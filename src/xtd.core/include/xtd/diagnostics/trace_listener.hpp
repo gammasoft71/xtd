@@ -158,7 +158,7 @@ namespace xtd {
       /// @param data The trace data to emit.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
-      template<class object_t>
+      template<typename object_t>
       auto trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const object_t& data) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, data));
@@ -174,7 +174,7 @@ namespace xtd {
       /// @param data The trace data to emit.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
-      template<class object_t>
+      template<typename object_t>
       auto trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::array<object_t>& data) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, xtd::string::join(", ", data)));
@@ -190,7 +190,7 @@ namespace xtd {
       /// @param data An array of objects to emit as data.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
-      template<class ...objects_t>
+      template<typename ...objects_t>
       auto trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, objects_t&& ... data) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, xtd::string::join(", ", {std::forward<objects_t>(data)...})));
@@ -236,7 +236,7 @@ namespace xtd {
       /// @param args An object array containing zero or more objects to format.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The args object array is converted to a string using the Format method, passing the format string and args array to format the string as the message portion of the trace. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
-      template<class ...objects_t>
+      template<typename ...objects_t>
       auto trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::string& format, const objects_t& ... args) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, xtd::string::format(format, args...)));
@@ -253,7 +253,7 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The TraceTransfer method is used for the correlation of related traces. The TraceTransfer method calls the TraceEvent method to process the call, with the eventType level set to Transfer and the relatedActivityIdGuid as a string appended to the message.
       /// @remarks activity_id_type is generally a guid.
-      template<class guid_t>
+      template<typename guid_t>
       auto trace_transfer(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, xtd::int32 id, const xtd::string& message, const guid_t& related_activity_id) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{} transfer: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
@@ -263,7 +263,7 @@ namespace xtd {
       
       /// @brief Writes the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
-      template <class object_t>
+      template<typename object_t>
       auto write(const object_t& o) -> void {
         #if DEBUG || TRACE
         write(xtd::string::format("{}", o));
@@ -273,7 +273,7 @@ namespace xtd {
       /// @brief Writes a category name and the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
       /// @param category A category name used to organize the output.
-      template <class object_t>
+      template<typename object_t>
       auto write(const object_t& o, const xtd::string& category) -> void {
         #if DEBUG || TRACE
         write(xtd::string::format("{} : {}", o, category));
@@ -286,7 +286,7 @@ namespace xtd {
       
       /// @brief Writes the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
-      template <class object_t>
+      template<typename object_t>
       auto write_line(const object_t& o) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{}", o));
@@ -296,7 +296,7 @@ namespace xtd {
       /// @brief Writes a category name and the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
       /// @param category A category name used to organize the output.
-      template <class object_t>
+      template<typename object_t>
       auto write_line(const object_t& o, const xtd::string& category) -> void {
         #if DEBUG || TRACE
         write_line(xtd::string::format("{} : {}", o, category));
@@ -309,7 +309,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template <class object_t>
+      template<typename object_t>
       auto operator <<(object_t&& message) -> xtd::diagnostics::trace_listener& {
         #if DEBUG || TRACE
         write_line(message);

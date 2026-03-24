@@ -11,7 +11,7 @@ namespace xtd {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
       /// @cond
-      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
       class list;
       /// @endcond
     }

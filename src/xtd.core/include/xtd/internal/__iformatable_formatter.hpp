@@ -19,11 +19,11 @@ namespace xtd {
 }
 
 [[nodiscard]] auto __to_string_iformatable_to_string(const xtd::iformatable* obj, const std::string& fmt, const std::locale& loc) -> std::string;
-template<class type_t>
+template<typename type_t>
 [[nodiscard]] auto __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) -> std::string;
 [[nodiscard]] auto __to_string_object_to_string(const xtd::object* obj) -> std::string;
 
-template<class value_t>
+template<typename value_t>
 [[nodiscard]] inline static auto __to_string_polymorphic(const value_t& value, const std::string& fmt, const std::locale& loc) -> std::string {
   if constexpr(std::derived_from<xtd::raw_type<value_t>, xtd::iformatable>) return __to_string_iformatable_to_string(static_cast<const xtd::iformatable*>(&value), fmt, loc);
   else if constexpr(std::derived_from<xtd::raw_type<value_t>, xtd::istringable<xtd::raw_type<value_t>>>) return __to_string_istringable_to_string(static_cast<const xtd::istringable<value_t>*>(&value));

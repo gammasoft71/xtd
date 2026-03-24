@@ -286,7 +286,7 @@ namespace xtd {
       /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::string::empty_string for section paramreter to read keys of the global section.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::read (const xtd::string& section, const xtd::string& key, const xtd::string& default_value) with xtd::string::empty_string paramreter as section parameter.
-      template<class type_t>
+      template<typename type_t>
       [[nodiscard]] auto read(const xtd::string& key, const type_t& default_value) -> type_t {
         return xtd::parse<type_t>(read_string(xtd::string::empty_string, key, xtd::string::format("{}", default_value)));
       }
@@ -303,7 +303,7 @@ namespace xtd {
       /// @param default_value A string used if value not found.
       /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::string::empty_string for section paramreter to read keys of the global section.
-      template<class type_t>
+      template<typename type_t>
       [[nodiscard]] auto read(const xtd::string& section, const xtd::string& key, const type_t& default_value) -> type_t {
         return xtd::parse<type_t>(read_string(section, key, xtd::string::format("{}", default_value)));
       }
@@ -524,7 +524,7 @@ namespace xtd {
       /// file_open = resources/symbolic_open.png
       /// file_save = resources/symbolic_save.png
       /// ```
-      template<class type_t>
+      template<typename type_t>
       auto write(const xtd::string& key, type_t&& value) -> void {
         write_string(xtd::string::empty_string, key, xtd::string::format("{}", value));
       }
@@ -576,7 +576,7 @@ namespace xtd {
       /// file_open = resources/symbolic_open.png
       /// file_save = resources/symbolic_save.png
       /// ```
-      template<class type_t>
+      template<typename type_t>
       auto write(const xtd::string& section, const xtd::string& key, type_t&& value) -> void {
         write_string(section, key, xtd::string::format("{}", value));
       }

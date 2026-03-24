@@ -38,7 +38,7 @@ namespace xtd {
           task<>::wait_all(tasks);
         }
         
-        template<class collection_t>
+        template<typename collection_t>
         static auto invoke(const collection_t& actions) -> void {
           xtd::collections::generic::list<xtd::threading::tasks::task<>> tasks;
           for (const auto& action : actions)

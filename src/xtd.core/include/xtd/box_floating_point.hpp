@@ -38,7 +38,7 @@ namespace xtd {
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = 3.14;
   /// ```
-  template<class type_t>
+  template<typename type_t>
   class box_floating_point : public xtd::box_integer<type_t> {
   public:
     /// @cond

@@ -11,10 +11,10 @@ namespace xtd {
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
       /// @cond
-      template<class actual_t> class operator_value;
+      template<typename actual_t> class operator_value;
       /// @endcond
       
-      template<class actual_t>
+      template<typename actual_t>
       class and_operator_value : public that_value<actual_t> {
       protected:
         /// @name Protected Construtors
@@ -26,7 +26,7 @@ namespace xtd {
         /// @}
         
       private:
-        template<class value_t> friend class operator_value;
+        template<typename value_t> friend class operator_value;
       };
     }
   }

@@ -81,19 +81,19 @@ namespace xtd {
     /// @}
     
     /// @cond
-    template<class delegate_t>
+    template<typename delegate_t>
     xtd::async_result begin_invoke(delegate_t value, const xtd::array<xtd::any_object>& args) {return begin_invoke(delegate<void(xtd::array<xtd::any_object>)>(value), args);}
     
-    template<class delegate_t>
+    template<typename delegate_t>
     xtd::async_result begin_invoke(delegate_t value) {return begin_invoke(delegate<void(xtd::array<xtd::any_object>)>(value), {});}
     
-    template<class delegate_t>
+    template<typename delegate_t>
     void invoke(delegate_t value, const xtd::array<xtd::any_object>& args) {invoke(delegate<void(xtd::array<xtd::any_object>)>(value), args);}
     
-    template<class delegate_t, class args_t>
+    template<typename delegate_t, typename args_t>
     void invoke(delegate_t value, args_t args) {invoke(delegate<void(xtd::array<xtd::any_object>)>(value), xtd::any_object(args));}
     
-    template<class delegate_t>
+    template<typename delegate_t>
     void invoke(delegate_t value) {invoke(delegate<void(xtd::array<xtd::any_object>)>(value), xtd::array<xtd::any_object> {});}
     /// @endcond
   };

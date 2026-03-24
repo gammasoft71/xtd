@@ -14,14 +14,14 @@ namespace xtd {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
       /// @cond
-      template <class type_t = std::nullptr_t>
+      template<typename type_t = std::nullptr_t>
       struct enumerator;
       /// @endcond
       
       /// @brief Supports a simple iteration over a generic collection.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// struct enumerator : ienumerator<type_t>;
       /// ```
       /// @par Header
@@ -34,7 +34,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::enumerator <type_t> class is used to encapsulate an xtd::collections::generic::ienumerator <type_t>.
-      template<class type_t>
+      template<typename type_t>
       struct enumerator : ienumerator<type_t> {
         /// @name Public Constructors
         
@@ -83,7 +83,7 @@ namespace xtd {
       /// @brief Supports a simple iteration over a generic collection.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class enumerator static_
       /// ```
       /// @par Header
@@ -110,7 +110,7 @@ namespace xtd {
         /// @par Examples
         /// The following code shows how to use enumerator<>::create method to create a simple enumerator on any std or xtd collections.
         /// @include generic_ienumerable3.cpp
-        template <class collection_t, class version_t = std::nullptr_t>
+        template<typename collection_t, typename version_t = std::nullptr_t>
         static auto create(const collection_t& items, const version_t* current_version = nullptr) noexcept {
           using value_type = typename collection_t::value_type;
           using const_iterator = typename collection_t::const_iterator;

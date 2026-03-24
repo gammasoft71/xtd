@@ -24,7 +24,7 @@ namespace xtd {
   /// xtd::type_object type2 = type_of(i);
   /// ```
   /// @remarks The type_of operator cannot be overloaded.
-  template<class type_t>
+  template<typename type_t>
   auto type_of() noexcept -> const xtd::type_object& {
     static auto instance = xtd::type_object {typeid(type_t)};
     return instance;

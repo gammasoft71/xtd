@@ -12,17 +12,17 @@
 #include "box.hpp"
 
 /// @cond
-template<class type_t>
+template<typename type_t>
 auto xtd::box<type_t>::to_string() const noexcept -> xtd::string {
   return to_string("", xtd::globalization::culture_info::current_culture());
 }
 
-template<class type_t>
+template<typename type_t>
 auto xtd::box<type_t>::to_string(const xtd::string& format) const -> xtd::string {
   return to_string(format, xtd::globalization::culture_info::current_culture());
 }
 
-template<class type_t>
+template<typename type_t>
 auto xtd::box<type_t>::to_string(const xtd::string& format, const xtd::globalization::culture_info& culture) const -> xtd::string {
   return xtd::string::format(culture, xtd::string::format("{{:{}}}", format), value);
 }

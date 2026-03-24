@@ -74,17 +74,17 @@ namespace xtd {
       
       /// @cond
       jthread();
-      template<class start_t>
+      template<typename start_t>
       jthread(start_t start) : jthread(parameterized_thread_start {start}) {}
-      template<class start_t>
+      template<typename start_t>
       jthread(start_t start, int32 max_stack_size) : jthread(parameterized_thread_start {start}, max_stack_size) {}
       jthread(jthread&&) = default;
       jthread(const jthread&) = default;
       jthread& operator=(const jthread&) = default;
-      template<class start_t>
+      template<typename start_t>
       
       static auto start_new(start_t start) -> jthread {return start_new(thread_start {start});}
-      template<class start_t>
+      template<typename start_t>
       static auto start_new(start_t start, const xtd::any_object& obj) -> jthread {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
       

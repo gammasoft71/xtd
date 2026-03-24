@@ -9,15 +9,15 @@
 /// @endcond
 
 /// @cond
-template<class type_t, class bool_t>
+template<typename type_t, typename bool_t>
 struct __box_enum_or_object__;
 
-template<class type_t>
+template<typename type_t>
 struct __box_enum_or_object__<type_t, std::true_type> {
   using type = xtd::enum_object<type_t>;
 };
 
-template<class type_t>
+template<typename type_t>
 struct __box_enum_or_object__<type_t, std::false_type> {
   using type = typename std::conditional<std::is_base_of<xtd::object, type_t>::value, type_t, xtd::box<type_t >>::type;
 };

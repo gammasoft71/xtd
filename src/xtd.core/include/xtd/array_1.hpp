@@ -11,7 +11,7 @@ namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t, xtd::size rank_, class allocator_t>
+  /// template<typename type_t, xtd::size rank_, typename allocator_t>
   /// class array : public xtd::basic_array<type_t, allocator_t>;
   /// ```
   /// @par Header
@@ -36,7 +36,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<class type_t, class allocator_t>
+  template<typename type_t, typename allocator_t>
   class array<type_t, 1, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
   public:
     /// @name Public Aliases
@@ -146,7 +146,7 @@ namespace xtd {
     /// @brief Constructs the container with the contents of the range [first, last).
     /// @param first The first iterator the range to copy the elements from.
     /// @param last The last iterator the range to copy the elements from.
-    template<class input_iterator_t>
+    template<typename input_iterator_t>
     array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The initializer list to initialize the elements of the container with.

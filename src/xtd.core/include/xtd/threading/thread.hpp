@@ -94,9 +94,9 @@ namespace xtd {
       
       /// @cond
       thread();
-      template<class start_t>
+      template<typename start_t>
       explicit thread(start_t start) : thread(parameterized_thread_start {start}) {}
-      template<class start_t>
+      template<typename start_t>
       thread(start_t start, int32 max_stack_size) : thread(parameterized_thread_start {start}, max_stack_size) {}
       thread(thread&&) = default;
       thread(const thread&) = default;
@@ -335,14 +335,14 @@ namespace xtd {
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
-      template<class collection_t>
+      template<typename collection_t>
       static auto join_all(const collection_t& threads) -> void {join_all(threads, timeout::infinite);}
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
       /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
-      template<class collection_t>
+      template<typename collection_t>
       static auto join_all(const collection_t& threads, int32 milliseconds_timeout) -> bool {
         auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
@@ -354,7 +354,7 @@ namespace xtd {
       /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
-      template<class collection_t>
+      template<typename collection_t>
       static auto join_all(const collection_t& threads, const time_span& timeout) -> bool {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
       
       /// @brief Suspends the current thread for a specified time.
@@ -383,16 +383,16 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<class item_t>
+      template<typename item_t>
       static auto join_all(const std::initializer_list<item_t>& threads) -> bool {return join_all(threads, timeout::infinite);}
-      template<class item_t>
+      template<typename item_t>
       static auto join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) -> bool {
         auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
-      template<class item_t>
+      template<typename item_t>
       static auto join_all(const std::initializer_list<item_t>& threads, const time_span& timeout) -> bool {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
       static auto join_all(const std::initializer_list<xtd::sptr<thread>>& threads) -> bool;
       static auto join_all(const std::initializer_list<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) -> bool;
@@ -406,9 +406,9 @@ namespace xtd {
       static auto join_all(const xtd::array<xtd::uptr<thread>>& threads) -> bool;
       static auto join_all(const xtd::array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) -> bool;
       static auto join_all(const xtd::array<xtd::uptr<thread>>& threads, const time_span& timeout) -> bool;
-      template<class start_t>
+      template<typename start_t>
       static auto start_new(start_t start) -> thread {return start_new(thread_start {start});}
-      template<class start_t>
+      template<typename start_t>
       static auto start_new(start_t start, const xtd::any_object& obj) -> thread {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
       

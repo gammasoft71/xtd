@@ -20,7 +20,7 @@ namespace xtd {
   namespace forms {
     namespace native {
       class control;
-      template<class control_t>
+      template<typename control_t>
       class control_wrapper;
       class group_box;
       class wx_group_box;
@@ -74,7 +74,7 @@ namespace xtd {
       };
       
       class wxGroupBox : public wxStaticBox {
-        template<class control_t>
+        template<typename control_t>
         friend class control_wrapper;
         friend xtd::forms::native::group_box;
         friend xtd::forms::native::wx_group_box;
@@ -130,7 +130,7 @@ namespace xtd {
       };
       
       class wxGroupBoxOwnerDraw : public wxPanel {
-        template<class control_t>
+        template<typename control_t>
         friend class control_wrapper;
         friend xtd::forms::native::group_box;
         friend xtd::forms::native::wx_group_box;

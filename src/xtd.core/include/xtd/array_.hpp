@@ -15,50 +15,50 @@
 namespace xtd {
   // Deduction guides for xtd::array
   // {
-  template<class type_t, xtd::size length>
+  template<typename type_t, xtd::size length>
   array(const type_t(&)[length]) -> array<type_t, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(const type_t*, xtd::size) -> array<type_t, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(const xtd::collections::generic::ienumerable<type_t>&) -> array<type_t, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(const xtd::collections::generic::ilist<type_t>&) -> array<type_t, 1>;
   
-  template <class input_iterator_t>
+  template<typename input_iterator_t>
   array(input_iterator_t, input_iterator_t) -> array<std::iter_value_t<input_iterator_t>, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(const std::vector<type_t>&) -> array<type_t, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(std::vector<type_t>&&) -> array<type_t, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(std::vector<std::vector<type_t>>) -> array<type_t, 2>;
   
-  template<class type_t>
+  template<typename type_t>
   array(std::vector<std::vector<std::vector<type_t>>>) -> array<type_t, 3>;
   
-  template<class type_t>
+  template<typename type_t>
   array(std::initializer_list<type_t>) -> array<type_t, 1>;
   
-  template<class type_t>
+  template<typename type_t>
   array(std::initializer_list<std::initializer_list<type_t>>) -> array<type_t, 2>;
   
-  template<class type_t>
+  template<typename type_t>
   array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>>) -> array<type_t, 3>;
   // }
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::get_value(const xtd::array<xtd::size>& indexes) const {
   return operator()(indexes);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 xtd::array<xtd::size, 1> xtd::basic_array<type_t, allocator_t>::get_lengths() const {
   auto result = xtd::array<xtd::size, 1>(rank());
   for (auto r = xtd::size {}; r < rank(); ++r)
@@ -66,12 +66,12 @@ xtd::array<xtd::size, 1> xtd::basic_array<type_t, allocator_t>::get_lengths() co
   return result;
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noexcept {
   return xtd::string::format("[{}]", xtd::string::join(", ", *this));
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.length(); ++index1) {
@@ -85,16 +85,16 @@ inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::arra
   return data_->items[position];
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) const {
   return data_->items[compute_index(self_, indexes)];
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) : basic_array(lengths, value_type {}) {
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths, const value_type& value) {
   data_->items = base_type(lengths.aggregate([&](const size_type & accumulator, const size_type & value) {return accumulator * value;}), value);
   data_->lower_bound.clear();
@@ -105,8 +105,8 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
   }
 }
 
-template<class type_t, class allocator_t>
-template<class value_t>
+template<typename type_t, typename allocator_t>
+template<typename value_t>
 xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, const xtd::array < size_type >& indexes) {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.length(); ++index1) {
@@ -120,8 +120,8 @@ xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_
   return position;
 }
 
-template<class type_t, class allocator_t>
-template<class value_t>
+template<typename type_t, typename allocator_t>
+template<typename value_t>
 xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index) {
   auto relative = index - items.get_lower_bound(rank);
   auto multiplier = xtd::size {1};
@@ -131,8 +131,8 @@ xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_
   return relative * multiplier;
 }
 
-template<class type_t, class allocator_t>
-template<class value_t>
+template<typename type_t, typename allocator_t>
+template<typename value_t>
 xtd::string xtd::basic_array<type_t, allocator_t>::to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index) {
   auto result = xtd::string {"["};
   for (auto index = items.get_lower_bound(rank); index <= items.get_upper_bound(rank); ++index) {
@@ -145,27 +145,27 @@ xtd::string xtd::basic_array<type_t, allocator_t>::to_string(const xtd::basic_ar
   return result;
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::collections::object_model::read_only_collection<type_t> xtd::array<>::as_read_only(const xtd::array<type_t, 1, allocator_t>& array) {
   return xtd::collections::object_model::read_only_collection<type_t> {array};
 }
 
-template<class type_t, xtd::size rank_, class allocator_t>
+template<typename type_t, xtd::size rank_, typename allocator_t>
 inline xtd::string xtd::array<type_t, rank_, allocator_t>::to_string() const noexcept {
   return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::array<type_t, 1, allocator_t>::to_string() const noexcept {
   return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::array<type_t, 2, allocator_t>::to_string() const noexcept {
   return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::array<type_t, 3, allocator_t>::to_string() const noexcept {
   return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
@@ -173,14 +173,14 @@ inline xtd::string xtd::array<type_t, 3, allocator_t>::to_string() const noexcep
 
 /// @cond
 namespace xtd::collections::generic::extensions {
-  template <class enumerable_t, class source_t>
+  template<typename enumerable_t, typename source_t>
   inline xtd::array<source_t> enumerable<enumerable_t, source_t>::to_array() const noexcept {
     return xtd::linq::enumerable::to_array(self());
   }
 }
 
 namespace xtd::linq {
-  template <class source_t>
+  template<typename source_t>
   inline auto enumerable::to_array(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
     auto result = xtd::array<source_t> {};
     result = xtd::array<source_t> {source};

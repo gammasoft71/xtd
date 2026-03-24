@@ -10,7 +10,7 @@ using namespace xtd::drawing::imaging;
 using namespace xtd::helpers;
 
 namespace {
-  template<class type_t>
+  template<typename type_t>
   void add_bytes(list<byte>& bytes, type_t value) {
     auto value_bytes = bit_converter::get_bytes(value);
     bytes.insert_range(bytes.count(), value_bytes);

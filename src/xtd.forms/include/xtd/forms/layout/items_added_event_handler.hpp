@@ -13,7 +13,7 @@ namespace xtd {
     namespace layout {
       /// @brief Represents the method that will handle the items added event of a xtd::forms::layout::arranged_element_colleciton.
       /// ```cpp
-      /// template<class item_t>
+      /// template<typename item_t>
       /// using items_added_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::layout::items_added_event_args<type_t>& e)>;
       /// ```
       /// @param sender The source of the event.
@@ -27,7 +27,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms events
-      template<class item_t>
+      template<typename item_t>
       using items_added_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::layout::items_added_event_args<item_t>& e)>;
     }
   }

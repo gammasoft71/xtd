@@ -12,7 +12,7 @@
 #include <string>
 
 /// @cond
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __sprintf(const char_t* fmt, ...) -> std::basic_string<char_t> {return std::basic_string<char_t>();}
 
 template <>

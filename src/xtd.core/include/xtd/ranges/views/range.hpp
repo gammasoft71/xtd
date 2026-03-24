@@ -23,7 +23,7 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// auto range(type_t count);
       /// ```
       /// @par Header
@@ -35,7 +35,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
-      template<class type_t>
+      template<typename type_t>
       [[nodiscard]] auto range(type_t count) {
         return xtd::linq::enumerable::range(count);
       }
@@ -46,7 +46,7 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// auto range(type_t start, type_t count);
       /// ```
       /// @par Header
@@ -58,7 +58,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
-      template<class type_t>
+      template<typename type_t>
       [[nodiscard]] auto range(type_t start, type_t count) {
         return xtd::linq::enumerable::range(start, count);
       }
@@ -70,7 +70,7 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable that contains a range of sequential integral numbers.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// auto range(type_t start, type_t count, type_t step);
       /// ```
       /// @par Header
@@ -82,7 +82,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
-      template<class type_t>
+      template<typename type_t>
       [[nodiscard]] auto range(type_t start, type_t count, type_t step) {
         return xtd::linq::enumerable::range(start, count, step);
       }

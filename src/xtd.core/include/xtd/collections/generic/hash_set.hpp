@@ -17,7 +17,7 @@ namespace xtd {
       /// @brief Represents a set of values.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
+      /// template<typename type_t, typename hasher_t = xtd::collections::generic::helpers::hasher<type_t>, typename equator_t = xtd::collections::generic::helpers::equator<type_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
       /// class hash_set : public xtd::object, public xtd::collections::generic::iset<type_t>
       /// ```
       /// @par Header
@@ -33,7 +33,7 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to merge two disparate sets. This example creates two xtd::collections::generic::hash_set <type_t> objects and populates them with even and odd numbers, respectively. A third xtd::collections::generic::hash_set <type_t> object is created from the set that contains the even numbers. The example then calls the xtd::collections::generic::hash_set::union_with method, which adds the odd number set to the third set.
       /// @include generic_hash_set.cpp
-      template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
+      template<typename type_t, typename hasher_t = xtd::collections::generic::helpers::hasher<type_t>, typename equator_t = xtd::collections::generic::helpers::equator<type_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
       class hash_set : public xtd::object, public xtd::collections::generic::iset<type_t> {
       public:
         /// @name Public Aliases
@@ -120,7 +120,7 @@ namespace xtd {
           for (const auto& value : init)
             add(value);
         }
-        template <class input_iterator_t>
+        template<typename input_iterator_t>
         explicit hash_set(input_iterator_t first, input_iterator_t last) {
           for (auto iterator = first; iterator != last; ++iterator)
             add(*iterator);
@@ -339,7 +339,7 @@ namespace xtd {
         /// @brief Removes all elements that match the conditions defined by the specified predicate from a hash_set <type_t> collection.
         /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to remove.
         /// @return The number of elements that were removed from the hash_set <type_t> collection.
-        template<class predicate_t>
+        template<typename predicate_t>
         auto remove_where(predicate_t match) noexcept -> size_type {
           auto to_remove = hash_set {};
           for (const auto& item : self_)
@@ -431,16 +431,16 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::hash_set
       // {
-      template<class type_t>
+      template<typename type_t>
       hash_set(iset<type_t>) -> hash_set<type_t>;
       
-      template<class type_t>
+      template<typename type_t>
       hash_set(ienumerable<type_t>) -> hash_set<type_t>;
       
-      template <class type_t>
+      template<typename type_t>
       hash_set(std::initializer_list<type_t>) -> hash_set<type_t>;
       
-      template <class input_iterator_t >
+      template<typename input_iterator_t >
       hash_set(input_iterator_t, input_iterator_t) -> hash_set<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond

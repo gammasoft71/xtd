@@ -11,7 +11,7 @@ namespace xtd {
   /// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+  /// template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   /// class basic_array : public xtd::array_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>>;
   /// ```
   /// @par Header
@@ -23,7 +23,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+  template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t >> {
   public:
     /// @name Public Aliases
@@ -357,7 +357,7 @@ namespace xtd {
     /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    template<class comparison_t>
+    template<typename comparison_t>
     auto sort(comparison_t&& comparison) -> basic_array<type_t>& {
       data_->items.increment_version();
       std::sort(data_->items.begin(), data_->items.end(), [&](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});
@@ -461,7 +461,7 @@ namespace xtd {
     /// @}
     
   private:
-    template<class type_array_t, size_type rank_array_t, class allocator_array_t>
+    template<typename type_array_t, size_type rank_array_t, typename allocator_array_t>
     friend class array;
     
     basic_array() = default;
@@ -484,7 +484,7 @@ namespace xtd {
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    template<class input_iterator_t>
+    template<typename input_iterator_t>
     basic_array(input_iterator_t first, input_iterator_t last) {
       data_->items.assign(first, last);
       data_->upper_bound[0] = data_->items.size() - 1;
@@ -542,9 +542,9 @@ namespace xtd {
     
     auto clear() -> void override {fill(value_type {});}
     
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, const xtd::array<size_type>& indexes) -> xtd::size;
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index) -> xtd::size;
     
     auto insert(size_type index, const type_t& value) -> void override {}
@@ -560,7 +560,7 @@ namespace xtd {
       std::reverse(data_->items.begin() + index, data_->items.begin() + index + count);
     }
     
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index) -> xtd::string;
     
     struct array_data {

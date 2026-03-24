@@ -20,10 +20,10 @@ namespace xtd {
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
       /// @cond
-      template<class actual_t> class that_value;
+      template<typename actual_t> class that_value;
       /// @endcond
       
-      template<class actual_t>
+      template<typename actual_t>
       class does_value : public actual_value<actual_t> {
       public:
         /// @name Public Methods
@@ -41,7 +41,7 @@ namespace xtd {
         /// xtd::tunit::constraints::assert_that(s).does().end_with("val"); // test ok.
         /// xtd::tunit::constraints::assert_that(s).does().end_with("law"); // test throws an assert_error exception.
         /// ```
-        template<class item_t>
+        template<typename item_t>
         auto end_with(const item_t& item, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::ends_with(item, actual_value<actual_t>::actual(), stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::ends_with(item, actual_value<actual_t>::actual(), stack_frame);
@@ -59,7 +59,7 @@ namespace xtd {
         /// xtd::tunit::constraints::assert_that(s).does().end_with("val", "User message..."); // test ok.
         /// xtd::tunit::constraints::assert_that(s).does().end_with("law", "User message..."); // test throws an assert_error exception.
         /// ```
-        template<class item_t>
+        template<typename item_t>
         auto end_with(const item_t& item, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::ends_with(item, actual_value<actual_t>::actual(), message, stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::ends_with(item, actual_value<actual_t>::actual(), message, stack_frame);
@@ -77,7 +77,7 @@ namespace xtd {
         /// xtd::tunit::constraints::assert_that(s).does().start_with("val"); // test ok.
         /// xtd::tunit::constraints::assert_that(s).does().start_with("zoe"); // test throws an assert_error exception.
         /// ```
-        template<class item_t>
+        template<typename item_t>
         auto start_with(const item_t& item, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::starts_with(item, actual_value<actual_t>::actual(), stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::starts_with(item, actual_value<actual_t>::actual(), stack_frame);
@@ -95,7 +95,7 @@ namespace xtd {
         /// xtd::tunit::constraints::assert_that(s).does().start_with("val", "User message..."); // test ok.
         /// xtd::tunit::constraints::assert_that(s).does().start_with("zoe", "User message..."); // test throws an assert_error exception.
         /// ```
-        template<class item_t>
+        template<typename item_t>
         auto start_with(const item_t& item, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::starts_with(item, actual_value<actual_t>::actual(), message, stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::starts_with(item, actual_value<actual_t>::actual(), message, stack_frame);
@@ -114,7 +114,7 @@ namespace xtd {
         /// @}
         
       private:
-        template<class value_t> friend class that_value;
+        template<typename value_t> friend class that_value;
       };
     }
   }

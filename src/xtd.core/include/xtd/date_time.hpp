@@ -210,7 +210,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point.
     /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
     /// @remarks This constructor can be used for example to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
-    template<class clock_t, class duration_t = clock_t::duration> // Can't be explicit by design.
+    template<typename clock_t, typename duration_t = clock_t::duration> // Can't be explicit by design.
     date_time(const std::chrono::time_point<clock_t, duration_t>& time_point) {
       *this = from_time_t(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now() + std::chrono::duration_cast<std::chrono::system_clock::duration>(time_point - clock_t::now())), date_time_kind::local);
     }
@@ -219,7 +219,7 @@ namespace xtd {
     /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
     /// @remarks This constructor can be used for example to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
-    template<class clock_t, class duration_t = clock_t::duration>
+    template<typename clock_t, typename duration_t = clock_t::duration>
     date_time(const std::chrono::time_point<clock_t, duration_t>& time_point, date_time_kind kind) {
       *this = from_time_t(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now() + std::chrono::duration_cast<std::chrono::system_clock::duration>(time_point - clock_t::now())), kind);
     }
@@ -1428,7 +1428,7 @@ namespace xtd {
 #if defined(__xtd__cpp_lib_format)
 template <>
 struct std::formatter<xtd::date_time> : std::formatter<std::string> {
-  template<class format_context_t>
+  template<typename format_context_t>
   constexpr auto parse(format_context_t& ctx) {
     auto iterator = ctx.begin();
     for (; iterator != ctx.end() && *iterator != '}'; ++iterator)
@@ -1436,7 +1436,7 @@ struct std::formatter<xtd::date_time> : std::formatter<std::string> {
     return iterator;
   }
 
-  template<class object_t, class format_context_t>
+  template<typename object_t, typename format_context_t>
   auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string(format_value)});}
 
 private:

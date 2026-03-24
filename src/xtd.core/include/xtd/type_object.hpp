@@ -11,7 +11,7 @@
 namespace xtd {
   class type_object;
   
-  template<class type_t> auto type_of() noexcept -> const xtd::type_object&;
+  template<typename type_t> auto type_of() noexcept -> const xtd::type_object&;
   auto type_of(const auto& value) noexcept -> xtd::type_object;
   auto type_of(const xtd::type& value) noexcept -> xtd::type_object;
 }
@@ -80,7 +80,7 @@ namespace xtd {
     /// @}
     
   private:
-    template<class type_t>
+    template<typename type_t>
     friend auto xtd::type_of() noexcept -> const type_object&;
     friend auto xtd::type_of(const auto& value) noexcept -> type_object;
     friend auto xtd::type_of(const xtd::type& value) noexcept -> type_object;

@@ -1104,7 +1104,7 @@ namespace xtd {
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
     /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.
-    template<class string_t>
+    template<typename string_t>
     [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.")]] static const xtd::string& to_ustring(const string_t& str) noexcept {return to_string(str);}
     /// @brief Converts string_t to xtd::string.
     /// @param str string to convert.
@@ -1112,7 +1112,7 @@ namespace xtd {
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
     /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.
-    template<class char_t>
+    template<typename char_t>
     [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.")]] static const xtd::string& to_ustring(const char_t* str) noexcept {return to_string(str);}
     /// @brief Converts string_t to xtd::string.
     /// @param str string to convert.
@@ -1120,7 +1120,7 @@ namespace xtd {
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
     /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.
-    template<class char_t>
+    template<typename char_t>
     [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.")]] static const xtd::string& to_ustring(char_t* str) noexcept {return to_string(str);}
     /// @}
   };

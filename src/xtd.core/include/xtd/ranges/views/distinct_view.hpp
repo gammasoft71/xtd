@@ -42,7 +42,7 @@ namespace xtd {
       /// The following example shows how to use xtd::ranges::views::distinct_view class :
       /// @include ranges_views_distinct2.cpp
       class distinct_view {
-        template <typename comparer_t>
+        template<typename comparer_t>
         struct with_comparer {
           const comparer_t& comparer;
           
@@ -71,7 +71,7 @@ namespace xtd {
         /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
         /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
         /// @return An iterable distinct elements from the source sequence.
-        template <typename comparer_t>
+        template<typename comparer_t>
         auto operator()(const comparer_t& comparer) const {return with_comparer {comparer};}
         
         /// @brief Applies a distinct projection on the given range using the pipe operator.

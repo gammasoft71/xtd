@@ -38,7 +38,7 @@ namespace xtd {
   /// console::write_line("version = {}", version->to_string());
   /// delete_unique_ptr_object(version); // Not mandatory.
   /// @endcode
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   class unique_ptr_object : public xtd::object, public xtd::icomparable<unique_ptr_object<type_t, deleter_t>>, public xtd::iequatable<unique_ptr_object<type_t, deleter_t >> {
   public:
     /// @name Public Aliases
@@ -85,11 +85,11 @@ namespace xtd {
     unique_ptr_object(unique_ptr_object&& value) noexcept : ptr_ {std::move(value.ptr_)} {}
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
-    template<class value_t, class other_deleter_t>
+    template<typename value_t, typename other_deleter_t>
     unique_ptr_object(unique_ptr_object<value_t, other_deleter_t>&& value) : ptr_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
-    template<class value_t, class other_deleter_t>
+    template<typename value_t, typename other_deleter_t>
     unique_ptr_object(std::unique_ptr<value_t, other_deleter_t>&& value) : ptr_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
@@ -100,24 +100,24 @@ namespace xtd {
     
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified pointer.
     /// @param ptr The pointer.
-    template<class pointer_t>
+    template<typename pointer_t>
     explicit unique_ptr_object(pointer_t* ptr) noexcept : ptr_ {ptr} {}
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified pointer and dleter.
     /// @param ptr The pointer.
     /// @param deleter The tdeleter method.
-    template<class pointer_t, class other_deleter_t>
+    template<typename pointer_t, typename other_deleter_t>
     unique_ptr_object(pointer_t* ptr, other_deleter_t deleter) noexcept : ptr_ {ptr, deleter} {}
     
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
-    template<class value_t>
+    template<typename value_t>
     unique_ptr_object(unique_ptr_object<value_t>&& value) noexcept : ptr_ {std::move(value.ptr_)} {}
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
     unique_ptr_object(base_type&& value) noexcept : ptr_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
-    template<class value_t>
+    template<typename value_t>
     unique_ptr_object(std::unique_ptr<value_t>&& value) noexcept : ptr_ {std::move(value)} {}
     /// @}
     
@@ -178,7 +178,7 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param ptr The pointer to assign the current object. It can be null.
     /// @remarks xtd::unique_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    template<class pointer_t>
+    template<typename pointer_t>
     void reset(pointer_t* ptr) noexcept {ptr_.reset(ptr);}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param null The null pointer.
@@ -226,7 +226,7 @@ namespace xtd {
     
     /// @brief Assignment operator with specified xtd::unique_ptr_object value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     unique_ptr_object& operator =(unique_ptr_object<value_t>&& value) noexcept {
       ptr_ = std::move(value.ptr_);
       return *this;
@@ -234,7 +234,7 @@ namespace xtd {
     
     /// @brief Assignment operator with specified std::unique_ptr value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     unique_ptr_object& operator =(std::unique_ptr<value_t>&& value) noexcept {
       ptr_ = std::move(value);
       return *this;
@@ -259,13 +259,13 @@ namespace xtd {
     /// @}
     
   private:
-    template<class value_t, class other_deleter_t>
+    template<typename value_t, typename other_deleter_t>
     friend class xtd::unique_ptr_object;
     
-    template<class value_t, class allocator_t>
+    template<typename value_t, typename allocator_t>
     friend class xtd::basic_array;
     
-    template<class value_t, class allocator_t>
+    template<typename value_t, typename allocator_t>
     friend class xtd::collections::generic::list;
     
     friend class xtd::linq::enumerable;
@@ -275,25 +275,25 @@ namespace xtd {
     base_type ptr_;
   };
   
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   inline const unique_ptr_object<type_t, deleter_t>  unique_ptr_object<type_t, deleter_t>::empty;
   /// @}
   
   /// @cond
   // Deduction guides for xtd::reference_wrapper_object
   // {
-  template<class type_t>
+  template<typename type_t>
   unique_ptr_object(type_t*) -> unique_ptr_object<type_t, std::default_delete<type_t>>;
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   unique_ptr_object(type_t*, const deleter_t&) -> unique_ptr_object<type_t, deleter_t>;
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   unique_ptr_object(xtd::unique_ptr_object<type_t, deleter_t>()) -> unique_ptr_object<type_t, deleter_t>;
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   unique_ptr_object(std::unique_ptr<type_t, deleter_t>()) -> unique_ptr_object<type_t, deleter_t>;
   // }
 }
 
-template<class object_t>
+template<typename object_t>
 xtd::unique_ptr_object<object_t> xtd::object::memberwise_clone() const {
   auto object_ptr = dynamic_cast<const object_t*>(this);
   if (object_ptr == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);

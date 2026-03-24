@@ -21,7 +21,7 @@ namespace xtd {
   ///
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
-  template<class type_t>
+  template<typename type_t>
   using ref = xtd::reference_wrapper_object<type_t>;
   /// @}
 }

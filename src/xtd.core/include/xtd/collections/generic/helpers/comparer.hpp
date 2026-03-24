@@ -28,7 +28,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class value_t = void>
+        template<typename value_t = void>
         struct comparer {
           /// @name Public Aliases
           

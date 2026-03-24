@@ -41,7 +41,7 @@ namespace xtd {
           /// @param first the fist iterator to sort.
           /// @param last the last iterator to sort.
           /// @remarks same as std::sort.
-          template<class type_t>
+          template<typename type_t>
           void operator()(type_t first, type_t last) {
             std::sort(first, last);
           }

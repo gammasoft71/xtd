@@ -15,7 +15,7 @@ namespace xtd {
         /// @brief Represents a wrap pointer reverse iterator.
         /// @par Definition
         /// ```cpp
-        /// template<class value_t, class iterator_tag_t = std::random_access_iterator_tag>
+        /// template<typename value_t, typename iterator_tag_t = std::random_access_iterator_tag>
         /// using wrap_pointer_reverse_iterator = std::reverse_iterator<wrap_pointer_iterator<value_t, iterator_tag_t>>;
         /// ```
         /// @par Header
@@ -27,7 +27,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class value_t, class iterator_tag_t = std::random_access_iterator_tag>
+        template<typename value_t, typename iterator_tag_t = std::random_access_iterator_tag>
         using wrap_pointer_reverse_iterator = std::reverse_iterator<wrap_pointer_iterator<value_t, iterator_tag_t>>;
       }
     }

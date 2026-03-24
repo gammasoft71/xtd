@@ -18,7 +18,7 @@ namespace xtd {
   /// @param operand The target any object.
   /// @return The type_t value contained in the `operand`.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto any_cast(const xtd::any& operand) -> type_t {
     return std::any_cast<type_t>(operand);
   }
@@ -35,7 +35,7 @@ namespace xtd {
   /// @param operand The target any object.
   /// @return The type_t value contained in the `operand`.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto any_cast(xtd::any& operand) -> type_t {
     return std::any_cast<type_t>(operand);
   }
@@ -52,7 +52,7 @@ namespace xtd {
   /// @param operand The target any object.
   /// @return The type_t value contained in the `operand`.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto any_cast(xtd::any&& operand) -> type_t {
     return std::any_cast<type_t>(operand);
   }
@@ -70,7 +70,7 @@ namespace xtd {
   /// @return The type_t pointer on the `operand` value.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   /// @remarks If the `operand` is null poinetr, the result is null pointer.
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto any_cast(xtd::any* operand) -> type_t* {
     return std::any_cast<type_t>(operand);
   }
@@ -88,7 +88,7 @@ namespace xtd {
   /// @return The type_t pointer on the `operand` value.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   /// @remarks If the `operand` is null poinetr, the result is null pointer.
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto any_cast(const xtd::any* operand) -> type_t* {
     return std::any_cast<type_t>(operand);
   }

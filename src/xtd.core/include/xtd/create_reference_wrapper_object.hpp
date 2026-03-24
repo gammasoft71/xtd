@@ -20,7 +20,7 @@ namespace xtd {
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
   /// @remarks The xtd::create_reference_wrapper_object is equivalent to [std::ref](https://en.cppreference.com/w/cpp/utility/functional/ref).
-  template<class type_t>
+  template<typename type_t>
   reference_wrapper_object<type_t> create_reference_wrapper_object(type_t& arg) noexcept {return reference_wrapper_object<type_t> {arg};}
   /// @brief xtd::create_reference_wrapper_object operator. This operator creates a xtd::reference_wrapper_object object.
   /// @par Library
@@ -35,6 +35,6 @@ namespace xtd {
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
   /// @remarks The xtd::create_reference_wrapper_object is equivalent to [std::ref](https://en.cppreference.com/w/cpp/utility/functional/ref).
-  template<class type_t>
+  template<typename type_t>
   reference_wrapper_object<type_t> create_reference_wrapper_object(reference_wrapper_object<type_t> arg) noexcept {return arg;}
 }

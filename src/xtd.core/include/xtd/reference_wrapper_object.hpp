@@ -34,7 +34,7 @@ namespace xtd {
   ///
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
-  template<class type_t>
+  template<typename type_t>
   class reference_wrapper_object : public xtd::object, public xtd::icomparable<reference_wrapper_object<type_t>>, public xtd::iequatable<reference_wrapper_object<type_t >> {
   public:
     /// @name Public Aliases
@@ -65,7 +65,7 @@ namespace xtd {
     reference_wrapper_object(xtd::null_ptr null) noexcept {} // Can't be explicit by design.
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference.
     /// @param value The reference.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(value_t&& value) noexcept : ref_ {value} {} // Can't be explicit by design.
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
     /// @param value The reference object.
@@ -78,15 +78,15 @@ namespace xtd {
     reference_wrapper_object(reference_wrapper_object&& value) noexcept : ref_ {std::move(value.ref_)} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
     /// @param value The reference object.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(reference_wrapper_object<value_t>& value) noexcept : ref_ {value.ref_} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
     /// @param value The reference object.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(const reference_wrapper_object<value_t>& value) noexcept : ref_ {value.ref_} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
     /// @param value The reference object.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(reference_wrapper_object<value_t>&& value) noexcept : ref_ {std::move(value.ref_)} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
@@ -99,15 +99,15 @@ namespace xtd {
     reference_wrapper_object(base_type&& value) noexcept : ref_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(std::reference_wrapper<value_t>& value) noexcept : ref_ {value} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(const std::reference_wrapper<value_t>& value) noexcept : ref_ {value} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object(std::reference_wrapper<value_t>&& value) noexcept : ref_ {std::move(value)} {}
     /// @}
     
@@ -119,7 +119,7 @@ namespace xtd {
     /// @par Examples
     /// The following code shows how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
     /// @code
-    /// template<class value_t>
+    /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
     ///   if (value.is_empty()) println("value is empty");
     ///   else println("value = {}", value.get());
@@ -181,7 +181,7 @@ namespace xtd {
     /// @par Examples
     /// The following code shows how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
     /// @code
-    /// template<class value_t>
+    /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
     ///   if (value.is_empty()) println("value is empty");
     ///   else println("value = {}", value.get());
@@ -202,7 +202,7 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified reference.
     /// @param value The reference to assign the current object. It can be null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    template<class value_t>
+    template<typename value_t>
     void reset(value_t&& value) noexcept {ref_ = value;}
     /// @brief Resets the current object. Set the current object with specified null value.
     /// @param null The null value.
@@ -219,7 +219,7 @@ namespace xtd {
     /// @par Examples
     /// The following code shows how to use xtd::reference_wrapper_object::to_object and xtd::reference_wrapper_object::is_empty
     /// @code
-    /// template<class value_t>
+    /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
     ///   if (value.is_empty()) println("value is empty");
     ///   else println("value = {}", value.get());
@@ -271,35 +271,35 @@ namespace xtd {
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object& operator =(const reference_wrapper_object<value_t>& value) noexcept {
       ref_ = value.ref_;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object& operator =(reference_wrapper_object<value_t>& value) noexcept {
       ref_ = value.ref_;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object& operator =(reference_wrapper_object<value_t>&& value) noexcept {
       ref_ = std::move(value.ref_);
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object& operator =(const std::reference_wrapper<value_t>& value) noexcept {
       ref_ = value;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object& operator =(std::reference_wrapper<value_t>& value) noexcept {
       ref_ = value;
       return *this;
@@ -318,7 +318,7 @@ namespace xtd {
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     reference_wrapper_object& operator =(value_t&& value) noexcept {
       ref_ = value;
       return *this;
@@ -330,7 +330,7 @@ namespace xtd {
     /// @par Examples
     /// The following code shows how to use xtd::reference_wrapper_object::operator type& and xtd::reference_wrapper_object::is_empty
     /// @code
-    /// template<class value_t>
+    /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
     ///   if (value.is_empty()) println("value is empty");
     ///   else println("value = {}", value.get());
@@ -372,19 +372,19 @@ namespace xtd {
     /// @}
     
   private:
-    template<class other_t>
+    template<typename other_t>
     friend class reference_wrapper_object;
     std::optional<base_type> ref_;
   };
   
-  template<class type_t>
+  template<typename type_t>
   inline const reference_wrapper_object<type_t>  reference_wrapper_object<type_t>::empty;
   /// @}
   
   /// @cond
   // Deduction guides for xtd::reference_wrapper_object
   // {
-  template<class type_t>
+  template<typename type_t>
   reference_wrapper_object(type_t&) -> reference_wrapper_object<type_t>;
   // }
   /// @endcond

@@ -46,7 +46,7 @@ namespace xtd {
     /// @par
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
-    template<class main_function_t>
+    template<typename main_function_t>
     static int safe_run(main_function_t main_function) {
       return internal_safe_run(main_function, std::nullopt, std::nullopt);
     }
@@ -71,7 +71,7 @@ namespace xtd {
     /// @par
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
-    template<class main_function_t>
+    template<typename main_function_t>
     static int safe_run(main_function_t main_function, int argc, char* argv[]) {
       return internal_safe_run(main_function, argc, argv);
     }
@@ -154,7 +154,7 @@ namespace xtd {
     /// @endcond
     
   private:
-    template<class main_function_t>
+    template<typename main_function_t>
     static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
       try {
         init_safe_run();

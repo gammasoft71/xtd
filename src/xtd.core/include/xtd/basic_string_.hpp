@@ -12,17 +12,17 @@
 //#include "formatter.hpp"
 
 /// @cond
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::size {
   return index_of_any(values, 0, length());
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const -> xtd::size {
   return index_of_any(values, start_index, length() - start_index);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
   if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   auto index = xtd::size {0};
@@ -34,32 +34,32 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const
   return npos;
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::size {
   return index_of_any(xtd::array<value_type>(values));
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const -> xtd::size {
   return index_of_any(xtd::array<value_type>(values), start_index);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
   return index_of_any(xtd::array<value_type>(values), start_index, count);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::size {
   return last_index_of_any(values, 0, length());
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const -> xtd::size {
   return last_index_of_any(values, start_index, length() - start_index);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
   if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   auto index = length() - 1;
@@ -71,57 +71,57 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(
   return npos;
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::size {
   return last_index_of_any(xtd::array<value_type>(values));
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const -> xtd::size {
   return last_index_of_any(xtd::array<value_type>(values), start_index);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
   return last_index_of_any(xtd::array<value_type>(values), start_index, count);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split() const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(default_split_separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(xtd::array<value_type> {separator}, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(xtd::array<value_type> {separator}, std::numeric_limits<xtd::size>::max(), options);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::size count) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(xtd::array<value_type> {separator}, count, xtd::string_split_options::none);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::size count, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(xtd::array<value_type> {separator}, count, options);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(separators, std::numeric_limits<xtd::size>::max(), options);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::size count) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(separators, count, xtd::string_split_options::none);
 }
@@ -132,7 +132,7 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::a
 #  pragma GCC diagnostic ignored "-Warray-bounds"
 #endif
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::size count, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   if (count == 0) return {};
   if (count == 1) return {self_};
@@ -167,34 +167,34 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::a
 #  pragma GCC diagnostic pop
 #endif
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array() const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   return to_array(0, length());
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array(xtd::size start_index) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   return to_array(start_index, length() - start_index);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array(xtd::size start_index, xtd::size length) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   if (start_index >= self_.length()) return {};
   if (start_index + length >= self_.length()) return {chars().begin() + start_index, chars().end()};
   return {chars().begin() + start_index, chars().begin() + start_index + length};
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_char_array() const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   return to_array(0, length());
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_char_array(xtd::size start_index, xtd::size length) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   return to_array(start_index, length);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_title_case() const noexcept -> basic_string {
   auto words = split({' '});
   for (auto& word : words)
@@ -202,22 +202,22 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_title_case() co
   return basic_string::join(" ", words);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::trim(value_type trim_char) const noexcept -> basic_string {
   return trim(xtd::array<value_type> {trim_char});
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::trim(const xtd::array<value_type>& trim_chars) const noexcept -> basic_string {
   return trim_start(trim_chars).trim_end(trim_chars);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_end(value_type trim_char) const noexcept {
   return trim_end(xtd::array<value_type> {trim_char});
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::trim_end(const xtd::array<value_type>& trim_chars) const noexcept -> basic_string {
   if (!length()) return self_;
   auto result = chars_;
@@ -226,10 +226,10 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::trim_end(const xtd
   return result;
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::trim_start(value_type trim_char) const noexcept -> basic_string {return trim_start(xtd::array<value_type> {trim_char});}
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_start(const xtd::array<value_type>& trim_chars) const noexcept {
   if (!length()) return self_;
   auto result = chars_;
@@ -238,22 +238,22 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
   return result;
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<basic_string>& values) noexcept -> basic_string {
   auto result = basic_string::empty_string;
   std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<const_pointer>& values) noexcept -> basic_string {
   auto result = basic_string::empty_string;
   std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
-template<class char_t, class traits_t, class allocator_t>
-template<class other_char_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename other_char_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<const other_char_t*>& values) noexcept -> basic_string {
   auto result = basic_string::empty_string;
   std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
@@ -261,8 +261,8 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::
 }
 
 
-template<class char_t, class traits_t, class allocator_t>
-template<class object_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename object_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<object_t>& args) noexcept -> basic_string {
   basic_string result;
   for (const auto& arg : args)
@@ -270,14 +270,14 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::
   return result;
 }
 
-template<class char_t, class traits_t, class allocator_t>
-template<class ...args_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename ...args_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::format(const basic_string<char>& fmt, args_t&& ... args) -> basic_string {
   return format(std::locale {}, fmt, std::forward<args_t>(args)...);
 }
 
-template<class char_t, class traits_t, class allocator_t>
-template<class ...args_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename ...args_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::format(const std::locale& loc, const basic_string<char>& fmt, args_t&& ... args) -> basic_string {
   auto result = basic_string<char> {};
   auto index = xtd::size {0};
@@ -349,34 +349,34 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::format(const std::
   return result.chars().c_str();
 }
 
-template<class char_t, class traits_t, class allocator_t>
-template<class value_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename value_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept -> basic_string {
   return join(separator, xtd::array<value_t>(values));
 }
 
-template<class char_t, class traits_t, class allocator_t>
-template<class value_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename value_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) -> basic_string {
   return join(separator, xtd::array<value_t>(values), index);
 }
 
-template<class char_t, class traits_t, class allocator_t>
-template<class value_t>
+template<typename char_t, typename traits_t, typename allocator_t>
+template<typename value_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) -> basic_string {
   return join(separator, xtd::array<value_t>(values), index, count);
 }
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline const xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::empty_string;
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::default_split_separators = {9, 10, 11, 12, 13, 32};
 
-template<class char_t, class traits_t, class allocator_t>
+template<typename char_t, typename traits_t, typename allocator_t>
 inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::default_trim_chars = {9, 10, 11, 12, 13, 32};
 
-template<class arg_t>
+template<typename arg_t>
 auto __basic_string_extract_format_arg(const std::locale& loc, std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char >>& formats, arg_t&& arg) -> void {
   //void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
   auto offset = xtd::size {0};
@@ -403,14 +403,14 @@ auto __basic_string_extract_format_arg(const std::locale& loc, std::basic_string
   ++index;
 }
 
-template<class ...args_t>
+template<typename ...args_t>
 auto __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, std::vector<__format_information<char >>& formats, args_t&&... args) -> void {
   [[maybe_unused]] auto index = xtd::size {0};
   (__basic_string_extract_format_arg(loc, const_cast<std::basic_string<char>& > (fmt.chars()), index, formats, args), ...);
   //(__basic_string_extract_format_arg(loc, fmt, index, formats, args), ...);
 }
 
-template<class target_t, class source_t>
+template<typename target_t, typename source_t>
 inline auto __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept -> std::basic_string<target_t> {
   auto out = std::basic_string<target_t> {};
   auto codepoint = 0u;
@@ -853,7 +853,7 @@ inline auto __xtd_convert_to_string<xtd::wchar, xtd::char32>(std::basic_string<x
   return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(std::move(str)));
 }
 
-template<class target_t, class source_t>
+template<typename target_t, typename source_t>
 inline auto __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept -> std::basic_string<target_t> {
   auto out = std::basic_string<target_t> {};
   auto codepoint = 0u;

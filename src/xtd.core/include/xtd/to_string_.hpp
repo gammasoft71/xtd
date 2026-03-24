@@ -13,10 +13,10 @@
 #include "to_string.hpp"
 
 /// @cond
-template<class range_t>
+template<typename range_t>
 std::string __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);
 
-template<class value_t>
+template<typename value_t>
 inline xtd::string xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) {
   if constexpr(std::is_polymorphic_v<value_t>) return __to_string_polymorphic(value, fmt, loc);
   else if constexpr(std::is_enum_v<value_t>) return __enum_formatter<char>(fmt, value, loc);
@@ -115,7 +115,7 @@ inline xtd::string xtd::to_string(const std::tm& value, const xtd::string& fmt, 
   return __date_time_formatter(fmt.chars(), value, 0, loc);
 }
 
-template<class type_t, class period_t>
+template<typename type_t, typename period_t>
 inline xtd::string xtd::to_string(const std::chrono::duration<type_t, period_t>& value, const xtd::string& fmt, const std::locale& loc) {
   return __duration_formatter(fmt.chars(), value, loc);
 }
@@ -140,7 +140,7 @@ inline xtd::string xtd::to_string(const wchar& value, const xtd::string& fmt, co
   return __character_formatter(fmt.chars(), value, loc);
 }
 
-template<class value_t>
+template<typename value_t>
 inline xtd::string xtd::to_string(const value_t& value, const xtd::string& fmt) {
   return to_string(value, fmt, std::locale());
 }
@@ -170,25 +170,25 @@ inline xtd::string xtd::to_string(const std::weak_ordering& value, const xtd::st
   return "equivalent";
 }
 
-template<class value_t>
+template<typename value_t>
 inline xtd::string xtd::to_string(const value_t* value, const xtd::string& fmt, const std::locale& loc) {
   if (!value) return "(null)";
   return __numeric_formatter(fmt.chars(), reinterpret_cast<intptr>(value), loc);
 }
 
-template<class value_t>
+template<typename value_t>
 inline xtd::string xtd::to_string(value_t* const value, const xtd::string& fmt, const std::locale& loc) {
   if (!value) return "(null)";
   return __numeric_formatter(fmt.chars(), reinterpret_cast<intptr>(value), loc);
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const std::shared_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc) {
   if (!value) return "(null)";
   return __numeric_formatter(fmt.chars(), reinterpret_cast<intptr>(value.get()), loc);
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const std::unique_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc) {
   if (!value) return "(null)";
   return __numeric_formatter(fmt.chars(), reinterpret_cast<intptr>(value.get()), loc);
@@ -200,7 +200,7 @@ inline xtd::string xtd::to_string(const xtd::any& value, const xtd::string& fmt,
   return iterator != __any_stringer__.cend() ? xtd::to_string(iterator->second(value), fmt, loc) : "(unregistered)";
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const std::optional<type_t>& value, const xtd::string& fmt, const std::locale& loc) {
   return !value.has_value() ? "(null)" : std::string {"("} + to_string(value.value(), fmt, loc).chars() + std::string {")"};
 }
@@ -215,39 +215,39 @@ inline xtd::string xtd::to_string(const std::nullptr_t&, const xtd::string& fmt,
   return "null";
 }
 
-template<class type1_t, class type2_t>
+template<typename type1_t, typename type2_t>
 inline xtd::string xtd::to_string(const std::pair<type1_t, type2_t>& value, const xtd::string& fmt, const std::locale& loc) {
   return std::string {"("} + to_string(value.first, fmt, loc).chars() + std::string {", "} + to_string(value.second, fmt, loc).chars() + std::string {")"};
 }
 
-template<class type_t, unsigned n_t, unsigned last_t>
+template<typename type_t, unsigned n_t, unsigned last_t>
 inline xtd::string xtd::__xtd_tuple_stringer<type_t, n_t, last_t>::to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_tuple_stringer < type_t, n_t + 1, last_t >::to_string(str + xtd::to_string(std::get<n_t>(value), fmt, loc).chars() + ", ", value, fmt, loc);
 }
 
-template<class type_t, unsigned n_t>
+template<typename type_t, unsigned n_t>
 inline xtd::string xtd::__xtd_tuple_stringer<type_t, n_t, n_t>::to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc) {
   return str + xtd::to_string(std::get<n_t>(value), fmt, loc).chars();
 }
 
-template<class ...types_t>
+template<typename ...types_t>
 inline xtd::string xtd::to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_tuple_stringer < std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::to_string(std::string {"("}, value, fmt, loc) + ")";
 }
 
-template<class iterator_t>
+template<typename iterator_t>
 inline std::string __xtd_iterator_to_string(const std::string& str, iterator_t iterator, const iterator_t& begin, const iterator_t& end, const xtd::string& fmt, const std::locale& loc) {
   if (iterator == end) return str;
   auto new_str = str + (iterator == begin ? std::string {} : std::string {", "}) + xtd::to_string(*iterator, fmt, loc).chars();
   return __xtd_iterator_to_string(new_str, ++iterator, begin, end, fmt, loc);
 }
 
-template<class iterator_t>
+template<typename iterator_t>
 inline std::string __xtd_sequence_container_to_string(const iterator_t& begin, const iterator_t& end, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_iterator_to_string("[", begin, begin, end, fmt, loc) + "]";
 }
 
-template<class range_t>
+template<typename range_t>
 inline std::string __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) {
   std::ostringstream oss;
   oss.imbue(loc);
@@ -262,7 +262,7 @@ inline std::string __xtd_range_to_string(const range_t& values, const xtd::strin
   return oss.str();
 }
 
-template<class type_t, size_t size>
+template<typename type_t, size_t size>
 inline xtd::string xtd::to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
@@ -275,27 +275,27 @@ inline xtd::string xtd::to_string(const std::bitset<size>& values, const xtd::st
   return result + "]";
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::forward_list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const std::initializer_list<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t, class container_t>
+template<typename type_t, typename container_t>
 inline xtd::string xtd::to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
   struct std_queue : public std::queue<type_t> {
     std_queue(const std::queue<type_t>& queue) : ptr {reinterpret_cast<const std_queue*>(&queue)} {}
@@ -307,7 +307,7 @@ inline xtd::string xtd::to_string(const std::queue<type_t, container_t>& values,
   return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
 }
 
-template<class type_t, class container_t>
+template<typename type_t, typename container_t>
 inline xtd::string xtd::to_string(const std::priority_queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
   struct std_priority_queue : public std::queue<type_t> {
     std_priority_queue(const std::priority_queue<type_t>& queue) : ptr {reinterpret_cast<const std_priority_queue*>(&queue)} {}
@@ -319,7 +319,7 @@ inline xtd::string xtd::to_string(const std::priority_queue<type_t, container_t>
   return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
 }
 
-template<class type_t, class container_t>
+template<typename type_t, typename container_t>
 inline xtd::string xtd::to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
   struct std_stack : public std::stack<type_t> {
     std_stack(const std::stack<type_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}
@@ -331,62 +331,62 @@ inline xtd::string xtd::to_string(const std::stack<type_t, container_t>& values,
   return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const std::valarray<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(std::begin(values), std::end(values), fmt, loc);
 }
 
-template<class type_t, class allocator_t>
+template<typename type_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::vector<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class iterator_t>
+template<typename iterator_t>
 inline std::string __xtd_associative_container_to_string(const iterator_t& begin, const iterator_t& end, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_iterator_to_string("{", begin, begin, end, fmt, loc) + "}";
 }
 
-template<class key_t, class value_t, class compare_t, class allocator_t>
+template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class value_t, class compare_t, class allocator_t>
+template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class compare_t, class allocator_t>
+template<typename key_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class compare_t, class allocator_t>
+template<typename key_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class value_t, class compare_t, class allocator_t>
+template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class value_t, class compare_t, class allocator_t>
+template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class compare_t, class allocator_t>
+template<typename key_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class key_t, class compare_t, class allocator_t>
+template<typename key_t, typename compare_t, typename allocator_t>
 inline xtd::string xtd::to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il) {
   std::map<type_t, xtd::string, std::greater<type_t>> values;
   for (const auto& item : il) values[item.first] = item.second;
@@ -400,17 +400,17 @@ inline xtd::string to_string(const range_t& values, const xtd::string& fmt, cons
 }
 #endif
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t>
+template<typename type_t>
 inline xtd::string xtd::to_string(const xtd::collections::generic::helpers::raw_array<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<class type_t, class string_t>
+template<typename type_t, typename string_t>
 inline string_t xtd::to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
   auto it = values.find(value);
   if (it != values.end()) return it->second;
@@ -427,14 +427,14 @@ inline string_t xtd::to_string(type_t value, const std::map<type_t, string_t, st
   return to_string(static_cast<long long>(value), string_t {'G'}, std::locale());
 }
 
-template<class type_t, class string_t>
+template<typename type_t, typename string_t>
 inline string_t xtd::to_string(type_t value, const std::map<type_t, string_t>& values) {
   std::map<type_t, string_t, std::greater<type_t>> descending_values;
   for (const auto& item : values) descending_values[item.first] = item.second;
   return to_string(value, descending_values);
 }
 
-template<class char_t, class value_t>
+template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __string_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   return __format_stringer<char_t>(value);
 }
@@ -544,12 +544,12 @@ inline std::string __format_stringer < char, xtd::char32& > (xtd::char32& value)
   return xtd::to_string(value, "G", std::locale());
 }
 
-template<class char_t, class type_t, class period_t = std::ratio<1>>
+template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
 std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const std::chrono::duration<type_t, period_t>& value) {
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
-template < class char_t, class type_t >
+template < class char_t, typename type_t >
 struct __enum_ostream__ < char_t, type_t, std::false_type > {
   std::basic_ostream < char_t >& to_stream(std::basic_ostream < char_t >& os, const type_t& value) noexcept {
     //return os << value;

@@ -15,7 +15,7 @@ namespace xtd {
       /// @brief Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.
       /// @par Definition
       /// ```cpp
-      /// template<class key_t, class value_t, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
+      /// template<typename key_t, typename value_t, typename allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
       /// class sorted_list : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
@@ -32,7 +32,7 @@ namespace xtd {
       /// @par Examples
       /// The following shows how to use xtd::collections::generic::sorted_list.
       /// @include sorted_list.cpp
-      template<class key_t, class value_t, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
+      template<typename key_t, typename value_t, typename allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
       using sorted_list = sorted_dictionary<key_t, value_t, helpers::lesser<key_t>, allocator_t>;
     }
   }

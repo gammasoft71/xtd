@@ -16,6 +16,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class ...arguments_t>
+  template<typename ...arguments_t>
   using action = delegate <void(arguments_t...)>;
 }

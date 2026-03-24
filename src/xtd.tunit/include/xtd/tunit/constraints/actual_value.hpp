@@ -14,7 +14,7 @@ namespace xtd {
       class assert_value;
       /// @endcond
       
-      template<class actual_t>
+      template<typename actual_t>
       class actual_value {
       protected:
         /// @name Protected Construtors

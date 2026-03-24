@@ -54,7 +54,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<class post_phase_action_t>
+      template<typename post_phase_action_t>
       barrier(xtd::size participant_count, post_phase_action_t post_phase_action) : barrier(participant_count, barrier::post_phase_action {post_phase_action}) {}
       barrier();
       barrier(barrier&&) = default;

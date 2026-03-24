@@ -21,12 +21,12 @@ namespace xtd {
   namespace forms {
     namespace native {
       class control;
-      template<class control_t>
+      template<typename control_t>
       class control_wrapper;
       class domain_up_down;
       class wx_domain_up_down;
       class wxDomainSpinCtrl : public wxPanel {
-        template<class control_t>
+        template<typename control_t>
         friend class control_wrapper;
         friend xtd::forms::native::domain_up_down;
         friend xtd::forms::native::wx_domain_up_down;

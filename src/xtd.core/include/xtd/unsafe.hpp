@@ -18,21 +18,21 @@ namespace xtd {
   /// @ingroup xtd_core
   class unsafe static_ {
   public:
-    template<class to_type, class from_type>
+    template<typename to_type, typename from_type>
     requires (!xtd::is_value_type_v<to_type>)
     [[nodiscard]] static constexpr auto as(from_type&& value) -> to_type {return static_cast<to_type>(std::forward<from_type>(value));}
     
-    template<class to_type, class from_type>
+    template<typename to_type, typename from_type>
     requires xtd::is_value_type_v<to_type>
     [[nodiscard]] static constexpr auto as(from_type&& value) -> to_type {
       using underlying = typename to_type::native_type;
       return to_type{static_cast<underlying>(value)};
     }
     
-    template<class to_type, class from_type>
+    template<typename to_type, typename from_type>
     [[nodiscard]] static constexpr auto as(const from_type* value) -> to_type* {return reinterpret_cast<to_type*>(value);}
     
-    template<class to_type, class from_type>
+    template<typename to_type, typename from_type>
     [[nodiscard]] static constexpr auto as(from_type* value) -> const to_type* {return reinterpret_cast<const to_type*>(value);}
   };
 }

@@ -19,7 +19,7 @@ namespace xtd {
         /// @brief Represents a wrap pointer iterator.
         /// @par Definition
         /// ```cpp
-        /// template<class value_t, class iterator_tag_t = std::bidirectional_iterator_tag>
+        /// template<typename value_t, typename iterator_tag_t = std::bidirectional_iterator_tag>
         /// class wrap_pointer_iterator : public xtd::icomparable<wrap_pointer_iterator<value_t, iterator_tag_t>>, public xtd::iequatable<wrap_pointer_iterator<value_t, iterator_tag_t>>;
         /// ```
         /// @par Header
@@ -31,7 +31,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class value_t, class iterator_tag_t = std::bidirectional_iterator_tag>
+        template<typename value_t, typename iterator_tag_t = std::bidirectional_iterator_tag>
         class wrap_pointer_iterator : public xtd::icomparable<wrap_pointer_iterator<value_t, iterator_tag_t>>, public xtd::iequatable<wrap_pointer_iterator<value_t, iterator_tag_t >> {
         public:
           /// @name Public Aliases

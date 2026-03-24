@@ -33,7 +33,7 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const xtd::func<result_t>& action) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action};
           t.start();
@@ -43,7 +43,7 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const xtd::func<result_t>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, cancellation_token};
           t.start();
@@ -53,7 +53,7 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const xtd::func<result_t, const xtd::any_object&>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, state};
           t.start();
@@ -63,7 +63,7 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const xtd::func<result_t, const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, state, cancellation_token};
           t.start();
@@ -94,25 +94,25 @@ namespace xtd {
           return t;
         }
 
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const std::function<result_t()>& action) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action};
           t.start();
           return t;
         }
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const std::function<result_t()>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, cancellation_token};
           t.start();
           return t;
         }
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const std::function<result_t(const xtd::any_object&)>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, state};
           t.start();
           return t;
         }
-        template<class result_t>
+        template<typename result_t>
         auto start_new(const std::function<result_t(const xtd::any_object&)>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, state, cancellation_token};
           t.start();
@@ -122,7 +122,7 @@ namespace xtd {
       };
       
       /// @cond
-      template<class result_t>
+      template<typename result_t>
       struct xtd::threading::tasks::basic_task<result_t>::yield_awaiter {
         xtd::threading::tasks::task<result_t> task_;
         
@@ -132,7 +132,7 @@ namespace xtd {
         void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
       };
 
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::completed_task() -> xtd::threading::tasks::task<result_t> {
         auto task = xtd::threading::tasks::task<result_t> {};
         task.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
@@ -140,27 +140,27 @@ namespace xtd {
         return task;
       }
 
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::factory() noexcept -> const xtd::threading::tasks::task_factory& {
         static auto factory = xtd::threading::tasks::task_factory {};
         return factory;
       }
 
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::delay(const xtd::time_span& delay) -> xtd::threading::tasks::task<> {return basic_task<result_t>::delay(xtd::as<xtd::int32>(delay.total_milliseconds()));}
       
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::delay(const xtd::time_span& delay, const xtd::threading::cancellation_token& cancellation_token) -> task<> {return basic_task<result_t>::delay(xtd::as<xtd::int32>(delay.total_milliseconds()), cancellation_token);}
       
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay) -> xtd::threading::tasks::task<> {return xtd::threading::tasks::task<>::run([milliseconds_delay]{xtd::threading::cancellation_token {}.wait_handle().wait_one(milliseconds_delay);});}
       
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay, const xtd::threading::cancellation_token& cancellation_token) -> task<> {
         return xtd::threading::tasks::task<>::run([cancellation_token, milliseconds_delay]{xtd::threading::cancellation_token {cancellation_token}.wait_handle().wait_one(milliseconds_delay);}, cancellation_token);
       }
       
-      template<class result_t>
+      template<typename result_t>
       auto basic_task<result_t>::from_cancelation(const xtd::threading::cancellation_token& cancellation_token) -> task<result_t> {
         if (!cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         auto task = xtd::threading::tasks::task<result_t> {};
@@ -170,8 +170,8 @@ namespace xtd {
         return task;
       }
       
-      template<class result_t>
-      template<class from_exception_t>
+      template<typename result_t>
+      template<typename from_exception_t>
       auto basic_task<result_t>::from_exception(from_exception_t exception) -> xtd::threading::tasks::task<result_t> {
         auto task = xtd::threading::tasks::task<result_t> {};
         task.basic_task<>::data_->exception = xtd::exception_services::exception_dispatch_info::capture(exception);
@@ -180,24 +180,24 @@ namespace xtd {
         return task;
       }
       
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const xtd::func<result_t>& func) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, cancellation_token);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state, cancellation_token);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t()>& func) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, cancellation_token);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state);}
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state, cancellation_token);}
       
-      template<class result_t>
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::yield() -> task<result_t> {
         co_await yield_awaiter {};
       }

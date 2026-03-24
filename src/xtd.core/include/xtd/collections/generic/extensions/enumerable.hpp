@@ -16,7 +16,7 @@ namespace xtd {
         /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.
         /// @par Definition
         /// ```cpp
-        /// template<class type_t>
+        /// template<typename type_t>
         /// class enumerable : public xtd::static_object;
         /// ```
         /// @par Header
@@ -28,7 +28,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core extensions_generic_collections
-        template <class enumerable_t, class source_t>
+        template<typename enumerable_t, typename source_t>
         class enumerable {
         public:
           /// @name Public Aliases
@@ -39,11 +39,11 @@ namespace xtd {
           /// @brief Represents the ienumerable source type.
           using source_type = source_t;
           /// @brief Represents the ienumerable value type.
-          template <class type_t>
+          template<typename type_t>
           using ienumerable = typename xtd::linq::enumerable::ienumerable<type_t>;
           
           /// @brief Represents the list value type.
-          template <class type_t>
+          template<typename type_t>
           using list = typename xtd::linq::enumerable::list<type_t>;
           /// @}
           
@@ -77,7 +77,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate2.cpp
-          template<class accumulate_t>
+          template<typename accumulate_t>
           [[nodiscard]] auto aggregate(const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func) const -> accumulate_t {
             return xtd::linq::enumerable::aggregate(self(), seed, func);
           }
@@ -102,7 +102,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
-          template<class result_t, class accumulate_t>
+          template<typename result_t, typename accumulate_t>
           [[nodiscard]] auto aggregate(const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) const -> result_t {
             return xtd::linq::enumerable::aggregate(self(), seed, func, result_selector);
           }
@@ -165,7 +165,7 @@ namespace xtd {
           /// @tparam result_t The type of the resulting value.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
           /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
-          template <class result_t>
+          template<typename result_t>
           [[nodiscard]] auto cast() const noexcept {
             return xtd::linq::enumerable::cast<result_t>(self());
           }
@@ -234,7 +234,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
-          template <class key_t>
+          template<typename key_t>
           [[nodiscard]] auto count_by(const std::function<key_t(const source_t&)>& key_selector) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, source_t>(self(), key_selector);
           }
@@ -247,7 +247,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
-          template <class key_t>
+          template<typename key_t>
           [[nodiscard]] auto count_by(const std::function<key_t(const source_t&)>& key_selector, const xtd::collections::generic::iequality_comparer<key_t>& key_comparer) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, source_t>(self(), key_selector, key_comparer);
           }
@@ -334,7 +334,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
           /// @include linq_order_by.cpp
-          template<class key_t>
+          template<typename key_t>
           [[nodiscard]] auto order_by_descending(const std::function<key_t(const source_t&)>& key_selector) const {
             return xtd::linq::enumerable::order_by_descending<key_t, source_t>(self(), key_selector);
           }
@@ -353,7 +353,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
           /// @include linq_order_by.cpp
-          template<class key_t>
+          template<typename key_t>
           [[nodiscard]] auto order_by(const std::function<key_t(const source_t&)>& key_selector) const {
             return xtd::linq::enumerable::order_by<key_t, source_t>(self(), key_selector);
           }
@@ -366,7 +366,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
           /// @include enumerable_select.cpp
-          template<class result_t>
+          template<typename result_t>
           [[nodiscard]] auto select(const std::function<result_t(const source_t&)>& selector) const {
             return xtd::linq::enumerable::select<result_t, source_t>(self(), selector);
           }
@@ -388,7 +388,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
-          template<class result_t>
+          template<typename result_t>
           [[nodiscard]] auto select(const std::function<result_t(const source_t&, xtd::size index)>& selector) const {
             return xtd::linq::enumerable::select<result_t, source_t>(self(), selector);
           }

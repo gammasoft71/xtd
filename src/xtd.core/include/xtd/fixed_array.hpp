@@ -19,7 +19,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<class type_t, xtd::size len>
+  template<typename type_t, xtd::size len>
   class fixed_array : public xtd::object {
   public:
     /// @name Public Aliases
@@ -206,6 +206,6 @@ namespace xtd {
     type_t items_[len];
   };
   
-  template <class type_t, class... args_t>
+  template<typename type_t, typename... args_t>
   fixed_array(type_t, args_t...) -> fixed_array < type_t, 1 + sizeof...(args_t) >;
 }

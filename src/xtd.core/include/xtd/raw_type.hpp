@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents a raw type alias equivalent to std::remove_cvref_t<value_t>.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// using xtd::raw_type = std::remove_cvref_t<value_t>;
   /// ```
   /// @par Header
@@ -21,6 +21,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class value_t>
+  template<typename value_t>
   using raw_type = std::remove_cvref_t<value_t>;
 }

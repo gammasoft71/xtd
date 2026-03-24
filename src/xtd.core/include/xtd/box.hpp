@@ -22,7 +22,7 @@
 namespace xtd {
   /// @brief Represents a boxed object.
   /// ```cpp
-  /// template<class type_t>
+  /// template<typename type_t>
   /// struct box : xtd::object, xtd::icomparable<box<type_t>>, xtd::iequatable<box<type_t>>, xtd::iformatable;
   /// ```
   /// @par Inheritance
@@ -52,7 +52,7 @@ namespace xtd {
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = true;
   /// ```
-  template<class type_t>
+  template<typename type_t>
   struct box : xtd::object, xtd::icomparable<box<type_t>>, xtd::iequatable<box<type_t >>, xtd::iformatable {
     /// @name Public Aliases
     
@@ -83,7 +83,7 @@ namespace xtd {
     box(const_reference value) : value(value) {}
     /// @brief Initialize a new xtd::box object with specified value.
     /// @param ...args_t Params used to initialize object.
-    template<class ...args_t>
+    template<typename ...args_t>
     box(args_t&& ...args) : value(args...) {}
     /// @}
     

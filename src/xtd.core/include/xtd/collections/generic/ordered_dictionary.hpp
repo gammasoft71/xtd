@@ -17,7 +17,7 @@ namespace xtd {
       /// @brief Represents a collection of key/value pairs that are accessible by the key or index.
       /// @par Definition
       /// ```cpp
-      /// template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator <std::pair<const key_t, value_t>>>
+      /// template<typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator <std::pair<const key_t, value_t>>>
       /// class ordered_dictionary : public xtd::object, public xtd::collections::generic::idictionary <key_t, value_t>;
       /// ```
       /// @par Header
@@ -29,7 +29,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      template<typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       class ordered_dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
         /// @name Public Aliases
@@ -183,7 +183,7 @@ namespace xtd {
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
-        template < class init_key_t, class init_value_t >
+        template < class init_key_t, typename init_value_t >
         explicit ordered_dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -432,7 +432,7 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
-        template < class init_key_t, class init_value_t >
+        template < class init_key_t, typename init_value_t >
         auto operator =(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) -> ordered_dictionary& {
           clear();
           for (const auto& [key, value] : ilist)
@@ -524,16 +524,16 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::specialized::ordered_dictionary
       // {
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       ordered_dictionary(xtd::collections::generic::idictionary < key_t, value_t >) -> ordered_dictionary < key_t, value_t>;
       
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       ordered_dictionary(xtd::collections::generic::ienumerable < key_value_pair < key_t, value_t>>) -> ordered_dictionary<key_t, value_t>;
       
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       ordered_dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> ordered_dictionary < key_t, value_t >;
       
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       ordered_dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> ordered_dictionary < key_t, value_t >;
       
       template < class input_iterator_t >

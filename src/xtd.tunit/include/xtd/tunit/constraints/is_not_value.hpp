@@ -20,10 +20,10 @@ namespace xtd {
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
       /// @cond
-      template<class actual_t> class is_value;
+      template<typename actual_t> class is_value;
       /// @endcond
       
-      template<class actual_t>
+      template<typename actual_t>
       class is_not_value : public actual_value<actual_t> {
       public:
         /// @name Public Methods
@@ -73,7 +73,7 @@ namespace xtd {
         /// valid_that(value).is().not_().equal_to(23); // test ok.
         /// assert_that(value).is().not_().equal_to(24); // test throws an assert_error exception.
         /// ```
-        template<class expected_t>
+        template<typename expected_t>
         auto equal_to(const expected_t& expected, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::are_not_equal(expected, actual_value<actual_t>::actual(), stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::are_not_equal(expected, actual_value<actual_t>::actual(), stack_frame);
@@ -91,7 +91,7 @@ namespace xtd {
         /// valid_that(value).is().not_().equal_to(23 "User message..."); // test ok.
         /// assert_that(value).is().not_().equal_to(24, "User message..."); // test throws an assert_error exception.
         /// ```
-        template<class expected_t>
+        template<typename expected_t>
         auto equal_to(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::are_not_equal(expected, actual_value<actual_t>::actual(), message, stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::are_not_equal(expected, actual_value<actual_t>::actual(), message, stack_frame);
@@ -145,7 +145,7 @@ namespace xtd {
         /// valid_that(a).is().not_().same_as(b); // test ok.
         /// assert_that(a).is().not_().same_as(c); // test throws an assert_error exception.
         /// ```
-        template<class expected_t>
+        template<typename expected_t>
         auto same_as(const expected_t& expected, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::are_not_same(expected, actual_value<actual_t>::actual(), stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::are_not_same(expected, actual_value<actual_t>::actual(), stack_frame);
@@ -165,7 +165,7 @@ namespace xtd {
         /// valid_that(a).is().not_().same_as(b "User message..."); // test ok.
         /// assert_that(a).is().not_().same_as(c, "User message..."); // test throws an assert_error exception.
         /// ```
-        template<class expected_t>
+        template<typename expected_t>
         auto same_as(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::are_not_same(expected, actual_value<actual_t>::actual(), message, stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::are_not_same(expected, actual_value<actual_t>::actual(), message, stack_frame);
@@ -218,7 +218,7 @@ namespace xtd {
         /// @}
         
       private:
-        template<class value_t> friend class is_value;
+        template<typename value_t> friend class is_value;
       };
     }
   }

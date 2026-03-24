@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
-    template<class actual_t> class does_not_value;
-    template<class actual_t> class does_value;
-    template<class actual_t> class is_not_value;
-    template<class actual_t> class is_value;
+    template<typename actual_t> class does_not_value;
+    template<typename actual_t> class does_value;
+    template<typename actual_t> class is_not_value;
+    template<typename actual_t> class is_value;
     /// @endcond
     
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
-      template<class actual_t>
+      template<typename actual_t>
       class operator_value : public actual_value<actual_t> {
       public:
         /// @name Public Methods
@@ -36,10 +36,10 @@ namespace xtd {
         /// @}
         
       private:
-        template<class value_t> friend class does_not_value;
-        template<class value_t> friend class does_value;
-        template<class value_t> friend class is_not_value;
-        template<class value_t> friend class is_value;
+        template<typename value_t> friend class does_not_value;
+        template<typename value_t> friend class does_value;
+        template<typename value_t> friend class is_not_value;
+        template<typename value_t> friend class is_value;
       };
     }
   }

@@ -37,7 +37,7 @@ namespace xtd {
       /// @remarks xtd::forms::layout::arranged_element_collection inherits from xtd::collections::generic::icollection instead of xtd::collections::generic::ilistto allow `operator[]` to return `value_type`, which triggers updates and events on element changes.
       /// @remarks Returning `type_t&` would bypass these updates, while returning `value_type&` would break the xtd::collections::generic::ilist interface.
       /// @remarks This keeps the collection safe and consistent, while most developers can still use xtd::forms::layout::arranged_element_collection::add_range() or xtd::forms::layout::arranged_element_collection::operator[] as expected.
-      template<class type_t, class sorter_t = sorter_none>
+      template<typename type_t, typename sorter_t = sorter_none>
       class arranged_element_collection : public object, public xtd::collections::generic::icollection<type_t> {
       public:
         /// @brief Represents the value type of the collection.
@@ -47,7 +47,7 @@ namespace xtd {
           value_type() = default;
           value_type(const value_type&) = default;
           value_type(value_type&&) = default;
-          template<class ...args_t>
+          template<typename ...args_t>
           value_type(args_t&& ...args) : type_t(args...) {}
           value_type& operator =(const value_type& value) {
             if (value.owner) owner = value.owner;
@@ -275,14 +275,14 @@ namespace xtd {
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        template<class collection_t>
+        template<typename collection_t>
         void add_range(collection_t&& collection) {
           for (auto& item : collection)
             add(value_type(item));
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        template<class collection_t>
+        template<typename collection_t>
         void add_range(const collection_t& collection) {
           for (const auto& item : collection)
             add(item);
@@ -557,7 +557,7 @@ namespace xtd {
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param args The arguments to forward to the constructor of the element
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
-        template<class ...args_t>
+        template<typename ...args_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
         void emplace(xtd::collections::generic::list<value_type>::const_iterator pos, args_t&& ... args) {
           auto index = pos - items().begin();
@@ -574,7 +574,7 @@ namespace xtd {
         /// @brief Adds an element to the end.
         /// @param args The arguments to forward to the constructor of the element
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
-        template<class ...args_t>
+        template<typename ...args_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
         void emplace_back(args_t&& ... args) {
           data_->items.emplace_back(args...);
@@ -729,7 +729,7 @@ namespace xtd {
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
-        template<class collection_t>
+        template<typename collection_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         void push_back_range(collection_t&& collection) {
           add_range(collection);
@@ -737,7 +737,7 @@ namespace xtd {
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
-        template<class iterator_t>
+        template<typename iterator_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         void push_back_range(iterator_t begin, iterator_t end) {
           add_range(begin, end);

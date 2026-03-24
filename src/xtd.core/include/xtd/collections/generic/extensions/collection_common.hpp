@@ -15,7 +15,7 @@ namespace xtd {
         /// @brief Internal collection common definition.
         /// @par Definition
         /// ```cpp
-        /// template<class type_t, class collection_t>
+        /// template<typename type_t, typename collection_t>
         /// class collection_operator;
         /// ```
         /// @par Header
@@ -28,7 +28,7 @@ namespace xtd {
         /// xtd.core
         /// @ingroup xtd_core extensions_generic_collections
         /// @warning Internal use only for xtd::icollection interfece.
-        template<class type_t, class collection_t>
+        template<typename type_t, typename collection_t>
         class collection_common {
         public:
           /// @name Public Properties

@@ -19,7 +19,7 @@ namespace {
     friend type get(wxToolBarToolBase_m_toolStyle);
   };
   
-  template<class tag_t, typename tag_t::type memeber_t>
+  template<typename tag_t, typename tag_t::type memeber_t>
   struct steal_private_member {
     friend typename tag_t::type get(tag_t) {
       return memeber_t;

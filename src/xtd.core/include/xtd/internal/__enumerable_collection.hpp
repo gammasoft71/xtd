@@ -17,7 +17,7 @@ namespace xtd::linq {
   class enumerable;
 };
 
-template<class type_t, class param_t>
+template<typename type_t, typename param_t>
 struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable<__opaque_xtd_linq_lazy_enumerable__<type_t, param_t>> {
   [[nodiscard]] xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
     struct lazy_enumerator : xtd::collections::generic::ienumerator<type_t> {
@@ -63,7 +63,7 @@ private:
   mutable xtd::ptr<data> data_ = xtd::new_ptr<data>();
 };
 
-template<class type_t>
+template<typename type_t>
 struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable<__opaque_xtd_linq_enumerable_collection__<type_t>> {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {return xtd::collections::generic::enumerator<>::create(items);}
   

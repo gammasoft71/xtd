@@ -25,7 +25,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class type_t, class allocator_t = std::allocator<type_t>>
+        template<typename type_t, typename allocator_t = std::allocator<type_t>>
         class raw_array {
           using internal_storage_value_type = std::conditional_t<std::is_same_v<type_t, bool>, std::uint8_t, type_t>;
           using internal_storage_allocator_type = typename std::allocator_traits<allocator_t>::template rebind_alloc<internal_storage_value_type>;
@@ -164,7 +164,7 @@ namespace xtd {
           /// @param first The first iteraror of the range to copy in this instances.
           /// @param last The last iteraror of the range to copy in this instances.
           /// @param alloc The allocator associate to this instance.
-          template<class input_iterator_t>
+          template<typename input_iterator_t>
           raw_array(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items_(first, last, alloc) {}
           raw_array(const raw_array & vector) : items_(vector.items_) {}
           raw_array(const base_type & vector) : items_(vector) {}
@@ -230,7 +230,7 @@ namespace xtd {
           
           /// @{
           auto assign(size_type count, const type_t& value) -> void {++version_; items_.assign(count, value);}
-          template<class input_iterator_t>
+          template<typename input_iterator_t>
           auto assign(input_iterator_t first, input_iterator_t last) -> void {++version_; items_.assign(first, last);}
           auto assign(std::initializer_list<type_t> items) -> void {++version_; items_.assign(items.begin(), items.end());}
           
@@ -239,9 +239,9 @@ namespace xtd {
           
           auto clear() -> void {++version_; items_.clear();}
           
-          template<class ...args_t>
+          template<typename ...args_t>
           auto emplace(const_iterator pos, args_t&&... args) -> iterator {++version_; return to_type_iterator(items_.emplace(pos.to_base_type(), std::forward<args_t>(args)...));}
-          template<class ...args_t>
+          template<typename ...args_t>
           auto emplace_back(args_t&&... args) -> reference {++version_; return reinterpret_cast<reference>(items_.emplace_back(std::forward<args_t>(args)...));}
           
           auto erase(const_iterator pos) -> iterator {++version_; return to_type_iterator(items_.erase(pos.to_base_type()));}
@@ -255,7 +255,7 @@ namespace xtd {
           auto insert(const_iterator pos, type_t&& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), std::move(value)));}
           auto insert(const_iterator pos, size_type count, const type_t& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), count, value));}
           auto insert(const_iterator pos, size_type count, type_t&& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), count, std::move(value)));}
-          template<class input_iterator_t>
+          template<typename input_iterator_t>
           auto insert(const_iterator pos, input_iterator_t first, input_iterator_t last) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), first, last));}
           auto insert(const_iterator pos, const std::initializer_list<type_t>& items) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), items.begin(), items.end()));}
           
@@ -329,19 +329,19 @@ namespace xtd {
         /// @cond
         // Deduction guides for xtd::collections::generic::helpers::raw_array
         // {
-        template<class type_t>
+        template<typename type_t>
         raw_array(std::initializer_list<type_t>) -> raw_array<type_t, std::allocator<type_t >>;
         
-        template<class type_t>
+        template<typename type_t>
         raw_array(const std::vector<type_t>&) -> raw_array<type_t, std::allocator<type_t >>;
         
-        template<class type_t, class allocator_t = std::allocator<type_t>>
+        template<typename type_t, typename allocator_t = std::allocator<type_t>>
         raw_array(const raw_array<type_t, allocator_t>&) -> raw_array<type_t, allocator_t>;
         
-        template<class type_t>
+        template<typename type_t>
         raw_array(std::vector<type_t>&&) -> raw_array<type_t, std::allocator<type_t >>;
         
-        template<class type_t, class allocator_t = std::allocator<type_t>>
+        template<typename type_t, typename allocator_t = std::allocator<type_t>>
         raw_array(raw_array<type_t, allocator_t>&&) -> raw_array<type_t, allocator_t>;
         // }
         /// @endcond

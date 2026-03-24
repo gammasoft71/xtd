@@ -30,10 +30,10 @@ namespace xtd {
     /// @brief The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and asynchronous code. The main types are xtd::threading::tasks::task which represents an asynchronous operation that can be waited on and cancelled, and xtd::threading::tasks::task <result_t>, which is a task that can return a value. The xtd::threading::tasks::task_factory class provides static methods for creating and starting tasks, and the xtd::threading::tasks::task_scheduler class provides the default thread scheduling infrastructure.
     namespace tasks {
       /// @cond
-      template<class result_t = void>
+      template<typename result_t = void>
       class task;
       
-      template<class result_t>
+      template<typename result_t>
       struct task_awaiter;
 
       class task_factory;
@@ -45,7 +45,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading tasks
-      template<class result_t = void>
+      template<typename result_t = void>
       class basic_task : public itask, public xtd::iasync_result {
       public:
         struct yield_awaiter;
@@ -96,21 +96,21 @@ namespace xtd {
           data_->cancellation_token = cancellation_token;
         }
 
-        template<class create_result_t>
+        template<typename create_result_t>
         basic_task(const std::function<create_result_t()>& func) {
           data_->func = func;
         }
-        template<class create_result_t>
+        template<typename create_result_t>
         basic_task(const std::function<create_result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) {
           data_->func = func;
           data_->cancellation_token = cancellation_token;
         }
-        template<class create_result_t>
+        template<typename create_result_t>
         basic_task(const std::function<create_result_t(const xtd::any_object&)>& func, const xtd::any_object& state) {
           data_->parameterized_func = func;
           data_->state = &state;
         }
-        template<class create_result_t>
+        template<typename create_result_t>
         basic_task(const std::function<create_result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) {
           data_->parameterized_func = func;
           data_->state = &state;
@@ -212,7 +212,7 @@ namespace xtd {
         /// @{
         [[nodiscard]] static auto from_cancelation(const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
         
-        template<class from_exception_t>
+        template<typename from_exception_t>
         [[nodiscard]] static auto from_exception(from_exception_t exception) -> task<result_t>;
         
         [[nodiscard]] static auto delay(const xtd::time_span& delay) -> task<>;
@@ -225,10 +225,10 @@ namespace xtd {
         [[nodiscard]] static auto run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) -> task<result_t>;
         [[nodiscard]] static auto run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
         
-        template<class collection_t>
+        template<typename collection_t>
         static auto wait_all(const collection_t& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
 
-        template<class collection_t>
+        template<typename collection_t>
         static auto wait_all(const collection_t& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
@@ -236,13 +236,13 @@ namespace xtd {
           return wait_all(array<itask*> {task_pointers}, milliseconds_timeout);
         }
 
-        template<class collection_t>
+        template<typename collection_t>
         static auto wait_all(const collection_t& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
 
-        template<class collection_t>
+        template<typename collection_t>
         static size_t wait_any(const collection_t& tasks) {return wait_any(tasks, timeout::infinite);}
         
-        template<class collection_t>
+        template<typename collection_t>
         static size_t wait_any(const collection_t& tasks, int32 milliseconds_timeout) {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
@@ -250,7 +250,7 @@ namespace xtd {
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
         
-        template<class collection_t>
+        template<typename collection_t>
         static size_t wait_any(const collection_t& tasks, const time_span& timeout) {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
         /// @}
         
@@ -260,26 +260,26 @@ namespace xtd {
         [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> task<result_t>;
         [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
 
-        template<class ...items_t>
+        template<typename ...items_t>
         static auto wait_all(items_t... items) -> bool {return wait_all(xtd::threading::timeout::infinite, items...);}
-        template<class ...items_t>
+        template<typename ...items_t>
         static auto wait_all(const xtd::time_span& timeout, items_t... items) -> bool {return wait_all(xtd::as<xtd::int32>(timeout.total_milliseconds()), items...);}
-        template<class ...items_t>
+        template<typename ...items_t>
         static auto wait_all(xtd::int32 milliseconds_timeout, items_t... items) -> bool {
           auto task_pointers = std::vector<itask*> {};
           fill_task_pointers(task_pointers, items...);
           return wait_all(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        template<class item_t>
+        template<typename item_t>
         static auto wait_all(const std::initializer_list<item_t>& tasks) -> bool {return wait_all(tasks, timeout::infinite);}
-        template<class item_t>
+        template<typename item_t>
         static auto wait_all(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(const_cast<item_t*>(&task));
           return wait_all(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        template<class item_t>
+        template<typename item_t>
         static auto wait_all(const std::initializer_list<item_t>& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
         static auto wait_all(const std::initializer_list<xtd::sptr<itask>>& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
         static auto wait_all(const std::initializer_list<xtd::sptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> bool {
@@ -328,26 +328,26 @@ namespace xtd {
           return true;
         }
 
-        template<class ...items_t>
+        template<typename ...items_t>
         static auto wait_any(items_t... items) -> xtd::size {return wait_any(xtd::threading::timeout::infinite, items...);}
-        template<class ...items_t>
+        template<typename ...items_t>
         static auto wait_any(const xtd::time_span& timeout, items_t... items) -> xtd::size {return wait_any(xtd::as<xtd::int32>(timeout.total_milliseconds()), items...);}
-        template<class ...items_t>
+        template<typename ...items_t>
         static auto wait_any(xtd::int32 milliseconds_timeout, items_t... items) -> xtd::size {
           auto task_pointers = std::vector<itask*> {};
           fill_task_pointers(task_pointers, items...);
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        template<class item_t>
+        template<typename item_t>
         static auto wait_any(const std::initializer_list<item_t>& tasks) -> xtd::size {return wait_any(tasks, timeout::infinite);}
-        template<class item_t>
+        template<typename item_t>
         static auto wait_any(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(const_cast<item_t*>(&task));
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        template<class item_t>
+        template<typename item_t>
         static auto wait_any(const std::initializer_list<item_t>& tasks, const xtd::time_span& timeout) -> xtd::size {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
         static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks) -> xtd::size {return wait_any(tasks, xtd::threading::timeout::infinite);}
         static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
@@ -403,9 +403,9 @@ namespace xtd {
         /// @endcond
         
       private:
-        template<class task_result_t>
+        template<typename task_result_t>
         friend class task;
-        template<class batic_task_result_t>
+        template<typename batic_task_result_t>
         friend class batic_task;
         
         basic_task() = default;
@@ -417,12 +417,12 @@ namespace xtd {
         [[nodiscard]] auto async_wait_handle() noexcept -> xtd::threading::wait_handle& override {return data_->async_event;}
         [[nodiscard]] auto completed_synchronously() const noexcept -> bool override {return false;}
 
-        template<class item_t, class ...items_t>
+        template<typename item_t, typename ...items_t>
         static auto fill_task_pointers(std::vector<itask*>& itask_pointer, item_t& first, items_t& ... rest) -> void {
           itask_pointer.push_back(&first);
           fill_task_pointers(itask_pointer, rest...);
         }
-        template<class item_t>
+        template<typename item_t>
         static auto fill_task_pointers(std::vector<itask*>& itask_pointer, item_t& item) -> void {
           itask_pointer.push_back(&item);
         }

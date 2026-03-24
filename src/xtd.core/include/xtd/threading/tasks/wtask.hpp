@@ -11,7 +11,7 @@ namespace xtd {
   namespace threading {
     /// @brief The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and asynchronous code. The main types are xtd::threading::tasks::task which represents an asynchronous operation that can be waited on and cancelled, and xtd::threading::tasks::task <result_t>, which is a task that can return a value. The xtd::threading::tasks::task_factory class provides static methods for creating and starting tasks, and the xtd::threading::tasks::task_scheduler class provides the default thread scheduling infrastructure.
     namespace tasks {
-      template<class result_t = void>
+      template<typename result_t = void>
       class wtask : public xtd::threading::tasks::task<result_t> {
       public:
         struct promise_type {

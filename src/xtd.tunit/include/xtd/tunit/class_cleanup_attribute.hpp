@@ -28,7 +28,7 @@ namespace xtd {
       /// @param test_class xtd::tunit::class_test containing clean_up method.
       /// @param method Cleanup class method.
       /// @param stack_frame Contains information about current file and current line.
-      template<class test_class_t>
+      template<typename test_class_t>
       class_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) noexcept {test_class.add_class_cleanup({name, method, stack_frame});}
       /// @}
     };
@@ -46,7 +46,7 @@ namespace xtd {
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
   struct __class_cleanup_attribute : xtd::tunit::class_cleanup_attribute { \
-    template<class test_class> __class_cleanup_attribute(test_class& test) : class_cleanup_attribute(#method_name, test, &method_name) {__##method_name##_static();} \
+    template<typename test_class> __class_cleanup_attribute(test_class& test) : class_cleanup_attribute(#method_name, test, &method_name) {__##method_name##_static();} \
   } __class_cleanup_attribute {*this}; \
   static void method_name()
 

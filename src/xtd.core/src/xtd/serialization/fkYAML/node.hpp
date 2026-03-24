@@ -351,7 +351,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @note std::add_pointer_t is available since C++14.
 /// @sa https://en.cppreference.com/w/cpp/types/add_pointer
 /// @tparam T A type to be added a pointer.
-template <typename T>
+template<typename T>
 using add_pointer_t = typename std::add_pointer<T>::type;
 
 /// @brief An alias template for std::enable_if::type with C++11.
@@ -366,31 +366,31 @@ using enable_if_t = typename std::enable_if<Condition, T>::type;
 /// @note std::is_null_pointer is available since C++14.
 /// @sa https://en.cppreference.com/w/cpp/types/is_null_pointer
 /// @tparam T The type to be checked if it's equal to std::nullptr_t.
-template <typename T>
+template<typename T>
 struct is_null_pointer : std::is_same<std::nullptr_t, typename std::remove_cv<T>::type> {};
 
 /// @brief An alias template for std::remove_cv::type with C++11.
 /// @note std::remove_cv_t is available since C++14.
 /// @sa https://en.cppreference.com/w/cpp/types/remove_cv
 /// @tparam T A type from which const-volatile qualifiers are removed.
-template <typename T>
+template<typename T>
 using remove_cv_t = typename std::remove_cv<T>::type;
 
 /// @brief An alias template for std::remove_pointer::type with C++11.
 /// @note std::remove_pointer_t is available since C++14.
 /// @sa https://en.cppreference.com/w/cpp/types/remove_pointer
 /// @tparam T A type from which a pointer is removed.
-template <typename T>
+template<typename T>
 using remove_pointer_t = typename std::remove_pointer<T>::type;
 
 /// @brief An alias template for std::remove_reference::type with C++11.
 /// @note std::remove_reference_t is available since C++14.
 /// @sa https://en.cppreference.com/w/cpp/types/remove_reference
 /// @tparam T A type from which a reference is removed.
-template <typename T>
+template<typename T>
 using remove_reference_t = typename std::remove_reference<T>::type;
 
-template <typename T, T... I>
+template<typename T, T... I>
 struct integer_sequence {
     using value_type = T;
     static constexpr std::size_t size() noexcept {
@@ -402,26 +402,26 @@ struct integer_sequence {
 
 namespace make_int_seq_impl {
 
-template <typename IntSeq0, typename IntSeq1>
+template<typename IntSeq0, typename IntSeq1>
 struct merger;
 
-template <typename T, T... Ints0, T... Ints1>
+template<typename T, T... Ints0, T... Ints1>
 struct merger<integer_sequence<T, Ints0...>, integer_sequence<T, Ints1...>> {
     using type = integer_sequence<T, Ints0..., (sizeof...(Ints0) + Ints1)...>;
 };
 
-template <typename T, std::size_t Num>
+template<typename T, std::size_t Num>
 struct generator {
     using type =
         typename merger<typename generator<T, Num / 2>::type, typename generator<T, Num - Num / 2>::type>::type;
 };
 
-template <typename T>
+template<typename T>
 struct generator<T, 0> {
     using type = integer_sequence<T>;
 };
 
-template <typename T>
+template<typename T>
 struct generator<T, 1> {
     using type = integer_sequence<T, 0>;
 };
@@ -430,7 +430,7 @@ struct generator<T, 1> {
 
 #endif
 
-template <typename T, T Num>
+template<typename T, T Num>
 using make_integer_sequence
 #if FK_YAML_HAS_BUILTIN(__make_integer_seq)
     // clang defines built-in __make_integer_seq to generate an integer sequence.
@@ -450,7 +450,7 @@ using index_sequence = integer_sequence<std::size_t, Idx...>;
 template <std::size_t Num>
 using make_index_sequence = make_integer_sequence<std::size_t, Num>;
 
-template <typename... Types>
+template<typename... Types>
 using index_sequence_for = make_index_sequence<sizeof...(Types)>;
 
 #else // !defined(FK_YAML_HAS_CXX_14)
@@ -482,18 +482,18 @@ using bool_constant = std::integral_constant<bool, Val>;
 /// This is applied when no traits are specified as inputs.
 /// @sa https://en.cppreference.com/w/cpp/types/conjunction
 /// @tparam Traits Type traits to be checked if their ::value are all true.
-template <typename... Traits>
+template<typename... Traits>
 struct conjunction : std::true_type {};
 
 /// @brief A partial specialization of conjunction if only one Trait is given.
 /// @tparam Trait Type trait to be checked if its ::value is true.
-template <typename Trait>
+template<typename Trait>
 struct conjunction<Trait> : Trait {};
 
 /// @brief A partial specialization of conjunction if more than one traits are given.
 /// @tparam First The first type trait to be checked if its ::value is true.
 /// @tparam Rest The rest of traits passed as another conjunction template arguments if First::value is true.
-template <typename First, typename... Rest>
+template<typename First, typename... Rest>
 struct conjunction<First, Rest...> : std::conditional<First::value, conjunction<Rest...>, First>::type {};
 
 /// @brief A simple implementation to use std::disjunction with C++11/C++14.
@@ -502,30 +502,30 @@ struct conjunction<First, Rest...> : std::conditional<First::value, conjunction<
 /// This is applied when no traits are specified as inputs.
 /// @sa https://en.cppreference.com/w/cpp/types/disjunction
 /// @tparam Traits Type traits to be checked if at least one of their ::value is true.
-template <typename... Traits>
+template<typename... Traits>
 struct disjunction : std::false_type {};
 
 /// @brief A partial specialization of disjunction if only one Trait is given.
 /// @tparam Trait Type trait to be checked if its ::value is true.
-template <typename Trait>
+template<typename Trait>
 struct disjunction<Trait> : Trait {};
 
 /// @brief A partial specialization of disjunction if more than one traits are given.
 /// @tparam First The first type trait to be checked if its ::value is true.
 /// @tparam Rest The rest of traits passed as another conjunction template arguments if First::value is false.
-template <typename First, typename... Rest>
+template<typename First, typename... Rest>
 struct disjunction<First, Rest...> : std::conditional<First::value, First, disjunction<Rest...>>::type {};
 
 /// @brief A simple implementation to use std::negation with C++11/C++14.
 /// @note std::negation is available since C++17.
 /// @sa https://en.cppreference.com/w/cpp/types/negation
 /// @tparam Trait Type trait whose ::value is negated.
-template <typename Trait>
+template<typename Trait>
 struct negation : std::integral_constant<bool, !Trait::value> {};
 
 /// @brief A helper for void_t.
 /// @tparam Types Any types to be transformed to void type.
-template <typename... Types>
+template<typename... Types>
 struct make_void {
     using type = void;
 };
@@ -534,7 +534,7 @@ struct make_void {
 /// @note std::void_t is available since C++17.
 /// @sa https://en.cppreference.com/w/cpp/types/void_t
 /// @tparam Types Any types to be transformed to void type.
-template <typename... Types>
+template<typename... Types>
 using void_t = typename make_void<Types...>::type;
 
 #else // !defined(FK_YAML_HAS_CXX_17)
@@ -553,7 +553,7 @@ using std::void_t;
 /// @note std::remove_cvref & std::remove_cvref_t are available since C++20.
 /// @sa https://en.cppreference.com/w/cpp/types/remove_cvref
 /// @tparam T A type from which cv-qualifiers and reference are removed.
-template <typename T>
+template<typename T>
 using remove_cvref_t = typename std::remove_cv<typename std::remove_reference<T>::type>::type;
 
 #else
@@ -605,7 +605,7 @@ namespace detector_impl {
 /// @tparam AlwaysVoid This must be void type.
 /// @tparam Op A type for desired operation type.
 /// @tparam Args Argument types passed to desired operation.
-template <typename Default, typename AlwaysVoid, template <typename...> class Op, typename... Args>
+template<typename Default, typename AlwaysVoid, template<typename...> class Op, typename... Args>
 struct detector : std::false_type {
     /// @brief A type which represents detection failure.
     using type = Default;
@@ -615,7 +615,7 @@ struct detector : std::false_type {
 /// @tparam Default A type to represent detection failure.
 /// @tparam Op A type for desired operation type.
 /// @tparam Args Argument types passed to desired operation.
-template <typename Default, template <typename...> class Op, typename... Args>
+template<typename Default, template<typename...> class Op, typename... Args>
 struct detector<Default, void_t<Op<Args...>>, Op, Args...> : std::true_type {
     /// @brief A detected type.
     using type = Op<Args...>;
@@ -626,20 +626,20 @@ struct detector<Default, void_t<Op<Args...>>, Op, Args...> : std::true_type {
 /// @brief Type traits to detect Op operation with Args argument types
 /// @tparam Op A desired operation type.
 /// @tparam Args Argument types passed to desired operation.
-template <template <typename...> class Op, typename... Args>
+template <template<typename...> class Op, typename... Args>
 using is_detected = detector_impl::detector<nonesuch, void, Op, Args...>;
 
 /// @brief Type traits to represent a detected type.
 /// @tparam Op A type for desired operation type.
 /// @tparam Args Argument types passed to desired operation.
-template <template <typename...> class Op, typename... Args>
+template <template<typename...> class Op, typename... Args>
 using detected_t = typename detector_impl::detector<nonesuch, void, Op, Args...>::type;
 
 /// @brief Type traits to check if Expected and a detected type are exactly the same.
 /// @tparam Expected An expected detection result type.
 /// @tparam Op A type for desired operation.
 /// @tparam Args Argument types passed to desired operation.
-template <typename Expected, template <typename...> class Op, typename... Args>
+template<typename Expected, template<typename...> class Op, typename... Args>
 using is_detected_exact = std::is_same<Expected, detected_t<Op, Args...>>;
 
 /// @brief namespace for member type detections of aliases and functions.
@@ -647,82 +647,82 @@ namespace detect {
 
 /// @brief The type which represents `iterator` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using iterator_t = typename T::iterator;
 
 /// @brief The type which represents `key_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using key_type_t = typename T::key_type;
 
 /// @brief The type which represents `mapped_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using mapped_type_t = typename T::mapped_type;
 
 /// @brief The type which represents `value_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using value_type_t = typename T::value_type;
 
 /// @brief The type which represents `difference_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using difference_type_t = typename T::difference_type;
 
 /// @brief The type which represents `pointer` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using pointer_t = typename T::pointer;
 
 /// @brief The type which represents `reference` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using reference_t = typename T::reference;
 
 /// @brief The type which represents `iterator_category` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using iterator_category_t = typename T::iterator_category;
 
 /// @brief The type which represents `container_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using container_type_t = typename T::container_type;
 
 /// @brief The type which represents emplace member function.
 /// @tparam T A target type.
-template <typename T, typename... Args>
+template<typename T, typename... Args>
 using emplace_fn_t = decltype(std::declval<T>().emplace(std::declval<Args>()...));
 
 /// @brief The type which represents reserve member function.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using reserve_fn_t = decltype(std::declval<T>().reserve(std::declval<typename remove_cvref_t<T>::size_type>()));
 
 /// @brief Type traits to check if T has `iterator` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using has_iterator = is_detected<iterator_t, remove_cvref_t<T>>;
 
 /// @brief Type traits to check if T has `key_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using has_key_type = is_detected<key_type_t, remove_cvref_t<T>>;
 
 /// @brief Type traits to check if T has `mapped_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using has_mapped_type = is_detected<mapped_type_t, remove_cvref_t<T>>;
 
 /// @brief Type traits to check if T has `value_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using has_value_type = is_detected<value_type_t, remove_cvref_t<T>>;
 
 /// @brief Type traits to check if T is a std::iterator_traits like type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 struct is_iterator_traits : conjunction<
                                 is_detected<difference_type_t, remove_cvref_t<T>>, has_value_type<remove_cvref_t<T>>,
                                 is_detected<pointer_t, remove_cvref_t<T>>, is_detected<reference_t, remove_cvref_t<T>>,
@@ -730,12 +730,12 @@ struct is_iterator_traits : conjunction<
 
 /// @brief Type traits to check if T has `container_type` member type.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using has_container_type = is_detected<container_type_t, remove_cvref_t<T>>;
 
 /// @brief Type traits to check if T has reserve member function.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using has_reserve = is_detected<reserve_fn_t, T>;
 
 // fallback to these STL functions.
@@ -744,12 +744,12 @@ using std::end;
 
 /// @brief Type traits to check if begin/end functions can be called on a T object.
 /// @tparam T A target type.
-template <typename T, typename = void>
+template<typename T, typename = void>
 struct has_begin_end : std::false_type {};
 
 /// @brief Type traits to check if begin/end functions can be called on a T object.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 struct has_begin_end<T, void_t<decltype(begin(std::declval<T>()), end(std::declval<T>()))>> : std::true_type {};
 
 } // namespace detect
@@ -787,14 +787,14 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @tparam T A type for comparison.
 /// @tparam U The other type for comparison.
 /// @tparam typename Placeholder for determining T and U are comparable types.
-template <typename Comparator, typename T, typename U, typename = void>
+template<typename Comparator, typename T, typename U, typename = void>
 struct is_comparable : std::false_type {};
 
 /// @brief A partial specialization of is_comparable if T and U are comparable types.
 /// @tparam Comparator An object type to compare T and U objects.
 /// @tparam T A type for comparison.
 /// @tparam U The other type for comparison.
-template <typename Comparator, typename T, typename U>
+template<typename Comparator, typename T, typename U>
 struct is_comparable<
     Comparator, T, U,
     void_t<
@@ -805,34 +805,34 @@ struct is_comparable<
 /// @tparam Comparator An object type to compare T and U objects.
 /// @tparam ObjectKeyType The original key type.
 /// @tparam KeyType A type to be used as key type.
-template <typename Comparator, typename ObjectKeyType, typename KeyType>
+template<typename Comparator, typename ObjectKeyType, typename KeyType>
 using is_usable_as_key_type = is_comparable<Comparator, ObjectKeyType, KeyType>;
 
 /// @brief Type trait to check if T is of non-boolean integral types.
 /// @tparam T A type to be checked.
-template <typename T>
+template<typename T>
 using is_non_bool_integral = conjunction<std::is_integral<T>, negation<std::is_same<bool, T>>>;
 
 /// @brief Type traits to check if T is a complete type.
 /// @tparam T A type to be checked if a complete type.
 /// @tparam typename N/A
-template <typename T, typename = void>
+template<typename T, typename = void>
 struct is_complete_type : std::false_type {};
 
 /// @brief A partial specialization of is_complete_type if T is a complete type.
 /// @tparam T
-template <typename T>
+template<typename T>
 struct is_complete_type<T, decltype(void(sizeof(T)))> : std::true_type {};
 
 /// @brief A utility alias to test if the value type of `ItrType` is `T`.
 /// @tparam ItrType An iterator type.
 /// @tparam T The target iterator value type.
-template <typename ItrType, typename T>
+template<typename ItrType, typename T>
 using is_iterator_of = std::is_same<remove_cv_t<typename std::iterator_traits<ItrType>::value_type>, T>;
 
 /// @brief A utility struct to generate static constant instance.
 /// @tparam T A target type for the resulting static constant instance.
-template <typename T>
+template<typename T>
 struct static_const {
     static FK_YAML_INLINE_VAR constexpr T value {}; // NOLINT(readability-identifier-naming)
 };
@@ -841,13 +841,13 @@ struct static_const {
 /// @brief A instantiation of static_const::value instance.
 /// @note This is required if inline variables are not available. C++11-14 do not provide such a feature yet.
 /// @tparam T A target type for the resulting static constant instance.
-template <typename T>
+template<typename T>
 constexpr T static_const<T>::value;
 #endif
 
 /// @brief A helper structure for tag dispatch.
 /// @tparam T A tag type.
-template <typename T>
+template<typename T>
 struct type_tag {
     /// @brief A tagged type.
     using type = T;
@@ -882,16 +882,16 @@ FK_YAML_NAMESPACE_BEGIN
 /// @brief An ADL friendly converter between basic_node objects and native data objects.
 /// @tparam ValueType A target data type.
 /// @sa https://fktn-k.github.io/fkYAML/api/node_value_converter/
-template <typename ValueType, typename = void>
+template<typename ValueType, typename = void>
 class node_value_converter;
 
 /// @brief A class to store value of YAML nodes.
 /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/
 template <
-    template <typename, typename...> class SequenceType = std::vector,
-    template <typename, typename, typename...> class MappingType = std::map, typename BooleanType = bool,
+    template<typename, typename...> class SequenceType = std::vector,
+    template<typename, typename, typename...> class MappingType = std::map, typename BooleanType = bool,
     typename IntegerType = std::int64_t, typename FloatNumberType = double, typename StringType = std::string,
-    template <typename, typename = void> class ConverterType = node_value_converter>
+    template<typename, typename = void> class ConverterType = node_value_converter>
 class basic_node;
 
 /// @brief default YAML node value container.
@@ -904,7 +904,7 @@ using node = basic_node<>;
 /// @tparam IgnoredCompare A placeholder for key comparison. This will be ignored.
 /// @tparam Allocator A class for allocators.
 /// @sa https://fktn-k.github.io/fkYAML/api/ordered_map/
-template <typename Key, typename Value, typename IgnoredCompare, typename Allocator>
+template<typename Key, typename Value, typename IgnoredCompare, typename Allocator>
 class ordered_map;
 
 FK_YAML_NAMESPACE_END
@@ -920,7 +920,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief Actual implementation of the is_basic_node type traits struct.
 /// @tparam T A class to be checked if it's a basic_node template class instance type.
-template <typename T>
+template<typename T>
 struct is_basic_node_impl : std::false_type {};
 
 /// @brief A partial specialization of is_basic_node_impl for basic_node template class.
@@ -932,16 +932,16 @@ struct is_basic_node_impl : std::false_type {};
 /// @tparam StringType A type for string node values.
 /// @tparam Converter A type for node-value converter
 template <
-    template <typename, typename...> class SequenceType, template <typename, typename, typename...> class MappingType,
+    template<typename, typename...> class SequenceType, template<typename, typename, typename...> class MappingType,
     typename BooleanType, typename IntegerType, typename FloatNumberType, typename StringType,
-    template <typename, typename> class Converter>
+    template<typename, typename> class Converter>
 struct is_basic_node_impl<
     basic_node<SequenceType, MappingType, BooleanType, IntegerType, FloatNumberType, StringType, Converter>>
     : std::true_type {};
 
 /// @brief A struct to check the template parameter class is a basic_node template class instance type.
 /// @tparam T A class to be checked if it's a basic_node template class instance type.
-template <typename T>
+template<typename T>
 struct is_basic_node : is_basic_node_impl<remove_cvref_t<T>> {};
 
 ///////////////////////////////////
@@ -949,17 +949,17 @@ struct is_basic_node : is_basic_node_impl<remove_cvref_t<T>> {};
 ///////////////////////////////////
 
 // forward declaration for node_ref_storage<...>
-template <typename>
+template<typename>
 class node_ref_storage;
 
 /// @brief A struct to check the template parameter class is a kind of node_ref_storage_template class.
 /// @tparam T A type to be checked if it's a kind of node_ref_storage template class.
-template <typename T>
+template<typename T>
 struct is_node_ref_storage : std::false_type {};
 
 /// @brief A partial specialization for node_ref_storage template class.
 /// @tparam T A template parameter type of node_ref_storage template class.
-template <typename T>
+template<typename T>
 struct is_node_ref_storage<node_ref_storage<T>> : std::true_type {};
 
 ///////////////////////////////////////////////////////
@@ -969,13 +969,13 @@ struct is_node_ref_storage<node_ref_storage<T>> : std::true_type {};
 /// @brief A type represent from_node function.
 /// @tparam T A type which provides from_node function.
 /// @tparam Args Argument types passed to from_node function.
-template <typename T, typename... Args>
+template<typename T, typename... Args>
 using from_node_function_t = decltype(T::from_node(std::declval<Args>()...));
 
 /// @brief A type which represent to_node function.
 /// @tparam T A type which provides to_node function.
 /// @tparam Args Argument types passed to to_node function.
-template <typename T, typename... Args>
+template<typename T, typename... Args>
 using to_node_function_t = decltype(T::to_node(std::declval<Args>()...));
 
 ///////////////////////////////////////////////////
@@ -986,13 +986,13 @@ using to_node_function_t = decltype(T::to_node(std::declval<Args>()...));
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam T A target type passed to from_node function.
 /// @tparam typename N/A
-template <typename BasicNodeType, typename T, typename = void>
+template<typename BasicNodeType, typename T, typename = void>
 struct has_from_node : std::false_type {};
 
 /// @brief A partial specialization of has_from_node if T is not a basic_node template instance type.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam T A target type passed to from_node function.
-template <typename BasicNodeType, typename T>
+template<typename BasicNodeType, typename T>
 struct has_from_node<BasicNodeType, T, enable_if_t<negation<is_basic_node<T>>::value>> {
     using converter = typename BasicNodeType::template value_converter_type<T, void>;
 
@@ -1006,13 +1006,13 @@ struct has_from_node<BasicNodeType, T, enable_if_t<negation<is_basic_node<T>>::v
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam T A target type passed to to_node function.
 /// @tparam typename N/A
-template <typename BasicNodeType, typename T, typename = void>
+template<typename BasicNodeType, typename T, typename = void>
 struct has_to_node : std::false_type {};
 
 /// @brief A partial specialization of has_to_node if T is not a basic_node template instance type.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam T A target type passed to to_node function.
-template <typename BasicNodeType, typename T>
+template<typename BasicNodeType, typename T>
 struct has_to_node<BasicNodeType, T, enable_if_t<negation<is_basic_node<T>>::value>> {
     using converter = typename BasicNodeType::template value_converter_type<T, void>;
 
@@ -1029,14 +1029,14 @@ struct has_to_node<BasicNodeType, T, enable_if_t<negation<is_basic_node<T>>::val
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam CompatibleType A target type for compatibility check.
 /// @tparam typename N/A
-template <typename BasicNodeType, typename CompatibleType, typename = void>
+template<typename BasicNodeType, typename CompatibleType, typename = void>
 struct is_node_compatible_type_impl : std::false_type {};
 
 /// @brief A partial specialization of is_node_compatible_type_impl if CompatibleType is a complete type and is
 /// compatible for BasicNodeType.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam CompatibleType A target type for compatibility check.
-template <typename BasicNodeType, typename CompatibleType>
+template<typename BasicNodeType, typename CompatibleType>
 struct is_node_compatible_type_impl<
     BasicNodeType, CompatibleType,
     enable_if_t<conjunction<is_complete_type<CompatibleType>, has_to_node<BasicNodeType, CompatibleType>>::value>>
@@ -1045,7 +1045,7 @@ struct is_node_compatible_type_impl<
 /// @brief Type traits to check if CompatibleType is a compatible type for BasicNodeType.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam CompatibleType A target type for compatibility check.
-template <typename BasicNodeType, typename CompatibleType>
+template<typename BasicNodeType, typename CompatibleType>
 struct is_node_compatible_type : is_node_compatible_type_impl<BasicNodeType, CompatibleType> {};
 
 FK_YAML_DETAIL_NAMESPACE_END
@@ -1097,7 +1097,7 @@ FK_YAML_NAMESPACE_END
 FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief The set of directives for a YAML document.
-template <typename BasicNodeType, typename = enable_if_t<is_basic_node<BasicNodeType>::value>>
+template<typename BasicNodeType, typename = enable_if_t<is_basic_node<BasicNodeType>::value>>
 struct document_metainfo {
     /// The YAML version used for the YAML document.
     yaml_version_type version {yaml_version_type::VERSION_1_2};
@@ -1142,7 +1142,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @brief Helper struct which ensures destruction/deallocation of heap-allocated objects.
 /// @tparam ObjT Object type.
 /// @tparam AllocTraits Allocator traits type for the object.
-template <typename ObjT, typename AllocTraits>
+template<typename ObjT, typename AllocTraits>
 struct tidy_guard {
     tidy_guard() = delete;
 
@@ -1201,7 +1201,7 @@ struct tidy_guard {
 /// @tparam ...Args The argument types.
 /// @param ...args The arguments for construction.
 /// @return An address of allocated memory on the heap.
-template <typename ObjT, typename... Args>
+template<typename ObjT, typename... Args>
 inline ObjT* create_object(Args&&... args) {
     using alloc_type = std::allocator<ObjT>;
     using alloc_traits_type = std::allocator_traits<alloc_type>;
@@ -1217,7 +1217,7 @@ inline ObjT* create_object(Args&&... args) {
 /// @brief Destroys and deallocates an `ObjT` object.
 /// @tparam ObjT The object type.
 /// @param p_obj A pointer to the object.
-template <typename ObjT>
+template<typename ObjT>
 inline void destroy_object(ObjT* p_obj) {
     FK_YAML_ASSERT(p_obj != nullptr);
     std::allocator<ObjT> alloc;
@@ -2170,7 +2170,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// made before calling this class' APIs for safety.
 /// @tparam CharT Character type
 /// @tparam Traits Character traits type which defaults to std::char_traits<CharT>.
-template <typename CharT, typename Traits = std::char_traits<CharT>>
+template<typename CharT, typename Traits = std::char_traits<CharT>>
 class basic_str_view {
     static_assert(!std::is_array<CharT>::value, "CharT must not be an array type.");
     static_assert(
@@ -2922,7 +2922,7 @@ private:
 // Prior to C++17, a static constexpr class member needs an out-of-class definition.
 #ifndef FK_YAML_HAS_CXX_17
 
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 constexpr typename basic_str_view<CharT, Traits>::size_type basic_str_view<CharT, Traits>::npos;
 
 #endif // !defined(FK_YAML_HAS_CXX_17)
@@ -2933,7 +2933,7 @@ constexpr typename basic_str_view<CharT, Traits>::size_type basic_str_view<CharT
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if the two objects are the same, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator==(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     // Comparing the lengths first will omit unnecessary value comparison in compare().
     return lhs.size() == rhs.size() && lhs.compare(rhs) == 0;
@@ -2945,7 +2945,7 @@ inline bool operator==(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, 
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_string object to compare with.
 /// @return true if the two objects are the same, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator==(basic_str_view<CharT, Traits> lhs, const std::basic_string<CharT, Traits>& rhs) noexcept {
     return lhs == basic_str_view<CharT, Traits>(rhs);
 }
@@ -2956,7 +2956,7 @@ inline bool operator==(basic_str_view<CharT, Traits> lhs, const std::basic_strin
 /// @param lhs A basic_string object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if the two objects are the same, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator==(const std::basic_string<CharT, Traits>& lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return basic_str_view<CharT, Traits>(lhs) == rhs;
 }
@@ -2968,7 +2968,7 @@ inline bool operator==(const std::basic_string<CharT, Traits>& lhs, basic_str_vi
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A character array to compare with.
 /// @return true if the two objects are the same, false otherwise.
-template <typename CharT, typename Traits, std::size_t N>
+template<typename CharT, typename Traits, std::size_t N>
 inline bool operator==(basic_str_view<CharT, Traits> lhs, const CharT (&rhs)[N]) noexcept {
     // assume `rhs` is null terminated
     return lhs == basic_str_view<CharT, Traits>(rhs);
@@ -2981,7 +2981,7 @@ inline bool operator==(basic_str_view<CharT, Traits> lhs, const CharT (&rhs)[N])
 /// @param rhs A character array for comparison.
 /// @param lhs A basic_str_view object to compare with.
 /// @return true if the two objects are the same, false otherwise.
-template <typename CharT, typename Traits, std::size_t N>
+template<typename CharT, typename Traits, std::size_t N>
 inline bool operator==(const CharT (&lhs)[N], basic_str_view<CharT, Traits> rhs) noexcept {
     // assume `lhs` is null terminated
     return basic_str_view<CharT, Traits>(lhs) == rhs;
@@ -2993,7 +2993,7 @@ inline bool operator==(const CharT (&lhs)[N], basic_str_view<CharT, Traits> rhs)
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if the two objects are different, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator!=(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return !(lhs == rhs);
 }
@@ -3004,7 +3004,7 @@ inline bool operator!=(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, 
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_string object to compare with.
 /// @return true if the two objects are different, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator!=(basic_str_view<CharT, Traits> lhs, const std::basic_string<CharT, Traits>& rhs) noexcept {
     return !(lhs == basic_str_view<CharT, Traits>(rhs));
 }
@@ -3015,7 +3015,7 @@ inline bool operator!=(basic_str_view<CharT, Traits> lhs, const std::basic_strin
 /// @param lhs A basic_string object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if the two objects are different, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator!=(const std::basic_string<CharT, Traits>& lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return !(basic_str_view<CharT, Traits>(lhs) == rhs);
 }
@@ -3027,7 +3027,7 @@ inline bool operator!=(const std::basic_string<CharT, Traits>& lhs, basic_str_vi
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A character array to compare with.
 /// @return true if the two objects are different, false otherwise.
-template <typename CharT, typename Traits, std::size_t N>
+template<typename CharT, typename Traits, std::size_t N>
 inline bool operator!=(basic_str_view<CharT, Traits> lhs, const CharT (&rhs)[N]) noexcept {
     // assume `rhs` is null terminated.
     return !(lhs == basic_str_view<CharT, Traits>(rhs, N - 1));
@@ -3040,7 +3040,7 @@ inline bool operator!=(basic_str_view<CharT, Traits> lhs, const CharT (&rhs)[N])
 /// @param rhs A character array for comparison.
 /// @param lhs A basic_str_view object to compare with.
 /// @return true if the two objects are different, false otherwise.
-template <typename CharT, typename Traits, std::size_t N>
+template<typename CharT, typename Traits, std::size_t N>
 inline bool operator!=(const CharT (&lhs)[N], basic_str_view<CharT, Traits> rhs) noexcept {
     // assume `lhs` is null terminate
     return !(basic_str_view<CharT, Traits>(lhs, N - 1) == rhs);
@@ -3052,7 +3052,7 @@ inline bool operator!=(const CharT (&lhs)[N], basic_str_view<CharT, Traits> rhs)
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if `lhs` is less than `rhs`, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator<(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return lhs.compare(rhs) < 0;
 }
@@ -3063,7 +3063,7 @@ inline bool operator<(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, T
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if `lhs` is less than or equal to `rhs`, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator<=(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return lhs.compare(rhs) <= 0;
 }
@@ -3074,7 +3074,7 @@ inline bool operator<=(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, 
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if `lhs` is greater than `rhs`, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator>(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return lhs.compare(rhs) > 0;
 }
@@ -3085,7 +3085,7 @@ inline bool operator>(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, T
 /// @param lhs A basic_str_view object for comparison.
 /// @param rhs A basic_str_view object to compare with.
 /// @return true if `lhs` is greater than or equal to `rhs`, false otherwise.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline bool operator>=(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, Traits> rhs) noexcept {
     return lhs.compare(rhs) >= 0;
 }
@@ -3096,7 +3096,7 @@ inline bool operator>=(basic_str_view<CharT, Traits> lhs, basic_str_view<CharT, 
 /// @param os An output stream object.
 /// @param sv A basic_str_view object.
 /// @return Reference to the output stream object `os`.
-template <typename CharT, typename Traits>
+template<typename CharT, typename Traits>
 inline std::basic_ostream<CharT, Traits>& operator<<(
     std::basic_ostream<CharT, Traits>& os, basic_str_view<CharT, Traits> sv) {
     return os.write(sv.data(), static_cast<std::streamsize>(sv.size()));
@@ -4865,7 +4865,7 @@ struct conv_limits<8u, false> : conv_limits_base<8u> {
 /// @param end The iterator to the past-the-end element of the scalar.
 /// @param /*unused*/ The null value holder (unused since it can only have `nullptr`)
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename CharItr>
+template<typename CharItr>
 inline bool aton(CharItr begin, CharItr end, std::nullptr_t& /*unused*/) noexcept {
     static_assert(is_iterator_of<CharItr, char>::value, "aton() accepts iterators for char type");
 
@@ -4900,7 +4900,7 @@ inline bool aton(CharItr begin, CharItr end, std::nullptr_t& /*unused*/) noexcep
 /// @param end The iterator to the past-the-end element of the scalar.
 /// @param boolean The boolean value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename CharItr, typename BoolType>
+template<typename CharItr, typename BoolType>
 inline bool atob(CharItr begin, CharItr end, BoolType& boolean) noexcept {
     static_assert(is_iterator_of<CharItr, char>::value, "atob() accepts iterators for char type");
 
@@ -4952,7 +4952,7 @@ inline bool atob(CharItr begin, CharItr end, BoolType& boolean) noexcept {
 /// @param p_end The pointer to the past-the-end element of the scalar.
 /// @param i The output integer value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename IntType>
+template<typename IntType>
 inline bool atoi_dec_unchecked(const char* p_begin, const char* p_end, IntType& i) noexcept {
     static_assert(
         is_non_bool_integral<IntType>::value,
@@ -4978,7 +4978,7 @@ inline bool atoi_dec_unchecked(const char* p_begin, const char* p_end, IntType& 
 /// @param p_end The pointer to the past-the-end element of the scalar.
 /// @param i The output integer value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename IntType>
+template<typename IntType>
 inline bool atoi_dec_pos(const char* p_begin, const char* p_end, IntType& i) noexcept {
     static_assert(
         is_non_bool_integral<IntType>::value, "atoi_dec_pos() accepts non-boolean integral types as an output type");
@@ -5021,7 +5021,7 @@ inline bool atoi_dec_pos(const char* p_begin, const char* p_end, IntType& i) noe
 /// @param p_end The pointer to the past-the-end element of the scalar.
 /// @param i The output integer value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename IntType>
+template<typename IntType>
 inline bool atoi_dec_neg(const char* p_begin, const char* p_end, IntType& i) noexcept {
     static_assert(
         is_non_bool_integral<IntType>::value, "atoi_dec_neg() accepts non-boolean integral types as an output type");
@@ -5068,7 +5068,7 @@ inline bool atoi_dec_neg(const char* p_begin, const char* p_end, IntType& i) noe
 /// @param p_end The pointer to the past-the-end element of the scalar.
 /// @param i The output integer value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename IntType>
+template<typename IntType>
 inline bool atoi_oct(const char* p_begin, const char* p_end, IntType& i) noexcept {
     static_assert(
         is_non_bool_integral<IntType>::value, "atoi_oct() accepts non-boolean integral types as an output type");
@@ -5107,7 +5107,7 @@ inline bool atoi_oct(const char* p_begin, const char* p_end, IntType& i) noexcep
 /// @param p_end The pointer to the past-the-end element of the scalar.
 /// @param i The output integer value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename IntType>
+template<typename IntType>
 inline bool atoi_hex(const char* p_begin, const char* p_end, IntType& i) noexcept {
     static_assert(
         is_non_bool_integral<IntType>::value, "atoi_hex() accepts non-boolean integral types as an output type");
@@ -5158,7 +5158,7 @@ inline bool atoi_hex(const char* p_begin, const char* p_end, IntType& i) noexcep
 /// @param end The iterator to the past-the-end element of the scalar.
 /// @param i The output integer value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename CharItr, typename IntType>
+template<typename CharItr, typename IntType>
 inline bool atoi(CharItr begin, CharItr end, IntType& i) noexcept {
     static_assert(is_iterator_of<CharItr, char>::value, "atoi() accepts iterators for char type");
     static_assert(is_non_bool_integral<IntType>::value, "atoi() accepts non-boolean integral types as an output type");
@@ -5247,7 +5247,7 @@ inline void set_nan(double& f) noexcept {
 /// @param p_end The pointer to the past-the-end element of the scalar.
 /// @param f The output floating point value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename FloatType>
+template<typename FloatType>
 inline bool atof_impl(const char* p_begin, const char* p_end, FloatType& f) noexcept {
     static_assert(std::is_floating_point_v<FloatType>, "atof_impl() accepts floating point types as an output type");
     if (auto [ptr, ec] = std::from_chars(p_begin, p_end, f); ec == std::errc {}) {
@@ -5291,7 +5291,7 @@ inline bool atof_impl(const char* p_begin, const char* p_end, double& f) {
 /// @param end The iterator to the past-the-end element of the scalar.
 /// @param f The output floating point value holder.
 /// @return true if the conversion completes successfully, false otherwise.
-template <typename CharItr, typename FloatType>
+template<typename CharItr, typename FloatType>
 inline bool atof(CharItr begin, CharItr end, FloatType& f) noexcept(noexcept(atof_impl(&*begin, &*begin, f))) {
     static_assert(is_iterator_of<CharItr, char>::value, "atof() accepts iterators for char type");
     static_assert(std::is_floating_point<FloatType>::value, "atof() accepts floating point types as an output type");
@@ -6098,7 +6098,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief A parser for YAML scalars.
 /// @tparam BasicNodeType A type of the container for parsed YAML scalars.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 class scalar_parser {
     static_assert(is_basic_node<BasicNodeType>::value, "scalar_parser only accepts basic_node<...>");
 
@@ -6688,7 +6688,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 static constexpr str_view default_primary_handle_prefix {"!"};
 static constexpr str_view default_secondary_handle_prefix {"tag:yaml.org,2002:"};
 
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 class tag_resolver {
     static_assert(is_basic_node<BasicNodeType>::value, "tag_resolver only accepts basic_node<...>.");
     using doc_metainfo_type = document_metainfo<BasicNodeType>;
@@ -6877,13 +6877,13 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief A type which represents get_buffer_view function.
 /// @tparam T A target type.
-template <typename T>
+template<typename T>
 using get_buffer_view_fn_t = decltype(std::declval<T>().get_buffer_view());
 
 /// @brief Type traits to check if InputAdapterType has get_buffer_view member function.
 /// @tparam InputAdapterType An input adapter type to check if it has get_buffer_view function.
 /// @tparam typename N/A
-template <typename InputAdapterType>
+template<typename InputAdapterType>
 using has_get_buffer_view = is_detected<get_buffer_view_fn_t, InputAdapterType>;
 
 ////////////////////////////////
@@ -6893,12 +6893,12 @@ using has_get_buffer_view = is_detected<get_buffer_view_fn_t, InputAdapterType>;
 /// @brief Type traits to check if T is an input adapter type.
 /// @tparam T A target type.
 /// @tparam typename N/A
-template <typename T, typename = void>
+template<typename T, typename = void>
 struct is_input_adapter : std::false_type {};
 
 /// @brief A partial specialization of is_input_adapter if T is an input adapter type.
 /// @tparam InputAdapterType
-template <typename InputAdapterType>
+template<typename InputAdapterType>
 struct is_input_adapter<InputAdapterType, enable_if_t<has_get_buffer_view<InputAdapterType>::value>> : std::true_type {
 };
 
@@ -7090,7 +7090,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief A class which provides the feature of deserializing YAML documents.
 /// @tparam BasicNodeType A type of the container for deserialized YAML values.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 class basic_deserializer {
     static_assert(is_basic_node<BasicNodeType>::value, "basic_deserializer only accepts basic_node<...>");
 
@@ -7187,7 +7187,7 @@ public:
     /// @tparam InputAdapterType The type of an input adapter object.
     /// @param input_adapter An input adapter object for the input source buffer.
     /// @return basic_node_type A root YAML node deserialized from the source string.
-    template <typename InputAdapterType, enable_if_t<is_input_adapter<InputAdapterType>::value, int> = 0>
+    template<typename InputAdapterType, enable_if_t<is_input_adapter<InputAdapterType>::value, int> = 0>
     basic_node_type deserialize(InputAdapterType&& input_adapter) { // NOLINT(cppcoreguidelines-missing-std-forward)
         const str_view input_view = input_adapter.get_buffer_view();
         lexer_type lexer(input_view);
@@ -7200,7 +7200,7 @@ public:
     /// @tparam InputAdapterType The type of an adapter object.
     /// @param input_adapter An input adapter object for the input source buffer.
     /// @return std::vector<basic_node_type> Root YAML nodes for deserialized YAML documents.
-    template <typename InputAdapterType, enable_if_t<is_input_adapter<InputAdapterType>::value, int> = 0>
+    template<typename InputAdapterType, enable_if_t<is_input_adapter<InputAdapterType>::value, int> = 0>
     // NOLINTNEXTLINE(cppcoreguidelines-missing-std-forward)
     std::vector<basic_node_type> deserialize_docs(InputAdapterType&& input_adapter) {
         const str_view input_view = input_adapter.get_buffer_view();
@@ -8343,7 +8343,7 @@ private:
     /// @tparam Pred Functor type to test parent contexts.
     /// @param line The current line count.
     /// @param indent The indentation level of the target parent block mapping.
-    template <typename Pred>
+    template<typename Pred>
     void pop_to_parent_node(uint32_t line, uint32_t indent, Pred&& pred) {
         FK_YAML_ASSERT(!m_context_stack.empty());
 
@@ -8568,12 +8568,12 @@ inline utf_encode_t detect_encoding_type(const std::array<uint8_t, 4>& bytes, bo
 
 /// @brief A class which detects UTF encoding type and the existence of a BOM at the beginning.
 /// @tparam ItrType Type of iterators for the input.
-template <typename ItrType, typename = void>
+template<typename ItrType, typename = void>
 struct utf_encode_detector {};
 
 /// @brief The partial specialization of utf_encode_detector for char iterators.
 /// @tparam ItrType An iterator type.
-template <typename ItrType>
+template<typename ItrType>
 struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char>::value>> {
     /// @brief Detects the encoding type of the input, and consumes a BOM if it exists.
     /// @param begin The iterator to the first element of an input.
@@ -8620,7 +8620,7 @@ struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char>::v
 
 /// @brief The partial specialization of utf_encode_detector for char8_t iterators.
 /// @tparam ItrType An iterator type.
-template <typename ItrType>
+template<typename ItrType>
 struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char8_t>::value>> {
     /// @brief Detects the encoding type of the input, and consumes a BOM if it exists.
     /// @param begin The iterator to the first element of an input.
@@ -8658,7 +8658,7 @@ struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char8_t>
 
 /// @brief The partial specialization of utf_encode_detector for char16_t iterators.
 /// @tparam ItrType An iterator type.
-template <typename ItrType>
+template<typename ItrType>
 struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char16_t>::value>> {
     /// @brief Detects the encoding type of the input, and consumes a BOM if it exists.
     /// @param begin The iterator to the first element of an input.
@@ -8700,7 +8700,7 @@ struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char16_t
 
 /// @brief The partial specialization of utf_encode_detector for char32_t iterators.
 /// @tparam ItrType An iterator type.
-template <typename ItrType>
+template<typename ItrType>
 struct utf_encode_detector<ItrType, enable_if_t<is_iterator_of<ItrType, char32_t>::value>> {
     /// @brief Detects the encoding type of the input, and consumes a BOM if it exists.
     /// @param begin The iterator to the first element of an input.
@@ -8849,12 +8849,12 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 //   input_adapter   //
 ///////////////////////
 
-template <typename IterType, typename = void>
+template<typename IterType, typename = void>
 class iterator_input_adapter;
 
 /// @brief An input adapter for iterators of type char.
 /// @tparam IterType An iterator type.
-template <typename IterType>
+template<typename IterType>
 class iterator_input_adapter<IterType, enable_if_t<is_iterator_of<IterType, char>::value>> {
 public:
     /// @brief Construct a new iterator_input_adapter object.
@@ -9086,7 +9086,7 @@ private:
 
 /// @brief An input adapter for iterators of type char8_t.
 /// @tparam IterType An iterator type.
-template <typename IterType>
+template<typename IterType>
 class iterator_input_adapter<IterType, enable_if_t<is_iterator_of<IterType, char8_t>::value>> {
 public:
     /// @brief Construct a new iterator_input_adapter object.
@@ -9196,7 +9196,7 @@ private:
 
 /// @brief An input adapter for iterators of type char16_t.
 /// @tparam IterType An iterator type.
-template <typename IterType>
+template<typename IterType>
 class iterator_input_adapter<IterType, enable_if_t<is_iterator_of<IterType, char16_t>::value>> {
 public:
     /// @brief Construct a new iterator_input_adapter object.
@@ -9283,7 +9283,7 @@ private:
 
 /// @brief An input adapter for iterators of type char32_t.
 /// @tparam IterType An iterator type.
-template <typename IterType>
+template<typename IterType>
 class iterator_input_adapter<IterType, enable_if_t<is_iterator_of<IterType, char32_t>::value>> {
 public:
     /// @brief Construct a new iterator_input_adapter object.
@@ -9798,7 +9798,7 @@ private:
 /// @param end The end of iterators.
 /// @param is_contiguous Whether iterators refer to a contiguous byte array.
 /// @return An iterator_input_adapter object for the target iterator type.
-template <typename ItrType>
+template<typename ItrType>
 inline iterator_input_adapter<ItrType> create_iterator_input_adapter(ItrType begin, ItrType end, bool is_contiguous) {
     const utf_encode_t encode_type = utf_encode_detector<ItrType>::detect(begin, end);
     return iterator_input_adapter<ItrType>(begin, end, encode_type, is_contiguous);
@@ -9809,7 +9809,7 @@ inline iterator_input_adapter<ItrType> create_iterator_input_adapter(ItrType beg
 /// @param begin The beginning of iterators.
 /// @param end The end of iterators.
 /// @return iterator_input_adapter<ItrType> An iterator_input_adapter object for the target iterator type.
-template <typename ItrType>
+template<typename ItrType>
 inline iterator_input_adapter<ItrType> input_adapter(ItrType begin, ItrType end) {
     bool is_contiguous = true;
     const auto size = std::distance(begin, end);
@@ -9829,7 +9829,7 @@ inline iterator_input_adapter<ItrType> input_adapter(ItrType begin, ItrType end)
 /// @tparam T A type of arrayed objects.
 /// @tparam N A size of an array.
 /// @return decltype(input_adapter(array, array + N)) An iterator_input_adapter object for the target array.
-template <typename T, std::size_t N>
+template<typename T, std::size_t N>
 inline auto input_adapter(T (&array)[N]) -> decltype(create_iterator_input_adapter(array, array + (N - 1), true)) {
     return create_iterator_input_adapter(array, array + (N - 1), true);
 }
@@ -9843,12 +9843,12 @@ using std::end;
 /// @brief A factory of input adapters for containers.
 /// @tparam ContainerType A container type.
 /// @tparam typename N/A
-template <typename ContainerType, typename = void>
+template<typename ContainerType, typename = void>
 struct container_input_adapter_factory {};
 
 /// @brief A partial specialization of container_input_adapter_factory if begin()/end() are available for ContainerType.
 /// @tparam ContainerType A container type.
-template <typename ContainerType>
+template<typename ContainerType>
 struct container_input_adapter_factory<
     ContainerType, void_t<decltype(begin(std::declval<ContainerType>()), end(std::declval<ContainerType>()))>> {
     /// A type for resulting input adapter object.
@@ -9869,7 +9869,7 @@ struct container_input_adapter_factory<
 /// @tparam ContainerType A container type.
 /// @param container A container object.
 /// @return input_adapter_factory::container_input_adapter_factory<ContainerType>::adapter_type
-template <typename ContainerType>
+template<typename ContainerType>
 inline typename input_adapter_factory::container_input_adapter_factory<ContainerType>::adapter_type input_adapter(
     const ContainerType& container) {
     return input_adapter_factory::container_input_adapter_factory<ContainerType>::create(container);
@@ -9929,7 +9929,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief The template definitions of type information used in @ref Iterator class
 /// @tparam ValueType The type of iterated elements.
-template <typename ValueType>
+template<typename ValueType>
 struct iterator_traits {
     /// A type of iterated elements.
     using value_type = typename ValueType::value_type;
@@ -9943,7 +9943,7 @@ struct iterator_traits {
 
 /// @brief A specialization of @ref iterator_traits for constant value types.
 /// @tparam ValueType The type of iterated elements.
-template <typename ValueType>
+template<typename ValueType>
 struct iterator_traits<const ValueType> {
     /// A type of iterated elements.
     using value_type = typename ValueType::value_type;
@@ -9962,7 +9962,7 @@ enum class iterator_t : std::uint8_t {
 };
 
 /// @brief The actual storage for iterators internally held in iterator.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 struct iterator_holder {
     static_assert(
         is_basic_node<BasicNodeType>::value,
@@ -9976,7 +9976,7 @@ struct iterator_holder {
 
 /// @brief A class which holds iterators either of sequence or mapping type
 /// @tparam ValueType The type of iterated elements.
-template <typename ValueType>
+template<typename ValueType>
 class iterator {
     /// @brief The iterator type with ValueType of different const-ness.
     using other_iterator_type = typename std::conditional<
@@ -10314,7 +10314,7 @@ namespace std {
 
 /// @brief Partial specialization of std::tuple_size for iterator class.
 /// @tparam ValueType The iterator value type.
-template <typename ValueType>
+template<typename ValueType>
 // NOLINTNEXTLINE(cert-dcl58-cpp)
 struct tuple_size<::fkyaml::detail::iterator<ValueType>> : integral_constant<size_t, 2> {};
 
@@ -10356,7 +10356,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief A helper iterator class which wraps a mapping iterator object.
 /// @tparam Iterator The base iterator type.
-template <typename Iterator>
+template<typename Iterator>
 class map_iterator_proxy {
 public:
     /// @brief The type of the pointed-to elements by base iterators.
@@ -10458,7 +10458,7 @@ private:
 
 /// @brief A helper struct which allows accessing node iterator member functions in range-based for loops.
 /// @tparam BasicNodeType A basic_node template instance type.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 class map_range_proxy {
     static_assert(
         is_basic_node<BasicNodeType>::value,
@@ -10567,7 +10567,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @brief A temporal storage for basic_node class objects.
 /// @note This class makes it easier to handle lvalue basic_node objects in basic_node ctor with std::initializer_list.
 /// @tparam BasicNodeType A basic_node template instance type.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 class node_ref_storage {
     static_assert(is_basic_node<BasicNodeType>::value, "node_ref_storage only accepts basic_node<...>");
 
@@ -10595,7 +10595,7 @@ public:
     /// @brief Construct a new node ref storage object with variadic template arguments
     /// @tparam Args Types of arguments to construct a basic_node object.
     /// @param args Arguments to construct a basic_node object.
-    template <typename... Args, enable_if_t<std::is_constructible<node_type, Args...>::value, int> = 0>
+    template<typename... Args, enable_if_t<std::is_constructible<node_type, Args...>::value, int> = 0>
     node_ref_storage(Args&&... args)
         : m_owned_value(std::forward<Args>(args)...) {
     }
@@ -10683,7 +10683,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @tparam CharType The type of characters for the conversion result.
 /// @param s A resulting output string.
 /// @param v A source value.
-template <typename ValueType, typename CharType>
+template<typename ValueType, typename CharType>
 inline void to_string(ValueType v, std::basic_string<CharType>& s) noexcept;
 
 /// @brief Specialization of to_string() for null values.
@@ -10706,7 +10706,7 @@ inline void to_string(bool v, std::string& s) noexcept {
 /// @tparam IntegerType An integer type.
 /// @param s A resulting string YAML token.
 /// @param i An integer source value.
-template <typename IntegerType>
+template<typename IntegerType>
 inline enable_if_t<is_non_bool_integral<IntegerType>::value> to_string(IntegerType v, std::string& s) noexcept {
     s = std::to_string(v);
 }
@@ -10715,7 +10715,7 @@ inline enable_if_t<is_non_bool_integral<IntegerType>::value> to_string(IntegerTy
 /// @tparam FloatType A floating point number type.
 /// @param s A resulting string YAML token.
 /// @param f A floating point number source value.
-template <typename FloatType>
+template<typename FloatType>
 inline enable_if_t<std::is_floating_point<FloatType>::value> to_string(FloatType v, std::string& s) noexcept {
     if (std::isnan(v)) {
         s = ".nan";
@@ -10765,7 +10765,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief A basic implementation of serialization feature for YAML nodes.
 /// @tparam BasicNodeType A BasicNode template class instantiation.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 class basic_serializer {
     static_assert(detail::is_basic_node<BasicNodeType>::value, "basic_serializer only accepts basic_node<...>");
 
@@ -11147,7 +11147,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief An iterator adapter class that reverses the direction of a given node iterator.
 /// @tparam Iterator The base iterator type.
-template <typename Iterator>
+template<typename Iterator>
 class reverse_iterator {
     static_assert(
         is_basic_node<typename Iterator::value_type>::value,
@@ -11196,7 +11196,7 @@ public:
     /// @brief Copy constructs a reverse_iterator object with a compatible reverse_iterator object.
     /// @tparam U A compatible iterator type with Iterator.
     /// @param other A compatible reverse_iterator object.
-    template <typename U, enable_if_t<negation<std::is_same<U, Iterator>>::value, int> = 0>
+    template<typename U, enable_if_t<negation<std::is_same<U, Iterator>>::value, int> = 0>
     reverse_iterator(const reverse_iterator<U>& other) noexcept
         : m_current(other.base()) {
     }
@@ -11205,7 +11205,7 @@ public:
     /// @tparam U A compatible iterator type with Iterator.
     /// @param other A compatible reverse_iterator object.
     /// @return Reference to this reverse_iterator object.
-    template <typename U, enable_if_t<negation<std::is_same<U, Iterator>>::value, int> = 0>
+    template<typename U, enable_if_t<negation<std::is_same<U, Iterator>>::value, int> = 0>
     reverse_iterator& operator=(const reverse_iterator<U>& other) noexcept {
         m_current = other.base();
         return *this;
@@ -11318,7 +11318,7 @@ private:
 /// @param lhs A reverse_iterator object.
 /// @param rhs A reverse_iterator object.
 /// @return true if the two reverse_iterator objects are equal, false otherwise.
-template <typename IteratorL, typename IteratorR>
+template<typename IteratorL, typename IteratorR>
 inline bool operator==(const reverse_iterator<IteratorL>& lhs, const reverse_iterator<IteratorR>& rhs) {
     return lhs.base() == rhs.base();
 }
@@ -11329,7 +11329,7 @@ inline bool operator==(const reverse_iterator<IteratorL>& lhs, const reverse_ite
 /// @param lhs A reverse_iterator object.
 /// @param rhs A reverse_iterator object.
 /// @return true if the two reverse_iterator objects are not equal, false otherwise.
-template <typename IteratorL, typename IteratorR>
+template<typename IteratorL, typename IteratorR>
 inline bool operator!=(const reverse_iterator<IteratorL>& lhs, const reverse_iterator<IteratorR>& rhs) {
     return lhs.base() != rhs.base();
 }
@@ -11340,7 +11340,7 @@ inline bool operator!=(const reverse_iterator<IteratorL>& lhs, const reverse_ite
 /// @param lhs A reverse_iterator object.
 /// @param rhs A reverse_iterator object.
 /// @return true if `lhs` is less than `rhs`, false otherwise.
-template <typename IteratorL, typename IteratorR>
+template<typename IteratorL, typename IteratorR>
 inline bool operator<(const reverse_iterator<IteratorL>& lhs, const reverse_iterator<IteratorR>& rhs) {
     return lhs.base() > rhs.base();
 }
@@ -11351,7 +11351,7 @@ inline bool operator<(const reverse_iterator<IteratorL>& lhs, const reverse_iter
 /// @param lhs A reverse_iterator object.
 /// @param rhs A reverse_iterator object.
 /// @return true if `lhs` is less than or equal to `rhs`, false otherwise.
-template <typename IteratorL, typename IteratorR>
+template<typename IteratorL, typename IteratorR>
 inline bool operator<=(const reverse_iterator<IteratorL>& lhs, const reverse_iterator<IteratorR>& rhs) {
     return lhs.base() >= rhs.base();
 }
@@ -11362,7 +11362,7 @@ inline bool operator<=(const reverse_iterator<IteratorL>& lhs, const reverse_ite
 /// @param lhs A reverse_iterator object.
 /// @param rhs A reverse_iterator object.
 /// @return true if `lhs` is greater than `rhs`, false otherwise.
-template <typename IteratorL, typename IteratorR>
+template<typename IteratorL, typename IteratorR>
 inline bool operator>(const reverse_iterator<IteratorL>& lhs, const reverse_iterator<IteratorR>& rhs) {
     return lhs.base() < rhs.base();
 }
@@ -11373,7 +11373,7 @@ inline bool operator>(const reverse_iterator<IteratorL>& lhs, const reverse_iter
 /// @param lhs A reverse_iterator object.
 /// @param rhs A reverse_iterator object.
 /// @return true if `lhs` is greater than or equal to `rhs`, false otherwise.
-template <typename IteratorL, typename IteratorR>
+template<typename IteratorL, typename IteratorR>
 inline bool operator>=(const reverse_iterator<IteratorL>& lhs, const reverse_iterator<IteratorR>& rhs) {
     return lhs.base() <= rhs.base();
 }
@@ -11502,7 +11502,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @brief Utility traits type alias to detect constructible associative container types from a mapping node, e.g.,
 /// std::map or std::unordered_map.
 /// @tparam T A target type for detection.
-template <typename T>
+template<typename T>
 using is_constructible_mapping_type =
     conjunction<detect::has_key_type<T>, detect::has_mapped_type<T>, detect::has_value_type<T>>;
 
@@ -11510,7 +11510,7 @@ using is_constructible_mapping_type =
 /// std::list.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam T A target type for detection.
-template <typename BasicNodeType, typename T>
+template<typename BasicNodeType, typename T>
 using is_constructible_sequence_type = conjunction<
     negation<is_basic_node<T>>, detect::has_iterator<T>, detect::is_iterator_traits<typename T::iterator>,
     detect::has_begin_end<T>, negation<std::is_same<T, typename BasicNodeType::mapping_type>>,
@@ -11518,14 +11518,14 @@ using is_constructible_sequence_type = conjunction<
 
 /// @brief Utility traits type alias to detect a sequence container adapter type, e.g., std::stack or std::queue.
 /// @tparam T A target type for detection.
-template <typename T>
+template<typename T>
 using is_sequence_container_adapter = conjunction<
     negation<is_basic_node<T>>, detect::has_container_type<T>, detect::has_value_type<T>,
     negation<detect::has_key_type<T>>>;
 
 /// @brief Helper struct for reserve() member function call switch for types which do not have reserve function.
 /// @tparam ContainerType A container type.
-template <typename ContainerType, typename = void>
+template<typename ContainerType, typename = void>
 struct call_reserve_if_available {
     /// @brief Do nothing since ContainerType does not have reserve function.
     static void call(ContainerType& /*unused*/, typename ContainerType::size_type /*unused*/) {
@@ -11534,7 +11534,7 @@ struct call_reserve_if_available {
 
 /// @brief Helper struct for reserve() member function call switch for types which have reserve function.
 /// @tparam ContainerType A container type.
-template <typename ContainerType>
+template<typename ContainerType>
 struct call_reserve_if_available<ContainerType, enable_if_t<detect::has_reserve<ContainerType>::value>> {
     /// @brief Call reserve function on the ContainerType object with a given size.
     /// @param c A container object.
@@ -11553,7 +11553,7 @@ struct call_reserve_if_available<ContainerType, enable_if_t<detect::has_reserve<
 /// @tparam N Size of the array.
 /// @param n A basic_node object.
 /// @param array An array object.
-template <typename BasicNodeType, typename T, std::size_t N>
+template<typename BasicNodeType, typename T, std::size_t N>
 inline auto from_node(const BasicNodeType& n, T (&array)[N])
     -> decltype(n.get_value_inplace(std::declval<T&>()), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -11574,7 +11574,7 @@ inline auto from_node(const BasicNodeType& n, T (&array)[N])
 /// @tparam N1 Size of the inner dimension.
 /// @param n A basic_node object.
 /// @param array An array object.
-template <typename BasicNodeType, typename T, std::size_t N0, std::size_t N1>
+template<typename BasicNodeType, typename T, std::size_t N0, std::size_t N1>
 inline auto from_node(const BasicNodeType& n, T (&array)[N0][N1])
     -> decltype(n.get_value_inplace(std::declval<T&>()), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -11598,7 +11598,7 @@ inline auto from_node(const BasicNodeType& n, T (&array)[N0][N1])
 /// @tparam N2 Size of the innermost dimension.
 /// @param n A basic_node object.
 /// @param array An array object.
-template <typename BasicNodeType, typename T, std::size_t N0, std::size_t N1, std::size_t N2>
+template<typename BasicNodeType, typename T, std::size_t N0, std::size_t N1, std::size_t N2>
 inline auto from_node(const BasicNodeType& n, T (&array)[N0][N1][N2])
     -> decltype(n.get_value_inplace(std::declval<T&>()), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -11622,7 +11622,7 @@ inline auto from_node(const BasicNodeType& n, T (&array)[N0][N1][N2])
 /// @tparam N Size of std::array.
 /// @param n A basic_node object.
 /// @param arr A std::array object.
-template <typename BasicNodeType, typename T, std::size_t N>
+template<typename BasicNodeType, typename T, std::size_t N>
 inline auto from_node(const BasicNodeType& n, std::array<T, N>& arr)
     -> decltype(n.get_value_inplace(std::declval<T&>()), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -11641,7 +11641,7 @@ inline auto from_node(const BasicNodeType& n, std::array<T, N>& arr)
 /// @tparam T Element type of std::valarray.
 /// @param n A basic_node object.
 /// @param va A std::valarray object.
-template <typename BasicNodeType, typename T>
+template<typename BasicNodeType, typename T>
 inline auto from_node(const BasicNodeType& n, std::valarray<T>& va)
     -> decltype(n.get_value_inplace(std::declval<T&>()), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -11664,7 +11664,7 @@ inline auto from_node(const BasicNodeType& n, std::valarray<T>& va)
 /// @tparam Alloc Allocator type of std::forward_list.
 /// @param n A basic_node object.
 /// @param fl A std::forward_list object.
-template <typename BasicNodeType, typename T, typename Alloc>
+template<typename BasicNodeType, typename T, typename Alloc>
 inline auto from_node(const BasicNodeType& n, std::forward_list<T, Alloc>& fl)
     -> decltype(n.template get_value<T>(), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -11747,7 +11747,7 @@ inline auto from_node(const BasicNodeType& n, SeqContainerAdapter& ca)
 /// @tparam Allocator Allocator type for destination mapping object.
 /// @param n A node object.
 /// @param m Mapping container object to store converted key/value objects.
-template <typename BasicNodeType, typename CompatMapType, enable_if_t<is_constructible_mapping_type<CompatMapType>::value, int> = 0>
+template<typename BasicNodeType, typename CompatMapType, enable_if_t<is_constructible_mapping_type<CompatMapType>::value, int> = 0>
 inline auto from_node(const BasicNodeType& n, CompatMapType& m)
     -> decltype(
         std::declval<const BasicNodeType&>().template get_value<typename CompatMapType::key_type>(),
@@ -11772,7 +11772,7 @@ inline auto from_node(const BasicNodeType& n, CompatMapType& m)
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @param n A node object.
 /// @param null Storage for a null value.
-template <typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline void from_node(const BasicNodeType& n, std::nullptr_t& null) {
     // to ensure the target node value type is null.
     if FK_YAML_UNLIKELY (!n.is_null()) {
@@ -11785,7 +11785,7 @@ inline void from_node(const BasicNodeType& n, std::nullptr_t& null) {
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @param n A node object.
 /// @param b Storage for a boolean value.
-template <typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline void from_node(const BasicNodeType& n, bool& b) {
     switch (n.get_type()) {
     case node_type::NULL_OBJECT:
@@ -11829,7 +11829,7 @@ struct from_node_int_helper {
 /// @brief Helper struct for node-to-int conversion if IntType is not the node's integer value type.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam IntType Target integer value type (different from BasicNodeType::integer_type)
-template <typename BasicNodeType, typename IntType>
+template<typename BasicNodeType, typename IntType>
 struct from_node_int_helper<BasicNodeType, IntType, false> {
     /// @brief Convert node's integer value to non-uint64_t integer types.
     /// @param n A node object.
@@ -11926,7 +11926,7 @@ struct from_node_float_helper {
 /// @brief Helper struct for node-to-float conversion if IntType is not the node's floating point value type.
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @tparam FloatType Target floating point value type (different from BasicNodeType::float_number_type)
-template <typename BasicNodeType, typename FloatType>
+template<typename BasicNodeType, typename FloatType>
 struct from_node_float_helper<BasicNodeType, FloatType, false> {
     /// @brief Convert node's floating point value to the target floating point type.
     /// @param n A node object.
@@ -11997,7 +11997,7 @@ inline void from_node(const BasicNodeType& n, FloatType& f) {
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @param n A basic_node object.
 /// @param s A string node value object.
-template <typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline void from_node(const BasicNodeType& n, typename BasicNodeType::string_type& s) {
     if FK_YAML_UNLIKELY (!n.is_string()) {
         throw type_error("The target node value type is not string type.", n.get_type());
@@ -12034,7 +12034,7 @@ inline void from_node(const BasicNodeType& n, CompatibleStringType& s) {
 /// @tparam U The second type of the std::pair.
 /// @param n A basic_node object.
 /// @param p A std::pair object.
-template <typename BasicNodeType, typename T, typename U, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, typename T, typename U, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline auto from_node(const BasicNodeType& n, std::pair<T, U>& p)
     -> decltype(std::declval<const BasicNodeType&>().template get_value<T>(), std::declval<const BasicNodeType&>().template get_value<U>(), void()) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
@@ -12053,7 +12053,7 @@ inline auto from_node(const BasicNodeType& n, std::pair<T, U>& p)
 /// @param n A basic_node object
 /// @param _ Index sequence values (unused).
 /// @return A std::tuple object converted from the sequence node values.
-template <typename BasicNodeType, typename... Types, std::size_t... Idx>
+template<typename BasicNodeType, typename... Types, std::size_t... Idx>
 inline std::tuple<Types...> from_node_tuple_impl(const BasicNodeType& n, index_sequence<Idx...> /*unused*/) {
     return std::make_tuple(n.at(Idx).template get_value<Types>()...);
 }
@@ -12064,7 +12064,7 @@ inline std::tuple<Types...> from_node_tuple_impl(const BasicNodeType& n, index_s
 /// @tparam ...Types Value types of std::tuple.
 /// @param n A basic_node object.
 /// @param t A std::tuple object.
-template <typename BasicNodeType, typename... Types, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, typename... Types, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline void from_node(const BasicNodeType& n, std::tuple<Types...>& t) {
     if FK_YAML_UNLIKELY (!n.is_sequence()) {
         throw type_error("The target node value type is not sequence type.", n.get_type());
@@ -12082,7 +12082,7 @@ inline void from_node(const BasicNodeType& n, std::tuple<Types...>& t) {
 /// @tparam T A value type of the std::optional.
 /// @param n A basic_node object.
 /// @param o A std::optional object.
-template <typename BasicNodeType, typename T, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, typename T, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline auto from_node(const BasicNodeType& n, std::optional<T>& o) -> decltype(n.template get_value<T>(), void()) {
     try {
         o.emplace(n.template get_value<T>());
@@ -12106,7 +12106,7 @@ struct from_node_fn {
     /// @param n A basic_node object.
     /// @param val A target object assigned from the basic_node object.
     /// @return decltype(from_node(n, std::forward<T>(val))) void by default. User can set it to some other type.
-    template <typename BasicNodeType, typename T>
+    template<typename BasicNodeType, typename T>
     auto operator()(const BasicNodeType& n, T&& val) const
         noexcept(noexcept(from_node(n, std::forward<T>(val)))) -> decltype(from_node(n, std::forward<T>(val))) {
         return from_node(n, std::forward<T>(val));
@@ -12177,16 +12177,16 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 /// @warning All the specialization must call n.m_value.destroy() first in the construct function to avoid
 /// memory leak.
 /// @tparam node_type The resulting YAML node value type.
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 struct external_node_constructor {
-    template <typename... Args>
+    template<typename... Args>
     static void sequence(BasicNodeType& n, Args&&... args) {
         destroy(n);
         n.m_attrs |= node_attr_bits::seq_bit;
         n.m_value.p_seq = create_object<typename BasicNodeType::sequence_type>(std::forward<Args>(args)...);
     }
 
-    template <typename... Args>
+    template<typename... Args>
     static void mapping(BasicNodeType& n, Args&&... args) {
         destroy(n);
         n.m_attrs |= node_attr_bits::map_bit;
@@ -12217,7 +12217,7 @@ struct external_node_constructor {
         n.m_value.float_val = f;
     }
 
-    template <typename... Args>
+    template<typename... Args>
     static void string_scalar(BasicNodeType& n, Args&&... args) {
         destroy(n);
         n.m_attrs |= node_attr_bits::string_bit;
@@ -12283,7 +12283,7 @@ inline void to_node(BasicNodeType& n, CompatSeqType&& s) {
 /// @tparam U The second type of std::pair.
 /// @param n A basic_node object.
 /// @param p A std::pair object.
-template <typename BasicNodeType, typename T, typename U>
+template<typename BasicNodeType, typename T, typename U>
 inline void to_node(BasicNodeType& n, const std::pair<T, U>& p) {
     n = {p.first, p.second};
 }
@@ -12295,7 +12295,7 @@ inline void to_node(BasicNodeType& n, const std::pair<T, U>& p) {
 /// @param n A basic_node object.
 /// @param t A std::tuple object.
 /// @param _ An index sequence. (unused)
-template <typename BasicNodeType, typename... Types, std::size_t... Idx>
+template<typename BasicNodeType, typename... Types, std::size_t... Idx>
 inline void to_node_tuple_impl(BasicNodeType& n, const std::tuple<Types...>& t, index_sequence<Idx...> /*unused*/) {
     n = {std::get<Idx>(t)...};
 }
@@ -12305,7 +12305,7 @@ inline void to_node_tuple_impl(BasicNodeType& n, const std::tuple<Types...>& t, 
 /// @tparam BasicNodeType A basic_node template instance type.
 /// @param n A basic_node object.
 /// @param _ A std::tuple object. (unused)
-template <typename BasicNodeType>
+template<typename BasicNodeType>
 inline void to_node(BasicNodeType& n, const std::tuple<>& /*unused*/) {
     n = BasicNodeType::sequence();
 }
@@ -12316,7 +12316,7 @@ inline void to_node(BasicNodeType& n, const std::tuple<>& /*unused*/) {
 /// @tparam ...RestTypes The rest value types of std::tuple. (maybe empty)
 /// @param n A basic_node object.
 /// @param t A std::tuple object.
-template <typename BasicNodeType, typename FirstType, typename... RestTypes>
+template<typename BasicNodeType, typename FirstType, typename... RestTypes>
 inline void to_node(BasicNodeType& n, const std::tuple<FirstType, RestTypes...>& t) {
     to_node_tuple_impl(n, t, index_sequence_for<FirstType, RestTypes...> {});
 }
@@ -12364,7 +12364,7 @@ inline void to_node(BasicNodeType& n, CompatMapType&& m) {
 /// @brief to_node function for null objects.
 /// @tparam BasicNodeType A mapping node value type.
 /// @tparam NullType This must be std::nullptr_t type
-template <typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline void to_node(BasicNodeType& n, std::nullptr_t /*unused*/) {
     external_node_constructor<BasicNodeType>::null_scalar(n, nullptr);
 }
@@ -12374,7 +12374,7 @@ inline void to_node(BasicNodeType& n, std::nullptr_t /*unused*/) {
 /// @tparam T A boolean scalar node value type.
 /// @param n A basic_node object.
 /// @param b A boolean scalar node value object.
-template <typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
+template<typename BasicNodeType, enable_if_t<is_basic_node<BasicNodeType>::value, int> = 0>
 inline void to_node(BasicNodeType& n, typename BasicNodeType::boolean_type b) noexcept {
     external_node_constructor<BasicNodeType>::boolean_scalar(n, b);
 }
@@ -12428,7 +12428,7 @@ struct to_node_fn {
     /// @param n A basic_node object.
     /// @param val A target object assigned to the basic_node object.
     /// @return decltype(to_node(n, std::forward<T>(val))) void by default. User can set it to some other type.
-    template <typename BasicNodeType, typename T>
+    template<typename BasicNodeType, typename T>
     auto operator()(BasicNodeType& n, T&& val) const
         noexcept(noexcept(to_node(n, std::forward<T>(val)))) -> decltype(to_node(n, std::forward<T>(val))) {
         return to_node(n, std::forward<T>(val));
@@ -12464,7 +12464,7 @@ FK_YAML_NAMESPACE_BEGIN
 /// @brief An ADL friendly converter between basic_node objects and native data objects.
 /// @tparam ValueType A default target data type.
 /// @sa https://fktn-k.github.io/fkYAML/api/node_value_converter/
-template <typename ValueType, typename>
+template<typename ValueType, typename>
 class node_value_converter {
 public:
     /// @brief Convert a YAML node value into compatible native data.
@@ -12473,7 +12473,7 @@ public:
     /// @param n A basic_node object.
     /// @param val A native data object.
     /// @sa https://fktn-k.github.io/fkYAML/api/node_value_converter/from_node/
-    template <typename BasicNodeType, typename TargetType = ValueType>
+    template<typename BasicNodeType, typename TargetType = ValueType>
     static auto from_node(BasicNodeType&& n, TargetType& val) noexcept(
         noexcept(::fkyaml::from_node(std::forward<BasicNodeType>(n), val)))
         -> decltype(::fkyaml::from_node(std::forward<BasicNodeType>(n), val), void()) {
@@ -12486,7 +12486,7 @@ public:
     /// @param n A basic_node object.
     /// @param val A native data object.
     /// @sa https://fktn-k.github.io/fkYAML/api/node_value_converter/to_node/
-    template <typename BasicNodeType, typename TargetType = ValueType>
+    template<typename BasicNodeType, typename TargetType = ValueType>
     static auto to_node(BasicNodeType& n, TargetType&& val) noexcept(noexcept(::fkyaml::to_node(
         n, std::forward<TargetType>(val)))) -> decltype(::fkyaml::to_node(n, std::forward<TargetType>(val))) {
         ::fkyaml::to_node(n, std::forward<TargetType>(val));
@@ -12697,9 +12697,9 @@ FK_YAML_NAMESPACE_BEGIN
 /// @brief A class to store value of YAML nodes.
 /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/
 template <
-    template <typename, typename...> class SequenceType, template <typename, typename, typename...> class MappingType,
+    template<typename, typename...> class SequenceType, template<typename, typename, typename...> class MappingType,
     typename BooleanType, typename IntegerType, typename FloatNumberType, typename StringType,
-    template <typename, typename = void> class ConverterType>
+    template<typename, typename = void> class ConverterType>
 class basic_node {
 public:
     /// @brief A type for sequence basic_node values.
@@ -12773,7 +12773,7 @@ public:
 
     /// @brief A helper alias to determine converter type for the given target native data type.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/value_converter_type/
-    template <typename T, typename SFINAE>
+    template<typename T, typename SFINAE>
     using value_converter_type = ConverterType<T, SFINAE>;
 
     /// @brief Definition of node value types.
@@ -12795,13 +12795,13 @@ public:
     using const_map_range = fkyaml::detail::map_range_proxy<const basic_node>;
 
 private:
-    template <typename BasicNodeType>
+    template<typename BasicNodeType>
     friend struct fkyaml::detail::external_node_constructor;
 
-    template <typename BasicNodeType>
+    template<typename BasicNodeType>
     friend class fkyaml::detail::basic_deserializer;
 
-    template <typename BasicNodeType>
+    template<typename BasicNodeType>
     friend class fkyaml::detail::basic_serializer;
 
     /// @brief A type for YAML docs deserializers.
@@ -13079,7 +13079,7 @@ public:
     /// @param[in] input An input source in the YAML format.
     /// @return The resulting basic_node object deserialized from the input source.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/deserialize/
-    template <typename InputType>
+    template<typename InputType>
     static basic_node deserialize(InputType&& input) {
         return deserializer_type().deserialize(detail::input_adapter(std::forward<InputType>(input)));
     }
@@ -13093,7 +13093,7 @@ public:
     /// @param[in] end An iterator to the past-the-last element of an input sequence.
     /// @return The resulting basic_node object deserialized from the pair of iterators.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/deserialize/
-    template <typename ItrType>
+    template<typename ItrType>
     static basic_node deserialize(ItrType begin, ItrType end) {
         return deserializer_type().deserialize(
             detail::input_adapter(std::forward<ItrType>(begin), std::forward<ItrType>(end)));
@@ -13104,7 +13104,7 @@ public:
     /// @param[in] input An input source in the YAML format.
     /// @return The resulting basic_node objects deserialized from the input.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/deserialize_docs/
-    template <typename InputType>
+    template<typename InputType>
     static std::vector<basic_node> deserialize_docs(InputType&& input) {
         return deserializer_type().deserialize_docs(detail::input_adapter(std::forward<InputType>(input)));
     }
@@ -13115,7 +13115,7 @@ public:
     /// @param[in] end An iterator to the past-the-last element of an input sequence.
     /// @return The resulting basic_node objects deserialized from the pair of iterators.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/deserialize_docs/
-    template <typename ItrType>
+    template<typename ItrType>
     static std::vector<basic_node> deserialize_docs(ItrType&& begin, ItrType&& end) {
         return deserializer_type().deserialize_docs(
             detail::input_adapter(std::forward<ItrType>(begin), std::forward<ItrType>(end)));
@@ -13310,7 +13310,7 @@ public:
     /// @param key A key to the target value in a sequence/mapping node.
     /// @return The value associated with the given key, or a default basic_node object associated with the given key.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/operator[]/
-    template <typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
+    template<typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
     basic_node& operator[](KeyType&& key) {
         if FK_YAML_UNLIKELY (is_scalar()) {
             throw fkyaml::type_error("operator[] is unavailable for a scalar node.", get_type());
@@ -13336,7 +13336,7 @@ public:
     /// @param key A key to the target value in a sequence/mapping node.
     /// @return The value associated with the given key, or a default basic_node object associated with the given key.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/operator[]/
-    template <typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
+    template<typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
     const basic_node& operator[](KeyType&& key) const {
         if FK_YAML_UNLIKELY (is_scalar()) {
             throw fkyaml::type_error("operator[] is unavailable for a scalar node.", get_type());
@@ -13735,7 +13735,7 @@ public:
     /// @param key A key to the target basic_node object in a sequence/mapping node.
     /// @return Reference to the basic_node object associated with the given key.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/at/
-    template <typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
+    template<typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
     basic_node& at(KeyType&& key) {
         basic_node& act_node = resolve_reference();
         if FK_YAML_UNLIKELY (act_node.is_scalar_impl()) {
@@ -13771,7 +13771,7 @@ public:
     /// @param key A key to the target basic_node object in a sequence/mapping node.
     /// @return Constant reference to the basic_node object associated with the given key.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/at/
-    template <typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
+    template<typename KeyType, detail::enable_if_t<detail::is_basic_node<KeyType>::value, int> = 0>
     const basic_node& at(KeyType&& key) const {
         const basic_node& act_node = resolve_reference();
         if FK_YAML_UNLIKELY (act_node.is_scalar_impl()) {
@@ -13978,7 +13978,7 @@ public:
     /// @tparam T A compatible value type.
     /// @param value_ref A storage into which the conversion result is filled.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/get_value_inplace/
-    template <typename T>
+    template<typename T>
     void get_value_inplace(T& value_ref) const
         noexcept(noexcept(std::declval<const basic_node&>().template get_value_impl<T>(std::declval<T&>()))) {
         resolve_reference().get_value_impl(value_ref);
@@ -14029,7 +14029,7 @@ public:
     /// @tparam ReferenceType Reference type to the target YAML node value.
     /// @return Reference to the internally stored YAML node value.
     /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/get_value_ref/
-    template <typename ReferenceType, detail::enable_if_t<std::is_reference<ReferenceType>::value, int> = 0>
+    template<typename ReferenceType, detail::enable_if_t<std::is_reference<ReferenceType>::value, int> = 0>
     FK_YAML_DEPRECATED("Since 0.4.3; Use one of as_seq(), as_map(), as_bool(), as_int(), as_float() or as_str()")
     ReferenceType get_value_ref() {
         return get_value_ref_impl(static_cast<detail::add_pointer_t<ReferenceType>>(nullptr));
@@ -14437,7 +14437,7 @@ private:
         ConverterType<ValueType, void>::from_node(*this, v);
     }
 
-    template <typename ValueType, detail::enable_if_t<detail::is_basic_node<ValueType>::value, int> = 0>
+    template<typename ValueType, detail::enable_if_t<detail::is_basic_node<ValueType>::value, int> = 0>
     void get_value_impl(ValueType& v) const {
         v = *this;
     }
@@ -14543,9 +14543,9 @@ private:
 /// @param[in] rhs A right-side-hand basic_node object to be swapped with.
 /// @sa https://fktn-k.github.io/fkYAML/api/swap/
 template <
-    template <typename, typename...> class SequenceType, template <typename, typename, typename...> class MappingType,
+    template<typename, typename...> class SequenceType, template<typename, typename, typename...> class MappingType,
     typename BooleanType, typename IntegerType, typename FloatNumberType, typename StringType,
-    template <typename, typename = void> class ConverterType>
+    template<typename, typename = void> class ConverterType>
 inline void swap(
     basic_node<SequenceType, MappingType, BooleanType, IntegerType, FloatNumberType, StringType, ConverterType>& lhs,
     basic_node<SequenceType, MappingType, BooleanType, IntegerType, FloatNumberType, StringType, ConverterType>&
@@ -14559,9 +14559,9 @@ inline void swap(
 /// @return Reference to the output stream object `os`.
 /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/insertion_operator/
 template <
-    template <typename, typename...> class SequenceType, template <typename, typename, typename...> class MappingType,
+    template<typename, typename...> class SequenceType, template<typename, typename, typename...> class MappingType,
     typename BooleanType, typename IntegerType, typename FloatNumberType, typename StringType,
-    template <typename, typename = void> class ConverterType>
+    template<typename, typename = void> class ConverterType>
 inline std::ostream& operator<<(
     std::ostream& os,
     const basic_node<SequenceType, MappingType, BooleanType, IntegerType, FloatNumberType, StringType, ConverterType>&
@@ -14578,9 +14578,9 @@ inline std::ostream& operator<<(
 /// @return Reference to the input stream object `is`.
 /// @sa https://fktn-k.github.io/fkYAML/api/basic_node/extraction_operator/
 template <
-    template <typename, typename...> class SequenceType, template <typename, typename, typename...> class MappingType,
+    template<typename, typename...> class SequenceType, template<typename, typename, typename...> class MappingType,
     typename BooleanType, typename IntegerType, typename FloatNumberType, typename StringType,
-    template <typename, typename = void> class ConverterType>
+    template<typename, typename = void> class ConverterType>
 inline std::istream& operator>>(
     std::istream& is,
     basic_node<SequenceType, MappingType, BooleanType, IntegerType, FloatNumberType, StringType, ConverterType>& n) {
@@ -14657,9 +14657,9 @@ FK_YAML_NAMESPACE_END
 namespace std {
 
 template <
-    template <typename, typename...> class SequenceType, template <typename, typename, typename...> class MappingType,
+    template<typename, typename...> class SequenceType, template<typename, typename, typename...> class MappingType,
     typename BooleanType, typename IntegerType, typename FloatNumberType, typename StringType,
-    template <typename, typename = void> class ConverterType>
+    template<typename, typename = void> class ConverterType>
 // NOLINTNEXTLINE(cert-dcl58-cpp)
 struct hash<fkyaml::basic_node<
     SequenceType, MappingType, BooleanType, IntegerType, FloatNumberType, StringType, ConverterType>> {

@@ -15,10 +15,10 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  template<class result_t>
+  template<typename result_t>
   class delegate;
   
-  template<class result_t, class ...arguments_t>
+  template<typename result_t, typename ...arguments_t>
   class delegate<result_t(arguments_t...)>;
   /// @endcond
   
@@ -52,7 +52,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
-  template<class result_t>
+  template<typename result_t>
   class delegate<result_t()> : public xtd::object, public xtd::iequatable<delegate<result_t() >> {
     struct data {
       std::vector<std::function <result_t()>> functions;
@@ -98,14 +98,14 @@ namespace xtd {
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, class object2_t >
+    template < class object1_t, typename object2_t >
     delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
     }
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, class object2_t >
+    template < class object1_t, typename object2_t >
     delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
     }
@@ -390,7 +390,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
-  template < class result_t, class ...arguments_t >
+  template < class result_t, typename ...arguments_t >
   class delegate < result_t(arguments_t...) > : public object, public xtd::iequatable < delegate<result_t(arguments_t...) >> {
     struct data {
       std::vector < std::function < result_t()>> no_arguments_functions;
@@ -446,7 +446,7 @@ namespace xtd {
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, class object2_t >
+    template < class object1_t, typename object2_t >
     delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
     }
@@ -454,109 +454,109 @@ namespace xtd {
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, class object2_t >
+    template < class object1_t, typename object2_t >
     delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
     }
     /// @}
     
     /// @cond
-    template < class object1_t, class object2_t, class a1_t >
+    template < class object1_t, typename object2_t, typename a1_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1)));
     }
     
-    template < class object1_t, class object2_t, class a1_t >
+    template < class object1_t, typename object2_t, typename a1_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t) const) {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5 >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5 >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5 >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5 >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5)) {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t, class a8_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t, class a8_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t, class a8_t, class a9_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t, class a8_t, class a9_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t, class a8_t, class a9_t, class a10_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
     }
     
-    template < class object1_t, class object2_t, class a1_t, class a2_t, class a3_t, class a4_t, class A5, class a6_t, class a7_t, class a8_t, class a9_t, class a10_t >
+    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t >
     delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t)) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
     }

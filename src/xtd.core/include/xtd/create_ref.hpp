@@ -19,7 +19,7 @@ namespace xtd {
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::ref](https://en.cppreference.com/w/cpp/utility/functional/ref).
-  template<class type_t>
+  template<typename type_t>
   ref<type_t> create_ref(type_t& arg) noexcept {return ref<type_t> {arg};}
   /// @brief xtd::new_uptr operator. This operator creates a xtd::ref object.
   /// @par Library
@@ -34,6 +34,6 @@ namespace xtd {
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::ref](https://en.cppreference.com/w/cpp/utility/functional/ref).
-  template<class type_t>
+  template<typename type_t>
   ref<type_t> create_ref(ref<type_t> arg) noexcept {return arg;}
 }

@@ -78,7 +78,7 @@ namespace xtd {
       /// @name Public Metdods
       
       /// @{
-      template<class type_t>
+      template<typename type_t>
       auto as(const xtd::string& key) const -> type_t {
         if constexpr (std::floating_point<type_t>) return xtd::as<type_t>(as_floating_point(key));
         else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return xtd::as<type_t>(xtd::is<integer_type>(nodes_[key]) ? xtd::as<int64>(nodes_[key]) : xtd::as<uint64>(nodes_[key]));
@@ -100,7 +100,7 @@ namespace xtd {
 
       auto contains_key(const xtd::string& key) const noexcept -> bool;
       
-      template<class type_t>
+      template<typename type_t>
       auto is(const xtd::string& key) const -> bool {
         if (!contains_key(key)) return false;
         if constexpr (std::floating_point<type_t>) return is_floating_point(key) && xtd::box_floating_point<type_t>::is_valid(as_floating_point(key));

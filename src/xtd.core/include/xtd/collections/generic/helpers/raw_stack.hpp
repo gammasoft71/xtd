@@ -39,7 +39,7 @@ namespace xtd {
         /// q.pop();
         /// println(q.front();) // 1
         /// @endcode
-        template<class type_t, class container_t = std::deque<type_t>>
+        template<typename type_t, typename container_t = std::deque<type_t>>
         class raw_stack final : public std::stack<type_t, container_t> {
         public:
           /// @name Public Aliases
@@ -82,11 +82,11 @@ namespace xtd {
           /// @tparam input_iterator_t Input iterator type.
           /// @param first Iterator to the first element.
           /// @param last Iterator past the last element.
-          template<class input_iterator_t>
+          template<typename input_iterator_t>
           raw_stack(input_iterator_t first, input_iterator_t last) : base_type(first, last) {shrink_to_fit();}
           
           /// @brief Constructs a stack with a specific allocator.
-          template<class allocator_t>
+          template<typename allocator_t>
           explicit raw_stack(const allocator_t& alloc) : base_type(alloc) {shrink_to_fit();}
           /// @}
           
@@ -210,16 +210,16 @@ namespace xtd {
         /// @cond
         // Deduction guides for xtd::collections::generic::helpers::raw_stack
         // {
-        template<class container_t>
+        template<typename container_t>
         raw_stack(container_t) -> raw_stack<typename container_t::value_type, container_t>;
         
-        template<class container_t, class allocator_t>
+        template<typename container_t, typename allocator_t>
         raw_stack(container_t, allocator_t) -> raw_stack<typename container_t::value_type, container_t>;
         
         template< class input_iterator_t>
         raw_stack(input_iterator_t, input_iterator_t) -> raw_stack<typename std::iterator_traits<input_iterator_t>::value_type>;
         
-        template< class input_iterator_t, class allocator_t>
+        template< class input_iterator_t, typename allocator_t>
         raw_stack(input_iterator_t, input_iterator_t, allocator_t) -> raw_stack<typename std::iterator_traits<input_iterator_t>::value_type, std::deque<typename std::iterator_traits<input_iterator_t>::value_type, allocator_t>>;
         // }
         /// @endcond

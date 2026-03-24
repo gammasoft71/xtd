@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief Internal comparable operators definition.
     /// @par Definition
     /// ```cpp
-    /// template<class type_t, class stringable_t>
+    /// template<typename type_t, typename stringable_t>
     /// class stream_insertion_operator
     /// ```
     /// @par Header
@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core extensions
     /// @warning Internal use only for xtd::istringable interfece.
-    template<class type_t, class stringable_t>
+    template<typename type_t, typename stringable_t>
     class stream_insertion_operator {
     public:
       /// @name Public Operators

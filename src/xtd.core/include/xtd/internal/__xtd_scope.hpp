@@ -14,7 +14,7 @@
 #define __xtd_scope_cat__(name, line) name##line
 #define __xtd_scope_id__(name, line) __xtd_scope_cat__(name, line)
 
-template<class function_t>
+template<typename function_t>
 struct __xtd_scope_exit_object__ {
   __xtd_scope_exit_object__(function_t&& f) : function(std::forward<function_t>(f)) {}
   ~__xtd_scope_exit_object__() { function(); }

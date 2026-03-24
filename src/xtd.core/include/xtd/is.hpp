@@ -12,43 +12,43 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  template<class value_t>
+  template<typename value_t>
   inline bool is(bool value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(char value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(char16 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(char32 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(char8 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(wchar value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(decimal value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(double value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(float value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(sbyte value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(int16 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(int32 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(int64 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(slong value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(xtd::byte value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(uint16 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(uint32 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(uint64 value) {return false;}
-  template<class value_t>
+  template<typename value_t>
   inline bool is(xtd::ulong value) {return false;}
   /// @endcond
   
@@ -480,7 +480,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class type_t>
+  template<typename type_t>
   bool is(xtd::any value) {
     try {
       xtd::any_cast<type_t>(value);
@@ -522,7 +522,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class type_t, class param_t>
+  template<typename type_t, typename param_t>
   bool is(const param_t* value) {
     try {
       if (value == nullptr) return false;
@@ -542,7 +542,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class type_t, class param_t>
+  template<typename type_t, typename param_t>
   bool is(const param_t& value) {
     return is<type_t>(&value);
   }
@@ -557,7 +557,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class type_t, class param_t>
+  template<typename type_t, typename param_t>
   requires (std::is_polymorphic_v<type_t> && std::is_polymorphic_v<param_t> && !std::is_null_pointer_v<type_t>)
   bool is(param_t* value) {
     if (value == nullptr) return false;
@@ -565,14 +565,14 @@ namespace xtd {
   }
 
   /// @cond
-  template<class type_t, class param_t>
+  template<typename type_t, typename param_t>
   requires ((!std::is_polymorphic_v<type_t> || !std::is_polymorphic_v<param_t>) && !std::is_null_pointer_v<type_t>)
   bool is(param_t* value) {
     if (value == nullptr) return false;
     return typeid(type_t).name() == typeid(param_t).name();
   }
   
-  template<class type_t, class param_t>
+  template<typename type_t, typename param_t>
   requires std::is_null_pointer_v<type_t>
   bool is(param_t* value) {
     return value == nullptr;
@@ -589,7 +589,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class type_t, class param_t>
+  template<typename type_t, typename param_t>
   bool is(param_t& value) {
     return is<type_t>(&value);
   }
@@ -604,7 +604,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type, class current_type>
+  template<typename new_type, typename current_type>
   bool is(xtd::sptr<current_type>& value) {
     auto result = std::dynamic_pointer_cast<new_type>(value.pointer());
     if (result) return true;

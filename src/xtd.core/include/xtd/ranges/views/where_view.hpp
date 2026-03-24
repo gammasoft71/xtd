@@ -42,7 +42,7 @@ namespace xtd {
       /// The following example shows how to use xtd::ranges::views::where_view class :
       /// @include ranges_views_where2.cpp
       class where_view {
-        template <typename predicate_t>
+        template<typename predicate_t>
         struct with_predicate {
           const predicate_t& predicate;
           
@@ -66,7 +66,7 @@ namespace xtd {
         /// @brief Filters a sequence of values based on a predicate.
         /// @tparam range_t The type of the elements of source.
         /// @param predicate A function to test each element for a condition.
-        template <typename predicate_t>
+        template<typename predicate_t>
         auto operator()(const predicate_t& predicate) const {return with_predicate {predicate};}
         
         /// @brief Applies a filter on the given range using the pipe operator.

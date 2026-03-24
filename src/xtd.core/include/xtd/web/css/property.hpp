@@ -34,7 +34,7 @@ namespace xtd {
         
         /// @{
         [[nodiscard]] auto value() const noexcept -> const xtd::string& {return value_;}
-        template<class value_t>
+        template<typename value_t>
         [[nodiscard]] auto value() const noexcept -> value_t {return xtd::parse<value_t>(value_);}
         /// @}
         
@@ -55,7 +55,7 @@ namespace xtd {
         [[nodiscard]] auto to_uint32() const -> xtd::uint32 {return xtd::parse<xtd::uint32>(value_);}
         [[nodiscard]] auto to_uint64() const -> xtd::uint64 {return xtd::parse<xtd::uint64>(value_);}
         [[nodiscard]] auto to_uintptr() const -> xtd::uintptr {return xtd::parse<xtd::uintptr>(value_);}
-        template<class value_t>
+        template<typename value_t>
         [[nodiscard]] auto to() const -> value_t {return xtd::parse<value_t>(value_);}
         /// @}
         

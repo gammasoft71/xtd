@@ -40,7 +40,7 @@ namespace xtd {
       /// @brief Create a xtd::threading::lock_guard object and acquires an exclusive lock_guard on the specified obj.
       /// @param obj The object on which to acquire the mutex lock_guard.
       /// @remarks When the xtd::threading::lock_guard destroyed it releases the exclusive lock_guard specified in the constructor.
-      template<class object_t>
+      template<typename object_t>
       explicit lock_guard(const object_t& obj) : lock_guard {reinterpret_cast<xtd::intptr>(&obj)} {}
       
       /// @brief Create a xtd::threading::lock_guard object and acquires an exclusive lock_guard on the specified string.

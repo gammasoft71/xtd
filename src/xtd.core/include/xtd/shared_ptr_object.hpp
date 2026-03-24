@@ -26,7 +26,7 @@ namespace xtd {
   /// console::write_line("version = {}", version->to_string());
   /// delete_shared_ptr_object(version); // Not mandatory.
   /// @endcode
-  template<class type_t>
+  template<typename type_t>
   class shared_ptr_object : public xtd::object, public xtd::icomparable<shared_ptr_object<type_t>>, public xtd::iequatable<shared_ptr_object<type_t >> {
   public:
     /// @name Public Aliases
@@ -63,15 +63,15 @@ namespace xtd {
     shared_ptr_object(const shared_ptr_object& value) noexcept : ptr_ {value.ptr_} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified pointer.
     /// @param value The pointer.
-    template<class pointer_t>
+    template<typename pointer_t>
     explicit shared_ptr_object(pointer_t* ptr) noexcept : ptr_ {ptr} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object(shared_ptr_object<value_t>&& value) noexcept : ptr_ {std::move(value.ptr_)} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object(const shared_ptr_object<value_t>& value) noexcept : ptr_ {value.ptr_} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
@@ -81,19 +81,19 @@ namespace xtd {
     shared_ptr_object(base_type&& value) noexcept : ptr_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object(const std::shared_ptr<value_t>& value) noexcept : ptr_ {value} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified weak pointer object.
     /// @param value The weak pointer object.
-    template<class value_t>
+    template<typename value_t>
     explicit shared_ptr_object(const std::weak_ptr<value_t>& value) noexcept : ptr_ {value} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
-    template<class value_t, class deleter_t>
+    template<typename value_t, typename deleter_t>
     shared_ptr_object(xtd::unique_ptr_object<value_t, deleter_t>&& value) : ptr_ {std::move(value.pointer())} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
-    template<class value_t, class deleter_t>
+    template<typename value_t, typename deleter_t>
     shared_ptr_object(std::unique_ptr<value_t, deleter_t>&& value) : ptr_ {std::move(value)} {}
     /// @}
     
@@ -107,17 +107,17 @@ namespace xtd {
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The xtd::shared_ptr_object to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
-    template<class value_t>
+    template<typename value_t>
     bool owner_before(const shared_ptr_object<value_t>& other) const noexcept {return ptr_.owner_before(other.ptr_);}
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The xtd::shared_ptr_object::base_type to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
-    template<class value_t>
+    template<typename value_t>
     bool owner_before(const std::shared_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The std::weak_ptr to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
-    template<class value_t>
+    template<typename value_t>
     bool owner_before(const std::weak_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
     
     /// @brief Returns the underlying base type pointer.
@@ -171,7 +171,7 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param ptr The pointer to assign the current object. It can be null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    template<class pointer_t>
+    template<typename pointer_t>
     void reset(pointer_t* ptr) noexcept {ptr_.reset(ptr);}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param null The null pointer.
@@ -225,7 +225,7 @@ namespace xtd {
     
     /// @brief Assignment operator with specified xtd::shared_ptr_object value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object& operator =(shared_ptr_object<value_t>&& value) noexcept {
       ptr_ = std::move(value.ptr_);
       return *this;
@@ -233,7 +233,7 @@ namespace xtd {
     
     /// @brief Assignment operator with specified xtd::shared_ptr_object value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object& operator =(const shared_ptr_object<value_t>& value) noexcept {
       ptr_ = value.ptr_;
       return *this;
@@ -241,7 +241,7 @@ namespace xtd {
     
     /// @brief Assignment operator with specified std::shared_ptr value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object& operator =(std::shared_ptr<value_t>&& value) noexcept {
       ptr_ = std::move(value);
       return *this;
@@ -249,7 +249,7 @@ namespace xtd {
     
     /// @brief Assignment operator with specified std::shared_ptr value.
     /// @param value The value to assign.
-    template<class value_t>
+    template<typename value_t>
     shared_ptr_object& operator =(const std::shared_ptr<value_t>& value) noexcept {
       ptr_ = value;
       return *this;
@@ -282,25 +282,25 @@ namespace xtd {
     /// @}
     
   private:
-    template<class other_t>
+    template<typename other_t>
     friend class shared_ptr_object;
     base_type ptr_;
   };
   
-  template<class type_t>
+  template<typename type_t>
   inline const shared_ptr_object<type_t>  shared_ptr_object<type_t>::empty;
   /// @}
   
   /// @cond
   // Deduction guides for xtd::reference_wrapper_object
   // {
-  template<class type_t>
+  template<typename type_t>
   shared_ptr_object(type_t*) -> shared_ptr_object<type_t>;
-  template<class type_t>
+  template<typename type_t>
   shared_ptr_object(std::weak_ptr<type_t>()) -> shared_ptr_object<type_t>;
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   shared_ptr_object(xtd::unique_ptr_object<type_t, deleter_t>()) -> shared_ptr_object<type_t>;
-  template<class type_t, class deleter_t>
+  template<typename type_t, typename deleter_t>
   shared_ptr_object(std::unique_ptr<type_t, deleter_t>()) -> shared_ptr_object<type_t>;
   // }
 }

@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief Represents a collection of keys and values.
       /// @par Definition
       /// ```cpp
-      /// template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      /// template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       /// class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
@@ -63,7 +63,7 @@ namespace xtd {
       /// for (const auto& [key, value] : my_dictionary)
       ///   console::write_line("key = {}, value = {}", key, value);
       /// ```
-      template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>
+      template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>
       class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
         /// @name Public Aliases
@@ -245,7 +245,7 @@ namespace xtd {
         /// dictionary(init.begin(), init.end())
         /// ```
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
-        template < class init_key_t, class init_value_t >
+        template < class init_key_t, typename init_value_t >
         explicit dictionary(std::initializer_list < key_value_pair < init_key_t, init_value_t>> init) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -543,7 +543,7 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
-        template < class init_key_t, class init_value_t >
+        template < class init_key_t, typename init_value_t >
         auto operator =(std::initializer_list < key_value_pair < init_key_t, init_value_t>> ilist) -> dictionary& {
           data_->items.clear();
           for (const auto& [key, value] : ilist)
@@ -617,16 +617,16 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::dictionary
       // {
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       dictionary(idictionary < key_t, value_t >) -> dictionary<key_t, value_t>;
       
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       dictionary(ienumerable < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template < class input_iterator_t >

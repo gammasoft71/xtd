@@ -28,7 +28,7 @@ namespace xtd {
       /// @param test_class The test_class that will contians the test cleanup attribute.
       /// @param method The test cleanup method.
       /// @param stack_frame The stack frame of test cleanup method.
-      template<class test_class_t>
+      template<typename test_class_t>
       test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) noexcept {test_class.add_test_cleanup({name, method, stack_frame});}
       /// @}
     };
@@ -44,6 +44,6 @@ namespace xtd {
 #define test_cleanup_(method_name) \
   __##method_name##_unused() = delete; \
   struct __test_cleanup_attribute : xtd::tunit::test_cleanup_attribute { \
-    template<class test_class> __test_cleanup_attribute(test_class& test) : test_cleanup_attribute(#method_name, test, &test_class::method_name) {} \
+    template<typename test_class> __test_cleanup_attribute(test_class& test) : test_cleanup_attribute(#method_name, test, &test_class::method_name) {} \
   } __test_cleanup_attribute {*this}; \
   static void method_name()

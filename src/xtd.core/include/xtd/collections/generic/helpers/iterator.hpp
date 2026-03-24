@@ -27,7 +27,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template <class input_iterator_t>
+        template<typename input_iterator_t>
         using iterator_value_t = typename std::iterator_traits<input_iterator_t>::value_type;
         
         /// @brief Represents the key iterator type.
@@ -40,7 +40,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template <class input_iterator_t>
+        template<typename input_iterator_t>
         using iterator_key_t = std::remove_const_t<std::tuple_element_t<0, iterator_value_t<input_iterator_t>>>;
         
         /// @brief Represents the mapped iterator type.
@@ -53,7 +53,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template <class input_iterator_t>
+        template<typename input_iterator_t>
         using iterator_mapped_t = std::tuple_element_t<1, iterator_value_t<input_iterator_t>>;
         
         /// @brief Represents the iterator to allocator type.

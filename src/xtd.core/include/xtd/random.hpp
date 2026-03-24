@@ -34,7 +34,7 @@ namespace xtd {
   /// @par Notes to Callers
   /// The implementation of the random number generator in the random class is not guaranteed to remain the same across major versions of the xtd. As a result, your application code should not assume that the same seed will result in the same pseudo-random sequence in different versions of the xtd.
   /// @par Notes to Inheritors
-  /// In xtd, the behavior of the random::next(), random::next(int32, int32), and next_bytes methods have changed so that these methods do not necessarily call the derived class implementation of the sample method. As a result, classes derived from Random that target the xtd should also virtual these three methods.
+  /// In xtd, the behavior of the random::next(), random::next(int32, int32), and next_bytes methods have changed so that these methods do not necessarily call the derived class implementation of the sample method. As a result, typenamees derived from Random that target the xtd should also virtual these three methods.
   /// @par Examples
   /// The following example creates a single random number generator and calls its next_bytes, next, and next_double methods to generate sequences of random numbers within different ranges.
   /// @include random2.cpp
@@ -81,7 +81,7 @@ namespace xtd {
     /// @brief Creates an array populated with items chosen at random from the provided set of choices.
     /// @param choices Set of choices.
     /// @param length The length of the populated array.
-    template<class value_t>
+    template<typename value_t>
     xtd::array<value_t> get_items(const xtd::read_only_span<value_t>& choices, xtd::size length) {
       auto result = array<value_t>(length);
       auto span_result = span<value_t>(result);
@@ -91,14 +91,14 @@ namespace xtd {
     /// @brief Creates an array populated with items chosen at random from the provided set of choices.
     /// @param choices Set of choices.
     /// @param length The length of the populated array.
-    template<class value_t>
+    template<typename value_t>
     xtd::array<value_t> get_items(const xtd::array<value_t>& choices, xtd::size length) {
       return get_items(read_only_span<value_t>(choices), length);
     }
     /// @brief Fills the elements of a specified span with items chosen at random from the provided set of choices.
     /// @param choices Set of choices.
     /// @param destination The elements to fill.
-    template<class value_t>
+    template<typename value_t>
     void get_items(const xtd::read_only_span<value_t>& choices, xtd::span<value_t>& destination) {
       for (auto& item : destination)
         item = choices[next(choices.length())];
@@ -109,7 +109,7 @@ namespace xtd {
     virtual int32 next() const;
     /// @brief Returns a nonnegative random number.
     /// @return A value_t greater than or equal to zero and less than std::numeric_limits<value_t>::max()
-    template<class value_t>
+    template<typename value_t>
     value_t next() const {
       return next(xtd::box_integer<value_t>::max_value);
     }
@@ -125,7 +125,7 @@ namespace xtd {
     /// @return A value_t greater than or equal to zero and less than max_value
     /// @exception argument_out_of_range_exception max_value is less than zero.
     /// @remarks The next(value_t) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
-    template<class value_t>
+    template<typename value_t>
     value_t next(value_t max_value) const {
       return static_cast<value_t>(next(value_t {}, max_value));
     }
@@ -145,7 +145,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception min_value is greater than max_value.
     /// @remarks The next(value_t, value_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
-    template<class value_t>
+    template<typename value_t>
     value_t next(value_t min_value, value_t max_value) const {
       if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (min_value == max_value) return min_value;
@@ -182,7 +182,7 @@ namespace xtd {
     /// @brief Fills the elements of a specified xtd::span of bytes with random numbers.
     /// @param buffer An xtd::span of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
-    template<class value_t>
+    template<typename value_t>
     void next_values(xtd::span<value_t>& buffer) const {
       for (auto index = 0_z; index < buffer.length(); ++index)
         buffer[index] = next<value_t>();
@@ -191,7 +191,7 @@ namespace xtd {
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
-    template<class value_t>
+    template<typename value_t>
     void next_values(xtd::array<value_t>& buffer) const {
       auto span_buffer = span<value_t> {buffer};
       next_values(span_buffer);
@@ -221,7 +221,7 @@ namespace xtd {
     
     /// @brief Performs an in-place shuffle of a span.
     /// @param values The span to shuffle.
-    template<class value_t>
+    template<typename value_t>
     xtd::span<value_t>& shuffle(xtd::span<value_t>& values) const {
       for (auto index = 0_z; index < values.length() - 1; ++index)
         std::swap(values[index], values[next(index, values.length())]);
@@ -229,7 +229,7 @@ namespace xtd {
     }
     /// @brief Performs an in-place shuffle of an array.
     /// @param values The array to shuffle.
-    template<class collection_t>
+    template<typename collection_t>
     collection_t& shuffle(collection_t& values) const {
       auto span_values = span<typename collection_t::value_type> {values};
       shuffle(span_values);
@@ -237,7 +237,7 @@ namespace xtd {
     }
     /// @brief Performs an in-place shuffle of an array.
     /// @param values The array to shuffle.
-    template<class collection_t>
+    template<typename collection_t>
     collection_t shuffle(const collection_t& values) const {
       auto result = values;
       shuffle(result);

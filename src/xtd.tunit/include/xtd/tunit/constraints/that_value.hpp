@@ -14,10 +14,10 @@ namespace xtd {
     namespace constraints {
       /// @cond
       class assert_value;
-      template<class actual_t> class operator_value;
+      template<typename actual_t> class operator_value;
       /// @endcond
       
-      template<class actual_t>
+      template<typename actual_t>
       class that_value : public actual_value<actual_t> {
       public:
         /// @name Public Methods
@@ -38,7 +38,7 @@ namespace xtd {
         
       private:
         friend class assert_value;
-        template<class value_t> friend class operator_value;
+        template<typename value_t> friend class operator_value;
       };
     }
   }

@@ -37,7 +37,7 @@ namespace xtd {
       /// @brief Create a xtd::threading::lock object and acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks When the xtd::threading::lock destroyed it releases the exclusive lock specified in the constructor.
-      template<class object_t>
+      template<typename object_t>
       explicit lock(const object_t& obj) : obj_(monitor::get_ptr(obj)) {monitor::enter_ptr(obj_);}
       /// @}
       

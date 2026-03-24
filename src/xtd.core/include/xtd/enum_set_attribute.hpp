@@ -13,7 +13,7 @@
 namespace xtd {
   /// @brief Provides the set attribute struct for enumerations.
   /// ```cpp
-  /// template<class enum_t>
+  /// template<typename enum_t>
   /// struct enum_set_attribute
   /// ```
   /// @par Header
@@ -32,7 +32,7 @@ namespace xtd {
   /// @par Examples
   /// The following code show how to use xtd::enum_set_attribute operator.
   /// @include format_enum_class_flags_without_helpers.cpp
-  template<class enum_t>
+  template<typename enum_t>
   struct enum_set_attribute {
     /// Allows to set attribute to an enumeration that can be used by xtd::enum_object.
     /// @return One of xtd::enum_attribute values.

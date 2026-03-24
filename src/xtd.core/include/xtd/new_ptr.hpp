@@ -20,14 +20,14 @@ namespace xtd {
   /// delete_ptr(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_ptr is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared).
-  template<class type_t, class ...args_t>
+  template<typename type_t, typename ...args_t>
   ptr<type_t> new_ptr(args_t&& ... args) {return ptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @cond
-  template<class type_t>
+  template<typename type_t>
   ptr<type_t> new_ptr(const type_t& arg) {return ptr<type_t> {new type_t(arg)};}
   
-  template<class type_t>
+  template<typename type_t>
   ptr<type_t> new_ptr() {return ptr<type_t>(new type_t);}
   /// @endcond
 }

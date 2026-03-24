@@ -20,14 +20,14 @@ namespace xtd {
   /// delete_uptr(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::make_unique](https://en.cppreference.com/w/cpp/memory/xtd::uptr/make_unique).
-  template<class type_t, class ...args_t>
+  template<typename type_t, typename ...args_t>
   uptr<type_t> new_uptr(args_t&& ... args) {return uptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @cond
-  template<class type_t>
+  template<typename type_t>
   uptr<type_t> new_uptr(const type_t& arg) {return uptr<type_t> {new type_t(arg)};}
   
-  template<class type_t>
+  template<typename type_t>
   uptr<type_t> new_uptr() {return uptr<type_t>(new type_t);}
   /// @endcond
 }

@@ -19,7 +19,7 @@ namespace xtd {
       /// @brief Represents a doubly linked list.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class linked_list : public xtd::object, public xtd::collections::generic::icollection <type_t>;
       /// ```
       /// @par Header
@@ -47,7 +47,7 @@ namespace xtd {
       /// @include ranges_views.cpp
       /// @par Performance considerations
       /// As xtd::collections::generic::linked_list <type_t> instantiates and uses only the methods of [std::list](https://en.cppreference.com/w/cpp/container/list), the performance of xtd::collections::generic::linked_list <type_t> is practically identical to that of [std::list](https://en.cppreference.com/w/cpp/container/list).
-      template<class type_t, class allocator_t>
+      template<typename type_t, typename allocator_t>
       class linked_list : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
         /// @name Public Aliases
@@ -441,10 +441,10 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::linked_list
       // {
-      template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
+      template < class type_t, typename allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
       linked_list(linked_list < type_t, allocator_t >&&) -> linked_list < type_t, allocator_t >;
       
-      template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
+      template < class type_t, typename allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
       linked_list(const list < type_t, allocator_t >&) -> linked_list < type_t, allocator_t >;
       
       template < class type_t>
@@ -459,7 +459,7 @@ namespace xtd {
       template < class type_t>
       linked_list(std::initializer_list < type_t >) -> linked_list < type_t >;
       
-      template <class input_iterator_t>
+      template<typename input_iterator_t>
       linked_list(input_iterator_t, input_iterator_t) -> linked_list<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond

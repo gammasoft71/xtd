@@ -10,7 +10,7 @@ namespace xtd {
   namespace tunit {
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
-      template<class actual_t>
+      template<typename actual_t>
       inline auto assume_that(const actual_t& actual) {return xtd::tunit::constraints::assume().that(actual);}
     }
   }

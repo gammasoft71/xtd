@@ -14,7 +14,7 @@ namespace xtd {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
       /// @cond
-      template <class type_t>
+      template<typename type_t>
       class ienumerable;
       /// @endcond
       
@@ -34,7 +34,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       class ienumerable_abstract {
       private:
-        template<class type_t>
+        template<typename type_t>
         friend class ienumerable;
         
         ienumerable_abstract() = default;

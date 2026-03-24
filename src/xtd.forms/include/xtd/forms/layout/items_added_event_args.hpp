@@ -12,7 +12,7 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
-      template<class item_t>
+      template<typename item_t>
       class items_added_event_args : public xtd::event_args {
       public:
         /// @name Public Consturctors

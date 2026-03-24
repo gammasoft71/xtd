@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief Represents a method that converts an object from one type to another type.
   /// ```cpp
-  /// template<class output_t, class input_t>
+  /// template<typename output_t, typename input_t>
   /// using converter = xtd::delegate<output_t(input_t input)>;
   /// ```
   /// @tparam input_t The type of object that is to be converted. This type parameter is contravariant. That is, you can use either the type you specified or any type that is less derived.
@@ -29,6 +29,6 @@ namespace xtd {
   /// @par Examples
   /// The following example defines a method named `point_f_to_point` that converts a xtd::drawing::point_f structure to a xtd::drawing::point structure. The example then creates a xtd::collections::generic::list <type_t> of xtd::drawing::point_f structures, creates a xtd::converter <point_f, point> delegate to represent the `point_f_to_point` method, and passes the delegate to the xtd::collections::generic::list::convert_all method. The xtd::collections::generic::list::convert_all method passes each element of the input list to the `point_f_to_point` method and puts the converted elements into a new list of Point structures. Both lists are displayed.
   /// @include generic_list_convert_all.cpp
-  template<class output_t, class input_t>
+  template<typename output_t, typename input_t>
   using converter = xtd::delegate<output_t(input_t input)>;
 }

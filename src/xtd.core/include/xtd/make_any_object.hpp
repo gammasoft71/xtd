@@ -22,14 +22,14 @@ namespace xtd {
   ///
   /// console::write_line("version = {}", ver.to_string());
   /// @endcode
-  template<class type_t, class ...args_t>
+  template<typename type_t, typename ...args_t>
   any_object make_any_object(args_t&& ... args) {return any_object {type_t(args...)};}
   
   /// @cond
-  template<class type_t>
+  template<typename type_t>
   any_object make_any_object(const type_t& arg) {return any_object {arg};}
   
-  template<class type_t>
+  template<typename type_t>
   any_object make_any_object() {return any_object {type_t()};}
   /// @endcond
 }

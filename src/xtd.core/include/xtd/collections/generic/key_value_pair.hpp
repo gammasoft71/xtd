@@ -20,7 +20,7 @@ namespace xtd {
     namespace generic {
       /// @brief Defines a key/value pair that can be set or retrieved.
       /// ```cpp
-      /// template<class key_t, class value_t>
+      /// template<typename key_t, typename value_t>
       /// struct key_value_pair : xtd::object, xtd::iequatable<key_value_pair<key_t, value_t>>;
       /// ```
       /// @par Header
@@ -33,7 +33,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
-      template <class key_t, class value_t>
+      template<typename key_t, typename value_t>
       struct key_value_pair : xtd::object, xtd::iequatable<key_value_pair<key_t, value_t>> {
         /// @name Public Aliases
         
@@ -62,7 +62,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified key and value.
         /// @param Key The object defined in each key/value pair
         /// @param value The definition associated with key
-        template <class key_type_t, class value_type_t>
+        template<typename key_type_t, typename value_type_t>
         key_value_pair(key_type_t&& key, value_type_t&& value) : first(std::move(key)), second(std::move(value)) {}
         /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified key and value.
         /// @param value The key and value of the key_value_pair<key_t, value_t>.
@@ -73,7 +73,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified first_args and second_args.
         /// @param first_args The tuple of constructor arguments to initialize the first element of this key_value_pair.
         /// @param second_args The tuple of constructor arguments to initialize the second element of this key_value_pair.
-        template<class... args1_t, class... args2_t>
+        template<typename... args1_t, typename... args2_t>
         key_value_pair(std::piecewise_construct_t, std::tuple<args1_t...> first_args, std::tuple<args2_t...> second_args) : first {first_args}, second {second_args} {}
         /// @}
         
@@ -155,7 +155,7 @@ namespace xtd {
         /// @param key The key of the key_value_pair.
         /// @param value The value of the key_value_pair.
         /// @return The key_value_pair value type.
-        template < class key_t, class value_t >
+        template < class key_t, typename value_t >
         static auto create(key_t key, value_t value) -> key_value_pair<key_t, value_t> {return key_value_pair < key_t, value_t > (key, value);}
         /// @}
       };
@@ -163,7 +163,7 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::key_value_pair
       // {
-      template < class key_t, class value_t >
+      template < class key_t, typename value_t >
       key_value_pair(key_t, value_t) -> key_value_pair < key_t, value_t >;
       // }
       /// @endcond

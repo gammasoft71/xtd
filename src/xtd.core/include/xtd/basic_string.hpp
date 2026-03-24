@@ -31,11 +31,11 @@
 #include <string>
 
 /// @cond
-template<class ...args_t>
+template<typename ...args_t>
 void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::array<__format_information<char >>& formats, args_t&&... args);
-template<class target_t, class source_t>
+template<typename target_t, typename source_t>
 std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
-template<class target_t, class source_t>
+template<typename target_t, typename source_t>
 std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept;
 std::basic_string<char> __xtd_demangle(const std::basic_string<char>& value) noexcept;
 std::basic_string<char> __xtd_get_class_name(const std::type_info& value) noexcept;
@@ -62,7 +62,7 @@ namespace xtd {
   /// | xtd::u32string | xtd::basic_string <xtd::char32> |
   /// | xtd::u8string  | xtd::basic_string <xtd::char8>  |
   /// | xtd::wstring   | xtd::basic_string <xtd::wchar>  |
-  template<class char_t, class traits_t, class allocator_t>
+  template<typename char_t, typename traits_t, typename allocator_t>
   class basic_string : public object, public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t >>, public xtd::collections::generic::ienumerable<char_t> {
   public:
     /// @name Public Aliases
@@ -314,7 +314,7 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring.
     /// @param first The first iterator of substring.
     /// @param last The first iterator of substring.
-    template<class input_iterator_t>
+    template<typename input_iterator_t>
     basic_string(input_iterator_t first, input_iterator_t last) : chars_(first, last) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified std::basic_string_view.
     /// @param str The std::basic_string_view string.
@@ -1093,7 +1093,7 @@ namespace xtd {
     /// @param obj_c The third object to concatenate.
     /// @param obj_d The fourth object to concatenate.
     /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
-    template<class object_a_t, class object_b_t, class object_c_t, class object_d_t>
+    template<typename object_a_t, typename object_b_t, typename object_c_t, typename object_d_t>
     [[nodiscard]] static auto concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept -> basic_string {return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);}
     /// @brief Concatenates three specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
@@ -1106,7 +1106,7 @@ namespace xtd {
     /// @param obj_b The second object to concatenate.
     /// @param obj_c The third object to concatenate.
     /// @return The concatenation of obj_a, obj_b and obj_c.
-    template<class object_a_t, class object_b_t, class object_c_t>
+    template<typename object_a_t, typename object_b_t, typename object_c_t>
     [[nodiscard]] static auto concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept -> basic_string {return format("{}{}{}", obj_a, obj_b, obj_c);}
     /// @brief Concatenates two specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
@@ -1117,7 +1117,7 @@ namespace xtd {
     /// @param obj_a The first object to concatenate.
     /// @param obj_b The second object to concatenate.
     /// @return The concatenation of obj_a and obj_b.
-    template<class object_a_t, class object_b_t>
+    template<typename object_a_t, typename object_b_t>
     [[nodiscard]] static auto concat(object_a_t obj_a, object_b_t obj_b) noexcept -> basic_string {return format("{}{}", obj_a, obj_b);}
     /// @brief Concatenates the elements of a specified basic_string array.
     /// @param values An array of basic_string instances.
@@ -1125,7 +1125,7 @@ namespace xtd {
     [[nodiscard]] static auto concat(const xtd::array<basic_string>& values) noexcept -> basic_string;
     /// @cond
     [[nodiscard]] static auto concat(const xtd::array<const_pointer>& values) noexcept -> basic_string;
-    template<class other_char_t>
+    template<typename other_char_t>
     [[nodiscard]] static auto concat(const xtd::array<const other_char_t*>& values) noexcept -> basic_string;
     [[nodiscard]] static auto concat(const std::initializer_list<basic_string>& values) noexcept -> basic_string {
       auto result = basic_string::empty_string;
@@ -1137,7 +1137,7 @@ namespace xtd {
       std::for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
       return result;
     }
-    template<class other_char_t>
+    template<typename other_char_t>
     [[nodiscard]] static auto concat(const std::initializer_list<const other_char_t*>& values) noexcept -> basic_string {
       auto result = basic_string::empty_string;
       std::for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
@@ -1147,10 +1147,10 @@ namespace xtd {
     /// @brief Concatenates the basic_string representations of the elements in a specified object array.
     /// @param args An object array that contains the elements to concatenate.
     /// @return The concatenated basic_string representations of the values of the elements in args.
-    template<class object_t>
+    template<typename object_t>
     [[nodiscard]] static auto concat(const xtd::array<object_t>& args) noexcept -> basic_string;
     /// @cond
-    template<class object_t>
+    template<typename object_t>
     [[nodiscard]] static auto concat(const std::initializer_list<object_t>& args) noexcept -> basic_string {
       basic_string result;
       for (const auto& arg : args)
@@ -1161,7 +1161,7 @@ namespace xtd {
     /// @brief Creates the basic_string representation of a specified object.
     /// @param value The object to represent.
     /// @return The basic_string representation of the value of arg.
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto concat(value_t value) noexcept -> basic_string {
       return format("{}", value);
     }
@@ -1202,7 +1202,7 @@ namespace xtd {
     /// @param b The second basic_string to compare.
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
-    template<class char_a_t, class char_b_t>
+    template<typename char_a_t, typename char_b_t>
     [[nodiscard]] static auto equals(const char_a_t* a, const char_b_t* b) noexcept -> bool {return basic_string {a}.equals(basic_string {b});}
     
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
@@ -1218,7 +1218,7 @@ namespace xtd {
     /// @param ignore_case `true` to ignore case when comparing this instance and value; otherwise, `false`
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
-    template<class char_a_t, class char_b_t>
+    template<typename char_a_t, typename char_b_t>
     [[nodiscard]] static auto equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept -> bool {return basic_string {a}.equals(basic_string {b}, ignore_case);}
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
@@ -1227,7 +1227,7 @@ namespace xtd {
     /// @return string formatted.
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
-    template<class ...args_t>
+    template<typename ...args_t>
     [[nodiscard]] static auto format(const basic_string<char>& fmt, args_t&& ... args) -> basic_string;
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
@@ -1237,7 +1237,7 @@ namespace xtd {
     /// @return string formatted.
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
-    template<class ...args_t>
+    template<typename ...args_t>
     [[nodiscard]] static auto format(const std::locale& loc, const basic_string<char>& fmt, args_t&& ... args) -> basic_string;
     
     /// @brief Indicates whether the specifeid basic_string is an empty basic_string ("").
@@ -1251,7 +1251,7 @@ namespace xtd {
     /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<class collection_t>
+    template<typename collection_t>
     [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values) noexcept -> basic_string {
       xtd::size i = 0;
       basic_string result;
@@ -1266,7 +1266,7 @@ namespace xtd {
     /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<class collection_t>
+    template<typename collection_t>
     [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values, xtd::size index) -> basic_string {return join(separator, values, index, values.size() - index);}
     /// @brief Concatenates a specified separator basic_string between each element of a specified Object array, yielding a single concatenated basic_string.
     /// @param separator A basic_string separator.
@@ -1276,7 +1276,7 @@ namespace xtd {
     /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<class collection_t>
+    template<typename collection_t>
     [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values, xtd::size index, xtd::size count) -> basic_string {
       if (index > values.size() || index + count > values.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       xtd::size i = 0;
@@ -1289,18 +1289,18 @@ namespace xtd {
     }
     
     /// @cond
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept -> basic_string;
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) -> basic_string;
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) -> basic_string;
     /// @endcond
     
     /// @brief Converts a basic_string into a value_t type.
     /// @param str Ax xtd::basic_string to convert to value_t
     /// @return The value_t object parsed.
-    template<class value_t>
+    template<typename value_t>
     [[nodiscard]] static auto parse(const basic_string& str) -> value_t {
       if constexpr(std::is_same_v<char, char_t>) return xtd::parse<value_t>(str.chars());
       else return xtd::parse<value_t>(__xtd_convert_to_string<char>(str.chars()));
@@ -1365,14 +1365,14 @@ namespace xtd {
     /// | L      |               |                        | long double     |       |          |       |                 |
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
     /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-    template<class ...args_t>
+    template<typename ...args_t>
     [[nodiscard]] static auto sprintf(const basic_string& fmt, args_t&& ... args) noexcept -> basic_string {return __sprintf(fmt.chars().c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Try to convert a basic_string into a value_t type.
     /// @param str An xtd::basic_string to convert to value_t
     /// @param value The value that will contain the parsed xtd::basic_string.
     /// @return `true` if xtd::basic_string:=:try_parse succed; otherwise, `false`.
-    template<class value_t>
+    template<typename value_t>
     static auto try_parse(const basic_string& str, value_t& value) noexcept -> bool {
       try {
         value = parse<value_t>(str);
@@ -2594,14 +2594,14 @@ namespace xtd {
     
     /// Name Public Deprecated Static Methods
     
-    template<class object_t>
+    template<typename object_t>
     [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.")]]
     [[nodiscard]] static auto class_name() -> basic_string {return get_class_name(full_class_name<object_t>());}
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
     /// @remarks For example, the name of the basic_string type is basic_string.
     /// @deprecated Replaced by typeof_(object).name() - Will be removed in version 0.4.0.
-    template<class object_t>
+    template<typename object_t>
     [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0.")]]
     [[nodiscard]] static auto class_name(const object_t& object) -> basic_string {return get_class_name(full_class_name(object));}
     /// @brief Gets the class name of the specified object.
@@ -2614,14 +2614,14 @@ namespace xtd {
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
     /// @deprecated Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.
-    template<class object_t>
+    template<typename object_t>
     [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.")]]
     [[nodiscard]] static auto full_class_name() -> basic_string {return demangle(typeid(object_t).name());}
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
     /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
     /// @deprecated Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.
-    template<class object_t>
+    template<typename object_t>
     [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.")]]
     [[nodiscard]] static auto full_class_name(const object_t& object) -> basic_string {return demangle(typeid(object).name());}
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
@@ -2642,7 +2642,7 @@ namespace xtd {
     static const xtd::array<value_type> default_split_separators;
     static const xtd::array<value_type> default_trim_chars;
     
-    template<class arg_t>
+    template<typename arg_t>
     [[nodiscard]] static auto convert_param(arg_t&& arg) noexcept {
       if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u16string>::value) return std::forward<arg_t>(arg).c_str();

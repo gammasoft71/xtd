@@ -17,7 +17,7 @@ namespace xtd {
       /// @brief Provides a base class for implementations of the xtd::collections::generic::icomparer <type_t> generic interface.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class comparer : public xtd::object, public xtd::collections::generic::icomparer<type_t>;
       /// ```
       /// @par Header
@@ -29,7 +29,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      template<class type_t>
+      template<typename type_t>
       class comparer : public xtd::object, public xtd::collections::generic::icomparer<type_t> {
       public:
         /// @name Public Aliases
@@ -83,7 +83,7 @@ namespace xtd {
       };
       
       /// @cond
-      template<class type_t>
+      template<typename type_t>
       inline const comparer<type_t> comparer<type_t>::default_comparer;
       /// @endcond
     }

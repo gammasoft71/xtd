@@ -49,7 +49,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
-  template<class type_t>
+  template<typename type_t>
   inline auto boxing(const type_t& value) noexcept {return typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.
@@ -65,7 +65,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
-  template<class type_t, class ...args_t>
+  template<typename type_t, typename ...args_t>
   inline box<type_t> boxing(args_t&& ...args) noexcept {return box<type_t>(args...);}
   /// @}
   
@@ -112,7 +112,7 @@ namespace xtd {
   inline single_object boxing(float& value) noexcept {return single_object(value);}
   inline double_object boxing(double& value) noexcept {return double_object(value);}
   inline decimal_object boxing(decimal& value) noexcept {return decimal_object(value);}
-  template<class value_t>
+  template<typename value_t>
   inline xtd::collections::generic::list<value_t> boxing(std::vector<value_t>&& value) noexcept {return std::move(value);}
   /// @endcond
 }

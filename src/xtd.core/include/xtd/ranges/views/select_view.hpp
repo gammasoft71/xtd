@@ -42,7 +42,7 @@ namespace xtd {
       /// The following example shows how to use xtd::ranges::views::select_view class :
       /// @include ranges_views_select2.cpp
       class select_view {
-        template <typename selector_t>
+        template<typename selector_t>
         struct with_selector {
           const selector_t& selector;
           
@@ -66,7 +66,7 @@ namespace xtd {
         /// @brief Projects each element of a sequence into a new form.
         /// @param selector A transform function to apply to each element.
         /// @return An iterable select elements from the source sequence.
-        template <typename selector_t>
+        template<typename selector_t>
         auto operator()(const selector_t& selector) const {return with_selector {selector};}
         
         /// @brief Applies a select projection on the given range using the pipe operator.

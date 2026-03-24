@@ -71,7 +71,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<class type_t>
+      template<typename type_t>
       emoticon(const xtd::string& name, std::initializer_list<type_t> codepoints) {
         create_data();
         name_(name);
@@ -79,7 +79,7 @@ namespace xtd {
           codepoints_().add(static_cast<char32>(codepoint));
       }
       
-      template<class type_t>
+      template<typename type_t>
       emoticon(const xtd::string& name, const xtd::array<type_t>& codepoints) {
         create_data();
         name_(name);
@@ -87,28 +87,28 @@ namespace xtd {
           codepoints_().add(static_cast<char32>(codepoint));
       }
       
-      template<class type_t>
+      template<typename type_t>
       emoticon(const xtd::string& name, type_t codepoint) {
         create_data();
         name_(name);
         codepoints_({static_cast<char32>(codepoint)});
       }
       
-      template<class type_t>
+      template<typename type_t>
       explicit emoticon(std::initializer_list<type_t> codepoints) {
         create_data();
         for (auto codepoint : codepoints)
           codepoints_().add(static_cast<char32>(codepoint));
       }
       
-      template<class type_t>
+      template<typename type_t>
       explicit emoticon(const xtd::array<type_t>& codepoints) {
         create_data();
         for (auto codepoint : codepoints)
           codepoints_().add(static_cast<char32>(codepoint));
       }
       
-      template<class type_t>
+      template<typename type_t>
       explicit emoticon(type_t codepoint) {
         create_data();
         codepoints_({static_cast<char32>(codepoint)});

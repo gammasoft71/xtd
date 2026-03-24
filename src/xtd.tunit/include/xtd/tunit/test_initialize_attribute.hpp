@@ -24,7 +24,7 @@ namespace xtd {
       /// @param test_class The test_class that will contians the test initialize attribute.
       /// @param method The test initialize method.
       /// @param stack_frame The stack frame of test initialize method.
-      template<class test_class_t>
+      template<typename test_class_t>
       test_initialize_attribute(const xtd::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) noexcept {test_class.add_test_initialize({name, method, stack_frame});}
       /// @}
     };
@@ -40,7 +40,7 @@ namespace xtd {
 #define test_initialize_(method_name) \
   __##method_name##_unused() = delete; \
   struct __test_initialize_attribute : xtd::tunit::test_initialize_attribute { \
-    template<class test_class> __test_initialize_attribute(test_class& test) : test_initialize_attribute(#method_name, test, &test_class::method_name) {} \
+    template<typename test_class> __test_initialize_attribute(test_class& test) : test_initialize_attribute(#method_name, test, &test_class::method_name) {} \
   } __test_initialize_attribute {*this}; \
   static void method_name()
 

@@ -32,7 +32,7 @@ namespace xtd {
     /// | xtd::text::u32string_builder | xtd::text::basic_string_builder <xtd::char32> |
     /// | xtd::text::u8string_builder  | xtd::text::basic_string_builder <xtd::char8>  |
     /// | xtd::text::wstring_builder   | xtd::text::basic_string_builder <xtd::wchar>  |
-    template<class char_t, class traits_t = std::char_traits<char_t>, class allocator_t = xtd::collections::generic::helpers::allocator<char_t >>
+    template<typename char_t, typename traits_t = std::char_traits<char_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<char_t >>
     class basic_string_builder final : public object, public xtd::iequatable<basic_string_builder<char_t, traits_t, allocator_t>> {
     public:
       /// @name Public Aliases
@@ -307,13 +307,13 @@ namespace xtd {
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified first and last iterators of substring.
       /// @param first The first iterator of substring.
       /// @param last The first iterator of substring.
-      template<class input_iterator_t>
+      template<typename input_iterator_t>
       basic_string_builder(input_iterator_t first, input_iterator_t last) : chars_(first, last) {}
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified first and last iterators of substring and allocator.
       /// @param first The first iterator of substring.
       /// @param last The first iterator of substring.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
-      template<class input_iterator_t>
+      template<typename input_iterator_t>
       basic_string_builder(input_iterator_t first, input_iterator_t last, const allocator_type & allocator) : chars_(first, last, allocator) {}
       
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified initializer list.
@@ -776,7 +776,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<class object_t>
+      template<typename object_t>
       auto append(object_t value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends additional characters to the string.
       /// @param count The number of characters to append.
@@ -855,7 +855,7 @@ namespace xtd {
       /// @remarks Appends characters in the range [`first`, `last`).
       /// @remarks This overload only participates in overload resolution if `input_iterator_t` qualifies as a [LegacyInputIterator](https://en.cppreference.com/w/cpp/named_req/InputIterator).
       /// @remarks The capacity of this instance is adjusted as needed.
-      template<class input_iterator_t>
+      template<typename input_iterator_t>
       auto append(input_iterator_t first, input_iterator_t last) -> basic_string_builder& {
         if (length() + std::distance(first, last) > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return append(basic_string_builder {first, last});
@@ -889,7 +889,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<class ...args_t>
+      template<typename ...args_t>
       auto append_format(const xtd::basic_string<char_t>& format, args_t&& ... args) -> basic_string_builder& {return append(xtd::basic_string<char_t>::format(format, std::forward<args_t>(args)...));}
       
       /// @brief Concatenates and appends the members of a collection, using the specified separator between each member.
@@ -900,7 +900,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<class collection_t>
+      template<typename collection_t>
       auto append_join(const xtd::basic_string<char_t>& separator, const collection_t& values) -> basic_string_builder& {return append(xtd::basic_string<char_t>::join(separator, values));}
       /// @brief Concatenates and appends the members of a collection, using the specified xtd::basic_string_builder::value_type separator between each member.
       /// @param separator The xtd::basic_string_builder::value_type to use as a separator. `separator` is included in the concatenated and appended strings only if `values` has more than one element.
@@ -910,13 +910,13 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<class collection_t>
+      template<typename collection_t>
       auto append_join(value_type separator, const collection_t& values) -> basic_string_builder& {return append(xtd::basic_string<char_t>::join(xtd::basic_string<char_t>(separator, 1), values));}
       
       /// @cond
-      template<class value_t>
+      template<typename value_t>
       auto append_join(const xtd::basic_string<char_t>& separator, const std::initializer_list<value_t>& values) -> basic_string_builder& {return append_join(separator, xtd::array<value_t>(values));}
-      template<class value_t>
+      template<typename value_t>
       auto append_join(value_type separator, const std::initializer_list<value_t>& values) -> basic_string_builder& {return append_join(separator, xtd::array<value_t>(values));}
       /// @endcond
       
@@ -1165,7 +1165,7 @@ namespace xtd {
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
       /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
-      template<class object_t>
+      template<typename object_t>
       auto insert(size_type index, object_t value) -> basic_string_builder& {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
       /// @brief Inserts characters into the string.
       /// @param index The position at which the content will be inserted.
@@ -1408,7 +1408,7 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Those characters are replaced with the characters in the range [`first2`, `last2`) as if by `replace(first, last, basic_string(first2, last2, get_allocator()))`.
       /// @remarks If [`begin()`, `first`) or [`first`, last`) is not a valid range, the behavior is undefined.
-      template<class input_iterator_t>
+      template<typename input_iterator_t>
       auto replace(const_iterator first, const_iterator last, input_iterator_t first2, input_iterator_t last2) -> basic_string_builder& {
         chars_.replace(first, last, first2, last2);
         return self_;

@@ -14,7 +14,7 @@ namespace xtd {
       /// @brief Exposes a method that compares two objects.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class icomparer interface_
       /// ```
       /// @par Header
@@ -26,7 +26,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections interfaces
-      template<class type_t>
+      template<typename type_t>
       class icomparer interface_ {
       public:
         /// @brief Compares two entities and returns a value indicating whether one is less than, equal to, or greater than the other.

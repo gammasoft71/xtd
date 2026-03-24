@@ -458,11 +458,11 @@ namespace xtd {
     /// @brief Writes the text representation of the specified value to the standard output stream.
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
-    template<class arg_t>
+    template<typename arg_t>
     static void write(arg_t&& value) {write_(xtd::string::format("{}",  value));}
     
     /// @cond
-    template<class type_t>
+    template<typename type_t>
     static void write(std::initializer_list<type_t>&& il) {write_(xtd::string::format("{}", il));}
     /// @endcond
     
@@ -470,7 +470,7 @@ namespace xtd {
     /// @tparam ...args_t Types of the values to write.
     /// @param fmt A composite format string.
     /// @param values Values to write,
-    template<class ...args_t>
+    template<typename ...args_t>
     static void write(const xtd::string& fmt, args_t&& ... values) {write_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     
     /// @brief Writes the current line terminator to the standard output stream using the specified format information.
@@ -479,11 +479,11 @@ namespace xtd {
     /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the standard output stream.
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
-    template<class arg_t>
+    template<typename arg_t>
     static void write_line(arg_t&& value) {write_line_(xtd::string::format("{}", value));}
     
     /// @cond
-    template<class type_t>
+    template<typename type_t>
     static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::string::format("{}", il));}
     /// @endcond
     
@@ -491,7 +491,7 @@ namespace xtd {
     /// @tparam ...args_t Types of the values to write.
     /// @param fmt A composite format string.
     /// @param values Values to write,
-    template<class ...args_t>
+    template<typename ...args_t>
     static void write_line(const xtd::string& fmt, args_t&& ... values) {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     /// @}
     

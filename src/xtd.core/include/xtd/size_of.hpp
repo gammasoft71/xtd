@@ -17,7 +17,7 @@ namespace xtd {
   /// xtd::size size2 = xtd::size_of(i);
   /// ```
   /// @remarks The size_of operator cannot be overloaded.
-  template<class type_t>
+  template<typename type_t>
   auto size_of() noexcept -> xtd::size {return sizeof(type_t);}
   /// @brief Used to obtain the size in bytes of the object representation of type or expression.
   /// @par Examples

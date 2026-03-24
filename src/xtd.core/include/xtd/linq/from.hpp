@@ -24,28 +24,28 @@ namespace xtd {
     /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
     /// @include linq_from3.cpp
     /// @see xtd::linq::enumerable::from methods for all overloads of xtd::linq::from.
-    template<class collection_t>
+    template<typename collection_t>
     [[nodiscard]] auto from(collection_t&& source) noexcept {
       return enumerable::as_enumerable(source);
     }
     /// @cond
-    template<class input_iterator_t>
+    template<typename input_iterator_t>
     [[nodiscard]] auto from(input_iterator_t first, input_iterator_t last) noexcept {
       return enumerable::as_enumerable(first, last);
     }
-    template<class source_t>
+    template<typename source_t>
     [[nodiscard]] auto from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
       return enumerable::as_enumerable(source);
     }
-    template<class source_t>
+    template<typename source_t>
     [[nodiscard]] auto from(const std::initializer_list<source_t>& source) noexcept {
       return enumerable::as_enumerable(source);
     }
-    template<class input_iterator_t>
+    template<typename input_iterator_t>
     [[nodiscard]] auto from(input_iterator_t iterator, size_t length) noexcept {
       return enumerable::as_enumerable(iterator, iterator + length);
     }
-    template<class source_t, size_t length>
+    template<typename source_t, size_t length>
     [[nodiscard]] auto from(const source_t (&array)[length]) noexcept {
       return enumerable::as_enumerable(array, array + length);
     }

@@ -15,7 +15,7 @@ namespace xtd {
       /// @brief Provides the base interface for the abstraction of sets.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class iset : public xtd::collections::generic::ienumerable<type_t>
       /// ```
       /// @par Header
@@ -29,7 +29,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections interfaces
       /// @include generic_iset.cpp
       /// @remarks This interface provides methods for implementing sets, which are collections that have unique elements and specific operations. The xtd::collections::generic::hash_set <type_t> and xtd::collections::generic::sorted_set <type_t> collections implement this interface.
-      template<class type_t>
+      template<typename type_t>
       class iset : public ienumerable<type_t> {
       public:
         /// @name Public Aliases

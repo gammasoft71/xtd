@@ -22,7 +22,7 @@ namespace xtd {
         /// @brief Internal enumerable iterators definition.
         /// @par Definition
         /// ```cpp
-        /// template<class type_t, class enumerable_t>
+        /// template<typename type_t, typename enumerable_t>
         /// class enumerable_iterators;
         /// ```
         /// @par Header
@@ -46,10 +46,10 @@ namespace xtd {
         ///   console::write_line(part);
         /// ```
         /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
-        template<class type_t, class enumerable_t>
+        template<typename type_t, typename enumerable_t>
         class enumerable_iterators {
           /// @cond
-          template<class iterator_enumerable_t>
+          template<typename iterator_enumerable_t>
           class enumerable_iterator : public xtd::icomparable<enumerable_iterator<iterator_enumerable_t>>, public xtd::iequatable<enumerable_iterator<iterator_enumerable_t >> {
           public:
             using value_type = type_t;
@@ -90,11 +90,11 @@ namespace xtd {
               return current;
             }
             
-            template<class value_t>
+            template<typename value_t>
             auto operator +(value_t value) const noexcept -> const enumerable_iterator {return enumerable_iterator {*enumerable_, pos_ + value};}
-            template<class value_t>
+            template<typename value_t>
             auto operator +(value_t value) noexcept -> enumerable_iterator {return enumerable_iterator {*enumerable_, pos_ + value};}
-            template<class value_t>
+            template<typename value_t>
             auto operator +=(value_t value) noexcept -> enumerable_iterator& {
               *this = *this + value;
               return *this;
@@ -176,7 +176,7 @@ namespace xtd {
           /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
-          template<class source_collection_t, class target_collection_t>
+          template<typename source_collection_t, typename target_collection_t>
           static auto to_const_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
@@ -194,7 +194,7 @@ namespace xtd {
           /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
-          template<class source_collection_t, class target_collection_t>
+          template<typename source_collection_t, typename target_collection_t>
           static auto to_const_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
@@ -212,7 +212,7 @@ namespace xtd {
           /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
-          template<class source_collection_t, class target_collection_t>
+          template<typename source_collection_t, typename target_collection_t>
           static auto to_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
@@ -230,7 +230,7 @@ namespace xtd {
           /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
-          template<class source_collection_t, class target_collection_t>
+          template<typename source_collection_t, typename target_collection_t>
           static auto to_iterator(typename source_collection_t::iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept -> typename target_collection_t::iterator {
             if (value == source_collection.begin()) return target_collection.begin();
             if (value == source_collection.end()) return target_collection.end();
@@ -248,7 +248,7 @@ namespace xtd {
           /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
-          template<class source_collection_t, class target_collection_t>
+          template<typename source_collection_t, typename target_collection_t>
           static auto to_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
@@ -266,7 +266,7 @@ namespace xtd {
           /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
-          template<class source_collection_t, class target_collection_t>
+          template<typename source_collection_t, typename target_collection_t>
           static auto to_iterator(typename source_collection_t::iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept -> typename target_collection_t::iterator {
             if (value == source_collection.begin()) return target_collection.begin();
             if (value == source_collection.end()) return target_collection.end();

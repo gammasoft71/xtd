@@ -24,7 +24,7 @@ namespace xtd {
       ///   auto result = xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).distinct().distinct();
       ///   return __xtd_range_view_adapter__<decltype(result)> {std::move(result)};
       /// }
-      template <typename range_t>
+      template<typename range_t>
       class __xtd_range_view_adapter__ : public xtd::istringable<__xtd_range_view_adapter__<range_t>> {
       public:
         explicit __xtd_range_view_adapter__(range_t&& range) : range(std::move(range)) {}

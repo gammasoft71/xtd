@@ -24,7 +24,7 @@ namespace xtd {
   /// @{
   /// @brief Provides the base class for enumerations.
   /// ```cpp
-  /// template<class enum_t = std::nullptr_t>
+  /// template<typename enum_t = std::nullptr_t>
   /// struct enum_object : xtd::object, xtd::icomparable<enum_object<enum_t>>, xtd::iequatable<enum_object<enum_t>>, xtd::iformatable;
   /// ```
   /// @par Inheritance
@@ -44,7 +44,7 @@ namespace xtd {
   /// @include enum_class.cpp
   /// The following code show how to use xtd::enum_object class for an enum flags.
   /// @include enum_class_flags.cpp
-  template<class enum_t = std::nullptr_t>
+  template<typename enum_t = std::nullptr_t>
   struct enum_object : xtd::object, xtd::icomparable<enum_object<enum_t>>, xtd::iequatable<enum_object<enum_t >>, xtd::iformatable {
     /// @name Public Aliases
     
@@ -128,7 +128,7 @@ namespace xtd {
     /// @brief Indicates whether the current object is equal to another object with defferent type.
     /// @param obj An object to compare with this object.
     /// @return Always return `false`.
-    template<class attribute_t>
+    template<typename attribute_t>
     bool equals(attribute_t value) const noexcept {return false;}
     
     /// @brief Serves as a hash function for a particular type.
@@ -311,7 +311,7 @@ namespace xtd {
       return str;
     }
     
-    template<class attribute_t>
+    template<typename attribute_t>
     static enum_type to_enum(attribute_t value) noexcept {return static_cast<enum_type>(value);}
     static int64 to_int(enum_type value) noexcept {return static_cast<int64>(value);}
     

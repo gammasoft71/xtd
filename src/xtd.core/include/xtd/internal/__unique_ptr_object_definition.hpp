@@ -11,7 +11,7 @@
 
 /// @cond
 namespace xtd {
-  template<class type_t, class deleter_t = std::default_delete<type_t>>
+  template<typename type_t, typename deleter_t = std::default_delete<type_t>>
   class unique_ptr_object;
 }
 /// @endcond

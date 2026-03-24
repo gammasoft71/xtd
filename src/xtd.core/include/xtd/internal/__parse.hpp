@@ -16,7 +16,7 @@
 #include <sstream>
 
 /// @cond
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __parse_remove_decorations(const std::basic_string<char_t>& s, xtd::number_styles styles) -> std::basic_string<char_t> {
   std::basic_string<char_t> str(s);
   if ((styles & xtd::number_styles::allow_leading_white) == xtd::number_styles::allow_leading_white) {
@@ -35,7 +35,7 @@ template<class char_t>
   return str;
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styles styles) -> int {
   int sign = 0;
   
@@ -71,7 +71,7 @@ template<class char_t>
   return sign;
 }
 
-template<class char_t>
+template<typename char_t>
 inline auto __parse_check_valid_characters(const std::basic_string<char_t>& str, xtd::number_styles styles) -> void {
   std::basic_string<char_t> valid_characters = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier) valid_characters.erase(2);
@@ -109,7 +109,7 @@ inline auto __parse_check_valid_characters(const std::basic_string<char_t>& str,
   }
 }
 
-template<class value_t, class char_t>
+template<typename value_t, typename char_t>
 [[nodiscard]] inline auto __parse_floating_point(const std::basic_string<char_t>& str, int sign, xtd::number_styles styles) -> value_t {
   long double result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
@@ -125,7 +125,7 @@ template<class value_t, class char_t>
   return static_cast<value_t>(result);
 }
 
-template<class value_t, class char_t>
+template<typename value_t, typename char_t>
 [[nodiscard]] inline auto __parse_signed(const std::basic_string<char_t>& str, int base, int sign, xtd::number_styles styles) -> value_t {
   long long result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
@@ -141,7 +141,7 @@ template<class value_t, class char_t>
   return static_cast<value_t>(result);
 }
 
-template<class value_t, class char_t>
+template<typename value_t, typename char_t>
 [[nodiscard]] inline auto __parse_unsigned(const std::basic_string<char_t>& str, int base, xtd::number_styles styles) -> value_t {
   unsigned long long result = 0;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
@@ -156,7 +156,7 @@ template<class value_t, class char_t>
   return static_cast<value_t>(result);
 }
 
-template<class value_t, class char_t>
+template<typename value_t, typename char_t>
 [[nodiscard]] inline auto __parse_floating_point_number(const std::basic_string<char_t>& s, xtd::number_styles styles, const std::locale& locale) -> value_t {
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "xtd::number_styles::binary_number not supported by floating point");
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "xtd::number_styles::octal_number not supported by floating point");
@@ -188,7 +188,7 @@ template<class value_t, class char_t>
   return static_cast<value_t>(result);
 }
 
-template<class value_t, class char_t>
+template<typename value_t, typename char_t>
 [[nodiscard]] inline auto __parse_number(const std::basic_string<char_t>& s, xtd::number_styles styles) -> value_t {
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
@@ -208,7 +208,7 @@ template<class value_t, class char_t>
   return __parse_signed<value_t>(str, base, sign, styles);
 }
 
-template<class value_t, class char_t>
+template<typename value_t, typename char_t>
 [[nodiscard]] inline auto __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::number_styles styles) -> value_t {
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
@@ -228,6 +228,6 @@ template<class value_t, class char_t>
   return __parse_unsigned<value_t>(str, base, styles);
 }
 
-template<class value_t>
+template<typename value_t>
 value_t __parse_enum(const std::string& str);
 /// @endcond

@@ -10,7 +10,7 @@ namespace xtd {
   /// @brief Type trait that determines whether a type can be inserted into an std::ostream using the stream insertion operator (`operator<<`).
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const value_t&>())>> : std::true_type {};
   /// ```
   /// @par Header
@@ -30,12 +30,12 @@ namespace xtd {
   /// @tparam value_t The type to test for stream insertability.
   /// @note This trait only checks syntactic validity of the insertion expression. It does not guarantee any particular semantic meaning or formatting quality of the output.
   /// @see is_stream_insertable_v
-  template<class value_t, class = void>
+  template<typename value_t, typename = void>
   struct is_stream_insertable : std::false_type {};
   /// @brief Specialization of is_stream_insertable for types that support stream insertion into std::ostream.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const xtd::raw_type<value_t>&>())>> : std::true_type {};
   /// ```
   /// @par Header
@@ -50,12 +50,12 @@ namespace xtd {
   /// This specialization is selected when `value_t` provides a valid `operator<<` overload compatible with `std::ostream`.
   /// @tparam value_t The type to test for stream insertability.
   /// @see is_stream_insertable_v
-  template<class value_t>
+  template<typename value_t>
   struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const xtd::raw_type<value_t>&>())>> : std::true_type {};
   /// @brief Specialization of is_stream_insertable for types that support stream insertion into std::ostream.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const xtd::raw_type<value_t>&>())>> : std::true_type {};
   /// ```
   /// @par Header
@@ -70,14 +70,14 @@ namespace xtd {
   /// This specialization is selected when `value_t` provides a valid `operator<<` overload compatible with `std::ostream`.
   /// @tparam value_t The type to test for stream insertability.
   /// @see is_stream_insertable_v
-  template<class value_t>
+  template<typename value_t>
   requires std::is_enum_v<xtd::raw_type<value_t>>
   struct is_stream_insertable<value_t> : std::false_type {};
   
   /// @brief Convenience variable template equivalent to `is_stream_insertable_v<value_t>::value`.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// inline constexpr bool is_stream_insertable_v = is_stream_insertable<xtd::raw_type<value_t>>::value;
   /// ```
   /// @par Header
@@ -96,6 +96,6 @@ namespace xtd {
   /// static_assert(!xtd::is_stream_insertable_v<std::vector<int>>);
   /// ```
   /// @see is_stream_insertable
-  template<class value_t>
+  template<typename value_t>
   inline constexpr bool is_stream_insertable_v = is_stream_insertable<xtd::raw_type<value_t>>::value;
 }

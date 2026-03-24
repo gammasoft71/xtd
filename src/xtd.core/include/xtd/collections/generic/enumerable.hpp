@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
       // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/collections/generic/enumerable.hpp
-      template<class type_t>
+      template<typename type_t>
       concept enumerable =
       requires {typename xtd::raw_type<type_t>::value_type;} &&
       std::derived_from<xtd::raw_type<type_t>, xtd::collections::generic::ienumerable<typename xtd::raw_type<type_t>::value_type>>;

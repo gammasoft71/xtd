@@ -13,7 +13,7 @@
 #include "../enum_collection.hpp"
 
 /// @cond
-template<class enum_t>
+template<typename enum_t>
 [[nodiscard]] auto __enum_definition_to_enum_collection__(const xtd::string& enum_definition) -> xtd::enum_collection<enum_t> {
   xtd::enum_collection<enum_t> entries;
   #if !defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)

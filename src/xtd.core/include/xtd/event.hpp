@@ -17,7 +17,7 @@ namespace xtd {
   /// @par Examples
   /// The following example cshow hot to use event.
   /// @include event.cpp
-  template<class object_t, class handler_t>
+  template<typename object_t, typename handler_t>
   class event : protected handler_t {
     friend object_t;
   public:
@@ -51,7 +51,7 @@ namespace xtd {
     /// @brief Adds a function to the event.
     /// @param function Function to add.
     /// @return The current event instance.
-    template<class fn_t>
+    template<typename fn_t>
     handler_t& operator +=(fn_t function) noexcept {
       return handler_t::operator +=(function);
     }
@@ -73,7 +73,7 @@ namespace xtd {
     /// @brief Removes a function to the event.
     /// @param function Function to remove.
     /// @return The current event instance.
-    template<class fn_t>
+    template<typename fn_t>
     handler_t& operator -=(fn_t function) noexcept {
       return handler_t::operator -=(function);
     }

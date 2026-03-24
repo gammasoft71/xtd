@@ -22,7 +22,7 @@ namespace xtd {
   /// @include istringable.cpp
   /// @remarks Types inheriting from xtd::object should not implement the xtd::istringable interface. For more info, see xtd::object::to_string Method.
   /// @remarks Implementing xtd::istringable<T> automatically enables stream insertion (operator<<) using the to_string() representation.
-  template<class type_t>
+  template<typename type_t>
   class istringable interface_, public extensions::stream_insertion_operator<type_t, istringable<type_t>> {
   public:
     /// @name Public Methods

@@ -16,14 +16,14 @@ namespace xtd {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
       /// @cond
-      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
       class linked_list;
       /// @endcond
       
       /// @brief Represents a node in a LinkedList<T>. This class cannot be inherited.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class linked_list_node final : public xtd::object;
       /// ```
       /// @par Header
@@ -39,7 +39,7 @@ namespace xtd {
       /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
       /// @include generic_linked_list_node.cpp
       /// @remarks Each element of the xtd::collections::generic::linked_list <type_t> collection has a virtual xtd::collections::generic::linked_list_node <type_t>. The xtd::collections::generic::linked_list_node <type_t> contains a value, a reference to the xtd::collections::generic::linked_list <type_t> that it belongs to, a reference to the next node, and a reference to the previous node.
-      template<class type_t>
+      template<typename type_t>
       class linked_list_node final : public xtd::object {
       public:
         /// @name Public Aliases

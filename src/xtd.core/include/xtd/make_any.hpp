@@ -17,7 +17,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @param args The arguments needed by type_t constructor.
   /// @return An xtd::any object created.
-  template<class type_t, class... args_t>
+  template<typename type_t, typename... args_t>
   xtd::any make_any(args_t&&... args) {
     return std::make_any<type_t>(std::forward<args_t>(args)...);
   }
@@ -35,7 +35,7 @@ namespace xtd {
   /// @param il The std::initializer_list needed by type_t constructor.
   /// @param args The arguments for type_t needed by constructor.
   /// @return An xtd::any object created.
-  template<class type_t, class il_type_t, class... args_t>
+  template<typename type_t, typename il_type_t, typename... args_t>
   xtd::any make_any(std::initializer_list<il_type_t> il, args_t&&... args) {
     return std::make_any<type_t>(il, std::forward<args_t>(args)...);
   }

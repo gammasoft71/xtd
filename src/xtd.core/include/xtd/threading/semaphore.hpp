@@ -140,7 +140,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<class char_t>
+      template<typename char_t>
       explicit semaphore(const char_t* name) : semaphore(string(name)) {}
       ~semaphore();
       /// @endcond

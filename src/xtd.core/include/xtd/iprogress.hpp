@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  template<class type_t>
+  template<typename type_t>
   /// @brief Defines a provider for progress updates.
   /// @par Namespace
   /// xtd

@@ -15,7 +15,7 @@ namespace xtd {
       /// @brief Represents a generic collection of key/value pairs.
       /// @par Definition
       /// ```cpp
-      /// template<class key_t, class value_t>
+      /// template<typename key_t, typename value_t>
       /// class idictionary : public xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>>;
       /// ```
       /// @par Header
@@ -40,7 +40,7 @@ namespace xtd {
       /// for (const auto& [key, value] : my_dictionary)
       ///   console::write_line("key = {}, value = {}", key, value);
       /// ```
-      template<class key_t, class value_t>
+      template<typename key_t, typename value_t>
       class idictionary : public xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>> {
       public:
         /// @name Public Aliases

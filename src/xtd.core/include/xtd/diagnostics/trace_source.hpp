@@ -106,7 +106,7 @@ namespace xtd {
       /// @param data The trace data.
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
-      template<class object_t>
+      template<typename object_t>
       auto trace_data(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const object_t& data) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
@@ -121,7 +121,7 @@ namespace xtd {
       /// @param data The trace data.
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
-      template<class object_t>
+      template<typename object_t>
       auto trace_data(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::array<object_t>& data) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
@@ -159,7 +159,7 @@ namespace xtd {
       /// @param id A numeric identifier for the event.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param args... An object array containing zero or more objects to format.
-      template<class ...objects>
+      template<typename ...objects>
       auto trace_event(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::string& format, const objects& ... args) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
@@ -179,7 +179,7 @@ namespace xtd {
       /// @param args... An array containing zero or more objects to format.
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
       /// @remarks trace_information(const std::string&, const Objects_t) calls the trace_event(const trace_eventType&, std::int32_t, const xtd::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, std::int32_t, xtd::string&, ...objects_t) method in turn calls the trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, std::int32_t, const xtd::string&, ...objects_t) method of each trace listener.
-      template<class ...objects_t>
+      template<typename ...objects_t>
       auto trace_information(const xtd::string& format, const objects_t& ... args) -> void {trace_event(trace_event_type::information, 0, format, args...);}
       
       /// @brief Writes a trace transfer message to the trace listeners in the listeners collection using the specified numeric identifier, message, and related activity identifier.
@@ -188,7 +188,7 @@ namespace xtd {
       /// @param related_activity_id A structure that identifies the related activity.
       /// @remarks The trace_transfer method calls the trace_transfer method of each trace listener in the listeners property to write the trace information. The default trace_transfer method in the base trace_listener class calls the trace_listener::trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, std::int32_t, const xtd::string&) method to process the call, setting event_type to trace_event_type::transfer and appending a string representation of the related_activity_id GUID to message.
       /// @remarks trace_transfer is intended to be used with the logical operations of a correlation_manager. The related_activity_id parameter relates to the activity_id property of a correlation_manager object. If a logical operation begins in one activity and transfers to another, the second activity logs the transfer by calling the trace_transfer method. The trace_transfer call relates the new activity identity to the previous identity. The most likely consumer of this functionality is a trace viewer that can report logical operations that span multiple activities.
-      template<class guid_t>
+      template<typename guid_t>
       auto trace_transfer(xtd::int32 id, const xtd::string& message, const  guid_t& related_activity_id) -> void {
         #if TRACE
         for (auto listener : listeners_)

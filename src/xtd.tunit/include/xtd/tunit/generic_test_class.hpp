@@ -21,8 +21,8 @@
 /// };
 /// ```
 #define generic_test_class_(class_name, ...) \
-  template<class type_t> \
+  template<typename type_t> \
   class class_name; \
   inline auto __register_##class_name = register_test_class_types<class_name, __VA_ARGS__> {}; \
-  template<class type_t> \
+  template<typename type_t> \
   class class_name : public test_class

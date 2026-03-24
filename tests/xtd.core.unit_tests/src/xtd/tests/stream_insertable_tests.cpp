@@ -5,11 +5,11 @@
 
 namespace xtd::tests {
   class test_class_(stream_insertable_tests) {
-    template<class value_t>
+    template<typename value_t>
     requires stream_insertable<value_t>
     [[nodiscard]] static auto is_stream_insertable(value_t&& value) noexcept -> bool {return true;}
     
-    template<class value_t>
+    template<typename value_t>
     requires (!stream_insertable<value_t>)
     [[nodiscard]] static auto is_stream_insertable(value_t&& value) noexcept -> bool {return false;}
     

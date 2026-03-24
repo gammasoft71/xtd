@@ -10,28 +10,28 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  template<class type_t, class bool_t>
+  template<typename type_t, typename bool_t>
   struct __enum_any_object__ {};
   
-  template<class type_t>
+  template<typename type_t>
   struct __enum_any_object__<type_t, std::true_type> {
     auto operator()(const any_object& o) const -> type_t {return as<enum_object<type_t>>(o.value());}
   };
   
-  template<class type_t>
+  template<typename type_t>
   struct __enum_any_object__<type_t, std::false_type> {
     auto operator()(const any_object& o) const -> type_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);}
   };
   
-  template<class type_t, class bool_t>
+  template<typename type_t, typename bool_t>
   struct __polymorphic_any_object__ {};
   
-  template<class type_t>
+  template<typename type_t>
   struct __polymorphic_any_object__<type_t, std::true_type> {
     auto operator()(const any_object& o) const -> type_t {return as<type_t>(o.value());}
   };
   
-  template<class type_t>
+  template<typename type_t>
   struct __polymorphic_any_object__<type_t, std::false_type> {
     auto operator()(const any_object& o) const -> type_t {return __enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
   };
@@ -55,7 +55,7 @@ namespace xtd {
   /// xtd::any value = true;
   /// bool result = as<bool>(value);
   /// ```
-  template<class type_t>
+  template<typename type_t>
   requires (!std::integral<type_t> || std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
@@ -63,7 +63,7 @@ namespace xtd {
   }
 
   /// @cond
-  template<class type_t>
+  template<typename type_t>
   requires (std::integral<type_t> && !std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(any_object& o) -> type_t {
     if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);
@@ -104,7 +104,7 @@ namespace xtd {
   /// xtd::any value = true;
   /// bool result = as<bool>(value);
   /// ```
-  template<class type_t>
+  template<typename type_t>
   requires (!std::integral<type_t> || std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(const any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
@@ -112,7 +112,7 @@ namespace xtd {
   }
  
   /// @cond
-  template<class type_t>
+  template<typename type_t>
   requires (std::integral<type_t> && !std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(const any_object& o) -> type_t {
     if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);

@@ -12,7 +12,7 @@
 
 
 /// @cond
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __boolean_formatter(const std::basic_string<char_t>& fmt, bool value, const std::locale& loc) -> std::basic_string<char_t> {
   if (fmt.empty()) return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
   

@@ -20,7 +20,7 @@ namespace xtd {
   /// delete_shared_ptr_object(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_shared_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared) with xtd::shared_ptr_object instead [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
-  template<class type_t, class ...args_t>
+  template<typename type_t, typename ...args_t>
   shared_ptr_object<type_t> new_shared_ptr_object(args_t&& ... args) {return shared_ptr_object<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @brief xtd::new_shared_ptr_object operator creates a xtd::shared_ptr_object object.
@@ -36,7 +36,7 @@ namespace xtd {
   /// delete_shared_ptr_object(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_shared_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared) with xtd::shared_ptr_object instead [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
-  template<class type_t>
+  template<typename type_t>
   shared_ptr_object<type_t> new_shared_ptr_object(const type_t& arg) {return shared_ptr_object<type_t> {new type_t(arg)};}
   
   /// @brief xtd::new_shared_ptr_object operator creates a xtd::shared_ptr_object object.
@@ -52,6 +52,6 @@ namespace xtd {
   /// delete_shared_ptr_object(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_shared_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared) with xtd::shared_ptr_object instead [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
-  template<class type_t>
+  template<typename type_t>
   shared_ptr_object<type_t> new_shared_ptr_object() {return shared_ptr_object<type_t>(new type_t);}
 }

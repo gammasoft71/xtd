@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading tasks
-      template<class result_t>
+      template<typename result_t>
       class task : public xtd::threading::tasks::basic_task<result_t> {
       public:
         struct promise_type {

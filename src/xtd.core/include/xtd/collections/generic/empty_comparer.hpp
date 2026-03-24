@@ -14,7 +14,7 @@ namespace xtd {
       /// @brief Provides an empty comparer class.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class empty_comparer : public xtd::object, public xtd::collections::generic::icomparer<type_t>;
       /// ```
       /// @par Header
@@ -26,7 +26,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      template<class type_t>
+      template<typename type_t>
       class empty_comparer : public object, public icomparer<type_t> {
       public:
         /// @name Public Constructors

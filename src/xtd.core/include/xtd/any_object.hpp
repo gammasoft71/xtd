@@ -35,15 +35,15 @@ namespace xtd {
     any_object() noexcept = default;
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<class type_t> // Can't be explicit by design.
+    template<typename type_t> // Can't be explicit by design.
     any_object(type_t&& value) noexcept : value_(boxing_ptr(std::forward<type_t>(value))) {}
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<class type_t> // Can't be explicit by design.
+    template<typename type_t> // Can't be explicit by design.
     any_object(type_t& value) noexcept : value_(boxing_ptr(value)) {}
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<class type_t> // Can't be explicit by design.
+    template<typename type_t> // Can't be explicit by design.
     any_object(const type_t& value) noexcept : value_(boxing_ptr(value)) {}
     /// @}
     
@@ -118,9 +118,9 @@ namespace xtd {
     /// @}
     
   private:
-    template<class type_t>
+    template<typename type_t>
     [[nodiscard]] auto boxing_ptr(const type_t& value) noexcept -> ptr<object> {return new_ptr<typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type>(value);}
-    template<class type_t, class ...args_t>
+    template<typename type_t, typename ...args_t>
     [[nodiscard]] auto boxing_ptr(args_t&& ...args) noexcept -> ptr<object> {return new box<type_t>(args...);}
     //[[nodiscard]] auto boxing_ptr(const object& value) noexcept -> ptr<object>;
     [[nodiscard]] auto boxing_ptr(const char* value) noexcept -> ptr<object>;
@@ -170,33 +170,33 @@ namespace xtd {
   };
   
   /// @cond
-  template<class type_t, class bool_t>
+  template<typename type_t, typename bool_t>
   struct __is_enum_any_object__ {};
   
-  template<class type_t>
+  template<typename type_t>
   struct __is_enum_any_object__<type_t, std::true_type> {
     [[nodiscard]] auto operator()(const any_object& o) const -> bool {return is<enum_object<type_t>>(o.value());}
   };
   
-  template<class type_t>
+  template<typename type_t>
   struct __is_enum_any_object__<type_t, std::false_type> {
     [[nodiscard]] auto operator()(const any_object& o) const -> bool {return false;}
   };
   
-  template<class type_t, class bool_t>
+  template<typename type_t, typename bool_t>
   struct __is_polymorphic_any_object__ {};
   
-  template<class type_t>
+  template<typename type_t>
   struct __is_polymorphic_any_object__<type_t, std::true_type> {
     [[nodiscard]] auto operator()(const any_object& o) const -> bool {return is<type_t>(o.value());}
   };
   
-  template<class type_t>
+  template<typename type_t>
   struct __is_polymorphic_any_object__<type_t, std::false_type> {
     [[nodiscard]] auto operator()(const any_object& o) const -> bool {return __is_enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
   };
   
-  template<class type_t>
+  template<typename type_t>
   requires (!std::is_null_pointer_v<type_t> && (!std::integral<type_t> || std::same_as<type_t, bool>))
   [[nodiscard]] auto is(any_object& o) -> bool {
     if (!o.has_value()) return false;
@@ -204,7 +204,7 @@ namespace xtd {
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
   
-  template<class type_t>
+  template<typename type_t>
   requires (!std::is_null_pointer_v<type_t> && (!std::integral<type_t> || std::same_as<type_t, bool>))
   [[nodiscard]] auto is(const any_object& o) -> bool {
     if (!o.has_value()) return false;
@@ -212,7 +212,7 @@ namespace xtd {
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
   
-  template<class type_t>
+  template<typename type_t>
   requires (!std::is_null_pointer_v<type_t> && std::integral<type_t> && !std::same_as<type_t, bool>)
   [[nodiscard]] auto is(any_object& o) -> bool {
     if (!o.has_value()) return false;
@@ -229,7 +229,7 @@ namespace xtd {
     return false;
   }
   
-  template<class type_t>
+  template<typename type_t>
   requires (!std::is_null_pointer_v<type_t> && std::integral<type_t> && !std::same_as<type_t, bool>)
   [[nodiscard]] auto is(const any_object& o) -> bool {
     if (!o.has_value()) return false;
@@ -246,25 +246,25 @@ namespace xtd {
     return false;
   }
 
-  template<class type_t>
+  template<typename type_t>
   requires std::is_null_pointer_v<type_t>
   [[nodiscard]] auto is(any_object& o) -> bool {
     return !o.has_value();
   }
   
-  template<class type_t>
+  template<typename type_t>
   requires std::is_null_pointer_v<type_t>
   [[nodiscard]] auto is(const any_object& o) -> bool {
     return !o.has_value();
   }
 
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto is(any_object* o) -> bool {
     if (is<box<type_t>>(o->value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(*o);
   }
   
-  template<class type_t>
+  template<typename type_t>
   [[nodiscard]] auto is(const any_object* o) -> bool {
     if (is<box<type_t>>(o->value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(*o);

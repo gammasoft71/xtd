@@ -92,7 +92,7 @@ namespace xtd {
     /// @param other The value to compare with `value`.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_equal(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value == other) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must not be equal to `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is less than `other`.
     /// @tparam value_t The type of the object to validate.
@@ -100,7 +100,7 @@ namespace xtd {
     /// @param other The value to compare with `value`.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_less_than(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value < other) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be greater than or equal to `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is less than or equal to `other`.
     /// @tparam value_t The type of the object to validate.
@@ -108,7 +108,7 @@ namespace xtd {
     /// @param other The value to compare with `value`.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_less_than_or_equal(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value <= other) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be greater than `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is greater than `other`.
     /// @tparam value_t The type of the object to validate.
@@ -116,7 +116,7 @@ namespace xtd {
     /// @param other The value to compare with `value`.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_greater_than(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value > other) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be less than or equal to `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is greater than or equal to `other`.
     /// @tparam value_t The type of the object to validate.
@@ -124,21 +124,21 @@ namespace xtd {
     /// @param other The value to compare with `value`.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_greater_than_or_equal(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value >= other) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be less than `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is negative.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-negative.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_negative(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value < static_cast<value_t>(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be a non-negative value. (Parameter '{1}')\nActual value was {0}.", value, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is negative or zero.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-zero or non-negative.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_negative_or_zero(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value <= static_cast<value_t>(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be a non-negative and non-zero value. (Parameter '{1}')\nActual value was {0}.", value, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is not equal to `other`.
     /// @tparam value_t The type of the object to validate.
@@ -146,28 +146,28 @@ namespace xtd {
     /// @param other The value to compare with `value`.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_not_equal(const value_t& value, const value_t& other, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value != other) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be equal to `{1}`. (Parameter '{2}')\nActual value was {0}.", value, other, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is positive.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-positive.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_positive(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value > static_cast<value_t>(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be a non-positive value. (Parameter '{1}')\nActual value was {0}.", value, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is positive or zero.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-zero or non-positive.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_positive_or_zero(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value >= static_cast<value_t>(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be a non-positive and non-zero value. (Parameter '{1}')\nActual value was {0}.", value, param_name, stack_frame).c_str());}
     /// @brief Throws an xtd::argument_out_of_range_exception if `value` is zero.
     /// @tparam value_t The type of the object to validate.
     /// @param value The argument to validate as non-zero.
     /// @param param_name (optional) The name of the parameter with which `value` corresponds.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-    template<class value_t>
+    template<typename value_t>
     static auto throw_if_zero(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {if (value == static_cast<value_t>(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be a non-zero value. (Parameter '{1}')\nActual value was {0}.", value, param_name, stack_frame).c_str());}
     /// @}
     

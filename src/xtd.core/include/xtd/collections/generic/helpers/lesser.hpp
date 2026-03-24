@@ -35,7 +35,7 @@ namespace xtd {
         /// auto key_values = std::map<xtd::date_time, xtd::string, xtd::collections::generic::helpers::lesser<xtd::date_time>, xtd::collections::generic::helpers::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::string>>> {};
         /// key_values.insert({{1971, 1, 5}, "Birth date"});
         /// ```
-        template<class value_t = void>
+        template<typename value_t = void>
         struct lesser {
           /// @name Public Aliases
           

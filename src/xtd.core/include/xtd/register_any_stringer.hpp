@@ -7,7 +7,7 @@
 /// @cond
 extern std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__;
 
-template<class type_t, class function_t>
+template<typename type_t, typename function_t>
 inline std::pair<const std::type_index, std::function<std::string(xtd::any const&)>> __to_any_stringer__(function_t const& func) {
   return {
     std::type_index(typeid(type_t)),
@@ -34,7 +34,7 @@ namespace xtd {
   /// @par Examples
   /// Show how to register your own class.
   /// @include format_any.cpp
-  template<class type_t, class function_t>
+  template<typename type_t, typename function_t>
   inline void register_any_stringer(const function_t& func) {
     unregister_any_stringer<type_t>();
     __any_stringer__.insert(__to_any_stringer__<type_t>(func));

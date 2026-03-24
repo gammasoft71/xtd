@@ -13,7 +13,7 @@
 #include <sstream>
 
 /// @cond
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __natural_formatter(long double value, int precision, const std::locale& loc) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss.imbue(loc);

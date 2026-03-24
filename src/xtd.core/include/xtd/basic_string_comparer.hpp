@@ -16,7 +16,7 @@ namespace xtd {
   /// @brief Represents a string comparison operation that uses specific case and culture-based or ordinal comparison rules.
   /// @par Definition
   /// ```cpp
-  /// template<class char_t>
+  /// template<typename char_t>
   /// class basic_string_comparer : public xtd::object, public xtd::collections::generic::icomparer<xtd::basic_string<char_t>>, public xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t>>;
   /// ```
   /// @par Header
@@ -28,7 +28,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<class char_t>
+  template<typename char_t>
   class basic_string_comparer : public xtd::object, public xtd::collections::generic::icomparer<xtd::basic_string<char_t>>, public xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t >> {
   public:
     /// @name Public Static Properties
@@ -121,7 +121,7 @@ namespace xtd {
     /// | Greater than zero | `x` follows `y` in the sort order.  |
     /// @exception xtd::argument_exception Neither `x` nor `y` is a xtd::string object, and neither `x` nor `y` implements the `xtd::icomparable` interface.
     /// @remarks The xtd::basic_string_comparer::compare(const string&, const string&) method is slightly more efficient than the xtd::basic_string_comparer::compare(const object_t&, consy object_t&) method because no conversion of the `x` and `y` arguments is needed to perform the comparison.
-    template <class object_t>
+    template<typename object_t>
     [[nodiscard]] auto compare(const object_t& x, const object_t& y) const -> xtd::int32 {
       if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return compare(as<basic_string<char_t >> (x), as<basic_string<char_t >> (y));
       if (is<icomparable<object_t>>(x) && is<icomparable<object_t>>(y)) return as<icomparable<object_t >> (x).compare_to(y);
@@ -174,7 +174,7 @@ namespace xtd {
     /// @param y An object to compare to `x`.
     /// @return `true` if `x` and `y`  refer to the same object, or `x` and `y` are both the same type of object and those objects are equal; otherwise, `false`.
     /// @remarks The xtd::basic_string_comparer::equals(const string&, const string&) method is slightly more efficient than the xtd::basic_string_comparer::equals(const object_t&, consy object_t&) method because no conversion of the `x` and `y` arguments is needed to perform the comparison.
-    template <class object_t>
+    template<typename object_t>
     [[nodiscard]] auto equals(const object_t& x, const object_t& y) const -> bool {
       if (&x == &y) return true;
       if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return equals(as<basic_string<char_t >> (x), as<basic_string<char_t >> (y));
@@ -214,7 +214,7 @@ namespace xtd {
     /// @param obj An object.
     /// @return A xtd::size hash code calculated from the value of the obj parameter.
     /// @remarks The xtd::basic_string_comparer::get_hash_code(const string&) method is more efficient than the xtd::basic_string_comparer::get_hash_code(const object&) method because the obj parameter does not have to be converted to perform the operation.
-    template <class object_t>
+    template<typename object_t>
     [[nodiscard]] auto get_hash_code(const object_t& obj) const -> xtd::size {
       if (is<basic_string<char_t>>(obj)) return get_hash_code(as<basic_string<char_t >> (obj));
       if (is<object>(obj)) return as<object>(obj).get_hash_code();

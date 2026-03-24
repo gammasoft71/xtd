@@ -20,12 +20,12 @@ namespace xtd {
     /// ```cpp
     /// #include <xtd/tunit/tunit>
     ///
-    /// template<class type_t>
+    /// template<typename type_t>
     /// class vector_tests;
     ///
     /// auto register_vector_tests = register_test_class_types<vector_tests, int, char, bool> {};
     ///
-    /// template<class type_t>
+    /// template<typename type_t>
     /// class vector_tests : public test_class {
     ///    auto test_method_(default_constructor) {
     ///      auto v = std::vector<type_t> {};
@@ -33,17 +33,17 @@ namespace xtd {
     ///    }
     /// };
     /// ```
-    template<template<class> class test_class_t, class... args_t>
+    template<template<typename> class test_class_t, typename... args_t>
     class register_test_class_types;
     
     /// @cond
-    template<template<class> class test_class_t, class arg_t, class... args_t>
+    template<template<typename> class test_class_t, typename arg_t, typename... args_t>
     class register_test_class_types<test_class_t, arg_t, args_t...> {
       test_class_attribute<test_class_t<arg_t>> attr {typeof_<test_class_t<arg_t>>().name()};
       register_test_class_types<test_class_t, args_t...> next;
     };
     
-    template<template<class> class test_class_t>
+    template<template<typename> class test_class_t>
     class register_test_class_types<test_class_t> {};
     /// @endcond
   }

@@ -11,10 +11,10 @@
 #include "../helpers/throw_helper.hpp"
 
 /// @cond
-template<class enum_t>
+template<typename enum_t>
 [[nodiscard]] auto __enum_to_string__(enum_t value) noexcept -> std::string;
 
-template<class char_t, class value_t>
+template<typename char_t, typename value_t>
 [[nodiscard]] inline auto __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) -> std::basic_string<char_t> {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};

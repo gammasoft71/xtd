@@ -27,7 +27,7 @@ namespace xtd {
   /// @brief Represents a non-owning view over a contiguous sequence of objects.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t, xtd::size extent = dynamic_extent>
+  /// template<typename type_t, xtd::size extent = dynamic_extent>
   /// class read_only_span : public xtd::object, public xtd::iequatable<xtd::read_only_span<type_t, extent>>;
   /// ```
   /// @par Header
@@ -48,7 +48,7 @@ namespace xtd {
   /// span<int> span_numbers = numbers;
   /// span_numbers[0] = 42; // numbers == {42, 1, 2};
   /// ```
-  template<class type_t, xtd::size extent = dynamic_extent>
+  template<typename type_t, xtd::size extent = dynamic_extent>
   class read_only_span : public xtd::object, public xtd::iequatable<xtd::read_only_span<type_t, extent>> {
   public:
     /// @name Public Aliases
@@ -91,13 +91,13 @@ namespace xtd {
     /// @brief Creates an xtd::read_only_span with specified iterators.
     /// @param first The iterator to the first element of the sequence.
     /// @param last The iterator to the last element of the sequence.
-    template<class iterator_t>
+    template<typename iterator_t>
     constexpr read_only_span(iterator_t first, iterator_t last) : data_ { & (*first)}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
     /* Conflict with read_only_span(collection_t& items, xtd::size count)
     /// @brief Creates an xtd::read_only_span with specified iterator and count.
     /// @param first The iterator to the first element of the sequence.
     /// @param count The number of elements in the iteration.
-    template<class iterator_t>
+    template<typename iterator_t>
     read_only_span(iterator_t first, xtd::size count) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : count} {}
      */
     #if defined(__xtd__cpp_lib_type_identity)
@@ -113,17 +113,17 @@ namespace xtd {
     #endif
     /// @brief Creates an xtd::read_only_span with specified std::array.
     /// @param array The std::array to construct a view for.
-    template<class array_type_t, xtd::size len>
+    template<typename array_type_t, xtd::size len>
     constexpr read_only_span(const std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
     #if defined(__xtd__cpp_lib_ranges)
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
-    template<class range_t>
+    template<typename range_t>
     constexpr read_only_span(range_t&& range) noexcept : data_ {std::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : std::ranges::size(range)} {}
     #else
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
-    template<class range_t>
+    template<typename range_t>
     constexpr read_only_span(range_t&& range) noexcept : data_ {range.data()}, length_ {extent != dynamic_extent ? extent : range.size()} {}
     #endif
     /// @brief Creates an xtd::read_only_span with specified initializer list.
@@ -133,21 +133,21 @@ namespace xtd {
     /// @brief Creates an xtd::span with specified collection.
     /// @param items The collection to construct a view for.
     /// @exception xtd::argument_out_of_range_exception if length is greater than items size.
-    template<class collection_t>
+    template<typename collection_t>
     constexpr read_only_span(collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
      */
     /// @brief Creates an xtd::read_only_span with specified collection and count.
     /// @param items The collection to construct a view for.
     /// @param length The number of elements in the collection.
     /// @exception xtd::argument_out_of_range_exception if length is greater than items size.
-    template<class collection_t>
+    template<typename collection_t>
     constexpr read_only_span(const collection_t& items, size_type length) : read_only_span {items, size_type {0}, length} {}
     /// @brief Creates an xtd::read_only_span with specified collection, offest and count.
     /// @param items The collection to construct a view for.
     /// @param start The offset in the collection.
     /// @param length The number of elements in the collection.
     /// @exception xtd::argument_out_of_range_exception if offset or offset + length are greater than items size.
-    template<class collection_t>
+    template<typename collection_t>
     constexpr read_only_span(const collection_t& items, size_type start, size_type length) : data_ {items.data() + start}, length_ {extent != dynamic_extent ? extent : length} {
       if (start + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
     }
@@ -405,39 +405,39 @@ namespace xtd {
     size_type length_ = size_type {};
   };
   
-  template<class type_t, xtd::size extent>
+  template<typename type_t, xtd::size extent>
   inline const read_only_span<type_t, extent> read_only_span<type_t, extent>::empty_read_only_span;
   
   /// @cond
   // Deduction guides for xtd::read_only_span
   // {
-  template<class iterator_t>
+  template<typename iterator_t>
   read_only_span(iterator_t first, iterator_t last) -> read_only_span<typename iterator_t::value_type>;
   
-  template<class type_t, xtd::size len>
+  template<typename type_t, xtd::size len>
   read_only_span(const type_t (&array)[len]) -> read_only_span<type_t>;
   
   template< class type_t, xtd::size len>
   read_only_span(const std::array<type_t, len>& array) -> read_only_span<type_t>;
   
   #if defined(__xtd__cpp_lib_ranges)
-  template<class range_t>
+  template<typename range_t>
   read_only_span(range_t&& items) -> read_only_span<typename std::remove_reference_t<std::ranges::range_reference_t<range_t>>>;
   #else
-  template<class range_t>
+  template<typename range_t>
   read_only_span(range_t&& items) -> read_only_span<typename range_t::value_type>;
   #endif
   
-  template<class collection_t>
+  template<typename collection_t>
   read_only_span(const collection_t& items) -> read_only_span<typename collection_t::value_type>;
   
-  template<class collection_t>
+  template<typename collection_t>
   read_only_span(const collection_t& items, xtd::size) -> read_only_span<typename collection_t::value_type>;
   
-  template<class collection_t>
+  template<typename collection_t>
   read_only_span(const collection_t& items, xtd::size, xtd::size) -> read_only_span<typename collection_t::value_type>;
   
-  template<class type_t>
+  template<typename type_t>
   read_only_span(const type_t* data, xtd::size size) -> read_only_span<type_t>;
   // }
   /// @endcond

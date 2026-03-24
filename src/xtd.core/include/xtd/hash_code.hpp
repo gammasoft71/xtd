@@ -39,7 +39,7 @@ namespace xtd {
     /// @tparam type_t The type of the value to add to the hash code.
     /// @param value The value to add to the hash code.
     /// @return The current instance.
-    template<class type_t>
+    template<typename type_t>
     hash_code& add(const type_t& value) noexcept {
       hash_code_ = hash_combine(hash_code_, xtd::collections::generic::helpers::hasher<type_t> {}(value));
       return *this;
@@ -66,12 +66,12 @@ namespace xtd {
     /// @brief Combines values into a hash code.
     /// @param values The values to combine into the hash code.
     /// @return The hash code that represents the values.
-    template<class ...args_t>
+    template<typename ...args_t>
     static xtd::size combine(args_t... values) noexcept {return combine_iterator(generate_uniqueness_seed(), values...);}
     /// @}
     
   private:
-    template<class type_t, class ...args_t>
+    template<typename type_t, typename ...args_t>
     static xtd::size combine_iterator(xtd::size seed, const type_t& value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}
     static xtd::size combine_iterator(xtd::size seed) noexcept;
     static xtd::size hash_combine(xtd::size seed, xtd::size value) noexcept;

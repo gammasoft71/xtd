@@ -19,7 +19,7 @@
 #include <vector>
 
 /// @cond
-template<class char_t, class floating_point_t>
+template<typename char_t, typename floating_point_t>
 [[nodiscard]] inline auto __floating_point_to_binary(floating_point_t value, int precision) -> std::basic_string<char_t> {
   union {
     double input;
@@ -89,7 +89,7 @@ template <>
   return __binary_formatter<wchar_t>(data.output, precision);
 }
 
-template<class char_t, class value_t>
+template<typename char_t, typename value_t>
 [[nodiscard]] inline auto __floating_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) -> std::basic_string<char_t> {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};

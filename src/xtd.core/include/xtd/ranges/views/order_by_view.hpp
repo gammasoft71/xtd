@@ -42,7 +42,7 @@ namespace xtd {
       /// The following example shows how to use xtd::ranges::views::order_by_view class :
       /// @include ranges_views_order_by2.cpp
       class order_by_view {
-        template <typename key_selector_t>
+        template<typename key_selector_t>
         struct with_key_selector {
           const key_selector_t& key_selector;
           
@@ -66,7 +66,7 @@ namespace xtd {
         /// @brief Sorts the elements of a sequence in ascending order according to a key.
         /// @tparam range_t The type of the elements of source.
         /// @param key_selector A function to extract a key from an element.
-        template <typename key_selector_t>
+        template<typename key_selector_t>
         auto operator()(const key_selector_t& key_selector) const {return with_key_selector {key_selector};}
         
         /// @brief Applies a sort on the given range using the pipe operator.

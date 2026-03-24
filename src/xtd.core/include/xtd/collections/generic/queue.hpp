@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Represents a first-in, first-out collection of objects.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t, class container_t = std::deque<type_t>>
+      /// template<typename type_t, typename container_t = std::deque<type_t>>
       /// class queue : public xtd::object, public xtd::collections::generic::icollection<type_t>;
       /// ```
       /// @par Header
@@ -43,7 +43,7 @@ namespace xtd {
       /// An array twice the size of the queue is created, and the xtd::collections::generic::queue::copy_to method is used to copy the array elements beginning at the middle of the array. The xtd::collections::generic::queue <type_t> constructor is used again to create a second copy of the queue containing three null elements at the beginning.
       /// The xtd::collections::generic::queue::contains method is used to show that the string "four" is in the first copy of the queue, after which the Clear method clears the copy and the xtd::collections::generic::queue::count property shows that the queue is empty.
       /// @include generic_queue.cpp
-      template<class type_t, class container_t = std::deque<type_t>>
+      template<typename type_t, typename container_t = std::deque<type_t>>
       class queue : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
         /// @name Public Aliases
@@ -353,10 +353,10 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::queue
       // {
-      template < class type_t, class container_t>
+      template < class type_t, typename container_t>
       queue(queue< type_t, container_t>&&) -> queue<type_t, container_t>;
       
-      template < class type_t, class container_t>
+      template < class type_t, typename container_t>
       queue(const queue<type_t, container_t>&) -> queue<type_t, container_t>;
       
       template < class type_t>
@@ -365,7 +365,7 @@ namespace xtd {
       template < class type_t>
       queue(std::initializer_list<type_t>) -> queue<type_t>;
       
-      template <class input_iterator_t>
+      template<typename input_iterator_t>
       queue(input_iterator_t, input_iterator_t) -> queue<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond

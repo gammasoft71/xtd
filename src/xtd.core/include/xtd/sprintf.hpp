@@ -69,7 +69,7 @@ namespace xtd {
   /// | L      |               |                        | long double     |       |          |       |                 |
   /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::string sprintf(const xtd::string& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt, std::forward<args_t>(args)...);}
   /// @brief Writes the text representation of the specified arguments list, to basic_string using the specified format information.
   /// @param fmt A composite format basic_string.
@@ -130,7 +130,7 @@ namespace xtd {
   /// | L      |               |                        | long double     |       |          |       |                 |
   /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::u8string sprintf(const xtd::u8string& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt.to_string(), std::forward<args_t>(args)...);}
   /// @brief Writes the text representation of the specified arguments list, to basic_string using the specified format information.
   /// @param fmt A composite format basic_string.
@@ -191,7 +191,7 @@ namespace xtd {
   /// | L      |               |                        | long double     |       |          |       |                 |
   /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::u16string sprintf(const xtd::u16string& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt.to_string(), std::forward<args_t>(args)...);}
   /// @brief Writes the text representation of the specified arguments list, to basic_string using the specified format information.
   /// @param fmt A composite format basic_string.
@@ -252,7 +252,7 @@ namespace xtd {
   /// | L      |               |                        | long double     |       |          |       |                 |
   /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::u32string sprintf(const xtd::u32string& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt.to_string(), std::forward<args_t>(args)...);}
   /// @brief Writes the text representation of the specified arguments list, to basic_string using the specified format information.
   /// @param fmt A composite format basic_string.
@@ -313,19 +313,19 @@ namespace xtd {
   /// | L      |               |                        | long double     |       |          |       |                 |
   /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::wstring sprintf(const xtd::wstring& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt.to_string(), std::forward<args_t>(args)...);}
   
   /// @cond
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::string sprintf(const char* fmt, args_t&& ... args) {return xtd::string::sprintf(std::string {fmt}, std::forward<args_t>(args)...);}
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::u8string sprintf(const char8_t* fmt, args_t&& ... args) {return xtd::string::sprintf(std::u8string {fmt}, std::forward<args_t>(args)...);}
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::u16string sprintf(const char16_t* fmt, args_t&& ... args) {return xtd::string::sprintf(std::u16string {fmt}, std::forward<args_t>(args)...);}
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::u32string sprintf(const char32_t* fmt, args_t&& ... args) {return xtd::string::sprintf(std::u32string {fmt}, std::forward<args_t>(args)...);}
-  template<class ...args_t>
+  template<typename ...args_t>
   xtd::wstring sprintf(const wchar_t* fmt, args_t&& ... args) {return xtd::string::sprintf(std::wstring {fmt}, std::forward<args_t>(args)...);}
   /// @endcond
 }

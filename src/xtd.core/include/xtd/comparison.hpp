@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief Represents the method that compares two objects of the same type.
   /// ```cpp
-  /// template<class type_t>
+  /// template<typename type_t>
   /// using comparison = xtd::delegate<int32(type_t x, type_t y)>;
   /// ```
   /// @param type_t The type of the objects to compare.
@@ -29,6 +29,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system delegates
-  template<class type_t>
+  template<typename type_t>
   using comparison = xtd::delegate<int32(type_t x, type_t y)>;
 }

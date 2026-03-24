@@ -19,7 +19,7 @@ namespace xtd {
       /// @brief Defines methods to manipulate generic collections.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t>
+      /// template<typename type_t>
       /// class icollection : public xtd::collections::generic::ienumerable<type_t>, public xtd::collections::generic::extensions::collection_common<type_t, icollection<type_t>>;
       /// ```
       /// @par Header
@@ -41,7 +41,7 @@ namespace xtd {
       /// @remarks The xtd::collections::generic::icollection <type_t> interface is the base interface for classes in the xtd::collections::generic namespace.
       /// @remarks The xtd::collections::generic::icollection <type_t> interface extends xtd::collections::generic::ienumerable <type_t>; xtd::collections::generic::idictionary <key_t, value_t> and xtd::collections::generic::ilist <type_t> are more specialized interfaces that extend xtd::collections::generic::icollection <type_t>. A xtd::collections::generic::idictionary <key_t, value_t> implementation is a collection of key/value pairs, like the xtd::collections::generic::dictoinary <key_t, value_t> class. A xtd::collections::generic::ilist <type_t> implementation is a collection of values, and its members can be accessed by index, like the xtd::collections::generic::list <type_t> class.
       /// @remarks If neither the xtd::collections::generic::idictionary <key_t, value_t> interface nor the xtd::collections::generic::ilist <type_t> interface meet the requirements of the required collection, derive the new collection class from the xtd::collections::generic::icollection <type_t> interface instead for more flexibility.
-      template<class type_t>
+      template<typename type_t>
       class icollection : public xtd::collections::generic::ienumerable<type_t>, public xtd::collections::generic::extensions::collection_common<type_t, icollection<type_t >> {
       public:
         /// @name Public Aliases

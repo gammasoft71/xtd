@@ -21,7 +21,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        template<class actual_t>
+        template<typename actual_t>
         auto that(const actual_t& actual) {return that_value<actual_t> {actual_value<actual_t> {}.type(type_).actual(actual)};}
         /// @}
         

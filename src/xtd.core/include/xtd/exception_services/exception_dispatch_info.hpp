@@ -58,7 +58,7 @@ namespace xtd {
       /// @return An object that represents the specified exception at the current point in code.
       /// @remarks You can use the xtd::exception_services::exception_dispatch_info object that's returned by this method at another time and possibly on another thread to rethrow the specified exception, as if the exception had flowed from the point where it was captured to the point where it's rethrown.
       /// @remarks If the exception is active when it's captured, the current stack trace information that's contained in the exception is stored. If it's inactive, that is, if it has not been thrown, it doesn't have any stack trace information.
-      template<class exception_t>
+      template<typename exception_t>
       requires std::derived_from<exception_t, xtd::exception>
       [[nodiscard]] static auto capture(const exception_t& source) -> exception_dispatch_info {
         return exception_dispatch_info {source};
@@ -74,7 +74,7 @@ namespace xtd {
       /// @brief Rethrows the exception that's represented by the current xtd::exception_services::exception_dispatch_info object, after restoring the state that was saved when the exception was captured.
       auto rethrow() -> void {if (exception_captured()) std::rethrow_exception(exception_ptr_);}
       /// @brief Rehrows the source exception, maintaining the original stack trace information.
-      template<class exception_t>
+      template<typename exception_t>
       static auto rethrow(const exception_t& source) -> void {exception_dispatch_info {source}.rethrow();}
       /// @}
       
@@ -89,7 +89,7 @@ namespace xtd {
       /// @}
       
     private:
-      template<class exception_t>
+      template<typename exception_t>
       exception_dispatch_info(const exception_t& source) : source_ {source.template memberwise_clone<exception_t>().release()}, exception_ptr_ {std::make_exception_ptr(source)} {}
       exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
 

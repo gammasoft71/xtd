@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  template<class type_t>
+  template<typename type_t>
   using wptr = std::weak_ptr<type_t>;
   /// @}
 }

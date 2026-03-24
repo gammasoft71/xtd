@@ -48,7 +48,7 @@ namespace xtd {
   }
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __codepoint_to_string(xtd::char32 codepoint) -> std::basic_string<char_t> {
   std::basic_string<char_t> result;
   if (codepoint < 0x80)
@@ -69,39 +69,39 @@ template<class char_t>
   return result;
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __to_string(char codepoint) -> std::basic_string<char_t> {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __to_string(xtd::char32 codepoint) -> std::basic_string<char_t> {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __to_string(xtd::char16 codepoint) -> std::basic_string<char_t> {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __to_string(xtd::char8 codepoint) -> std::basic_string<char_t> {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __to_string(xtd::wchar codepoint) -> std::basic_string<char_t> {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<class char_t>
+template<typename char_t>
 [[nodiscard]] inline auto __to_string(const std::basic_string<char_t>& str) -> std::basic_string<char_t> {
   std::basic_string<char_t> result;
   std::for_each(str.begin(), str.end(), [&](auto codepoint) {result += __to_string<char_t>(codepoint);});
   return result;
 }
 
-template<class char_t, class arg_t>
+template<typename char_t, typename arg_t>
 [[nodiscard]] inline auto __to_string(const std::basic_string<arg_t>& str) -> std::basic_string<char_t> {
   std::basic_string<char_t> result;
   for (auto codepoint : str)
@@ -109,7 +109,7 @@ template<class char_t, class arg_t>
   return result;
 }
 
-template<class char_t, class arg_t>
+template<typename char_t, typename arg_t>
 [[nodiscard]] inline auto __to_string(const arg_t* str) -> std::basic_string<char_t> {
   std::basic_string<char_t> result;
   for (auto codepoint : std::basic_string<arg_t>(str))
@@ -122,25 +122,25 @@ auto operator <<(std::ostream& os, const xtd::char16* str) -> std::ostream&;
 auto operator <<(std::ostream& os, const xtd::char32* str) -> std::ostream&;
 auto operator <<(std::ostream& os, const xtd::wchar* str) -> std::ostream&;
 
-template<class enum_t>
+template<typename enum_t>
 [[nodiscard]] auto __enum_to_string__(enum_t value) noexcept -> std::string;
 [[nodiscard]] auto __iformatable_to_string(const xtd::iformatable& value) noexcept -> std::string;
 [[nodiscard]] auto __object_to_string__(const xtd::object& value) noexcept -> std::string;
 
-template<class char_t, class type_t, class bool_t>
+template<typename char_t, typename type_t, typename bool_t>
 struct __enum_ostream__ {};
 
-template < class char_t, class type_t >
+template < class char_t, typename type_t >
 struct __enum_ostream__ < char_t, type_t, std::true_type > {
   auto to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept -> std::basic_ostream<char_t>& {
     return os << __enum_to_string__(value);
   }
 };
 
-template < class char_t, class type_t, class bool_t >
+template < class char_t, typename type_t, typename bool_t >
 struct __enum_or_polymorphic_ostream__ {};
 
-template < class char_t, class type_t >
+template < class char_t, typename type_t >
 struct __enum_or_polymorphic_ostream__ < char_t, type_t, std::true_type > {
   auto to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept -> std::basic_ostream <char_t>& {
     if (dynamic_cast < const xtd::iformatable* > (&value)) return os << __iformatable_to_string(dynamic_cast<const xtd::iformatable&>(value));
@@ -149,7 +149,7 @@ struct __enum_or_polymorphic_ostream__ < char_t, type_t, std::true_type > {
   }
 };
 
-template < class char_t, class type_t >
+template < class char_t, typename type_t >
 struct __enum_or_polymorphic_ostream__ < char_t, type_t, std::false_type > {
   auto to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept -> std::basic_ostream<char_t>& {
     __enum_ostream__ < char, type_t, typename std::is_enum < type_t>::type > ().to_stream(os, value);
@@ -182,35 +182,35 @@ template < class value_t >
 [[nodiscard]] auto __format_stringer_to_std_string(const std::u32string& str) -> std::string;
 [[nodiscard]] auto __format_stringer_to_std_string(const std::wstring& str) -> std::string;
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(value_t value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __format_stringer_to_std_string(value).c_str(); // Using "c_str()" is not the best method, but it is the only possibility if "char_t" is of another type than "char".
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const bool& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << std::boolalpha << value;
   return ss.str();
 }
 
-template < class char_t, class value_t, xtd::int32 len >
+template < class char_t, typename value_t, xtd::int32 len >
 [[nodiscard]] inline auto __format_stringer(const char*& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t, xtd::int32 len >
+template < class char_t, typename value_t, xtd::int32 len >
 [[nodiscard]] inline auto __format_stringer(const char* const& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::char8*& value) -> std::basic_string<char_t> {
   auto s = std::u8string(value);
   std::basic_stringstream<char_t> ss;
@@ -218,7 +218,7 @@ template < class char_t, class value_t >
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::char8* const& value) -> std::basic_string<char_t> {
   auto s = std::u8string(value);
   std::basic_stringstream<char_t> ss;
@@ -226,42 +226,42 @@ template < class char_t, class value_t >
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::char16*& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::char16* const& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::char32*& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::char32* const& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::wchar*& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);
   return ss.str();
 }
 
-template < class char_t, class value_t >
+template < class char_t, typename value_t >
 [[nodiscard]] inline auto __format_stringer(const xtd::wchar* const& value) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss << __to_string < char_t > (value);

@@ -5,11 +5,11 @@
 
 namespace xtd::tests {
   class test_class_(forward_iterable_tests) {
-    template<class value_t>
+    template<typename value_t>
     requires forward_iterable<value_t>
     [[nodiscard]] static auto is_forward_iterable(value_t&& value) noexcept -> bool {return true;}
     
-    template<class value_t>
+    template<typename value_t>
     requires (!forward_iterable<value_t>)
     [[nodiscard]] static auto is_forward_iterable(value_t&& value) noexcept -> bool {return false;}
     

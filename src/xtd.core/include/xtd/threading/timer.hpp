@@ -120,23 +120,23 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback) : timer(timer_callback {callback}) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, int32 due_time, int32 period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, int64 due_time, int64 period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, const time_span& due_time, const time_span& period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, const xtd::any_object& state, int32 due_time, int32 period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, const xtd::any_object& state, int64 due_time, int64 period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, const xtd::any_object& state, const time_span& due_time, const time_span& period) : timer(timer_callback {callback}, due_time, period) {}
-      template<class callback_t>
+      template<typename callback_t>
       timer(callback_t callback, const xtd::any_object& state, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
       timer();
       timer(const timer& timer);

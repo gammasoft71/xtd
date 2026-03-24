@@ -149,18 +149,18 @@ namespace xtd {
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.
       /// @return The xtd::string that contains the value.
-      template<class value_t>
+      template<typename value_t>
       static xtd::string to_string(const value_t& value) {return __tunit_to_string(value);}
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.
       /// @return The xtd::string that contains the value.
-      template<class value_t>
+      template<typename value_t>
       static xtd::string to_string(const value_t* value) {return __tunit_to_string(value);}
       
       /// @brief Join specified collection into xtd::string.
       /// @param collection The collection to join into xtd::string.
       /// @return The xtd::string that contains the joined collection.
-      template<class collection_t>
+      template<typename collection_t>
       static xtd::string join_items(const collection_t& collection) {return __tunit_join__items(collection);}
       /// @brief Join specified string into xtd::string.
       /// @param str The joined to join into xtd::string.
@@ -175,7 +175,7 @@ namespace xtd {
       /// @param value_a The first value.
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      template<class value_a_t, class value_b_t>
+      template<typename value_a_t, typename value_b_t>
       static bool equals(const value_a_t& value_a, const value_b_t& value_b) {
         return value_a == value_b;
       }
@@ -183,7 +183,7 @@ namespace xtd {
       /// @param value_a The first value.
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      template<class char_t>
+      template<typename char_t>
       static bool equals(const char_t* value_a, const string& value_b) {
         return xtd::string {value_a} == value_b;
       }
@@ -191,7 +191,7 @@ namespace xtd {
       /// @param value_a The first value.
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      template<class char_t>
+      template<typename char_t>
       static bool equals(const string&  value_a, const char_t* value_b) {
         return value_a == xtd::string {value_b};
       }

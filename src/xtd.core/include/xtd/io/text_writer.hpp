@@ -127,14 +127,14 @@ namespace xtd {
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      template<class value_t>
+      template<typename value_t>
       auto write(value_t value) -> void {write(xtd::string::format("{}", value));}
       
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format
       /// @exception io::io_exception An I/O error occurs.
-      template<class ...args_t>
+      template<typename ...args_t>
       auto write(const xtd::string& fmt, args_t&& ... args) noexcept -> void {write(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       
       /// @brief Writes new line to the text stream.
@@ -205,14 +205,14 @@ namespace xtd {
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      template<class value_t>
+      template<typename value_t>
       auto write_line(value_t value) -> void {write_line(xtd::string::format("{}", value));}
       
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format.
       /// @exception io::io_exception An I/O error occurs.
-      template<class ...args_t>
+      template<typename ...args_t>
       auto write_line(const xtd::string& fmt, args_t&& ... args) noexcept -> void {write_line(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       /// @}
       

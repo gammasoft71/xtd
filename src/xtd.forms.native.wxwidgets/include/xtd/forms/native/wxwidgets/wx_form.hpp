@@ -27,7 +27,7 @@ bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 namespace xtd {
   namespace forms {
     namespace native {
-      template<class control_t>
+      template<typename control_t>
       class control_wrapper;
       class wxForm;
       class wxFormDialog;
@@ -90,7 +90,7 @@ namespace xtd {
       };
       
       class wxForm : public wxFrame, public iform_control_handler {
-        template<class control_t>
+        template<typename control_t>
         friend class control_wrapper;
         friend xtd::forms::native::wx_form;
       private:
@@ -132,7 +132,7 @@ namespace xtd {
       };
       
       class wxFormDialog : public wxDialog, public iform_control_handler {
-        template<class control_t>
+        template<typename control_t>
         friend class control_wrapper;
         friend xtd::forms::native::wx_form;
       private:

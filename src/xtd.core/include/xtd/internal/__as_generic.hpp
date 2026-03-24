@@ -32,7 +32,7 @@ namespace xtd {
   /// xtd::any value = 42;
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::any value) -> new_type {
     try {
       return xtd::any_cast<new_type>(value);
@@ -58,7 +58,7 @@ namespace xtd {
   /// bool value = true;
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(bool value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -80,7 +80,7 @@ namespace xtd {
   /// xtd::byte value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::byte value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -102,7 +102,7 @@ namespace xtd {
   /// char value = 'a';
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(char value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -124,7 +124,7 @@ namespace xtd {
   /// char8 value = u8'a';
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::char8 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -146,7 +146,7 @@ namespace xtd {
   /// char8 value = u'a';
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::char16 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -168,7 +168,7 @@ namespace xtd {
   /// char8 value = U'a';
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::char32 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -190,7 +190,7 @@ namespace xtd {
   /// char8 value = L'a';
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::wchar value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -212,7 +212,7 @@ namespace xtd {
   /// decimal value = 42.0l;
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::decimal value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -234,7 +234,7 @@ namespace xtd {
   /// double value = 42.0;
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(double value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -256,7 +256,7 @@ namespace xtd {
   /// float value = 42.0f;
   /// int result = as<int>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(float value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -278,7 +278,7 @@ namespace xtd {
   /// int16 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::int16 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -300,7 +300,7 @@ namespace xtd {
   /// int32 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::int32 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -322,7 +322,7 @@ namespace xtd {
   /// int64 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::int64 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -344,7 +344,7 @@ namespace xtd {
   /// slong value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::slong value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -366,7 +366,7 @@ namespace xtd {
   /// sbyte value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::sbyte value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -388,7 +388,7 @@ namespace xtd {
   /// uint16 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::uint16 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -410,7 +410,7 @@ namespace xtd {
   /// uint32 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::uint32 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -432,7 +432,7 @@ namespace xtd {
   /// uint64 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::uint64 value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -454,7 +454,7 @@ namespace xtd {
   /// xtd::ulong value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::ulong value) -> new_type {
     return static_cast<new_type>(value);
   }
@@ -477,7 +477,7 @@ namespace xtd {
   /// string value = "Gammasoft";
   /// object result = as<object>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const xtd::string& value) -> new_type {
     try {
       return dynamic_cast<const new_type&>(value);
@@ -505,7 +505,7 @@ namespace xtd {
   /// string value = "Gammasoft";
   /// object result = as<object>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::string& value) -> new_type {
     try {
       return dynamic_cast<new_type&>(value);
@@ -516,47 +516,47 @@ namespace xtd {
   }
   
   /// @cond
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const xtd::string& value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::byte value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(int16 value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::int32 value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::int64 value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::slong value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::sbyte value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(uint16 value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::uint32 value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::uint64 value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::ulong value, xtd::byte from_base) -> new_type {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
@@ -575,7 +575,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const std::string& value) -> new_type {
     try {
       return dynamic_cast<const new_type&>(value);
@@ -598,7 +598,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(std::string& value) -> new_type {
     try {
       return dynamic_cast<new_type&>(value);
@@ -621,7 +621,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const std::u8string& value) -> new_type {
     try {
       return dynamic_cast<const new_type&>(value);
@@ -644,7 +644,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(std::u8string& value) -> new_type {
     try {
       return dynamic_cast<new_type&>(value);
@@ -667,7 +667,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const std::u16string& value) -> new_type {
     try {
       return dynamic_cast<const new_type&>(value);
@@ -690,7 +690,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(std::u16string& value) -> new_type {
     try {
       return dynamic_cast<new_type&>(value);
@@ -713,7 +713,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const std::u32string& value) -> new_type {
     try {
       return dynamic_cast<const new_type&>(value);
@@ -736,7 +736,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(std::u32string& value) -> new_type {
     try {
       return dynamic_cast<new_type&>(value);
@@ -759,7 +759,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const std::wstring& value) -> new_type {
     try {
       return dynamic_cast<const new_type&>(value);
@@ -782,7 +782,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(std::wstring& value) -> new_type {
     try {
       return dynamic_cast<new_type&>(value);
@@ -809,7 +809,7 @@ namespace xtd {
   /// const char* value = "Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const char* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -831,7 +831,7 @@ namespace xtd {
   /// char* value = "Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(char* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -853,7 +853,7 @@ namespace xtd {
   /// const char8* value = u8"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const xtd::char8* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -875,7 +875,7 @@ namespace xtd {
   /// char8* value = u8"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::char8* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -897,7 +897,7 @@ namespace xtd {
   /// const char16* value = u"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const xtd::char16* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -919,7 +919,7 @@ namespace xtd {
   /// char16* value = u"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::char16* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -941,7 +941,7 @@ namespace xtd {
   /// const char32* value = U"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const xtd::char32* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -963,7 +963,7 @@ namespace xtd {
   /// char32* value = U"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::char32* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -985,7 +985,7 @@ namespace xtd {
   /// const wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(const xtd::wchar* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
@@ -1007,7 +1007,7 @@ namespace xtd {
   /// wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<class new_type>
+  template<typename new_type>
   [[nodiscard]] auto as(xtd::wchar* value) -> new_type {
     return reinterpret_cast<new_type>(value);
   }
