@@ -29,10 +29,10 @@ Unsafe cast :
 
 Safe cast :
   366216421905 is greater than 2147483647
-  "value" is not a std::string
+  xtd::date_time* is not a xtd::string*
 
 Convert :
   366216421905 is greater than 2147483647
-  "value" is not a std::string
+  xtd::date_time* is not a xtd::string*
 
 ```
