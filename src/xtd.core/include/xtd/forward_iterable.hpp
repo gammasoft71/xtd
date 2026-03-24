@@ -13,24 +13,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Concept forward iterable.
-  /// @par Definition
-  /// ```cpp
-  /// template<class value_t>
-  /// concept xtd::forward_iterable;
-  /// ```
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/forward_iterable>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system concepts
-  /// @par Examples
-  /// The following code shows how to use xtd::forward_iterable conceps
-  /// @include forward_iterable.cpp
+  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/forward_iterable_.hpp
   template<class value_t>
   concept forward_iterable =
 #if defined(__xtd__cpp_lib_ranges)
