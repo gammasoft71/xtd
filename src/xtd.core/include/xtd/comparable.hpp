@@ -7,24 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Concept comparable.
-  /// @par Definition
-  /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::comparable = xtd::less_than_comparable<value_t> && xtd::greater_than_comparable<value_t>;
-  /// ```
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/comparable>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core concepts
-  /// @par Examples
-  /// The following code shows how to use xtd::comparable conceps
-  /// @include comparable.cpp
+  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/comparable_.hpp
   template<typename value_t>
   concept comparable =
   xtd::less_than_comparable<value_t> &&
