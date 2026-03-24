@@ -2,6 +2,7 @@
 /// @brief Contains xtd::int32 type.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+//#include "value_type.hpp"
 #include <cstdint>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -20,6 +21,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
+  //using int32 = xtd::value_type<std::int32_t>;
   using int32 = std::int32_t;
   /// @}
 }
