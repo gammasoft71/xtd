@@ -62,7 +62,7 @@ namespace xtd {
             return self_;
           }
           operator type_t() {return self_;}
-          friend std::ostream& operator <<(std::ostream& os, const value_type& value) {return os << static_cast<const type_t&>(value);}
+          friend std::ostream& operator <<(std::ostream& os, const arranged_element_collection::value_type& value) {return os << static_cast<const type_t&>(value);}
           /// @endcond
           
         private:
