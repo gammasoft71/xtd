@@ -15,9 +15,11 @@ var searchData=
   ['message_5fnotifier_12',['message_notifier',['../classxtd_1_1forms_1_1message__notifier.html',1,'xtd::forms']]],
   ['message_5fnotifier_5fbutton_13',['message_notifier_button',['../classxtd_1_1forms_1_1message__notifier__button.html',1,'xtd::forms']]],
   ['mimetypes_5fsystem_5fimages_14',['mimetypes_system_images',['../classxtd_1_1drawing_1_1mimetypes__system__images.html',1,'xtd::drawing']]],
-  ['monitor_15',['monitor',['../classxtd_1_1threading_1_1monitor.html',1,'xtd::threading']]],
-  ['month_5fcalendar_16',['month_calendar',['../classxtd_1_1forms_1_1month__calendar.html',1,'xtd::forms']]],
-  ['mouse_5fevent_5fargs_17',['mouse_event_args',['../classxtd_1_1forms_1_1mouse__event__args.html',1,'xtd::forms']]],
-  ['multicast_5foption_18',['multicast_option',['../classxtd_1_1net_1_1sockets_1_1multicast__option.html',1,'xtd::net::sockets']]],
-  ['mutex_19',['mutex',['../classxtd_1_1threading_1_1mutex.html',1,'xtd::threading']]]
+  ['modable_15',['modable',['../structxtd_1_1modable.html',1,'xtd']]],
+  ['monitor_16',['monitor',['../classxtd_1_1threading_1_1monitor.html',1,'xtd::threading']]],
+  ['month_5fcalendar_17',['month_calendar',['../classxtd_1_1forms_1_1month__calendar.html',1,'xtd::forms']]],
+  ['mouse_5fevent_5fargs_18',['mouse_event_args',['../classxtd_1_1forms_1_1mouse__event__args.html',1,'xtd::forms']]],
+  ['multicast_5foption_19',['multicast_option',['../classxtd_1_1net_1_1sockets_1_1multicast__option.html',1,'xtd::net::sockets']]],
+  ['multipliable_20',['multipliable',['../structxtd_1_1multipliable.html',1,'xtd']]],
+  ['mutex_21',['mutex',['../classxtd_1_1threading_1_1mutex.html',1,'xtd::threading']]]
 ];

@@ -113,7 +113,7 @@ class xtd::istringable&lt; type_t &gt;</div><p>Provides a way to represent the c
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name() const noexcept {<span class="keywordflow">return</span> name_;}</div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank() const noexcept {<span class="keywordflow">return</span> rank_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="#ab691c58cc9150a197eb216695219ac3d">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">string</span> name_;</div>
@@ -137,8 +137,8 @@ class xtd::istringable&lt; type_t &gt;</div><p>Provides a way to represent the c
 <div class="line"><span class="comment">// Worf (Lieutenant Commander)</span></div>
 <div class="line"><span class="comment">// Tasha Yar (Lieutenant)</span></div>
 <div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.hpp:26</div></div>
-<div class="ttc" id="aclassxtd_1_1istringable_html_ab691c58cc9150a197eb216695219ac3d"><div class="ttname"><a href="#ab691c58cc9150a197eb216695219ac3d">xtd::istringable::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const =0</div><div class="ttdoc">Gets a string that represents the current object.</div></div>
-<div class="ttc" id="aconceptxtd_1_1character_html"><div class="ttname"><a href="conceptxtd_1_1character.html">xtd::character</a></div><div class="ttdoc">Represent a character concept.</div><div class="ttdef"><b>Definition</b> character.hpp:31</div></div>
+<div class="ttc" id="aconceptxtd_1_1character_html"><div class="ttname"><a href="conceptxtd_1_1character.html">xtd::character</a></div><div class="ttdef"><b>Definition</b> character.hpp:17</div></div>
+<div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Types inheriting from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> should not implement the <a class="el" href="classxtd_1_1istringable.html" title="Provides a way to represent the current object as a string.">xtd::istringable</a> interface. For more info, see <a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18" title="Returns a xtd::string that represents the current object.">xtd::object::to_string</a> Method. </dd>
 <dd>
