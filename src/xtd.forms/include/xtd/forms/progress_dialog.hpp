@@ -161,11 +161,11 @@ namespace xtd {
       /// @brief Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar.
       /// @return The amount by which to increment the progress bar with each call to the perform_step() method. The default is 10.
       /// @remarks You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
-      virtual int32 step() const noexcept;
+      int32 step() const noexcept;
       /// @brief Sets the amount by which a call to the PerformStep() method increases the current position of the progress bar.
       /// @param step The amount by which to increment the progress bar with each call to the perform_step() method. The default is 10.
       /// @remarks You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
-      virtual progress_dialog& step(int32 step);
+      progress_dialog& step(int32 step);
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
