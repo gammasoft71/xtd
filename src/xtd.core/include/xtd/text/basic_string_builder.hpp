@@ -981,7 +981,7 @@ namespace xtd {
       
       /// @brief Returns the underlying base type.
       /// @return The underlying base type.
-      [[nodiscard]] virtual auto get_base_type() const noexcept -> const base_type& {return chars_;}
+      [[nodiscard]] auto get_base_type() const noexcept -> const base_type& {return chars_;}
       
       /// @brief Returns the hash code for this basic_string_builder.
       /// @return A hash code.
