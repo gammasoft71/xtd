@@ -198,10 +198,10 @@ Public Constructors</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:a25c2e6d0d3af3066142eec68a653b98e" id="r_a25c2e6d0d3af3066142eec68a653b98e"><td class="memItemLeft">std::ifstream&#160;</td><td class="memItemRight"><a class="el" href="#a25c2e6d0d3af3066142eec68a653b98e">open_file</a> () const noexcept</td></tr>
 <tr class="memdesc:a25c2e6d0d3af3066142eec68a653b98e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the file with read only permission selected by the user.  <br /></td></tr>
-<tr class="memitem:ad65c08ca57d588135e305516efd9cf29" id="r_ad65c08ca57d588135e305516efd9cf29"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#ad65c08ca57d588135e305516efd9cf29">multiselect</a> () const noexcept</td></tr>
-<tr class="memdesc:ad65c08ca57d588135e305516efd9cf29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the dialog box allows multiple files to be selected.  <br /></td></tr>
-<tr class="memitem:a11e2cf27b92ac6e2285042a662fbfae2" id="r_a11e2cf27b92ac6e2285042a662fbfae2"><td class="memItemLeft">virtual <a class="el" href="#a1bb7b064b2ddb5875c8e16a541f4e9be">open_file_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a11e2cf27b92ac6e2285042a662fbfae2">multiselect</a> (bool value)</td></tr>
-<tr class="memdesc:a11e2cf27b92ac6e2285042a662fbfae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the dialog box allows multiple files to be selected.  <br /></td></tr>
+<tr class="memitem:a1c1d25f29d6022b64a9b37f2d6f250ce" id="r_a1c1d25f29d6022b64a9b37f2d6f250ce"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1c1d25f29d6022b64a9b37f2d6f250ce">multiselect</a> () const noexcept</td></tr>
+<tr class="memdesc:a1c1d25f29d6022b64a9b37f2d6f250ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the dialog box allows multiple files to be selected.  <br /></td></tr>
+<tr class="memitem:a6f5b397d815680c42b8e4f1b5df572ec" id="r_a6f5b397d815680c42b8e4f1b5df572ec"><td class="memItemLeft"><a class="el" href="#a1bb7b064b2ddb5875c8e16a541f4e9be">open_file_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6f5b397d815680c42b8e4f1b5df572ec">multiselect</a> (bool value)</td></tr>
+<tr class="memdesc:a6f5b397d815680c42b8e4f1b5df572ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the dialog box allows multiple files to be selected.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -394,8 +394,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad65c08ca57d588135e305516efd9cf29" name="ad65c08ca57d588135e305516efd9cf29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad65c08ca57d588135e305516efd9cf29">&#9670;&#160;</a></span>multiselect() <span class="overload">[1/2]</span></h2>
+<a id="a1c1d25f29d6022b64a9b37f2d6f250ce" name="a1c1d25f29d6022b64a9b37f2d6f250ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1d25f29d6022b64a9b37f2d6f250ce">&#9670;&#160;</a></span>multiselect() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +404,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::forms::open_file_dialog::multiselect </td>
+          <td class="memname">bool xtd::forms::open_file_dialog::multiselect </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -412,7 +412,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -423,27 +423,19 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a11e2cf27b92ac6e2285042a662fbfae2" name="a11e2cf27b92ac6e2285042a662fbfae2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11e2cf27b92ac6e2285042a662fbfae2">&#9670;&#160;</a></span>multiselect() <span class="overload">[2/2]</span></h2>
+<a id="a6f5b397d815680c42b8e4f1b5df572ec" name="a6f5b397d815680c42b8e4f1b5df572ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f5b397d815680c42b8e4f1b5df572ec">&#9670;&#160;</a></span>multiselect() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a1bb7b064b2ddb5875c8e16a541f4e9be">open_file_dialog</a> &amp; xtd::forms::open_file_dialog::multiselect </td>
+          <td class="memname"><a class="el" href="#a1bb7b064b2ddb5875c8e16a541f4e9be">open_file_dialog</a> &amp; xtd::forms::open_file_dialog::multiselect </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets a value indicating whether the dialog box allows multiple files to be selected. </p>

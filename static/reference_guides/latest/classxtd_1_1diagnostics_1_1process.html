@@ -235,11 +235,6 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:ac408bbd5b003d66a0b0c149c71b126a7" id="r_ac408bbd5b003d66a0b0c149c71b126a7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac408bbd5b003d66a0b0c149c71b126a7">start</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;arguments) -&gt; <a class="el" href="classxtd_1_1diagnostics_1_1process.html">xtd::diagnostics::process</a></td></tr>
 <tr class="memdesc:ac408bbd5b003d66a0b0c149c71b126a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a process resource by specifying the name of an application and a set of command-line arguments, and associates the resource with a new <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> component.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Protected Methods</h2></td></tr>
-<tr class="memitem:aed2a20c446329833c8cc4edb7c4cc343" id="r_aed2a20c446329833c8cc4edb7c4cc343"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aed2a20c446329833c8cc4edb7c4cc343">on_exited</a> () -&gt; void</td></tr>
-<tr class="memdesc:aed2a20c446329833c8cc4edb7c4cc343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="#ae2705d1c3fc2c5d87ddbe2c187fd8abd" title="Occurs when a process exits.">xtd::diagnostics::process::exited</a> event.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
@@ -1837,36 +1832,6 @@ Unlike the other overloads, the overload of <a class="el" href="#a83bb259fa5bcda
 If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it. </dd>
 <dd>
 Whenever you use <a class="el" href="#a83bb259fa5bcda4dcceca2b8d86fc2db" title="Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...">xtd::diagnostics::process::start</a> to start a process, you might need to close it or you risk losing system resources. Close processes using xtd::diagnostics::process::close_main_window or Kill. You can check whether a process has already been closed by using its <a class="el" href="#a9481578320363c2c56ea50bc5a9b8acb" title="Gets a value indicating whether the associated process has been terminated.">xtd::diagnostics::process::has_exited</a> property. </dd></dl>
-
-</div>
-</div>
-<a id="aed2a20c446329833c8cc4edb7c4cc343" name="aed2a20c446329833c8cc4edb7c4cc343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed2a20c446329833c8cc4edb7c4cc343">&#9670;&#160;</a></span>on_exited()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual auto xtd::diagnostics::process::on_exited </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  void</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Raises the <a class="el" href="#ae2705d1c3fc2c5d87ddbe2c187fd8abd" title="Occurs when a process exits.">xtd::diagnostics::process::exited</a> event. </p>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aed2a20c446329833c8cc4edb7c4cc343" title="Raises the xtd::diagnostics::process::exited event.">xtd::diagnostics::process::on_exited</a> is the API method that raises the <a class="el" href="#ae2705d1c3fc2c5d87ddbe2c187fd8abd" title="Occurs when a process exits.">xtd::diagnostics::process::exited</a> event. Calling <a class="el" href="#aed2a20c446329833c8cc4edb7c4cc343" title="Raises the xtd::diagnostics::process::exited event.">xtd::diagnostics::process::on_exited</a> causes the <a class="el" href="#ae2705d1c3fc2c5d87ddbe2c187fd8abd" title="Occurs when a process exits.">xtd::diagnostics::process::exited</a> event to occur and is the only way to raise the event using the Process component. <a class="el" href="#aed2a20c446329833c8cc4edb7c4cc343" title="Raises the xtd::diagnostics::process::exited event.">xtd::diagnostics::process::on_exited</a> is primarily used when deriving classes from the component. </dd>
-<dd>
-As an alternative to xtd::diagnostics::process::xtd::diagnostics::process::on_eExited, you can write your own event handler. You create your own event handler delegate and your own event-handling method. </dd></dl>
 
 </div>
 </div>
