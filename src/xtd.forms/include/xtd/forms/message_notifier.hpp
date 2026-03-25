@@ -104,15 +104,10 @@ namespace xtd {
       event<message_notifier, xtd::forms::notifier_closed_event_handler> notifier_closed;
       event<message_notifier, xtd::forms::notifier_button_click_event_handler> button_click;
       
-    protected:
-      virtual void on_notifier_closed(const xtd::forms::notifier_closed_event_args& e) {
-        notifier_closed(*this, e);
-      }
-      virtual void on_button_click(const xtd::forms::notifier_button_click_event_args& e) {
-        button_click(*this, e);
-      }
-      
     private:
+      void on_notifier_closed(const xtd::forms::notifier_closed_event_args& e) {notifier_closed(*this, e);}
+      void on_button_click(const xtd::forms::notifier_button_click_event_args& e) {button_click(*this, e);}
+
       xtd::string title_;
       xtd::string message_;
       xtd::drawing::image icon_ = xtd::drawing::image::empty;
