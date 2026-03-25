@@ -36,7 +36,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the dialog_result contains the result when closing dialog.
       /// One of dialog_result enumerated values.
-      virtual forms::dialog_result dialog_result() const noexcept {return dialog_result_;}
+      forms::dialog_result dialog_result() const noexcept {return dialog_result_;}
       /// @}
       
     private:
