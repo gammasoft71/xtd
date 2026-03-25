@@ -158,7 +158,7 @@ namespace xtd {
       /// @brief Raises the message_dialog::dialog_close event.
       /// @param e An message_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the message dialog box is closed.
-      virtual void on_dialog_closed(const dialog_closed_event_args& e);
+      void on_dialog_closed(const dialog_closed_event_args& e);
       
       xtd::sptr<data> data_;
     };
