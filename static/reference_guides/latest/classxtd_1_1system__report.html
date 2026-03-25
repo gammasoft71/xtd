@@ -137,7 +137,21 @@ Public Types</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e">system_informations</a>
 , <br />
-&#160;&#160;<b>all</b>
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050baa181a603769c1f98ad927e7367c7aa51">all</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050ba7d5c009e4eb8bbc78647caeca308e61b">ui</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050badc43e863c176e9b9f2a0b6054b24bd1a">minimal</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050bac00f0c4675b91fb8b918e4079a0b1bac">standard</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050ba1b2415052ea497897c757a8069a97686">diagnostic</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050ba7bdc8a923ea34af94c5d36604d0fb3dc">sensitive</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050ba9dfc8dce7280fd49fc6e7bf0436ed325">safe</a>
+, <br />
+&#160;&#160;<a class="el" href="#ad9aa20286ab053ab3e44c75417bc050bae9dc924f238fa6cc29465942875fe8f0">full</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ad9aa20286ab053ab3e44c75417bc050b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies enumerated constants used by <a class="el" href="#a3a17372bc46ca0852262b1aaffeb3b92" title="Generates json format string report.">xtd::system_report::to_json</a>, <a class="el" href="#abf6a753fd4510046bd7f571dd0e0c4d4" title="Generates string report.">xtd::system_report::to_string</a> and <a class="el" href="#aa9448489c2629ab1bef0ab519cb6d915" title="Generates xml format string report.">xtd::system_report::to_xml</a> methods to generate reports.  <a href="#ad9aa20286ab053ab3e44c75417bc050b">More...</a><br /></td></tr>
@@ -356,6 +370,30 @@ Public Static Methods</h2></td></tr>
 <tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050babf1bac83fb72069c93b3e1f63d41251c" name="ad9aa20286ab053ab3e44c75417bc050babf1bac83fb72069c93b3e1f63d41251c"></a>screens&#160;</td><td class="fielddoc"><p>Displays on the system. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e" name="ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e"></a>system_informations&#160;</td><td class="fielddoc"><p>System informations collection. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050baa181a603769c1f98ad927e7367c7aa51" name="ad9aa20286ab053ab3e44c75417bc050baa181a603769c1f98ad927e7367c7aa51"></a>all&#160;</td><td class="fielddoc"><p>All reports. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba7d5c009e4eb8bbc78647caeca308e61b" name="ad9aa20286ab053ab3e44c75417bc050ba7d5c009e4eb8bbc78647caeca308e61b"></a>ui&#160;</td><td class="fielddoc"><p>UI report. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050badc43e863c176e9b9f2a0b6054b24bd1a" name="ad9aa20286ab053ab3e44c75417bc050badc43e863c176e9b9f2a0b6054b24bd1a"></a>minimal&#160;</td><td class="fielddoc"><p>Minimal report. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Typically used for rapid logging. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050bac00f0c4675b91fb8b918e4079a0b1bac" name="ad9aa20286ab053ab3e44c75417bc050bac00f0c4675b91fb8b918e4079a0b1bac"></a>standard&#160;</td><td class="fielddoc"><p>Standard report. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Typically used for class bug report. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba1b2415052ea497897c757a8069a97686" name="ad9aa20286ab053ab3e44c75417bc050ba1b2415052ea497897c757a8069a97686"></a>diagnostic&#160;</td><td class="fielddoc"><p>Diagnostic report. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Typically used for advanced development debug. </dd>
+<dd>
+Does not include sensitive information by default. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba7bdc8a923ea34af94c5d36604d0fb3dc" name="ad9aa20286ab053ab3e44c75417bc050ba7bdc8a923ea34af94c5d36604d0fb3dc"></a>sensitive&#160;</td><td class="fielddoc"><p>Sensitive report. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Contains sensitive information such as environment variables and user-specific paths. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba9dfc8dce7280fd49fc6e7bf0436ed325" name="ad9aa20286ab053ab3e44c75417bc050ba9dfc8dce7280fd49fc6e7bf0436ed325"></a>safe&#160;</td><td class="fielddoc"><p>Safe report. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Includes all non-sensitive information. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050bae9dc924f238fa6cc29465942875fe8f0" name="ad9aa20286ab053ab3e44c75417bc050bae9dc924f238fa6cc29465942875fe8f0"></a>full&#160;</td><td class="fielddoc"><p>Standard report. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Includes all available information, including sensitive data. </dd></dl>
 </td></tr>
 </table>
 

@@ -115,7 +115,7 @@ $(function() {
 <div class="line">    text(<span class="stringliteral">&quot;System reports example&quot;</span>);</div>
 <div class="line">    start_position(form_start_position::center_screen);</div>
 <div class="line">    size({500, 700});</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    report_tab_control.dock(dock_style::fill);</div>
 <div class="line">    report_tab_control.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    report_tab_control.tab_pages().add_range({text_report_tab_page, json_report_tab_page, xml_report_tab_page});</div>
@@ -125,11 +125,9 @@ $(function() {
 <div class="line">    xml_report_tab_page.text(<span class="stringliteral">&quot;xml&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    text_reports_text_box.dock(dock_style::fill);</div>
-<div class="line">    text_reports_text_box.font({drawing::font_family::generic_monospace(), text_reports_text_box.font().size()});</div>
 <div class="line">    text_reports_text_box.multiline(<span class="keyword">true</span>);</div>
 <div class="line">    text_reports_text_box.parent(text_report_tab_page);</div>
 <div class="line">    text_reports_text_box.read_only(<span class="keyword">true</span>);</div>
-<div class="line">    text_reports_text_box.text(system_report::to_string());</div>
 <div class="line">    text_reports_text_box.word_wrap(<span class="keyword">false</span>);</div>
 <div class="line">    </div>
 <div class="line">    json_reports_text_box.dock(dock_style::fill);</div>
@@ -137,7 +135,6 @@ $(function() {
 <div class="line">    json_reports_text_box.multiline(<span class="keyword">true</span>);</div>
 <div class="line">    json_reports_text_box.parent(json_report_tab_page);</div>
 <div class="line">    json_reports_text_box.read_only(<span class="keyword">true</span>);</div>
-<div class="line">    json_reports_text_box.text(system_report::to_json());</div>
 <div class="line">    json_reports_text_box.word_wrap(<span class="keyword">false</span>);</div>
 <div class="line">    </div>
 <div class="line">    xml_reports_text_box.dock(dock_style::fill);</div>
@@ -145,11 +142,41 @@ $(function() {
 <div class="line">    xml_reports_text_box.multiline(<span class="keyword">true</span>);</div>
 <div class="line">    xml_reports_text_box.parent(xml_report_tab_page);</div>
 <div class="line">    xml_reports_text_box.read_only(<span class="keyword">true</span>);</div>
-<div class="line">    xml_reports_text_box.text(system_report::to_xml());</div>
 <div class="line">    xml_reports_text_box.word_wrap(<span class="keyword">false</span>);</div>
+<div class="line">    </div>
+<div class="line">    reports_panel.parent(*<span class="keyword">this</span>);</div>
+<div class="line">    reports_panel.padding(10);</div>
+<div class="line">    reports_panel.height(reports_choice.height() + 20);</div>
+<div class="line">    reports_panel.dock(dock_style::top);</div>
+<div class="line"> </div>
+<div class="line">    reports_choice.dock(dock_style::fill);</div>
+<div class="line">    reports_choice.parent(reports_panel);</div>
+<div class="line">    reports_choice.items().add_range({</div>
+<div class="line">      {<span class="stringliteral">&quot;minimal&quot;</span>, system_report::reports::minimal},</div>
+<div class="line">      {<span class="stringliteral">&quot;standard&quot;</span>, system_report::reports::standard},</div>
+<div class="line">      {<span class="stringliteral">&quot;diagnostic&quot;</span>, system_report::reports::diagnostic},</div>
+<div class="line">      {<span class="stringliteral">&quot;diagnostic | sensitive&quot;</span>, system_report::reports::diagnostic | system_report::reports::sensitive},</div>
+<div class="line">      {<span class="stringliteral">&quot;safe&quot;</span>, system_report::reports::safe},</div>
+<div class="line">      {<span class="stringliteral">&quot;full&quot;</span>, system_report::reports::full}</div>
+<div class="line">    });</div>
+<div class="line">    reports_choice.selected_value_changed += [&amp;] {</div>
+<div class="line">      text_reports_text_box.text(system_report::to_string(as&lt;system_report::reports&gt;(reports_choice.selected_item().tag())));</div>
+<div class="line">      json_reports_text_box.text(system_report::to_json(as&lt;system_report::reports&gt;(reports_choice.selected_item().tag())));</div>
+<div class="line">      xml_reports_text_box.text(system_report::to_xml(as&lt;system_report::reports&gt;(reports_choice.selected_item().tag())));</div>
+<div class="line">    };</div>
+<div class="line">    reports_choice.selected_index(0);</div>
+<div class="line"> </div>
+<div class="line">    reports_label.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    reports_label.parent(reports_panel);</div>
+<div class="line">    reports_label.dock(dock_style::left);</div>
+<div class="line">    reports_label.text(<span class="stringliteral">&quot;Reports :&quot;</span>);</div>
+<div class="line">    reports_label.text_align(<a id="_a0" name="_a0"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">xtd::forms::content_alignment::middle_left</a>);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  panel reports_panel;</div>
+<div class="line">  label reports_label;</div>
+<div class="line">  choice reports_choice;</div>
 <div class="line">  tab_control report_tab_control;</div>
 <div class="line">  tab_page text_report_tab_page;</div>
 <div class="line">  tab_page json_report_tab_page;</div>
@@ -162,6 +189,7 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(main_form());</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">xtd::forms::content_alignment::middle_left</a></div><div class="ttdeci">@ middle_left</div><div class="ttdoc">Content is vertically aligned in the middle, and horizontally aligned on the left.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:29</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
