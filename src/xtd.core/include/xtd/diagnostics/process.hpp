@@ -839,17 +839,8 @@ namespace xtd {
       [[nodiscard]] auto compare_to(const xtd::diagnostics::process& o) const noexcept -> xtd::int32 override {return this < &o ? -1 : this > &o ? 1 : 0;}
       /// @endcond
       
-    protected:
-      /// @name Protected Methods
-      
-      /// @{
-      /// @brief Raises the xtd::diagnostics::process::exited event.
-      /// @remarks xtd::diagnostics::process::on_exited is the API method that raises the xtd::diagnostics::process::exited event. Calling xtd::diagnostics::process::on_exited causes the xtd::diagnostics::process::exited event to occur and is the only way to raise the event using the Process component. xtd::diagnostics::process::on_exited is primarily used when deriving classes from the component.
-      /// @remarks As an alternative to xtd::diagnostics::process::xtd::diagnostics::process::on_eExited, you can write your own event handler. You create your own event handler delegate and your own event-handling method.
-      virtual auto on_exited() -> void;
-      /// @}
-      
     private:
+      auto on_exited() -> void;
       xtd::sptr<data> data_;
       friend __init_process_message_box_message__;
       inline static xtd::delegate<void(const xtd::string&)> message_box_message_;
