@@ -495,6 +495,7 @@
 #include "parse.hpp"
 #include "platform_id.hpp"
 #include "platform_not_supported_exception.hpp"
+#include "post_decrementable.hpp"
 #include "predicate.hpp"
 #include "print.hpp"
 #include "println.hpp"
