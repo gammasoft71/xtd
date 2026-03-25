@@ -55,7 +55,31 @@ namespace xtd {
       screens = 0b10000000000000,
       /// @brief System informations collection.
       system_informations = 0b100000000000000,
-      all = stack_trace | libraries | processor | operating_system | compiler | language | locale | toolkit | environment_variables | special_folders | system_colors | generic_font_families | system_fonts | screens | system_informations
+      /// @brief All reports.
+      all = stack_trace | libraries | processor | operating_system | compiler | language | locale | toolkit | environment_variables | special_folders | system_colors | generic_font_families | system_fonts | screens | system_informations,
+
+      /// @brief UI report.
+      ui = system_colors | system_fonts | generic_font_families | screens,
+      
+      /// @brief Minimal report.
+      /// @remarks Typically used for rapid logging.
+      minimal = operating_system | processor | compiler | language,
+      /// @brief Standard report.
+      /// @remarks Typically used for class bug report.
+      standard = minimal | stack_trace | toolkit | libraries,
+      /// @brief Diagnostic report.
+      /// @remarks Typically used for advanced development debug.
+      /// @remarks Does not include sensitive information by default.
+      diagnostic = standard | screens | system_informations,
+      /// @brief Sensitive report.
+      /// @warning Contains sensitive information such as environment variables and user-specific paths.
+      sensitive = environment_variables | special_folders,
+      /// @brief Safe report.
+      /// @remarks Includes all non-sensitive information.
+      safe = all & ~sensitive,
+      /// @brief Standard report.
+      /// @remarks Includes all available information, including sensitive data.
+      full = all,
     };
     
     /// @name Public Aliases

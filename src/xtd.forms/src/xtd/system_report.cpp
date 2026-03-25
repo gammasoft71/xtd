@@ -272,7 +272,7 @@ const xtd::environment::xtd_library_collection& system_report::xtd_libraries() n
 }
 
 string system_report::to_json() noexcept {
-  return to_json(reports::all);
+  return to_json(reports::standard);
 }
 
 string system_report::to_json(reports reports) noexcept {
@@ -280,7 +280,7 @@ string system_report::to_json(reports reports) noexcept {
 }
 
 string system_report::to_string() noexcept {
-  return to_string(reports::all);
+  return to_string(reports::standard);
 }
 
 string system_report::to_string(reports reports) noexcept {
@@ -305,7 +305,7 @@ string system_report::to_string(reports reports) noexcept {
 }
 
 string system_report::to_xml() noexcept {
-  return to_xml(reports::all);
+  return to_xml(reports::standard);
 }
 
 string system_report::to_xml(reports reports) noexcept {
