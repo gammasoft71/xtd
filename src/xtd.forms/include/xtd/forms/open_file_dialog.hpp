@@ -46,12 +46,12 @@ namespace xtd {
       /// @brief Gets a value indicating whether the dialog box allows multiple files to be selected.
       /// @return `true` if the dialog box allows multiple files to be selected together or concurrently; otherwise, `false`. The default value is `false`.
       /// @remarks Use the file_names property to access the full list of selected file names.
-      virtual bool multiselect() const noexcept;
+      bool multiselect() const noexcept;
       /// @brief Sets a value indicating whether the dialog box allows multiple files to be selected.
       /// @param value `true` if the dialog box allows multiple files to be selected together or concurrently; otherwise, `false`. The default value is `false`.
       /// @return Current open_file_dialog.
       /// @remarks Use the file_names property to access the full list of selected file names.
-      virtual open_file_dialog& multiselect(bool value);
+      open_file_dialog& multiselect(bool value);
       /// @}
       
     private:
