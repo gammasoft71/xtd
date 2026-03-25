@@ -61,7 +61,9 @@ namespace {
     auto major = -1, minor = -1, build = -1, revision = -1;
     auto server = false;
     get_windows_version(major, minor, build, revision, server);
-    if (!server && build >= 26200) return make_tuple("Windows 11", "Selenium", "25H2");
+    if (!server && build >= 26400) return make_tuple("Windows 11", "Bromine", "26H2");
+    if (!server && build >= 26300) return make_tuple("Windows 11", "Bromine", "26H1");
+    if (!server && build >= 26200) return make_tuple("Windows 11", "Germanium", "25H2");
     if (!server && build >= 26100) return make_tuple("Windows 11", "Germanium", "24H2");
     if (server && build >= 26100) return make_tuple("Windows Server 2025", "Germanium", "24H2");
     if (server && build >= 25398) return make_tuple("Windows Server, version 23H2", "Zinc", "23H2");
