@@ -27,7 +27,7 @@ public:
     write_mail_button.image_align(content_alignment::middle_left);
     write_mail_button.text("Write mail...");
     write_mail_button.click += delegate_ {
-      diagnostics::process::start(diagnostics::process_start_info {"mailto:gammasoft71@gmail.com?subject=Hi%20Gammasoft71&body=xtd%20is%20a%20great%20project.%0D%0A%20"}.use_shell_execute(true));
+      diagnostics::process::start(diagnostics::process_start_info {string::format("mailto:gammasoft71@gmail.com?subject={}&body={}", uri::escape_data_string("Hi Gammasoft71"), uri::escape_data_string("xtd is a great project.\n\n"))}.use_shell_execute(true));
     };
     
     open_home_folder_button.image(button_images::from_name("folder-home", drawing::size(64, 64)));
