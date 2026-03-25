@@ -57,7 +57,6 @@ add_sources(
   "src/xtd/drawing/native/wxwidgets/region.cpp"
   "src/xtd/drawing/native/wxwidgets/system_colors.cpp"
   "src/xtd/drawing/native/wxwidgets/system_images.cpp"
-  "src/xtd/drawing/native/wxwidgets/system_images_gtk.cpp"
   "src/xtd/drawing/native/wxwidgets/system_fonts.cpp"
   "src/xtd/drawing/native/wxwidgets/toolkit.cpp"
 )
@@ -65,6 +64,10 @@ if (APPLE)
   add_sources(
     "src/xtd/drawing/native/wxwidgets/system_colors.mm"
     "src/xtd/drawing/native/wxwidgets/system_images.mm"
+  )
+elseif (UNIX)
+  add_sources(
+    "src/xtd/drawing/native/wxwidgets/system_images_gtk.cpp"
   )
 endif()
 target_type(${XTD_LIBRARY_TYPE})
