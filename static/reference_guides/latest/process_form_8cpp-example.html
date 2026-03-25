@@ -136,7 +136,7 @@ $(function() {
 <div class="line">    write_mail_button.image_align(content_alignment::middle_left);</div>
 <div class="line">    write_mail_button.text(<span class="stringliteral">&quot;Write mail...&quot;</span>);</div>
 <div class="line">    write_mail_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      diagnostics::process::start(diagnostics::process_start_info {<span class="stringliteral">&quot;mailto:gammasoft71@gmail.com?subject=Hi%20Gammasoft71&amp;body=xtd%20is%20a%20great%20project.%0D%0A%20&quot;</span>}.use_shell_execute(<span class="keyword">true</span>));</div>
+<div class="line">      diagnostics::process::start(diagnostics::process_start_info {string::format(<span class="stringliteral">&quot;mailto:gammasoft71@gmail.com?subject={}&amp;body={}&quot;</span>, uri::escape_data_string(<span class="stringliteral">&quot;Hi Gammasoft71&quot;</span>), uri::escape_data_string(<span class="stringliteral">&quot;xtd is a great project.\n\n&quot;</span>))}.use_shell_execute(<span class="keyword">true</span>));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    open_home_folder_button.image(button_images::from_name(<span class="stringliteral">&quot;folder-home&quot;</span>, drawing::size(64, 64)));</div>
