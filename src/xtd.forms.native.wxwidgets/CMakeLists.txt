@@ -141,7 +141,6 @@ add_sources(
   "src/xtd/forms/native/wxwidgets/form.cpp"
   "src/xtd/forms/native/wxwidgets/find_dialog.cpp"
   "src/xtd/forms/native/wxwidgets/group_box.cpp"
-  "src/xtd/forms/native/wxwidgets/gtk_settings.cpp"
   "src/xtd/forms/native/wxwidgets/image_list.cpp"
   "src/xtd/forms/native/wxwidgets/input_dialog.cpp"
   "src/xtd/forms/native/wxwidgets/label.cpp"
@@ -182,12 +181,16 @@ add_sources(
 )
 
 if (APPLE)
-add_sources(
+  add_sources(
     "src/xtd/forms/native/wxwidgets/application.mm"
     "src/xtd/forms/native/wxwidgets/button.mm"
     "src/xtd/forms/native/wxwidgets/cursor.mm"
     "src/xtd/forms/native/wxwidgets/form.mm"
     "src/xtd/forms/native/wxwidgets/message_box.mm"
+  )
+elseif (UNIX)
+  add_sources(
+    "src/xtd/forms/native/wxwidgets/gtk_settings.cpp"
   )
 endif()
 target_type(${XTD_LIBRARY_TYPE})
