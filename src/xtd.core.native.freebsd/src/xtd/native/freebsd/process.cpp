@@ -71,24 +71,37 @@ namespace {
   string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& file_name, const string& working_directory = "") {
     string path_directories = getenv("PATH") == nullptr ? "" : getenv("PATH");
     
-    static set<string> standard_extensions = {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
-    set<string> extensions = path(file_name).has_extension() ? set<string> {""} : standard_extensions;
+    static auto standard_extensions = set<string> {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
+    auto extensions = path(file_name).has_extension() ? set<string> {""} : standard_extensions;
     for (auto extension : extensions) {
       auto file_name_with_extension = file_name + extension;
-      if (working_directory != "" && exists(path(working_directory) / file_name_with_extension)) return (path(working_directory) / file_name_with_extension).string();
+      try {
+        if (working_directory != "" && exists(path(working_directory) / file_name_with_extension)) return (path(working_directory) / file_name_with_extension).string();
+      } catch (...) {
+      }
       if (path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
-      if (exists(current_path() / file_name_with_extension)) return (current_path() / file_name_with_extension).string();
+      try {
+        if (exists(current_path() / file_name_with_extension)) return (current_path() / file_name_with_extension).string();
+      } catch (...) {
+      }
       for (auto directory : splitter(path_directories, {':'}, numeric_limits<size_t>::max(), false))
-        if (exists(path(directory) / file_name_with_extension)) return (path(directory) / file_name_with_extension).string();
+        try {
+          if (exists(path(directory) / file_name_with_extension)) return (path(directory) / file_name_with_extension).string();
+        }catch (...) {
+        }
     }
     return file_name;
   }
   
   bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
-    return exists(full_file_name_with_extension);
+    try {
+      return exists(full_file_name_with_extension);
+    }catch (...) {
+      return false;
+    }
   }
-  
+
   bool is_valid_uri(const string& command_line) {
     static vector<string> schemes = {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
     auto iterator = find_if(schemes.begin(), schemes.end(), [&](auto scheme) {return command_line.find(scheme + ":") == 0;});

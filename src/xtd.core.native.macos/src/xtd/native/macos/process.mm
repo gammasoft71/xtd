@@ -78,18 +78,33 @@ namespace {
     auto extensions = std::filesystem::path(file_name).has_extension() ? std::set<std::string> {""} : standard_extensions;
     for (const auto& extension : extensions) {
       auto file_name_with_extension = file_name + extension;
-      if (working_directory != "" && exists(std::filesystem::path(working_directory) / file_name_with_extension)) return (std::filesystem::path(working_directory) / file_name_with_extension).string();
+      try {
+        if (working_directory != "" && exists(std::filesystem::path(working_directory) / file_name_with_extension)) return (std::filesystem::path(working_directory) / file_name_with_extension).string();
+      } catch (...) {
+      }
       if (std::filesystem::path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
-      if (std::filesystem::exists(std::filesystem::current_path() / file_name_with_extension)) return (std::filesystem::current_path() / file_name_with_extension).string();
+      try {
+        if (std::filesystem::exists(std::filesystem::current_path() / file_name_with_extension)) return (std::filesystem::current_path() / file_name_with_extension).string();
+      } catch (...) {
+      }
+
       for (const auto& directory : splitter(path_directories, {':'}, std::numeric_limits<size_t>::max(), false))
-        if (exists(std::filesystem::path(directory) / file_name_with_extension)) return (std::filesystem::path(directory) / file_name_with_extension).string();
+        try {
+          if (exists(std::filesystem::path(directory) / file_name_with_extension)) return (std::filesystem::path(directory) / file_name_with_extension).string();
+        } catch (...) {
+        }
+
     }
     return file_name;
   }
   
   bool is_valid_process(std::function<std::vector<std::string>(const std::string& str, const std::vector<char>& separators, size_t count, bool)> splitter, const std::string& command_line, const std::string& working_directory) {
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
-    return std::filesystem::exists(full_file_name_with_extension);
+    try {
+      return std::filesystem::exists(full_file_name_with_extension);
+    } catch (...) {
+      return false;
+    }
   }
   
   bool is_valid_uri(const std::string& command_line) {
