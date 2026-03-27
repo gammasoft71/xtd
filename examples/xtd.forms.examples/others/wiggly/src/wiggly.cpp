@@ -7,30 +7,29 @@ namespace wiggly_example {
       back_color(system_colors::window());
       font({font(), font().size() + 12});
       timer.interval(60_ms);
-      timer.tick += event_handler(*this, &wiggly::on_timer_tick);
+      timer.tick += event_handler {self_, &wiggly::on_timer_tick};
       timer.enabled(true);
     }
     
   protected:
-    void on_paint(paint_event_args& e) override {
-      static const auto sins = array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
+    auto on_paint(paint_event_args& e) -> void override {
+      static constexpr auto sins = std::array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width - as<int>(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as<int>(e.graphics().measure_string(text(), font()).height)) / 2};
-      auto wiggly_text = text().to_u32string();
-      for (auto i = 0_z; i < wiggly_text.length(); i++) {
-        auto index = (step + i) % sins.length();
-        e.graphics().draw_string(string::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.length() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
-        pos.x = pos.x + as<int>(e.graphics().measure_string(string::format("{}", wiggly_text[i]), font()).width);
+      for (auto char_index = 0_z; const auto& c : text().to_u32string()) {
+        auto sins_index = (step + char_index++) % sins.size();
+        e.graphics().draw_string(string::format("{}", c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[sins_index] * font().height() / 400)));
+        pos.x = pos.x + as<int>(e.graphics().measure_string(string::format("{}", c), font()).width);
       }
     }
     
   private:
-    void on_timer_tick(object& sender, const event_args& e) {
+    auto on_timer_tick(object& sender, const event_args& e) -> void {
       step++;
       invalidate();
     }
     
     forms::timer timer;
-    int step = 0;
+    xtd::size step = 0;
   };
   
   class form1 : public form {
