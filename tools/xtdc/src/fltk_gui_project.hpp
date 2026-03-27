@@ -59,7 +59,7 @@ namespace xtdc_command {
         "if (APPLE)",
         "  # Workaround: fltk.framework does not exist, so we have to replace it by libfltk.dylib",
         "  string(REPLACE \"libfltk_images\" \"libfltk\" FLTK_LIBRARY_NAME \"${FLTK_IMAGES_LIBRARY_RELEASE}\")",
-        "  string(REPLACE \"/usr/local/fltk.framework\" \"${FLTK_LIBRARY_NAME}\" FLTK_LIBRARIES \"${FLTK_LIBRARIES}\")",
+        "  string(REPLACE \"/usr/local/FLTK.framework\" \"${FLTK_LIBRARY_NAME}\" FLTK_LIBRARIES \"${FLTK_LIBRARIES}\")",
         "  endif()",
         "target_link_libraries(${PROJECT_NAME} ${FLTK_LIBRARIES})",
       };
@@ -145,7 +145,7 @@ namespace xtdc_command {
       lines.add("if (APPLE)");
       lines.add("  # Workaround: fltk.framework does not exist, so we have to replace it by libfltk.dylib");
       lines.add("  string(REPLACE \"libfltk_images\" \"libfltk\" FLTK_LIBRARY_NAME \"${FLTK_IMAGES_LIBRARY_RELEASE}\")");
-      lines.add("  string(REPLACE \"/usr/local/fltk.framework\" \"${FLTK_LIBRARY_NAME}\" FLTK_LIBRARIES \"${FLTK_LIBRARIES}\")");
+      lines.add("  string(REPLACE \"/usr/local/FLTK.framework\" \"${FLTK_LIBRARY_NAME}\" FLTK_LIBRARIES \"${FLTK_LIBRARIES}\")");
       lines.add("  endif()");
       lines.add("target_link_libraries(${PROJECT_NAME} ${FLTK_LIBRARIES})");
       
