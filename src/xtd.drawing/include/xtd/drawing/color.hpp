@@ -781,6 +781,57 @@ namespace xtd {
       /// ```
       float get_saturation() const noexcept;
       
+      /// @brief Gets the hue-saturation-value (HSB) value value for this xtd::drawing::color structure.
+      /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// ```cpp
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   xtd::array<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_value() == red_shade.get_value())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// ```
+      float get_value() const noexcept;
+
       /// @brief Gets the Y'UV color model `U` (chroma) value for this xtd::drawing::color structure.
       /// @return The Y'UV `U` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
       float get_u() const noexcept;
@@ -1138,6 +1189,13 @@ namespace xtd {
       /// @return The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color from_hsl(float hue, float saturation, float lightness) noexcept;
       
+      /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and value) values.
+      /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
+      /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
+      /// @param value The xtd::drawing::color lightness. The value ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      static xtd::drawing::color from_hsv(float hue, float saturation, float value) noexcept;
+
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
       /// @param red The red component. Valid values are 0 through 255.

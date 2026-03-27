@@ -261,12 +261,12 @@ color color::from_hsb(float hue, float saturation, float brightness) noexcept {
   
   hue = hue >= 360 ? 0 : hue / 60;
   
-  auto f = hue - trunc(hue);
+  auto f = hue - std::trunc(hue);
   auto p = brightness * (1.0f - saturation);
   auto q = brightness * (1.0f - (saturation * f));
   auto t = brightness * (1.0f - (saturation * (1.0f - f)));
   
-  switch (static_cast<int32>(trunc(hue))) {
+  switch (static_cast<int32>(std::trunc(hue))) {
     case 0: return color::from_argb(255, static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(t * 255.0f), static_cast<xtd::byte>(p * 255.0f));
     case 1: return color::from_argb(255, static_cast<xtd::byte>(q * 255.0f), static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(p * 255.0f));
     case 2: return color::from_argb(255, static_cast<xtd::byte>(p * 255.0f),  static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(t * 255.0f));
@@ -294,6 +294,10 @@ color color::from_hsl(float hue, float saturation, float lightness) noexcept {
   auto v1 = 2 * lightness - v2;
   
   return color::from_argb(255, static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
+}
+
+color color::from_hsv(float hue, float saturation, float value) noexcept {
+  return from_hsb(hue, saturation, value);
 }
 
 color color::from_known_color(known_color color) {
@@ -631,6 +635,10 @@ float color::get_saturation() const noexcept {
   if (max == min) return 0.0f;
   
   return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
+}
+
+float color::get_value() const noexcept {
+  return get_brightness();
 }
 
 float color::get_u() const noexcept {
