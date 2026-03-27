@@ -116,30 +116,29 @@ $(function() {
 <div class="line">      back_color(system_colors::window());</div>
 <div class="line">      font({font(), font().size() + 12});</div>
 <div class="line">      timer.interval(60_ms);</div>
-<div class="line">      timer.tick += event_handler(*<span class="keyword">this</span>, &amp;wiggly::on_timer_tick);</div>
+<div class="line">      timer.tick += event_handler {<a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, &amp;wiggly::on_timer_tick};</div>
 <div class="line">      timer.enabled(<span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">protected</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_paint(paint_event_args&amp; e)<span class="keyword"> override </span>{</div>
-<div class="line">      <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> sins = array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};</div>
+<div class="line">    <span class="keyword">auto</span> on_paint(paint_event_args&amp; e) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
+<div class="line">      <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> sins = std::array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};</div>
 <div class="line">      <span class="keyword">auto</span> pos = point {(e.clip_rectangle().size().width - as&lt;int&gt;(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as&lt;int&gt;(e.graphics().measure_string(text(), font()).height)) / 2};</div>
-<div class="line">      <span class="keyword">auto</span> wiggly_text = text().to_u32string();</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; wiggly_text.length(); i++) {</div>
-<div class="line">        <span class="keyword">auto</span> index = (step + i) % sins.length();</div>
-<div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.length() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));</div>
-<div class="line">        pos.x = pos.x + as&lt;int&gt;(e.graphics().measure_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, wiggly_text[i]), font()).width);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> char_index = 0_z; <span class="keyword">const</span> <span class="keyword">auto</span>&amp; c : text().to_u32string()) {</div>
+<div class="line">        <span class="keyword">auto</span> sins_index = (step + char_index++) % sins.size();</div>
+<div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[sins_index] * font().height() / 400)));</div>
+<div class="line">        pos.x = pos.x + as&lt;int&gt;(e.graphics().measure_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, c), font()).width);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_timer_tick(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">    <span class="keyword">auto</span> on_timer_tick(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      step++;</div>
 <div class="line">      invalidate();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    forms::timer timer;</div>
-<div class="line">    <span class="keywordtype">int</span> step = 0;</div>
+<div class="line">    <a id="_a1" name="_a1"></a><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> step = 0;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
@@ -150,7 +149,7 @@ $(function() {
 <div class="line">      controls().add_range({wiggly, text_box});</div>
 <div class="line">      </div>
 <div class="line">      text_box.location({20, 90});</div>
-<div class="line">      text_box.text_changed += <a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">      text_box.text_changed += <a id="_a2" name="_a2"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        wiggly.text(text_box.text());</div>
 <div class="line">      };</div>
 <div class="line">      text_box.text(<span class="stringliteral">&quot;Habemus papam&quot;</span>);</div>
@@ -172,7 +171,9 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(wiggly_example::form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:932</div></div>
+<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
