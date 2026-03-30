@@ -10,7 +10,7 @@ namespace xtd {
   /// @par Definition
   /// ```cpp
   /// template<typename type_t>
-  /// concept xtd::post_incrementable = requires(xtd::raw_type<type_t>& a) {{a--} -> std::same_as<xtd::raw_type<type_t>>;}
+  /// concept xtd::post_incrementable = requires(xtd::raw_type<type_t>& a) {{a++} -> std::same_as<xtd::raw_type<type_t>>;}
   /// ```
   /// @par Header
   /// ```cpp
