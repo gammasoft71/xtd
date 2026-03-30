@@ -497,6 +497,7 @@
 #include "platform_not_supported_exception.hpp"
 #include "post_decrementable.hpp"
 #include "post_incrementable.hpp"
+#include "pre_decrementable.hpp"
 #include "pre_incrementable.hpp"
 #include "predicate.hpp"
 #include "print.hpp"
