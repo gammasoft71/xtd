@@ -374,6 +374,7 @@
 #include "debugstreambuf.hpp"
 #include "decimal.hpp"
 #include "decimal_object.hpp"
+#include "decrementable.hpp"
 #include "delegate.hpp"
 #include "delete_ptr.hpp"
 #include "delete_sptr.hpp"
