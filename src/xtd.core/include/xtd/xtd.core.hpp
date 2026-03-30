@@ -428,6 +428,7 @@
 #include "iequatable.hpp"
 #include "iformatable.hpp"
 #include "ihashable.hpp"
+#include "incrementable.hpp"
 #include "index_out_of_range_exception.hpp"
 #include "int16.hpp"
 #include "int16_object.hpp"
