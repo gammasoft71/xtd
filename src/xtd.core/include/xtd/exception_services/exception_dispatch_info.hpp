@@ -33,6 +33,9 @@ namespace xtd {
       exception_dispatch_info() = default;
       exception_dispatch_info(exception_dispatch_info&&) = default;
       exception_dispatch_info(const exception_dispatch_info&) = default;
+      template<typename exception_t>
+      exception_dispatch_info(const exception_t& source) : source_ {xtd::new_ptr<exception_t>()}, exception_ptr_ {std::make_exception_ptr(source)} {}
+      exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
       auto operator =(exception_dispatch_info&&) -> exception_dispatch_info& = default;
       auto operator =(const exception_dispatch_info&) -> exception_dispatch_info& = default;
       /// @endcond
@@ -47,7 +50,7 @@ namespace xtd {
       /// @brief Gets the exception that's represented by the current instance.
       /// @return The exception that's represented by the current instance.
       /// @remarks This property is used by the Task Parallel Library, for example, to combine multiple exceptions in an xtd::aggregate_exception object. It's not intended to be used by application code. Use the xtd::exception_services::exception_dispatch_info::rethrow method to restore the state of the captured exception and throw it.
-      [[nodiscard]] auto source_exception() const noexcept -> xtd::ptr<xtd::exception> {return source_;}
+      [[nodiscard]] auto source_exception() const noexcept -> xtd::ptr<std::exception> {return source_;}
       /// @}
       
       /// @name Public Properties
@@ -89,11 +92,7 @@ namespace xtd {
       /// @}
       
     private:
-      template<typename exception_t>
-      exception_dispatch_info(const exception_t& source) : source_ {source.template memberwise_clone<exception_t>().release()}, exception_ptr_ {std::make_exception_ptr(source)} {}
-      exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
-
-      xtd::ptr<xtd::exception> source_;
+      xtd::ptr<std::exception> source_;
       std::exception_ptr exception_ptr_;
     };
   }

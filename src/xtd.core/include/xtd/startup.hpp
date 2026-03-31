@@ -47,8 +47,8 @@ namespace xtd {
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
     template<typename main_function_t>
-    static int safe_run(main_function_t main_function) {
-      return internal_safe_run(main_function, std::nullopt, std::nullopt);
+    static int run(main_function_t main_function) {
+      return internal_run(main_function, std::nullopt, std::nullopt);
     }
     
     /// @brief Safely call the specified application's main entry point, argc and argv.
@@ -72,110 +72,12 @@ namespace xtd {
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
     template<typename main_function_t>
-    static int safe_run(main_function_t main_function, int argc, char* argv[]) {
-      return internal_safe_run(main_function, argc, argv);
+    static int run(main_function_t main_function, int argc, char* argv[]) {
+      return internal_run(main_function, argc, argv);
     }
     /// @}
     
     /// @cond
-    static int safe_run(xtd::delegate<void()> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<void()> main_function);
-    static int safe_run(xtd::delegate<void(int, char* [])> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<void(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<void(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<void(const xtd::argument_collection&)> main_function);
-    static int safe_run(xtd::delegate<int()> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<int()> main_function);
-    static int safe_run(xtd::delegate<int(int, char* [])> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<int(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<int(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<int(const xtd::argument_collection&)> main_function);
-    
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<>()> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<>()> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<>(int, char* [])> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<>(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<>(const xtd::argument_collection&)> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<int>()> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<int>()> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<int>(int, char* [])> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<int>(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<int>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::task<int>(const xtd::argument_collection&)> main_function);
-    
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<>()> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<>()> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<>(int, char* [])> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<>(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<>(const xtd::argument_collection&)> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<int>()> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<int>()> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<int>(int, char* [])> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<int>(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<int>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<xtd::threading::tasks::wtask<int>(const xtd::argument_collection&)> main_function);
-
-    static int safe_run(void (*main_function)(int, char* []), int argc, char* argv[]);
-    static int safe_run(void (*main_function)(int, char* []));
-    static int safe_run(void (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
-    static int safe_run(void (*main_function)(const xtd::argument_collection&));
-    static int safe_run(int (*main_function)(int, char* []), int argc, char* argv[]);
-    static int safe_run(int (*main_function)(int, char* []));
-    static int safe_run(int (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
-    static int safe_run(int (*main_function)(const xtd::argument_collection&));
-
-    static int safe_run(xtd::threading::tasks::task<> (*main_function)(), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::task<> (*main_function)());
-    static int safe_run(xtd::threading::tasks::task<> (*main_function)(int, char* []), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::task<> (*main_function)(int, char* []));
-    static int safe_run(xtd::threading::tasks::task<> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::task<> (*main_function)(const xtd::argument_collection&));
-    static int safe_run(xtd::threading::tasks::task<int> (*main_function)(), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::task<int> (*main_function)());
-    static int safe_run(xtd::threading::tasks::task<int> (*main_function)(int, char* []), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::task<int> (*main_function)(int, char* []));
-    static int safe_run(xtd::threading::tasks::task<int> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::task<int> (*main_function)(const xtd::argument_collection&));
-
-    static int safe_run(xtd::threading::tasks::wtask<> (*main_function)(), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::wtask<> (*main_function)());
-    static int safe_run(xtd::threading::tasks::wtask<> (*main_function)(int, char* []), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::wtask<> (*main_function)(int, char* []));
-    static int safe_run(xtd::threading::tasks::wtask<> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::wtask<> (*main_function)(const xtd::argument_collection&));
-    static int safe_run(xtd::threading::tasks::wtask<int> (*main_function)(), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::wtask<int> (*main_function)());
-    static int safe_run(xtd::threading::tasks::wtask<int> (*main_function)(int, char* []), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::wtask<int> (*main_function)(int, char* []));
-    static int safe_run(xtd::threading::tasks::wtask<int> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
-    static int safe_run(xtd::threading::tasks::wtask<int> (*main_function)(const xtd::argument_collection&));
-    /// @endcond
-    
-  private:
-    template<typename main_function_t>
-    static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
-      try {
-        init_safe_run();
-        if (argv.has_value() && argc.has_value()) xtd::environment::set_command_line_args({argv.value(), argv.value() + argc.value()});
-        auto exit_code = argc == std::nullopt && argv == std::nullopt ? run(main_function) : run(main_function, argc.value(), argv.value());
-        end_safe_run();
-        return exit_code;
-      } catch (const std::exception& e) {
-        __show_generic_exception_message__(e);
-        return EXIT_FAILURE;
-      } catch (...) {
-        \
-        __show_generic_exception_message__();
-        return EXIT_FAILURE;
-      }
-    }
-    
-    static void init_safe_run();
-    
-    static void end_safe_run();
-    
     static int run(xtd::delegate<void()> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<void()> main_function);
     static int run(xtd::delegate<void(int, char* [])> main_function, int argc, char* argv[]);
@@ -215,14 +117,10 @@ namespace xtd {
     static int run(xtd::delegate<xtd::threading::tasks::wtask<int>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<xtd::threading::tasks::wtask<int>(const xtd::argument_collection&)> main_function);
 
-    static int run(void (*main_function)(), int argc, char* argv[]);
-    static int run(void (*main_function)());
     static int run(void (*main_function)(int, char* []), int argc, char* argv[]);
     static int run(void (*main_function)(int, char* []));
     static int run(void (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
     static int run(void (*main_function)(const xtd::argument_collection&));
-    static int run(int (*main_function)(), int argc, char* argv[]);
-    static int run(int (*main_function)());
     static int run(int (*main_function)(int, char* []), int argc, char* argv[]);
     static int run(int (*main_function)(int, char* []));
     static int run(int (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
@@ -253,6 +151,108 @@ namespace xtd {
     static int run(xtd::threading::tasks::wtask<int> (*main_function)(int, char* []));
     static int run(xtd::threading::tasks::wtask<int> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
     static int run(xtd::threading::tasks::wtask<int> (*main_function)(const xtd::argument_collection&));
+    /// @endcond
+    
+  private:
+    template<typename main_function_t>
+    static int internal_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
+      try {
+        init_run();
+        if (argv.has_value() && argc.has_value()) xtd::environment::set_command_line_args({argv.value(), argv.value() + argc.value()});
+        auto exit_code = argc == std::nullopt && argv == std::nullopt ? run_(main_function) : run_(main_function, argc.value(), argv.value());
+        end_run();
+        return exit_code;
+      } catch (const std::exception& e) {
+        __show_generic_exception_message__(e);
+        return EXIT_FAILURE;
+      } catch (...) {
+        \
+        __show_generic_exception_message__();
+        return EXIT_FAILURE;
+      }
+    }
+    
+    static void init_run();
+    
+    static void end_run();
+    
+    static int run_(xtd::delegate<void()> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<void()> main_function);
+    static int run_(xtd::delegate<void(int, char* [])> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<void(int, char* [])> main_function);
+    static int run_(xtd::delegate<void(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<void(const xtd::argument_collection&)> main_function);
+    static int run_(xtd::delegate<int()> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<int()> main_function);
+    static int run_(xtd::delegate<int(int, char* [])> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<int(int, char* [])> main_function);
+    static int run_(xtd::delegate<int(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<int(const xtd::argument_collection&)> main_function);
+    
+    static int run_(xtd::delegate<xtd::threading::tasks::task<>()> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<>()> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<>(int, char* [])> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<>(int, char* [])> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<>(const xtd::argument_collection&)> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<int>()> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<int>()> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<int>(int, char* [])> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<int>(int, char* [])> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<int>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::task<int>(const xtd::argument_collection&)> main_function);
+    
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<>()> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<>()> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<>(int, char* [])> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<>(int, char* [])> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<>(const xtd::argument_collection&)> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<int>()> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<int>()> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<int>(int, char* [])> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<int>(int, char* [])> main_function);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<int>(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
+    static int run_(xtd::delegate<xtd::threading::tasks::wtask<int>(const xtd::argument_collection&)> main_function);
+
+    static int run_(void (*main_function)(), int argc, char* argv[]);
+    static int run_(void (*main_function)());
+    static int run_(void (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run_(void (*main_function)(int, char* []));
+    static int run_(void (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run_(void (*main_function)(const xtd::argument_collection&));
+    static int run_(int (*main_function)(), int argc, char* argv[]);
+    static int run_(int (*main_function)());
+    static int run_(int (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run_(int (*main_function)(int, char* []));
+    static int run_(int (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run_(int (*main_function)(const xtd::argument_collection&));
+
+    static int run_(xtd::threading::tasks::task<> (*main_function)(), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::task<> (*main_function)());
+    static int run_(xtd::threading::tasks::task<> (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::task<> (*main_function)(int, char* []));
+    static int run_(xtd::threading::tasks::task<> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::task<> (*main_function)(const xtd::argument_collection&));
+    static int run_(xtd::threading::tasks::task<int> (*main_function)(), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::task<int> (*main_function)());
+    static int run_(xtd::threading::tasks::task<int> (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::task<int> (*main_function)(int, char* []));
+    static int run_(xtd::threading::tasks::task<int> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::task<int> (*main_function)(const xtd::argument_collection&));
+
+    static int run_(xtd::threading::tasks::wtask<> (*main_function)(), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::wtask<> (*main_function)());
+    static int run_(xtd::threading::tasks::wtask<> (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::wtask<> (*main_function)(int, char* []));
+    static int run_(xtd::threading::tasks::wtask<> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::wtask<> (*main_function)(const xtd::argument_collection&));
+    static int run_(xtd::threading::tasks::wtask<int> (*main_function)(), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::wtask<int> (*main_function)());
+    static int run_(xtd::threading::tasks::wtask<int> (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::wtask<int> (*main_function)(int, char* []));
+    static int run_(xtd::threading::tasks::wtask<int> (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run_(xtd::threading::tasks::wtask<int> (*main_function)(const xtd::argument_collection&));
   };
 }
 
@@ -266,7 +266,7 @@ namespace xtd {
 /// @par Implementation
 /// ```cpp
 /// auto main() -> int {
-///   return xtd::startup::safe_run(main_method);
+///   return xtd::startup::run(main_method);
 /// }
 /// ```
 /// @par Examples
@@ -281,8 +281,8 @@ namespace xtd {
 /// @par
 /// This example show a main method with argument and return code
 /// @include main4.cpp
-#define startup_(main_method) \
-  auto main(int argc, char* argv[]) -> int { \
-    return xtd::startup::safe_run(main_method, argc, argv); \
+#define startup_(...) \
+  auto main() -> int { \
+    return xtd::startup::run(__VA_ARGS__); \
   } \
   auto __opaque_sftews__ = 0 // force to end with semicolon

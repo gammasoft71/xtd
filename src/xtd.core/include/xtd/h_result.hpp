@@ -97,245 +97,245 @@ namespace xtd {
     
     /// @{
     /// @brief Operation successful.
-    static constexpr int32 S_OK = static_cast<int32>(0x00000000);
+    static constexpr auto S_OK = static_cast<xtd::int32>(0x00000000);
     /// @brief Operation successful but returned no results.
-    static constexpr int32 S_FALSE = static_cast<int32>(0x00000001);
+    static constexpr auto S_FALSE = static_cast<xtd::int32>(0x00000001);
     /// @brief The wait completed due to an abandoned mutex.
-    static constexpr int32 COR_E_ABANDONEDMUTEX = static_cast<int32>(0x8013152D);
+    static constexpr auto COR_E_ABANDONEDMUTEX = static_cast<xtd::int32>(0x8013152Dl);
     /// @brief Ambiguous implementation found.
-    static constexpr int32 COR_E_AMBIGUOUSIMPLEMENTATION = static_cast<int32>(0x8013106A);
+    static constexpr auto COR_E_AMBIGUOUSIMPLEMENTATION = static_cast<xtd::int32>(0x8013106Al);
     /// @brief Ambiguous match found.
-    static constexpr int32 COR_E_AMBIGUOUSMATCH = static_cast<int32>(0x8000211D);
+    static constexpr auto COR_E_AMBIGUOUSMATCH = static_cast<xtd::int32>(0x8000211D);
     /// @brief Attempted to access an unloaded AppDomain.
-    static constexpr int32 COR_E_APPDOMAINUNLOADED = static_cast<int32>(0x80131014);
+    static constexpr auto COR_E_APPDOMAINUNLOADED = static_cast<xtd::int32>(0x80131014);
     /// @brief Error in the application.
-    static constexpr int32 COR_E_APPLICATION = static_cast<int32>(0x80131600);
+    static constexpr auto COR_E_APPLICATION = static_cast<xtd::int32>(0x80131600);
     /// @brief Value does not fall within the expected range.
-    static constexpr int32 COR_E_ARGUMENT = static_cast<int32>(0x80070057); // Duplicate with E_INVALIDARG
+    static constexpr auto COR_E_ARGUMENT = static_cast<xtd::int32>(0x80070057); // Duplicate with E_INVALIDARG
     /// @brief Specified argument was out of the range of valid values.
-    static constexpr int32 COR_E_ARGUMENTOUTOFRANGE = static_cast<int32>(0x80131502);
+    static constexpr auto COR_E_ARGUMENTOUTOFRANGE = static_cast<xtd::int32>(0x80131502);
     /// @brief Overflow or underflow in the arithmetic operation.
-    static constexpr int32 COR_E_ARITHMETIC = static_cast<int32>(0x80070216);
+    static constexpr auto COR_E_ARITHMETIC = static_cast<xtd::int32>(0x80070216);
     /// @brief Attempted to access an element as a type incompatible with the array.
-    static constexpr int32 COR_E_ARRAYTYPEMISMATCH = static_cast<int32>(0x80131503);
+    static constexpr auto COR_E_ARRAYTYPEMISMATCH = static_cast<xtd::int32>(0x80131503);
     /// @brief Format of the executable (.exe) cannot be run.
-    static constexpr int32 COR_E_BADEXEFORMAT = static_cast<int32>(0x800700C1);
+    static constexpr auto COR_E_BADEXEFORMAT = static_cast<xtd::int32>(0x800700C1);
     /// @brief Format of the executable (.exe) or library (.dll) is invalid.
-    static constexpr int32 COR_E_BADIMAGEFORMAT = static_cast<int32>(0x8007000B);
+    static constexpr auto COR_E_BADIMAGEFORMAT = static_cast<xtd::int32>(0x8007000B);
     /// @brief Attempt to unload the AppDomain failed.
-    static constexpr int32 COR_E_CANNOTUNLOADAPPDOMAIN = static_cast<int32>(0x80131015);
+    static constexpr auto COR_E_CANNOTUNLOADAPPDOMAIN = static_cast<xtd::int32>(0x80131015);
     /// @brief A code contract (ie, precondition, postcondition, invariant, or assert) failed.
-    static constexpr int32 COR_E_CODECONTRACTFAILED = static_cast<int32>(0x80131542);
+    static constexpr auto COR_E_CODECONTRACTFAILED = static_cast<xtd::int32>(0x80131542);
     /// @brief Attempted to marshal an object across a context boundary.
-    static constexpr int32 COR_E_CONTEXTMARSHAL = static_cast<int32>(0x80131504);
+    static constexpr auto COR_E_CONTEXTMARSHAL = static_cast<xtd::int32>(0x80131504);
     /// @brief Binary format of the specified custom attribute was invalid.
-    static constexpr int32 COR_E_CUSTOMATTRIBUTEFORMAT = static_cast<int32>(0x80131605);
+    static constexpr auto COR_E_CUSTOMATTRIBUTEFORMAT = static_cast<xtd::int32>(0x80131605);
     /// @brief A datatype misalignment was detected in a load or store instruction.
-    static constexpr int32 COR_E_DATAMISALIGNED = static_cast<int32>(0x80131541);
+    static constexpr auto COR_E_DATAMISALIGNED = static_cast<xtd::int32>(0x80131541);
     /// @brief Attempted to access a path that is not on the disk.
-    static constexpr int32 COR_E_DIRECTORYNOTFOUND = static_cast<int32>(0x80070003);
+    static constexpr auto COR_E_DIRECTORYNOTFOUND = static_cast<xtd::int32>(0x80070003);
     /// @brief Attempted to divide by zero.
-    static constexpr int32 COR_E_DIVIDEBYZERO = static_cast<int32>(0x80020012); // Duplicate with DISP_E_DIVBYZERO
+    static constexpr auto COR_E_DIVIDEBYZERO = static_cast<xtd::int32>(0x80020012); // Duplicate with DISP_E_DIVBYZERO
     /// @brief Dll was not found.
-    static constexpr int32 COR_E_DLLNOTFOUND = static_cast<int32>(0x80131524);
+    static constexpr auto COR_E_DLLNOTFOUND = static_cast<xtd::int32>(0x80131524);
     /// @brief Could not find the drive. The drive might not be ready or might not be mapped.
-    static constexpr int32 COR_E_DRIVENOTFOUND = static_cast<int32>(0x80070007);
+    static constexpr auto COR_E_DRIVENOTFOUND = static_cast<xtd::int32>(0x80070007);
     /// @brief Duplicate objects in argument.
-    static constexpr int32 COR_E_DUPLICATEWAITOBJECT = static_cast<int32>(0x80131529);
+    static constexpr auto COR_E_DUPLICATEWAITOBJECT = static_cast<xtd::int32>(0x80131529);
     /// @brief Attempted to read past the end of the stream.
-    static constexpr int32 COR_E_ENDOFSTREAM = static_cast<int32>(0x80070026);
+    static constexpr auto COR_E_ENDOFSTREAM = static_cast<xtd::int32>(0x80070026);
     /// @brief Entry point was not found.
-    static constexpr int32 COR_E_ENTRYPOINTNOTFOUND = static_cast<int32>(0x80131523);
+    static constexpr auto COR_E_ENTRYPOINTNOTFOUND = static_cast<xtd::int32>(0x80131523);
     /// @brief Exception of type 'xtd::exception' was thrown.
-    static constexpr int32 COR_E_EXCEPTION = static_cast<int32>(0x80131500);
+    static constexpr auto COR_E_EXCEPTION = static_cast<xtd::int32>(0x80131500);
     /// @brief Internal error in the runtime.
-    static constexpr int32 COR_E_EXECUTIONENGINE = static_cast<int32>(0x80131506);
+    static constexpr auto COR_E_EXECUTIONENGINE = static_cast<xtd::int32>(0x80131506);
     /// @brief Fail fast.
-    static constexpr int32 COR_E_FAILFAST = static_cast<int32>(0x80131623);
+    static constexpr auto COR_E_FAILFAST = static_cast<xtd::int32>(0x80131623);
     /// @brief Attempted to access a field that is not accessible by the caller.
-    static constexpr int32 COR_E_FIELDACCESS = static_cast<int32>(0x80131507);
+    static constexpr auto COR_E_FIELDACCESS = static_cast<xtd::int32>(0x80131507);
     /// @brief Could not load the specified file.
-    static constexpr int32 COR_E_FILELOAD = static_cast<int32>(0x80131621);
+    static constexpr auto COR_E_FILELOAD = static_cast<xtd::int32>(0x80131621);
     /// @brief Unable to find the specified file.
-    static constexpr int32 COR_E_FILENOTFOUND = static_cast<int32>(0x80070002); // Duplicate with E_FILENOTFOUND
+    static constexpr auto COR_E_FILENOTFOUND = static_cast<xtd::int32>(0x80070002); // Duplicate with E_FILENOTFOUND
     /// @brief One of the identified items was in an invalid format.
-    static constexpr int32 COR_E_FORMAT = static_cast<int32>(0x80131537);
+    static constexpr auto COR_E_FORMAT = static_cast<xtd::int32>(0x80131537);
     /// @brief Index was outside the bounds of the array.
-    static constexpr int32 COR_E_INDEXOUTOFRANGE = static_cast<int32>(0x80131508);
+    static constexpr auto COR_E_INDEXOUTOFRANGE = static_cast<xtd::int32>(0x80131508);
     /// @brief Insufficient stack to continue executing the program safely. This can happen from having too many functions on the call stack or function on the stack using too much stack space.
-    static constexpr int32 COR_E_INSUFFICIENTEXECUTIONSTACK = static_cast<int32>(0x80131578);
+    static constexpr auto COR_E_INSUFFICIENTEXECUTIONSTACK = static_cast<xtd::int32>(0x80131578);
     /// @brief Insufficient memory to continue the execution of the program.
-    static constexpr int32 COR_E_INSUFFICIENTMEMORY = static_cast<int32>(0x8013153D);
+    static constexpr auto COR_E_INSUFFICIENTMEMORY = static_cast<xtd::int32>(0x8013153D);
     /// @brief Specified cast is not valid.
-    static constexpr int32 COR_E_INVALIDCAST = static_cast<int32>(0x80004002);
+    static constexpr auto COR_E_INVALIDCAST = static_cast<xtd::int32>(0x80004002);
     /// @brief Attempt has been made to use a COM object that does not have a backing class factory.
-    static constexpr int32 COR_E_INVALIDCOMOBJECT = static_cast<int32>(0x80131527);
+    static constexpr auto COR_E_INVALIDCOMOBJECT = static_cast<xtd::int32>(0x80131527);
     /// @brief Specified filter criteria was invalid.
-    static constexpr int32 COR_E_INVALIDFILTERCRITERIA = static_cast<int32>(0x80131601);
+    static constexpr auto COR_E_INVALIDFILTERCRITERIA = static_cast<xtd::int32>(0x80131601);
     /// @brief Specified OLE variant was invalid.
-    static constexpr int32 COR_E_INVALIDOLEVARIANTTYPE = static_cast<int32>(0x80131531);
+    static constexpr auto COR_E_INVALIDOLEVARIANTTYPE = static_cast<xtd::int32>(0x80131531);
     /// @brief Operation is not valid due to the current state of the object.
-    static constexpr int32 COR_E_INVALIDOPERATION = static_cast<int32>(0x80131509);
+    static constexpr auto COR_E_INVALIDOPERATION = static_cast<xtd::int32>(0x80131509);
     /// @brief xtd detected an invalid program.
-    static constexpr int32 COR_E_INVALIDPROGRAM = static_cast<int32>(0x8013153A);
+    static constexpr auto COR_E_INVALIDPROGRAM = static_cast<xtd::int32>(0x8013153A);
     /// @brief I/O error occurred.
-    static constexpr int32 COR_E_IO = static_cast<int32>(0x80131620);
+    static constexpr auto COR_E_IO = static_cast<xtd::int32>(0x80131620);
     /// @brief The given key was not present in the dictionary.
-    static constexpr int32 COR_E_KEYNOTFOUND = static_cast<int32>(0x80131577);
+    static constexpr auto COR_E_KEYNOTFOUND = static_cast<xtd::int32>(0x80131577);
     /// @brief Marshaling directives are invalid.
-    static constexpr int32 COR_E_MARSHALDIRECTIVE = static_cast<int32>(0x80131535);
+    static constexpr auto COR_E_MARSHALDIRECTIVE = static_cast<xtd::int32>(0x80131535);
     /// @brief Cannot access member.
-    static constexpr int32 COR_E_MEMBERACCESS = static_cast<int32>(0x8013151A);
+    static constexpr auto COR_E_MEMBERACCESS = static_cast<xtd::int32>(0x8013151A);
     /// @brief Attempt to access the method failed.
-    static constexpr int32 COR_E_METHODACCESS = static_cast<int32>(0x80131510);
+    static constexpr auto COR_E_METHODACCESS = static_cast<xtd::int32>(0x80131510);
     /// @brief Attempted to access a non-existing field.
-    static constexpr int32 COR_E_MISSINGFIELD = static_cast<int32>(0x80131511);
+    static constexpr auto COR_E_MISSINGFIELD = static_cast<xtd::int32>(0x80131511);
     /// @brief Attempted to access a missing manifest resource.
-    static constexpr int32 COR_E_MISSINGMANIFESTRESOURCE = static_cast<int32>(0x80131532);
+    static constexpr auto COR_E_MISSINGMANIFESTRESOURCE = static_cast<xtd::int32>(0x80131532);
     /// @brief Attempted to access a missing member.
-    static constexpr int32 COR_E_MISSINGMEMBER = static_cast<int32>(0x80131512);
+    static constexpr auto COR_E_MISSINGMEMBER = static_cast<xtd::int32>(0x80131512);
     /// @brief Attempted to access a missing method.
-    static constexpr int32 COR_E_MISSINGMETHOD = static_cast<int32>(0x80131513);
+    static constexpr auto COR_E_MISSINGMETHOD = static_cast<xtd::int32>(0x80131513);
     /// @brief Resource lookup fell back to the ultimate fallback resources in a satellite assembly, but that satellite either was not found or could not be loaded. Please consider reinstalling or repairing the application.
-    static constexpr int32 COR_E_MISSINGSATELLITEASSEMBLY = static_cast<int32>(0x80131536);
+    static constexpr auto COR_E_MISSINGSATELLITEASSEMBLY = static_cast<xtd::int32>(0x80131536);
     /// @brief Attempted to add multiple callbacks to a delegate that does not support multicast.
-    static constexpr int32 COR_E_MULTICASTNOTSUPPORTED = static_cast<int32>(0x80131514);
+    static constexpr auto COR_E_MULTICASTNOTSUPPORTED = static_cast<xtd::int32>(0x80131514);
     /// @brief Number encountered was not a finite quantity.
-    static constexpr int32 COR_E_NOTFINITENUMBER = static_cast<int32>(0x80131528);
+    static constexpr auto COR_E_NOTFINITENUMBER = static_cast<xtd::int32>(0x80131528);
     /// @brief Specified method is not supported.
-    static constexpr int32 COR_E_NOTSUPPORTED = static_cast<int32>(0x80131515);
+    static constexpr auto COR_E_NOTSUPPORTED = static_cast<xtd::int32>(0x80131515);
     /// @brief Cannot access a closed object.
-    static constexpr int32 COR_E_OBJECTCLOSED = static_cast<int32>(0x80131622);
+    static constexpr auto COR_E_OBJECTCLOSED = static_cast<xtd::int32>(0x80131622);
     /// @brief The operation was canceled.
-    static constexpr int32 COR_E_OPERATIONCANCELED = static_cast<int32>(0x8013153B);
+    static constexpr auto COR_E_OPERATIONCANCELED = static_cast<xtd::int32>(0x8013153B);
     /// @brief Insufficient memory to continue the execution of the program.
-    static constexpr int32 COR_E_OUTOFMEMORY = static_cast<int32>(0x8007000E);
+    static constexpr auto COR_E_OUTOFMEMORY = static_cast<xtd::int32>(0x8007000E);
     /// @brief Arithmetic operation resulted in an overflow.
-    static constexpr int32 COR_E_OVERFLOW = static_cast<int32>(0x80131516);
+    static constexpr auto COR_E_OVERFLOW = static_cast<xtd::int32>(0x80131516);
     /// @brief The specified file name or path is too long, or a component of the specified path is too long.
-    static constexpr int32 COR_E_PATHTOOLONG = static_cast<int32>(0x800700CE);
+    static constexpr auto COR_E_PATHTOOLONG = static_cast<xtd::int32>(0x800700CE);
     /// @brief Operation is not supported on this platform.
-    static constexpr int32 COR_E_PLATFORMNOTSUPPORTED = static_cast<int32>(0x80131539);
+    static constexpr auto COR_E_PLATFORMNOTSUPPORTED = static_cast<xtd::int32>(0x80131539);
     /// @brief Attempted to operate on an array with the incorrect number of dimensions.
-    static constexpr int32 COR_E_RANK = static_cast<int32>(0x80131517);
+    static constexpr auto COR_E_RANK = static_cast<xtd::int32>(0x80131517);
     /// @brief Exception of type 'xtd::reflection::reflection_type_load_exception' was thrown.
-    static constexpr int32 COR_E_REFLECTIONTYPELOAD = static_cast<int32>(0x80131602);
+    static constexpr auto COR_E_REFLECTIONTYPELOAD = static_cast<xtd::int32>(0x80131602);
     /// @brief An object that does not derive from xtd:oobject has been wrapped in a runtime_wrapped_exception.
-    static constexpr int32 COR_E_RUNTIMEWRAPPED = static_cast<int32>(0x8013153E);
+    static constexpr auto COR_E_RUNTIMEWRAPPED = static_cast<xtd::int32>(0x8013153E);
     /// @brief Specified array was not of the expected rank.
-    static constexpr int32 COR_E_SAFEARRAYRANKMISMATCH = static_cast<int32>(0x80131538);
+    static constexpr auto COR_E_SAFEARRAYRANKMISMATCH = static_cast<xtd::int32>(0x80131538);
     /// @brief Specified array was not of the expected type.
-    static constexpr int32 COR_E_SAFEARRAYTYPEMISMATCH = static_cast<int32>(0x80131533);
+    static constexpr auto COR_E_SAFEARRAYTYPEMISMATCH = static_cast<xtd::int32>(0x80131533);
     /// @brief Security error.
-    static constexpr int32 COR_E_SECURITY = static_cast<int32>(0x8013150A);
+    static constexpr auto COR_E_SECURITY = static_cast<xtd::int32>(0x8013150A);
     /// @brief Serialization error.
-    static constexpr int32 COR_E_SERIALIZATION = static_cast<int32>(0x8013150C);
+    static constexpr auto COR_E_SERIALIZATION = static_cast<xtd::int32>(0x8013150C);
     /// @brief Operation caused a stack overflow.
-    static constexpr int32 COR_E_STACKOVERFLOW = static_cast<int32>(0x800703E9);
+    static constexpr auto COR_E_STACKOVERFLOW = static_cast<xtd::int32>(0x800703E9);
     /// @brief Object synchronization method was called from an unsynchronized block of code.
-    static constexpr int32 COR_E_SYNCHRONIZATIONLOCK = static_cast<int32>(0x80131518);
+    static constexpr auto COR_E_SYNCHRONIZATIONLOCK = static_cast<xtd::int32>(0x80131518);
     /// @brief System error.
-    static constexpr int32 COR_E_SYSTEM = static_cast<int32>(0x80131501);
+    static constexpr auto COR_E_SYSTEM = static_cast<xtd::int32>(0x80131501);
     /// @brief Exception of type 'xtd::reflection::target_exception' was thrown.
-    static constexpr int32 COR_E_TARGET = static_cast<int32>(0x80131603);
+    static constexpr auto COR_E_TARGET = static_cast<xtd::int32>(0x80131603);
     /// @brief Exception has been thrown by the target of an invocation.
-    static constexpr int32 COR_E_TARGETINVOCATION = static_cast<int32>(0x80131604);
+    static constexpr auto COR_E_TARGETINVOCATION = static_cast<xtd::int32>(0x80131604);
     /// @brief Number of parameters specified does not match the expected number.
-    static constexpr int32 COR_E_TARGETPARAMCOUNT = static_cast<int32>(0x8002000E);
+    static constexpr auto COR_E_TARGETPARAMCOUNT = static_cast<xtd::int32>(0x8002000E);
     /// @brief Thread was aborted.
-    static constexpr int32 COR_E_THREADABORTED = static_cast<int32>(0x80131530);
+    static constexpr auto COR_E_THREADABORTED = static_cast<xtd::int32>(0x80131530);
     /// @brief Thread was interrupted from a waiting state.
-    static constexpr int32 COR_E_THREADINTERRUPTED = static_cast<int32>(0x80131519);
+    static constexpr auto COR_E_THREADINTERRUPTED = static_cast<xtd::int32>(0x80131519);
     /// @brief Thread start failure.
-    static constexpr int32 COR_E_THREADSTART = static_cast<int32>(0x80131525);
+    static constexpr auto COR_E_THREADSTART = static_cast<xtd::int32>(0x80131525);
     /// @brief Thread was in an invalid state for the operation being executed.
-    static constexpr int32 COR_E_THREADSTATE = static_cast<int32>(0x80131520);
+    static constexpr auto COR_E_THREADSTATE = static_cast<xtd::int32>(0x80131520);
     /// @brief The operation has timed out.
-    static constexpr int32 COR_E_TIMEOUT = static_cast<int32>(0x80131505);
+    static constexpr auto COR_E_TIMEOUT = static_cast<xtd::int32>(0x80131505);
     /// @brief Attempt to access the type failed.
-    static constexpr int32 COR_E_TYPEACCESS = static_cast<int32>(0x80131543);
+    static constexpr auto COR_E_TYPEACCESS = static_cast<xtd::int32>(0x80131543);
     /// @brief The type initializer for 'value' threw an exception.
-    static constexpr int32 COR_E_TYPEINITIALIZATION = static_cast<int32>(0x80131534);
+    static constexpr auto COR_E_TYPEINITIALIZATION = static_cast<xtd::int32>(0x80131534);
     /// @brief Failure has occurred while loading a type.
-    static constexpr int32 COR_E_TYPELOAD = static_cast<int32>(0x80131522);
+    static constexpr auto COR_E_TYPELOAD = static_cast<xtd::int32>(0x80131522);
     /// @brief Type had been unloaded.
-    static constexpr int32 COR_E_TYPEUNLOADED = static_cast<int32>(0x80131013);
+    static constexpr auto COR_E_TYPEUNLOADED = static_cast<xtd::int32>(0x80131013);
     /// @brief Attempted to perform an unauthorized operation.
-    static constexpr int32 COR_E_UNAUTHORIZEDACCESS = static_cast<int32>(0x80070005);
+    static constexpr auto COR_E_UNAUTHORIZEDACCESS = static_cast<xtd::int32>(0x80070005);
     /// @brief Operation could destabilize the runtime.
-    static constexpr int32 COR_E_VERIFICATION = static_cast<int32>(0x8013150D);
+    static constexpr auto COR_E_VERIFICATION = static_cast<xtd::int32>(0x8013150D);
     /// @brief No handle of the given name exists.
-    static constexpr int32 COR_E_WAITHANDLECANNOTBEOPENED = static_cast<int32>(0x8013152C);
+    static constexpr auto COR_E_WAITHANDLECANNOTBEOPENED = static_cast<xtd::int32>(0x8013152C);
     /// @brief Not initialized
-    static constexpr int32 CO_E_NOTINITIALIZED = static_cast<int32>(0x800401F0);
+    static constexpr auto CO_E_NOTINITIALIZED = static_cast<xtd::int32>(0x800401F0);
     /// @brief Could not find the parameter.
-    static constexpr int32 DISP_E_PARAMNOTFOUND = static_cast<int32>(0x80020004);
+    static constexpr auto DISP_E_PARAMNOTFOUND = static_cast<xtd::int32>(0x80020004);
     /// @brief Attempt to access a variable with an incompatible type.
-    static constexpr int32 DISP_E_TYPEMISMATCH = static_cast<int32>(0x80020005);
+    static constexpr auto DISP_E_TYPEMISMATCH = static_cast<xtd::int32>(0x80020005);
     /// @brief Invalid variable type.
-    static constexpr int32 DISP_E_BADVARTYPE = static_cast<int32>(0x80020008);
+    static constexpr auto DISP_E_BADVARTYPE = static_cast<xtd::int32>(0x80020008);
     /// @brief Arithmetic operation resulted in an overflow.
-    static constexpr int32 DISP_E_OVERFLOW = static_cast<int32>(0x8002000A);
+    static constexpr auto DISP_E_OVERFLOW = static_cast<xtd::int32>(0x8002000A);
     /// @brief Attempted to divide by zero.
-    static constexpr int32 DISP_E_DIVBYZERO = static_cast<int32>(0x80020012); // Duplicate with COR_E_DIVIDEBYZERO
+    static constexpr auto DISP_E_DIVBYZERO = static_cast<xtd::int32>(0x80020012); // Duplicate with COR_E_DIVIDEBYZERO
     /// @brief Operation aborted.
-    static constexpr int32 E_ABORT = static_cast<int32>(0x80004004);
+    static constexpr auto E_ABORT = static_cast<xtd::int32>(0x80004004);
     /// @brief Bounds exception.
-    static constexpr int32 E_BOUNDS = static_cast<int32>(0x8000000B);
+    static constexpr auto E_BOUNDS = static_cast<xtd::int32>(0x8000000B);
     /// @brief The state has been modified.
-    static constexpr int32 E_CHANGED_STATE = static_cast<int32>(0x8000000C);
+    static constexpr auto E_CHANGED_STATE = static_cast<xtd::int32>(0x8000000C);
     /// @brief Unable to find the specified file.
-    static constexpr int32 E_FILENOTFOUND = static_cast<int32>(0x80070002); // Duplicate with COR_E_FILENOTFOUND
+    static constexpr auto E_FILENOTFOUND = static_cast<xtd::int32>(0x80070002); // Duplicate with COR_E_FILENOTFOUND
     /// @brief Unspecified failure.
-    static constexpr int32 E_FAIL = static_cast<int32>(0x80004005);
+    static constexpr auto E_FAIL = static_cast<xtd::int32>(0x80004005);
     /// @brief The handle is invalid.
-    static constexpr int32 E_HANDLE = static_cast<int32>(0x80070006);
+    static constexpr auto E_HANDLE = static_cast<xtd::int32>(0x80070006);
     /// @brief Value does not fall within the expected range.
-    static constexpr int32 E_INVALIDARG = static_cast<int32>(0x80070057); // Duplicate with COR_E_ARGUMENT
+    static constexpr auto E_INVALIDARG = static_cast<xtd::int32>(0x80070057); // Duplicate with COR_E_ARGUMENT
     /// @brief The method or operation is not implemented.
-    static constexpr int32 E_NOTIMPL = static_cast<int32>(0x80004001);
+    static constexpr auto E_NOTIMPL = static_cast<xtd::int32>(0x80004001);
     /// @brief Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
-    static constexpr int32 E_POINTER = static_cast<int32>(0x80004003);
+    static constexpr auto E_POINTER = static_cast<xtd::int32>(0x80004003);
     /// @brief Unexpected failure.
-    static constexpr int32 E_UNEXPECTED = static_cast<int32>(0x8000FFFF);
+    static constexpr auto E_UNEXPECTED = static_cast<xtd::int32>(0x8000FFFF);
     /// @brief Resource map not found.
-    static constexpr int32 ERROR_MRM_MAP_NOT_FOUND = static_cast<int32>(0x80073B1F);
+    static constexpr auto ERROR_MRM_MAP_NOT_FOUND = static_cast<xtd::int32>(0x80073B1F);
     /// @brief The operation has timed out.
-    static constexpr int32 ERROR_TIMEOUT = static_cast<int32>(0x800705B4);
+    static constexpr auto ERROR_TIMEOUT = static_cast<xtd::int32>(0x800705B4);
     /// @brief The object has been closed.
-    static constexpr int32 RO_E_CLOSED = static_cast<int32>(0x80000013);
+    static constexpr auto RO_E_CLOSED = static_cast<xtd::int32>(0x80000013);
     /// @brief Cannot change the current thread mode.
-    static constexpr int32 RPC_E_CHANGED_MODE = static_cast<int32>(0x80010106);
+    static constexpr auto RPC_E_CHANGED_MODE = static_cast<xtd::int32>(0x80010106);
     /// @brief Incompatible type.
-    static constexpr int32 TYPE_E_TYPEMISMATCH = static_cast<int32>(0x80028CA0);
+    static constexpr auto TYPE_E_TYPEMISMATCH = static_cast<xtd::int32>(0x80028CA0);
     /// @brief Attempted to access a path that is not on the disk.
-    static constexpr int32 STG_E_PATHNOTFOUND = static_cast<int32>(0x80030003);
+    static constexpr auto STG_E_PATHNOTFOUND = static_cast<xtd::int32>(0x80030003);
     /// @brief Attempted to access a path that is not on the disk.
-    static constexpr int32 CTL_E_PATHNOTFOUND = static_cast<int32>(0x800A004C);
+    static constexpr auto CTL_E_PATHNOTFOUND = static_cast<xtd::int32>(0x800A004C);
     /// @brief Unable to find the specified file.
-    static constexpr int32 CTL_E_FILENOTFOUND = static_cast<int32>(0x800A0035);
+    static constexpr auto CTL_E_FILENOTFOUND = static_cast<xtd::int32>(0x800A0035);
     /// @brief Fusion invalid name exception.
-    static constexpr int32 FUSION_E_INVALID_NAME = static_cast<int32>(0x80131047);
+    static constexpr auto FUSION_E_INVALID_NAME = static_cast<xtd::int32>(0x80131047);
     /// @brief Fusion the reference definition is incompatible.
-    static constexpr int32 FUSION_E_REF_DEF_MISMATCH = static_cast<int32>(0x80131040);
+    static constexpr auto FUSION_E_REF_DEF_MISMATCH = static_cast<xtd::int32>(0x80131040);
     /// @brief Too many open files.
-    static constexpr int32 ERROR_TOO_MANY_OPEN_FILES = static_cast<int32>(0x80070004);
+    static constexpr auto ERROR_TOO_MANY_OPEN_FILES = static_cast<xtd::int32>(0x80070004);
     /// @brief Sharing violation.
-    static constexpr int32 ERROR_SHARING_VIOLATION = static_cast<int32>(0x80070020);
+    static constexpr auto ERROR_SHARING_VIOLATION = static_cast<xtd::int32>(0x80070020);
     /// @brief Lock violations.
-    static constexpr int32 ERROR_LOCK_VIOLATION = static_cast<int32>(0x80070021);
+    static constexpr auto ERROR_LOCK_VIOLATION = static_cast<xtd::int32>(0x80070021);
     /// @brief Open failed.
-    static constexpr int32 ERROR_OPEN_FAILED = static_cast<int32>(0x8007006E);
+    static constexpr auto ERROR_OPEN_FAILED = static_cast<xtd::int32>(0x8007006E);
     /// @brief Disk corrupt.
-    static constexpr int32 ERROR_DISK_CORRUPT = static_cast<int32>(0x80070571);
+    static constexpr auto ERROR_DISK_CORRUPT = static_cast<xtd::int32>(0x80070571);
     /// @brief Unrecognized volume.
-    static constexpr int32 ERROR_UNRECOGNIZED_VOLUME = static_cast<int32>(0x800703ED);
+    static constexpr auto ERROR_UNRECOGNIZED_VOLUME = static_cast<xtd::int32>(0x800703ED);
     /// @brief DLL init failed.
-    static constexpr int32 ERROR_DLL_INIT_FAILED = static_cast<int32>(0x8007045A);
+    static constexpr auto ERROR_DLL_INIT_FAILED = static_cast<xtd::int32>(0x8007045A);
     /// @brief Assembly load in progress.
-    static constexpr int32 MSEE_E_ASSEMBLYLOADINPROGRESS = static_cast<int32>(0x80131016);
+    static constexpr auto MSEE_E_ASSEMBLYLOADINPROGRESS = static_cast<xtd::int32>(0x80131016);
     /// @brief File invalid.
-    static constexpr int32 ERROR_FILE_INVALID = static_cast<int32>(0x800703EE);
+    static constexpr auto ERROR_FILE_INVALID = static_cast<xtd::int32>(0x800703EE);
     /// @}
     
     /// @name Public Static Methods

@@ -22,7 +22,7 @@ inline auto xtd::diagnostics::stack_frame::get_stack_frames(const xtd::string& s
   auto frames_to_skip = {
     "decltype",
     "int xtd::startup::internal_safe_run",
-    "int xtd::startup::safe_run",
+    "int xtd::startup::run",
     "long std::_",
     "std::_",
     "std::invoke",
@@ -30,7 +30,7 @@ inline auto xtd::diagnostics::stack_frame::get_stack_frames(const xtd::string& s
     "xtd::delegate<",
     "xtd::startup::internal_safe_run",
     "xtd::startup::run",
-    "xtd::startup::safe_run",
+    "xtd::startup::run",
   };
   
   auto stack_frames = xtd::collections::generic::list<stack_frame> {};

@@ -30,7 +30,7 @@ namespace assert_unit_tests {
     }
     
     static int run_all_tests() noexcept {
-      return xtd::startup::safe_run(xtd::delegate<int()>([] {
+      return xtd::startup::run(xtd::delegate<int()>([] {
         xtd::exception::enable_stack_trace(false);
         xtd::tunit::test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<xtd::intptr>("internal_tests");
         if (xtd::environment::get_command_line_args().contains("--verbose")) std::cout << "Run tests:" << std::endl;

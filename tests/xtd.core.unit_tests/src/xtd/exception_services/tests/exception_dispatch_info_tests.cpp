@@ -22,7 +22,7 @@ namespace xtd::exception_services::tests {
     auto test_method_(source_exception) {
       auto edi = exception_dispatch_info::capture(argument_out_of_range_exception {"The first index is out of range"});
       assert::is_not_null(edi.source_exception());
-      assert::are_equal("The first index is out of range", edi.source_exception()->message());
+      assert::are_equal("The first index is out of range", edi.source_exception()->what());
       assert::are_equal(typeof_<argument_out_of_range_exception>(), typeof_(*edi.source_exception()));
     }
     

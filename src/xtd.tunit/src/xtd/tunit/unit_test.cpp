@@ -113,7 +113,7 @@ array<string> unit_test::succeed_test_names() const noexcept {
 }
 
 int32 unit_test::run() noexcept {
-  return startup::safe_run(delegate<int()>([this] {
+  return startup::run(delegate<int()>([this] {
     if (parse_arguments(arguments))
       return settings::default_settings().exit_status();
       
