@@ -21,14 +21,14 @@ inline auto xtd::diagnostics::stack_frame::get_stack_frames(const xtd::string& s
   
   auto frames_to_skip = {
     "decltype",
-    "int xtd::startup::internal_safe_run",
+    "int xtd::startup::internal_run",
     "int xtd::startup::run",
     "long std::_",
     "std::_",
     "std::invoke",
     "void std::_",
     "xtd::delegate<",
-    "xtd::startup::internal_safe_run",
+    "xtd::startup::internal_run",
     "xtd::startup::run",
     "xtd::startup::run",
   };
