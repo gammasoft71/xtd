@@ -317,7 +317,7 @@ macro(target_startup ...)
     "#include <xtd/startup>\n"
     "\n"
     "auto main() -> int {\n"
-    "  return xtd::startup::safe_run(${ARGV0});\n"
+    "  return xtd::startup::run(${ARGV0});\n"
     "}\n"
     "#pragma endregion\n"
   )
@@ -358,7 +358,7 @@ macro(target_top_level TOP_LEVEL_FILE)
     "#include <xtd/xtd>\n"
     "\n"
     "auto main() -> int {\n"
-    "  xtd::startup::safe_run([] {\n"
+    "  xtd::startup::run([] {\n"
     "    ${INCLUDE_FILE}"
     "  });\n"
     "}\n"
