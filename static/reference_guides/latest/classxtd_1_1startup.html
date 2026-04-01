@@ -105,16 +105,16 @@ Inheritance diagram for xtd::startup:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a9301437f9e6012fa2a487878639e7d23" id="r_a9301437f9e6012fa2a487878639e7d23"><td class="memTemplParams" colspan="2">template&lt;typename main_function_t&gt; </td></tr>
-<tr class="memitem:a9301437f9e6012fa2a487878639e7d23 template"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a9301437f9e6012fa2a487878639e7d23">safe_run</a> (main_function_t main_function)</td></tr>
-<tr class="memdesc:a9301437f9e6012fa2a487878639e7d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely call the specified application's main entry point.  <br /></td></tr>
-<tr class="memitem:a052f759ab4cf62333e6f61622cb5be32" id="r_a052f759ab4cf62333e6f61622cb5be32"><td class="memTemplParams" colspan="2">template&lt;typename main_function_t&gt; </td></tr>
-<tr class="memitem:a052f759ab4cf62333e6f61622cb5be32 template"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a052f759ab4cf62333e6f61622cb5be32">safe_run</a> (main_function_t main_function, int argc, char *argv[])</td></tr>
-<tr class="memdesc:a052f759ab4cf62333e6f61622cb5be32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely call the specified application's main entry point, argc and argv.  <br /></td></tr>
+<tr class="memitem:a3b5de4ba1d1a6308885af8e85cc948d1" id="r_a3b5de4ba1d1a6308885af8e85cc948d1"><td class="memTemplParams" colspan="2">template&lt;typename main_function_t&gt; </td></tr>
+<tr class="memitem:a3b5de4ba1d1a6308885af8e85cc948d1 template"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1">run</a> (main_function_t main_function)</td></tr>
+<tr class="memdesc:a3b5de4ba1d1a6308885af8e85cc948d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely call the specified application's main entry point.  <br /></td></tr>
+<tr class="memitem:aea7f0fa6b6ca8bb6d3424082d7d31eee" id="r_aea7f0fa6b6ca8bb6d3424082d7d31eee"><td class="memTemplParams" colspan="2">template&lt;typename main_function_t&gt; </td></tr>
+<tr class="memitem:aea7f0fa6b6ca8bb6d3424082d7d31eee template"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#aea7f0fa6b6ca8bb6d3424082d7d31eee">run</a> (main_function_t main_function, int argc, char *argv[])</td></tr>
+<tr class="memdesc:aea7f0fa6b6ca8bb6d3424082d7d31eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely call the specified application's main entry point, argc and argv.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a9301437f9e6012fa2a487878639e7d23" name="a9301437f9e6012fa2a487878639e7d23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9301437f9e6012fa2a487878639e7d23">&#9670;&#160;</a></span>safe_run() <span class="overload">[1/2]</span></h2>
+<a id="a3b5de4ba1d1a6308885af8e85cc948d1" name="a3b5de4ba1d1a6308885af8e85cc948d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5de4ba1d1a6308885af8e85cc948d1">&#9670;&#160;</a></span>run() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,7 @@ template&lt;typename main_function_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int xtd::startup::safe_run </td>
+          <td class="memname">int xtd::startup::run </td>
           <td>(</td>
           <td class="paramtype">main_function_t</td>          <td class="paramname"><span class="paramname"><em>main_function</em></span></td><td>)</td>
           <td></td>
@@ -149,7 +149,7 @@ template&lt;typename main_function_t&gt; </div>
 <dd>
 The <a class="el" href="classxtd_1_1threading_1_1thread.html#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> method are call before exit. See <a class="el" href="classxtd_1_1threading_1_1thread.html#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> for more information. </dd>
 <dd>
-The xtd::startup::run method is used by the keyword <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a>. </dd></dl>
+The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call the specified application&#39;s main entry point.">xtd::startup::run</a> method is used by the keyword <a class="el" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">main_class</td><td>The class that contains the static main method. </td></tr>
@@ -327,8 +327,8 @@ The xtd::startup::run method is used by the keyword <a class="el" href="group__k
 
 </div>
 </div>
-<a id="a052f759ab4cf62333e6f61622cb5be32" name="a052f759ab4cf62333e6f61622cb5be32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a052f759ab4cf62333e6f61622cb5be32">&#9670;&#160;</a></span>safe_run() <span class="overload">[2/2]</span></h2>
+<a id="aea7f0fa6b6ca8bb6d3424082d7d31eee" name="aea7f0fa6b6ca8bb6d3424082d7d31eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea7f0fa6b6ca8bb6d3424082d7d31eee">&#9670;&#160;</a></span>run() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,7 +339,7 @@ template&lt;typename main_function_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int xtd::startup::safe_run </td>
+          <td class="memname">int xtd::startup::run </td>
           <td>(</td>
           <td class="paramtype">main_function_t</td>          <td class="paramname"><span class="paramname"><em>main_function</em></span>, </td>
         </tr>
@@ -374,7 +374,7 @@ template&lt;typename main_function_t&gt; </div>
 <dd>
 The <a class="el" href="classxtd_1_1threading_1_1thread.html#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> method are call before exit. See <a class="el" href="classxtd_1_1threading_1_1thread.html#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> for more information. </dd>
 <dd>
-The xtd::startup::run method is used by the keyword <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a>. </dd></dl>
+The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call the specified application&#39;s main entry point.">xtd::startup::run</a> method is used by the keyword <a class="el" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">main_class</td><td>The class that contains the static main method. </td></tr>

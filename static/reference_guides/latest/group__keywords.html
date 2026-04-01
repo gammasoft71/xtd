@@ -160,8 +160,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga05d1212dca8562cec36b4ebb03dd897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> expression is a reference value expression whose value is the reference of the implicit object parameter (the object on which the non-static member function (up to C++23) implicit object member function (since C++23) is called).  <br /></td></tr>
 <tr class="memitem:ga7e5173499dc845cf977362c967c8589e" id="r_ga7e5173499dc845cf977362c967c8589e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga7e5173499dc845cf977362c967c8589e">sizeof_</a></td></tr>
 <tr class="memdesc:ga7e5173499dc845cf977362c967c8589e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
-<tr class="memitem:ga44bd440a34d147923e428eacd1c8eedd" id="r_ga44bd440a34d147923e428eacd1c8eedd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_method)</td></tr>
-<tr class="memdesc:ga44bd440a34d147923e428eacd1c8eedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.  <br /></td></tr>
+<tr class="memitem:gaeb9462ec721c9718cf689e93bf11bf56" id="r_gaeb9462ec721c9718cf689e93bf11bf56"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(...)</td></tr>
+<tr class="memdesc:gaeb9462ec721c9718cf689e93bf11bf56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.  <br /></td></tr>
 <tr class="memitem:ga28796443ec37b938df7072c79595e3f6" id="r_ga28796443ec37b938df7072c79595e3f6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga28796443ec37b938df7072c79595e3f6">static_</a></td></tr>
 <tr class="memdesc:ga28796443ec37b938df7072c79595e3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).  <br /></td></tr>
 <tr class="memitem:gafa2ffd9b4a6568b57ab2731bec095d99" id="r_gafa2ffd9b4a6568b57ab2731bec095d99"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></td></tr>
@@ -1157,11 +1157,11 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(thread_test::main)</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
+<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"></div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_8cpp-example.html#a0">lock.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a0">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a0">monitor_pulse.cpp</a>, and <a class="el" href="monitor_pulse_all_8cpp-example.html#a0">monitor_pulse_all.cpp</a>.</dd>
@@ -1234,7 +1234,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(thread_test::main)</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -1284,7 +1284,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(examples::program::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(examples::program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -1510,7 +1510,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 <div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">xtd::drawing::known_color::text_box</a></div><div class="ttdeci">@ text_box</div><div class="ttdoc">The system-defined color of the accent color (macos specific. On other platform is same as window).</div><div class="ttdef"><b>Definition</b> known_color.hpp:501</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
@@ -1638,7 +1638,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -1755,7 +1755,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -1872,7 +1872,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -1989,7 +1989,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2106,7 +2106,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2223,7 +2223,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2340,7 +2340,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2457,7 +2457,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2574,7 +2574,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2691,7 +2691,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2808,7 +2808,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2925,7 +2925,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3253,8 +3253,8 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 
 </div>
 </div>
-<a id="ga44bd440a34d147923e428eacd1c8eedd" name="ga44bd440a34d147923e428eacd1c8eedd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga44bd440a34d147923e428eacd1c8eedd">&#9670;&#160;</a></span>startup_</h2>
+<a id="gaeb9462ec721c9718cf689e93bf11bf56" name="gaeb9462ec721c9718cf689e93bf11bf56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb9462ec721c9718cf689e93bf11bf56">&#9670;&#160;</a></span>startup_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3262,7 +3262,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
         <tr>
           <td class="memname">#define startup_</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>main_method</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3280,9 +3280,9 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
   </dd>
 </dl>
 <dl class="section user"><dt>Implementation</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">xtd::startup::safe_run</a>(main_method);</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1startup.html#a3b5de4ba1d1a6308885af8e85cc948d1">xtd::startup::run</a>(main_method);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1startup_html_a9301437f9e6012fa2a487878639e7d23"><div class="ttname"><a href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function)</div><div class="ttdoc">Safely call the specified application&#39;s main entry point.</div><div class="ttdef"><b>Definition</b> startup.hpp:50</div></div>
+<div class="ttc" id="aclassxtd_1_1startup_html_a3b5de4ba1d1a6308885af8e85cc948d1"><div class="ttname"><a href="classxtd_1_1startup.html#a3b5de4ba1d1a6308885af8e85cc948d1">xtd::startup::run</a></div><div class="ttdeci">static int run(main_function_t main_function)</div><div class="ttdoc">Safely call the specified application&#39;s main entry point.</div><div class="ttdef"><b>Definition</b> startup.hpp:50</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example show a main method without arguments and without return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -3300,7 +3300,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main1_example::program::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(main1_example::program::main);</div>
 <div class="line"><span class="comment">// Is the same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main() -&gt; int {</span></div>
@@ -3331,7 +3331,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main2_example::program::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(main2_example::program::main);</div>
 <div class="line"><span class="comment">// Is the same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main() -&gt; int {</span></div>
@@ -3363,7 +3363,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main3_example::program::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(main3_example::program::main);</div>
 <div class="line"><span class="comment">// Is the same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main() -&gt; int {</span></div>
@@ -3393,7 +3393,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main4_example::program::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(main4_example::program::main);</div>
 <div class="line"><span class="comment">// Is the same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main() -&gt; int {</span></div>
@@ -3663,7 +3663,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a class="code hl_define" href="#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 <div class="ttc" id="aclassxtd_1_1version_html"><div class="ttname"><a href="classxtd_1_1version.html">xtd::version</a></div><div class="ttdoc">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...</div><div class="ttdef"><b>Definition</b> version.hpp:115</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>

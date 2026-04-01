@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['s_5ffalse_0',['S_FALSE',['../classxtd_1_1h__result.html#abaf7f60304e18904a74da6c734d05b3c',1,'xtd::h_result']]],
-  ['s_5fok_1',['S_OK',['../classxtd_1_1h__result.html#ac36faf3d0d39c9e720f290b9d4985d81',1,'xtd::h_result']]],
+  ['s_5ffalse_0',['S_FALSE',['../classxtd_1_1h__result.html#a4739375012d57bf7b4564a8faa4c9faa',1,'xtd::h_result']]],
+  ['s_5fok_1',['S_OK',['../classxtd_1_1h__result.html#a550459daa9b7903d674afbd48fa35535',1,'xtd::h_result']]],
   ['saddle_5fbrown_2',['saddle_brown',['../classxtd_1_1drawing_1_1color.html#a7ebd2d91a7cb50d542e5cbd4f16c624a',1,'xtd::drawing::color']]],
   ['safety_5fpin_3',['safety_pin',['../classxtd_1_1forms_1_1emoticons.html#a12e214c80ce43a332879d4ec5a6ddd3c',1,'xtd::forms::emoticons']]],
   ['sagittarius_4',['sagittarius',['../classxtd_1_1forms_1_1emoticons.html#aede87d0508e406e76613109377121287',1,'xtd::forms::emoticons']]],
@@ -178,7 +178,7 @@ var searchData=
   ['steaming_5fbowl_175',['steaming_bowl',['../classxtd_1_1forms_1_1emoticons.html#abbbbef3a13d618350fd3b9651b60605f',1,'xtd::forms::emoticons']]],
   ['steel_5fblue_176',['steel_blue',['../classxtd_1_1drawing_1_1color.html#ade6dad9b65ba9952548aa39691797dd8',1,'xtd::drawing::color']]],
   ['stethoscope_177',['stethoscope',['../classxtd_1_1forms_1_1emoticons.html#aafdd701ac148a1ab2e8c85d335f5f149',1,'xtd::forms::emoticons']]],
-  ['stg_5fe_5fpathnotfound_178',['STG_E_PATHNOTFOUND',['../classxtd_1_1h__result.html#ad6129f357dd4cb1424a9f6c40b24da25',1,'xtd::h_result']]],
+  ['stg_5fe_5fpathnotfound_178',['STG_E_PATHNOTFOUND',['../classxtd_1_1h__result.html#aeede6862a131e47b55a95c9907832831',1,'xtd::h_result']]],
   ['stopwatch_179',['stopwatch',['../classxtd_1_1forms_1_1emoticons.html#a2da4a98e11ca22bfef263f7914d20d31',1,'xtd::forms::emoticons']]],
   ['straight_5fruler_180',['straight_ruler',['../classxtd_1_1forms_1_1emoticons.html#afe5494b62509f0dfce05821e39f522ac',1,'xtd::forms::emoticons']]],
   ['strawberry_181',['strawberry',['../classxtd_1_1forms_1_1emoticons.html#ab3cc29c4cd11f6cf4295183870517f0a',1,'xtd::forms::emoticons']]],
