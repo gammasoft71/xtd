@@ -453,7 +453,6 @@
 #include "iobserver.hpp"
 #include "iprogress.hpp"
 #include "is.hpp"
-#include "is_stream_insertable.hpp"
 #include "is_value_type.hpp"
 #include "istringable.hpp"
 #include "keywords.hpp"
