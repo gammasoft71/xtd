@@ -28,5 +28,5 @@ namespace xtd {
     #if defined(__xtd__cpp_lib_ranges)
     std::ranges::range<xtd::raw_type<value_t>> ||
     #endif
-    xtd::stream_insertable<xtd::raw_type<value_t>>;
+    xtd::stream_insertable<value_t>;
 }
