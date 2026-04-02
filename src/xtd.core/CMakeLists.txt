@@ -373,8 +373,6 @@ add_sources(
   "include/xtd/iprogress"
   "include/xtd/is.hpp"
   "include/xtd/is"
-  "include/xtd/is_stream_insertable.hpp"
-  "include/xtd/is_stream_insertable"
   "include/xtd/is_value_type.hpp"
   "include/xtd/is_value_type"
   "include/xtd/istringable.hpp"
