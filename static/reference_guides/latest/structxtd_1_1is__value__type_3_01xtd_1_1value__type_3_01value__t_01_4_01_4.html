@@ -95,12 +95,12 @@ Inheritance diagram for xtd::is_value_type&lt; xtd::value_type&lt; value_t &gt; 
  </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename value_t&gt;<br />
-struct xtd::is_value_type&lt; xtd::value_type&lt; value_t &gt; &gt;</div><p>Specialization of <a class="el" href="structxtd_1_1is__stream__insertable.html" title="Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...">is_stream_insertable</a> for types that support stream insertion into std::ostream. </p>
+struct xtd::is_value_type&lt; xtd::value_type&lt; value_t &gt; &gt;</div><p>Specialization of <a class="el" href="structxtd_1_1is__value__type.html" title="Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...">is_value_type</a> for types that support stream insertion into std::ostream. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
-<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1is__stream__insertable.html">is_stream_insertable</a>&lt;value_t, std::void_t&lt;decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const xtd::raw_type&lt;value_t&gt;&amp;&gt;())&gt;&gt; : std::true_type {};</div>
-<div class="ttc" id="astructxtd_1_1is__stream__insertable_html"><div class="ttname"><a href="structxtd_1_1is__stream__insertable.html">xtd::is_stream_insertable</a></div><div class="ttdoc">Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:34</div></div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1is__value__type.html">is_value_type</a>&lt;value_t, std::void_t&lt;decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const xtd::raw_type&lt;value_t&gt;&amp;&gt;())&gt;&gt; : std::true_type {};</div>
+<div class="ttc" id="astructxtd_1_1is__value__type_html"><div class="ttname"><a href="structxtd_1_1is__value__type.html">xtd::is_value_type</a></div><div class="ttdoc">Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...</div><div class="ttdef"><b>Definition</b> is_value_type.hpp:34</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/is_stream_insertable&gt;</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/is_value_type&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -110,7 +110,7 @@ struct xtd::is_value_type&lt; xtd::value_type&lt; value_t &gt; &gt;</div><p>Spec
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__traits.html#ga15488925bf910f147bbf86d5ff2753b1" title="Convenience variable template equivalent to is_stream_insertable_v&lt;value_t&gt;::value.">is_stream_insertable_v</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__traits.html#gad583ce205007e3dbd9ae8165734071b5" title="Convenience variable template equivalent to is_value_type_v&lt;value_t&gt;::value.">is_value_type_v</a> </dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="is__value__type_8hpp_source.html">is_value_type.hpp</a></li>
 </ul>
