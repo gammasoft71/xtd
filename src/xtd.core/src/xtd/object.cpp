@@ -37,7 +37,7 @@ string object::to_string() const {
   return get_type().full_name();
 }
 
-std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {
+std::ostream& xtd::operator <<(std::ostream& os, const object& obj) noexcept {
   return os << obj.to_string();
 }
 

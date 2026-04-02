@@ -141,11 +141,11 @@ namespace xtd {
     }
     /// @}
   };
+  /// @cond
+  std::ostream& operator <<(std::ostream& os, const xtd::object& obj) noexcept;
+  /// @endcond
 }
 
-/// @cond
-std::ostream& operator <<(std::ostream& os, const xtd::object& obj) noexcept;
-/// @endcond
 
 #include "type.hpp"
 
