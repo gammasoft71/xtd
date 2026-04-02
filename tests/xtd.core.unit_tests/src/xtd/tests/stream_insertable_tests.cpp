@@ -1,4 +1,7 @@
 #include <xtd/stream_insertable>
+#include <xtd/version.hpp>
+#include <xtd/collections/bit_array.hpp>
+#include <xtd/collections/generic/list.hpp>
 #include <xtd/tunit/constraints/assert_that>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -17,16 +20,8 @@ namespace xtd::tests {
       assert_that(is_stream_insertable("str")).is().true_();
     }
     
-    auto test_method_(with_object) {
-      assert_that(is_stream_insertable(object {})).is().false_();
-    }
-    
     auto test_method_(with_string) {
       assert_that(is_stream_insertable("str"_s)).is().true_();
-    }
-    
-    auto test_method_(with_version) {
-      assert_that(is_stream_insertable("1.2.3"_vers)).is().false_();
     }
     
     struct my_stream_insertable {
@@ -67,6 +62,16 @@ namespace xtd::tests {
       assert_that(is_stream_insertable(42_u64)).is().true_();
 
       assert_that(is_stream_insertable(42_z)).is().true_();
+    }
+    
+    auto test_method_(with_object) {
+      assert_that(is_stream_insertable(object {})).is().true_();
+    }
+    
+    auto test_method_(with_derived_from_object) {
+      assert_that(is_stream_insertable(version {})).is().true_();
+      assert_that(is_stream_insertable(collections::bit_array {})).is().true_();
+      assert_that(is_stream_insertable(list<int> {})).is().true_();
     }
   };
 }
