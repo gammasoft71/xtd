@@ -86,14 +86,13 @@ inline std::ostream& operator <<(std::ostream& os, const std::variant<args_t ...
 }*/
 
 template<typename iterator_t>
-//requires xtd::stream_insertable<std::iter_value_t<iterator_t>>
+requires xtd::stream_insertable<std::iter_value_t<iterator_t>>
 inline void __xtd_console_print_container(std::ostream& os, const iterator_t& begin, const iterator_t& end) {
   for (auto it = begin; it != end; ++it) {
     os << (it != begin ? ", " : "") << *it;
   }
 }
 
-/*
 template<typename iterator_t>
 requires (!xtd::stream_insertable<std::iter_value_t<iterator_t>>)
 inline void __xtd_console_print_container(std::ostream& os, const iterator_t& begin, const iterator_t& end) {
@@ -101,7 +100,6 @@ inline void __xtd_console_print_container(std::ostream& os, const iterator_t& be
     os << (it != begin ? ", " : "") << " ";
   }
 }
- */
 
 template<typename iterator_t>
 inline std::ostream& __xtd_console_print_sequence_container(std::ostream& os, const iterator_t& begin, const iterator_t& end) {
