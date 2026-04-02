@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::is_stream_insertable struct and is_stream_insertable_v struct.
+/// @brief Contains xtd::is_value_type struct and is_value_type_v struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "value_type.hpp"
@@ -11,11 +11,11 @@ namespace xtd {
   /// @par Definition
   /// ```cpp
   /// template<typename value_t>
-  /// struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const value_t&>())>> : std::true_type {};
+  /// struct is_value_type<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const value_t&>())>> : std::true_type {};
   /// ```
   /// @par Header
   /// ```cpp
-  /// #include <xtd/is_stream_insertable>
+  /// #include <xtd/is_value_type>
   /// ```
   /// @par Namespace
   /// xtd
@@ -29,18 +29,18 @@ namespace xtd {
   /// Otherwise, it evaluates to `std::false_type`.
   /// @tparam value_t The type to test for stream insertability.
   /// @note This trait only checks syntactic validity of the insertion expression. It does not guarantee any particular semantic meaning or formatting quality of the output.
-  /// @see is_stream_insertable_v
+  /// @see is_value_type_v
   template<typename value_t, typename = void>
   struct is_value_type : std::false_type {};
-  /// @brief Specialization of is_stream_insertable for types that support stream insertion into std::ostream.
+  /// @brief Specialization of is_value_type for types that support stream insertion into std::ostream.
   /// @par Definition
   /// ```cpp
   /// template<typename value_t>
-  /// struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const xtd::raw_type<value_t>&>())>> : std::true_type {};
+  /// struct is_value_type<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const xtd::raw_type<value_t>&>())>> : std::true_type {};
   /// ```
   /// @par Header
   /// ```cpp
-  /// #include <xtd/is_stream_insertable>
+  /// #include <xtd/is_value_type>
   /// ```
   /// @par Namespace
   /// xtd
@@ -49,19 +49,19 @@ namespace xtd {
   /// @ingroup xtd_core traits
   /// This specialization is selected when `value_t` provides a valid `operator<<` overload compatible with `std::ostream`.
   /// @tparam value_t The type to test for stream insertability.
-  /// @see is_stream_insertable_v
+  /// @see is_value_type_v
   template<typename value_t>
   struct is_value_type<xtd::value_type<value_t>> : std::true_type {};
 
-  /// @brief Convenience variable template equivalent to `is_stream_insertable_v<value_t>::value`.
+  /// @brief Convenience variable template equivalent to `is_value_type_v<value_t>::value`.
   /// @par Definition
   /// ```cpp
   /// template<typename value_t>
-  /// inline constexpr bool is_stream_insertable_v = is_stream_insertable<xtd::raw_type<value_t>>::value;
+  /// inline constexpr bool is_value_type_v = is_value_type<xtd::raw_type<value_t>>::value;
   /// ```
   /// @par Header
   /// ```cpp
-  /// #include <xtd/is_stream_insertable>
+  /// #include <xtd/is_value_type>
   /// ```
   /// @par Namespace
   /// xtd
@@ -71,10 +71,10 @@ namespace xtd {
   /// This helper allows simpler and more readable usage, especially in `if constexpr` expressions and static assertions.
   /// @tparam value_t The type to test for stream insertability.
   /// ```cpp
-  /// static_assert(xtd::is_stream_insertable_v<int>);
-  /// static_assert(!xtd::is_stream_insertable_v<std::vector<int>>);
+  /// static_assert(xtd::is_value_type_v<int>);
+  /// static_assert(!xtd::is_value_type_v<std::vector<int>>);
   /// ```
-  /// @see is_stream_insertable
+  /// @see is_value_type
   template<typename value_t>
   inline constexpr bool is_value_type_v = is_value_type<xtd::raw_type<value_t>>::value;
 }
