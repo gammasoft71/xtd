@@ -402,7 +402,16 @@ namespace xtd {
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
     static console_key_info read_key(bool intercept);
-    
+    /// @brief Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window with specified invit text.
+    /// @param text The invit text to print before read line.
+    /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
+    static console_key_info read_key(const string& text);
+    /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window with specified invit text.
+    /// @param text The invit text to print before read line.
+    /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
+    /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
+    static console_key_info read_key(const string& text, bool intercept);
+
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::string read_line();
@@ -410,7 +419,16 @@ namespace xtd {
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::string read_line(bool intercept);
-    
+    /// @brief Reads the next line of characters from the standard input stream with specified invit text.
+    /// @param text The invit text to print before read line.
+    /// @return The next line of characters from the input stream, or "" if no more lines are available.
+    static xtd::string read_line(const string& text);
+    /// @brief Reads the next line of characters from the standard input stream with specified invit text.
+    /// @param text The invit text to print before read line.
+    /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
+    /// @return The next line of characters from the input stream, or "" if no more lines are available.
+    static xtd::string read_line(const string& text, bool intercept);
+
     /// @brief Sets the foreground and background console colors to their defaults.
     /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
     static bool reset_color();

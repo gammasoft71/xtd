@@ -299,13 +299,46 @@ int32 console::read() {
   return in.get();
 }
 
+console_key_info console::read_key() {
+  return read_key("", false);
+}
+
+console_key_info console::read_key(bool intercept) {
+  return read_key("", intercept);
+}
+
+console_key_info console::read_key(const string& text) {
+  return read_key(text, false);
+}
+
+console_key_info console::read_key(const string& text, bool intercept) {
+  write(text);
+  out.flush();
+  
+  auto key_char = U'0', key_code = U'0';
+  auto alt = false, shift = false, ctrl = false;
+  native::console::read_key(key_char, key_code, alt, shift, ctrl);
+  auto key_info = console_key_info(key_char, as<console_key>(key_code), shift, alt, ctrl);
+  
+  if (intercept == false)
+    write(key_info.key_char());
+  return key_info;
+}
+
 string console::read_line() {
-  register_cancel_key_press(); // Must be first...
-  return read_line(false);
+  return read_line("", false);
 }
 
 string console::read_line(bool intercept) {
-  register_cancel_key_press(); // Must be first...
+  return read_line("", intercept);
+}
+
+string console::read_line(const string& text) {
+  return read_line(text, false);
+}
+
+string console::read_line(const string& text, bool intercept) {
+  write(text);
   struct echo_on {
     echo_on(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
     ~echo_on() {
@@ -317,25 +350,6 @@ string console::read_line(bool intercept) {
   } echo_on {intercept};
   out.flush();
   return stream_reader {in}.read_line();
-}
-
-console_key_info console::read_key() {
-  register_cancel_key_press(); // Must be first...
-  return read_key(false);
-}
-
-console_key_info console::read_key(bool intercept) {
-  register_cancel_key_press(); // Must be first...
-  out.flush();
-  
-  auto key_char = U'0', key_code = U'0';
-  auto alt = false, shift = false, ctrl = false;
-  native::console::read_key(key_char, key_code, alt, shift, ctrl);
-  auto key_info = console_key_info(key_char, as<console_key>(key_code), shift, alt, ctrl);
-  
-  if (intercept == false)
-    write(key_info.key_char());
-  return key_info;
 }
 
 bool console::reset_color() {
