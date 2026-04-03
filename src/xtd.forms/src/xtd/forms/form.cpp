@@ -664,6 +664,7 @@ void form::on_deactivate(const event_args& e) {
 }
 
 void form::on_handle_created(const event_args& e) {
+  control::top_level_controls_.add(*this);
   container_control::on_handle_created(e);
   if (data_->show_icon && data_->icon != drawing::icon::empty) native::form::icon(handle(), data_->icon);
   if (data_->accept_button.has_value()) data_->accept_button.value().get().notify_default(true);
@@ -674,6 +675,11 @@ void form::on_handle_created(const event_args& e) {
 }
 
 void form::on_handle_destroyed(const event_args& e) {
+  for (auto index = 0_z; index < control::top_level_controls_.count(); ++index)
+    if (&control::top_level_controls_[index].get() == this) {
+      control::top_level_controls_.remove_at(index);
+      break;
+    }
   container_control::on_handle_destroyed(e);
   destroy_system_menu();
 }
@@ -903,6 +909,11 @@ void form::wm_close(message& message) {
   on_form_closing(event_args);
   message.result = event_args.cancel();
   if (event_args.cancel() != true) {
+    for (auto index = 0_z; index < control::top_level_controls_.count(); ++index)
+      if (&control::top_level_controls_[index].get() == this) {
+        control::top_level_controls_.remove_at(index);
+        break;
+      }
     data_->closed = true;
     if (!get_state(state::modal))
       hide();
