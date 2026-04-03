@@ -34,7 +34,6 @@ option(XTD_ENABLE_RUN_DEVELOPER_REFERENCE_GUIDE "Add run Developer Reference Gui
 option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
 option(XTD_INSTALL_EXAMPLES "Install examples" ON)
 option(XTD_INSTALL_RESOURCES "Install resources" ON)
-option(XTD_KEEP_CLONED_CONTROLS "Keep cloned controls by default (Only for debugging)" OFF)
 option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
 option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
 option(XTD_USE_SYSTEM_CONTROLS "Use by default system controls instead standard controls (Only for debugging)" OFF)
@@ -51,11 +50,6 @@ set(ASTYLE_SOURCE_FILES
 )
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
-
-if (XTD_KEEP_CLONED_CONTROLS)
-  message(WARNING "The XTD_KEEP_CLONED_CONTROLS option can only be used for debugging.\nUse xtd::application::keep_cloned_controls() instead.\nSee https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a for more information")
-  add_definitions(-D__XTD_KEEP_CLONED_CONTROLS__)
-endif ()
 
 if (XTD_USE_SYSTEM_CONTROLS)
   message(WARNING "The XTD_USE_SYSTEM_CONTROLS option can only be used for debugging.\nUse xtd::application::enable_system_controls() instead.\nSee https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a for more information")

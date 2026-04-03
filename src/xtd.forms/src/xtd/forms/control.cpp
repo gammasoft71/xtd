@@ -95,9 +95,6 @@ control::control_collection control::top_level_controls_;
 
 list<xtd::sptr<xtd::forms::control>> control::control_collection::controls_;
 
-control::control_collection::control_collection(bool keep_cloned_controls) : keep_cloned_controls_ {keep_cloned_controls} {
-}
-
 control::control_collection::control_collection(const control::control_collection::base& collection) : control::control_collection::base(collection) {}
 control::control_collection::control_collection(const control::control_collection& collection) : control::control_collection::base(collection) {}
 control::control_collection& control::control_collection::operator = (const control::control_collection& collection) {
@@ -143,7 +140,7 @@ struct control::data {
   drawing::size client_size;
   forms::control_appearance control_appearance = forms::control_appearance::standard;
   xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
-  control_collection controls {application::keep_cloned_controls()};
+  control_collection controls;
   std::optional < context_menu_ref > context_menu;
   std::optional < forms::cursor > cursor;
   dock_style dock = dock_style::none;
@@ -966,12 +963,7 @@ void control::destroy_control() {
     parent_prev.value().get().suspend_layout();
     parent(nullptr);
     parent_prev.value().get().resume_layout(false);
-  } else
-    for (auto index = 0_z; index < top_level_controls_.count(); ++index)
-      if (top_level_controls_[index].get().handle() == handle()) {
-        top_level_controls_.remove_at(index);
-        break;
-      }
+  }
   destroy_handle();
   set_state(state::destroyed, true);
   set_state(state::destroying, false);
@@ -1010,6 +1002,7 @@ std::optional<control_ref> control::from_child_handle(intptr handle) {
 }
 
 std::optional<control_ref> control::from_handle(intptr handle) {
+  if (!handle) return std::nullopt;
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -1204,10 +1197,6 @@ void control::on_control_appearance_changed(const event_args& e) {
 }
 
 void control::on_create_control() {
-  if (!parent().has_value()) {
-    if (!application::keep_cloned_controls()) top_level_controls_.add(*this);
-    else top_level_controls_.add(*application::top_level_forms_[~1_z]);
-  }
   for (auto control : data_->controls) {
     control.get().data_->parent = handle();
     control.get().create_control();

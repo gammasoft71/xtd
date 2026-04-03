@@ -56,6 +56,7 @@ namespace xtd {
     class application;
     class context_menu;
     class horizontal_layout_panel;
+    class form;
     class screen;
     class vertical_layout_panel;
     
@@ -164,11 +165,6 @@ namespace xtd {
         /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection() = default;
-        /// @brief Creates a new object xtd::forms::control::control_collection with specified keep_cloned_controls, and allocator (optional).
-        /// @param keep_cloned_controls If `true` the collection clone and keep controls; otherwise none.
-        /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-        /// @warning Internal use only
-        explicit control_collection(bool keep_cloned_controls);
         /// @}
         
         /// @cond
@@ -203,13 +199,7 @@ namespace xtd {
         void add(control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
-          if (!keep_cloned_controls_) base::add(value);
-          else {
-            auto control_ptr = as<control>(as<iclonable>(value).clone());
-            auto& control_ref = *control_ptr;
-            controls_.add(std::move(control_ptr));
-            base::add(control_ref);
-          }
+          base::add(value);
         }
         
         /// @brief Creates and inserts specified control at specified position.
@@ -271,13 +261,7 @@ namespace xtd {
         void insert(size_t index, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
-          if (!keep_cloned_controls_) base::insert(index, value);
-          else {
-            auto control_ptr = as<control>(as<iclonable>(value).clone());
-            auto& control_ref = *control_ptr;
-            controls_.add(std::move(control_ptr));
-            base::insert(index, control_ref);
-          }
+          base::insert(index, value);
         }
         /// @}
         
@@ -308,7 +292,6 @@ namespace xtd {
         using xtd::forms::layout::arranged_element_collection<control_ref>::insert;
         using xtd::forms::layout::arranged_element_collection<control_ref>::add;
         
-        bool keep_cloned_controls_ = false;
         static xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> controls_;
       };
       
@@ -1863,6 +1846,7 @@ namespace xtd {
       friend class application;
       friend class context_menu;
       friend class horizontal_layout_panel;
+      friend class form;
       friend class paint_event_args;
       friend class screen;
       friend class vertical_layout_panel;

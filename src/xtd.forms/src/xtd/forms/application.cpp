@@ -81,11 +81,6 @@ namespace {
 xtd::forms::application_context application::internal_context_;
 xtd::forms::application_context* application::context_ = &application::internal_context_;
 bool application::button_images_ = true;
-#if defined(__XTD_KEEP_CLONED_CONTROLS__)
-bool application::keep_cloned_controls_ = true;
-#else
-bool application::keep_cloned_controls_ = false;
-#endif
 bool application::font_size_correction_ = true;
 bool application::light_mode_ = false;
 bool application::menu_images_ = true;
@@ -190,15 +185,6 @@ void application::font_size_correction(bool value) {
   native::application::enable_font_size_correction(value);
 }
 
-bool application::keep_cloned_controls() noexcept {
-  return keep_cloned_controls_;
-}
-
-void application::keep_cloned_controls(bool value) {
-  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::keep_cloned_controls::button_images() before application::run()");
-  keep_cloned_controls_ = value;
-}
-
 bool application::light_mode() noexcept {
   return !dark_mode();
 }
@@ -239,24 +225,9 @@ bool application::message_loop() noexcept {
 
 const form_collection application::open_forms() noexcept {
   auto forms = form_collection {};
-  if (keep_cloned_controls()) {
-    for (auto control : top_level_forms_)
-      forms.add(dynamic_cast<form&>(*control));
-    return forms;
-  }
-  
   for (auto control : control::top_level_controls_)
     forms.add(dynamic_cast<form&>(control.get()));
   return forms;
-
-  /*
-  auto forms = form_collection {};
-  for (intptr handle : native::application::open_forms()) {
-    control& control = control::from_handle(handle);
-    forms.push_back(static_cast<form&>(control));
-  }
-  return forms;
-   */
 }
 
 xtd::string application::product_name() noexcept {
