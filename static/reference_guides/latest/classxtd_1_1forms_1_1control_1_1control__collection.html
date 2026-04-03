@@ -111,8 +111,6 @@ Public Aliases</h2></td></tr>
 Public Constructors</h2></td></tr>
 <tr class="memitem:a582e230e401b9ae503cb031335a5a3bf" id="r_a582e230e401b9ae503cb031335a5a3bf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a582e230e401b9ae503cb031335a5a3bf">control_collection</a> ()=default</td></tr>
 <tr class="memdesc:a582e230e401b9ae503cb031335a5a3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified allocator (optional).  <br /></td></tr>
-<tr class="memitem:a8c92ae33db28dccbdd69a87eefd30e12" id="r_a8c92ae33db28dccbdd69a87eefd30e12"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8c92ae33db28dccbdd69a87eefd30e12">control_collection</a> (bool keep_cloned_controls)</td></tr>
-<tr class="memdesc:a8c92ae33db28dccbdd69a87eefd30e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified keep_cloned_controls, and allocator (optional).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Operators</h2></td></tr>
@@ -381,7 +379,7 @@ bool&#160;</td><td class="memItemRight"><b>operator!=</b> (const <a class="el" h
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a582e230e401b9ae503cb031335a5a3bf" name="a582e230e401b9ae503cb031335a5a3bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a582e230e401b9ae503cb031335a5a3bf">&#9670;&#160;</a></span>control_collection() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a582e230e401b9ae503cb031335a5a3bf">&#9670;&#160;</a></span>control_collection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,41 +403,6 @@ bool&#160;</td><td class="memItemRight"><b>operator!=</b> (const <a class="el" h
 
 <p>Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified allocator (optional). </p>
 <dl class="section remark"><dt>Remarks</dt><dd>If allocator not specified, the std::allocator&lt;value_type&gt; is used. </dd></dl>
-
-</div>
-</div>
-<a id="a8c92ae33db28dccbdd69a87eefd30e12" name="a8c92ae33db28dccbdd69a87eefd30e12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c92ae33db28dccbdd69a87eefd30e12">&#9670;&#160;</a></span>control_collection() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">xtd::forms::control::control_collection::control_collection </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>keep_cloned_controls</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified keep_cloned_controls, and allocator (optional). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">keep_cloned_controls</td><td>If <span class="tt">true</span> the collection clone and keep controls; otherwise none. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If allocator not specified, the std::allocator&lt;value_type&gt; is used. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 
 </div>
 </div>
@@ -551,7 +514,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="line">  application::run(form1);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.hpp:1488</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.hpp:1471</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:932</div></div>
