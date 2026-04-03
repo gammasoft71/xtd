@@ -120,7 +120,7 @@ int32 unit_test::run() noexcept {
     if (settings::default_settings().count_tests()) {
       auto count = 0;
       for (const auto& test_class : test_classes())
-        count += test_class.test()->tests().size();
+        count += static_cast<int32>(test_class.test()->tests().size());
           
       return count_tests(count);
     }
