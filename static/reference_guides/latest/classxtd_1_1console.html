@@ -122,7 +122,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Enter your name: James</span></div>
 <div class="line"><span class="comment">// Good day, James!</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -273,10 +273,18 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:ac0ebb643e4d3b01faa8380bd90d22aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.  <br /></td></tr>
 <tr class="memitem:a1822f37e38d57997eb5f094980b47e1b" id="r_a1822f37e38d57997eb5f094980b47e1b"><td class="memItemLeft">static <a class="el" href="classxtd_1_1console__key__info.html">console_key_info</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1822f37e38d57997eb5f094980b47e1b">read_key</a> (bool intercept)</td></tr>
 <tr class="memdesc:a1822f37e38d57997eb5f094980b47e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.  <br /></td></tr>
+<tr class="memitem:a7c9d4156b028c66a4eaa4403d0a9e5e8" id="r_a7c9d4156b028c66a4eaa4403d0a9e5e8"><td class="memItemLeft">static <a class="el" href="classxtd_1_1console__key__info.html">console_key_info</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7c9d4156b028c66a4eaa4403d0a9e5e8">read_key</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="namespacextd_1_1text.html">text</a>)</td></tr>
+<tr class="memdesc:a7c9d4156b028c66a4eaa4403d0a9e5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window with specified invit text.  <br /></td></tr>
+<tr class="memitem:a69c568e9a420cf858892d13d799eaf0c" id="r_a69c568e9a420cf858892d13d799eaf0c"><td class="memItemLeft">static <a class="el" href="classxtd_1_1console__key__info.html">console_key_info</a>&#160;</td><td class="memItemRight"><a class="el" href="#a69c568e9a420cf858892d13d799eaf0c">read_key</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="namespacextd_1_1text.html">text</a>, bool intercept)</td></tr>
+<tr class="memdesc:a69c568e9a420cf858892d13d799eaf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window with specified invit text.  <br /></td></tr>
 <tr class="memitem:a01a96244846df28bb0178e3728434243" id="r_a01a96244846df28bb0178e3728434243"><td class="memItemLeft">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a01a96244846df28bb0178e3728434243">read_line</a> ()</td></tr>
 <tr class="memdesc:a01a96244846df28bb0178e3728434243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next line of characters from the standard input stream.  <br /></td></tr>
 <tr class="memitem:a0d0c13bc9aba9c2a20b47f96608b56fd" id="r_a0d0c13bc9aba9c2a20b47f96608b56fd"><td class="memItemLeft">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0d0c13bc9aba9c2a20b47f96608b56fd">read_line</a> (bool intercept)</td></tr>
 <tr class="memdesc:a0d0c13bc9aba9c2a20b47f96608b56fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next line of characters from the standard input stream.  <br /></td></tr>
+<tr class="memitem:aa4ddce17622a93e115c5c43b0608a764" id="r_aa4ddce17622a93e115c5c43b0608a764"><td class="memItemLeft">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa4ddce17622a93e115c5c43b0608a764">read_line</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="namespacextd_1_1text.html">text</a>)</td></tr>
+<tr class="memdesc:aa4ddce17622a93e115c5c43b0608a764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next line of characters from the standard input stream with specified invit text.  <br /></td></tr>
+<tr class="memitem:a5965d5688c5a6c06d901d37a3f4a4e98" id="r_a5965d5688c5a6c06d901d37a3f4a4e98"><td class="memItemLeft">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5965d5688c5a6c06d901d37a3f4a4e98">read_line</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="namespacextd_1_1text.html">text</a>, bool intercept)</td></tr>
+<tr class="memdesc:a5965d5688c5a6c06d901d37a3f4a4e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next line of characters from the standard input stream with specified invit text.  <br /></td></tr>
 <tr class="memitem:aa238558f28b619a37668f9129b098600" id="r_aa238558f28b619a37668f9129b098600"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#aa238558f28b619a37668f9129b098600">reset_color</a> ()</td></tr>
 <tr class="memdesc:aa238558f28b619a37668f9129b098600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground and background console colors to their defaults.  <br /></td></tr>
 <tr class="memitem:ace49300f3a5875c474af63de69275025" id="r_ace49300f3a5875c474af63de69275025"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ace49300f3a5875c474af63de69275025">set_cursor_position</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> left, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> top)</td></tr>
@@ -3162,7 +3170,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 </div>
 </div>
 <a id="ac0ebb643e4d3b01faa8380bd90d22aa0" name="ac0ebb643e4d3b01faa8380bd90d22aa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0ebb643e4d3b01faa8380bd90d22aa0">&#9670;&#160;</a></span>read_key() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ebb643e4d3b01faa8380bd90d22aa0">&#9670;&#160;</a></span>read_key() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3190,7 +3198,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 </div>
 </div>
 <a id="a1822f37e38d57997eb5f094980b47e1b" name="a1822f37e38d57997eb5f094980b47e1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1822f37e38d57997eb5f094980b47e1b">&#9670;&#160;</a></span>read_key() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1822f37e38d57997eb5f094980b47e1b">&#9670;&#160;</a></span>read_key() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3223,8 +3231,81 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 
 </div>
 </div>
+<a id="a7c9d4156b028c66a4eaa4403d0a9e5e8" name="a7c9d4156b028c66a4eaa4403d0a9e5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9d4156b028c66a4eaa4403d0a9e5e8">&#9670;&#160;</a></span>read_key() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1console__key__info.html">console_key_info</a> xtd::console::read_key </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window with specified invit text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="namespacextd_1_1text.html" title="Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...">text</a></td><td>The invit text to print before read line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1console__key__info.html" title="Specifies the standard keys on a console.">xtd::console_key_info</a> A <a class="el" href="classxtd_1_1console__key__info.html" title="Specifies the standard keys on a console.">xtd::console_key_info</a> object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The <a class="el" href="classxtd_1_1console__key__info.html" title="Specifies the standard keys on a console.">xtd::console_key_info</a> object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key. </dd></dl>
+
+</div>
+</div>
+<a id="a69c568e9a420cf858892d13d799eaf0c" name="a69c568e9a420cf858892d13d799eaf0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c568e9a420cf858892d13d799eaf0c">&#9670;&#160;</a></span>read_key() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1console__key__info.html">console_key_info</a> xtd::console::read_key </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>intercept</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window with specified invit text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="namespacextd_1_1text.html" title="Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...">text</a></td><td>The invit text to print before read line. </td></tr>
+    <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. <span class="tt">true</span> to not display the pressed key; otherwise, <span class="tt">false</span> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1console__key__info.html" title="Specifies the standard keys on a console.">xtd::console_key_info</a> A <a class="el" href="classxtd_1_1console__key__info.html" title="Specifies the standard keys on a console.">xtd::console_key_info</a> object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The <a class="el" href="classxtd_1_1console__key__info.html" title="Specifies the standard keys on a console.">xtd::console_key_info</a> object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key. </dd></dl>
+
+</div>
+</div>
 <a id="a01a96244846df28bb0178e3728434243" name="a01a96244846df28bb0178e3728434243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01a96244846df28bb0178e3728434243">&#9670;&#160;</a></span>read_line() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a96244846df28bb0178e3728434243">&#9670;&#160;</a></span>read_line() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3252,7 +3333,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 </div>
 </div>
 <a id="a0d0c13bc9aba9c2a20b47f96608b56fd" name="a0d0c13bc9aba9c2a20b47f96608b56fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d0c13bc9aba9c2a20b47f96608b56fd">&#9670;&#160;</a></span>read_line() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d0c13bc9aba9c2a20b47f96608b56fd">&#9670;&#160;</a></span>read_line() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3277,6 +3358,79 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <p>Reads the next line of characters from the standard input stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. <span class="tt">true</span> to not display the pressed key; otherwise, <span class="tt">false</span> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The next line of characters from the input stream, or "" if no more lines are available. </dd></dl>
+
+</div>
+</div>
+<a id="aa4ddce17622a93e115c5c43b0608a764" name="aa4ddce17622a93e115c5c43b0608a764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ddce17622a93e115c5c43b0608a764">&#9670;&#160;</a></span>read_line() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::console::read_line </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads the next line of characters from the standard input stream with specified invit text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="namespacextd_1_1text.html" title="Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...">text</a></td><td>The invit text to print before read line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The next line of characters from the input stream, or "" if no more lines are available. </dd></dl>
+
+</div>
+</div>
+<a id="a5965d5688c5a6c06d901d37a3f4a4e98" name="a5965d5688c5a6c06d901d37a3f4a4e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5965d5688c5a6c06d901d37a3f4a4e98">&#9670;&#160;</a></span>read_line() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::console::read_line </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>intercept</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads the next line of characters from the standard input stream with specified invit text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="namespacextd_1_1text.html" title="Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...">text</a></td><td>The invit text to print before read line. </td></tr>
     <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. <span class="tt">true</span> to not display the pressed key; otherwise, <span class="tt">false</span> </td></tr>
   </table>
   </dd>
