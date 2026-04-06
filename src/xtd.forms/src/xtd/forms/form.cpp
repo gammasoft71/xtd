@@ -312,6 +312,7 @@ std::optional<form::tool_bar_ref> form::tool_bar() const noexcept {
 
 form& form::tool_bar(const forms::tool_bar& value) {
   if (data_->tool_bar.has_value() && &data_->tool_bar.value().get() == &value) return *this;
+  if (data_->tool_bar.has_value()) data_->tool_bar.value().get().is_system_tool_bar(false);
   data_->tool_bar = const_cast<forms::tool_bar&>(value);
   data_->tool_bar.value().get().is_system_tool_bar(true);
   return *this;
