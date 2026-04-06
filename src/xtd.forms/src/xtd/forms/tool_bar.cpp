@@ -556,29 +556,28 @@ void tool_bar::fill() {
   controls().clear();
   data_->stretchable_separators.clear();
   data_->tool_bar_buttons.clear();
-  auto reversed_buttons = data_->buttons;
-  if (!is_system_tool_bar()) std::reverse(reversed_buttons.items().begin(), reversed_buttons.items().end());
+  if (!is_system_tool_bar()) data_->buttons.reverse();
   if (!is_system_tool_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
-  for (auto index = 0_z; index < reversed_buttons.count(); ++index) {
-    auto& button_item = reversed_buttons[index].get();
+  for (auto index = 0_z; index < data_->buttons.count(); ++index) {
+    auto& button_item = data_->buttons[index].get();
     auto control_handle = 0_z;
     if (is_system_tool_bar()) {
-      if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
+      if (data_->buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
         control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
-      else if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
-        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
-      else if (reversed_buttons[index].get().style() == tool_bar_button_style::separator)
+      else if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
+        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, data_->buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
+      else if (data_->buttons[index].get().style() == tool_bar_button_style::separator)
         control_handle = native::tool_bar::add_tool_bar_separator(handle());
-      else if (reversed_buttons[index].get().style() == tool_bar_button_style::drop_down_button)
+      else if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button)
         control_handle = native::tool_bar::add_tool_bar_drop_down_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible(), button_item.drop_down_menu().has_value() ? button_item.drop_down_menu().value().get().handle() : 0);
-      else if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
+      else if (data_->buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
         control_handle = native::tool_bar::add_tool_bar_stretchable_separator(handle());
-      else if (reversed_buttons[index].get().style() == tool_bar_button_style::control) {
+      else if (data_->buttons[index].get().style() == tool_bar_button_style::control) {
         if (button_item.control().has_value()) button_item.control().value().get().parent(*this);
         control_handle = native::tool_bar::add_tool_bar_control(handle(), button_item.control().has_value() ? button_item.control().value().get().handle() : 0, button_item.text(), button_item.tool_tip_text());
       }
-      reversed_buttons[index].get().data_->handle = control_handle;
+      data_->buttons[index].get().data_->handle = control_handle;
       data_->system_tool_bar_button_handles.add(control_handle);
       button_item.data_->rectangle = drawing::rectangle(native::tool_bar::tool_bar_item_rectangle(handle(), control_handle));
     } else {
@@ -631,7 +630,8 @@ void tool_bar::fill() {
       data_->tool_bar_buttons.add(button_control);
     }
   }
-  
+  if (!is_system_tool_bar()) data_->buttons.reverse();
+
   if (is_system_tool_bar()) {
     auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
