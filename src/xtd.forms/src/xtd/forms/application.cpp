@@ -415,8 +415,8 @@ void application::run(xtd::forms::application_context& context) {
   context.thread_exit -= application::on_app_thread_exit;
   application::message_loop_ = false;
   internal_context_.main_form(nullptr);
-  native::application::cleanup();
   top_level_forms_.clear();
+  native::application::cleanup();
 }
 
 void application::run(const form& form) {
