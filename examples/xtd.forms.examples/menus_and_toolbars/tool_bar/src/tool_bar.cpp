@@ -43,15 +43,13 @@ namespace tool_bar_example {
     }
     
   private:
-    void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
-      if (e.button().style() == tool_bar_button_style::toggle_button)
-        list_box1.items().add(string::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
-      else
-        list_box1.items().add(string::format("Button {} clicked", e.button().text()));
+    auto on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) -> void {
+      if (e.button().style() == tool_bar_button_style::toggle_button) list_box1.items().add(string::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
+      else list_box1.items().add(string::format("Button {} clicked", e.button().text()));
       list_box1.selected_index(list_box1.items().count() - 1);
     }
     
-    void on_menu_click(object& sender, const event_args& e) {
+    auto on_menu_click(object& sender, const event_args& e) -> void {
       list_box1.items().add(string::format("Menu item {} clicked", as<menu_item>(sender).text()));
       list_box1.selected_index(list_box1.items().count() - 1);
     }
