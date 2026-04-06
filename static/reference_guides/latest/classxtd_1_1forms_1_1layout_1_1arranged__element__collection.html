@@ -233,6 +233,10 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a766c30fc28eb3c75dca051916993ac54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a7cd0bf57cdb4896d06865a71c647fcb6" id="r_a7cd0bf57cdb4896d06865a71c647fcb6"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6">remove_at</a> (size_t index)</td></tr>
 <tr class="memdesc:a7cd0bf57cdb4896d06865a71c647fcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases element at specified index.  <br /></td></tr>
+<tr class="memitem:a6ce002e88a81d38446a82cc1e3698f2f" id="r_a6ce002e88a81d38446a82cc1e3698f2f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ce002e88a81d38446a82cc1e3698f2f">reverse</a> () -&gt; <a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a> &amp;</td></tr>
+<tr class="memdesc:a6ce002e88a81d38446a82cc1e3698f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a9fe85206edb6a9e7ac7b690ff27e7a03" id="r_a9fe85206edb6a9e7ac7b690ff27e7a03"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fe85206edb6a9e7ac7b690ff27e7a03">reverse</a> (<a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> index, <a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="#af921b936ffed8db4a8936e91fbc69b39">count</a>) -&gt; <a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a> &amp;</td></tr>
+<tr class="memdesc:a9fe85206edb6a9e7ac7b690ff27e7a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the specified range.  <br /></td></tr>
 <tr class="memitem:a8d7e3cde1a97b03e109a4851b770b19a" id="r_a8d7e3cde1a97b03e109a4851b770b19a"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8d7e3cde1a97b03e109a4851b770b19a">to_array</a> () const noexcept</td></tr>
 <tr class="memdesc:a8d7e3cde1a97b03e109a4851b770b19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array with the elements of the container.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -1946,6 +1950,203 @@ template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a6ce002e88a81d38446a82cc1e3698f2f" name="a6ce002e88a81d38446a82cc1e3698f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce002e88a81d38446a82cc1e3698f2f">&#9670;&#160;</a></span>reverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::reverse </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </p>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates both overloads of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> method. The example creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings and adds six strings. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> () method overload is used to reverse the list, and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = list&lt;string&gt; {};</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Parasauralophus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Oviraptor&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.reverse();</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.reverse(1, 4);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">// Parasauralophus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Oviraptor</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Oviraptor</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Parasauralophus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Oviraptor</span></div>
+<div class="line"><span class="comment">// Parasauralophus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method uses xtd::array::reverse to reverse the order of the elements. </dd>
+<dd>
+This method is an O(n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a9fe85206edb6a9e7ac7b690ff27e7a03" name="a9fe85206edb6a9e7ac7b690ff27e7a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe85206edb6a9e7ac7b690ff27e7a03">&#9670;&#160;</a></span>reverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::reverse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt; <a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reverses the order of the elements in the specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to reverse. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">count</a></td><td>The number of elements in the range to reverse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`index` and `count` do not denote a valid range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates both overloads of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> method. The example creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings and adds six strings. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> () method overload is used to reverse the list, and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = list&lt;string&gt; {};</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Parasauralophus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Oviraptor&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.reverse();</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.reverse(1, 4);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">// Parasauralophus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Oviraptor</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Oviraptor</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Parasauralophus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Oviraptor</span></div>
+<div class="line"><span class="comment">// Parasauralophus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method uses xtd::array::reverse to reverse the order of the elements. </dd>
+<dd>
+This method is an O(n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
 
 </div>
 </div>
