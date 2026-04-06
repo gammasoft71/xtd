@@ -538,15 +538,14 @@ bool tool_bar::is_system_tool_bar() const noexcept {
 }
 
 tool_bar& tool_bar::is_system_tool_bar(bool value) {
-  if (data_->is_system_tool_bar != value) {
-    if (!value) control::dock(data_->non_system_dock);
-    else {
-      data_->non_system_dock = control::dock();
-      control::dock(dock_style::none);
-    }
-    data_->is_system_tool_bar = value;
-    post_recreate_handle();
+  if (data_->is_system_tool_bar == value) return *this;
+  if (!value) control::dock(data_->non_system_dock);
+  else {
+    data_->non_system_dock = control::dock();
+    control::dock(dock_style::none);
   }
+  data_->is_system_tool_bar = value;
+  post_recreate_handle();
   return *this;
 }
 
