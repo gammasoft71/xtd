@@ -392,6 +392,28 @@ namespace xtd {
           data_->erasing = false;
         }
         
+        /// @brief Reverses the order of the elements in the entire xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+        /// @include generic_list_reverse.cpp
+        /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        auto reverse() -> arranged_element_collection& {return reverse(0, count());}
+        /// @brief Reverses the order of the elements in the specified range.
+        /// @param index The zero-based starting index of the range to reverse.
+        /// @param count The number of elements in the range to reverse.
+        /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+        /// @include generic_list_reverse.cpp
+        /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        auto reverse(size_type index, size_type count) -> arranged_element_collection& {
+          data_->items.reverse(index, count);
+          return self_;
+        }
+
+        
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         xtd::array<type_t> to_array() const noexcept {
