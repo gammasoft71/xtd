@@ -1032,7 +1032,6 @@ add_sources(
   "include/xtd/internal/__binary_formatter.hpp"
   "include/xtd/internal/__boolean_formatter.hpp"
   "include/xtd/internal/__box_enum_or_object.hpp"
-  "include/xtd/internal/__box_floating_point.hpp"
   "include/xtd/internal/__build_type.hpp"
   "include/xtd/internal/__character_formatter.hpp"
   "include/xtd/internal/__compiler_id.hpp"
