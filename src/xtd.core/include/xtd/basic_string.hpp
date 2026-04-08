@@ -1373,7 +1373,7 @@ namespace xtd {
     /// @param value The value that will contain the parsed xtd::basic_string.
     /// @return `true` if xtd::basic_string:=:try_parse succed; otherwise, `false`.
     template<typename value_t>
-    static auto try_parse(const basic_string& str, value_t& value) noexcept -> bool {
+    [[nodiscard]] static auto try_parse(const basic_string& str, value_t& value) noexcept -> bool {
       try {
         value = parse<value_t>(str);
         return true;
