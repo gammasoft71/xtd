@@ -261,6 +261,8 @@ add_sources(
   "include/xtd/exit_mode"
   "include/xtd/exit_status.hpp"
   "include/xtd/exit_status"
+  "include/xtd/finally.hpp"
+  "include/xtd/finally"
   "include/xtd/fixed_array.hpp"
   "include/xtd/fixed_array"
   "include/xtd/flags_attribute.hpp"

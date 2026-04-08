@@ -1,0 +1,118 @@
+/// @file
+/// @brief Contains #finally_ keyword.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
+#pragma once
+#include <utility>
+#define __XTD_CORE_INTERNAL__
+#include "internal/__xtd_scope.hpp"
+#undef __XTD_CORE_INTERNAL__
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd xtd::finally comes into play. xtd::finally is always executed at the end of the scope.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @remarks #finally_, #scope_success_ and #scope_fail_ are themselves RAII utilities.
+  /// @remarks They are designed to make scope-based cleanup and control flow more concise and expressive.
+  /// @remarks See also #finally_ keyword helper.
+  ///
+  /// ```cpp
+  /// #include <xtd/xtd>
+  ///
+  /// auto main() -> int {
+  ///   try {
+  ///     finally_ {
+  ///       console::write_line("always (finally)");
+  ///     };
+  ///     scope_success_ {
+  ///       console::write_line("only on success (scope_success)");
+  ///     };
+  ///     scope_fail_ {
+  ///       console::write_line("only on failure (scope_fail)");
+  ///     };
+  ///
+  ///     console::write_line("begin");
+  ///     // ...
+  ///     console::write_line("do something...");
+  ///     // Remove the comment from the following line to test failure
+  ///     //throw invalid_operation_exception {};
+  ///     // ...
+  ///     console::write_line("end normally");
+  ///   } catch (...) {
+  ///     console::write_line("caught exception!");
+  ///   }
+  /// }
+  ///
+  /// // This code produces the following output if success :
+  /// //
+  /// // begin
+  /// // do something...
+  /// // end normally
+  /// // only on success (scope_success)
+  /// // always (finally)
+  ///
+  /// // This code produces the following output if throws exception :
+  /// //
+  /// // begin
+  /// // do something...
+  /// // only on failure (scope_fail)
+  /// // always (finally)
+  /// // caught exception!
+  /// ```
+  struct finally {};
+  
+  /// @cond
+  template<typename function_t>
+  auto operator +(finally, function_t&& function) {
+    return __xtd_finally_object__<function_t> {std::forward<function_t>(function)};
+  }
+  /// @endcond
+}
+
+/// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd #finally_ comes into play. #finally_ is always executed at the end of the scope.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @remarks xtd::finally, xtd::scope_success_ and #xtd::scope_fail are themselves RAII utilities.
+/// @remarks They are designed to make scope-based cleanup and control flow more concise and expressive.
+/// @remarks See also xtd::finally struct.
+///
+/// ```cpp
+/// #include <xtd/xtd>
+///
+/// auto main() -> int {
+///   try {
+///     console::write_line("begin");
+///     // ...
+///     console::write_line("do something...");
+///     // Remove the comment from the following line to test failure
+///     //throw invalid_operation_exception {};
+///     // ...
+///     console::write_line("end normally");
+///   } catch (...) {
+///     console::write_line("caught exception!");
+///   } finally_ {
+///     console::write_line("always (finally)");
+///   };
+/// }
+///
+/// // This code produces the following output if success :
+/// //
+/// // begin
+/// // do something...
+/// // always (finally)
+///
+/// // This code produces the following output if throws exception :
+/// //
+/// // begin
+/// // do something...
+/// // caught exception!
+/// // always (finally)
+/// ```
+#define finally_ \
+  [[maybe_unused]] auto __xtd_finally_id__(__xtd__finally__, __LINE__) = xtd::finally {} + [&]

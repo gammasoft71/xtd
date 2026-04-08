@@ -11,8 +11,18 @@
 #include <exception>
 
 /// @cond
+#define __xtd_finally_cat__(name, line) name##line
+#define __xtd_finally_id__(name, line) __xtd_finally_cat__(name, line)
+
 #define __xtd_scope_cat__(name, line) name##line
 #define __xtd_scope_id__(name, line) __xtd_scope_cat__(name, line)
+
+template<typename function_t>
+struct __xtd_finally_object__ {
+  __xtd_finally_object__(function_t&& f) : function(std::forward<function_t>(f)) {}
+  ~__xtd_finally_object__() { function(); }
+  function_t function;
+};
 
 template<typename function_t>
 struct __xtd_scope_exit_object__ {

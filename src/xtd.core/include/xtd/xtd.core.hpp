@@ -403,6 +403,7 @@
 #include "exception.hpp"
 #include "exit_mode.hpp"
 #include "exit_status.hpp"
+#include "finally.hpp"
 #include "fixed_array.hpp"
 #include "flags_attribute.hpp"
 #include "foreach.hpp"
