@@ -112,6 +112,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga3844e63da56dbd2107788b5396857216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the registration struct for enum with specified underlying type.  <br /></td></tr>
 <tr class="memitem:ga59ea5f69803bcfb367107f1cf66e5fff" id="r_ga59ea5f69803bcfb367107f1cf66e5fff"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga59ea5f69803bcfb367107f1cf66e5fff">enum_struct_</a>(namespace_name,  enum_struct_t, ...)</td></tr>
 <tr class="memdesc:ga59ea5f69803bcfb367107f1cf66e5fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the registration struct for enum struct.  <br /></td></tr>
+<tr class="memitem:gaa1d4feda5380aa7b0daa9b38c8f2251f" id="r_gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></td></tr>
+<tr class="memdesc:gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> comes into play. <a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> is always executed at the end of the scope.  <br /></td></tr>
 <tr class="memitem:gaea49fae71107df8769685efb159c181a" id="r_gaea49fae71107df8769685efb159c181a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gaea49fae71107df8769685efb159c181a">flags_attribute_</a>(namespace_name,  enum_type)</td></tr>
 <tr class="memdesc:gaea49fae71107df8769685efb159c181a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the set attribute struct for enumerations helper.  <br /></td></tr>
 <tr class="memitem:ga95858a9512e538d8d56fef205ecf5222" id="r_ga95858a9512e538d8d56fef205ecf5222"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga95858a9512e538d8d56fef205ecf5222">foreach_</a>(item, ...)</td></tr>
@@ -813,6 +815,62 @@ Public Static Methods</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_struct_8cpp-example.html#a0">enum_struct.cpp</a>, and <a class="el" href="parse_enum_struct_8cpp-example.html#a0">parse_enum_struct.cpp</a>.</dd>
 </dl>
 
+</div>
+</div>
+<a id="gaa1d4feda5380aa7b0daa9b38c8f2251f" name="gaa1d4feda5380aa7b0daa9b38c8f2251f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1d4feda5380aa7b0daa9b38c8f2251f">&#9670;&#160;</a></span>finally_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define finally_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="finally_8hpp.html">finally.hpp</a>&gt;</code></p>
+
+<p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> comes into play. <a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> is always executed at the end of the scope. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="structxtd_1_1finally.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::finally</a>, xtd::scope_success_ and <a class="el" href="structxtd_1_1scope__fail.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_fail</a> are themselves RAII utilities. </dd>
+<dd>
+They are designed to make scope-based cleanup and control flow more concise and expressive. </dd>
+<dd>
+See also <a class="el" href="structxtd_1_1finally.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::finally</a> struct.</dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;do something...&quot;</span>);</div>
+<div class="line">    <span class="comment">// Remove the comment from the following line to test failure</span></div>
+<div class="line">    <span class="comment">//throw invalid_operation_exception {};</span></div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;end normally&quot;</span>);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;caught exception!&quot;</span>);</div>
+<div class="line">  } <a class="code hl_define" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a> {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;always (finally)&quot;</span>);</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output if success :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// begin</span></div>
+<div class="line"><span class="comment">// do something...</span></div>
+<div class="line"><span class="comment">// always (finally)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output if throws exception :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// begin</span></div>
+<div class="line"><span class="comment">// do something...</span></div>
+<div class="line"><span class="comment">// caught exception!</span></div>
+<div class="line"><span class="comment">// always (finally)</span></div>
+<div class="ttc" id="agroup__keywords_html_gaa1d4feda5380aa7b0daa9b38c8f2251f"><div class="ttname"><a href="#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></div><div class="ttdeci">#define finally_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> finally.hpp:117</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="gaea49fae71107df8769685efb159c181a" name="gaea49fae71107df8769685efb159c181a"></a>
