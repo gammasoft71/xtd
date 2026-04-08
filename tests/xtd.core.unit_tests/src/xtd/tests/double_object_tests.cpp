@@ -12,7 +12,7 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(double_object_tests) {
     auto test_method_(epsilon) {
-      assert::are_equal(4.94066e-324, double_object::epsilon);
+      assert::are_equal(std::numeric_limits<double>::denorm_min(), double_object::epsilon);
     }
     
     auto test_method_(max_value) {
