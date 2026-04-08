@@ -172,7 +172,7 @@ namespace xtd {
     /// @param value A string containing a `value_type` to convert.
     /// @param result A `value_type` equivalent to the native value contained in value.
     /// @return `true` if s was converted successfully; otherwise, `false`.
-    static auto try_parse(const xtd::string& value, reference result) noexcept -> bool {return xtd::try_parse<value_type>(value.chars(), result);}
+    [[nodiscard]] static auto try_parse(const xtd::string& value, reference result) noexcept -> bool {return xtd::try_parse<value_type>(value.chars(), result);}
     /// @}
   };
 }
