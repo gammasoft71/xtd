@@ -196,15 +196,13 @@ Inheritance diagram for xtd::forms::tool_bar:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> tool_bar_button_click_event_args&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().style() == tool_bar_button_style::toggle_button)</div>
-<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().pushed()));</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text()));</div>
+<div class="line">    <span class="keyword">auto</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> tool_bar_button_click_event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().style() == tool_bar_button_style::toggle_button) list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().pushed()));</div>
+<div class="line">      <span class="keywordflow">else</span> list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text()));</div>
 <div class="line">      list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">    <span class="keyword">auto</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      list_box1.items().add(string::format(<span class="stringliteral">&quot;Menu item {} clicked&quot;</span>, as&lt;menu_item&gt;(sender).<a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>()));</div>
 <div class="line">      list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">    }</div>

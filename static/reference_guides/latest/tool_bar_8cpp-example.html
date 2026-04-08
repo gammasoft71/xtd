@@ -152,15 +152,13 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> tool_bar_button_click_event_args&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> (e.button().style() == tool_bar_button_style::toggle_button)</div>
-<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, e.button().text(), e.button().pushed()));</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, e.button().text()));</div>
+<div class="line">    <span class="keyword">auto</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> tool_bar_button_click_event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">      <span class="keywordflow">if</span> (e.button().style() == tool_bar_button_style::toggle_button) list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, e.button().text(), e.button().pushed()));</div>
+<div class="line">      <span class="keywordflow">else</span> list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, e.button().text()));</div>
 <div class="line">      list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">    <span class="keyword">auto</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      list_box1.items().add(string::format(<span class="stringliteral">&quot;Menu item {} clicked&quot;</span>, as&lt;menu_item&gt;(sender).text()));</div>
 <div class="line">      list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">    }</div>

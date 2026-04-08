@@ -95,7 +95,6 @@ Inheritance diagram for xtd::box_floating_point&lt; type_t &gt;:</div>
  <div class="center">
   <img src="classxtd_1_1box__floating__point.png" usemap="#xtd_3A_3Abox_5Ffloating_5Fpoint_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd_3A_3Abox_5Ffloating_5Fpoint_3C_20type_5Ft_20_3E_map" name="xtd_3A_3Abox_5Ffloating_5Fpoint_3C_20type_5Ft_20_3E_map">
-<area href="classxtd_1_1box__integer.html" title="Represents a boxed integer object." alt="xtd::box_integer&lt; type_t &gt;" shape="rect" coords="858,168,1277,192"/>
 <area href="structxtd_1_1box.html" title="Represents a boxed object." alt="xtd::box&lt; type_t &gt;" shape="rect" coords="858,112,1277,136"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,419,80"/>
 <area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; box&lt; type_t &gt; &gt;" shape="rect" coords="429,56,848,80"/>
@@ -110,12 +109,13 @@ Inheritance diagram for xtd::box_floating_point&lt; type_t &gt;:</div>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
+requires <a class="el" href="structxtd_1_1real.html">xtd::real</a>&lt;type_t&gt;<br />
 class xtd::box_floating_point&lt; type_t &gt;</div><p>Represents a boxed floating point object. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__floating__point.html">box_floating_point</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structxtd_1_1box.html">xtd::box</a>&lt;type_t&gt;</div>
 <div class="ttc" id="aclassxtd_1_1box__floating__point_html"><div class="ttname"><a href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a></div><div class="ttdoc">Represents a boxed floating point object.</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:42</div></div>
 <div class="ttc" id="astructxtd_1_1box_html"><div class="ttname"><a href="structxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.hpp:56</div></div>
-</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__integer.html" title="Represents a boxed integer object.">xtd::box_integer</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__floating__point.html" title="Represents a boxed floating point object.">box_floating_point</a> &lt;type_t&gt; </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/box°floating_point&gt;</span></div>
+</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__floating__point.html" title="Represents a boxed floating point object.">box_floating_point</a> &lt;type_t&gt; </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/box_floating_point&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -139,6 +139,10 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 Public Fields</h2></td></tr>
 <tr class="memitem:a0c3f86bfb01071c75facec7b01b69177" id="r_a0c3f86bfb01071c75facec7b01b69177"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#a0c3f86bfb01071c75facec7b01b69177">epsilon</a></td></tr>
 <tr class="memdesc:a0c3f86bfb01071c75facec7b01b69177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the smallest positive type_t value greater than zero. This field is constant.  <br /></td></tr>
+<tr class="memitem:a4780457947323c7c845195e2c73d65aa" id="r_a4780457947323c7c845195e2c73d65aa"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#a4780457947323c7c845195e2c73d65aa">max_value</a></td></tr>
+<tr class="memdesc:a4780457947323c7c845195e2c73d65aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the largest possible value of type_t. This field is constant.  <br /></td></tr>
+<tr class="memitem:a33df11bd18b6279b9f3f472ac290e924" id="r_a33df11bd18b6279b9f3f472ac290e924"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#a33df11bd18b6279b9f3f472ac290e924">min_value</a></td></tr>
+<tr class="memdesc:a33df11bd18b6279b9f3f472ac290e924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the smallest possible value of type_t. This field is constant.  <br /></td></tr>
 <tr class="memitem:a3e658f6e798b8f0f972fef8bfd8ff086" id="r_a3e658f6e798b8f0f972fef8bfd8ff086"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#a3e658f6e798b8f0f972fef8bfd8ff086">NaN</a></td></tr>
 <tr class="memdesc:a3e658f6e798b8f0f972fef8bfd8ff086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents not a number (NaN). This field is constant.  <br /></td></tr>
 <tr class="memitem:af0e356626d4d7a6198806cbc2cca4f97" id="r_af0e356626d4d7a6198806cbc2cca4f97"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#af0e356626d4d7a6198806cbc2cca4f97">negative_infinity</a></td></tr>
@@ -148,18 +152,28 @@ Public Fields</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a036fd0e6cd39a088ca005946fce35289" id="r_a036fd0e6cd39a088ca005946fce35289"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a036fd0e6cd39a088ca005946fce35289">is_finite</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a036fd0e6cd39a088ca005946fce35289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified value is finite (zero, subnormal, or normal).  <br /></td></tr>
-<tr class="memitem:a8f3c77b6e4030101ec8eb2cca70969c3" id="r_a8f3c77b6e4030101ec8eb2cca70969c3"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a8f3c77b6e4030101ec8eb2cca70969c3">is_infinity</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a8f3c77b6e4030101ec8eb2cca70969c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to negative or positive infinity.  <br /></td></tr>
-<tr class="memitem:aa567be51091ddd7ac45666669093f92d" id="r_aa567be51091ddd7ac45666669093f92d"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#aa567be51091ddd7ac45666669093f92d">is_negative_infinity</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:aa567be51091ddd7ac45666669093f92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to negative infinity.  <br /></td></tr>
-<tr class="memitem:a46e3d7fc637d34fe35ad3fbfa74d80c8" id="r_a46e3d7fc637d34fe35ad3fbfa74d80c8"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a46e3d7fc637d34fe35ad3fbfa74d80c8">is_positive_infinity</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a46e3d7fc637d34fe35ad3fbfa74d80c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to positive infinity.  <br /></td></tr>
-<tr class="memitem:a3b5945d9579d3a9c5d13775abbfa6441" id="r_a3b5945d9579d3a9c5d13775abbfa6441"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a3b5945d9579d3a9c5d13775abbfa6441">is_NaN</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a3b5945d9579d3a9c5d13775abbfa6441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to not a number.  <br /></td></tr>
-<tr class="memitem:a73069f433f141bb309386512b9c6db90" id="r_a73069f433f141bb309386512b9c6db90"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a73069f433f141bb309386512b9c6db90">is_valid</a> (std::floating_point auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a73069f433f141bb309386512b9c6db90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified floating point value is within the range of type_t.  <br /></td></tr>
+<tr class="memitem:a50c7a1c9069bfa313fe9f344616213b1" id="r_a50c7a1c9069bfa313fe9f344616213b1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a50c7a1c9069bfa313fe9f344616213b1">is_finite</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a50c7a1c9069bfa313fe9f344616213b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified value is finite (zero, subnormal, or normal).  <br /></td></tr>
+<tr class="memitem:a97e9b0349bc7da3335041d8a88140337" id="r_a97e9b0349bc7da3335041d8a88140337"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a97e9b0349bc7da3335041d8a88140337">is_infinity</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a97e9b0349bc7da3335041d8a88140337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to negative or positive infinity.  <br /></td></tr>
+<tr class="memitem:ae8c45c0182222e74cd4cc98f9285bf59" id="r_ae8c45c0182222e74cd4cc98f9285bf59"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae8c45c0182222e74cd4cc98f9285bf59">is_NaN</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ae8c45c0182222e74cd4cc98f9285bf59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to not a number.  <br /></td></tr>
+<tr class="memitem:ad4574b06fe2dea29d1e8c9726c286955" id="r_ad4574b06fe2dea29d1e8c9726c286955"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad4574b06fe2dea29d1e8c9726c286955">is_negative_infinity</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ad4574b06fe2dea29d1e8c9726c286955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to negative infinity.  <br /></td></tr>
+<tr class="memitem:a86c01aa52b766c82d90772b3f15d1f0d" id="r_a86c01aa52b766c82d90772b3f15d1f0d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a86c01aa52b766c82d90772b3f15d1f0d">is_normal</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a86c01aa52b766c82d90772b3f15d1f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to normal, i.e. not an infinity, subnormal, not-a-number or zero.  <br /></td></tr>
+<tr class="memitem:a7278c4f6aba5d90b724d26b786bacc6e" id="r_a7278c4f6aba5d90b724d26b786bacc6e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7278c4f6aba5d90b724d26b786bacc6e">is_positive_infinity</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a7278c4f6aba5d90b724d26b786bacc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to positive infinity.  <br /></td></tr>
+<tr class="memitem:a606d8adb08ab7924ec90e7145fb2806a" id="r_a606d8adb08ab7924ec90e7145fb2806a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a606d8adb08ab7924ec90e7145fb2806a">is_subnormal</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a606d8adb08ab7924ec90e7145fb2806a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to subnormal.  <br /></td></tr>
+<tr class="memitem:ac1cdd170f8e7e388ed0359a3776cc9ac" id="r_ac1cdd170f8e7e388ed0359a3776cc9ac"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac1cdd170f8e7e388ed0359a3776cc9ac">is_valid</a> (<a class="el" href="structxtd_1_1real.html">xtd::real</a> auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ac1cdd170f8e7e388ed0359a3776cc9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified value can be safely converted to type_t without overflow.  <br /></td></tr>
+<tr class="memitem:a7a490b3ca6a520b872f170fc7b3115d8" id="r_a7a490b3ca6a520b872f170fc7b3115d8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a490b3ca6a520b872f170fc7b3115d8">is_zero</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a7a490b3ca6a520b872f170fc7b3115d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to zero.  <br /></td></tr>
+<tr class="memitem:a9fd48ac5dd42fde122569db26125dbe9" id="r_a9fd48ac5dd42fde122569db26125dbe9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fd48ac5dd42fde122569db26125dbe9">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles) -&gt; type_t</td></tr>
+<tr class="memdesc:a9fd48ac5dd42fde122569db26125dbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
+<tr class="memitem:af4c0b6df44920e504affdbf15ff7287e" id="r_af4c0b6df44920e504affdbf15ff7287e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af4c0b6df44920e504affdbf15ff7287e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, type_t &amp;result, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:af4c0b6df44920e504affdbf15ff7287e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -175,10 +189,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a8a1b76f7cac000e44ac1c3e84828b34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the cont reference type.  <br /></td></tr>
 <tr class="memitem:aa386b4b7a8149a336dbdbc9a1180a8a4" id="r_aa386b4b7a8149a336dbdbc9a1180a8a4"><td class="memItemLeft"><a class="el" href="structxtd_1_1box.html#ae91aa9821b7140ea6f2aeb25b306f07d">value_type</a>&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a></td></tr>
 <tr class="memdesc:aa386b4b7a8149a336dbdbc9a1180a8a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the underlying value.  <br /></td></tr>
-<tr class="memitem:a21847edbb248c1b0d07a35e2a8c08232" id="r_a21847edbb248c1b0d07a35e2a8c08232"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232">max_value</a></td></tr>
-<tr class="memdesc:a21847edbb248c1b0d07a35e2a8c08232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the largest possible value of type_t. This field is constant.  <br /></td></tr>
-<tr class="memitem:abacf9950b09d5d214dcfa6205559785d" id="r_abacf9950b09d5d214dcfa6205559785d"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d">min_value</a></td></tr>
-<tr class="memdesc:abacf9950b09d5d214dcfa6205559785d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the smallest possible value of type_t. This field is constant.  <br /></td></tr>
 <tr class="memitem:a5e6950ecad0d9454193185bd48e170ee" id="r_a5e6950ecad0d9454193185bd48e170ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a5e6950ecad0d9454193185bd48e170ee">box</a> ()=default</td></tr>
 <tr class="memdesc:a5e6950ecad0d9454193185bd48e170ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> object.  <br /></td></tr>
 <tr class="memitem:a971667ebd76171abde7165af082cf5ec" id="r_a971667ebd76171abde7165af082cf5ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a971667ebd76171abde7165af082cf5ec">box</a> (<a class="el" href="structxtd_1_1box.html#a96117dedaafd93a12a60eaef6a18d9aa">const_reference</a> <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>)</td></tr>
@@ -213,14 +223,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const type_t &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a25f99e58eb47110d160b82f832624bf1" id="r_a25f99e58eb47110d160b82f832624bf1"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a25f99e58eb47110d160b82f832624bf1">is_valid</a> (<a class="el" href="structxtd_1_1signed__integer.html">xtd::signed_integer</a> auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a25f99e58eb47110d160b82f832624bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified signed integral value is within the range of type_t.  <br /></td></tr>
-<tr class="memitem:a6327f8a67d4c9fa73a3f3438753fe4e8" id="r_a6327f8a67d4c9fa73a3f3438753fe4e8"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a6327f8a67d4c9fa73a3f3438753fe4e8">is_valid</a> (<a class="el" href="structxtd_1_1unsigned__integer.html">xtd::unsigned_integer</a> auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a6327f8a67d4c9fa73a3f3438753fe4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified unsigned integral value is within the range of type_t.  <br /></td></tr>
-<tr class="memitem:a5afccb7592db155d127dde594cb4af74" id="r_a5afccb7592db155d127dde594cb4af74"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a5afccb7592db155d127dde594cb4af74">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
-<tr class="memdesc:a5afccb7592db155d127dde594cb4af74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
-<tr class="memitem:a9f3925bfeb0b97e6460217daa694840e" id="r_a9f3925bfeb0b97e6460217daa694840e"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a9f3925bfeb0b97e6460217daa694840e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, type_t &amp;result, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
-<tr class="memdesc:a9f3925bfeb0b97e6460217daa694840e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
 <tr class="memitem:ad9d8855ee372e5a3520a218c434e1c8c" id="r_ad9d8855ee372e5a3520a218c434e1c8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#ad9d8855ee372e5a3520a218c434e1c8c">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) -&gt; <a class="el" href="structxtd_1_1box.html#ae91aa9821b7140ea6f2aeb25b306f07d">value_type</a></td></tr>
 <tr class="memdesc:ad9d8855ee372e5a3520a218c434e1c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its <span class="tt"><a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a></span> equivalent.  <br /></td></tr>
 <tr class="memitem:a1bcd653b5ebcdfa65de42df0a888ad2e" id="r_a1bcd653b5ebcdfa65de42df0a888ad2e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a1bcd653b5ebcdfa65de42df0a888ad2e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="structxtd_1_1box.html#aa4e5555032a0c3ec377bdbb400ce8b74">reference</a> result) noexcept -&gt; bool</td></tr>
@@ -233,8 +235,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a036fd0e6cd39a088ca005946fce35289" name="a036fd0e6cd39a088ca005946fce35289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a036fd0e6cd39a088ca005946fce35289">&#9670;&#160;</a></span>is_finite()</h2>
+<a id="a50c7a1c9069bfa313fe9f344616213b1" name="a50c7a1c9069bfa313fe9f344616213b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c7a1c9069bfa313fe9f344616213b1">&#9670;&#160;</a></span>is_finite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,15 +247,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_finite </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_finite </td>
           <td>(</td>
           <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -269,8 +271,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a8f3c77b6e4030101ec8eb2cca70969c3" name="a8f3c77b6e4030101ec8eb2cca70969c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f3c77b6e4030101ec8eb2cca70969c3">&#9670;&#160;</a></span>is_infinity()</h2>
+<a id="a97e9b0349bc7da3335041d8a88140337" name="a97e9b0349bc7da3335041d8a88140337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e9b0349bc7da3335041d8a88140337">&#9670;&#160;</a></span>is_infinity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,15 +283,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_infinity </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_infinity </td>
           <td>(</td>
           <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -305,8 +307,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="aa567be51091ddd7ac45666669093f92d" name="aa567be51091ddd7ac45666669093f92d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa567be51091ddd7ac45666669093f92d">&#9670;&#160;</a></span>is_negative_infinity()</h2>
+<a id="ae8c45c0182222e74cd4cc98f9285bf59" name="ae8c45c0182222e74cd4cc98f9285bf59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c45c0182222e74cd4cc98f9285bf59">&#9670;&#160;</a></span>is_NaN()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,87 +319,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_negative_infinity </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_NaN </td>
           <td>(</td>
           <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a value indicating whether the specified number evaluates to negative infinity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to <a class="el" href="classxtd_1_1math.html#a50bc7218eb56c5b664319074d4585346" title="Represents negative infinity. This field is constant.">xtd::math::negative_infinity</a>; otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a46e3d7fc637d34fe35ad3fbfa74d80c8" name="a46e3d7fc637d34fe35ad3fbfa74d80c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46e3d7fc637d34fe35ad3fbfa74d80c8">&#9670;&#160;</a></span>is_positive_infinity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_positive_infinity </td>
-          <td>(</td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a value indicating whether the specified number evaluates to positive infinity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to <a class="el" href="classxtd_1_1math.html#a286fa28f76555d660a6108f39cb72ec5" title="Represents positive infinity. This field is constant.">xtd::math::positive_infinity</a>; otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a3b5945d9579d3a9c5d13775abbfa6441" name="a3b5945d9579d3a9c5d13775abbfa6441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b5945d9579d3a9c5d13775abbfa6441">&#9670;&#160;</a></span>is_NaN()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_NaN </td>
-          <td>(</td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -413,8 +343,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a73069f433f141bb309386512b9c6db90" name="a73069f433f141bb309386512b9c6db90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73069f433f141bb309386512b9c6db90">&#9670;&#160;</a></span>is_valid()</h2>
+<a id="ad4574b06fe2dea29d1e8c9726c286955" name="ad4574b06fe2dea29d1e8c9726c286955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4574b06fe2dea29d1e8c9726c286955">&#9670;&#160;</a></span>is_negative_infinity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,20 +355,164 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_valid </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_negative_infinity </td>
           <td>(</td>
-          <td class="paramtype">std::floating_point auto</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified floating point value is within the range of type_t. </p>
+<p>Returns a value indicating whether the specified number evaluates to negative infinity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to <a class="el" href="classxtd_1_1math.html#a50bc7218eb56c5b664319074d4585346" title="Represents negative infinity. This field is constant.">xtd::math::negative_infinity</a>; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a86c01aa52b766c82d90772b3f15d1f0d" name="a86c01aa52b766c82d90772b3f15d1f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c01aa52b766c82d90772b3f15d1f0d">&#9670;&#160;</a></span>is_normal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_normal </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether the specified number evaluates to normal, i.e. not an infinity, subnormal, not-a-number or zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to normal; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a7278c4f6aba5d90b724d26b786bacc6e" name="a7278c4f6aba5d90b724d26b786bacc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7278c4f6aba5d90b724d26b786bacc6e">&#9670;&#160;</a></span>is_positive_infinity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_positive_infinity </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether the specified number evaluates to positive infinity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to <a class="el" href="classxtd_1_1math.html#a286fa28f76555d660a6108f39cb72ec5" title="Represents positive infinity. This field is constant.">xtd::math::positive_infinity</a>; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a606d8adb08ab7924ec90e7145fb2806a" name="a606d8adb08ab7924ec90e7145fb2806a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606d8adb08ab7924ec90e7145fb2806a">&#9670;&#160;</a></span>is_subnormal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_subnormal </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether the specified number evaluates to subnormal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to subnormal; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="ac1cdd170f8e7e388ed0359a3776cc9ac" name="ac1cdd170f8e7e388ed0359a3776cc9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1cdd170f8e7e388ed0359a3776cc9ac">&#9670;&#160;</a></span>is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1real.html">xtd::real</a> auto</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified value can be safely converted to type_t without overflow. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>The floating point value to validate. </td></tr>
@@ -447,6 +521,127 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the value is outside the valid range defined by min_value and max_value, the method returns false. </dd></dl>
+
+</div>
+</div>
+<a id="a7a490b3ca6a520b872f170fc7b3115d8" name="a7a490b3ca6a520b872f170fc7b3115d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a490b3ca6a520b872f170fc7b3115d8">&#9670;&#160;</a></span>is_zero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_zero </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether the specified number evaluates to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A floating-point number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to zero; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a9fd48ac5dd42fde122569db26125dbe9" name="a9fd48ac5dd42fde122569db26125dbe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd48ac5dd42fde122569db26125dbe9">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;) -&gt; type_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the string to its type_t equivalent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A string containing a type_t to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A type_t equivalent to the number contained in value. </dd></dl>
+
+</div>
+</div>
+<a id="af4c0b6df44920e504affdbf15ff7287e" name="af4c0b6df44920e504affdbf15ff7287e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c0b6df44920e504affdbf15ff7287e">&#9670;&#160;</a></span>try_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::try_parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the string to its type_t equivalent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A string containing a type_t to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A type_t equivalent to the number contained in value. </dd></dl>
 
 </div>
 </div>
@@ -474,7 +669,61 @@ template&lt;typename type_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Represents the smallest positive type_t value greater than zero. This field is constant. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of this field is 4.94066e-324. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of this field is std::numeric_limits&lt;type_t&gt;::denorm_min(). </dd></dl>
+
+</div>
+</div>
+<a id="a4780457947323c7c845195e2c73d65aa" name="a4780457947323c7c845195e2c73d65aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4780457947323c7c845195e2c73d65aa">&#9670;&#160;</a></span>max_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::max_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the largest possible value of type_t. This field is constant. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of this field is std::numeric_limits&lt;type_t&gt;::max(). </dd></dl>
+
+</div>
+</div>
+<a id="a33df11bd18b6279b9f3f472ac290e924" name="a33df11bd18b6279b9f3f472ac290e924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33df11bd18b6279b9f3f472ac290e924">&#9670;&#160;</a></span>min_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::min_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the smallest possible value of type_t. This field is constant. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of this field is std::numeric_limits&lt;type_t&gt;::lowest(). </dd></dl>
 
 </div>
 </div>
