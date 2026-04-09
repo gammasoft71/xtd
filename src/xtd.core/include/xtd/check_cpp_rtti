@@ -1,0 +1,2 @@
+#pragma once
+#include <xtd/check_cpp_rtti.hpp>

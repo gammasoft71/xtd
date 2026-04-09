@@ -6,6 +6,7 @@
 
 #include "check_cpp_version.hpp"
 #include "check_cpp_exceptions.hpp"
+#include "check_cpp_rtti.hpp"
 
 #include "collections/array_list.hpp"
 #include "collections/bit_array.hpp"

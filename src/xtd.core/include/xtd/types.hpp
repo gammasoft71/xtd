@@ -6,6 +6,7 @@
 #include "trace.hpp"
 #include "check_cpp_version.hpp"
 #include "check_cpp_exceptions.hpp"
+#include "check_cpp_rtti.hpp"
 #include "boolean.hpp"
 #include "byte.hpp"
 #include "char.hpp"

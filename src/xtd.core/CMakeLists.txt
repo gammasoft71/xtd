@@ -128,6 +128,8 @@ add_sources(
   "include/xtd/character"
   "include/xtd/check_cpp_exceptions.hpp"
   "include/xtd/check_cpp_exceptions"
+  "include/xtd/check_cpp_rtti.hpp"
+  "include/xtd/check_cpp_rtti"
   "include/xtd/check_cpp_version.hpp"
   "include/xtd/check_cpp_version"
   "include/xtd/chrono.hpp"

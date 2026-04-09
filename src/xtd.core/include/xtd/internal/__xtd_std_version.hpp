@@ -4,6 +4,7 @@
 /// @cond
 #include "../check_cpp_version.hpp"
 #include "../check_cpp_exceptions.hpp"
+#include "../check_cpp_rtti.hpp"
 
 #if !defined(__XTD_STD_INTERNAL__)
 #error "Do not include this file: Internal use only"
