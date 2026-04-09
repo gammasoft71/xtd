@@ -87,7 +87,7 @@ namespace xtd {
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
     /// @param value A floating-point number.
     /// @return `true` if value evaluates to not a number; otherwise, `false`.
-    [[nodiscard]] static auto is_NaN(type_t value) noexcept -> bool {return value != value;}
+    [[nodiscard]] static auto is_NaN(type_t value) noexcept -> bool {return std::fpclassify(value) == FP_NAN;}
 
     /// @brief Returns a value indicating whether the specified number evaluates to negative infinity.
     /// @param value A floating-point number.
