@@ -134,6 +134,7 @@ xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_
 template<typename type_t, typename allocator_t>
 template<typename value_t>
 xtd::string xtd::basic_array<type_t, allocator_t>::to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index) {
+  if (!items.size()) return "[]";
   auto result = xtd::string {"["};
   for (auto index = items.get_lower_bound(rank); index <= items.get_upper_bound(rank); ++index) {
     if (index != items.get_lower_bound(rank)) result += ", ";
