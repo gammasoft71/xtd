@@ -500,6 +500,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(to_string) {
+      assert::are_equal("[]", array<int> {}.to_string());
       assert::are_equal("[1, 2, 3, 4, 5]", array {1, 2, 3, 4, 5}.to_string());
       assert::are_equal("[one, two, three, four, five]", array {"one", "two", "three", "four", "five"}.to_string());
     }
