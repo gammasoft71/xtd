@@ -78,10 +78,10 @@ xtd::uptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::st
   if (image.image_type() == style_sheets::image_type::conic_gradient) {
     auto x = rect.x + (rect.width - rect.x) / 2;
     auto y = rect.y + (rect.height - rect.y) / 2;
-    return xtd::new_uptr<conical_gradient_brush>(xtd::drawing::point {x, y}, image.colors(), brush_angle);
+    return xtd::new_uptr<conical_gradient_brush>(xtd::drawing::point {x, y}, image.colors(), as<float>(brush_angle));
   }
   if (image.image_type() == style_sheets::image_type::linear_gradient)
-    return xtd::new_uptr<linear_gradient_brush>(rect, image.colors(), brush_angle);
+    return xtd::new_uptr<linear_gradient_brush>(rect, image.colors(), as<float>(brush_angle));
   if (image.image_type() == style_sheets::image_type::url)
     return xtd::new_uptr<texture_brush>(image::from_file(image.url().to_string()));
   return nullptr;
