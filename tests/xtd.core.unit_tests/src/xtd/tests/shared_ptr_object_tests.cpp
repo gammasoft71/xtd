@@ -275,7 +275,7 @@ namespace xtd::tests {
     auto test_method_(to_object_with_specified_type) {
       assert::are_equal("value", shared_ptr_object<object> {new string {"value"}}.to_object<string>());
       assert::are_equal(42, shared_ptr_object<int> {new int {42}}.to_object<byte>());
-      assert::throws<null_pointer_exception>([] {shared_ptr_object<object> {}.to_object<string>();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto v = shared_ptr_object<object> {}.to_object<string>();});
     }
     
     auto test_method_(to_pointer) {
