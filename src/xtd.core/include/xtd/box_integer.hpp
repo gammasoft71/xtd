@@ -93,8 +93,7 @@ namespace xtd {
     /// @remarks Since unsigned values are always greater than or equal to zero, only the upper bound (max_value) is validated.
     static bool is_valid(xtd::unsigned_integer auto value) noexcept {
       return value <= static_cast<xtd::uint64>(max_value);
-      if (std::unsigned_integral<type_t>) return static_cast<xtd::uint64>(value) <= static_cast<xtd::uint64>(max_value);
-      return static_cast<xtd::int64>(value) <= static_cast<xtd::int64>(max_value);}
+    }
 
     using box<type_t>::parse;
     /// @brief Converts the string to its type_t equivalent.
