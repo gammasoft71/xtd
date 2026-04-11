@@ -27,27 +27,29 @@ namespace {
   wxAssertHandler_t original_assert_handler = nullptr;
   
   void xtd_assert_handler(const wxString& file, int32 line, const wxString& func, const wxString& cond, const wxString& msg) noexcept {
-    static boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
+    static auto show_wx_assert = boolean_switch {"wx_assert", "Shows wxAssert log", "true"};
     try {
       // Workaround : wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
-      if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
+      if (func.Contains("wxCalendarCtrl::HitTest") && cond.Contains("Assert failure") && msg.Contains("unexpected")) return;
       // Workaround : wxWidgets generates an assert if wxApp is not running when call exit.
-      if (func == "wxEventLoopBase::Exit" && cond == "\"IsRunning()\"" && msg == "Use ScheduleExit() on not running loop") return;
+      if (func.Contains("wxEventLoopBase::Exit") && cond.Contains("IsRunning()") && msg.Contains("Use ScheduleExit() on not running loop")) return;
       // Workaround : wxWidgets generates an assert if bitmap is empty.
-      if (func.Contains("GetHeight") && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
+      if (func.Contains("GetHeight") && cond.Contains("IsOk()") && msg.Contains("invalid bitmap")) return;
       // Workaround : wxWidgets generates an assert if bitmap is empty.
-      if (func.Contains("GetWidth") && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
+      if (func.Contains("GetWidth") && cond.Contains("IsOk()") && msg.Contains("invalid bitmap")) return;
       // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
-      if (func.Contains("wxPaintDCImpl::wxPaintDCImpl") && cond == "\"paintStack.top().window == window\"" && msg == "wxPaintDC must be associated with the window being repainted") return;
+      if (func.Contains("wxPaintDCImpl::wxPaintDCImpl") && cond.Contains("paintStack.top().window == window") && msg.Contains("wxPaintDC must be associated with the window being repainted")) return;
       // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
-      if (func.Contains("wxClientDCImpl::DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
+      if (func.Contains("wxClientDCImpl::DoGetSize") && cond.Contains("m_window") && msg.Contains("wxClientDCImpl without a window?")) return;
       // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
-      if (func.Contains("wxTextMeasure::BeginMeasuring") && cond == "m_hdc" && msg == "Must not be used with non-native wxDCs") return;
+      if (func.Contains("wxTextMeasure::BeginMeasuring") && cond.Contains("m_hdc") && msg.Contains("Must not be used with non-native wxDCs")) return;
       // Workaround : wxWidgets generates an assert if wxPaintDC is not call with the window being repainted.
-      if (func.Contains("wxPaintDCImpl") && cond == "\"paintStack.top().window == window\"" && msg == "wxPaintDC must be associated with the window being repainted") return;
+      if (func.Contains("wxPaintDCImpl") && cond.Contains("paintStack.top().window == window") && msg.Contains("wxPaintDC must be associated with the window being repainted")) return;
       // Workaround : Call wxClientDCImpl without a window.
-      if (func.Contains("DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
-      
+      if (func.Contains("DoGetSize") && cond.Contains("m_window") && msg.Contains("wxClientDCImpl without a window?")) return;
+      // Workaround : wxWidgets generates an assert if wxPaintDC is not call with the window being repainted.
+      if (func.Contains("wxPaintDC") && cond.Contains("paintStack.top().window == window") && msg.Contains("wxPaintDC must be associated with the window being repainted")) return;
+
       if (xtd::diagnostics::debug::__should_aborted__(stack_frame {string {static_cast<const char*>(file.c_str())}, as<uint32>(line), string {static_cast<const char*>(func.c_str())}}, !show_wx_assert.enabled(), "wxAssert", string::format("cond={}, msg={}", string {static_cast<const char*>(cond.c_str())}, string {static_cast<const char*>(msg.c_str())}))) debug_break_();
     } catch (const xtd::exception& e) {
       if (xtd::diagnostics::debug::__should_aborted__(stack_frame {string {static_cast<const char*>(file.c_str())}, as<uint32>(line), string {static_cast<const char*>(func.c_str())}}, !show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.to_string()))) debug_break_();
@@ -79,6 +81,9 @@ intptr xtd::drawing::native::toolkit::initialize() {
   #else
   as<wx_application>(wxApp::GetInstance())->CallOnInit();
   #endif
+  //#if defined(_WIN32) && wxCHECK_VERSION(3, 3, 0)
+  //wxTheApp->SetAppearance(wxApp::Appearance::System);
+  //#endif
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
   return 0;
