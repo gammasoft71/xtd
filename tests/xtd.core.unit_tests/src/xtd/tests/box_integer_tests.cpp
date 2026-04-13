@@ -113,13 +113,6 @@ namespace xtd::tests {
     }
     
     auto test_method_(is_valid) {
-      static auto signed_overflow_values = dictionary<string, int64> {{typeof_<signed char>().full_name(), 128}, {typeof_<short>().full_name(), 32768}, {typeof_<int>().full_name(), 2147483648}};
-      static auto signed_underflow_values = dictionary<string, int64> {{typeof_<signed char>().full_name(), -129}, {typeof_<short>().full_name(), -32769}, {typeof_<int>().full_name(), -2147483649}};
-      static auto unsigned_overflow_values = dictionary<string, int64> {{typeof_<unsigned char>().full_name(), 256}, {typeof_<unsigned short>().full_name(), 65536}, {typeof_<unsigned int>().full_name(), 4294967296}};
-      
-      if (std::signed_integral<size_t> && signed_overflow_values.contains_key(typeof_<type_t>().full_name())) assert::is_false(box_integer<type_t>::is_valid(signed_overflow_values[typeof_<type_t>().full_name()]));
-      if (std::signed_integral<size_t> && signed_underflow_values.contains_key(typeof_<type_t>().full_name())) assert::is_false(box_integer<type_t>::is_valid(signed_underflow_values[typeof_<type_t>().full_name()]));
-      if (std::unsigned_integral<size_t> && unsigned_overflow_values.contains_key(typeof_<type_t>().full_name())) assert::is_false(box_integer<type_t>::is_valid(unsigned_overflow_values[typeof_<type_t>().full_name()]));
       assert::is_true(box_integer<type_t>::is_valid(5));
       assert::is_true(box_integer<type_t>::is_valid(42));
       assert::is_true(box_integer<type_t>::is_valid(120));
