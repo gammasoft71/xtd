@@ -113,7 +113,7 @@ namespace xtd {
     /// @param value The floating point value to validate.
     /// @return true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false.
     /// @remarks If the value is outside the valid range defined by min_value and max_value, the method returns false.
-    [[nodiscard]] static auto is_valid(xtd::real auto value) noexcept -> bool {return !is_NaN(value) && !is_infinity(value) && value >= static_cast<xtd::decimal>(min_value) && value <= static_cast<xtd::decimal>(max_value);}
+    [[nodiscard]] static auto is_valid(type_t value) noexcept -> bool {return !is_NaN(value) && !is_infinity(value) && value >= static_cast<xtd::decimal>(min_value) && value <= static_cast<xtd::decimal>(max_value);}
 
     /// @brief Returns a value indicating whether the specified number evaluates to zero.
     /// @param value A floating-point number.
