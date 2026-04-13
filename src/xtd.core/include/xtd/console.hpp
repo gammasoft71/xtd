@@ -57,10 +57,10 @@ namespace xtd {
     /// @{
     /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
     /// @return `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is `true`.
-    static bool auto_flush_out();
+    [[nodiscard]] static auto auto_flush_out() -> bool;
     /// @brief Sets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
     /// @param value `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is `true`.
-    static void auto_flush_out(bool value);
+    static auto auto_flush_out(bool value) -> void;
     
     /// @brief Gets the background color of the console.
     /// @return the background xtd::console_color.
@@ -68,7 +68,7 @@ namespace xtd {
     /// @par Examples
     /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::console::background_color and xtd::console::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::console::reset_color method to restore the original console colors.
     /// @include console_color2.cpp
-    static console_color background_color();
+    [[nodiscard]] static auto background_color() -> console_color;
     /// @brief Sets the background color of the console.
     /// @param color A xtd::console_color that specifies the background color of the console; that is, the color that appears behind each character.
     /// @exception xtd::argument_exception The color specified in a set operation is not a valid member of xtd::console_color.
@@ -76,74 +76,74 @@ namespace xtd {
     /// @par Examples
     /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::console::background_color and xtd::console::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::console::reset_color method to restore the original console colors.
     /// @include console_color2.cpp
-    static void background_color(console_color color);
+    static auto background_color(console_color color) -> void;
     
     /// @brief Gets the height of the buffer area.
     /// @return The current height, in rows, of the buffer area.
     /// @par Examples
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static int32 buffer_height();
+    [[nodiscard]] static auto buffer_height() -> int32;
     /// @brief Sets or sets the height of the buffer area.
     /// @param height The current height, in rows, of the buffer area.
     /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. <br>-or-<br> The value in a set operation is greater than or equal to xtd::int16_object::max_value.
     /// @par Examples
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static void buffer_height(int32 height);
+    static auto buffer_height(int32 height) -> void;
     
     /// @brief Gets the width of the buffer area.
     /// @return The current width, in columns, of the buffer area.
     /// @par Examples
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static int32 buffer_width();
+    [[nodiscard]] static auto buffer_width() -> int32;
     /// @brief Sets the width of the buffer area.
     /// @param width The current width, in columns, of the buffer area.
     /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. <br>-or-<br> The value in a set operation is greater than or equal to xtd::int16_object::max_value.
     /// @par Examples
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static void buffer_width(int32 width);
+    static auto buffer_width(int32 width) -> void;
     
     /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
     /// @return `true` if CAPS LOCK is turned on; `false` if CAPS LOCK is turned off.
-    static bool caps_lock();
+    [[nodiscard]] static auto caps_lock() -> bool;
     
     /// @brief Gets the column position of the cursor within the buffer area.
     /// @return The current position, in columns, of the cursor.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static int32 cursor_left();
+    [[nodiscard]] static auto cursor_left() -> int32;
     /// @brief Sets the column position of the cursor within the buffer area.
     /// @param left The current position, in columns, of the cursor.
     /// @exception xtd::argument_out_of_range_exception The value in a set operation is less than zero <br>-or-<br> The value in a set operation is greater than or equal to xtd::console::buffer_width.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static void cursor_left(int32 left);
+    static auto cursor_left(int32 left) -> void;
     
     /// @brief Gets or sets the height of the cursor within a character cell.
     /// @return The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
     /// @par Examples
     /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
     /// @include console_cursor_size.cpp
-    static int32 cursor_size();
+    [[nodiscard]] static auto cursor_size() -> int32;
     /// @brief Sets the height of the cursor within a character cell.
     /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
     /// @exception xtd::argument_out_of_range_exception The value specified in a set operation is less than 1 or greater than 100.
     /// @par Examples
     /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
     /// @include console_cursor_size.cpp
-    static void cursor_size(int32 size);
+    static auto cursor_size(int32 size) -> void;
     
     /// @brief Gets the row position of the cursor within the buffer area.
     /// @return The current position, in rows, of the cursor.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static int32 cursor_top();
+    [[nodiscard]] static auto cursor_top() -> int32;
     /// @brief Sets the row position of the cursor within the buffer area.
     /// @param top The current position, in rows, of the cursor.
     /// @return `true` if cursor top changed; otherwise `false`.
@@ -151,34 +151,34 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static void cursor_top(int32 top);
+    static auto cursor_top(int32 top) -> void;
     
     /// @brief Gets a value indicating whether the cursor is visible.
     /// @return `true` if the cursor is visible; otherwise, `false`.
     /// @par Examples
     /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
     /// @include console_cursor_visible.cpp
-    static bool cursor_visible();
+    [[nodiscard]] static auto cursor_visible() -> bool;
     /// @brief Sets a value indicating whether the cursor is visible.
     /// @param visible `true` if the cursor is visible; otherwise, `false`.
     /// @par Examples
     /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
     /// @include console_cursor_visible.cpp
-    static void cursor_visible(bool visible);
+    static auto cursor_visible(bool visible) -> void;
     
     /// @brief Gets the foreground color of the console.
     /// @return A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed.
     /// @par Examples
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
-    static console_color foreground_color();
+    [[nodiscard]] static auto foreground_color() -> console_color;
     /// @brief Sets the foreground color of the console.
     /// @param color A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed.
     /// @exception xtd::argument_exception The color specified in a set operation is not a valid member of xtd::console_color.
     /// @par Examples
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
-    static bool foreground_color(console_color color);
+    static auto foreground_color(console_color color) -> bool;
     
     /// @brief Gets the code page the console uses to read input.
     /// @return The code page used to read console input.
@@ -195,7 +195,7 @@ namespace xtd {
     /// | 28591     | iso-8859-1 | Western European (ISO)      |
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
-    static int32 input_code_page();
+    [[nodiscard]] static auto input_code_page() -> int32;
     /// @brief Sets the code page the console uses to read input.
     /// @param code_page The code page used to read console input.
     /// @exception xtd::io::io_exception An error occurred during the execution of this operation.
@@ -211,34 +211,34 @@ namespace xtd {
     /// | 28591     | iso-8859-1 | Western European (ISO)      |
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
-    static void input_code_page(int32 code_page);
+    static auto input_code_page(int32 code_page) -> void;
     
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @return `true` if error output is redirected; otherwise, `false`.
-    static bool is_error_redirected();
+    [[nodiscard]] static auto is_error_redirected() -> bool;
     /// @brief  Gets a value that indicates whether the input stream has been redirected from the standard input stream.
     /// @return `true` if input is redirected; otherwise, `false`.
-    static bool is_input_redirected();
+    [[nodiscard]] static auto is_input_redirected() -> bool;
     /// @brief  Gets a value that indicates whether the output stream has been redirected from the standard output stream.
     /// @return `true` if output is redirected; otherwise, `false`.
-    static bool is_output_redirected();
+    [[nodiscard]] static auto is_output_redirected() -> bool;
     
     /// @brief Gets a value indicating whether a key press is available in the input stream.
     /// @return `true` if a key press is available; otherwise, `false`.
     /// @remarks The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available.
     /// @remarks Use the key_available method in conjunction with only the read_key method, not the read or read_line methods
-    static bool key_available();
+    [[nodiscard]] static auto key_available() -> bool;
     
     /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
     /// @return The height of the largest possible console window measured in rows.
-    static int32 largest_window_height();
+    [[nodiscard]] static auto largest_window_height() -> int32;
     /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
     /// @return The width of the largest possible console window measured in columns.
-    static int32 largest_window_width();
+    [[nodiscard]] static auto largest_window_width() -> int32;
     
     /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
     /// @return `true` if NUM LOCK is turned on; `false` if NUM LOCK is turned off.
-    static bool number_lock();
+    [[nodiscard]] static auto number_lock() -> bool;
     
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
@@ -255,7 +255,7 @@ namespace xtd {
     /// | 28591     | iso-8859-1 | Western European (ISO)      |
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
-    static int32 output_code_page();
+    [[nodiscard]] static auto output_code_page() -> int32;
     /// @brief Sets the code page the console uses to write output.
     /// @param code_page The code page used to write console output.
     /// @exception xtd::io::io_exception An error occurred during the execution of this operation.
@@ -271,53 +271,53 @@ namespace xtd {
     /// | 28591     | iso-8859-1 | Western European (ISO)      |
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
-    static void output_code_page(int32 code_page);
+    static auto output_code_page(int32 code_page) -> void;
     
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
-    static xtd::string title();
+    [[nodiscard]] static auto title() -> xtd::string;
     /// @brief Sets the title to display in the console title bar.
     /// @param title The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
-    static void title(const xtd::string& title);
+    static auto title(const xtd::string& title) -> void;
     
     /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
     /// @return `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
     /// @remarks If the value of the treat_control_c_as_input property is `false` and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
     /// @warning Use this property judiciously because setting it to `true` has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
-    static bool treat_control_c_as_input();
+    [[nodiscard]] static auto treat_control_c_as_input() -> bool;
     /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
     /// @param treat_control_c_as_input `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
     /// @remarks If the value of the treat_control_c_as_input property is `false` and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
     /// @warning Use this property judiciously because setting it to `true` has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
-    static void treat_control_c_as_input(bool treat_control_c_as_input);
+    static auto treat_control_c_as_input(bool treat_control_c_as_input) -> void;
     
     /// @brief Gets the height of the console window area.
     /// @return The height of the console window measured in rows.
-    static int32 window_height();
+    [[nodiscard]] static auto window_height() -> int32;
     /// @brief Sets the height of the console window area.
     /// @param height The height of the console window measured in rows.
-    static void window_height(int32 height);
+    static auto window_height(int32 height) -> void;
     
     /// @brief Gets the left of the console window area.
     /// @return The left of the console window measured in columns.
-    static int32 window_left();
+    [[nodiscard]] static auto window_left() -> int32;
     /// @brief Sets the left of the console window area.
     /// @param left The left of the console window measured in columns.
-    static void window_left(int32 left);
+    static auto window_left(int32 left) -> void;
     
     /// @brief Gets the top of the console window area.
     /// @return The top of the console window measured in rows.
-    static int32 window_top();
+    [[nodiscard]] static auto window_top() ->int32;
     /// @brief Sets the top of the console window area.
     /// @param top The top of the console window measured in rows.
-    static void window_top(int32 top);
+    static auto window_top(int32 top) -> void;
     
     /// @brief Gets the width of the console window area.
     /// @return The width of the console window measured in columns.
-    static int32 window_width();
+    [[nodiscard]] static auto window_width() -> int32;
     /// @brief Sets the width of the console window area.
     /// @param width The width of the console window measured in columns.
-    static void window_width(int32 width);
+    static auto window_width(int32 width) -> void;
     /// @}
     
     /// @name Public Static Events
@@ -343,14 +343,14 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times.
     /// @include console_beep.cpp
-    static void beep();
+    static auto beep() -> void;
     /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
     /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
     /// @param duration The duration of the beep measured in milliseconds
     /// @par Examples
     /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
     /// @include console_song.cpp
-    static void beep(uint32 frequency, uint32 duration);
+    static auto beep(uint32 frequency, uint32 duration) -> void;
     
     /// @brief Clears the console buffer and corresponding console window of display information.
     /// @remarks Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window.
@@ -362,25 +362,25 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static void clear();
+    static auto clear() -> void;
     
     /// @brief Gets the position of the cursor.
     /// @return The column and row position of the cursor.
     /// @remarks Columns are numbered from left to right starting at 0. Rows are numbered from top to bottom starting at 0.
-    static xtd::collections::generic::key_value_pair<int32, int32> get_cursor_position();
+    [[nodiscard]] static auto get_cursor_position() -> xtd::collections::generic::key_value_pair<int32, int32>;
     
     /// @brief Acquires the standard error stream.
     /// @return The standard error stream.
     /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
-    static std::ostream open_standard_error();
+    [[nodiscard]] static auto open_standard_error() -> std::ostream;
     /// @brief Acquires the standard input stream.
     /// @return The standard input stream.
     /// @remarks This method can be used to reacquire the standard input stream after it has been changed by the set_int method.
-    static std::istream open_standard_input();
+    [[nodiscard]] static auto open_standard_input() -> std::istream;
     /// @brief Acquires the standard output stream.
     /// @return The standard output stream.
     /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
-    static std::ostream open_standard_output();
+    [[nodiscard]] static auto open_standard_output() -> std::ostream;
     
     /// @brief Reads the next character from the standard input stream.
     /// @return int32 The next character from the input stream, or negative one (-1) if there are currently no more characters to be read
@@ -393,45 +393,45 @@ namespace xtd {
     /// @par Example
     /// The following example demonstrates the Read method.
     /// @include console_read.cpp
-    static int32 read();
+    [[nodiscard]] static auto read() -> int32;
     
     /// @brief Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
-    static console_key_info read_key();
+    static auto read_key() -> console_key_info;
     /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
-    static console_key_info read_key(bool intercept);
+    static auto read_key(bool intercept) -> console_key_info;
     /// @brief Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window with specified invit text.
     /// @param text The invit text to print before read line.
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
-    static console_key_info read_key(const string& text);
+    static auto read_key(const string& text) -> console_key_info;
     /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window with specified invit text.
     /// @param text The invit text to print before read line.
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
-    static console_key_info read_key(const string& text, bool intercept);
+    static auto read_key(const string& text, bool intercept) -> console_key_info;
 
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::string read_line();
+    static auto read_line() -> xtd::string;
     /// @brief Reads the next line of characters from the standard input stream.
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::string read_line(bool intercept);
+    static auto read_line(bool intercept) -> xtd::string;
     /// @brief Reads the next line of characters from the standard input stream with specified invit text.
     /// @param text The invit text to print before read line.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::string read_line(const string& text);
+    static auto read_line(const string& text) -> xtd::string;
     /// @brief Reads the next line of characters from the standard input stream with specified invit text.
     /// @param text The invit text to print before read line.
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::string read_line(const string& text, bool intercept);
+    static auto read_line(const string& text, bool intercept) -> xtd::string;
 
     /// @brief Sets the foreground and background console colors to their defaults.
     /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
-    static bool reset_color();
+    static auto reset_color() -> bool;
     
     /// @brief Sets the position of the cursor.
     /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
@@ -439,29 +439,29 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception The left in a set operation is less than zero <br>-or-<br> The left in a set operation is greater than or equal to xtd::console::buffer_width <br>-or-<br> the top in a set operation is less than zero <br>-or-<br> The topo in a set operation is greater than or equal to xtd::console::buffer_height.
     /// @remarks Use the set_cursor_position method to specify where the next write operation in the console window is to begin. If the specified cursor position is outside the area that is currently visible in the console window, the window origin changes automatically to make the cursor visible.
     /// @remarks The cursor automatically moves to the next character position each time a character is written to the console window. If the cursor is at the bottom right character position of the console window, the next write operation causes the console window to scroll so the cursor remains visible. If you want to write a character to the bottom right character position without causing the console window to scroll, use the move_buffer_area method to move a character to that position.
-    static void set_cursor_position(int32 left, int32 top);
+    static auto set_cursor_position(int32 left, int32 top) -> void;
     
     /// @brief Sets the error property to the specified std::ostream object.
     /// @param os A stream that is the new standard error output.
     /// @remarks By default, the error property is set to the standard error output stream.
     /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send error messages to a file.
-    static void set_error(const std::ostream& os);
+    static auto set_error(const std::ostream& os) -> void;
     /// @brief Sets the int property to the specified std::istream object.
     /// @param os A stream that is the new standard input.
     /// @remarks By default, the in property is set to the standard input stream.
     /// @remarks A std::istream that encapsulates a std::ifstream can be used to receiver input from a file.
-    static void set_in(const std::istream& is);
+    static auto set_in(const std::istream& is) -> void;
     /// @brief Sets the out property to the specified std::ostream object.
     /// @param os A stream that is the new standard output.
     /// @remarks By default, the out property is set to the standard output stream.
     /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send output to a file.
-    static void set_out(const std::ostream& os);
+    static auto set_out(const std::ostream& os) -> void;
     
     /// @brief Sets the position of the console window relative to the screen buffer.
     /// @param left The column position of the upper left corner of the console window.
     /// @param top The row position of the upper left corner of the console window.
     /// @exception xtd::argument_out_of_range_exception The left in a set operation is less than zero <br>-or-<br> The left in a set operation is greater than or equal to xtd::console::buffer_width <br>-or-<br> the top in a set operation is less than zero <br>-or-<br> The topo in a set operation is greater than or equal to xtd::console::buffer_height.
-    static void set_window_position(int32 left, int32 top);
+    static auto set_window_position(int32 left, int32 top) -> void;
     
     /// @brief Sets the height and width of the console window to the specified values.
     /// @param width The width of the console window measured in columns.
@@ -471,17 +471,17 @@ namespace xtd {
     /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
     /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
     /// @include console_window_size.cpp
-    static void set_window_size(int32 width, int32 height);
+    static auto set_window_size(int32 width, int32 height) -> void;
     
     /// @brief Writes the text representation of the specified value to the standard output stream.
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
     template<typename arg_t>
-    static void write(arg_t&& value) {write_(xtd::string::format("{}",  value));}
+    static auto write(arg_t&& value) -> void {write_(xtd::string::format("{}",  value));}
     
     /// @cond
     template<typename type_t>
-    static void write(std::initializer_list<type_t>&& il) {write_(xtd::string::format("{}", il));}
+    static auto write(std::initializer_list<type_t>&& il) -> void {write_(xtd::string::format("{}", il));}
     /// @endcond
     
     /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
@@ -489,20 +489,20 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param values Values to write,
     template<typename ...args_t>
-    static void write(const xtd::string& fmt, args_t&& ... values) {write_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
+    static auto write(const xtd::string& fmt, args_t&& ... values) -> void {write_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     
     /// @brief Writes the current line terminator to the standard output stream using the specified format information.
-    static void write_line();
+    static auto write_line() -> void;
     
     /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the standard output stream.
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
     template<typename arg_t>
-    static void write_line(arg_t&& value) {write_line_(xtd::string::format("{}", value));}
+    static auto write_line(arg_t&& value) -> void {write_line_(xtd::string::format("{}", value));}
     
     /// @cond
     template<typename type_t>
-    static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::string::format("{}", il));}
+    static auto write_line(const std::initializer_list<type_t>& il) -> void {write_line_(xtd::string::format("{}", il));}
     /// @endcond
     
     /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
@@ -510,19 +510,19 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param values Values to write,
     template<typename ...args_t>
-    static void write_line(const xtd::string& fmt, args_t&& ... values) {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
+    static auto write_line(const xtd::string& fmt, args_t&& ... values) -> void {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     /// @}
     
     /// @cond
-    static void __internal_rstc__();
+    static auto __internal_rstc__() -> void;
     /// @endcond
     
   private:
     friend class xtd::environment;
-    static bool on_cancel_key_press(int32 special_key);
-    static void register_cancel_key_press();
+    [[nodiscard]] static auto on_cancel_key_press(int32 special_key) -> bool;
+    static auto register_cancel_key_press() -> void;
     
-    static void write_(const string& value);
-    static void write_line_(const string& value);
+    static auto write_(const string& value) -> void;
+    static auto write_line_(const string& value) -> void;
   };
 }
