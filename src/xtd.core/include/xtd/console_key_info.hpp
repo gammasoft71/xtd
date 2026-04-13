@@ -52,15 +52,15 @@ namespace xtd {
     /// @{
     /// @brief Gets the console key represented by the current console_key_info object.
     /// @param A console_key value that identifies the console key that was pressed
-    console_key key() const noexcept;
+    [[nodiscard]] auto key() const noexcept -> console_key;
     
     /// @brief Gets the Unicode character represented by the current console_key_info object.
     /// @param An char32 object that corresponds to the console key represented by the current console_key_info object.
-    char32 key_char() const noexcept;
+    [[nodiscard]] auto key_char() const noexcept -> char32;
     
     /// @brief Gets a bitwise combination of console_modifiers values that specifies one or more modifier keys pressed simultaneously with the console key.
     /// @param A bitwise combination of console_modifiers values. There is no default value.
-    console_modifiers modifiers() const noexcept;
+    [[nodiscard]] auto modifiers() const noexcept -> console_modifiers;
     /// @}
     
     /// @name Public Methods
@@ -69,15 +69,15 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override;
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const console_key_info& key_info) const noexcept override;
+    [[nodiscard]] auto equals(const console_key_info& key_info) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
     /// @}
     
   private:
