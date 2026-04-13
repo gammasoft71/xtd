@@ -135,7 +135,7 @@ Inheritance diagram for xtd::threading::monitor:</div>
 <div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> value : values)</div>
 <div class="line">            thread_total += value;</div>
 <div class="line">          </div>
-<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Mean for task {0,2}: {1:N2} (N={2:N0})&quot;</span>,</div>
+<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Mean for task {0,2}: {1:N2} (N={2:N0})&quot;</span>,</div>
 <div class="line">                              thread::current_thread().managed_thread_id(),</div>
 <div class="line">                              (thread_total * 1.0) / thread_n, thread_n);</div>
 <div class="line">          interlocked::add(n, thread_n);</div>
@@ -170,7 +170,7 @@ Inheritance diagram for xtd::threading::monitor:</div>
 <div class="line"><span class="comment">// Mean for task 11: 498.69 (N=10000)</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Mean for all tasks: 499.84 (N=100000)</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:44</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">xtd::console_key::n</a></div><div class="ttdeci">@ n</div><div class="ttdoc">The N key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:114</div></div>
@@ -185,13 +185,13 @@ The following example demonstrates the combined use of the <a class="el" href="c
 <div class="line">    <span class="comment">// Use a monitor to enforce synchronization.</span></div>
 <div class="line">    <span class="keywordtype">void</span> access() {</div>
 <div class="line">      <a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(*<span class="keyword">this</span>) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Starting synchronized resource access on thread #{0}&quot;</span>,</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Starting synchronized resource access on thread #{0}&quot;</span>,</div>
 <div class="line">                            <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a56cf6a462e943a302e4c93a28bb9caaf">thread::current_thread</a>().managed_thread_id());</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a56cf6a462e943a302e4c93a28bb9caaf">thread::current_thread</a>().managed_thread_id() % 2 == 0)</div>
 <div class="line">          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a330d3bf0916af42f3ca433010cd585a0">thread::sleep</a>(2000);</div>
 <div class="line">        </div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a330d3bf0916af42f3ca433010cd585a0">thread::sleep</a>(200);</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Stopping synchronized resource access on thread #{0}&quot;</span>,</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Stopping synchronized resource access on thread #{0}&quot;</span>,</div>
 <div class="line">                            <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a56cf6a462e943a302e4c93a28bb9caaf">thread::current_thread</a>().managed_thread_id());</div>
 <div class="line">      }</div>
 <div class="line">    }</div>

@@ -132,7 +132,7 @@ In order for <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html"
 <div class="line">    <span class="keyword">auto</span> reader = stream_reader {<a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app)</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a>.data_available()) <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(reader.read_line());</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a>.data_available()) <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(reader.read_line());</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> client = thread {[&amp;] {</div>
@@ -165,7 +165,7 @@ In order for <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html"
 <div class="line"><span class="comment">// counter=4</span></div>
 <div class="line"><span class="comment">// counter=5</span></div>
 <div class="line"><span class="comment">// ...</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__client_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a></div><div class="ttdoc">Provides client connections for TCP network services.</div><div class="ttdef"><b>Definition</b> tcp_client.hpp:48</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__client_html_a764afce0f475678c7711bdd76a9e1377"><div class="ttname"><a href="#a764afce0f475678c7711bdd76a9e1377">xtd::net::sockets::tcp_client::connect</a></div><div class="ttdeci">auto connect(const xtd::net::ip_end_point &amp;remote_end_point) -&gt; void</div><div class="ttdoc">Connects the client to a remote TCP host using the specified remote network endpoint.</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_af69b1214067e6666756700eef6e2d190"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html#af69b1214067e6666756700eef6e2d190">xtd::net::sockets::tcp_listener::create</a></div><div class="ttdeci">static auto create(uint16 port) -&gt; tcp_listener</div><div class="ttdoc">Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.</div></div>
@@ -183,7 +183,7 @@ In order for <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html"
 <div class="line">    <span class="keyword">auto</span> reader = stream_reader {<a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app)</div>
-<div class="line">      <span class="keywordflow">if</span> (stream.data_available()) <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(reader.read_line());</div>
+<div class="line">      <span class="keywordflow">if</span> (stream.data_available()) <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(reader.read_line());</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> client = thread {[&amp;] {</div>

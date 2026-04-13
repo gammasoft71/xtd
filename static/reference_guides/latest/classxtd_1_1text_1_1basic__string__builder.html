@@ -2620,12 +2620,12 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (const <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a>&amp;) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> flag = <span class="keyword">false</span>;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="stringliteral">&quot;The value of the flag is &quot;</span>).append(flag).append(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb.to_string());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb.to_string());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The value of the flag is `false`.</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> </dd>
 <dd>
 If <span class="tt">value</span> is <span class="tt"><a class="el" href="#abb8633fd591157815c13097fb964e003" title="Checks if the string has no characters, i.e. whether begin() == end().">empty</a></span>, no changes are made. </dd>
@@ -2702,7 +2702,7 @@ The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a cop
 <div class="line">sb.append(str, index, <a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>).append(<span class="stringliteral">&quot; to &quot;</span>);</div>
 <div class="line">index += <a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a> + 1;</div>
 <div class="line">sb.append(str, index, str.length() - index);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2757,7 +2757,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#ga6593319302fd0fc8ab795e52ec187729" title="Represents a boolean.">xtd::boolean</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> flag = <span class="keyword">false</span>;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="stringliteral">&quot;The value of the flag is &quot;</span>).append(flag).append(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb.to_string());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb.to_string());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2812,7 +2812,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> value : bytes)</div>
 <div class="line">  sb.append(value).append(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The byte array: {0}&quot;</span>, sb.to_string());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The byte array: {0}&quot;</span>, sb.to_string());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2867,7 +2867,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd" title="Represents a decimal-precision floating-point number.">xtd::decimal</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346.19l;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2921,7 +2921,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (double) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346.19;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -2975,7 +2975,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d" title="Represents a single-precision floating-point number.">xtd::single</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346.19f;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3029,7 +3029,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751" title="Represents a 16-bit signed integer.">xtd::int16</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346_s16;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3083,7 +3083,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3137,7 +3137,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">xtd::int64</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346_s64;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3192,7 +3192,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> value : bytes)</div>
 <div class="line">  sb.append(value).append(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The byte array: {0}&quot;</span>, sb.to_string());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The byte array: {0}&quot;</span>, sb.to_string());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3246,7 +3246,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4" title="Represents a 16-bit unsigned integer.">xtd::uint16</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346_u16;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3300,7 +3300,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce" title="Represents a 32-bit unsigned integer.">xtd::uint32</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346_u32;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3354,7 +3354,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346_u64;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3410,8 +3410,8 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> ch : str)</div>
 <div class="line">  sb.append(<span class="stringliteral">&quot; &#39;&quot;</span>).append(ch).append(<span class="stringliteral">&quot;&#39; &quot;</span>);</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Characters in the string:&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  {}&quot;</span>, sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Characters in the string:&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  {}&quot;</span>, sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -3471,7 +3471,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa50125195497060f9ae144f9c814b18c" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (<a class="el" href="#afc4750931de93fb98ca4024209bd18cc" title="Represents the basic string value type.">xtd::text::basic_string_builder::value_type</a>, <a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f" title="Represents the basic string size type.">xtd::text::basic_string_builder::size_type</a>) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. <div class="fragment"><div class="line"><span class="keyword">auto</span> value = 1346.19;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a> {};</div>
 <div class="line">sb.append(<span class="charliteral">&#39;*&#39;</span>, 5).append(value).append(<span class="charliteral">&#39;*&#39;</span>, 5);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(sb);</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(sb);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -6854,7 +6854,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> str = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
 <div class="line"><span class="keywordflow">if</span> (str.index_of(<span class="charliteral">&#39;g&#39;</span>) == str.npos)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -6884,8 +6884,8 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <p>Represents the index of the first valid element in a collection. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a> points to the first accessible element of a collection. It is equivalent to <span class="tt">0</span>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> str = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">bpos</a>]); <span class="comment">// Prints &#39;h&#39;</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">bpos</a> + 1]); <span class="comment">// Prints &#39;e&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">bpos</a>]); <span class="comment">// Prints &#39;h&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">bpos</a> + 1]); <span class="comment">// Prints &#39;e&#39;</span></div>
 <div class="ttc" id="agroup__system_html_gae5b63301b69ce281ee7db98e2e61941f"><div class="ttname"><a href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">xtd::bpos</a></div><div class="ttdeci">constexpr xtd::size bpos</div><div class="ttdoc">Represents the index of the firsy valid element in a collection.</div><div class="ttdef"><b>Definition</b> bpos.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -6918,12 +6918,12 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> str = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a>]); <span class="comment">// Prints &#39;o&#39;</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a> - 1]); <span class="comment">// Prints &#39;l&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a>]); <span class="comment">// Prints &#39;o&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a> - 1]); <span class="comment">// Prints &#39;l&#39;</span></div>
 <div class="ttc" id="agroup__system_html_gaa99759e66edbafa9f3ed0b523c924b5c"><div class="ttname"><a href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">xtd::epos</a></div><div class="ttdeci">constexpr xtd::size epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> str = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str[~1_z]); <span class="comment">// Prints &#39;o&#39;</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str[~2_z]); <span class="comment">// Prints &#39;l&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~1_z]); <span class="comment">// Prints &#39;o&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~2_z]); <span class="comment">// Prints &#39;l&#39;</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

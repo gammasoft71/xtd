@@ -137,17 +137,17 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <div class="line">        odd_numbers.add((i * 2) + 1);</div>
 <div class="line">      }</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
 <div class="line">      display_set(even_numbers);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
 <div class="line">      display_set(odd_numbers);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Create a new hash_set populated with even numbers.</span></div>
 <div class="line">      <span class="keyword">auto</span> numbers = even_numbers;</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
 <div class="line">      numbers.union_with(odd_numbers);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
 <div class="line">      display_set(numbers);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -170,8 +170,8 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <div class="line"><span class="comment">// numbers union_with odd_numbers...</span></div>
 <div class="line"><span class="comment">// numbers contains 10 elements: { 1 3 5 7 9 0 2 4 6 8 }</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1hash__set_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a></div><div class="ttdoc">Represents a set of values.</div><div class="ttdef"><b>Definition</b> hash_set.hpp:37</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -580,17 +580,17 @@ template&lt;typename type_t, typename hasher_t = xtd::collections::generic::help
 <div class="line">        odd_numbers.add((i * 2) + 1);</div>
 <div class="line">      }</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
 <div class="line">      display_set(even_numbers);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
 <div class="line">      display_set(odd_numbers);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Create a new hash_set populated with even numbers.</span></div>
 <div class="line">      <span class="keyword">auto</span> numbers = even_numbers;</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
 <div class="line">      numbers.union_with(odd_numbers);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
 <div class="line">      display_set(numbers);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -673,9 +673,9 @@ template&lt;typename type_t, typename hasher_t = xtd::collections::generic::help
 <div class="line">    <span class="comment">// Add in the vehicles contained in the some_vehicles list.</span></div>
 <div class="line">    all_vehicles.union_with(some_vehicles);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current hash_set contains:\n&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current hash_set contains:\n&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(vehicle);</div>
 <div class="line">    </div>
 <div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Ships&quot;</span>);</div>
 <div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Motorcycles&quot;</span>);</div>
@@ -683,33 +683,33 @@ template&lt;typename type_t, typename hasher_t = xtd::collections::generic::help
 <div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Helicopters&quot;</span>);</div>
 <div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Submarines&quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe updated hash_set contains:\n&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nThe updated hash_set contains:\n&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(vehicle);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Verify that the &#39;All Vehicles&#39; set contains at least the vehicles in</span></div>
 <div class="line">    <span class="comment">// the &#39;Some Vehicles&#39; list.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (all_vehicles.is_superset_of(some_vehicles)) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;\nThe &#39;All&#39; vehicles set contains everything in &quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;&#39;Some&#39; vechicles list.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;\nThe &#39;All&#39; vehicles set contains everything in &quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;&#39;Some&#39; vechicles list.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Check for Rockets. Here the OrdinalIgnoreCase comparer will compare</span></div>
 <div class="line">    <span class="comment">// true for the mixed-case vehicle type.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (all_vehicles.contains(<span class="stringliteral">&quot;roCKeTs&quot;</span>))</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe &#39;All&#39; vehicles set contains &#39;roCKeTs&#39;&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nThe &#39;All&#39; vehicles set contains &#39;roCKeTs&#39;&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    all_vehicles.except_with(some_vehicles);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe excepted hash_set contains:\n&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nThe excepted hash_set contains:\n&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(vehicle);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Remove all the vehicles that are not &#39;super cool&#39;.</span></div>
 <div class="line">    all_vehicles.remove_where(is_not_super_cool);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe super cool vehicles are:\n&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nThe super cool vehicles are:\n&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(vehicle);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Predicate to determine vehicle &#39;coolness&#39;.</span></div>

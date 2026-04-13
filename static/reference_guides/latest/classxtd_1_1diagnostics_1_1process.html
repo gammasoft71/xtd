@@ -849,9 +849,9 @@ You can call xtd::diagnostics::process::get_processes_by_name, passing it an exe
 <div class="line"> </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a> my_stream_reader(my_process.<a class="code hl_function" href="#a6ea192be7b894210a2b7f936d121a9c8">standard_error</a>());</div>
 <div class="line">  <span class="comment">// Read the standard error of net.exe and write it on to console.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(my_stream_reader.read_line());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a>(my_stream_reader.read_line());</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a></div><div class="ttdoc">Specifies a set of values that are used when you start a process.</div><div class="ttdef"><b>Definition</b> process_start_info.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a6ea192be7b894210a2b7f936d121a9c8"><div class="ttname"><a href="#a6ea192be7b894210a2b7f936d121a9c8">xtd::diagnostics::process::standard_error</a></div><div class="ttdeci">auto standard_error() -&gt; std::istream &amp;</div><div class="ttdoc">Gets a stream used to read the error output of the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a83bb259fa5bcda4dcceca2b8d86fc2db"><div class="ttname"><a href="#a83bb259fa5bcda4dcceca2b8d86fc2db">xtd::diagnostics::process::start</a></div><div class="ttdeci">auto start() -&gt; bool</div><div class="ttdoc">Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...</div></div>
@@ -874,7 +874,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ctr = 0; ctr &lt; 500; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a07c2c9e615422f0ab7321b3331e83c73">console::error</a> &lt;&lt; <span class="stringliteral">&quot;\nSuccessfully wrote 500 lines.\n&quot;</span>;</div>
 <div class="line">}</div>
@@ -907,7 +907,7 @@ The following example shows how to read from a redirected error stream and wait 
 <div class="line">  <span class="keywordtype">string</span> output = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.standard_error()).<a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#adfd2a7b2ba77bb0fdb937f1490c878dd">read_to_end</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.wait_for_exit();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// The end of the output produced by the example includes the following:</span></div>
 <div class="line"><span class="comment">//      Error stream: Successfully wrote 500 lines.</span></div>
@@ -939,7 +939,7 @@ There is a similar issue when you read all text from both the standard output an
 <div class="line">  <span class="keywordtype">string</span> output = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.standard_error()).<a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#adfd2a7b2ba77bb0fdb937f1490c878dd">read_to_end</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.wait_for_exit();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//      The last 40 characters in the output stream are:</span></div>
@@ -996,7 +996,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Ready to sort one or more text lines...&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Ready to sort one or more text lines...&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Start the sort process with redirected input.</span></div>
 <div class="line">  <span class="comment">// Use the sort command to sort the input text.</span></div>
@@ -1015,9 +1015,9 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line">    <span class="keywordtype">string</span> input_text;</div>
 <div class="line">    <span class="keywordtype">int</span> num_lines = 0;</div>
 <div class="line">    <span class="keywordflow">do</span> {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Enter a line of text (or press the Enter key to stop):&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Enter a line of text (or press the Enter key to stop):&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">      input_text = <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
+<div class="line">      input_text = <a class="code hl_function" href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">console::read_line</a>();</div>
 <div class="line">      <span class="keywordflow">if</span> (input_text.<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">length</a>() &gt; 0) {</div>
 <div class="line">        num_lines++;</div>
 <div class="line">        my_stream_writer.write_line(input_text);</div>
@@ -1026,10 +1026,10 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Write a report header to the console.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (num_lines &gt; 0) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; {} sorted text line(s) &quot;</span>, num_lines);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; {} sorted text line(s) &quot;</span>, num_lines);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; No input was sorted&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; No input was sorted&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// End the input stream to the sort command.</span></div>
@@ -1043,7 +1043,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets the number of characters in the current xtd::basic_string object.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:380</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a85d69fe536a28002ecdc2b52600a0530"><div class="ttname"><a href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">xtd::console::read_line</a></div><div class="ttdeci">static auto read_line() -&gt; xtd::string</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a5a996100b8c2d6b4b62ff064adf199b7"><div class="ttname"><a href="#a5a996100b8c2d6b4b62ff064adf199b7">xtd::diagnostics::process::wait_for_exit</a></div><div class="ttdeci">auto wait_for_exit() -&gt; xtd::diagnostics::process &amp;</div><div class="ttdoc">Instructs the xtd::diagnostics::process component to wait indefinitely for the associated process to ...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a601b09ef0cd01fd67d208a478aa425d5"><div class="ttname"><a href="#a601b09ef0cd01fd67d208a478aa425d5">xtd::diagnostics::process::standard_input</a></div><div class="ttdeci">auto standard_input() -&gt; std::ostream &amp;</div><div class="ttdoc">Gets a stream used to write the input of the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a></div><div class="ttdoc">Implements a xtd::io::text_writer for writing characters to a stream.</div><div class="ttdef"><b>Definition</b> stream_writer.hpp:28</div></div>
@@ -1102,13 +1102,13 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line">    <span class="keywordtype">string</span> output = reader.read_to_end();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Write the redirected output to this application&#39;s window.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(output);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(output);</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="#a81ba433310fc43b2e2422753227e8b44">process</a>.wait_for_exit();</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\n\nPress any key to exit.&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\n\nPress any key to exit.&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">console::read_line</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> writes text to its standard stream, that text is normally displayed on the console. By redirecting the <a class="el" href="#aefb5078ab8d928d9015ef449107f273e" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file. </dd></dl>
@@ -1126,7 +1126,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ctr = 0; ctr &lt; 500; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a07c2c9e615422f0ab7321b3331e83c73">console::error</a> &lt;&lt; <span class="stringliteral">&quot;\nSuccessfully wrote 500 lines.\n&quot;</span>;</div>
 <div class="line">}</div>
@@ -1156,7 +1156,7 @@ The following example shows how to read from a redirected error stream and wait 
 <div class="line">  <span class="keywordtype">string</span> output = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.standard_error()).<a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#adfd2a7b2ba77bb0fdb937f1490c878dd">read_to_end</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.wait_for_exit();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// The end of the output produced by the example includes the following:</span></div>
 <div class="line"><span class="comment">//      Error stream: Successfully wrote 500 lines.</span></div>
@@ -1185,7 +1185,7 @@ There is a similar issue when you read all text from both the standard output an
 <div class="line">  <span class="keywordtype">string</span> output = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.standard_error()).<a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#adfd2a7b2ba77bb0fdb937f1490c878dd">read_to_end</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.wait_for_exit();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nError stream: {}&quot;</span>, output);</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//      The last 40 characters in the output stream are:</span></div>

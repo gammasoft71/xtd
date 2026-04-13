@@ -273,9 +273,9 @@ Static Methods</h2></td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15" id="r_ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga7352fcff0da12feb0aff421fc8c41d15">xtd::boxing</a> (const type_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3" id="r_gab155c2e1615c761866911598011c74b3"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename ... args_t&gt; </td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3 template"><td class="memItemLeft"><a class="el" href="structxtd_1_1box.html">box</a>&lt; type_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#gab155c2e1615c761866911598011c74b3">xtd::boxing</a> (args_t &amp;&amp;...args) noexcept</td></tr>
-<tr class="memdesc:gab155c2e1615c761866911598011c74b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
+<tr class="memitem:ga6bcd6f8af119bbde51f25bbeff3fb4ce" id="r_ga6bcd6f8af119bbde51f25bbeff3fb4ce"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga6bcd6f8af119bbde51f25bbeff3fb4ce template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga6bcd6f8af119bbde51f25bbeff3fb4ce">xtd::boxing</a> (args_t &amp;&amp;...args) noexcept -&gt; <a class="el" href="structxtd_1_1box.html">box</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:ga6bcd6f8af119bbde51f25bbeff3fb4ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
 <tr class="memitem:gad7c8890de68091b1a95110ec75c34e99" id="r_gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename function_t&gt; </td></tr>
 <tr class="memitem:gad7c8890de68091b1a95110ec75c34e99 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad7c8890de68091b1a95110ec75c34e99">xtd::register_any_stringer</a> (const function_t &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>)</td></tr>
 <tr class="memdesc:gad7c8890de68091b1a95110ec75c34e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an any stringer method for a specified type.  <br /></td></tr>
@@ -307,8 +307,8 @@ Static Methods</h2></td></tr>
 <div class="line"><span class="keywordtype">bool</span> unboxed_object = <span class="keyword">true</span>;</div>
 <div class="line"><a class="code hl_typedef" href="#ga985fe68f7af28fad14c5922db7e44d79">boolean_object</a> boxed_object = unboxed_bool;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = true;</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = true;</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__system_html_ga985fe68f7af28fad14c5922db7e44d79"><div class="ttname"><a href="#ga985fe68f7af28fad14c5922db7e44d79">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.hpp:32</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -335,7 +335,7 @@ Static Methods</h2></td></tr>
 <div class="line"><span class="keywordtype">size_t</span> unboxed_object = 42;</div>
 <div class="line"><a class="code hl_typedef" href="#gaa59c1fb30e22f8371bd5798f177e3042">size_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 42;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 42;</span></div>
 <div class="ttc" id="agroup__system_html_gaa59c1fb30e22f8371bd5798f177e3042"><div class="ttname"><a href="#gaa59c1fb30e22f8371bd5798f177e3042">xtd::size_object</a></div><div class="ttdeci">box_integer&lt; size_t &gt; size_object</div><div class="ttdoc">Represent a boxed size_t.</div><div class="ttdef"><b>Definition</b> size_object.hpp:28</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -488,7 +488,7 @@ template&lt;typename type_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -512,8 +512,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="gab155c2e1615c761866911598011c74b3" name="gab155c2e1615c761866911598011c74b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab155c2e1615c761866911598011c74b3">&#9670;&#160;</a></span>boxing() <span class="overload">[2/2]</span></h2>
+<a id="ga6bcd6f8af119bbde51f25bbeff3fb4ce" name="ga6bcd6f8af119bbde51f25bbeff3fb4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bcd6f8af119bbde51f25bbeff3fb4ce">&#9670;&#160;</a></span>boxing() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,15 +524,15 @@ template&lt;typename type_t, typename ... args_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1box.html">box</a>&lt; type_t &gt; xtd::boxing </td>
+          <td class="memname">auto xtd::boxing </td>
           <td>(</td>
           <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="structxtd_1_1box.html">box</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -788,8 +788,8 @@ template&lt;typename type_t&gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="#gae5b63301b69ce281ee7db98e2e61941f" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a> points to the first accessible element of a collection. It is equivalent to <span class="tt">0</span>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(items[<a class="code hl_variable" href="#gae5b63301b69ce281ee7db98e2e61941f">bpos</a>]); <span class="comment">// Prints 10</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(items[<a class="code hl_variable" href="#gae5b63301b69ce281ee7db98e2e61941f">bpos</a> + 1]); <span class="comment">// Prints 20</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gae5b63301b69ce281ee7db98e2e61941f">bpos</a>]); <span class="comment">// Prints 10</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gae5b63301b69ce281ee7db98e2e61941f">bpos</a> + 1]); <span class="comment">// Prints 20</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="agroup__system_html_gae5b63301b69ce281ee7db98e2e61941f"><div class="ttname"><a href="#gae5b63301b69ce281ee7db98e2e61941f">xtd::bpos</a></div><div class="ttdeci">constexpr xtd::size bpos</div><div class="ttdoc">Represents the index of the firsy valid element in a collection.</div><div class="ttdef"><b>Definition</b> bpos.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -856,12 +856,12 @@ template&lt;typename type_t&gt; </div>
 <dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="#gaa99759e66edbafa9f3ed0b523c924b5c" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(items[<a class="code hl_variable" href="#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a>]); <span class="comment">// Prints 40</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(items[<a class="code hl_variable" href="#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a>]); <span class="comment">// Prints 40</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
 <div class="ttc" id="agroup__system_html_gaa99759e66edbafa9f3ed0b523c924b5c"><div class="ttname"><a href="#gaa99759e66edbafa9f3ed0b523c924b5c">xtd::epos</a></div><div class="ttdeci">constexpr xtd::size epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(items[~1_z]); <span class="comment">// Prints 40</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(items[~2_z]); <span class="comment">// Prints 30</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~1_z]); <span class="comment">// Prints 40</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~2_z]); <span class="comment">// Prints 30</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -894,7 +894,7 @@ template&lt;typename type_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {1, 2, 3};</div>
 <div class="line"><span class="keywordflow">if</span> (items.index_of(42) == <a class="code hl_variable" href="#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
 <div class="ttc" id="agroup__system_html_ga94bb9e7be783a1b9d24894b3b23859e6"><div class="ttname"><a href="#ga94bb9e7be783a1b9d24894b3b23859e6">xtd::npos</a></div><div class="ttdeci">constexpr xtd::size npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
 </div><!-- fragment --> </dd></dl>
 

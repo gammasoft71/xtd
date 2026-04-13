@@ -138,16 +138,16 @@ Public Fields</h2></td></tr>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Test the Remove method.</span></div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86aebf78b512222fe4dcd14e7d5060a15b0">display</a>(boxes);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Removing 6x10x4&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Removing 6x10x4&quot;</span>);</div>
 <div class="line">    boxes.remove(program::box {6, 10, 4});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86aebf78b512222fe4dcd14e7d5060a15b0">display</a>(boxes);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Test the Contains method.</span></div>
 <div class="line">    <span class="keyword">auto</span> box_check = program::box {8, 12, 10};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Contains {}x{}x{} by dimensions: {}&quot;</span>, box_check.height, box_check.length, box_check.width, boxes.contains(box_check));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Contains {}x{}x{} by dimensions: {}&quot;</span>, box_check.height, box_check.length, box_check.width, boxes.contains(box_check));</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Test the Contains method overload with a specified equality comparer.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Contains {}x{}x{} by volume: {}&quot;</span>, box_check.height, box_check.length, box_check.width, boxes.contains(box_check, box_same_volume {}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Contains {}x{}x{} by volume: {}&quot;</span>, box_check.height, box_check.length, box_check.width, boxes.contains(box_check, box_same_volume {}));</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">struct </span>box : <span class="keyword">public</span> object, <span class="keyword">public</span> iequatable&lt;program::box&gt; {</div>
@@ -275,7 +275,7 @@ Public Fields</h2></td></tr>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86aebf78b512222fe4dcd14e7d5060a15b0">display</a>(<span class="keyword">const</span> box_collection&amp; boxes) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nheight  length  width   hash code&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nheight  length  width   hash code&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; boxes.count(); ++index)</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{,-6}  {,-6}  {,-6}  {}&quot;</span>, boxes[index].height, boxes[index].length, boxes[index].width, boxes[index].<a class="code hl_function" href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">get_hash_code</a>());</div>
 <div class="line">    </div>
@@ -295,7 +295,7 @@ Public Fields</h2></td></tr>
 <div class="line">    <span class="comment">//  console::write_line(&quot;{,-6}  {,-6}  {,-6}  {}&quot;, b.height, b.length, b.width, b.get_hash_code());</span></div>
 <div class="line">    <span class="comment">//}</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -320,7 +320,7 @@ Public Fields</h2></td></tr>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Contains 8x12x10 by dimensions: false</span></div>
 <div class="line"><span class="comment">// Contains 8x12x10 by volume: true</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
 <div class="ttc" id="agroup__collections_html_ga564fa21e6bb9787ccd4b37201081cf6b"><div class="ttname"><a href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b">xtd::collections::ilist</a></div><div class="ttdeci">generic::ilist&lt; xtd::any_object &gt; ilist</div><div class="ttdoc">Represents a non-generic collection of objects that can be individually accessed by index.</div><div class="ttdef"><b>Definition</b> ilist.hpp:32</div></div>
 <div class="ttc" id="agroup__collections_html_ga65aa6014ffed4ba75756a8be6778e6b6"><div class="ttname"><a href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">xtd::collections::comparer</a></div><div class="ttdeci">xtd::collections::generic::comparer&lt; xtd::any_object &gt; comparer</div><div class="ttdoc">Exposes a method that compares two objects.</div><div class="ttdef"><b>Definition</b> comparer.hpp:25</div></div>

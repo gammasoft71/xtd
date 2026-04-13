@@ -178,16 +178,16 @@ class xtd::iobserver&lt; type_t &gt;</div><p>Provides a mechanism for receiving 
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a466d725a38941d2d70f44348aa611c17">on_completed</a>() noexcept<span class="keyword"> override </span>{</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The location Tracker has completed transmitting data to {}.&quot;</span>, <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The location Tracker has completed transmitting data to {}.&quot;</span>, <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
 <div class="line">    unsubscribe();</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a081a17a5c8182225d3719a88f6489fad">on_error</a>(<span class="keyword">const</span> exception&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}: The location cannot be determined.&quot;</span>, <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{}: The location cannot be determined.&quot;</span>, <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#adfef0387f4871d47e98627b514035420">on_next</a>(<span class="keyword">const</span> location&amp; value) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}: The current location is {}, {}&quot;</span>, <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>(), value.latitude(), value.longitude());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{}: The current location is {}, {}&quot;</span>, <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>(), value.latitude(), value.longitude());</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> unsubscribe() {</div>
@@ -199,7 +199,7 @@ class xtd::iobserver&lt; type_t &gt;</div><p>Provides a mechanism for receiving 
 <div class="line">  <span class="keywordtype">string</span> name_;</div>
 <div class="line">  iobservable&lt;location&gt;* provider_ = <span class="keyword">nullptr</span>;</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1iobserver_html_a081a17a5c8182225d3719a88f6489fad"><div class="ttname"><a href="#a081a17a5c8182225d3719a88f6489fad">xtd::iobserver::on_error</a></div><div class="ttdeci">virtual void on_error(const std::exception &amp;error) noexcept=0</div><div class="ttdoc">Notifies the observer that the provider has experienced an error condition.</div></div>
 <div class="ttc" id="aclassxtd_1_1iobserver_html_a466d725a38941d2d70f44348aa611c17"><div class="ttname"><a href="#a466d725a38941d2d70f44348aa611c17">xtd::iobserver::on_completed</a></div><div class="ttdeci">virtual void on_completed() noexcept=0</div><div class="ttdoc">Notifies the observer that the provider has finished sending push-based notifications.</div></div>
 <div class="ttc" id="aclassxtd_1_1iobserver_html_adfef0387f4871d47e98627b514035420"><div class="ttname"><a href="#adfef0387f4871d47e98627b514035420">xtd::iobserver::on_next</a></div><div class="ttdeci">virtual void on_next(const type_t &amp;value) noexcept=0</div><div class="ttdoc">Provides the observer with new data.</div></div>
@@ -283,7 +283,7 @@ template&lt;typename type_t&gt; </div>
 
 <p>Notifies the observer that the provider has finished sending push-based notifications. </p>
 <dl class="section user"><dt>Examples</dt><dd>The following example provides an implementation of the OnCompleted method in a latitude/longitude tracking application. The method simply reports that no further data is available and calls the provider's IDisposable.Dispose implementation. See the Example section of the IObserver&lt;T&gt; topic for the complete example. <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="#a466d725a38941d2d70f44348aa611c17">on_completed</a>() noexcept<span class="keyword"> override </span>{</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The location Tracker has completed transmitting data to {}.&quot;</span>, name());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The location Tracker has completed transmitting data to {}.&quot;</span>, name());</div>
 <div class="line">  unsubscribe();</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
@@ -323,7 +323,7 @@ template&lt;typename type_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example provides an implementation of the on_error method in a latitude/longitude tracking application. The method simply reports that data is currently unavailable; it does not make use of the std::exception object passed to it as a parameter. See the Example section of the <a class="el" href="classxtd_1_1iobserver.html" title="Provides a mechanism for receiving push-based notifications.">xtd::iobserver&lt;type_t&gt;</a> topic for the complete example. <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="#a081a17a5c8182225d3719a88f6489fad">on_error</a>(<span class="keyword">const</span> std::exception&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}: The location cannot be determined.&quot;</span>, name());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{}: The location cannot be determined.&quot;</span>, name());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
@@ -362,7 +362,7 @@ template&lt;typename type_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example provides an implementation of the on_next method in a latitude/longitude tracking application. See the Example section of the <a class="el" href="classxtd_1_1iobserver.html" title="Provides a mechanism for receiving push-based notifications.">iobserver&lt;type_t&gt;</a> topic for the complete example. <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="#adfef0387f4871d47e98627b514035420">on_next</a>(<span class="keyword">const</span> location&amp; value) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}: The current location is {}, {}&quot;</span>, name(), value.latitude(), value.longitude());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{}: The current location is {}, {}&quot;</span>, name(), value.latitude(), value.longitude());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 

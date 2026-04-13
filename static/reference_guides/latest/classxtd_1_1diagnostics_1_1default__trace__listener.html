@@ -148,7 +148,7 @@ Inheritance diagram for xtd::diagnostics::default_trace_listener:</div>
 <div class="line">        <span class="keyword">auto</span> fail_message = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;\&quot;{}\&quot; is not a valid number of possibilities.&quot;</span>, args[0]);</div>
 <div class="line">        default_listener-&gt;fail(fail_message, ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">        <span class="keywordflow">if</span> (!default_listener-&gt;assert_ui_enabled())</div>
-<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
+<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
@@ -156,7 +156,7 @@ Inheritance diagram for xtd::diagnostics::default_trace_listener:</div>
 <div class="line">      <span class="keyword">const</span> <span class="keyword">auto</span> ENTER_PARAM = <span class="stringliteral">&quot;Enter the number of possibilities as a command line argument.&quot;</span>;</div>
 <div class="line">      default_listener-&gt;fail(ENTER_PARAM);</div>
 <div class="line">      <span class="keywordflow">if</span> (!default_listener-&gt;assert_ui_enabled())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(ENTER_PARAM);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(ENTER_PARAM);</div>
 <div class="line">      <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -171,7 +171,7 @@ Inheritance diagram for xtd::diagnostics::default_trace_listener:</div>
 <div class="line">        <span class="keyword">auto</span> fail_message = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;An exception was raised when calculating Binomial( {}, {} ).&quot;</span>, possibilities, iter);</div>
 <div class="line">        default_listener-&gt;fail(fail_message, ex.message());</div>
 <div class="line">        <span class="keywordflow">if</span> (!default_listener-&gt;assert_ui_enabled())</div>
-<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.message());</div>
+<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.message());</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">      }</div>
 <div class="line">      </div>
@@ -179,7 +179,7 @@ Inheritance diagram for xtd::diagnostics::default_trace_listener:</div>
 <div class="line">      binomial = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Binomial( {0}, {1} ) = &quot;</span>, possibilities, iter);</div>
 <div class="line">      default_listener-&gt;write(binomial);</div>
 <div class="line">      default_listener-&gt;write_line(string::format(<span class="stringliteral">&quot;{}&quot;</span>, result));</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} {1}&quot;</span>, binomial, result);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0} {1}&quot;</span>, binomial, result);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -221,7 +221,7 @@ Inheritance diagram for xtd::diagnostics::default_trace_listener:</div>
 <div class="line"><span class="comment">// Binomial( 20, 19 ) = 20</span></div>
 <div class="line"><span class="comment">// Binomial( 20, 20 ) = 1</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_a9d5d3b513ccae2470ae034fac4cb85ad"><div class="ttname"><a href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">xtd::basic_array::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:124</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a0a665fecff0ea22514dec6e21493b4eb"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html#a0a665fecff0ea22514dec6e21493b4eb">xtd::diagnostics::trace::listeners</a></div><div class="ttdeci">static auto listeners() -&gt; listener_collection &amp;</div><div class="ttdoc">Gets the collection of listeners that is monitoring the trace output.</div></div>
 <div class="ttc" id="aclassxtd_1_1exception_html_a472b56575bd47dbd829931c900a16600"><div class="ttname"><a href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">xtd::exception::message</a></div><div class="ttdeci">virtual const xtd::string &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object&#39;s current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
@@ -454,7 +454,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="keywordtype">string</span> fail_message = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;An exception was raised when calculating Binomial( {}, {} ).&quot;</span>, possibilities, iter);</div>
 <div class="line">  default_listener-&gt;fail(fail_message, ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">  <span class="keywordflow">if</span> (!default_listener-&gt;assert_ui_enabled())</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">  <span class="keywordflow">return</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
@@ -498,7 +498,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="keywordtype">string</span> fail_message = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;An exception was raised when calculating Binomial( {}, {} ).&quot;</span>, possibilities, iter);</div>
 <div class="line">  default_listener-&gt;fail(fail_message, ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">  <span class="keywordflow">if</span> (!default_listener-&gt;assert_ui_enabled())</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(fail_message + <span class="stringliteral">&quot;\n&quot;</span> + ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">  <span class="keywordflow">return</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>

@@ -252,10 +252,10 @@ Each call to the ::basic_string_comparer::current_culture property get accessor 
 <div class="line">  <a class="code hl_function" href="#acbe1c6fbfd337e09912bbef919a62fc3">basic_string_comparer</a> basic_string_comparer1 = <a class="code hl_function" href="#ad8ac6026cd23782355f9f900e3a9c079">basic_string_comparer::current_culture</a>;</div>
 <div class="line">  <a class="code hl_function" href="#acbe1c6fbfd337e09912bbef919a62fc3">basic_string_comparer</a> basic_string_comparer2 = <a class="code hl_function" href="#ad8ac6026cd23782355f9f900e3a9c079">basic_string_comparer::current_culture</a>;</div>
 <div class="line">  <span class="comment">// Displays false</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">basic_string_comparer::reference_equals</a>(basic_string_comparer1, basic_string_comparer2));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">basic_string_comparer::reference_equals</a>(basic_string_comparer1, basic_string_comparer2));</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1basic__string__comparer_html_ad8ac6026cd23782355f9f900e3a9c079"><div class="ttname"><a href="#ad8ac6026cd23782355f9f900e3a9c079">xtd::basic_string_comparer::current_culture</a></div><div class="ttdeci">static auto current_culture() -&gt; basic_string_comparer</div><div class="ttdoc">Gets a xtd::basic_string_comparer object that performs a case-sensitive string comparison using the w...</div><div class="ttdef"><b>Definition</b> basic_string_comparer.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_a772d50f4da23b418b7e3a523f52564b5"><div class="ttname"><a href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">xtd::object::reference_equals</a></div><div class="ttdeci">static bool reference_equals(const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</div><div class="ttdoc">Determines whether the specified object instances are the same instance.</div><div class="ttdef"><b>Definition</b> object.hpp:137</div></div>
 </div><!-- fragment --> </dd>
 <dd>
@@ -300,7 +300,7 @@ Each call to the <a class="el" href="#ab6491e0017e6c850b825f589a7d9dd24" title="
 <div class="line">  <a class="code hl_function" href="#acbe1c6fbfd337e09912bbef919a62fc3">basic_string_comparer</a> basic_string_comparer1 = <a class="code hl_function" href="#ab6491e0017e6c850b825f589a7d9dd24">basic_string_comparer::current_culture_ignore_case</a>;</div>
 <div class="line">  <a class="code hl_function" href="#acbe1c6fbfd337e09912bbef919a62fc3">basic_string_comparer</a> basic_string_comparer2 = <a class="code hl_function" href="#ab6491e0017e6c850b825f589a7d9dd24">basic_string_comparer::current_culture_ignore_case</a>;</div>
 <div class="line">  <span class="comment">// Displays false</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">basic_string_comparer::reference_equals</a>(basic_string_comparer1, basic_string_comparer2));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">basic_string_comparer::reference_equals</a>(basic_string_comparer1, basic_string_comparer2));</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1basic__string__comparer_html_ab6491e0017e6c850b825f589a7d9dd24"><div class="ttname"><a href="#ab6491e0017e6c850b825f589a7d9dd24">xtd::basic_string_comparer::current_culture_ignore_case</a></div><div class="ttdeci">static auto current_culture_ignore_case() -&gt; basic_string_comparer</div><div class="ttdoc">Gets a xtd::basic_string_comparer object that performs case-insensitive string comparisons using the ...</div><div class="ttdef"><b>Definition</b> basic_string_comparer.hpp:73</div></div>
 </div><!-- fragment --> </dd>
@@ -587,11 +587,11 @@ template&lt;typename char_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> object2 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;object&gt;</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(*object1 == *object3);</div>
 <div class="line">  object3 = object1;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(*object1 == *object3);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>

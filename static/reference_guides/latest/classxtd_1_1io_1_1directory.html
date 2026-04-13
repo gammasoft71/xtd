@@ -129,14 +129,14 @@ Inheritance diagram for xtd::io::directory:</div>
 <div class="line">        <a class="code hl_function" href="#a199d948cef5f0a0feb4d8a2fa4935a13">directory::move</a>(current_file, <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">path::combine</a>(archive_directory, file_name));</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code hl_class" href="classxtd_1_1exception.html">exception</a>&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets the number of characters in the current xtd::basic_string object.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:380</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a199d948cef5f0a0feb4d8a2fa4935a13"><div class="ttname"><a href="#a199d948cef5f0a0feb4d8a2fa4935a13">xtd::io::directory::move</a></div><div class="ttdeci">static auto move(const xtd::string &amp;source_dir_name, const xtd::string &amp;dest_dir_name) -&gt; void</div><div class="ttdoc">Moves a file or a directory and its contents to a new location.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a2703cfa97e57b443d28937a7526e7579"><div class="ttname"><a href="#a2703cfa97e57b443d28937a7526e7579">xtd::io::directory::enumerate_files</a></div><div class="ttdeci">static auto enumerate_files(const xtd::string &amp;path) -&gt; xtd::io::directory::file_iterator</div><div class="ttdoc">Returns an enumerable collection of full file names in a specified path.</div></div>
@@ -160,7 +160,7 @@ Inheritance diagram for xtd::io::directory:</div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
 <div class="line">      <a class="code hl_function" href="#a199d948cef5f0a0feb4d8a2fa4935a13">directory::move</a>(source_directory, destination_directory);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -427,7 +427,7 @@ On Unix systems, use a forward slash (/) as path separator. </dd></dl>
                 for (const auto&amp; dir : dirs) {
                   console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
                 }
-                console::write_line("{} directories found.", dirs.length()); } catch (const <a class="el" href="classxtd_1_1unauthorized__access__exception.html" title="The exception that is thrown when the operating system denies access because of an I/O error or a spe...">unauthorized_access_exception</a>&amp; ex) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(ex.message()); } catch (const <a class="el" href="classxtd_1_1io_1_1path__too__long__exception.html" title="The exception that is thrown when a path or file name is longer than the system-defined maximum lengt...">path_too_long_exception</a>&amp; ex) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(ex.message()); } } };</td></tr>
+                console::write_line("{} directories found.", dirs.length()); } catch (const <a class="el" href="classxtd_1_1unauthorized__access__exception.html" title="The exception that is thrown when the operating system denies access because of an I/O error or a spe...">unauthorized_access_exception</a>&amp; ex) { <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(ex.message()); } catch (const <a class="el" href="classxtd_1_1io_1_1path__too__long__exception.html" title="The exception that is thrown when a path or file name is longer than the system-defined maximum lengt...">path_too_long_exception</a>&amp; ex) { <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(ex.message()); } } };</td></tr>
   </table>
   </dd>
 </dl>
@@ -590,7 +590,7 @@ The <a class="el" href="#aec212dec9c49f433c0f304243b0b48e9" title="Returns an en
   </dd>
 </dl>
 <p>try { auto txt_files = directory::enumerate_files(source_directory);</p>
-<p>for (string current_file : txt_files) { string file_name = current_file.substring(source_directory.length() + 1); directory::move(current_file, path::combine(archive_directory, file_name)); } } catch (exception&amp; e) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(e.message()); } } };</p>
+<p>for (string current_file : txt_files) { string file_name = current_file.substring(source_directory.length() + 1); directory::move(current_file, path::combine(archive_directory, file_name)); } } catch (exception&amp; e) { <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(e.message()); } } };</p>
 <p><a class="el" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the <a class="el" href="#af752eaf2a14949159270e11ad84688c3" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a> method. </dd>
 <dd>
 The <a class="el" href="#a2703cfa97e57b443d28937a7526e7579" title="Returns an enumerable collection of full file names in a specified path.">xtd::io::directory::enumerate_files</a> and <a class="el" href="#a6e8fffe0b2fcbe79591d7a80797dbb11" title="Returns the names of files (including their paths) in the specified directory.">xtd::io::directory::get_files</a> methods differ as follows: When you use <a class="el" href="#a2703cfa97e57b443d28937a7526e7579" title="Returns an enumerable collection of full file names in a specified path.">xtd::io::directory::enumerate_files</a>, you can start enumerating the collection of names before the whole collection is returned. When you use <a class="el" href="#a6e8fffe0b2fcbe79591d7a80797dbb11" title="Returns the names of files (including their paths) in the specified directory.">xtd::io::directory::get_files</a>, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, <a class="el" href="#a2703cfa97e57b443d28937a7526e7579" title="Returns an enumerable collection of full file names in a specified path.">xtd::io::directory::enumerate_files</a> can be more efficient. </dd></dl>
@@ -845,7 +845,7 @@ The <a class="el" href="#a5cae4facc4186e5a89bc400c25ed3006" title="Returns an en
 <div class="line">        <span class="comment">// This path is a directory</span></div>
 <div class="line">        process_directory(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is not a valid file or directory.&quot;</span>, <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0} is not a valid file or directory.&quot;</span>, <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -1007,7 +1007,7 @@ The <a class="el" href="#a4f6991e4be7cecab37f7fc74d2dd25a2" title="Determines wh
 <div class="line">      <span class="comment">// Get the current directory.</span></div>
 <div class="line">      <span class="keywordtype">string</span> <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a> = <a class="code hl_function" href="#af752eaf2a14949159270e11ad84688c3">directory::get_current_directory</a>();</div>
 <div class="line">      <span class="keywordtype">string</span> target = R<span class="stringliteral">&quot;(c:\temp)&quot;;</span></div>
-<div class="line"><span class="stringliteral">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(</span><span class="stringliteral">&quot;The current directory is {0}&quot;</span>, <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
+<div class="line"><span class="stringliteral">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(</span><span class="stringliteral">&quot;The current directory is {0}&quot;</span>, <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
 <div class="line">      <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a4f6991e4be7cecab37f7fc74d2dd25a2">directory::exists</a>(target)) {</div>
 <div class="line">        <a class="code hl_function" href="#a4c70ba0e1199c9d5b073d0219cf110ec">directory::create_directory</a>(target);</div>
 <div class="line">      }</div>
@@ -1015,9 +1015,9 @@ The <a class="el" href="#a4f6991e4be7cecab37f7fc74d2dd25a2" title="Determines wh
 <div class="line">      <span class="comment">// Change the current directory.</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1environment.html#ae25575bcef6ad4fe46723839788ff9bd">environment::current_directory</a>(target);</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>.equals(<a class="code hl_function" href="#af752eaf2a14949159270e11ad84688c3">directory::get_current_directory</a>())) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;You are in the temp directory.&quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;You are in the temp directory.&quot;</span>);</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;You are not in the temp directory.&quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;You are not in the temp directory.&quot;</span>);</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;The process failed: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.to_string());</div>
@@ -1531,7 +1531,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
             static auto main() {
               try {
                 // Only get files that begin with the letter "c".
-                array&lt;string&gt; dirs = directory::get_files(R"(c:", "c*)"); <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The number of files starting with c is {0}.", dirs.length()); for (string dir : dirs) { console::write_line(dir); } } catch (const exception&amp; e) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The process failed: {0}", e.to_string()); } } };</td></tr>
+                array&lt;string&gt; dirs = directory::get_files(R"(c:", "c*)"); <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The number of files starting with c is {0}.", dirs.length()); for (string dir : dirs) { console::write_line(dir); } } catch (const exception&amp; e) { <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The process failed: {0}", e.to_string()); } } };</td></tr>
   </table>
   </dd>
 </dl>
@@ -1631,7 +1631,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
             static auto main() {
               try {
                 // Only get files that begin with the letter "c".
-                array&lt;string&gt; dirs = directory::get_files(R"(c:", "c*)"); <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The number of files starting with c is {0}.", dirs.length()); for (string dir : dirs) { console::write_line(dir); } } catch (const exception&amp; e) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The process failed: {0}", e.to_string()); } } };</td></tr>
+                array&lt;string&gt; dirs = directory::get_files(R"(c:", "c*)"); <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The number of files starting with c is {0}.", dirs.length()); for (string dir : dirs) { console::write_line(dir); } } catch (const exception&amp; e) { <a class="el" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>("The process failed: {0}", e.to_string()); } } };</td></tr>
   </table>
   </dd>
 </dl>
@@ -2219,10 +2219,10 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> directory_entries = <a class="code hl_function" href="#a30bc267751988e156ffa02b3dcc7f1fd">io::directory::get_file_system_entries</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
 <div class="line"> </div>
 <div class="line">   <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> str : directory_entries) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(str);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str);</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1security_1_1security__exception.html">security::security_exception</a>&amp;) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The caller does not have the required permission.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The caller does not have the required permission.&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> argument_exception&amp;) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;path is an empty string, contains only white spaces, or contains invalid characters.&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> io::directory_not_found_exception&amp;) {</div>
@@ -2551,7 +2551,7 @@ The directory or a file within it is being used by another process. </td></tr>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
 <div class="line">      <a class="code hl_function" href="#a199d948cef5f0a0feb4d8a2fa4935a13">directory::move</a>(source_directory, destination_directory);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -2972,11 +2972,11 @@ The path parameter is not case-sensitive. </dd></dl>
 <div class="line">      <span class="comment">//Set the current directory.</span></div>
 <div class="line">      <a class="code hl_function" href="#ae24f195aed35fb315f66f3e61016290f">directory::set_current_directory</a>(dir);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1io_1_1directory__not__found__exception.html">directory_not_found_exception</a>&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The specified directory does not exist. {0}&quot;</span>, e);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The specified directory does not exist. {0}&quot;</span>, e);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// Print to console the results.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Root directory: {0}&quot;</span>, <a class="code hl_function" href="#a9e1c06bc415b3d2695cf11470b24b87f">directory::get_directory_root</a>(dir));</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Current directory: {0}&quot;</span>, <a class="code hl_function" href="#af752eaf2a14949159270e11ad84688c3">directory::get_current_directory</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Root directory: {0}&quot;</span>, <a class="code hl_function" href="#a9e1c06bc415b3d2695cf11470b24b87f">directory::get_directory_root</a>(dir));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Current directory: {0}&quot;</span>, <a class="code hl_function" href="#af752eaf2a14949159270e11ad84688c3">directory::get_current_directory</a>());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -3066,16 +3066,16 @@ If you are setting the directory to a drive with removable media (for example, "
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Get the creation time of a well-known directory.</span></div>
 <div class="line">      sdate_time dt = <a class="code hl_function" href="#a9fb9a1bee8920c9b0fe472455f0f74e9">directory::get_last_access_time</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The last access time for this directory was {0}&quot;</span>, dt);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The last access time for this directory was {0}&quot;</span>, dt);</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Update the last access time.</span></div>
 <div class="line">      <a class="code hl_function" href="#a81c6f523af3e4bbba3c8ae25bfb250b3">directory::set_last_access_time</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>, <a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">date_time::now</a>());</div>
 <div class="line">      dt = <a class="code hl_function" href="#a9fb9a1bee8920c9b0fe472455f0f74e9">directory::get_last_access_time</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The last access time for this directory was {0}&quot;</span>, dt);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The last access time for this directory was {0}&quot;</span>, dt);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The process failed: {0}&quot;</span>, e.to_string());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The process failed: {0}&quot;</span>, e.to_string());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -3154,16 +3154,16 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Get the creation time of a well-known directory.</span></div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dt = <a class="code hl_function" href="#afc4207ff16e68694e9d0e670441a5d3c">directory::get_last_write_time</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The last write time for this directory was {0}&quot;</span>, dt);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The last write time for this directory was {0}&quot;</span>, dt);</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Update the last write time.</span></div>
 <div class="line">      <a class="code hl_function" href="#a4aeb06e9e671d96f9ebd164b0ca626d4">directory::set_last_write_time</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>, <a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">date_time::now</a>());</div>
 <div class="line">      tp = <a class="code hl_function" href="#afc4207ff16e68694e9d0e670441a5d3c">directory::get_last_write_time</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The last write time for this directory was {0}&quot;</span>, dt);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The last write time for this directory was {0}&quot;</span>, dt);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The process failed: {0}&quot;</span>, e.to_string());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The process failed: {0}&quot;</span>, e.to_string());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>

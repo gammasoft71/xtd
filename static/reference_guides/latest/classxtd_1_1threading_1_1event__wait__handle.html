@@ -177,8 +177,8 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">    <span class="comment">// until all threads have been released.</span></div>
 <div class="line">    <span class="comment">//</span></div>
 <div class="line">    <span class="keywordflow">while</span> (interlocked::read(thread_count) &gt; 0) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Press ENTER to release a waiting thread.&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Press ENTER to release a waiting thread.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">console::read_line</a>();</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// SignalAndWait signals the event_wait_handle, which</span></div>
 <div class="line">      <span class="comment">// releases exactly one thread before resetting,</span></div>
@@ -189,7 +189,7 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">      <span class="comment">//</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1wait__handle.html#a3c3b5668113c8b067ea863d7d7360e43">wait_handle::signal_and_wait</a>(ewh, clear_count);</div>
 <div class="line">    }</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a manual_reset event_wait_handle.</span></div>
 <div class="line">    <span class="comment">//</span></div>
@@ -212,21 +212,21 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">    <span class="comment">// manual_reset mode, signaling it releases all the</span></div>
 <div class="line">    <span class="comment">// waiting threads.</span></div>
 <div class="line">    <span class="comment">//</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Press ENTER to release the waiting threads.&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Press ENTER to release the waiting threads.&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">console::read_line</a>();</div>
 <div class="line">    ewh.<a class="code hl_function" href="#a1701b04407b640070fbc3683ee32c1c0">set</a>();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc(any_object data) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Thread {0} blocks.&quot;</span>, as&lt;int&gt;(data));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Thread {0} blocks.&quot;</span>, as&lt;int&gt;(data));</div>
 <div class="line">    <span class="comment">// Increment the count of blocked threads.</span></div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a65d4309898b6f48a2dd912cee77a4db3">interlocked::increment</a>(thread_count);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Wait on the event_wait_handle.</span></div>
 <div class="line">    ewh.<a class="code hl_function" href="classxtd_1_1threading_1_1wait__handle.html#a4edf7f6e282478baececcf5651713499">wait_one</a>();</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Thread {0} exits.&quot;</span>, as&lt;int&gt;(data));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Thread {0} exits.&quot;</span>, as&lt;int&gt;(data));</div>
 <div class="line">    <span class="comment">// Decrement the count of blocked threads.</span></div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a28c4429b3c8f721591da12751106e50f">interlocked::decrement</a>(thread_count);</div>
 <div class="line">    </div>
@@ -277,8 +277,8 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line"><span class="comment">// Thread 4 exits.</span></div>
 <div class="line"><span class="comment">// Thread 3 exits.</span></div>
 <div class="line"><span class="comment">// Thread 0 exits.</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a85d69fe536a28002ecdc2b52600a0530"><div class="ttname"><a href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">xtd::console::read_line</a></div><div class="ttdeci">static auto read_line() -&gt; xtd::string</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1event__wait__handle.html">xtd::threading::event_wait_handle</a></div><div class="ttdoc">Represents a thread synchronization event.</div><div class="ttdef"><b>Definition</b> event_wait_handle.hpp:37</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html_a1701b04407b640070fbc3683ee32c1c0"><div class="ttname"><a href="#a1701b04407b640070fbc3683ee32c1c0">xtd::threading::event_wait_handle::set</a></div><div class="ttdeci">auto set() -&gt; bool</div><div class="ttdoc">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a28c4429b3c8f721591da12751106e50f"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#a28c4429b3c8f721591da12751106e50f">xtd::threading::interlocked::decrement</a></div><div class="ttdeci">static auto decrement(int32 &amp;location) noexcept -&gt; int32</div><div class="ttdoc">Decrements a specified variable and stores the result, as an atomic operation.</div></div>

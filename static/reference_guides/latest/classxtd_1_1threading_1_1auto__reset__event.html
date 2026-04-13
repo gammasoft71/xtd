@@ -135,11 +135,11 @@ AutoResetEvent can also be used with the static <a class="el" href="classxtd_1_1
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Press Enter to create three threads and start them.\r\n&quot;</span></div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Press Enter to create three threads and start them.\r\n&quot;</span></div>
 <div class="line">                          <span class="stringliteral">&quot;The threads wait on auto_reset_event #1, which was created\r\n&quot;</span></div>
 <div class="line">                          <span class="stringliteral">&quot;in the signaled state, so the first thread is released.\r\n&quot;</span></div>
 <div class="line">                          <span class="stringliteral">&quot;This puts auto_reset_event #1 into the unsignaled state.&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">console::read_line</a>();</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt; 4; ++index) {</div>
 <div class="line">        threads.add(<a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {thread_proc});</div>
@@ -149,8 +149,8 @@ AutoResetEvent can also be used with the static <a class="el" href="classxtd_1_1
 <div class="line">      thread::sleep(250_ms);</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; 2; ++index) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Press Enter to release another thread.&quot;</span>);</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Press Enter to release another thread.&quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">console::read_line</a>();</div>
 <div class="line">        event_1.set();</div>
 <div class="line">        thread::sleep(250_ms);</div>
 <div class="line">      }</div>
@@ -223,8 +223,8 @@ AutoResetEvent can also be used with the static <a class="el" href="classxtd_1_1
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Thread_2 is released from auto_reset_event #2.</span></div>
 <div class="line"><span class="comment">// Thread_2 ends.</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a85d69fe536a28002ecdc2b52600a0530"><div class="ttname"><a href="classxtd_1_1console.html#a85d69fe536a28002ecdc2b52600a0530">xtd::console::read_line</a></div><div class="ttdeci">static auto read_line() -&gt; xtd::string</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.hpp:49</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>

@@ -119,7 +119,7 @@ class xtd::collections::generic::linked_list_node&lt; type_t &gt;</div><p>Repres
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -127,36 +127,36 @@ class xtd::collections::generic::linked_list_node&lt; type_t &gt;</div><p>Repres
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -184,7 +184,7 @@ class xtd::collections::generic::linked_list_node&lt; type_t &gt;</div><p>Repres
 <div class="line"><span class="comment">//</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1linked__list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a></div><div class="ttdoc">Represents a doubly linked list.</div><div class="ttdef"><b>Definition</b> linked_list.hpp:51</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1linked__list_html_a0b39d046fe590f910d67586627550bc6"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">xtd::collections::generic::linked_list::add_last</a></div><div class="ttdeci">auto add_last(const type_t &amp;value) -&gt; linked_list_node&lt; type_t &gt;</div><div class="ttdoc">Adds a new node containing the specified value at the end of the xtd::collections::generic::linked_li...</div><div class="ttdef"><b>Definition</b> linked_list.hpp:242</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__types_html_gaf0620df1fd6c165eaad955c07e15097d"><div class="ttname"><a href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">xtd::nullopt</a></div><div class="ttdeci">constexpr null_opt nullopt</div><div class="ttdoc">Represents a nullopt value. Used to indicate that an std::optional does not contain a value.</div><div class="ttdef"><b>Definition</b> nullopt.hpp:26</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
@@ -357,7 +357,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -365,36 +365,36 @@ template&lt;typename type_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -462,7 +462,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -470,36 +470,36 @@ template&lt;typename type_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -565,7 +565,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -573,36 +573,36 @@ template&lt;typename type_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -668,7 +668,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -676,36 +676,36 @@ template&lt;typename type_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -771,7 +771,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -779,36 +779,36 @@ template&lt;typename type_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -875,7 +875,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = <a class="code hl_function" href="#ac1d2bd002feda021972e059c39fb7890">linked_list_node&lt;string&gt;</a> {<span class="stringliteral">&quot;orange&quot;</span>};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a new linked_list.</span></div>
@@ -883,36 +883,36 @@ template&lt;typename type_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the &quot;orange&quot; node and display its properties.</span></div>
 <div class="line">    ll.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1linked__list.html#a0b39d046fe590f910d67586627550bc6">add_last</a>(lln);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding the node to the empty linked_list ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add nodes before and after the &quot;orange&quot; node and display the &quot;orange&quot; node&#39;s properties.</span></div>
 <div class="line">    ll.add_first(<span class="stringliteral">&quot;red&quot;</span>);</div>
 <div class="line">    ll.add_last(<span class="stringliteral">&quot;yellow&quot;</span>);</div>
 <div class="line">    lln = *ll.find(<span class="stringliteral">&quot;orange&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;After adding red and yellow ....&quot;</span>);</div>
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
 <div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.previous() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (lln.next() == <a class="code hl_variable" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a>)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>

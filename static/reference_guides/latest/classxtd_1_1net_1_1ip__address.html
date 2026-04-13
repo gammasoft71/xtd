@@ -130,11 +130,11 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line">      <span class="comment">// If no server name is passed as an argument to this program, use the current</span></div>
 <div class="line">      <span class="comment">// server name as default.</span></div>
 <div class="line">      server = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a3c476eaaf93bfec088f0a82fde71f81b">net::dns::get_host_name</a>();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Using current host: {}&quot;</span>, server);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Using current host: {}&quot;</span>, server);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">      server = args[0];</div>
 <div class="line">      <span class="keywordflow">if</span> (!regex_match(server.chars(), rex)) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Input string format not allowed.&quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Input string format not allowed.&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
@@ -157,28 +157,28 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line">        <span class="comment">// Display the type of address family supported by the server. If the</span></div>
 <div class="line">        <span class="comment">// server is IPv6-enabled this value is: InterNetworkV6. If the server</span></div>
 <div class="line">        <span class="comment">// is also IPv4-enabled there will be an additional value of InterNetwork.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;address_family: {}&quot;</span>, cur_add.address_family());</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;address_family: {}&quot;</span>, cur_add.address_family());</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Display the ScopeId property in case of IPV6 addresses.</span></div>
 <div class="line">        <span class="keywordflow">if</span> (cur_add.address_family() == net::sockets::address_family::inter_network_v6)</div>
-<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;scope id: {}&quot;</span>, cur_add.scope_id());</div>
+<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;scope id: {}&quot;</span>, cur_add.scope_id());</div>
 <div class="line">          </div>
 <div class="line">          </div>
 <div class="line">        <span class="comment">// Display the server IP address in the standard format. In</span></div>
 <div class="line">        <span class="comment">// IPv4 the format will be dotted-quad notation, in IPv6 it will be</span></div>
 <div class="line">        <span class="comment">// in in colon-hexadecimal notation.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;address: {}&quot;</span>, cur_add);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;address: {}&quot;</span>, cur_add);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Display the server IP address in byte format.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;address_bytes: &quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;address_bytes: &quot;</span>);</div>
 <div class="line">        </div>
 <div class="line">        <span class="keyword">auto</span> bytes = cur_add.get_address_bytes();</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; bytes.length(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++)</div>
 <div class="line">          console::write(bytes[i]);</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;[do_resolve] exception: {}&quot;</span>, e);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;[do_resolve] exception: {}&quot;</span>, e);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -187,25 +187,25 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Display the flags that show if the server supports IPv4 or IPv6</span></div>
 <div class="line">      <span class="comment">// address schemas.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\r\nos_supports_ip_v4: {}&quot;</span>, net::sockets::socket::os_supports_ip_v4());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;os_supports_ip_v6: {}&quot;</span>, net::sockets::socket::os_supports_ip_v6());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\r\nos_supports_ip_v4: {}&quot;</span>, net::sockets::socket::os_supports_ip_v4());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;os_supports_ip_v6: {}&quot;</span>, net::sockets::socket::os_supports_ip_v6());</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">if</span> (net::sockets::socket::os_supports_ip_v6()) {</div>
 <div class="line">        <span class="comment">// Display the server Any address. This IP address indicates that the server</span></div>
 <div class="line">        <span class="comment">// should listen for client activity on all network interfaces.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\r\nip_v6_any: {}&quot;</span>, net::ip_address::ip_v6_any);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\r\nip_v6_any: {}&quot;</span>, net::ip_address::ip_v6_any);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Display the server loopback address.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;ip_v6_loopback: {}&quot;</span>, net::ip_address::ip_v6_loopback);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;ip_v6_loopback: {}&quot;</span>, net::ip_address::ip_v6_loopback);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Used during autoconfiguration first phase.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;ip_v6_none: {}&quot;</span>, net::ip_address::ip_v6_none);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;ip_v6_none: {}&quot;</span>, net::ip_address::ip_v6_none);</div>
 <div class="line">        </div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;is_loopback(ip_v6_loopback): {}&quot;</span>, net::ip_address::is_loopback(net::ip_address::ip_v6_loopback));</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;is_loopback(ip_v6_loopback): {}&quot;</span>, net::ip_address::is_loopback(net::ip_address::ip_v6_loopback));</div>
 <div class="line">      }</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;is_loopback(loopback):{}&quot;</span>, net::ip_address::is_loopback(net::ip_address::loopback));</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;is_loopback(loopback):{}&quot;</span>, net::ip_address::is_loopback(net::ip_address::loopback));</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp; e) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;[ip_addresses] exception: {}&quot;</span>, e);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;[ip_addresses] exception: {}&quot;</span>, e);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -229,8 +229,8 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"><span class="comment">// is_loopback(ip_v6_loopback): true</span></div>
 <div class="line"><span class="comment">// is_loopback(loopback):true</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_a9d5d3b513ccae2470ae034fac4cb85ad"><div class="ttname"><a href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">xtd::basic_array::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:124</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a1728b0ce52a52a0f25e9eebb9a0e0aba"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a1728b0ce52a52a0f25e9eebb9a0e0aba">xtd::net::dns::get_host_entry</a></div><div class="ttdeci">static auto get_host_entry(const xtd::net::ip_address &amp;address) -&gt; xtd::net::ip_host_entry</div><div class="ttdoc">Resolves an IP address to an xtd::net::ip_host_entry instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a3c476eaaf93bfec088f0a82fde71f81b"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a3c476eaaf93bfec088f0a82fde71f81b">xtd::net::dns::get_host_name</a></div><div class="ttdeci">static auto get_host_name() -&gt; xtd::string</div><div class="ttdoc">Gets the host name of the local computer.</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>

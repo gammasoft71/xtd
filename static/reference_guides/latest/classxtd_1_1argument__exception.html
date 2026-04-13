@@ -120,10 +120,10 @@ Inheritance diagram for xtd::argument_exception:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// argument_exception is not thrown because 10 is an even number.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;10 divided by 2 is {0}&quot;</span>, divide_by_two(10));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;10 divided by 2 is {0}&quot;</span>, divide_by_two(10));</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    <span class="comment">// argument_exception is thrown because 7 is not an even number.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;7 divided by 2 is {0}&quot;</span>, divide_by_two(7));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;7 divided by 2 is {0}&quot;</span>, divide_by_two(7));</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> argument_exception&amp;) {</div>
 <div class="line">    <span class="comment">// Show the user that 7 cannot be divided by 2.</span></div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;7 is not divided by 2 integrally.&quot;</span>);</div>
@@ -137,7 +137,7 @@ Inheritance diagram for xtd::argument_exception:</div>
 <div class="line"><span class="comment">// 10 divided by 2 is 5</span></div>
 <div class="line"><span class="comment">// 7 is not divided by 2 integrally.</span></div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html_a4c0a0845499b84135edb625d794b0799"><div class="ttname"><a href="#a4c0a0845499b84135edb625d794b0799">xtd::argument_exception::argument_exception</a></div><div class="ttdeci">argument_exception(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Create a new instance of class argument_exception.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:31</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>add param_name property and constructors param (param_name is the parameter that cause the exception). </dd></dl>
 </div><table class="memberdecls">

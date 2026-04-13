@@ -166,13 +166,13 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">    indicate_node(*sentence.find(<span class="stringliteral">&quot;dog&quot;</span>), <span class="stringliteral">&quot;Test 9: Indicate the &#39;dog&#39; node:&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// The add_before method throws an invalid_operation_exception if you try to add a node that already belongs to a list.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 10: Throw exception by adding node (fox) already in the list:&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Test 10: Throw exception by adding node (fox) already in the list:&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      sentence.add_before(*sentence.find(<span class="stringliteral">&quot;fox&quot;</span>), node);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1invalid__operation__exception.html">invalid_operation_exception</a>&amp; ex) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Exception message: {}&quot;</span>, ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Exception message: {}&quot;</span>, ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
 <div class="line">    }</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Remove the &#39;fox&#39; node, and then add it before the &#39;dog&#39; node.</span></div>
 <div class="line">    <span class="comment">// Indicate the node referred to by current.</span></div>
@@ -201,37 +201,37 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">    icoll.add(<span class="stringliteral">&quot;rhinoceros&quot;</span>);</div>
 <div class="line">    display(sentence, <span class="stringliteral">&quot;Test 15: Remove last node, cast to icollection, and add &#39;rhinoceros&#39;:&quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 16: Copy the list to an array:&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Test 16: Copy the list to an array:&quot;</span>);</div>
 <div class="line">    <span class="comment">// Create an array with the same number of elements as the linked list.</span></div>
 <div class="line">    <span class="keyword">auto</span> sarray = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a>(sentence.count());</div>
 <div class="line">    sentence.copy_to(sarray, 0);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> s : sarray)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(s);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(s);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 17: linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Test 17: linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Release all the nodes.</span></div>
 <div class="line">    sentence.clear();</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 18: Cleared linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Test 18: Cleared linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(test);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(test);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> word : words)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(word + <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(word + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(test);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(test);</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">l</a> = node.list();</div>
 <div class="line">    <span class="keywordflow">if</span> (!l) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Node &#39;{0}&#39; is not in the list.\n&quot;</span>, node.value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Node &#39;{0}&#39; is not in the list.\n&quot;</span>, node.value());</div>
 <div class="line">      <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -249,8 +249,8 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">      node_next = node_next-&gt;next();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(result);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(result);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -322,8 +322,8 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line"><span class="comment">// Test 18: Cleared linked list Contains &#39;jumps&#39; = false</span></div>
 <div class="line"> </div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1exception_html_a472b56575bd47dbd829931c900a16600"><div class="ttname"><a href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">xtd::exception::message</a></div><div class="ttdeci">virtual const xtd::string &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1invalid__operation__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__operation__exception.html">xtd::invalid_operation_exception</a></div><div class="ttdoc">The exception that is thrown when the format of an argument does not meet the parameter specification...</div><div class="ttdef"><b>Definition</b> invalid_operation_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>

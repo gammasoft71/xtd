@@ -164,7 +164,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : <a class="code hl_function" href="classxtd_1_1environment.html#ae193a8bd220fe661761947d92293dd29">environment::get_command_line_args</a>())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">environment::exit_code</a>(42);</div>
@@ -197,7 +197,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ab8c69ac9963a6a51c9e56975aed98237"><div class="ttname"><a href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">xtd::environment::exit_code</a></div><div class="ttdeci">static int32 exit_code() noexcept</div><div class="ttdoc">Gets the exit code of the process.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae193a8bd220fe661761947d92293dd29"><div class="ttname"><a href="classxtd_1_1environment.html#ae193a8bd220fe661761947d92293dd29">xtd::environment::get_command_line_args</a></div><div class="ttdeci">static const xtd::argument_collection &amp; get_command_line_args()</div><div class="ttdoc">Returns a string array containing the command-line arguments for the current process.</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -209,7 +209,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main() {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : <a class="code hl_function" href="classxtd_1_1environment.html#ae193a8bd220fe661761947d92293dd29">environment::get_command_line_args</a>())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="keywordflow">return</span> 42;</div>
 <div class="line">    }</div>
@@ -249,7 +249,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">environment::exit_code</a>(42);</div>
@@ -292,7 +292,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="keywordflow">return</span> 42;</div>
 <div class="line">    }</div>
@@ -389,7 +389,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : <a class="code hl_function" href="classxtd_1_1environment.html#ae193a8bd220fe661761947d92293dd29">environment::get_command_line_args</a>())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">environment::exit_code</a>(42);</div>
@@ -431,7 +431,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main() {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : <a class="code hl_function" href="classxtd_1_1environment.html#ae193a8bd220fe661761947d92293dd29">environment::get_command_line_args</a>())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="keywordflow">return</span> 42;</div>
 <div class="line">    }</div>
@@ -471,7 +471,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">environment::exit_code</a>(42);</div>
@@ -513,7 +513,7 @@ The <a class="el" href="#a3b5de4ba1d1a6308885af8e85cc948d1" title="Safely call t
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(arg);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="keywordflow">return</span> 42;</div>
 <div class="line">    }</div>

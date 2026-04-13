@@ -126,14 +126,14 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_timer_properties() {</div>
 <div class="line">    <span class="comment">// Display the timer frequency and resolution.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="#acd55b8a46e42de6556ff6060b74e89d0">diagnostics::stopwatch::is_high_resolution</a>())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a> = <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">diagnostics::stopwatch::frequency</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
 <div class="line">    <span class="keyword">auto</span> nanosec_per_tick = (1000l * 1000l * 1000l) / <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>;</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> time_operations() {</div>
@@ -261,12 +261,12 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="line">      time_10k_operations.stop();</div>
 <div class="line">      milli_sec = time_10k_operations.elapsed_milliseconds();</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} Summary:&quot;</span>, operation_names[operation]);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Slowest time:  #{0}/{1} = {2} ticks&quot;</span>, index_slowest, num_iterations, max_ticks);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Fastest time:  #{0}/{1} = {2} ticks&quot;</span>, index_fastest, num_iterations, min_ticks);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Average time:  {0} ticks = {1} nanoseconds&quot;</span>, num_ticks / num_iterations, (num_ticks * nanosec_per_tick) / num_iterations);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Total time looping through {0} operations: {1} milliseconds&quot;</span>, num_iterations, milli_sec);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0} Summary:&quot;</span>, operation_names[operation]);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Slowest time:  #{0}/{1} = {2} ticks&quot;</span>, index_slowest, num_iterations, max_ticks);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Fastest time:  #{0}/{1} = {2} ticks&quot;</span>, index_fastest, num_iterations, min_ticks);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Average time:  {0} ticks = {1} nanoseconds&quot;</span>, num_ticks / num_iterations, (num_ticks * nanosec_per_tick) / num_iterations);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Total time looping through {0} operations: {1} milliseconds&quot;</span>, num_iterations, milli_sec);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -314,7 +314,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="line"><span class="comment">//   Fastest time:  #20/10000 = 5809 ticks</span></div>
 <div class="line"><span class="comment">//   Average time:  6532 ticks = 6532 nanoseconds</span></div>
 <div class="line"><span class="comment">//   Total time looping through 10000 operations: 6536 milliseconds</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a></div><div class="ttdoc">Provides a set of methods and properties that you can use to accurately measure elapsed time.</div><div class="ttdef"><b>Definition</b> stopwatch.hpp:36</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_acd55b8a46e42de6556ff6060b74e89d0"><div class="ttname"><a href="#acd55b8a46e42de6556ff6060b74e89d0">xtd::diagnostics::stopwatch::is_high_resolution</a></div><div class="ttdeci">static auto is_high_resolution() noexcept -&gt; bool</div><div class="ttdoc">Indicates whether the timer is based on a high-resolution performance counter. This field is read-onl...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_ad601563de338ff84ae27b4d92d71c084"><div class="ttname"><a href="#ad601563de338ff84ae27b4d92d71c084">xtd::diagnostics::stopwatch::frequency</a></div><div class="ttdeci">static auto frequency() noexcept -&gt; xtd::int64</div><div class="ttdoc">Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.</div></div>
@@ -438,7 +438,7 @@ Use the <a class="el" href="#a60b97b2f443629f2b684788de9492d00" title="Starts, o
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
 <div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -499,7 +499,7 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
 <div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -547,14 +547,14 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_timer_properties() {</div>
 <div class="line">    <span class="comment">// Display the timer frequency and resolution.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="#acd55b8a46e42de6556ff6060b74e89d0">diagnostics::stopwatch::is_high_resolution</a>())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a> = <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">diagnostics::stopwatch::frequency</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
 <div class="line">    <span class="keyword">auto</span> nanosec_per_tick = (1000l * 1000l * 1000l) / <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>;</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> time_operations() {</div>
@@ -810,14 +810,14 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_timer_properties() {</div>
 <div class="line">    <span class="comment">// Display the timer frequency and resolution.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="#acd55b8a46e42de6556ff6060b74e89d0">diagnostics::stopwatch::is_high_resolution</a>())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a> = <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">diagnostics::stopwatch::frequency</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
 <div class="line">    <span class="keyword">auto</span> nanosec_per_tick = (1000l * 1000l * 1000l) / <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>;</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> time_operations() {</div>
@@ -1187,7 +1187,7 @@ When a stopwatch instance measures more than one interval, the start method resu
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
 <div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1230,14 +1230,14 @@ When a stopwatch instance measures more than one interval, the start method resu
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_timer_properties() {</div>
 <div class="line">    <span class="comment">// Display the timer frequency and resolution.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="#acd55b8a46e42de6556ff6060b74e89d0">diagnostics::stopwatch::is_high_resolution</a>())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operations timed using the standard date time.&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a> = <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">diagnostics::stopwatch::frequency</a>();</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer frequency in ticks per second = {0}&quot;</span>, <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>);</div>
 <div class="line">    <span class="keyword">auto</span> nanosec_per_tick = (1000l * 1000l * 1000l) / <a class="code hl_function" href="#ad601563de338ff84ae27b4d92d71c084">frequency</a>;</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> time_operations() {</div>
@@ -1463,7 +1463,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
 <div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
