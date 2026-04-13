@@ -9,7 +9,7 @@
 #include <vector>
 
 /// @cond
-xtd::int32 __get_file_attributes(const char* path);
+auto __get_file_attributes(const char* path) -> xtd::int32;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
