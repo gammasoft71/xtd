@@ -2,16 +2,18 @@
 /// @brief Contains xtd::box_char class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "box_integer.hpp"
+#include "box.hpp"
+#include "char32.hpp"
+#include "character.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a boxed char object.
   /// ```cpp
-  /// class box_char : public xtd::box_integer<type_t>
+  /// class box_char : public xtd::box<type_t>
   /// ```
   /// @par Inheritance
-  /// xtd::object → xtd::box <type_t> → xtd::box_integer <type_t> → xtd::box_char <type_t>
+  /// xtd::object → xtd::box <type_t> → xtd::box <type_t> → xtd::box_char <type_t>
   /// @par Header
   /// ```cpp
   /// #include <xtd/box_char>
@@ -35,16 +37,28 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = a;
   /// ```
   template<typename type_t>
-  class box_char : public xtd::box_integer<type_t> {
+  requires xtd::character<type_t>
+  class box_char : public xtd::box<type_t> {
   public:
     /// @cond
     box_char() = default;
-    box_char(const type_t& value) : box_integer<type_t>(value) {}
+    box_char(const type_t& value) : box<type_t>(value) {}
     box_char(const box_char&) = default;
     box_char(box_char&&) = default;
     box_char& operator =(const box_char&) = default;
     /// @endcond
     
+    /// @name Public Fields
+    
+    /// @{
+    /// @brief Represents the largest possible value of type_t. This field is constant.
+    /// @remarks The value of this field is std::numeric_limits<type_t>::max().
+    static constexpr type_t max_value = std::numeric_limits<type_t>::max();
+    /// @brief Represents the smallest possible value of type_t. This field is constant.
+    /// @remarks The value of this field is std::numeric_limits<type_t>::lowest().
+    static constexpr type_t min_value = std::numeric_limits<type_t>::lowest();
+    /// @}
+
     /// @name Public Static Methods
     
     /// @{
@@ -170,6 +184,12 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
     [[nodiscard]] static auto is_upper(const string& s, size_t index) -> bool {return is_upper(s[index]);}
     
+    /// @brief Determines whether the specified value can be safely converted to type_t without overflow.
+    /// @param value The floating point value to validate.
+    /// @return true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false.
+    /// @remarks If the value is outside the valid range defined by min_value and max_value, the method returns false.
+    [[nodiscard]] static auto is_valid(type_t value) noexcept -> bool {return value >= static_cast<xtd::char32>(min_value) && value <= static_cast<xtd::char32>(max_value);}
+
     /// @brief Indicates whether the specified Unicode character is categorized as white space.
     /// @param c The Unicode character to evaluate.
     /// @return `true` if c is white space; otherwise, `false`.
@@ -181,6 +201,12 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception index is greater than the last position in s.
     [[nodiscard]] static auto is_white_space(const string& s, size_t index) -> bool {return is_white_space(s[index]);}
     
+    using box<type_t>::parse;
+    /// @brief Converts the string to its type_t equivalent.
+    /// @param value A string containing a type_t to convert.
+    /// @return A type_t equivalent to the number contained in value.
+    static type_t parse(const xtd::string& value, xtd::number_styles styles) {return xtd::parse<type_t>(value, styles);}
+
     /// @brief Converts the value of a Unicode character to its lowercase equivalent.
     /// @param c The Unicode character to convert.
     /// @return The lowercase equivalent of c, or the unchanged value of c, if c is already lowercase or not alphabetic.
@@ -190,6 +216,12 @@ namespace xtd {
     /// @param c The Unicode character to convert.
     /// @return The uppercase equivalent of c, or the unchanged value of c if c is already uppercase, has no uppercase equivalent, or is not alphabetic.
     [[nodiscard]] static auto to_upper(type_t c) noexcept -> type_t {return static_cast<type_t>(std::toupper(static_cast<int>(c)));}
+    
+    using box<type_t>::try_parse;
+    /// @brief Converts the string to its type_t equivalent.
+    /// @param value A string containing a type_t to convert.
+    /// @return A type_t equivalent to the number contained in value.
+    static bool try_parse(const xtd::string& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
     /// @}
   };
 }
