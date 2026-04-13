@@ -50,7 +50,7 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   template<typename type_t>
-  inline auto boxing(const type_t& value) noexcept {return typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
+  [[nodiscard]] auto boxing(const type_t& value) noexcept {return typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.
   /// @return Boxed object.
@@ -66,53 +66,53 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   template<typename type_t, typename ...args_t>
-  inline box<type_t> boxing(args_t&& ...args) noexcept {return box<type_t>(args...);}
+  [[nodiscard]] auto boxing(args_t&& ...args) noexcept -> box<type_t> {return box<type_t>(args...);}
   /// @}
   
   /// @cond
-  inline const object& boxing(const object& value) noexcept {return value;}
-  inline string boxing(const char* value) noexcept {return string(value);}
-  inline string boxing(const char8* value) noexcept {return string(value);}
-  inline string boxing(const char16* value) noexcept {return string(value);}
-  inline string boxing(const char32* value) noexcept {return string(value);}
-  inline string boxing(const wchar* value) noexcept {return string(value);}
-  inline char_object boxing(const char& value) noexcept {return char_object(value);}
-  inline char8_object boxing(const char8& value) noexcept {return char8_object(value);}
-  inline char16_object boxing(const char16& value) noexcept {return char16_object(value);}
-  inline char32_object boxing(const char32& value) noexcept {return char32_object(value);}
-  inline wchar_object boxing(const wchar& value) noexcept {return wchar_object(value);}
-  inline char_object boxing(char& value) noexcept {return char_object(value);}
-  inline char8_object boxing(char8& value) noexcept {return char8_object(value);}
-  inline char16_object boxing(char16& value) noexcept {return char16_object(value);}
-  inline char32_object boxing(char32& value) noexcept {return char32_object(value);}
-  inline wchar_object boxing(wchar& value) noexcept {return wchar_object(value);}
-  inline byte_object boxing(const xtd::byte& value) noexcept {return byte_object(value);}
-  inline int16_object boxing(const int16& value) noexcept {return int16_object(value);}
-  inline int32_object boxing(const int32& value) noexcept {return int32_object(value);}
-  inline int64_object boxing(const int64& value) noexcept {return int64_object(value);}
-  inline slong_object boxing(const slong& value) noexcept {return slong_object(value);}
-  inline sbyte_object boxing(const sbyte& value) noexcept {return sbyte_object(value);}
-  inline uint16_object boxing(const uint16& value) noexcept {return uint16_object(value);}
-  inline uint32_object boxing(const uint32& value) noexcept {return uint32_object(value);}
-  inline uint64_object boxing(const uint64& value) noexcept {return uint64_object(value);}
-  inline ulong_object boxing(const xtd::ulong& value) noexcept {return ulong_object(value);}
-  inline byte_object boxing(xtd::byte& value) noexcept {return byte_object(value);}
-  inline int16_object boxing(int16& value) noexcept {return int16_object(value);}
-  inline int32_object boxing(int32& value) noexcept {return int32_object(value);}
-  inline int64_object boxing(int64& value) noexcept {return int64_object(value);}
-  inline slong_object boxing(slong& value) noexcept {return slong_object(value);}
-  inline sbyte_object boxing(sbyte& value) noexcept {return sbyte_object(value);}
-  inline uint16_object boxing(uint16& value) noexcept {return uint16_object(value);}
-  inline uint32_object boxing(uint32& value) noexcept {return uint32_object(value);}
-  inline uint64_object boxing(uint64& value) noexcept {return uint64_object(value);}
-  inline ulong_object boxing(xtd::ulong& value) noexcept {return ulong_object(value);}
-  inline single_object boxing(const float& value) noexcept {return single_object(value);}
-  inline double_object boxing(const double& value) noexcept {return double_object(value);}
-  inline decimal_object boxing(const decimal& value) noexcept {return decimal_object(value);}
-  inline single_object boxing(float& value) noexcept {return single_object(value);}
-  inline double_object boxing(double& value) noexcept {return double_object(value);}
-  inline decimal_object boxing(decimal& value) noexcept {return decimal_object(value);}
+  [[nodiscard]] inline auto boxing(const object& value) noexcept -> const object& {return value;}
+  [[nodiscard]] inline auto boxing(const char* value) noexcept -> string {return string(value);}
+  [[nodiscard]] inline auto boxing(const char8* value) noexcept -> string {return string(value);}
+  [[nodiscard]] inline auto boxing(const char16* value) noexcept -> string {return string(value);}
+  [[nodiscard]] inline auto boxing(const char32* value) noexcept -> string {return string(value);}
+  [[nodiscard]] inline auto boxing(const wchar* value) noexcept -> string {return string(value);}
+  [[nodiscard]] inline auto boxing(const char& value) noexcept -> char_object {return char_object(value);}
+  [[nodiscard]] inline auto boxing(const char8& value) noexcept -> char8_object {return char8_object(value);}
+  [[nodiscard]] inline auto boxing(const char16& value) noexcept -> char16_object {return char16_object(value);}
+  [[nodiscard]] inline auto boxing(const char32& value) noexcept -> char32_object {return char32_object(value);}
+  [[nodiscard]] inline auto boxing(const wchar& value) noexcept -> wchar_object {return wchar_object(value);}
+  [[nodiscard]] inline auto boxing(char& value) noexcept -> char_object {return char_object(value);}
+  [[nodiscard]] inline auto boxing(char8& value) noexcept -> char8_object {return char8_object(value);}
+  [[nodiscard]] inline auto boxing(char16& value) noexcept -> char16_object {return char16_object(value);}
+  [[nodiscard]] inline auto boxing(char32& value) noexcept -> char32_object {return char32_object(value);}
+  [[nodiscard]] inline auto boxing(wchar& value) noexcept -> wchar_object {return wchar_object(value);}
+  [[nodiscard]] inline auto boxing(const xtd::byte& value) noexcept -> byte_object {return byte_object(value);}
+  [[nodiscard]] inline auto boxing(const int16& value) noexcept -> int16_object {return int16_object(value);}
+  [[nodiscard]] inline auto boxing(const int32& value) noexcept -> int32_object {return int32_object(value);}
+  [[nodiscard]] inline auto boxing(const int64& value) noexcept -> int64_object {return int64_object(value);}
+  [[nodiscard]] inline auto boxing(const slong& value) noexcept -> slong_object {return slong_object(value);}
+  [[nodiscard]] inline auto boxing(const sbyte& value) noexcept -> sbyte_object {return sbyte_object(value);}
+  [[nodiscard]] inline auto boxing(const uint16& value) noexcept -> uint16_object {return uint16_object(value);}
+  [[nodiscard]] inline auto boxing(const uint32& value) noexcept -> uint32_object {return uint32_object(value);}
+  [[nodiscard]] inline auto boxing(const uint64& value) noexcept -> uint64_object {return uint64_object(value);}
+  [[nodiscard]] inline auto boxing(const xtd::ulong& value) noexcept -> ulong_object {return ulong_object(value);}
+  [[nodiscard]] inline auto boxing(xtd::byte& value) noexcept -> byte_object {return byte_object(value);}
+  [[nodiscard]] inline auto boxing(int16& value) noexcept -> int16_object {return int16_object(value);}
+  [[nodiscard]] inline auto boxing(int32& value) noexcept -> int32_object {return int32_object(value);}
+  [[nodiscard]] inline auto boxing(int64& value) noexcept -> int64_object {return int64_object(value);}
+  [[nodiscard]] inline auto boxing(slong& value) noexcept -> slong_object {return slong_object(value);}
+  [[nodiscard]] inline auto boxing(sbyte& value) noexcept -> sbyte_object {return sbyte_object(value);}
+  [[nodiscard]] inline auto boxing(uint16& value) noexcept -> uint16_object {return uint16_object(value);}
+  [[nodiscard]] inline auto boxing(uint32& value) noexcept -> uint32_object {return uint32_object(value);}
+  [[nodiscard]] inline auto boxing(uint64& value) noexcept -> uint64_object {return uint64_object(value);}
+  [[nodiscard]] inline auto boxing(xtd::ulong& value) noexcept -> ulong_object {return ulong_object(value);}
+  [[nodiscard]] inline auto boxing(const float& value) noexcept -> single_object {return single_object(value);}
+  [[nodiscard]] inline auto boxing(const double& value) noexcept -> double_object {return double_object(value);}
+  [[nodiscard]] inline auto boxing(const decimal& value) noexcept -> decimal_object {return decimal_object(value);}
+  [[nodiscard]] inline auto boxing(float& value) noexcept -> single_object {return single_object(value);}
+  [[nodiscard]] inline auto boxing(double& value) noexcept -> double_object {return double_object(value);}
+  [[nodiscard]] inline auto boxing(decimal& value) noexcept -> decimal_object {return decimal_object(value);}
   template<typename value_t>
-  inline xtd::collections::generic::list<value_t> boxing(std::vector<value_t>&& value) noexcept {return std::move(value);}
+  [[nodiscard]] auto boxing(std::vector<value_t>&& value) noexcept -> xtd::collections::generic::list<value_t> {return std::move(value);}
   /// @endcond
 }
