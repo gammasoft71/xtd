@@ -95,7 +95,6 @@ Inheritance diagram for xtd::box_char&lt; type_t &gt;:</div>
  <div class="center">
   <img src="classxtd_1_1box__char.png" usemap="#xtd_3A_3Abox_5Fchar_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd_3A_3Abox_5Fchar_3C_20type_5Ft_20_3E_map" name="xtd_3A_3Abox_5Fchar_3C_20type_5Ft_20_3E_map">
-<area href="classxtd_1_1box__integer.html" title="Represents a boxed integer object." alt="xtd::box_integer&lt; type_t &gt;" shape="rect" coords="858,168,1277,192"/>
 <area href="structxtd_1_1box.html" title="Represents a boxed object." alt="xtd::box&lt; type_t &gt;" shape="rect" coords="858,112,1277,136"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,419,80"/>
 <area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; box&lt; type_t &gt; &gt;" shape="rect" coords="429,56,848,80"/>
@@ -110,11 +109,12 @@ Inheritance diagram for xtd::box_char&lt; type_t &gt;:</div>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
+requires <a class="el" href="structxtd_1_1character.html">xtd::character</a>&lt;type_t&gt;<br />
 class xtd::box_char&lt; type_t &gt;</div><p>Represents a boxed char object. </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__char.html">box_char</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1box__integer.html">xtd::box_integer</a>&lt;type_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1box__char_html"><div class="ttname"><a href="classxtd_1_1box__char.html">xtd::box_char</a></div><div class="ttdoc">Represents a boxed char object.</div><div class="ttdef"><b>Definition</b> box_char.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.hpp:55</div></div>
-</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__integer.html" title="Represents a boxed integer object.">xtd::box_integer</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__char.html" title="Represents a boxed char object.">xtd::box_char</a> &lt;type_t&gt; </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__char.html">box_char</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structxtd_1_1box.html">xtd::box</a>&lt;type_t&gt;</div>
+<div class="ttc" id="aclassxtd_1_1box__char_html"><div class="ttname"><a href="classxtd_1_1box__char.html">xtd::box_char</a></div><div class="ttdoc">Represents a boxed char object.</div><div class="ttdef"><b>Definition</b> box_char.hpp:41</div></div>
+<div class="ttc" id="astructxtd_1_1box_html"><div class="ttname"><a href="structxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.hpp:56</div></div>
+</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__char.html" title="Represents a boxed char object.">xtd::box_char</a> &lt;type_t&gt; </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/box_char&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
@@ -136,6 +136,13 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="ttc" id="astructxtd_1_1box_html_aa386b4b7a8149a336dbdbc9a1180a8a4"><div class="ttname"><a href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">xtd::box::value</a></div><div class="ttdeci">value_type value</div><div class="ttdoc">Gets or sets the underlying value.</div><div class="ttdef"><b>Definition</b> box.hpp:106</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Fields</h2></td></tr>
+<tr class="memitem:a739dd79871bdee2df5508ffc41841b52" id="r_a739dd79871bdee2df5508ffc41841b52"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#a739dd79871bdee2df5508ffc41841b52">max_value</a></td></tr>
+<tr class="memdesc:a739dd79871bdee2df5508ffc41841b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the largest possible value of type_t. This field is constant.  <br /></td></tr>
+<tr class="memitem:a463ffa81db6179c21c2b4e67519e76be" id="r_a463ffa81db6179c21c2b4e67519e76be"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="#a463ffa81db6179c21c2b4e67519e76be">min_value</a></td></tr>
+<tr class="memdesc:a463ffa81db6179c21c2b4e67519e76be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the smallest possible value of type_t. This field is constant.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
 <tr class="memitem:a42d0f5427797a9dccbdb397b4385b16d" id="r_a42d0f5427797a9dccbdb397b4385b16d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a42d0f5427797a9dccbdb397b4385b16d">is_ascii</a> (type_t c) noexcept -&gt; bool</td></tr>
@@ -182,14 +189,20 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a4435219764e8399bc346dadf7312e567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specified Unicode character is categorized as an uppercase letter.  <br /></td></tr>
 <tr class="memitem:ab052dd4a0ab62ba6cf3399ea1d255ade" id="r_ab052dd4a0ab62ba6cf3399ea1d255ade"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab052dd4a0ab62ba6cf3399ea1d255ade">is_upper</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;s, size_t index) -&gt; bool</td></tr>
 <tr class="memdesc:ab052dd4a0ab62ba6cf3399ea1d255ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the character at the specified position in a specified string is categorized as an uppercase letter.  <br /></td></tr>
+<tr class="memitem:a6d78fb66bcf606de324988902e5642e6" id="r_a6d78fb66bcf606de324988902e5642e6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6d78fb66bcf606de324988902e5642e6">is_valid</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a6d78fb66bcf606de324988902e5642e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified value can be safely converted to type_t without overflow.  <br /></td></tr>
 <tr class="memitem:aa9b2dd3b8ea2e05c52cc1bf25c9a19a8" id="r_aa9b2dd3b8ea2e05c52cc1bf25c9a19a8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa9b2dd3b8ea2e05c52cc1bf25c9a19a8">is_white_space</a> (type_t c) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:aa9b2dd3b8ea2e05c52cc1bf25c9a19a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specified Unicode character is categorized as white space.  <br /></td></tr>
 <tr class="memitem:ad0862a8c8b505b56e8f66fb25a5e84b9" id="r_ad0862a8c8b505b56e8f66fb25a5e84b9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0862a8c8b505b56e8f66fb25a5e84b9">is_white_space</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;s, size_t index) -&gt; bool</td></tr>
 <tr class="memdesc:ad0862a8c8b505b56e8f66fb25a5e84b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the character at the specified position in a specified string is categorized as white space.  <br /></td></tr>
+<tr class="memitem:a309cec5b2043bb98f9766bbf4949f253" id="r_a309cec5b2043bb98f9766bbf4949f253"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="#a309cec5b2043bb98f9766bbf4949f253">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
+<tr class="memdesc:a309cec5b2043bb98f9766bbf4949f253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
 <tr class="memitem:a459848f01ad35c97553ced62198aa69f" id="r_a459848f01ad35c97553ced62198aa69f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a459848f01ad35c97553ced62198aa69f">to_lower</a> (type_t c) noexcept -&gt; type_t</td></tr>
 <tr class="memdesc:a459848f01ad35c97553ced62198aa69f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of a Unicode character to its lowercase equivalent.  <br /></td></tr>
 <tr class="memitem:a1a39e386f5586bf524416297734a048d" id="r_a1a39e386f5586bf524416297734a048d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1a39e386f5586bf524416297734a048d">to_upper</a> (type_t c) noexcept -&gt; type_t</td></tr>
 <tr class="memdesc:a1a39e386f5586bf524416297734a048d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of a Unicode character to its uppercase equivalent.  <br /></td></tr>
+<tr class="memitem:afa533e10565b28e8ed9a269819a2e262" id="r_afa533e10565b28e8ed9a269819a2e262"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#afa533e10565b28e8ed9a269819a2e262">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, type_t &amp;result, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
+<tr class="memdesc:afa533e10565b28e8ed9a269819a2e262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -205,10 +218,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a8a1b76f7cac000e44ac1c3e84828b34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the cont reference type.  <br /></td></tr>
 <tr class="memitem:aa386b4b7a8149a336dbdbc9a1180a8a4" id="r_aa386b4b7a8149a336dbdbc9a1180a8a4"><td class="memItemLeft"><a class="el" href="structxtd_1_1box.html#ae91aa9821b7140ea6f2aeb25b306f07d">value_type</a>&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a></td></tr>
 <tr class="memdesc:aa386b4b7a8149a336dbdbc9a1180a8a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the underlying value.  <br /></td></tr>
-<tr class="memitem:a21847edbb248c1b0d07a35e2a8c08232" id="r_a21847edbb248c1b0d07a35e2a8c08232"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232">max_value</a></td></tr>
-<tr class="memdesc:a21847edbb248c1b0d07a35e2a8c08232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the largest possible value of type_t. This field is constant.  <br /></td></tr>
-<tr class="memitem:abacf9950b09d5d214dcfa6205559785d" id="r_abacf9950b09d5d214dcfa6205559785d"><td class="memItemLeft">static constexpr type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d">min_value</a></td></tr>
-<tr class="memdesc:abacf9950b09d5d214dcfa6205559785d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the smallest possible value of type_t. This field is constant.  <br /></td></tr>
 <tr class="memitem:a5e6950ecad0d9454193185bd48e170ee" id="r_a5e6950ecad0d9454193185bd48e170ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a5e6950ecad0d9454193185bd48e170ee">box</a> ()=default</td></tr>
 <tr class="memdesc:a5e6950ecad0d9454193185bd48e170ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> object.  <br /></td></tr>
 <tr class="memitem:a971667ebd76171abde7165af082cf5ec" id="r_a971667ebd76171abde7165af082cf5ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a971667ebd76171abde7165af082cf5ec">box</a> (<a class="el" href="structxtd_1_1box.html#a96117dedaafd93a12a60eaef6a18d9aa">const_reference</a> <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>)</td></tr>
@@ -243,14 +252,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const type_t &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a25f99e58eb47110d160b82f832624bf1" id="r_a25f99e58eb47110d160b82f832624bf1"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a25f99e58eb47110d160b82f832624bf1">is_valid</a> (<a class="el" href="structxtd_1_1signed__integer.html">xtd::signed_integer</a> auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a25f99e58eb47110d160b82f832624bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified signed integral value is within the range of type_t.  <br /></td></tr>
-<tr class="memitem:a6327f8a67d4c9fa73a3f3438753fe4e8" id="r_a6327f8a67d4c9fa73a3f3438753fe4e8"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a6327f8a67d4c9fa73a3f3438753fe4e8">is_valid</a> (<a class="el" href="structxtd_1_1unsigned__integer.html">xtd::unsigned_integer</a> auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
-<tr class="memdesc:a6327f8a67d4c9fa73a3f3438753fe4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified unsigned integral value is within the range of type_t.  <br /></td></tr>
-<tr class="memitem:a5afccb7592db155d127dde594cb4af74" id="r_a5afccb7592db155d127dde594cb4af74"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a5afccb7592db155d127dde594cb4af74">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
-<tr class="memdesc:a5afccb7592db155d127dde594cb4af74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
-<tr class="memitem:a9f3925bfeb0b97e6460217daa694840e" id="r_a9f3925bfeb0b97e6460217daa694840e"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a9f3925bfeb0b97e6460217daa694840e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, type_t &amp;result, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
-<tr class="memdesc:a9f3925bfeb0b97e6460217daa694840e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
 <tr class="memitem:ad9d8855ee372e5a3520a218c434e1c8c" id="r_ad9d8855ee372e5a3520a218c434e1c8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#ad9d8855ee372e5a3520a218c434e1c8c">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) -&gt; <a class="el" href="structxtd_1_1box.html#ae91aa9821b7140ea6f2aeb25b306f07d">value_type</a></td></tr>
 <tr class="memdesc:ad9d8855ee372e5a3520a218c434e1c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its <span class="tt"><a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a></span> equivalent.  <br /></td></tr>
 <tr class="memitem:a1bcd653b5ebcdfa65de42df0a888ad2e" id="r_a1bcd653b5ebcdfa65de42df0a888ad2e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a1bcd653b5ebcdfa65de42df0a888ad2e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="structxtd_1_1box.html#aa4e5555032a0c3ec377bdbb400ce8b74">reference</a> result) noexcept -&gt; bool</td></tr>
@@ -1177,6 +1178,43 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
+<a id="a6d78fb66bcf606de324988902e5642e6" name="a6d78fb66bcf606de324988902e5642e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d78fb66bcf606de324988902e5642e6">&#9670;&#160;</a></span>is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1box__char.html">xtd::box_char</a>&lt; type_t &gt;::is_valid </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified value can be safely converted to type_t without overflow. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>The floating point value to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the value is outside the valid range defined by min_value and max_value, the method returns false. </dd></dl>
+
+</div>
+</div>
 <a id="aa9b2dd3b8ea2e05c52cc1bf25c9a19a8" name="aa9b2dd3b8ea2e05c52cc1bf25c9a19a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9b2dd3b8ea2e05c52cc1bf25c9a19a8">&#9670;&#160;</a></span>is_white_space() <span class="overload">[1/2]</span></h2>
 
@@ -1260,6 +1298,46 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
+<a id="a309cec5b2043bb98f9766bbf4949f253" name="a309cec5b2043bb98f9766bbf4949f253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309cec5b2043bb98f9766bbf4949f253">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t <a class="el" href="classxtd_1_1box__char.html">xtd::box_char</a>&lt; type_t &gt;::parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the string to its type_t equivalent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A string containing a type_t to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A type_t equivalent to the number contained in value. </dd></dl>
+
+</div>
+</div>
 <a id="a459848f01ad35c97553ced62198aa69f" name="a459848f01ad35c97553ced62198aa69f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a459848f01ad35c97553ced62198aa69f">&#9670;&#160;</a></span>to_lower()</h2>
 
@@ -1329,6 +1407,106 @@ template&lt;typename type_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The uppercase equivalent of c, or the unchanged value of c if c is already uppercase, has no uppercase equivalent, or is not alphabetic. </dd></dl>
+
+</div>
+</div>
+<a id="afa533e10565b28e8ed9a269819a2e262" name="afa533e10565b28e8ed9a269819a2e262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa533e10565b28e8ed9a269819a2e262">&#9670;&#160;</a></span>try_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxtd_1_1box__char.html">xtd::box_char</a>&lt; type_t &gt;::try_parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the string to its type_t equivalent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>A string containing a type_t to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A type_t equivalent to the number contained in value. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a739dd79871bdee2df5508ffc41841b52" name="a739dd79871bdee2df5508ffc41841b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739dd79871bdee2df5508ffc41841b52">&#9670;&#160;</a></span>max_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t <a class="el" href="classxtd_1_1box__char.html">xtd::box_char</a>&lt; type_t &gt;::max_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the largest possible value of type_t. This field is constant. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of this field is std::numeric_limits&lt;type_t&gt;::max(). </dd></dl>
+
+</div>
+</div>
+<a id="a463ffa81db6179c21c2b4e67519e76be" name="a463ffa81db6179c21c2b4e67519e76be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463ffa81db6179c21c2b4e67519e76be">&#9670;&#160;</a></span>min_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t <a class="el" href="classxtd_1_1box__char.html">xtd::box_char</a>&lt; type_t &gt;::min_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the smallest possible value of type_t. This field is constant. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of this field is std::numeric_limits&lt;type_t&gt;::lowest(). </dd></dl>
 
 </div>
 </div>

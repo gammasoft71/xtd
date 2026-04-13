@@ -690,7 +690,7 @@ var searchData=
   ['is_5func_687',['is_unc',['../classxtd_1_1uri.html#af4381a2278f13bb39325b76deacfd17b',1,'xtd::uri']]],
   ['is_5funix_5fplatform_688',['is_unix_platform',['../classxtd_1_1operating__system.html#aa64128125769d72475b5b9773f7252fb',1,'xtd::operating_system']]],
   ['is_5fupper_689',['is_upper',['../classxtd_1_1box__char.html#a4435219764e8399bc346dadf7312e567',1,'xtd::box_char::is_upper(type_t c) noexcept -&gt; bool'],['../classxtd_1_1box__char.html#ab052dd4a0ab62ba6cf3399ea1d255ade',1,'xtd::box_char::is_upper(const string &amp;s, size_t index) -&gt; bool']]],
-  ['is_5fvalid_690',['is_valid',['../classxtd_1_1box__floating__point.html#ac1cdd170f8e7e388ed0359a3776cc9ac',1,'xtd::box_floating_point::is_valid()'],['../classxtd_1_1box__integer.html#a25f99e58eb47110d160b82f832624bf1',1,'xtd::box_integer::is_valid(xtd::signed_integer auto value) noexcept'],['../classxtd_1_1box__integer.html#a6327f8a67d4c9fa73a3f3438753fe4e8',1,'xtd::box_integer::is_valid(xtd::unsigned_integer auto value) noexcept']]],
+  ['is_5fvalid_690',['is_valid',['../classxtd_1_1box__char.html#a6d78fb66bcf606de324988902e5642e6',1,'xtd::box_char::is_valid()'],['../classxtd_1_1box__floating__point.html#a91b8a7ae5d9fee2626cde80863cfa8ae',1,'xtd::box_floating_point::is_valid()'],['../classxtd_1_1box__integer.html#ab1bb2b2cfe8da381b86473f9c8f1965a',1,'xtd::box_integer::is_valid()']]],
   ['is_5fvalue_691',['is_value',['../classxtd_1_1tunit_1_1constraints_1_1is__value.html',1,'xtd::tunit::constraints']]],
   ['is_5fvalue_2ehpp_692',['is_value.hpp',['../is__value_8hpp.html',1,'']]],
   ['is_5fvalue_5fcreated_693',['is_value_created',['../classxtd_1_1threading_1_1thread__local__object.html#afcbfd1eb1331aa7d9c563e82cdf79525',1,'xtd::threading::thread_local_object']]],

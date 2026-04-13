@@ -166,8 +166,8 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a7278c4f6aba5d90b724d26b786bacc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to positive infinity.  <br /></td></tr>
 <tr class="memitem:a606d8adb08ab7924ec90e7145fb2806a" id="r_a606d8adb08ab7924ec90e7145fb2806a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a606d8adb08ab7924ec90e7145fb2806a">is_subnormal</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a606d8adb08ab7924ec90e7145fb2806a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to subnormal.  <br /></td></tr>
-<tr class="memitem:ac1cdd170f8e7e388ed0359a3776cc9ac" id="r_ac1cdd170f8e7e388ed0359a3776cc9ac"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac1cdd170f8e7e388ed0359a3776cc9ac">is_valid</a> (<a class="el" href="structxtd_1_1real.html">xtd::real</a> auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
-<tr class="memdesc:ac1cdd170f8e7e388ed0359a3776cc9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified value can be safely converted to type_t without overflow.  <br /></td></tr>
+<tr class="memitem:a91b8a7ae5d9fee2626cde80863cfa8ae" id="r_a91b8a7ae5d9fee2626cde80863cfa8ae"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a91b8a7ae5d9fee2626cde80863cfa8ae">is_valid</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a91b8a7ae5d9fee2626cde80863cfa8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified value can be safely converted to type_t without overflow.  <br /></td></tr>
 <tr class="memitem:a7a490b3ca6a520b872f170fc7b3115d8" id="r_a7a490b3ca6a520b872f170fc7b3115d8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a490b3ca6a520b872f170fc7b3115d8">is_zero</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a7a490b3ca6a520b872f170fc7b3115d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to zero.  <br /></td></tr>
 <tr class="memitem:a9fd48ac5dd42fde122569db26125dbe9" id="r_a9fd48ac5dd42fde122569db26125dbe9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fd48ac5dd42fde122569db26125dbe9">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles) -&gt; type_t</td></tr>
@@ -487,8 +487,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ac1cdd170f8e7e388ed0359a3776cc9ac" name="ac1cdd170f8e7e388ed0359a3776cc9ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1cdd170f8e7e388ed0359a3776cc9ac">&#9670;&#160;</a></span>is_valid()</h2>
+<a id="a91b8a7ae5d9fee2626cde80863cfa8ae" name="a91b8a7ae5d9fee2626cde80863cfa8ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b8a7ae5d9fee2626cde80863cfa8ae">&#9670;&#160;</a></span>is_valid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -501,7 +501,7 @@ template&lt;typename type_t&gt; </div>
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_valid </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structxtd_1_1real.html">xtd::real</a> auto</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt; bool</td>
         </tr>
       </table>
