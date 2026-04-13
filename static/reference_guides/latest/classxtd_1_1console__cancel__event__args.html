@@ -115,17 +115,17 @@ If the cancel property is set to <span class="tt">true</span> in the event handl
 Public Constructors</h2></td></tr>
 <tr class="memitem:a08bf329e030811ce372a31e52d50f355" id="r_a08bf329e030811ce372a31e52d50f355"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a08bf329e030811ce372a31e52d50f355">console_cancel_event_args</a> ()=default</td></tr>
 <tr class="memdesc:a08bf329e030811ce372a31e52d50f355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> class.  <br /></td></tr>
-<tr class="memitem:a7e65c7f39bbfa2ac1ff446a98666a0c3" id="r_a7e65c7f39bbfa2ac1ff446a98666a0c3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7e65c7f39bbfa2ac1ff446a98666a0c3">console_cancel_event_args</a> (<a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a> <a class="el" href="#af4527f1da4e784086413e4ef1f44281b">special_key</a>)</td></tr>
+<tr class="memitem:a7e65c7f39bbfa2ac1ff446a98666a0c3" id="r_a7e65c7f39bbfa2ac1ff446a98666a0c3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7e65c7f39bbfa2ac1ff446a98666a0c3">console_cancel_event_args</a> (<a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a> <a class="el" href="#af5ab07c31f7fa2d34c3dfef5617f92d1">special_key</a>)</td></tr>
 <tr class="memdesc:a7e65c7f39bbfa2ac1ff446a98666a0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> class.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a762cd441f8153c96de76a4010ea0eaca" id="r_a762cd441f8153c96de76a4010ea0eaca"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a762cd441f8153c96de76a4010ea0eaca">cancel</a> () const noexcept</td></tr>
-<tr class="memdesc:a762cd441f8153c96de76a4010ea0eaca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
-<tr class="memitem:a9d176b33579dd38d901284024ce7cd13" id="r_a9d176b33579dd38d901284024ce7cd13"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9d176b33579dd38d901284024ce7cd13">cancel</a> (bool cancel)</td></tr>
-<tr class="memdesc:a9d176b33579dd38d901284024ce7cd13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
-<tr class="memitem:af4527f1da4e784086413e4ef1f44281b" id="r_af4527f1da4e784086413e4ef1f44281b"><td class="memItemLeft"><a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a>&#160;</td><td class="memItemRight"><a class="el" href="#af4527f1da4e784086413e4ef1f44281b">special_key</a> () const noexcept</td></tr>
-<tr class="memdesc:af4527f1da4e784086413e4ef1f44281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the combination of modifier and console keys that interrupted the current process.  <br /></td></tr>
+<tr class="memitem:adfc80e9da844336c9e39f2dacae7ceae" id="r_adfc80e9da844336c9e39f2dacae7ceae"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adfc80e9da844336c9e39f2dacae7ceae">cancel</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:adfc80e9da844336c9e39f2dacae7ceae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
+<tr class="memitem:a4d5536f5e2b89c173a5f89f5311cb9be" id="r_a4d5536f5e2b89c173a5f89f5311cb9be"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4d5536f5e2b89c173a5f89f5311cb9be">cancel</a> (bool cancel) -&gt; void</td></tr>
+<tr class="memdesc:a4d5536f5e2b89c173a5f89f5311cb9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
+<tr class="memitem:af5ab07c31f7fa2d34c3dfef5617f92d1" id="r_af5ab07c31f7fa2d34c3dfef5617f92d1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af5ab07c31f7fa2d34c3dfef5617f92d1">special_key</a> () const noexcept -&gt; <a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a></td></tr>
+<tr class="memdesc:af5ab07c31f7fa2d34c3dfef5617f92d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the combination of modifier and console keys that interrupted the current process.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -207,7 +207,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#af4527f1da4e784086413e4ef1f44281b" title="Gets the combination of modifier and console keys that interrupted the current process.">special_key</a></td><td>One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value.. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#af5ab07c31f7fa2d34c3dfef5617f92d1" title="Gets the combination of modifier and console keys that interrupted the current process.">special_key</a></td><td>One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value.. </td></tr>
   </table>
   </dd>
 </dl>
@@ -215,8 +215,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a762cd441f8153c96de76a4010ea0eaca" name="a762cd441f8153c96de76a4010ea0eaca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a762cd441f8153c96de76a4010ea0eaca">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
+<a id="adfc80e9da844336c9e39f2dacae7ceae" name="adfc80e9da844336c9e39f2dacae7ceae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc80e9da844336c9e39f2dacae7ceae">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,15 +225,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::console_cancel_event_args::cancel </td>
+          <td class="memname">auto xtd::console_cancel_event_args::cancel </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -243,17 +243,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d176b33579dd38d901284024ce7cd13" name="a9d176b33579dd38d901284024ce7cd13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d176b33579dd38d901284024ce7cd13">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
+<a id="a4d5536f5e2b89c173a5f89f5311cb9be" name="a4d5536f5e2b89c173a5f89f5311cb9be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5536f5e2b89c173a5f89f5311cb9be">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::console_cancel_event_args::cancel </td>
+          <td class="memname">auto xtd::console_cancel_event_args::cancel </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -261,15 +261,15 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <span class="tt">false</span>, which terminates the current process. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a762cd441f8153c96de76a4010ea0eaca" title="Gets a value that indicates whether simultaneously pressing the Control modifier key and the C consol...">cancel</a></td><td><span class="tt">true</span> if the current process should resume when the event handler concludes; <span class="tt">false</span> if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If <span class="tt">true</span>, the current process continues. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#adfc80e9da844336c9e39f2dacae7ceae" title="Gets a value that indicates whether simultaneously pressing the Control modifier key and the C consol...">cancel</a></td><td><span class="tt">true</span> if the current process should resume when the event handler concludes; <span class="tt">false</span> if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If <span class="tt">true</span>, the current process continues. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="af4527f1da4e784086413e4ef1f44281b" name="af4527f1da4e784086413e4ef1f44281b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4527f1da4e784086413e4ef1f44281b">&#9670;&#160;</a></span>special_key()</h2>
+<a id="af5ab07c31f7fa2d34c3dfef5617f92d1" name="af5ab07c31f7fa2d34c3dfef5617f92d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ab07c31f7fa2d34c3dfef5617f92d1">&#9670;&#160;</a></span>special_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,15 +278,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a> xtd::console_cancel_event_args::special_key </td>
+          <td class="memname">auto xtd::console_cancel_event_args::special_key </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
