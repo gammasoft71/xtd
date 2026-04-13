@@ -9,7 +9,7 @@
 namespace xtd {
   #if DEBUG
   /// @brief A xtd::debugstreambuf variable used by xtd::cdebug ostream.
-  inline xtd::debugstreambuf cdebugstreambuf;
+  inline auto cdebugstreambuf = xtd::debugstreambuf {};
   
   /// @brief Provides an std::ostream for xtd::diagnostics::debug.
   /// @par Header
