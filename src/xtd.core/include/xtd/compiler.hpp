@@ -48,35 +48,35 @@ namespace xtd {
     /// @{
     /// @brief Gets additional information.
     /// @return Additional information.
-    xtd::string additional_information() const noexcept;
+    [[nodiscard]] auto additional_information() const noexcept -> xtd::string;
     
     /// @brief Gets the build type.
     /// @return One of xtd::build_type values.
-    xtd::build_type build_type() const noexcept;
+    [[nodiscard]] auto build_type() const noexcept -> xtd::build_type;
     
     /// @brief Gets the compiler id.
     /// @return One of xtd::compiler_id values.
-    xtd::compiler_id compiler_id() const noexcept;
+    [[nodiscard]] auto compiler_id() const noexcept -> xtd::compiler_id;
     
     /// @brief Gets build type is debug.
     /// @return `true` if build type debug; otherwise `false`.
-    bool is_build_type_debug() const noexcept;
+    [[nodiscard]] auto is_build_type_debug() const noexcept -> bool;
     
     /// @brief Gets is 64 bits.
     /// @return `true` if 64 bits; otherwise `false`.
-    bool is_64_bit() noexcept;
+    [[nodiscard]] auto is_64_bit() noexcept -> bool;
     
     /// @brief Gets compiler name.
     /// @return The compiler name.
-    xtd::string name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> xtd::string;
     
     /// @brief Gets compiler version string.
     /// @return The compiler version string.
-    xtd::string version_string() const noexcept;
+    [[nodiscard]] auto version_string() const noexcept -> xtd::string;
     
     /// @brief Gets compiler version.
     /// @return The compiler version.
-    const xtd::version& version() const noexcept;
+    [[nodiscard]] auto version() const noexcept -> const xtd::version&;
     /// @}
     
     /// @name Public Methods
@@ -84,17 +84,17 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
-    xtd::string get_apple_clang_additional_information() const noexcept;
-    xtd::string get_compiler_version_string(const xtd::string& compiler_name) const noexcept;
-    xtd::string get_msvc_additional_information() const noexcept;
+    [[nodiscard]] auto get_apple_clang_additional_information() const noexcept -> xtd::string;
+    [[nodiscard]] auto get_compiler_version_string(const xtd::string& compiler_name) const noexcept -> xtd::string;
+    [[nodiscard]] auto get_msvc_additional_information() const noexcept -> xtd::string;
     
     xtd::compiler_id compiler_id_ = xtd::compiler_id::unknown;
     xtd::version version_;
