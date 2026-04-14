@@ -256,7 +256,7 @@ namespace {
   
   string date_time_formatter(string fmt, const std::tm& time, uint32 nanoseconds, const culture_info& culture) {
     auto dt = xtd::date_time(time.tm_year + 1900, time.tm_mon + 1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
-    dt.add_ticks(nanoseconds * 100);
+    dt = dt.add_ticks(nanoseconds * 100);
     return dt.to_string(fmt, culture);
   }
 }
@@ -579,19 +579,19 @@ date_time date_time::to_local_time() const {
   return date_time {ticks_duration() + utc_offset, date_time_kind::local};
 }
 
-const xtd::string date_time::to_long_date_string() const {
+string date_time::to_long_date_string() const {
   return to_string("D");
 }
 
-const xtd::string date_time::to_long_time_string() const {
+string date_time::to_long_time_string() const {
   return to_string("T");
 }
 
-const xtd::string date_time::to_short_date_string() const {
+string date_time::to_short_date_string() const {
   return to_string("d");
 }
 
-const xtd::string date_time::to_short_time_string() const {
+string date_time::to_short_time_string() const {
   return to_string("t");
 }
 
