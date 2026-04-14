@@ -176,7 +176,7 @@ var searchData=
   ['hotel_173',['hotel',['../classxtd_1_1forms_1_1emoticons.html#aca4a42ba48231e38c5154214e3dd7b2d',1,'xtd::forms::emoticons']]],
   ['hotkey_5fprefix_174',['hotkey_prefix',['../classxtd_1_1drawing_1_1string__format.html#a167e36c94b3704b34cc48cd4cd2a59e5',1,'xtd::drawing::string_format::hotkey_prefix() const noexcept'],['../classxtd_1_1drawing_1_1string__format.html#a56d1d4ca6bee359897af9964c68eb928',1,'xtd::drawing::string_format::hotkey_prefix(xtd::drawing::text::hotkey_prefix hotkey_prefix) noexcept'],['../group__texts.html#ga9eee82940e5b13decf9dca44676861a7',1,'xtd::drawing::text::hotkey_prefix']]],
   ['hotkey_5fprefix_2ehpp_175',['hotkey_prefix.hpp',['../hotkey__prefix_8hpp.html',1,'']]],
-  ['hour_176',['hour',['../classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc',1,'xtd::date_time']]],
+  ['hour_176',['hour',['../classxtd_1_1date__time.html#a0757262939701265e95f60c3f401fc9d',1,'xtd::date_time']]],
   ['hourglass_177',['hourglass',['../classxtd_1_1forms_1_1emoticons.html#a98b9de5d706682ea5139e536407af357',1,'xtd::forms::emoticons']]],
   ['hourglass_5fwith_5fflowing_5fsand_178',['hourglass_with_flowing_sand',['../classxtd_1_1forms_1_1emoticons.html#a456cb716d12c339f4de9c11c651fc13f',1,'xtd::forms::emoticons']]],
   ['hours_179',['hours',['../classxtd_1_1time__span.html#adfa825159a709add812d5243492ff86a',1,'xtd::time_span']]],

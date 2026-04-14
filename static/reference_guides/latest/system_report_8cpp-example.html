@@ -171,12 +171,20 @@ $(function() {
 <div class="line">    reports_label.dock(dock_style::left);</div>
 <div class="line">    reports_label.text(<span class="stringliteral">&quot;Reports :&quot;</span>);</div>
 <div class="line">    reports_label.text_align(<a id="_a0" name="_a0"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">xtd::forms::content_alignment::middle_left</a>);</div>
+<div class="line"> </div>
+<div class="line">    send_button.parent(reports_panel);</div>
+<div class="line">    send_button.dock(dock_style::right);</div>
+<div class="line">    send_button.text(<span class="stringliteral">&quot;Send&quot;</span>);</div>
+<div class="line">    send_button.click += [&amp;] {</div>
+<div class="line">      diagnostics::process::start(diagnostics::process_start_info {string::format(<span class="stringliteral">&quot;mailto:?subject={}&amp;body={}&quot;</span>, uri::escape_data_string(<span class="stringliteral">&quot;System report&quot;</span>), uri::escape_data_string(text_reports_text_box.text()))}.use_shell_execute(<span class="keyword">true</span>)).wait_for_exit();</div>
+<div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  panel reports_panel;</div>
 <div class="line">  label reports_label;</div>
 <div class="line">  choice reports_choice;</div>
+<div class="line">  button send_button;</div>
 <div class="line">  tab_control report_tab_control;</div>
 <div class="line">  tab_page text_report_tab_page;</div>
 <div class="line">  tab_page json_report_tab_page;</div>
