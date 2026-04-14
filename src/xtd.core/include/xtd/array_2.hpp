@@ -168,7 +168,7 @@ namespace xtd {
     /// @param index1 The position of the Array element to get.
     /// @param index2 The position of the Array element to get.
     /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     [[nodiscard]] auto get_value(size_type index1, size_type index2) const -> const value_type& {return operator()(index1, index2);}
     
@@ -177,7 +177,7 @@ namespace xtd {
     /// @param value The new value for the specified element.
     /// @param index1 The position of the Array element to get.
     /// @param index2 The position of the Array element to get.
-    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     auto set_value(const value_type& value, size_type index1, size_type index2) -> void {operator()(index1, index2) = value;}
     
@@ -203,7 +203,7 @@ namespace xtd {
     /// @param value The new value for the specified element.
     /// @param index1 A xtd::size that represents the position of the first rank of array element to set.
     /// @param index2 A xtd::size that represents the position of the second rank of array element to set.
-    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
@@ -214,7 +214,7 @@ namespace xtd {
     /// @param index1 A xtd::size that represents the position of the first rank of array element to set.
     /// @param index2 A xtd::size that represents the position of the second rank of array element to set.
     /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
