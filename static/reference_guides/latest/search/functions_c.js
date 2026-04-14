@@ -189,7 +189,7 @@ var searchData=
   ['modal_186',['modal',['../classxtd_1_1forms_1_1form.html#a4da044c17c19c8c3905c36f9f9cfcf63',1,'xtd::forms::form']]],
   ['modem_187',['modem',['../classxtd_1_1drawing_1_1devices__system__images.html#a830c7d527992f450e68e82f1255b9729',1,'xtd::drawing::devices_system_images::modem() noexcept'],['../classxtd_1_1drawing_1_1devices__system__images.html#a757d97e7732b7747cb8f00994b171f97',1,'xtd::drawing::devices_system_images::modem(const xtd::drawing::size &amp;size) noexcept']]],
   ['modifier_5fkeys_188',['modifier_keys',['../classxtd_1_1forms_1_1control.html#a722ace5725df0780b3bdc5a788e40e6c',1,'xtd::forms::control']]],
-  ['modifiers_189',['modifiers',['../classxtd_1_1console__key__info.html#a53119fbf6b4a580889fea52ce82792e6',1,'xtd::console_key_info::modifiers()'],['../classxtd_1_1forms_1_1key__event__args.html#a324d4daa4aa2eec08ddb66eec5887c5e',1,'xtd::forms::key_event_args::modifiers()']]],
+  ['modifiers_189',['modifiers',['../classxtd_1_1console__key__info.html#a694d720d5cdcc9767abe8a1924b42f06',1,'xtd::console_key_info::modifiers()'],['../classxtd_1_1forms_1_1key__event__args.html#a324d4daa4aa2eec08ddb66eec5887c5e',1,'xtd::forms::key_event_args::modifiers()']]],
   ['moldova_190',['moldova',['../classxtd_1_1forms_1_1countries.html#a6d9d57ccadb460e363f98093e246be4f',1,'xtd::forms::countries']]],
   ['monaco_191',['monaco',['../classxtd_1_1forms_1_1countries.html#a4667cb13441f84db0a3b063b64f61949',1,'xtd::forms::countries']]],
   ['mongolia_192',['mongolia',['../classxtd_1_1forms_1_1countries.html#a36fe3bb11f7876649061efc580347453',1,'xtd::forms::countries']]],

@@ -3110,7 +3110,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="line">  <span class="keywordflow">do</span> {</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code hl_function" href="#ac428d86447dc95645c69692ab5791b8c">console::read</a>();</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">      ch = <a class="code hl_function" href="classxtd_1_1convert.html#a4ef8aa91ca84732b9526c238323d1206">convert::to_char32</a>(x);</div>
+<div class="line">      ch = <a class="code hl_function" href="classxtd_1_1convert.html#a78b9cfb3d263077d474862422b1d5162">convert::to_char32</a>(x);</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1box__char.html#aa9b2dd3b8ea2e05c52cc1bf25c9a19a8">char_object::is_white_space</a>(ch)) {</div>
 <div class="line">        <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m3, x);</div>
 <div class="line">        <span class="keywordflow">if</span> (ch == 0x0a)</div>
@@ -3164,7 +3164,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="line"><span class="comment">// Character &#39;+&#39; is hexadecimal 0x002b.</span></div>
 <div class="ttc" id="aclassxtd_1_1box__char_html_aa9b2dd3b8ea2e05c52cc1bf25c9a19a8"><div class="ttname"><a href="classxtd_1_1box__char.html#aa9b2dd3b8ea2e05c52cc1bf25c9a19a8">xtd::box_char&lt; char &gt;::is_white_space</a></div><div class="ttdeci">static auto is_white_space(char c) noexcept -&gt; bool</div><div class="ttdef"><b>Definition</b> box_char.hpp:196</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ac428d86447dc95645c69692ab5791b8c"><div class="ttname"><a href="#ac428d86447dc95645c69692ab5791b8c">xtd::console::read</a></div><div class="ttdeci">static auto read() -&gt; int32</div><div class="ttdoc">Reads the next character from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1convert_html_a4ef8aa91ca84732b9526c238323d1206"><div class="ttname"><a href="classxtd_1_1convert.html#a4ef8aa91ca84732b9526c238323d1206">xtd::convert::to_char32</a></div><div class="ttdeci">static char32 to_char32(xtd::any value)</div><div class="ttdoc">Convert xtd::any to char32.</div></div>
+<div class="ttc" id="aclassxtd_1_1convert_html_a78b9cfb3d263077d474862422b1d5162"><div class="ttname"><a href="classxtd_1_1convert.html#a78b9cfb3d263077d474862422b1d5162">xtd::convert::to_char32</a></div><div class="ttdeci">static auto to_char32(xtd::any value) -&gt; xtd::char32</div><div class="ttdoc">Convert xtd::any to char32.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
