@@ -43,44 +43,44 @@ namespace xtd {
     /// @{
     /// @brief Gets if is experimental language
     /// @return `true` if is experimental language; otherwise `false`.
-    bool is_experimental_language() const noexcept;
+    [[nodiscard]] auto is_experimental_language() const noexcept -> bool;
     
     /// @brief Gets if is supported by xtd.
     /// @return `true` is supported by xtd; otherwise `false`.
-    bool is_supported() const noexcept;
+    [[nodiscard]] auto is_supported() const noexcept -> bool;
     
     /// @brief Gets lagnguage id.
     /// @return One of xtd::languade_id values.
-    language_id language() const noexcept;
+    [[nodiscard]] auto language() const noexcept -> language_id;
     
     /// @brief Gets experimental language id.
     /// @return One of xtd::language_id values.
     /// @remarks If is not experimental, the xtd::language_id is the same as xtd::cpp_language::language property.
-    language_id experimental_language() const noexcept;
+    [[nodiscard]] auto experimental_language() const noexcept -> language_id;
     
     /// @brief Gets the month when the cpp language was released.
     /// @return The month when the cpp version was released.
-    int32 month() const noexcept;
+    [[nodiscard]] auto month() const noexcept -> int32;
     
     /// @brief Gets the offical name of the cpp language.
     /// @return The offical name of the cpp version.
-    xtd::string name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> xtd::string;
     
     /// @brief Gets the value of cpp language.
     /// @return The value of cpp version.
-    uint32 value() const noexcept;
+    [[nodiscard]] auto value() const noexcept -> uint32;
     
     /// @brief Gets the version string of cpp language.
     /// @return The version string.
-    xtd::string version_string() const noexcept;
+    [[nodiscard]] auto version_string() const noexcept -> xtd::string;
     
     /// @brief Gets The version of cpp language.
     /// @return The version.
-    xtd::version version() const noexcept;
+    [[nodiscard]] auto version() const noexcept -> xtd::version;
     
     /// @brief Gets the year when the cpp language was released.
     /// @return The year when the cpp version was released.
-    int32 year() const noexcept;
+    [[nodiscard]] auto year() const noexcept -> int32;
     /// @}
     
     /// @name Public Methods
@@ -88,11 +88,11 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
