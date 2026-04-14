@@ -20,7 +20,7 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::cref](https://en.cppreference.com/w/cpp/utility/functional/ref).
   template<typename type_t>
-  ref<const type_t> create_cref(const type_t& arg) noexcept {return ref<const type_t> {arg};}
+  [[nodiscard]] auto create_cref(const type_t& arg) noexcept -> ref<const type_t> {return ref<const type_t> {arg};}
   /// @brief xtd::new_uptr operator. This operator creates a xtd::ref object.
   /// @par Library
   /// xtd.core
@@ -35,5 +35,5 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::cref](https://en.cppreference.com/w/cpp/utility/functional/ref).
   template<typename type_t>
-  ref<const type_t> create_ref(ref<type_t> arg) noexcept {return arg;}
+  [[nodiscard]] auto create_cref(ref<type_t> arg) noexcept -> ref<const type_t> {return arg;}
 }
