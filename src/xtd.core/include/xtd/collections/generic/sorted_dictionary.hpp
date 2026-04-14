@@ -29,7 +29,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::sorted_dictionary class is same as [std::map](https://en.cppreference.com/w/cpp/container/map).
-      /// @remarks A xtd::collections::generic::sorted_dictionary object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior.
+      /// @remarks A xtd::collections::generic::sorted_dictionary object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are not allowed. Changing the sort values of existing items is not supported and may lead to unexpected behavior.
       /// @par Examples
       /// The following shows how to use xtd::collections::generic::sorted_dictionary.
       /// @include sorted_dictionary.cpp
