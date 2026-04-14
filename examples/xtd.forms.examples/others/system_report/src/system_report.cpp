@@ -62,12 +62,20 @@ public:
     reports_label.dock(dock_style::left);
     reports_label.text("Reports :");
     reports_label.text_align(xtd::forms::content_alignment::middle_left);
+
+    send_button.parent(reports_panel);
+    send_button.dock(dock_style::right);
+    send_button.text("Send");
+    send_button.click += [&] {
+      diagnostics::process::start(diagnostics::process_start_info {string::format("mailto:?subject={}&body={}", uri::escape_data_string("System report"), uri::escape_data_string(text_reports_text_box.text()))}.use_shell_execute(true)).wait_for_exit();
+    };
   }
   
 private:
   panel reports_panel;
   label reports_label;
   choice reports_choice;
+  button send_button;
   tab_control report_tab_control;
   tab_page text_report_tab_page;
   tab_page json_report_tab_page;
