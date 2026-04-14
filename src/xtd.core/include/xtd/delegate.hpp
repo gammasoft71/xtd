@@ -8,8 +8,8 @@
 #include "iequatable.hpp"
 #include "object.hpp"
 #include "object_ref.hpp"
+#include "size.hpp"
 #include <functional>
-#include <stdexcept>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -38,7 +38,7 @@ namespace xtd {
   /// @ingroup xtd_core system delegates
   using async_callback = xtd::delegate<void(async_result ar)>;
   
-  /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+  /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance and an instance method of that class.
   /// @par Header
   /// ```cpp
   /// #include <xtd/delegate>
@@ -50,24 +50,24 @@ namespace xtd {
   /// @ingroup xtd_core system delegates
   /// @remarks For more info about delegates see [Delegates](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/delegates) guide.
   /// @par Examples
-  /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
+  /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method and a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t>
-  class delegate<result_t()> : public xtd::object, public xtd::iequatable<delegate<result_t() >> {
+  class delegate<result_t()> : public xtd::object, public xtd::iequatable<delegate<result_t()>> {
     struct data {
-      std::vector<std::function <result_t()>> functions;
+      std::vector<std::function<result_t()>> functions;
     };
     
     class async_result_invoke : public xtd::iasync_result {
       struct data;
     public:
-      async_result_invoke(xtd::async_callback async_callback, const xtd::any_object & async_state);
-      xtd::any_object async_state() const noexcept override;
-      xtd::threading::wait_handle& async_wait_handle() noexcept override;
-      bool completed_synchronously() const noexcept override;
-      bool is_completed() const noexcept override;
+      async_result_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state);
+      [[nodiscard]] auto async_state() const noexcept -> xtd::any_object override;
+      [[nodiscard]] auto async_wait_handle() noexcept -> xtd::threading::wait_handle& override;
+      [[nodiscard]] auto completed_synchronously() const noexcept -> bool override;
+      [[nodiscard]] auto is_completed() const noexcept -> bool override;
       
-      xtd::sptr < data > data_;
+      xtd::sptr<data> data_;
     };
     
   public:
@@ -75,9 +75,9 @@ namespace xtd {
     
     /// @{
     /// @brief Represents function type.
-    using function_t = std::function < result_t() >;
+    using function_t = std::function<result_t()>;
     /// @brief Represents the function collection type.
-    using function_collection = std::vector < function_t >;
+    using function_collection = std::vector<function_t>;
     /// @}
     
     /// @name Public Constructors
@@ -98,17 +98,13 @@ namespace xtd {
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, typename object2_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
-    }
+    template<class object1_t, typename object2_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));}
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, typename object2_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
-    }
+    template<class object1_t, typename object2_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));}
     /// @}
     
     /// @name Public Properties
@@ -116,40 +112,40 @@ namespace xtd {
     /// @{
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t count() const noexcept {return data_->functions.size();}
+    [[nodiscard]] auto count() const noexcept -> xtd::size {return data_->functions.size();}
     
     /// @brief Gets the delegates array
     /// @return The delegates array.
-    const function_collection& functions() const {return data_->functions;}
+    [[nodiscard]] auto functions() const -> const function_collection& {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
-    bool is_empty() const noexcept {return count() == 0;}
+    [[nodiscard]] auto is_empty() const noexcept -> bool {return count() == 0;}
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t size() const noexcept {return count();}
+    [[nodiscard]] auto size() const noexcept -> xtd::size {return count();}
     /// @}
     
     /// @name Public Methods
     
     /// @{
     /// @brief Clear delegates array.
-    void clear() {data_->functions.clear();}
+    auto clear() -> void {data_->functions.clear();}
     
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke();
+    [[nodiscard]] auto begin_invoke() -> async_result;
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(xtd::async_callback async_callback);
+    [[nodiscard]] auto begin_invoke(xtd::async_callback async_callback) -> async_result;
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @param async_state The asynchronous state associated with the invocation.
@@ -157,14 +153,14 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state);
+    [[nodiscard]] auto begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state) -> async_result;
     
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    result_t end_invoke(async_result async);
+    auto end_invoke(async_result async) -> result_t;
     
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
@@ -172,23 +168,19 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    result_t invoke() const {return operator()();}
+    auto invoke() const -> result_t {return operator()();}
     
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param obj The delegateType to compare.
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
-    bool equals(const object& obj) const noexcept override {return is < delegate > (obj) && equals(static_cast < const delegate& > (obj));}
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<delegate>(obj) && equals(static_cast<const delegate&>(obj));}
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param other The delegateType to compare.
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
-    bool equals(const delegate& other) const noexcept override {
-      if (data_->functions.size() != other.data_->functions.size())
-        return false;
-        
-      for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], other.data_->functions[i]))
-          return false;
-          
+    [[nodiscard]] auto equals(const delegate& other) const noexcept -> bool override {
+      if (data_->functions.size() != other.data_->functions.size()) return false;
+      for (auto i = xtd::size {0}; i < data_->functions.size(); i++)
+        if (!are_equals(data_->functions[i], other.data_->functions[i])) return false;
       return true;
     }
     /// @}
@@ -198,37 +190,31 @@ namespace xtd {
     /// @{
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
-    /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
+    /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, or if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const array < delegate >& delegates) noexcept {
-      delegate result;
-      for (const delegate& delegate : delegates) {
-        for (const function_t& function : delegate.data_->functions)
+    [[nodiscard]] static auto combine(const xtd::array<delegate>& delegates) noexcept -> delegate {
+      auto result = delegate {};
+      for (auto delegate : delegates)
+        for (auto function : delegate.data_->functions)
           result.data_->functions.push_back(function);
-      }
       return result;
     }
     
     /// @brief Concatenates the invocation lists of two delegates.
     /// @param a The delegate whose invocation list comes first.
     /// @param b The delegate whose invocation list comes second.
-    /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
+    /// @return A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is empty, returns b if a is a empty, and returns empty if both a and b are empty.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const delegate& a, const delegate& b) noexcept {
-      delegate result = a;
-      for (const function_t& function : b.data_->functions)
-        result.data_->functions.push_back(function);
-      return result;
-    }
+    [[nodiscard]] static auto combine(const delegate& a, const delegate& b) noexcept -> delegate {return combine({a, b});}
     
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
     /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
-    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source and removing the last occurrence of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null || if the invocation list of value is ! found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source || if source is a null reference.
+    /// @return A new delegate with an invocation list formed by taking the invocation list of source and removing the last occurrence of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null or if the invocation list of value is not found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source or if source is a null reference.
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
-    static delegate remove(const delegate& source, const delegate& value) noexcept {
-      delegate result = source;
+    [[nodiscard]] static auto remove(const delegate& source, const delegate& value) noexcept -> delegate {
+      auto result = source;
       std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](const auto& function) {
         auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
         if (iterator != result.data_->functions.rend()) result.data_->functions.erase((iterator + 1).base());
@@ -239,9 +225,9 @@ namespace xtd {
     /// @brief removes all occurrences of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
     /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
-    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source && removing all occurrences of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null || if the invocation list of value is ! found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source, if source contains only a series of invocation lists that are equal to the invocation list of value, || if source is a null reference.
+    /// @return A new delegate with an invocation list formed by taking the invocation list of source and removing all occurrences of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null or if the invocation list of value is not found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source, if source contains only a series of invocation lists that are equal to the invocation list of value, or if source is a null reference.
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, all occurrences are removed.
-    static delegate remove_all(const delegate& source, const delegate& value) noexcept {
+    [[nodiscard]] static auto remove_all(const delegate& source, const delegate& value) noexcept -> delegate {
       delegate result = source;
       for (const function_t& function : value.data_->functions) {
         if (find(result.data_->functions.begin(), result.data_->functions.end(), function) != result.data_->functions.end()) {
@@ -261,12 +247,12 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t operator()() const {
+    auto operator()() const -> result_t {
       if (data_->functions.size() == 0) {
-        if constexpr(std::is_void_v < result_t >) return;
-        else if constexpr(std::is_reference_v < result_t >) {
-          using underlying_t = std::remove_reference_t < result_t >;
-          if constexpr(std::is_const_v < underlying_t >) {
+        if constexpr(std::is_void_v<result_t>) return;
+        else if constexpr(std::is_reference_v<result_t>) {
+          using underlying_t = std::remove_reference_t<result_t>;
+          if constexpr(std::is_const_v<underlying_t>) {
             static const underlying_t empty_value{};
             return empty_value;
           } else {
@@ -276,7 +262,7 @@ namespace xtd {
         } else return result_t{};
       }
       
-      for (size_t i = 0; i < data_->functions.size() - 1; i++) {
+      for (auto i = xtd::size {0}; i < data_->functions.size() - 1; i++) {
         if (data_->functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
         data_->functions[i]();
       }
@@ -284,7 +270,7 @@ namespace xtd {
       return data_->functions.back()();
     }
     
-    delegate& operator =(const function_t& function) noexcept {
+    auto operator =(const function_t& function) noexcept -> delegate& {
       data_->functions.clear();
       data_->functions.push_back(function);
       return *this;
@@ -292,91 +278,89 @@ namespace xtd {
     /// @}
     
     /// @cond
-    delegate operator +(const delegate& other) const noexcept {
+    auto operator +(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    delegate operator +(const function_t& function) const noexcept {
+    auto operator +(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    template < class fn_t >
-    delegate operator +(fn_t function) const noexcept {
+    template<class fn_t>
+    auto operator +(fn_t function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate& operator +=(const delegate& delegate) noexcept {
-      *this = delegate::combine(*this, delegate);
+    auto operator +=(const delegate& other) noexcept -> delegate& {
+      *this = delegate::combine(*this, other);
       return *this;
     }
     
-    delegate& operator +=(const function_t& function) noexcept {
+    auto operator +=(const function_t& function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    template < class fn_t >
-    delegate& operator +=(fn_t function) noexcept {
+    template<class fn_t>
+    auto operator +=(fn_t function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate operator -(const delegate& other) const noexcept {
+    auto operator -(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    delegate operator -(const function_t& function) const noexcept {
+    auto operator -(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    template < class fn_t >
-    delegate operator -(fn_t function) const noexcept {
+    template<class fn_t>
+    auto operator -(fn_t function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate& operator -=(const delegate& delegate) noexcept {
-      *this = delegate::remove(*this, delegate);
+    auto operator -=(const delegate& other) noexcept -> delegate& {
+      *this = delegate::remove(*this, other);
       return *this;
     }
     
-    delegate& operator -=(const function_t& function) noexcept {
+    auto operator -=(const function_t& function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
-    template < class fn_t >
-    delegate& operator -=(fn_t function) noexcept {
+    template<class fn_t>
+    auto operator -=(fn_t function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     /// @endcond
     
   private:
-    static bool are_equals(const std::function < result_t() >& fct1, const std::function < result_t() >& fct2) noexcept {
-      return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)()>() == fct2.template target<result_t(*)()>() || *fct1.template target<result_t(*)()>() == *fct2.template target<result_t(*)()>());
-    }
-    
-    static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
+    [[nodiscard]] static auto are_equals(const std::function<result_t()>& fct1, const std::function<result_t()>& fct2) noexcept -> bool {return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)()>() == fct2.template target<result_t(*)()>() || *fct1.template target<result_t(*)()>() == *fct2.template target<result_t(*)()>());}
+    [[nodiscard]] static auto find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept -> typename function_collection::const_iterator {
       auto iterator = std::find_if(begin, end, [&](const auto& item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }
-    xtd::sptr < data > data_ = xtd::new_sptr < data > ();
+    
+    xtd::sptr<data> data_ = xtd::new_sptr<data>();
   };
   
-  /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+  /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance and an instance method of that class.
   /// @par Header
   /// ```cpp
   /// #include <xtd/delegate>
@@ -388,25 +372,25 @@ namespace xtd {
   /// @ingroup xtd_core system delegates
   /// @remarks For more info about delegates see [Delegates](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/delegates) guide.
   /// @par Examples
-  /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
+  /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method and a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
-  template < class result_t, typename ...arguments_t >
-  class delegate < result_t(arguments_t...) > : public object, public xtd::iequatable < delegate<result_t(arguments_t...) >> {
+  template<class result_t, typename ...arguments_t>
+  class delegate<result_t(arguments_t...)> : public object, public xtd::iequatable<delegate<result_t(arguments_t...)>> {
     struct data {
-      std::vector < std::function < result_t()>> no_arguments_functions;
-      std::vector < std::function < result_t(arguments_t...)>> functions;
+      std::vector<std::function<result_t()>> no_arguments_functions;
+      std::vector<std::function<result_t(arguments_t...)>> functions;
     };
     
     class async_result_invoke : public xtd::iasync_result {
       struct data;
     public:
-      async_result_invoke(xtd::async_callback async_callback, const xtd::any_object & async_state);
-      xtd::any_object async_state() const noexcept override;
-      xtd::threading::wait_handle& async_wait_handle() noexcept override;
-      bool completed_synchronously() const noexcept override;
-      bool is_completed() const noexcept override;
+      async_result_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state);
+      [[nodiscard]] auto async_state() const noexcept -> xtd::any_object override;
+      [[nodiscard]] auto async_wait_handle() noexcept -> xtd::threading::wait_handle& override;
+      [[nodiscard]] auto completed_synchronously() const noexcept -> bool override;
+      [[nodiscard]] auto is_completed() const noexcept -> bool override;
       
-      xtd::sptr < data > data_;
+      xtd::sptr<data> data_;
     };
     
   public:
@@ -414,13 +398,13 @@ namespace xtd {
     
     /// @{
     /// @brief Represents no arguments function type.
-    using no_arguments_function_t = std::function < result_t() >;
+    using no_arguments_function_t = std::function<result_t()>;
     /// @brief Represents function type.
-    using function_t = std::function < result_t(arguments_t...) >;
+    using function_t = std::function<result_t(arguments_t...)>;
     /// @brief function_t Represents the no arguments function collection type.
-    using no_arguments_function_collection = std::vector < no_arguments_function_t >;
+    using no_arguments_function_collection = std::vector<no_arguments_function_t>;
     /// @brief function_t Represents the function collection type.
-    using function_collection = std::vector < function_t >;
+    using function_collection = std::vector<function_t>;
     /// @}
     
     /// @name Public Constructors
@@ -431,8 +415,8 @@ namespace xtd {
     /// @cond
     delegate(delegate&&) = default;
     delegate(const delegate&) = default;
-    delegate& operator =(const delegate & delegate) = default;
-    delegate(const delegate < result_t() >& delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
+    delegate& operator =(const delegate& delegate) = default;
+    delegate(const delegate<result_t()>& delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
@@ -446,120 +430,76 @@ namespace xtd {
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, typename object2_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
-    }
+    template<class object1_t, typename object2_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));}
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
     /// @param function the method instance.
-    template < class object1_t, typename object2_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object))));
-    }
+    template<class object1_t, typename object2_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));}
     /// @}
     
     /// @cond
-    template < class object1_t, typename object2_t, typename a1_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1)));}
     
-    template < class object1_t, typename object2_t, typename a1_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t) const) {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t) const) {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5 >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5 >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5)) {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5)) {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t) const) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t) const) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));}
     
-    template < class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t >
-    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t)) noexcept {
-      data_->functions.push_back(function_t(std::bind(method, const_cast < object1_t* > (&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
-    }
+    template<class object1_t, typename object2_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t>
+    delegate(const object1_t& object, result_t(object2_t::*method)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t)) noexcept {data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));}
     /// @endcond
     
     /// @name Public Properties
@@ -567,23 +507,23 @@ namespace xtd {
     /// @{
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t count() const noexcept {return data_->functions.size() + data_->no_arguments_functions.size();}
+    [[nodiscard]] auto count() const noexcept -> xtd::size {return data_->functions.size() + data_->no_arguments_functions.size();}
     
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
-    const no_arguments_function_collection& no_arguments_functions() const {return data_->no_arguments_functions;}
+    [[nodiscard]] auto no_arguments_functions() const -> const no_arguments_function_collection& {return data_->no_arguments_functions;}
     
     /// @brief Gets the delegates array
     /// @return The delegates array.
-    const function_collection& functions() const {return data_->functions;}
+    [[nodiscard]] auto functions() const -> const function_collection& {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
-    bool is_empty() const noexcept {return count() == 0;}
+    [[nodiscard]] auto is_empty() const noexcept -> bool {return count() == 0;}
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t size() const noexcept {return count();}
+    [[nodiscard]] auto size() const noexcept -> xtd::size {return count();}
     /// @}
     
     /// @name Public Methods
@@ -597,7 +537,7 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(arguments_t&&... arguments);
+    [[nodiscard]] auto begin_invoke(arguments_t&&... arguments) -> async_result;
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @param arguments The parameter list.
@@ -605,21 +545,21 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(xtd::async_callback async_callback, arguments_t&&... arguments);
+    [[nodiscard]] auto begin_invoke(xtd::async_callback async_callback, arguments_t&&... arguments) -> async_result;
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(xtd::async_callback async_callback, const xtd::any_object & async_state, arguments_t&&... arguments);
+    [[nodiscard]] auto begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state, arguments_t&&... arguments) -> async_result;
     
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    result_t end_invoke(async_result async);
+    auto end_invoke(async_result async) -> result_t;
     
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
@@ -627,27 +567,21 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    result_t invoke(arguments_t&&... arguments) const {return operator()(arguments...);}
+    auto invoke(arguments_t&&... arguments) const -> result_t {return operator()(arguments...);}
     
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param obj The delegateType to compare.
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
-    bool equals(const object & obj) const noexcept override {return is < delegate > (obj) && equals(static_cast < const delegate& > (obj));}
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<delegate>(obj) && equals(static_cast<const delegate&>(obj));}
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param other The delegateType to compare.
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
-    bool equals(const delegate & other) const noexcept override {
-      if (data_->functions.size() != other.data_->functions.size() || data_->no_arguments_functions.size() != other.data_->no_arguments_functions.size())
-        return false;
-        
-      for (size_t i = 0; i < data_->no_arguments_functions.size(); i++)
-        if (!are_equals(data_->no_arguments_functions[i], other.data_->no_arguments_functions[i]))
-          return false;
-          
-      for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], other.data_->functions[i]))
-          return false;
-          
+    [[nodiscard]] auto equals(const delegate& other) const noexcept -> bool override {
+      if (data_->functions.size() != other.data_->functions.size() || data_->no_arguments_functions.size() != other.data_->no_arguments_functions.size()) return false;
+      for (auto i = xtd::size {0}; i < data_->no_arguments_functions.size(); i++)
+        if (!are_equals(data_->no_arguments_functions[i], other.data_->no_arguments_functions[i])) return false;
+      for (auto i = xtd::size {0}; i < data_->functions.size(); i++)
+        if (!are_equals(data_->functions[i], other.data_->functions[i])) return false;
       return true;
     }
     /// @}
@@ -657,15 +591,15 @@ namespace xtd {
     /// @{
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
-    /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
+    /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, or if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const array < delegate >& delegates) noexcept {
-      delegate result;
-      for (const delegate& delegate : delegates) {
-        for (const no_arguments_function_t& function : delegate.data_->no_arguments_functions)
+    [[nodiscard]] static auto combine(const xtd::array<delegate>& delegates) noexcept -> delegate {
+      auto result = delegate {};
+      for (auto delegate : delegates) {
+        for (auto function : delegate.data_->no_arguments_functions)
           result.data_->no_arguments_functions.push_back(function);
-        for (const function_t& function : delegate.data_->functions)
+        for (auto function : delegate.data_->functions)
           result.data_->functions.push_back(function);
       }
       return result;
@@ -676,22 +610,15 @@ namespace xtd {
     /// @param b The delegate whose invocation list comes second.
     /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const delegate & a, const delegate & b) noexcept {
-      delegate result = a;
-      for (const no_arguments_function_t& function : b.data_->no_arguments_functions)
-        result.data_->no_arguments_functions.push_back(function);
-      for (const function_t& function : b.data_->functions)
-        result.data_->functions.push_back(function);
-      return result;
-    }
+    [[nodiscard]] static auto combine(const delegate& a, const delegate& b) noexcept -> delegate {return combine({a, b});}
     
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
     /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
-    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source and removing the last occurrence of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null || if the invocation list of value is ! found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source || if source is a null reference.
+    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source and removing the last occurrence of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null or if the invocation list of value is not found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source or if source is a null reference.
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
-    static delegate remove(const delegate & source, const delegate & value) noexcept {
-      delegate result = source;
+    [[nodiscard]] static auto remove(const delegate& source, const delegate& value) noexcept -> delegate {
+      auto result = source;
       std::for_each(value.data_->no_arguments_functions.begin(), value.data_->no_arguments_functions.end(), [&](const auto& no_arguments_function) {
         auto iterator = std::find_if(result.data_->no_arguments_functions.rbegin(), result.data_->no_arguments_functions.rend(), [&](const auto& item) {return are_equals(item, no_arguments_function);});
         if (iterator != result.data_->no_arguments_functions.rend()) result.data_->no_arguments_functions.erase((iterator + 1).base());
@@ -707,11 +634,11 @@ namespace xtd {
     /// @brief removes all occurrences of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
     /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
-    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source && removing all occurrences of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null || if the invocation list of value is ! found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source, if source contains only a series of invocation lists that are equal to the invocation list of value, || if source is a null reference.
+    /// @return delegate A new delegate with an invocation list formed by taking the invocation list of source and removing all occurrences of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is null or if the invocation list of value is not found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source, if source contains only a series of invocation lists that are equal to the invocation list of value, or if source is a null reference.
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, all occurrences are removed.
-    static delegate remove_all(const delegate & source, const delegate & value) noexcept {
-      delegate result = source;
-      for (const no_arguments_function_t& function : value.data_->no_arguments_functions) {
+    [[nodiscard]] static auto remove_all(const delegate& source, const delegate& value) noexcept -> delegate {
+      auto result = source;
+      for (auto function : value.data_->no_arguments_functions) {
         if (find(result.data_->no_arguments_functions.begin(), result.data_->no_arguments_functions.end(), function) != result.data_->no_arguments_functions.end()) {
           for (typename function_collection::reverse_iterator iterator = result.data_->no_arguments_functions.rbegin(); iterator != result.data_->no_arguments_functions.rend(); ++iterator) {
             if (are_equals(*iterator, function))
@@ -720,9 +647,9 @@ namespace xtd {
         }
       }
       
-      for (const function_t& function : value.data_->functions) {
+      for (auto function : value.data_->functions) {
         if (find(result.data_->functions.begin(), result.data_->functions.end(), function) != result.data_->functions.end()) {
-          for (typename function_collection::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
+          for (auto iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
             if (are_equals(*iterator, function))
               result.data_->functions.erase((iterator + 1).base());
           }
@@ -738,12 +665,12 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t operator()(arguments_t... arguments) const {
+    auto operator()(arguments_t... arguments) const -> result_t {
       if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) {
-        if constexpr(std::is_void_v < result_t >) return;
-        else if constexpr(std::is_reference_v < result_t >) {
-          using underlying_t = std::remove_reference_t < result_t >;
-          if constexpr(std::is_const_v < underlying_t >) {
+        if constexpr(std::is_void_v<result_t>) return;
+        else if constexpr(std::is_reference_v<result_t>) {
+          using underlying_t = std::remove_reference_t<result_t>;
+          if constexpr(std::is_const_v<underlying_t>) {
             static const underlying_t empty_value{};
             return empty_value;
           } else {
@@ -754,7 +681,7 @@ namespace xtd {
       }
       
       if (data_->no_arguments_functions.size()) {
-        for (size_t i = 0; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
+        for (auto i = xtd::size {0}; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
           if (data_->no_arguments_functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
           data_->no_arguments_functions[i]();
         }
@@ -765,7 +692,7 @@ namespace xtd {
         }
       }
       
-      for (size_t i = 0; i < data_->functions.size() - 1; i++) {
+      for (auto i = xtd::size {0}; i < data_->functions.size() - 1; i++) {
         if (data_->functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
         data_->functions[i](arguments...);
       }
@@ -775,116 +702,116 @@ namespace xtd {
     /// @}
     
     /// @cond
-    template < class type_t >
-    delegate& operator =(const type_t& function) noexcept {
+    template<class type_t>
+    auto operator =(const type_t& function) noexcept -> delegate& {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->functions.push_back(function_t(function));
       return *this;
     }
     
-    delegate& operator =(const function_t& function) noexcept {
+    auto operator =(const function_t& function) noexcept -> delegate& {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->functions.push_back(function);
       return *this;
     }
     
-    delegate& operator =(const no_arguments_function_t& function) noexcept {
+    auto operator =(const no_arguments_function_t& function) noexcept -> delegate& {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->no_arguments_functions.push_back(function);
       return *this;
     }
     
-    delegate operator +(const delegate & other) const noexcept {
+    auto operator +(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    delegate operator +(const no_arguments_function_t& function) const noexcept {
+    auto operator +(const no_arguments_function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate operator +(const function_t& function) const noexcept {
+    auto operator +(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    template < class fn_t >
-    delegate operator +(fn_t function) const noexcept {
+    template<class fn_t>
+    auto operator +(fn_t function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate& operator +=(const delegate & delegate) noexcept {
-      *this = delegate::combine(*this, delegate);
+    auto operator +=(const delegate& other) noexcept -> delegate& {
+      *this = delegate::combine(*this, other);
       return *this;
     }
     
-    delegate& operator +=(const no_arguments_function_t& function) noexcept {
+    auto operator +=(const no_arguments_function_t& function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate& operator +=(const function_t& function) noexcept {
+    auto operator +=(const function_t& function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    template < class fn_t >
-    delegate& operator +=(fn_t function) noexcept {
+    template<class fn_t>
+    auto operator +=(fn_t function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate operator -(const delegate & other) const noexcept {
+    auto operator -(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    delegate operator -(const no_arguments_function_t& function) const noexcept {
+    auto operator -(const no_arguments_function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate operator -(const function_t& function) const noexcept {
+    auto operator -(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    template < class fn_t >
-    delegate operator -(fn_t function) const noexcept {
+    template<class fn_t>
+    auto operator -(fn_t function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate& operator -=(const delegate & delegate) noexcept {
-      *this = delegate::remove(*this, delegate);
+    auto operator -=(const delegate& other) noexcept -> delegate& {
+      *this = delegate::remove(*this, other);
       return *this;
     }
     
-    delegate& operator -=(const no_arguments_function_t& function) noexcept {
+    auto operator -=(const no_arguments_function_t& function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
-    delegate& operator -=(const function_t& function) noexcept {
+    auto operator -=(const function_t& function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
-    template < class fn_t >
-    delegate& operator -=(fn_t function) noexcept {
+    template<class fn_t>
+    auto operator -=(fn_t function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
@@ -893,27 +820,27 @@ namespace xtd {
   private:
     struct delegate_async_state;
     
-    static bool are_equals(const std::function < result_t(arguments_t...) >& fct1, const std::function < result_t(arguments_t...) >& fct2) noexcept {
-      return fct1.target_type() == fct2.target_type() && (fct1.template target < result_t(*)(arguments_t...) > () == fct2.template target < result_t(*)(arguments_t...)>() || *fct1.template target<result_t(*)(arguments_t...) > () == *fct2.template target < result_t(*)(arguments_t...) > ());
+    [[nodiscard]] static auto are_equals(const std::function<result_t(arguments_t...)>& fct1, const std::function<result_t(arguments_t...)>& fct2) noexcept -> bool {
+      return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)(arguments_t...)>() == fct2.template target<result_t(*)(arguments_t...)>() || *fct1.template target<result_t(*)(arguments_t...)>() == *fct2.template target<result_t(*)(arguments_t...)>());
     }
     
-    static bool are_equals(const std::function < result_t() >& fct1, const std::function < result_t() >& fct2) noexcept {
-      return fct1.target_type() == fct2.target_type() && (fct1.template target < result_t(*)() > () == fct2.template target < result_t(*)()>() || *fct1.template target<result_t(*)() > () == *fct2.template target < result_t(*)() > ());
+    [[nodiscard]] static auto are_equals(const std::function<result_t()>& fct1, const std::function<result_t()>& fct2) noexcept -> bool {
+      return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)()>() == fct2.template target<result_t(*)()>() || *fct1.template target<result_t(*)()>() == *fct2.template target<result_t(*)()>());
     }
     
-    static typename no_arguments_function_collection::const_iterator find(typename no_arguments_function_collection::const_iterator begin, typename no_arguments_function_collection::const_iterator end, const no_arguments_function_t& function) noexcept {
+    [[nodiscard]] static auto find(typename no_arguments_function_collection::const_iterator begin, typename no_arguments_function_collection::const_iterator end, const no_arguments_function_t& function) noexcept -> typename no_arguments_function_collection::const_iterator {
       auto iterator = std::find_if(begin, end, [&](const auto& item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }
     
-    static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
+    [[nodiscard]] static auto find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept -> typename function_collection::const_iterator {
       auto iterator = std::find_if(begin, end, [&](const auto& item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }
     
-    xtd::sptr < data > data_ = xtd::new_sptr < data > ();
+    xtd::sptr<data> data_ = xtd::new_sptr<data>();
   };
 }
 
