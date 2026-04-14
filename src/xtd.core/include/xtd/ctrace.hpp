@@ -9,7 +9,7 @@
 namespace xtd {
   #if TRACE
   /// @brief A xtd::tracestreambuf variable used by xtd::ctrace ostream.
-  inline xtd::tracestreambuf ctracestreambuf;
+  inline auto ctracestreambuf = xtd::tracestreambuf {};
   
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
   /// @par Header
