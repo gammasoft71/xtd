@@ -87,8 +87,8 @@ namespace xtd {
     delegate() = default;
     /// @cond
     delegate(delegate&&) = default;
-    delegate(const delegate&) = default;
-    delegate& operator =(const delegate& delegate) = default;
+    delegate(const delegate& other) {*data_ = *other.data_;}
+    delegate& operator =(const delegate& other) {*data_ = *other.data_; return *this;}
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
@@ -414,8 +414,8 @@ namespace xtd {
     delegate() = default;
     /// @cond
     delegate(delegate&&) = default;
-    delegate(const delegate&) = default;
-    delegate& operator =(const delegate& delegate) = default;
+    delegate(const delegate& other) {*data_ = *other.data_;}
+    delegate& operator =(const delegate& other) {*data_ = *other.data_; return *this;}
     delegate(const delegate<result_t()>& delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
     /// @endcond
     
