@@ -107,7 +107,7 @@ Inheritance diagram for xtd::distribution:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The distribution class contains information about an operating system distribution. </dd>
 <dd>
-For information about the current runtime operating system, retrieve the distribution object returned by the <a class="el" href="classxtd_1_1environment.html#a7eb460253deb58efb3bfdfbb71904119" title="Gets an xtd::operating_system object that contains the current platform identifier and version number...">xtd::environment::os_version</a> method. </dd>
+For information about the current runtime operating system, retrieve the distribution object returned by the <a class="el" href="classxtd_1_1environment.html#abf0a6319d1ff6d958ae80bbfeba45d22" title="Gets an xtd::operating_system object that contains the current platform identifier and version number...">xtd::environment::os_version</a> method. </dd>
 <dd>
 By design, the distribution class is not a general purpose means of describing an operating system distribution, and you cannot derive a more inclusive type from the distribution class. If you need a type to contain other information about an operating system distribution, create your own type, then include a field of type distribution and any additional fields or methods that you require. </dd></dl>
 </div><table class="memberdecls">
@@ -118,36 +118,36 @@ using&#160;</td><td class="memItemRight"><b>id_collection</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:ac1c48082ecbaee8568d47c8a053871c6" id="r_ac1c48082ecbaee8568d47c8a053871c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac1c48082ecbaee8568d47c8a053871c6">distribution</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#aabaa68383484f2673a88e29e566fc4c0">name</a>, const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;<a class="el" href="#a32affc63ce956b568117a458095f88f8">version</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#ac7307b073930ce3f65bbc3584af5d71e">code_name</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#af8558f5b722cec1bcf96c315cd1195a7">description</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a4c0682604d40a193fe38d3df2a9c6303">id</a>, const id_collection &amp;<a class="el" href="#ad1189d1a5c65add22978f2c5e54180cf">like_ids</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a955f17760d051cb7c604245a5c8377ad">version_string</a>, const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;<a class="el" href="#a960fa49df6e8fa0928ca5351561fd2ee">home</a>, const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;<a class="el" href="#a14a699bdd19a95ca664eaf216d3c26d3">bug_repport</a>)</td></tr>
+<tr class="memitem:ac1c48082ecbaee8568d47c8a053871c6" id="r_ac1c48082ecbaee8568d47c8a053871c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac1c48082ecbaee8568d47c8a053871c6">distribution</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a6ce31b35ab590339d87f4caae2116433">name</a>, const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;<a class="el" href="#a0fceeb1b618f5982f1827da0af27b9f8">version</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a5ee33d366f2b7fff7366e1c7ada6e7b9">code_name</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a0dc0f0c912b5c56beae70e9f3b1a5659">description</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a22070a2ec32faf33dbaae39d28a0dfb3">id</a>, const id_collection &amp;<a class="el" href="#adf85f2a72d2af97c622fca967a07c218">like_ids</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a90a58dae670b6d370a1fe89ee5be6ca5">version_string</a>, const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;<a class="el" href="#a2d5fe13e0cf157b841c2e1351df2047b">home</a>, const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;<a class="el" href="#abad1b55bd361dbf0ff4dc7ad2ec163bf">bug_repport</a>)</td></tr>
 <tr class="memdesc:ac1c48082ecbaee8568d47c8a053871c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, like identifiers array, version string, home url and bug repport url.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a14a699bdd19a95ca664eaf216d3c26d3" id="r_a14a699bdd19a95ca664eaf216d3c26d3"><td class="memItemLeft">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a14a699bdd19a95ca664eaf216d3c26d3">bug_repport</a> () const noexcept</td></tr>
-<tr class="memdesc:a14a699bdd19a95ca664eaf216d3c26d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution bug repport url.  <br /></td></tr>
-<tr class="memitem:ac7307b073930ce3f65bbc3584af5d71e" id="r_ac7307b073930ce3f65bbc3584af5d71e"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac7307b073930ce3f65bbc3584af5d71e">code_name</a> () const noexcept</td></tr>
-<tr class="memdesc:ac7307b073930ce3f65bbc3584af5d71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution code name. For example "jammy" is the code name of Ubuntu 22.04.  <br /></td></tr>
-<tr class="memitem:af8558f5b722cec1bcf96c315cd1195a7" id="r_af8558f5b722cec1bcf96c315cd1195a7"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af8558f5b722cec1bcf96c315cd1195a7">description</a> () const noexcept</td></tr>
-<tr class="memdesc:af8558f5b722cec1bcf96c315cd1195a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution description. For example "Ubuntu 22.04.2 LTS".  <br /></td></tr>
-<tr class="memitem:a960fa49df6e8fa0928ca5351561fd2ee" id="r_a960fa49df6e8fa0928ca5351561fd2ee"><td class="memItemLeft">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a960fa49df6e8fa0928ca5351561fd2ee">home</a> () const noexcept</td></tr>
-<tr class="memdesc:a960fa49df6e8fa0928ca5351561fd2ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution home url.  <br /></td></tr>
-<tr class="memitem:a4c0682604d40a193fe38d3df2a9c6303" id="r_a4c0682604d40a193fe38d3df2a9c6303"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4c0682604d40a193fe38d3df2a9c6303">id</a> () const noexcept</td></tr>
-<tr class="memdesc:a4c0682604d40a193fe38d3df2a9c6303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution identifier.  <br /></td></tr>
-<tr class="memitem:ad1189d1a5c65add22978f2c5e54180cf" id="r_ad1189d1a5c65add22978f2c5e54180cf"><td class="memItemLeft">const id_collection &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad1189d1a5c65add22978f2c5e54180cf">like_ids</a> () const noexcept</td></tr>
-<tr class="memdesc:ad1189d1a5c65add22978f2c5e54180cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution like identifiers array.  <br /></td></tr>
-<tr class="memitem:aabaa68383484f2673a88e29e566fc4c0" id="r_aabaa68383484f2673a88e29e566fc4c0"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aabaa68383484f2673a88e29e566fc4c0">name</a> () const noexcept</td></tr>
-<tr class="memdesc:aabaa68383484f2673a88e29e566fc4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution name. For example "Ubuntu".  <br /></td></tr>
-<tr class="memitem:a32affc63ce956b568117a458095f88f8" id="r_a32affc63ce956b568117a458095f88f8"><td class="memItemLeft">const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a32affc63ce956b568117a458095f88f8">version</a> () const noexcept</td></tr>
-<tr class="memdesc:a32affc63ce956b568117a458095f88f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object that identifies the operating system distribution. For example <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version(22, 4)</a>.  <br /></td></tr>
-<tr class="memitem:a955f17760d051cb7c604245a5c8377ad" id="r_a955f17760d051cb7c604245a5c8377ad"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a955f17760d051cb7c604245a5c8377ad">version_string</a> () const noexcept</td></tr>
-<tr class="memdesc:a955f17760d051cb7c604245a5c8377ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution version string.  <br /></td></tr>
+<tr class="memitem:abad1b55bd361dbf0ff4dc7ad2ec163bf" id="r_abad1b55bd361dbf0ff4dc7ad2ec163bf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abad1b55bd361dbf0ff4dc7ad2ec163bf">bug_repport</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;</td></tr>
+<tr class="memdesc:abad1b55bd361dbf0ff4dc7ad2ec163bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution bug repport url.  <br /></td></tr>
+<tr class="memitem:a5ee33d366f2b7fff7366e1c7ada6e7b9" id="r_a5ee33d366f2b7fff7366e1c7ada6e7b9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5ee33d366f2b7fff7366e1c7ada6e7b9">code_name</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a5ee33d366f2b7fff7366e1c7ada6e7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution code name. For example "jammy" is the code name of Ubuntu 22.04.  <br /></td></tr>
+<tr class="memitem:a0dc0f0c912b5c56beae70e9f3b1a5659" id="r_a0dc0f0c912b5c56beae70e9f3b1a5659"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0dc0f0c912b5c56beae70e9f3b1a5659">description</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a0dc0f0c912b5c56beae70e9f3b1a5659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution description. For example "Ubuntu 22.04.2 LTS".  <br /></td></tr>
+<tr class="memitem:a2d5fe13e0cf157b841c2e1351df2047b" id="r_a2d5fe13e0cf157b841c2e1351df2047b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d5fe13e0cf157b841c2e1351df2047b">home</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;</td></tr>
+<tr class="memdesc:a2d5fe13e0cf157b841c2e1351df2047b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution home url.  <br /></td></tr>
+<tr class="memitem:a22070a2ec32faf33dbaae39d28a0dfb3" id="r_a22070a2ec32faf33dbaae39d28a0dfb3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a22070a2ec32faf33dbaae39d28a0dfb3">id</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a22070a2ec32faf33dbaae39d28a0dfb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution identifier.  <br /></td></tr>
+<tr class="memitem:adf85f2a72d2af97c622fca967a07c218" id="r_adf85f2a72d2af97c622fca967a07c218"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adf85f2a72d2af97c622fca967a07c218">like_ids</a> () const noexcept -&gt; const id_collection &amp;</td></tr>
+<tr class="memdesc:adf85f2a72d2af97c622fca967a07c218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution like identifiers array.  <br /></td></tr>
+<tr class="memitem:a6ce31b35ab590339d87f4caae2116433" id="r_a6ce31b35ab590339d87f4caae2116433"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ce31b35ab590339d87f4caae2116433">name</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a6ce31b35ab590339d87f4caae2116433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution name. For example "Ubuntu".  <br /></td></tr>
+<tr class="memitem:a0fceeb1b618f5982f1827da0af27b9f8" id="r_a0fceeb1b618f5982f1827da0af27b9f8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0fceeb1b618f5982f1827da0af27b9f8">version</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;</td></tr>
+<tr class="memdesc:a0fceeb1b618f5982f1827da0af27b9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object that identifies the operating system distribution. For example <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version(22, 4)</a>.  <br /></td></tr>
+<tr class="memitem:a90a58dae670b6d370a1fe89ee5be6ca5" id="r_a90a58dae670b6d370a1fe89ee5be6ca5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a90a58dae670b6d370a1fe89ee5be6ca5">version_string</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a90a58dae670b6d370a1fe89ee5be6ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets operating system distribution version string.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a80d3de0b7fc8bc981ecdf5cf26bfbe7e" id="r_a80d3de0b7fc8bc981ecdf5cf26bfbe7e"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a80d3de0b7fc8bc981ecdf5cf26bfbe7e">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a80d3de0b7fc8bc981ecdf5cf26bfbe7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:a5a58150c0a9b4645a65d5dfb60e92be1" id="r_a5a58150c0a9b4645a65d5dfb60e92be1"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5a58150c0a9b4645a65d5dfb60e92be1">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a5a58150c0a9b4645a65d5dfb60e92be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this distribution object to its equivalent string representation.  <br /></td></tr>
+<tr class="memitem:a67d280cf43c5adda43df858a77586b07" id="r_a67d280cf43c5adda43df858a77586b07"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a67d280cf43c5adda43df858a77586b07">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a67d280cf43c5adda43df858a77586b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6012ce221e6424a559b8387ab0c3a484" id="r_a6012ce221e6424a559b8387ab0c3a484"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6012ce221e6424a559b8387ab0c3a484">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a6012ce221e6424a559b8387ab0c3a484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this distribution object to its equivalent string representation.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -225,15 +225,15 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, like identifiers array, version string, home url and bug repport url. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#aabaa68383484f2673a88e29e566fc4c0" title="Gets operating system distribution name. For example &quot;Ubuntu&quot;.">name</a></td><td>The operating system distribution name. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a6ce31b35ab590339d87f4caae2116433" title="Gets operating system distribution name. For example &quot;Ubuntu&quot;.">name</a></td><td>The operating system distribution name. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">version</a></td><td>A Version object that indicates the version of the operating system distribution. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#ac7307b073930ce3f65bbc3584af5d71e" title="Gets operating system distribution code name. For example &quot;jammy&quot; is the code name of Ubuntu 22....">code_name</a></td><td>The operating system distribution code name. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#af8558f5b722cec1bcf96c315cd1195a7" title="Gets operating system distribution description. For example &quot;Ubuntu 22.04.2 LTS&quot;.">description</a></td><td>The operating system distribution description. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a4c0682604d40a193fe38d3df2a9c6303" title="Gets operating system distribution identifier.">id</a></td><td>The operating system distribution identifier. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#ad1189d1a5c65add22978f2c5e54180cf" title="Gets operating system distribution like identifiers array.">like_ids</a></td><td>The operating system distribution like identifiers array. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a955f17760d051cb7c604245a5c8377ad" title="Gets operating system distribution version string.">version_string</a></td><td>The operating system distribution version string. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a960fa49df6e8fa0928ca5351561fd2ee" title="Gets operating system distribution home url.">home</a></td><td>The operating system distribution home url. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a14a699bdd19a95ca664eaf216d3c26d3" title="Gets operating system distribution bug repport url.">bug_repport</a></td><td>The operating system distribution bug report url. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a5ee33d366f2b7fff7366e1c7ada6e7b9" title="Gets operating system distribution code name. For example &quot;jammy&quot; is the code name of Ubuntu 22....">code_name</a></td><td>The operating system distribution code name. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a0dc0f0c912b5c56beae70e9f3b1a5659" title="Gets operating system distribution description. For example &quot;Ubuntu 22.04.2 LTS&quot;.">description</a></td><td>The operating system distribution description. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a22070a2ec32faf33dbaae39d28a0dfb3" title="Gets operating system distribution identifier.">id</a></td><td>The operating system distribution identifier. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#adf85f2a72d2af97c622fca967a07c218" title="Gets operating system distribution like identifiers array.">like_ids</a></td><td>The operating system distribution like identifiers array. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a90a58dae670b6d370a1fe89ee5be6ca5" title="Gets operating system distribution version string.">version_string</a></td><td>The operating system distribution version string. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a2d5fe13e0cf157b841c2e1351df2047b" title="Gets operating system distribution home url.">home</a></td><td>The operating system distribution home url. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#abad1b55bd361dbf0ff4dc7ad2ec163bf" title="Gets operating system distribution bug repport url.">bug_repport</a></td><td>The operating system distribution bug report url. </td></tr>
   </table>
   </dd>
 </dl>
@@ -241,8 +241,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a14a699bdd19a95ca664eaf216d3c26d3" name="a14a699bdd19a95ca664eaf216d3c26d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14a699bdd19a95ca664eaf216d3c26d3">&#9670;&#160;</a></span>bug_repport()</h2>
+<a id="abad1b55bd361dbf0ff4dc7ad2ec163bf" name="abad1b55bd361dbf0ff4dc7ad2ec163bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad1b55bd361dbf0ff4dc7ad2ec163bf">&#9670;&#160;</a></span>bug_repport()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,15 +251,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp; xtd::distribution::bug_repport </td>
+          <td class="memname">auto xtd::distribution::bug_repport </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -269,8 +269,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac7307b073930ce3f65bbc3584af5d71e" name="ac7307b073930ce3f65bbc3584af5d71e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7307b073930ce3f65bbc3584af5d71e">&#9670;&#160;</a></span>code_name()</h2>
+<a id="a5ee33d366f2b7fff7366e1c7ada6e7b9" name="a5ee33d366f2b7fff7366e1c7ada6e7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee33d366f2b7fff7366e1c7ada6e7b9">&#9670;&#160;</a></span>code_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,15 +279,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::distribution::code_name </td>
+          <td class="memname">auto xtd::distribution::code_name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -297,8 +297,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af8558f5b722cec1bcf96c315cd1195a7" name="af8558f5b722cec1bcf96c315cd1195a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8558f5b722cec1bcf96c315cd1195a7">&#9670;&#160;</a></span>description()</h2>
+<a id="a0dc0f0c912b5c56beae70e9f3b1a5659" name="a0dc0f0c912b5c56beae70e9f3b1a5659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc0f0c912b5c56beae70e9f3b1a5659">&#9670;&#160;</a></span>description()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,15 +307,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::distribution::description </td>
+          <td class="memname">auto xtd::distribution::description </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -325,8 +325,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a960fa49df6e8fa0928ca5351561fd2ee" name="a960fa49df6e8fa0928ca5351561fd2ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a960fa49df6e8fa0928ca5351561fd2ee">&#9670;&#160;</a></span>home()</h2>
+<a id="a2d5fe13e0cf157b841c2e1351df2047b" name="a2d5fe13e0cf157b841c2e1351df2047b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5fe13e0cf157b841c2e1351df2047b">&#9670;&#160;</a></span>home()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,15 +335,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp; xtd::distribution::home </td>
+          <td class="memname">auto xtd::distribution::home </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -353,8 +353,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4c0682604d40a193fe38d3df2a9c6303" name="a4c0682604d40a193fe38d3df2a9c6303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c0682604d40a193fe38d3df2a9c6303">&#9670;&#160;</a></span>id()</h2>
+<a id="a22070a2ec32faf33dbaae39d28a0dfb3" name="a22070a2ec32faf33dbaae39d28a0dfb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22070a2ec32faf33dbaae39d28a0dfb3">&#9670;&#160;</a></span>id()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,15 +363,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::distribution::id </td>
+          <td class="memname">auto xtd::distribution::id </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -381,8 +381,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad1189d1a5c65add22978f2c5e54180cf" name="ad1189d1a5c65add22978f2c5e54180cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1189d1a5c65add22978f2c5e54180cf">&#9670;&#160;</a></span>like_ids()</h2>
+<a id="adf85f2a72d2af97c622fca967a07c218" name="adf85f2a72d2af97c622fca967a07c218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf85f2a72d2af97c622fca967a07c218">&#9670;&#160;</a></span>like_ids()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,15 +391,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const id_collection &amp; xtd::distribution::like_ids </td>
+          <td class="memname">auto xtd::distribution::like_ids </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const id_collection &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -409,8 +409,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aabaa68383484f2673a88e29e566fc4c0" name="aabaa68383484f2673a88e29e566fc4c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabaa68383484f2673a88e29e566fc4c0">&#9670;&#160;</a></span>name()</h2>
+<a id="a6ce31b35ab590339d87f4caae2116433" name="a6ce31b35ab590339d87f4caae2116433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce31b35ab590339d87f4caae2116433">&#9670;&#160;</a></span>name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,15 +419,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::distribution::name </td>
+          <td class="memname">auto xtd::distribution::name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -437,8 +437,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a32affc63ce956b568117a458095f88f8" name="a32affc63ce956b568117a458095f88f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32affc63ce956b568117a458095f88f8">&#9670;&#160;</a></span>version()</h2>
+<a id="a0fceeb1b618f5982f1827da0af27b9f8" name="a0fceeb1b618f5982f1827da0af27b9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fceeb1b618f5982f1827da0af27b9f8">&#9670;&#160;</a></span>version()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -447,15 +447,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp; xtd::distribution::version </td>
+          <td class="memname">auto xtd::distribution::version </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -465,8 +465,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a955f17760d051cb7c604245a5c8377ad" name="a955f17760d051cb7c604245a5c8377ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a955f17760d051cb7c604245a5c8377ad">&#9670;&#160;</a></span>version_string()</h2>
+<a id="a90a58dae670b6d370a1fe89ee5be6ca5" name="a90a58dae670b6d370a1fe89ee5be6ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a58dae670b6d370a1fe89ee5be6ca5">&#9670;&#160;</a></span>version_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,15 +475,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::distribution::version_string </td>
+          <td class="memname">auto xtd::distribution::version_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -493,8 +493,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a80d3de0b7fc8bc981ecdf5cf26bfbe7e" name="a80d3de0b7fc8bc981ecdf5cf26bfbe7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80d3de0b7fc8bc981ecdf5cf26bfbe7e">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a67d280cf43c5adda43df858a77586b07" name="a67d280cf43c5adda43df858a77586b07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d280cf43c5adda43df858a77586b07">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -503,15 +503,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::distribution::get_hash_code </td>
+          <td class="memname">auto xtd::distribution::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -523,8 +523,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5a58150c0a9b4645a65d5dfb60e92be1" name="a5a58150c0a9b4645a65d5dfb60e92be1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a58150c0a9b4645a65d5dfb60e92be1">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a6012ce221e6424a559b8387ab0c3a484" name="a6012ce221e6424a559b8387ab0c3a484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6012ce221e6424a559b8387ab0c3a484">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -533,15 +533,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::distribution::to_string </td>
+          <td class="memname">auto xtd::distribution::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

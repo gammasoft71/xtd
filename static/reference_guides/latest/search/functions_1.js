@@ -115,7 +115,7 @@ var searchData=
   ['buffer_5fheight_112',['buffer_height',['../classxtd_1_1console.html#a4228718d234e7bdcfee70d6a3607189b',1,'xtd::console::buffer_height() -&gt; int32'],['../classxtd_1_1console.html#ac2ee5554f2484cb0153ee82f3e9523cb',1,'xtd::console::buffer_height(int32 height) -&gt; void']]],
   ['buffer_5fwidth_113',['buffer_width',['../classxtd_1_1console.html#afdaf595bcbc3cd9b2aeb0bbad50ba8bf',1,'xtd::console::buffer_width() -&gt; int32'],['../classxtd_1_1console.html#a654fad65ab576411dd41adb1ccbf6786',1,'xtd::console::buffer_width(int32 width) -&gt; void']]],
   ['buffered_5fgraphics_5fcontext_114',['buffered_graphics_context',['../classxtd_1_1drawing_1_1buffered__graphics__context.html#a7b0bb3d66e773984195bd9e9ae349f2e',1,'xtd::drawing::buffered_graphics_context']]],
-  ['bug_5frepport_115',['bug_repport',['../classxtd_1_1distribution.html#a14a699bdd19a95ca664eaf216d3c26d3',1,'xtd::distribution']]],
+  ['bug_5frepport_115',['bug_repport',['../classxtd_1_1distribution.html#abad1b55bd361dbf0ff4dc7ad2ec163bf',1,'xtd::distribution']]],
   ['build_116',['build',['../classxtd_1_1version.html#aa7a3bfb1c5089058407f302c39dfd189',1,'xtd::version']]],
   ['build_5ftype_117',['build_type',['../classxtd_1_1compiler.html#a949c80f34297048b03e37f6fbaaa580d',1,'xtd::compiler']]],
   ['bulgaria_118',['bulgaria',['../classxtd_1_1forms_1_1countries.html#a30a5668ff2b90d7746dc92d8bf8b8bf2',1,'xtd::forms::countries']]],

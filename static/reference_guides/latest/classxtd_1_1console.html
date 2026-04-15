@@ -130,12 +130,12 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -146,7 +146,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a0ae9e9b0cbe9df3f4fc03f7e4682ef2e"><div class="ttname"><a href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::basic_string&lt; char &gt;::empty_string</a></div><div class="ttdeci">static const basic_string empty_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:111</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.hpp:47</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_af15178dea424d7fcfcbd7cecc9675466"><div class="ttname"><a href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">xtd::environment::new_line</a></div><div class="ttdeci">static auto new_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:484</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -4027,12 +4027,12 @@ template&lt;typename ... args_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -4073,12 +4073,12 @@ template&lt;typename ... args_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>

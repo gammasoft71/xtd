@@ -393,7 +393,7 @@ var searchData=
   ['buffered_5fgraphics_5fcontext_390',['buffered_graphics_context',['../classxtd_1_1drawing_1_1buffered__graphics__context.html',1,'xtd::drawing::buffered_graphics_context'],['../classxtd_1_1drawing_1_1buffered__graphics__context.html#a7b0bb3d66e773984195bd9e9ae349f2e',1,'xtd::drawing::buffered_graphics_context::buffered_graphics_context()']]],
   ['buffered_5fgraphics_5fcontext_2ehpp_391',['buffered_graphics_context.hpp',['../buffered__graphics__context_8hpp.html',1,'']]],
   ['bug_392',['bug',['../classxtd_1_1forms_1_1emoticons.html#afea891b4e7a1886b738872c04586f15e',1,'xtd::forms::emoticons']]],
-  ['bug_5frepport_393',['bug_repport',['../classxtd_1_1distribution.html#a14a699bdd19a95ca664eaf216d3c26d3',1,'xtd::distribution']]],
+  ['bug_5frepport_393',['bug_repport',['../classxtd_1_1distribution.html#abad1b55bd361dbf0ff4dc7ad2ec163bf',1,'xtd::distribution']]],
   ['build_394',['build',['../classxtd_1_1version.html#aa7a3bfb1c5089058407f302c39dfd189',1,'xtd::version']]],
   ['build_20and_20run_395',['Build and run',['../index.html#ExamplesConsoleBuildAndRunSubsubsection',1,'Build and run'],['../index.html#ExamplesFormsBuildAndRunSubsubsection',1,'Build and run'],['../index.html#ExamplesUnitTestBuildAndRunSubsubsection',1,'Build and run']]],
   ['build_20options_396',['build options',['../_c_make_build_option.html',1,'CMake build options'],['../_c_make_build_option.html#xtdBuildOptions',1,'xtd build options'],['../_c_make_build_option.html#xtUserProjectdBuildOptions',1,'xtd user project build options']]],

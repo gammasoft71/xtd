@@ -260,7 +260,7 @@ var searchData=
   ['original_5fstring_257',['original_string',['../classxtd_1_1uri.html#ae4412f788e6a3b2f42d072f7f7192652',1,'xtd::uri']]],
   ['os_5fsupports_5fip_5fv4_258',['os_supports_ip_v4',['../classxtd_1_1net_1_1sockets_1_1socket.html#ab61adfe49bbfe4a83542a17a53c9ff46',1,'xtd::net::sockets::socket']]],
   ['os_5fsupports_5fip_5fv6_259',['os_supports_ip_v6',['../classxtd_1_1net_1_1sockets_1_1socket.html#a5971ca76c1787256e88e5183538c227d',1,'xtd::net::sockets::socket']]],
-  ['os_5fversion_260',['os_version',['../classxtd_1_1environment.html#a7eb460253deb58efb3bfdfbb71904119',1,'xtd::environment']]],
+  ['os_5fversion_260',['os_version',['../classxtd_1_1environment.html#abf0a6319d1ff6d958ae80bbfeba45d22',1,'xtd::environment']]],
   ['ostream_261',['ostream',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html#a1f8ebcbd494282d648fe88d0993dc216',1,'xtd::diagnostics::ostream_trace_listener::ostream() const -&gt; const std::ostream &amp;'],['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html#adf27bedad8ec6cda12635b82e5c416f4',1,'xtd::diagnostics::ostream_trace_listener::ostream(const std::ostream &amp;ostream) -&gt; void'],['../classxtd_1_1tunit_1_1ostream__unit__test.html#afdd8405179918c5f9dffcb837fbb1b82',1,'xtd::tunit::ostream_unit_test::ostream()']]],
   ['ostream_5fevent_5flistener_262',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html#aea12aefadf59d40592eda90a4f44f132',1,'xtd::tunit::ostream_event_listener']]],
   ['ostream_5ftrace_5flistener_263',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html#a8059bcba47a3afb9ecf1fcc5d9d7d722',1,'xtd::diagnostics::ostream_trace_listener']]],

@@ -116,7 +116,7 @@ struct xtd::enum_object&lt; enum_t &gt;</div><p>Provides the base class for enum
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 <div class="ttc" id="astructxtd_1_1enum__object_html_ad83a0a2f3a6287e2b47e7c2271bf8088"><div class="ttname"><a href="#ad83a0a2f3a6287e2b47e7c2271bf8088">xtd::enum_object::enum_object</a></div><div class="ttdeci">enum_object() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::enum_object class.</div></div>
-</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> &lt;enum_t&gt; </dd></dl>
+</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object&lt;enum_t&gt;</a> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum_object&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
@@ -134,7 +134,7 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a>(enum_test::value_four).<a class="code hl_function" href="#ad7d06564133d899d9194509afc1d185e">to_int32</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a>(enum_test::value_four).<a class="code hl_function" href="#a52e2486d94c7ad32c76be3c9b1c404a9">to_int32</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int&gt;</a>(enum_test::value_four));</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
@@ -152,7 +152,7 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3cf593875eebd764cb406fa27ded6d93"><div class="ttname"><a href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a></div><div class="ttdeci">#define enum_class_(namespace_name, enum_class_t,...)</div><div class="ttdoc">Provides the registration struct for enum class.</div><div class="ttdef"><b>Definition</b> enum_class.hpp:52</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga64df7eb27c64ffe5ab208756cbc26cf3"><div class="ttname"><a href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">xtd::as</a></div><div class="ttdeci">auto as(any_object &amp;o) -&gt; type_t</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:60</div></div>
-<div class="ttc" id="astructxtd_1_1enum__object_html_ad7d06564133d899d9194509afc1d185e"><div class="ttname"><a href="#ad7d06564133d899d9194509afc1d185e">xtd::enum_object::to_int32</a></div><div class="ttdeci">int32 to_int32() const noexcept</div><div class="ttdoc">Converts this instance to int32.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:148</div></div>
+<div class="ttc" id="astructxtd_1_1enum__object_html_a52e2486d94c7ad32c76be3c9b1c404a9"><div class="ttname"><a href="#a52e2486d94c7ad32c76be3c9b1c404a9">xtd::enum_object::to_int32</a></div><div class="ttdeci">auto to_int32() const noexcept -&gt; xtd::int32</div><div class="ttdoc">Converts this instance to int32.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:148</div></div>
 </div><!-- fragment --> The following code show how to use <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> class for an enum flags. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a>(, text_attribute,</div>
@@ -167,7 +167,7 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;name = {}&quot;</span>, text_attribute::bold | text_attribute::italic);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a>(text_attribute::bold | text_attribute::italic).<a class="code hl_function" href="#ad7d06564133d899d9194509afc1d185e">to_int32</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a>(text_attribute::bold | text_attribute::italic).<a class="code hl_function" href="#a52e2486d94c7ad32c76be3c9b1c404a9">to_int32</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int&gt;</a>(text_attribute::bold | text_attribute::italic));</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object&lt;&gt;::get_values_as_int32&lt;text_attribute&gt;</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object&lt;&gt;::get_names&lt;text_attribute&gt;</a>());</div>
@@ -198,8 +198,8 @@ Public Aliases</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:ae25fad9922f39d5bc0aa0efb82b6551d" id="r_ae25fad9922f39d5bc0aa0efb82b6551d"><td class="memItemLeft"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a></td></tr>
 <tr class="memdesc:ae25fad9922f39d5bc0aa0efb82b6551d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of the enum.  <br /></td></tr>
-<tr class="memitem:a00873f075288eaa8c80473e02145f4b5" id="r_a00873f075288eaa8c80473e02145f4b5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a00873f075288eaa8c80473e02145f4b5">has_flag</a> (<a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> flag) const noexcept</td></tr>
-<tr class="memdesc:a00873f075288eaa8c80473e02145f4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an array of the values of the constants in a specified enumeration.  <br /></td></tr>
+<tr class="memitem:a9610f5ac1de94024b0b8588343786f0d" id="r_a9610f5ac1de94024b0b8588343786f0d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9610f5ac1de94024b0b8588343786f0d">has_flag</a> (<a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> flag) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a9610f5ac1de94024b0b8588343786f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an array of the values of the constants in a specified enumeration.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -210,46 +210,46 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:af6cd5998f4565de0d5bd54bd9e7aaffc" id="r_af6cd5998f4565de0d5bd54bd9e7aaffc"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#af6cd5998f4565de0d5bd54bd9e7aaffc">compare_to</a> (const <a class="el" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a> &amp;<a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept override</td></tr>
-<tr class="memdesc:af6cd5998f4565de0d5bd54bd9e7aaffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
-<tr class="memitem:a05b3e6a769ac3e24ef9158c3bc4bf3d2" id="r_a05b3e6a769ac3e24ef9158c3bc4bf3d2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a05b3e6a769ac3e24ef9158c3bc4bf3d2">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a05b3e6a769ac3e24ef9158c3bc4bf3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a7854c2efb516c7ada1ea6dfe5558aa7f" id="r_a7854c2efb516c7ada1ea6dfe5558aa7f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7854c2efb516c7ada1ea6dfe5558aa7f">equals</a> (const <a class="el" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a> &amp;<a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept override</td></tr>
-<tr class="memdesc:a7854c2efb516c7ada1ea6dfe5558aa7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:ade2ca76218273c342516131e9ea361b7" id="r_ade2ca76218273c342516131e9ea361b7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ade2ca76218273c342516131e9ea361b7">equals</a> (<a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> <a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept</td></tr>
-<tr class="memdesc:ade2ca76218273c342516131e9ea361b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:ad75ecc4ea7a05157a027ccfb8b3fb7f3" id="r_ad75ecc4ea7a05157a027ccfb8b3fb7f3"><td class="memTemplParams" colspan="2">template&lt;typename attribute_t&gt; </td></tr>
-<tr class="memitem:ad75ecc4ea7a05157a027ccfb8b3fb7f3 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad75ecc4ea7a05157a027ccfb8b3fb7f3">equals</a> (attribute_t <a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept</td></tr>
-<tr class="memdesc:ad75ecc4ea7a05157a027ccfb8b3fb7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object with defferent type.  <br /></td></tr>
-<tr class="memitem:a751cb18de899f55a0d0bad16889d8c9e" id="r_a751cb18de899f55a0d0bad16889d8c9e"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a751cb18de899f55a0d0bad16889d8c9e">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a751cb18de899f55a0d0bad16889d8c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:aae2d86e5ae2cc335b9eba5999a42b159" id="r_aae2d86e5ae2cc335b9eba5999a42b159"><td class="memItemLeft"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#aae2d86e5ae2cc335b9eba5999a42b159">to_byte</a> () const noexcept</td></tr>
-<tr class="memdesc:aae2d86e5ae2cc335b9eba5999a42b159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to byte.  <br /></td></tr>
-<tr class="memitem:aee8df2f9c05410319d0d46d97d8fa60a" id="r_aee8df2f9c05410319d0d46d97d8fa60a"><td class="memItemLeft"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight"><a class="el" href="#aee8df2f9c05410319d0d46d97d8fa60a">to_int16</a> () const noexcept</td></tr>
-<tr class="memdesc:aee8df2f9c05410319d0d46d97d8fa60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751" title="Represents a 16-bit signed integer.">int16</a>.  <br /></td></tr>
-<tr class="memitem:ad7d06564133d899d9194509afc1d185e" id="r_ad7d06564133d899d9194509afc1d185e"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad7d06564133d899d9194509afc1d185e">to_int32</a> () const noexcept</td></tr>
-<tr class="memdesc:ad7d06564133d899d9194509afc1d185e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a>.  <br /></td></tr>
-<tr class="memitem:a0a557dc2f41d893c3048526b8905098e" id="r_a0a557dc2f41d893c3048526b8905098e"><td class="memItemLeft"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0a557dc2f41d893c3048526b8905098e">to_int64</a> () const noexcept</td></tr>
-<tr class="memdesc:a0a557dc2f41d893c3048526b8905098e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">int64</a>.  <br /></td></tr>
-<tr class="memitem:a6710342e6eafc488db9e03af24e9d5f1" id="r_a6710342e6eafc488db9e03af24e9d5f1"><td class="memItemLeft"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6710342e6eafc488db9e03af24e9d5f1">to_sbyte</a> () const noexcept</td></tr>
-<tr class="memdesc:a6710342e6eafc488db9e03af24e9d5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to signed byte.  <br /></td></tr>
-<tr class="memitem:a3027f9edc7609b1dafe7bad3e002e249" id="r_a3027f9edc7609b1dafe7bad3e002e249"><td class="memItemLeft"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3027f9edc7609b1dafe7bad3e002e249">to_uint16</a> () const noexcept</td></tr>
-<tr class="memdesc:a3027f9edc7609b1dafe7bad3e002e249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751" title="Represents a 16-bit signed integer.">int16</a>.  <br /></td></tr>
-<tr class="memitem:a1956bdd49aa3b7d09a16b3e9b2ed3372" id="r_a1956bdd49aa3b7d09a16b3e9b2ed3372"><td class="memItemLeft"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1956bdd49aa3b7d09a16b3e9b2ed3372">to_uint32</a> () const noexcept</td></tr>
-<tr class="memdesc:a1956bdd49aa3b7d09a16b3e9b2ed3372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a>.  <br /></td></tr>
-<tr class="memitem:ac1e6598eb744c86db3f335f27d912e03" id="r_ac1e6598eb744c86db3f335f27d912e03"><td class="memItemLeft"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac1e6598eb744c86db3f335f27d912e03">to_uint64</a> () const noexcept</td></tr>
-<tr class="memdesc:ac1e6598eb744c86db3f335f27d912e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">int64</a>.  <br /></td></tr>
-<tr class="memitem:a773dd7848c4fc85bc2270963f649e230" id="r_a773dd7848c4fc85bc2270963f649e230"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a773dd7848c4fc85bc2270963f649e230">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a773dd7848c4fc85bc2270963f649e230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a297aef0214a26dabdd54614abea33edb" id="r_a297aef0214a26dabdd54614abea33edb"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a297aef0214a26dabdd54614abea33edb">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>) const</td></tr>
-<tr class="memdesc:a297aef0214a26dabdd54614abea33edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this instance to its equivalent string representation using the specified format.  <br /></td></tr>
-<tr class="memitem:a4922fd843042c1ec8bd1f2513742c792" id="r_a4922fd843042c1ec8bd1f2513742c792"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4922fd843042c1ec8bd1f2513742c792">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a> &amp;culture) const override</td></tr>
-<tr class="memdesc:a4922fd843042c1ec8bd1f2513742c792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this instance to its equivalent string representation using the specified format, and locale.  <br /></td></tr>
+<tr class="memitem:a9b48d30628178505fd147759b949d4c8" id="r_a9b48d30628178505fd147759b949d4c8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9b48d30628178505fd147759b949d4c8">compare_to</a> (const <a class="el" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a> &amp;<a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:a9b48d30628178505fd147759b949d4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="memitem:a0673c9da97dbb3236368f5e5009b62e9" id="r_a0673c9da97dbb3236368f5e5009b62e9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0673c9da97dbb3236368f5e5009b62e9">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a0673c9da97dbb3236368f5e5009b62e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:abced02f1c5db58a5861c21e8bb698769" id="r_abced02f1c5db58a5861c21e8bb698769"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abced02f1c5db58a5861c21e8bb698769">equals</a> (const <a class="el" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a> &amp;<a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:abced02f1c5db58a5861c21e8bb698769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a48cb89bb5b1a90421f7befac0102e3b9" id="r_a48cb89bb5b1a90421f7befac0102e3b9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a48cb89bb5b1a90421f7befac0102e3b9">equals</a> (<a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> <a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a48cb89bb5b1a90421f7befac0102e3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memitem:a48797108d09357395674b626d032acae" id="r_a48797108d09357395674b626d032acae"><td class="memTemplParams" colspan="2">template&lt;typename attribute_t&gt; </td></tr>
+<tr class="memitem:a48797108d09357395674b626d032acae template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a48797108d09357395674b626d032acae">equals</a> (attribute_t <a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a48797108d09357395674b626d032acae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object with defferent type.  <br /></td></tr>
+<tr class="memitem:a9319ed7accb24b5ded1877fa7cd3fb53" id="r_a9319ed7accb24b5ded1877fa7cd3fb53"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9319ed7accb24b5ded1877fa7cd3fb53">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a9319ed7accb24b5ded1877fa7cd3fb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a35c66dac79a5ba4e476e77a7ca0b465b" id="r_a35c66dac79a5ba4e476e77a7ca0b465b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a35c66dac79a5ba4e476e77a7ca0b465b">to_byte</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td></tr>
+<tr class="memdesc:a35c66dac79a5ba4e476e77a7ca0b465b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to byte.  <br /></td></tr>
+<tr class="memitem:a0c03aa9213ee3d8caa1451b2be6006e8" id="r_a0c03aa9213ee3d8caa1451b2be6006e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c03aa9213ee3d8caa1451b2be6006e8">to_int16</a> () const noexcept -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td></tr>
+<tr class="memdesc:a0c03aa9213ee3d8caa1451b2be6006e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751" title="Represents a 16-bit signed integer.">int16</a>.  <br /></td></tr>
+<tr class="memitem:a52e2486d94c7ad32c76be3c9b1c404a9" id="r_a52e2486d94c7ad32c76be3c9b1c404a9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a52e2486d94c7ad32c76be3c9b1c404a9">to_int32</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a52e2486d94c7ad32c76be3c9b1c404a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a>.  <br /></td></tr>
+<tr class="memitem:a7293c37ac280b791ebcc324d642aa09f" id="r_a7293c37ac280b791ebcc324d642aa09f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7293c37ac280b791ebcc324d642aa09f">to_int64</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:a7293c37ac280b791ebcc324d642aa09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">int64</a>.  <br /></td></tr>
+<tr class="memitem:a33b206afb4211234f205dd09ae5018f7" id="r_a33b206afb4211234f205dd09ae5018f7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a33b206afb4211234f205dd09ae5018f7">to_sbyte</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">xtd::sbyte</a></td></tr>
+<tr class="memdesc:a33b206afb4211234f205dd09ae5018f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to signed byte.  <br /></td></tr>
+<tr class="memitem:a4e123c77d882195d64be1ff45233194e" id="r_a4e123c77d882195d64be1ff45233194e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e123c77d882195d64be1ff45233194e">to_uint16</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td></tr>
+<tr class="memdesc:a4e123c77d882195d64be1ff45233194e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751" title="Represents a 16-bit signed integer.">int16</a>.  <br /></td></tr>
+<tr class="memitem:a774a6e66ccd24bfc09df34417e70c21d" id="r_a774a6e66ccd24bfc09df34417e70c21d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a774a6e66ccd24bfc09df34417e70c21d">to_uint32</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td></tr>
+<tr class="memdesc:a774a6e66ccd24bfc09df34417e70c21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a>.  <br /></td></tr>
+<tr class="memitem:a663bc9a7b1773cb8937cb0a9acdf974f" id="r_a663bc9a7b1773cb8937cb0a9acdf974f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a663bc9a7b1773cb8937cb0a9acdf974f">to_uint64</a> () const noexcept -&gt; <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td></tr>
+<tr class="memdesc:a663bc9a7b1773cb8937cb0a9acdf974f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">int64</a>.  <br /></td></tr>
+<tr class="memitem:afc5e9054924e19be9a8d361a7e7e7699" id="r_afc5e9054924e19be9a8d361a7e7e7699"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afc5e9054924e19be9a8d361a7e7e7699">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:afc5e9054924e19be9a8d361a7e7e7699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:a6dcab4203f6950cba012ad7464515411" id="r_a6dcab4203f6950cba012ad7464515411"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6dcab4203f6950cba012ad7464515411">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a6dcab4203f6950cba012ad7464515411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this instance to its equivalent string representation using the specified format.  <br /></td></tr>
+<tr class="memitem:a8b65c5ce8ab2768b25dc8a50a9d3dd5b" id="r_a8b65c5ce8ab2768b25dc8a50a9d3dd5b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8b65c5ce8ab2768b25dc8a50a9d3dd5b">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a> &amp;culture) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a8b65c5ce8ab2768b25dc8a50a9d3dd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this instance to its equivalent string representation using the specified format, and locale.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a90f637d3fef5924b7ba750a2aa1fb01e" id="r_a90f637d3fef5924b7ba750a2aa1fb01e"><td class="memItemLeft">static <a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90f637d3fef5924b7ba750a2aa1fb01e">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str)</td></tr>
-<tr class="memdesc:a90f637d3fef5924b7ba750a2aa1fb01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its <span class="tt"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c" title="Represents the enumeration type.">enum_type</a></span> equivalent.  <br /></td></tr>
+<tr class="memitem:ad2e6363acb80954c06d23dcb24fa8791" id="r_ad2e6363acb80954c06d23dcb24fa8791"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad2e6363acb80954c06d23dcb24fa8791">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str) -&gt; <a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a></td></tr>
+<tr class="memdesc:ad2e6363acb80954c06d23dcb24fa8791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its <span class="tt"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c" title="Represents the enumeration type.">enum_type</a></span> equivalent.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -374,8 +374,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a00873f075288eaa8c80473e02145f4b5" name="a00873f075288eaa8c80473e02145f4b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00873f075288eaa8c80473e02145f4b5">&#9670;&#160;</a></span>has_flag()</h2>
+<a id="a9610f5ac1de94024b0b8588343786f0d" name="a9610f5ac1de94024b0b8588343786f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9610f5ac1de94024b0b8588343786f0d">&#9670;&#160;</a></span>has_flag()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,15 +386,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::has_flag </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::has_flag </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -413,8 +413,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="af6cd5998f4565de0d5bd54bd9e7aaffc" name="af6cd5998f4565de0d5bd54bd9e7aaffc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6cd5998f4565de0d5bd54bd9e7aaffc">&#9670;&#160;</a></span>compare_to()</h2>
+<a id="a9b48d30628178505fd147759b949d4c8" name="a9b48d30628178505fd147759b949d4c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b48d30628178505fd147759b949d4c8">&#9670;&#160;</a></span>compare_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,15 +425,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::compare_to </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::compare_to </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a>&lt; enum_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -459,8 +459,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a05b3e6a769ac3e24ef9158c3bc4bf3d2" name="a05b3e6a769ac3e24ef9158c3bc4bf3d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05b3e6a769ac3e24ef9158c3bc4bf3d2">&#9670;&#160;</a></span>equals() <span class="overload">[1/4]</span></h2>
+<a id="a0673c9da97dbb3236368f5e5009b62e9" name="a0673c9da97dbb3236368f5e5009b62e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0673c9da97dbb3236368f5e5009b62e9">&#9670;&#160;</a></span>equals() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -471,15 +471,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -497,8 +497,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a7854c2efb516c7ada1ea6dfe5558aa7f" name="a7854c2efb516c7ada1ea6dfe5558aa7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7854c2efb516c7ada1ea6dfe5558aa7f">&#9670;&#160;</a></span>equals() <span class="overload">[2/4]</span></h2>
+<a id="abced02f1c5db58a5861c21e8bb698769" name="abced02f1c5db58a5861c21e8bb698769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abced02f1c5db58a5861c21e8bb698769">&#9670;&#160;</a></span>equals() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,15 +509,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a>&lt; enum_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -533,8 +533,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="ade2ca76218273c342516131e9ea361b7" name="ade2ca76218273c342516131e9ea361b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade2ca76218273c342516131e9ea361b7">&#9670;&#160;</a></span>equals() <span class="overload">[3/4]</span></h2>
+<a id="a48cb89bb5b1a90421f7befac0102e3b9" name="a48cb89bb5b1a90421f7befac0102e3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48cb89bb5b1a90421f7befac0102e3b9">&#9670;&#160;</a></span>equals() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -545,15 +545,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -569,8 +569,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="ad75ecc4ea7a05157a027ccfb8b3fb7f3" name="ad75ecc4ea7a05157a027ccfb8b3fb7f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad75ecc4ea7a05157a027ccfb8b3fb7f3">&#9670;&#160;</a></span>equals() <span class="overload">[4/4]</span></h2>
+<a id="a48797108d09357395674b626d032acae" name="a48797108d09357395674b626d032acae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48797108d09357395674b626d032acae">&#9670;&#160;</a></span>equals() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -583,15 +583,15 @@ template&lt;typename attribute_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype">attribute_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -607,8 +607,8 @@ template&lt;typename attribute_t&gt; </div>
 
 </div>
 </div>
-<a id="a751cb18de899f55a0d0bad16889d8c9e" name="a751cb18de899f55a0d0bad16889d8c9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a751cb18de899f55a0d0bad16889d8c9e">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a9319ed7accb24b5ded1877fa7cd3fb53" name="a9319ed7accb24b5ded1877fa7cd3fb53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9319ed7accb24b5ded1877fa7cd3fb53">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,15 +619,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::get_hash_code </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -639,8 +639,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="aae2d86e5ae2cc335b9eba5999a42b159" name="aae2d86e5ae2cc335b9eba5999a42b159"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae2d86e5ae2cc335b9eba5999a42b159">&#9670;&#160;</a></span>to_byte()</h2>
+<a id="a35c66dac79a5ba4e476e77a7ca0b465b" name="a35c66dac79a5ba4e476e77a7ca0b465b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c66dac79a5ba4e476e77a7ca0b465b">&#9670;&#160;</a></span>to_byte()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,15 +651,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_byte </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_byte </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -669,8 +669,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="aee8df2f9c05410319d0d46d97d8fa60a" name="aee8df2f9c05410319d0d46d97d8fa60a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee8df2f9c05410319d0d46d97d8fa60a">&#9670;&#160;</a></span>to_int16()</h2>
+<a id="a0c03aa9213ee3d8caa1451b2be6006e8" name="a0c03aa9213ee3d8caa1451b2be6006e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c03aa9213ee3d8caa1451b2be6006e8">&#9670;&#160;</a></span>to_int16()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -681,15 +681,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_int16 </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_int16 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -699,8 +699,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="ad7d06564133d899d9194509afc1d185e" name="ad7d06564133d899d9194509afc1d185e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7d06564133d899d9194509afc1d185e">&#9670;&#160;</a></span>to_int32()</h2>
+<a id="a52e2486d94c7ad32c76be3c9b1c404a9" name="a52e2486d94c7ad32c76be3c9b1c404a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e2486d94c7ad32c76be3c9b1c404a9">&#9670;&#160;</a></span>to_int32()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -711,15 +711,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_int32 </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_int32 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -729,8 +729,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a0a557dc2f41d893c3048526b8905098e" name="a0a557dc2f41d893c3048526b8905098e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a557dc2f41d893c3048526b8905098e">&#9670;&#160;</a></span>to_int64()</h2>
+<a id="a7293c37ac280b791ebcc324d642aa09f" name="a7293c37ac280b791ebcc324d642aa09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7293c37ac280b791ebcc324d642aa09f">&#9670;&#160;</a></span>to_int64()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -741,15 +741,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_int64 </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_int64 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -759,8 +759,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a6710342e6eafc488db9e03af24e9d5f1" name="a6710342e6eafc488db9e03af24e9d5f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6710342e6eafc488db9e03af24e9d5f1">&#9670;&#160;</a></span>to_sbyte()</h2>
+<a id="a33b206afb4211234f205dd09ae5018f7" name="a33b206afb4211234f205dd09ae5018f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33b206afb4211234f205dd09ae5018f7">&#9670;&#160;</a></span>to_sbyte()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -771,26 +771,26 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_sbyte </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_sbyte </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">xtd::sbyte</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Converts this instance to signed byte. </p>
-<dl class="section return"><dt>Returns</dt><dd>A new sbyte object converted from this instance. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92" title="Represents a 8-bit signed integer.">xtd::sbyte</a> object converted from this instance. </dd></dl>
 
 </div>
 </div>
-<a id="a3027f9edc7609b1dafe7bad3e002e249" name="a3027f9edc7609b1dafe7bad3e002e249"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3027f9edc7609b1dafe7bad3e002e249">&#9670;&#160;</a></span>to_uint16()</h2>
+<a id="a4e123c77d882195d64be1ff45233194e" name="a4e123c77d882195d64be1ff45233194e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e123c77d882195d64be1ff45233194e">&#9670;&#160;</a></span>to_uint16()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -801,15 +801,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_uint16 </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_uint16 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -819,8 +819,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a1956bdd49aa3b7d09a16b3e9b2ed3372" name="a1956bdd49aa3b7d09a16b3e9b2ed3372"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1956bdd49aa3b7d09a16b3e9b2ed3372">&#9670;&#160;</a></span>to_uint32()</h2>
+<a id="a774a6e66ccd24bfc09df34417e70c21d" name="a774a6e66ccd24bfc09df34417e70c21d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774a6e66ccd24bfc09df34417e70c21d">&#9670;&#160;</a></span>to_uint32()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -831,15 +831,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_uint32 </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_uint32 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -849,8 +849,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="ac1e6598eb744c86db3f335f27d912e03" name="ac1e6598eb744c86db3f335f27d912e03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1e6598eb744c86db3f335f27d912e03">&#9670;&#160;</a></span>to_uint64()</h2>
+<a id="a663bc9a7b1773cb8937cb0a9acdf974f" name="a663bc9a7b1773cb8937cb0a9acdf974f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663bc9a7b1773cb8937cb0a9acdf974f">&#9670;&#160;</a></span>to_uint64()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -861,15 +861,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_uint64 </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_uint64 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -879,8 +879,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a773dd7848c4fc85bc2270963f649e230" name="a773dd7848c4fc85bc2270963f649e230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a773dd7848c4fc85bc2270963f649e230">&#9670;&#160;</a></span>to_string() <span class="overload">[1/3]</span></h2>
+<a id="afc5e9054924e19be9a8d361a7e7e7699" name="afc5e9054924e19be9a8d361a7e7e7699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5e9054924e19be9a8d361a7e7e7699">&#9670;&#160;</a></span>to_string() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -891,15 +891,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -911,8 +911,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a297aef0214a26dabdd54614abea33edb" name="a297aef0214a26dabdd54614abea33edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a297aef0214a26dabdd54614abea33edb">&#9670;&#160;</a></span>to_string() <span class="overload">[2/3]</span></h2>
+<a id="a6dcab4203f6950cba012ad7464515411" name="a6dcab4203f6950cba012ad7464515411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dcab4203f6950cba012ad7464515411">&#9670;&#160;</a></span>to_string() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -923,15 +923,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>format</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -962,8 +962,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a4922fd843042c1ec8bd1f2513742c792" name="a4922fd843042c1ec8bd1f2513742c792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4922fd843042c1ec8bd1f2513742c792">&#9670;&#160;</a></span>to_string() <span class="overload">[3/3]</span></h2>
+<a id="a8b65c5ce8ab2768b25dc8a50a9d3dd5b" name="a8b65c5ce8ab2768b25dc8a50a9d3dd5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b65c5ce8ab2768b25dc8a50a9d3dd5b">&#9670;&#160;</a></span>to_string() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -974,19 +974,19 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span>&#160;) const</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span>&#160;) const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1017,8 +1017,8 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a90f637d3fef5924b7ba750a2aa1fb01e" name="a90f637d3fef5924b7ba750a2aa1fb01e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90f637d3fef5924b7ba750a2aa1fb01e">&#9670;&#160;</a></span>parse()</h2>
+<a id="ad2e6363acb80954c06d23dcb24fa8791" name="ad2e6363acb80954c06d23dcb24fa8791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e6363acb80954c06d23dcb24fa8791">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1029,15 +1029,15 @@ template&lt;typename enum_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::parse </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::parse </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
