@@ -53,39 +53,39 @@ namespace xtd {
     /// @{
     /// @brief Gets operating system distribution bug repport url.
     /// @return The operating system distribution bug repport url.
-    const xtd::uri& bug_repport() const noexcept;
+    [[nodiscard]] auto bug_repport() const noexcept -> const xtd::uri&;
     
     /// @brief Gets operating system distribution code name. For example "jammy" is the code name of Ubuntu 22.04.
     /// @return The operating system distribution code name.
-    const xtd::string& code_name() const noexcept;
+    [[nodiscard]] auto code_name() const noexcept -> const xtd::string&;
     
     /// @brief Gets operating system distribution description. For example "Ubuntu 22.04.2 LTS".
     /// @return The operating system distribution description.
-    const xtd::string& description() const noexcept;
+    [[nodiscard]] auto description() const noexcept -> const xtd::string&;
     
     /// @brief Gets operating system distribution home url.
     /// @return The operating system distribution home url.
-    const xtd::uri& home() const noexcept;
+    [[nodiscard]] auto home() const noexcept -> const xtd::uri&;
     
     /// @brief Gets operating system distribution identifier.
     /// @return The operating system distribution identifier.
-    const xtd::string& id() const noexcept;
+    [[nodiscard]] auto id() const noexcept -> const xtd::string&;
     
     /// @brief Gets operating system distribution like identifiers array.
     /// @return The operating system distribution like identifiers array.
-    const id_collection& like_ids() const noexcept;
+    [[nodiscard]] auto like_ids() const noexcept -> const id_collection&;
     
     /// @brief Gets operating system distribution name. For example "Ubuntu".
     /// @return The operating system distribution name.
-    const xtd::string& name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> const xtd::string&;
     
     /// @brief Gets a xtd::version object that identifies the operating system distribution. For example xtd::version(22, 4).
     /// @return Version A Version object that describes the major version, minor version, build, and revision numbers for the operating system distribution.
-    const xtd::version& version() const noexcept;
+    [[nodiscard]] auto version() const noexcept -> const xtd::version&;
     
     /// @brief Gets operating system distribution version string.
     /// @return The operating system distribution version string.
-    const xtd::string& version_string() const noexcept;
+    [[nodiscard]] auto version_string() const noexcept -> const xtd::string&;
     /// @}
     
     /// @name Public Methods
@@ -93,11 +93,11 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
     
     /// @brief Converts the value of this distribution object to its equivalent string representation.
     /// @return The string representation of the value returned by the description property.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
