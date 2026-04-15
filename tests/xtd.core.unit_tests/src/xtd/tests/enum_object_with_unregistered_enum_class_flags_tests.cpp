@@ -341,14 +341,14 @@ namespace xtd::tests {
     
     auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<enum_object_with_unregistered_enum_class_flags_test>(16), enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("16"));
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("none");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("one");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("two");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("three");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("four");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("one, two");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("three, four");});
-      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("five");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("none");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("one");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("two");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("three");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("four");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("one, two");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("three, four");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = enum_object<>::parse<enum_object_with_unregistered_enum_class_flags_test>("five");});
     }
     
     auto test_method_(to_byte) {
