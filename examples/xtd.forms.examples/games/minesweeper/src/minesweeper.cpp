@@ -338,7 +338,7 @@ auto minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_arg
   dialog.custom_height(properties::settings::default_settings().custom_height());
   dialog.custom_width(properties::settings::default_settings().custom_width());
   dialog.custom_mines(properties::settings::default_settings().custom_mines());
-  dialog.show_dialog(*this);
+  dialog.show_sheet_dialog(*this);
   properties::settings::default_settings().custom_height(dialog.custom_heght());
   properties::settings::default_settings().custom_width(dialog.custom_width());
   properties::settings::default_settings().custom_mines(dialog.custom_mines());
@@ -476,7 +476,7 @@ auto minesweeper_form::you_win() -> void {
     minesweeper::input_name_dialog input_name_dialog;
     input_name_dialog.gammer_name(gamer_name);
     input_name_dialog.level(level_);
-    if (input_name_dialog.show_dialog(*this) == dialog_result::ok)
+    if (input_name_dialog.show_sheet_dialog(*this) == dialog_result::ok)
       gamer_name = input_name_dialog.gammer_name();
       
     std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {[](int value) {properties::settings::default_settings().beginner_high_scores_value(value);}}}, {level::intermediate, {[](int value) {properties::settings::default_settings().intermediate_high_scores_value(value);}}}, {level::expert, {[](int value) {properties::settings::default_settings().expert_high_scores_value(value);}}}};
