@@ -447,7 +447,7 @@ $(function() {
 <div class="line">  dialog.custom_height(properties::settings::default_settings().custom_height());</div>
 <div class="line">  dialog.custom_width(properties::settings::default_settings().custom_width());</div>
 <div class="line">  dialog.custom_mines(properties::settings::default_settings().custom_mines());</div>
-<div class="line">  dialog.show_dialog(*<span class="keyword">this</span>);</div>
+<div class="line">  dialog.show_sheet_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">  properties::settings::default_settings().custom_height(dialog.custom_heght());</div>
 <div class="line">  properties::settings::default_settings().custom_width(dialog.custom_width());</div>
 <div class="line">  properties::settings::default_settings().custom_mines(dialog.custom_mines());</div>
@@ -585,7 +585,7 @@ $(function() {
 <div class="line">    minesweeper::input_name_dialog input_name_dialog;</div>
 <div class="line">    input_name_dialog.gammer_name(gamer_name);</div>
 <div class="line">    input_name_dialog.level(level_);</div>
-<div class="line">    <span class="keywordflow">if</span> (input_name_dialog.show_dialog(*<span class="keyword">this</span>) == dialog_result::ok)</div>
+<div class="line">    <span class="keywordflow">if</span> (input_name_dialog.show_sheet_dialog(*<span class="keyword">this</span>) == dialog_result::ok)</div>
 <div class="line">      gamer_name = input_name_dialog.gammer_name();</div>
 <div class="line">      </div>
 <div class="line">    std::map&lt;level, delegate&lt;void(<span class="keywordtype">int</span>)&gt;&gt; set_settings_high_scores_values {{level::beginner, {[](<span class="keywordtype">int</span> value) {properties::settings::default_settings().beginner_high_scores_value(value);}}}, {level::intermediate, {[](<span class="keywordtype">int</span> value) {properties::settings::default_settings().intermediate_high_scores_value(value);}}}, {level::expert, {[](<span class="keywordtype">int</span> value) {properties::settings::default_settings().expert_high_scores_value(value);}}}};</div>
