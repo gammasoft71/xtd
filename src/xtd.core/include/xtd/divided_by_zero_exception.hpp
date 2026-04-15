@@ -84,6 +84,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Attempt to divide by zero.";}
+    [[nodiscard]] auto default_message() const noexcept -> const char* {return "Attempt to divide by zero.";}
   };
 }
