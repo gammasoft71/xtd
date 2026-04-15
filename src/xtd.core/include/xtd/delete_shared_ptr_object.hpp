@@ -22,5 +22,5 @@ namespace xtd {
   /// @remarks This operator does not have to be called because when an xtd::shared_ptr_object object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::shared_ptr_object object at a specific time.
   template<typename type_t>
-  void delete_shared_ptr_object(shared_ptr_object<type_t>& ptr) {ptr = null;}
+  auto delete_shared_ptr_object(shared_ptr_object<type_t>& ptr) -> void {ptr = null;}
 }
