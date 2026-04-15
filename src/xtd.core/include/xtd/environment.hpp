@@ -27,6 +27,8 @@
 #include "processor.hpp"
 #include "program_exit_event_handler.hpp"
 #include "signal_cancel_event_handler.hpp"
+#include "size.hpp"
+#include "size_of.hpp"
 #include "static.hpp"
 #include "target_id.hpp"
 #include "target_type.hpp"
@@ -303,32 +305,32 @@ namespace xtd {
       /// @{
       /// @brief Gets The inlcude path of the library.
       /// @return A string that represents the include path of the library.
-      const xtd::string& include_path() const noexcept;
+      [[nodiscard]] auto include_path() const noexcept -> const xtd::string&;
       
       /// @brief Gets The library path of the library.
       /// @return A string that represents the library path of the library.
-      const xtd::string& library_path() const noexcept;
+      [[nodiscard]] auto library_path() const noexcept -> const xtd::string&;
       
       /// @brief Gets The name of the library.
       /// @return A string that represents the name of the library.
-      const xtd::string& name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       
       /// @brief Gets The resource path of the library.
       /// @return A string that represents the resource path of the library.
-      const xtd::string& resources_path() const noexcept;
+      [[nodiscard]] auto resources_path() const noexcept -> const xtd::string&;
       
       /// @brief Gets The version of the library.
       /// @return An xtd::version object that represents the version of the library.
-      const xtd::version& version() const noexcept;
+      [[nodiscard]] auto version() const noexcept -> const xtd::version&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      bool equals(const object& other) const noexcept override {return is<xtd_library>(other) && equals(static_cast<const xtd_library&>(other));}
-      bool equals(const xtd_library& other) const noexcept override {return name_ == other.name_ && version_ == other.version_ && include_path_ == other.include_path_ && library_path_ == other.library_path_ && resources_path_ == other.resources_path_;}
+      [[nodiscard]] auto equals(const object& other) const noexcept -> bool override {return is<xtd_library>(other) && equals(static_cast<const xtd_library&>(other));}
+      [[nodiscard]] auto equals(const xtd_library& other) const noexcept -> bool override {return name_ == other.name_ && version_ == other.version_ && include_path_ == other.include_path_ && library_path_ == other.library_path_ && resources_path_ == other.resources_path_;}
       
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     private:
@@ -352,21 +354,21 @@ namespace xtd {
     /// @remarks This method provides access to the program name and any arguments specified on the command line when the current process was started.
     /// @remarks The program name can include path information, but is not required to do so. Use the xtd::environment::get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
-    static xtd::string command_line() noexcept;
+    [[nodiscard]] static auto command_line() noexcept -> xtd::string;
     
     /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
     /// @return An object that contains the compiler identifier and version number.
-    static xtd::compiler compiler_version() noexcept {
+    [[nodiscard]] static auto compiler_version() noexcept -> xtd::compiler {
       static auto compiler_id = __compiler_id;
       static auto version = __compiler_version;
       static auto build_type = __build_type;
-      static xtd::compiler compiler {compiler_id, version, build_type, sizeof(size_t) == 8};
+      static xtd::compiler compiler {compiler_id, version, build_type, size_of<xtd::size>() == 8};
       return compiler;
     }
     
     /// @brief Gets an xtd::cpp_language object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
-    static xtd::cpp_language cpp_version() noexcept {
+    [[nodiscard]] static auto cpp_version() noexcept -> xtd::cpp_language {
       static auto cpp_language = __cpp_language;
       return cpp_language;
     }
@@ -375,7 +377,7 @@ namespace xtd {
     /// @return xtd::string A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
     /// @exception xtd::not_supported_exception The operating system does not have current directory functionality.
-    static xtd::string current_directory();
+    [[nodiscard]] static auto current_directory() -> xtd::string;
     
     /// @brief Sets the fully qualified path of the current working directory.
     /// @param directory_name A string containing a directory path.
@@ -383,61 +385,61 @@ namespace xtd {
     /// @exception xtd::io::io_exception An I/O error occurred.
     /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
     /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
-    static void current_directory(const xtd::string& directory_name);
+    static auto current_directory(const xtd::string& directory_name) -> void;
     
     /// @brief Gets a unique identifier for the current managed thread.
     /// @return An id that represents a unique identifier for this thread.
-    static int32 current_managed_thread_id() noexcept;
+    [[nodiscard]] static auto current_managed_thread_id() noexcept -> xtd::int32;
     
     /// @brief Gets a unique identifier for the current thread.
     /// @return An id that represents a unique identifier for this thread.
-    static intptr current_thread_id() noexcept;
+    [[nodiscard]] static auto current_thread_id() noexcept -> xtd::intptr;
     
     /// @brief Gets the exit code of the process.
     /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
     /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
-    static int32 exit_code() noexcept;
+    [[nodiscard]] static auto exit_code() noexcept -> xtd::int32;
     /// @brief Sets the exit code of the process.
     /// @param value A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
     /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
-    static void exit_code(int32 value) noexcept;
+    static auto exit_code(xtd::int32 value) noexcept -> void;
     
     /// @brief Gets a value that indicates whether the current application domain is shutting down.
     /// @return bool `true` if the current application domain is shutting down; otherwise, `false`.
     /// @remarks At this time the return value is always `false` for macOS and linux.
-    static bool has_shutdown_started();
+    [[nodiscard]] static auto has_shutdown_started() -> bool;
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return `true` if the operating system is 64-bit; otherwise, `false`.
-    static bool is_64_bit_operating_system() noexcept;
+    [[nodiscard]] static auto is_64_bit_operating_system() noexcept -> bool;
     
     /// @brief Determines whether the current process is a 64-bit process.
     /// @return `true` if the process is 64-bit; otherwise, `false`.
-    static bool is_64_bit_process() noexcept;
+    [[nodiscard]] static auto is_64_bit_process() noexcept -> bool;
     
     /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) or a copy of See [std::locale::classic()](https://en.cppreference.com/w/cpp/locale/locale/locale) if no call to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) has been made.
     /// @return A copy of the global C++ locale.
     /// @remarks See [std::locale](https://en.cppreference.com/w/cpp/locale/locale/locale) for more information.
-    static std::locale locale() noexcept;
+    [[nodiscard]] static auto locale() noexcept -> std::locale;
     
     /// @brief Gets the NetBIOS name of this local computer.
     /// @return A string containing the name of this computer.
     /// @remarks The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
-    static xtd::string machine_name();
+    [[nodiscard]] static auto machine_name() -> xtd::string;
     
     /// @brief Gets the newline string defined for this environment.
     /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
-    static xtd::string new_line() noexcept;
+    static auto new_line() noexcept -> xtd::string;
     
     /// @brief Inserts a new-line character.
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
     /// @return Argument os.
     template<typename char_t, typename traits_t>
-    static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
+    [[nodiscard]] static auto new_line(std::basic_ostream<char_t, traits_t>& os) -> std::basic_ostream<char_t, traits_t>& {
       for (auto c : new_line())
         os.put(os.widen(c));
       return os;
@@ -445,68 +447,68 @@ namespace xtd {
     
     /// @brief Gets an xtd::operating_system object that contains the current platform identifier and version number.
     /// @return An object that contains the platform identifier and version number.
-    static xtd::operating_system os_version() noexcept;
+    [[nodiscard]] static auto os_version() noexcept -> xtd::operating_system;
     
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    static uint32 processor_count();
+    [[nodiscard]] static auto processor_count() -> xtd::uint32;
     
     /// @brief Gets an xtd::processor object that contains the processor identifier.
     /// @return An object that contains the procesor identifier.
-    static xtd::processor processor_information();
+    [[nodiscard]] static auto processor_information() -> xtd::processor;
     
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
-    static xtd::string stack_trace();
+    [[nodiscard]] static auto stack_trace() -> xtd::string;
     
     /// @brief Gets the fully qualified path of the system directory.
     /// @return A string containing a directory path.
     /// @remarks An example of the value returned is the string "C:\Windows".
-    static xtd::string system_directory();
+    [[nodiscard]] static auto system_directory() -> xtd::string;
     
     /// @brief Gets the number of bytes in the operating system's memory page.
     /// @return The number of bytes in the system memory page.
-    static size_t system_page_size();
+    [[nodiscard]] static auto system_page_size() -> xtd::size;
     
     /// @brief Gets an xtd::target_type object that contains the current target identifier.
     /// @return An object that contains the target identifier.
-    static xtd::target_type target_type() noexcept {
+    [[nodiscard]] static auto target_type() noexcept -> xtd::target_type {
       return xtd::target_type(as<xtd::target_id>(__XTD_CURRENT_TARGET_ID__));
     }
     
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
-    static xtd::time_span tick_count();
+    [[nodiscard]] static auto tick_count() -> xtd::time_span;
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
-    static xtd::int32 tick_count_milliseconds();
+    [[nodiscard]] static auto tick_count_milliseconds() -> xtd::int32;
     
     /// @brief Gets the current toolkit version.
     /// @return The current toolkit version.
-    static xtd::toolkit toolkit_version();
+    [[nodiscard]] static auto toolkit_version() -> xtd::toolkit;
     
     /// @brief Gets a value indicating whether the current user is an administrator.
     /// @return bool `true` if the current user is an administrator; otherwise, `false`.
-    static bool user_administrator();
+    [[nodiscard]] static auto user_administrator() -> bool;
     
     /// @brief Gets the network domain name associated with the current user.
     /// @return The network domain name associated with the current user.
-    static xtd::string user_domain_name();
+    [[nodiscard]] static auto user_domain_name() -> xtd::string;
     
     /// @brief Gets a value indicating whether the current process is running in user interactive mode.
     /// @return bool `true` if the current process is running in user interactive mode; otherwise, `false`.
     /// @remarks The user_interactive method reports `false` for a Os process or a service like IIS that runs without a user interface. If this property is `false`, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
     /// @remarks Return always `true` for now.
     /// @todo check if process is an operating system process or service process...
-    static bool user_interactive();
+    [[nodiscard]] static auto user_interactive() -> bool;
     
     /// @brief Gets the user name of the person who is currently logged on to the operating system.
     /// @return The user name of the person who is logged on to the operating system.
-    static xtd::string user_name();
+    [[nodiscard]] static auto user_name() -> xtd::string;
     
     /// @brief Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.
     /// @return The version of the xtd framework.
-    static xtd::version version() noexcept;
+    [[nodiscard]] static auto version() noexcept -> xtd::version;
     
     /// @brief Gets the amount of physical memory mapped to the process context.
     /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
@@ -514,11 +516,11 @@ namespace xtd {
     /// @par Example
     /// The following example displays the size of the working set of the computer that runs the code example.
     /// @include EnvironmentWorkingSet.cpp
-    static int64 working_set();
+    [[nodiscard]] static auto working_set() -> xtd::int64;
     
     /// @brief Gets an xtd::environment::xtd_library array that represent the xtd libraries name, version and paths.
     /// @return an xtd::environment::xtd_library array.
-    static const xtd_library_collection& xtd_libraries() noexcept;
+    [[nodiscard]] static auto xtd_libraries() noexcept -> const xtd_library_collection&;
     /// @}
     
     /// @name Public Static Events
@@ -540,24 +542,24 @@ namespace xtd {
     
     /// @{
     /// @brief Causes abnormal program termination unless xtd::signal::abnormal_termination is being caught by a xtd::environment::cancel_signal event.
-    static void abort();
+    static auto abort() -> void;
     
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @remarks Use xtd::environment::exit_code method to return to the operating system.
-    [[noreturn]] static void exit();
+    [[noreturn]] static auto exit() -> void;
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
-    [[noreturn]] static void exit(int32 exit_code);
+    [[noreturn]] static auto exit(xtd::int32 exit_code) -> void;
     /// @brief Terminates this process and returns an exit status to the operating system.
     /// @param exit_status One of xtd::exit_status values.
-    [[noreturn]] static void exit(xtd::exit_status exit_status);
+    [[noreturn]] static auto exit(xtd::exit_status exit_status) -> void;
     
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
     /// @return A string with each environment variable replaced by its value.
     /// @remarks Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
-    static xtd::string expand_environment_variables(const xtd::string& name);
+    [[nodiscard]] static auto expand_environment_variables(const xtd::string& name) -> xtd::string;
     
     /// @brief Returns a string array containing the command-line arguments for the current process.
     /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
@@ -574,7 +576,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
-    static const xtd::argument_collection& get_command_line_args();
+    [[nodiscard]] static auto get_command_line_args() -> const xtd::argument_collection&;
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
@@ -582,7 +584,7 @@ namespace xtd {
     /// @remarks The get_environment_variable(xtd::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the xtd::environment::get_environment_variable(xtd::string, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target::process.
     /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
-    static xtd::string get_environment_variable(const xtd::string& variable);
+    [[nodiscard]] static auto get_environment_variable(const xtd::string& variable) -> xtd::string;
     
     /// @brief Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.
     /// @param variable The name of an environment variable.
@@ -592,12 +594,12 @@ namespace xtd {
     /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     /// @todo Add xtd::registry and uncomment lines.
-    static xtd::string get_environment_variable(const xtd::string& variable, environment_variable_target target);
+    [[nodiscard]] static auto get_environment_variable(const xtd::string& variable, xtd::environment_variable_target target) -> xtd::string;
     
     /// @brief Retrieves all environment variable names and their values from the current process.
     /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned xtd::collections::specialized::string_dictionary.
-    static xtd::collections::specialized::string_dictionary get_environment_variables();
+    [[nodiscard]] static auto get_environment_variables() -> xtd::collections::specialized::string_dictionary;
     
     /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
     /// @param target One of the environment_variable_target values.
@@ -605,39 +607,39 @@ namespace xtd {
     /// @exception std::invalid_argument target is not a valid environment_variable_target value.
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned xtd::collections::specialized::string_dictionary.
     /// @todo Add xtd::registry and uncomment lines.
-    static xtd::collections::specialized::string_dictionary get_environment_variables(environment_variable_target target);
+    [[nodiscard]] static auto get_environment_variables(xtd::environment_variable_target target) -> xtd::collections::specialized::string_dictionary;
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
     /// @param folder One of enumeration values that identifies a system special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static xtd::string get_folder_path(environment::special_folder folder) {return get_folder_path_(folder, environment::special_folder_option::none);}
+    [[nodiscard]] static auto get_folder_path(environment::special_folder folder) -> xtd::string {return get_folder_path_(folder, environment::special_folder_option::none);}
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.
     /// @param folder One of the enumeration values that identifies a system special folder.
     /// @param option One of the enumeration values that specifies options to use for accessing a special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static xtd::string get_folder_path(environment::special_folder folder, environment::special_folder_option option) {return get_folder_path_(folder, option);}
+    [[nodiscard]] static auto get_folder_path(environment::special_folder folder, environment::special_folder_option option) -> xtd::string {return get_folder_path_(folder, option);}
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
-    static xtd::collections::specialized::string_collection get_logical_drives();
+    [[nodiscard]] static auto get_logical_drives() -> xtd::collections::specialized::string_collection;
     
     /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
     /// @remarks Use xtd::environment::exit_code method to return to the operating system.
-    [[noreturn]] static void quick_exit() noexcept;
+    [[noreturn]] static auto quick_exit() noexcept -> void;
     /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
     /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
-    [[noreturn]] static void quick_exit(int32 exit_code) noexcept;
+    [[noreturn]] static auto quick_exit(xtd::int32 exit_code) noexcept -> void;
     /// @brief Terminates this process and returns an exit status to the operating system without completely cleaning the resources..
     /// @param exit_status One of xtd::exit_status values.
-    [[noreturn]] static void quick_exit(xtd::exit_status exit_status) noexcept;
+    [[noreturn]] static auto quick_exit(xtd::exit_status exit_status) noexcept -> void;
     
     /// @brief Sends xtd::signal to the program. The xtd::environment::cancel_signal event is invoked with the specified signal
     /// @param signal One of xtd::signal values that represents the signal sent to the program.
-    static void raise(xtd::signal signal);
+    static auto raise(xtd::signal signal) -> void;
     
     /// @brief Sets the command-line arguments for the current process.
     /// @param An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
@@ -654,7 +656,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
-    static void set_command_line_args(const xtd::argument_collection& args);
+    static auto set_command_line_args(const xtd::argument_collection& args) -> void;
 
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
@@ -662,7 +664,7 @@ namespace xtd {
     /// @remarks Calling this method is equivalent to calling the xtd::environment::set_environment_variable(xtd::string, xtd::string, environment_variable_target) overload with a value of xtd::environment_variable_target::process for the target argument.
     /// @remarks If the value argument is not empty and the environment variable named by the variable parameter does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified. Because the environment variable is defined in the environment block of the current process only, it does not persist after the process has ended.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
-    static void set_environment_variable(const xtd::string& variable, const xtd::string& value);
+    static auto set_environment_variable(const xtd::string& variable, const xtd::string& value) -> void;
     
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process or in the Windows operating system registry key reserved for the current user or local machine.
     /// @param variable The name of an environment variable.
@@ -672,15 +674,15 @@ namespace xtd {
     /// @remarks If the value argument is not empty and the environment variable named by the variable argument does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
-    static void set_environment_variable(const xtd::string& variable, const xtd::string& value, environment_variable_target target);
+    static auto set_environment_variable(const xtd::string& variable, const xtd::string& value, xtd::environment_variable_target target) -> void;
     /// @}
     
   private:
-    static void on_cancel_signal(signal_cancel_event_args& e);
-    static void on_program_exit(const program_exit_event_args& e);
+    static auto on_cancel_signal(xtd::signal_cancel_event_args& e) -> void;
+    static auto on_program_exit(const xtd::program_exit_event_args& e) -> void;
     
-    static xtd::string get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_gui_application());
-    static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
+    [[nodiscard]] static auto get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_gui_application()) -> xtd::string;
+    [[nodiscard]] static auto xtd_root_path() -> xtd::string {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;
     static xtd::argument_collection args_;
   };
