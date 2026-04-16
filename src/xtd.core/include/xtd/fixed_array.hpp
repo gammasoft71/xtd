@@ -161,7 +161,7 @@ namespace xtd {
     /// @brief Determines whether this instance and a specified object, which must also be a xtd::fixed_array object, have the same value.
     /// @param obj The fixed_array to compare to this instance.
     /// @return `true` if `obj` is a xtd::fixed_array and its value is the same as this instance; otherwise, `false`.
-    [[nodiscard]] auto equals(const object & obj) const noexcept -> bool override {return dynamic_cast<const fixed_array<value_type>*>(&obj) && equals(static_cast<const fixed_array<value_type>&>(obj));}
+    [[nodiscard]] auto equals(const object & obj) const noexcept -> bool override {return dynamic_cast<const fixed_array<value_type, len>*>(&obj) && equals(static_cast<const fixed_array<value_type, len>&>(obj));}
     /// @brief Determines whether this instance and another specified xtd::fixed_array object have the same value.
     /// @param value The fixed_array to compare to this instance.
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
