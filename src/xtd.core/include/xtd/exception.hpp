@@ -66,45 +66,45 @@ namespace xtd {
     /// @{
     /// @brief Gets a link to the help file associated with this exception.
     /// @return A string represent a link to Help file associated with exception
-    virtual const xtd::string& help_link() const noexcept;
+    [[nodiscard]] virtual auto help_link() const noexcept -> const xtd::string&;
     /// @brief Sets a link to the help file associated with this exception.
     /// @param value A string represent a link to Help file associated with exception
-    virtual void help_link(const xtd::string& value) noexcept;
+    virtual auto help_link(const xtd::string& value) noexcept -> void;
     
     /// @brief Gets HRESULT, a coded numerical value that is assigned to a specific exception.
     /// @return The HRESULT value.
-    virtual int32 h_result() const noexcept;
+    [[nodiscard]] virtual auto h_result() const noexcept -> xtd::int32;
     /// @brief Sets HRESULT, a coded numerical value that is assigned to a specific exception.
     /// @param value The HRESULT value.
-    virtual void h_result(int32 value) noexcept;
+    virtual auto h_result(xtd::int32 value) noexcept -> void;
     
     /// @brief Gets error associate to the exception
     /// @return An error_code represent a Error associate to the exception
-    virtual const std::error_code& error_code() const noexcept;
+    [[nodiscard]] virtual auto error_code() const noexcept -> const std::error_code&;
     /// @brief Sets error associate to the exception
     /// @param value An error_code represent a Error associate to the exception
-    virtual void error_code(const std::error_code& value) noexcept;
+    virtual auto error_code(const std::error_code& value) noexcept -> void;
     
     /// @brief Gets the exception instance that caused the current exception.
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
-    virtual exception_ref inner_exception() const noexcept;
+    [[nodiscard]] virtual auto inner_exception() const noexcept -> exception_ref;
     
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
-    virtual const xtd::string& message() const noexcept;
+    [[nodiscard]] virtual auto message() const noexcept -> const xtd::string&;
     
     /// @brief Gets the name of the application or the object that causes the error.
     /// @return The name of the application or the object that causes the error.
     /// @remarks If the xtd::exception::source property is not set explicitly, the runtime automatically sets it to the name of the assembly in which the exception originated.
-    virtual const xtd::string& source() const noexcept;
+    [[nodiscard]] virtual auto source() const noexcept -> const xtd::string&;
     /// @brief Sets the name of the application or the object that causes the error.
     /// @return The name of the application or the object that causes the error.
     /// @remarks If the xtd::exception::source property is not set explicitly, the runtime automatically sets it to the name of the assembly in which the exception originated.
-    virtual void source(const xtd::string& value) noexcept;
+    virtual auto source(const xtd::string& value) noexcept -> void;
     
     /// @brief Gets a string representation of the immediate frames on the call stack.
     /// @return A string that describes the immediate frames of the call stack.
-    virtual xtd::string stack_trace() const noexcept;
+    [[nodiscard]] virtual auto stack_trace() const noexcept -> xtd::string;
     /// @}
     
     /// @name Public Methods
@@ -112,14 +112,14 @@ namespace xtd {
     /// @{
     /// @brief Gets the last stack frame where the exception occurred
     /// @return The last stack frame where exception occurred
-    virtual const xtd::diagnostics::stack_frame& get_last_stack_frame() const noexcept;
+    [[nodiscard]] virtual auto get_last_stack_frame() const noexcept -> const xtd::diagnostics::stack_frame&;
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
-    const char* what() const noexcept override;
+    [[nodiscard]] auto what() const noexcept -> const char* override;
     /// @}
     
     /// @name Public Static Methods
@@ -127,20 +127,20 @@ namespace xtd {
     /// @{
     /// @brief Gets if the generation of the stack trace is enabled.
     /// @return triue if stack trace enabled; otherwise `false`.
-    static bool enable_stack_trace() noexcept;
+    [[nodiscard]] static auto enable_stack_trace() noexcept -> bool;
     /// @brief Sets if the generation of the stack trace is enabled.
     /// @paran enable triue if stack trace enabled; otherwise `false`.
-    static void enable_stack_trace(bool enable) noexcept;
+    static auto enable_stack_trace(bool enable) noexcept -> void;
     /// @}
     
   private:
-    exception(const xtd::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool);
-    xtd::string stack_trace_to_string() const noexcept;
+    exception(const xtd::optional<xtd::string>& message, xtd::uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool);
+    [[nodiscard]] auto stack_trace_to_string() const noexcept -> xtd::string;
     
-    const xtd::string& get_name() const noexcept;
+    [[nodiscard]] auto get_name() const noexcept -> const xtd::string&;
     
     struct data;
-    ptr < data > data_;
+    xtd::ptr<data> data_;
     static bool enable_stack_trace_;
   };
 }
