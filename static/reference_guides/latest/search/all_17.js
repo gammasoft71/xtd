@@ -72,7 +72,7 @@ var searchData=
   ['weight_5flifter_69',['weight_lifter',['../classxtd_1_1forms_1_1emoticons.html#a05c619e96195fabc5ceb36074f4158b0',1,'xtd::forms::emoticons']]],
   ['western_5fsahara_70',['western_sahara',['../classxtd_1_1forms_1_1countries.html#a8af67b55fabc591fb21675ff8273daaa',1,'xtd::forms::countries']]],
   ['whale_71',['whale',['../classxtd_1_1forms_1_1emoticons.html#a5358da09edc2ca2777a1aa4e74f8947a',1,'xtd::forms::emoticons']]],
-  ['what_72',['what',['../classxtd_1_1exception.html#acc17fd22f4f1892ad2edacbfb1de0e1d',1,'xtd::exception']]],
+  ['what_72',['what',['../classxtd_1_1exception.html#a7ee73140a6a36ef0cf0c9d9528b3087d',1,'xtd::exception']]],
   ['wheat_73',['wheat',['../classxtd_1_1drawing_1_1color.html#a0b0e243a6375b2948ec3c87e4bf979c2',1,'xtd::drawing::color::wheat'],['../classxtd_1_1drawing_1_1brown__colors.html#a8c05671443fad23185093599b08ed0ef',1,'xtd::drawing::brown_colors::wheat()'],['../classxtd_1_1drawing_1_1brushes.html#a584e1a259124a8b6ac1cc4dc95303855',1,'xtd::drawing::brushes::wheat()'],['../classxtd_1_1drawing_1_1colors.html#ab2e9405d5f82c024a9362face26c74e4',1,'xtd::drawing::colors::wheat()'],['../classxtd_1_1drawing_1_1pens.html#a2fd7cee8bc7179f123f0d77f0e25ce1f',1,'xtd::drawing::pens::wheat()'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad29db4ac8712f5bdb343991281b26db1',1,'xtd::drawing::wheat']]],
   ['wheel_5fof_5fdharma_74',['wheel_of_dharma',['../classxtd_1_1forms_1_1emoticons.html#a1a4045c5b6415995e63e573ce1ed8a4a',1,'xtd::forms::emoticons']]],
   ['wheelchair_5fsymbol_75',['wheelchair_symbol',['../classxtd_1_1forms_1_1emoticons.html#a615753917433e69626783a2ba2904cda',1,'xtd::forms::emoticons']]],
