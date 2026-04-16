@@ -57,8 +57,6 @@ namespace xtd {
     using const_reverse_iterator = typename xtd::collections::generic::helpers::raw_array<value_type>::const_reverse_iterator;
     /// @}
     
-    /// @name Public Fields
-    
     /// @cond
     basic_array(basic_array&& array) = default;
     basic_array(const basic_array & array) { if (array.data_) *data_ = *array.data_;}
@@ -187,19 +185,37 @@ namespace xtd {
     auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {
       return copy_to(0, array, array_index);
     }
-    
+    /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
+    /// @param indexes The zero-based multi-dimentional indexes in the source array at which copying begins.
+    /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
+    /// @param array_index The zero-based index in `array` at which copying begins.
+    /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index) const -> void {
       return copy_to(compute_index(self_, indexes), array, array_index);
     }
-    
+    /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
+    /// @param indexes The zero-based multi-dimentional indexes in the source array at which copying begins.
+    /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
+    /// @param array_index The zero-based index in `array` at which copying begins.
+    /// @param count The number of elements to copy.
+    /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
       return copy_to(compute_index(self_, indexes), array, array_index, count);
     }
-    
+    /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
+    /// @param index The zero-based index in the source array at which copying begins.
+    /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
+    /// @param array_index The zero-based index in `array` at which copying begins.
+    /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index) const -> void {
       return copy_to(index, array, array_index, length() - index);
     }
-    
+    /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
+    /// @param index The zero-based index in the source array at which copying begins.
+    /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
+    /// @param array_index The zero-based index in `array` at which copying begins.
+    /// @param count The number of elements to copy.
+    /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
       if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       if (index + count > self_.length() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
@@ -207,7 +223,14 @@ namespace xtd {
         array[array_index++] = self_[i];
     }
     
+    /// @brief Determines whether this instance and a specified object, which must also be a xtd::basic_array object, have the same value.
+    /// @param obj The basic_array to compare to this instance.
+    /// @return `true` if `obj` is a xtd::basic_array and its value is the same as this instance; otherwise, `false`.
     [[nodiscard]] auto equals(const object & obj) const noexcept -> bool override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
+    /// @brief Determines whether this instance and another specified xtd::basic_array object have the same value.
+    /// @param value The basic_array to compare to this instance.
+    /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
+    /// @remarks This method performs an ordinal (case-sensitive) comparison.
     [[nodiscard]] auto equals(const basic_array & rhs) const noexcept -> bool override {
       if (count() != rhs.count()) return false;
       for (size_type i = 0; i < count(); i++)
@@ -306,7 +329,18 @@ namespace xtd {
     /// @param value The object to locate in the xtd::array.
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
     [[nodiscard]] auto index_of(const type_t& value) const noexcept -> size_type override {return index_of(value, 0, length());}
+    /// @brief Determines the index of a specific item in the xtd::basic_array <type_t>.
+    /// @param value The object to locate in the xtd::basic_array <type_t>.
+    /// @param index The zero-based starting index of the search.
+    /// @return The index of value if found in the xtd::basic_array; otherwise, xtd::collections::generic::ilist::npos.
+    /// @exception xtd::argument_out_of_range_exception `index` is outside the range of valid indexes for the xtd::basic_array <type_t>.
     [[nodiscard]] auto index_of(const type_t& value, size_type index) const -> size_type {return index_of(value, index, length() - index);}
+    /// @brief Determines the index of a specific item in the xtd::basic_array <type_t>.
+    /// @param value The object to locate in the xtd::basic_array <type_t>.
+    /// @param index The zero-based starting index of the search.
+    /// @param count The number of elements in the section to search
+    /// @return The index of value if found in the xtd::basic_array; otherwise, xtd::collections::generic::ilist::npos.
+    /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::basic_array <type_t>.
     [[nodiscard]] auto index_of(const type_t& value, size_type index, size_type count) const -> size_type {
       if (index > length() || index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       for (auto increment = index; increment < (index + count); ++increment)
@@ -316,7 +350,7 @@ namespace xtd {
     
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
-    /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+    /// @exception xtd::argument_out_of_range_exception xtd::basic_array::capacity is set to a value that is less than xtd::basic_array::count.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     auto resize(size_type new_size) -> void {resize(new_size, value_type {});}
@@ -324,7 +358,7 @@ namespace xtd {
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
     /// @param value The value to initialize the new elements with.
-    /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+    /// @exception xtd::argument_out_of_range_exception xtd::basic_array::capacity is set to a value that is less than xtd::basic_array::count.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     auto resize(size_type new_size, value_type value) -> void {
@@ -341,22 +375,22 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the current array.
     auto set_value(const type_t& value, const xtd::array<size_type>& indexes) -> void {operator()(indexes) = value;}
     
-    /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the default comparer.
+    /// @brief Sorts the elements in the entire xtd::basic_array <type_t> using the default comparer.
     /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
     /// @par Examples
-    /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is gretaer than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
+    /// The xtd::basic_array::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::basic_array::insert method is used to insert them. The return value of the xtd::basic_array::binary_search method is gretaer than xtd::basic_array::count in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
     /// @include generic_list_binary_search.cpp
     /// @remarks This method uses the default comparer xtd::collections::generic::comparer::default_comparer for type `type_t` to determine the order of list elements. The xtd::collections::generic::comparer::default_comparer property checks whether type `type_t` implements the xtd::icomparable <type_t> generic interface and uses that implementation, if available. If not, xtd::collections::generic::comparer::default_comparer checks whether type T implements the xtd::icomparable interface. If type `type_t` does not implement either interface, xtd::collections::generic::comparer::default_comparer throws an xtd::invalid_operation_exception.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
-    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
+    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::basic_array::count; in the worst case it is an O(n ^ 2) operation.
+    /// @remarks The following code example demonstrates the xtd::basic_array::sort method overload and the xtd::basic_array::binary_search method overload. A xtd::basic_array <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
     auto sort() -> basic_array<type_t>& {return sort(dynamic_cast<const xtd::collections::generic::icomparer<type_t>&>(xtd::collections::generic::comparer<type_t>::default_comparer));}
     
-    /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+    /// @brief Sorts the elements in the entire xtd::basic_array <type_t> using the specified xtd::comparison <type_t>.
     /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
-    /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
+    /// @remarks If comparison is provided, the elements of the xtd::basic_array <type_t> are sorted using the method represented by the delegate.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
-    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::basic_array::count; in the worst case it is an O(n ^ 2) operation.
     template<typename comparison_t>
     auto sort(comparison_t&& comparison) -> basic_array<type_t>& {
       data_->items.increment_version();
@@ -364,24 +398,24 @@ namespace xtd {
       return self_;
     }
     
-    /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
+    /// @brief Sorts the elements in the entire xtd::basic_array <type_t> using the specified comparer.
     /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
     /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
-    /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
+    /// @remarks If comparer is provided, the elements of the xtd::basic_array <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
-    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::basic_array::count; in the worst case it is an O(n ^ 2) operation.
     auto sort(const xtd::collections::generic::icomparer<type_t>& comparer) -> basic_array<type_t>& {
       return sort(0, count(), comparer);
     }
     
-    /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified comparer.
+    /// @brief Sorts the elements in a range of elements in xtd::basic_array <type_t> using the specified comparer.
     /// @param index The zero-based starting index of the range to sort.
     /// @param count The length of the range to sort.
     /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
     /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
-    /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
+    /// @remarks If comparer is provided, the elements of the xtd::basic_array <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
-    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+    /// @remarks On average, this method is an O(n log n) operation, where n is xtd::basic_array::count; in the worst case it is an O(n ^ 2) operation.
     auto sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) -> basic_array<type_t>& {
       if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       data_->items.increment_version();
