@@ -13,8 +13,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @remarks Each of the above values represents a constant, which represent different exit status of to the program.
-  /// @remarks For more information about exit_mode, see [EXIT_status](https://en.cppreference.com/w/cpp/utility/program/EXIT_status).
+  /// @remarks Each of the above values represents a constant, which represent different exit mode of to the program.
   enum class exit_mode {
     /// @brief Represent the exit mode when the terminates normally (via xtd::environment::exit or returning from the main function).
     normal = 0,
