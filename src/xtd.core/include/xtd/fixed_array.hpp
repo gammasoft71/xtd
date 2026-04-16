@@ -4,7 +4,9 @@
 #pragma once
 #include "array.hpp"
 #include "optional.hpp"
+#include "npos.hpp"
 #include "string.hpp"
+#include "collections/generic/ienumerable.hpp"
 #include "helpers/throw_helper.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -20,7 +22,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<typename type_t, xtd::size len>
-  class fixed_array : public xtd::object {
+  class fixed_array : public xtd::object, public xtd::collections::generic::ienumerable<type_t> {
   public:
     /// @name Public Aliases
     
@@ -35,10 +37,6 @@ namespace xtd {
     using reference = value_type&;
     /// @brief Represents the const reference of array value type.
     using const_reference = const value_type&;
-    /// @brief Represents the iterator of array value type.
-    using iterator = value_type*;
-    /// @brief Represents the const iterator of array value type.
-    using const_iterator = const value_type*;
     /// @brief Represents the pointer of array value type.
     using pointer = value_type*;
     /// @brief Represents the const pointer of array value type.
@@ -47,10 +45,6 @@ namespace xtd {
     using size_type = xtd::size;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
     using difference_type = xtd::ptrdiff;
-    /// @brief Represents the reverse iterator of array value type.
-    using reverse_iterator = std::reverse_iterator<iterator>;
-    /// @brief Represents the const reverse iterator of array value type.
-    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
     /// @}
     
     /// @name Public Constructors
@@ -80,21 +74,6 @@ namespace xtd {
     /// @remarks Calling front on an empty container causes undefined behavior.
     [[nodiscard]] virtual auto back() const -> const_reference {return at(count() - 1);}
     
-    /// @brief Returns an iterator to the first element of the enumerable.
-    /// @return Iterator to the first element.
-    [[nodiscard]] auto begin() const noexcept -> const_iterator {return cbegin();}
-    /// @brief Returns an iterator to the first element of the enumerable.
-    /// @return Iterator to the first element.
-    [[nodiscard]] auto begin() noexcept -> iterator {return iterator {data()};}
-    
-    /// @brief Returns an iterator to the first element of the enumerable.
-    /// @return Iterator to the first element.
-    [[nodiscard]] auto cbegin() const noexcept -> const_iterator {return const_iterator {data()};}
-    
-    /// @brief Returns an iterator to the element following the last element of the enumerable.
-    /// @return Iterator to the element following the last element.
-    [[nodiscard]] auto cend() const noexcept -> const_iterator {return const_iterator {data() + len};}
-    
     /// @brief Gets the number of elements contained in the xtd::collections::generic::list <type_t>.
     /// @return The number of elements contained in the xtd::collections::generic::list <type_t>.
     [[nodiscard]] auto count() const noexcept -> size_type {return size();}
@@ -112,12 +91,6 @@ namespace xtd {
     /// @return `true` if the container is empty, `false` otherwise.
     [[nodiscard]] virtual auto empty() const noexcept -> bool {return len == xtd::size {0};}
     
-    /// @brief Returns an iterator to the element following the last element of the enumerable.
-    /// @return Iterator to the element following the last element.
-    [[nodiscard]] auto end() const noexcept -> const_iterator {return cend();}
-    /// @brief Returns an iterator to the element following the last element of the enumerable.
-    /// @return Iterator to the element following the last element.
-    [[nodiscard]] auto end() noexcept -> iterator {return iterator {data() + len};}
     /// @brief Returns a reference to the first element in the container.
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
@@ -169,6 +142,28 @@ namespace xtd {
         item = value;
     }
     
+    /// @brief Returns an enumerator that iterates through a collection.
+    /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
+    [[nodiscard]] auto get_enumerator() const -> xtd::collections::generic::enumerator<value_type> override {
+      struct fixed_array_enumerator : public xtd::collections::generic::ienumerator < value_type > {
+        explicit fixed_array_enumerator(const fixed_array & items) : items_(items) {}
+        
+        [[nodiscard]] const value_type& current() const override {
+          if (index_ >= items_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          return items_[index_];
+        }
+        
+        bool move_next() override {return ++index_ < items_.count();}
+        
+        void reset() override {index_ = xtd::npos;}
+        
+      private:
+        size_type index_ = xtd::npos;
+        const fixed_array& items_;
+      };
+      return {new_ptr<fixed_array_enumerator>(*this)};
+    }
+
     /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.
     /// @return An array containing copies of the elements of the xtd::fixed_array <type_t, xtd::size>.
     [[nodiscard]] virtual auto to_array() const noexcept -> xtd::array<value_type> {return size() ? xtd::array<value_type>(items_, items_ + len) : xtd::array<value_type> {};}
