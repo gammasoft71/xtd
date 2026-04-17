@@ -633,7 +633,7 @@ namespace xtd::threading::tests {
       for (auto& thread : threads)
         thread.join();
         
-      assert::are_equal(max_count_thread, as<size_t>(counter));
+      assert::are_equal(max_count_thread, as<xtd::usize>(counter));
     }
     
     auto test_method_(create_many_threads_with_join_all) {
@@ -650,7 +650,7 @@ namespace xtd::threading::tests {
         
       thread::join_all(threads);
       
-      assert::are_equal(max_count_thread, as<size_t>(counter));
+      assert::are_equal(max_count_thread, as<xtd::usize>(counter));
     }
     
     auto test_method_(create_many_threads_with_join_all_global) {
@@ -666,7 +666,7 @@ namespace xtd::threading::tests {
       thread::sleep(40);
       thread::join_all();
       
-      assert::are_equal(max_count_thread, as<size_t>(counter));
+      assert::are_equal(max_count_thread, as<xtd::usize>(counter));
     }
   };
 }

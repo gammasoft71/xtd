@@ -12,16 +12,16 @@ using namespace xtd::tunit;
 namespace xtd::threading::tests {
   class test_class_(thread_pool_tests) {
     auto test_method_(get_max_threads) {
-      size_t max_worker_threads = 0;
-      size_t max_completion_port_threads = 0;
+      xtd::usize max_worker_threads = 0;
+      xtd::usize max_completion_port_threads = 0;
       thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);
       assert::are_equal(environment::processor_count() * 25, max_worker_threads);
       assert::are_equal(environment::processor_count() * 25, max_completion_port_threads);
     }
     
     auto test_method_(get_min_threads) {
-      size_t min_worker_threads = 0;
-      size_t min_completion_port_threads = 0;
+      xtd::usize min_worker_threads = 0;
+      xtd::usize min_completion_port_threads = 0;
       thread_pool::get_min_threads(min_worker_threads, min_completion_port_threads);
       assert::are_equal(environment::processor_count(), min_worker_threads);
       assert::are_equal(environment::processor_count(), min_completion_port_threads);
@@ -53,8 +53,8 @@ namespace xtd::threading::tests {
     }
     
     auto test_method_(queue_user_work_item_min_thread) {
-      size_t min_worker_threads = 0;
-      size_t min_completion_port_threads = 0;
+      xtd::usize min_worker_threads = 0;
+      xtd::usize min_completion_port_threads = 0;
       thread_pool::get_min_threads(min_worker_threads, min_completion_port_threads);
       auto count = 0;
       auto action = wait_callback {[&] {
@@ -64,12 +64,12 @@ namespace xtd::threading::tests {
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(min_worker_threads, as<size_t>(count));
+      assert::are_equal(min_worker_threads, as<xtd::usize>(count));
     }
     
     auto test_method_(queue_user_work_item_max_thread) {
-      size_t max_worker_threads = 0;
-      size_t max_completion_port_threads = 0;
+      xtd::usize max_worker_threads = 0;
+      xtd::usize max_completion_port_threads = 0;
       thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);
       // The following test is commented on because the execution time is too long.
       /*
@@ -81,7 +81,7 @@ namespace xtd::threading::tests {
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(max_worker_threads, as<size_t>(count));
+      assert::are_equal(max_worker_threads, as<xtd::usize>(count));
        */
     }
   };

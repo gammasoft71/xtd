@@ -83,7 +83,7 @@ namespace xtdc_gui {
         item_control->tag(project_type_item_controls_.count());
         project_type_item_controls_.add(item_control);
         item_control->click += [&](object & sender, const xtd::event_args & e) {
-          selected_index(project_type_item_controls_.count() - 1 - xtd::as<size_t>(xtd::as<control>(sender).tag()));
+          selected_index(project_type_item_controls_.count() - 1 - xtd::as<xtd::usize>(xtd::as<control>(sender).tag()));
         };
       }
       
@@ -93,8 +93,8 @@ namespace xtdc_gui {
       border_style(xtd::forms::border_style::fixed_single);
     }
     
-    size_t selected_index() const {return selected_index_;}
-    void selected_index(size_t value) {
+    xtd::usize selected_index() const {return selected_index_;}
+    void selected_index(xtd::usize value) {
       if (selected_index_ != value) {
         selected_index_ = value;
         on_selected_index_changed(xtd::event_args::empty);
@@ -167,15 +167,15 @@ namespace xtdc_gui {
     void on_selected_project_type_item_changed(const xtd::event_args& e) {
       for (const auto& item : project_type_item_controls_)
         if (item->project_type_item() == selected_project_type_item_) {
-          selected_index(project_type_item_controls_.count() - 1 - xtd::as<size_t>(item->tag()));
+          selected_index(project_type_item_controls_.count() - 1 - xtd::as<xtd::usize>(item->tag()));
           break;
         }
       selected_project_type_item_changed(*this, e);
     }
     
     xtd::collections::generic::list<xtd::sptr<project_type_item_control>> project_type_item_controls_;
-    size_t previous_selected_index_ = npos;
-    size_t selected_index_ = npos;
+    xtd::usize previous_selected_index_ = npos;
+    xtd::usize selected_index_ = npos;
     project_type_item selected_project_type_item_;
   };
 }

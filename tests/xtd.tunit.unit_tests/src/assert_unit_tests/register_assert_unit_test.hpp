@@ -57,8 +57,8 @@ namespace assert_unit_tests {
     std::string name;
     
     static std::vector<register_assert_unit_test> assert_unit_tests;
-    static size_t error_test_count;
-    static size_t ignore_test_count;
+    static xtd::usize error_test_count;
+    static xtd::usize ignore_test_count;
   };
 }
 

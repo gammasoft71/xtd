@@ -29,7 +29,7 @@ namespace xtd::tests {
       assert::are_equal(__compiler_version__, compiler.version());
       assert::are_equal(__build_type__, compiler.build_type());
       assert::are_equal(__build_type__ == build_type::debug, compiler.is_build_type_debug());
-      assert::are_equal(sizeof(size_t) == 8, compiler.is_64_bit());
+      assert::are_equal(sizeof(xtd::usize) == 8, compiler.is_64_bit());
     }
     
     auto test_method_(cpp_version) {
@@ -75,7 +75,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(is_64_bit_process) {
-      assert::are_equal(sizeof(size_t) == 8_z, environment::is_64_bit_process());
+      assert::are_equal(sizeof(xtd::usize) == 8_z, environment::is_64_bit_process());
     }
     
     auto test_method_(locale) {

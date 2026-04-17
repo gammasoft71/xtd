@@ -4,6 +4,7 @@
 #pragma once
 #include <cstddef>
 #include "../uint16.hpp"
+#include "../usize.hpp"
 #define __XTD_STD_INTERNAL__
 #include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
@@ -49,7 +50,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_u16 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u16(const char* s, std::size_t n) -> xtd::uint16;
+    [[nodiscard]] auto operator""_u16(const char* s, xtd::usize n) -> xtd::uint16;
     
     /// @brief Used to convert specified value into uint16.
     /// @par Namespace
@@ -61,7 +62,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_u16 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u16(const char8_t* s, std::size_t n) -> xtd::uint16;
+    [[nodiscard]] auto operator""_u16(const char8_t* s, xtd::usize n) -> xtd::uint16;
     
     /// @brief Used to convert specified value into uint16.
     /// @par Namespace
@@ -73,7 +74,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_u16 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u16(const char16_t* s, std::size_t n) -> xtd::uint16;
+    [[nodiscard]] auto operator""_u16(const char16_t* s, xtd::usize n) -> xtd::uint16;
     
     /// @brief Used to convert specified value into uint16.
     /// @par Namespace
@@ -85,7 +86,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_u16 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u16(const char32_t* s, std::size_t n) -> xtd::uint16;
+    [[nodiscard]] auto operator""_u16(const char32_t* s, xtd::usize n) -> xtd::uint16;
     
     /// @brief Used to convert specified value into uint16.
     /// @par Namespace
@@ -97,7 +98,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_u16 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u16(const wchar_t* s, std::size_t n) -> xtd::uint16;
+    [[nodiscard]] auto operator""_u16(const wchar_t* s, xtd::usize n) -> xtd::uint16;
     /// @}
   }
 }

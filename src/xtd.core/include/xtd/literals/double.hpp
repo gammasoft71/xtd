@@ -4,6 +4,7 @@
 #pragma once
 #include <cstddef>
 #include "../double.hpp"
+#include "../usize.hpp"
 #define __XTD_STD_INTERNAL__
 #include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
@@ -49,7 +50,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_d << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_d(const char* s, std::size_t n) -> double;
+    [[nodiscard]] auto operator""_d(const char* s, xtd::usize n) -> double;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -61,7 +62,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_d << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_d(const char8_t* s, std::size_t n) -> double;
+    [[nodiscard]] auto operator""_d(const char8_t* s, xtd::usize n) -> double;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -73,7 +74,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_d << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_d(const char16_t* s, std::size_t n) -> double;
+    [[nodiscard]] auto operator""_d(const char16_t* s, xtd::usize n) -> double;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -85,7 +86,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_d << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_d(const char32_t* s, std::size_t n) -> double;
+    [[nodiscard]] auto operator""_d(const char32_t* s, xtd::usize n) -> double;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -97,7 +98,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_d << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_d(const wchar_t* s, std::size_t n) -> double;
+    [[nodiscard]] auto operator""_d(const wchar_t* s, xtd::usize n) -> double;
     /// @}
   }
 }

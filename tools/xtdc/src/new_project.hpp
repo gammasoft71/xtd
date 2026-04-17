@@ -102,7 +102,7 @@ namespace xtdc_command {
     }
     
     static bool process_arguments(const xtd::array<xtd::string>& args, bool& show_help, xtd::string& type, xtd::string& name, xtd::string& path, xtd::string& sdk, xtd::string& invalid_option) {
-      for (size_t i = 1; i < args.length(); i += 1) {
+      for (xtd::usize i = 1; i < args.length(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-n" || args[i] == "--name") {

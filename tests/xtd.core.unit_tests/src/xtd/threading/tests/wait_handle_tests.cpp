@@ -71,7 +71,7 @@ namespace xtd::threading::tests {
     }
     
     auto test_method_(wait_timeout) {
-      assert::are_equal(std::numeric_limits<size_t>::max(), wait_handle::wait_timeout);
+      assert::are_equal(std::numeric_limits<usize>::max(), wait_handle::wait_timeout);
     }
     
     auto test_method_(handle) {

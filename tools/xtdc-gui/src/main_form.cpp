@@ -422,7 +422,7 @@ main_form::main_form() {
       next_button_.enabled(false);
     else {
       create_project_type_items_control_.selected_index(create_project_type_items_control_.npos);
-      current_project_type_index_ = parse<size_t>(properties::settings::default_settings().create_recent_propjects().split(';')[create_create_recent_projects_list_box_.selected_index()]);
+      current_project_type_index_ = parse<xtd::usize>(properties::settings::default_settings().create_recent_propjects().split(';')[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
   };
@@ -431,7 +431,7 @@ main_form::main_form() {
   };
   create_create_recent_projects_list_box_.key_down += [&](object & sender, key_event_args & e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
-      delete_from_create_recent_projects(parse<size_t>(properties::settings::default_settings().create_recent_propjects().split(';')[create_create_recent_projects_list_box_.selected_index()]));
+      delete_from_create_recent_projects(parse<xtd::usize>(properties::settings::default_settings().create_recent_propjects().split(';')[create_create_recent_projects_list_box_.selected_index()]));
   };
   
   create_language_choice_.parent(create_panel_);
@@ -663,7 +663,7 @@ main_form::main_form() {
   busy_box::hide();
 }
 
-void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
+void main_form::delete_from_create_recent_projects(xtd::usize create_project_items_index) {
   auto create_recent_projects = list<string> {properties::settings::default_settings().create_recent_propjects().split(';')};
   create_recent_projects.remove(std::to_string(create_project_items_index));
   properties::settings::default_settings().create_recent_propjects(string::join(";", create_recent_projects)).save();
@@ -687,7 +687,7 @@ void main_form::init_create_create_recent_projects_list_box() {
   auto project_type_items = create_project_type_items_control_.project_type_items();
   create_create_recent_projects_list_box_.items().clear();
   for (const auto& item : properties::settings::default_settings().create_recent_propjects().split(';'))
-    create_create_recent_projects_list_box_.items().add(project_type_items[parse<size_t>(item)].name());
+    create_create_recent_projects_list_box_.items().add(project_type_items[parse<xtd::usize>(item)].name());
   create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().count() == 0 ? -1 : 0);
 }
 
@@ -698,7 +698,7 @@ void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().count() == 0 ? -1 : 0);
 }
 
-void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
+void main_form::add_to_create_recent_projects(xtd::usize create_project_items_index) {
   auto create_recent_projects_from_settings = properties::settings::default_settings().create_recent_propjects().split(';');
   std::list<string> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
   if (find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
@@ -735,7 +735,7 @@ void main_form::new_project() {
   next_button_.visible(true);
 }
 
-void main_form::new_project(const string& project_path, size_t project_type_items_index) {
+void main_form::new_project(const string& project_path, xtd::usize project_type_items_index) {
   auto current_project_type = create_project_type_items_control_.project_type_items()[current_project_type_index_];
   add_to_create_recent_projects(project_type_items_index);
   new_project(project_path, current_project_type.project_type(), current_project_type.project_language(), current_project_type.project_sdk());

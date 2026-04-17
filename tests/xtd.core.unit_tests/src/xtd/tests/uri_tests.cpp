@@ -303,7 +303,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(hex_unescape) {
-      size_t index = 0_z;
+      auto index = 0_z;
       assert::are_equal('<', uri::hex_unescape("%3c", index));
       assert::are_equal(3_z, index);
     }

@@ -45,15 +45,15 @@ namespace xtdc_gui {
     static auto main() -> void;
     
   private:
-    void add_to_create_recent_projects(size_t create_project_items_index);
+    void add_to_create_recent_projects(xtd::usize create_project_items_index);
     void add_to_open_recent_projects(const xtd::string& project_path);
-    void delete_from_create_recent_projects(size_t create_project_items_index);
+    void delete_from_create_recent_projects(xtd::usize create_project_items_index);
     void delete_from_open_recent_projects(const xtd::string& project_path);
     void init();
     void init_create_create_recent_projects_list_box();
     void init_startup_open_recent_projects_list_box();
     void new_project();
-    void new_project(const xtd::string& project_path, size_t project_type_items_index);
+    void new_project(const xtd::string& project_path, xtd::usize project_type_items_index);
     void new_project(const xtd::string& project_path, project_type type, project_language language, project_sdk sdk);
     void open_project();
     void open_project(const xtd::string& project_path);
@@ -145,11 +145,11 @@ namespace xtdc_gui {
     xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {file_menu_item_, help_menu_item_};
     
-    size_t current_project_type_index_ = xtd::usize_object::max_value;
-    size_t current_open_xtd_example_core_list_box_index_ = 0;
-    size_t current_open_xtd_example_drawing_list_box_index_ = 0;
-    size_t current_open_xtd_example_forms_list_box_index_ = 0;
-    size_t current_open_xtd_example_tunit_list_box_index_ = 0;
-    size_t current_open_xtd_example_cmake_list_box_index_ = 0;
+    xtd::usize current_project_type_index_ = xtd::usize_object::max_value;
+    xtd::usize current_open_xtd_example_core_list_box_index_ = 0;
+    xtd::usize current_open_xtd_example_drawing_list_box_index_ = 0;
+    xtd::usize current_open_xtd_example_forms_list_box_index_ = 0;
+    xtd::usize current_open_xtd_example_tunit_list_box_index_ = 0;
+    xtd::usize current_open_xtd_example_cmake_list_box_index_ = 0;
   };
 }

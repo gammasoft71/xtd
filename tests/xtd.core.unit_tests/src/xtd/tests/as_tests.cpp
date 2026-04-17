@@ -169,8 +169,8 @@ namespace xtd::tests {
       assert::is_true(is<double>(as<double>(42ull)));
     }
     
-    auto test_method_(size_t_as_int) {
-      assert::is_true(is<int>(as<int>((size_t)42)));
+    auto test_method_(usize_as_int) {
+      assert::is_true(is<int>(as<int>((usize)42)));
     }
     
     auto test_method_(intptr_as_int) {

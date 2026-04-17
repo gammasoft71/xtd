@@ -14,13 +14,13 @@ namespace xtd::forms::layout::tests {
   class test_class_(arranged_element_collection_tests) {
     auto test_method_(new_collection) {
       arranged_element_collection<std::string> items;
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -29,8 +29,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(add_item) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -38,10 +38,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -55,8 +55,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(add_items) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -72,10 +72,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -93,8 +93,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(add_range_item) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -102,10 +102,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -119,8 +119,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(add_range_items) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -136,10 +136,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -155,8 +155,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(insert_item) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -176,10 +176,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -199,8 +199,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(insert_item_in_first) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -212,10 +212,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -229,8 +229,8 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(insert_item_in_last) {
       arranged_element_collection<std::string> items;
-      size_t added_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize added_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         if (added_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -242,10 +242,10 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -267,11 +267,11 @@ namespace xtd::forms::layout::tests {
     auto test_method_(erase_item) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c", "d", "e"});
-      size_t erased_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize erased_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         if (erased_control_check == 0) {
           assert::are_equal(1_z, index);
           assert::are_equal("b", value);
@@ -279,7 +279,7 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -295,11 +295,11 @@ namespace xtd::forms::layout::tests {
     auto test_method_(erase_all_items) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c", "d", "e"});
-      size_t erased_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize erased_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         if (erased_control_check == 0) {
           assert::are_equal(1_z, index);
           assert::are_equal("b", value);
@@ -323,7 +323,7 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -339,12 +339,12 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(erase_item_first) {
       arranged_element_collection<std::string> items;
-      size_t erased_control_check = 0_z;
+      usize erased_control_check = 0_z;
       items.add_range({"a", "b", "c", "d", "e"});
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         if (erased_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -352,7 +352,7 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -367,12 +367,12 @@ namespace xtd::forms::layout::tests {
     
     auto test_method_(erase_item_last) {
       arranged_element_collection<std::string> items;
-      size_t erased_control_check = 0;
+      usize erased_control_check = 0;
       items.add_range({"a", "b", "c", "d", "e"});
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         if (erased_control_check == 0) {
           assert::are_equal(4_z, index);
           assert::are_equal("e", value);
@@ -380,7 +380,7 @@ namespace xtd::forms::layout::tests {
         } else
           assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -402,14 +402,14 @@ namespace xtd::forms::layout::tests {
     auto test_method_(update_item) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c", "d", "e"});
-      size_t updated_control_check = 0;
-      items.item_added += [&](size_t index, std::string & value) {
+      usize updated_control_check = 0;
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         if (updated_control_check == 0) {
           assert::are_equal(1_z, index);
           assert::are_equal("z", value);
@@ -432,13 +432,13 @@ namespace xtd::forms::layout::tests {
       arranged_element_collection<std::string> items;
       items.add_range({"z", "a"});
       
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::succeed(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -452,13 +452,13 @@ namespace xtd::forms::layout::tests {
       arranged_element_collection<std::string> items;
       items.add_range({"d", "a", "c", "b"});
       
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::succeed(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -474,13 +474,13 @@ namespace xtd::forms::layout::tests {
       arranged_element_collection<std::string> items;
       items.add_range({"d", "a", "c", "b", "g", "i", "b", "h", "f", "j", "f", "k"});
       
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         assert::succeed(string::format("updated index = {}, value = {}", index, value));
       };
       
@@ -503,15 +503,15 @@ namespace xtd::forms::layout::tests {
     auto test_method_(using_std_swap) {
       arranged_element_collection<std::string> items;
       items.add_range({"z", "a"});
-      size_t updated_control_check = 0;
+      usize updated_control_check = 0;
       
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         if (updated_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);
@@ -534,15 +534,15 @@ namespace xtd::forms::layout::tests {
     auto test_method_(using_std_double_swap) {
       arranged_element_collection<std::string> items;
       items.add_range({"z", "a"});
-      size_t updated_control_check = 0;
+      usize updated_control_check = 0;
       
-      items.item_added += [&](size_t index, std::string & value) {
+      items.item_added += [&](usize index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
       };
-      items.item_removed += [&](size_t index, std::string & value) {
+      items.item_removed += [&](usize index, std::string & value) {
         assert::fail(string::format("erased index = {}, value = {}", index, value));
       };
-      items.item_updated += [&](size_t index, std::string & value) {
+      items.item_updated += [&](usize index, std::string & value) {
         if (updated_control_check == 0) {
           assert::are_equal(0_z, index);
           assert::are_equal("a", value);

@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../byte.hpp"
+#include "../usize.hpp"
 #define __XTD_STD_INTERNAL__
 #include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
@@ -49,7 +50,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_b << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_b(const char* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_b(const char* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -61,7 +62,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_b << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_b(const char8_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_b(const char8_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -73,7 +74,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_b << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_b(const char16_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_b(const char16_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -85,7 +86,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_b << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_b(const char32_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_b(const char32_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -97,7 +98,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_b << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_b(const wchar_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_b(const wchar_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -133,7 +134,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_u8 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u8(const char* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_u8(const char* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -145,7 +146,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_u8 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u8(const char8_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_u8(const char8_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -157,7 +158,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_u8 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u8(const char16_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_u8(const char16_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -169,7 +170,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_u8 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u8(const char32_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_u8(const char32_t* s, xtd::usize n) -> xtd::byte;
     
     /// @brief Used to convert specified value into uint16.
     /// @par Namespace
@@ -181,7 +182,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_u8 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_u8(const wchar_t* s, std::size_t n) -> xtd::byte;
+    [[nodiscard]] auto operator""_u8(const wchar_t* s, xtd::usize n) -> xtd::byte;
     /// @}
   }
 }
