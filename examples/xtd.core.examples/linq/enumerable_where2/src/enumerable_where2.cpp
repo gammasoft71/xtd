@@ -3,7 +3,7 @@
 auto main() -> int {
   auto numbers = array {0, 30, 20, 15, 90, 85, 40, 75};
   
-  auto query = numbers.where([](int number, size index) {
+  auto query = numbers.where([](int number, usize index) {
     return number <= as<int>(index * 10);
   });
   

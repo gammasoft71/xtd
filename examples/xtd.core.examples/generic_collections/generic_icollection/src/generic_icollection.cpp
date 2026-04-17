@@ -48,7 +48,7 @@ public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
     // Public Properties :
-    xtd::usize count() const noexcept override {return boxes_.count();}
+    usize count() const noexcept override {return boxes_.count();}
     
     bool is_read_only() const noexcept override {return false;}
     
@@ -74,7 +74,7 @@ public:
       return false;
     }
     
-    void copy_to(array<program::box>& array, xtd::usize array_index) const override {boxes_.copy_to(array, array_index);}
+    void copy_to(array<program::box>& array, usize array_index) const override {boxes_.copy_to(array, array_index);}
     
     enumerator<program::box> get_enumerator() const override {return {new_ptr<box_enumerator>(boxes_)};}
     
@@ -99,7 +99,7 @@ public:
     
   protected:
     const list<program::box>& items_;
-    size index_ = usize_object::max_value;
+    usize index_ = usize_object::max_value;
   };
 
   // Defines two boxes as equal if they have the same dimensions.
@@ -108,7 +108,7 @@ public:
     // Public Methods :
     bool equals(const program::box& b1, const program::box& b2) const noexcept override {return b1.height == b2.height && b1.length == b2.length && b1.width == b2.width;}
     
-    size get_hash_code(const program::box& box) const noexcept override {return hash_code::combine(box.height, box.length, box.width);}
+    usize get_hash_code(const program::box& box) const noexcept override {return hash_code::combine(box.height, box.length, box.width);}
   };
   
   // Defines two boxes as equal if they have the same volume.
@@ -117,7 +117,7 @@ public:
     // Public Methods :
     bool equals(const program::box& b1, const program::box& b2) const noexcept override {return b1.height * b1.length * b1.width == b2.height * b2.length * b2.width;}
     
-    size get_hash_code(const program::box& box) const noexcept override {
+    usize get_hash_code(const program::box& box) const noexcept override {
       auto hash_code = hash_code::combine(box.height, box.length, box.width);
       console::write_line("HC: {}", hash_code);
       return hash_code;

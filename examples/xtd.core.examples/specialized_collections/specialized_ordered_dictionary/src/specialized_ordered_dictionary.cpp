@@ -47,7 +47,7 @@ public:
 
   // Displays the contents of the OrderedDictionary from its keys and values
   template<class key_t, class value_t>
-  static void display_contents(const icollection<key_t>& key_collection, const icollection<value_t>& value_collection, size dictionary_size) {
+  static void display_contents(const icollection<key_t>& key_collection, const icollection<value_t>& value_collection, usize dictionary_size) {
     auto my_keys = array<any_object>(dictionary_size);
     auto my_values = array<any_object>(dictionary_size);
     key_collection.copy_to(my_keys, 0);

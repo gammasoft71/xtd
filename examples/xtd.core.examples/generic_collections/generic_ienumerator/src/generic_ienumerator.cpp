@@ -25,7 +25,7 @@ public:
   
 private:
   const box_collection& boxes;
-  size cur_index = box_integer<usize>::max_value;
+  usize cur_index = box_integer<usize>::max_value;
 };
 
 auto main() -> int {

@@ -28,7 +28,7 @@ public:
   }
 
   static void test_reading_file() {
-    size memory_before = memory_information::get_used_process_memory();
+    usize memory_before = memory_information::get_used_process_memory();
 
     auto file_contents = list<string> {};
     try {

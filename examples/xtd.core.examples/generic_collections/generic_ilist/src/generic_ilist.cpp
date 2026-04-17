@@ -48,7 +48,7 @@ public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
     // Public Properties :
-    xtd::usize count() const noexcept override {return boxes_.count();}
+    usize count() const noexcept override {return boxes_.count();}
     
     bool is_fixed_size() const noexcept override {return false;}
     bool is_read_only() const noexcept override {return false;}
@@ -74,35 +74,35 @@ public:
       return false;
     }
     
-    void copy_to(array<program::box>& array, xtd::usize array_index) const override {boxes_.copy_to(array, array_index);}
+    void copy_to(array<program::box>& array, usize array_index) const override {boxes_.copy_to(array, array_index);}
     
     enumerator<program::box> get_enumerator() const override {return {new_ptr<box_enumerator>(boxes_)};}
     
-    xtd::usize index_of(const program::box& item) const noexcept override {
+    usize index_of(const program::box& item) const noexcept override {
       for (auto index = 0_z; index  < count(); ++index)
         if (boxes_[index] == item) return index;
       return npos;
     }
     
-    void insert(xtd::usize index, const program::box& item) override {
+    void insert(usize index, const program::box& item) override {
       if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.insert(index, item);
     }
     
     bool remove(const program::box& item) override {return boxes_.remove(item);}
     
-    void remove_at(xtd::usize index) override {
+    void remove_at(usize index) override {
       if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.remove_at(index);
     }
     
     // Public Operators :
-    const program::box& operator [](xtd::usize index) const override {
+    const program::box& operator [](usize index) const override {
       if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
     
-    program::box& operator [](xtd::usize index) override {
+    program::box& operator [](usize index) override {
       if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
@@ -122,11 +122,11 @@ public:
     
     // Public Methods :
     bool move_next() override {return ++index_ < items_.count();}
-    void reset() override {index_ = size_object::max_value;}
+    void reset() override {index_ = usize_object::max_value;}
     
   protected:
     const list<program::box>& items_;
-    size index_ = size_object::max_value;
+    usize index_ = usize_object::max_value;
   };
   
   // Defines two boxes as equal if they have the same dimensions.
@@ -135,7 +135,7 @@ public:
     // Public Methods :
     bool equals(const program::box& b1, const program::box& b2) const noexcept override {return b1.height == b2.height && b1.length == b2.length && b1.width == b2.width;}
     
-    size get_hash_code(const program::box& box) const noexcept override {return hash_code::combine(box.height, box.length, box.width);}
+    usize get_hash_code(const program::box& box) const noexcept override {return hash_code::combine(box.height, box.length, box.width);}
   };
   
   // Defines two boxes as equal if they have the same volume.
@@ -144,7 +144,7 @@ public:
     // Public Methods :
     bool equals(const program::box& b1, const program::box& b2) const noexcept override {return b1.height * b1.length * b1.width == b2.height * b2.length * b2.width;}
     
-    size get_hash_code(const program::box& box) const noexcept override {
+    usize get_hash_code(const program::box& box) const noexcept override {
       auto hash_code = hash_code::combine(box.height, box.length, box.width);
       console::write_line("HC: {}", hash_code);
       return hash_code;

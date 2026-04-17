@@ -15,7 +15,7 @@ public:
   bool equals(const object& obj) const noexcept override {return is<part>(obj) && equals(as<part>(obj));}
   bool equals(const part& other) const noexcept override {return part_id == other.part_id;}
 
-  size get_hash_code() const noexcept override {return part_id;}
+  usize get_hash_code() const noexcept override {return part_id;}
 };
 
 class example {

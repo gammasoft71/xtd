@@ -46,7 +46,7 @@ public:
     const collections::array_list& people_;
 
     // Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.
-    size position = collections::array_list::npos;
+    usize position = collections::array_list::npos;
     
   public:
     people_enumerator(const collections::array_list& list) : people_(list) {}

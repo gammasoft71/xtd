@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-template<size rank>
+template<usize rank>
 auto print_values(const array<int, rank>& my_arr) {
   auto my_enumerator = my_arr.get_enumerator();
   auto i = 0_z;

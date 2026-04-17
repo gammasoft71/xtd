@@ -23,7 +23,7 @@ auto xtd::to_string(const foo2& value, const string& fmt, const std::locale& loc
 
 template<>
 struct std::hash<foo2> {
-  auto operator()(const foo2& value) const noexcept -> xtd::usize {return xtd::hash_code::combine(value.value);}
+  auto operator()(const foo2& value) const noexcept -> usize {return hash_code::combine(value.value);}
 };
 
 template<typename type_t>

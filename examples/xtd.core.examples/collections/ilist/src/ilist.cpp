@@ -46,10 +46,10 @@ public:
   class simple_list : public object, public collections::ilist {
   private:
     array<any_object> contents_ = array<any_object>(8);
-    xtd::usize count_;
+    usize count_;
     
   public:
-    inline static constexpr xtd::usize npos = ilist::npos;
+    inline static constexpr usize npos = ilist::npos;
 
     simple_list() {count_ = 0;}
     
@@ -84,17 +84,17 @@ public:
       return false;
     }
     
-    auto index_of(const any_object& value) const noexcept -> xtd::usize override {
+    auto index_of(const any_object& value) const noexcept -> usize override {
       for (auto i = 0_z; i < count(); ++i)
         if (contents_[i] == value) return i;
       return npos;
     }
     
-    auto insert(xtd::usize index, const any_object& value) -> void override {
+    auto insert(usize index, const any_object& value) -> void override {
       if (count_ + 1 <= contents_.length() && index < count()) {
         ++count_;
         
-        for (xtd::usize i = count() - 1; i > index; --i)
+        for (usize i = count() - 1; i > index; --i)
           contents_[i] = contents_[i - 1];
         
         contents_[index] = value;
@@ -107,24 +107,24 @@ public:
       return index != npos;
     }
     
-    auto remove_at(xtd::usize index) -> void override {
+    auto remove_at(usize index) -> void override {
       if (index < count()) {
-        for (xtd::usize i = index; i < count() - 1; ++i)
+        for (usize i = index; i < count() - 1; ++i)
           contents_[i] = contents_[i + 1];
         --count_;
       }
     }
     
-    auto operator [] (xtd::usize index) const -> const any_object& override {
+    auto operator [] (usize index) const -> const any_object& override {
       return contents_[index];
     }
-    auto operator [] (xtd::usize index) -> any_object& override {
+    auto operator [] (usize index) -> any_object& override {
       return contents_[index];
     }
     
     // xtd::collections::icollection members.
     
-    auto count() const noexcept -> xtd::usize override {return count_;}
+    auto count() const noexcept -> usize override {return count_;}
     
     auto is_synchronized() const noexcept -> bool override {return false;}
     
@@ -132,7 +132,7 @@ public:
     // publicly available.
     auto sync_root() const noexcept -> const object& override {return *this;}
     
-    auto copy_to(xtd::array<any_object>& array, xtd::usize index) const noexcept -> void override {
+    auto copy_to(array<any_object>& array, usize index) const noexcept -> void override {
       for (auto i = 0_z; i < count(); ++i)
         array[index + i] = contents_[i];
     }
