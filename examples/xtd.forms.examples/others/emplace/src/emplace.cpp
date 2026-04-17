@@ -6,10 +6,10 @@ auto main() -> int {
   form1.controls().emplace_front<button>("Button 1", point{50, 50}).click += delegate_ {
     form1.controls()["label1"].get().text(string::format("Button 1 clicked {} times", ++button1_clicked));
   };
-  form1.controls().emplace_at<button>(1, "Button 2", point {50, 100}, drawing::size {200, 75}).auto_repeat(true).click += delegate_ {
+  form1.controls().emplace_at<button>(1, "Button 2", point {50, 100}, size {200, 75}).auto_repeat(true).click += delegate_ {
     form1.controls()["label2"].get().text(string::format("Button 2 clicked {} times", ++button2_clicked));
   };
-  form1.controls().emplace_at<label>(2, "Button 1 clicked 0 times", point {50, 200}, drawing::size {200, 23}, "label1");
-  form1.controls().emplace_back<label>("Button 2 clicked 0 times", point {50, 230}, drawing::size {200, 23}, "label2");
+  form1.controls().emplace_at<label>(2, "Button 1 clicked 0 times", point {50, 200}, size {200, 23}, "label1");
+  form1.controls().emplace_back<label>("Button 2 clicked 0 times", point {50, 230}, size {200, 23}, "label2");
   application::run(form1);
 }

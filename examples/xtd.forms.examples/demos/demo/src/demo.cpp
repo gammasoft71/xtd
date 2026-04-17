@@ -12,7 +12,7 @@ auto main() -> int {
   tab_control tab_control_main;
   tab_control_main.location({10, 10});
   tab_control_main.parent(form_main);
-  tab_control_main.size(form_main.client_size() - drawing::size(20, 20));
+  tab_control_main.size(form_main.client_size() - size {20, 20});
   tab_control_main.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
   
   tab_page tab_page_labels;

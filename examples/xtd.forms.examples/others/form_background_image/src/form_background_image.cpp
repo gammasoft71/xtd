@@ -9,7 +9,7 @@ namespace form_background_image_example {
     
     form_main() {
       double_buffered(true);
-      background_image(images::from_name("xtd", drawing::size(64, 64)));
+      background_image(images::from_name("xtd", drawing::size {64, 64}));
       text("form with background image example");
       
       button.parent(*this);

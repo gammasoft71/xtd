@@ -18,7 +18,7 @@ namespace example {
       layout_panel.control_layout_style(button_question, {size_type::auto_size, true});
       
       button_asterisk.text("asterisk");
-      button_asterisk.image(button_images::from_name("dialog-information", drawing::size(64, 64)));
+      button_asterisk.image(button_images::from_name("dialog-information", drawing::size {64, 64}));
       button_asterisk.image_align(content_alignment::top_center);
       button_asterisk.text_align(content_alignment::bottom_center);
       button_asterisk.click += delegate_ {
@@ -26,7 +26,7 @@ namespace example {
       };
       
       button_beep.text("beep");
-      button_beep.image(button_images::from_name("dialog-ok", drawing::size(64, 64)));
+      button_beep.image(button_images::from_name("dialog-ok", drawing::size {64, 64}));
       button_beep.image_align(content_alignment::top_center);
       button_beep.text_align(content_alignment::bottom_center);
       button_beep.click += delegate_ {

@@ -11,7 +11,7 @@ public:
     user_label1.text_align(content_alignment::middle_center).font({user_label1.font(), 32}).dock(dock_style::fill).fore_color(color::black);
     user_label2.text_align(content_alignment::middle_center).font({user_label2.font(), 32}).dock(dock_style::fill).fore_color(color::black);
 
-    dialog.icon(system_images::from_name("symbolic", "contact-new", xtd::drawing::size {64, 64}));
+    dialog.icon(system_images::from_name("symbolic", "contact-new", drawing::size {64, 64}));
     dialog.name("User about dialog");
     dialog.version("1.0");
     dialog.long_version("1.0.0");

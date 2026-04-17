@@ -1,14 +1,16 @@
 #include <xtd/xtd>
 
+using namespace xtd::drawing;
+
 auto main() -> int {
-  auto location = drawing::point {10, 235};
+  auto location = point {10, 235};
   console::write_line("location = {}", location);
   
   location.x = location.x + 20;
   location.y = location.y - 15;
   console::write_line("location = {}", location);
   
-  location = drawing::point {10, 10} + drawing::size {20, 50};
+  location = point {10, 10} + size {20, 50};
   console::write_line("location = {}", location);
   
   location.offset({70, 140});
