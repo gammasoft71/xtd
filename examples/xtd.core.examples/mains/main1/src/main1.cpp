@@ -18,7 +18,7 @@ startup_(main1_example::program::main);
 // Is the same as :
 //
 // auto main() -> int {
-//   return startup::safe_run(main1_example::program::main);
+//   return startup::run(main1_example::program::main);
 // }
 
 

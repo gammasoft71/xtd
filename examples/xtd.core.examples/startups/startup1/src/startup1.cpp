@@ -15,7 +15,7 @@ namespace startup1_example {
 }
 
 auto main() -> int {
-  return startup::safe_run(startup1_example::program::main);
+  return startup::run(startup1_example::program::main);
 }
 // Is approximately the same as :
 //
