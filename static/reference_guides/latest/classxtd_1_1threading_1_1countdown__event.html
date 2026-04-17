@@ -100,9 +100,9 @@ Inheritance diagram for xtd::threading::countdown_event:</div>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><p>Represents a synchronization primitive that is signaled when its count reaches zero. </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_function" href="#ab1e9a2e5b783ff58aabe00346e451c6f">countdown_event</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a30d44771d6bdabadb975751879221f7b">countdown_event</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1countdown__event_html_ab1e9a2e5b783ff58aabe00346e451c6f"><div class="ttname"><a href="#ab1e9a2e5b783ff58aabe00346e451c6f">xtd::threading::countdown_event::countdown_event</a></div><div class="ttdeci">countdown_event(xtd::size initial_count)</div><div class="ttdoc">Initializes a new instance of xtd::threading::countdown_event class with the specified count.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1countdown__event_html_a30d44771d6bdabadb975751879221f7b"><div class="ttname"><a href="#a30d44771d6bdabadb975751879221f7b">xtd::threading::countdown_event::countdown_event</a></div><div class="ttdeci">countdown_event(xtd::usize initial_count)</div><div class="ttdoc">Initializes a new instance of xtd::threading::countdown_event class with the specified count.</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/countdown_event&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
@@ -113,7 +113,7 @@ Inheritance diagram for xtd::threading::countdown_event:</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="#ab1e9a2e5b783ff58aabe00346e451c6f">countdown_event</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1countdown__event.html">threading::countdown_event</a> {5};</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="#a30d44771d6bdabadb975751879221f7b">countdown_event</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1countdown__event.html">threading::countdown_event</a> {5};</div>
 <div class="line">      <span class="keyword">auto</span> thread_proc = [&amp;] {</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Thread {} signals countdown_event&quot;</span>, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a56cf6a462e943a302e4c93a28bb9caaf">thread::current_thread</a>().managed_thread_id());</div>
 <div class="line">        <a class="code hl_class" href="classxtd_1_1threading_1_1countdown__event.html">countdown_event</a>.<a class="code hl_function" href="#a32adaf0876003a801b0c96bc1b6ad26d">signal</a>();</div>
@@ -149,15 +149,15 @@ Inheritance diagram for xtd::threading::countdown_event:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:ab1e9a2e5b783ff58aabe00346e451c6f" id="r_ab1e9a2e5b783ff58aabe00346e451c6f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab1e9a2e5b783ff58aabe00346e451c6f">countdown_event</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e">initial_count</a>)</td></tr>
-<tr class="memdesc:ab1e9a2e5b783ff58aabe00346e451c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> class with the specified count.  <br /></td></tr>
+<tr class="memitem:a30d44771d6bdabadb975751879221f7b" id="r_a30d44771d6bdabadb975751879221f7b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a30d44771d6bdabadb975751879221f7b">countdown_event</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#a930efabde645759fefef157c52d32372">initial_count</a>)</td></tr>
+<tr class="memdesc:a30d44771d6bdabadb975751879221f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> class with the specified count.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a4e6af84f51f92393e6a8db654e0f9dd7" id="r_a4e6af84f51f92393e6a8db654e0f9dd7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7">current_count</a> () const -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a4e6af84f51f92393e6a8db654e0f9dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of remaining signals required to set the event.  <br /></td></tr>
-<tr class="memitem:a3f3d88e84f5034ac7fa719e874da840e" id="r_a3f3d88e84f5034ac7fa719e874da840e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e">initial_count</a> () const -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a3f3d88e84f5034ac7fa719e874da840e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the numbers of signals initially required to set the event.  <br /></td></tr>
+<tr class="memitem:a3abf053f6de69d4fc304eee94b7551f0" id="r_a3abf053f6de69d4fc304eee94b7551f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0">current_count</a> () const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a3abf053f6de69d4fc304eee94b7551f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of remaining signals required to set the event.  <br /></td></tr>
+<tr class="memitem:a930efabde645759fefef157c52d32372" id="r_a930efabde645759fefef157c52d32372"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a930efabde645759fefef157c52d32372">initial_count</a> () const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a930efabde645759fefef157c52d32372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the numbers of signals initially required to set the event.  <br /></td></tr>
 <tr class="memitem:ac20428e4ba1a17f5514cd6124af94d5c" id="r_ac20428e4ba1a17f5514cd6124af94d5c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac20428e4ba1a17f5514cd6124af94d5c">is_set</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:ac20428e4ba1a17f5514cd6124af94d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ndicates whether the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> object's current count has reached zero.  <br /></td></tr>
 <tr class="memitem:aa05dff789ee7be7cd2a5ab1835670273" id="r_aa05dff789ee7be7cd2a5ab1835670273"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa05dff789ee7be7cd2a5ab1835670273">wait_handle</a> () const -&gt; const <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp;</td></tr>
@@ -169,22 +169,22 @@ Public Properties</h2></td></tr>
 Public Methods</h2></td></tr>
 <tr class="memitem:a302a1f88949146759d36aee81c3fe6b5" id="r_a302a1f88949146759d36aee81c3fe6b5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a302a1f88949146759d36aee81c3fe6b5">add_count</a> () -&gt; void</td></tr>
 <tr class="memdesc:a302a1f88949146759d36aee81c3fe6b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>'s current count by one.  <br /></td></tr>
-<tr class="memitem:a80516832551f63520a20e6fad6d72873" id="r_a80516832551f63520a20e6fad6d72873"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a80516832551f63520a20e6fad6d72873">add_count</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; void</td></tr>
-<tr class="memdesc:a80516832551f63520a20e6fad6d72873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>'s current count by one.  <br /></td></tr>
+<tr class="memitem:ab8983064dba0c9624f30c66fe2a2d6fe" id="r_ab8983064dba0c9624f30c66fe2a2d6fe"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab8983064dba0c9624f30c66fe2a2d6fe">add_count</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; void</td></tr>
+<tr class="memdesc:ab8983064dba0c9624f30c66fe2a2d6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>'s current count by one.  <br /></td></tr>
 <tr class="memitem:a42e484908253ec0e5bb711ac408dd46d" id="r_a42e484908253ec0e5bb711ac408dd46d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a42e484908253ec0e5bb711ac408dd46d">close</a> () -&gt; void</td></tr>
 <tr class="memdesc:a42e484908253ec0e5bb711ac408dd46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the current instance of the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> class.  <br /></td></tr>
 <tr class="memitem:a33d60c45920678be266a3992dce73185" id="r_a33d60c45920678be266a3992dce73185"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a33d60c45920678be266a3992dce73185">reset</a> () -&gt; void</td></tr>
-<tr class="memdesc:a33d60c45920678be266a3992dce73185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> to the value of <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a>.  <br /></td></tr>
-<tr class="memitem:a3b16fc3e990666cc341aa5a9216f8f14" id="r_a3b16fc3e990666cc341aa5a9216f8f14"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3b16fc3e990666cc341aa5a9216f8f14">reset</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count)</td></tr>
-<tr class="memdesc:a3b16fc3e990666cc341aa5a9216f8f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> property to a specified value.  <br /></td></tr>
+<tr class="memdesc:a33d60c45920678be266a3992dce73185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> to the value of <a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a>.  <br /></td></tr>
+<tr class="memitem:a1c0e6c525d72e3ade95cdd267c30b51f" id="r_a1c0e6c525d72e3ade95cdd267c30b51f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1c0e6c525d72e3ade95cdd267c30b51f">reset</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count)</td></tr>
+<tr class="memdesc:a1c0e6c525d72e3ade95cdd267c30b51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> property to a specified value.  <br /></td></tr>
 <tr class="memitem:a32adaf0876003a801b0c96bc1b6ad26d" id="r_a32adaf0876003a801b0c96bc1b6ad26d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a32adaf0876003a801b0c96bc1b6ad26d">signal</a> () -&gt; bool</td></tr>
-<tr class="memdesc:a32adaf0876003a801b0c96bc1b6ad26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a signal with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>.  <br /></td></tr>
-<tr class="memitem:a8377b1dc25c69a9be844c7e175938fc0" id="r_a8377b1dc25c69a9be844c7e175938fc0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8377b1dc25c69a9be844c7e175938fc0">signal</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> signal_count) -&gt; bool</td></tr>
-<tr class="memdesc:a8377b1dc25c69a9be844c7e175938fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers multiple signals with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by the specified amount.  <br /></td></tr>
+<tr class="memdesc:a32adaf0876003a801b0c96bc1b6ad26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a signal with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>.  <br /></td></tr>
+<tr class="memitem:a57c81f886913a32b30ff6d22825b6614" id="r_a57c81f886913a32b30ff6d22825b6614"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a57c81f886913a32b30ff6d22825b6614">signal</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> signal_count) -&gt; bool</td></tr>
+<tr class="memdesc:a57c81f886913a32b30ff6d22825b6614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers multiple signals with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by the specified amount.  <br /></td></tr>
 <tr class="memitem:a6dfd4c1cbd06a04e36e0c1576367e4b7" id="r_a6dfd4c1cbd06a04e36e0c1576367e4b7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6dfd4c1cbd06a04e36e0c1576367e4b7">try_add_count</a> () noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a6dfd4c1cbd06a04e36e0c1576367e4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to increment <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by one.  <br /></td></tr>
-<tr class="memitem:aa7b8fa5d164a2bc15b8f6e74f7b97dfe" id="r_aa7b8fa5d164a2bc15b8f6e74f7b97dfe"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa7b8fa5d164a2bc15b8f6e74f7b97dfe">try_add_count</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) noexcept -&gt; bool</td></tr>
-<tr class="memdesc:aa7b8fa5d164a2bc15b8f6e74f7b97dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to increment <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by by a specified value.  <br /></td></tr>
+<tr class="memdesc:a6dfd4c1cbd06a04e36e0c1576367e4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to increment <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by one.  <br /></td></tr>
+<tr class="memitem:a0685b23ad3bfc4271885278263925d37" id="r_a0685b23ad3bfc4271885278263925d37"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0685b23ad3bfc4271885278263925d37">try_add_count</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a0685b23ad3bfc4271885278263925d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to increment <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by by a specified value.  <br /></td></tr>
 <tr class="memitem:a81d30f0e9eab5a0e17c742c703de305e" id="r_a81d30f0e9eab5a0e17c742c703de305e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a81d30f0e9eab5a0e17c742c703de305e">wait</a> () -&gt; void</td></tr>
 <tr class="memdesc:a81d30f0e9eab5a0e17c742c703de305e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> is set.  <br /></td></tr>
 <tr class="memitem:a718f3eb10385d766f40eff9dc4589627" id="r_a718f3eb10385d766f40eff9dc4589627"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a718f3eb10385d766f40eff9dc4589627">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> milliseconds_timeout) -&gt; bool</td></tr>
@@ -204,8 +204,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6e48ffbad2ee99afb6dbff032a18345e" id="r_a6e48ffbad2ee99afb6dbff032a18345e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6e48ffbad2ee99afb6dbff032a18345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
@@ -221,8 +221,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab1e9a2e5b783ff58aabe00346e451c6f" name="ab1e9a2e5b783ff58aabe00346e451c6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1e9a2e5b783ff58aabe00346e451c6f">&#9670;&#160;</a></span>countdown_event()</h2>
+<a id="a30d44771d6bdabadb975751879221f7b" name="a30d44771d6bdabadb975751879221f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d44771d6bdabadb975751879221f7b">&#9670;&#160;</a></span>countdown_event()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +233,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::threading::countdown_event::countdown_event </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>initial_count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>initial_count</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -247,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> class with the specified count. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">initial_count</a></td><td>he number of signals initially required to set the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">initial_count</a></td><td>he number of signals initially required to set the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -262,8 +262,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a4e6af84f51f92393e6a8db654e0f9dd7" name="a4e6af84f51f92393e6a8db654e0f9dd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e6af84f51f92393e6a8db654e0f9dd7">&#9670;&#160;</a></span>current_count()</h2>
+<a id="a3abf053f6de69d4fc304eee94b7551f0" name="a3abf053f6de69d4fc304eee94b7551f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3abf053f6de69d4fc304eee94b7551f0">&#9670;&#160;</a></span>current_count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +275,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::threading::countdown_event::current_count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -296,8 +296,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3f3d88e84f5034ac7fa719e874da840e" name="a3f3d88e84f5034ac7fa719e874da840e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f3d88e84f5034ac7fa719e874da840e">&#9670;&#160;</a></span>initial_count()</h2>
+<a id="a930efabde645759fefef157c52d32372" name="a930efabde645759fefef157c52d32372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a930efabde645759fefef157c52d32372">&#9670;&#160;</a></span>initial_count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +309,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::threading::countdown_event::initial_count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -361,7 +361,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> does not raise an event when the countdown has reached zero. Instead, the <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> property equals zero, and the <a class="el" href="#ac20428e4ba1a17f5514cd6124af94d5c" title="ndicates whether the xtd::threading::countdown_event object&#39;s current count has reached zero.">xtd::threading::countdown_event::is_set</a> property equals <span class="tt">true</span>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> does not raise an event when the countdown has reached zero. Instead, the <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> property equals zero, and the <a class="el" href="#ac20428e4ba1a17f5514cd6124af94d5c" title="ndicates whether the xtd::threading::countdown_event object&#39;s current count has reached zero.">xtd::threading::countdown_event::is_set</a> property equals <span class="tt">true</span>. </dd></dl>
 
 </div>
 </div>
@@ -459,8 +459,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a80516832551f63520a20e6fad6d72873" name="a80516832551f63520a20e6fad6d72873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80516832551f63520a20e6fad6d72873">&#9670;&#160;</a></span>add_count() <span class="overload">[2/2]</span></h2>
+<a id="ab8983064dba0c9624f30c66fe2a2d6fe" name="ab8983064dba0c9624f30c66fe2a2d6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8983064dba0c9624f30c66fe2a2d6fe">&#9670;&#160;</a></span>add_count() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,7 +468,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto xtd::threading::countdown_event::add_count </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
           <td> -&gt;  void</td>
         </tr>
       </table>
@@ -477,7 +477,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Increments the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>'s current count by one. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">count</td><td>The value by which to increase <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </td></tr>
+    <tr><td class="paramname">count</td><td>The value by which to increase <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -526,19 +526,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> to the value of <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a>. </p>
+<p>Resets the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> to the value of <a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a>. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method resets <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> for all subsequent accesses of the property on the current instance. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method resets <a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> for all subsequent accesses of the property on the current instance. </dd></dl>
 
 </div>
 </div>
-<a id="a3b16fc3e990666cc341aa5a9216f8f14" name="a3b16fc3e990666cc341aa5a9216f8f14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b16fc3e990666cc341aa5a9216f8f14">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
+<a id="a1c0e6c525d72e3ade95cdd267c30b51f" name="a1c0e6c525d72e3ade95cdd267c30b51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0e6c525d72e3ade95cdd267c30b51f">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,13 +546,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void xtd::threading::countdown_event::reset </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> property to a specified value. </p>
+<p>Resets the <a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> property to a specified value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">count</td><td>he number of signals required to set the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>. </td></tr>
@@ -566,7 +566,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method resets <a class="el" href="#a3f3d88e84f5034ac7fa719e874da840e" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> for all subsequent accesses of the property on the current instance. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method resets <a class="el" href="#a930efabde645759fefef157c52d32372" title="Gets the numbers of signals initially required to set the event.">xtd::threading::countdown_event::initial_count</a> for all subsequent accesses of the property on the current instance. </dd></dl>
 
 </div>
 </div>
@@ -585,7 +585,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registers a signal with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </p>
+<p>Registers a signal with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the signal caused the count to reach zero and the event was set; otherwise, <span class="tt">false</span>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -597,8 +597,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8377b1dc25c69a9be844c7e175938fc0" name="a8377b1dc25c69a9be844c7e175938fc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8377b1dc25c69a9be844c7e175938fc0">&#9670;&#160;</a></span>signal() <span class="overload">[2/2]</span></h2>
+<a id="a57c81f886913a32b30ff6d22825b6614" name="a57c81f886913a32b30ff6d22825b6614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c81f886913a32b30ff6d22825b6614">&#9670;&#160;</a></span>signal() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -606,13 +606,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto xtd::threading::countdown_event::signal </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>signal_count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>signal_count</em></span></td><td>)</td>
           <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registers multiple signals with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by the specified amount. </p>
+<p>Registers multiple signals with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by the specified amount. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">signal_count</td><td>The number of signals to register. </td></tr>
@@ -654,13 +654,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Attempts to increment <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by one. </p>
+<p>Attempts to increment <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by one. </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the increment succeeded; otherwise, <span class="tt">false</span>. If CurrentCount is already at zero, this method will return <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
-<a id="aa7b8fa5d164a2bc15b8f6e74f7b97dfe" name="aa7b8fa5d164a2bc15b8f6e74f7b97dfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7b8fa5d164a2bc15b8f6e74f7b97dfe">&#9670;&#160;</a></span>try_add_count() <span class="overload">[2/2]</span></h2>
+<a id="a0685b23ad3bfc4271885278263925d37" name="a0685b23ad3bfc4271885278263925d37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0685b23ad3bfc4271885278263925d37">&#9670;&#160;</a></span>try_add_count() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -671,7 +671,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto xtd::threading::countdown_event::try_add_count </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
           <td> -&gt;  bool</td>
         </tr>
       </table>
@@ -682,10 +682,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Attempts to increment <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by by a specified value. </p>
+<p>Attempts to increment <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by by a specified value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">count</td><td>The value by which to increase <a class="el" href="#a4e6af84f51f92393e6a8db654e0f9dd7" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </td></tr>
+    <tr><td class="paramname">count</td><td>The value by which to increase <a class="el" href="#a3abf053f6de69d4fc304eee94b7551f0" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </td></tr>
   </table>
   </dd>
 </dl>

@@ -112,7 +112,7 @@ Inheritance diagram for xtd::net::socket_address:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="#a838dacd89343d57502f9d21312d18866" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="#aecc86f6989968964374d00a50f2cee7f" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="#a979bf5a5ac4de96764a11ec15596a89d" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="#aecc86f6989968964374d00a50f2cee7f" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -127,8 +127,8 @@ Public Constructors</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:a688af2684ef87b52ddff9a3fdcaa4405" id="r_a688af2684ef87b52ddff9a3fdcaa4405"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a688af2684ef87b52ddff9a3fdcaa4405">address_family</a> () const -&gt; <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a></td></tr>
 <tr class="memdesc:a688af2684ef87b52ddff9a3fdcaa4405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family to which the endpoint belongs.  <br /></td></tr>
-<tr class="memitem:a838dacd89343d57502f9d21312d18866" id="r_a838dacd89343d57502f9d21312d18866"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a838dacd89343d57502f9d21312d18866">size</a> () const -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a838dacd89343d57502f9d21312d18866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying buffer size of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a>.  <br /></td></tr>
+<tr class="memitem:a979bf5a5ac4de96764a11ec15596a89d" id="r_a979bf5a5ac4de96764a11ec15596a89d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a979bf5a5ac4de96764a11ec15596a89d">size</a> () const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a979bf5a5ac4de96764a11ec15596a89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying buffer size of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
@@ -136,17 +136,17 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a7f96b27406b53de2b908a9a4d057ca39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:a26c29b5a7c290529e8513a7bc5fb375e" id="r_a26c29b5a7c290529e8513a7bc5fb375e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a26c29b5a7c290529e8513a7bc5fb375e">equals</a> (const <a class="el" href="#a6f1f2b3d35bbc2210ea81b363210826d">socket_address</a> &amp;other) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a26c29b5a7c290529e8513a7bc5fb375e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a4b541e06de75d3bc1fe4f4a95f983c1b" id="r_a4b541e06de75d3bc1fe4f4a95f983c1b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b541e06de75d3bc1fe4f4a95f983c1b">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> override</td></tr>
-<tr class="memdesc:a4b541e06de75d3bc1fe4f4a95f983c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a79ae28540f63f67013cb3f7bf5fda636" id="r_a79ae28540f63f67013cb3f7bf5fda636"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a79ae28540f63f67013cb3f7bf5fda636">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a79ae28540f63f67013cb3f7bf5fda636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:aecc86f6989968964374d00a50f2cee7f" id="r_aecc86f6989968964374d00a50f2cee7f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aecc86f6989968964374d00a50f2cee7f">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:aecc86f6989968964374d00a50f2cee7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns information about the socket address.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:a62f801f83c8136e6fa12164910147d02" id="r_a62f801f83c8136e6fa12164910147d02"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a62f801f83c8136e6fa12164910147d02">operator[]</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &amp;</td></tr>
-<tr class="memdesc:a62f801f83c8136e6fa12164910147d02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the specified index element in the underlying buffer.  <br /></td></tr>
-<tr class="memitem:a07730f2fbfce0bbb875c4d6c4044951b" id="r_a07730f2fbfce0bbb875c4d6c4044951b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a07730f2fbfce0bbb875c4d6c4044951b">operator[]</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) const -&gt; const <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &amp;</td></tr>
-<tr class="memdesc:a07730f2fbfce0bbb875c4d6c4044951b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified index element in the underlying buffer.  <br /></td></tr>
+<tr class="memitem:aae62af25275fea475a38058d229381ed" id="r_aae62af25275fea475a38058d229381ed"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae62af25275fea475a38058d229381ed">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &amp;</td></tr>
+<tr class="memdesc:aae62af25275fea475a38058d229381ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the specified index element in the underlying buffer.  <br /></td></tr>
+<tr class="memitem:a330e7e39b61136eeca95ace329da9934" id="r_a330e7e39b61136eeca95ace329da9934"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a330e7e39b61136eeca95ace329da9934">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; const <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &amp;</td></tr>
+<tr class="memdesc:a330e7e39b61136eeca95ace329da9934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified index element in the underlying buffer.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -271,8 +271,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a838dacd89343d57502f9d21312d18866" name="a838dacd89343d57502f9d21312d18866"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a838dacd89343d57502f9d21312d18866">&#9670;&#160;</a></span>size()</h2>
+<a id="a979bf5a5ac4de96764a11ec15596a89d" name="a979bf5a5ac4de96764a11ec15596a89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a979bf5a5ac4de96764a11ec15596a89d">&#9670;&#160;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,7 +284,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::net::socket_address::size </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -371,8 +371,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b541e06de75d3bc1fe4f4a95f983c1b" name="a4b541e06de75d3bc1fe4f4a95f983c1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b541e06de75d3bc1fe4f4a95f983c1b">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a79ae28540f63f67013cb3f7bf5fda636" name="a79ae28540f63f67013cb3f7bf5fda636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79ae28540f63f67013cb3f7bf5fda636">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -384,7 +384,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::net::socket_address::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -397,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -432,8 +432,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a62f801f83c8136e6fa12164910147d02" name="a62f801f83c8136e6fa12164910147d02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62f801f83c8136e6fa12164910147d02">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="aae62af25275fea475a38058d229381ed" name="aae62af25275fea475a38058d229381ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae62af25275fea475a38058d229381ed">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -441,7 +441,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto xtd::net::socket_address::operator[] </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &amp;</td>
         </tr>
       </table>
@@ -462,12 +462,12 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property gets or sets the specified byte position in the underlying buffer. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Be sure to call <a class="el" href="#a838dacd89343d57502f9d21312d18866" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a> to throw an <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Be sure to call <a class="el" href="#a979bf5a5ac4de96764a11ec15596a89d" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a> to throw an <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a>. </dd></dl>
 
 </div>
 </div>
-<a id="a07730f2fbfce0bbb875c4d6c4044951b" name="a07730f2fbfce0bbb875c4d6c4044951b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07730f2fbfce0bbb875c4d6c4044951b">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<a id="a330e7e39b61136eeca95ace329da9934" name="a330e7e39b61136eeca95ace329da9934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a330e7e39b61136eeca95ace329da9934">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,7 +475,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto xtd::net::socket_address::operator[] </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const -&gt;  const <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &amp;</td>
         </tr>
       </table>
@@ -496,7 +496,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property gets or sets the specified byte position in the underlying buffer. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Be sure to call <a class="el" href="#a838dacd89343d57502f9d21312d18866" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a> to throw an <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Be sure to call <a class="el" href="#a979bf5a5ac4de96764a11ec15596a89d" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes. par Deinition.">xtd::net::socket_address</a> to throw an <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a>. </dd></dl>
 
 </div>
 </div>

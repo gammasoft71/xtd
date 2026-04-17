@@ -135,7 +135,7 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><span class="keyword">struct </span>std::hash&lt;foo2&gt; {</div>
-<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1hash__code.html#aeca6f45b8de9d6bf5359c3d2a02bc640">xtd::hash_code::combine</a>(value.value);}</div>
+<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1hash__code.html#ad0e2045a552008b2e7c8722cd2dd274e">xtd::hash_code::combine</a>(value.value);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -166,7 +166,7 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line"><span class="comment">// a = foo2 =&gt; NA (foo2)</span></div>
 <div class="line"><span class="comment">// a = wednesday =&gt; wednesday (xtd::day_of_week)</span></div>
 <div class="ttc" id="aclassxtd_1_1any__object_html_a4aac324c61225774eae3432bc18a5a41"><div class="ttname"><a href="#a4aac324c61225774eae3432bc18a5a41">xtd::any_object::value</a></div><div class="ttdeci">auto value() const -&gt; const object &amp;</div><div class="ttdoc">Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...</div></div>
-<div class="ttc" id="aclassxtd_1_1hash__code_html_aeca6f45b8de9d6bf5359c3d2a02bc640"><div class="ttname"><a href="classxtd_1_1hash__code.html#aeca6f45b8de9d6bf5359c3d2a02bc640">xtd::hash_code::combine</a></div><div class="ttdeci">static xtd::size combine(args_t... values) noexcept</div><div class="ttdoc">Combines values into a hash code.</div><div class="ttdef"><b>Definition</b> hash_code.hpp:70</div></div>
+<div class="ttc" id="aclassxtd_1_1hash__code_html_ad0e2045a552008b2e7c8722cd2dd274e"><div class="ttname"><a href="classxtd_1_1hash__code.html#ad0e2045a552008b2e7c8722cd2dd274e">xtd::hash_code::combine</a></div><div class="ttdeci">static xtd::usize combine(args_t... values) noexcept</div><div class="ttdoc">Combines values into a hash code.</div><div class="ttdef"><b>Definition</b> hash_code.hpp:70</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
@@ -175,9 +175,9 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="ttc" id="agroup__diagnostics_html_gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264"><div class="ttname"><a href="group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264">xtd::diagnostics::trace_options::date_time</a></div><div class="ttdeci">@ date_time</div><div class="ttdoc">Write the date and time.</div><div class="ttdef"><b>Definition</b> trace_options.hpp:31</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:24</div></div>
-<div class="ttc" id="agroup__types_html_ga0a27fff7b553c7e6da4a774353c8fa96"><div class="ttname"><a href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></div><div class="ttdeci">usize size</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:36</div></div>
 <div class="ttc" id="agroup__types_html_gaa9a6cd7d720cd7466a0acb01f807b0c5"><div class="ttname"><a href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></div><div class="ttdeci">std::int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:25</div></div>
 <div class="ttc" id="agroup__types_html_gac8e2f13523520227e0137c8f5ce7b86d"><div class="ttname"><a href="group__types.html#gac8e2f13523520227e0137c8f5ce7b86d">xtd::int32_object</a></div><div class="ttdeci">box_integer&lt; int32 &gt; int32_object</div><div class="ttdoc">Represent a boxed int32.</div><div class="ttdef"><b>Definition</b> int32_object.hpp:29</div></div>
+<div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:484</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:98</div></div>
@@ -215,8 +215,8 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a0f70cfcce620c75b7b322de9b30c8b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:a2bf92ad4b02925876aa59ff3f6b9cda5" id="r_a2bf92ad4b02925876aa59ff3f6b9cda5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2bf92ad4b02925876aa59ff3f6b9cda5">equals</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a2bf92ad4b02925876aa59ff3f6b9cda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:ae7573f1028f1c35e4f603bb5ee309969" id="r_ae7573f1028f1c35e4f603bb5ee309969"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7573f1028f1c35e4f603bb5ee309969">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> override</td></tr>
-<tr class="memdesc:ae7573f1028f1c35e4f603bb5ee309969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a0aeec64337e452957b4340119de1339f" id="r_a0aeec64337e452957b4340119de1339f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0aeec64337e452957b4340119de1339f">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a0aeec64337e452957b4340119de1339f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a4935d2f8e0a029e87de04812bc0940bf" id="r_a4935d2f8e0a029e87de04812bc0940bf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4935d2f8e0a029e87de04812bc0940bf">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:a4935d2f8e0a029e87de04812bc0940bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="memitem:ac347a9d497ffcaef486d2fcf394782cf" id="r_ac347a9d497ffcaef486d2fcf394782cf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac347a9d497ffcaef486d2fcf394782cf">reset</a> () noexcept -&gt; void</td></tr>
@@ -560,8 +560,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ae7573f1028f1c35e4f603bb5ee309969" name="ae7573f1028f1c35e4f603bb5ee309969"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7573f1028f1c35e4f603bb5ee309969">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a0aeec64337e452957b4340119de1339f" name="a0aeec64337e452957b4340119de1339f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aeec64337e452957b4340119de1339f">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -573,7 +573,7 @@ template&lt;typename type_t&gt; </div>
           <td class="memname">auto xtd::any_object::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -586,7 +586,7 @@ template&lt;typename type_t&gt; </div>
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
 
 </div>
 </div>

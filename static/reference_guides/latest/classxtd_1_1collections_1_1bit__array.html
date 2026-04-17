@@ -105,8 +105,8 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><p>Manages a compact array of bit values, which are represented as booleans, where <span class="tt">true</span> indicates that the bit is on (1) and <span class="tt">false</span> indicates the bit is off (0). </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_function" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;bit_array&gt;, <span class="keyword">public</span> xtd::collections::generic::icollection&lt;bool&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iclonable.html">xtd::iclonable</a>;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1bit__array_html_ad508bbb1382d5d3f5adcc69835ffdf52"><div class="ttname"><a href="#ad508bbb1382d5d3f5adcc69835ffdf52">xtd::collections::bit_array::bit_array</a></div><div class="ttdeci">bit_array(xtd::size length) noexcept</div><div class="ttdoc">Initializes a new instance of the xtd::collections::bit_array class that can hold the specified numbe...</div></div>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_function" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;bit_array&gt;, <span class="keyword">public</span> xtd::collections::generic::icollection&lt;bool&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iclonable.html">xtd::iclonable</a>;</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1bit__array_html_a934e8881f5975aa6ab671b294f78abf4"><div class="ttname"><a href="#a934e8881f5975aa6ab671b294f78abf4">xtd::collections::bit_array::bit_array</a></div><div class="ttdeci">bit_array(xtd::usize length) noexcept</div><div class="ttdoc">Initializes a new instance of the xtd::collections::bit_array class that can hold the specified numbe...</div></div>
 <div class="ttc" id="aclassxtd_1_1iclonable_html"><div class="ttname"><a href="classxtd_1_1iclonable.html">xtd::iclonable</a></div><div class="ttdoc">Supports cloning, which creates a new instance of a class with the same value as an existing instance...</div><div class="ttdef"><b>Definition</b> iclonable.hpp:21</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
@@ -248,8 +248,8 @@ Public Aliases</h2></td></tr>
 <tr class="memdesc:ae4a337c8d303c1ec7d742aab4ae189ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
 <tr class="memitem:a05a54ab1c418ea0373bce3d157a89341" id="r_a05a54ab1c418ea0373bce3d157a89341"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a05a54ab1c418ea0373bce3d157a89341">base_type</a></td></tr>
 <tr class="memdesc:a05a54ab1c418ea0373bce3d157a89341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list base type.  <br /></td></tr>
-<tr class="memitem:a6e83f73bd0569e5ca75ff4f316541426" id="r_a6e83f73bd0569e5ca75ff4f316541426"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6e83f73bd0569e5ca75ff4f316541426">size_type</a></td></tr>
-<tr class="memdesc:a6e83f73bd0569e5ca75ff4f316541426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list size type (usually <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a>).  <br /></td></tr>
+<tr class="memitem:a4c9b9b6f4dd0d5f389f7d34ec8881c62" id="r_a4c9b9b6f4dd0d5f389f7d34ec8881c62"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a4c9b9b6f4dd0d5f389f7d34ec8881c62">size_type</a></td></tr>
+<tr class="memdesc:a4c9b9b6f4dd0d5f389f7d34ec8881c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list size type (usually <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>).  <br /></td></tr>
 <tr class="memitem:a5aef47fac580f6cd7e01dca50a5fed85" id="r_a5aef47fac580f6cd7e01dca50a5fed85"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5aef47fac580f6cd7e01dca50a5fed85">difference_type</a></td></tr>
 <tr class="memdesc:a5aef47fac580f6cd7e01dca50a5fed85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>).  <br /></td></tr>
 <tr class="memitem:a7e62bf5a9f329fdefdb48dee956155ed" id="r_a7e62bf5a9f329fdefdb48dee956155ed"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a7e62bf5a9f329fdefdb48dee956155ed">reference</a></td></tr>
@@ -263,10 +263,10 @@ Public Aliases</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:ad508bbb1382d5d3f5adcc69835ffdf52" id="r_ad508bbb1382d5d3f5adcc69835ffdf52"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a>) noexcept</td></tr>
-<tr class="memdesc:ad508bbb1382d5d3f5adcc69835ffdf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that can hold the specified number of bit values, which are initially set to <span class="tt">false</span>.  <br /></td></tr>
-<tr class="memitem:a97eb7539ed615bfba76ed9440b18c7bf" id="r_a97eb7539ed615bfba76ed9440b18c7bf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a97eb7539ed615bfba76ed9440b18c7bf">bit_array</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a>, bool defaultValue) noexcept</td></tr>
-<tr class="memdesc:a97eb7539ed615bfba76ed9440b18c7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that can hold the specified number of bit values, which are initially set to the specified value.  <br /></td></tr>
+<tr class="memitem:a934e8881f5975aa6ab671b294f78abf4" id="r_a934e8881f5975aa6ab671b294f78abf4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a>) noexcept</td></tr>
+<tr class="memdesc:a934e8881f5975aa6ab671b294f78abf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that can hold the specified number of bit values, which are initially set to <span class="tt">false</span>.  <br /></td></tr>
+<tr class="memitem:ac595a9beb5ae13dd555a296fbd6e258e" id="r_ac595a9beb5ae13dd555a296fbd6e258e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac595a9beb5ae13dd555a296fbd6e258e">bit_array</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a>, bool defaultValue) noexcept</td></tr>
+<tr class="memdesc:ac595a9beb5ae13dd555a296fbd6e258e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that can hold the specified number of bit values, which are initially set to the specified value.  <br /></td></tr>
 <tr class="memitem:a16ea5da64e5a65675efd5e02b12422c8" id="r_a16ea5da64e5a65675efd5e02b12422c8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a16ea5da64e5a65675efd5e02b12422c8">bit_array</a> (std::initializer_list&lt; bool &gt; il) noexcept</td></tr>
 <tr class="memdesc:a16ea5da64e5a65675efd5e02b12422c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified initializer list of booleans.  <br /></td></tr>
 <tr class="memitem:ab61c2604b5cfb9d26ccc2c7b02173f23" id="r_ab61c2604b5cfb9d26ccc2c7b02173f23"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab61c2604b5cfb9d26ccc2c7b02173f23">bit_array</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; bool &gt; &amp;values) noexcept</td></tr>
@@ -275,100 +275,100 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a04255aeadd40fc7aa53cefadf62f4e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified array of bytes.  <br /></td></tr>
 <tr class="memitem:ae203e44b85846f74e535cd5a49e5ead5" id="r_ae203e44b85846f74e535cd5a49e5ead5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae203e44b85846f74e535cd5a49e5ead5">bit_array</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &gt; &amp;values) noexcept</td></tr>
 <tr class="memdesc:ae203e44b85846f74e535cd5a49e5ead5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified array of 32-bit integers.  <br /></td></tr>
-<tr class="memitem:ac784c0e5dd9a11567758599711294ac0" id="r_ac784c0e5dd9a11567758599711294ac0"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> length&gt; </td></tr>
-<tr class="memitem:ac784c0e5dd9a11567758599711294ac0 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac784c0e5dd9a11567758599711294ac0">bit_array</a> (const std::bitset&lt; <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a> &gt; &amp;bit_set) noexcept</td></tr>
+<tr class="memitem:ac784c0e5dd9a11567758599711294ac0" id="r_ac784c0e5dd9a11567758599711294ac0"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
+<tr class="memitem:ac784c0e5dd9a11567758599711294ac0 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac784c0e5dd9a11567758599711294ac0">bit_array</a> (const std::bitset&lt; <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a> &gt; &amp;bit_set) noexcept</td></tr>
 <tr class="memdesc:ac784c0e5dd9a11567758599711294ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified <a href="https://en.cppreference.com/w/cpp/utility/bitset">bitset</a>.  <br /></td></tr>
 <tr class="memitem:a9caad1685fa39ad3e1c6525297b9af48" id="r_a9caad1685fa39ad3e1c6525297b9af48"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9caad1685fa39ad3e1c6525297b9af48">bit_array</a> (const std::vector&lt; bool &gt; &amp;booleans) noexcept</td></tr>
 <tr class="memdesc:a9caad1685fa39ad3e1c6525297b9af48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified <a href="https://en.cppreference.com/w/cpp/container/vector_bool">std::vector&lt;bool&gt;</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:af64c0608751aaad1ead91b35e3d01973" id="r_af64c0608751aaad1ead91b35e3d01973"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> length&gt; </td></tr>
-<tr class="memitem:af64c0608751aaad1ead91b35e3d01973 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af64c0608751aaad1ead91b35e3d01973">bits</a> () const noexcept -&gt; std::bitset&lt; <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a> &gt;</td></tr>
+<tr class="memitem:af64c0608751aaad1ead91b35e3d01973" id="r_af64c0608751aaad1ead91b35e3d01973"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
+<tr class="memitem:af64c0608751aaad1ead91b35e3d01973 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af64c0608751aaad1ead91b35e3d01973">bits</a> () const noexcept -&gt; std::bitset&lt; <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a> &gt;</td></tr>
 <tr class="memdesc:af64c0608751aaad1ead91b35e3d01973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a href="https://en.cppreference.com/w/cpp/utility/bitset">std::bitset</a> object containing the Booleans contained in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="memitem:aa35a9095b196b31dffe26052d0dc0294" id="r_aa35a9095b196b31dffe26052d0dc0294"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa35a9095b196b31dffe26052d0dc0294">bits</a> () const noexcept -&gt; std::vector&lt; bool &gt;</td></tr>
 <tr class="memdesc:aa35a9095b196b31dffe26052d0dc0294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a href="https://en.cppreference.com/w/cpp/container/vector_bool">std::vector&lt;bool&gt;</a> object containing the Booleans contained in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:ac8dd8ffe1caf7d912b20e86065209275" id="r_ac8dd8ffe1caf7d912b20e86065209275"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> override</td></tr>
-<tr class="memdesc:ac8dd8ffe1caf7d912b20e86065209275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a3feee7f9cf9e5601c2ad6e0f7c61eb34" id="r_a3feee7f9cf9e5601c2ad6e0f7c61eb34"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a3feee7f9cf9e5601c2ad6e0f7c61eb34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a89cd0f151f16d01c3e7c3c587c3aafec" id="r_a89cd0f151f16d01c3e7c3c587c3aafec"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a89cd0f151f16d01c3e7c3c587c3aafec">length</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> value) -&gt; void</td></tr>
-<tr class="memdesc:a89cd0f151f16d01c3e7c3c587c3aafec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="memitem:ae906d251f8ddd06e3f6da7cbeb5e62c1" id="r_ae906d251f8ddd06e3f6da7cbeb5e62c1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:ae906d251f8ddd06e3f6da7cbeb5e62c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="memitem:a2c2502fd7bc3b2f859921000d03e0112" id="r_a2c2502fd7bc3b2f859921000d03e0112"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a2c2502fd7bc3b2f859921000d03e0112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="memitem:ac1ae584a3d1f563b2f543dc5e8dd544c" id="r_ac1ae584a3d1f563b2f543dc5e8dd544c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac1ae584a3d1f563b2f543dc5e8dd544c">length</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> value) -&gt; void</td></tr>
+<tr class="memdesc:ac1ae584a3d1f563b2f543dc5e8dd544c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a63afbb24c28296755ad811844023e98c" id="r_a63afbb24c28296755ad811844023e98c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a63afbb24c28296755ad811844023e98c">and_</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) -&gt; const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:a63afbb24c28296755ad811844023e98c" id="r_a63afbb24c28296755ad811844023e98c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a63afbb24c28296755ad811844023e98c">and_</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:a63afbb24c28296755ad811844023e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise AND operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="memitem:aeff67c98afb6682b1728a4518ceafcdb" id="r_aeff67c98afb6682b1728a4518ceafcdb"><td class="memItemLeft"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aeff67c98afb6682b1728a4518ceafcdb">clone</a> () const override</td></tr>
 <tr class="memdesc:aeff67c98afb6682b1728a4518ceafcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
-<tr class="memitem:a820e624a50a1fdb450364c0e9479ca8d" id="r_a820e624a50a1fdb450364c0e9479ca8d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a820e624a50a1fdb450364c0e9479ca8d">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; bool &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) const -&gt; void override</td></tr>
-<tr class="memdesc:a820e624a50a1fdb450364c0e9479ca8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
-<tr class="memitem:aa3c182113d6fbcac0a6768b9b7616765" id="r_aa3c182113d6fbcac0a6768b9b7616765"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3c182113d6fbcac0a6768b9b7616765">equals</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) const noexcept -&gt; bool override</td></tr>
+<tr class="memitem:aed2e92e3360342ce6bf292b1d8dfb4a1" id="r_aed2e92e3360342ce6bf292b1d8dfb4a1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aed2e92e3360342ce6bf292b1d8dfb4a1">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; bool &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; void override</td></tr>
+<tr class="memdesc:aed2e92e3360342ce6bf292b1d8dfb4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
+<tr class="memitem:aa3c182113d6fbcac0a6768b9b7616765" id="r_aa3c182113d6fbcac0a6768b9b7616765"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3c182113d6fbcac0a6768b9b7616765">equals</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:aa3c182113d6fbcac0a6768b9b7616765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this instance of <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> and a specified object, which must also be a <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> object, have the same value.  <br /></td></tr>
 <tr class="memitem:ab243d2ea85ff008ed889adb0a5ce705c" id="r_ab243d2ea85ff008ed889adb0a5ce705c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab243d2ea85ff008ed889adb0a5ce705c">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:ab243d2ea85ff008ed889adb0a5ce705c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this instance of <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> and a specified object, which must also be a <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> object, have the same value.  <br /></td></tr>
-<tr class="memitem:aad32795a0dd157a8acd0b76da3c29ad6" id="r_aad32795a0dd157a8acd0b76da3c29ad6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aad32795a0dd157a8acd0b76da3c29ad6">get</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) const -&gt; bool</td></tr>
-<tr class="memdesc:aad32795a0dd157a8acd0b76da3c29ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the bit at a specific position in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a3e30a76d677a713ebc25f9f4d9554819" id="r_a3e30a76d677a713ebc25f9f4d9554819"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3e30a76d677a713ebc25f9f4d9554819">get</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) -&gt; bool &amp;</td></tr>
-<tr class="memdesc:a3e30a76d677a713ebc25f9f4d9554819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the bit at a specific position in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="memitem:afa55650f73f9237415fcf974a7af6b3c" id="r_afa55650f73f9237415fcf974a7af6b3c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afa55650f73f9237415fcf974a7af6b3c">get</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; bool</td></tr>
+<tr class="memdesc:afa55650f73f9237415fcf974a7af6b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the bit at a specific position in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="memitem:a5afb782a38d3dda9271737f84958faf8" id="r_a5afb782a38d3dda9271737f84958faf8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5afb782a38d3dda9271737f84958faf8">get</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; bool &amp;</td></tr>
+<tr class="memdesc:a5afb782a38d3dda9271737f84958faf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the bit at a specific position in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="memitem:ac33bda42040b74e8b5cbceacd11e46e6" id="r_ac33bda42040b74e8b5cbceacd11e46e6"><td class="memItemLeft"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; bool &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac33bda42040b74e8b5cbceacd11e46e6">get_enumerator</a> () const override</td></tr>
 <tr class="memdesc:ac33bda42040b74e8b5cbceacd11e46e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
 <tr class="memitem:ad553f27b6ad268990dc0d6e5af65d1d7" id="r_ad553f27b6ad268990dc0d6e5af65d1d7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad553f27b6ad268990dc0d6e5af65d1d7">has_all_set</a> () const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:ad553f27b6ad268990dc0d6e5af65d1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all bits in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> are set to <span class="tt">true</span>.  <br /></td></tr>
 <tr class="memitem:aca9004891a68180be31c1ae0ba16a7bb" id="r_aca9004891a68180be31c1ae0ba16a7bb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aca9004891a68180be31c1ae0ba16a7bb">has_any_set</a> () const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:aca9004891a68180be31c1ae0ba16a7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any bit in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is set to <span class="tt">true</span>.  <br /></td></tr>
-<tr class="memitem:ad3e87252484d64d28050f370fcc2d423" id="r_ad3e87252484d64d28050f370fcc2d423"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad3e87252484d64d28050f370fcc2d423">left_shift</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a>) noexcept -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
-<tr class="memdesc:ad3e87252484d64d28050f370fcc2d423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
-<tr class="memitem:a5e050abafc49d138fa712ec93a8d5b98" id="r_a5e050abafc49d138fa712ec93a8d5b98"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5e050abafc49d138fa712ec93a8d5b98">not_</a> () -&gt; const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:a10acef27ddcf8e338406d501b277e53d" id="r_a10acef27ddcf8e338406d501b277e53d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a10acef27ddcf8e338406d501b277e53d">left_shift</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a>) noexcept -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
+<tr class="memdesc:a10acef27ddcf8e338406d501b277e53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
+<tr class="memitem:a5e050abafc49d138fa712ec93a8d5b98" id="r_a5e050abafc49d138fa712ec93a8d5b98"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5e050abafc49d138fa712ec93a8d5b98">not_</a> () -&gt; const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:a5e050abafc49d138fa712ec93a8d5b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts all the bit values in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>, so that elements set to <span class="tt">true</span> are changed to <span class="tt">false</span>, and elements set to <span class="tt">false</span> are changed to <span class="tt">true</span>.  <br /></td></tr>
-<tr class="memitem:a8485cce6f296b60ac2fc91ec4906706d" id="r_a8485cce6f296b60ac2fc91ec4906706d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8485cce6f296b60ac2fc91ec4906706d">or_</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) -&gt; const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:a8485cce6f296b60ac2fc91ec4906706d" id="r_a8485cce6f296b60ac2fc91ec4906706d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8485cce6f296b60ac2fc91ec4906706d">or_</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:a8485cce6f296b60ac2fc91ec4906706d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise OR operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:acd789642d5f22addc411b09fcb79fe47" id="r_acd789642d5f22addc411b09fcb79fe47"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acd789642d5f22addc411b09fcb79fe47">right_shift</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a>) noexcept -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
-<tr class="memdesc:acd789642d5f22addc411b09fcb79fe47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits.  <br /></td></tr>
-<tr class="memitem:a7faf98129262a34a7e0268f0c6c1af01" id="r_a7faf98129262a34a7e0268f0c6c1af01"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7faf98129262a34a7e0268f0c6c1af01">set</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, bool value) -&gt; void</td></tr>
-<tr class="memdesc:a7faf98129262a34a7e0268f0c6c1af01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the bit at a specific position in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="memitem:a815e711c0b054ba630e170ff56c6ec92" id="r_a815e711c0b054ba630e170ff56c6ec92"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a815e711c0b054ba630e170ff56c6ec92">right_shift</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a>) noexcept -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
+<tr class="memdesc:a815e711c0b054ba630e170ff56c6ec92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits.  <br /></td></tr>
+<tr class="memitem:a8709da1dce61dcb35c3dfa2ccb840d5d" id="r_a8709da1dce61dcb35c3dfa2ccb840d5d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8709da1dce61dcb35c3dfa2ccb840d5d">set</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, bool value) -&gt; void</td></tr>
+<tr class="memdesc:a8709da1dce61dcb35c3dfa2ccb840d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the bit at a specific position in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="memitem:a81972c32735dbe0933822d0da7b95a80" id="r_a81972c32735dbe0933822d0da7b95a80"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a81972c32735dbe0933822d0da7b95a80">set_all</a> (bool value) -&gt; void</td></tr>
 <tr class="memdesc:a81972c32735dbe0933822d0da7b95a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all bits in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the specified value.  <br /></td></tr>
 <tr class="memitem:ad3fb87cf18d4a7fd9beeae648395687d" id="r_ad3fb87cf18d4a7fd9beeae648395687d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad3fb87cf18d4a7fd9beeae648395687d">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:ad3fb87cf18d4a7fd9beeae648395687d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:acfae99f56d4b546df3aeb877fafc03d4" id="r_acfae99f56d4b546df3aeb877fafc03d4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acfae99f56d4b546df3aeb877fafc03d4">xor_</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) -&gt; const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:acfae99f56d4b546df3aeb877fafc03d4" id="r_acfae99f56d4b546df3aeb877fafc03d4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acfae99f56d4b546df3aeb877fafc03d4">xor_</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:acfae99f56d4b546df3aeb877fafc03d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise exclusive OR operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:a1db4b743b52ecf49a14ef406f6876c8a" id="r_a1db4b743b52ecf49a14ef406f6876c8a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1db4b743b52ecf49a14ef406f6876c8a">operator[]</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) const -&gt; const bool &amp;</td></tr>
-<tr class="memdesc:a1db4b743b52ecf49a14ef406f6876c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
-<tr class="memitem:a1216f046de2589c1130754675543885d" id="r_a1216f046de2589c1130754675543885d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1216f046de2589c1130754675543885d">operator[]</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) -&gt; bool &amp;</td></tr>
-<tr class="memdesc:a1216f046de2589c1130754675543885d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or Sets the element at the specified index.  <br /></td></tr>
-<tr class="memitem:a623ac60eab06694124252106559f1481" id="r_a623ac60eab06694124252106559f1481"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a623ac60eab06694124252106559f1481">operator&amp;</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) const -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td></tr>
+<tr class="memitem:a10edfe705d2443844a2e8afc076e8cb5" id="r_a10edfe705d2443844a2e8afc076e8cb5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a10edfe705d2443844a2e8afc076e8cb5">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; const bool &amp;</td></tr>
+<tr class="memdesc:a10edfe705d2443844a2e8afc076e8cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:a9d31cc44f16271ed35b9954a90514190" id="r_a9d31cc44f16271ed35b9954a90514190"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9d31cc44f16271ed35b9954a90514190">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; bool &amp;</td></tr>
+<tr class="memdesc:a9d31cc44f16271ed35b9954a90514190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or Sets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:a623ac60eab06694124252106559f1481" id="r_a623ac60eab06694124252106559f1481"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a623ac60eab06694124252106559f1481">operator&amp;</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) const -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
 <tr class="memdesc:a623ac60eab06694124252106559f1481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise AND operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a951f202fdec1401abafe0e041fa9d66e" id="r_a951f202fdec1401abafe0e041fa9d66e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a951f202fdec1401abafe0e041fa9d66e">operator&amp;=</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:a951f202fdec1401abafe0e041fa9d66e" id="r_a951f202fdec1401abafe0e041fa9d66e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a951f202fdec1401abafe0e041fa9d66e">operator&amp;=</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:a951f202fdec1401abafe0e041fa9d66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise AND operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a69a0cf529e679d30cb4fbcb18e53142e" id="r_a69a0cf529e679d30cb4fbcb18e53142e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a69a0cf529e679d30cb4fbcb18e53142e">operator|</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) const -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td></tr>
+<tr class="memitem:a69a0cf529e679d30cb4fbcb18e53142e" id="r_a69a0cf529e679d30cb4fbcb18e53142e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a69a0cf529e679d30cb4fbcb18e53142e">operator|</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) const -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
 <tr class="memdesc:a69a0cf529e679d30cb4fbcb18e53142e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise OR operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a16d3217f27f0f5275b0b948d98568873" id="r_a16d3217f27f0f5275b0b948d98568873"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a16d3217f27f0f5275b0b948d98568873">operator|=</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:a16d3217f27f0f5275b0b948d98568873" id="r_a16d3217f27f0f5275b0b948d98568873"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a16d3217f27f0f5275b0b948d98568873">operator|=</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:a16d3217f27f0f5275b0b948d98568873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise OR operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:a2ad8aeab5eebf4f1e5e96f619f44126e" id="r_a2ad8aeab5eebf4f1e5e96f619f44126e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2ad8aeab5eebf4f1e5e96f619f44126e">operator^</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) const -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td></tr>
+<tr class="memitem:a2ad8aeab5eebf4f1e5e96f619f44126e" id="r_a2ad8aeab5eebf4f1e5e96f619f44126e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2ad8aeab5eebf4f1e5e96f619f44126e">operator^</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) const -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
 <tr class="memdesc:a2ad8aeab5eebf4f1e5e96f619f44126e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise exclusive OR operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:aef4a17974e5eef99d2744bf4dc09b356" id="r_aef4a17974e5eef99d2744bf4dc09b356"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aef4a17974e5eef99d2744bf4dc09b356">operator^=</a> (const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;value) -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
+<tr class="memitem:aef4a17974e5eef99d2744bf4dc09b356" id="r_aef4a17974e5eef99d2744bf4dc09b356"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aef4a17974e5eef99d2744bf4dc09b356">operator^=</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
 <tr class="memdesc:aef4a17974e5eef99d2744bf4dc09b356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise exclusive OR operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
-<tr class="memitem:affb0921123eedcb09889064cda0f5877" id="r_affb0921123eedcb09889064cda0f5877"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#affb0921123eedcb09889064cda0f5877">operator~</a> () const -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td></tr>
+<tr class="memitem:affb0921123eedcb09889064cda0f5877" id="r_affb0921123eedcb09889064cda0f5877"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#affb0921123eedcb09889064cda0f5877">operator~</a> () const -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
 <tr class="memdesc:affb0921123eedcb09889064cda0f5877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts all the bit values in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>, so that elements set to <span class="tt">true</span> are changed to <span class="tt">false</span>, and elements set to <span class="tt">false</span> are changed to <span class="tt">true</span>.  <br /></td></tr>
-<tr class="memitem:ab36c0883ad2e11c88a129b939545ad1d" id="r_ab36c0883ad2e11c88a129b939545ad1d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab36c0883ad2e11c88a129b939545ad1d">operator&gt;&gt;</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a>) const noexcept -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td></tr>
-<tr class="memdesc:ab36c0883ad2e11c88a129b939545ad1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The right shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits.  <br /></td></tr>
-<tr class="memitem:a7696c83d61e02224b9f6254fe3c32e95" id="r_a7696c83d61e02224b9f6254fe3c32e95"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7696c83d61e02224b9f6254fe3c32e95">operator&gt;&gt;=</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a>) noexcept -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
-<tr class="memdesc:a7696c83d61e02224b9f6254fe3c32e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">The right shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits.  <br /></td></tr>
-<tr class="memitem:a910fdc1fde45721db14ad7051eb259fe" id="r_a910fdc1fde45721db14ad7051eb259fe"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a910fdc1fde45721db14ad7051eb259fe">operator&lt;&lt;</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a>) const noexcept -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td></tr>
-<tr class="memdesc:a910fdc1fde45721db14ad7051eb259fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The left shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
-<tr class="memitem:a01aafd0b508a0e58d8b898e9ffe2af30" id="r_a01aafd0b508a0e58d8b898e9ffe2af30"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a01aafd0b508a0e58d8b898e9ffe2af30">operator&lt;&lt;=</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275">count</a>) noexcept -&gt; <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td></tr>
-<tr class="memdesc:a01aafd0b508a0e58d8b898e9ffe2af30"><td class="mdescLeft">&#160;</td><td class="mdescRight">The left shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
+<tr class="memitem:a19bc1664eae60d99841ff18fc5576d4b" id="r_a19bc1664eae60d99841ff18fc5576d4b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a19bc1664eae60d99841ff18fc5576d4b">operator&gt;&gt;</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a>) const noexcept -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
+<tr class="memdesc:a19bc1664eae60d99841ff18fc5576d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The right shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits.  <br /></td></tr>
+<tr class="memitem:a6826d74ce6e7bf7fd0a3d0082ff86f0b" id="r_a6826d74ce6e7bf7fd0a3d0082ff86f0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6826d74ce6e7bf7fd0a3d0082ff86f0b">operator&gt;&gt;=</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a>) noexcept -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
+<tr class="memdesc:a6826d74ce6e7bf7fd0a3d0082ff86f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The right shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits.  <br /></td></tr>
+<tr class="memitem:aa0e03ae5781893cd6580050a544099ae" id="r_aa0e03ae5781893cd6580050a544099ae"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa0e03ae5781893cd6580050a544099ae">operator&lt;&lt;</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a>) const noexcept -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
+<tr class="memdesc:aa0e03ae5781893cd6580050a544099ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The left shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
+<tr class="memitem:ab8c16038e3153d09d5b138f27ae22452" id="r_ab8c16038e3153d09d5b138f27ae22452"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab8c16038e3153d09d5b138f27ae22452">operator&lt;&lt;=</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">count</a>) noexcept -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
+<tr class="memdesc:ab8c16038e3153d09d5b138f27ae22452"><td class="mdescLeft">&#160;</td><td class="mdescRight">The left shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6e48ffbad2ee99afb6dbff032a18345e" id="r_a6e48ffbad2ee99afb6dbff032a18345e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6e48ffbad2ee99afb6dbff032a18345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
@@ -416,19 +416,19 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e83f73bd0569e5ca75ff4f316541426" name="a6e83f73bd0569e5ca75ff4f316541426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e83f73bd0569e5ca75ff4f316541426">&#9670;&#160;</a></span>size_type</h2>
+<a id="a4c9b9b6f4dd0d5f389f7d34ec8881c62" name="a4c9b9b6f4dd0d5f389f7d34ec8881c62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c9b9b6f4dd0d5f389f7d34ec8881c62">&#9670;&#160;</a></span>size_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a6e83f73bd0569e5ca75ff4f316541426">xtd::collections::bit_array::size_type</a></td>
+          <td class="memname">using <a class="el" href="#a4c9b9b6f4dd0d5f389f7d34ec8881c62">xtd::collections::bit_array::size_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the list size type (usually <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a>). </p>
+<p>Represents the list size type (usually <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>). </p>
 
 </div>
 </div>
@@ -513,8 +513,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad508bbb1382d5d3f5adcc69835ffdf52" name="ad508bbb1382d5d3f5adcc69835ffdf52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad508bbb1382d5d3f5adcc69835ffdf52">&#9670;&#160;</a></span>bit_array() <span class="overload">[1/8]</span></h2>
+<a id="a934e8881f5975aa6ab671b294f78abf4" name="a934e8881f5975aa6ab671b294f78abf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a934e8881f5975aa6ab671b294f78abf4">&#9670;&#160;</a></span>bit_array() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +525,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::collections::bit_array::bit_array </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -553,8 +553,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a97eb7539ed615bfba76ed9440b18c7bf" name="a97eb7539ed615bfba76ed9440b18c7bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97eb7539ed615bfba76ed9440b18c7bf">&#9670;&#160;</a></span>bit_array() <span class="overload">[2/8]</span></h2>
+<a id="ac595a9beb5ae13dd555a296fbd6e258e" name="ac595a9beb5ae13dd555a296fbd6e258e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac595a9beb5ae13dd555a296fbd6e258e">&#9670;&#160;</a></span>bit_array() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -565,7 +565,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::collections::bit_array::bit_array </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -744,7 +744,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> length&gt; </div>
+template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -752,7 +752,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
         <tr>
           <td class="memname">xtd::collections::bit_array::bit_array </td>
           <td>(</td>
-          <td class="paramtype">const std::bitset&lt; <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>bit_set</em></span></td><td>)</td>
+          <td class="paramtype">const std::bitset&lt; <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>bit_set</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -815,7 +815,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> length&gt; </div>
+template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -824,7 +824,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
           <td class="memname">auto xtd::collections::bit_array::bits </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; std::bitset&lt; <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">length</a> &gt;</td>
+          <td> const -&gt; std::bitset&lt; <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112">length</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -867,8 +867,8 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
 
 </div>
 </div>
-<a id="ac8dd8ffe1caf7d912b20e86065209275" name="ac8dd8ffe1caf7d912b20e86065209275"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8dd8ffe1caf7d912b20e86065209275">&#9670;&#160;</a></span>count()</h2>
+<a id="ae906d251f8ddd06e3f6da7cbeb5e62c1" name="ae906d251f8ddd06e3f6da7cbeb5e62c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae906d251f8ddd06e3f6da7cbeb5e62c1">&#9670;&#160;</a></span>count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -880,7 +880,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
           <td class="memname">auto xtd::collections::bit_array::count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -896,8 +896,8 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
 
 </div>
 </div>
-<a id="a3feee7f9cf9e5601c2ad6e0f7c61eb34" name="a3feee7f9cf9e5601c2ad6e0f7c61eb34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34">&#9670;&#160;</a></span>length() <span class="overload">[1/2]</span></h2>
+<a id="a2c2502fd7bc3b2f859921000d03e0112" name="a2c2502fd7bc3b2f859921000d03e0112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2502fd7bc3b2f859921000d03e0112">&#9670;&#160;</a></span>length() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -909,7 +909,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
           <td class="memname">auto xtd::collections::bit_array::length </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -921,12 +921,12 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
 
 <p>Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> and <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::count</a> return the same value. <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> can be set to a specific value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> and <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::count</a> return the same value. <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> can be set to a specific value. </dd></dl>
 
 </div>
 </div>
-<a id="a89cd0f151f16d01c3e7c3c587c3aafec" name="a89cd0f151f16d01c3e7c3c587c3aafec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89cd0f151f16d01c3e7c3c587c3aafec">&#9670;&#160;</a></span>length() <span class="overload">[2/2]</span></h2>
+<a id="ac1ae584a3d1f563b2f543dc5e8dd544c" name="ac1ae584a3d1f563b2f543dc5e8dd544c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ae584a3d1f563b2f543dc5e8dd544c">&#9670;&#160;</a></span>length() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -934,7 +934,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
         <tr>
           <td class="memname">auto xtd::collections::bit_array::length </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt;  void</td>
         </tr>
       </table>
@@ -947,7 +947,7 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> and <a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::count</a> return the same value. <a class="el" href="#a3feee7f9cf9e5601c2ad6e0f7c61eb34" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> can be set to a specific value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> and <a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::count</a> return the same value. <a class="el" href="#a2c2502fd7bc3b2f859921000d03e0112" title="Gets the number of elements contained in the xtd::collections::bit_array.">xtd::collections::bit_array::length</a> can be set to a specific value. </dd></dl>
 
 </div>
 </div>
@@ -960,8 +960,8 @@ template&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8
         <tr>
           <td class="memname">auto xtd::collections::bit_array::and_ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1016,8 +1016,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a820e624a50a1fdb450364c0e9479ca8d" name="a820e624a50a1fdb450364c0e9479ca8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a820e624a50a1fdb450364c0e9479ca8d">&#9670;&#160;</a></span>copy_to()</h2>
+<a id="aed2e92e3360342ce6bf292b1d8dfb4a1" name="aed2e92e3360342ce6bf292b1d8dfb4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2e92e3360342ce6bf292b1d8dfb4a1">&#9670;&#160;</a></span>copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1033,7 +1033,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;) const -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;) const -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1067,7 +1067,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::equals </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
         </tr>
       </table>
@@ -1125,8 +1125,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="aad32795a0dd157a8acd0b76da3c29ad6" name="aad32795a0dd157a8acd0b76da3c29ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad32795a0dd157a8acd0b76da3c29ad6">&#9670;&#160;</a></span>get() <span class="overload">[1/2]</span></h2>
+<a id="afa55650f73f9237415fcf974a7af6b3c" name="afa55650f73f9237415fcf974a7af6b3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa55650f73f9237415fcf974a7af6b3c">&#9670;&#160;</a></span>get() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1137,7 +1137,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
         </tr>
       </table>
@@ -1166,8 +1166,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a3e30a76d677a713ebc25f9f4d9554819" name="a3e30a76d677a713ebc25f9f4d9554819"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e30a76d677a713ebc25f9f4d9554819">&#9670;&#160;</a></span>get() <span class="overload">[2/2]</span></h2>
+<a id="a5afb782a38d3dda9271737f84958faf8" name="a5afb782a38d3dda9271737f84958faf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5afb782a38d3dda9271737f84958faf8">&#9670;&#160;</a></span>get() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1178,7 +1178,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> -&gt;  bool &amp;</td>
         </tr>
       </table>
@@ -1291,8 +1291,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="ad3e87252484d64d28050f370fcc2d423" name="ad3e87252484d64d28050f370fcc2d423"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3e87252484d64d28050f370fcc2d423">&#9670;&#160;</a></span>left_shift()</h2>
+<a id="a10acef27ddcf8e338406d501b277e53d" name="a10acef27ddcf8e338406d501b277e53d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10acef27ddcf8e338406d501b277e53d">&#9670;&#160;</a></span>left_shift()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1303,8 +1303,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::left_shift </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1317,7 +1317,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <p>Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1336,7 +1336,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
           <td class="memname">auto xtd::collections::bit_array::not_ </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td> -&gt;  const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1356,8 +1356,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::or_ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1382,8 +1382,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="acd789642d5f22addc411b09fcb79fe47" name="acd789642d5f22addc411b09fcb79fe47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd789642d5f22addc411b09fcb79fe47">&#9670;&#160;</a></span>right_shift()</h2>
+<a id="a815e711c0b054ba630e170ff56c6ec92" name="a815e711c0b054ba630e170ff56c6ec92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815e711c0b054ba630e170ff56c6ec92">&#9670;&#160;</a></span>right_shift()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1394,8 +1394,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::right_shift </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1408,7 +1408,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <p>Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1417,8 +1417,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a7faf98129262a34a7e0268f0c6c1af01" name="a7faf98129262a34a7e0268f0c6c1af01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7faf98129262a34a7e0268f0c6c1af01">&#9670;&#160;</a></span>set()</h2>
+<a id="a8709da1dce61dcb35c3dfa2ccb840d5d" name="a8709da1dce61dcb35c3dfa2ccb840d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8709da1dce61dcb35c3dfa2ccb840d5d">&#9670;&#160;</a></span>set()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1426,7 +1426,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::set </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1519,8 +1519,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::xor_ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1545,8 +1545,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a1db4b743b52ecf49a14ef406f6876c8a" name="a1db4b743b52ecf49a14ef406f6876c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1db4b743b52ecf49a14ef406f6876c8a">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a10edfe705d2443844a2e8afc076e8cb5" name="a10edfe705d2443844a2e8afc076e8cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10edfe705d2443844a2e8afc076e8cb5">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1554,7 +1554,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator[] </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const -&gt;  const bool &amp;</td>
         </tr>
       </table>
@@ -1577,8 +1577,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a1216f046de2589c1130754675543885d" name="a1216f046de2589c1130754675543885d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1216f046de2589c1130754675543885d">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<a id="a9d31cc44f16271ed35b9954a90514190" name="a9d31cc44f16271ed35b9954a90514190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d31cc44f16271ed35b9954a90514190">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1586,7 +1586,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator[] </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> -&gt;  bool &amp;</td>
         </tr>
       </table>
@@ -1618,8 +1618,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator&amp; </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1653,8 +1653,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator&amp;= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1688,8 +1688,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator| </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1723,8 +1723,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator|= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1758,8 +1758,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator^ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1793,8 +1793,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator^= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype">const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1829,7 +1829,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
           <td class="memname">auto xtd::collections::bit_array::operator~ </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td>
+          <td> const -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1840,8 +1840,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="ab36c0883ad2e11c88a129b939545ad1d" name="ab36c0883ad2e11c88a129b939545ad1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab36c0883ad2e11c88a129b939545ad1d">&#9670;&#160;</a></span>operator&gt;&gt;()</h2>
+<a id="a19bc1664eae60d99841ff18fc5576d4b" name="a19bc1664eae60d99841ff18fc5576d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19bc1664eae60d99841ff18fc5576d4b">&#9670;&#160;</a></span>operator&gt;&gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1852,8 +1852,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator&gt;&gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td>
         </tr>
       </table>
   </td>
@@ -1866,7 +1866,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <p>The right shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1875,8 +1875,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a7696c83d61e02224b9f6254fe3c32e95" name="a7696c83d61e02224b9f6254fe3c32e95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7696c83d61e02224b9f6254fe3c32e95">&#9670;&#160;</a></span>operator&gt;&gt;=()</h2>
+<a id="a6826d74ce6e7bf7fd0a3d0082ff86f0b" name="a6826d74ce6e7bf7fd0a3d0082ff86f0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6826d74ce6e7bf7fd0a3d0082ff86f0b">&#9670;&#160;</a></span>operator&gt;&gt;=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1887,8 +1887,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator&gt;&gt;= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1901,7 +1901,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <p>The right shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the right on count bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1910,8 +1910,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a910fdc1fde45721db14ad7051eb259fe" name="a910fdc1fde45721db14ad7051eb259fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a910fdc1fde45721db14ad7051eb259fe">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+<a id="aa0e03ae5781893cd6580050a544099ae" name="aa0e03ae5781893cd6580050a544099ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0e03ae5781893cd6580050a544099ae">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1922,8 +1922,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td>
         </tr>
       </table>
   </td>
@@ -1936,7 +1936,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <p>The left shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1945,8 +1945,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
-<a id="a01aafd0b508a0e58d8b898e9ffe2af30" name="a01aafd0b508a0e58d8b898e9ffe2af30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01aafd0b508a0e58d8b898e9ffe2af30">&#9670;&#160;</a></span>operator&lt;&lt;=()</h2>
+<a id="ab8c16038e3153d09d5b138f27ae22452" name="ab8c16038e3153d09d5b138f27ae22452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c16038e3153d09d5b138f27ae22452">&#9670;&#160;</a></span>operator&lt;&lt;=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1957,8 +1957,8 @@ This method is an O(n) operation, where n is count. </dd></dl>
         <tr>
           <td class="memname">auto xtd::collections::bit_array::operator&lt;&lt;= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#ad508bbb1382d5d3f5adcc69835ffdf52">bit_array</a> &amp;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1971,7 +1971,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <p>The left shift operator shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac8dd8ffe1caf7d912b20e86065209275" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae906d251f8ddd06e3f6da7cbeb5e62c1" title="Gets the number of elements contained in the xtd::collections::bit_array.">count</a></td><td>The number of shifts to make for each bit. </td></tr>
   </table>
   </dd>
 </dl>

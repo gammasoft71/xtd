@@ -181,8 +181,8 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Fields</h2></td></tr>
-<tr class="memitem:ab2b895b981a0a94acb747cf5018dae56" id="r_ab2b895b981a0a94acb747cf5018dae56"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab2b895b981a0a94acb747cf5018dae56">OFFSET_UNKNOWN</a></td></tr>
-<tr class="memdesc:ab2b895b981a0a94acb747cf5018dae56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the value that is returned from the <a class="el" href="#a67b2875befcb85ea0988cd721dc8c27c" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method when the offset is unknown. This field is constant.  <br /></td></tr>
+<tr class="memitem:a19c53ad10236dc0427543947744937f3" id="r_a19c53ad10236dc0427543947744937f3"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a19c53ad10236dc0427543947744937f3">OFFSET_UNKNOWN</a></td></tr>
+<tr class="memdesc:a19c53ad10236dc0427543947744937f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the value that is returned from the <a class="el" href="#a1df08a40876657d2d34353fcd1ce8c9e" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method when the offset is unknown. This field is constant.  <br /></td></tr>
 <tr class="memitem:aa75be952539981c7c8b89f9b095b78e7" id="r_aa75be952539981c7c8b89f9b095b78e7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa75be952539981c7c8b89f9b095b78e7">empty</a> () noexcept -&gt; <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></td></tr>
 <tr class="memdesc:aa75be952539981c7c8b89f9b095b78e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an empty stack frame.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -190,26 +190,26 @@ Public Fields</h2></td></tr>
 Public Constructors</h2></td></tr>
 <tr class="memitem:a43999f81ef9259a28a3a0a6880da3276" id="r_a43999f81ef9259a28a3a0a6880da3276"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> ()</td></tr>
 <tr class="memdesc:a43999f81ef9259a28a3a0a6880da3276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class.  <br /></td></tr>
-<tr class="memitem:a5410383d4780b78a908ec35ed0af79b1" id="r_a5410383d4780b78a908ec35ed0af79b1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5410383d4780b78a908ec35ed0af79b1">stack_frame</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> skip_frame)</td></tr>
-<tr class="memdesc:a5410383d4780b78a908ec35ed0af79b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that corresponds to a frame above the current stack frame.  <br /></td></tr>
+<tr class="memitem:a7fdb3b4b2a995c98ea9da820647450bb" id="r_a7fdb3b4b2a995c98ea9da820647450bb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7fdb3b4b2a995c98ea9da820647450bb">stack_frame</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> skip_frame)</td></tr>
+<tr class="memdesc:a7fdb3b4b2a995c98ea9da820647450bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that corresponds to a frame above the current stack frame.  <br /></td></tr>
 <tr class="memitem:ad7594dc1df9d1d2be08012b553c38acc" id="r_ad7594dc1df9d1d2be08012b553c38acc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad7594dc1df9d1d2be08012b553c38acc">stack_frame</a> (bool need_file_info)</td></tr>
 <tr class="memdesc:ad7594dc1df9d1d2be08012b553c38acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class, optionally capturing source information.  <br /></td></tr>
-<tr class="memitem:aa06a8f9a10c025a2b233d3985ec81b1a" id="r_aa06a8f9a10c025a2b233d3985ec81b1a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa06a8f9a10c025a2b233d3985ec81b1a">stack_frame</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> skip_frame, bool need_file_info)</td></tr>
-<tr class="memdesc:aa06a8f9a10c025a2b233d3985ec81b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that corresponds to a frame above the current stack frame, optionally capturing source information.  <br /></td></tr>
-<tr class="memitem:a26855b11bbce1809f40500e196281f0d" id="r_a26855b11bbce1809f40500e196281f0d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a26855b11bbce1809f40500e196281f0d">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> line_number)</td></tr>
-<tr class="memdesc:a26855b11bbce1809f40500e196281f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, and line number.  <br /></td></tr>
-<tr class="memitem:a619e96ed71a0354426b9450cdeb6e4f7" id="r_a619e96ed71a0354426b9450cdeb6e4f7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a619e96ed71a0354426b9450cdeb6e4f7">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> line_number, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;method_name)</td></tr>
-<tr class="memdesc:a619e96ed71a0354426b9450cdeb6e4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, and method name.  <br /></td></tr>
-<tr class="memitem:af5a07c84be888405f02ab33ba9a02a34" id="r_af5a07c84be888405f02ab33ba9a02a34"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af5a07c84be888405f02ab33ba9a02a34">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> line_number, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;method_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> column_number)</td></tr>
-<tr class="memdesc:af5a07c84be888405f02ab33ba9a02a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, and column number.  <br /></td></tr>
-<tr class="memitem:aa3ba30f1b0d77de6031c7295ffc18136" id="r_aa3ba30f1b0d77de6031c7295ffc18136"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa3ba30f1b0d77de6031c7295ffc18136">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> line_number, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> column_number)</td></tr>
-<tr class="memdesc:aa3ba30f1b0d77de6031c7295ffc18136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, and column number.  <br /></td></tr>
-<tr class="memitem:ae27631b9846cd43925d5ba10260b6a59" id="r_ae27631b9846cd43925d5ba10260b6a59"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae27631b9846cd43925d5ba10260b6a59">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> line_number, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;method_name, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> column_number, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> offset)</td></tr>
-<tr class="memdesc:ae27631b9846cd43925d5ba10260b6a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, method name, column number, and offset.  <br /></td></tr>
+<tr class="memitem:a5c6d2286f3e4a2277bf9f20ac46c82c6" id="r_a5c6d2286f3e4a2277bf9f20ac46c82c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5c6d2286f3e4a2277bf9f20ac46c82c6">stack_frame</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> skip_frame, bool need_file_info)</td></tr>
+<tr class="memdesc:a5c6d2286f3e4a2277bf9f20ac46c82c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that corresponds to a frame above the current stack frame, optionally capturing source information.  <br /></td></tr>
+<tr class="memitem:ad7dc78487741de68ae8d578a7c00e6b4" id="r_ad7dc78487741de68ae8d578a7c00e6b4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad7dc78487741de68ae8d578a7c00e6b4">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> line_number)</td></tr>
+<tr class="memdesc:ad7dc78487741de68ae8d578a7c00e6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, and line number.  <br /></td></tr>
+<tr class="memitem:a35eab5853c9a8e3692bc085d068fa191" id="r_a35eab5853c9a8e3692bc085d068fa191"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a35eab5853c9a8e3692bc085d068fa191">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> line_number, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;method_name)</td></tr>
+<tr class="memdesc:a35eab5853c9a8e3692bc085d068fa191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, and method name.  <br /></td></tr>
+<tr class="memitem:afa54733074efc74395259628e2f764d4" id="r_afa54733074efc74395259628e2f764d4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afa54733074efc74395259628e2f764d4">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> line_number, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;method_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> column_number)</td></tr>
+<tr class="memdesc:afa54733074efc74395259628e2f764d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, and column number.  <br /></td></tr>
+<tr class="memitem:ac8994e3cc7b07da066fda6155593e471" id="r_ac8994e3cc7b07da066fda6155593e471"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac8994e3cc7b07da066fda6155593e471">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> line_number, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> column_number)</td></tr>
+<tr class="memdesc:ac8994e3cc7b07da066fda6155593e471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, and column number.  <br /></td></tr>
+<tr class="memitem:a973813021338b5fecfcee1b007456af4" id="r_a973813021338b5fecfcee1b007456af4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a973813021338b5fecfcee1b007456af4">stack_frame</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> line_number, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;method_name, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> column_number, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> offset)</td></tr>
+<tr class="memdesc:a973813021338b5fecfcee1b007456af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, method name, column number, and offset.  <br /></td></tr>
 <tr class="memitem:ab594e31bc2c16e128275bec7453f3663" id="r_ab594e31bc2c16e128275bec7453f3663"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab594e31bc2c16e128275bec7453f3663">stack_frame</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1source__location.html">xtd::diagnostics::source_location</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__location.html">source_location</a>)</td></tr>
 <tr class="memdesc:ab594e31bc2c16e128275bec7453f3663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given source location.  <br /></td></tr>
-<tr class="memitem:a5b787fa5b5dedc6660aaaee78dfaba58" id="r_a5b787fa5b5dedc6660aaaee78dfaba58"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5b787fa5b5dedc6660aaaee78dfaba58">stack_frame</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1source__location.html">xtd::diagnostics::source_location</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__location.html">source_location</a>, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> offset)</td></tr>
-<tr class="memdesc:a5b787fa5b5dedc6660aaaee78dfaba58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given given source location, and offset.  <br /></td></tr>
+<tr class="memitem:a15d4d28f8d07fbd1ff1fcd9e6a6d886f" id="r_a15d4d28f8d07fbd1ff1fcd9e6a6d886f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a15d4d28f8d07fbd1ff1fcd9e6a6d886f">stack_frame</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1source__location.html">xtd::diagnostics::source_location</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__location.html">source_location</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> offset)</td></tr>
+<tr class="memdesc:a15d4d28f8d07fbd1ff1fcd9e6a6d886f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given given source location, and offset.  <br /></td></tr>
 <tr class="memitem:a85dcf9869f4496cd38087fafeb4b2a6a" id="r_a85dcf9869f4496cd38087fafeb4b2a6a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a85dcf9869f4496cd38087fafeb4b2a6a">stack_frame</a> (<a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">xtd::null_ptr</a> frame)</td></tr>
 <tr class="memdesc:a85dcf9869f4496cd38087fafeb4b2a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new empty instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a>.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -219,20 +219,20 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:aee43d086374db71ff76956afdc7e8e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current xtd::diagnostic::stack_frame is equal to another xtd::diagnostic::stack_frame.  <br /></td></tr>
 <tr class="memitem:abaf280daa78a27d9e39594ec7fd1944a" id="r_abaf280daa78a27d9e39594ec7fd1944a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abaf280daa78a27d9e39594ec7fd1944a">equals</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;other) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:abaf280daa78a27d9e39594ec7fd1944a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current xtd::diagnostic::stack_frame is equal to another xtd::diagnostic::stack_frame.  <br /></td></tr>
-<tr class="memitem:a107200519eccb0bcf2f75a83c5b5778f" id="r_a107200519eccb0bcf2f75a83c5b5778f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a107200519eccb0bcf2f75a83c5b5778f">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> override</td></tr>
-<tr class="memdesc:a107200519eccb0bcf2f75a83c5b5778f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:af116025fb874fbe9095e8fce6399c27b" id="r_af116025fb874fbe9095e8fce6399c27b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:af116025fb874fbe9095e8fce6399c27b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
-<tr class="memitem:a8915b3eb0f6ddcd7df9ee4d0c1a9d057" id="r_a8915b3eb0f6ddcd7df9ee4d0c1a9d057"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a8915b3eb0f6ddcd7df9ee4d0c1a9d057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
+<tr class="memitem:a9bacead0f77220db87f85469c7e5daa7" id="r_a9bacead0f77220db87f85469c7e5daa7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9bacead0f77220db87f85469c7e5daa7">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a9bacead0f77220db87f85469c7e5daa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a07ee05b892c46804c59cc659230c77bf" id="r_a07ee05b892c46804c59cc659230c77bf"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a07ee05b892c46804c59cc659230c77bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
+<tr class="memitem:aafde26e1074b3bcecf141227e6319074" id="r_aafde26e1074b3bcecf141227e6319074"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:aafde26e1074b3bcecf141227e6319074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
 <tr class="memitem:a281766ddf29deabdc49ab37442d193c1" id="r_a281766ddf29deabdc49ab37442d193c1"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
 <tr class="memdesc:a281766ddf29deabdc49ab37442d193c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
 <tr class="memitem:a1e212ea5b0b40ef7a1bed933c04f10b3" id="r_a1e212ea5b0b40ef7a1bed933c04f10b3"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
 <tr class="memdesc:a1e212ea5b0b40ef7a1bed933c04f10b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the method in which the frame is executing.  <br /></td></tr>
-<tr class="memitem:a1a389027826f6e4e15cda3f386b8875e" id="r_a1a389027826f6e4e15cda3f386b8875e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a1a389027826f6e4e15cda3f386b8875e">get_native_offset</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a1a389027826f6e4e15cda3f386b8875e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the native code for the method that is being executed.  <br /></td></tr>
-<tr class="memitem:a67b2875befcb85ea0988cd721dc8c27c" id="r_a67b2875befcb85ea0988cd721dc8c27c"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a67b2875befcb85ea0988cd721dc8c27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the code for the method that is being executed.  <br /></td></tr>
+<tr class="memitem:a26576fe6f8da9084ce8db9bc1711f78b" id="r_a26576fe6f8da9084ce8db9bc1711f78b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a26576fe6f8da9084ce8db9bc1711f78b">get_native_offset</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a26576fe6f8da9084ce8db9bc1711f78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the native code for the method that is being executed.  <br /></td></tr>
+<tr class="memitem:a1df08a40876657d2d34353fcd1ce8c9e" id="r_a1df08a40876657d2d34353fcd1ce8c9e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a1df08a40876657d2d34353fcd1ce8c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the code for the method that is being executed.  <br /></td></tr>
 <tr class="memitem:a068d645ccc7d89373335790fb0026858" id="r_a068d645ccc7d89373335790fb0026858"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a068d645ccc7d89373335790fb0026858">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:a068d645ccc7d89373335790fb0026858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a readable representation of the stack trace.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -279,8 +279,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5410383d4780b78a908ec35ed0af79b1" name="a5410383d4780b78a908ec35ed0af79b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5410383d4780b78a908ec35ed0af79b1">&#9670;&#160;</a></span>stack_frame() <span class="overload">[2/12]</span></h2>
+<a id="a7fdb3b4b2a995c98ea9da820647450bb" name="a7fdb3b4b2a995c98ea9da820647450bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fdb3b4b2a995c98ea9da820647450bb">&#9670;&#160;</a></span>stack_frame() <span class="overload">[2/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +291,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::diagnostics::stack_frame::stack_frame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>skip_frame</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>skip_frame</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -345,8 +345,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa06a8f9a10c025a2b233d3985ec81b1a" name="aa06a8f9a10c025a2b233d3985ec81b1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa06a8f9a10c025a2b233d3985ec81b1a">&#9670;&#160;</a></span>stack_frame() <span class="overload">[4/12]</span></h2>
+<a id="a5c6d2286f3e4a2277bf9f20ac46c82c6" name="a5c6d2286f3e4a2277bf9f20ac46c82c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6d2286f3e4a2277bf9f20ac46c82c6">&#9670;&#160;</a></span>stack_frame() <span class="overload">[4/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +354,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::diagnostics::stack_frame::stack_frame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>skip_frame</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>skip_frame</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -375,8 +375,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a26855b11bbce1809f40500e196281f0d" name="a26855b11bbce1809f40500e196281f0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26855b11bbce1809f40500e196281f0d">&#9670;&#160;</a></span>stack_frame() <span class="overload">[5/12]</span></h2>
+<a id="ad7dc78487741de68ae8d578a7c00e6b4" name="ad7dc78487741de68ae8d578a7c00e6b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7dc78487741de68ae8d578a7c00e6b4">&#9670;&#160;</a></span>stack_frame() <span class="overload">[5/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,7 +389,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -405,8 +405,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a619e96ed71a0354426b9450cdeb6e4f7" name="a619e96ed71a0354426b9450cdeb6e4f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a619e96ed71a0354426b9450cdeb6e4f7">&#9670;&#160;</a></span>stack_frame() <span class="overload">[6/12]</span></h2>
+<a id="a35eab5853c9a8e3692bc085d068fa191" name="a35eab5853c9a8e3692bc085d068fa191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35eab5853c9a8e3692bc085d068fa191">&#9670;&#160;</a></span>stack_frame() <span class="overload">[6/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,7 +419,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -441,8 +441,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af5a07c84be888405f02ab33ba9a02a34" name="af5a07c84be888405f02ab33ba9a02a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5a07c84be888405f02ab33ba9a02a34">&#9670;&#160;</a></span>stack_frame() <span class="overload">[7/12]</span></h2>
+<a id="afa54733074efc74395259628e2f764d4" name="afa54733074efc74395259628e2f764d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa54733074efc74395259628e2f764d4">&#9670;&#160;</a></span>stack_frame() <span class="overload">[7/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +455,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -465,7 +465,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>column_number</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>column_number</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -483,8 +483,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa3ba30f1b0d77de6031c7295ffc18136" name="aa3ba30f1b0d77de6031c7295ffc18136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3ba30f1b0d77de6031c7295ffc18136">&#9670;&#160;</a></span>stack_frame() <span class="overload">[8/12]</span></h2>
+<a id="ac8994e3cc7b07da066fda6155593e471" name="ac8994e3cc7b07da066fda6155593e471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8994e3cc7b07da066fda6155593e471">&#9670;&#160;</a></span>stack_frame() <span class="overload">[8/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -497,12 +497,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>column_number</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>column_number</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -520,8 +520,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae27631b9846cd43925d5ba10260b6a59" name="ae27631b9846cd43925d5ba10260b6a59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae27631b9846cd43925d5ba10260b6a59">&#9670;&#160;</a></span>stack_frame() <span class="overload">[9/12]</span></h2>
+<a id="a973813021338b5fecfcee1b007456af4" name="a973813021338b5fecfcee1b007456af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a973813021338b5fecfcee1b007456af4">&#9670;&#160;</a></span>stack_frame() <span class="overload">[9/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -534,7 +534,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>line_number</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -544,12 +544,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>column_number</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>column_number</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -593,8 +593,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b787fa5b5dedc6660aaaee78dfaba58" name="a5b787fa5b5dedc6660aaaee78dfaba58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b787fa5b5dedc6660aaaee78dfaba58">&#9670;&#160;</a></span>stack_frame() <span class="overload">[11/12]</span></h2>
+<a id="a15d4d28f8d07fbd1ff1fcd9e6a6d886f" name="a15d4d28f8d07fbd1ff1fcd9e6a6d886f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d4d28f8d07fbd1ff1fcd9e6a6d886f">&#9670;&#160;</a></span>stack_frame() <span class="overload">[11/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -607,7 +607,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -747,8 +747,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a107200519eccb0bcf2f75a83c5b5778f" name="a107200519eccb0bcf2f75a83c5b5778f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a107200519eccb0bcf2f75a83c5b5778f">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a9bacead0f77220db87f85469c7e5daa7" name="a9bacead0f77220db87f85469c7e5daa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bacead0f77220db87f85469c7e5daa7">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -760,7 +760,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::diagnostics::stack_frame::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -773,12 +773,12 @@ Additional Inherited Members</h2></td></tr>
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
 
 </div>
 </div>
-<a id="af116025fb874fbe9095e8fce6399c27b" name="af116025fb874fbe9095e8fce6399c27b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af116025fb874fbe9095e8fce6399c27b">&#9670;&#160;</a></span>get_file_column_number()</h2>
+<a id="a07ee05b892c46804c59cc659230c77bf" name="a07ee05b892c46804c59cc659230c77bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ee05b892c46804c59cc659230c77bf">&#9670;&#160;</a></span>get_file_column_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -790,7 +790,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">virtual auto xtd::diagnostics::stack_frame::get_file_column_number </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -802,29 +802,29 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file column number, or 0 (zero) if the file column number cannot be determined. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#af116025fb874fbe9095e8fce6399c27b" title="Gets the column number in the file that contains the code that is executing. This information is typi...">get_file_column_number()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a07ee05b892c46804c59cc659230c77bf" title="Gets the column number in the file that contains the code that is executing. This information is typi...">get_file_column_number()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
 <div class="line"><a class="code hl_function" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a>());</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a>());</div>
 <div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a>());</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a>());</div>
-<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>() != <a class="code hl_variable" href="#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>());</div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>() != <a class="code hl_variable" href="#a19c53ad10236dc0427543947744937f3">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>());</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a07ee05b892c46804c59cc659230c77bf"><div class="ttname"><a href="#a07ee05b892c46804c59cc659230c77bf">xtd::diagnostics::stack_frame::get_file_column_number</a></div><div class="ttdeci">virtual auto get_file_column_number() const noexcept -&gt; xtd::usize</div><div class="ttdoc">Gets the column number in the file that contains the code that is executing. This information is typi...</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a19c53ad10236dc0427543947744937f3"><div class="ttname"><a href="#a19c53ad10236dc0427543947744937f3">xtd::diagnostics::stack_frame::OFFSET_UNKNOWN</a></div><div class="ttdeci">static constexpr xtd::usize OFFSET_UNKNOWN</div><div class="ttdoc">Defines the value that is returned from the get_offset() method when the offset is unknown....</div><div class="ttdef"><b>Definition</b> stack_frame.hpp:121</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a1df08a40876657d2d34353fcd1ce8c9e"><div class="ttname"><a href="#a1df08a40876657d2d34353fcd1ce8c9e">xtd::diagnostics::stack_frame::get_offset</a></div><div class="ttdeci">virtual auto get_offset() const noexcept -&gt; xtd::usize</div><div class="ttdoc">Gets the offset from the start of the code for the method that is being executed.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a1e212ea5b0b40ef7a1bed933c04f10b3"><div class="ttname"><a href="#a1e212ea5b0b40ef7a1bed933c04f10b3">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual auto get_method() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a281766ddf29deabdc49ab37442d193c1"><div class="ttname"><a href="#a281766ddf29deabdc49ab37442d193c1">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual auto get_file_name() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a67b2875befcb85ea0988cd721dc8c27c"><div class="ttname"><a href="#a67b2875befcb85ea0988cd721dc8c27c">xtd::diagnostics::stack_frame::get_offset</a></div><div class="ttdeci">virtual auto get_offset() const noexcept -&gt; xtd::size</div><div class="ttdoc">Gets the offset from the start of the code for the method that is being executed.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a8915b3eb0f6ddcd7df9ee4d0c1a9d057"><div class="ttname"><a href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">xtd::diagnostics::stack_frame::get_file_line_number</a></div><div class="ttdeci">virtual auto get_file_line_number() const noexcept -&gt; xtd::size</div><div class="ttdoc">Gets the line number in the file that contains the code that is executing. This information is typica...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ab2b895b981a0a94acb747cf5018dae56"><div class="ttname"><a href="#ab2b895b981a0a94acb747cf5018dae56">xtd::diagnostics::stack_frame::OFFSET_UNKNOWN</a></div><div class="ttdeci">static constexpr xtd::size OFFSET_UNKNOWN</div><div class="ttdoc">Defines the value that is returned from the get_offset() method when the offset is unknown....</div><div class="ttdef"><b>Definition</b> stack_frame.hpp:121</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_af116025fb874fbe9095e8fce6399c27b"><div class="ttname"><a href="#af116025fb874fbe9095e8fce6399c27b">xtd::diagnostics::stack_frame::get_file_column_number</a></div><div class="ttdeci">virtual auto get_file_column_number() const noexcept -&gt; xtd::size</div><div class="ttdoc">Gets the column number in the file that contains the code that is executing. This information is typi...</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_aafde26e1074b3bcecf141227e6319074"><div class="ttname"><a href="#aafde26e1074b3bcecf141227e6319074">xtd::diagnostics::stack_frame::get_file_line_number</a></div><div class="ttdeci">virtual auto get_file_line_number() const noexcept -&gt; xtd::usize</div><div class="ttdoc">Gets the line number in the file that contains the code that is executing. This information is typica...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a8915b3eb0f6ddcd7df9ee4d0c1a9d057" name="a8915b3eb0f6ddcd7df9ee4d0c1a9d057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">&#9670;&#160;</a></span>get_file_line_number()</h2>
+<a id="aafde26e1074b3bcecf141227e6319074" name="aafde26e1074b3bcecf141227e6319074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafde26e1074b3bcecf141227e6319074">&#9670;&#160;</a></span>get_file_line_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,7 +836,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">virtual auto xtd::diagnostics::stack_frame::get_file_line_number </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -848,15 +848,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file line number, or 0 (zero) if the file line number cannot be determined. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057" title="Gets the line number in the file that contains the code that is executing. This information is typica...">get_file_line_number()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#aafde26e1074b3bcecf141227e6319074" title="Gets the line number in the file that contains the code that is executing. This information is typica...">get_file_line_number()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
 <div class="line"><a class="code hl_function" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a>());</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a>());</div>
 <div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a>());</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a>());</div>
-<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>() != <a class="code hl_variable" href="#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>());</div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>() != <a class="code hl_variable" href="#a19c53ad10236dc0427543947744937f3">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -889,12 +889,12 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a281766ddf29deabdc49ab37442d193c1" title="Gets the file name that contains the code that is executing. This information is typically extracted ...">get_file_name()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
 <div class="line"><a class="code hl_function" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a>());</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a>());</div>
 <div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a>());</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a>());</div>
-<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>() != <a class="code hl_variable" href="#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>());</div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>() != <a class="code hl_variable" href="#a19c53ad10236dc0427543947744937f3">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -927,18 +927,18 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a1e212ea5b0b40ef7a1bed933c04f10b3" title="Gets the method in which the frame is executing.">get_method()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
 <div class="line"><a class="code hl_function" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a>());</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a>());</div>
 <div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a>());</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a>());</div>
-<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>() != <a class="code hl_variable" href="#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>());</div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>() != <a class="code hl_variable" href="#a19c53ad10236dc0427543947744937f3">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a1a389027826f6e4e15cda3f386b8875e" name="a1a389027826f6e4e15cda3f386b8875e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a389027826f6e4e15cda3f386b8875e">&#9670;&#160;</a></span>get_native_offset()</h2>
+<a id="a26576fe6f8da9084ce8db9bc1711f78b" name="a26576fe6f8da9084ce8db9bc1711f78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26576fe6f8da9084ce8db9bc1711f78b">&#9670;&#160;</a></span>get_native_offset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -950,7 +950,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">virtual auto xtd::diagnostics::stack_frame::get_native_offset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -962,22 +962,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the offset from the start of the native code for the method that is being executed. </p>
 <dl class="section return"><dt>Returns</dt><dd>The offset from the start of the native code for the method that is being executed. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a67b2875befcb85ea0988cd721dc8c27c" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a1df08a40876657d2d34353fcd1ce8c9e" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
 <div class="line"><a class="code hl_function" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a>());</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a>());</div>
 <div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a>());</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a>());</div>
-<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>() != <a class="code hl_variable" href="#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Native Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a1a389027826f6e4e15cda3f386b8875e">get_native_offset</a>());</div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a1a389027826f6e4e15cda3f386b8875e"><div class="ttname"><a href="#a1a389027826f6e4e15cda3f386b8875e">xtd::diagnostics::stack_frame::get_native_offset</a></div><div class="ttdeci">virtual auto get_native_offset() const noexcept -&gt; xtd::size</div><div class="ttdoc">Gets the offset from the start of the native code for the method that is being executed.</div></div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>() != <a class="code hl_variable" href="#a19c53ad10236dc0427543947744937f3">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Native Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a26576fe6f8da9084ce8db9bc1711f78b">get_native_offset</a>());</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a26576fe6f8da9084ce8db9bc1711f78b"><div class="ttname"><a href="#a26576fe6f8da9084ce8db9bc1711f78b">xtd::diagnostics::stack_frame::get_native_offset</a></div><div class="ttdeci">virtual auto get_native_offset() const noexcept -&gt; xtd::usize</div><div class="ttdoc">Gets the offset from the start of the native code for the method that is being executed.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a67b2875befcb85ea0988cd721dc8c27c" name="a67b2875befcb85ea0988cd721dc8c27c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67b2875befcb85ea0988cd721dc8c27c">&#9670;&#160;</a></span>get_offset()</h2>
+<a id="a1df08a40876657d2d34353fcd1ce8c9e" name="a1df08a40876657d2d34353fcd1ce8c9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df08a40876657d2d34353fcd1ce8c9e">&#9670;&#160;</a></span>get_offset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -989,7 +989,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">virtual auto xtd::diagnostics::stack_frame::get_offset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -1001,15 +1001,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the offset from the start of the code for the method that is being executed. </p>
 <dl class="section return"><dt>Returns</dt><dd>The offset from the code for the method that is being executed. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a67b2875befcb85ea0988cd721dc8c27c" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="#a1df08a40876657d2d34353fcd1ce8c9e" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class. <div class="fragment"><div class="line"><span class="comment">// Display the stack frame properties.</span></div>
 <div class="line"><a class="code hl_function" href="#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; File: {}&quot;</span>, sf.<a class="code hl_function" href="#a281766ddf29deabdc49ab37442d193c1">get_file_name</a>());</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a8915b3eb0f6ddcd7df9ee4d0c1a9d057">get_file_line_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Line Number: {}&quot;</span>, sf.<a class="code hl_function" href="#aafde26e1074b3bcecf141227e6319074">get_file_line_number</a>());</div>
 <div class="line"><span class="comment">// Note that the column number defaults to zero when not initialized.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#af116025fb874fbe9095e8fce6399c27b">get_file_column_number</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Column Number: {}&quot;</span>, sf.<a class="code hl_function" href="#a07ee05b892c46804c59cc659230c77bf">get_file_column_number</a>());</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Method: {}&quot;</span>, sf.<a class="code hl_function" href="#a1e212ea5b0b40ef7a1bed933c04f10b3">get_method</a>());</div>
-<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>() != <a class="code hl_variable" href="#ab2b895b981a0a94acb747cf5018dae56">stack_frame::OFFSET_UNKNOWN</a>)</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a67b2875befcb85ea0988cd721dc8c27c">get_offset</a>());</div>
+<div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>() != <a class="code hl_variable" href="#a19c53ad10236dc0427543947744937f3">stack_frame::OFFSET_UNKNOWN</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="#a1df08a40876657d2d34353fcd1ce8c9e">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1083,8 +1083,8 @@ If <a class="el" href="#ab0acb39aaf9a3f77703f678ec1f1f192" title="Crates a new x
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="ab2b895b981a0a94acb747cf5018dae56" name="ab2b895b981a0a94acb747cf5018dae56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2b895b981a0a94acb747cf5018dae56">&#9670;&#160;</a></span>OFFSET_UNKNOWN</h2>
+<a id="a19c53ad10236dc0427543947744937f3" name="a19c53ad10236dc0427543947744937f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c53ad10236dc0427543947744937f3">&#9670;&#160;</a></span>OFFSET_UNKNOWN</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1093,7 +1093,7 @@ If <a class="el" href="#ab0acb39aaf9a3f77703f678ec1f1f192" title="Crates a new x
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::diagnostics::stack_frame::OFFSET_UNKNOWN</td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::diagnostics::stack_frame::OFFSET_UNKNOWN</td>
         </tr>
       </table>
   </td>
@@ -1103,8 +1103,8 @@ If <a class="el" href="#ab0acb39aaf9a3f77703f678ec1f1f192" title="Crates a new x
 </table>
 </div><div class="memdoc">
 
-<p>Defines the value that is returned from the <a class="el" href="#a67b2875befcb85ea0988cd721dc8c27c" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method when the offset is unknown. This field is constant. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of this constant is <span class="tt">std::numeric_limits&lt;<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a>&gt;::max()</span>. </dd></dl>
+<p>Defines the value that is returned from the <a class="el" href="#a1df08a40876657d2d34353fcd1ce8c9e" title="Gets the offset from the start of the code for the method that is being executed.">get_offset()</a> method when the offset is unknown. This field is constant. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of this constant is <span class="tt">std::numeric_limits&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>&gt;::max()</span>. </dd></dl>
 
 </div>
 </div>

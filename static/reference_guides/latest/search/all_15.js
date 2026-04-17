@@ -214,17 +214,13 @@ var searchData=
   ['user_5ftrash_5ffull_211',['user_trash_full',['../classxtd_1_1drawing_1_1status__system__images.html#af4503f58a117bdb22d08a8ced0da0aef',1,'xtd::drawing::status_system_images::user_trash_full() noexcept'],['../classxtd_1_1drawing_1_1status__system__images.html#a15687fcdd30fa943364d3e1b053b46b8',1,'xtd::drawing::status_system_images::user_trash_full(const xtd::drawing::size &amp;size) noexcept']]],
   ['using_2ehpp_212',['using.hpp',['../using_8hpp.html',1,'']]],
   ['using_5f_213',['using_',['../group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f',1,'using.hpp']]],
-  ['usize_214',['usize',['../group__types.html#gae60f5a861761019d824a87291f85d525',1,'xtd']]],
+  ['usize_214',['usize',['../group__types.html#gae60f5a861761019d824a87291f85d525',1,'xtd::usize'],['../group__types.html#gae60f5a861761019d824a87291f85d525',1,'xtd::usize']]],
   ['usize_2ehpp_215',['usize.hpp',['../literals_2usize_8hpp.html',1,'(Global Namespace)'],['../usize_8hpp.html',1,'(Global Namespace)']]],
   ['usize_5fobject_216',['usize_object',['../group__system.html#ga58b45e46d20091b8700bdbb94dac69a7',1,'xtd']]],
   ['usize_5fobject_2ehpp_217',['usize_object.hpp',['../usize__object_8hpp.html',1,'']]],
-  ['ustring_218',['ustring',['../group__strings.html#ga6740756710f29c0742a183f24f7547b9',1,'xtd']]],
-  ['ustring_2ehpp_219',['ustring.hpp',['../ustring_8hpp.html',1,'']]],
-  ['ustring_5fbuilder_220',['ustring_builder',['../group__strings.html#ga4ef9ebda22eadb7370c2efed9c94e4dc',1,'xtd::text']]],
-  ['ustring_5fbuilder_2ehpp_221',['ustring_builder.hpp',['../ustring__builder_8hpp.html',1,'']]],
-  ['utc_222',['utc',['../classxtd_1_1time__zone__info.html#a8523cfdd8ed4a8db88e5ebdb04af91f3',1,'xtd::time_zone_info::utc()'],['../group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b',1,'xtd::utc']]],
-  ['utc_5fnow_223',['utc_now',['../classxtd_1_1date__time.html#a5dd7b27e1acb75293f18f34258ab5c4b',1,'xtd::date_time']]],
-  ['utilities_5fsystem_5fmonitor_224',['utilities_system_monitor',['../classxtd_1_1drawing_1_1applications__system__images.html#a64fddbcd16d510d9d1032ee225dfef59',1,'xtd::drawing::applications_system_images::utilities_system_monitor() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#abcc663e0d3a2dce42be7df8d1ffb35c2',1,'xtd::drawing::applications_system_images::utilities_system_monitor(const xtd::drawing::size &amp;size) noexcept']]],
-  ['utilities_5fterminal_225',['utilities_terminal',['../classxtd_1_1drawing_1_1applications__system__images.html#ab1f4dfd006b71a27354fe1f68adc9659',1,'xtd::drawing::applications_system_images::utilities_terminal() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#aa77fd56aa9392a65750dbc16517e8ff0',1,'xtd::drawing::applications_system_images::utilities_terminal(const xtd::drawing::size &amp;size) noexcept']]],
-  ['uzbekistan_226',['uzbekistan',['../classxtd_1_1forms_1_1countries.html#af5b3dbc093b2cd2a2852bda080e84ec5',1,'xtd::forms::countries']]]
+  ['utc_218',['utc',['../classxtd_1_1time__zone__info.html#a8523cfdd8ed4a8db88e5ebdb04af91f3',1,'xtd::time_zone_info::utc()'],['../group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b',1,'xtd::utc']]],
+  ['utc_5fnow_219',['utc_now',['../classxtd_1_1date__time.html#a5dd7b27e1acb75293f18f34258ab5c4b',1,'xtd::date_time']]],
+  ['utilities_5fsystem_5fmonitor_220',['utilities_system_monitor',['../classxtd_1_1drawing_1_1applications__system__images.html#a64fddbcd16d510d9d1032ee225dfef59',1,'xtd::drawing::applications_system_images::utilities_system_monitor() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#abcc663e0d3a2dce42be7df8d1ffb35c2',1,'xtd::drawing::applications_system_images::utilities_system_monitor(const xtd::drawing::size &amp;size) noexcept']]],
+  ['utilities_5fterminal_221',['utilities_terminal',['../classxtd_1_1drawing_1_1applications__system__images.html#ab1f4dfd006b71a27354fe1f68adc9659',1,'xtd::drawing::applications_system_images::utilities_terminal() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#aa77fd56aa9392a65750dbc16517e8ff0',1,'xtd::drawing::applications_system_images::utilities_terminal(const xtd::drawing::size &amp;size) noexcept']]],
+  ['uzbekistan_222',['uzbekistan',['../classxtd_1_1forms_1_1countries.html#af5b3dbc093b2cd2a2852bda080e84ec5',1,'xtd::forms::countries']]]
 ];

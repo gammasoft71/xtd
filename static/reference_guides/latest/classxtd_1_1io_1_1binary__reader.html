@@ -227,7 +227,7 @@ When you create a new instance of the xtd:io::<a class="el" href="classxtd_1_1io
 <dl class="section note"><dt>Note</dt><dd>xtd <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> and <a class="el" href="classxtd_1_1io_1_1binary__writer.html" title="Writes primitive types in binary to a stream and supports writing strings.">xtd::io::binary_writer</a> are fully compatible with .NET <a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.binaryreader">BinaryReader</a>/<a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.binarywriter">BinaryWriter</a>. </dd>
 <dd>
 Files written with xtd can be read directly in C# and vice versa, following the same binary format conventions (7-bit encoded string lengths, little-endian integers, etc.). </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#_a5">binary_reader3.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#_a4">binary_reader3.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -256,20 +256,20 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:adbdb82beb81e1b68e1c2e30f9247c905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the current position.  <br /></td></tr>
 <tr class="memitem:a47acccdbda5ba26c09b4d8c5824eae88" id="r_a47acccdbda5ba26c09b4d8c5824eae88"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a47acccdbda5ba26c09b4d8c5824eae88">read</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
 <tr class="memdesc:a47acccdbda5ba26c09b4d8c5824eae88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads characters from the underlying stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.  <br /></td></tr>
-<tr class="memitem:a62a47a2fc5d46866d9c24dbbe5eb4f45" id="r_a62a47a2fc5d46866d9c24dbbe5eb4f45"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a62a47a2fc5d46866d9c24dbbe5eb4f45">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:a62a47a2fc5d46866d9c24dbbe5eb4f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of bytes from the stream, starting from a specified point in the byte array.  <br /></td></tr>
-<tr class="memitem:afb710e2fb8ca47fe3628afe09bf3822b" id="r_afb710e2fb8ca47fe3628afe09bf3822b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afb710e2fb8ca47fe3628afe09bf3822b">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:afb710e2fb8ca47fe3628afe09bf3822b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of characters from the stream, starting from a specified point in the character array.  <br /></td></tr>
+<tr class="memitem:aea018ccebd2cd951e35521b162239a75" id="r_aea018ccebd2cd951e35521b162239a75"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aea018ccebd2cd951e35521b162239a75">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:aea018ccebd2cd951e35521b162239a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of bytes from the stream, starting from a specified point in the byte array.  <br /></td></tr>
+<tr class="memitem:ab9a8546c520f15bbb8d5877e7717e7e5" id="r_ab9a8546c520f15bbb8d5877e7717e7e5"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ab9a8546c520f15bbb8d5877e7717e7e5">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:ab9a8546c520f15bbb8d5877e7717e7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of characters from the stream, starting from a specified point in the character array.  <br /></td></tr>
 <tr class="memitem:ad38eaaadf4e975c4c6a9b8e20b18f1a4" id="r_ad38eaaadf4e975c4c6a9b8e20b18f1a4"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad38eaaadf4e975c4c6a9b8e20b18f1a4">read_boolean</a> () -&gt; bool</td></tr>
 <tr class="memdesc:ad38eaaadf4e975c4c6a9b8e20b18f1a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a boolean value from the current stream and advances the current position of the stream by one byte.  <br /></td></tr>
 <tr class="memitem:a48ff5f03fb5387d112154ac13dc8747b" id="r_a48ff5f03fb5387d112154ac13dc8747b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a48ff5f03fb5387d112154ac13dc8747b">read_byte</a> () -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td></tr>
 <tr class="memdesc:a48ff5f03fb5387d112154ac13dc8747b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next byte from the current stream and advances the current position of the stream by one byte.  <br /></td></tr>
-<tr class="memitem:afc12d5451442044f2c41ad6670e02afb" id="r_afc12d5451442044f2c41ad6670e02afb"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afc12d5451442044f2c41ad6670e02afb">read_bytes</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;</td></tr>
-<tr class="memdesc:afc12d5451442044f2c41ad6670e02afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of bytes from the current stream into a byte array and advances the current position by that number of bytes.  <br /></td></tr>
+<tr class="memitem:a506a9316c072690b9736381ac917323e" id="r_a506a9316c072690b9736381ac917323e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a506a9316c072690b9736381ac917323e">read_bytes</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;</td></tr>
+<tr class="memdesc:a506a9316c072690b9736381ac917323e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of bytes from the current stream into a byte array and advances the current position by that number of bytes.  <br /></td></tr>
 <tr class="memitem:a56d6e2a55d83243973812dbb457bc24e" id="r_a56d6e2a55d83243973812dbb457bc24e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a56d6e2a55d83243973812dbb457bc24e">read_char</a> () -&gt; char</td></tr>
 <tr class="memdesc:a56d6e2a55d83243973812dbb457bc24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character from the current stream and advances the current position of the stream by one byte.  <br /></td></tr>
-<tr class="memitem:a4b4b44d3f19f471bcda4d60bef7a1ef2" id="r_a4b4b44d3f19f471bcda4d60bef7a1ef2"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b4b44d3f19f471bcda4d60bef7a1ef2">read_chars</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt;</td></tr>
-<tr class="memdesc:a4b4b44d3f19f471bcda4d60bef7a1ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of characters from the current stream into a byte array and advances the current position by that number of bytes.  <br /></td></tr>
+<tr class="memitem:a71057447ddd1867d3c6c4cbfc1a66d54" id="r_a71057447ddd1867d3c6c4cbfc1a66d54"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a71057447ddd1867d3c6c4cbfc1a66d54">read_chars</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:a71057447ddd1867d3c6c4cbfc1a66d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the specified number of characters from the current stream into a byte array and advances the current position by that number of bytes.  <br /></td></tr>
 <tr class="memitem:acb525462bb88f9ae41dd85cea983906e" id="r_acb525462bb88f9ae41dd85cea983906e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#acb525462bb88f9ae41dd85cea983906e">read_double</a> () -&gt; double</td></tr>
 <tr class="memdesc:acb525462bb88f9ae41dd85cea983906e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.  <br /></td></tr>
 <tr class="memitem:a51d4d94ec37eddfdc913e27b9dfdc62f" id="r_a51d4d94ec37eddfdc913e27b9dfdc62f"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a51d4d94ec37eddfdc913e27b9dfdc62f">read_int16</a> () -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td></tr>
@@ -282,8 +282,8 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a4951dbc0412080014a7d77d41f2678fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the a signed byte from the current stream and advances the current position of the stream by one byte.  <br /></td></tr>
 <tr class="memitem:a5ca81fce9051b6caaaffe4939d23cdf1" id="r_a5ca81fce9051b6caaaffe4939d23cdf1"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a5ca81fce9051b6caaaffe4939d23cdf1">read_single</a> () -&gt; float</td></tr>
 <tr class="memdesc:a5ca81fce9051b6caaaffe4939d23cdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an 4-byte floating point value from the current stream and advances the current position of the stream by four bytes.  <br /></td></tr>
-<tr class="memitem:aedb67f70fb176b363a2a4da9bee6bcc2" id="r_aedb67f70fb176b363a2a4da9bee6bcc2"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aedb67f70fb176b363a2a4da9bee6bcc2">read_size</a> () -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
-<tr class="memdesc:aedb67f70fb176b363a2a4da9bee6bcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a> from the current stream and advances the current position of the stream by eight bytes.  <br /></td></tr>
+<tr class="memitem:a4a452e4c8372892a6bcd243c36aa6b98" id="r_a4a452e4c8372892a6bcd243c36aa6b98"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a452e4c8372892a6bcd243c36aa6b98">read_size</a> () -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a4a452e4c8372892a6bcd243c36aa6b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> from the current stream and advances the current position of the stream by eight bytes.  <br /></td></tr>
 <tr class="memitem:a8124abd710bb812f2138e989cbf51e30" id="r_a8124abd710bb812f2138e989cbf51e30"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a8124abd710bb812f2138e989cbf51e30">read_string</a> () -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a8124abd710bb812f2138e989cbf51e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a string from the current stream. The string is prefixed with the length.  <br /></td></tr>
 <tr class="memitem:ac400e7b5cde861f5a820a1fcf469af90" id="r_ac400e7b5cde861f5a820a1fcf469af90"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac400e7b5cde861f5a820a1fcf469af90">read_uint16</a> () -&gt; <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td></tr>
@@ -305,8 +305,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6e48ffbad2ee99afb6dbff032a18345e" id="r_a6e48ffbad2ee99afb6dbff032a18345e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6e48ffbad2ee99afb6dbff032a18345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
@@ -578,7 +578,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pop the current top position. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#a9">binary_reader3.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#a8">binary_reader3.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -605,7 +605,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#a7">binary_reader3.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#a6">binary_reader3.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -647,8 +647,8 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="a62a47a2fc5d46866d9c24dbbe5eb4f45" name="a62a47a2fc5d46866d9c24dbbe5eb4f45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62a47a2fc5d46866d9c24dbbe5eb4f45">&#9670;&#160;</a></span>read() <span class="overload">[2/3]</span></h2>
+<a id="aea018ccebd2cd951e35521b162239a75" name="aea018ccebd2cd951e35521b162239a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea018ccebd2cd951e35521b162239a75">&#9670;&#160;</a></span>read() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -664,12 +664,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -702,8 +702,8 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="afb710e2fb8ca47fe3628afe09bf3822b" name="afb710e2fb8ca47fe3628afe09bf3822b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb710e2fb8ca47fe3628afe09bf3822b">&#9670;&#160;</a></span>read() <span class="overload">[3/3]</span></h2>
+<a id="ab9a8546c520f15bbb8d5877e7717e7e5" name="ab9a8546c520f15bbb8d5877e7717e7e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a8546c520f15bbb8d5877e7717e7e5">&#9670;&#160;</a></span>read() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -719,12 +719,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -832,8 +832,8 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="afc12d5451442044f2c41ad6670e02afb" name="afc12d5451442044f2c41ad6670e02afb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc12d5451442044f2c41ad6670e02afb">&#9670;&#160;</a></span>read_bytes()</h2>
+<a id="a506a9316c072690b9736381ac917323e" name="a506a9316c072690b9736381ac917323e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506a9316c072690b9736381ac917323e">&#9670;&#160;</a></span>read_bytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -844,7 +844,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
         <tr>
           <td class="memname">virtual auto xtd::io::binary_reader::read_bytes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;</td>
         </tr>
       </table>
@@ -914,8 +914,8 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="a4b4b44d3f19f471bcda4d60bef7a1ef2" name="a4b4b44d3f19f471bcda4d60bef7a1ef2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b4b44d3f19f471bcda4d60bef7a1ef2">&#9670;&#160;</a></span>read_chars()</h2>
+<a id="a71057447ddd1867d3c6c4cbfc1a66d54" name="a71057447ddd1867d3c6c4cbfc1a66d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71057447ddd1867d3c6c4cbfc1a66d54">&#9670;&#160;</a></span>read_chars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -926,7 +926,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
         <tr>
           <td class="memname">virtual auto xtd::io::binary_reader::read_chars </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt;</td>
         </tr>
       </table>
@@ -1186,8 +1186,8 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="aedb67f70fb176b363a2a4da9bee6bcc2" name="aedb67f70fb176b363a2a4da9bee6bcc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedb67f70fb176b363a2a4da9bee6bcc2">&#9670;&#160;</a></span>read_size()</h2>
+<a id="a4a452e4c8372892a6bcd243c36aa6b98" name="a4a452e4c8372892a6bcd243c36aa6b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a452e4c8372892a6bcd243c36aa6b98">&#9670;&#160;</a></span>read_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1199,7 +1199,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
           <td class="memname">virtual auto xtd::io::binary_reader::read_size </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -1209,8 +1209,8 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 </table>
 </div><div class="memdoc">
 
-<p>Reads a <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a> from the current stream and advances the current position of the stream by eight bytes. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a> read from the current stream. </dd></dl>
+<p>Reads a <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> from the current stream and advances the current position of the stream by eight bytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> read from the current stream. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1end__of__stream__exception.html" title="The exception that is thrown when reading is attempted past the end of a stream.">xtd::io::end_of_stream_exception</a></td><td>The end of the stream is reached. </td></tr>
@@ -1392,7 +1392,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 </div><div class="memdoc">
 
 <p>Rewind stream. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#a8">binary_reader3.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#a7">binary_reader3.cpp</a>.</dd>
 </dl>
 
 </div>

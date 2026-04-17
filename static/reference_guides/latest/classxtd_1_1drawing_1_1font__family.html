@@ -137,8 +137,8 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a8434448a5e1d02f3f797a55826df5fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cell descent, in design units, of the <a class="el" href="classxtd_1_1drawing_1_1font__family.html" title="Defines a group of type faces having a similar basic design and certain variations in styles....">font_family</a> of the specified style.  <br /></td></tr>
 <tr class="memitem:aca940a4b4b182e244f372074556b4904" id="r_aca940a4b4b182e244f372074556b4904"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#aca940a4b4b182e244f372074556b4904">get_em_height</a> (<a class="el" href="group__fonts.html#ga5622feb39a9d16672cef53957d224571">font_style</a> style) const noexcept</td></tr>
 <tr class="memdesc:aca940a4b4b182e244f372074556b4904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height, in font design units, of the em square for the specified style.  <br /></td></tr>
-<tr class="memitem:a8e167e1aa8abc9756362bbdedfe74f61" id="r_a8e167e1aa8abc9756362bbdedfe74f61"><td class="memItemLeft"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8e167e1aa8abc9756362bbdedfe74f61">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a8e167e1aa8abc9756362bbdedfe74f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:aa7c2ea20f4538f318165fd82cf8ce3cc" id="r_aa7c2ea20f4538f318165fd82cf8ce3cc"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa7c2ea20f4538f318165fd82cf8ce3cc">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:aa7c2ea20f4538f318165fd82cf8ce3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a23c339673f75d0aca04d4365ef3e84f5" id="r_a23c339673f75d0aca04d4365ef3e84f5"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a23c339673f75d0aca04d4365ef3e84f5">get_line_spacing</a> (<a class="el" href="group__fonts.html#ga5622feb39a9d16672cef53957d224571">font_style</a> style) const</td></tr>
 <tr class="memdesc:a23c339673f75d0aca04d4365ef3e84f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the line spacing, in design units, of the <a class="el" href="classxtd_1_1drawing_1_1font__family.html" title="Defines a group of type faces having a similar basic design and certain variations in styles....">font_family</a> of the specified style. The line spacing is the vertical distance between the base lines of two consecutive lines of text.  <br /></td></tr>
 <tr class="memitem:ac77524649d8b944978c4623ac704ddaf" id="r_ac77524649d8b944978c4623ac704ddaf"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac77524649d8b944978c4623ac704ddaf">get_name</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> language) const</td></tr>
@@ -587,8 +587,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8e167e1aa8abc9756362bbdedfe74f61" name="a8e167e1aa8abc9756362bbdedfe74f61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e167e1aa8abc9756362bbdedfe74f61">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="aa7c2ea20f4538f318165fd82cf8ce3cc" name="aa7c2ea20f4538f318165fd82cf8ce3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c2ea20f4538f318165fd82cf8ce3cc">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -597,7 +597,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::drawing::font_family::get_hash_code </td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::drawing::font_family::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -613,7 +613,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
 
 </div>
 </div>

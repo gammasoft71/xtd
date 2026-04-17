@@ -117,7 +117,7 @@ Inheritance diagram for xtd::drawing::point:</div>
 <div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> start_point = subtract_button.size();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Use the addition operator to get the end point.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> end_point = start_point + <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(140, 150);</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> end_point = start_point + <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(140, 150);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Draw a line between the points.</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(<a class="code hl_function" href="classxtd_1_1drawing_1_1system__pens.html#a2963793eaeac8937a9599eecdad781d6">system_pens::highlight</a>, start_point, end_point);</div>
@@ -133,8 +133,8 @@ Inheritance diagram for xtd::drawing::point:</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.hpp:45</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__pens_html_a2963793eaeac8937a9599eecdad781d6"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__pens.html#a2963793eaeac8937a9599eecdad781d6">xtd::drawing::system_pens::highlight</a></div><div class="ttdeci">static xtd::drawing::pen highlight()</div><div class="ttdoc">Gets a pen that is the color of the highlight.</div></div>
 <div class="ttc" id="agroup__fonts_html_ga5622feb39a9d16672cef53957d224571"><div class="ttname"><a href="group__fonts.html#ga5622feb39a9d16672cef53957d224571">xtd::drawing::font_style</a></div><div class="ttdeci">font_style</div><div class="ttdoc">Specifies style information applied to text. This enumeration has a flags attribute that allows a bit...</div><div class="ttdef"><b>Definition</b> font_style.hpp:17</div></div>
-<div class="ttc" id="agroup__types_html_ga0a27fff7b553c7e6da4a774353c8fa96"><div class="ttname"><a href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></div><div class="ttdeci">usize size</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:36</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
+<div class="ttc" id="anamespacextd_html_ac6d22d2703cdaac732df137dc46abd78"><div class="ttname"><a href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">xtd::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:241</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="buttons_8cpp-example.html#_a0">buttons.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#_a9">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a14">graphics.cpp</a>, and <a class="el" href="tutorial_button_8cpp-example.html#_a5">tutorial_button.cpp</a>.</dd>
 </dl>
@@ -170,8 +170,8 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:ac204e77b6a4e38f5253e3ba27c79fdf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:a4da9af3899074f1835d21fe599e2d6c5" id="r_a4da9af3899074f1835d21fe599e2d6c5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4da9af3899074f1835d21fe599e2d6c5">equals</a> (const <a class="el" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> &amp;other) const noexcept override</td></tr>
 <tr class="memdesc:a4da9af3899074f1835d21fe599e2d6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:abe3126ce33527d39305468d306a8e36a" id="r_abe3126ce33527d39305468d306a8e36a"><td class="memItemLeft"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#abe3126ce33527d39305468d306a8e36a">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:abe3126ce33527d39305468d306a8e36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:aa7b812a2eb608e1431939e01957f563d" id="r_aa7b812a2eb608e1431939e01957f563d"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa7b812a2eb608e1431939e01957f563d">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:aa7b812a2eb608e1431939e01957f563d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a813937ec5b83642dc5a45335fd55fb3b" id="r_a813937ec5b83642dc5a45335fd55fb3b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a813937ec5b83642dc5a45335fd55fb3b">offset</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> dx, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> dy) noexcept</td></tr>
 <tr class="memdesc:a813937ec5b83642dc5a45335fd55fb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates this <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> by the specified amount.  <br /></td></tr>
 <tr class="memitem:a475ce4ddda7f7c04acffb387a3dbbf3c" id="r_a475ce4ddda7f7c04acffb387a3dbbf3c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a475ce4ddda7f7c04acffb387a3dbbf3c">offset</a> (const <a class="el" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> &amp;p) noexcept</td></tr>
@@ -352,7 +352,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>
@@ -407,7 +407,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>
@@ -517,8 +517,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abe3126ce33527d39305468d306a8e36a" name="abe3126ce33527d39305468d306a8e36a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe3126ce33527d39305468d306a8e36a">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="aa7b812a2eb608e1431939e01957f563d" name="aa7b812a2eb608e1431939e01957f563d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b812a2eb608e1431939e01957f563d">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -527,7 +527,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::drawing::point::get_hash_code </td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::drawing::point::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -543,7 +543,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -727,7 +727,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that is the result of the addition operation. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a85e70417ae292795b559c515626c6d4b" title="Adds the specified xtd::drawing::size to the specified xtd::drawing::point.">xtd::drawing::point::add</a> adds the xtd::drawing::size::width and xtd::drawing::size::height of the specified size to the <a class="el" href="#af40e7fa377a1912eca7f3eca0e213145" title="Gets or sets the x-coordinate of this xtd::drawing::point.">xtd::drawing::point::x</a> and <a class="el" href="#a5d87cc2efeb1c2eee31ea0451f0e7995" title="Gets or sets the y-coordinate of this xtd::drawing::point.">xtd::drawing::point::y</a> values of the specified <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a85e70417ae292795b559c515626c6d4b" title="Adds the specified xtd::drawing::size to the specified xtd::drawing::point.">xtd::drawing::point::add</a> adds the <a class="el" href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147" title="Gets or sets the horizontal component of this xtd::drawing::size class.">xtd::drawing::size::width</a> and <a class="el" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b" title="Gets or sets he vertical component of this xtd::drawing::size class.">xtd::drawing::size::height</a> of the specified size to the <a class="el" href="#af40e7fa377a1912eca7f3eca0e213145" title="Gets or sets the x-coordinate of this xtd::drawing::point.">xtd::drawing::point::x</a> and <a class="el" href="#a5d87cc2efeb1c2eee31ea0451f0e7995" title="Gets or sets the y-coordinate of this xtd::drawing::point.">xtd::drawing::point::y</a> values of the specified <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use the add method. To run this example, paste it into a Windows Form (<a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a>. Handle the form's <a class="el" href="classxtd_1_1forms_1_1control.html#a9807bd96bb4688bf38e796a165c734c1" title="Occurs when the xtd::forms::control is redrawn.">xtd::forms::control::paint</a> event and call the add_point method from the paint event-handling method, passing e as paint_event_args. <div class="fragment"><div class="line"><span class="keywordtype">void</span> add_point(paint_event_args&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point1(10, 10);</div>
 <div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2 = <a class="code hl_function" href="#a85e70417ae292795b559c515626c6d4b">point::add</a>(point1, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>(250,0));</div>
@@ -881,7 +881,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that is the result of the subtraction operation. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a8ca41216b41c852ce3fbfc338a87187b" title="Returns the result of subtracting specified xtd::drawing::size from the specified xtd::drawing::point...">xtd::drawing::point::subtract</a> subtracts the xtd::drawing::size::width and xtd::drawing::size::height of the specified <a class="el" href="structxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> from the <a class="el" href="#af40e7fa377a1912eca7f3eca0e213145" title="Gets or sets the x-coordinate of this xtd::drawing::point.">xtd::drawing::point::x</a> and <a class="el" href="#a5d87cc2efeb1c2eee31ea0451f0e7995" title="Gets or sets the y-coordinate of this xtd::drawing::point.">xtd::drawing::point::y</a> values of the specified <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a8ca41216b41c852ce3fbfc338a87187b" title="Returns the result of subtracting specified xtd::drawing::size from the specified xtd::drawing::point...">xtd::drawing::point::subtract</a> subtracts the <a class="el" href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147" title="Gets or sets the horizontal component of this xtd::drawing::size class.">xtd::drawing::size::width</a> and <a class="el" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b" title="Gets or sets he vertical component of this xtd::drawing::size class.">xtd::drawing::size::height</a> of the specified <a class="el" href="structxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> from the <a class="el" href="#af40e7fa377a1912eca7f3eca0e213145" title="Gets or sets the x-coordinate of this xtd::drawing::point.">xtd::drawing::point::x</a> and <a class="el" href="#a5d87cc2efeb1c2eee31ea0451f0e7995" title="Gets or sets the y-coordinate of this xtd::drawing::point.">xtd::drawing::point::y</a> values of the specified <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a>. </dd></dl>
 
 </div>
 </div>
@@ -1248,7 +1248,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>
@@ -1288,7 +1288,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>

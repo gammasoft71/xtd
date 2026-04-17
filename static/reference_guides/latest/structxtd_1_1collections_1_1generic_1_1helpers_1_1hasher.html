@@ -110,8 +110,8 @@ struct xtd::collections::generic::helpers::hasher&lt; key_t &gt;</div><p>Impleme
 Public Aliases</h2></td></tr>
 <tr class="memitem:a7084c96751d1b25f759fcd9e7e68019d" id="r_a7084c96751d1b25f759fcd9e7e68019d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a7084c96751d1b25f759fcd9e7e68019d">argument_type</a></td></tr>
 <tr class="memdesc:a7084c96751d1b25f759fcd9e7e68019d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the argument type.  <br /></td></tr>
-<tr class="memitem:a7ad2123af2796f3321145acb0173cdb6" id="r_a7ad2123af2796f3321145acb0173cdb6"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a7ad2123af2796f3321145acb0173cdb6">result_type</a></td></tr>
-<tr class="memdesc:a7ad2123af2796f3321145acb0173cdb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the result type.  <br /></td></tr>
+<tr class="memitem:ab42294d0aa3a15717607d3af179e7b16" id="r_ab42294d0aa3a15717607d3af179e7b16"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ab42294d0aa3a15717607d3af179e7b16">result_type</a></td></tr>
+<tr class="memdesc:ab42294d0aa3a15717607d3af179e7b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the result type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -122,7 +122,7 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:a31d17ddda9aa5117dc805e887596c83f" id="r_a31d17ddda9aa5117dc805e887596c83f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a31d17ddda9aa5117dc805e887596c83f">operator()</a> (const <a class="el" href="#a7084c96751d1b25f759fcd9e7e68019d">argument_type</a> &amp;key) const noexcept -&gt; <a class="el" href="#a7ad2123af2796f3321145acb0173cdb6">result_type</a></td></tr>
+<tr class="memitem:a31d17ddda9aa5117dc805e887596c83f" id="r_a31d17ddda9aa5117dc805e887596c83f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a31d17ddda9aa5117dc805e887596c83f">operator()</a> (const <a class="el" href="#a7084c96751d1b25f759fcd9e7e68019d">argument_type</a> &amp;key) const noexcept -&gt; <a class="el" href="#ab42294d0aa3a15717607d3af179e7b16">result_type</a></td></tr>
 <tr class="memdesc:a31d17ddda9aa5117dc805e887596c83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a specified key with a particular type (type_t).  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
@@ -144,8 +144,8 @@ template&lt;typename key_t&gt; </div>
 
 </div>
 </div>
-<a id="a7ad2123af2796f3321145acb0173cdb6" name="a7ad2123af2796f3321145acb0173cdb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ad2123af2796f3321145acb0173cdb6">&#9670;&#160;</a></span>result_type</h2>
+<a id="ab42294d0aa3a15717607d3af179e7b16" name="ab42294d0aa3a15717607d3af179e7b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42294d0aa3a15717607d3af179e7b16">&#9670;&#160;</a></span>result_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +243,7 @@ template&lt;typename key_t&gt; </div>
           <td class="memname">auto <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">xtd::collections::generic::helpers::hasher</a>&lt; key_t &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a7084c96751d1b25f759fcd9e7e68019d">argument_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#a7ad2123af2796f3321145acb0173cdb6">result_type</a></td>
+          <td> const -&gt; <a class="el" href="#ab42294d0aa3a15717607d3af179e7b16">result_type</a></td>
         </tr>
       </table>
   </td>
@@ -261,7 +261,7 @@ template&lt;typename key_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the spesified key. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If key_t inherits from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, the <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508" title="Serves as a hash function for a particular type.">xtd::object::get_hash_code</a> method will be used; otherwise, the <a href="https://en.cppreference.com/w/cpp/utility/hash">std::hash</a> object function will be used. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If key_t inherits from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, the <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e" title="Serves as a hash function for a particular type.">xtd::object::get_hash_code</a> method will be used; otherwise, the <a href="https://en.cppreference.com/w/cpp/utility/hash">std::hash</a> object function will be used. </dd></dl>
 
 </div>
 </div>

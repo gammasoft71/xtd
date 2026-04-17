@@ -121,8 +121,8 @@ Public Aliases</h2></td></tr>
 <tr class="memdesc:aa086c7110d8dc50935371d537fac981c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary mapped type.  <br /></td></tr>
 <tr class="memitem:a6baf6beb429bff712da86ee3c3f71a61" id="r_a6baf6beb429bff712da86ee3c3f71a61"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6baf6beb429bff712da86ee3c3f71a61">value_type</a></td></tr>
 <tr class="memdesc:a6baf6beb429bff712da86ee3c3f71a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary value type.  <br /></td></tr>
-<tr class="memitem:a27a9d943fc78f2af929108739cb2e45c" id="r_a27a9d943fc78f2af929108739cb2e45c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a27a9d943fc78f2af929108739cb2e45c">size_type</a></td></tr>
-<tr class="memdesc:a27a9d943fc78f2af929108739cb2e45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary size type.  <br /></td></tr>
+<tr class="memitem:a0132791da5e6aa76babfdb6a5cabce42" id="r_a0132791da5e6aa76babfdb6a5cabce42"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0132791da5e6aa76babfdb6a5cabce42">size_type</a></td></tr>
+<tr class="memdesc:a0132791da5e6aa76babfdb6a5cabce42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary size type.  <br /></td></tr>
 <tr class="memitem:ab613405f6897108c5c07c1a07aed3d88" id="r_ab613405f6897108c5c07c1a07aed3d88"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ab613405f6897108c5c07c1a07aed3d88">base_value_type</a></td></tr>
 <tr class="memdesc:ab613405f6897108c5c07c1a07aed3d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary base value type.  <br /></td></tr>
 <tr class="memitem:a2a55294d5b42f4dbda860fa759c75ed6" id="r_a2a55294d5b42f4dbda860fa759c75ed6"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a2a55294d5b42f4dbda860fa759c75ed6">base_type</a></td></tr>
@@ -167,7 +167,7 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a43af2f1b3d4c79d88fcdc2474660ea0b" id="r_a43af2f1b3d4c79d88fcdc2474660ea0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a43af2f1b3d4c79d88fcdc2474660ea0b">count</a> () const noexcept -&gt; <a class="el" href="#a27a9d943fc78f2af929108739cb2e45c">size_type</a> override</td></tr>
+<tr class="memitem:a43af2f1b3d4c79d88fcdc2474660ea0b" id="r_a43af2f1b3d4c79d88fcdc2474660ea0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a43af2f1b3d4c79d88fcdc2474660ea0b">count</a> () const noexcept -&gt; <a class="el" href="#a0132791da5e6aa76babfdb6a5cabce42">size_type</a> override</td></tr>
 <tr class="memdesc:a43af2f1b3d4c79d88fcdc2474660ea0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="memitem:a911ba49ff1eac10dec7a4513d8d7aae4" id="r_a911ba49ff1eac10dec7a4513d8d7aae4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a911ba49ff1eac10dec7a4513d8d7aae4">comparer</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; key_t &gt; &amp;</td></tr>
 <tr class="memdesc:a911ba49ff1eac10dec7a4513d8d7aae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; that is used to determine equality of keys for the dictionary.  <br /></td></tr>
@@ -194,20 +194,20 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:abd7661e16544c8849f9de8cb986586b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains the specified key.  <br /></td></tr>
 <tr class="memitem:a4974a2ed8baa7bd82a6139d4505db688" id="r_a4974a2ed8baa7bd82a6139d4505db688"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4974a2ed8baa7bd82a6139d4505db688">contains_value</a> (const value_t &amp;value) const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a4974a2ed8baa7bd82a6139d4505db688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains the specified value.  <br /></td></tr>
-<tr class="memitem:ae3ea68d664f87d83d4371776d4651ba6" id="r_ae3ea68d664f87d83d4371776d4651ba6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae3ea68d664f87d83d4371776d4651ba6">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> array_index) const -&gt; void override</td></tr>
-<tr class="memdesc:ae3ea68d664f87d83d4371776d4651ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the xtd::collections::generic::icollection &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
+<tr class="memitem:a9c58e0d404b820502e296ea17f7ee3fa" id="r_a9c58e0d404b820502e296ea17f7ee3fa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c58e0d404b820502e296ea17f7ee3fa">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index) const -&gt; void override</td></tr>
+<tr class="memdesc:a9c58e0d404b820502e296ea17f7ee3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the xtd::collections::generic::icollection &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
 <tr class="memitem:a22536731f8be4b55ac46c26a50195dac" id="r_a22536731f8be4b55ac46c26a50195dac"><td class="memItemLeft"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a22536731f8be4b55ac46c26a50195dac">get_enumerator</a> () const noexcept override</td></tr>
 <tr class="memdesc:a22536731f8be4b55ac46c26a50195dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
-<tr class="memitem:a242b756de120fce9b8dc225857b9b528" id="r_a242b756de120fce9b8dc225857b9b528"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a242b756de120fce9b8dc225857b9b528">insert</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, const key_t &amp;key) -&gt; void</td></tr>
-<tr class="memdesc:a242b756de120fce9b8dc225857b9b528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key at the specified index.  <br /></td></tr>
-<tr class="memitem:ad5ea33bd4a9331efe46bc82361f0ecf1" id="r_ad5ea33bd4a9331efe46bc82361f0ecf1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad5ea33bd4a9331efe46bc82361f0ecf1">insert</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, const key_t &amp;key, const value_t &amp;value) -&gt; void</td></tr>
-<tr class="memdesc:ad5ea33bd4a9331efe46bc82361f0ecf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key and value at the specified index.  <br /></td></tr>
+<tr class="memitem:aa6ddc9efeea13e6e2bdd295a64443eb6" id="r_aa6ddc9efeea13e6e2bdd295a64443eb6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa6ddc9efeea13e6e2bdd295a64443eb6">insert</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, const key_t &amp;key) -&gt; void</td></tr>
+<tr class="memdesc:aa6ddc9efeea13e6e2bdd295a64443eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key at the specified index.  <br /></td></tr>
+<tr class="memitem:a180ef833941d2b74d4d3eda5f193431f" id="r_a180ef833941d2b74d4d3eda5f193431f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a180ef833941d2b74d4d3eda5f193431f">insert</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, const key_t &amp;key, const value_t &amp;value) -&gt; void</td></tr>
+<tr class="memdesc:a180ef833941d2b74d4d3eda5f193431f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key and value at the specified index.  <br /></td></tr>
 <tr class="memitem:ac55ca3e32d20d6e2c39c4bf7c94e1f33" id="r_ac55ca3e32d20d6e2c39c4bf7c94e1f33"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac55ca3e32d20d6e2c39c4bf7c94e1f33">remove</a> (const key_t &amp;key) noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:ac55ca3e32d20d6e2c39c4bf7c94e1f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the value with the specified key from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="memitem:a49e1985d9a8d47c0c98d5b328c571ffb" id="r_a49e1985d9a8d47c0c98d5b328c571ffb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a49e1985d9a8d47c0c98d5b328c571ffb">remove</a> (const <a class="el" href="#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &amp;item) noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a49e1985d9a8d47c0c98d5b328c571ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
-<tr class="memitem:a3546939b35df60be863f352e13bbe1fa" id="r_a3546939b35df60be863f352e13bbe1fa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3546939b35df60be863f352e13bbe1fa">remove_at</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) -&gt; void</td></tr>
-<tr class="memdesc:a3546939b35df60be863f352e13bbe1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the entry at the specified index from the OrderedDictionary collection.  <br /></td></tr>
+<tr class="memitem:a625f361e0bae40969530882eaf88c70b" id="r_a625f361e0bae40969530882eaf88c70b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a625f361e0bae40969530882eaf88c70b">remove_at</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; void</td></tr>
+<tr class="memdesc:a625f361e0bae40969530882eaf88c70b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the entry at the specified index from the OrderedDictionary collection.  <br /></td></tr>
 <tr class="memitem:a232e3e9d89c9d0cc0aebc20794a297e8" id="r_a232e3e9d89c9d0cc0aebc20794a297e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a232e3e9d89c9d0cc0aebc20794a297e8">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:a232e3e9d89c9d0cc0aebc20794a297e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that represents the current object.  <br /></td></tr>
 <tr class="memitem:afa4f1a38366b474879ae344a57a63aa0" id="r_afa4f1a38366b474879ae344a57a63aa0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afa4f1a38366b474879ae344a57a63aa0">try_get_value</a> (const key_t &amp;key, value_t &amp;value) const -&gt; bool override</td></tr>
@@ -224,10 +224,10 @@ Public Operators</h2></td></tr>
 <tr class="memitem:afebe190db5bf6bb00dbbf09c238fb4a8" id="r_afebe190db5bf6bb00dbbf09c238fb4a8"><td class="memTemplParams" colspan="2">template&lt;class init_key_t, typename init_value_t&gt; </td></tr>
 <tr class="memitem:afebe190db5bf6bb00dbbf09c238fb4a8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afebe190db5bf6bb00dbbf09c238fb4a8">operator=</a> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; ilist) -&gt; <a class="el" href="#adb9f2f5dcc150f5e9d45e7d44d54427b">ordered_dictionary</a> &amp;</td></tr>
 <tr class="memdesc:afebe190db5bf6bb00dbbf09c238fb4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of <span class="tt">other</span>.  <br /></td></tr>
-<tr class="memitem:a540de8a286600704ce4a2cc2b8d1a979" id="r_a540de8a286600704ce4a2cc2b8d1a979"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a540de8a286600704ce4a2cc2b8d1a979">operator()</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) const -&gt; const value_t &amp;</td></tr>
-<tr class="memdesc:a540de8a286600704ce4a2cc2b8d1a979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified index.  <br /></td></tr>
-<tr class="memitem:a2654aec2786ec50f1bff1b6d1d627689" id="r_a2654aec2786ec50f1bff1b6d1d627689"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2654aec2786ec50f1bff1b6d1d627689">operator()</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) -&gt; value_t &amp;</td></tr>
-<tr class="memdesc:a2654aec2786ec50f1bff1b6d1d627689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value at the specified index.  <br /></td></tr>
+<tr class="memitem:a9aca5685f4a1f769d4cef9f7f1f8c964" id="r_a9aca5685f4a1f769d4cef9f7f1f8c964"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9aca5685f4a1f769d4cef9f7f1f8c964">operator()</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:a9aca5685f4a1f769d4cef9f7f1f8c964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified index.  <br /></td></tr>
+<tr class="memitem:ab91bfc4db4ad3e0d44521290f1623b81" id="r_ab91bfc4db4ad3e0d44521290f1623b81"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab91bfc4db4ad3e0d44521290f1623b81">operator()</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; value_t &amp;</td></tr>
+<tr class="memdesc:ab91bfc4db4ad3e0d44521290f1623b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value at the specified index.  <br /></td></tr>
 <tr class="memitem:a120bc920109ca0845f87b10236154f6c" id="r_a120bc920109ca0845f87b10236154f6c"><td class="memItemLeft">const value_t &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a120bc920109ca0845f87b10236154f6c">operator[]</a> (const key_t &amp;key) const override</td></tr>
 <tr class="memdesc:a120bc920109ca0845f87b10236154f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element with the specified key.  <br /></td></tr>
 <tr class="memitem:a77ede68d9aa3ae677daeba3387ea795e" id="r_a77ede68d9aa3ae677daeba3387ea795e"><td class="memItemLeft">value_t &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a77ede68d9aa3ae677daeba3387ea795e">operator[]</a> (const key_t &amp;key) override</td></tr>
@@ -257,8 +257,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6e48ffbad2ee99afb6dbff032a18345e" id="r_a6e48ffbad2ee99afb6dbff032a18345e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6e48ffbad2ee99afb6dbff032a18345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
@@ -326,8 +326,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 
 </div>
 </div>
-<a id="a27a9d943fc78f2af929108739cb2e45c" name="a27a9d943fc78f2af929108739cb2e45c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27a9d943fc78f2af929108739cb2e45c">&#9670;&#160;</a></span>size_type</h2>
+<a id="a0132791da5e6aa76babfdb6a5cabce42" name="a0132791da5e6aa76babfdb6a5cabce42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0132791da5e6aa76babfdb6a5cabce42">&#9670;&#160;</a></span>size_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -991,7 +991,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#a27a9d943fc78f2af929108739cb2e45c">size_type</a></td>
+          <td> const -&gt; <a class="el" href="#a0132791da5e6aa76babfdb6a5cabce42">size_type</a></td>
         </tr>
       </table>
   </td>
@@ -1405,8 +1405,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 
 </div>
 </div>
-<a id="ae3ea68d664f87d83d4371776d4651ba6" name="ae3ea68d664f87d83d4371776d4651ba6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3ea68d664f87d83d4371776d4651ba6">&#9670;&#160;</a></span>copy_to()</h2>
+<a id="a9c58e0d404b820502e296ea17f7ee3fa" name="a9c58e0d404b820502e296ea17f7ee3fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c58e0d404b820502e296ea17f7ee3fa">&#9670;&#160;</a></span>copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1424,7 +1424,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>array_index</em></span>&#160;) const -&gt; void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>array_index</em></span>&#160;) const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1481,8 +1481,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 
 </div>
 </div>
-<a id="a242b756de120fce9b8dc225857b9b528" name="a242b756de120fce9b8dc225857b9b528"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a242b756de120fce9b8dc225857b9b528">&#9670;&#160;</a></span>insert() <span class="overload">[1/2]</span></h2>
+<a id="aa6ddc9efeea13e6e2bdd295a64443eb6" name="aa6ddc9efeea13e6e2bdd295a64443eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ddc9efeea13e6e2bdd295a64443eb6">&#9670;&#160;</a></span>insert() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1495,7 +1495,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1528,8 +1528,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 
 </div>
 </div>
-<a id="ad5ea33bd4a9331efe46bc82361f0ecf1" name="ad5ea33bd4a9331efe46bc82361f0ecf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5ea33bd4a9331efe46bc82361f0ecf1">&#9670;&#160;</a></span>insert() <span class="overload">[2/2]</span></h2>
+<a id="a180ef833941d2b74d4d3eda5f193431f" name="a180ef833941d2b74d4d3eda5f193431f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180ef833941d2b74d4d3eda5f193431f">&#9670;&#160;</a></span>insert() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1542,7 +1542,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1656,8 +1656,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 
 </div>
 </div>
-<a id="a3546939b35df60be863f352e13bbe1fa" name="a3546939b35df60be863f352e13bbe1fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3546939b35df60be863f352e13bbe1fa">&#9670;&#160;</a></span>remove_at()</h2>
+<a id="a625f361e0bae40969530882eaf88c70b" name="a625f361e0bae40969530882eaf88c70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625f361e0bae40969530882eaf88c70b">&#9670;&#160;</a></span>remove_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1670,7 +1670,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::remove_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> -&gt; void</td>
         </tr>
       </table>
@@ -1920,8 +1920,8 @@ template&lt;class init_key_t, typename init_value_t&gt; </div>
 
 </div>
 </div>
-<a id="a540de8a286600704ce4a2cc2b8d1a979" name="a540de8a286600704ce4a2cc2b8d1a979"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a540de8a286600704ce4a2cc2b8d1a979">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<a id="a9aca5685f4a1f769d4cef9f7f1f8c964" name="a9aca5685f4a1f769d4cef9f7f1f8c964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aca5685f4a1f769d4cef9f7f1f8c964">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1934,7 +1934,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const -&gt; const value_t &amp;</td>
         </tr>
       </table>
@@ -1965,8 +1965,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 
 </div>
 </div>
-<a id="a2654aec2786ec50f1bff1b6d1d627689" name="a2654aec2786ec50f1bff1b6d1d627689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2654aec2786ec50f1bff1b6d1d627689">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<a id="ab91bfc4db4ad3e0d44521290f1623b81" name="ab91bfc4db4ad3e0d44521290f1623b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91bfc4db4ad3e0d44521290f1623b81">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1979,7 +1979,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> -&gt; value_t &amp;</td>
         </tr>
       </table>

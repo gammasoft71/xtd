@@ -234,7 +234,7 @@ Public Aliases</h2></td></tr>
 <div class="line">    box_collection(<span class="keyword">const</span> std::initializer_list&lt;program::box&gt;&amp; boxes) : boxes_(boxes) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Public Properties :</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> boxes_.count();}</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> boxes_.count();}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#ad32651c33d58e31a9ed27c4ab355900e">is_read_only</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line">    </div>
@@ -260,7 +260,7 @@ Public Aliases</h2></td></tr>
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#a5bc7c1ff91f78376ba9ad47eee0307c5">copy_to</a>(array&lt;program::box&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> array_index)<span class="keyword"> const override </span>{boxes_.copy_to(array, array_index);}</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#acc39fddeef76601fcc890bcf49e9531d">copy_to</a>(array&lt;program::box&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index)<span class="keyword"> const override </span>{boxes_.copy_to(array, array_index);}</div>
 <div class="line">    </div>
 <div class="line">    enumerator&lt;program::box&gt; get_enumerator()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> {new_ptr&lt;box_enumerator&gt;(boxes_)};}</div>
 <div class="line">    </div>
@@ -281,11 +281,11 @@ Public Aliases</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Public Methods :</span></div>
 <div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++index_ &lt; items_.count();}</div>
-<div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{index_ = size_object::max_value;}</div>
+<div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{index_ = usize_object::max_value;}</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">protected</span>:</div>
 <div class="line">    <span class="keyword">const</span> list&lt;program::box&gt;&amp; items_;</div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> index_ = size_object::max_value;</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> index_ = usize_object::max_value;</div>
 <div class="line">  };</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Defines two boxes as equal if they have the same dimensions.</span></div>
@@ -294,7 +294,7 @@ Public Aliases</h2></td></tr>
 <div class="line">    <span class="comment">// Public Methods :</span></div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> program::box&amp; b1, <span class="keyword">const</span> program::box&amp; b2) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> b1.height == b2.height &amp;&amp; b1.length == b2.length &amp;&amp; b1.width == b2.width;}</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> <a class="code hl_function" href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(box.height, box.length, box.width);}</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> <a class="code hl_function" href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(box.height, box.length, box.width);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Defines two boxes as equal if they have the same volume.</span></div>
@@ -303,7 +303,7 @@ Public Aliases</h2></td></tr>
 <div class="line">    <span class="comment">// Public Methods :</span></div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> program::box&amp; b1, <span class="keyword">const</span> program::box&amp; b2) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> b1.height * b1.length * b1.width == b2.height * b2.length * b2.width;}</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> <a class="code hl_function" href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> <a class="code hl_function" href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keyword">auto</span> hash_code = hash_code::combine(box.height, box.length, box.width);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;HC: {}&quot;</span>, hash_code);</div>
 <div class="line">      <span class="keywordflow">return</span> hash_code;</div>
@@ -355,7 +355,7 @@ Public Aliases</h2></td></tr>
 <div class="ttc" id="agroup__collections_html_ga7e82abf077905e1a534f62d8beb0e0a2"><div class="ttname"><a href="group__collections.html#ga7e82abf077905e1a534f62d8beb0e0a2">xtd::collections::ienumerator</a></div><div class="ttdeci">generic::ienumerator&lt; xtd::any_object &gt; ienumerator</div><div class="ttdoc">Supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> ienumerator.hpp:38</div></div>
 <div class="ttc" id="agroup__collections_html_gaf08e1c4c9551b36c55a00283f6431e5d"><div class="ttname"><a href="group__collections.html#gaf08e1c4c9551b36c55a00283f6431e5d">xtd::collections::iequality_comparer</a></div><div class="ttdeci">generic::iequality_comparer&lt; xtd::any_object &gt; iequality_comparer</div><div class="ttdoc">Defines methods to support the comparison of objects for equality.</div><div class="ttdef"><b>Definition</b> iequality_comparer.hpp:29</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
-<div class="ttc" id="agroup__types_html_ga0a27fff7b553c7e6da4a774353c8fa96"><div class="ttname"><a href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></div><div class="ttdeci">usize size</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:36</div></div>
+<div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000"><div class="ttname"><a href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">xtd::io::seek_origin::current</a></div><div class="ttdeci">@ current</div><div class="ttdoc">Specifies the current position within a stream.</div><div class="ttdef"><b>Definition</b> seek_origin.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91">xtd::console_key::h</a></div><div class="ttdeci">@ h</div><div class="ttdoc">The H key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:102</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">xtd::console_key::l</a></div><div class="ttdeci">@ l</div><div class="ttdoc">The L key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:110</div></div>
@@ -366,15 +366,16 @@ Public Aliases</h2></td></tr>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a0b6870aa765b78724e8120131cf32773"><div class="ttname"><a href="#a0b6870aa765b78724e8120131cf32773">xtd::collections::generic::remove</a></div><div class="ttdeci">virtual auto remove(const type_t &amp;item) -&gt; bool=0</div><div class="ttdoc">Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a301328e900575a6fa0ff1ec59ae16bc6"><div class="ttname"><a href="#a301328e900575a6fa0ff1ec59ae16bc6">xtd::collections::generic::sync_root</a></div><div class="ttdeci">virtual auto sync_root() const noexcept -&gt; const xtd::object &amp;=0</div><div class="ttdoc">Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a37a8895b723cf53251f0ac0fa490f137"><div class="ttname"><a href="#a37a8895b723cf53251f0ac0fa490f137">xtd::collections::generic::contains</a></div><div class="ttdeci">virtual auto contains(const type_t &amp;item) const noexcept -&gt; bool=0</div><div class="ttdoc">Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a5bc7c1ff91f78376ba9ad47eee0307c5"><div class="ttname"><a href="#a5bc7c1ff91f78376ba9ad47eee0307c5">xtd::collections::generic::copy_to</a></div><div class="ttdeci">virtual auto copy_to(xtd::array&lt; type_t &gt; &amp;array, xtd::size array_index) const -&gt; void=0</div><div class="ttdoc">Copies the elements of the xtd::collections::generic::icollection &lt;type_t&gt; to an xtd::array,...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a614e3ce4c6a572d1067a6c01dba5641c"><div class="ttname"><a href="#a614e3ce4c6a572d1067a6c01dba5641c">xtd::collections::generic::add</a></div><div class="ttdeci">virtual auto add(const type_t &amp;item) -&gt; void=0</div><div class="ttdoc">Adds an item to the xtd::collections::generic::icollection &lt;type_t&gt;.</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a7458d2f90cdba798da61c2da98a6eb1d"><div class="ttname"><a href="#a7458d2f90cdba798da61c2da98a6eb1d">xtd::collections::generic::count</a></div><div class="ttdeci">virtual auto count() const noexcept -&gt; xtd::usize=0</div><div class="ttdoc">Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_abfec637ebd3a0d04de0017bf8e4aff6d"><div class="ttname"><a href="#abfec637ebd3a0d04de0017bf8e4aff6d">xtd::collections::generic::is_synchronized</a></div><div class="ttdeci">virtual auto is_synchronized() const noexcept -&gt; bool=0</div><div class="ttdoc">Gets a value indicating whether access to the xtd::collections::generic::icollection &lt;type_t&gt; is sync...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_ac656399c5dd8237fe08b61de7aa00c73"><div class="ttname"><a href="#ac656399c5dd8237fe08b61de7aa00c73">xtd::collections::generic::clear</a></div><div class="ttdeci">virtual auto clear() -&gt; void=0</div><div class="ttdoc">Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_acc39fddeef76601fcc890bcf49e9531d"><div class="ttname"><a href="#acc39fddeef76601fcc890bcf49e9531d">xtd::collections::generic::copy_to</a></div><div class="ttdeci">virtual auto copy_to(xtd::array&lt; type_t &gt; &amp;array, xtd::usize array_index) const -&gt; void=0</div><div class="ttdoc">Copies the elements of the xtd::collections::generic::icollection &lt;type_t&gt; to an xtd::array,...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_ad32651c33d58e31a9ed27c4ab355900e"><div class="ttname"><a href="#ad32651c33d58e31a9ed27c4ab355900e">xtd::collections::generic::is_read_only</a></div><div class="ttdeci">virtual auto is_read_only() const noexcept -&gt; bool=0</div><div class="ttdoc">Gets a value indicating whether the xtd::collections::generic::icollection &lt;type_t&gt; is read-only.</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_afa5f26ea3b998768c61a908016b99fa3"><div class="ttname"><a href="#afa5f26ea3b998768c61a908016b99fa3">xtd::collections::generic::count</a></div><div class="ttdeci">virtual auto count() const noexcept -&gt; xtd::size=0</div><div class="ttdoc">Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.</div></div>
 <div class="ttc" id="anamespacextd_html_a9d02f9ee8b045cc4b36d45c12aec4e3d"><div class="ttname"><a href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">xtd::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:272</div></div>
 <div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>
-<div class="ttc" id="anamespacextd_html_af784ad455cb29f4a0d1ff618d224a03f"><div class="ttname"><a href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">xtd::get_hash_code</a></div><div class="ttdeci">xtd::size get_hash_code() const noexcept override</div><div class="ttdoc">Serves as a hash function for a particular type.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:296</div></div>
+<div class="ttc" id="anamespacextd_html_ac6d22d2703cdaac732df137dc46abd78"><div class="ttname"><a href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">xtd::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:241</div></div>
+<div class="ttc" id="anamespacextd_html_ae3fac1dc7497fb3abeb98589f00e987e"><div class="ttname"><a href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">xtd::get_hash_code</a></div><div class="ttdeci">xtd::usize get_hash_code() const noexcept override</div><div class="ttdoc">Serves as a hash function for a particular type.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:296</div></div>
 </div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface is the base interface for classes in the <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespace. </dd>
 <dd>
 The <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface extends <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;; <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; and <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; are more specialized interfaces that extend <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; implementation is a collection of key/value pairs, like the xtd::collections::generic::dictoinary &lt;key_t, value_t&gt; class. A <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; implementation is a collection of values, and its members can be accessed by index, like the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class. </dd>
@@ -449,7 +450,7 @@ Public Fields</h2></td></tr>
 <div class="line">    box_collection(<span class="keyword">const</span> std::initializer_list&lt;program::box&gt;&amp; boxes) : boxes_(boxes) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Public Properties :</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> boxes_.count();}</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> boxes_.count();}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#aedbf7bc49cecb49533bf1735d132038e">is_fixed_size</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#ad32651c33d58e31a9ed27c4ab355900e">is_read_only</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
@@ -467,7 +468,7 @@ Public Fields</h2></td></tr>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#ac656399c5dd8237fe08b61de7aa00c73">clear</a>()<span class="keyword"> override </span>{boxes_.clear();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#a37a8895b723cf53251f0ac0fa490f137">contains</a>(<span class="keyword">const</span> program::box&amp; item) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="#a6649364d996a6b88697c3e5bd568c6cd">index_of</a>(item) != <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;}</div>
+<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#a37a8895b723cf53251f0ac0fa490f137">contains</a>(<span class="keyword">const</span> program::box&amp; item) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="#aa28fdc29d164273b1d7bd98db7f70fbf">index_of</a>(item) != <a class="code hl_variable" href="group__system.html#gafc1840f9ae5425b9783c380d424eac43">npos</a>;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#a37a8895b723cf53251f0ac0fa490f137">contains</a>(<span class="keyword">const</span> program::box&amp; item, <span class="keyword">const</span> iequality_comparer&lt;program::box&gt;&amp; comparer) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> box : boxes_)</div>
@@ -475,36 +476,36 @@ Public Fields</h2></td></tr>
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#a5bc7c1ff91f78376ba9ad47eee0307c5">copy_to</a>(array&lt;program::box&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> array_index)<span class="keyword"> const override </span>{boxes_.copy_to(array, array_index);}</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#acc39fddeef76601fcc890bcf49e9531d">copy_to</a>(array&lt;program::box&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index)<span class="keyword"> const override </span>{boxes_.copy_to(array, array_index);}</div>
 <div class="line">    </div>
 <div class="line">    enumerator&lt;program::box&gt; get_enumerator()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> {new_ptr&lt;box_enumerator&gt;(boxes_)};}</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> <a class="code hl_function" href="#a6649364d996a6b88697c3e5bd568c6cd">index_of</a>(<span class="keyword">const</span> program::box&amp; item) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index  &lt; <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>(); ++index)</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="code hl_function" href="#aa28fdc29d164273b1d7bd98db7f70fbf">index_of</a>(<span class="keyword">const</span> program::box&amp; item) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index  &lt; <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>(); ++index)</div>
 <div class="line">        <span class="keywordflow">if</span> (boxes_[index] == item) <span class="keywordflow">return</span> index;</div>
-<div class="line">      <span class="keywordflow">return</span> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
+<div class="line">      <span class="keywordflow">return</span> <a class="code hl_variable" href="group__system.html#gafc1840f9ae5425b9783c380d424eac43">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#ac48d68fc6830210cea6cbace4922b6e5">insert</a>(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, <span class="keyword">const</span> program::box&amp; item)<span class="keyword"> override </span>{</div>
-<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#a306ea5ba5f458d2da438739758a17ee8">insert</a>(<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <span class="keyword">const</span> program::box&amp; item)<span class="keyword"> override </span>{</div>
+<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
 <div class="line">      boxes_.insert(index, item);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="#a0b6870aa765b78724e8120131cf32773">remove</a>(<span class="keyword">const</span> program::box&amp; item)<span class="keyword"> override </span>{<span class="keywordflow">return</span> boxes_.remove(item);}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#a6d885240aacee13d58e99f9bc3799ef3">remove_at</a>(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index)<span class="keyword"> override </span>{</div>
-<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="#a5950cdc0e2d4630b9f3109d302f4b403">remove_at</a>(<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index)<span class="keyword"> override </span>{</div>
+<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
 <div class="line">      boxes_.remove_at(index);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Public Operators :</span></div>
-<div class="line">    <span class="keyword">const</span> program::box&amp; operator [](<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index)<span class="keyword"> const override </span>{</div>
-<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
+<div class="line">    <span class="keyword">const</span> program::box&amp; operator [](<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index)<span class="keyword"> const override </span>{</div>
+<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> boxes_[index];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    program::box&amp; operator [](<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index)<span class="keyword"> override </span>{</div>
-<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#afa5f26ea3b998768c61a908016b99fa3">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
+<div class="line">    program::box&amp; operator [](<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index)<span class="keyword"> override </span>{</div>
+<div class="line">      <span class="keywordflow">if</span> (index &gt;= <a class="code hl_function" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a>()) <span class="keywordflow">throw</span> argument_out_of_range_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> boxes_[index];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -527,7 +528,7 @@ Public Fields</h2></td></tr>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">protected</span>:</div>
 <div class="line">    <span class="keyword">const</span> list&lt;program::box&gt;&amp; items_;</div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> index_ = size_object::max_value;</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> index_ = size_object::max_value;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Defines two boxes as equal if they have the same dimensions.</span></div>
@@ -536,7 +537,7 @@ Public Fields</h2></td></tr>
 <div class="line">    <span class="comment">// Public Methods :</span></div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> program::box&amp; b1, <span class="keyword">const</span> program::box&amp; b2) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> b1.height == b2.height &amp;&amp; b1.length == b2.length &amp;&amp; b1.width == b2.width;}</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> <a class="code hl_function" href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(box.height, box.length, box.width);}</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> <a class="code hl_function" href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(box.height, box.length, box.width);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Defines two boxes as equal if they have the same volume.</span></div>
@@ -545,7 +546,7 @@ Public Fields</h2></td></tr>
 <div class="line">    <span class="comment">// Public Methods :</span></div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> program::box&amp; b1, <span class="keyword">const</span> program::box&amp; b2) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> b1.height * b1.length * b1.width == b2.height * b2.length * b2.width;}</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> <a class="code hl_function" href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> <a class="code hl_function" href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">get_hash_code</a>(<span class="keyword">const</span> program::box&amp; box) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keyword">auto</span> hash_code = hash_code::combine(box.height, box.length, box.width);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;HC: {}&quot;</span>, hash_code);</div>
 <div class="line">      <span class="keywordflow">return</span> hash_code;</div>
@@ -555,7 +556,7 @@ Public Fields</h2></td></tr>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86aebf78b512222fe4dcd14e7d5060a15b0">display</a>(<span class="keyword">const</span> box_collection&amp; boxes) {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nheight  length  width   hash code&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; boxes.count(); ++index)</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{,-6}  {,-6}  {,-6}  {}&quot;</span>, boxes[index].height, boxes[index].length, boxes[index].width, boxes[index].<a class="code hl_function" href="namespacextd.html#af784ad455cb29f4a0d1ff618d224a03f">get_hash_code</a>());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{,-6}  {,-6}  {,-6}  {}&quot;</span>, boxes[index].height, boxes[index].length, boxes[index].width, boxes[index].<a class="code hl_function" href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">get_hash_code</a>());</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Results by manipulating the iterator directly:</span></div>
 <div class="line">    </div>
@@ -598,10 +599,10 @@ Public Fields</h2></td></tr>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Contains 8x12x10 by dimensions: false</span></div>
 <div class="line"><span class="comment">// Contains 8x12x10 by volume: true</span></div>
-<div class="ttc" id="agroup__system_html_ga94bb9e7be783a1b9d24894b3b23859e6"><div class="ttname"><a href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">xtd::npos</a></div><div class="ttdeci">constexpr xtd::size npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a6649364d996a6b88697c3e5bd568c6cd"><div class="ttname"><a href="#a6649364d996a6b88697c3e5bd568c6cd">xtd::collections::generic::index_of</a></div><div class="ttdeci">virtual auto index_of(const type_t &amp;item) const noexcept -&gt; xtd::size=0</div><div class="ttdoc">Determines the index of a specific item in the xtd::collections::generic::ilist &lt;type_t&gt;.</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a6d885240aacee13d58e99f9bc3799ef3"><div class="ttname"><a href="#a6d885240aacee13d58e99f9bc3799ef3">xtd::collections::generic::remove_at</a></div><div class="ttdeci">virtual auto remove_at(xtd::size index) -&gt; void=0</div><div class="ttdoc">Removes the xtd::collections::generic::ilist &lt;type_t&gt; item at the specified index.</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_ac48d68fc6830210cea6cbace4922b6e5"><div class="ttname"><a href="#ac48d68fc6830210cea6cbace4922b6e5">xtd::collections::generic::insert</a></div><div class="ttdeci">virtual auto insert(xtd::size index, const type_t &amp;item) -&gt; void=0</div><div class="ttdoc">Inserts an item to the xtd::collections::generic::ilist &lt;type_t&gt; at the specified index.</div></div>
+<div class="ttc" id="agroup__system_html_gafc1840f9ae5425b9783c380d424eac43"><div class="ttname"><a href="group__system.html#gafc1840f9ae5425b9783c380d424eac43">xtd::npos</a></div><div class="ttdeci">constexpr xtd::usize npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a306ea5ba5f458d2da438739758a17ee8"><div class="ttname"><a href="#a306ea5ba5f458d2da438739758a17ee8">xtd::collections::generic::insert</a></div><div class="ttdeci">virtual auto insert(xtd::usize index, const type_t &amp;item) -&gt; void=0</div><div class="ttdoc">Inserts an item to the xtd::collections::generic::ilist &lt;type_t&gt; at the specified index.</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a5950cdc0e2d4630b9f3109d302f4b403"><div class="ttname"><a href="#a5950cdc0e2d4630b9f3109d302f4b403">xtd::collections::generic::remove_at</a></div><div class="ttdeci">virtual auto remove_at(xtd::usize index) -&gt; void=0</div><div class="ttdoc">Removes the xtd::collections::generic::ilist &lt;type_t&gt; item at the specified index.</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_aa28fdc29d164273b1d7bd98db7f70fbf"><div class="ttname"><a href="#aa28fdc29d164273b1d7bd98db7f70fbf">xtd::collections::generic::index_of</a></div><div class="ttdeci">virtual auto index_of(const type_t &amp;item) const noexcept -&gt; xtd::usize=0</div><div class="ttdoc">Determines the index of a specific item in the xtd::collections::generic::ilist &lt;type_t&gt;.</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_aedbf7bc49cecb49533bf1735d132038e"><div class="ttname"><a href="#aedbf7bc49cecb49533bf1735d132038e">xtd::collections::generic::is_fixed_size</a></div><div class="ttdeci">virtual auto is_fixed_size() const noexcept -&gt; bool=0</div><div class="ttdoc">Gets a value indicating whether the xtd::collections::generic::ilist &lt;type_t&gt; has a fixed size.</div></div>
 </div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; interface is the base interface for classes in the <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespace. </dd>
 <dd>
@@ -609,24 +610,24 @@ The <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf
 <dd>
 If neither the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; interface nor the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; interface meet the requirements of the required collection, derive the new collection class from the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; interface instead for more flexibility. */ template&lt;typename type_t&gt; class ilist : public <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">icollection&lt;type_t&gt;</a> { public: /</dd></dl>
 <p>/**</p>
-<p>Represents a value that is not a valid position in a collection. </p><dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">xtd::size</a>. </dd></dl>
+<p>Represents a value that is not a valid position in a collection. </p><dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {1, 2, 3};</div>
 <div class="line"><span class="keywordflow">if</span> (items.index_of(42) == items.npos)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
 </div><!-- fragment --> </dd></dl>
 </td></tr>
-<tr class="memitem:a90be5a954cd7749688bff036e4860b1a" id="r_a90be5a954cd7749688bff036e4860b1a"><td class="memItemLeft"><a id="a90be5a954cd7749688bff036e4860b1a" name="a90be5a954cd7749688bff036e4860b1a"></a>
-static constexpr <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><b>npos</b></td></tr>
-<tr class="memitem:a25ac66da24781c8f473172c459e7c845" id="r_a25ac66da24781c8f473172c459e7c845"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a25ac66da24781c8f473172c459e7c845">bpos</a></td></tr>
-<tr class="memdesc:a25ac66da24781c8f473172c459e7c845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the first valid element in a collection.  <br /></td></tr>
-<tr class="memitem:a41c8075ccd3e1a938b7e1dd201ab6411" id="r_a41c8075ccd3e1a938b7e1dd201ab6411"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a41c8075ccd3e1a938b7e1dd201ab6411">epos</a></td></tr>
-<tr class="memdesc:a41c8075ccd3e1a938b7e1dd201ab6411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
+<tr class="memitem:a0e1bf3b0344e7494b2a747acbe36e717" id="r_a0e1bf3b0344e7494b2a747acbe36e717"><td class="memItemLeft"><a id="a0e1bf3b0344e7494b2a747acbe36e717" name="a0e1bf3b0344e7494b2a747acbe36e717"></a>
+static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><b>npos</b></td></tr>
+<tr class="memitem:abf90a8489301c27e8633fd9a430e937b" id="r_abf90a8489301c27e8633fd9a430e937b"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#abf90a8489301c27e8633fd9a430e937b">bpos</a></td></tr>
+<tr class="memdesc:abf90a8489301c27e8633fd9a430e937b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the first valid element in a collection.  <br /></td></tr>
+<tr class="memitem:a963bf7dacd0ad56b9e20fecfde87bb34" id="r_a963bf7dacd0ad56b9e20fecfde87bb34"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a963bf7dacd0ad56b9e20fecfde87bb34">epos</a></td></tr>
+<tr class="memdesc:a963bf7dacd0ad56b9e20fecfde87bb34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:afa5f26ea3b998768c61a908016b99fa3" id="r_afa5f26ea3b998768c61a908016b99fa3"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afa5f26ea3b998768c61a908016b99fa3">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>=0</td></tr>
-<tr class="memdesc:afa5f26ea3b998768c61a908016b99fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a7458d2f90cdba798da61c2da98a6eb1d" id="r_a7458d2f90cdba798da61c2da98a6eb1d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a7458d2f90cdba798da61c2da98a6eb1d">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>=0</td></tr>
+<tr class="memdesc:a7458d2f90cdba798da61c2da98a6eb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:ad32651c33d58e31a9ed27c4ab355900e" id="r_ad32651c33d58e31a9ed27c4ab355900e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad32651c33d58e31a9ed27c4ab355900e">is_read_only</a> () const noexcept -&gt; bool=0</td></tr>
 <tr class="memdesc:ad32651c33d58e31a9ed27c4ab355900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
 <tr class="memitem:abfec637ebd3a0d04de0017bf8e4aff6d" id="r_abfec637ebd3a0d04de0017bf8e4aff6d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#abfec637ebd3a0d04de0017bf8e4aff6d">is_synchronized</a> () const noexcept -&gt; bool=0</td></tr>
@@ -644,25 +645,25 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:ac656399c5dd8237fe08b61de7aa00c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items from the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a37a8895b723cf53251f0ac0fa490f137" id="r_a37a8895b723cf53251f0ac0fa490f137"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a37a8895b723cf53251f0ac0fa490f137">contains</a> (const type_t &amp;item) const noexcept -&gt; bool=0</td></tr>
 <tr class="memdesc:a37a8895b723cf53251f0ac0fa490f137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; contains a specific value.  <br /></td></tr>
-<tr class="memitem:a5bc7c1ff91f78376ba9ad47eee0307c5" id="r_a5bc7c1ff91f78376ba9ad47eee0307c5"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a5bc7c1ff91f78376ba9ad47eee0307c5">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> array_index) const -&gt; void=0</td></tr>
-<tr class="memdesc:a5bc7c1ff91f78376ba9ad47eee0307c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
+<tr class="memitem:acc39fddeef76601fcc890bcf49e9531d" id="r_acc39fddeef76601fcc890bcf49e9531d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#acc39fddeef76601fcc890bcf49e9531d">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index) const -&gt; void=0</td></tr>
+<tr class="memdesc:acc39fddeef76601fcc890bcf49e9531d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
 <tr class="memitem:a0b6870aa765b78724e8120131cf32773" id="r_a0b6870aa765b78724e8120131cf32773"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a0b6870aa765b78724e8120131cf32773">remove</a> (const type_t &amp;item) -&gt; bool=0</td></tr>
 <tr class="memdesc:a0b6870aa765b78724e8120131cf32773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec" title="Defines size, enumerators, and synchronization methods for all nongeneric collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a6649364d996a6b88697c3e5bd568c6cd" id="r_a6649364d996a6b88697c3e5bd568c6cd"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a6649364d996a6b88697c3e5bd568c6cd">index_of</a> (const type_t &amp;item) const noexcept -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>=0</td></tr>
-<tr class="memdesc:a6649364d996a6b88697c3e5bd568c6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:ac48d68fc6830210cea6cbace4922b6e5" id="r_ac48d68fc6830210cea6cbace4922b6e5"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac48d68fc6830210cea6cbace4922b6e5">insert</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index, const type_t &amp;item) -&gt; void=0</td></tr>
-<tr class="memdesc:ac48d68fc6830210cea6cbace4922b6e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an item to the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; at the specified index.  <br /></td></tr>
-<tr class="memitem:a6d885240aacee13d58e99f9bc3799ef3" id="r_a6d885240aacee13d58e99f9bc3799ef3"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a6d885240aacee13d58e99f9bc3799ef3">remove_at</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) -&gt; void=0</td></tr>
-<tr class="memdesc:a6d885240aacee13d58e99f9bc3799ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; item at the specified index.  <br /></td></tr>
+<tr class="memitem:aa28fdc29d164273b1d7bd98db7f70fbf" id="r_aa28fdc29d164273b1d7bd98db7f70fbf"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aa28fdc29d164273b1d7bd98db7f70fbf">index_of</a> (const type_t &amp;item) const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>=0</td></tr>
+<tr class="memdesc:aa28fdc29d164273b1d7bd98db7f70fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a306ea5ba5f458d2da438739758a17ee8" id="r_a306ea5ba5f458d2da438739758a17ee8"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a306ea5ba5f458d2da438739758a17ee8">insert</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, const type_t &amp;item) -&gt; void=0</td></tr>
+<tr class="memdesc:a306ea5ba5f458d2da438739758a17ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an item to the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; at the specified index.  <br /></td></tr>
+<tr class="memitem:a5950cdc0e2d4630b9f3109d302f4b403" id="r_a5950cdc0e2d4630b9f3109d302f4b403"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a5950cdc0e2d4630b9f3109d302f4b403">remove_at</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; void=0</td></tr>
+<tr class="memdesc:a5950cdc0e2d4630b9f3109d302f4b403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the <a class="el" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; item at the specified index.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:aa5d0cd85c3ed83daefacb8b8ca53f8df" id="r_aa5d0cd85c3ed83daefacb8b8ca53f8df"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aa5d0cd85c3ed83daefacb8b8ca53f8df">operator[]</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> index) const -&gt; const type_t &amp;=0</td></tr>
-<tr class="memdesc:aa5d0cd85c3ed83daefacb8b8ca53f8df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:ac6d90298b52f4a319d5d7c0c2c935422" id="r_ac6d90298b52f4a319d5d7c0c2c935422"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac6d90298b52f4a319d5d7c0c2c935422">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; const type_t &amp;=0</td></tr>
+<tr class="memdesc:ac6d90298b52f4a319d5d7c0c2c935422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="afa5f26ea3b998768c61a908016b99fa3" name="afa5f26ea3b998768c61a908016b99fa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa5f26ea3b998768c61a908016b99fa3">&#9670;&#160;</a></span>count()</h2>
+<a id="a7458d2f90cdba798da61c2da98a6eb1d" name="a7458d2f90cdba798da61c2da98a6eb1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7458d2f90cdba798da61c2da98a6eb1d">&#9670;&#160;</a></span>count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -674,7 +675,7 @@ Public Operators</h2></td></tr>
           <td class="memname">virtual auto xtd::collections::generic::count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -921,8 +922,8 @@ In the absence of a <span class="tt">synchronized</span> method on a collection,
 
 </div>
 </div>
-<a id="a5bc7c1ff91f78376ba9ad47eee0307c5" name="a5bc7c1ff91f78376ba9ad47eee0307c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bc7c1ff91f78376ba9ad47eee0307c5">&#9670;&#160;</a></span>copy_to()</h2>
+<a id="acc39fddeef76601fcc890bcf49e9531d" name="acc39fddeef76601fcc890bcf49e9531d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc39fddeef76601fcc890bcf49e9531d">&#9670;&#160;</a></span>copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -938,7 +939,7 @@ In the absence of a <span class="tt">synchronized</span> method on a collection,
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>array_index</em></span>&#160;) const -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>array_index</em></span>&#160;) const -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1037,8 +1038,8 @@ In collections of contiguous elements, such as lists, the elements that follow t
 
 </div>
 </div>
-<a id="a6649364d996a6b88697c3e5bd568c6cd" name="a6649364d996a6b88697c3e5bd568c6cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6649364d996a6b88697c3e5bd568c6cd">&#9670;&#160;</a></span>index_of()</h2>
+<a id="aa28fdc29d164273b1d7bd98db7f70fbf" name="aa28fdc29d164273b1d7bd98db7f70fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28fdc29d164273b1d7bd98db7f70fbf">&#9670;&#160;</a></span>index_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,7 +1051,7 @@ In collections of contiguous elements, such as lists, the elements that follow t
           <td class="memname">virtual auto xtd::collections::generic::index_of </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -1072,8 +1073,8 @@ In collections of contiguous elements, such as lists, the elements that follow t
 
 </div>
 </div>
-<a id="ac48d68fc6830210cea6cbace4922b6e5" name="ac48d68fc6830210cea6cbace4922b6e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac48d68fc6830210cea6cbace4922b6e5">&#9670;&#160;</a></span>insert()</h2>
+<a id="a306ea5ba5f458d2da438739758a17ee8" name="a306ea5ba5f458d2da438739758a17ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306ea5ba5f458d2da438739758a17ee8">&#9670;&#160;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1084,7 +1085,7 @@ In collections of contiguous elements, such as lists, the elements that follow t
         <tr>
           <td class="memname">virtual auto xtd::collections::generic::insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1120,8 +1121,8 @@ In collections of contiguous elements, such as lists, the elements that follow t
 
 </div>
 </div>
-<a id="a6d885240aacee13d58e99f9bc3799ef3" name="a6d885240aacee13d58e99f9bc3799ef3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d885240aacee13d58e99f9bc3799ef3">&#9670;&#160;</a></span>remove_at()</h2>
+<a id="a5950cdc0e2d4630b9f3109d302f4b403" name="a5950cdc0e2d4630b9f3109d302f4b403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5950cdc0e2d4630b9f3109d302f4b403">&#9670;&#160;</a></span>remove_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1132,7 +1133,7 @@ In collections of contiguous elements, such as lists, the elements that follow t
         <tr>
           <td class="memname">virtual auto xtd::collections::generic::remove_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> -&gt;  void</td>
         </tr>
       </table>
@@ -1161,8 +1162,8 @@ In collections of contiguous elements, such as lists, the elements that follow t
 
 </div>
 </div>
-<a id="aa5d0cd85c3ed83daefacb8b8ca53f8df" name="aa5d0cd85c3ed83daefacb8b8ca53f8df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5d0cd85c3ed83daefacb8b8ca53f8df">&#9670;&#160;</a></span>operator[]()</h2>
+<a id="ac6d90298b52f4a319d5d7c0c2c935422" name="ac6d90298b52f4a319d5d7c0c2c935422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d90298b52f4a319d5d7c0c2c935422">&#9670;&#160;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1173,7 +1174,7 @@ In collections of contiguous elements, such as lists, the elements that follow t
         <tr>
           <td class="memname">auto xtd::collections::generic::operator[] </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const -&gt;  const type_t &amp;</td>
         </tr>
       </table>
@@ -1204,8 +1205,8 @@ In collections of contiguous elements, such as lists, the elements that follow t
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="a25ac66da24781c8f473172c459e7c845" name="a25ac66da24781c8f473172c459e7c845"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25ac66da24781c8f473172c459e7c845">&#9670;&#160;</a></span>bpos</h2>
+<a id="abf90a8489301c27e8633fd9a430e937b" name="abf90a8489301c27e8633fd9a430e937b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf90a8489301c27e8633fd9a430e937b">&#9670;&#160;</a></span>bpos</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1214,7 +1215,7 @@ In collections of contiguous elements, such as lists, the elements that follow t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::collections::generic::bpos</td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::collections::generic::bpos</td>
         </tr>
       </table>
   </td>
@@ -1225,17 +1226,17 @@ In collections of contiguous elements, such as lists, the elements that follow t
 </div><div class="memdoc">
 
 <p>Represents the index of the first valid element in a collection. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a> points to the first accessible element of a collection. It is equivalent to <span class="tt">0</span>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gafc1840f9ae5425b9783c380d424eac43" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#ga323200da261db3b59ca924918bb29e30" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a> points to the first accessible element of a collection. It is equivalent to <span class="tt">0</span>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">bpos</a>]); <span class="comment">// Prints 10</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">bpos</a> + 1]); <span class="comment">// Prints Z0</span></div>
-<div class="ttc" id="agroup__system_html_gae5b63301b69ce281ee7db98e2e61941f"><div class="ttname"><a href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f">xtd::bpos</a></div><div class="ttdeci">constexpr xtd::size bpos</div><div class="ttdoc">Represents the index of the firsy valid element in a collection.</div><div class="ttdef"><b>Definition</b> bpos.hpp:25</div></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#ga323200da261db3b59ca924918bb29e30">bpos</a>]); <span class="comment">// Prints 10</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#ga323200da261db3b59ca924918bb29e30">bpos</a> + 1]); <span class="comment">// Prints Z0</span></div>
+<div class="ttc" id="agroup__system_html_ga323200da261db3b59ca924918bb29e30"><div class="ttname"><a href="group__system.html#ga323200da261db3b59ca924918bb29e30">xtd::bpos</a></div><div class="ttdeci">constexpr xtd::usize bpos</div><div class="ttdoc">Represents the index of the firsy valid element in a collection.</div><div class="ttdef"><b>Definition</b> bpos.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a41c8075ccd3e1a938b7e1dd201ab6411" name="a41c8075ccd3e1a938b7e1dd201ab6411"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41c8075ccd3e1a938b7e1dd201ab6411">&#9670;&#160;</a></span>epos</h2>
+<a id="a963bf7dacd0ad56b9e20fecfde87bb34" name="a963bf7dacd0ad56b9e20fecfde87bb34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963bf7dacd0ad56b9e20fecfde87bb34">&#9670;&#160;</a></span>epos</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1244,7 +1245,7 @@ In collections of contiguous elements, such as lists, the elements that follow t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::collections::generic::epos</td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::collections::generic::epos</td>
         </tr>
       </table>
   </td>
@@ -1255,13 +1256,13 @@ In collections of contiguous elements, such as lists, the elements that follow t
 </div><div class="memdoc">
 
 <p>Represents the index of the last valid element in a collection. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gafc1840f9ae5425b9783c380d424eac43" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gac8bcbd8c06b90f2b0935bc0b414bdf66" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#gac8bcbd8c06b90f2b0935bc0b414bdf66" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a>]); <span class="comment">// Prints 40</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
-<div class="ttc" id="agroup__system_html_gaa99759e66edbafa9f3ed0b523c924b5c"><div class="ttname"><a href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c">xtd::epos</a></div><div class="ttdeci">constexpr xtd::size epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#gac8bcbd8c06b90f2b0935bc0b414bdf66">epos</a>]); <span class="comment">// Prints 40</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="group__system.html#gac8bcbd8c06b90f2b0935bc0b414bdf66">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
+<div class="ttc" id="agroup__system_html_gac8bcbd8c06b90f2b0935bc0b414bdf66"><div class="ttname"><a href="group__system.html#gac8bcbd8c06b90f2b0935bc0b414bdf66">xtd::epos</a></div><div class="ttdeci">constexpr xtd::usize epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {10, 20, 30, 40};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~1_z]); <span class="comment">// Prints 40</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~2_z]); <span class="comment">// Prints 30</span></div>
