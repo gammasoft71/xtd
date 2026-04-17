@@ -19,7 +19,7 @@ private:
     co_return "Hello, World!";
   }
   
-  static auto get_size(auto message) -> task<size> {
+  static auto get_size(auto message) -> task<usize> {
     co_return message.length();
   }
 };

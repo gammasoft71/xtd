@@ -24,7 +24,7 @@ auto main()->int {
   console::write_line("│ xtd::ptrdiff             = {,2} │ xtd::ptrdiff_object      = {,2} │ n/a                                                     │ ptrdiff_t          = {,2} │", sizeof_<xtd::ptrdiff>(), sizeof_<xtd::ptrdiff_object>(), sizeof_<ptrdiff_t>());
   console::write_line("│ xtd::sbyte               = {,2} │ xtd::sbyte_object        = {,2} │ std::int8_t                                        = {,2} │ char               = {,2} │", sizeof_<xtd::sbyte>(), sizeof_<xtd::sbyte_object>(), sizeof_<std::int8_t>(), sizeof_<char>());
   console::write_line("│ xtd::single              = {,2} │ xtd::single_object       = {,2} │ std::float_t                                       = {,2} │ float              = {,2} │", sizeof_<xtd::single>(), sizeof_<xtd::single_object>(), sizeof_<std::float_t>(), sizeof_<float>());
-  console::write_line("│ xtd::size                = {,2} │ xtd::size_object         = {,2} │ n/a                                                     │ size_t             = {,2} │", sizeof_<xtd::size>(), sizeof_<xtd::size_object>(), sizeof_<size_t>());
+  console::write_line("│ xtd::usize                = {,2} │ xtd::size_object         = {,2} │ n/a                                                     │ size_t             = {,2} │", sizeof_<xtd::usize>(), sizeof_<xtd::size_object>(), sizeof_<size_t>());
   console::write_line("│ xtd::string              = {,2} │ xtd::string              = {,2} │ std::string                                        = {,2} │ n/a                     │", sizeof_<xtd::string>(), sizeof_<xtd::string>(), sizeof_<std::string>());
   console::write_line("│ xtd::time_span           = {,2} │ xtd::time_span           = {,2} │ std::chrono::time_point<std::chrono::system_clock> = {,2} │ n/a                     │", sizeof_<xtd::time_span>(), sizeof_<xtd::time_span>(), sizeof_<std::chrono::time_point<std::chrono::system_clock>>());
   console::write_line("│ xtd::uint16              = {,2} │ xtd::uint16_object       = {,2} │ std::uint16_t                                      = {,2} │ unsigned short     = {,2} │", sizeof_<xtd::uint16>(), sizeof_<xtd::uint16_object>(), sizeof_<std::uint16_t>(), sizeof_<unsigned short>());
@@ -65,7 +65,7 @@ auto main()->int {
 // │ xtd::ptrdiff             =  8 │ xtd::ptrdiff_object      = 40 │ n/a                                                     │ ptrdiff_t          =  8 │
 // │ xtd::sbyte               =  1 │ xtd::sbyte_object        = 40 │ std::int8_t                                        =  1 │ char               =  1 │
 // │ xtd::single              =  4 │ xtd::single_object       = 40 │ std::float_t                                       =  4 │ float              =  4 │
-// │ xtd::size                =  8 │ xtd::size_object         = 40 │ n/a                                                     │ size_t             =  8 │
+// │ xtd::usize                =  8 │ xtd::size_object         = 40 │ n/a                                                     │ size_t             =  8 │
 // │ xtd::string              = 64 │ xtd::string              = 64 │ std::string                                        = 24 │ n/a                     │
 // │ xtd::time_span           = 40 │ xtd::time_span           = 40 │ std::chrono::time_point<std::chrono::system_clock> =  8 │ n/a                     │
 // │ xtd::uint16              =  2 │ xtd::uint16_object       = 40 │ std::uint16_t                                      =  2 │ unsigned short     =  2 │

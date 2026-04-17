@@ -41,7 +41,7 @@ sizeof :
 │ xtd::ptrdiff             =  8 │ xtd::ptrdiff_object      = 40 │ n/a                                                     │ ptrdiff_t          =  8 │
 │ xtd::sbyte               =  1 │ xtd::sbyte_object        = 40 │ std::int8_t                                        =  1 │ char               =  1 │
 │ xtd::single              =  4 │ xtd::single_object       = 40 │ std::float_t                                       =  4 │ float              =  4 │
-│ xtd::size                =  8 │ xtd::size_object         = 40 │ n/a                                                     │ size_t             =  8 │
+│ xtd::usize                =  8 │ xtd::size_object         = 40 │ n/a                                                     │ size_t             =  8 │
 │ xtd::string              = 64 │ xtd::string              = 64 │ std::string                                        = 24 │ n/a                     │
 │ xtd::time_span           = 40 │ xtd::time_span           = 40 │ std::chrono::time_point<std::chrono::system_clock> =  8 │ n/a                     │
 │ xtd::uint16              =  2 │ xtd::uint16_object       = 40 │ std::uint16_t                                      =  2 │ unsigned short     =  2 │

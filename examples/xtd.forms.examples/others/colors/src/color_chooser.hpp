@@ -137,8 +137,8 @@ namespace colors_example {
       selected_color_changed(*this, e);
     }
     
-    xtd::size previous_selected_index_ = npos;
-    xtd::size selected_index_ = npos;
+    xtd::usize previous_selected_index_ = npos;
+    xtd::usize selected_index_ = npos;
     drawing::color selected_color_ = drawing::color::empty;
     choice colors_choice_;
     panel main_panel_;

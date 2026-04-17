@@ -29,7 +29,7 @@ namespace wiggly_example {
     }
     
     forms::timer timer;
-    xtd::size step = 0;
+    xtd::usize step = 0;
   };
   
   class form1 : public form {

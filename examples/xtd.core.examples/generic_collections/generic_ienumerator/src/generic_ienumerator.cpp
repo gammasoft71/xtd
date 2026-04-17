@@ -21,11 +21,11 @@ public:
   
   const ::box& current() const override {return boxes[cur_index];}
   bool move_next() override {return ++cur_index < boxes.count();}
-  void reset() override {cur_index = box_integer<size>::max_value;}
+  void reset() override {cur_index = box_integer<usize>::max_value;}
   
 private:
   const box_collection& boxes;
-  size cur_index = box_integer<size>::max_value;
+  size cur_index = box_integer<usize>::max_value;
 };
 
 auto main() -> int {
