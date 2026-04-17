@@ -6,22 +6,22 @@ using namespace xtd;
 using namespace tunit;
 
 template<typename type_t>
-size_t get_max_value() {return 0;}
+usize get_max_value() {return 0;}
 
 template<>
-size_t get_max_value<bool>() {return 1;}
+usize get_max_value<bool>() {return 1;}
 
 template<>
-size_t get_max_value<int>() {return 2147483647;}
+usize get_max_value<int>() {return 2147483647;}
 
 template<>
-size_t get_max_value<sbyte>() {return 127;}
+usize get_max_value<sbyte>() {return 127;}
 
 template<>
-size_t get_max_value<long int>() {return 9223372036854775807;}
+usize get_max_value<long int>() {return 9223372036854775807;}
 
 template<>
-size_t get_max_value<byte>() {return 255;}
+usize get_max_value<byte>() {return 255;}
 
 namespace unit_tests {
   // Used test_class_attribute<> to add unit test suit.
@@ -34,7 +34,7 @@ namespace unit_tests {
   template<typename type_t>
   class test : public test_class {
     void test_method_(test_max_value) {
-      static auto expected_max_values = std::map<std::string, size_t> {{typeid(bool).name(), std::numeric_limits<bool>::max()}, {typeid(int).name(), std::numeric_limits<int>::max()}, {typeid(long int).name(), std::numeric_limits<long int>::max()}, {typeid(sbyte).name(), std::numeric_limits<sbyte>::max()}};
+      static auto expected_max_values = std::map<std::string, usize> {{typeid(bool).name(), std::numeric_limits<bool>::max()}, {typeid(int).name(), std::numeric_limits<int>::max()}, {typeid(long int).name(), std::numeric_limits<long int>::max()}, {typeid(sbyte).name(), std::numeric_limits<sbyte>::max()}};
       
       if (expected_max_values.find(typeid(type_t).name()) == expected_max_values.end())
         assert::fail("expect max value for this type is not defined.");

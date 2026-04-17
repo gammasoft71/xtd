@@ -73,7 +73,7 @@ protected:
   
 private:
   const list<float> sinuses_ = {.0f, .38f, .71f, .92f, 1.0f, .92f, .71f, .38f, .0f, -.38f, -.71f, -.92f, -1.0f, -.92f, -.71f, -.38f};
-  size_t index_ = 0;
+  usize index_ = 0;
 };
 
 class max_min_signal_generator : public signal_generator_base {
@@ -86,7 +86,7 @@ protected:
   
 private:
   const list<float> sinuses_ = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f};
-  size_t index_ = 0;
+  usize index_ = 0;
 };
 
 class graph_control : public user_control {
@@ -207,8 +207,8 @@ public:
     return *this;
   }
   
-  size_t signals_max_size() const noexcept {return signals_max_size_;}
-  graph_control& signals_max_size(size_t value) {
+  usize signals_max_size() const noexcept {return signals_max_size_;}
+  graph_control& signals_max_size(usize value) {
     signals_max_size_ = value;
     while (values_.count() > signals_max_size_)
       values_.remove_at(0);
@@ -277,7 +277,7 @@ private:
   std::optional<color> y_axis_line_color_;
   bool y_axis_line_visible_ = true;
   float y_axis_line_width_ = 3.0f;
-  size_t signals_max_size_ = 48;
+  usize signals_max_size_ = 48;
 };
 
 class form1 : public form {

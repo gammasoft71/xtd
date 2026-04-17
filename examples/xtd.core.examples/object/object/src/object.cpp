@@ -17,7 +17,7 @@ public:
   }
   
   // Return the XOR of the x and y fields.
-  size_t get_hash_code() const noexcept override {
+  usize get_hash_code() const noexcept override {
     return x ^ y;
   }
   

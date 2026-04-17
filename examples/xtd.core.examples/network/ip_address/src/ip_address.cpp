@@ -63,7 +63,7 @@ private:
         console::write("address_bytes: ");
         
         auto bytes = cur_add.get_address_bytes();
-        for (size_t i = 0; i < bytes.length(); i++)
+        for (auto i = 0_z; i < bytes.length(); i++)
           console::write(bytes[i]);
         console::write_line("\r\n");
       }

@@ -91,7 +91,7 @@ namespace example {
       button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).length() - 1);
     }
     
-    size_t current_image_index = 0;
+    usize current_image_index = 0;
     choice choice_theme;
     choice choice_context;
     picture_box picture_16;

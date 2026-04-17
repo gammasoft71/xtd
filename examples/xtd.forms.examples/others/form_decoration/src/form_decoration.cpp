@@ -14,7 +14,7 @@ public:
     form_border_style_choice.location({10, 10});
     form_border_style_choice.width(300);
     form_border_style_choice.items().add_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
-    form_border_style_choice.selected_index(as<size_t>(form_border_style()));
+    form_border_style_choice.selected_index(as<usize>(form_border_style()));
     form_border_style_choice.selected_index_changed += delegate_ {
       form_border_style(as<forms::form_border_style>(form_border_style_choice.selected_index()));
     };

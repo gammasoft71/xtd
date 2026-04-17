@@ -67,8 +67,8 @@ namespace colors_example {
       main_panel_.auto_scroll(true);
     }
     
-    size_t selected_index() const {return selected_index_;}
-    void selected_index(size_t value) {
+    usize selected_index() const {return selected_index_;}
+    void selected_index(usize value) {
       if (selected_index_ == value) return;
       selected_index_ = value;
       on_selected_index_changed(event_args::empty);
@@ -84,7 +84,7 @@ namespace colors_example {
     event<color_chooser, event_handler> selected_index_changed;
     event<color_chooser, event_handler> selected_color_changed;
     
-    static const size_t npos = std::numeric_limits<size_t>::max();
+    static const usize npos = std::numeric_limits<usize>::max();
     
   private:
     void add_color_panel(const drawing::color& color) {
@@ -112,7 +112,7 @@ namespace colors_example {
     
     void on_color_panel_click(object & sender, const event_args & e) {
       selected_index(npos);
-      selected_index(colors_.count() - 1 - as<size_t>(as<control>(sender).tag()));
+      selected_index(colors_.count() - 1 - as<usize>(as<control>(sender).tag()));
     }
     
     void on_selected_index_changed(const event_args& e) {
@@ -131,7 +131,7 @@ namespace colors_example {
     void on_selected_color_changed(const event_args& e) {
       for (auto color : colors_)
         if (color->color() == selected_color_) {
-          selected_index(colors_.count() - 1 - as<size_t>(color->tag()));
+          selected_index(colors_.count() - 1 - as<usize>(color->tag()));
           break;
         }
       selected_color_changed(*this, e);

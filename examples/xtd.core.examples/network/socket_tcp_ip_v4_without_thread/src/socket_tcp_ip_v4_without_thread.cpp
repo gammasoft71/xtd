@@ -25,7 +25,7 @@ auto main() -> int {
     }
   };
   
-  const size_t client_count = 10;
+  const auto client_count = 10_z;
   
   auto server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
   server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});

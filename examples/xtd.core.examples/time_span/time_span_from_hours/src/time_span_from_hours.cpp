@@ -1,18 +1,16 @@
 #include <xtd/xtd>
 
 void gen_time_span_from_hours(double hours) {
-  // Crée un objet time_span et une chaîne string à partir
-  // d'un nombre d'heures.
+  // Creates a `time_span` object and a string from a number of hours.
   time_span interval = time_span::from_hours(hours);
-  string timeInterval = interval.to_string();
+  string time_interval = interval.to_string();
   
-  // Remplit la fin de la chaîne string avec des espaces si elle
-  // ne contient pas de millisecondes.
-  size_t pIndex = timeInterval.index_of(':');
-  pIndex = timeInterval.index_of( '.', pIndex );
-  if (pIndex < 0) timeInterval += "        ";
+  // Fills the end of the string with spaces if it does not contain any milliseconds.
+  auto index = time_interval.index_of(':');
+  index = time_interval.index_of( '.', index );
+  if (index < 0) time_interval += "        ";
   
-  console::write_line( "{0,21}{1,26}", hours, timeInterval );
+  console::write_line( "{0,21}{1,26}", hours, time_interval );
 }
 
 int main( ) {

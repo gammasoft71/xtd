@@ -14,7 +14,7 @@ public:
   bool equals(const user& other) const noexcept override {return id_ == other.id_ && name_ == other.name_;}
 
   // Overriding the get_hash_code method from object
-  size_t get_hash_code() const noexcept override {return hash_code::combine(id_, name_);}
+  usize get_hash_code() const noexcept override {return hash_code::combine(id_, name_);}
     
   // Overriding the ToString method for better readability
   string to_string() const noexcept override {return string::format("user: id = {}, name = {}", id_, name_);}

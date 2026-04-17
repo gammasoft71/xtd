@@ -58,7 +58,7 @@ namespace example {
       }
     }
     
-    size_t current_image_index = 0;
+    usize current_image_index = 0;
     image_list pictures;
     picture_box picture;
     button button_previous;

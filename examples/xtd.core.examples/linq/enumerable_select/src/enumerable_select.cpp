@@ -3,7 +3,7 @@
 auto main() -> int {
   auto fruits = array<string> {"apple", "banana", "mango", "orange", "passionfruit", "grape"};
   
-  const auto& query = fruits.select<std::tuple<size_t, string>>([](const string& fruit, size_t index) {
+  const auto& query = fruits.select<std::tuple<usize, string>>([](const string& fruit, usize index) {
     return std::make_tuple(index, fruit.substring(0, index));
   });
   
