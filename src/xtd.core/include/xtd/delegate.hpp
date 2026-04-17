@@ -112,7 +112,7 @@ namespace xtd {
     /// @{
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    [[nodiscard]] auto count() const noexcept -> xtd::size {return data_->functions.size();}
+    [[nodiscard]] auto count() const noexcept -> xtd::usize {return data_->functions.size();}
     
     /// @brief Gets the delegates array
     /// @return The delegates array.
@@ -124,7 +124,7 @@ namespace xtd {
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    [[nodiscard]] auto size() const noexcept -> xtd::size {return count();}
+    [[nodiscard]] auto size() const noexcept -> xtd::usize {return count();}
     /// @}
     
     /// @name Public Methods
@@ -179,7 +179,7 @@ namespace xtd {
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
     [[nodiscard]] auto equals(const delegate& other) const noexcept -> bool override {
       if (data_->functions.size() != other.data_->functions.size()) return false;
-      for (auto i = xtd::size {0}; i < data_->functions.size(); i++)
+      for (auto i = xtd::usize {0}; i < data_->functions.size(); i++)
         if (!are_equals(data_->functions[i], other.data_->functions[i])) return false;
       return true;
     }
@@ -262,7 +262,7 @@ namespace xtd {
         } else return result_t{};
       }
       
-      for (auto i = xtd::size {0}; i < data_->functions.size() - 1; i++) {
+      for (auto i = xtd::usize {0}; i < data_->functions.size() - 1; i++) {
         if (data_->functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
         data_->functions[i]();
       }
@@ -453,7 +453,7 @@ namespace xtd {
     /// @{
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    [[nodiscard]] auto count() const noexcept -> xtd::size {return data_->functions.size() + data_->no_arguments_functions.size();}
+    [[nodiscard]] auto count() const noexcept -> xtd::usize {return data_->functions.size() + data_->no_arguments_functions.size();}
     
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
@@ -469,7 +469,7 @@ namespace xtd {
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    [[nodiscard]] auto size() const noexcept -> xtd::size {return count();}
+    [[nodiscard]] auto size() const noexcept -> xtd::usize {return count();}
     /// @}
     
     /// @name Public Methods
@@ -524,9 +524,9 @@ namespace xtd {
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
     [[nodiscard]] auto equals(const delegate& other) const noexcept -> bool override {
       if (data_->functions.size() != other.data_->functions.size() || data_->no_arguments_functions.size() != other.data_->no_arguments_functions.size()) return false;
-      for (auto i = xtd::size {0}; i < data_->no_arguments_functions.size(); i++)
+      for (auto i = xtd::usize {0}; i < data_->no_arguments_functions.size(); i++)
         if (!are_equals(data_->no_arguments_functions[i], other.data_->no_arguments_functions[i])) return false;
-      for (auto i = xtd::size {0}; i < data_->functions.size(); i++)
+      for (auto i = xtd::usize {0}; i < data_->functions.size(); i++)
         if (!are_equals(data_->functions[i], other.data_->functions[i])) return false;
       return true;
     }
@@ -627,7 +627,7 @@ namespace xtd {
       }
       
       if (data_->no_arguments_functions.size()) {
-        for (auto i = xtd::size {0}; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
+        for (auto i = xtd::usize {0}; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
           if (data_->no_arguments_functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
           data_->no_arguments_functions[i]();
         }
@@ -638,7 +638,7 @@ namespace xtd {
         }
       }
       
-      for (auto i = xtd::size {0}; i < data_->functions.size() - 1; i++) {
+      for (auto i = xtd::usize {0}; i < data_->functions.size() - 1; i++) {
         if (data_->functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
         data_->functions[i](arguments...);
       }

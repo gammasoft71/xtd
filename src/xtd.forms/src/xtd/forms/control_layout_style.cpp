@@ -89,7 +89,7 @@ bool control_layout_style::equals(const control_layout_style& other) const noexc
   return data_->size_type == other.data_->size_type && data_->expanded == other.data_->expanded && data_->align == other.data_->align;
 }
 
-xtd::size control_layout_style::get_hash_code() const noexcept {
+xtd::usize control_layout_style::get_hash_code() const noexcept {
   return hash_code::combine(data_->size_type, data_->expanded, data_->align);
 }
 

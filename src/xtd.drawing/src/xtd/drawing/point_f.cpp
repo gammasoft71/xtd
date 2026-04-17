@@ -43,7 +43,7 @@ bool point_f::equals(const point_f& other) const noexcept {
   return x == other.x && y == other.y;
 }
 
-xtd::size point_f::get_hash_code() const noexcept {
+xtd::usize point_f::get_hash_code() const noexcept {
   return hash_code::combine(x, y);
 }
 

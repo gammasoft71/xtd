@@ -16,7 +16,7 @@ namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, xtd::size rank_, typename allocator_t>
+  /// template<typename type_t, xtd::usize rank_, typename allocator_t>
   /// class array : public xtd::basic_array<type_t, allocator_t>;
   /// ```
   /// @par Header
@@ -41,7 +41,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<typename type_t = std::nullptr_t, xtd::size rank_size = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+  template<typename type_t = std::nullptr_t, xtd::usize rank_size = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   class array;
   
   /// @brief Base object that represent array.

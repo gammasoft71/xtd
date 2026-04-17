@@ -95,7 +95,7 @@ bool background_image::equals(const background_image& other) const noexcept {
   return image_type_ == other.image_type_ && url_ == other.url_ && colors_ == other.colors_ && angle_ == other.angle_;
 }
 
-xtd::size background_image::get_hash_code() const noexcept {
+xtd::usize background_image::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(image_type_);
   result.add(url_);

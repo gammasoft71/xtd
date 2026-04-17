@@ -18,7 +18,7 @@ namespace xtd::collections::generic::helpers::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<xtd::size>(), typeof_<raw_queue<int>::size_type>());
+      assert::are_equal(typeof_<xtd::usize>(), typeof_<raw_queue<int>::size_type>());
     }
     
     auto test_method_(reference) {

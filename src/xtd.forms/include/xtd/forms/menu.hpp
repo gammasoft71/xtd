@@ -126,7 +126,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.

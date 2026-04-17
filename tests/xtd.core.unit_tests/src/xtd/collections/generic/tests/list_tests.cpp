@@ -33,7 +33,7 @@ namespace xtd::collections::generic::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<xtd::size>(), typeof_<list<int>::size_type>());
+      assert::are_equal(typeof_<xtd::usize>(), typeof_<list<int>::size_type>());
       assert::are_equal(typeof_<list<bool>::base_type::size_type>(), typeof_<list<int>::size_type>());
     }
     

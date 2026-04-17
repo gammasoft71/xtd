@@ -52,7 +52,7 @@ namespace xtd {
       /// @brief Gets the column number represented by this object.
       /// @return The column number represented by this object.
       /// @remarks Returns 0 when the column number is unknown.
-      [[nodiscard]] auto column() const noexcept -> xtd::size;
+      [[nodiscard]] auto column() const noexcept -> xtd::usize;
       /// @brief Gets the name of the current source file represented by this object, represented as a null-terminated byte string.
       /// @return The name of the current source file represented by this object.
       /// @remarks Returns xtd::string::empty_string (`""`) when the source file is unknown.
@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Gets the line number represented by this object.
       /// @return The line number represented by this object.
       /// @remarks Returns 0 when the line number is unknown.
-      [[nodiscard]] auto line() const noexcept -> xtd::size;
+      [[nodiscard]] auto line() const noexcept -> xtd::usize;
       /// @}
       
       /// @name Public Methods
@@ -86,7 +86,7 @@ namespace xtd {
       /// @}
       
     private:
-      source_location(const xtd::string& file, xtd::size line, const xtd::string& func, xtd::size column);
+      source_location(const xtd::string& file, xtd::usize line, const xtd::string& func, xtd::usize column);
       struct data;
       xtd::ptr<data> data_;
     };

@@ -133,7 +133,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override {return hash_code::combine(value);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(value);}
     
     /// @brief Converts this instance to byte.
     /// @return A new xtd::byte object converted from this instance.

@@ -73,7 +73,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    virtual xtd::size get_hash_code() const noexcept;
+    virtual xtd::usize get_hash_code() const noexcept;
     
     /// @brief Gets the type of the current instance.
     /// @return The type instance that represents the exact runtime type of the current instance.

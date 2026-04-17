@@ -35,8 +35,8 @@ namespace xtd {
     using allocator_type = xtd::collections::generic::helpers::allocator<value_type>;
     /// @brief Represents the array base type.
     using base_type = typename xtd::collections::generic::helpers::raw_array<value_type, allocator_type>::base_type;
-    /// @brief Represents the array size type (usually xtd::size).
-    using size_type = xtd::size;
+    /// @brief Represents the array size type (usually xtd::usize).
+    using size_type = xtd::usize;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
     using difference_type = xtd::ptrdiff;
     /// @brief Represents the reference of array value type.
@@ -416,7 +416,7 @@ namespace xtd {
     /// @remarks If comparer is provided, the elements of the xtd::basic_array <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::basic_array::count; in the worst case it is an O(n ^ 2) operation.
-    auto sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) -> basic_array<type_t>& {
+    auto sort(xtd::usize index, xtd::usize count, const xtd::collections::generic::icomparer<type_t>& comparer) -> basic_array<type_t>& {
       if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       data_->items.increment_version();
       std::sort(data_->items.begin(), data_->items.end(), xtd::collections::generic::helpers::lesser<type_t> {comparer});
@@ -577,9 +577,9 @@ namespace xtd {
     auto clear() -> void override {fill(value_type {});}
     
     template<typename value_t>
-    [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, const xtd::array<size_type>& indexes) -> xtd::size;
+    [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, const xtd::array<size_type>& indexes) -> xtd::usize;
     template<typename value_t>
-    [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index) -> xtd::size;
+    [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, xtd::usize rank, xtd::usize index) -> xtd::usize;
     
     auto insert(size_type index, const type_t& value) -> void override {}
     
@@ -595,7 +595,7 @@ namespace xtd {
     }
     
     template<typename value_t>
-    [[nodiscard]] static auto to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index) -> xtd::string;
+    [[nodiscard]] static auto to_string(const xtd::basic_array<value_t>& items, xtd::usize rank, xtd::usize base_index) -> xtd::string;
     
     struct array_data {
       xtd::collections::generic::helpers::raw_array < value_type > items;

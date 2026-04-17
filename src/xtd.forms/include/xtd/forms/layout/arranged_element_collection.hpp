@@ -78,8 +78,8 @@ namespace xtd {
         using base_type = typename xtd::collections::generic::list<value_type>::base_type;
         /// @brief Represents the list base type.
         using const_base_type = const base_type;
-        /// @brief Represents the list size type (usually xtd::size).
-        using size_type = xtd::size;
+        /// @brief Represents the list size type (usually xtd::usize).
+        using size_type = xtd::usize;
         /// @brief Represents the reference of list value type.
         using reference = type_t&;
         /// @brief Represents the const reference of list value type.
@@ -96,14 +96,14 @@ namespace xtd {
         
         /// @{
         /// @brief Represents a value that is not a valid position in a collection.
-        /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+        /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
         /// @par Examples
         /// ```cpp
         /// auto controls = control_collection {label1, button1, choice1};
         /// if (items.index_of(label1) == items.npos)
         ///   console::write_line("Value not found");
         /// ```
-        inline static constexpr xtd::size npos = xtd::npos;
+        inline static constexpr xtd::usize npos = xtd::npos;
         
         /// @brief Represents the index of the first valid element in a collection.
         /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
@@ -113,7 +113,7 @@ namespace xtd {
         /// controls[bpos].width(240); // change the with of label1 to 240
         /// controls[bpos + 1].width(120); // change the with of button1 to 120
         /// ```
-        static inline constexpr xtd::size bpos = 0;
+        static inline constexpr xtd::usize bpos = 0;
         
         /// @brief Represents the index of the last valid element in a collection.
         /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
@@ -131,7 +131,7 @@ namespace xtd {
         /// controls[~1_z].width(240); // change the with of choice1 to 240
         /// controls[~2_z].width(120); // change the with of button1 to 120
         /// ```
-        static inline constexpr xtd::size epos = npos - 1;
+        static inline constexpr xtd::usize epos = npos - 1;
         /// @}
         
         /// @name Public Constructors
@@ -306,7 +306,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::forms::layout::arranged_element_collection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::forms::layout::arranged_element_collection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {
+        void copy_to(xtd::array<type_t>& array, xtd::usize array_index) const override {
           if (array_index + count() > array.length()) helpers::throw_helper::throws(helpers::exception_case::argument_out_of_range);
           auto i = size_type {0};
           for (const type_t& item : self_) {
@@ -319,7 +319,7 @@ namespace xtd {
         /// @return A xtd::collections::generic::.enumerator for the xtd::forms::layout::arranged_element_collection <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
           struct arranged_element_collection_enumerator : public xtd::collections::generic::ienumerator<type_t> {
-            explicit arranged_element_collection_enumerator(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
+            explicit arranged_element_collection_enumerator(const arranged_element_collection& items, xtd::usize version) : items_(items), version_(version) {}
             
             const type_t& current() const override {
               if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
@@ -349,7 +349,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
-        virtual void insert(xtd::size index, const type_t& value) {
+        virtual void insert(xtd::usize index, const type_t& value) {
           if (index > count()) helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->inserting = true;
           items().insert(items().begin() + index, value);
@@ -394,7 +394,7 @@ namespace xtd {
         
         /// @brief Reverses the order of the elements in the entire xtd::collections::generic::list <type_t>.
         /// @par Examples
-        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::usize, xtd::usize) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
         /// @include generic_list_reverse.cpp
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
@@ -404,7 +404,7 @@ namespace xtd {
         /// @param count The number of elements in the range to reverse.
         /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
         /// @par Examples
-        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::usize, xtd::usize) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
         /// @include generic_list_reverse.cpp
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.

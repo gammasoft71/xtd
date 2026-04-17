@@ -22,7 +22,7 @@ namespace xtd::collections::generic::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<xtd::size>(), typeof_<queue<int>::size_type>());
+      assert::are_equal(typeof_<xtd::usize>(), typeof_<queue<int>::size_type>());
       assert::are_equal(typeof_<queue<bool>::base_type::size_type>(), typeof_<queue<int>::size_type>());
     }
     

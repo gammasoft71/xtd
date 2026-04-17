@@ -18,8 +18,8 @@ namespace {
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
     const auto source_rgb = reinterpret_cast<const xtd::drawing::helpers::rgb*>(source_image.rgb());
     
-    if (static_cast<xtd::size>(source_width) > xtd::usize_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image width is greater than 281474976710655 pixels");
-    if (static_cast<xtd::size>(source_height) > xtd::usize_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image height is greater than 281474976710655 pixels");
+    if (static_cast<xtd::usize>(source_width) > xtd::usize_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image width is greater than 281474976710655 pixels");
+    if (static_cast<xtd::usize>(source_height) > xtd::usize_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image height is greater than 281474976710655 pixels");
     
     const auto result_width = size.width;
     const auto result_height = size.height;
@@ -27,12 +27,12 @@ namespace {
     auto result_alpha = reinterpret_cast<xtd::drawing::helpers::alpha*>(result_image.alpha());
     auto result_rgb = reinterpret_cast<xtd::drawing::helpers::rgb*>(result_image.rgb());
     
-    const auto delta_x = (static_cast<xtd::size>(source_width) << 16) / result_width;
-    const auto delta_y = (static_cast<xtd::size>(source_height) << 16) / result_height;
+    const auto delta_x = (static_cast<xtd::usize>(source_width) << 16) / result_width;
+    const auto delta_y = (static_cast<xtd::usize>(source_height) << 16) / result_height;
     
-    auto source_y = xtd::size {0};
+    auto source_y = xtd::usize {0};
     for (auto y = 0; y < result_height; ++y) {
-      auto source_x = xtd::size {0};
+      auto source_x = xtd::usize {0};
       for (auto x = 0; x < result_width; ++x) {
         const auto result_pixel = y * result_width + x;
         const auto source_pixel = static_cast<xtd::int32>((source_y >> 16) * source_width + (source_x >> 16));

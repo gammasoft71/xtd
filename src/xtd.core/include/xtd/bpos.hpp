@@ -22,6 +22,6 @@ namespace xtd {
   /// console::write_line(items[bpos]); // Prints 10
   /// console::write_line(items[bpos + 1]); // Prints 20
   /// ```
-  inline constexpr xtd::size bpos = 0;
+  inline constexpr xtd::usize bpos = 0;
   /// @}
 }

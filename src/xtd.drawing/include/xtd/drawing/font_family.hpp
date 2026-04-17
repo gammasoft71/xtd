@@ -117,7 +117,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Returns the line spacing, in design units, of the font_family of the specified style. The line spacing is the vertical distance between the base lines of two consecutive lines of text.
       /// @param style A font_style that contains style information for the font.

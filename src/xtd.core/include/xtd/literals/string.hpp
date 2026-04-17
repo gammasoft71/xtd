@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd::string s = "This is a "_s + "simple test"_s;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_s(const char* s, xtd::size n) -> xtd::string;
+    [[nodiscard]] auto operator""_s(const char* s, xtd::usize n) -> xtd::string;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -38,7 +38,7 @@ namespace xtd {
     /// xtd::string s = u8"This is a "_s + u8"simple test"_s;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_s(const char8* s, xtd::size n) -> xtd::string;
+    [[nodiscard]] auto operator""_s(const char8* s, xtd::usize n) -> xtd::string;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -51,7 +51,7 @@ namespace xtd {
     /// xtd::string s = U"This is a "_s + U"simple test"_s;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_s(const char16* s, xtd::size n) -> xtd::string;
+    [[nodiscard]] auto operator""_s(const char16* s, xtd::usize n) -> xtd::string;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -64,7 +64,7 @@ namespace xtd {
     /// xtd::string s = u"This is a "_s + u"simple test"_s;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_s(const char32* s, xtd::size n) -> xtd::string;
+    [[nodiscard]] auto operator""_s(const char32* s, xtd::usize n) -> xtd::string;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -77,7 +77,7 @@ namespace xtd {
     /// xtd::string s = L"This is a "_s + L"simple test"_s;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_s(const wchar* s, xtd::size n) -> xtd::string;
+    [[nodiscard]] auto operator""_s(const wchar* s, xtd::usize n) -> xtd::string;
     
     /// @brief Used to convert the specified value to xtd::string with a binary format.
     /// @par Namespace

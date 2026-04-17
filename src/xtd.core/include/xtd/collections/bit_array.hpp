@@ -42,14 +42,14 @@ namespace xtd {
     private:
       struct boolean_ref {
         boolean_ref() noexcept = default;
-        bool& get_boolean_ref(bool value, xtd::size index) noexcept;
-        const bool& get_boolean_ref(bool value, xtd::size index) const noexcept;
+        bool& get_boolean_ref(bool value, xtd::usize index) noexcept;
+        const bool& get_boolean_ref(bool value, xtd::usize index) const noexcept;
         void from_boolean(bit_array& parent) noexcept;
         
-        inline static constexpr xtd::size npos = xtd::npos;
-        inline static constexpr xtd::size bpos = xtd::bpos;
-        inline static constexpr xtd::size epos = xtd::epos;
-        mutable xtd::size index = npos;
+        inline static constexpr xtd::usize npos = xtd::npos;
+        inline static constexpr xtd::usize bpos = xtd::bpos;
+        inline static constexpr xtd::usize epos = xtd::epos;
+        mutable xtd::usize index = npos;
         mutable bool value = false;
       };
       
@@ -61,8 +61,8 @@ namespace xtd {
       using value_type = bool;
       /// @brief Represents the list base type.
       using base_type =  typename xtd::collections::generic::list<int32>;
-      /// @brief Represents the list size type (usually xtd::size).
-      using size_type = xtd::size;
+      /// @brief Represents the list size type (usually xtd::usize).
+      using size_type = xtd::usize;
       /// @brief Represents the list difference type (usually xtd::ptrdiff).
       using difference_type = xtd::ptrdiff;
       /// @brief Represents the reference of list value type.
@@ -82,14 +82,14 @@ namespace xtd {
       /// @param length_ The number of bit values in the new xtd::collections::bit_array.
       /// @exception xtd::argument_out_of_range_exception length_ is less than 0.
       /// @remarks This constructor is an O(n) operation, where n is length_.
-      explicit bit_array(xtd::size length) noexcept;
+      explicit bit_array(xtd::usize length) noexcept;
       
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that can hold the specified number of bit values, which are initially set to the specified value.
       /// @param length_ The number of bit values in the new xtd::collections::bit_array.
       /// @param defaultValueThe bool value to assign to each bit.
       /// @exception xtd::argument_out_of_range_exception length_ is less than 0.
       /// @remarks This constructor is an O(n) operation, where n is length_.
-      bit_array(xtd::size length, bool defaultValue) noexcept;
+      bit_array(xtd::usize length, bool defaultValue) noexcept;
       
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified initializer list of booleans.
       /// @param values An array of booleans to copy.
@@ -116,9 +116,9 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified [bitset](https://en.cppreference.com/w/cpp/utility/bitset).
       /// @param values A [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object that contains bit values.
       /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in values.
-      template<xtd::size length>
+      template<xtd::usize length>
       bit_array(const std::bitset<length>& bit_set) noexcept : bit_array(length) {
-        for (auto index = xtd::size {0}; index < length; ++index)
+        for (auto index = xtd::usize {0}; index < length; ++index)
           set(index, bit_set.test(index));
       }
       
@@ -140,11 +140,11 @@ namespace xtd {
       /// @{
       /// @brief Returns a [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object containing the Booleans contained in the current xtd::collections::bit_array.
       /// @return The [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object.
-      template<xtd::size length>
+      template<xtd::usize length>
       [[nodiscard]] auto bits() const noexcept -> std::bitset<length> {
         auto result = std::bitset<length> {};
         auto bits_count = xtd::math::min(length, count());
-        for (auto index = xtd::size {0}; index < bits_count; ++index)
+        for (auto index = xtd::usize {0}; index < bits_count; ++index)
           result[index] = self_[index];
         return result;
       }
@@ -153,7 +153,7 @@ namespace xtd {
       /// @return The [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool) object.
       [[nodiscard]] auto bits() const noexcept -> std::vector<bool> {
         auto result = std::vector<bool> {};
-        for (auto index = xtd::size {0}; index < count(); ++index)
+        for (auto index = xtd::usize {0}; index < count(); ++index)
           result[index] = self_[index];
         return result;
       }
@@ -161,16 +161,16 @@ namespace xtd {
       /// @brief Gets the number of elements contained in the xtd::collections::bit_array.
       /// @return The number of elements contained in the xtd::collections::bit_array.
       /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
-      [[nodiscard]] auto count() const noexcept -> xtd::size override;
+      [[nodiscard]] auto count() const noexcept -> xtd::usize override;
       
       /// @brief Gets the number of elements contained in the xtd::collections::bit_array.
       /// @return The number of elements contained in the xtd::collections::bit_array.
       /// @remarks xtd::collections::bit_array::length and xtd::collections::bit_array::count return the same value. xtd::collections::bit_array::length can be set to a specific value.
-      [[nodiscard]] auto length() const noexcept -> xtd::size;
+      [[nodiscard]] auto length() const noexcept -> xtd::usize;
       /// @brief Sets the number of elements contained in the xtd::collections::bit_array.
       /// @param value The number of elements contained in the xtd::collections::bit_array.
       /// @remarks xtd::collections::bit_array::length and xtd::collections::bit_array::count return the same value. xtd::collections::bit_array::length can be set to a specific value.
-      auto length(xtd::size value) -> void;
+      auto length(xtd::usize value) -> void;
       /// @}
       
       /// @name Public Methods
@@ -192,7 +192,7 @@ namespace xtd {
       /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::bit_array. The xtd::array must have zero-based indexing.
       /// @param index The zero-based index in array at which copying begins;
       /// @return Number of elements copied.
-      auto copy_to(xtd::array<bool>& array, xtd::size index) const -> void override;
+      auto copy_to(xtd::array<bool>& array, xtd::usize index) const -> void override;
       
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param value The xtd::collections::bit_array to compare with the current object.
@@ -209,14 +209,14 @@ namespace xtd {
       /// @return The value of the bit at position index.
       /// @exception xtd::argument_out_of_range_exception index is less than zero. -or- index is greater than or equal to the number of elements in the xtd::collections::bit_array.
       /// @remarks This method is an O(1) operation.
-      [[nodiscard]] auto get(xtd::size index) const -> bool;
+      [[nodiscard]] auto get(xtd::usize index) const -> bool;
       
       /// @brief Gets the value of the bit at a specific position in the xtd::collections::bit_array.
       /// @param index The zero-based index of the value to get.
       /// @return The value of the bit at position index.
       /// @exception xtd::argument_out_of_range_exception index is less than zero. -or- index is greater than or equal to the number of elements in the xtd::collections::bit_array.
       /// @remarks This method is an O(1) operation.
-      [[nodiscard]] auto get(xtd::size index) -> bool&;
+      [[nodiscard]] auto get(xtd::usize index) -> bool&;
       
       /// @brief Returns an enumerator that iterates through a collection.
       /// @return An xtd::collections::generic::ienumerator object that can be used to iterate through the collection.
@@ -234,7 +234,7 @@ namespace xtd {
       /// @param count The number of shifts to make for each bit.
       /// @return The current xtd::collections::bit_array.
       /// @remarks The current xtd::collections::bit_array is updated and returned.
-      auto left_shift(xtd::size count) noexcept -> bit_array&;
+      auto left_shift(xtd::usize count) noexcept -> bit_array&;
       
       /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to `true` are changed to `false`, and elements set to `false` are changed to `true`.
       /// @return The current instance with inverted bit values.
@@ -253,14 +253,14 @@ namespace xtd {
       /// @param count The number of shifts to make for each bit.
       /// @return The current xtd::collections::bit_array.
       /// @remarks The current xtd::collections::bit_array is updated and returned.
-      auto right_shift(xtd::size count) noexcept -> bit_array&;
+      auto right_shift(xtd::usize count) noexcept -> bit_array&;
       
       /// @brief Sets the value of the bit at a specific position in the xtd::collections::bit_array.
       /// @param index The zero-based index of the value to get.
       /// @param value The bool value to assign to the bit.
       /// @exception xtd::argument_out_of_range_exception index is less than zero. -or- index is greater than or equal to the number of elements in the xtd::collections::bit_array.
       /// @remarks This method is an O(1) operation.
-      auto set(xtd::size index, bool value) -> void;
+      auto set(xtd::usize index, bool value) -> void;
       
       /// @brief Sets all bits in the xtd::collections::bit_array to the specified value.
       /// @param value The bool value to assign to all bits.
@@ -287,13 +287,13 @@ namespace xtd {
       /// @param index The zero-based index of the element to get.
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
-      auto operator [](xtd::size index) const -> const bool&;
+      auto operator [](xtd::usize index) const -> const bool&;
       
       /// @brief Gets or Sets the element at the specified index.
       /// @param index The zero-based index of the element to get.
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
-      auto operator [](xtd::size index) -> bool&;
+      auto operator [](xtd::usize index) -> bool&;
       
       /// @brief Performs the bitwise AND operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @param value The xtd::collections::bit_array with which to perform the bitwise AND operation.
@@ -350,26 +350,26 @@ namespace xtd {
       /// @param count The number of shifts to make for each bit.
       /// @return The new shifted xtd::collections::bit_array.
       /// @remarks The current xtd::collections::bit_array is not updated.
-      auto operator >>(xtd::size count) const noexcept -> bit_array;
+      auto operator >>(xtd::usize count) const noexcept -> bit_array;
       
       /// @brief The right shift operator shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
       /// @param count The number of shifts to make for each bit.
       /// @return The current xtd::collections::bit_array.
       /// @remarks The current xtd::collections::bit_array is updated and returned.
-      auto operator >>=(xtd::size count) noexcept -> bit_array&;
+      auto operator >>=(xtd::usize count) noexcept -> bit_array&;
       
       using xtd::collections::generic::icollection<bool>::operator <<;
       /// @brief The left shift operator shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
       /// @param count The number of shifts to make for each bit.
       /// @return The new shifted xtd::collections::bit_array.
       /// @remarks The current xtd::collections::bit_array is not updated.
-      auto operator <<(xtd::size count) const noexcept -> bit_array;
+      auto operator <<(xtd::usize count) const noexcept -> bit_array;
       
       /// @brief The left shift operator shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
       /// @param count The number of shifts to make for each bit.
       /// @return The current xtd::collections::bit_array.
       /// @remarks The current xtd::collections::bit_array is updated and returned.
-      auto operator <<=(xtd::size count) noexcept -> bit_array&;
+      auto operator <<=(xtd::usize count) noexcept -> bit_array&;
       /// @}
       
     private:
@@ -383,26 +383,26 @@ namespace xtd {
       auto remove(const bool&) -> bool override;
       
       auto flush() const noexcept -> void;
-      auto get_int32_array_length_from_bit_length(xtd::size n) const noexcept -> xtd::size;
-      auto get_list_length(xtd::size length_) const noexcept -> xtd::size;
-      auto get_list_position(xtd::size index) const noexcept -> xtd::size;
-      auto get_bit_position(xtd::size index) const noexcept -> xtd::size;
-      auto get_bit_value(xtd::size index) const noexcept -> bool;
-      auto set_bit_value(xtd::size index, bool value) noexcept -> void;
+      auto get_int32_array_length_from_bit_length(xtd::usize n) const noexcept -> xtd::usize;
+      auto get_list_length(xtd::usize length_) const noexcept -> xtd::usize;
+      auto get_list_position(xtd::usize index) const noexcept -> xtd::usize;
+      auto get_bit_position(xtd::usize index) const noexcept -> xtd::usize;
+      auto get_bit_value(xtd::usize index) const noexcept -> bool;
+      auto set_bit_value(xtd::usize index, bool value) noexcept -> void;
       
-      static constexpr xtd::size bits_per_byte = 8;
-      static constexpr xtd::size bits_per_int32 = 32;
-      static constexpr xtd::size bytes_per_int32 = 4;
-      static constexpr xtd::size bit_shift_per_int32 = 5;
+      static constexpr xtd::usize bits_per_byte = 8;
+      static constexpr xtd::usize bits_per_int32 = 32;
+      static constexpr xtd::usize bytes_per_int32 = 4;
+      static constexpr xtd::usize bit_shift_per_int32 = 5;
       mutable boolean_ref value_ref_;
       xtd::collections::generic::list<int32> bit_array_;
-      xtd::size length_ = 0;
+      xtd::usize length_ = 0;
     };
   }
 }
 
 /// @cond
-template<xtd::size size_>
+template<xtd::usize size_>
 inline auto xtd::linq::enumerable::as_enumerable(std::bitset<size_> source) {
   return xtd::collections::bit_array {source};
 }

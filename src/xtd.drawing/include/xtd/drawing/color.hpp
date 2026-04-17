@@ -673,7 +673,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
       /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.

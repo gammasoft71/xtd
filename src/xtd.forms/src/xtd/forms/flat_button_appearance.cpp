@@ -116,6 +116,6 @@ bool flat_button_appearance::equals(const flat_button_appearance& other) const n
   return data_->border_color == other.data_->border_color && data_->border_radius == other.data_->border_radius && data_->border_size == other.data_->border_size && data_->checked_back_color == other.data_->checked_back_color && data_->mouse_down_back_color == other.data_->mouse_down_back_color && data_->mouse_over_back_color == other.data_->mouse_over_back_color;
 }
 
-xtd::size flat_button_appearance::get_hash_code() const noexcept {
+xtd::usize flat_button_appearance::get_hash_code() const noexcept {
   return hash_code::combine(data_->border_color.value_or(drawing::color::empty), data_->border_radius.value_or(0), data_->border_size.value_or(0), data_->checked_back_color.value_or(drawing::color::empty), data_->mouse_down_back_color.value_or(drawing::color::empty), data_->mouse_over_back_color.value_or(drawing::color::empty));
 }

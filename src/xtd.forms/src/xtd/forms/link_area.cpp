@@ -36,7 +36,7 @@ bool link_area::equals(const link_area& other) const noexcept {
   return start_ == other.start_ && length_ == other.length_;
 }
 
-xtd::size link_area::get_hash_code() const noexcept {
+xtd::usize link_area::get_hash_code() const noexcept {
   return hash_code::combine(start_, length_);
 }
 

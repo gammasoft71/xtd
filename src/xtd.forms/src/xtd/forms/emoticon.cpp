@@ -72,7 +72,7 @@ bool emoticon::equals(const emoticon& other) const noexcept {
   return data_->name == other.data_->name && data_->codepoints == other.data_->codepoints;
 }
 
-xtd::size emoticon::get_hash_code() const noexcept {
+xtd::usize emoticon::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(data_->name);
   for (const auto& codepoint : data_->codepoints)

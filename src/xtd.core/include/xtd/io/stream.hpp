@@ -110,20 +110,20 @@ namespace xtd {
       /// @brief When overridden in a derived class, gets the length in bytes of the stream.
       /// @return The length of the stream in bytes.
       /// @exception xtd::not_supported_exception A class derived from xtd::io::stream does not support seeking and the length is unknown.
-      [[nodiscard]] virtual auto length() const -> xtd::size = 0;
+      [[nodiscard]] virtual auto length() const -> xtd::usize = 0;
       
       /// @brief When overridden in a derived class, gets the position within the current stream.
       /// @return The current position within the stream.
       /// @exception xtd::not_supported_exception The stream does not support seeking.
       /// @remarks The stream must support seeking to get or set the position. Use the xtd::io::stream::can_seek property to determine whether the stream supports seeking.
       /// @remarks Seeking to any location beyond the length of the stream is supported.
-      [[nodiscard]] virtual auto position() const -> xtd::size = 0;
+      [[nodiscard]] virtual auto position() const -> xtd::usize = 0;
       /// @brief When overridden in a derived class, sets the position within the current stream.
       /// @param value The current position within the stream.
       /// @exception xtd::not_supported_exception The stream does not support seeking.
       /// @remarks The stream must support seeking to get or set the position. Use the xtd::io::stream::can_seek property to determine whether the stream supports seeking.
       /// @remarks Seeking to any location beyond the length of the stream is supported.
-      virtual auto position(xtd::size value) -> void = 0;
+      virtual auto position(xtd::usize value) -> void = 0;
       
       /// @brief Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.
       /// @return A value, in milliseconds, that determines how long the stream will attempt to read before timing out.
@@ -163,7 +163,7 @@ namespace xtd {
       /// @brief Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.
       /// @param destination The stream to which the contents of the current memory stream will be copied.
       /// @param buffer_size The size of the buffer. This value must be greater than zero. The default size is 81920.
-      auto copy_to(std::ostream& destination, xtd::size buffer_size) -> void;
+      auto copy_to(std::ostream& destination, xtd::usize buffer_size) -> void;
       
       /// @brief When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
       /// exception xtd::io::io_exception An I/O error occurs.
@@ -172,8 +172,8 @@ namespace xtd {
       using std::iostream::read;
       /// @brief When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
       /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current source.
-      virtual auto read(xtd::span<xtd::byte>& buffer) -> xtd::size;
-      virtual auto read(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) -> xtd::size = 0;
+      virtual auto read(xtd::span<xtd::byte>& buffer) -> xtd::usize;
+      virtual auto read(xtd::array<xtd::byte>& buffer, xtd::usize offset, xtd::usize count) -> xtd::usize = 0;
       
       /// @brief Reads at least a minimum number of bytes from the current stream and advances the position within the stream by the number of bytes read.
       /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current stream.
@@ -183,7 +183,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `minimum_bytes` is greater than the length of `buffer`.
       /// @exception xtd::io::end_of_stream_exception `throw_on_end_of_stream` is `true` and the end of the stream is reached before reading `minimum_bytes` bytes of data.
       /// @remarks When `minimum_bytes` is 0 (zero), this read operation will be completed without waiting for available data in the stream.
-      auto read_at_least(xtd::array<xtd::byte>& buffer, xtd::size minimum_bytes, bool throw_on_end_of_stream = true) -> xtd::size;
+      auto read_at_least(xtd::array<xtd::byte>& buffer, xtd::usize minimum_bytes, bool throw_on_end_of_stream = true) -> xtd::usize;
       
       [[nodiscard]] virtual auto read_byte() -> xtd::int32;
       
@@ -199,13 +199,13 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception offset is outside the bounds of buffer.<br>-or-<br>The range specified by the combination of offset and count exceeds the length of buffer.
       /// @exception xtd::io::end_of_stream_exception `throw_on_end_of_stream` is `true` and the end of the stream is reached before reading `minimum_bytes` bytes of data.
       /// @remarks When `count` is 0 (zero), this read operation will be completed without waiting for available data in the stream.
-      auto read_exactly(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) -> void;
+      auto read_exactly(xtd::array<xtd::byte>& buffer, xtd::usize offset, xtd::usize count) -> void;
       
-      virtual auto set_length(xtd::size value) -> void = 0;
+      virtual auto set_length(xtd::usize value) -> void = 0;
       
       using std::iostream::write;
       virtual auto write(xtd::span<const xtd::byte> buffer) -> void;
-      virtual auto write(const xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) -> void = 0;
+      virtual auto write(const xtd::array<xtd::byte>& buffer, xtd::usize offset, xtd::usize count) -> void = 0;
       
       virtual auto write_byte(xtd::byte value) -> void;
       /// @}

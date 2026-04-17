@@ -38,7 +38,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.
-      using selected_index_collection = xtd::array<xtd::size>;
+      using selected_index_collection = xtd::array<xtd::usize>;
       
       /// @brief Represents the collection of selected items in the list_box.
       using selected_object_collection = xtd::array<item>;

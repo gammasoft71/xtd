@@ -100,7 +100,7 @@ bool icon::equals(const icon& other) const noexcept {
   return data_->handle == other.data_->handle;
 }
 
-xtd::size icon::get_hash_code() const noexcept {
+xtd::usize icon::get_hash_code() const noexcept {
   return hash_code::combine(data_->handle);
 }
 

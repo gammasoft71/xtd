@@ -111,7 +111,7 @@ namespace xtd {
     static const basic_string empty_string;
     
     /// @brief Represents a value that is not a valid position in a collection.
-    /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+    /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
     /// @par Examples
     /// ```cpp
     /// auto str = string {"hello"};
@@ -128,7 +128,7 @@ namespace xtd {
     /// console::write_line(str[bpos]); // Prints 'h'
     /// console::write_line(str[bpos + 1]); // Prints 'e'
     /// ```
-    static inline constexpr xtd::size bpos = 0;
+    static inline constexpr xtd::usize bpos = 0;
     
     /// @brief Represents the index of the last valid element in a collection.
     /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
@@ -146,7 +146,7 @@ namespace xtd {
     /// console::write_line(str[~1_z]); // Prints 'o'
     /// console::write_line(str[~2_z]); // Prints 'l'
     /// ```
-    static inline constexpr xtd::size epos = npos - 1;
+    static inline constexpr xtd::usize epos = npos - 1;
     /// @}
     
     /// @name Public Constructors
@@ -223,23 +223,23 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
-    basic_string(char character, xtd::size count) : basic_string(std::basic_string<char>(count, character)) {}
+    basic_string(char character, xtd::usize count) : basic_string(std::basic_string<char>(count, character)) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
-    basic_string(xtd::char16 character, xtd::size count) : basic_string(std::basic_string<xtd::char16>(count, character)) {}
+    basic_string(xtd::char16 character, xtd::usize count) : basic_string(std::basic_string<xtd::char16>(count, character)) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
-    basic_string(xtd::char32 character, xtd::size count) : basic_string(std::basic_string<xtd::char32>(count, character)) {}
+    basic_string(xtd::char32 character, xtd::usize count) : basic_string(std::basic_string<xtd::char32>(count, character)) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
-    basic_string(xtd::char8 character, xtd::size count) : basic_string(std::basic_string<xtd::char8>(count, character)) {}
+    basic_string(xtd::char8 character, xtd::usize count) : basic_string(std::basic_string<xtd::char8>(count, character)) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
-    basic_string(xtd::wchar character, xtd::size count) : basic_string(std::basic_string<xtd::wchar>(count, character)) {}
+    basic_string(xtd::wchar character, xtd::usize count) : basic_string(std::basic_string<xtd::wchar>(count, character)) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const char* str) {  // Can't be explicit by design.
@@ -278,35 +278,35 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
-    basic_string(const char* str, xtd::size count) {
+    basic_string(const char* str, xtd::usize count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr(std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
-    basic_string(const xtd::char16* str, xtd::size count) {
+    basic_string(const xtd::char16* str, xtd::usize count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
-    basic_string(const xtd::char32* str, xtd::size count) {
+    basic_string(const xtd::char32* str, xtd::usize count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
-    basic_string(const xtd::char8* str, xtd::size count) {
+    basic_string(const xtd::char8* str, xtd::usize count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
-    basic_string(const xtd::wchar* str, xtd::size count) {
+    basic_string(const xtd::wchar* str, xtd::usize count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count));
@@ -475,7 +475,7 @@ namespace xtd {
     
     /// @brief Returns the hash code for this basic_string.
     /// @return A hash code.
-    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override {return xtd::hash_code::combine(chars_);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return xtd::hash_code::combine(chars_);}
     
     [[nodiscard]] auto get_enumerator() const noexcept -> enumerator_type override {
       struct basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
@@ -497,19 +497,19 @@ namespace xtd {
     /// @brief Reports the index of the first occurrence of the specified basic_string in this basic_string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    [[nodiscard]] auto index_of(const basic_string& value) const noexcept -> xtd::size {return index_of(value, 0, length());}
+    [[nodiscard]] auto index_of(const basic_string& value) const noexcept -> xtd::usize {return index_of(value, 0, length());}
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    [[nodiscard]] auto index_of(const basic_string& value, xtd::size start_index) const -> xtd::size {return index_of(value, start_index, length() - start_index);}
+    [[nodiscard]] auto index_of(const basic_string& value, xtd::usize start_index) const -> xtd::usize {return index_of(value, start_index, length() - start_index);}
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto index_of(const basic_string& value, xtd::size start_index, xtd::size count) const -> xtd::size {
+    [[nodiscard]] auto index_of(const basic_string& value, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = chars_.find(value, start_index);
       return result > start_index + count ? npos : result;
@@ -517,19 +517,19 @@ namespace xtd {
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    [[nodiscard]] auto index_of(value_type value) const noexcept -> xtd::size {return index_of(value, 0, length());}
+    [[nodiscard]] auto index_of(value_type value) const noexcept -> xtd::usize {return index_of(value, 0, length());}
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    [[nodiscard]] auto index_of(value_type value, xtd::size start_index) const -> xtd::size {return index_of(value, start_index, length() - start_index);}
+    [[nodiscard]] auto index_of(value_type value, xtd::usize start_index) const -> xtd::usize {return index_of(value, start_index, length() - start_index);}
     /// @brief Reports the index of the first occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto index_of(value_type value, xtd::size start_index, xtd::size count) const -> xtd::size {
+    [[nodiscard]] auto index_of(value_type value, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = chars_.find(value, start_index);
       return result > start_index + count ? npos : result;
@@ -538,24 +538,24 @@ namespace xtd {
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    [[nodiscard]] auto index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::size;
+    [[nodiscard]] auto index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::usize;
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const -> xtd::size;
+    [[nodiscard]] auto index_of_any(const xtd::array<value_type>& values, xtd::usize start_index) const -> xtd::usize;
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size;
+    [[nodiscard]] auto index_of_any(const xtd::array<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize;
     /// @cond
-    [[nodiscard]] auto index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::size;
-    [[nodiscard]] auto index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const -> xtd::size;
-    [[nodiscard]] auto index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size;
+    [[nodiscard]] auto index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::usize;
+    [[nodiscard]] auto index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index) const -> xtd::usize;
+    [[nodiscard]] auto index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize;
     /// @endcond
     
     /// @brief Inserts a specified instance of basic_string at a specified index position in this instance.
@@ -564,7 +564,7 @@ namespace xtd {
     /// @return A new basic_string equivalent to this instance but with value inserted at position start_index.
     /// @remarks If start_index is equal to the length of this instance, value is appended to the end of this instance.
     /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
-    auto insert(xtd::size start_index, const basic_string& value) const -> basic_string {
+    auto insert(xtd::usize start_index, const basic_string& value) const -> basic_string {
       if (start_index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = self_;
       result.chars_.insert(start_index, value);
@@ -574,20 +574,20 @@ namespace xtd {
     /// @brief Reports the index of the last occurrence of the specified basic_string in this basic_string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    [[nodiscard]] auto last_index_of(const basic_string& value) const noexcept -> xtd::size {return last_index_of(value, 0, length());}
+    [[nodiscard]] auto last_index_of(const basic_string& value) const noexcept -> xtd::usize {return last_index_of(value, 0, length());}
     /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto last_index_of(const basic_string& value, xtd::size start_index) const -> xtd::size {return last_index_of(value, start_index, length() - start_index);}
+    [[nodiscard]] auto last_index_of(const basic_string& value, xtd::usize start_index) const -> xtd::usize {return last_index_of(value, start_index, length() - start_index);}
     /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto last_index_of(const basic_string& value, xtd::size start_index, xtd::size count) const -> xtd::size {
+    [[nodiscard]] auto last_index_of(const basic_string& value, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = chars_.rfind(value, start_index + count - value.length());
       return result < start_index ? npos : result;
@@ -595,13 +595,13 @@ namespace xtd {
     /// @brief Reports the index of the last occurrence of the specified character in this tring.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
-    [[nodiscard]] auto last_index_of(value_type value) const noexcept -> xtd::size {return last_index_of(value, 0, length());}
+    [[nodiscard]] auto last_index_of(value_type value) const noexcept -> xtd::usize {return last_index_of(value, 0, length());}
     /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto last_index_of(value_type value, xtd::size start_index) const -> xtd::size {return last_index_of(value, start_index, length() - start_index);}
+    [[nodiscard]] auto last_index_of(value_type value, xtd::usize start_index) const -> xtd::usize {return last_index_of(value, start_index, length() - start_index);}
     /// @brief Reports the index of the last occurrence of the specified character in this basic_string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param str A basic_string to find last index of.
     /// @param value An unicode character to seek
@@ -609,7 +609,7 @@ namespace xtd {
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
-    [[nodiscard]] auto last_index_of(value_type value, xtd::size start_index, xtd::size count) const -> xtd::size {
+    [[nodiscard]] auto last_index_of(value_type value, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = chars_.rfind(value, start_index + count - 1);
       return result < start_index ? npos : result;
@@ -618,22 +618,22 @@ namespace xtd {
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    [[nodiscard]] auto last_index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::size;
+    [[nodiscard]] auto last_index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::usize;
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    [[nodiscard]] auto last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const -> xtd::size;
+    [[nodiscard]] auto last_index_of_any(const xtd::array<value_type>& values, xtd::usize start_index) const -> xtd::usize;
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
-    [[nodiscard]] auto last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size;
+    [[nodiscard]] auto last_index_of_any(const xtd::array<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize;
     /// @cond
-    [[nodiscard]] auto last_index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::size;
-    [[nodiscard]] auto last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const -> xtd::size;
-    [[nodiscard]] auto last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size;
+    [[nodiscard]] auto last_index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::usize;
+    [[nodiscard]] auto last_index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index) const -> xtd::usize;
+    [[nodiscard]] auto last_index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize;
     /// @endcond
     
     /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
@@ -641,28 +641,28 @@ namespace xtd {
     /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned basic_string. This means that, when used with right-to-left languages, it pads the right portion of the basic_string..
-    [[nodiscard]] auto pad_left(xtd::size total_width) const noexcept -> basic_string {return pad_left(total_width, ' ');}
+    [[nodiscard]] auto pad_left(xtd::usize total_width) const noexcept -> basic_string {return pad_left(total_width, ' ');}
     /// @brief Right-aligns the characters in this basic_string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
     /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical the specified basic_string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned basic_string. This means that, when used with right-to-left languages, it pads the right portion of the basic_string..
-    [[nodiscard]] auto pad_left(xtd::size total_width, char32 padding_char) const noexcept -> basic_string {return total_width < length() ? self_ : basic_string(padding_char, total_width - length()) + self_;}
+    [[nodiscard]] auto pad_left(xtd::usize total_width, char32 padding_char) const noexcept -> basic_string {return total_width < length() ? self_ : basic_string(padding_char, total_width - length()) + self_;}
     
     /// @brief Left-aligns the characters in this basic_string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
     /// @return A new basic_string that is equivalent to the specified basic_string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned basic_string. This means that, when used with right-to-left languages, it pads the left portion of the basic_string..
-    [[nodiscard]] auto pad_right(xtd::size total_width) const noexcept -> basic_string {return pad_right(total_width, ' ');}
+    [[nodiscard]] auto pad_right(xtd::usize total_width) const noexcept -> basic_string {return pad_right(total_width, ' ');}
     /// @brief Left-aligns the characters in this basic_string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
     /// @return A new basic_string that is equivalent to the specified basic_string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The xtd::basic_string::pad_right method pads the end of the returned basic_string. This means that, when used with right-to-left languages, it pads the left portion of the basic_string..
-    [[nodiscard]] auto pad_right(xtd::size total_width, char32 padding_char) const noexcept -> basic_string {return total_width < length() ? self_ : self_ + basic_string(padding_char, total_width - length());}
+    [[nodiscard]] auto pad_right(xtd::usize total_width, char32 padding_char) const noexcept -> basic_string {return total_width < length() ? self_ : self_ + basic_string(padding_char, total_width - length());}
     
     /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
     /// @return A new quoted basic_string.
@@ -689,12 +689,12 @@ namespace xtd {
     /// @brief Deletes all the characters from this basic_string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @return A new basic_string object that is equivalent to this basic_string less the removed characters.
-    [[nodiscard]] auto remove(xtd::size start_index) const -> basic_string {return remove(start_index, length() - start_index);}
+    [[nodiscard]] auto remove(xtd::usize start_index) const -> basic_string {return remove(start_index, length() - start_index);}
     /// @brief Deletes all the characters from this basic_string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @param count The number of characters to delete.
     /// @return A new basic_string object that is equivalent to this basic_string less the removed characters.
-    [[nodiscard]] auto remove(xtd::size start_index, xtd::size count) const -> basic_string {
+    [[nodiscard]] auto remove(xtd::usize start_index, xtd::usize count) const -> basic_string {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = self_;
       result.chars_.erase(start_index, count);
@@ -715,7 +715,7 @@ namespace xtd {
       auto result = self_;
       auto old_size = old_string.length();
       auto new_size = new_string.length();
-      auto index = xtd::size {0};
+      auto index = xtd::usize {0};
       while (true) {
         index = result.chars_.find(old_string, index);
         if (index == npos) break;
@@ -765,7 +765,7 @@ namespace xtd {
     /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return `true` if they are passed to the char_t.IsWhiteSpace method.
     /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
-    [[nodiscard]] auto split(value_type separator, xtd::size count) const noexcept -> xtd::array<basic_string>;
+    [[nodiscard]] auto split(value_type separator, xtd::usize count) const noexcept -> xtd::array<basic_string>;
     /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array.
     /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
     /// @param count The maximum number of substrings to return.
@@ -777,7 +777,7 @@ namespace xtd {
     /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains an empty basic_string.
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
-    [[nodiscard]] auto split(value_type separator, xtd::size count, xtd::string_split_options options) const noexcept -> xtd::array<basic_string>;
+    [[nodiscard]] auto split(value_type separator, xtd::usize count, xtd::string_split_options options) const noexcept -> xtd::array<basic_string>;
     /// @brief Splits this basic_string into substrings that are based on the characters in an array.
     /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
     /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in separators. For more information, see the Remarks section.
@@ -809,7 +809,7 @@ namespace xtd {
     /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return `true` if they are passed to the char_t.IsWhiteSpace method.
     /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
-    [[nodiscard]] auto split(const xtd::array<value_type>& separators, xtd::size count) const noexcept -> xtd::array<basic_string>;
+    [[nodiscard]] auto split(const xtd::array<value_type>& separators, xtd::usize count) const noexcept -> xtd::array<basic_string>;
     /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array.
     /// @param separators A character array that delimits the substrings in this basic_string, an empty array that contains no delimiters.
     /// @param count The maximum number of substrings to return.
@@ -821,7 +821,7 @@ namespace xtd {
     /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains an empty basic_string.
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
-    [[nodiscard]] auto split(const xtd::array<value_type>& separators, xtd::size count, xtd::string_split_options options) const noexcept -> xtd::array<basic_string>;
+    [[nodiscard]] auto split(const xtd::array<value_type>& separators, xtd::usize count, xtd::string_split_options options) const noexcept -> xtd::array<basic_string>;
     
     /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string.
     /// @param value A xtd::basic_string to compare to.
@@ -862,7 +862,7 @@ namespace xtd {
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @return A basic_string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     /// @exception xtd::argument_out_of_range_exception `start_index` is greater than the length() of this instance.
-    [[nodiscard]] auto substring(xtd::size start_index) const -> basic_string {
+    [[nodiscard]] auto substring(xtd::usize start_index) const -> basic_string {
       if (start_index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return chars_.substr(start_index);
     }
@@ -871,7 +871,7 @@ namespace xtd {
     /// @param length The number of characters in the substring.
     /// @return A basic_string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     /// @exception xtd::argument_out_of_range_exception `start_index` plus `length` is greater than the length() of this instance.
-    [[nodiscard]] auto substring(xtd::size start_index, xtd::size length) const -> basic_string {
+    [[nodiscard]] auto substring(xtd::usize start_index, xtd::usize length) const -> basic_string {
       if (start_index > self_.length() || start_index + length > self_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return chars_.substr(start_index, length);
     }
@@ -882,12 +882,12 @@ namespace xtd {
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index.
     /// @param start_index The starting position of basic_string to convert.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::basic_string, the returned array is empty and has a zero length.
-    [[nodiscard]] auto to_array(xtd::size start_index) const -> xtd::array<value_type>;
+    [[nodiscard]] auto to_array(xtd::usize start_index) const -> xtd::array<value_type>;
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index with specified length.
     /// @param start_index The starting position of basic_string to convert.
     /// @param length The length of the basic_string to convert
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::basic_string, the returned array is empty and has a zero length.
-    [[nodiscard]] auto to_array(xtd::size start_index, xtd::size length) const -> xtd::array<value_type>;
+    [[nodiscard]] auto to_array(xtd::usize start_index, xtd::usize length) const -> xtd::array<value_type>;
     
     /// @brief Copies the characters in this instance to a Unicode character array.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::basic_string, the returned array is empty and has a zero length.
@@ -896,7 +896,7 @@ namespace xtd {
     /// @param start_index The starting position of basic_string to convert.
     /// @param length The length of the basic_string to convert
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::basic_string, the returned array is empty and has a zero length.
-    [[nodiscard]] auto to_char_array(xtd::size start_index, xtd::size length) const -> xtd::array<value_type>;
+    [[nodiscard]] auto to_char_array(xtd::usize start_index, xtd::usize length) const -> xtd::array<value_type>;
     
     /// @brief Returns a copy of the current xtd::basic_string converted to lowercase.
     /// @return A string in lowercase.
@@ -1050,7 +1050,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    [[nodiscard]] static auto compare(const basic_string& str_a, xtd::size index_a, const basic_string& str_b, xtd::size index_b, xtd::size length) -> xtd::int32 {return compare(str_a, index_a, str_b, index_b, length, false);}
+    [[nodiscard]] static auto compare(const basic_string& str_a, xtd::usize index_a, const basic_string& str_b, xtd::usize index_b, xtd::usize length) -> xtd::int32 {return compare(str_a, index_a, str_b, index_b, length, false);}
     /// @brief Compares substrings of two specified basic_string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first basic_string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -1064,7 +1064,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    [[nodiscard]] static auto compare(const basic_string& str_a, xtd::size index_a, const basic_string& str_b, xtd::size index_b, xtd::size length, bool ignore_case) -> xtd::int32 {return compare(str_a, index_a, str_b, index_b, length, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);}
+    [[nodiscard]] static auto compare(const basic_string& str_a, xtd::usize index_a, const basic_string& str_b, xtd::usize index_b, xtd::usize length, bool ignore_case) -> xtd::int32 {return compare(str_a, index_a, str_b, index_b, length, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);}
     /// @brief Compares substrings of two specified basic_string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first basic_string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -1078,7 +1078,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    [[nodiscard]] static auto compare(const basic_string& str_a, xtd::size index_a, const basic_string& str_b, xtd::size index_b, xtd::size length, xtd::string_comparison comparison_type) -> xtd::int32 {return comparison_type == xtd::string_comparison::ordinal_ignore_case ? str_a.substring(index_a, length).to_lower().chars_.compare(str_b.substring(index_b, length).to_lower()) : str_a.substring(index_a, length).chars_.compare(str_b.substring(index_b, length));}
+    [[nodiscard]] static auto compare(const basic_string& str_a, xtd::usize index_a, const basic_string& str_b, xtd::usize index_b, xtd::usize length, xtd::string_comparison comparison_type) -> xtd::int32 {return comparison_type == xtd::string_comparison::ordinal_ignore_case ? str_a.substring(index_a, length).to_lower().chars_.compare(str_b.substring(index_b, length).to_lower()) : str_a.substring(index_a, length).chars_.compare(str_b.substring(index_b, length));}
     
     /// @brief Concatenates four specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
@@ -1253,7 +1253,7 @@ namespace xtd {
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
     [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values) noexcept -> basic_string {
-      xtd::size i = 0;
+      xtd::usize i = 0;
       basic_string result;
       for (const auto& item : values)
         result += format("{}{}", (i++ != 0 ? separator : basic_string {}), item);
@@ -1267,7 +1267,7 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
-    [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values, xtd::size index) -> basic_string {return join(separator, values, index, values.size() - index);}
+    [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values, xtd::usize index) -> basic_string {return join(separator, values, index, values.size() - index);}
     /// @brief Concatenates a specified separator basic_string between each element of a specified Object array, yielding a single concatenated basic_string.
     /// @param separator A basic_string separator.
     /// @param values An array of Object.
@@ -1277,9 +1277,9 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
-    [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values, xtd::size index, xtd::size count) -> basic_string {
+    [[nodiscard]] static auto join(const basic_string& separator, const collection_t& values, xtd::usize index, xtd::usize count) -> basic_string {
       if (index > values.size() || index + count > values.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      xtd::size i = 0;
+      xtd::usize i = 0;
       basic_string result;
       for (const auto& item : values) {
         if (i >= index) result += format("{}{}", (i != index ? separator : basic_string {}), item);
@@ -1292,9 +1292,9 @@ namespace xtd {
     template<typename value_t>
     [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept -> basic_string;
     template<typename value_t>
-    [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) -> basic_string;
+    [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::usize index) -> basic_string;
     template<typename value_t>
-    [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) -> basic_string;
+    [[nodiscard]] static auto join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::usize index, xtd::usize count) -> basic_string;
     /// @endcond
     
     /// @brief Converts a basic_string into a value_t type.
@@ -1390,7 +1390,7 @@ namespace xtd {
     /// @param index The position of the character to return.
     /// @return Reference to the requested character.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-    auto operator [](xtd::size index) const -> const_reference {
+    auto operator [](xtd::usize index) const -> const_reference {
       if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return chars_[index == epos ? length() - 1 : index];
     }
@@ -2672,7 +2672,7 @@ namespace xtd {
 namespace std {
   template<typename char_t>
   struct hash<xtd::basic_string<char_t>> {
-    auto operator()(const xtd::basic_string<char_t>& s) const noexcept -> xtd::size {return s.get_hash_code();}
+    auto operator()(const xtd::basic_string<char_t>& s) const noexcept -> xtd::usize {return s.get_hash_code();}
   };
 }
 /// @endcond

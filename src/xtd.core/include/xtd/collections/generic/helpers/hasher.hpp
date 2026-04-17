@@ -44,7 +44,7 @@ namespace xtd {
           /// @brief Represents the argument type.
           using argument_type = key_t;
           /// @brief Represents the result type.
-          using result_type = xtd::size;
+          using result_type = xtd::usize;
           /// @}
           
           /// @name Public Constructors

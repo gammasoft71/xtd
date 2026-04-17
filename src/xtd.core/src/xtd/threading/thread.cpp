@@ -46,7 +46,7 @@ struct thread::data {
   any_object parameter;
   threading::parameterized_thread_start parameterized_thread_start;
   thread_priority priority {thread_priority::normal};
-  xtd::array<xtd::size> processor_affinity;
+  xtd::array<xtd::usize> processor_affinity;
   threading::thread_state state {threading::thread_state::unstarted};
   intptr thread_id {invalid_thread_id};
   threading::thread_start thread_start;
@@ -192,11 +192,11 @@ thread& thread::priority(thread_priority value) {
   return self_;
 }
 
-const xtd::array<xtd::size>& thread::processor_affinity() const noexcept {
+const xtd::array<xtd::usize>& thread::processor_affinity() const noexcept {
   return data_->processor_affinity;
 }
 
-thread& thread::processor_affinity(const xtd::array<xtd::size>& value) {
+thread& thread::processor_affinity(const xtd::array<xtd::usize>& value) {
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   
   if (data_->processor_affinity == value) return self_;

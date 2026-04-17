@@ -26,7 +26,7 @@ namespace xtd {
     /// xtd::drawing::color c3 = "0x00ff00"_color;
     /// xtd::console::out << c3 << xtd::environment::new_line;
     /// ```
-    xtd::drawing::color operator""_color(const char* s, xtd::size n);
+    xtd::drawing::color operator""_color(const char* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
@@ -43,7 +43,7 @@ namespace xtd {
     /// xtd::drawing::color c3 = u8"0x00ff00"_color;
     /// xtd::console::out << c3 << xtd::environment::new_line;
     /// ```
-    xtd::drawing::color operator""_color(const char8* s, xtd::size n);
+    xtd::drawing::color operator""_color(const char8* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
@@ -60,7 +60,7 @@ namespace xtd {
     /// xtd::drawing::color c3 = u"0x00ff00"_color;
     /// xtd::console::out << c3 << xtd::environment::new_line;
     /// ```
-    xtd::drawing::color operator""_color(const char16* s, xtd::size n);
+    xtd::drawing::color operator""_color(const char16* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
@@ -77,7 +77,7 @@ namespace xtd {
     /// xtd::drawing::color c3 = U"0x00ff00"_color;
     /// xtd::console::out << c3 << xtd::environment::new_line;
     /// ```
-    xtd::drawing::color operator""_color(const char32* s, xtd::size n);
+    xtd::drawing::color operator""_color(const char32* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
@@ -94,7 +94,7 @@ namespace xtd {
     /// xtd::drawing::color c3 = L"0x00ff00"_color;
     /// xtd::console::out << c3 << xtd::environment::new_line;
     /// ```
-    xtd::drawing::color operator""_color(const wchar* s, xtd::size n);
+    xtd::drawing::color operator""_color(const wchar* s, xtd::usize n);
     /// @}
   }
 }

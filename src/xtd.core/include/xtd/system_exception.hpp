@@ -54,7 +54,7 @@ namespace xtd {
     /// @return the line number where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0.
     [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 0.4.0.")]]
-    virtual xtd::size line_number() const noexcept;
+    virtual xtd::usize line_number() const noexcept;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred

@@ -57,7 +57,7 @@ bool theme::equals(const theme& other) const noexcept {
   return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;
 }
 
-xtd::size theme::get_hash_code() const noexcept {
+xtd::usize theme::get_hash_code() const noexcept {
   return hash_code::combine(name_, description_, authors_, website_);
 }
 

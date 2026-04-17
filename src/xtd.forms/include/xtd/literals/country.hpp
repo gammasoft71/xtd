@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::forms::country c = "Belgium"_country;
     /// xtd::console::out << c << xtd::environment::new_line;
     /// ```
-    xtd::forms::country operator""_country(const char* s, xtd::size n);
+    xtd::forms::country operator""_country(const char* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::forms::country.
     /// @par Namespace
@@ -35,7 +35,7 @@ namespace xtd {
     /// xtd::forms::country c = u8"Belgium"_country;
     /// xtd::console::out << c << xtd::environment::new_line;
     /// ```
-    xtd::forms::country operator""_country(const char8* s, xtd::size n);
+    xtd::forms::country operator""_country(const char8* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::forms::country.
     /// @par Namespace
@@ -48,7 +48,7 @@ namespace xtd {
     /// xtd::forms::country c = u"Belgium"_country;
     /// xtd::console::out << c << xtd::environment::new_line;
     /// ```
-    xtd::forms::country operator""_country(const char16* s, xtd::size n);
+    xtd::forms::country operator""_country(const char16* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::forms::country.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// xtd::forms::country c = U"Belgium"_country;
     /// xtd::console::out << c << xtd::environment::new_line;
     /// ```
-    xtd::forms::country operator""_country(const char32* s, xtd::size n);
+    xtd::forms::country operator""_country(const char32* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::forms::country.
     /// @par Namespace
@@ -74,7 +74,7 @@ namespace xtd {
     /// xtd::forms::country c = L"Belgium"_country;
     /// xtd::console::out << c << xtd::environment::new_line;
     /// ```
-    xtd::forms::country operator""_country(const wchar* s, xtd::size n);
+    xtd::forms::country operator""_country(const wchar* s, xtd::usize n);
     /// @}
   }
 }

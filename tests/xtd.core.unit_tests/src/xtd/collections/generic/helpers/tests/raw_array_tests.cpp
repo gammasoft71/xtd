@@ -26,7 +26,7 @@ namespace xtd::collections::generic::helpers::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<xtd::size>(), typeof_<raw_array<int>::size_type>());
+      assert::are_equal(typeof_<xtd::usize>(), typeof_<raw_array<int>::size_type>());
     }
     
     auto test_method_(size_type_with_bool) {

@@ -22,7 +22,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<typename type_t, xtd::size len>
+  template<typename type_t, xtd::usize len>
   class fixed_array : public xtd::object, public xtd::collections::generic::ienumerable<type_t>, public xtd::iequatable<fixed_array<type_t, len>> {
   public:
     /// @name Public Aliases
@@ -42,8 +42,8 @@ namespace xtd {
     using pointer = value_type*;
     /// @brief Represents the const pointer of array value type.
     using const_pointer = const value_type*;
-    /// @brief Represents the array size type (usually xtd::size).
-    using size_type = xtd::size;
+    /// @brief Represents the array size type (usually xtd::usize).
+    using size_type = xtd::usize;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
     using difference_type = xtd::ptrdiff;
     /// @}
@@ -58,7 +58,7 @@ namespace xtd {
     /// @param items The initializer list to initialize the elements of the container with.
     /// @remarks The fixed_array class is not thread safe.
     fixed_array(std::initializer_list<type_t> items) {
-      auto index = xtd::size {0};
+      auto index = xtd::usize {0};
       for (const auto& item : items)
         items_[index++] = item;
     }
@@ -89,7 +89,7 @@ namespace xtd {
     
     /// @brief Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end().
     /// @return `true` if the container is empty, `false` otherwise.
-    [[nodiscard]] virtual auto empty() const noexcept -> bool {return len == xtd::size {0};}
+    [[nodiscard]] virtual auto empty() const noexcept -> bool {return len == xtd::usize {0};}
     
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
@@ -263,14 +263,14 @@ namespace xtd {
     /// @remarks If comparer is provided, the elements of the xtd::fixed_array <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::fixed_array::count; in the worst case it is an O(n ^ 2) operation.
-    auto sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) -> fixed_array& {
+    auto sort(xtd::usize index, xtd::usize count, const xtd::collections::generic::icomparer<type_t>& comparer) -> fixed_array& {
       if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       std::sort(items_, items_ + length(), xtd::collections::generic::helpers::lesser<type_t> {comparer});
       return self_;
     }
 
     /// @brief Copies the elements of the xtd::fixed_array <type_t> to a new array.
-    /// @return An array containing copies of the elements of the xtd::fixed_array <type_t, xtd::size>.
+    /// @return An array containing copies of the elements of the xtd::fixed_array <type_t, xtd::usize>.
     [[nodiscard]] virtual auto to_array() const noexcept -> xtd::array<value_type> {return size() ? xtd::array<value_type>(items_, items_ + len) : xtd::array<value_type> {};}
     
     /// @brief Returns a xtd::string that represents the current object.

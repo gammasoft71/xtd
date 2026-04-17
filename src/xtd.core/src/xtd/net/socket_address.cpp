@@ -16,7 +16,7 @@ using namespace xtd::net::sockets;
 socket_address::socket_address(sockets::address_family address_family) : socket_address(address_family, 32) {
 }
 
-socket_address::socket_address(sockets::address_family address_family, xtd::size buffer_size) : bytes_(buffer_size) {
+socket_address::socket_address(sockets::address_family address_family, xtd::usize buffer_size) : bytes_(buffer_size) {
   if (buffer_size < 2) throw_helper::throws(exception_case::argument_out_of_range);
   bytes_[0] = static_cast<xtd::byte>(native::socket::address_family_to_native(as<int32>(address_family))); // do not use as because sockets::address_family::unknown is -1 and as<byte> throw an exception overflow_exception.
   bytes_[1] = 0;
@@ -29,16 +29,16 @@ auto socket_address::address_family() const -> sockets::address_family {
   return static_cast<sockets::address_family>(native::socket::native_to_address_family(bytes_[0]));
 }
 
-auto socket_address::size() const -> xtd::size {
+auto socket_address::size() const -> xtd::usize {
   return bytes_.length();
 }
 
-auto socket_address::operator [](xtd::size index) -> xtd::byte& {
+auto socket_address::operator [](xtd::usize index) -> xtd::byte& {
   if (index >= bytes_.length()) throw_helper::throws(exception_case::index_out_of_range);
   return bytes_[index];
 }
 
-auto socket_address::operator [](xtd::size index) const -> const xtd::byte& {
+auto socket_address::operator [](xtd::usize index) const -> const xtd::byte& {
   if (index >= bytes_.length()) throw_helper::throws(exception_case::index_out_of_range);
   return bytes_[index];
 }
@@ -51,7 +51,7 @@ auto socket_address::equals(const socket_address& other) const noexcept -> bool 
   return bytes_ == other.bytes_;
 }
 
-auto socket_address::get_hash_code() const noexcept -> xtd::size {
+auto socket_address::get_hash_code() const noexcept -> xtd::usize {
   auto result = hash_code {};
   for (auto b : bytes_)
     result.add(b);

@@ -420,7 +420,7 @@ bool style_sheet::equals(const style_sheet& other) const noexcept {
   return data_->theme == other.data_->theme;
 }
 
-xtd::size style_sheet::get_hash_code() const noexcept {
+xtd::usize style_sheet::get_hash_code() const noexcept {
   return hash_code::combine(data_->theme);
 }
 

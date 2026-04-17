@@ -50,7 +50,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
         /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
-        [[nodiscard]] virtual auto count() const noexcept -> xtd::size = 0;
+        [[nodiscard]] virtual auto count() const noexcept -> xtd::usize = 0;
         
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
         /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
@@ -121,7 +121,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::iset <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::iset <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        virtual auto copy_to(xtd::array<type_t>& array, xtd::size array_index) const -> void = 0;
+        virtual auto copy_to(xtd::array<type_t>& array, xtd::usize array_index) const -> void = 0;
         
         /// @brief Removes all elements in the specified collection from the current set.
         /// @param other The collection of items to remove from the set.

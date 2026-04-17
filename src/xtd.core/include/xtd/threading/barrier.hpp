@@ -44,18 +44,18 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::threading::barrier class.
       /// @param participant_count The number of participating threads.
       /// @exception xtd::argument_out_of_range_exception participant_count is less than 0 or greater than 32,767.
-      explicit barrier(xtd::size participant_count);
+      explicit barrier(xtd::usize participant_count);
       /// @brief Initializes a new instance of the xtd::threading::barrier class.
       /// @param participant_count The number of participating threads.
       /// @param post_phase_action The xtd::action< barrier& > to be executed after each phase. Empty may be passed to indicate no action is taken.
       /// @exception xtd::argument_out_of_range_exception participant_count is less than 0 or greater than 32,767.
       /// @remarks The post_phase_action delegate will be executed after all participants have arrived at the barrier in one phase. The participants will not be released to the next phase until the post_phase_action delegate has completed execution.
-      barrier(xtd::size participant_count, barrier::post_phase_action post_phase_action);
+      barrier(xtd::usize participant_count, barrier::post_phase_action post_phase_action);
       /// @}
       
       /// @cond
       template<typename post_phase_action_t>
-      barrier(xtd::size participant_count, post_phase_action_t post_phase_action) : barrier(participant_count, barrier::post_phase_action {post_phase_action}) {}
+      barrier(xtd::usize participant_count, post_phase_action_t post_phase_action) : barrier(participant_count, barrier::post_phase_action {post_phase_action}) {}
       barrier();
       barrier(barrier&&) = default;
       barrier(const barrier&) = default;
@@ -69,18 +69,18 @@ namespace xtd {
       /// @brief Gets the number of the barrier's current phase.
       /// @return Returns the number of the barrier's current phase.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
-      [[nodiscard]] auto current_phase_number() const -> xtd::size;
+      [[nodiscard]] auto current_phase_number() const -> xtd::usize;
       
       /// @brief Gets the total number of participants in the barrier.
       /// @return Returns the total number of participants in the barrier.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
-      [[nodiscard]] auto participant_count() const -> xtd::size;
+      [[nodiscard]] auto participant_count() const -> xtd::usize;
       
       /// @brief Gets the number of participants in the barrier that haven't yet signaled in the current phase.
       /// @return Returns the number of participants in the barrier that haven't yet signaled in the current phase.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @remarks This could be 0 during a post-phase action delegate execution or if the participant_count is 0.
-      [[nodiscard]] auto participants_remaining() const -> xtd::size;
+      [[nodiscard]] auto participants_remaining() const -> xtd::usize;
       /// @}
       
       /// @name Public Methods
@@ -91,7 +91,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception Adding a participant would cause the barrier's participant count to exceed 32,767.
       /// @remarks If the barrier is currently executing a post phase action, this call is blocked until the post phase action completes and the barrier has moved on to the next phase.
-      auto add_participant() -> xtd::size;
+      auto add_participant() -> xtd::usize;
       
       /// @brief Notifies the xtd::threading::barrier that there will be additional participants.
       /// @param participant_count The number of additional participants to add to the barrier.
@@ -99,7 +99,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception participant_count is less than 0 <br>-or-<br> Adding participant_count participants would cause the barrier's participant count to exceed 32,767..
       /// @remarks If the barrier is currently executing a post phase action, this call is blocked until the post phase action completes and the barrier has moved on to the next phase.
-      auto add_participants(xtd::size participant_count) -> xtd::size;
+      auto add_participants(xtd::usize participant_count) -> xtd::usize;
       
       /// @brief Close the current instance of the xtd::threading::barrier  class.
       auto close() -> void;
@@ -108,14 +108,14 @@ namespace xtd {
       /// @return The phase number of the barrier in which the new participants will first participate.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception The barrier already has 0 participants.
-      auto remove_participant() -> xtd::size;
+      auto remove_participant() -> xtd::usize;
       
       /// @brief Notifies the Barrier that there will be fewer participants.
       /// @param participant_count The number of additional participants to remove from the barrier.
       /// @return The phase number of the barrier in which the new participants will first participate.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception participant_count is less than 0 <br>-or-<br> The total participant count is less than the specified participant_count
-      auto remove_participants(xtd::size participant_count) -> xtd::size;
+      auto remove_participants(xtd::usize participant_count) -> xtd::usize;
       
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.

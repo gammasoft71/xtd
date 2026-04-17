@@ -55,7 +55,7 @@ namespace xtdc_gui {
       return examples;
     }
     
-    xtd::size get_hash_code() const noexcept override {return name_.get_hash_code();}
+    xtd::usize get_hash_code() const noexcept override {return name_.get_hash_code();}
     
     static const xtd::array<xtd_example_item>& get_tunit_examples() {
       static auto examples = xtd::array<xtd_example_item> {};

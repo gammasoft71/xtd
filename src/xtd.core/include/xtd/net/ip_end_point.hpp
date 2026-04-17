@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Serializes endpoint information into a socket_address instance.
       /// @return A new xtd::net::socket_address instance that contains the endpoint information.

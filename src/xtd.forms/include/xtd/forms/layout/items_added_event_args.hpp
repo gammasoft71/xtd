@@ -18,18 +18,18 @@ namespace xtd {
         /// @name Public Consturctors
         
         /// @{
-        items_added_event_args(xtd::size index, const xtd::array<item_t>& items) : index_ {index}, items_ {items} {}
+        items_added_event_args(xtd::usize index, const xtd::array<item_t>& items) : index_ {index}, items_ {items} {}
         /// @}
         
         /// @name Public Properties
         
         /// @{
-        xtd::size index() const noexcept {return index_;}
+        xtd::usize index() const noexcept {return index_;}
         const xtd::array<item_t>& items() const noexcept {return items_;}
         /// @}
         
       private:
-        xtd::size index_;
+        xtd::usize index_;
         xtd::array<item_t> items_;
       };
     }

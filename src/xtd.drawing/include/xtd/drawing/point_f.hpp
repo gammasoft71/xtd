@@ -90,7 +90,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Translates this xtd::drawing::point_f by the specified amount.
       /// @param dx The amount to offset the x-coordinate.

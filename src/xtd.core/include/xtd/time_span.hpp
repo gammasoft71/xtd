@@ -319,7 +319,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    xtd::usize get_hash_code() const noexcept override;
     
     /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.
     /// @param factor The value to be multiplied by.

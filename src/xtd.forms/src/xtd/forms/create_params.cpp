@@ -153,7 +153,7 @@ bool create_params::equals(const create_params& other) const noexcept {
   return data_->caption == other.data_->caption && data_->class_name == other.data_->class_name && data_->class_style == other.data_->class_style && data_->ex_style == other.data_->ex_style && data_->location == other.data_->location && data_->param == other.data_->param && data_->parent == other.data_->parent && data_->style == other.data_->style && data_->size == other.data_->size;
 }
 
-xtd::size create_params::get_hash_code() const noexcept {
+xtd::usize create_params::get_hash_code() const noexcept {
   return hash_code::combine(data_->caption, data_->class_name, data_->class_style, data_->ex_style, data_->location, data_->param, data_->parent, data_->style, data_->size);
 }
 

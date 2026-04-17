@@ -128,7 +128,7 @@ namespace xtd {
         /// @return The count of bytes to send if the xtd::net::sockets::send_packets_element class was initialized with a count parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::count property is zero if the xtd::net::sockets::send_packets_element class was not initialized with a count parameter.
         /// @remarks If Count is zero for a file, the entire file is sent. If xtd::net::sockets::send_packets_element::count is zero for a buffer, no bytes are sent.
-        [[nodiscard]] auto count() const noexcept -> xtd::size;
+        [[nodiscard]] auto count() const noexcept -> xtd::usize;
         
         /// @brief Gets a bool value that indicates if this element should not be combined with the next element in a single send request from the sockets layer to the transport.
         /// @return A bool value that indicates if this element should not be combined with the next element in a single send request.
@@ -149,16 +149,16 @@ namespace xtd {
         /// @brief Gets the offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @return The offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::offset property is zero if the xtd::net::sockets::send_packets_element class was not initialized with an offset parameter.
-        [[nodiscard]] auto offset() const noexcept -> xtd::size;
+        [[nodiscard]] auto offset() const noexcept -> xtd::usize;
         /// @}
         
       private:
         xtd::array<xtd::byte> buffer_;
-        xtd::size count_ = 0;
+        xtd::usize count_ = 0;
         bool end_of_packet_ = false;
         xtd::string file_path_;
         std::ifstream* file_stream_ = nullptr;
-        xtd::size offset_ = 0;
+        xtd::usize offset_ = 0;
         bool delete_file_stream_when_destroy_ = false;
       };
     }

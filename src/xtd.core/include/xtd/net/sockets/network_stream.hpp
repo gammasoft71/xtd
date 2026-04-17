@@ -96,14 +96,14 @@ namespace xtd {
         
         /// @brief Gets the length of the stream in bytes.
         /// @return The length of the stream in bytes.
-        [[nodiscard]] auto length() const -> xtd::size override;
+        [[nodiscard]] auto length() const -> xtd::usize override;
         
         /// @brief Gets the current position within the stream.
         /// @return The current position within the stream.
-        [[nodiscard]] auto position() const -> xtd::size override;
+        [[nodiscard]] auto position() const -> xtd::usize override;
         /// @brief Sets the current position within the stream.
         /// @param value The current position within the stream.
-        auto position(xtd::size value) -> void override;
+        auto position(xtd::usize value) -> void override;
         
         /// @brief Gets the amount of time that a read operation blocks waiting for data.
         /// @return A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
@@ -142,12 +142,12 @@ namespace xtd {
         /// @remarks If the read operation is successful, the current position within the stream advances by the number of bytes read. If an exception occurs, the current position within the stream remains unchanged.
         /// @remarks The `read` method will return zero only if the end of the stream is reached. In all other cases, `read` always reads at least one byte from the stream before returning. By definition, if no data is available from the stream upon a call to `read`, the `read` method returns zero (the end of the stream is reached automatically). An implementation is free to return fewer bytes than requested even if the end of the stream has not been reached.
         /// @remarks Use xtd::io::binary_reader for reading primitive data types.
-        auto read(xtd::array<xtd::byte>& buffer, size offset, size count) -> xtd::size override;
+        auto read(xtd::array<xtd::byte>& buffer, size offset, size count) -> xtd::usize override;
         
         /// @brief Sets the length of the current stream to the specified value.
         /// @param value The value at which to set the length.
         /// @remarks If the specified value is less than the current length of the stream, the stream is truncated. If after the truncation the current position within the stream is past the end of the stream, the xtd::io::memery_stream::read_byte method returns -1, the xtd::io::memery_stream::read method reads zero bytes into the provided byte array, and xtd::io::memery_stream::write and xtd::io::memery_stream::write_byte methods append specified bytes at the end of the stream, increasing its length. If the specified value is larger than the current capacity and the stream is resizable, the capacity is increased, and the current position within the stream is unchanged. If the length is increased, the contents of the stream between the old and the new length are initialized to zeros.
-        auto set_length(xtd::size value) -> void override;
+        auto set_length(xtd::usize value) -> void override;
         
         using xtd::io::stream::write;
         /// @brief Writes a block of bytes to the current stream using data read from a buffer.

@@ -40,7 +40,7 @@ namespace xtd {
           
           /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
           /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
-          [[nodiscard]] virtual auto size() const noexcept -> xtd::size {return self().count();}
+          [[nodiscard]] virtual auto size() const noexcept -> xtd::usize {return self().count();}
           /// @}
           
           /// @name Public Operators

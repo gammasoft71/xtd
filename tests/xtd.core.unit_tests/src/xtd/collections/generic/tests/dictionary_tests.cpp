@@ -30,7 +30,7 @@ namespace xtd::collections::generic::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<xtd::size>(), typeof_<dictionary<int, string>::size_type>());
+      assert::are_equal(typeof_<xtd::usize>(), typeof_<dictionary<int, string>::size_type>());
       assert::are_equal(typeof_<dictionary<int, string>::base_type::size_type>(), typeof_<dictionary<int, string>::size_type>());
     }
     
@@ -169,7 +169,7 @@ namespace xtd::collections::generic::tests {
     
     auto test_method_(constructor_with_specified_hasher_and_equator) {
       struct string_hash {
-        xtd::size operator()(const string& obj) const {return obj.to_lower().get_hash_code();}
+        xtd::usize operator()(const string& obj) const {return obj.to_lower().get_hash_code();}
       };
       
       struct string_equal {

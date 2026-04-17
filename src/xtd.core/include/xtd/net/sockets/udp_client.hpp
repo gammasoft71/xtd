@@ -68,7 +68,7 @@ namespace xtd {
         class async_result_send : public async_result_socket {
         public:
           explicit async_result_send(const xtd::any_object& async_state) : async_result_socket(async_state) {}
-          xtd::size number_of_bytes_sent_ = 0;
+          xtd::usize number_of_bytes_sent_ = 0;
         };
         
         struct data;
@@ -143,7 +143,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::udp_client::available property is used to determine the amount of data queued in the network buffer for reading. If data is available, call Read to get the data. If no data is available, the xtd::net::sockets::udp_client::available property returns 0.
         /// @remarks If the remote host shuts down or closes the connection, the xtd::net::sockets::udp_client::available property throws a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        [[nodiscard]] auto available() const -> xtd::size;
+        [[nodiscard]] auto available() const -> xtd::usize;
         
         /// @brief Gets the underlying network xtd::net::sockets::socket.
         /// @return The underlying Network xtd::net::sockets::socket.
@@ -269,7 +269,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        auto begin_send(const xtd::array<xtd::byte>& dgram, xtd::size bytes, const xtd::string& hostname, uint16 port, xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
+        auto begin_send(const xtd::array<xtd::byte>& dgram, xtd::usize bytes, const xtd::string& hostname, uint16 port, xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
         
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by a EndPoint.
         /// @param dgram A byte array that contains the data to be sent.
@@ -280,7 +280,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        auto begin_send(const xtd::array<xtd::byte>& dgram, xtd::size bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
+        auto begin_send(const xtd::array<xtd::byte>& dgram, xtd::usize bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a remote host asynchronously. The destination was specified previously by a call to xtd::net::sockets::udp_client::connect.
         /// @param dgram A byte array that contains the data to be sent.
         /// @param bytes The number of bytes to send.
@@ -289,7 +289,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        auto begin_send(const xtd::array<xtd::byte>& dgram, xtd::size bytes, xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
+        auto begin_send(const xtd::array<xtd::byte>& dgram, xtd::usize bytes, xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
         
         /// @brief  Closes the UDP connection
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -370,7 +370,7 @@ namespace xtd {
         /// @remarks This method blocks until the operation is complete.
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::send method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        auto end_send(xtd::sptr<xtd::iasync_result> async_result) -> xtd::size;
+        auto end_send(xtd::sptr<xtd::iasync_result> async_result) -> xtd::usize;
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
@@ -455,7 +455,7 @@ namespace xtd {
         /// @remarks If you want to send datagrams to any other broadcast address, use the xtd::net::sockets::udp_client::client method to obtain the underlying xtd::net::sockets::socket, and set the socket option to SocketOptionName.Broadcast. You can also revert to using the xtd::net::sockets::socket class.
         /// @note Do not provide a host name or port number to this method if you have already established a remote host with the xtd::net::sockets::udp_client::connect method. If you do, the xtd::net::sockets::udp_client::send method will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use xtd::net::sockets::socket_exception.ErrorCode to obtain the specific error code. Once you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        auto send(const xtd::array<xtd::byte>& dgram, xtd::size bytes, const xtd::string& hostname, uint16 port) -> xtd::size;
+        auto send(const xtd::array<xtd::byte>& dgram, xtd::usize bytes, const xtd::string& hostname, uint16 port) -> xtd::usize;
         /// @brief xtd::net::sockets::udp_client::sends a UDP datagram to the host at the specified remote endpoint.
         /// @param dgram An array of type Byte that specifies the UDP datagram that you intend to send, represented as an array of bytes.
         /// @param bytes The number of bytes in the datagram.
@@ -467,7 +467,7 @@ namespace xtd {
         /// @remarks If you want to send datagrams to any other broadcast address, use the xtd::net::sockets::udp_client::client method to obtain the underlying xtd::net::sockets::socket, and set the socket option to SocketOptionName.Broadcast. You can also revert to using the xtd::net::sockets::socket class.
         /// @remarks Do not provide an endPoint parameter to this method if you have already established a remote host with the xtd::net::sockets::udp_client::connect method. If you do, the xtd::net::sockets::udp_client::send method will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use xtd::net::sockets::socket_exception.ErrorCode to obtain the specific error code. Once you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        auto send(const xtd::array<xtd::byte>& dgram, xtd::size bytes, const xtd::net::ip_end_point& end_point) -> xtd::size;
+        auto send(const xtd::array<xtd::byte>& dgram, xtd::usize bytes, const xtd::net::ip_end_point& end_point) -> xtd::usize;
         /// @brief xtd::net::sockets::udp_client::sends a UDP datagram to a remote host.
         /// @param dgram An array of type Byte that specifies the UDP datagram that you intend to send represented as an array of bytes.
         /// @param bytes The number of bytes in the datagram.
@@ -477,7 +477,7 @@ namespace xtd {
         /// @remarks This overload sends datagrams to the remote host established in the xtd::net::sockets::udp_client::connect method and returns the number of bytes sent. If you do not call xtd::net::sockets::udp_client::connect before calling this overload, the xtd::net::sockets::udp_client::send method will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use xtd::net::sockets::socket_exception.ErrorCode to obtain the specific error code. Once you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         /// @remarks If you want to send datagrams to a different remote host, you must call the xtd::net::sockets::udp_client::connect method and specify the desired remote host. Use either of the other xtd::net::sockets::udp_client::send method overloads to send datagrams to a broadcast address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        auto send(const xtd::array<xtd::byte>& dgram, xtd::size bytes) -> xtd::size;
+        auto send(const xtd::array<xtd::byte>& dgram, xtd::usize bytes) -> xtd::usize;
         /// @}
         
       protected:

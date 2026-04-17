@@ -37,7 +37,7 @@ namespace xtd {
       /// @param initial_count he number of signals initially required to set the xtd::threading::countdown_event.
       /// @exception xtd::argument_out_of_range_exception initial_count is less than 0.
       /// @remarks If initial_count is 0, the event is created in a signaled state.
-      explicit countdown_event(xtd::size initial_count);
+      explicit countdown_event(xtd::usize initial_count);
       /// @}
       
       /// @cond
@@ -55,12 +55,12 @@ namespace xtd {
       /// @brief Gets the number of remaining signals required to set the event.
       /// @return The number of remaining signals required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      [[nodiscard]] auto current_count() const -> xtd::size;
+      [[nodiscard]] auto current_count() const -> xtd::usize;
       
       /// @brief Gets the numbers of signals initially required to set the event.
       /// @return The number of signals initially required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      [[nodiscard]] auto initial_count() const -> xtd::size;
+      [[nodiscard]] auto initial_count() const -> xtd::usize;
       
       /// @brief ndicates whether the xtd::threading::countdown_event object's current count has reached zero.
       /// @return `true` if the current count is zero; otherwise, `false`.
@@ -90,7 +90,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::invalid_operation_exception The current instance is already set.
       /// @exception xtd::argument_out_of_range_exception count is less than 0.
-      auto add_count(xtd::size count) -> void;
+      auto add_count(xtd::usize count) -> void;
       
       /// @brief Close the current instance of the xtd::threading::countdown_event  class.
       auto close() -> void;
@@ -104,7 +104,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::argument_out_of_range_exception count is less than 0.
       /// @remarks This method resets xtd::threading::countdown_event::initial_count for all subsequent accesses of the property on the current instance.
-      void reset(xtd::size count);
+      void reset(xtd::usize count);
       
       /// @brief Registers a signal with the xtd::threading::countdown_event, decrementing the value of xtd::threading::countdown_event::current_count.
       /// @return `true` if the signal caused the count to reach zero and the event was set; otherwise, `false`.
@@ -117,7 +117,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::argument_out_of_range_exception signal_count is less than 0.
       /// @exception xtd::nvalid_operation_exception The current instance is already set.
-      auto signal(xtd::size signal_count) -> bool;
+      auto signal(xtd::usize signal_count) -> bool;
       
       /// @brief Attempts to increment xtd::threading::countdown_event::current_count by one.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
@@ -125,7 +125,7 @@ namespace xtd {
       /// @brief Attempts to increment xtd::threading::countdown_event::current_count by by a specified value.
       /// @param count The value by which to increase xtd::threading::countdown_event::current_count.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
-      [[nodiscard]] auto try_add_count(xtd::size count) noexcept -> bool;
+      [[nodiscard]] auto try_add_count(xtd::usize count) noexcept -> bool;
       
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set.
       /// @exception xtd::object_closed_exception The current instance has already been closed.

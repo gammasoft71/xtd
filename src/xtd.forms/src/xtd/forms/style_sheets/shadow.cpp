@@ -40,6 +40,6 @@ bool shadow::equals(const shadow& other) const noexcept {
   return color_ == other.color_ && offset_ == other.offset_ && radius_ == other.radius_;
 }
 
-xtd::size shadow::get_hash_code() const noexcept {
+xtd::usize shadow::get_hash_code() const noexcept {
   return hash_code::combine(color_, offset_, radius_);
 }

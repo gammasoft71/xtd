@@ -43,7 +43,7 @@ namespace xtd {
           using const_iterator = typename generic::ilist<list_type_t>::const_iterator;
           
           [[nodiscard]] auto contains(const list_type_t& item) const noexcept -> bool override {return false;}
-          auto copy_to(xtd::array<list_type_t>& array, xtd::size array_index) const -> void override {}
+          auto copy_to(xtd::array<list_type_t>& array, xtd::usize array_index) const -> void override {}
           [[nodiscard]] generic::enumerator<list_type_t> get_enumerator() const noexcept override {
             struct empty_list_enumerator : public generic::ienumerator<list_type_t> {
               [[nodiscard]] const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
@@ -52,19 +52,19 @@ namespace xtd {
             };
             return {new_ptr<empty_list_enumerator>()};
           }
-          [[nodiscard]] auto index_of(const list_type_t& item) const noexcept -> xtd::size override {return npos;}
+          [[nodiscard]] auto index_of(const list_type_t& item) const noexcept -> xtd::usize override {return npos;}
           
-          const list_type_t& operator [](xtd::size index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
-          list_type_t& operator [](xtd::size index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+          const list_type_t& operator [](xtd::usize index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+          list_type_t& operator [](xtd::usize index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
           
         private:
           auto is_fixed_size() const noexcept -> bool override {return false;}
           auto is_synchronized() const noexcept -> bool override {return false;}
           auto add(const list_type_t& item) -> void override {}
           auto clear() -> void override {}
-          auto insert(xtd::size index, const list_type_t& item) -> void override {}
+          auto insert(xtd::usize index, const list_type_t& item) -> void override {}
           auto remove(const list_type_t& item) -> bool override {return false;}
-          auto remove_at(xtd::size index) -> void override {}
+          auto remove_at(xtd::usize index) -> void override {}
         };
         
       public:
@@ -75,8 +75,8 @@ namespace xtd {
         using value_type = type_t;
         /// @brief Represents the list base type.
         using base_type = const xtd::collections::generic::ilist<value_type>& ;
-        /// @brief Represents the list size type (usually xtd::size).
-        using size_type = xtd::size;
+        /// @brief Represents the list size type (usually xtd::usize).
+        using size_type = xtd::usize;
         /// @brief Represents the list difference type (usually xtd::ptrdiff).
         using difference_type = xtd::ptrdiff;
         /// @brief Represents the reference of list value type.
@@ -123,7 +123,7 @@ namespace xtd {
         /// Finally, the code example creates an array larger than the collection and uses the xtd::collections::object_model::read_only_collection::copy_to method to insert the elements of the collection into the middle of the array.
         /// @include read_only_collection.cpp
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        [[nodiscard]] auto count() const noexcept -> xtd::size override {return items_.count();}
+        [[nodiscard]] auto count() const noexcept -> xtd::usize override {return items_.count();}
         
         /// @brief Gets an empty xtd::collections::object_model::read_only_collection <type_t>.
         /// @return An empty xtd::collections::object_model::read_only_collection <type_t>.
@@ -168,7 +168,7 @@ namespace xtd {
         /// @remarks This method uses xtd::array::copy to copy the elements.
         /// @remarks The elements are copied to the xtd::array in the same order that the enumerator iterates through the xtd::collections::object_model::read_only_collection <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::object_model::read_only_collection::count.
-        auto copy_to(xtd::array<type_t>& array, xtd::size array_index) const -> void override {return items_.copy_to(array, array_index);}
+        auto copy_to(xtd::array<type_t>& array, xtd::usize array_index) const -> void override {return items_.copy_to(array, array_index);}
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::object_model::read_only_collection <type_t>.
         /// @return An xtd::collections::generic::enumerator<T> for the xtd::collections::object_model::read_only_collection <type_t>.
@@ -203,7 +203,7 @@ namespace xtd {
         /// @remarks The xtd::collections::object_model::read_only_collection <type_t> is searched forward starting at the first element and ending at the last element.
         /// @remarks This method determines equality using the default comparer xtd::collections::generic::equality_comparer::default_comparer.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::object_model::read_only_collection::count.
-        [[nodiscard]] auto index_of(const type_t& item) const noexcept -> xtd::size override {return items_.index_of(item);}
+        [[nodiscard]] auto index_of(const type_t& item) const noexcept -> xtd::usize override {return items_.index_of(item);}
         /// @}
         
         /// @name Public Operators
@@ -253,9 +253,9 @@ namespace xtd {
         auto is_synchronized() const noexcept -> bool override {return false;}
         auto add(const value_type& item) -> void override {}
         auto clear() -> void override {}
-        auto insert(xtd::size index, const value_type& item) -> void override {}
+        auto insert(xtd::usize index, const value_type& item) -> void override {}
         auto remove(const value_type& item) -> bool override {return false;}
-        auto remove_at(xtd::size index) -> void override {}
+        auto remove_at(xtd::usize index) -> void override {}
         base_type items_;
       };
     }

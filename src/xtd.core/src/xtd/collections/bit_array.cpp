@@ -6,13 +6,13 @@ using namespace xtd;
 using namespace xtd::helpers;
 using namespace xtd::collections;
 
-auto bit_array::boolean_ref::get_boolean_ref(bool v, xtd::size i) noexcept -> bool& {
+auto bit_array::boolean_ref::get_boolean_ref(bool v, xtd::usize i) noexcept -> bool& {
   index = i;
   value = v;
   return value;
 }
 
-auto bit_array::boolean_ref::get_boolean_ref(bool v, xtd::size i) const noexcept -> const bool& {
+auto bit_array::boolean_ref::get_boolean_ref(bool v, xtd::usize i) const noexcept -> const bool& {
   index = i;
   value = v;
   return value;
@@ -23,13 +23,13 @@ auto bit_array::boolean_ref::from_boolean(bit_array& parent) noexcept -> void {
   index = npos;
 }
 
-bit_array::bit_array(xtd::size length) noexcept {
+bit_array::bit_array(xtd::usize length) noexcept {
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(0);
 }
 
-bit_array::bit_array(xtd::size length, bool default_value) noexcept {
+bit_array::bit_array(xtd::usize length, bool default_value) noexcept {
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(default_value ? 0xFFFFFFFFL : 0);
@@ -80,17 +80,17 @@ bit_array::bit_array(const std::vector<bool>& booleans) noexcept : bit_array(boo
     set(index, booleans[index]);
 }
 
-auto bit_array::count() const noexcept -> xtd::size {
+auto bit_array::count() const noexcept -> xtd::usize {
   flush(); // Must be call first
   return length_;
 }
 
-auto bit_array::length() const noexcept -> xtd::size {
+auto bit_array::length() const noexcept -> xtd::usize {
   flush(); // Must be call first
   return length_;
 }
 
-auto bit_array::length(xtd::size value) -> void {
+auto bit_array::length(xtd::usize value) -> void {
   flush(); // Must be call first
   length_ = value;
   bit_array_.items().resize(bits_per_int32 / bits_per_int32 + (bits_per_int32 % bits_per_int32 ? 1 : 0), 0);
@@ -110,7 +110,7 @@ auto bit_array::clone() const -> uptr<object> {
 }
 
 
-auto bit_array::copy_to(array<bool>& array, xtd::size index) const -> void {
+auto bit_array::copy_to(array<bool>& array, xtd::usize index) const -> void {
   flush(); // Must be call first
   if (index + length() > array.length()) throw_helper::throws(exception_case::argument);
   for (auto item : *this)
@@ -130,11 +130,11 @@ auto bit_array::equals(const object& obj) const noexcept -> bool {
   return is<bit_array>(obj) && equals(static_cast<const bit_array&>(obj));
 }
 
-auto bit_array::get(xtd::size index) const -> bool {
+auto bit_array::get(xtd::usize index) const -> bool {
   return operator [](index);
 }
 
-auto bit_array::get(xtd::size index) -> bool& {
+auto bit_array::get(xtd::usize index) -> bool& {
   return operator [](index);
 }
 
@@ -151,7 +151,7 @@ auto bit_array::get_enumerator() const -> generic::enumerator<bool> {
     void reset() override {index_ = npos;}
     
   private:
-    xtd::size index_ = npos;
+    xtd::usize index_ = npos;
     const bit_array& items_;
   };
   flush(); // Must be call first
@@ -188,7 +188,7 @@ auto bit_array::has_any_set() const noexcept -> bool {
   return ((bit_array_[int_count] & (1 << extra_bits)) - 1) != 0;
 }
 
-auto bit_array::left_shift(xtd::size count) noexcept -> bit_array& {
+auto bit_array::left_shift(xtd::usize count) noexcept -> bit_array& {
   return *this <<= count;
 }
 
@@ -207,11 +207,11 @@ auto bit_array::or_(const bit_array& value) -> const bit_array& {
   return *this;
 }
 
-auto bit_array::right_shift(xtd::size count) noexcept -> bit_array& {
+auto bit_array::right_shift(xtd::usize count) noexcept -> bit_array& {
   return *this >>= count;
 }
 
-auto bit_array::set(xtd::size index, bool value) -> void {
+auto bit_array::set(xtd::usize index, bool value) -> void {
   flush(); // Must be call first
   if (index >= length()) throw_helper::throws(exception_case::argument_out_of_range);
   set_bit_value(index, value);
@@ -236,14 +236,14 @@ auto bit_array::xor_(const bit_array& value) -> const bit_array& {
   return *this;
 }
 
-auto bit_array::operator [](xtd::size index) const -> const bool& {
+auto bit_array::operator [](xtd::usize index) const -> const bool& {
   flush(); // Must be call first
   if (index >= length() && index != epos) throw_helper::throws(exception_case::argument_out_of_range);
   auto idx = index == epos ? length() - 1 : index;
   return value_ref_.get_boolean_ref(get_bit_value(idx), idx);
 }
 
-auto bit_array::operator [](xtd::size index) -> bool& {
+auto bit_array::operator [](xtd::usize index) -> bool& {
   flush(); // Must be call first
   if (index >= length() && index != epos) throw_helper::throws(exception_case::argument_out_of_range);
   auto idx = index == epos ? length() - 1 : index;
@@ -293,7 +293,7 @@ auto bit_array::operator ~() const -> bit_array {
   return result;
 }
 
-auto bit_array::operator >>(xtd::size pos) const noexcept -> bit_array {
+auto bit_array::operator >>(xtd::usize pos) const noexcept -> bit_array {
   flush(); // Must be call first
   auto result = bit_array(count());
   for (auto index = count() - 1; index > 0; --index)
@@ -302,21 +302,21 @@ auto bit_array::operator >>(xtd::size pos) const noexcept -> bit_array {
   return result;
 }
 
-auto bit_array::operator >>=(xtd::size pos) noexcept -> bit_array& {
+auto bit_array::operator >>=(xtd::usize pos) noexcept -> bit_array& {
   *this = as_const(*this) >> pos;
   return *this;
 }
 
-auto bit_array::operator <<(xtd::size pos) const noexcept -> bit_array {
+auto bit_array::operator <<(xtd::usize pos) const noexcept -> bit_array {
   flush(); // Must be call first
   auto result = bit_array(count());
-  for (auto index = xtd::size {0}; index < count(); ++index)
+  for (auto index = xtd::usize {0}; index < count(); ++index)
     result[index] = index + pos < count() ? self_[index + pos] : false;
   result.flush();
   return result;
 }
 
-auto bit_array::operator <<=(xtd::size pos) noexcept -> bit_array& {
+auto bit_array::operator <<=(xtd::usize pos) noexcept -> bit_array& {
   *this = as_const(*this) << pos;
   return *this;
 }
@@ -363,27 +363,27 @@ auto bit_array::flush() const noexcept -> void {
   value_ref_.from_boolean(const_cast<bit_array&>(*this));
 }
 
-auto bit_array::get_int32_array_length_from_bit_length(xtd::size n) const noexcept -> xtd::size {
+auto bit_array::get_int32_array_length_from_bit_length(xtd::usize n) const noexcept -> xtd::usize {
   return (n - 1 + (1 << bit_shift_per_int32)) >> bit_shift_per_int32;
 }
 
-auto bit_array::get_list_position(xtd::size index) const noexcept -> xtd::size {
+auto bit_array::get_list_position(xtd::usize index) const noexcept -> xtd::usize {
   return index / bits_per_int32;
 }
 
-auto bit_array::get_bit_position(xtd::size index) const noexcept -> xtd::size {
+auto bit_array::get_bit_position(xtd::usize index) const noexcept -> xtd::usize {
   return index % bits_per_int32;
 }
 
-auto bit_array::get_list_length(xtd::size length_) const noexcept -> xtd::size {
+auto bit_array::get_list_length(xtd::usize length_) const noexcept -> xtd::usize {
   return get_list_position(length_) + (get_bit_position(length_) ? 1 : 0);
 }
 
-auto bit_array::get_bit_value(xtd::size index) const noexcept -> bool {
+auto bit_array::get_bit_value(xtd::usize index) const noexcept -> bool {
   return (bit_array_[get_list_position(index)] & (1 << get_bit_position(index))) == (1 << get_bit_position(index));
 }
 
-auto bit_array::set_bit_value(xtd::size index, bool value) noexcept -> void {
+auto bit_array::set_bit_value(xtd::usize index, bool value) noexcept -> void {
   if (value) bit_array_[get_list_position(index)] = bit_array_[get_list_position(index)] | (1 << (get_bit_position(index)));
   else bit_array_[get_list_position(index)] = bit_array_[get_list_position(index)] & ~(1 << (get_bit_position(index)));
 }

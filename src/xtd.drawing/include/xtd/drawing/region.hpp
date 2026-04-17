@@ -94,7 +94,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to exclude from this xtd::drawing::region.

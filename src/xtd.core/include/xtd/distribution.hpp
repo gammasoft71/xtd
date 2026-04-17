@@ -93,7 +93,7 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Converts the value of this distribution object to its equivalent string representation.
     /// @return The string representation of the value returned by the description property.

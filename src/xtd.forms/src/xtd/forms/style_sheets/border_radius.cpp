@@ -75,6 +75,6 @@ bool border_radius::equals(const border_radius& other) const noexcept {
   return all_ == other.all_ && bottom_left_ == other.bottom_left_ && bottom_right_ == other.bottom_right_ && top_left_ == other.top_left_ && top_right_ == other.top_left_;
 }
 
-xtd::size border_radius::get_hash_code() const noexcept {
+xtd::usize border_radius::get_hash_code() const noexcept {
   return hash_code::combine(all_, bottom_left_, bottom_right_, top_left_, top_right_);
 }

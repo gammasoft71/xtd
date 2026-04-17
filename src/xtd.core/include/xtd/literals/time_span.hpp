@@ -126,7 +126,7 @@ namespace xtd {
     /// xtd::time_span ts = "6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ts(const char* s, xtd::size n) -> xtd::time_span;
+    [[nodiscard]] auto operator""_ts(const char* s, xtd::usize n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -139,7 +139,7 @@ namespace xtd {
     /// xtd::time_span ts = u8"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ts(const char8* s, xtd::size n) -> xtd::time_span;
+    [[nodiscard]] auto operator""_ts(const char8* s, xtd::usize n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -152,7 +152,7 @@ namespace xtd {
     /// xtd::time_span ts = u"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ts(const char16* s, xtd::size n) -> xtd::time_span;
+    [[nodiscard]] auto operator""_ts(const char16* s, xtd::usize n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -165,7 +165,7 @@ namespace xtd {
     /// xtd::time_span ts = U"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ts(const char32* s, xtd::size n) -> xtd::time_span;
+    [[nodiscard]] auto operator""_ts(const char32* s, xtd::usize n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -178,7 +178,7 @@ namespace xtd {
     /// xtd::time_span ts = L"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ts(const wchar* s, xtd::size n) -> xtd::time_span;
+    [[nodiscard]] auto operator""_ts(const wchar* s, xtd::usize n) -> xtd::time_span;
     /// @}
   }
 }

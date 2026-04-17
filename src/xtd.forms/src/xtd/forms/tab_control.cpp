@@ -313,7 +313,7 @@ void tab_control::on_tab_pages_text_added(size_t index, const string& text, cons
   }
 }
 
-void tab_control::on_tab_pages_text_inserted(xtd::size pos, const string& text, const string& name) {
+void tab_control::on_tab_pages_text_inserted(xtd::usize pos, const string& text, const string& name) {
   auto item = xtd::new_sptr<tab_page>();
   item->text(text);
   item->name(name);

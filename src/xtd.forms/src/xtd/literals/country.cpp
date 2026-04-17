@@ -13,22 +13,22 @@ namespace {
   }
 }
 
-country xtd::literals::operator""_country(const char* s, xtd::size n) {
+country xtd::literals::operator""_country(const char* s, xtd::usize n) {
   return get_country(string {s});
 }
 
-country xtd::literals::operator""_country(const char8* s, xtd::size n) {
+country xtd::literals::operator""_country(const char8* s, xtd::usize n) {
   return get_country(string {s});
 }
 
-country xtd::literals::operator""_country(const char16* s, xtd::size n) {
+country xtd::literals::operator""_country(const char16* s, xtd::usize n) {
   return get_country(string {s});
 }
 
-country xtd::literals::operator""_country(const char32* s, xtd::size n) {
+country xtd::literals::operator""_country(const char32* s, xtd::usize n) {
   return get_country(string {s});
 }
 
-country xtd::literals::operator""_country(const wchar* s, xtd::size n) {
+country xtd::literals::operator""_country(const wchar* s, xtd::usize n) {
   return get_country(string {s});
 }

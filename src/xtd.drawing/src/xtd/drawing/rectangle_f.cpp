@@ -83,7 +83,7 @@ bool rectangle_f::equals(const rectangle_f& value) const noexcept {
   return x == value.x && y == value.y && width == value.width && height == value.height;
 }
 
-xtd::size rectangle_f::get_hash_code() const noexcept {
+xtd::usize rectangle_f::get_hash_code() const noexcept {
   return hash_code::combine(x, y, width, height);
 }
 

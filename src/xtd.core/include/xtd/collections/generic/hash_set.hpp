@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Represents the hash set value type.
         using value_type = typename xtd::collections::generic::iset <type_t>::value_type;
         /// @brief Represents the hash set size type.
-        using size_type = xtd::size;
+        using size_type = xtd::usize;
         /// @brief Represents the hash set base type.
         using base_type = std::unordered_set<key_type, hasher_t, equator_t, allocator_t>;
         /// @}
@@ -218,7 +218,7 @@ namespace xtd {
         /// @brief Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The number of entries.
         /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
-        auto ensure_capacity(xtd::size capacity) noexcept -> xtd::size {
+        auto ensure_capacity(xtd::usize capacity) noexcept -> xtd::usize {
           data_->items.reserve(capacity);
           return self_.capacity();
         }

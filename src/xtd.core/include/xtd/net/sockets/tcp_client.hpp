@@ -94,7 +94,7 @@ namespace xtd {
         /// @remarks The available data is the total amount of data queued in the network buffer for reading. If no data is queued in the network buffer, available returns 0.
         /// @remarks If the remote host shuts down or closes the connection, available may throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use xtd::net::sockets::socket_exception.ErrorCode to obtain the specific error code.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        [[nodiscard]] auto available() const -> xtd::size;
+        [[nodiscard]] auto available() const -> xtd::usize;
         
         /// @brief Gets the underlying network xtd::net::sockets::socket
         /// @return The underlying network xtd::net::sockets::socket
@@ -191,22 +191,22 @@ namespace xtd {
         auto no_delay(bool value) -> tcp_client&;
         
         /// @brief Gets the size of the receive buffer.
-        /// @return A xtd::size that contains the size, in bytes, of the receive buffer. The default is 8192.
+        /// @return A xtd::usize that contains the size, in bytes, of the receive buffer. The default is 8192.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::tcp_client::receive_buffer_size property gets or sets the number of bytes that you are expecting to store in the receive buffer for each read operation. This property actually manipulates the network buffer space allocated for receiving incoming data.
         /// @remarks Your network buffer should be at least as large as your application buffer to ensure that the desired data will be available when you call the std::iostream::read method. Use the xtd::net::sockets::tcp_client::receive_buffer_size property to set this size. If your application will be receiving bulk data, you should pass the Read method a very large application buffer.
         /// @remarks If the network buffer is smaller than the amount of data you request in the std::iostream::read method, you will not be able to retrieve the desired amount of data in one read operation. This incurs the overhead of additional calls to the std::iostream::read method.
-        [[nodiscard]] auto receive_buffer_size() const -> xtd::size;
+        [[nodiscard]] auto receive_buffer_size() const -> xtd::usize;
         /// @brief Sets the size of the receive buffer.
-        /// @param value A xtd::size that contains the size, in bytes, of the receive buffer. The default is 8192.
+        /// @param value A xtd::usize that contains the size, in bytes, of the receive buffer. The default is 8192.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::tcp_client::receive_buffer_size property gets or sets the number of bytes that you are expecting to store in the receive buffer for each read operation. This property actually manipulates the network buffer space allocated for receiving incoming data.
         /// @remarks Your network buffer should be at least as large as your application buffer to ensure that the desired data will be available when you call the std::iostream::read method. Use the xtd::net::sockets::tcp_client::receive_buffer_size property to set this size. If your application will be receiving bulk data, you should pass the Read method a very large application buffer.
         /// @remarks If the network buffer is smaller than the amount of data you request in the std::iostream::read method, you will not be able to retrieve the desired amount of data in one read operation. This incurs the overhead of additional calls to the std::iostream::read method.
-        auto receive_buffer_size(xtd::size value) -> tcp_client&;
+        auto receive_buffer_size(xtd::usize value) -> tcp_client&;
         
         /// @brief Gets the amount of time a xtd::net::sockets::tcp_client will wait to receive data once a read operation is initiated.
         /// @return The time-out value of the connection in milliseconds. The default value is 0.
@@ -223,14 +223,14 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::tcp_client::send_buffer_size property gets or sets the number of bytes that you are expecting to send in each call to the std::iostream::write method. This property actually manipulates the network buffer space allocated for send operation.
         /// @remarks Your network buffer should be at least as large as your application buffer to ensure that the desired data will be stored and sent in one operation. Use the xtd::net::sockets::tcp_client::send_buffer_size property to set this size. If your application will be sending bulk data, you should pass the std::iostream::write method a very large application buffer.
         /// @remarks If the network buffer is smaller than the amount of data you provide the std::iostream::write method, several network send operations will be performed for every call you make to the std::iostream::write method. You can achieve greater data throughput by ensuring that your network buffer is at least as large as your application buffer.
-        [[nodiscard]] auto send_buffer_size() const -> xtd::size;
+        [[nodiscard]] auto send_buffer_size() const -> xtd::usize;
         /// @brief Sets the size of the send buffer.
         /// @param value The size of the send buffer, in bytes. The default value is 8192 bytes.
         /// @return This current instance.
         /// @remarks The xtd::net::sockets::tcp_client::send_buffer_size property gets or sets the number of bytes that you are expecting to send in each call to the std::iostream::write method. This property actually manipulates the network buffer space allocated for send operation.
         /// @remarks Your network buffer should be at least as large as your application buffer to ensure that the desired data will be stored and sent in one operation. Use the xtd::net::sockets::tcp_client::send_buffer_size property to set this size. If your application will be sending bulk data, you should pass the std::iostream::write method a very large application buffer.
         /// @remarks If the network buffer is smaller than the amount of data you provide the std::iostream::write method, several network send operations will be performed for every call you make to the std::iostream::write method. You can achieve greater data throughput by ensuring that your network buffer is at least as large as your application buffer.
-        auto send_buffer_size(xtd::size value) -> tcp_client&;
+        auto send_buffer_size(xtd::usize value) -> tcp_client&;
         
         /// @brief Gets the amount of time a xtd::net::sockets::tcp_client will wait for a send operation to complete successfully.
         /// @return The send time-out value, in milliseconds. The default value is 0.

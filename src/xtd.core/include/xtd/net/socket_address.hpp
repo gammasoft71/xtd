@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @brief Gets the underlying buffer size of the xtd::net::socket_address.
       /// @return The underlying buffer size of the xtd::net::socket_address.
-      [[nodiscard]] auto size() const -> xtd::size;
+      [[nodiscard]] auto size() const -> xtd::usize;
       /// @}
       
       /// @name Public Methods
@@ -81,7 +81,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns information about the socket address.
       /// @return A string that contains information about the xtd::net::socket_address.
@@ -98,14 +98,14 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception index is equal to or greater than size.
       /// @remarks This property gets or sets the specified byte position in the underlying buffer.
       /// @note Be sure to call xtd::net::socket_address::size before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the xtd::net::socket_address to throw an xtd::argument_out_of_range_exception.
-      auto operator [](xtd::size index) -> xtd::byte&;
+      auto operator [](xtd::usize index) -> xtd::byte&;
       /// @brief Gets the specified index element in the underlying buffer.
       /// @param index The array index element of the desired information.
       /// @return The value of the specified index element in the underlying buffer.
       /// @exception xtd::argument_out_of_range_exception index is equal to or greater than size.
       /// @remarks This property gets or sets the specified byte position in the underlying buffer.
       /// @note Be sure to call xtd::net::socket_address::size before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the xtd::net::socket_address to throw an xtd::argument_out_of_range_exception.
-      auto operator [](xtd::size index) const -> const xtd::byte&;
+      auto operator [](xtd::usize index) const -> const xtd::byte&;
       /// @}
 
     private:

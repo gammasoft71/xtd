@@ -37,7 +37,7 @@ bool size_f::equals(const xtd::drawing::size_f& value) const noexcept {
   return width == value.width && height == value.height;
 }
 
-xtd::size size_f::get_hash_code() const noexcept {
+xtd::usize size_f::get_hash_code() const noexcept {
   return hash_code::combine(width, height);
 }
 

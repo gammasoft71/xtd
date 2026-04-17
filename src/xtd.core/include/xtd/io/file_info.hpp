@@ -328,7 +328,7 @@ namespace xtd {
       /// * xtd::io::file_info::enumerate_files
       /// * xtd::io::file_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_info::refresh method.
-      [[nodiscard]] auto length() const -> xtd::size;
+      [[nodiscard]] auto length() const -> xtd::usize;
       
       /// @brief Gets the name of the file.
       /// @return The name of the file.

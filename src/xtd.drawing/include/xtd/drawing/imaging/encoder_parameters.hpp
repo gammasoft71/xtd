@@ -26,11 +26,11 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::imaging::encoder_parameters class that can contain one xtd::drawing::imaging::encoder_parameter object.
         /// @remarks Some of the xtd::drawing::image::save and xtd::drawing::image::ssave_add methods receive an xtd::drawing::imaging::encoder_parameters object as an argument. The xtd::drawing::image::get_encoder_parameter_list method returns an xtd::drawing::imaging::encoder_parameters object.
-        explicit encoder_parameters() : params(xtd::size {1}) {}
+        explicit encoder_parameters() : params(xtd::usize {1}) {}
         /// @brief Initializes a new instance of the xtd::drawing::imaging::encoder_parameters class that can contain the specified number of xtd::drawing::imaging::encoder_parameter objects.
         /// @param count A size_t that specifies the number of xtd::drawing::imaging::encoder_parameter objects that the xtd::drawing::imaging::encoder_parameters object can contain.
         /// @remarks Some of the xtd::drawing::image::save and xtd::drawing::image::ssave_add methods receive an xtd::drawing::imaging::encoder_parameters object as an argument. The xtd::drawing::image::get_encoder_parameter_list method returns an xtd::drawing::imaging::encoder_parameters object.
-        explicit encoder_parameters(xtd::size count) : params(count) {}
+        explicit encoder_parameters(xtd::usize count) : params(count) {}
         /// @}
         
         /// @cond

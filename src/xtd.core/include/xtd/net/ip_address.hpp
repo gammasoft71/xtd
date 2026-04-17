@@ -160,7 +160,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Maps the xtd::net::ip_address object to an IPv4 address.
       /// @return An IPv4 address.
@@ -314,7 +314,7 @@ namespace xtd {
       
     private:
       friend xtd::net::sockets::socket;
-      static constexpr xtd::size number_of_numbers_ = 8;
+      static constexpr xtd::usize number_of_numbers_ = 8;
       ip_address(const xtd::array<xtd::uint16>& numbers, xtd::uint32 scope_id);
       xtd::uint32 address_or_scope_id_ = 0;
       xtd::array<xtd::uint16> numbers_ = xtd::array<xtd::uint16>(number_of_numbers_);

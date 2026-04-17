@@ -42,7 +42,7 @@ namespace xtd {
         /// @brief Represents the dictionary value type.
         using value_type = typename xtd::collections::generic::idictionary<key_type, mapped_type>::value_type;
         /// @brief Represents the dictionary size type.
-        using size_type = xtd::size;
+        using size_type = xtd::usize;
         /// @brief Represents the dictionary base value type.
         using base_value_type = xtd::collections::generic::key_value_pair<key_type, mapped_type>;
         /// @brief Represents the dictionary base type.
@@ -294,7 +294,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        auto copy_to(xtd::array<value_type>& array, xtd::size array_index) const -> void override {
+        auto copy_to(xtd::array<value_type>& array, xtd::usize array_index) const -> void override {
           if (array_index + count() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           for (const auto& item : self_)
             array[array_index++] = item;
@@ -304,7 +304,7 @@ namespace xtd {
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         [[nodiscard]] xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
           struct ordered_dictionary_enumerator : public ienumerator<value_type> {
-            explicit ordered_dictionary_enumerator(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
+            explicit ordered_dictionary_enumerator(const ordered_dictionary & items, xtd::usize version) : items_(items), version_(version) {}
             
             [[nodiscard]] const value_type& current() const override {
               if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
@@ -337,7 +337,7 @@ namespace xtd {
         /// @param key The key of the entry to add.
         /// @exception xtd::argument_out_of_range index is out of range.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
-        auto insert(xtd::size index, const key_t & key) -> void {insert(index, key, value_t {});}
+        auto insert(xtd::usize index, const key_t & key) -> void {insert(index, key, value_t {});}
         
         /// @brief Inserts a new entry into the xtd::collections::generic::ordered_dictionary collection with the specified key and value at the specified index.
         /// @param index The zero-based index at which the element should be inserted.
@@ -345,7 +345,7 @@ namespace xtd {
         /// @param value The value of the entry to add.
         /// @exception xtd::argument_out_of_range index is out of range.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
-        auto insert(xtd::size index, const key_t & key, const value_t& value) -> void {
+        auto insert(xtd::usize index, const key_t & key, const value_t& value) -> void {
           if (contains_key(key)) return xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           lock_(data_->sync_op) {
             data_->items.add(key, value);
@@ -385,7 +385,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range index is out of range.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks The entries that follow the removed entry move up to occupy the vacated spot and the indexes of the entries that move are also updated.
-        auto remove_at(xtd::size index) -> void {
+        auto remove_at(xtd::usize index) -> void {
           lock_(data_->sync_op) {
             data_->items.remove(data_->keys[index]);
             data_->keys.remove_at(index);
@@ -447,7 +447,7 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property allows you to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        auto operator()(xtd::size index) const -> const value_t& {return operator [](data_->keys[index]);}
+        auto operator()(xtd::usize index) const -> const value_t& {return operator [](data_->keys[index]);}
         /// @brief Sets the value at the specified index.
         /// @param index The zero-based index of the value to get or set.
         /// @return The value of the item at the specified index.
@@ -455,7 +455,7 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property allows you to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        auto operator()(xtd::size index) -> value_t& {return operator [](data_->keys[index]);}
+        auto operator()(xtd::usize index) -> value_t& {return operator [](data_->keys[index]);}
         
         /// @brief Gets the element with the specified key.
         /// @param key The key of the element to get.
@@ -488,8 +488,8 @@ namespace xtd {
         /// @}
         
       private:
-        auto get_index(const key_t & key) const noexcept -> xtd::size {
-          auto index = xtd::size {0};
+        auto get_index(const key_t & key) const noexcept -> xtd::usize {
+          auto index = xtd::usize {0};
           for (const auto& item_key : data_->keys) {
             if (item_key == key) return index;
             ++index;

@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
       /// @remarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
-      static constexpr xtd::size wait_timeout = usize_object::max_value;
+      static constexpr xtd::usize wait_timeout = usize_object::max_value;
       /// @}
       
       /// @name Public Constructors
@@ -195,7 +195,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The number of objects in wait_handles is greater than the system permits.
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
       template<typename collection_t>
-      static auto wait_any(const collection_t& wait_handles) -> xtd::size {return wait_any(wait_handles, timeout::infinite);}
+      static auto wait_any(const collection_t& wait_handles) -> xtd::usize {return wait_any(wait_handles, timeout::infinite);}
       
       /// @brief Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.
       /// @param wait_handles A xtd::threading::wait_handle collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object.
@@ -206,7 +206,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The number of objects in wait_handles is greater than the system permits.
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
       template<typename collection_t>
-      static auto wait_any(const collection_t& wait_handles, int32 milliseconds_timeout) -> xtd::size {
+      static auto wait_any(const collection_t& wait_handles, int32 milliseconds_timeout) -> xtd::usize {
         auto wait_handle_pointers = std::vector<wait_handle*> {};
         for (auto& item : wait_handles)
           wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
@@ -222,7 +222,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The number of objects in wait_handles is greater than the system permits.
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
       template<typename collection_t>
-      static auto wait_any(const collection_t& wait_handles, const time_span& timeout) -> xtd::size {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
+      static auto wait_any(const collection_t& wait_handles, const time_span& timeout) -> xtd::usize {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
       /// @}
       
       /// @cond
@@ -262,39 +262,39 @@ namespace xtd {
       static auto wait_all(const xtd::array<wait_handle*>& wait_handles, int32 milliseconds_timeout) -> bool;
       
       template<typename ...items_t>
-      static auto wait_any(items_t... items) -> xtd::size {return wait_any(timeout::infinite, items...);}
+      static auto wait_any(items_t... items) -> xtd::usize {return wait_any(timeout::infinite, items...);}
       template<typename ...items_t>
-      static auto wait_any(const time_span& timeout, items_t... items) -> xtd::size {return wait_any(as<int32>(timeout.total_milliseconds()), items...);}
+      static auto wait_any(const time_span& timeout, items_t... items) -> xtd::usize {return wait_any(as<int32>(timeout.total_milliseconds()), items...);}
       template<typename ...items_t>
-      static auto wait_any(int32 milliseconds_timeout, items_t... items) -> xtd::size {
+      static auto wait_any(int32 milliseconds_timeout, items_t... items) -> xtd::usize {
         auto wait_handle_pointers = std::vector<wait_handle*> {};
         fill_wait_handle_pointers(wait_handle_pointers, items...);
         return wait_any(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       template<typename item_t>
-      static auto wait_any(const std::initializer_list<item_t>& wait_handles) -> xtd::size {return wait_any(wait_handles, timeout::infinite);}
+      static auto wait_any(const std::initializer_list<item_t>& wait_handles) -> xtd::usize {return wait_any(wait_handles, timeout::infinite);}
       template<typename item_t>
-      static auto wait_any(const std::initializer_list<item_t>& wait_handles, int32 milliseconds_timeout) -> xtd::size {
+      static auto wait_any(const std::initializer_list<item_t>& wait_handles, int32 milliseconds_timeout) -> xtd::usize {
         auto wait_handle_pointers = std::vector<wait_handle*> {};
         for (auto& item : wait_handles)
           wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
         return wait_any(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       template<typename item_t>
-      static auto wait_any(const std::initializer_list<item_t>& wait_handles, const time_span& timeout) -> xtd::size {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
-      static auto wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles) -> xtd::size;
-      static auto wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::size;
-      static auto wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::size;
-      static auto wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles) -> xtd::size;
-      static auto wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::size;
-      static auto wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::size;
-      static auto wait_any(const xtd::array<xtd::sptr<wait_handle>>& wait_handles) -> xtd::size;
-      static auto wait_any(const xtd::array<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::size;
-      static auto wait_any(const xtd::array<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::size;
-      static auto wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles) -> xtd::size;
-      static auto wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::size;
-      static auto wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::size;
-      static auto wait_any(const xtd::array<wait_handle*>& wait_handles, int32 milliseconds_timeout) -> xtd::size;
+      static auto wait_any(const std::initializer_list<item_t>& wait_handles, const time_span& timeout) -> xtd::usize {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
+      static auto wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles) -> xtd::usize;
+      static auto wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::usize;
+      static auto wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::usize;
+      static auto wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles) -> xtd::usize;
+      static auto wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::usize;
+      static auto wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::usize;
+      static auto wait_any(const xtd::array<xtd::sptr<wait_handle>>& wait_handles) -> xtd::usize;
+      static auto wait_any(const xtd::array<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::usize;
+      static auto wait_any(const xtd::array<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::usize;
+      static auto wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles) -> xtd::usize;
+      static auto wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) -> xtd::usize;
+      static auto wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) -> xtd::usize;
+      static auto wait_any(const xtd::array<wait_handle*>& wait_handles, int32 milliseconds_timeout) -> xtd::usize;
       /// @endcond
       
     protected:

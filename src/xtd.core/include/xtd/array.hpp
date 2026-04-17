@@ -35,7 +35,7 @@ namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, xtd::size rank_, typename allocator_t>
+  /// template<typename type_t, xtd::usize rank_, typename allocator_t>
   /// class array : public xtd::basic_array<type_t, allocator_t>;
   /// ```
   /// @par Header
@@ -60,7 +60,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<typename type_t, xtd::size rank_, typename allocator_t>
+  template<typename type_t, xtd::usize rank_, typename allocator_t>
   class array : public basic_array<type_t, allocator_t> {
   public:
     /// @name Public Aliases
@@ -72,7 +72,7 @@ namespace xtd {
     using allocator_type = typename xtd::basic_array<type_t, allocator_t>::allocator_type;
     /// @brief Represents the array base type.
     using base_type = typename xtd::basic_array<type_t, allocator_t>::base_type;
-    /// @brief Represents the array size type (usually xtd::size).
+    /// @brief Represents the array size type (usually xtd::usize).
     using size_type = typename xtd::basic_array<type_t, allocator_t>::size_type;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
     using difference_type = typename xtd::basic_array<type_t, allocator_t>::difference_type;
@@ -115,14 +115,14 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    explicit array(const array<xtd::size, 1>& lengths) : xtd::basic_array<type_t, allocator_t>(lengths) {}
+    explicit array(const array<xtd::usize, 1>& lengths) : xtd::basic_array<type_t, allocator_t>(lengths) {}
     /// @brief Initializes a new instance of the array class with lengths for each rank specified.
     /// @param lengths the lengths for each rank.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const array<xtd::size, 1>& lengths, const type_t& value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
+    array(const array<xtd::usize, 1>& lengths, const type_t& value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
@@ -155,7 +155,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the rank of an array.
     /// @include array_get_length.cpp
-    xtd::size rank() const noexcept override {return rank_;}
+    xtd::usize rank() const noexcept override {return rank_;}
     /// @}
     
     /// @name Public Methods
@@ -181,7 +181,7 @@ namespace xtd {
     
   private:
     friend class array<>;
-    array(const array<xtd::size>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
+    array(const array<xtd::usize>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
   };
 }
 

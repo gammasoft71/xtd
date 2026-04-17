@@ -13,11 +13,11 @@
 /// @par Examples
 /// ```cpp
 /// // Get the size of a type :
-/// xtd::size size1 = sizeof_<int>();
+/// xtd::usize size1 = sizeof_<int>();
 ///
 /// int i = 42;
 /// // Get the size of an object :
-/// xtd::size size2 = sizeof_(i);
+/// xtd::usize size2 = sizeof_(i);
 /// ```
 /// @remarks The #sizeof_ operator cannot be overloaded.
 #define sizeof_ \

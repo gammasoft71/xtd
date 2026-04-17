@@ -53,8 +53,8 @@ namespace xtd {
         using value_type = typename icollection<type_t>::value_type;
         /// @brief Represents the list base type.
         using base_type = xtd::collections::generic::helpers::raw_queue<value_type, container_t>;
-        /// @brief Represents the list size type (usually xtd::size).
-        using size_type = xtd::size;
+        /// @brief Represents the list size type (usually xtd::usize).
+        using size_type = xtd::usize;
         /// @brief Represents the reference of list value type.
         using reference = value_type&;
         /// @brief Represents the const reference of list value type.
@@ -213,7 +213,7 @@ namespace xtd {
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::queue <type_t>.
         [[nodiscard]] enumerator<value_type> get_enumerator() const noexcept override {
           struct queue_enumerator : public ienumerator < value_type > {
-            explicit queue_enumerator(const queue & items, xtd::size version) : items_(items), version_(version) {}
+            explicit queue_enumerator(const queue & items, xtd::usize version) : items_(items), version_(version) {}
             
             [[nodiscard]] const value_type& current() const override {
               if (iterator_ == items_.data_->items.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
@@ -270,7 +270,7 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::queue::count.
         /// @remarks To reset a xtd::collections::generic::queue <type_t> to its initial state, call the xtd::collections::generic::queue::clear method before calling xtd::collections::generic::queue::trim_excess method. Trimming an empty xtd::collections::generic::queue <type_t> sets the capacity of the xtd::collections::generic::queue <type_t> to the default capacity.
         auto trim_excess() -> void {
-          if (count() < static_cast<xtd::size>(capacity() * 0.9)) trim_excess(count());
+          if (count() < static_cast<xtd::usize>(capacity() * 0.9)) trim_excess(count());
         }
         
         /// @brief Sets the capacity of a xtd::collections::generic::queue <type_t> object to the specified number of entries.
@@ -344,7 +344,7 @@ namespace xtd {
         struct queue_data {
           base_type items;
           xtd::object sync_root;
-          xtd::size version = 0;
+          xtd::usize version = 0;
         };
         
         xtd::ptr<queue_data> data_ = xtd::new_ptr<queue_data>();

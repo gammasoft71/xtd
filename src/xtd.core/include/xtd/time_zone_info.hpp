@@ -167,7 +167,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       /// @}
       
     private:
@@ -257,7 +257,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       /// @}
       
     private:
@@ -360,7 +360,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    xtd::usize get_hash_code() const noexcept override;
     
     /// @brief Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current xtd::time_zone_info object.
     /// @param date_time A date and time value.

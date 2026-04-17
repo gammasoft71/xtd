@@ -21,7 +21,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<xtd::size>(), typeof_<read_only_span<int>::size_type>());
+      assert::are_equal(typeof_<xtd::usize>(), typeof_<read_only_span<int>::size_type>());
     }
     
     auto test_method_(difference_type) {
@@ -115,7 +115,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(constructor_with_const_iterator_and_count) {
-      /* Conflict with read_only_span(collection_t& items, xtd::size count)
+      /* Conflict with read_only_span(collection_t& items, xtd::usize count)
        const auto a = array {10, 20, 30, 40, 50};
        auto s = read_only_span(a.begin(), 4_z);
        assert::are_equal(a.data(), s.data());
@@ -125,7 +125,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(constructor_with_const_iterator_count_and_static_extent) {
-      /* Conflict with read_only_span(collection_t& items, xtd::size count)
+      /* Conflict with read_only_span(collection_t& items, xtd::usize count)
        const auto a = array {10, 20, 30, 40, 50};
        auto s = read_only_span<int, 3>(a.begin(), 4_z);
        assert::are_equal(a.data(), s.data());
@@ -135,7 +135,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(constructor_with_iterator_and_count) {
-      /* Conflict with read_only_span(collection_t& items, xtd::size count)
+      /* Conflict with read_only_span(collection_t& items, xtd::usize count)
        auto a = array {10, 20, 30, 40, 50};
        auto s = read_only_span(a.begin(), 4_z);
        assert::are_equal(a.data(), s.data());
@@ -145,7 +145,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(constructor_with_iterator_count_and_static_extent) {
-      /* Conflict with read_only_span(collection_t& items, xtd::size count)
+      /* Conflict with read_only_span(collection_t& items, xtd::usize count)
        auto a = array {10, 20, 30, 40, 50};
        auto s = read_only_span<int, 3>(a.begin(), 4_z);
        assert::are_equal(a.data(), s.data());

@@ -52,12 +52,12 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    xtd::usize get_hash_code() const noexcept override;
     
     /// @brief Calculates the final hash code after consecutive xtd::hash_code::add invocations.
     /// @return The calculated hash code.
     /// @remarks This method must be called at most once per instance of xtd::hash_code.
-    xtd::size to_hash_code() const noexcept;
+    xtd::usize to_hash_code() const noexcept;
     /// @}
     
     /// @name Public Static Methods
@@ -67,16 +67,16 @@ namespace xtd {
     /// @param values The values to combine into the hash code.
     /// @return The hash code that represents the values.
     template<typename ...args_t>
-    static xtd::size combine(args_t... values) noexcept {return combine_iterator(generate_uniqueness_seed(), values...);}
+    static xtd::usize combine(args_t... values) noexcept {return combine_iterator(generate_uniqueness_seed(), values...);}
     /// @}
     
   private:
     template<typename type_t, typename ...args_t>
-    static xtd::size combine_iterator(xtd::size seed, const type_t& value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}
-    static xtd::size combine_iterator(xtd::size seed) noexcept;
-    static xtd::size hash_combine(xtd::size seed, xtd::size value) noexcept;
-    static xtd::size generate_uniqueness_seed() noexcept;
+    static xtd::usize combine_iterator(xtd::usize seed, const type_t& value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}
+    static xtd::usize combine_iterator(xtd::usize seed) noexcept;
+    static xtd::usize hash_combine(xtd::usize seed, xtd::usize value) noexcept;
+    static xtd::usize generate_uniqueness_seed() noexcept;
     
-    xtd::size hash_code_ = generate_uniqueness_seed();
+    xtd::usize hash_code_ = generate_uniqueness_seed();
   };
 }

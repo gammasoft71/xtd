@@ -55,7 +55,7 @@ namespace xtd {
         /// @{
         /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
         /// @remarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
-        static constexpr xtd::size wait_timeout = xtd::usize_object::max_value;
+        static constexpr xtd::usize wait_timeout = xtd::usize_object::max_value;
         /// @}
         /// @name Public Constructors
         
@@ -129,7 +129,7 @@ namespace xtd {
         /// @return The identifier that is assigned by the system to this xtd::threading::tasks::task instance.
         /// @remarks Task IDs are assigned on-demand and do not necessarily represent the order in which task instances are created. Note that although collisions are very rare, task identifiers are not guaranteed to be unique.
         /// @remarks To get the task ID of the currently executing task from within code that task is executing, use the xtd::threading::tasks::task::current_id property.
-        [[nodiscard]] auto id() const noexcept -> xtd::size override {return data_->id;}
+        [[nodiscard]] auto id() const noexcept -> xtd::usize override {return data_->id;}
         [[nodiscard]] auto is_canceled() const noexcept -> bool {return data_->status == xtd::threading::tasks::task_status::canceled;}
         [[nodiscard]] auto is_completed() const noexcept -> bool override {return is_faulted() || is_canceled() || data_->status == xtd::threading::tasks::task_status::ran_to_completion;}
         [[nodiscard]] auto is_faulted() const noexcept -> bool {return data_->status == xtd::threading::tasks::task_status::faulted;}
@@ -140,7 +140,7 @@ namespace xtd {
         
         /// @{
         [[nodiscard]] static auto completed_task() -> task<result_t>;
-        [[nodiscard]] static auto current_id() noexcept -> xtd::size {return current_id_;}
+        [[nodiscard]] static auto current_id() noexcept -> xtd::usize {return current_id_;}
         [[nodiscard]] static auto factory() noexcept -> const xtd::threading::tasks::task_factory&;
         /// @}
         
@@ -329,59 +329,59 @@ namespace xtd {
         }
 
         template<typename ...items_t>
-        static auto wait_any(items_t... items) -> xtd::size {return wait_any(xtd::threading::timeout::infinite, items...);}
+        static auto wait_any(items_t... items) -> xtd::usize {return wait_any(xtd::threading::timeout::infinite, items...);}
         template<typename ...items_t>
-        static auto wait_any(const xtd::time_span& timeout, items_t... items) -> xtd::size {return wait_any(xtd::as<xtd::int32>(timeout.total_milliseconds()), items...);}
+        static auto wait_any(const xtd::time_span& timeout, items_t... items) -> xtd::usize {return wait_any(xtd::as<xtd::int32>(timeout.total_milliseconds()), items...);}
         template<typename ...items_t>
-        static auto wait_any(xtd::int32 milliseconds_timeout, items_t... items) -> xtd::size {
+        static auto wait_any(xtd::int32 milliseconds_timeout, items_t... items) -> xtd::usize {
           auto task_pointers = std::vector<itask*> {};
           fill_task_pointers(task_pointers, items...);
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
         template<typename item_t>
-        static auto wait_any(const std::initializer_list<item_t>& tasks) -> xtd::size {return wait_any(tasks, timeout::infinite);}
+        static auto wait_any(const std::initializer_list<item_t>& tasks) -> xtd::usize {return wait_any(tasks, timeout::infinite);}
         template<typename item_t>
-        static auto wait_any(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
+        static auto wait_any(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> xtd::usize {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(const_cast<item_t*>(&task));
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
         template<typename item_t>
-        static auto wait_any(const std::initializer_list<item_t>& tasks, const xtd::time_span& timeout) -> xtd::size {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks) -> xtd::size {return wait_any(tasks, xtd::threading::timeout::infinite);}
-        static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
+        static auto wait_any(const std::initializer_list<item_t>& tasks, const xtd::time_span& timeout) -> xtd::usize {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks) -> xtd::usize {return wait_any(tasks, xtd::threading::timeout::infinite);}
+        static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::usize {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(task.get());
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::size {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_any(const std::initializer_list<xtd::uptr<itask>>& tasks) -> xtd::size {return wait_any(tasks, xtd::threading::timeout::infinite);}
-        static auto wait_any(const std::initializer_list<xtd::uptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
+        static auto wait_any(const std::initializer_list<xtd::sptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::usize {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_any(const std::initializer_list<xtd::uptr<itask>>& tasks) -> xtd::usize {return wait_any(tasks, xtd::threading::timeout::infinite);}
+        static auto wait_any(const std::initializer_list<xtd::uptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::usize {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(task.get());
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_any(const std::initializer_list<xtd::uptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::size {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_any(const xtd::array<xtd::sptr<itask>>& tasks) -> xtd::size {return wait_any(tasks, timeout::infinite);}
-        static auto wait_any(const xtd::array<xtd::sptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
+        static auto wait_any(const std::initializer_list<xtd::uptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::usize {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_any(const xtd::array<xtd::sptr<itask>>& tasks) -> xtd::usize {return wait_any(tasks, timeout::infinite);}
+        static auto wait_any(const xtd::array<xtd::sptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::usize {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(task.get());
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_any(const xtd::array<xtd::sptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::size {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_any(const xtd::array<xtd::uptr<itask>>& tasks) -> xtd::size {return wait_any(tasks, timeout::infinite);}
-        static auto wait_any(const xtd::array<xtd::uptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
+        static auto wait_any(const xtd::array<xtd::sptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::usize {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_any(const xtd::array<xtd::uptr<itask>>& tasks) -> xtd::usize {return wait_any(tasks, timeout::infinite);}
+        static auto wait_any(const xtd::array<xtd::uptr<itask>>& tasks, xtd::int32 milliseconds_timeout) -> xtd::usize {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(task.get());
           return wait_any(xtd::array<itask*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_any(const xtd::array<xtd::uptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::size {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_any(const xtd::array<itask*>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
+        static auto wait_any(const xtd::array<xtd::uptr<itask>>& tasks, const xtd::time_span& timeout) -> xtd::usize {return wait_any(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_any(const xtd::array<itask*>& tasks, xtd::int32 milliseconds_timeout) -> xtd::usize {
           if (milliseconds_timeout < xtd::threading::timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           
           auto sleep_duration = 1;
@@ -389,7 +389,7 @@ namespace xtd {
           auto sw = xtd::diagnostics::stopwatch::start_new();
           
           while (milliseconds_timeout == xtd::threading::timeout::infinite || sw.elapsed_milliseconds() <= milliseconds_timeout) {
-            for (auto index = xtd::size {0}; index < tasks.length(); ++index)
+            for (auto index = xtd::usize {0}; index < tasks.length(); ++index)
               if (tasks[index]->wait(0)) return index;
 
             xtd::threading::thread::sleep(sleep_duration);
@@ -427,8 +427,8 @@ namespace xtd {
           itask_pointer.push_back(&item);
         }
 
-        static auto generate_id() noexcept -> xtd::size {
-          static auto id = xtd::size {0};
+        static auto generate_id() noexcept -> xtd::usize {
+          static auto id = xtd::usize {0};
           return ++id;
         }
 
@@ -445,7 +445,7 @@ namespace xtd {
           xtd::threading::auto_reset_event end_event;
           xtd::exception_services::exception_dispatch_info exception;
           xtd::func<result_t> func;
-          xtd::size id = generate_id();
+          xtd::usize id = generate_id();
           xtd::func<result_t, const xtd::any_object&> parameterized_func;
           result_type result;
           const xtd::any_object* state = &empty_state;
@@ -492,7 +492,7 @@ namespace xtd {
         };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
-        inline static thread_local xtd::size current_id_ = 0;
+        inline static thread_local xtd::usize current_id_ = 0;
       };
     }
   }

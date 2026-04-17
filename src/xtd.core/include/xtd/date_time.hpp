@@ -644,7 +644,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.

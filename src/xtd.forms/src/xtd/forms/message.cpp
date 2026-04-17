@@ -14,7 +14,7 @@ bool message::equals(const message& other) const noexcept {
   return hwnd == other.hwnd && msg == other.msg && wparam == other.wparam && lparam == other.lparam && result == other.result && __handle__ == other.__handle__;
 }
 
-xtd::size message::get_hash_code() const noexcept {
+xtd::usize message::get_hash_code() const noexcept {
   return hash_code::combine(hwnd, msg);
 }
 

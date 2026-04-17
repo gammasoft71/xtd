@@ -201,17 +201,17 @@ namespace xtd {
       auto priority(xtd::threading::thread_priority value) -> thread&;
       
       /// @brief Gets the processors on which the associated thread can run.
-      /// @return An xtd::array<xtd::size> that represents an array of processor numbers on which the thread can run.
+      /// @return An xtd::array<xtd::usize> that represents an array of processor numbers on which the thread can run.
       /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
       /// @remarks If the array is empty, no affinity is defined.
       /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
-      [[nodiscard]] auto processor_affinity() const noexcept -> const xtd::array<xtd::size>&;
+      [[nodiscard]] auto processor_affinity() const noexcept -> const xtd::array<xtd::usize>&;
       /// @brief Sets the processors on which the associated thread can run.
-      /// @param value An xtd::array<xtd::size> that represents an array of processor numbers on which the thread can run.
+      /// @param value An xtd::array<xtd::usize> that represents an array of processor numbers on which the thread can run.
       /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
       /// @remarks If the array is empty, no affinity is defined.
       /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
-      auto processor_affinity(const xtd::array<xtd::size>& value) -> thread&;
+      auto processor_affinity(const xtd::array<xtd::usize>& value) -> thread&;
       
       /// @brief Gets the native operating system thread id.
       /// @return An intptr representing the native operating thread id.
@@ -251,7 +251,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.
       /// @remarks If this thread is not currently blocked in a thread_state::wait, thread_state::sleep, or thread_state::join state, it will be interrupted when it next begins to block.

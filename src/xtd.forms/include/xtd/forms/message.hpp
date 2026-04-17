@@ -85,7 +85,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Gets the lparam value and converts the value to an object.
       /// @tparam type The type to use to create an instance. This type must be declared as a structure type.

@@ -26,7 +26,7 @@ bool any_object::equals(const any_object& other) const noexcept {
   return value_->equals(*other.value_);
 }
 
-xtd::size any_object::get_hash_code() const noexcept {
+xtd::usize any_object::get_hash_code() const noexcept {
   return has_value() ? value_->get_hash_code() : 0;
 }
 

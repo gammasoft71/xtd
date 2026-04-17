@@ -31,7 +31,7 @@ namespace xtd {
       /// @param value A pointer to an array of char.
       /// @param length The number of elements of value to include in the new instance.
       /// @remarks This constructor initializes the new xtd::security::secure_string object to the number of characters in value specified by length; the value of the instance is then encrypted.
-      secure_string(const char value[], xtd::size length);
+      secure_string(const char value[], xtd::usize length);
       /// @}
       
       /// @cond
@@ -51,11 +51,11 @@ namespace xtd {
       
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.
-      [[nodiscard]] auto length() const noexcept -> xtd::size;
+      [[nodiscard]] auto length() const noexcept -> xtd::usize;
       
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.
-      [[nodiscard]] auto size() const noexcept -> xtd::size;
+      [[nodiscard]] auto size() const noexcept -> xtd::usize;
       /// @}
       
       /// @name Public Methods

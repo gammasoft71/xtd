@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd::net::ip_address ip_v6 = "2001:db8::1"_ip;
     /// xtd::console::out << ip_v6 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ip(const char* s, xtd::size n) -> xtd::net::ip_address;
+    [[nodiscard]] auto operator""_ip(const char* s, xtd::usize n) -> xtd::net::ip_address;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -39,7 +39,7 @@ namespace xtd {
     /// xtd::net::ip_address ip_v6 = "2001:db8::1"_ip;
     /// xtd::console::out << ip_v6 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ip(const char8* s, xtd::size n) -> xtd::net::ip_address;
+    [[nodiscard]] auto operator""_ip(const char8* s, xtd::usize n) -> xtd::net::ip_address;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -54,7 +54,7 @@ namespace xtd {
     /// xtd::net::ip_address ip_v6 = "2001:db8::1"_ip;
     /// xtd::console::out << ip_v6 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ip(const char16* s, xtd::size n) -> xtd::net::ip_address;
+    [[nodiscard]] auto operator""_ip(const char16* s, xtd::usize n) -> xtd::net::ip_address;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -69,7 +69,7 @@ namespace xtd {
     /// xtd::net::ip_address ip_v6 = "2001:db8::1"_ip;
     /// xtd::console::out << ip_v6 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ip(const char32* s, xtd::size n) -> xtd::net::ip_address;
+    [[nodiscard]] auto operator""_ip(const char32* s, xtd::usize n) -> xtd::net::ip_address;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
@@ -84,7 +84,7 @@ namespace xtd {
     /// xtd::net::ip_address ip_v6 = "2001:db8::1"_ip;
     /// xtd::console::out << ip_v6 << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_ip(const wchar* s, xtd::size n) -> xtd::net::ip_address;
+    [[nodiscard]] auto operator""_ip(const wchar* s, xtd::usize n) -> xtd::net::ip_address;
     /// @}
   }
 }

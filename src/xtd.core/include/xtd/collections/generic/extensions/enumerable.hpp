@@ -175,7 +175,7 @@ namespace xtd {
           /// @param source A sequence of values to chunk.
           /// @param size The maximum size of each chunk.
           /// @return A sequence of chunks of size at most size.
-          [[nodiscard]] auto chunk(xtd::size size) const {
+          [[nodiscard]] auto chunk(xtd::usize size) const {
             return xtd::linq::enumerable::chunk(self(), size);
           }
           
@@ -206,7 +206,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&) to count the elements in a sequence.
           /// @include enumerable_count.cpp
-          [[nodiscard]] auto count() const noexcept -> xtd::size {
+          [[nodiscard]] auto count() const noexcept -> xtd::usize {
             return xtd::linq::enumerable::count(self());
           }
           
@@ -216,14 +216,14 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&, const std::function <bool(const source_t&)>&) to count the elements in a sequence that satisfy a condition.
           /// @include enumerable_count2.cpp
-          [[nodiscard]] auto count(const std::function<bool(const source_t&)>& predicate) const noexcept -> xtd::size {
+          [[nodiscard]] auto count(const std::function<bool(const source_t&)>& predicate) const noexcept -> xtd::usize {
             return xtd::linq::enumerable::count(self(), predicate);
           }
           
           /// @brief Returns the number of elements with the specified value.
           /// @param value The value to search for.
           /// @return A number representing the number of elements in the sequence that are equal to the `value`.
-          [[nodiscard]] auto count(const source_t& value) const noexcept -> xtd::size {
+          [[nodiscard]] auto count(const source_t& value) const noexcept -> xtd::usize {
             return xtd::linq::enumerable::count(self(), value);
           }
           
@@ -389,7 +389,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
           template<typename result_t>
-          [[nodiscard]] auto select(const std::function<result_t(const source_t&, xtd::size index)>& selector) const {
+          [[nodiscard]] auto select(const std::function<result_t(const source_t&, xtd::usize index)>& selector) const {
             return xtd::linq::enumerable::select<result_t, source_t>(self(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
@@ -399,7 +399,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
-          [[nodiscard]] auto select(const std::function<source_t(const source_t&, xtd::size index)>& selector) const {
+          [[nodiscard]] auto select(const std::function<source_t(const source_t&, xtd::usize index)>& selector) const {
             return xtd::linq::enumerable::select(self(), selector);
           }
           
@@ -432,7 +432,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
           /// @include enumerable_where2.cpp
-          auto where(const std::function<bool(const source_t&, xtd::size)>& predicate) const {
+          auto where(const std::function<bool(const source_t&, xtd::usize)>& predicate) const {
             return xtd::linq::enumerable::where(self(), predicate);
           }
           /// @}

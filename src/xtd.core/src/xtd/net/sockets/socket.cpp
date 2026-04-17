@@ -107,10 +107,10 @@ auto socket::address_family() const noexcept -> sockets::address_family {
   return data_->address_family;
 }
 
-auto socket::available() const -> xtd::size {
+auto socket::available() const -> xtd::usize {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto available = native::socket::get_available(data_->handle);
-  if (available == static_cast<xtd::size>(-1)) throw_helper::throws(exception_case::socket, get_last_error_());
+  if (available == static_cast<xtd::usize>(-1)) throw_helper::throws(exception_case::socket, get_last_error_());
   return available;
 }
 
@@ -234,11 +234,11 @@ auto socket::protocol_type() const noexcept -> sockets::protocol_type {
   return data_->protocol_type;
 }
 
-auto socket::receive_buffer_size() const -> xtd::size {
-  return as<xtd::size>(get_socket_option(sockets::socket_option_level::socket, socket_option_name::receive_buffer));
+auto socket::receive_buffer_size() const -> xtd::usize {
+  return as<xtd::usize>(get_socket_option(sockets::socket_option_level::socket, socket_option_name::receive_buffer));
 }
 
-auto socket::receive_buffer_size(xtd::size value) -> socket& {
+auto socket::receive_buffer_size(xtd::usize value) -> socket& {
   set_socket_option(sockets::socket_option_level::socket, socket_option_name::receive_buffer, as<int32>(value));
   return *this;
 }
@@ -258,11 +258,11 @@ auto socket::remote_end_point() const -> sptr<end_point> {
   return data_->remote_end_point;
 }
 
-auto socket::send_buffer_size() const -> xtd::size {
-  return as<xtd::size>(get_socket_option(sockets::socket_option_level::socket, socket_option_name::send_buffer));
+auto socket::send_buffer_size() const -> xtd::usize {
+  return as<xtd::usize>(get_socket_option(sockets::socket_option_level::socket, socket_option_name::send_buffer));
 }
 
-auto socket::send_buffer_size(xtd::size value) -> socket& {
+auto socket::send_buffer_size(xtd::usize value) -> socket& {
   set_socket_option(sockets::socket_option_level::socket, socket_option_name::send_buffer, as<int32>(value));
   return *this;
 }
@@ -387,13 +387,13 @@ auto socket::begin_disconnect(bool reuse_socket, async_callback callback, const 
   return ar;
 }
 
-auto socket::begin_receive(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_receive(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
   
   auto ar = xtd::new_sptr<async_result_receive>(state);
-  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, sptr<async_result_receive> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, sptr<async_result_receive> ar, async_callback callback) {
     try {
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
@@ -408,13 +408,13 @@ auto socket::begin_receive(array<xtd::byte>& buffer, xtd::size offset, xtd::size
   return ar;
 }
 
-auto socket::begin_receive(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, socket_error& error_code, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_receive(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, socket_error& error_code, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
   
   auto ar = xtd::new_sptr<async_result_receive>(state);
-  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, sptr<async_result_receive> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, sptr<async_result_receive> ar, async_callback callback) {
     try {
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
@@ -429,12 +429,12 @@ auto socket::begin_receive(array<xtd::byte>& buffer, xtd::size offset, xtd::size
   return ar;
 }
 
-auto socket::begin_receive_from(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, end_point& remote_end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_receive_from(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, end_point& remote_end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_receive_from>(state);
-  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, sptr<async_result_receive_from> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, sptr<async_result_receive_from> ar, async_callback callback) {
     try {
       ar->end_point_ = xtd::new_sptr<ip_end_point>();
       ar->number_of_bytes_received_ = s.receive_from(*buffer, offset, size, socket_flags, *ar->end_point_);
@@ -450,13 +450,13 @@ auto socket::begin_receive_from(array<xtd::byte>& buffer, xtd::size offset, xtd:
   return ar;
 }
 
-auto socket::begin_receive_message_from(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, end_point& remote_end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_receive_message_from(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, end_point& remote_end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_receive_message_from>(state);
   ar->socket_flags_ = socket_flags;
-  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::size offset, xtd::size size, sptr<async_result_receive_message_from> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, array<xtd::byte>* buffer, xtd::usize offset, xtd::usize size, sptr<async_result_receive_message_from> ar, async_callback callback) {
     try {
       ar->end_point_ = xtd::new_sptr<ip_end_point>();
       ar->number_of_bytes_received_ = s.receive_message_from(*buffer, offset, size, ar->socket_flags_, *ar->end_point_, ar->ip_packet_information_);
@@ -472,13 +472,13 @@ auto socket::begin_receive_message_from(array<xtd::byte>& buffer, xtd::size offs
   return ar;
 }
 
-auto socket::begin_send(const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_send(const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
   
   auto ar = xtd::new_sptr<async_result_send>(state);
-  auto operation_thread = std::thread {[](socket s, const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, sptr<async_result_send> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, sptr<async_result_send> ar, async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
@@ -493,13 +493,13 @@ auto socket::begin_send(const array<xtd::byte>& buffer, xtd::size offset, xtd::s
   return ar;
 }
 
-auto socket::begin_send(const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, socket_error& error, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_send(const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, socket_error& error, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
   
   auto ar = xtd::new_sptr<async_result_send>(state);
-  auto operation_thread = std::thread {[](socket s, const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, sptr<async_result_send> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, sptr<async_result_send> ar, async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
@@ -514,12 +514,12 @@ auto socket::begin_send(const array<xtd::byte>& buffer, xtd::size offset, xtd::s
   return ar;
 }
 
-auto socket::begin_send_to(const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, const end_point& remote_end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto socket::begin_send_to(const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, const end_point& remote_end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_send_to>(state);
-  auto operation_thread = std::thread {[](socket s, const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, sockets::socket_flags socket_flags, const end_point & remote_end_point, sptr<async_result_send_to> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](socket s, const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, sockets::socket_flags socket_flags, const end_point & remote_end_point, sptr<async_result_send_to> ar, async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send_to(buffer, offset, size, socket_flags, remote_end_point);
       ar->is_completed_ = true;
@@ -607,7 +607,7 @@ auto socket::end_disconnect(sptr<iasync_result> ar) -> void {
   if (as<async_result_disconnect>(ar)->exception_) rethrow_exception(as<async_result_disconnect>(ar)->exception_);
 }
 
-auto socket::end_receive(sptr<iasync_result> ar) -> xtd::size {
+auto socket::end_receive(sptr<iasync_result> ar) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_receive>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -615,7 +615,7 @@ auto socket::end_receive(sptr<iasync_result> ar) -> xtd::size {
   return as<async_result_receive>(ar)->number_of_bytes_received_;
 }
 
-auto socket::end_receive(sptr<iasync_result> ar, socket_error& error) -> xtd::size {
+auto socket::end_receive(sptr<iasync_result> ar, socket_error& error) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_receive>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -624,7 +624,7 @@ auto socket::end_receive(sptr<iasync_result> ar, socket_error& error) -> xtd::si
   return as<async_result_receive>(ar)->number_of_bytes_received_;
 }
 
-auto socket::end_receive_from(sptr<iasync_result> ar, sptr<end_point>& end_point) -> xtd::size {
+auto socket::end_receive_from(sptr<iasync_result> ar, sptr<end_point>& end_point) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_receive_from>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -633,7 +633,7 @@ auto socket::end_receive_from(sptr<iasync_result> ar, sptr<end_point>& end_point
   return as<async_result_receive_from>(ar)->number_of_bytes_received_;
 }
 
-auto socket::end_receive_message_from(sptr<iasync_result> ar, sockets::socket_flags& socket_flags, sptr<end_point>& end_point, ip_packet_information& ip_packet_information) -> xtd::size {
+auto socket::end_receive_message_from(sptr<iasync_result> ar, sockets::socket_flags& socket_flags, sptr<end_point>& end_point, ip_packet_information& ip_packet_information) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_receive_message_from>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -644,7 +644,7 @@ auto socket::end_receive_message_from(sptr<iasync_result> ar, sockets::socket_fl
   return as<async_result_receive_message_from>(ar)->number_of_bytes_received_;
 }
 
-auto socket::end_send(sptr<iasync_result> ar) -> xtd::size {
+auto socket::end_send(sptr<iasync_result> ar) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_send>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -652,7 +652,7 @@ auto socket::end_send(sptr<iasync_result> ar) -> xtd::size {
   return as<async_result_send>(ar)->number_of_bytes_sent_;
 }
 
-auto socket::end_send(sptr<iasync_result> ar, socket_error& error) -> xtd::size {
+auto socket::end_send(sptr<iasync_result> ar, socket_error& error) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_send>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -661,7 +661,7 @@ auto socket::end_send(sptr<iasync_result> ar, socket_error& error) -> xtd::size 
   return as<async_result_send>(ar)->number_of_bytes_sent_;
 }
 
-auto socket::end_send_to(sptr<iasync_result> ar) -> xtd::size {
+auto socket::end_send_to(sptr<iasync_result> ar) -> xtd::usize {
   if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_send_to>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
@@ -669,7 +669,7 @@ auto socket::end_send_to(sptr<iasync_result> ar) -> xtd::size {
   return as<async_result_send_to>(ar)->number_of_bytes_sent_;
 }
 
-auto socket::get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, xtd::size size_option_value) const -> xtd::size {
+auto socket::get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, xtd::usize size_option_value) const -> xtd::usize {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto size = 0_z;
   if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw_helper::throws(exception_case::socket, get_last_error_());
@@ -720,18 +720,18 @@ auto socket::get_socket_ip_v6_multicast_option(socket_option_name socket_option_
   return ip_v6_multicast_option(ip_address(multicast_address), interface_index);
 }
 
-auto socket::io_control(int32 io_control_code, array<xtd::byte>& option_in_value, array<xtd::byte>& option_out_value) -> xtd::size {
+auto socket::io_control(int32 io_control_code, array<xtd::byte>& option_in_value, array<xtd::byte>& option_out_value) -> xtd::usize {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto result = native::socket::io_control(data_->handle, io_control_code, option_in_value, option_out_value);
   if (result == -1)  throw_helper::throws(exception_case::socket, get_last_error_());
-  return static_cast<xtd::size>(result);
+  return static_cast<xtd::usize>(result);
 }
 
-auto socket::io_control(xtd::net::sockets::io_control_code io_control_code, array<xtd::byte>& option_in_value, array<xtd::byte>& option_out_value) -> xtd::size {
+auto socket::io_control(xtd::net::sockets::io_control_code io_control_code, array<xtd::byte>& option_in_value, array<xtd::byte>& option_out_value) -> xtd::usize {
   return io_control(static_cast<int32>(io_control_code), option_in_value, option_out_value);
 }
 
-auto socket::listen(xtd::size backlog) -> void {
+auto socket::listen(xtd::usize backlog) -> void {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (data_->is_bound == false) throw_helper::throws(exception_case::socket, socket_error::not_connected);
   if (native::socket::listen(data_->handle, backlog) != 0) throw_helper::throws(exception_case::socket, get_last_error_());
@@ -739,7 +739,7 @@ auto socket::listen(xtd::size backlog) -> void {
 }
 
 auto socket::listen() -> void {
-  listen(static_cast<xtd::size>(-1));
+  listen(static_cast<xtd::usize>(-1));
 }
 
 auto socket::poll(int32 micro_seconds, xtd::net::sockets::select_mode mode) -> bool {
@@ -749,57 +749,57 @@ auto socket::poll(int32 micro_seconds, xtd::net::sockets::select_mode mode) -> b
   return result;
 }
 
-auto socket::receive(array<xtd::byte>& buffer) -> xtd::size {
+auto socket::receive(array<xtd::byte>& buffer) -> xtd::usize {
   return receive(buffer, 0, buffer.length(), socket_flags::none);
 }
 
-auto socket::receive(array<xtd::byte>& buffer, socket_flags socket_flags) -> xtd::size {
+auto socket::receive(array<xtd::byte>& buffer, socket_flags socket_flags) -> xtd::usize {
   return receive(buffer, 0, buffer.length(), socket_flags);
 }
 
-auto socket::receive(array<xtd::byte>& buffer, xtd::size size, socket_flags socket_flags) -> xtd::size {
+auto socket::receive(array<xtd::byte>& buffer, xtd::usize size, socket_flags socket_flags) -> xtd::usize {
   return receive(buffer, 0, size, socket_flags);
 }
 
-auto socket::receive(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags) -> xtd::size {
+auto socket::receive(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags) -> xtd::usize {
   socket_error error_code = socket_error::success;
   auto number_of_bytes_received = receive(buffer, offset, size, socket_flags, error_code);
   if (error_code != socket_error::success) throw_helper::throws(exception_case::socket, error_code);
   return number_of_bytes_received;
 }
 
-auto socket::receive(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags, socket_error& error_code) -> xtd::size {
+auto socket::receive(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags, socket_error& error_code) -> xtd::usize {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
   
   auto number_of_bytes_received = native::socket::receive(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags));
   error_code = number_of_bytes_received > 0 ? get_last_error_() : socket_error::success;
-  return static_cast<xtd::size>(number_of_bytes_received);
+  return static_cast<xtd::usize>(number_of_bytes_received);
 }
 
-auto socket::receive_from(array<xtd::byte>& buffer, end_point& remote_end_point) -> xtd::size {
+auto socket::receive_from(array<xtd::byte>& buffer, end_point& remote_end_point) -> xtd::usize {
   return receive_from(buffer, 0, buffer.length(), socket_flags::none, remote_end_point);
 }
 
-auto socket::receive_from(array<xtd::byte>& buffer, socket_flags socket_flags, end_point& remote_end_point) -> xtd::size {
+auto socket::receive_from(array<xtd::byte>& buffer, socket_flags socket_flags, end_point& remote_end_point) -> xtd::usize {
   return receive_from(buffer, 0, buffer.length(), socket_flags, remote_end_point);
 }
 
-auto socket::receive_from(array<xtd::byte>& buffer, xtd::size size, socket_flags socket_flags, end_point& remote_end_point) -> xtd::size {
+auto socket::receive_from(array<xtd::byte>& buffer, xtd::usize size, socket_flags socket_flags, end_point& remote_end_point) -> xtd::usize {
   return receive_from(buffer, 0, size, socket_flags, remote_end_point);
 }
 
-auto socket::receive_from(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags, end_point& remote_end_point) -> xtd::size {
+auto socket::receive_from(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags, end_point& remote_end_point) -> xtd::usize {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto socket_address = remote_end_point.serialize();
   auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
   if (number_of_bytes_received == -1) throw_helper::throws(exception_case::socket, get_last_error_());
-  return static_cast<xtd::size>(number_of_bytes_received);
+  return static_cast<xtd::usize>(number_of_bytes_received);
 }
 
-auto socket::receive_message_from(array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags, end_point& remote_end_point, ip_packet_information& ip_packet_information) -> xtd::size {
+auto socket::receive_message_from(array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags, end_point& remote_end_point, ip_packet_information& ip_packet_information) -> xtd::usize {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto socket_address = remote_end_point.serialize();
@@ -811,10 +811,10 @@ auto socket::receive_message_from(array<xtd::byte>& buffer, xtd::size offset, xt
   if (data_->address_family == address_family::inter_network_v6)
     ip_packet_information.address_ = ip_address(array<xtd::byte>(socket_address.bytes_.begin() + 8, socket_address.bytes_.begin() + 24), bit_converter::to_uint32(socket_address.bytes_, 25));
     
-  return static_cast<xtd::size>(number_of_bytes_received);
+  return static_cast<xtd::usize>(number_of_bytes_received);
 }
 
-auto socket::select(ilist<socket>& check_read, ilist<socket>& check_write, ilist<socket>& check_error, int32 microseconds) -> xtd::size {
+auto socket::select(ilist<socket>& check_read, ilist<socket>& check_write, ilist<socket>& check_error, int32 microseconds) -> xtd::usize {
   if (check_read.count() == 0 && check_write.count() == 0 && check_error.count() == 0) throw_helper::throws(exception_case::argument);
   
   auto check_read_handles = list<intptr> {};
@@ -839,49 +839,49 @@ auto socket::select(ilist<socket>& check_read, ilist<socket>& check_write, ilist
   update_check_sockets(check_write, check_write_handles);
   update_check_sockets(check_error, check_error_handles);
   
-  return static_cast<xtd::size>(status);
+  return static_cast<xtd::usize>(status);
 }
 
-auto socket::send(const array<xtd::byte>& buffer) -> xtd::size {
+auto socket::send(const array<xtd::byte>& buffer) -> xtd::usize {
   return send(buffer, 0, buffer.length(), socket_flags::none);
 }
 
-auto socket::send(const array<xtd::byte>& buffer, socket_flags socket_flags) -> xtd::size {
+auto socket::send(const array<xtd::byte>& buffer, socket_flags socket_flags) -> xtd::usize {
   return send(buffer, 0, buffer.length(), socket_flags);
 }
 
-auto socket::send(const array<xtd::byte>& buffer, xtd::size size, socket_flags socket_flags) -> xtd::size {
+auto socket::send(const array<xtd::byte>& buffer, xtd::usize size, socket_flags socket_flags) -> xtd::usize {
   return send(buffer, 0, size, socket_flags);
 }
 
-auto socket::send(const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags) -> xtd::size {
+auto socket::send(const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags) -> xtd::usize {
   auto error_code = socket_error::success;
   auto number_of_bytes_sent = send(buffer, offset, size, socket_flags, error_code);
   if (error_code != socket_error::success) throw_helper::throws(exception_case::socket, get_last_error_());
   return number_of_bytes_sent;
 }
 
-auto socket::send(const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags, socket_error& error_code) -> xtd::size {
+auto socket::send(const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags, socket_error& error_code) -> xtd::usize {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto number_of_bytes_sent = native::socket::send(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags));
   error_code = number_of_bytes_sent == -1 ? get_last_error_() : socket_error::success;
-  return static_cast<xtd::size>(number_of_bytes_sent);
+  return static_cast<xtd::usize>(number_of_bytes_sent);
 }
 
-auto socket::send_to(const array<xtd::byte>& buffer, const end_point& remote_end_point) -> xtd::size {
+auto socket::send_to(const array<xtd::byte>& buffer, const end_point& remote_end_point) -> xtd::usize {
   return send_to(buffer, 0, buffer.length(), socket_flags::none, remote_end_point);
 }
 
-auto socket::send_to(const array<xtd::byte>& buffer, socket_flags socket_flags, const end_point& remote_end_point) -> xtd::size {
+auto socket::send_to(const array<xtd::byte>& buffer, socket_flags socket_flags, const end_point& remote_end_point) -> xtd::usize {
   return send_to(buffer, 0, buffer.length(), socket_flags, remote_end_point);
 }
 
-auto socket::send_to(const array<xtd::byte>& buffer, xtd::size size, socket_flags socket_flags, const end_point& remote_end_point) -> xtd::size {
+auto socket::send_to(const array<xtd::byte>& buffer, xtd::usize size, socket_flags socket_flags, const end_point& remote_end_point) -> xtd::usize {
   return send_to(buffer, 0, size, socket_flags, remote_end_point);
 }
 
-auto socket::send_to(const array<xtd::byte>& buffer, xtd::size offset, xtd::size size, socket_flags socket_flags, const end_point& remote_end_point) -> xtd::size {
+auto socket::send_to(const array<xtd::byte>& buffer, xtd::usize offset, xtd::usize size, socket_flags socket_flags, const end_point& remote_end_point) -> xtd::usize {
   if (offset + size > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto socket_address = remote_end_point.serialize();
@@ -929,7 +929,7 @@ auto socket::set_socket_option(socket_option_name socket_option_name, const ip_v
   if (native::socket::set_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), option_value.group().get_address_bytes(), option_value.interface_index()) != 0) throw_helper::throws(exception_case::socket, get_last_error_());
 }
 
-auto socket::set_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, xtd::size option_value_size) -> void {
+auto socket::set_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, xtd::usize option_value_size) -> void {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (native::socket::set_raw_socket_option(data_->handle, socket_option_level, socket_option_name, reinterpret_cast<intptr>(&option_value), option_value_size) != 0) throw_helper::throws(exception_case::socket, get_last_error_());
 }

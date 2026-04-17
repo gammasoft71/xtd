@@ -68,7 +68,7 @@ namespace xtd {
       ///   * With `culture_info {0x041E}` (culture name th-TH), xtd::globalization::culture_info::calendar is set to xtd::globalization::thai_buddhist_calendar (which is the default calendar for th-TH).
       /// @note For backwards compatibility, a culture constructed using a culture parameter of `0x0004` or `0x7c04` will have a xtd::globalization::culture_info::name property of `zh-CHS` or `zh-CHT`, respectively. You should instead prefer to construct the culture using the current standard culture names of `zh-Hans` or `zh-Hant`, unless you have a reason for using the older names.
       /// @note <br>LCIDs are being deprecated, and implementers are strongly encouraged to use newer versions of APIs that support BCP 47 locale names instead. Each LCID can be represented by a BCP 47 locale name, but the reverse is not true. The LCID range is restricted and unable to uniquely identify all the possible combinations of language and region.
-      explicit culture_info(xtd::size culture);
+      explicit culture_info(xtd::usize culture);
       /// @brief Initializes a new instance of the xtd::globalization::culture_info class based on the culture specified by the culture identifier and on a value that specifies whether to use the user-selected culture settings from Windows.
       /// @param culture A predefined xtd::globalization::culture_info identifier, xtd::globalization::culture_info::lcid property of an existing xtd::globalization::culture_info object, or Windows-only culture identifier.
       /// @param use_user_override `true` to use the user-selected culture settings (Windows only); `false` to use the default culture settings.
@@ -82,7 +82,7 @@ namespace xtd {
       ///   * With `culture_info {0x041E}` (culture name th-TH), xtd::globalization::culture_info::calendar is set to xtd::globalization::thai_buddhist_calendar (which is the default calendar for th-TH).
       /// @note For backwards compatibility, a culture constructed using a culture parameter of `0x0004` or `0x7c04` will have a xtd::globalization::culture_info::name property of `zh-CHS` or `zh-CHT`, respectively. You should instead prefer to construct the culture using the current standard culture names of `zh-Hans` or `zh-Hant`, unless you have a reason for using the older names.
       /// @note <br>LCIDs are being deprecated, and implementers are strongly encouraged to use newer versions of APIs that support BCP 47 locale names instead. Each LCID can be represented by a BCP 47 locale name, but the reverse is not true. The LCID range is restricted and unable to uniquely identify all the possible combinations of language and region.
-      culture_info(xtd::size culture, bool use_user_override);
+      culture_info(xtd::usize culture, bool use_user_override);
       /// @brief Initializes a new instance of the xtd::globalization::culture_info class based on the culture specified by name.
       /// @param name A predefined xtd::globalization::culture_info name, xtd::globalization::culture_info::name of an existing xtd::globalization::culture_info, or Windows-only culture name. name is not case-sensitive.
       /// @par examples
@@ -175,14 +175,14 @@ namespace xtd {
       /// @brief Gets the active input locale identifier.
       /// @return A 32-bit signed number that specifies an input locale identifier.
       /// @remarks The input locale identifier was formerly called the keyboard layout. An input locale identifier is a broader concept than a keyboard layout since it can also indicate a speech-to-text converter, an Input Method Editor (IME), or any other form of input.
-      [[nodiscard]] auto keyboard_layout_id() const noexcept -> xtd::size;
+      [[nodiscard]] auto keyboard_layout_id() const noexcept -> xtd::usize;
       
       /// @brief Gets the culture identifier for the current xtd::globalization::culture_info.
       /// @return The culture identifier for the current xtd::globalization::culture_info.
       /// @par Examples
       /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
       /// @include culture_info_lcid.cpp
-      [[nodiscard]] auto lcid() const noexcept -> xtd::size;
+      [[nodiscard]] auto lcid() const noexcept -> xtd::usize;
       
       /// @brief Gets the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
       /// @return The [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
@@ -294,7 +294,7 @@ namespace xtd {
       
       /// @brief Returns the hash code for this basic_string.
       /// @return A hash code.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns a xtd::string that represents the current object.
       /// @return A string that represents the current object.
@@ -346,7 +346,7 @@ namespace xtd {
       /// @note LCIDs are being deprecated, and implementers are strongly encouraged to use newer versions of APIs that support BCP 47 locale names instead. Each LCID can be represented by a BCP 47 locale name, but the reverse is not true. The LCID range is restricted and unable to uniquely identify all the possible combinations of language and region.
       /// @par Notes to Callers
       /// This method throws a xtd::globalization::culture_not_found_exception if `culture` is not a valid culture identifier.
-      [[nodiscard]] static auto get_culture_info(xtd::size culture) -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto get_culture_info(xtd::usize culture) -> xtd::globalization::culture_info;
       
       /// @brief Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types parameter.
       /// @param types A bitwise combination of the enumeration values that filter the cultures to retrieve.
@@ -393,7 +393,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
+      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::usize keyboard_layout_id, xtd::usize lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
       
       auto fill_from_name(const xtd::string& name) -> void;
       static auto cultures() -> xtd::collections::generic::dictionary<xtd::string, culture_info>& ;

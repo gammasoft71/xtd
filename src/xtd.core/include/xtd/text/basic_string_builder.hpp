@@ -75,7 +75,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a value that is not a valid position in a collection.
-      /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+      /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
       /// @par Examples
       /// ```cpp
       /// auto str = string_builder {"hello"};
@@ -92,7 +92,7 @@ namespace xtd {
       /// console::write_line(str[bpos]); // Prints 'h'
       /// console::write_line(str[bpos + 1]); // Prints 'e'
       /// ```
-      static inline constexpr xtd::size bpos = 0;
+      static inline constexpr xtd::usize bpos = 0;
       
       /// @brief Represents the index of the last valid element in a collection.
       /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
@@ -110,7 +110,7 @@ namespace xtd {
       /// console::write_line(str[~1_z]); // Prints 'o'
       /// console::write_line(str[~2_z]); // Prints 'l'
       /// ```
-      static inline constexpr xtd::size epos = npos - 1;
+      static inline constexpr xtd::usize epos = npos - 1;
       /// @}
       
       /// @name Public Constructors
@@ -134,7 +134,7 @@ namespace xtd {
       /// ```
       /// @remarks The `capacity` parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the xtd::text::basic_string_builder::capacity property. If the number of characters to be stored in the current instance exceeds this capacity value, the xtd::text::basic_string_builder object allocates additional memory to store them.
       /// @remarks The string value of this instance is set to xtd::string::empty_string. If capacity is zero, the implementation-specific default capacity is used.
-      basic_string_builder(xtd::size capacity) {self_.capacity(capacity);}
+      basic_string_builder(xtd::usize capacity) {self_.capacity(capacity);}
       /// @brief Initializes a new instance of the xtd::text::basic_string_builder class that starts with a specified capacity and can grow to a specified maximum.
       /// @param capacity The suggested starting size of the xtd::text::basic_string_builder..
       /// @param max_capacity The maximum number of characters the current string can contain.
@@ -149,7 +149,7 @@ namespace xtd {
       /// @remarks The `capacity` parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the xtd::text::basic_string_builder::capacity property. If the number of characters to be stored in the current instance exceeds this capacity value, the xtd::text::basic_string_builder object allocates additional memory to store them.
       /// @remarks If `capacity` is zero, the implementation-specific default capacity is used.
       /// @remarks The `max_capacity` parameter defines the maximum number of characters that the current instance can hold. Its value is assigned to the xtd::text::basic_string_builder::max_capacity property. If the number of characters to be stored in the current instance exceeds this `max_capacity` value, the xtd::text::basic_string_builder object does not allocate additional memory, but instead throws an exception.
-      basic_string_builder(xtd::size capacity, xtd::size max_capacity) : max_capacity_{max_capacity} {self_.capacity(capacity);}
+      basic_string_builder(xtd::usize capacity, xtd::usize max_capacity) : max_capacity_{max_capacity} {self_.capacity(capacity);}
       /// @brief Initializes a new instance of the xtd::text::basic_string_builder class using the specified string.
       /// @param value The string used to initialize the value of the instance.
       /// @par Examples
@@ -170,7 +170,7 @@ namespace xtd {
       /// auto sb = string_builder(initial_string, capacity);
       /// ```
       /// @remarks The `capacity` parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the xtd::text::basic_string_builder::capacity property. If the number of characters to be stored in the current instance exceeds this capacity value, the xtd::text::basic_string_builder object allocates additional memory to store them.
-      basic_string_builder(const xtd::basic_string<value_type>& value, xtd::size capacity) : chars_(value.chars()) {self_.capacity(capacity);}
+      basic_string_builder(const xtd::basic_string<value_type>& value, xtd::usize capacity) : chars_(value.chars()) {self_.capacity(capacity);}
       /// @brief Initializes a new instance of the xtd::text::basic_string_builder class from the specified substring and capacity.
       /// @param value The string that contains the substring used to initialize the value of this instance.
       /// @param start_index The position within value where the substring begins.
@@ -187,7 +187,7 @@ namespace xtd {
       /// auto sb = string_builder(initial_string, start_index, length, capacity);
       /// ```
       /// @remarks The `capacity` parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the xtd::text::basic_string_builder::capacity property. If the number of characters to be stored in the current instance exceeds this capacity value, the xtd::text::basic_string_builder object allocates additional memory to store them.
-      basic_string_builder(const xtd::basic_string<value_type>& value, xtd::size start_index, xtd::size length, xtd::size capacity) : chars_(value.substring(start_index, length).chars()) {self_.capacity(capacity);}
+      basic_string_builder(const xtd::basic_string<value_type>& value, xtd::usize start_index, xtd::usize length, xtd::usize capacity) : chars_(value.substring(start_index, length).chars()) {self_.capacity(capacity);}
       
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified allocator.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
@@ -205,7 +205,7 @@ namespace xtd {
       /// @param str The string to copy.
       /// @param index The index of the first substring character where start copy.
       /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
-      basic_string_builder(const basic_string_builder & str, xtd::size index) {
+      basic_string_builder(const basic_string_builder & str, xtd::usize index) {
         if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index);
       }
@@ -214,7 +214,7 @@ namespace xtd {
       /// @param index The index of the first substring character where start copy.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
-      basic_string_builder(const basic_string_builder & str, xtd::size index, const allocator_type & allocator) {
+      basic_string_builder(const basic_string_builder & str, xtd::usize index, const allocator_type & allocator) {
         if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index, allocator);
       }
@@ -224,7 +224,7 @@ namespace xtd {
       /// @param index The index of the first substring character where start copy.
       /// @param count The number of substring characters to copy.
       /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-      basic_string_builder(const basic_string_builder & str, xtd::size index, xtd::size count) {
+      basic_string_builder(const basic_string_builder & str, xtd::usize index, xtd::usize count) {
         if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index, count);
       }
@@ -234,7 +234,7 @@ namespace xtd {
       /// @param count The number of substring characters to copy.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-      basic_string_builder(const basic_string_builder & str, xtd::size index, xtd::size count, const allocator_type & allocator) {
+      basic_string_builder(const basic_string_builder & str, xtd::usize index, xtd::usize count, const allocator_type & allocator) {
         if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index, count, allocator);
       }
@@ -250,22 +250,22 @@ namespace xtd {
       /// @param str The string to copy.
       /// @param count The number of copies of character.
       /// @param character The character copied.
-      basic_string_builder(xtd::size count, value_type character) : chars_(count, character) {}
+      basic_string_builder(xtd::usize count, value_type character) : chars_(count, character) {}
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character and specified allocator.
       /// @param count The number of copies of character.
       /// @param character The character copied.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
-      basic_string_builder(xtd::size count, value_type character, const allocator_type & allocator) : chars_(count, character, allocator) {}
+      basic_string_builder(xtd::usize count, value_type character, const allocator_type & allocator) : chars_(count, character, allocator) {}
       
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character.
       /// @param character The character copied.
       /// @param count The number of copies of character.
-      basic_string_builder(value_type character, xtd::size count) : chars_(count, character) {}
+      basic_string_builder(value_type character, xtd::usize count) : chars_(count, character) {}
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified count copies of character and specified allocator.
       /// @param character The character copied.
       /// @param count The number of copies of character.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
-      basic_string_builder(value_type character, xtd::size count, const allocator_type & allocator) : chars_(count, character, allocator) {}
+      basic_string_builder(value_type character, xtd::usize count, const allocator_type & allocator) : chars_(count, character, allocator) {}
       
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified string to copy.
       /// @param str The string to copy.
@@ -283,7 +283,7 @@ namespace xtd {
       
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring and count characters.
       /// @param count The number of substring characters to copy.
-      basic_string_builder(const_pointer str, xtd::size count) {
+      basic_string_builder(const_pointer str, xtd::usize count) {
         if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = base_type(str, count);
       }
@@ -291,7 +291,7 @@ namespace xtd {
       /// @param str The string to copy.
       /// @param count The number of substring characters to copy.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
-      basic_string_builder(const_pointer str, xtd::size count, const allocator_type & allocator) : chars_(allocator) {
+      basic_string_builder(const_pointer str, xtd::usize count, const allocator_type & allocator) : chars_(allocator) {
         if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = base_type(str, count);
       }
@@ -453,7 +453,7 @@ namespace xtd {
       /// @remarks If `value` is `empty`, no changes are made.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const xtd::basic_string<char_t>& value) -> basic_string_builder& {return append(basic_string_builder {value});}
       /// @brief Appends a copy of a specified substring to this instance.
       /// @param value The string that contains the substring to append.
@@ -485,7 +485,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const xtd::basic_string<char_t>& value, size_type start_index, size_type count) -> basic_string_builder& {return append(basic_string_builder {value, start_index, count});}
       /// @brief Appends the string representation of a specified boolean value to this instance.
       /// @param value The boolean value to append.
@@ -504,7 +504,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::boolean value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 8-bit unsigned value to this instance.
       /// @param value The 8-bit unsigned value to append.
@@ -524,7 +524,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::byte value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified decimal value to this instance.
       /// @param value The decimal value to append.
@@ -543,7 +543,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::decimal value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified double value to this instance.
       /// @param value The double value to append.
@@ -562,7 +562,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(double value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified single value to this instance.
       /// @param value The single value to append.
@@ -581,7 +581,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::single value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 16-bit signed integer value to this instance.
       /// @param value The 16-bit signed value to append.
@@ -600,7 +600,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::int16 value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 32-bit signed integer value to this instance.
       /// @param value The 32-bit signed value to append.
@@ -619,7 +619,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::int32 value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 64-bit signed integer value to this instance.
       /// @param value The 64-bit signed value to append.
@@ -638,7 +638,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::int64 value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 8-bit signed integer value to this instance.
       /// @param value The 8-bit signed integer value to append.
@@ -658,7 +658,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::sbyte value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 16-bit unsigned integer value to this instance.
       /// @param value The 16-bit unsigned value to append.
@@ -677,7 +677,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::uint16 value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 32-bit unsigned integer value to this instance.
       /// @param value The 32-bit unsigned value to append.
@@ -696,7 +696,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::uint32 value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified 64-bit unsigned integer value to this instance.
       /// @param value The 64-bit unsigned value to append.
@@ -715,7 +715,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(xtd::uint64 value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends the string representation of a specified xtd::text::basic_string_builder::value_type value to this instance.
       /// @param value The xtd::text::basic_string_builder::value_type value to append.
@@ -738,7 +738,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(value_type value) -> basic_string_builder& {return append(1_z, value);}
       /// @brief Appends a specified number of copies of the string representation of a Unicode character to this instance.
       /// @param value The character to append.
@@ -758,7 +758,7 @@ namespace xtd {
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(value_type value, size_type repeat_count) -> basic_string_builder& {return append(repeat_count, value);}
       
       /// @cond
@@ -775,7 +775,7 @@ namespace xtd {
       /// @include string_builder_append.cpp
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       template<typename object_t>
       auto append(object_t value) -> basic_string_builder& {return append_format("{}", value);}
       /// @brief Appends additional characters to the string.
@@ -786,7 +786,7 @@ namespace xtd {
       /// @remarks Appends `count` copies of character `ch`.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(size_type count, value_type ch) -> basic_string_builder& {return append(basic_string_builder(count, ch));}
       /// @brief Appends additional characters to the string.
       /// @param str The string to append.
@@ -795,7 +795,7 @@ namespace xtd {
       /// @remarks Appends string `str`.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const basic_string_builder & str) -> basic_string_builder& {return append(str, 0, str.length());}
       /// @brief Appends additional characters to the string.
       /// @param str The string to append.
@@ -807,7 +807,7 @@ namespace xtd {
       /// @remarks If `pos > str.length()`, `std::out_of_range` is thrown.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const basic_string_builder & str, size_type pos) -> basic_string_builder& {return append(str, pos, str.length() - pos);}
       /// @brief Appends additional characters to the string.
       /// @param str The string to append.
@@ -820,7 +820,7 @@ namespace xtd {
       /// @remarks If `pos > str.length()`, `std::out_of_range` is thrown.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const basic_string_builder & str, size_type pos, size_type count) -> basic_string_builder& {
         if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (pos > str.length() || pos + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
@@ -836,7 +836,7 @@ namespace xtd {
       /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const_pointer s, size_type count) -> basic_string_builder& {return append(basic_string_builder {s, count});}
       /// @brief Appends additional characters to the string.
       /// @param s The pointer to the character string to append.
@@ -845,7 +845,7 @@ namespace xtd {
       /// @remarks Appends the null-terminated character string pointed to by `s`, as if by `append(s, traits_t::length(s))`.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(const_pointer s) -> basic_string_builder& {return append(basic_string_builder {s});}
       /// @brief Appends additional characters to the string.
       /// @param first The first iterator of the range of characters to append.
@@ -867,7 +867,7 @@ namespace xtd {
       /// @remarks Appends characters from the initializer list `ilist`.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append(std::initializer_list<value_type> ilist) -> basic_string_builder& {return append(basic_string_builder {ilist});}
       
       /// @brief Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of a corresponding argument in a parameters.
@@ -888,7 +888,7 @@ namespace xtd {
       /// | :format_string | A standard or custom format string that is supported by the parameter.                                                                                                   |
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       template<typename ...args_t>
       auto append_format(const xtd::basic_string<char_t>& format, args_t&& ... args) -> basic_string_builder& {return append(xtd::basic_string<char_t>::format(format, std::forward<args_t>(args)...));}
       
@@ -899,7 +899,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       template<typename collection_t>
       auto append_join(const xtd::basic_string<char_t>& separator, const collection_t& values) -> basic_string_builder& {return append(xtd::basic_string<char_t>::join(separator, values));}
       /// @brief Concatenates and appends the members of a collection, using the specified xtd::basic_string_builder::value_type separator between each member.
@@ -909,7 +909,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       template<typename collection_t>
       auto append_join(value_type separator, const collection_t& values) -> basic_string_builder& {return append(xtd::basic_string<char_t>::join(xtd::basic_string<char_t>(separator, 1), values));}
       
@@ -925,7 +925,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append_line() -> basic_string_builder& {return append(xtd::basic_string<char_t> {xtd::environment::new_line()});}
       /// @brief Appends a copy of the specified string followed by the default line terminator to the end of the current xtd::text::basic_string_builder object.
       /// @param value The string to append.
@@ -933,7 +933,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
-      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
+      /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::usize, xtd::usize) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       auto append_line(const xtd::basic_string<char_t>& value) -> basic_string_builder& {return append(value).append_line();}
       
       /// @brief Removes all characters from the current xtd::text::basic_string_builder instance.
@@ -953,7 +953,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `source_index` is greater than length <br>-or-<br>`destination_index` + 'destination_count' greater than destination size.
       /// @remarks The xtd::text::basic_string_builder::copy_to method is intended to be used in the rare situation when you need to efficiently copy successive sections of a xtd::text::basic_string_builder object to an array. The array should be a fixed size, preallocated, reusable, and possibly globally accessible.
       /// @remarks For example, your code could populate a xtd::text::basic_string_builder object with a large number of characters then use the xtd::text::basic_string_builder::copy_to method to copy small, successive pieces of the xtd::text::basic_string_builder object to an array where the pieces are processed. When all the data in the xtd::text::basic_string_builder object is processed, the size of the xtd::text::basic_string_builder object is set to zero and the cycle is repeated.
-      auto copy_to(xtd::size source_index, xtd::array<value_type>& destination, xtd::size destination_index, xtd::size destination_count) const -> void {
+      auto copy_to(xtd::usize source_index, xtd::array<value_type>& destination, xtd::usize destination_index, xtd::usize destination_count) const -> void {
         if (source_index > length() || source_index + destination_count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (destination_index >= destination.length() || destination_index + destination_count > destination.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.copy(destination.data() + destination_index, destination_count, source_index);
@@ -985,7 +985,7 @@ namespace xtd {
       
       /// @brief Returns the hash code for this basic_string_builder.
       /// @return A hash code.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override {return xtd::hash_code::combine(chars_);}
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return xtd::hash_code::combine(chars_);}
       
       /// @brief Inserts a string into this instance at the specified character position.
       /// @param index The position in this instance where insertion begins.
@@ -1268,7 +1268,7 @@ namespace xtd {
         if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         auto old_size = old_value.length();
         auto new_size = new_value.length();
-        auto index = xtd::size {0};
+        auto index = xtd::usize {0};
         while (true) {
           index = chars_.find(old_value, index);
           if (index == npos || index >= start_index + count) break;
@@ -1445,7 +1445,7 @@ namespace xtd {
       /// @param index The position of the character to return.
       /// @return Reference to the requested character.
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-      auto operator [](xtd::size index) const -> const_reference {
+      auto operator [](xtd::usize index) const -> const_reference {
         if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
         return chars_[index == epos ? length() - 1 : index];
       }
@@ -1453,7 +1453,7 @@ namespace xtd {
       /// @param index The position of the character to return.
       /// @return Reference to the requested character.
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-      auto operator [](xtd::size index) -> reference {
+      auto operator [](xtd::usize index) -> reference {
         if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
         return chars_[index == epos ? length() - 1 : index];
       }

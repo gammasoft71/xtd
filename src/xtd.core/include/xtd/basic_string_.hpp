@@ -13,19 +13,19 @@
 
 /// @cond
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::usize {
   return index_of_any(values, 0, length());
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const -> xtd::size {
+auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::usize start_index) const -> xtd::usize {
   return index_of_any(values, start_index, length() - start_index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
   if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-  auto index = xtd::size {0};
+  auto index = xtd::usize {0};
   for (const auto& item : self_) {
     if (index++ < start_index) continue;
     if (index - 1 > start_index + count) break;
@@ -35,32 +35,32 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::usize {
   return index_of_any(xtd::array<value_type>(values));
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index) const -> xtd::usize {
   return index_of_any(xtd::array<value_type>(values), start_index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
   return index_of_any(xtd::array<value_type>(values), start_index, count);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values) const noexcept -> xtd::usize {
   return last_index_of_any(values, 0, length());
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::usize start_index) const -> xtd::usize {
   return last_index_of_any(values, start_index, length() - start_index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
   if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   auto index = length() - 1;
   for (auto iterator = chars().crbegin(); iterator != chars().crend(); ++iterator) {
@@ -72,57 +72,57 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values) const noexcept -> xtd::usize {
   return last_index_of_any(xtd::array<value_type>(values));
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index) const -> xtd::usize {
   return last_index_of_any(xtd::array<value_type>(values), start_index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::size start_index, xtd::size count) const -> xtd::size {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const std::initializer_list<value_type>& values, xtd::usize start_index, xtd::usize count) const -> xtd::usize {
   return last_index_of_any(xtd::array<value_type>(values), start_index, count);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split() const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
-  return split(default_split_separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
+  return split(default_split_separators, std::numeric_limits<xtd::usize>::max(), xtd::string_split_options::none);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
-  return split(xtd::array<value_type> {separator}, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
+  return split(xtd::array<value_type> {separator}, std::numeric_limits<xtd::usize>::max(), xtd::string_split_options::none);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
-  return split(xtd::array<value_type> {separator}, std::numeric_limits<xtd::size>::max(), options);
+  return split(xtd::array<value_type> {separator}, std::numeric_limits<xtd::usize>::max(), options);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::size count) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::usize count) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(xtd::array<value_type> {separator}, count, xtd::string_split_options::none);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::size count, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(value_type separator, xtd::usize count, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(xtd::array<value_type> {separator}, count, options);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
-  return split(separators, std::numeric_limits<xtd::size>::max(), xtd::string_split_options::none);
+  return split(separators, std::numeric_limits<xtd::usize>::max(), xtd::string_split_options::none);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
-  return split(separators, std::numeric_limits<xtd::size>::max(), options);
+  return split(separators, std::numeric_limits<xtd::usize>::max(), options);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::size count) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::usize count) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   return split(separators, count, xtd::string_split_options::none);
 }
 
@@ -133,7 +133,7 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::a
 #endif
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::size count, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::usize count, xtd::string_split_options options) const noexcept -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> {
   if (count == 0) return {};
   if (count == 1) return {self_};
   
@@ -173,12 +173,12 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array() const n
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array(xtd::size start_index) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array(xtd::usize start_index) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   return to_array(start_index, length() - start_index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array(xtd::size start_index, xtd::size length) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_array(xtd::usize start_index, xtd::usize length) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   if (start_index >= self_.length()) return {};
   if (start_index + length >= self_.length()) return {chars().begin() + start_index, chars().end()};
   return {chars().begin() + start_index, chars().begin() + start_index + length};
@@ -190,7 +190,7 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_char_array() co
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_char_array(xtd::size start_index, xtd::size length) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::to_char_array(xtd::usize start_index, xtd::usize length) const -> xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> {
   return to_array(start_index, length);
 }
 
@@ -280,7 +280,7 @@ template<typename char_t, typename traits_t, typename allocator_t>
 template<typename ...args_t>
 inline auto xtd::basic_string<char_t, traits_t, allocator_t>::format(const std::locale& loc, const basic_string<char>& fmt, args_t&& ... args) -> basic_string {
   auto result = basic_string<char> {};
-  auto index = xtd::size {0};
+  auto index = xtd::usize {0};
   auto formats = std::vector<__format_information<char>> {};
   auto begin_format_iterator = fmt.end();
   auto end_format_iterator = fmt.end();
@@ -302,8 +302,8 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::format(const std::
         if (format_str.length() == 0)
           fi.index = index++;
         else {
-          xtd::size index_alignment_separator = basic_string(format_str).index_of(',');
-          xtd::size index_format_separator = basic_string(format_str).index_of(u':');
+          xtd::usize index_alignment_separator = basic_string(format_str).index_of(',');
+          xtd::usize index_format_separator = basic_string(format_str).index_of(u':');
           
           if (index_alignment_separator != std::basic_string<char>::npos && index_format_separator != std::basic_string<char>::npos && index_alignment_separator > index_format_separator)
             index_alignment_separator = std::basic_string<char>::npos;
@@ -357,13 +357,13 @@ inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_s
 
 template<typename char_t, typename traits_t, typename allocator_t>
 template<typename value_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) -> basic_string {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::usize index) -> basic_string {
   return join(separator, xtd::array<value_t>(values), index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
 template<typename value_t>
-inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) -> basic_string {
+inline auto xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::usize index, xtd::usize count) -> basic_string {
   return join(separator, xtd::array<value_t>(values), index, count);
 }
 
@@ -377,9 +377,9 @@ template<typename char_t, typename traits_t, typename allocator_t>
 inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::default_trim_chars = {9, 10, 11, 12, 13, 32};
 
 template<typename arg_t>
-auto __basic_string_extract_format_arg(const std::locale& loc, std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char >>& formats, arg_t&& arg) -> void {
-  //void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
-  auto offset = xtd::size {0};
+auto __basic_string_extract_format_arg(const std::locale& loc, std::basic_string<char>& fmt, xtd::usize& index, std::vector<__format_information<char >>& formats, arg_t&& arg) -> void {
+  //void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::usize& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
+  auto offset = xtd::usize {0};
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
@@ -405,7 +405,7 @@ auto __basic_string_extract_format_arg(const std::locale& loc, std::basic_string
 
 template<typename ...args_t>
 auto __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, std::vector<__format_information<char >>& formats, args_t&&... args) -> void {
-  [[maybe_unused]] auto index = xtd::size {0};
+  [[maybe_unused]] auto index = xtd::usize {0};
   (__basic_string_extract_format_arg(loc, const_cast<std::basic_string<char>& > (fmt.chars()), index, formats, args), ...);
   //(__basic_string_extract_format_arg(loc, fmt, index, formats, args), ...);
 }

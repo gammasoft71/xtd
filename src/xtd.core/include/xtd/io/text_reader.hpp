@@ -65,26 +65,26 @@ namespace xtd {
       /// @brief Reads the characters from the current reader and writes the data to the specified buffer.
       /// @param buffer When this method returns, contains the specified span of characters replaced by the characters read from the current source.
       /// @return The number of characters that have been read. The number will be less than or equal to the buffer length, depending on whether the data is available within the reader. This method returns 0 (zero) if it is called when no more characters are left to read.
-      virtual auto read(xtd::span<char>& buffer) -> xtd::size;
+      virtual auto read(xtd::span<char>& buffer) -> xtd::usize;
       
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
-      virtual auto read(xtd::array<char>& buffer, xtd::size index, xtd::size count) -> xtd::size;
+      virtual auto read(xtd::array<char>& buffer, xtd::usize index, xtd::usize count) -> xtd::usize;
       
       /// @brief Reads the characters from the current stream and writes the data to a buffer.
       /// @param buffer When this method returns, contains the specified span of characters replaced by the characters read from the current source.
       /// @return The number of characters that have been read. The number will be less than or equal to the buffer length, depending on whether all input characters have been read.
-      virtual auto read_block(xtd::span<char>& buffer) -> xtd::size;
+      virtual auto read_block(xtd::span<char>& buffer) -> xtd::usize;
       
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
-      virtual auto read_block(xtd::array<char>& buffer, xtd::size index, xtd::size count) -> xtd::size;
+      virtual auto read_block(xtd::array<char>& buffer, xtd::usize index, xtd::usize count) -> xtd::usize;
       
       /// @brief Reads a line of characters from the current stream and returns the data as a string.
       /// @return The next line from the input stream, or the empty string if all characters have been read.

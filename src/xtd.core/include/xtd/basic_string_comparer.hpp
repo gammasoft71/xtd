@@ -212,22 +212,22 @@ namespace xtd {
     using xtd::object::get_hash_code;
     /// @brief When overridden in a derived class, gets the hash code for the specified object.
     /// @param obj An object.
-    /// @return A xtd::size hash code calculated from the value of the obj parameter.
+    /// @return A xtd::usize hash code calculated from the value of the obj parameter.
     /// @remarks The xtd::basic_string_comparer::get_hash_code(const string&) method is more efficient than the xtd::basic_string_comparer::get_hash_code(const object&) method because the obj parameter does not have to be converted to perform the operation.
     template<typename object_t>
-    [[nodiscard]] auto get_hash_code(const object_t& obj) const -> xtd::size {
+    [[nodiscard]] auto get_hash_code(const object_t& obj) const -> xtd::usize {
       if (is<basic_string<char_t>>(obj)) return get_hash_code(as<basic_string<char_t >> (obj));
       if (is<object>(obj)) return as<object>(obj).get_hash_code();
       return xtd::hash_code::combine(obj);
     }
     /// @cond
-    [[nodiscard]] auto get_hash_code(const char_t* obj) const -> xtd::size {return get_hash_code(basic_string<char_t> {obj});}
+    [[nodiscard]] auto get_hash_code(const char_t* obj) const -> xtd::usize {return get_hash_code(basic_string<char_t> {obj});}
     /// @endcond
     /// @brief When overridden in a derived class, gets the hash code for the specified string.
     /// @param obj A string.
-    /// @return A xtd::size hash code calculated from the value of the obj parameter.
+    /// @return A xtd::usize hash code calculated from the value of the obj parameter.
     /// @remarks The xtd::basic_string_comparer::get_hash_code(const string&) method is more efficient than the xtd::basic_string_comparer::get_hash_code(const object&) method because the obj parameter does not have to be converted to perform the operation.
-    [[nodiscard]] auto get_hash_code(const xtd::basic_string<char_t>& obj) const noexcept -> xtd::size override {
+    [[nodiscard]] auto get_hash_code(const xtd::basic_string<char_t>& obj) const noexcept -> xtd::usize override {
       /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
       switch (comparison_) {
         case string_comparison::current_culture:

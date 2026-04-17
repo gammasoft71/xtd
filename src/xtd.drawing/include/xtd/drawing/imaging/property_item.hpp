@@ -480,7 +480,7 @@ namespace xtd {
         
         /// @brief Gets the length (in bytes) of the value property.
         /// @return An integer that represents the length (in bytes) of the value byte array.
-        xtd::size len() const noexcept;
+        xtd::usize len() const noexcept;
         
         /// @brief Gets an integer that defines the type of data contained in the value property.
         /// @return An integer that defines the type of data contained in value.
@@ -539,7 +539,7 @@ namespace xtd {
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::size get_hash_code() const noexcept override;
+        xtd::usize get_hash_code() const noexcept override;
         /// @}
         
       private:

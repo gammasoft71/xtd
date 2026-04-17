@@ -138,7 +138,7 @@ namespace xtd {
             }
             
           protected:
-            xtd::size index_ = 0;
+            xtd::usize index_ = 0;
             const collection_t& items_;
             const_iterator iterator_ = items_.cend();
             version_t version_ = version_t {};

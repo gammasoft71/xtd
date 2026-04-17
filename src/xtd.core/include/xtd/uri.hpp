@@ -585,7 +585,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    xtd::usize get_hash_code() const noexcept override;
     
     /// @brief Gets a canonical string representation for the specified xtd::uri instance.
     /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.

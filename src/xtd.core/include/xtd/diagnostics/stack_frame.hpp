@@ -55,49 +55,49 @@ namespace xtd {
       stack_frame();
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that corresponds to a frame above the current stack frame.
       /// @param skip_frame The number of frames up the stack to skip.
-      explicit stack_frame(xtd::size skip_frame);
+      explicit stack_frame(xtd::usize skip_frame);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class, optionally capturing source information.
       /// @param need_file_info `true` to capture the file name, line number, and column number of the stack frame; otherwise, `false`.
       explicit stack_frame(bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that corresponds to a frame above the current stack frame, optionally capturing source information.
       /// @param skip_frame The number of frames up the stack to skip.
       /// @param need_file_info `true` to capture the file name, line number, and column number of the stack frame; otherwise, `false`.
-      stack_frame(xtd::size skip_frame, bool need_file_info);
+      stack_frame(xtd::usize skip_frame, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, and line number.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
-      stack_frame(const xtd::string& file_name, xtd::size line_number);
+      stack_frame(const xtd::string& file_name, xtd::usize line_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and method name.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
-      stack_frame(const xtd::string& file_name, xtd::size line_number, const xtd::string& method_name);
+      stack_frame(const xtd::string& file_name, xtd::usize line_number, const xtd::string& method_name);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const xtd::string& file_name, xtd::size line_number, const xtd::string& method_name, xtd::size column_number);
+      stack_frame(const xtd::string& file_name, xtd::usize line_number, const xtd::string& method_name, xtd::usize column_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, and column number.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param column_number The column number in the specified file.
-      stack_frame(const xtd::string& file_name, xtd::size line_number, xtd::size column_number);
+      stack_frame(const xtd::string& file_name, xtd::usize line_number, xtd::usize column_number);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, line number, method name, column number, and offset.
       /// @param file_name The file name.
       /// @param line_number The line number in the specified file.
       /// @param method_name The method name.
       /// @param column_number The column number in the specified file.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const xtd::string& file_name, xtd::size line_number, const xtd::string& method_name, xtd::size column_number, xtd::size offset);
+      stack_frame(const xtd::string& file_name, xtd::usize line_number, const xtd::string& method_name, xtd::usize column_number, xtd::usize offset);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given source location.
       /// @param source_location The source location caontaing the file name, the line number, the method name, and the column number.
       stack_frame(const xtd::diagnostics::source_location& source_location); // Not explicit by design.
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given given source location, and offset.
       /// @param source_location The source location caontaing the file name, the line number, the method name, and the column number.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const xtd::diagnostics::source_location& source_location, xtd::size offset);
+      stack_frame(const xtd::diagnostics::source_location& source_location, xtd::usize offset);
       /// @brief Initializes a new empty instance of the xtd::diagnostics::stack_frame.
       /// @param frame nullptr.
       stack_frame(xtd::null_ptr frame); // Not explicit by design.
@@ -117,8 +117,8 @@ namespace xtd {
       [[nodiscard]] static auto empty() noexcept -> xtd::diagnostics::stack_frame;
       
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
-      /// @remarks The value of this constant is `std::numeric_limits<xtd::size>::max()`.
-      static constexpr xtd::size OFFSET_UNKNOWN = std::numeric_limits<xtd::size>::max();
+      /// @remarks The value of this constant is `std::numeric_limits<xtd::usize>::max()`.
+      static constexpr xtd::usize OFFSET_UNKNOWN = std::numeric_limits<xtd::usize>::max();
       /// @}
       
       /// @name Public Methods
@@ -135,7 +135,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
@@ -152,7 +152,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      [[nodiscard]] virtual auto get_file_column_number() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_file_column_number() const noexcept -> xtd::usize;
       
       /// @brief Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file line number, or 0 (zero) if the file line number cannot be determined.
@@ -169,7 +169,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      [[nodiscard]] virtual auto get_file_line_number() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_file_line_number() const noexcept -> xtd::usize;
       
       /// @brief Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file name, or empty ("") if the file name cannot be determined.
@@ -220,7 +220,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Native Offset: {}", sf.get_native_offset());
       /// ```
-      [[nodiscard]] virtual auto get_native_offset() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_native_offset() const noexcept -> xtd::usize;
       
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
@@ -237,7 +237,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      [[nodiscard]] virtual auto get_offset() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_offset() const noexcept -> xtd::usize;
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
@@ -259,7 +259,7 @@ namespace xtd {
       
     private:
       friend class stack_trace;
-      static auto get_stack_frames(const xtd::string& str, xtd::size skip_frames, bool need_file_info) noexcept;
+      static auto get_stack_frames(const xtd::string& str, xtd::usize skip_frames, bool need_file_info) noexcept;
       
       struct data;
       xtd::ptr<data> data_;

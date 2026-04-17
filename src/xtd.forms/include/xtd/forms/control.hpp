@@ -280,7 +280,7 @@ namespace xtd {
         /// @{
         void on_item_removed(size_t index, control_ref& item) override {
           xtd::forms::layout::arranged_element_collection<control_ref>::on_item_removed(index, item);
-          for (auto i = xtd::size {0}; i < controls_.count(); ++i) {
+          for (auto i = xtd::usize {0}; i < controls_.count(); ++i) {
             if (controls_[i].get() != &item.get()) continue;
             controls_.remove_at(i);
             break;
@@ -1003,7 +1003,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to `false`. After the hide method is called, the visible property returns a value of `false` until the show method is called.

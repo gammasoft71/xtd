@@ -61,7 +61,7 @@ bool region::equals(const region& other) const noexcept {
   return data_ == other.data_;
 }
 
-xtd::size region::get_hash_code() const noexcept {
+xtd::usize region::get_hash_code() const noexcept {
   return hash_code::combine(data_);
 }
 

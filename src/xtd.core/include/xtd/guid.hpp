@@ -153,7 +153,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    xtd::usize get_hash_code() const noexcept override;
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.

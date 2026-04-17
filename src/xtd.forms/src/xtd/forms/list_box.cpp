@@ -105,8 +105,8 @@ list_control& list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
-array<xtd::size> list_box::selected_indices() const noexcept {
-  return is_handle_created() ? native::list_box::selected_indices(handle()) : xtd::array<xtd::size> {};
+array<xtd::usize> list_box::selected_indices() const noexcept {
+  return is_handle_created() ? native::list_box::selected_indices(handle()) : xtd::array<xtd::usize> {};
 }
 
 list_box& list_box::selected_item(const item& selected_item) {

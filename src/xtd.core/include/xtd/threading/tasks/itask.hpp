@@ -23,7 +23,7 @@ namespace xtd {
         /// @{
         /// @brief Gets an ID for this task instance.
         /// @return The identifier that is assigned by the system to this task instance.
-        [[nodiscard]] virtual auto id() const noexcept -> xtd::size = 0;
+        [[nodiscard]] virtual auto id() const noexcept -> xtd::usize = 0;
         /// @}
 
         /// @name Public Methods

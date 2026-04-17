@@ -118,7 +118,7 @@ bool forms::link::equals(const forms::link& other) const noexcept {
   return data_->description == other.data_->description && data_->enabled == other.data_->enabled && data_->length == other.data_->length && /*data_->link_data == other.data_->link_data &&*/ data_->name == other.data_->name && data_->start == other.data_->start;
 }
 
-xtd::size forms::link::get_hash_code() const noexcept {
+xtd::usize forms::link::get_hash_code() const noexcept {
   return hash_code::combine(data_->description, data_->enabled, data_->length, /*data_->link_data,*/ data_->name, data_->start);
 }
 

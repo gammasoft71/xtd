@@ -17,7 +17,7 @@ const xtd::string& system_exception::file_path() const noexcept {
   return get_last_stack_frame().get_file_name();
 }
 
-xtd::size system_exception::line_number() const noexcept {
+xtd::usize system_exception::line_number() const noexcept {
   return get_last_stack_frame().get_file_line_number();
 }
 

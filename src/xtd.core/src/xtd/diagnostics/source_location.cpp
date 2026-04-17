@@ -6,12 +6,12 @@ using namespace xtd::diagnostics;
 
 struct source_location::data {
   data() = default;
-  data(const xtd::string& file, xtd::size line, const xtd::string& func, xtd::size column) : file {file}, line {line}, func {func}, column {column} {}
+  data(const xtd::string& file, xtd::usize line, const xtd::string& func, xtd::usize column) : file {file}, line {line}, func {func}, column {column} {}
   
   xtd::string file;
-  xtd::size line = 0;
+  xtd::usize line = 0;
   xtd::string func;
-  xtd::size column = 0;
+  xtd::usize column = 0;
 };
 
 source_location::source_location() : data_ {new_ptr<data>()} {
@@ -34,7 +34,7 @@ auto source_location::operator =(const source_location& other) -> source_locatio
   return *this;
 }
 
-source_location::source_location(const xtd::string& file, xtd::size line, const xtd::string& func, xtd::size column) : data_ {new_ptr<data>(file, line, func, column)} {
+source_location::source_location(const xtd::string& file, xtd::usize line, const xtd::string& func, xtd::usize column) : data_ {new_ptr<data>(file, line, func, column)} {
 }
 
 auto source_location::column() const noexcept -> size {
@@ -58,5 +58,5 @@ auto source_location::to_string() const noexcept -> xtd::string {
 }
 
 auto source_location::current(const __xtd_source_location__& value) noexcept -> source_location {
-  return source_location {value.file_name(), static_cast<xtd::size>(value.line()), value.function_name() == xtd::string {} ? "<unknown>" : value.function_name(), static_cast<xtd::size>(value.column())};
+  return source_location {value.file_name(), static_cast<xtd::usize>(value.line()), value.function_name() == xtd::string {} ? "<unknown>" : value.function_name(), static_cast<xtd::usize>(value.column())};
 }

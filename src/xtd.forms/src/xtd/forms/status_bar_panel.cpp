@@ -202,7 +202,7 @@ void status_bar_panel::end_init() {
   if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
 }
 
-xtd::size status_bar_panel::get_hash_code() const noexcept {
+xtd::usize status_bar_panel::get_hash_code() const noexcept {
   return hash_code::combine(data_);
 }
 

@@ -77,7 +77,7 @@ bool country::equals(const country& other) const noexcept {
   return data_->name == other.data_->name && data_->alpha_2_code == other.data_->alpha_2_code && data_->alpha_3_code == other.data_->alpha_3_code && data_->numeric_code == other.data_->numeric_code && data_->emoticon == other.data_->emoticon;
 }
 
-xtd::size country::get_hash_code() const noexcept {
+xtd::usize country::get_hash_code() const noexcept {
   return hash_code::combine(data_->name, data_->alpha_2_code, data_->alpha_3_code, data_->numeric_code, data_->emoticon);
 }
 

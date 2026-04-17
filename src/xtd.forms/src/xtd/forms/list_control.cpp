@@ -38,7 +38,7 @@ bool list_control::item::equals(const item& other) const noexcept {
   return value_ == other.value_;
 }
 
-xtd::size list_control::item::get_hash_code() const noexcept {
+xtd::usize list_control::item::get_hash_code() const noexcept {
   return hash_code::combine(value_);
 }
 

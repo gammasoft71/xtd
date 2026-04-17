@@ -116,7 +116,7 @@ namespace xtd {
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::size get_hash_code() const noexcept override;
+        xtd::usize get_hash_code() const noexcept override;
         
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
@@ -139,18 +139,18 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a value that is not a valid position in a collection.
-      /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
-      inline static constexpr xtd::size npos = object_collection::npos;
+      /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
+      inline static constexpr xtd::usize npos = object_collection::npos;
       
       /// @brief Represents the index of the first valid element in a collection.
       /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
-      static inline constexpr xtd::size bpos = object_collection::bpos;
+      static inline constexpr xtd::usize bpos = object_collection::bpos;
       
       /// @brief Represents the index of the last valid element in a collection.
       /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
       /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
       /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
-      static inline constexpr xtd::size epos = object_collection::epos;
+      static inline constexpr xtd::usize epos = object_collection::epos;
       /// @}
       
       /// @name Public Properties

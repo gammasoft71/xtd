@@ -123,11 +123,11 @@ namespace xtd {
           /// @brief Add operator with specified value.
           /// @param value The number to add to the underlying iterator.
           /// @return The underlying iterator.
-          auto operator +(xtd::size value) const noexcept -> wrap_pointer_iterator {return wrap_pointer_iterator {data_ + value};}
+          auto operator +(xtd::usize value) const noexcept -> wrap_pointer_iterator {return wrap_pointer_iterator {data_ + value};}
           /// @brief Add equal operator with specified value.
           /// @param value The number to add to the underlying iterator.
           /// @return The underlying iterator.
-          auto operator +=(xtd::size value) noexcept -> wrap_pointer_iterator& {*this = *this + value; return *this;}
+          auto operator +=(xtd::usize value) noexcept -> wrap_pointer_iterator& {*this = *this + value; return *this;}
           /// @brief Subtract The specified iterator from the current iterator.
           /// @param value The iterator to subtract from the current iterator.
           /// @return The difference between current iterator and the specified iterator.

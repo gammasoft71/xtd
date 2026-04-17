@@ -30,6 +30,6 @@ namespace xtd {
   /// console::write_line(items[~1_z]); // Prints 40
   /// console::write_line(items[~2_z]); // Prints 30
   /// ```
-  inline constexpr xtd::size epos = xtd::npos - 1;
+  inline constexpr xtd::usize epos = xtd::npos - 1;
   /// @}
 }

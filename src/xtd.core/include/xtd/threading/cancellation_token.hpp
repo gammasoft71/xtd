@@ -98,7 +98,7 @@ namespace xtd {
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Throws a xtd::operation_canceled_exception if this token has had cancellation requested.
       /// @exception xtd::operation_canceled_exception The token has had cancellation requested.

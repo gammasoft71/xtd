@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::guid g = "1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_guid(const char* s, xtd::size n) -> xtd::guid;
+    [[nodiscard]] auto operator""_guid(const char* s, xtd::usize n) -> xtd::guid;
     
     /// @brief Used to convert specified value into xtd::guid.
     /// @par Namespace
@@ -35,7 +35,7 @@ namespace xtd {
     /// xtd::guid g = u8"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_guid(const char8* s, xtd::size n) -> xtd::guid;
+    [[nodiscard]] auto operator""_guid(const char8* s, xtd::usize n) -> xtd::guid;
     
     /// @brief Used to convert specified value into xtd::guid.
     /// @par Namespace
@@ -48,7 +48,7 @@ namespace xtd {
     /// xtd::guid g = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_guid(const char16* s, xtd::size n) -> xtd::guid;
+    [[nodiscard]] auto operator""_guid(const char16* s, xtd::usize n) -> xtd::guid;
     
     /// @brief Used to convert specified value into xtd::guid.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// xtd::guid g = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_guid(const char32* s, xtd::size n) -> xtd::guid;
+    [[nodiscard]] auto operator""_guid(const char32* s, xtd::usize n) -> xtd::guid;
     
     /// @brief Used to convert specified value into xtd::guid.
     /// @par Namespace
@@ -74,7 +74,7 @@ namespace xtd {
     /// xtd::guid g = L"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] auto operator""_guid(const wchar* s, xtd::size n) -> xtd::guid;
+    [[nodiscard]] auto operator""_guid(const wchar* s, xtd::usize n) -> xtd::guid;
     /// @}
   }
 }

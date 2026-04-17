@@ -82,7 +82,7 @@ namespace xtd {
     /// @param choices Set of choices.
     /// @param length The length of the populated array.
     template<typename value_t>
-    xtd::array<value_t> get_items(const xtd::read_only_span<value_t>& choices, xtd::size length) {
+    xtd::array<value_t> get_items(const xtd::read_only_span<value_t>& choices, xtd::usize length) {
       auto result = array<value_t>(length);
       auto span_result = span<value_t>(result);
       get_items(choices, span_result);
@@ -92,7 +92,7 @@ namespace xtd {
     /// @param choices Set of choices.
     /// @param length The length of the populated array.
     template<typename value_t>
-    xtd::array<value_t> get_items(const xtd::array<value_t>& choices, xtd::size length) {
+    xtd::array<value_t> get_items(const xtd::array<value_t>& choices, xtd::usize length) {
       return get_items(read_only_span<value_t>(choices), length);
     }
     /// @brief Fills the elements of a specified span with items chosen at random from the provided set of choices.

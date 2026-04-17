@@ -89,7 +89,7 @@ bool image_list::equals(const image_list& other) const noexcept {
   return data_->image_size == other.data_->image_size && data_->images == other.data_->images;
 }
 
-xtd::size image_list::get_hash_code() const noexcept {
+xtd::usize image_list::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(data_->handle);
   result.add(data_->image_size);

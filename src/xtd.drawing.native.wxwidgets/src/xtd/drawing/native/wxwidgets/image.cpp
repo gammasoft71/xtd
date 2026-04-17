@@ -205,7 +205,7 @@ namespace {
 
 void image::color_palette(intptr image, array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
-  entries = array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>(as<xtd::size>(palette.GetColoursCount()));
+  entries = array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>(as<xtd::usize>(palette.GetColoursCount()));
   if (palette.GetColoursCount() == 0) return;
   for (int32 index = 0; index < palette.GetColoursCount(); index++) {
     xtd::byte r = 0, g = 0, b = 0;

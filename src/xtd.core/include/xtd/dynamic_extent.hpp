@@ -10,8 +10,8 @@ namespace xtd {
   /// @name Static Fields
   
   /// @{
-  /// @brief Represents the constant of type xtd::size signifying that the span has dynamic extent
-  /// @remarks xtd::dynamic_extent is a constant of type xtd::size that is generally used to indicate that any type using xtd::dynamic_extent will dynamically store its value (e.g., size) rather than having the value statically known in the type.
+  /// @brief Represents the constant of type xtd::usize signifying that the span has dynamic extent
+  /// @remarks xtd::dynamic_extent is a constant of type xtd::usize that is generally used to indicate that any type using xtd::dynamic_extent will dynamically store its value (e.g., size) rather than having the value statically known in the type.
   /// @par Header
   /// ```cpp
   /// #include <xtd/dynamic_extent>
@@ -21,6 +21,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  inline constexpr xtd::size dynamic_extent = std::numeric_limits<xtd::size>::max();
+  inline constexpr xtd::usize dynamic_extent = std::numeric_limits<xtd::usize>::max();
   /// @}
 }

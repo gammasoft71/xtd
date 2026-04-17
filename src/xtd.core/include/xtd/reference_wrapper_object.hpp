@@ -194,7 +194,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
+    xtd::usize get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
     
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.

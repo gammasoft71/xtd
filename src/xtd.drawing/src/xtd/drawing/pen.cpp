@@ -192,7 +192,7 @@ bool pen::equals(const xtd::drawing::pen& other) const noexcept {
   return data_ == other.data_;
 }
 
-xtd::size pen::get_hash_code() const noexcept {
+xtd::usize pen::get_hash_code() const noexcept {
   return hash_code::combine(data_);
 }
 

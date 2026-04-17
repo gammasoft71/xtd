@@ -16,13 +16,13 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+  /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
   /// @par Examples
   /// ```cpp
   /// auto items = array {1, 2, 3};
   /// if (items.index_of(42) == npos)
   ///   console::write_line("Value not found");
   /// ```
-  inline constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
+  inline constexpr xtd::usize npos = std::numeric_limits<xtd::usize>::max();
   /// @}
 }

@@ -102,7 +102,7 @@ namespace xtd {
     /// @{
     /// @brief Checks whether the managed object is managed only by the current xtd::shared_ptr_object object.
     /// @return `true` if the managed object is managed only by the current xtd::shared_ptr_object object; otherwise `false`.
-    bool is_unique() const noexcept {return use_count() == xtd::size {1};}
+    bool is_unique() const noexcept {return use_count() == xtd::usize {1};}
     
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The xtd::shared_ptr_object to be compared.
@@ -130,7 +130,7 @@ namespace xtd {
     
     /// @brief Gets the number of xtd::shared_ptr_object objects referring to the same managed object.
     /// @return The number of xtd::shared_ptr_object objects referring to the same managed object.
-    xtd::size use_count() const noexcept {return static_cast<xtd::size>(ptr_.use_count());}
+    xtd::usize use_count() const noexcept {return static_cast<xtd::usize>(ptr_.use_count());}
     /// @}
     
     /// @name Public Methods
@@ -163,7 +163,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
+    xtd::usize get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
     
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.

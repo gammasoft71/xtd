@@ -57,8 +57,8 @@ namespace xtd {
         using value_type = typename icollection<type_t>::value_type;
         /// @brief Represents the list base type.
         using base_type = std::list<value_type, allocator_t>;
-        /// @brief Represents the list size type (usually xtd::size).
-        using size_type = xtd::size;
+        /// @brief Represents the list size type (usually xtd::usize).
+        using size_type = xtd::usize;
         /// @brief Represents the reference of list value type.
         using reference = value_type&;
         /// @brief Represents the const reference of list value type.
@@ -314,7 +314,7 @@ namespace xtd {
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::linked_list <type_t>.
         [[nodiscard]] enumerator<value_type> get_enumerator() const noexcept override {
           struct linked_list_enumerator : public ienumerator < value_type > {
-            explicit linked_list_enumerator(const linked_list & items, xtd::size version) : items_(items), version_(version) {}
+            explicit linked_list_enumerator(const linked_list & items, xtd::usize version) : items_(items), version_(version) {}
             
             [[nodiscard]] const value_type& current() const override {
               if (iterator_ == items_.data_->items.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
@@ -432,7 +432,7 @@ namespace xtd {
         struct linked_list_data {
           base_type items;
           xtd::object sync_root;
-          xtd::size version = 0;
+          xtd::usize version = 0;
         };
         
         xtd::ptr < linked_list_data > data_ = xtd::new_ptr < linked_list_data > ();

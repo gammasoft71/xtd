@@ -75,7 +75,7 @@ bool matrix::equals(const matrix& value) const noexcept {
   return data_ == value.data_;
 }
 
-xtd::size matrix::get_hash_code() const noexcept {
+xtd::usize matrix::get_hash_code() const noexcept {
   return hash_code::combine(data_->handle);
 }
 

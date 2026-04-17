@@ -34,7 +34,7 @@ bool enable_debug::equals(const enable_debug& other) const noexcept {
   return value_ == other.value_;
 }
 
-xtd::size enable_debug::get_hash_code() const noexcept {
+xtd::usize enable_debug::get_hash_code() const noexcept {
   return hash_code::combine(value_);
 }
 

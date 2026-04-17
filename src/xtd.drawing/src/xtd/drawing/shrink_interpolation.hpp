@@ -30,7 +30,7 @@ namespace {
     for (auto y = 0; y < result_height; ++y) {
       for (auto x = 0; x < result_width; ++x) {
         const auto result_pixel = y * result_width + x;
-        auto counter = xtd::size {0}, sum_alpha = xtd::size {0}, sum_red = xtd::size {0}, sum_green = xtd::size {0}, sum_blue = xtd::size {0};
+        auto counter = xtd::usize {0}, sum_alpha = xtd::usize {0}, sum_red = xtd::usize {0}, sum_green = xtd::usize {0}, sum_blue = xtd::usize {0};
         
         for (auto y1 = 0 ; y1 < y_factor ; ++y1) {
           const auto y_offset = (y * y_factor + y1) * source_width;

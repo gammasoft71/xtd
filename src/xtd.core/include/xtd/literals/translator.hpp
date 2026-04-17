@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd::string s = "Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] inline auto operator""_t(const char* s, xtd::size n) noexcept -> const char* {return xtd::globalization::translator::translate(s);}
+    [[nodiscard]] inline auto operator""_t(const char* s, xtd::usize n) noexcept -> const char* {return xtd::globalization::translator::translate(s);}
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -40,7 +40,7 @@ namespace xtd {
     /// xtd::string s = u8"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] inline auto operator""_t(const char8* s, xtd::size n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::u8string(s, s + n)); }
+    [[nodiscard]] inline auto operator""_t(const char8* s, xtd::usize n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::u8string(s, s + n)); }
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -53,7 +53,7 @@ namespace xtd {
     /// xtd::string s = u"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] inline auto operator""_t(const char16* s, xtd::size n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::u16string(s, s + n));}
+    [[nodiscard]] inline auto operator""_t(const char16* s, xtd::usize n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::u16string(s, s + n));}
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -66,7 +66,7 @@ namespace xtd {
     /// xtd::string s = U"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] inline auto operator""_t(const char32* s, xtd::size n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::u32string(s, s + n));}
+    [[nodiscard]] inline auto operator""_t(const char32* s, xtd::usize n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::u32string(s, s + n));}
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -79,7 +79,7 @@ namespace xtd {
     /// xtd::string s = L"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    [[nodiscard]] inline auto operator""_t(const wchar* s, xtd::size n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::wstring(s, s + n));}
+    [[nodiscard]] inline auto operator""_t(const wchar* s, xtd::usize n) noexcept -> xtd::string {return xtd::globalization::translator::translate(xtd::wstring(s, s + n));}
     /// @}
   }
 }

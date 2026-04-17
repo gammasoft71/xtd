@@ -230,11 +230,11 @@ namespace xtd {
       /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
-      xtd::size get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
+      xtd::usize get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.

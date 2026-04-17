@@ -59,10 +59,10 @@ namespace xtd {
             using pointer = value_type*;
             using reference = value_type&;
             
-            static constexpr auto npos() -> xtd::size {return std::numeric_limits<xtd::size>::max();}
+            static constexpr auto npos() -> xtd::usize {return std::numeric_limits<xtd::usize>::max();}
             
             enumerable_iterator() = default;
-            enumerable_iterator(iterator_enumerable_t& enumerable, xtd::size pos) : enumerable_ {&enumerable}, enumerator_ {enumerable.get_enumerator()}, pos_ {pos} {reset();}
+            enumerable_iterator(iterator_enumerable_t& enumerable, xtd::usize pos) : enumerable_ {&enumerable}, enumerator_ {enumerable.get_enumerator()}, pos_ {pos} {reset();}
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             auto operator =(enumerable_iterator&& value) noexcept -> enumerable_iterator& = default;
@@ -116,7 +116,7 @@ namespace xtd {
                 if (enumerator_.move_next() == false) pos_ = npos();
                 return;
               }
-              for (auto index = xtd::size {}; index <= pos_; ++index)
+              for (auto index = xtd::usize {}; index <= pos_; ++index)
                 if (enumerator_.move_next() == false) {
                   pos_ = npos();
                   break;
@@ -125,7 +125,7 @@ namespace xtd {
             
             iterator_enumerable_t* enumerable_ = nullptr;
             enumerator<type_t> enumerator_;
-            xtd::size pos_ = 0;
+            xtd::usize pos_ = 0;
           };
           /// @endcond
           

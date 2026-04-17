@@ -46,7 +46,7 @@ bool drawing::size::equals(const xtd::drawing::size& other) const noexcept {
   return width == other.width && height == other.height;
 }
 
-xtd::size drawing::size::get_hash_code() const noexcept {
+xtd::usize drawing::size::get_hash_code() const noexcept {
   return hash_code::combine(width, height);
 }
 

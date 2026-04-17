@@ -113,7 +113,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual auto read(xtd::array<xtd::byte>& buffer, xtd::size index, xtd::size count) -> xtd::size;
+      virtual auto read(xtd::array<xtd::byte>& buffer, xtd::usize index, xtd::usize count) -> xtd::usize;
       
       /// @brief Reads the specified number of characters from the stream, starting from a specified point in the character array.
       /// @param buffer The buffer to read data into.
@@ -123,7 +123,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual auto read(xtd::array<char>& buffer, xtd::size index, xtd::size count) -> xtd::size;
+      virtual auto read(xtd::array<char>& buffer, xtd::usize index, xtd::usize count) -> xtd::usize;
       
       /// @brief Reads a boolean value from the current stream and advances the current position of the stream by one byte.
       /// @return `true` if the byte is nonzero; otherwise, `false`.
@@ -148,7 +148,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      [[nodiscard]] virtual auto read_bytes(xtd::size count) -> xtd::array<xtd::byte>;
+      [[nodiscard]] virtual auto read_bytes(xtd::usize count) -> xtd::array<xtd::byte>;
       
       /// @brief Reads the next character from the current stream and advances the current position of the stream by one byte.
       /// @return A character read from the current stream.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      [[nodiscard]] virtual auto read_chars(xtd::size count) -> xtd::array<char>;
+      [[nodiscard]] virtual auto read_chars(xtd::usize count) -> xtd::array<char>;
       
       /// @brief Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.
       /// @return An 8-byte floating point value read from the current stream.
@@ -215,13 +215,13 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       [[nodiscard]] virtual auto read_single() -> float;
       
-      /// @brief Reads a xtd::size from the current stream and advances the current position of the stream by eight bytes.
-      /// @return A xtd::size read from the current stream.
+      /// @brief Reads a xtd::usize from the current stream and advances the current position of the stream by eight bytes.
+      /// @return A xtd::usize read from the current stream.
       /// @exception xtd::io::end_of_stream_exception The end of the stream is reached.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      [[nodiscard]] virtual auto read_size() -> xtd::size;
+      [[nodiscard]] virtual auto read_size() -> xtd::usize;
       
       /// @brief Reads a string from the current stream. The string is prefixed with the length.
       /// @return The string being read.

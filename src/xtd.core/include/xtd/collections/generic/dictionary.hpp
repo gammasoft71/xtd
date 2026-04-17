@@ -76,7 +76,7 @@ namespace xtd {
         /// @brief Represents the dictionary value type.
         using value_type = typename xtd::collections::generic::idictionary < key_type, mapped_type >::value_type;
         /// @brief Represents the dictionary size type.
-        using size_type = xtd::size;
+        using size_type = xtd::usize;
         /// @brief Represents the dictionary base value type.
         using base_value_type = std::pair < const key_t, value_t >;
         /// @brief Represents the dictionary base type.
@@ -161,7 +161,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(1) operation.
         /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
-        dictionary(xtd::size capacity) {
+        dictionary(xtd::usize capacity) {
           ensure_capacity(capacity);
         }
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that is empty, has the specified initial capacity, and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
@@ -174,7 +174,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(1) operation.
         /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
-        dictionary(xtd::size capacity, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : data_(xtd::new_ptr < dictionary_data > (comparer)) {
+        dictionary(xtd::usize capacity, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : data_(xtd::new_ptr < dictionary_data > (comparer)) {
           ensure_capacity(capacity);
         }
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::dictionary <key_t, value_t> and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
@@ -376,7 +376,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        auto copy_to(xtd::array < value_type >& array, xtd::size array_index) const -> void override {
+        auto copy_to(xtd::array < value_type >& array, xtd::usize array_index) const -> void override {
           if (array_index + count() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           for (const auto& item : self_)
             array[array_index++] = item;
@@ -385,7 +385,7 @@ namespace xtd {
         /// @brief Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The number of entries.
         /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
-        auto ensure_capacity(xtd::size capacity) noexcept -> size_type {
+        auto ensure_capacity(xtd::usize capacity) noexcept -> size_type {
           data_->items.reserve(capacity);
           return self_.capacity();
         }

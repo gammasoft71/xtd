@@ -89,7 +89,7 @@ namespace xtd {
       /// @return The position with the current stream.
       /// @exception xtd::io::io_exception The file pointer was moved to an invalid location.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual auto seek(xtd::size offset, std::ios::seekdir origin) -> xtd::size;
+      virtual auto seek(xtd::usize offset, std::ios::seekdir origin) -> xtd::usize;
       
       /// @brief Tell the current seek position of the readers stream;
       /// @return The current seek position
@@ -117,7 +117,7 @@ namespace xtd {
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      template<xtd::size size>
+      template<xtd::usize size>
       auto write(const std::array<xtd::byte, size>& buffer) -> void {
         for (auto b : buffer)
           write(b);
@@ -127,7 +127,7 @@ namespace xtd {
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      template<xtd::size size>
+      template<xtd::usize size>
       auto write(const std::array<char, size>& buffer) -> void {
         for (auto c : buffer)
           write(c);
@@ -146,7 +146,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual auto write(const xtd::array<xtd::byte>& buffer, xtd::size index, xtd::size count) -> void;
+      virtual auto write(const xtd::array<xtd::byte>& buffer, xtd::usize index, xtd::usize count) -> void;
       
       /// @brief Writes a character array to the underlying stream.
       /// @param buffer A character array containing the data to write.
@@ -161,7 +161,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual auto write(const xtd::array<char>& buffer, xtd::size index, xtd::size count) -> void;
+      virtual auto write(const xtd::array<char>& buffer, xtd::usize index, xtd::usize count) -> void;
       
       /// @brief Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte floating-point value to write.
@@ -246,9 +246,9 @@ namespace xtd {
       auto operator <<(bool value) -> binary_writer& {write(value); return *this;}
       auto operator <<(byte value) -> binary_writer& {write(value); return *this;}
       auto operator <<(char value) -> binary_writer& {write(value); return *this;}
-      template<xtd::size size>
+      template<xtd::usize size>
       auto operator <<(const xtd::fixed_array<xtd::byte, size>& value) -> binary_writer& {write(value); return *this;}
-      template<xtd::size size>
+      template<xtd::usize size>
       auto operator <<(const xtd::fixed_array<char, size>& value) -> binary_writer& {write(value); return *this;}
       auto operator <<(const xtd::array<xtd::byte>& value) -> binary_writer& {write(value, 0, value.length()); return *this;}
       auto operator <<(const xtd::array<char>& value) -> binary_writer& {write(value, 0, value.length()); return *this;}

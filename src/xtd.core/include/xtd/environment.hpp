@@ -362,7 +362,7 @@ namespace xtd {
       static auto compiler_id = __compiler_id;
       static auto version = __compiler_version;
       static auto build_type = __build_type;
-      static xtd::compiler compiler {compiler_id, version, build_type, size_of<xtd::size>() == 8};
+      static xtd::compiler compiler {compiler_id, version, build_type, size_of<xtd::usize>() == 8};
       return compiler;
     }
     
@@ -468,7 +468,7 @@ namespace xtd {
     
     /// @brief Gets the number of bytes in the operating system's memory page.
     /// @return The number of bytes in the system memory page.
-    [[nodiscard]] static auto system_page_size() -> xtd::size;
+    [[nodiscard]] static auto system_page_size() -> xtd::usize;
     
     /// @brief Gets an xtd::target_type object that contains the current target identifier.
     /// @return An object that contains the target identifier.

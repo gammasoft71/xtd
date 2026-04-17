@@ -251,7 +251,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
+    xtd::usize get_hash_code() const noexcept override;
     
     /// @brief Converts the value of the current xtd::version object to its equivalent xtd::string representation.
     /// @return The xtd::string representation of the values of the major, minor, build, and revision components of the current xtd::version object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:

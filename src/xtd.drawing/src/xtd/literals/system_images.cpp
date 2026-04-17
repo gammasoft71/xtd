@@ -4,22 +4,22 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-image xtd::literals::operator""_image(const char* s, xtd::size n) {
+image xtd::literals::operator""_image(const char* s, xtd::usize n) {
   return system_images::from_name(string {s});
 }
 
-image xtd::literals::operator""_image(const char8* s, xtd::size n) {
+image xtd::literals::operator""_image(const char8* s, xtd::usize n) {
   return system_images::from_name(string {s});
 }
 
-image xtd::literals::operator""_image(const char16* s, xtd::size n) {
+image xtd::literals::operator""_image(const char16* s, xtd::usize n) {
   return system_images::from_name(string {s});
 }
 
-image xtd::literals::operator""_image(const char32* s, xtd::size n) {
+image xtd::literals::operator""_image(const char32* s, xtd::usize n) {
   return system_images::from_name(string {s});
 }
 
-image xtd::literals::operator""_image(const wchar* s, xtd::size n) {
+image xtd::literals::operator""_image(const wchar* s, xtd::usize n) {
   return system_images::from_name(string {s});
 }

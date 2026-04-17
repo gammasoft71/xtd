@@ -117,7 +117,7 @@ namespace xtd {
         
         /// @brief Gets the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return An integer that indicates the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
-        xtd::size number_of_values() const noexcept;
+        xtd::usize number_of_values() const noexcept;
         
         /// @brief Gets the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return A member of the EncoderParameterValueType enumeration that indicates the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
@@ -146,12 +146,12 @@ namespace xtd {
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::size get_hash_code() const noexcept override;
+        xtd::usize get_hash_code() const noexcept override;
         /// @}
         
       private:
         xtd::drawing::imaging::encoder encoder_;
-        xtd::size number_of_values_ = 0;
+        xtd::usize number_of_values_ = 0;
         xtd::drawing::imaging::encoder_parameter_value_type type_ = static_cast<xtd::drawing::imaging::encoder_parameter_value_type>(0);
         xtd::collections::generic::list<xtd::byte> value_;
       };

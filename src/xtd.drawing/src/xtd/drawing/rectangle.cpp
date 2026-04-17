@@ -88,7 +88,7 @@ bool rectangle::equals(const rectangle& other) const noexcept {
   return x == other.x && y == other.y && width == other.width && height == other.height;
 }
 
-xtd::size rectangle::get_hash_code() const noexcept {
+xtd::usize rectangle::get_hash_code() const noexcept {
   return hash_code::combine(x, y, width, height);
 }
 

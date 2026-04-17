@@ -57,7 +57,7 @@ auto stream::copy_to(std::ostream& destination) -> void {
   copy_to(destination, length());
 }
 
-auto stream::copy_to(std::ostream& destination, xtd::size buffer_size) -> void {
+auto stream::copy_to(std::ostream& destination, xtd::usize buffer_size) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   if (buffer_size == 0_z) throw_helper::throws(exception_case::argument_out_of_range);

@@ -162,7 +162,7 @@ namespace xtd {
     
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
+    xtd::usize get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
     
     /// @brief Releases the stored pointer.
     /// @return The stored pointer.

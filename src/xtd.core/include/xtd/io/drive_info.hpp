@@ -66,7 +66,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the amount of free space available on the drive. Note that this number may be different from the xtd::io::drive_info::total_free_space number because this property takes into account disk quotas.
-      [[nodiscard]] auto available_free_space() const -> xtd::size;
+      [[nodiscard]] auto available_free_space() const -> xtd::usize;
       
       /// @brief Gets the name of the file system, such as NTFS or FAT32.
       /// @return The name of the file system on the specified drive.
@@ -117,7 +117,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the total amount of free space available on the drive, not just what is available to the current user.
-      [[nodiscard]] auto total_free_space() const -> xtd::size;
+      [[nodiscard]] auto total_free_space() const -> xtd::usize;
       
       /// @brief Gets the total size of storage space on a drive, in bytes.
       /// @return The total size of the drive, in bytes.
@@ -128,7 +128,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the total size of the drive in bytes, not just what is available to the current user.
-      [[nodiscard]] auto total_size() const -> xtd::size;
+      [[nodiscard]] auto total_size() const -> xtd::usize;
       
       /// @brief Gets the volume label of a drive.
       /// @return The volume label.

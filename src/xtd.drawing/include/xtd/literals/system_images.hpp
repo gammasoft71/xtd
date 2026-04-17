@@ -25,7 +25,7 @@ namespace xtd {
     /// @remarks The xtd::drawing::system_images::names contains the names of the images that can be used.
     /// @remarks The xtd::drawing::size of the image is equal to xtd::drawing::system_images::default_size property.
     /// @note If you want load image with other size use xtd::drawing::system_images::from_name (const xtd::string& name, const xtd::drawing::size& size) method.
-    xtd::drawing::image operator""_image(const char* s, xtd::size n);
+    xtd::drawing::image operator""_image(const char* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::image.
     /// @par Namespace
@@ -41,7 +41,7 @@ namespace xtd {
     /// @remarks The xtd::drawing::system_images::names contains the names of the images that can be used.
     /// @remarks The xtd::drawing::size of the image is equal to xtd::drawing::system_images::default_size property.
     /// @note If you want load image with other size use xtd::drawing::system_images::from_name (const xtd::string& name, const xtd::drawing::size& size) method.
-    xtd::drawing::image operator""_image(const char8* s, xtd::size n);
+    xtd::drawing::image operator""_image(const char8* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::image.
     /// @par Namespace
@@ -57,7 +57,7 @@ namespace xtd {
     /// @remarks The xtd::drawing::system_images::names contains the names of the images that can be used.
     /// @remarks The xtd::drawing::size of the image is equal to xtd::drawing::system_images::default_size property.
     /// @note If you want load image with other size use xtd::drawing::system_images::from_name (const xtd::string& name, const xtd::drawing::size& size) method.
-    xtd::drawing::image operator""_image(const char16* s, xtd::size n);
+    xtd::drawing::image operator""_image(const char16* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::image.
     /// @par Namespace
@@ -73,7 +73,7 @@ namespace xtd {
     /// @remarks The xtd::drawing::system_images::names contains the names of the images that can be used.
     /// @remarks The xtd::drawing::size of the image is equal to xtd::drawing::system_images::default_size property.
     /// @note If you want load image with other size use xtd::drawing::system_images::from_name (const xtd::string& name, const xtd::drawing::size& size) method.
-    xtd::drawing::image operator""_image(const char32* s, xtd::size n);
+    xtd::drawing::image operator""_image(const char32* s, xtd::usize n);
     
     /// @brief Used to convert specified value into xtd::drawing::image.
     /// @par Namespace
@@ -89,7 +89,7 @@ namespace xtd {
     /// @remarks The xtd::drawing::system_images::names contains the names of the images that can be used.
     /// @remarks The xtd::drawing::size of the image is equal to xtd::drawing::system_images::default_size property.
     /// @note If you want load image with other size use xtd::drawing::system_images::from_name (const xtd::string& name, const xtd::drawing::size& size) method.
-    xtd::drawing::image operator""_image(const wchar* s, xtd::size n);
+    xtd::drawing::image operator""_image(const wchar* s, xtd::usize n);
     /// @}
   }
 }

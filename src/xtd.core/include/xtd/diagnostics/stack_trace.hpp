@@ -133,14 +133,14 @@ namespace xtd {
       /// @param skip_frames The number of frames up the stack from which to start the trace.
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
       /// @remarks If the number of frames to skip is greater than or equal to the total number of frames on the call stack at the time the instance is created, the xtd::diagnostics::stack_trace will contain no frames.
-      explicit stack_trace(xtd::size skip_frames);
+      explicit stack_trace(xtd::usize skip_frames);
       /// @brief Initializes a new instance of the StackTrace class using the provided exception object and skipping the specified number of frames.
       /// @param exception The exception object from which to construct the stack trace.
       /// @param skip_framed The number of frames up the stack from which to start the trace.
       /// @remarks The xtd::diagnostics::stack_trace does not contain file name, line number, or column information.
       /// @remarks The resulting stack trace describes the stack at the time of the exception.
       /// @remarks If the number of frames to skip is greater than or equal to the total number of frames on the call stack at the time the instance is created, the xtd::diagnostics::stack_trace will contain no frames.
-      stack_trace(const std::exception& exception, xtd::size skip_frames);
+      stack_trace(const std::exception& exception, xtd::usize skip_frames);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame, skipping the specified number of frames and optionally capturing source information.
       /// @param skip_frames The number of frames up the stack from which to start the trace.
       /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
@@ -178,14 +178,14 @@ namespace xtd {
       /// }
       /// ```
       /// @remarks If the number of frames to skip is greater than or equal to the total number of frames on the call stack at the time the instance is created, the xtd::diagnostics::stack_trace will contain no frames.
-      stack_trace(xtd::size skip_frames, bool need_file_info);
+      stack_trace(xtd::usize skip_frames, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class using the provided exception object, skipping the specified number of frames and optionally capturing source information.
       /// @param exception The exception object from which to construct the stack trace.
       /// @param skip_frames The number of frames up the stack from which to start the trace.
       /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
       /// @remarks The resulting stack trace describes the stack at the time of the exception.
       /// @remarks If the number of frames to skip is greater than or equal to the total number of frames on the call stack at the time the instance is created, the xtd::diagnostics::stack_trace will contain no frames.
-      stack_trace(const std::exception& exception, xtd::size skip_frames, bool need_file_info);
+      stack_trace(const std::exception& exception, xtd::usize skip_frames, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class, using the provided exception object and optionally capturing source information.
       /// @param exception The exception object from which to construct the stack trace.
       /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
@@ -202,7 +202,7 @@ namespace xtd {
       /// @{
       /// @brief Defines the default for the number of methods to omit from the stack trace. This field is constant.
       /// @remarks The default value for the number of methods to skip at the beginning of the stack trace. The value of this constant is 0.
-      static constexpr xtd::size METHODS_TO_SKIP = 0;
+      static constexpr xtd::usize METHODS_TO_SKIP = 0;
       /// @}
       
       /// @name Public Properties
@@ -243,7 +243,7 @@ namespace xtd {
       ///   }
       /// }
       /// ```
-      [[nodiscard]] auto frame_count() const noexcept -> xtd::size;
+      [[nodiscard]] auto frame_count() const noexcept -> xtd::usize;
       /// @}
       
       /// @name Public Methods
@@ -286,7 +286,7 @@ namespace xtd {
       /// }
       /// ```
       /// @remarks Stack frames are numbered starting at 0, which is the last stack frame pushed.
-      [[nodiscard]] auto get_frame(xtd::size index) noexcept -> const xtd::diagnostics::stack_frame&;
+      [[nodiscard]] auto get_frame(xtd::usize index) noexcept -> const xtd::diagnostics::stack_frame&;
       
       /// @brief Returns a copy of all stack frames in the current stack trace.
       /// @return An array of type xtd::diagnostics::stack_frame representing the function calls in the stack trace.
@@ -333,8 +333,8 @@ namespace xtd {
     private:
       friend class xtd::exception;
       stack_trace(const xtd::diagnostics::stack_frame& frame, bool empty);
-      stack_trace(const xtd::string& str, xtd::size skip_frames, bool need_file_info);
-      [[nodiscard]] auto to_string(xtd::size skip_frames) const noexcept -> xtd::string;
+      stack_trace(const xtd::string& str, xtd::usize skip_frames, bool need_file_info);
+      [[nodiscard]] auto to_string(xtd::usize skip_frames) const noexcept -> xtd::string;
       
       struct data;
       xtd::ptr<data> data_;
