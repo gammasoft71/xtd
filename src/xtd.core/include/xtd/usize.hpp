@@ -20,21 +20,6 @@ namespace xtd {
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   using usize = std::size_t;
-
-  /// @{
-  /// @brief Represents an unsigned size of any object in bytes
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/usize>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
-  /// @deprecated Replaced by xtd::usize - Will be removed in version 0.4.0.
-  using size [[deprecated("Replaced by xtd::usize - Will be removed in version 0.4.0.")]] = usize;
   /// @}
 }
 
