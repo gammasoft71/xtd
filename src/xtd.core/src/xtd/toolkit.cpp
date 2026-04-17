@@ -25,7 +25,7 @@ bool toolkit::equals(const toolkit& other) const noexcept {
   return name_ == other.name_ && version_ == other.version_;
 }
 
-size toolkit::get_hash_code() const noexcept {
+usize toolkit::get_hash_code() const noexcept {
   return hash_code::combine(description_, name_, version_);
 }
 

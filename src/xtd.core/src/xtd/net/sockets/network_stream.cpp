@@ -46,15 +46,15 @@ auto network_stream::data_available() const -> bool {
   return data_->socket.available() != 0;
 }
 
-auto network_stream::length() const -> size {
+auto network_stream::length() const -> usize {
   return 1;
 }
 
-auto network_stream::position() const -> size {
+auto network_stream::position() const -> usize {
   return 0;
 }
 
-auto network_stream::position(size value) -> void {
+auto network_stream::position(usize value) -> void {
   throw_helper::throws(exception_case::not_supported);
 }
 
@@ -81,18 +81,18 @@ auto network_stream::socket() const -> xtd::net::sockets::socket {
 auto network_stream::flush() -> void {
 }
 
-auto network_stream::read(array<byte>& buffer, size offset, size count) -> size {
+auto network_stream::read(array<byte>& buffer, usize offset, usize count) -> usize {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   return data_->socket.receive(buffer, offset, count, socket_flags::none);
 }
 
-auto network_stream::set_length(size value) -> void {
+auto network_stream::set_length(usize value) -> void {
   throw_helper::throws(exception_case::not_supported);
 }
 
-auto network_stream::write(const array<byte>& buffer, size offset, size count) -> void {
+auto network_stream::write(const array<byte>& buffer, usize offset, usize count) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
   

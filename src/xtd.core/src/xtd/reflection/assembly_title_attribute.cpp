@@ -18,7 +18,7 @@ auto assembly_title_attribute::equals(const assembly_title_attribute& other) con
   return title_ == other.title_;
 }
 
-auto assembly_title_attribute::get_hash_code() const noexcept -> size {
+auto assembly_title_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(title_);
 }
 

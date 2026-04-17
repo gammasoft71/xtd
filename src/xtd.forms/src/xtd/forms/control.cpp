@@ -1046,7 +1046,7 @@ size_t control::get_child_index(intptr child, bool& throw_exception) const {
   }
 }
 
-xtd::usize control::get_hash_code() const noexcept {
+usize control::get_hash_code() const noexcept {
   return hash_code::combine(data_->id);
 }
 

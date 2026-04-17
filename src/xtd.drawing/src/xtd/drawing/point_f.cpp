@@ -5,6 +5,7 @@
 #include <xtd/as>
 #include <xtd/string>
 
+using namespace xtd;
 using namespace xtd::drawing;
 
 const point_f point_f::empty;
@@ -43,7 +44,7 @@ bool point_f::equals(const point_f& other) const noexcept {
   return x == other.x && y == other.y;
 }
 
-xtd::usize point_f::get_hash_code() const noexcept {
+usize point_f::get_hash_code() const noexcept {
   return hash_code::combine(x, y);
 }
 

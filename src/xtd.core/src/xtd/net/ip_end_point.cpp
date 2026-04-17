@@ -63,7 +63,7 @@ auto ip_end_point::equals(const ip_end_point& other) const noexcept -> bool {
   return address_family_ == other.address_family_ && address_ == other.address_ && port_ == other.port_;
 }
 
-auto ip_end_point::get_hash_code() const noexcept -> size {
+auto ip_end_point::get_hash_code() const noexcept -> usize {
   return hash_code::combine(address_family_, address_, port_);
 }
 

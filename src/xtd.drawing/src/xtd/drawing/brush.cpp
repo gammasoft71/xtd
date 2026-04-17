@@ -42,7 +42,7 @@ bool brush::equals(const brush& other) const noexcept {
   return data_->handle == other.data_->handle;
 }
 
-size brush::get_hash_code() const noexcept {
+usize brush::get_hash_code() const noexcept {
   return hash_code::combine(data_->handle);
 }
 

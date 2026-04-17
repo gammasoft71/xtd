@@ -84,7 +84,7 @@ bool renderer::equals(const renderer& other) const noexcept {
   return data_->name == other.data_->name;
 }
 
-xtd::usize renderer::get_hash_code() const noexcept {
+usize renderer::get_hash_code() const noexcept {
   return hash_code::combine(data_->name);
 }
 

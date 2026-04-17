@@ -13,6 +13,6 @@ bool graphics_state::equals(const graphics_state& other) const noexcept {
   return handle_ == other.handle_;
 }
 
-size graphics_state::get_hash_code() const noexcept {
+usize graphics_state::get_hash_code() const noexcept {
   return hash_code::combine(handle_);
 }

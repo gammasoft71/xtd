@@ -18,7 +18,7 @@ auto assembly_culture_attribute::equals(const assembly_culture_attribute& other)
   return culture_ == other.culture_;
 }
 
-auto assembly_culture_attribute::get_hash_code() const noexcept -> size {
+auto assembly_culture_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(culture_);
 }
 

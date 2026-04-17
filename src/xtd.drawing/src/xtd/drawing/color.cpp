@@ -597,7 +597,7 @@ float color::get_brightness() const noexcept {
   return static_cast<float>(math::max(math::max(r(), g()), b())) / 255.0f;
 }
 
-size color::get_hash_code() const noexcept {
+usize color::get_hash_code() const noexcept {
   return hash_code::combine(argb_, empty_, handle_, name_);
 }
 

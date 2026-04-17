@@ -40,6 +40,6 @@ auto ip_v6_multicast_option::equals(const ip_v6_multicast_option& other) const n
   return group_ == other.group_ && interface_index_ == other.interface_index_;
 }
 
-auto ip_v6_multicast_option::get_hash_code() const noexcept -> size {
+auto ip_v6_multicast_option::get_hash_code() const noexcept -> usize {
   return hash_code::combine(group_, interface_index_);
 }

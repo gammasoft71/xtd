@@ -31,7 +31,7 @@ target_id target_type::target_id() const noexcept {
   return target_id_;
 }
 
-size target_type::get_hash_code() const noexcept {
+usize target_type::get_hash_code() const noexcept {
   return hash_code::combine(target_id_, name());
 }
 

@@ -13,7 +13,7 @@ using namespace xtd::io;
 memory_stream::memory_stream() {
 }
 
-memory_stream::memory_stream(size capacity) {
+memory_stream::memory_stream(usize capacity) {
   this->capacity(capacity);
 }
 
@@ -29,26 +29,26 @@ auto memory_stream::can_write() const noexcept -> bool {
   return data_->writable;
 }
 
-auto memory_stream::capacity() const -> size {
+auto memory_stream::capacity() const -> usize {
   if (data_->static_buffer) return data_->static_buffer->length();
   return data_->dynamic_buffer.capacity();
 }
 
-auto memory_stream::capacity(size value) -> void {
+auto memory_stream::capacity(usize value) -> void {
   if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
   if (value != data_->dynamic_buffer.capacity()) data_->dynamic_buffer.capacity(value);
 }
 
-auto memory_stream::length() const -> size {
+auto memory_stream::length() const -> usize {
   if (data_->static_buffer) return data_->static_buffer->size();
   return data_->dynamic_buffer.count();
 }
 
-auto memory_stream::position() const -> size {
+auto memory_stream::position() const -> usize {
   return data_->position;
 }
 
-auto memory_stream::position(size value) -> void {
+auto memory_stream::position(usize value) -> void {
   if (value == data_->position) return;
   seek(value, seek_origin::begin);
 }
@@ -56,7 +56,7 @@ auto memory_stream::position(size value) -> void {
 auto memory_stream::flush() -> void {
 }
 
-auto memory_stream::read(array<byte>& buffer, size offset, size count) -> size {
+auto memory_stream::read(array<byte>& buffer, usize offset, usize count) -> usize {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -71,7 +71,7 @@ auto memory_stream::read(array<byte>& buffer, size offset, size count) -> size {
   return read_count;
 }
 
-auto memory_stream::seek(std::streamoff offset, seek_origin loc) -> size {
+auto memory_stream::seek(std::streamoff offset, seek_origin loc) -> usize {
   if (!enum_object<>::is_defined(loc)) throw_helper::throws(exception_case::argument);
   switch(loc) {
     case seek_origin::begin: data_->position = offset; break;
@@ -82,7 +82,7 @@ auto memory_stream::seek(std::streamoff offset, seek_origin loc) -> size {
   return position();
 }
 
-auto memory_stream::set_length(size value) -> void {
+auto memory_stream::set_length(usize value) -> void {
   if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
   data_->dynamic_buffer.items().resize(value);
 }
@@ -91,7 +91,7 @@ auto memory_stream::to_array() const -> array<byte> {
   return data_->static_buffer ? *data_->static_buffer : data_->dynamic_buffer.to_array();
 }
 
-auto memory_stream::write(const array<byte>& buffer, size offset, size count) -> void {
+auto memory_stream::write(const array<byte>& buffer, usize offset, usize count) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
   

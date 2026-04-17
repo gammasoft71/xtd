@@ -110,7 +110,7 @@ const imaging::encoder& encoder_parameter::encoder() const noexcept {
   return encoder_;
 }
 
-size encoder_parameter::number_of_values() const noexcept {
+usize encoder_parameter::number_of_values() const noexcept {
   return number_of_values_;
 }
 
@@ -134,7 +134,7 @@ bool encoder_parameter::equals(const encoder_parameter& other) const noexcept {
   return encoder_ == other.encoder_ && number_of_values_ == other.number_of_values_ && type_ == other.type_ && value_ == other.value_;
 }
 
-size encoder_parameter::get_hash_code() const noexcept {
+usize encoder_parameter::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(encoder_);
   result.add(number_of_values_);

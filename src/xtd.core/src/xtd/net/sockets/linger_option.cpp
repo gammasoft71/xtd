@@ -33,6 +33,6 @@ auto linger_option::equals(const linger_option& other) const noexcept -> bool {
   return enabled_ == other.enabled_ && linger_time_ == other.linger_time_;
 }
 
-auto linger_option::get_hash_code() const noexcept -> size {
+auto linger_option::get_hash_code() const noexcept -> usize {
   return hash_code::combine(enabled_, linger_time_);
 }

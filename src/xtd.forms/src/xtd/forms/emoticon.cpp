@@ -72,7 +72,7 @@ bool emoticon::equals(const emoticon& other) const noexcept {
   return data_->name == other.data_->name && data_->codepoints == other.data_->codepoints;
 }
 
-xtd::usize emoticon::get_hash_code() const noexcept {
+usize emoticon::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(data_->name);
   for (const auto& codepoint : data_->codepoints)
@@ -80,7 +80,7 @@ xtd::usize emoticon::get_hash_code() const noexcept {
   return result.to_hash_code();
 }
 
-xtd::string emoticon::to_string() const noexcept {
+string emoticon::to_string() const noexcept {
   /// @todo Replace string with string_builder when implemented.
   auto result = std::string {};
   for (auto codepoint : data_->codepoints) {

@@ -37,7 +37,7 @@ auto cancellation_token::equals(const cancellation_token& other) const noexcept 
   return data_ == data_;
 }
 
-auto cancellation_token::get_hash_code() const noexcept -> size {
+auto cancellation_token::get_hash_code() const noexcept -> usize {
   if (!data_->token_source) return hash_code::combine(data_->canceled);
   return hash_code::combine(*data_->token_source);
 }

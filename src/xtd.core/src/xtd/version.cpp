@@ -69,7 +69,7 @@ bool version::equals(const version& v) const noexcept {
   return major_ == v.major_ && minor_ == v.minor_ && build_ == v.build_ && revision_ == v.revision_;
 }
 
-size version::get_hash_code() const noexcept {
+usize version::get_hash_code() const noexcept {
   return hash_code::combine(major_, minor_, build_, revision_);
 }
 

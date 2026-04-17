@@ -66,7 +66,7 @@ bool time_zone_info::transition_time::equals(const time_zone_info::transition_ti
   return day_ == tt.day_ && day_of_week_ == tt.day_of_week_ && is_fixed_date_rule_ == tt.is_fixed_date_rule_ && month_ == tt.month_ && time_of_day_ == tt.time_of_day_ && week_ == tt.week_;
 }
 
-size time_zone_info::transition_time::get_hash_code() const noexcept {
+usize time_zone_info::transition_time::get_hash_code() const noexcept {
   return hash_code::combine(day_, day_of_week_, is_fixed_date_rule_, month_, time_of_day_, week_);
 }
 
@@ -98,7 +98,7 @@ bool time_zone_info::adjustment_rule::equals(const adjustment_rule& ar) const no
   return date_end_ == ar.date_end_ && date_start_ == ar.date_start_ && daylight_delta_ == ar.daylight_delta_ && daylight_transition_end_ == ar.daylight_transition_end_ && daylight_transition_start_ == ar.daylight_transition_start_;
 }
 
-size time_zone_info::adjustment_rule::get_hash_code() const noexcept {
+usize time_zone_info::adjustment_rule::get_hash_code() const noexcept {
   return hash_code::combine(date_end_, date_start_, daylight_delta_.count(), daylight_transition_end_, daylight_transition_start_);
 }
 
@@ -219,7 +219,7 @@ array<time_zone_info::adjustment_rule> time_zone_info::get_adjustment_rules() co
   return adjustment_rules_.to_array();
 }
 
-size time_zone_info::get_hash_code() const noexcept {
+usize time_zone_info::get_hash_code() const noexcept {
   return hash_code::combine(id_, base_utc_offset_.count(), daylight_name_, display_name_, standard_name_, supports_daylight_saving_time_);
 }
 

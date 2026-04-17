@@ -37,7 +37,7 @@ auto dns_end_point::equals(const dns_end_point& other) const noexcept -> bool {
   return address_family_ == other.address_family_ && host_ == other.host_ && port_ == other.port_;
 }
 
-auto dns_end_point::get_hash_code() const noexcept -> size {
+auto dns_end_point::get_hash_code() const noexcept -> usize {
   return hash_code::combine(address_family_, host_, port_);
 }
 

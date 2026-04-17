@@ -110,14 +110,14 @@ namespace {
     return result_image;
   }
   
-  image_format to_image_format(xtd::usize raw_fomat) {
-    static auto raw_formats = std::map<xtd::usize, image_format> {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
+  image_format to_image_format(usize raw_fomat) {
+    static auto raw_formats = std::map<usize, image_format> {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
     auto it = raw_formats.find(raw_fomat);
     return it == raw_formats.end() ? image_format() : it->second;
   }
   
-  xtd::usize to_raw_format(const class image_format& image_format) {
-    static auto image_formats = std::map<class image_format, xtd::usize> {{imaging::image_format::bmp(), IFM_BMP}, {imaging::image_format::emf(), IFM_EMF}, {imaging::image_format::exif(), IFM_EXIF}, {imaging::image_format::gif(), IFM_GIF}, {imaging::image_format::ico(), IFM_ICO}, {imaging::image_format::jpeg(), IFM_JPEG}, {imaging::image_format::memory_bmp(), IFM_MEMORY_BMP}, {imaging::image_format::png(), IFM_PNG}, {imaging::image_format::tiff(), IFM_TIFF}, {imaging::image_format::wmf(), IFM_WMF}, {imaging::image_format::memory_gif(), IFM_MEMORY_GIF}, {imaging::image_format::memory_ico(), IFM_MEMORY_ICO}, {imaging::image_format::memory_jpeg(), IFM_MEMORY_JPEG}, {imaging::image_format::memory_png(), IFM_MEMORY_PNG}, {imaging::image_format::memory_tiff(), IFM_MEMORY_TIFF}, {imaging::image_format::cur(), IFM_CUR}, {imaging::image_format::memory_cur(), IFM_MEMORY_CUR}, {imaging::image_format::xbm(), IFM_XBM}, {imaging::image_format::memory_xbm(), IFM_MEMORY_XBM}, {imaging::image_format::xpm(), IFM_XPM}, {imaging::image_format::memory_xpm(), IFM_MEMORY_XPM}, {imaging::image_format::pnm(), IFM_PNM}, {imaging::image_format::memory_pnm(), IFM_MEMORY_PNM}, {imaging::image_format::pcx(), IFM_PCX}, {imaging::image_format::memory_pcx(), IFM_MEMORY_PCX}, {imaging::image_format::pict(), IFM_PICT}, {imaging::image_format::memory_pict(), IFM_MEMORY_PICT}, {imaging::image_format::icon(), IFM_ICON}, {imaging::image_format::memory_icon(), IFM_MEMORY_ICON}, {imaging::image_format::cursor(), IFM_MACCUR}, {imaging::image_format::memory_cursor(), IFM_MEMORY_MACCUR}, {imaging::image_format::ani(), IFM_ANI}, {imaging::image_format::iif(), IFM_IIF}, {imaging::image_format::tga(), IFM_TGA}};
+  usize to_raw_format(const class image_format& image_format) {
+    static auto image_formats = std::map<class image_format, usize> {{imaging::image_format::bmp(), IFM_BMP}, {imaging::image_format::emf(), IFM_EMF}, {imaging::image_format::exif(), IFM_EXIF}, {imaging::image_format::gif(), IFM_GIF}, {imaging::image_format::ico(), IFM_ICO}, {imaging::image_format::jpeg(), IFM_JPEG}, {imaging::image_format::memory_bmp(), IFM_MEMORY_BMP}, {imaging::image_format::png(), IFM_PNG}, {imaging::image_format::tiff(), IFM_TIFF}, {imaging::image_format::wmf(), IFM_WMF}, {imaging::image_format::memory_gif(), IFM_MEMORY_GIF}, {imaging::image_format::memory_ico(), IFM_MEMORY_ICO}, {imaging::image_format::memory_jpeg(), IFM_MEMORY_JPEG}, {imaging::image_format::memory_png(), IFM_MEMORY_PNG}, {imaging::image_format::memory_tiff(), IFM_MEMORY_TIFF}, {imaging::image_format::cur(), IFM_CUR}, {imaging::image_format::memory_cur(), IFM_MEMORY_CUR}, {imaging::image_format::xbm(), IFM_XBM}, {imaging::image_format::memory_xbm(), IFM_MEMORY_XBM}, {imaging::image_format::xpm(), IFM_XPM}, {imaging::image_format::memory_xpm(), IFM_MEMORY_XPM}, {imaging::image_format::pnm(), IFM_PNM}, {imaging::image_format::memory_pnm(), IFM_MEMORY_PNM}, {imaging::image_format::pcx(), IFM_PCX}, {imaging::image_format::memory_pcx(), IFM_MEMORY_PCX}, {imaging::image_format::pict(), IFM_PICT}, {imaging::image_format::memory_pict(), IFM_MEMORY_PICT}, {imaging::image_format::icon(), IFM_ICON}, {imaging::image_format::memory_icon(), IFM_MEMORY_ICON}, {imaging::image_format::cursor(), IFM_MACCUR}, {imaging::image_format::memory_cursor(), IFM_MEMORY_MACCUR}, {imaging::image_format::ani(), IFM_ANI}, {imaging::image_format::iif(), IFM_IIF}, {imaging::image_format::tga(), IFM_TGA}};
     auto it = image_formats.find(image_format);
     return it == image_formats.end() ? IFM_UNKNOWN : it->second;
   }
@@ -154,7 +154,7 @@ namespace {
 
 struct image::data {
   imaging::image_flags flags = imaging::image_flags::none;
-  std::map<xtd::guid, xtd::usize> frame_dimensions = {{frame_dimension::page().guid(), 1}};
+  std::map<xtd::guid, usize> frame_dimensions = {{frame_dimension::page().guid(), 1}};
   intptr handle = 0;
   float horizontal_resolution = .0f;
   imaging::color_palette palette;
@@ -182,7 +182,7 @@ image::image(const string& filename) : image::image(filename, false) {
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
   if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument, string::format("`{}` file not found", filename).chars().c_str());
-  auto frame_resolutions = std::map<xtd::usize, xtd::usize> {};
+  auto frame_resolutions = std::map<usize, usize> {};
   if (path::get_extension(filename) == ".xbm") {
     auto [bits, width, height] = get_data_from_xbm(filename);
     data_->handle = native::image::create(reinterpret_cast<const unsigned char*>(bits.data()), width, height, frame_resolutions);
@@ -208,7 +208,7 @@ image::image(std::istream& stream) : image::image(stream, false) {
 }
 
 image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) {
-  auto frame_resolutions = std::map<xtd::usize, xtd::usize> {};
+  auto frame_resolutions = std::map<usize, usize> {};
   data_->handle = native::image::create(stream, use_icm, frame_resolutions);
   if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
@@ -407,13 +407,13 @@ encoder_parameters image::get_encoder_parameter_list(guid encoder) const noexcep
   return result;
 }
 
-xtd::usize image::get_frame_count(const frame_dimension& dimension) const {
+usize image::get_frame_count(const frame_dimension& dimension) const {
   auto iterator = std::find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](const auto& frame) {return frame.first == dimension.guid();});
   if (iterator == data_->frame_dimensions.end()) throw_helper::throws(exception_case::argument);
   return iterator->second;
 }
 
-xtd::usize image::get_hash_code() const noexcept {
+usize image::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(handle());
   result.add(flags());
@@ -512,7 +512,7 @@ image image::from_hicon(intptr hicon) {
 
 bitmap image::from_xbm_data(const unsigned char* bits, int32 width, int32 height) {
   auto img = image {};
-  auto frame_resolutions = std::map<xtd::usize, xtd::usize> {};
+  auto frame_resolutions = std::map<usize, usize> {};
   img.data_->handle = native::image::create(bits, width, height, frame_resolutions);
   if (img.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   img.data_->raw_format = imaging::image_format::memory_xpm();
@@ -528,7 +528,7 @@ bitmap image::from_xbm_data(const unsigned char* bits, int32 width, int32 height
 
 bitmap image::from_xpm_data(const char* const* bits) {
   auto img = image {};
-  auto frame_resolutions = std::map<xtd::usize, xtd::usize> {};
+  auto frame_resolutions = std::map<usize, usize> {};
   img.data_->handle = native::image::create(bits, frame_resolutions);
   if (img.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   img.data_->raw_format = imaging::image_format::memory_xpm();

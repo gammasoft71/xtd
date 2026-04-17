@@ -85,10 +85,10 @@ bool vertical_control_layout_style::equals(const vertical_control_layout_style& 
   return height_ == other.height_ && as<control_layout_style>(*this).equals(as<control_layout_style>(other));
 }
 
-xtd::usize vertical_control_layout_style::get_hash_code() const noexcept {
+usize vertical_control_layout_style::get_hash_code() const noexcept {
   return hash_code::combine(height_, as<control_layout_style>(*this).get_hash_code());
 }
 
-xtd::string vertical_control_layout_style::to_string() const noexcept {
+string vertical_control_layout_style::to_string() const noexcept {
   return string::format("vertical_control_layout_style=[expanded={}, align={}, size_type={}, height={}]", expanded(), align(), size_type(), height_.value_or(-1));
 }

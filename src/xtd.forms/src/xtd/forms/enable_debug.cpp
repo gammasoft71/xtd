@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/enable_debug.hpp"
 
+using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
@@ -34,7 +35,7 @@ bool enable_debug::equals(const enable_debug& other) const noexcept {
   return value_ == other.value_;
 }
 
-xtd::usize enable_debug::get_hash_code() const noexcept {
+usize enable_debug::get_hash_code() const noexcept {
   return hash_code::combine(value_);
 }
 

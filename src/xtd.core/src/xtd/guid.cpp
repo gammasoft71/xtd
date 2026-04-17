@@ -92,7 +92,7 @@ guid guid::new_guid() noexcept {
   return guid(native::guid::new_guid());
 }
 
-size guid::get_hash_code() const noexcept {
+usize guid::get_hash_code() const noexcept {
   auto result = hash_code {};
   for (auto d : data_)
     result.add(d);

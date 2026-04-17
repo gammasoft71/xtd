@@ -18,7 +18,7 @@ auto assembly_guid_attribute::equals(const assembly_guid_attribute& other) const
   return guid_ == other.guid_;
 }
 
-auto assembly_guid_attribute::get_hash_code() const noexcept -> size {
+auto assembly_guid_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(guid_);
 }
 

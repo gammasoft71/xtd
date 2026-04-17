@@ -2,6 +2,7 @@
 #include <xtd/math>
 #include <xtd/string>
 
+using namespace xtd;
 using namespace xtd::drawing;
 
 const rectangle_f rectangle_f::empty;
@@ -83,7 +84,7 @@ bool rectangle_f::equals(const rectangle_f& value) const noexcept {
   return x == value.x && y == value.y && width == value.width && height == value.height;
 }
 
-xtd::usize rectangle_f::get_hash_code() const noexcept {
+usize rectangle_f::get_hash_code() const noexcept {
   return hash_code::combine(x, y, width, height);
 }
 

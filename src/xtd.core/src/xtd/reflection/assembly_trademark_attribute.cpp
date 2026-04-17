@@ -18,7 +18,7 @@ auto assembly_trademark_attribute::equals(const assembly_trademark_attribute& ot
   return trademark_ == other.trademark_;
 }
 
-auto assembly_trademark_attribute::get_hash_code() const noexcept -> size {
+auto assembly_trademark_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(trademark_);
 }
 

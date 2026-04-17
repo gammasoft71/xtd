@@ -29,10 +29,10 @@ struct barrier::data : object {
 barrier::barrier() : barrier(0) {
 }
 
-barrier::barrier(size participant_count) : barrier(participant_count, {}) {
+barrier::barrier(usize participant_count) : barrier(participant_count, {}) {
 }
 
-barrier::barrier(size participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
+barrier::barrier(usize participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
   if (participant_count > as<usize>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;
@@ -49,26 +49,26 @@ barrier::~barrier() {
   if (data_.use_count() == 1) close();
 }
 
-auto barrier::current_phase_number() const -> size {
+auto barrier::current_phase_number() const -> usize {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->current_phase_number;
 }
 
-auto barrier::participant_count() const -> size {
+auto barrier::participant_count() const -> usize {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participant_count;
 }
 
-auto barrier::participants_remaining() const -> size {
+auto barrier::participants_remaining() const -> usize {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participants_remaining;
 }
 
-auto barrier::add_participant() -> size {
+auto barrier::add_participant() -> usize {
   return add_participants(1);
 }
 
-auto barrier::add_participants(size participant_count) -> size {
+auto barrier::add_participants(usize participant_count) -> usize {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
   if (data_->participant_count + participant_count > as<usize>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
@@ -82,11 +82,11 @@ auto barrier::close() -> void {
   data_.reset();
 }
 
-auto barrier::remove_participant() -> size {
+auto barrier::remove_participant() -> usize {
   return remove_participants(1);
 }
 
-auto barrier::remove_participants(size participant_count) -> size {
+auto barrier::remove_participants(usize participant_count) -> usize {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
   if (data_->participant_count < participant_count) throw_helper::throws(exception_case::argument_out_of_range);

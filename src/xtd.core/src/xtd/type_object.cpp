@@ -42,7 +42,7 @@ bool type_object::equals(const type_object& type) const noexcept {
   return type_ == type.type_;
 }
 
-size type_object::get_hash_code() const noexcept {
+usize type_object::get_hash_code() const noexcept {
   return hash_code::combine(full_name());
 }
 

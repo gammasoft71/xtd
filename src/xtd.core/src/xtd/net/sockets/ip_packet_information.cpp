@@ -20,6 +20,6 @@ auto ip_packet_information::equals(const ip_packet_information& other) const noe
   return address_ == other.address_ && address_interface_ == other.address_interface_;
 }
 
-auto ip_packet_information::get_hash_code() const noexcept -> size {
+auto ip_packet_information::get_hash_code() const noexcept -> usize {
   return hash_code::combine(address_, address_interface_);
 }

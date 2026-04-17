@@ -105,15 +105,15 @@ auto stack_frame::equals(const stack_frame& other) const noexcept -> bool {
   return data_->file_name == other.data_->file_name && data_->file_line_number == other.data_->file_line_number && data_->method_name == other.data_->method_name && data_->file_column_number == other.data_->file_column_number && data_->offset == other.data_->offset;
 }
 
-auto stack_frame::get_hash_code() const noexcept -> size {
+auto stack_frame::get_hash_code() const noexcept -> usize {
   return hash_code::combine(data_->file_name, data_->file_line_number, data_->method_name, data_->file_column_number, data_->offset);
 }
 
-auto stack_frame::get_file_column_number() const noexcept -> size {
+auto stack_frame::get_file_column_number() const noexcept -> usize {
   return data_->file_column_number;
 }
 
-auto stack_frame::get_file_line_number() const noexcept -> size {
+auto stack_frame::get_file_line_number() const noexcept -> usize {
   return data_->file_line_number;
 }
 
@@ -125,11 +125,11 @@ auto stack_frame::get_method() const noexcept -> const string& {
   return data_->method_name;
 }
 
-auto stack_frame::get_native_offset() const noexcept -> size {
+auto stack_frame::get_native_offset() const noexcept -> usize {
   return native::stack_trace::get_native_offset();
 }
 
-auto stack_frame::get_offset() const noexcept -> size {
+auto stack_frame::get_offset() const noexcept -> usize {
   return data_->offset;
 }
 

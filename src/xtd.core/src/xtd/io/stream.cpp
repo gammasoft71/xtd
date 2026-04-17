@@ -70,7 +70,7 @@ auto stream::copy_to(std::ostream& destination, xtd::usize buffer_size) -> void 
   }
 }
 
-auto stream::read(span<byte>& buffer) -> size {
+auto stream::read(span<byte>& buffer) -> usize {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -83,7 +83,7 @@ auto stream::read(span<byte>& buffer) -> size {
   return buffer.length();
 }
 
-auto stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_on_end_of_stream) -> size {
+auto stream::read_at_least(array<byte>& buffer, usize minimum_bytes, bool throw_on_end_of_stream) -> usize {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -109,7 +109,7 @@ auto stream::read_exactly(array<byte>& buffer) -> void {
   read_exactly(buffer, 0_z, buffer.length());
 }
 
-auto stream::read_exactly(array<byte>& buffer, size offset, size count) -> void {
+auto stream::read_exactly(array<byte>& buffer, usize offset, usize count) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   

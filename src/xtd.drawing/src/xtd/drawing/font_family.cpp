@@ -95,7 +95,7 @@ int32 font_family::get_em_height(font_style style) const noexcept {
   return 2048;
 }
 
-size font_family::get_hash_code() const noexcept {
+usize font_family::get_hash_code() const noexcept {
   return hash_code::combine(data_->name);
 }
 

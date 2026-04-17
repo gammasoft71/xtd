@@ -64,7 +64,7 @@ bool screen::equals(const screen& other) const noexcept {
   return device_name_ == other.device_name_;
 }
 
-xtd::usize screen::get_hash_code() const noexcept {
+usize screen::get_hash_code() const noexcept {
   return hash_code::combine(device_name_);
 }
 

@@ -50,7 +50,7 @@ udp_client::~udp_client() {
   if (data_.use_count() == 1) close();
 }
 
-auto udp_client::available() const -> size {
+auto udp_client::available() const -> usize {
   return data_->client_socket.available();
 }
 
@@ -129,9 +129,9 @@ auto udp_client::begin_receive(async_callback callback, const any_object& state)
   return ar;
 }
 
-auto udp_client::begin_send(const array<xtd::byte>& dgram, size bytes, const string& hostname, uint16 port, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto udp_client::begin_send(const array<xtd::byte>& dgram, usize bytes, const string& hostname, uint16 port, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   auto ar = new_sptr<async_result_send>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, size bytes, const string & hostname, uint16 port, sptr<async_result_send> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, usize bytes, const string & hostname, uint16 port, sptr<async_result_send> ar, async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, hostname, port);
       ar->is_completed_ = true;
@@ -145,9 +145,9 @@ auto udp_client::begin_send(const array<xtd::byte>& dgram, size bytes, const str
   return ar;
 }
 
-auto udp_client::begin_send(const array<xtd::byte>& dgram, size bytes, const ip_end_point& end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto udp_client::begin_send(const array<xtd::byte>& dgram, usize bytes, const ip_end_point& end_point, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   auto ar = new_sptr<async_result_send>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, size bytes, const ip_end_point & end_point, sptr<async_result_send> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, usize bytes, const ip_end_point & end_point, sptr<async_result_send> ar, async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, end_point);
       ar->is_completed_ = true;
@@ -161,9 +161,9 @@ auto udp_client::begin_send(const array<xtd::byte>& dgram, size bytes, const ip_
   return ar;
 }
 
-auto udp_client::begin_send(const array<xtd::byte>& dgram, size bytes, async_callback callback, const any_object& state) -> sptr<iasync_result> {
+auto udp_client::begin_send(const array<xtd::byte>& dgram, usize bytes, async_callback callback, const any_object& state) -> sptr<iasync_result> {
   auto ar = new_sptr<async_result_send>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, size bytes, sptr<async_result_send> ar, async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, usize bytes, sptr<async_result_send> ar, async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes);
       ar->is_completed_ = true;
@@ -216,7 +216,7 @@ auto udp_client::end_receive(sptr<iasync_result> async_result, ip_end_point& rem
   return as<async_result_receive>(async_result)->buffer_;
 }
 
-auto udp_client::end_send(sptr<iasync_result> async_result) -> size {
+auto udp_client::end_send(sptr<iasync_result> async_result) -> usize {
   if (async_result == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_send>(async_result)) throw_helper::throws(exception_case::argument);
   async_result->async_wait_handle().wait_one();
@@ -257,18 +257,18 @@ auto udp_client::receive(ip_end_point& remote_end_point) -> array<xtd::byte> {
   return array<xtd::byte>(data_->buffer.begin(), data_->buffer.begin() + received);
 }
 
-auto udp_client::send(const array<xtd::byte>& dgram, size bytes, const string& hostname, uint16 port) -> size {
+auto udp_client::send(const array<xtd::byte>& dgram, usize bytes, const string& hostname, uint16 port) -> usize {
   if (hostname != ip_address::broadcast.to_string()) return data_->client_socket.send_to(dgram, 0, bytes, socket_flags::none, ip_end_point(dns::get_host_addresses(hostname)[0], port));
   data_->client_socket.enable_broadcast(true);
   return data_->client_socket.send_to(dgram, 0, bytes, socket_flags::none, ip_end_point(ip_address::broadcast, port));
 }
 
-auto udp_client::send(const array<xtd::byte>& dgram, size bytes, const ip_end_point& end_point) -> size {
+auto udp_client::send(const array<xtd::byte>& dgram, usize bytes, const ip_end_point& end_point) -> usize {
   if (end_point.address() == ip_address::broadcast) data_->client_socket.enable_broadcast(true);
   return data_->client_socket.send_to(dgram, 0, bytes, socket_flags::none, end_point);
 }
 
-auto udp_client::send(const array<xtd::byte>& dgram, size bytes) -> size {
+auto udp_client::send(const array<xtd::byte>& dgram, usize bytes) -> usize {
   return data_->client_socket.send(dgram, 0, bytes, socket_flags::none);
 }
 

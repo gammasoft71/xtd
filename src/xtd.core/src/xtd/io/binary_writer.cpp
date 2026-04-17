@@ -47,7 +47,7 @@ auto binary_writer::flush() -> void {
   if (stream_) stream_->flush();
 }
 
-auto binary_writer::seek(size offset, std::ios::seekdir origin) -> size {
+auto binary_writer::seek(usize offset, std::ios::seekdir origin) -> usize {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->seekp(offset, origin);
   return static_cast<usize>(stream_->tellp());
@@ -77,7 +77,7 @@ auto binary_writer::write(const read_only_span<xtd::byte>& buffer) -> void {
     write(b);
 }
 
-auto binary_writer::write(const array<xtd::byte>& buffer, size index, size count) -> void {
+auto binary_writer::write(const array<xtd::byte>& buffer, usize index, usize count) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
@@ -89,7 +89,7 @@ auto binary_writer::write(const read_only_span<char>& buffer) -> void {
     write(b);
 }
 
-auto binary_writer::write(const array<char>& buffer, size index, size count) -> void {
+auto binary_writer::write(const array<char>& buffer, usize index, usize count) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)

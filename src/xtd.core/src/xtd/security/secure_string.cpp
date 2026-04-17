@@ -10,7 +10,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::security;
 
 namespace {
-  auto encrypt(const xtd::guid& guid, const char value[], size length) {
+  auto encrypt(const xtd::guid& guid, const char value[], usize length) {
     // https://www.programmingalgorithms.com/algorithm/xor-encryption/
     auto key = guid.to_string("D");
     auto result = list<byte> {};
@@ -19,13 +19,13 @@ namespace {
     return result;
   }
   
-  string decrypt(const xtd::guid& guid, const xtd::byte value[], size_t length) {
+  string decrypt(const xtd::guid& guid, const xtd::byte value[], usize length) {
     // https://www.programmingalgorithms.com/algorithm/xor-encryption/
     return string {reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length};
   }
 }
 
-secure_string::secure_string(const char value[], xtd::usize length) {
+secure_string::secure_string(const char value[], usize length) {
   if (value == nullptr) return;
   data_ = encrypt(guid(native::cryptography::machine_guid()), value, length).to_array();
 }
@@ -38,11 +38,11 @@ auto secure_string::data() const noexcept -> intptr {
   return reinterpret_cast<intptr>(data_.data());
 }
 
-auto secure_string::length() const noexcept -> xtd::usize {
+auto secure_string::length() const noexcept -> usize {
   return data_.length();
 }
 
-auto secure_string::size() const noexcept -> xtd::usize {
+auto secure_string::size() const noexcept -> usize {
   return length();
 }
 

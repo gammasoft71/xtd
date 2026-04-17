@@ -24,7 +24,7 @@ bool object::equals(const object& obj) const noexcept {
   return reference_equals(*this, obj);
 }
 
-size object::get_hash_code() const noexcept {
+usize object::get_hash_code() const noexcept {
   return hash_code::combine(reinterpret_cast<intptr_t>(this));
 }
 

@@ -19,7 +19,7 @@ drive_info::drive_info(const string& drive_name) : drive_name_(drive_name) {
   if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw_helper::throws(exception_case::argument);
 }
 
-auto drive_info::available_free_space() const -> size {
+auto drive_info::available_free_space() const -> usize {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return free_bytes;
@@ -49,13 +49,13 @@ auto drive_info::root_directory() const noexcept -> directory_info {
   return directory_info(drive_name_);
 }
 
-auto drive_info::total_free_space() const -> size {
+auto drive_info::total_free_space() const -> usize {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return total_number_of_free_bytes;
 }
 
-auto drive_info::total_size() const -> size {
+auto drive_info::total_size() const -> usize {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return total_number_of_bytes;

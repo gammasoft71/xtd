@@ -58,6 +58,6 @@ bool encoder::equals(const encoder& other) const noexcept {
   return guid_ == other.guid_;
 }
 
-size encoder::get_hash_code() const noexcept {
+usize encoder::get_hash_code() const noexcept {
   return hash_code::combine(guid_);
 }

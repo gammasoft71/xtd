@@ -18,7 +18,7 @@ auto assembly_identifier_attribute::equals(const assembly_identifier_attribute& 
   return identifier_ == other.identifier_;
 }
 
-auto assembly_identifier_attribute::get_hash_code() const noexcept -> size {
+auto assembly_identifier_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(identifier_);
 }
 

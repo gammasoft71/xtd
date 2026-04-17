@@ -42,11 +42,11 @@ bool domain_up_down::item::equals(const item& other) const noexcept {
   return value_ == other.value_;
 }
 
-xtd::usize domain_up_down::item::get_hash_code() const noexcept {
+usize domain_up_down::item::get_hash_code() const noexcept {
   return hash_code::combine(value_);
 }
 
-xtd::string domain_up_down::item::to_string() const noexcept {
+string domain_up_down::item::to_string() const noexcept {
   return value_;
 }
 

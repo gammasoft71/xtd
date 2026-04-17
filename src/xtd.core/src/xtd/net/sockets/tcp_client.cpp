@@ -34,7 +34,7 @@ tcp_client::~tcp_client() {
   if (data_.use_count() == 1) close();
 }
 
-auto tcp_client::available() const -> size {
+auto tcp_client::available() const -> usize {
   return data_->client_socket.available();
 }
 
@@ -79,11 +79,11 @@ auto tcp_client::no_delay(bool value) -> tcp_client& {
   return *this;
 }
 
-auto tcp_client::receive_buffer_size() const -> size {
+auto tcp_client::receive_buffer_size() const -> usize {
   return data_->client_socket.receive_buffer_size();
 }
 
-auto tcp_client::receive_buffer_size(size value) -> tcp_client& {
+auto tcp_client::receive_buffer_size(usize value) -> tcp_client& {
   data_->client_socket.receive_buffer_size(value);
   return *this;
 }
@@ -97,11 +97,11 @@ auto tcp_client::receive_timeout(int32 value) -> tcp_client& {
   return *this;
 }
 
-auto tcp_client::send_buffer_size() const -> size {
+auto tcp_client::send_buffer_size() const -> usize {
   return data_->client_socket.send_buffer_size();
 }
 
-auto tcp_client::send_buffer_size(size value) -> tcp_client& {
+auto tcp_client::send_buffer_size(usize value) -> tcp_client& {
   data_->client_socket.send_buffer_size(value);
   return *this;
 }

@@ -35,22 +35,22 @@ auto xtd::literals::operator""_us(unsigned long long us) -> time_span {
   return xtd::time_span::from_microseconds(static_cast<double>(us));
 }
 
-auto xtd::literals::operator""_ts(const char* s, size n) -> time_span {
+auto xtd::literals::operator""_ts(const char* s, usize n) -> time_span {
   return time_span::parse(string {s});
 }
 
-auto xtd::literals::operator""_ts(const char8* s, size n) -> time_span {
+auto xtd::literals::operator""_ts(const char8* s, usize n) -> time_span {
   return time_span::parse(string {s});
 }
 
-auto xtd::literals::operator""_ts(const char16* s, size n) -> time_span {
+auto xtd::literals::operator""_ts(const char16* s, usize n) -> time_span {
   return time_span::parse(string {s});
 }
 
-auto xtd::literals::operator""_ts(const char32* s, size n) -> time_span {
+auto xtd::literals::operator""_ts(const char32* s, usize n) -> time_span {
   return time_span::parse(string {s});
 }
 
-auto xtd::literals::operator""_ts(const wchar* s, size n) -> time_span {
+auto xtd::literals::operator""_ts(const wchar* s, usize n) -> time_span {
   return time_span::parse(string {s});
 }

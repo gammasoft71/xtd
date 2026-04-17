@@ -3,23 +3,23 @@
 
 using namespace xtd;
 
-auto xtd::literals::operator""_s(const char* s, size n) -> string {
+auto xtd::literals::operator""_s(const char* s, usize n) -> string {
   return string(s, s + n);
 }
 
-auto xtd::literals::operator""_s(const char8* s, size n) -> string {
+auto xtd::literals::operator""_s(const char8* s, usize n) -> string {
   return string(s, s + n);
 }
 
-auto xtd::literals::operator""_s(const char16* s, size n) -> string {
+auto xtd::literals::operator""_s(const char16* s, usize n) -> string {
   return string(std::u16string(s, s + n));
 }
 
-auto xtd::literals::operator""_s(const char32* s, size n) -> string {
+auto xtd::literals::operator""_s(const char32* s, usize n) -> string {
   return string(std::u32string(s, s + n));
 }
 
-auto xtd::literals::operator""_s(const wchar* s, size n) -> string {
+auto xtd::literals::operator""_s(const wchar* s, usize n) -> string {
   return string(std::wstring(s, s + n));
 }
 

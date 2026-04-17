@@ -38,11 +38,11 @@ bool list_control::item::equals(const item& other) const noexcept {
   return value_ == other.value_;
 }
 
-xtd::usize list_control::item::get_hash_code() const noexcept {
+usize list_control::item::get_hash_code() const noexcept {
   return hash_code::combine(value_);
 }
 
-xtd::string list_control::item::to_string() const noexcept {
+string list_control::item::to_string() const noexcept {
   return value_;
 }
 

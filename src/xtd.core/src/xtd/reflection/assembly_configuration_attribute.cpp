@@ -18,7 +18,7 @@ auto assembly_configuration_attribute::equals(const assembly_configuration_attri
   return configuration_ == other.configuration_;
 }
 
-auto assembly_configuration_attribute::get_hash_code() const noexcept -> size {
+auto assembly_configuration_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(configuration_);
 }
 

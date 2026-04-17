@@ -159,7 +159,7 @@ bool image_format::equals(const image_format& other) const noexcept {
   return guid_ == other.guid_;
 }
 
-size image_format::get_hash_code() const noexcept {
+usize image_format::get_hash_code() const noexcept {
   return hash_code::combine(guid_);
 }
 

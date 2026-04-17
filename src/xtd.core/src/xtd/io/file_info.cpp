@@ -49,7 +49,7 @@ auto file_info::is_read_only(bool value) -> void {
   if (native::file_system::set_attributes(full_path_, attributes) != 0) throw_helper::throws(exception_case::io);
 }
 
-auto file_info::length() const -> size {
+auto file_info::length() const -> usize {
   return native::file::get_size(full_path_);
 }
 

@@ -142,7 +142,7 @@ namespace xtd {
         /// @remarks If the read operation is successful, the current position within the stream advances by the number of bytes read. If an exception occurs, the current position within the stream remains unchanged.
         /// @remarks The `read` method will return zero only if the end of the stream is reached. In all other cases, `read` always reads at least one byte from the stream before returning. By definition, if no data is available from the stream upon a call to `read`, the `read` method returns zero (the end of the stream is reached automatically). An implementation is free to return fewer bytes than requested even if the end of the stream has not been reached.
         /// @remarks Use xtd::io::binary_reader for reading primitive data types.
-        auto read(xtd::array<xtd::byte>& buffer, size offset, size count) -> xtd::usize override;
+        auto read(xtd::array<xtd::byte>& buffer, usize offset, usize count) -> xtd::usize override;
         
         /// @brief Sets the length of the current stream to the specified value.
         /// @param value The value at which to set the length.
@@ -162,7 +162,7 @@ namespace xtd {
         /// ```
         /// @remarks The `offset` parameter gives the offset of the first byte in `buffer` to write from, and the `count` parameter gives the number of bytes to write. If the write operation is successful, the current position within the stream is advanced by the number of bytes written. If an exception occurs, the current position within the stream is unchanged.
         /// @remarks Except for a `memory_stream` constructed with a byte[] parameter, write operations at the end of a `memory_stream` expand the `memory_stream`.
-        auto write(const xtd::array<xtd::byte>& buffer, size offset, size count) -> void override;
+        auto write(const xtd::array<xtd::byte>& buffer, usize offset, usize count) -> void override;
         /// @}
         
       private:

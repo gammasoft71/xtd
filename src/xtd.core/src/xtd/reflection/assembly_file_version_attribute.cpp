@@ -18,7 +18,7 @@ auto assembly_file_version_attribute::equals(const assembly_file_version_attribu
   return version_ == other.version_;
 }
 
-auto assembly_file_version_attribute::get_hash_code() const noexcept -> size {
+auto assembly_file_version_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(version_);
 }
 

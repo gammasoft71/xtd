@@ -132,7 +132,7 @@ namespace {
     return day;
   }
   
-  static size to_string_custom_char_count(const string& format, usize& index, size max_char) {
+  static usize to_string_custom_char_count(const string& format, usize& index, usize max_char) {
     auto character = format[index];
     auto count = 1_z;
     while (index + count < format.length() && format[index + count] == character) ++count;
@@ -454,7 +454,7 @@ bool date_time::equals(const date_time& other) const noexcept {
   return value_.count() == other.value_.count();
 }
 
-size date_time::get_hash_code() const noexcept {
+usize date_time::get_hash_code() const noexcept {
   return hash_code::combine(value_.count(), kind_);
 }
 

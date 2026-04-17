@@ -15,7 +15,7 @@ namespace xtd::collections::generic::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<const size>(), typeof_<linked_list<int>::size_type>());
+      assert::are_equal(typeof_<usize>(), typeof_<linked_list<int>::size_type>());
     }
     
     auto test_method_(reference) {

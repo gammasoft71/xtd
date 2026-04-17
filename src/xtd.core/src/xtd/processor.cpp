@@ -32,7 +32,7 @@ string processor::name() const noexcept {
   return processor_names[architecture_];
 }
 
-size processor::get_hash_code() const noexcept {
+usize processor::get_hash_code() const noexcept {
   return hash_code::combine(architecture_, is_64_bit_, core_count_, architecture_string_);
 }
 

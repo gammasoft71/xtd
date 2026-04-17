@@ -11,7 +11,7 @@ void property_item::id(int32 value) noexcept {
   id_ = value;
 }
 
-size property_item::len() const noexcept {
+usize property_item::len() const noexcept {
   return value_.length();
 }
 
@@ -43,7 +43,7 @@ bool property_item::equals(const property_item& other) const noexcept {
   return id_ == other.id_ && type_ == other.type_ && value_ != other.value_;
 }
 
-size property_item::get_hash_code() const noexcept {
+usize property_item::get_hash_code() const noexcept {
   auto result = hash_code {};
   result.add(id_);
   result.add(type_);

@@ -125,7 +125,7 @@ auto ip_address::get_address_bytes() const -> array<byte> {
   return bytes.to_array();
 }
 
-auto ip_address::get_hash_code() const noexcept -> size {
+auto ip_address::get_hash_code() const noexcept -> usize {
   auto result = hash_code {};
   if (address_family_ == sockets::address_family::inter_network)
     result.add(address_or_scope_id_);

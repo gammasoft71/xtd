@@ -16,6 +16,6 @@ void private_font_collection::add_font_file(const string& filename) {
   throw_helper::throws(exception_case::not_implemented);
 }
 
-void private_font_collection::add_memory_font(intptr memory, size length) {
+void private_font_collection::add_memory_font(intptr memory, usize length) {
   throw_helper::throws(exception_case::not_implemented);
 }

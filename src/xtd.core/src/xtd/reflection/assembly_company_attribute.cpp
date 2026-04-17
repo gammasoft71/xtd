@@ -18,7 +18,7 @@ auto assembly_company_attribute::equals(const assembly_company_attribute& other)
   return company_ == other.company_;
 }
 
-auto assembly_company_attribute::get_hash_code() const noexcept -> size {
+auto assembly_company_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(company_);
 }
 

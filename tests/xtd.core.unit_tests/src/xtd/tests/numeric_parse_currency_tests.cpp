@@ -6,7 +6,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 namespace xtd::tests {
-  generic_test_class_(numeric_parse_string_currency_tests, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
+  generic_test_class_(numeric_parse_string_currency_tests, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, usize, byte, uint16, uint32, uint64, uintptr) {
     inline static xtd::globalization::culture_info previous_culture;
     
     static void class_initialize_(class_initialize) {

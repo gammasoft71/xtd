@@ -66,7 +66,7 @@ int32 cpp_language::year() const noexcept {
   return cpp_ / 100;
 }
 
-size cpp_language::get_hash_code() const noexcept {
+usize cpp_language::get_hash_code() const noexcept {
   return hash_code::combine(cpp_);
 }
 

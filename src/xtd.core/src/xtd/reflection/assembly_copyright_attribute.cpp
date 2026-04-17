@@ -18,7 +18,7 @@ auto assembly_copyright_attribute::equals(const assembly_copyright_attribute& ot
   return copyright_ == other.copyright_;
 }
 
-auto assembly_copyright_attribute::get_hash_code() const noexcept -> size {
+auto assembly_copyright_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(copyright_);
 }
 

@@ -86,7 +86,7 @@ auto assembly::equals(const assembly& other) const noexcept -> bool {
   return company_ == other.company_ && configuration_ == other.configuration_ && copyright_ == other.copyright_ && culture_ == other.culture_ && description_ == other.description_ && file_version_ == other.file_version_ && guid_ == other.guid_ && identifier_ == other.identifier_ && name_ == other.name_ && product_ == other.product_ && title_ == other.title_ && trademarks_ == other.trademarks_ && version_ == other.version_;
 }
 
-auto assembly::get_hash_code() const noexcept -> size {
+auto assembly::get_hash_code() const noexcept -> usize {
   return hash_code::combine(company_, configuration_, copyright_, culture_, description_, file_version_, guid_, identifier_, name_, product_, title_, trademarks_, version_);
 }
 

@@ -18,7 +18,7 @@ auto assembly_name_attribute::equals(const assembly_name_attribute& other) const
   return name_ == other.name_;
 }
 
-auto assembly_name_attribute::get_hash_code() const noexcept -> size {
+auto assembly_name_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(name_);
 }
 

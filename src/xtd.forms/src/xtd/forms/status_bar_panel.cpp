@@ -202,18 +202,18 @@ void status_bar_panel::end_init() {
   if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
 }
 
-xtd::usize status_bar_panel::get_hash_code() const noexcept {
+usize status_bar_panel::get_hash_code() const noexcept {
   return hash_code::combine(data_);
 }
 
-xtd::string status_bar_panel::to_string() const noexcept {
+string status_bar_panel::to_string() const noexcept {
   if (!xtd::string::is_empty(data_->text)) return string::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
   if (!xtd::string::is_empty(data_->name)) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
   return string::format("{}, style: {}", get_type().full_name(), data_->style);
 }
 
-xtd::uptr<xtd::object> status_bar_panel::clone() const {
-  auto result = xtd::new_uptr<status_bar_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
+uptr<object> status_bar_panel::clone() const {
+  auto result = new_uptr<status_bar_panel>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
   return result;
 }

@@ -213,7 +213,7 @@ bool font::equals(const font& other) const noexcept {
   return data_->font_family_ == other.data_->font_family_ && data_->gdi_char_set_ == other.data_->gdi_char_set_ && data_->gdi_vertical_font_ == other.data_->gdi_vertical_font_ && data_->style_ == other.data_->style_ && data_->size_ == other.data_->size_ && data_->unit_ == other.data_->unit_;
 }
 
-xtd::usize font::get_hash_code() const noexcept {
+usize font::get_hash_code() const noexcept {
   return hash_code::combine(data_->font_family_, data_->gdi_char_set_, data_->gdi_vertical_font_, data_->style_, data_->size_, data_->unit_);
 }
 

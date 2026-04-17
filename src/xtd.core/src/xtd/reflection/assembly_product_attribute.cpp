@@ -18,7 +18,7 @@ auto assembly_product_attribute::equals(const assembly_product_attribute& other)
   return product_ == other.product_;
 }
 
-auto assembly_product_attribute::get_hash_code() const noexcept -> size {
+auto assembly_product_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(product_);
 }
 

@@ -24,7 +24,7 @@ auto text_reader::read() -> int32 {
   return EOF;
 }
 
-auto text_reader::read(span<char>& buffer) -> size {
+auto text_reader::read(span<char>& buffer) -> usize {
   for (auto i = 0_z; i < buffer.length(); i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -33,7 +33,7 @@ auto text_reader::read(span<char>& buffer) -> size {
   return buffer.length();
 }
 
-auto text_reader::read(array<char>& buffer, size index, size count) -> size {
+auto text_reader::read(array<char>& buffer, usize index, usize count) -> usize {
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -43,11 +43,11 @@ auto text_reader::read(array<char>& buffer, size index, size count) -> size {
   return count;
 }
 
-auto text_reader::read_block(span<char>& buffer) -> size {
+auto text_reader::read_block(span<char>& buffer) -> usize {
   return read(buffer);
 }
 
-auto text_reader::read_block(array<char>& buffer, size index, size count) -> size {
+auto text_reader::read_block(array<char>& buffer, usize index, usize count) -> usize {
   return read(buffer, index, count);
 }
 

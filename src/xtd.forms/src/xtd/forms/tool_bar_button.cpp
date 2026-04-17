@@ -256,18 +256,18 @@ bool tool_bar_button::equals(const tool_bar_button& other) const noexcept {
   return data_ == other.data_;
 }
 
-xtd::usize tool_bar_button::get_hash_code() const noexcept {
+usize tool_bar_button::get_hash_code() const noexcept {
   return hash_code::combine(data_);
 }
 
-xtd::string tool_bar_button::to_string() const noexcept {
+string tool_bar_button::to_string() const noexcept {
   if (!xtd::string::is_empty(data_->text)) return string::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
   if (!xtd::string::is_empty(data_->name)) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
   return string::format("{}, style: {}", get_type().full_name(), data_->style);
 }
 
-xtd::uptr<xtd::object> tool_bar_button::clone() const {
-  auto result = xtd::new_uptr<tool_bar_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
+uptr<object> tool_bar_button::clone() const {
+  auto result = new_uptr<tool_bar_button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
   return result;
 }

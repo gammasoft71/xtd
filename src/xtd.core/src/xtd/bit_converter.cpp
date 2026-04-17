@@ -104,91 +104,91 @@ int32 bit_converter::single_to_int32_bits(float value) noexcept {
   return result;
 }
 
-bool bit_converter::to_boolean(const array<byte>& value, size start_index) {
+bool bit_converter::to_boolean(const array<byte>& value, usize start_index) {
   return to_boolean(read_only_span<byte>(value), start_index);
 }
 
-bool bit_converter::to_boolean(const read_only_span<xtd::byte>& value, size start_index) {
+bool bit_converter::to_boolean(const read_only_span<xtd::byte>& value, usize start_index) {
   return static_cast<bool>(value.at(start_index));
 }
 
-char32 bit_converter::to_char(const array<byte>& value, size start_index) {
+char32 bit_converter::to_char(const array<byte>& value, usize start_index) {
   return to_char(read_only_span<byte>(value), start_index);
 }
 
-char32 bit_converter::to_char(const read_only_span<byte>& value, size start_index) {
+char32 bit_converter::to_char(const read_only_span<byte>& value, usize start_index) {
   return static_cast<char32>(to_uint32(value, start_index));
 }
 
-double bit_converter::to_double(const array<byte>& value, size start_index) {
+double bit_converter::to_double(const array<byte>& value, usize start_index) {
   return to_double(read_only_span<byte>(value), start_index);
 }
 
-double bit_converter::to_double(const read_only_span<byte>& value, size start_index) {
+double bit_converter::to_double(const read_only_span<byte>& value, usize start_index) {
   return int64_bits_to_double(to_int64(value, start_index));
 }
 
-int16 bit_converter::to_int16(const array<byte>& value, size start_index) {
+int16 bit_converter::to_int16(const array<byte>& value, usize start_index) {
   return to_int16(read_only_span<byte>(value), start_index);
 }
 
-int16 bit_converter::to_int16(const read_only_span<byte>& value, size start_index) {
+int16 bit_converter::to_int16(const read_only_span<byte>& value, usize start_index) {
   return static_cast<int16>(to_uint16(value, start_index));
 }
 
-int32 bit_converter::to_int32(const array<byte>& value, size start_index) {
+int32 bit_converter::to_int32(const array<byte>& value, usize start_index) {
   return to_int32(read_only_span<byte>(value), start_index);
 }
 
-int32 bit_converter::to_int32(const read_only_span<byte>& value, size start_index) {
+int32 bit_converter::to_int32(const read_only_span<byte>& value, usize start_index) {
   return static_cast<int32>(to_uint32(value, start_index));
 }
 
-int64 bit_converter::to_int64(const array<byte>& value, size start_index) {
+int64 bit_converter::to_int64(const array<byte>& value, usize start_index) {
   return to_int64(read_only_span<byte>(value), start_index);
 }
 
-int64 bit_converter::to_int64(const read_only_span<byte>& value, size start_index) {
+int64 bit_converter::to_int64(const read_only_span<byte>& value, usize start_index) {
   return static_cast<int64>(to_uint64(value, start_index));
 }
 
-float bit_converter::to_single(const array<byte>& value, size start_index) {
+float bit_converter::to_single(const array<byte>& value, usize start_index) {
   return to_single(read_only_span<byte>(value), start_index);
 }
 
-float bit_converter::to_single(const read_only_span<byte>& value, size start_index) {
+float bit_converter::to_single(const read_only_span<byte>& value, usize start_index) {
   return int32_bits_to_single(to_int32(value, start_index));
 }
 
-size bit_converter::to_size(const array<byte>& value, size start_index) {
+usize bit_converter::to_size(const array<byte>& value, usize start_index) {
   return to_size(read_only_span<byte>(value), start_index);
 }
 
-size bit_converter::to_size(const read_only_span<byte>& value, size start_index) {
+usize bit_converter::to_size(const read_only_span<byte>& value, usize start_index) {
   return static_cast<usize>(to_uint64(value, start_index));
 }
 
-uint16 bit_converter::to_uint16(const array<byte>& value, size start_index) {
+uint16 bit_converter::to_uint16(const array<byte>& value, usize start_index) {
   return to_uint16(read_only_span<byte>(value), start_index);
 }
 
-uint16 bit_converter::to_uint16(const read_only_span<byte>& value, size start_index) {
+uint16 bit_converter::to_uint16(const read_only_span<byte>& value, usize start_index) {
   return static_cast<uint16>(value.at(start_index)) + (static_cast<uint16>(value.at(start_index + 1)) << 8);
 }
 
-uint32 bit_converter::to_uint32(const array<byte>& value, size start_index) {
+uint32 bit_converter::to_uint32(const array<byte>& value, usize start_index) {
   return to_uint32(read_only_span<byte>(value), start_index);
 }
 
-uint32 bit_converter::to_uint32(const read_only_span<byte>& value, size start_index) {
+uint32 bit_converter::to_uint32(const read_only_span<byte>& value, usize start_index) {
   return static_cast<uint32>(value.at(start_index)) + (static_cast<uint32>(value.at(start_index + 1)) << 8) + (static_cast<uint32>(value.at(start_index + 2)) << 16) + (static_cast<uint32>(value.at(start_index + 3)) << 24);
 }
 
-uint64 bit_converter::to_uint64(const array<byte>& value, size start_index) {
+uint64 bit_converter::to_uint64(const array<byte>& value, usize start_index) {
   return to_uint64(read_only_span<byte>(value), start_index);
 }
 
-uint64 bit_converter::to_uint64(const read_only_span<byte>& value, size start_index) {
+uint64 bit_converter::to_uint64(const read_only_span<byte>& value, usize start_index) {
   return static_cast<uint64>(value.at(start_index)) + (static_cast<uint64>(value.at(start_index + 1)) << 8) + (static_cast<uint64>(value.at(start_index + 2)) << 16) + (static_cast<uint64>(value.at(start_index + 3)) << 24) + (static_cast<uint64>(value.at(start_index + 4)) << 32) + (static_cast<uint64>(value.at(start_index + 5)) << 40) + (static_cast<uint64>(value.at(start_index + 6)) << 48) + (static_cast<uint64>(value.at(start_index + 7)) << 56);
 }
 
@@ -200,19 +200,19 @@ string bit_converter::to_string(const read_only_span<byte>& value) {
   return to_string(value, 0, value.length());
 }
 
-string bit_converter::to_string(const array<byte>& value, size start_index) {
+string bit_converter::to_string(const array<byte>& value, usize start_index) {
   return to_string(read_only_span<byte>(value), start_index);
 }
 
-string bit_converter::to_string(const read_only_span<byte>& value, size start_index) {
+string bit_converter::to_string(const read_only_span<byte>& value, usize start_index) {
   return to_string(value, start_index, value.length() - start_index);
 }
 
-string bit_converter::to_string(const array<byte>& value, size start_index, size length) {
+string bit_converter::to_string(const array<byte>& value, usize start_index, usize length) {
   return to_string(read_only_span<byte>(value), start_index, length);
 }
 
-string bit_converter::to_string(const read_only_span<byte>& value, size start_index, size length) {
+string bit_converter::to_string(const read_only_span<byte>& value, usize start_index, usize length) {
   if (value.length() == 0 && start_index == 0 && length == 0) return "";
   if (start_index >= value.length()) throw_helper::throws(exception_case::argument_out_of_range);
   if (start_index + length > value.length()) throw_helper::throws(exception_case::argument_out_of_range);

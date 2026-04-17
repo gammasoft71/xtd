@@ -63,7 +63,7 @@ auto binary_reader::read() -> int32 {
   return value;
 }
 
-auto binary_reader::read(array<xtd::byte>& buffer, size index, size count) -> size {
+auto binary_reader::read(array<xtd::byte>& buffer, usize index, usize count) -> usize {
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -73,7 +73,7 @@ auto binary_reader::read(array<xtd::byte>& buffer, size index, size count) -> si
   return count;
 }
 
-auto binary_reader::read(array<char>& buffer, size index, size count) -> size {
+auto binary_reader::read(array<char>& buffer, usize index, usize count) -> usize {
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -91,7 +91,7 @@ auto binary_reader::read_byte() -> xtd::byte {
   return read_bytes(sizeof(xtd::byte))[0];
 }
 
-auto binary_reader::read_bytes(size count) -> array<xtd::byte> {
+auto binary_reader::read_bytes(usize count) -> array<xtd::byte> {
   auto result = array<xtd::byte>(count);
   if (read(result, 0, count) != count)
     throw_helper::throws(exception_case::end_of_stream);
@@ -102,7 +102,7 @@ auto binary_reader::read_char() -> char {
   return read_bytes(sizeof(char))[0];
 }
 
-auto binary_reader::read_chars(size count) -> array<char> {
+auto binary_reader::read_chars(usize count) -> array<char> {
   auto result = array<char>(count);
   if (read(result, 0, count) != count)
     throw_helper::throws(exception_case::end_of_stream);
@@ -133,8 +133,8 @@ auto binary_reader::read_single() -> float {
   return bit_converter::to_single(read_bytes(sizeof(float)), 0);
 }
 
-auto binary_reader::read_size() -> size {
-  return bit_converter::to_size(read_bytes(sizeof(size)), 0);
+auto binary_reader::read_size() -> usize {
+  return bit_converter::to_size(read_bytes(sizeof(usize)), 0);
 }
 
 auto binary_reader::read_string() -> string {

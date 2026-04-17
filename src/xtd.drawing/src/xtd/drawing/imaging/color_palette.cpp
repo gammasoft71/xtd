@@ -20,7 +20,7 @@ bool color_palette::equals(const color_palette& other) const noexcept {
   return entries_ == other.entries_ && flags_ == other.flags_;
 }
 
-size color_palette::get_hash_code() const noexcept {
+usize color_palette::get_hash_code() const noexcept {
   auto result = hash_code {};
   for (const auto& entry : entries_)
     result.add(entry);

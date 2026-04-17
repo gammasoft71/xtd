@@ -50,6 +50,6 @@ auto multicast_option::equals(const multicast_option& other) const noexcept -> b
   return group_ == other.group_ && interface_index_ == other.interface_index_ && local_address_ == other.local_address_;
 }
 
-auto multicast_option::get_hash_code() const noexcept -> size {
+auto multicast_option::get_hash_code() const noexcept -> usize {
   return hash_code::combine(group_, interface_index_, local_address_);
 }

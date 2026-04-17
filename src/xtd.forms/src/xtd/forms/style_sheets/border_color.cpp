@@ -76,6 +76,6 @@ bool border_color::equals(const border_color& other) const noexcept {
   return all_ == other.all_ && bottom_ == other.bottom_ && left_ == other.left_ && right_ == other.right_ && top_ == other.top_;
 }
 
-xtd::usize border_color::get_hash_code() const noexcept {
+usize border_color::get_hash_code() const noexcept {
   return hash_code::combine(all_, bottom_, left_, right_, top_);
 }

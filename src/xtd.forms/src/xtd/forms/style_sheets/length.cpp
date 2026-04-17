@@ -38,7 +38,7 @@ bool length::equals(const length& other) const noexcept {
   return value_ == other.value_ && unit_ == other.unit_;
 }
 
-xtd::usize length::get_hash_code() const noexcept {
+usize length::get_hash_code() const noexcept {
   return hash_code::combine(value_, unit_);
 }
 

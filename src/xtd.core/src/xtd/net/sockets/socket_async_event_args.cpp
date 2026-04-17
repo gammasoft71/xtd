@@ -27,11 +27,11 @@ auto socket_async_event_args::set_buffer(const array<xtd::byte>& memory_buffer) 
   memory_buffer_ = memory_buffer;
 }
 
-auto socket_async_event_args::set_buffer(size offset, size count) -> void {
+auto socket_async_event_args::set_buffer(usize offset, usize count) -> void {
   set_buffer(buffer_, offset, count);
 }
 
-auto socket_async_event_args::set_buffer(const array<xtd::byte>& buffer, size offset, size count) -> void {
+auto socket_async_event_args::set_buffer(const array<xtd::byte>& buffer, usize offset, usize count) -> void {
   if (offset + count > buffer_.length()) throw_helper::throws(exception_case::argument_out_of_range);
   buffer_ = buffer;
   offset_ = offset;

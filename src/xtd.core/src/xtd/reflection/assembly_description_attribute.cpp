@@ -18,7 +18,7 @@ auto assembly_description_attribute::equals(const assembly_description_attribute
   return description_ == other.description_;
 }
 
-auto assembly_description_attribute::get_hash_code() const noexcept -> size {
+auto assembly_description_attribute::get_hash_code() const noexcept -> usize {
   return hash_code::combine(description_);
 }
 

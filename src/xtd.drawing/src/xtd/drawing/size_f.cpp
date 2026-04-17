@@ -3,6 +3,7 @@
 #include "../../../include/xtd/drawing/size.hpp"
 #include <xtd/as>
 
+using namespace xtd;
 using namespace xtd::drawing;
 
 const size_f size_f::empty;
@@ -37,7 +38,7 @@ bool size_f::equals(const xtd::drawing::size_f& value) const noexcept {
   return width == value.width && height == value.height;
 }
 
-xtd::usize size_f::get_hash_code() const noexcept {
+usize size_f::get_hash_code() const noexcept {
   return hash_code::combine(width, height);
 }
 

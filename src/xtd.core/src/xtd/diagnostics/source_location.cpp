@@ -37,7 +37,7 @@ auto source_location::operator =(const source_location& other) -> source_locatio
 source_location::source_location(const xtd::string& file, xtd::usize line, const xtd::string& func, xtd::usize column) : data_ {new_ptr<data>(file, line, func, column)} {
 }
 
-auto source_location::column() const noexcept -> size {
+auto source_location::column() const noexcept -> usize {
   return data_->column;
 }
 
@@ -49,7 +49,7 @@ auto source_location::function_name() const noexcept -> const string& {
   return data_->func;
 }
 
-auto source_location::line() const noexcept -> size {
+auto source_location::line() const noexcept -> usize {
   return data_->line;
 }
 

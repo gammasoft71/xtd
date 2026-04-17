@@ -239,7 +239,7 @@ bool time_span::equals(time_span t1, time_span t2) {
   return  t1.equals(t2);
 }
 
-size time_span::get_hash_code() const noexcept {
+usize time_span::get_hash_code() const noexcept {
   return hash_code::combine(ticks_);
 }
 

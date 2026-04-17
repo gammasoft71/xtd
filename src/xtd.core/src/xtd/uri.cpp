@@ -359,7 +359,7 @@ bool uri::equals(const uri& uri) const noexcept {
   return data_->scheme == uri.data_->scheme && data_->scheme_delimiter == uri.data_->scheme_delimiter && data_->host == uri.data_->host && data_->port == uri.data_->port && data_->path == uri.data_->path && data_->query == uri.data_->query && data_->kind == uri.data_->kind;
 }
 
-size uri::get_hash_code() const noexcept {
+usize uri::get_hash_code() const noexcept {
   return hash_code::combine(data_->original_uri, data_->scheme, data_->scheme_delimiter, data_->user_info, data_->host, data_->port, data_->path, data_->query, data_->fragment, data_->kind);
 }
 

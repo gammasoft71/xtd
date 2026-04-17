@@ -102,7 +102,7 @@ bool cursor::equals(const cursor& value) const noexcept {
   return data_->handle == value.data_->handle;
 }
 
-xtd::usize cursor::get_hash_code() const noexcept {
+usize cursor::get_hash_code() const noexcept {
   if (!string::is_empty(data_->name)) return hash_code::combine(data_->name);
   return hash_code::combine(data_->handle);
 }

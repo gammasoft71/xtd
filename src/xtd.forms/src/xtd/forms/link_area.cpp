@@ -36,10 +36,10 @@ bool link_area::equals(const link_area& other) const noexcept {
   return start_ == other.start_ && length_ == other.length_;
 }
 
-xtd::usize link_area::get_hash_code() const noexcept {
+usize link_area::get_hash_code() const noexcept {
   return hash_code::combine(start_, length_);
 }
 
-xtd::string link_area::to_string() const noexcept {
+string link_area::to_string() const noexcept {
   return string::format("{{start={}, length={}}}", start_, length_);
 }

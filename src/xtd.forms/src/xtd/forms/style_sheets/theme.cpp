@@ -57,11 +57,11 @@ bool theme::equals(const theme& other) const noexcept {
   return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;
 }
 
-xtd::usize theme::get_hash_code() const noexcept {
+usize theme::get_hash_code() const noexcept {
   return hash_code::combine(name_, description_, authors_, website_);
 }
 
-xtd::string theme::to_string() const noexcept {
+string theme::to_string() const noexcept {
   return string::format("[name={}, description={}, authors={}, website={}, ]", name(), description(), authors(), website());
 }
 
@@ -76,7 +76,7 @@ theme theme::parse(const xtd::string& text) {
   return result;
 }
 
-xtd::string theme::to_css() const noexcept {
+string theme::to_css() const noexcept {
   return string::format("  name: \"{}\";\n  description: \"{}\";\n  authors:\"{}\";\n  website=url(\"{}\");\n", name(), description(), authors(), website());
 }
 

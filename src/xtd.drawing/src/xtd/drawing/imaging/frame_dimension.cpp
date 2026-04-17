@@ -31,6 +31,6 @@ bool frame_dimension::equals(const frame_dimension& other) const noexcept {
   return guid_ == other.guid_;
 }
 
-size frame_dimension::get_hash_code() const noexcept {
+usize frame_dimension::get_hash_code() const noexcept {
   return hash_code::combine(guid_);
 }

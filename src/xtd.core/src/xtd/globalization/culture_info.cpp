@@ -23,8 +23,8 @@ struct culture_info::data {
   string display_name = "Invariant Language (Invariant Country)";
   string english_name = "Invariant Language (Invariant Country)";
   bool is_read_only = false;
-  size keyboard_layout_id = 127;
-  size lcid = 127;
+  usize keyboard_layout_id = 127;
+  usize lcid = 127;
   std::locale locale;
   string name;
   string native_name = "Invariant Language (Invariant Country)";
@@ -47,10 +47,10 @@ culture_info::culture_info(const std::locale& locale) : culture_info() {
   fill_from_name(to_cldr_name(locale.name()));
 }
 
-culture_info::culture_info(size culture) : culture_info {culture, false} {
+culture_info::culture_info(usize culture) : culture_info {culture, false} {
 }
 
-culture_info::culture_info(size culture, bool use_user_override) : culture_info() {
+culture_info::culture_info(usize culture, bool use_user_override) : culture_info() {
   for (const auto& [n, c] : cultures()) {
     //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
     if (c.data_->lcid != culture) continue;
@@ -103,11 +103,11 @@ auto culture_info::is_read_only() const noexcept -> bool {
   return data_->is_read_only;
 }
 
-auto culture_info::keyboard_layout_id() const noexcept -> size {
+auto culture_info::keyboard_layout_id() const noexcept -> usize {
   return data_->keyboard_layout_id;
 }
 
-auto culture_info::lcid() const noexcept -> size {
+auto culture_info::lcid() const noexcept -> usize {
   return data_->lcid;
 }
 
@@ -191,7 +191,7 @@ auto culture_info::equals(const culture_info& obj) const noexcept -> bool {
   return data_->name == obj.data_->name;;
 }
 
-auto culture_info::get_hash_code() const noexcept -> size {
+auto culture_info::get_hash_code() const noexcept -> usize {
   return xtd::hash_code::combine(data_->name);
 }
 
@@ -222,7 +222,7 @@ auto culture_info::get_culture_info(const string& name, const string& alt_name) 
   return culture;
 }
 
-auto culture_info::get_culture_info(size culture) -> culture_info {
+auto culture_info::get_culture_info(usize culture) -> culture_info {
   return culture_info {culture};
 }
 
@@ -268,7 +268,7 @@ culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
-culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : culture_info() {
+culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, usize keyboard_layout_id, usize lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : culture_info() {
   data_->culture_types = culture_types;
   data_->display_name = std::move(display_name);
   data_->english_name = std::move(english_name);
