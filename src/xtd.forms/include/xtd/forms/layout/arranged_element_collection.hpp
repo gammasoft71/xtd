@@ -15,7 +15,7 @@
 #include <xtd/event>
 #include <xtd/object>
 #include <xtd/new_ptr>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -67,7 +67,7 @@ namespace xtd {
           
         private:
           friend class arranged_element_collection;
-          size_t pos = size_object::max_value;
+          size_t pos = usize_object::max_value;
           arranged_element_collection* owner = nullptr;
         };
         

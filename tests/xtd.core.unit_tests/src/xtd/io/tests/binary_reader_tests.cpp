@@ -151,15 +151,15 @@ namespace xtd::io::tests {
     
     auto test_method_(read_size) {
       auto stream = memory_stream {};
-      stream.write(bit_converter::get_bytes(size_object::min_value));
+      stream.write(bit_converter::get_bytes(usize_object::min_value));
       stream.write(bit_converter::get_bytes(42_z));
-      stream.write(bit_converter::get_bytes(size_object::max_value));
+      stream.write(bit_converter::get_bytes(usize_object::max_value));
       
       stream.position(0);
       auto reader = binary_reader {stream};
-      assert::are_equal(size_object::min_value, reader.read_size());
+      assert::are_equal(usize_object::min_value, reader.read_size());
       assert::are_equal(42_z, reader.read_size());
-      assert::are_equal(size_object::max_value, reader.read_size());
+      assert::are_equal(usize_object::max_value, reader.read_size());
     }
     
     auto test_method_(read_time_span) {

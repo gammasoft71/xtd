@@ -4,8 +4,8 @@
 #pragma once
 #include "helpers/raw_queue.hpp"
 #include "icollection.hpp"
-#include "../../size.hpp"
 #include "../../string.hpp"
+#include "../../usize.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

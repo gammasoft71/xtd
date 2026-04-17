@@ -6,7 +6,7 @@
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/environment>
 #include <xtd/index_out_of_range_exception>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 #include <xtd/wchar>
 #include <xtd/collections/generic/list>
 #include <xtd/tunit/assert>
@@ -95,7 +95,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(npos) {
-      assert::are_equal(size_object::max_value, basic_string<type_t>::npos);
+      assert::are_equal(usize_object::max_value, basic_string<type_t>::npos);
     }
     
     // ______________________________________________________________________________________________________________________________________________

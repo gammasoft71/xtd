@@ -6,7 +6,7 @@
 #include "timeout.hpp"
 #include "../abstract.hpp"
 #include "../as.hpp"
-#include "../size_object.hpp"
+#include "../usize_object.hpp"
 #include "../time_span.hpp"
 #include "../types.hpp"
 #include <limits>
@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
       /// @remarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
-      static constexpr xtd::size wait_timeout = size_object::max_value;
+      static constexpr xtd::size wait_timeout = usize_object::max_value;
       /// @}
       
       /// @name Public Constructors

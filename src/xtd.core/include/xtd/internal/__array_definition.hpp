@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 #include "../collections/generic/helpers/allocator.hpp"
-#include "../size.hpp"
+#include "../usize.hpp"
 #include <vector> // @todo remove line
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

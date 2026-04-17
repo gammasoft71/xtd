@@ -8,7 +8,7 @@
 #include "image_list.hpp"
 #include "tab_alignment.hpp"
 #include "tab_page_ref.hpp"
-#include <xtd/size_object>
+#include <xtd/usize_object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

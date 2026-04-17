@@ -16,11 +16,12 @@
 #include "intptr.hpp"
 #include "sbyte.hpp"
 #include "single.hpp"
-#include "size.hpp"
+#include "ssize.hpp"
 #include "uint16.hpp"
 #include "uint32.hpp"
 #include "uint64.hpp"
 #include "uintptr.hpp"
+#include "usize.hpp"
 #include "wchar.hpp"
 #define __XTD_STD_INTERNAL__
 #include "internal/__xtd_std_version.hpp"

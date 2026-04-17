@@ -4,7 +4,7 @@
 #pragma once
 #include <xtd/array>
 #include <xtd/event_args>
-#include <xtd/size>
+#include <xtd//usize>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -32,7 +32,7 @@
 #include <xtd/drawing/texts>
 #include <xtd/environment>
 #include <xtd/overload>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 
 namespace xtdc_gui {
   /// @brief Represents the main form
@@ -145,7 +145,7 @@ namespace xtdc_gui {
     xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {file_menu_item_, help_menu_item_};
     
-    size_t current_project_type_index_ = xtd::size_object::max_value;
+    size_t current_project_type_index_ = xtd::usize_object::max_value;
     size_t current_open_xtd_example_core_list_box_index_ = 0;
     size_t current_open_xtd_example_drawing_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;

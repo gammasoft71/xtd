@@ -12,7 +12,7 @@
 #include "../math.hpp"
 #include "../npos.hpp"
 #include "../object.hpp"
-#include "../size.hpp"
+#include "../usize.hpp"
 #include "../types.hpp"
 #include <bitset>
 #include <initializer_list>

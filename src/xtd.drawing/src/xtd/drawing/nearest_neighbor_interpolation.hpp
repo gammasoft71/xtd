@@ -18,8 +18,8 @@ namespace {
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
     const auto source_rgb = reinterpret_cast<const xtd::drawing::helpers::rgb*>(source_image.rgb());
     
-    if (static_cast<xtd::size>(source_width) > xtd::size_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image width is greater than 281474976710655 pixels");
-    if (static_cast<xtd::size>(source_height) > xtd::size_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image height is greater than 281474976710655 pixels");
+    if (static_cast<xtd::size>(source_width) > xtd::usize_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image width is greater than 281474976710655 pixels");
+    if (static_cast<xtd::size>(source_height) > xtd::usize_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image height is greater than 281474976710655 pixels");
     
     const auto result_width = size.width;
     const auto result_height = size.height;

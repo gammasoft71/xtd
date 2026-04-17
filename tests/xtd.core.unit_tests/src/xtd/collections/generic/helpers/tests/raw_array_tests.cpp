@@ -106,11 +106,11 @@ namespace xtd::collections::generic::helpers::tests {
     }
     
     auto test_method_(epos) {
-      assert::are_equal(size_object::max_value - 1, raw_array<int>::epos);
+      assert::are_equal(usize_object::max_value - 1, raw_array<int>::epos);
     }
     
     auto test_method_(npos) {
-      assert::are_equal(size_object::max_value, raw_array<int>::npos);
+      assert::are_equal(usize_object::max_value, raw_array<int>::npos);
     }
     
     auto test_method_(default_constructor) {

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::size_of methods.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "size.hpp"
+#include "usize.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

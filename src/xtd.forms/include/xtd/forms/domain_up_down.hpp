@@ -6,7 +6,7 @@
 #include "up_down_base.hpp"
 #include "application.hpp"
 #include <xtd/iequatable>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

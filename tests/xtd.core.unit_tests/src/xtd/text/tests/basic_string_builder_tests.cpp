@@ -6,7 +6,7 @@
 #include <xtd/char8>
 #include <xtd/environment>
 #include <xtd/index_out_of_range_exception>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 #include <xtd/wchar>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
@@ -88,7 +88,7 @@ namespace xtd::text::tests {
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                         Fields
     auto test_method_(npos) {
-      assert::are_equal(size_object::max_value, basic_string_builder<type_t>::npos);
+      assert::are_equal(usize_object::max_value, basic_string_builder<type_t>::npos);
     }
     
     // ______________________________________________________________________________________________________________________________________________

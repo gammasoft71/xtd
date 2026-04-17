@@ -55,7 +55,7 @@ namespace xtd {
         /// @{
         /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
         /// @remarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
-        static constexpr xtd::size wait_timeout = xtd::size_object::max_value;
+        static constexpr xtd::size wait_timeout = xtd::usize_object::max_value;
         /// @}
         /// @name Public Constructors
         

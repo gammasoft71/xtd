@@ -8,7 +8,7 @@
 #include "iequatable.hpp"
 #include "object.hpp"
 #include "object_ref.hpp"
-#include "size.hpp"
+#include "usize.hpp"
 #include <functional>
 #include <vector>
 

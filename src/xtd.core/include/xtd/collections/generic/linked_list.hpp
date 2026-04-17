@@ -6,8 +6,8 @@
 #include "../object_model/read_only_collection.hpp"
 #include "icollection.hpp"
 #include "linked_list_node.hpp"
-#include "../../size.hpp"
 #include "../../string.hpp"
+#include "../../usize.hpp"
 #include <list>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

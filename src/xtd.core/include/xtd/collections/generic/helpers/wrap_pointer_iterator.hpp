@@ -5,7 +5,7 @@
 #include "../../../icomparable.hpp"
 #include "../../../iequatable.hpp"
 #include "../../../ptrdiff.hpp"
-#include "../../../size.hpp"
+#include "../../../usize.hpp"
 #include <iterator>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

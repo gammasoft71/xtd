@@ -7,7 +7,7 @@
 #undef __XTD_CORE_INTERNAL__
 #include "../object.hpp"
 #include "../ptr.hpp"
-#include "../size.hpp"
+#include "../usize.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

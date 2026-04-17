@@ -3,7 +3,7 @@
 #pragma once
 #include <limits>
 #include <xtd/as>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 #include <xtd/drawing/bitmap>
 #include <xtd/forms/application>
 #include "project_type_item_control.hpp"

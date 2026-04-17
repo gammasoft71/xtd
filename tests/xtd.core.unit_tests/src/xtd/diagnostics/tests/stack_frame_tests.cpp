@@ -1,7 +1,7 @@
 #include <xtd/diagnostics/stack_frame>
 #include <xtd/io/path>
 #include <xtd/environment>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -13,7 +13,7 @@ using namespace xtd::tunit;
 namespace xtd::diagnostics::tests {
   class test_class_(stack_frame_tests) {
     auto test_method_(OFFSET_UNKNOWN) {
-      assert::are_equal(size_object::max_value, stack_frame::OFFSET_UNKNOWN);
+      assert::are_equal(usize_object::max_value, stack_frame::OFFSET_UNKNOWN);
     }
     
     auto test_method_(empty) {

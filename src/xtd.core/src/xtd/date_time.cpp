@@ -141,7 +141,7 @@ namespace {
   }
   
   static string to_string_custom_date_separator(const string& format, size& index, const culture_info& culture) {
-    auto count = to_string_custom_char_count(format, index, size_object::max_value);
+    auto count = to_string_custom_char_count(format, index, usize_object::max_value);
     auto result = string {};
     for (auto i = 0_z; i < count; ++i)
       result += culture.date_time_format().date_separator();
@@ -214,7 +214,7 @@ namespace {
   }
   
   static string to_string_custom_time_separator(const string& format, size& index, const culture_info& culture) {
-    auto count = to_string_custom_char_count(format, index, size_object::max_value);
+    auto count = to_string_custom_char_count(format, index, usize_object::max_value);
     auto result = string {};
     for (auto i = 0_z; i < count; ++i)
       result += culture.date_time_format().time_separator();

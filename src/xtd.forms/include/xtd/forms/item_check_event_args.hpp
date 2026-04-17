@@ -5,7 +5,7 @@
 
 #include "check_state.hpp"
 #include <xtd/event_args>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 #include <cstdint>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -68,7 +68,7 @@ namespace xtd {
       /// @}
       
     private:
-      size_t index_ = size_object::max_value;
+      size_t index_ = usize_object::max_value;
       check_state new_value_ = check_state::indeterminate;
       check_state current_value_ = check_state::unchecked;
     };

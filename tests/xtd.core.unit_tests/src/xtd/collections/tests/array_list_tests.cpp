@@ -40,11 +40,11 @@ namespace xtd::collections::tests {
     }
     
     auto test_method_(epos) {
-      assert::are_equal(size_object::max_value - 1, array_list::epos);
+      assert::are_equal(usize_object::max_value - 1, array_list::epos);
     }
     
     auto test_method_(npos) {
-      assert::are_equal(size_object::max_value, array_list::npos);
+      assert::are_equal(usize_object::max_value, array_list::npos);
     }
     
     auto test_method_(constructor) {

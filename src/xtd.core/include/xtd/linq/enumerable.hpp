@@ -22,8 +22,8 @@
 #include "../int32.hpp"
 #include "../int64.hpp"
 #include "../optional.hpp"
-#include "../size.hpp"
 #include "../static.hpp"
+#include "../usize.hpp"
 #include <algorithm>
 #include <bitset>
 #include <functional>

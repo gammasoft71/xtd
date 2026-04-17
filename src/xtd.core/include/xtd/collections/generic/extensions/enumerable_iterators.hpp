@@ -8,7 +8,7 @@
 #include "../../../npos.hpp"
 #include "../../../ptrdiff.hpp"
 #include "../../../self.hpp"
-#include "../../../size.hpp"
+#include "../../../usize.hpp"
 #include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

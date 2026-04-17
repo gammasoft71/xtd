@@ -18,7 +18,7 @@
 #include "ptrdiff_object.hpp"
 #include "sbyte_object.hpp"
 #include "single_object.hpp"
-#include "size_object.hpp"
+#include "usize_object.hpp"
 #include "slong_object.hpp"
 #include "uint16_object.hpp"
 #include "uint32_object.hpp"

@@ -11,7 +11,7 @@
 #include "../null_ptr.hpp"
 #include "../object.hpp"
 #include "../ptr.hpp"
-#include "../size.hpp"
+#include "../usize.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__

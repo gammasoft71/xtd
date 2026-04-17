@@ -14,7 +14,7 @@
 #include "core_export.hpp"
 #include "generic_stream_output.hpp"
 #include "iequatable.hpp"
-#include "size.hpp"
+#include "usize.hpp"
 #if defined(__xtd__cpp_lib_format)
 #include <cassert>
 #include <format>

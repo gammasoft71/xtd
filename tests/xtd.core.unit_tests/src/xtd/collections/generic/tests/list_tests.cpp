@@ -2,7 +2,7 @@
 #include <xtd/as>
 #include <xtd/boolean>
 #include <xtd/environment>
-#include <xtd/size_object>
+#include <xtd/usize_object>
 #include <xtd/lock>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
@@ -54,11 +54,11 @@ namespace xtd::collections::generic::tests {
     }
     
     auto test_method_(epos) {
-      assert::are_equal(size_object::max_value - 1, list<int>::epos);
+      assert::are_equal(usize_object::max_value - 1, list<int>::epos);
     }
     
     auto test_method_(npos) {
-      assert::are_equal(size_object::max_value, list<int>::npos);
+      assert::are_equal(usize_object::max_value, list<int>::npos);
     }
     
     auto test_method_(default_constructor) {
