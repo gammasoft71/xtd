@@ -124,10 +124,10 @@ $(function() {
 <div class="line">      <span class="keywordflow">if</span> (muted &amp;&amp; track_bar1.value()) muted = <span class="keyword">false</span>;</div>
 <div class="line">      <span class="keywordflow">if</span> (!muted || track_bar1.value()) volume = track_bar1.value();</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">if</span> (track_bar1.value() == 0) button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-muted&quot;</span>, <a id="_a1" name="_a1"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> {64, 64}));</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (track_bar1.value() &lt; 30) button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-low&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> {64, 64}));</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (track_bar1.value() &lt; 80) button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-medium&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> {64, 64}));</div>
-<div class="line">      <span class="keywordflow">else</span> button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-high&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> {64, 64}));</div>
+<div class="line">      <span class="keywordflow">if</span> (track_bar1.value() == 0) button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-muted&quot;</span>, drawing::size {64, 64}));</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (track_bar1.value() &lt; 30) button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-low&quot;</span>, drawing::size {64, 64}));</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (track_bar1.value() &lt; 80) button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-medium&quot;</span>, drawing::size {64, 64}));</div>
+<div class="line">      <span class="keywordflow">else</span> button1.image(button_images::from_name(<span class="stringliteral">&quot;audio-volume-high&quot;</span>, drawing::size {64, 64}));</div>
 <div class="line">    };</div>
 <div class="line">    track_bar1.value(60);</div>
 <div class="line">    </div>
@@ -149,10 +149,9 @@ $(function() {
 <div class="line">  button button1;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
+<div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:805</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

@@ -111,7 +111,7 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">size_t</span> client_count = 10;</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> client_count = 10_z;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};</div>
 <div class="line">  server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});</div>

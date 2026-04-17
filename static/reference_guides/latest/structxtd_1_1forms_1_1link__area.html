@@ -109,25 +109,25 @@ Inheritance diagram for xtd::forms::link_area:</div>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>There are two ways to add a hyperlink to the text of a <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> control. You can access the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a2384266b0ee20aed20c1d54a99d7fc43">xtd::forms::link_label::link_collection::push_back</a> method of the <a class="el" href="classxtd_1_1forms_1_1link__label_1_1link__collection.html" title="Represents a collection of controls.">xtd::forms::link_label::link_collection</a> class through the <a class="el" href="classxtd_1_1forms_1_1link__label.html#a20be939c7e0b6413dfe0bbd65c3dfd07" title="Gets the collection of links contained within the xtd::forms::link_label.">xtd::forms::link_label::links</a> property of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to add multiple hyperlinks to the control's text. If you only need to add a single hyperlink to the text of the control, you can use the <a class="el" href="classxtd_1_1forms_1_1link__label.html#aeec25319f0f8cbb25269787eafd81aa2" title="Gets the range in the text to treat as a link.">xtd::forms::link_label::link_area</a> property of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>. This property accepts a <a class="el" href="structxtd_1_1forms_1_1link__area.html" title="Represents an area within a xtd::forms::link_label control that represents a hyperlink within the con...">xtd::forms::link_area</a> that defines the location of the hyperlink within the control's text. When a hyperlink is specified using the <a class="el" href="classxtd_1_1forms_1_1link__label.html#aeec25319f0f8cbb25269787eafd81aa2" title="Gets the range in the text to treat as a link.">xtd::forms::link_label::link_area</a> property, the link area is then added to the <a class="el" href="classxtd_1_1forms_1_1link__label_1_1link__collection.html" title="Represents a collection of controls.">xtd::forms::link_label::link_collection</a> in the same manner as adding the link using the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a2384266b0ee20aed20c1d54a99d7fc43">xtd::forms::link_label::link_collection::push_back</a> method of the <a class="el" href="classxtd_1_1forms_1_1link__label_1_1link__collection.html" title="Represents a collection of controls.">xtd::forms::link_label::link_collection</a>. </dd>
 <dd>
-The <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property specifies the number of characters within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to include in the link area. The <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property specifies the first character in the control text to include in the hyperlink. If you want to determine whether a specific <a class="el" href="structxtd_1_1forms_1_1link__area.html" title="Represents an area within a xtd::forms::link_label control that represents a hyperlink within the con...">xtd::forms::link_area</a> is empty, you can use the <a class="el" href="#a7b931c83e0ed338a45524e02aa8a25d5" title="Gets a value indicating whether the LinkArea is empty.">xtd::forms::link_area::is_empty</a> property instead of checking the values of the xtd::form::link_area::start and xtd::form::link_area::length properties. </dd></dl>
+The <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property specifies the number of characters within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to include in the link area. The <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property specifies the first character in the control text to include in the hyperlink. If you want to determine whether a specific <a class="el" href="structxtd_1_1forms_1_1link__area.html" title="Represents an area within a xtd::forms::link_label control that represents a hyperlink within the con...">xtd::forms::link_area</a> is empty, you can use the <a class="el" href="#a7b931c83e0ed338a45524e02aa8a25d5" title="Gets a value indicating whether the LinkArea is empty.">xtd::forms::link_area::is_empty</a> property instead of checking the values of the xtd::form::link_area::start and xtd::form::link_area::length properties. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:abfca9d39e1f0b4c035906b82870626da" id="r_abfca9d39e1f0b4c035906b82870626da"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> (size_t <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92">start</a>, size_t <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f">length</a>) noexcept</td></tr>
-<tr class="memdesc:abfca9d39e1f0b4c035906b82870626da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="structxtd_1_1forms_1_1link__area.html" title="Represents an area within a xtd::forms::link_label control that represents a hyperlink within the con...">xtd::forms::link_area</a> class.  <br /></td></tr>
+<tr class="memitem:a8076d56f2c8b91209073bbfaa15b14a5" id="r_a8076d56f2c8b91209073bbfaa15b14a5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#a9c658dc6c33b3e26273290262da71102">start</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d">length</a>) noexcept</td></tr>
+<tr class="memdesc:a8076d56f2c8b91209073bbfaa15b14a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="structxtd_1_1forms_1_1link__area.html" title="Represents an area within a xtd::forms::link_label control that represents a hyperlink within the con...">xtd::forms::link_area</a> class.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
 <tr class="memitem:a7b931c83e0ed338a45524e02aa8a25d5" id="r_a7b931c83e0ed338a45524e02aa8a25d5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7b931c83e0ed338a45524e02aa8a25d5">is_empty</a> () const noexcept</td></tr>
 <tr class="memdesc:a7b931c83e0ed338a45524e02aa8a25d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the LinkArea is empty.  <br /></td></tr>
-<tr class="memitem:ab307f32bbdb490b0e44cfb2178a9625f" id="r_ab307f32bbdb490b0e44cfb2178a9625f"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f">length</a> () const noexcept</td></tr>
-<tr class="memdesc:ab307f32bbdb490b0e44cfb2178a9625f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of characters in the link area.  <br /></td></tr>
-<tr class="memitem:a0c9649bbb985a6fd4c3fba303d9f6527" id="r_a0c9649bbb985a6fd4c3fba303d9f6527"><td class="memItemLeft"><a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0c9649bbb985a6fd4c3fba303d9f6527">length</a> (size_t value) noexcept</td></tr>
-<tr class="memdesc:a0c9649bbb985a6fd4c3fba303d9f6527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of characters in the link area.  <br /></td></tr>
-<tr class="memitem:ade6e71a1b326ec7e32c00682b6891c92" id="r_ade6e71a1b326ec7e32c00682b6891c92"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92">start</a> () const noexcept</td></tr>
-<tr class="memdesc:ade6e71a1b326ec7e32c00682b6891c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the starting location of the link area within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>.  <br /></td></tr>
-<tr class="memitem:a0555d6602e5587e45fb6f8b4a9acc107" id="r_a0555d6602e5587e45fb6f8b4a9acc107"><td class="memItemLeft"><a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0555d6602e5587e45fb6f8b4a9acc107">start</a> (size_t value) noexcept</td></tr>
-<tr class="memdesc:a0555d6602e5587e45fb6f8b4a9acc107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the starting location of the link area within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>.  <br /></td></tr>
+<tr class="memitem:adb44280452d1bebf48394bb3ab8bb85d" id="r_adb44280452d1bebf48394bb3ab8bb85d"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d">length</a> () const noexcept</td></tr>
+<tr class="memdesc:adb44280452d1bebf48394bb3ab8bb85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of characters in the link area.  <br /></td></tr>
+<tr class="memitem:a5c8ff6bbc8c915d208af7ebd9df2901c" id="r_a5c8ff6bbc8c915d208af7ebd9df2901c"><td class="memItemLeft"><a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5c8ff6bbc8c915d208af7ebd9df2901c">length</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> value) noexcept</td></tr>
+<tr class="memdesc:a5c8ff6bbc8c915d208af7ebd9df2901c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of characters in the link area.  <br /></td></tr>
+<tr class="memitem:a9c658dc6c33b3e26273290262da71102" id="r_a9c658dc6c33b3e26273290262da71102"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9c658dc6c33b3e26273290262da71102">start</a> () const noexcept</td></tr>
+<tr class="memdesc:a9c658dc6c33b3e26273290262da71102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the starting location of the link area within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>.  <br /></td></tr>
+<tr class="memitem:acf1bb2554ac3d63edc27416df430da04" id="r_acf1bb2554ac3d63edc27416df430da04"><td class="memItemLeft"><a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#acf1bb2554ac3d63edc27416df430da04">start</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> value) noexcept</td></tr>
+<tr class="memdesc:acf1bb2554ac3d63edc27416df430da04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the starting location of the link area within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
@@ -142,7 +142,7 @@ Public Methods</h2></td></tr>
 </td></tr>
 <tr class="memitem:a2589ec45e932000a9f21d9a3d3dae740" id="r_a2589ec45e932000a9f21d9a3d3dae740"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2589ec45e932000a9f21d9a3d3dae740">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept override</td></tr>
 <tr class="memdesc:a2589ec45e932000a9f21d9a3d3dae740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a018a8daea86cdd9838d73144aba204e6" id="r_a018a8daea86cdd9838d73144aba204e6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a018a8daea86cdd9838d73144aba204e6">equals</a> (const <a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> &amp;other) const noexcept override</td></tr>
+<tr class="memitem:a018a8daea86cdd9838d73144aba204e6" id="r_a018a8daea86cdd9838d73144aba204e6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a018a8daea86cdd9838d73144aba204e6">equals</a> (const <a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> &amp;other) const noexcept override</td></tr>
 <tr class="memdesc:a018a8daea86cdd9838d73144aba204e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:aadb7043bcae1c64b383fa86226a24449" id="r_aadb7043bcae1c64b383fa86226a24449"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#aadb7043bcae1c64b383fa86226a24449">get_hash_code</a> () const noexcept override</td></tr>
 <tr class="memdesc:aadb7043bcae1c64b383fa86226a24449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
@@ -168,8 +168,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abfca9d39e1f0b4c035906b82870626da" name="abfca9d39e1f0b4c035906b82870626da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfca9d39e1f0b4c035906b82870626da">&#9670;&#160;</a></span>link_area()</h2>
+<a id="a8076d56f2c8b91209073bbfaa15b14a5" name="a8076d56f2c8b91209073bbfaa15b14a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8076d56f2c8b91209073bbfaa15b14a5">&#9670;&#160;</a></span>link_area()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,12 +180,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::forms::link_area::link_area </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -198,8 +198,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="structxtd_1_1forms_1_1link__area.html" title="Represents an area within a xtd::forms::link_label control that represents a hyperlink within the con...">xtd::forms::link_area</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">start</a></td><td>The zero-based starting location of the link area within the text of the LinkLabel. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">length</a></td><td>The number of characters, after the starting character, to include in the link area. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">start</a></td><td>The zero-based starting location of the link area within the text of the LinkLabel. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">length</a></td><td>The number of characters, after the starting character, to include in the link area. </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,8 +235,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab307f32bbdb490b0e44cfb2178a9625f" name="ab307f32bbdb490b0e44cfb2178a9625f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab307f32bbdb490b0e44cfb2178a9625f">&#9670;&#160;</a></span>length() <span class="overload">[1/2]</span></h2>
+<a id="adb44280452d1bebf48394bb3ab8bb85d" name="adb44280452d1bebf48394bb3ab8bb85d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb44280452d1bebf48394bb3ab8bb85d">&#9670;&#160;</a></span>length() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +245,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t xtd::forms::link_area::length </td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::forms::link_area::length </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -260,12 +260,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the number of characters in the link area. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of characters, including spaces, in the link area. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
 
 </div>
 </div>
-<a id="a0c9649bbb985a6fd4c3fba303d9f6527" name="a0c9649bbb985a6fd4c3fba303d9f6527"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c9649bbb985a6fd4c3fba303d9f6527">&#9670;&#160;</a></span>length() <span class="overload">[2/2]</span></h2>
+<a id="a5c8ff6bbc8c915d208af7ebd9df2901c" name="a5c8ff6bbc8c915d208af7ebd9df2901c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8ff6bbc8c915d208af7ebd9df2901c">&#9670;&#160;</a></span>length() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,9 +274,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> &amp; xtd::forms::link_area::length </td>
+          <td class="memname"><a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> &amp; xtd::forms::link_area::length </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -295,12 +295,12 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
 
 </div>
 </div>
-<a id="ade6e71a1b326ec7e32c00682b6891c92" name="ade6e71a1b326ec7e32c00682b6891c92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade6e71a1b326ec7e32c00682b6891c92">&#9670;&#160;</a></span>start() <span class="overload">[1/2]</span></h2>
+<a id="a9c658dc6c33b3e26273290262da71102" name="a9c658dc6c33b3e26273290262da71102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c658dc6c33b3e26273290262da71102">&#9670;&#160;</a></span>start() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +309,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t xtd::forms::link_area::start </td>
+          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::forms::link_area::start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -324,12 +324,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the starting location of the link area within the text of the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The location within the text of the xtd::fors::link_label control where the link starts. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
 
 </div>
 </div>
-<a id="a0555d6602e5587e45fb6f8b4a9acc107" name="a0555d6602e5587e45fb6f8b4a9acc107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0555d6602e5587e45fb6f8b4a9acc107">&#9670;&#160;</a></span>start() <span class="overload">[2/2]</span></h2>
+<a id="acf1bb2554ac3d63edc27416df430da04" name="acf1bb2554ac3d63edc27416df430da04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1bb2554ac3d63edc27416df430da04">&#9670;&#160;</a></span>start() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,9 +338,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> &amp; xtd::forms::link_area::start </td>
+          <td class="memname"><a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> &amp; xtd::forms::link_area::start </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -359,7 +359,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#ade6e71a1b326ec7e32c00682b6891c92" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#ab307f32bbdb490b0e44cfb2178a9625f" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To specify text from the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> to display as a link, set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to the location in the text to start creating the link. After the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property is set, set the value of the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to the number of characters, including the character position specified in the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the <a class="el" href="#a9c658dc6c33b3e26273290262da71102" title="Gets the starting location of the link area within the text of the xtd::forms::link_label.">xtd::forms::link_area::start</a> property to zero (0) and the <a class="el" href="#adb44280452d1bebf48394bb3ab8bb85d" title="Gets the number of characters in the link area.">xtd::forms::link_area::length</a> property to three (3). </dd></dl>
 
 </div>
 </div>
@@ -434,7 +434,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bool xtd::forms::link_area::equals </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#abfca9d39e1f0b4c035906b82870626da">link_area</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a8076d56f2c8b91209073bbfaa15b14a5">link_area</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

@@ -157,23 +157,23 @@ Inheritance diagram for xtd::threading::thread_pool:</div>
 <dd>
 Timer-queue timers and registered wait operations also use the thread pool. Their callback functions are queued to the thread pool. </dd>
 <dd>
-There is one thread pool per process.The default size of the thread pool for a process depends on several factors, such as the size of the virtual address space. A process can call the xtd::threading::thread_pool::gt_max_threads method to determine the number of threads. The number of threads in the thread pool can be changed by using the <a class="el" href="#adaa8e89af0b21e255089bcc8843ef1ae" title="Sets the number of requests to the thread pool that can be active concurrently. All requests above th...">xtd::threading::thread_pool::set_max_threads</a> method. Each thread uses the default stack size and runs at the default priority. </dd>
+There is one thread pool per process.The default size of the thread pool for a process depends on several factors, such as the size of the virtual address space. A process can call the xtd::threading::thread_pool::gt_max_threads method to determine the number of threads. The number of threads in the thread pool can be changed by using the <a class="el" href="#a8534b3d9962838dd0ec8e4f22d67c438" title="Sets the number of requests to the thread pool that can be active concurrently. All requests above th...">xtd::threading::thread_pool::set_max_threads</a> method. Each thread uses the default stack size and runs at the default priority. </dd>
 <dd>
 The thread pool provides new worker threads or I/O completion threads on demand until it reaches the maximum for each category. When a maximum is reached, the thread pool can create additional threads in that category or wait until some tasks complete. The thread pool creates and destroys worker threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time. Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>When demand is low, the actual number of thread pool threads can fall below the minimum values. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="#a6497e125e644918a17a96dbe569925ca" title="Retrieves the number of idle threads the thread pool maintains in anticipation of new requests....">xtd::threading::thread_pool::get_min_threads</a> method to obtain these minimum values. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You can use the <a class="el" href="#af977e2eafdc95ee7498dd6770f97446f" title="Sets the number of idle threads the thread pool maintains in anticipation of new requests.">xtd::threading::thread_pool::set_min_threads</a> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="#a0726778b63bd4fa555a24d168412c6a4" title="Retrieves the number of idle threads the thread pool maintains in anticipation of new requests....">xtd::threading::thread_pool::get_min_threads</a> method to obtain these minimum values. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>You can use the <a class="el" href="#a68b027a54fbac886b50e995c14cd389c" title="Sets the number of idle threads the thread pool maintains in anticipation of new requests.">xtd::threading::thread_pool::set_min_threads</a> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
 <tr class="memitem:a000e9c80c4951d9d7bba587a0c35558f" id="r_a000e9c80c4951d9d7bba587a0c35558f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a000e9c80c4951d9d7bba587a0c35558f">close</a> () -&gt; void</td></tr>
 <tr class="memdesc:a000e9c80c4951d9d7bba587a0c35558f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all resources and worker threads.  <br /></td></tr>
-<tr class="memitem:a934bb1fb30599e82abe3ed68ac231e2f" id="r_a934bb1fb30599e82abe3ed68ac231e2f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a934bb1fb30599e82abe3ed68ac231e2f">get_available_threads</a> (size_t &amp;worker_threads, size_t &amp;completion_port_threads) -&gt; void</td></tr>
-<tr class="memdesc:a934bb1fb30599e82abe3ed68ac231e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.  <br /></td></tr>
-<tr class="memitem:a9220b77d5178043bd96f143cd405d5f5" id="r_a9220b77d5178043bd96f143cd405d5f5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9220b77d5178043bd96f143cd405d5f5">get_max_threads</a> (size_t &amp;worker_threads, size_t &amp;completion_port_threads) -&gt; void</td></tr>
-<tr class="memdesc:a9220b77d5178043bd96f143cd405d5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.  <br /></td></tr>
-<tr class="memitem:a6497e125e644918a17a96dbe569925ca" id="r_a6497e125e644918a17a96dbe569925ca"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6497e125e644918a17a96dbe569925ca">get_min_threads</a> (size_t &amp;worker_threads, size_t &amp;completion_port_threads) -&gt; void</td></tr>
-<tr class="memdesc:a6497e125e644918a17a96dbe569925ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of idle threads the thread pool maintains in anticipation of new requests. Always 0 for both.  <br /></td></tr>
+<tr class="memitem:ada8301d05d79c653ae88a22ff3b9b821" id="r_ada8301d05d79c653ae88a22ff3b9b821"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ada8301d05d79c653ae88a22ff3b9b821">get_available_threads</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;worker_threads, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;completion_port_threads) -&gt; void</td></tr>
+<tr class="memdesc:ada8301d05d79c653ae88a22ff3b9b821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.  <br /></td></tr>
+<tr class="memitem:a3a4372fea50ac8f7b1ab729ead8f4bb9" id="r_a3a4372fea50ac8f7b1ab729ead8f4bb9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3a4372fea50ac8f7b1ab729ead8f4bb9">get_max_threads</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;worker_threads, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;completion_port_threads) -&gt; void</td></tr>
+<tr class="memdesc:a3a4372fea50ac8f7b1ab729ead8f4bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.  <br /></td></tr>
+<tr class="memitem:a0726778b63bd4fa555a24d168412c6a4" id="r_a0726778b63bd4fa555a24d168412c6a4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0726778b63bd4fa555a24d168412c6a4">get_min_threads</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;worker_threads, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;completion_port_threads) -&gt; void</td></tr>
+<tr class="memdesc:a0726778b63bd4fa555a24d168412c6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of idle threads the thread pool maintains in anticipation of new requests. Always 0 for both.  <br /></td></tr>
 <tr class="memitem:ae3fe782c92967efab7b23d91e4aeb6de" id="r_ae3fe782c92967efab7b23d91e4aeb6de"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae3fe782c92967efab7b23d91e4aeb6de">join_all</a> () -&gt; void</td></tr>
 <tr class="memdesc:ae3fe782c92967efab7b23d91e4aeb6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join all resources and worker threads.  <br /></td></tr>
 <tr class="memitem:ac4be2b03de174ff4d0a05b3a9d360062" id="r_ac4be2b03de174ff4d0a05b3a9d360062"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4be2b03de174ff4d0a05b3a9d360062">join_all</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool</td></tr>
@@ -192,10 +192,10 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:adcb0cf5736a853cc30c8332122d1a656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a delegate to wait for a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, specifying a 32-bit signed integer for the time-out in milliseconds.  <br /></td></tr>
 <tr class="memitem:ad10a7b4f3b6960b9e182cba1c000d339" id="r_ad10a7b4f3b6960b9e182cba1c000d339"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad10a7b4f3b6960b9e182cba1c000d339">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__delegates.html#ga3c1bd95f129c003bebdfbab3164d32d4">wait_or_timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> milliseconds_timeout_interval, bool execute_only_once) -&gt; registered_wait_handle</td></tr>
 <tr class="memdesc:ad10a7b4f3b6960b9e182cba1c000d339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a delegate to wait for a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, specifying a 32-bit signed integer for the time-out in milliseconds.  <br /></td></tr>
-<tr class="memitem:adaa8e89af0b21e255089bcc8843ef1ae" id="r_adaa8e89af0b21e255089bcc8843ef1ae"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adaa8e89af0b21e255089bcc8843ef1ae">set_max_threads</a> (size_t worker_threads, size_t completion_port_threads) -&gt; bool</td></tr>
-<tr class="memdesc:adaa8e89af0b21e255089bcc8843ef1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.  <br /></td></tr>
-<tr class="memitem:af977e2eafdc95ee7498dd6770f97446f" id="r_af977e2eafdc95ee7498dd6770f97446f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af977e2eafdc95ee7498dd6770f97446f">set_min_threads</a> (size_t worker_threads, size_t completion_port_threads) -&gt; bool</td></tr>
-<tr class="memdesc:af977e2eafdc95ee7498dd6770f97446f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of idle threads the thread pool maintains in anticipation of new requests.  <br /></td></tr>
+<tr class="memitem:a8534b3d9962838dd0ec8e4f22d67c438" id="r_a8534b3d9962838dd0ec8e4f22d67c438"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8534b3d9962838dd0ec8e4f22d67c438">set_max_threads</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> worker_threads, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> completion_port_threads) -&gt; bool</td></tr>
+<tr class="memdesc:a8534b3d9962838dd0ec8e4f22d67c438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.  <br /></td></tr>
+<tr class="memitem:a68b027a54fbac886b50e995c14cd389c" id="r_a68b027a54fbac886b50e995c14cd389c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a68b027a54fbac886b50e995c14cd389c">set_min_threads</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> worker_threads, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> completion_port_threads) -&gt; bool</td></tr>
+<tr class="memdesc:a68b027a54fbac886b50e995c14cd389c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of idle threads the thread pool maintains in anticipation of new requests.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a000e9c80c4951d9d7bba587a0c35558f" name="a000e9c80c4951d9d7bba587a0c35558f"></a>
@@ -232,8 +232,8 @@ You can use this method to ensure that all pending threads are closed, and that 
 
 </div>
 </div>
-<a id="a934bb1fb30599e82abe3ed68ac231e2f" name="a934bb1fb30599e82abe3ed68ac231e2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a934bb1fb30599e82abe3ed68ac231e2f">&#9670;&#160;</a></span>get_available_threads()</h2>
+<a id="ada8301d05d79c653ae88a22ff3b9b821" name="ada8301d05d79c653ae88a22ff3b9b821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8301d05d79c653ae88a22ff3b9b821">&#9670;&#160;</a></span>get_available_threads()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,12 +244,12 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="memname">auto xtd::threading::thread_pool::get_available_threads </td>
           <td>(</td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -267,12 +267,12 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When <a class="el" href="#a934bb1fb30599e82abe3ed68ac231e2f" title="Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThre...">xtd::threading::thread_pool::get_available_threads</a> returns, the variable specified by worker_threads contains the number of additional worker threads that can be started, and the variable specified by completion_port_threads contains the number of additional asynchronous I/O threads that can be started. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When <a class="el" href="#ada8301d05d79c653ae88a22ff3b9b821" title="Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThre...">xtd::threading::thread_pool::get_available_threads</a> returns, the variable specified by worker_threads contains the number of additional worker threads that can be started, and the variable specified by completion_port_threads contains the number of additional asynchronous I/O threads that can be started. </dd></dl>
 
 </div>
 </div>
-<a id="a9220b77d5178043bd96f143cd405d5f5" name="a9220b77d5178043bd96f143cd405d5f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9220b77d5178043bd96f143cd405d5f5">&#9670;&#160;</a></span>get_max_threads()</h2>
+<a id="a3a4372fea50ac8f7b1ab729ead8f4bb9" name="a3a4372fea50ac8f7b1ab729ead8f4bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a4372fea50ac8f7b1ab729ead8f4bb9">&#9670;&#160;</a></span>get_max_threads()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,12 +283,12 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="memname">auto xtd::threading::thread_pool::get_max_threads </td>
           <td>(</td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -308,14 +308,14 @@ You can use this method to ensure that all pending threads are closed, and that 
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When GetMaxThreads returns, the variable specified by worker_threads contains the maximum number of worker threads allowed in the thread pool, and the variable specified by completion_port_threads contains the maximum number of asynchronous I/O threads allowed in the thread pool. </dd>
 <dd>
-You can use the <a class="el" href="#a934bb1fb30599e82abe3ed68ac231e2f" title="Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThre...">xtd::threading::thread_pool::get_available_threads</a> method to determine the actual number of threads in the thread pool at any given time. </dd>
+You can use the <a class="el" href="#ada8301d05d79c653ae88a22ff3b9b821" title="Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThre...">xtd::threading::thread_pool::get_available_threads</a> method to determine the actual number of threads in the thread pool at any given time. </dd>
 <dd>
-You can use the <a class="el" href="#adaa8e89af0b21e255089bcc8843ef1ae" title="Sets the number of requests to the thread pool that can be active concurrently. All requests above th...">xtd::threading::thread_pool::set_max_threads</a> to set the maximum number of worker threads and asynchronous I/O threads in the thread pool. </dd></dl>
+You can use the <a class="el" href="#a8534b3d9962838dd0ec8e4f22d67c438" title="Sets the number of requests to the thread pool that can be active concurrently. All requests above th...">xtd::threading::thread_pool::set_max_threads</a> to set the maximum number of worker threads and asynchronous I/O threads in the thread pool. </dd></dl>
 
 </div>
 </div>
-<a id="a6497e125e644918a17a96dbe569925ca" name="a6497e125e644918a17a96dbe569925ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6497e125e644918a17a96dbe569925ca">&#9670;&#160;</a></span>get_min_threads()</h2>
+<a id="a0726778b63bd4fa555a24d168412c6a4" name="a0726778b63bd4fa555a24d168412c6a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0726778b63bd4fa555a24d168412c6a4">&#9670;&#160;</a></span>get_min_threads()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,12 +326,12 @@ You can use the <a class="el" href="#adaa8e89af0b21e255089bcc8843ef1ae" title="S
         <tr>
           <td class="memname">auto xtd::threading::thread_pool::get_min_threads </td>
           <td>(</td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -783,8 +783,8 @@ You can use this method to ensure that all pending threads are closed, and that 
 
 </div>
 </div>
-<a id="adaa8e89af0b21e255089bcc8843ef1ae" name="adaa8e89af0b21e255089bcc8843ef1ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaa8e89af0b21e255089bcc8843ef1ae">&#9670;&#160;</a></span>set_max_threads()</h2>
+<a id="a8534b3d9962838dd0ec8e4f22d67c438" name="a8534b3d9962838dd0ec8e4f22d67c438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8534b3d9962838dd0ec8e4f22d67c438">&#9670;&#160;</a></span>set_max_threads()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -795,12 +795,12 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="memname">auto xtd::threading::thread_pool::set_max_threads </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -822,8 +822,8 @@ You can use this method to ensure that all pending threads are closed, and that 
 
 </div>
 </div>
-<a id="af977e2eafdc95ee7498dd6770f97446f" name="af977e2eafdc95ee7498dd6770f97446f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af977e2eafdc95ee7498dd6770f97446f">&#9670;&#160;</a></span>set_min_threads()</h2>
+<a id="a68b027a54fbac886b50e995c14cd389c" name="a68b027a54fbac886b50e995c14cd389c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b027a54fbac886b50e995c14cd389c">&#9670;&#160;</a></span>set_min_threads()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -834,12 +834,12 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="memname">auto xtd::threading::thread_pool::set_min_threads </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>worker_threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>completion_port_threads</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>

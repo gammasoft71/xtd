@@ -83,7 +83,7 @@ $(function() {
   <div class="headertitle"><div class="title">emplace.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a>, <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. </p><dl class="section user"><dt>Windows</dt><dd><div class="image">
+<p>demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a1ab135d2497183d1f0b5ae2fa04850a3" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a>, <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. </p><dl class="section user"><dt>Windows</dt><dd><div class="image">
 <img src="emplace_w.png" alt=""/>
 </div>
  <br  />
@@ -115,11 +115,11 @@ $(function() {
 <div class="line">  form1.controls().emplace_front&lt;button&gt;(<span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).click += <a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label1&quot;</span>].get().text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">  };</div>
-<div class="line">  form1.controls().emplace_at&lt;button&gt;(1, <span class="stringliteral">&quot;Button 2&quot;</span>, point {50, 100}, drawing::size {200, 75}).auto_repeat(<span class="keyword">true</span>).click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">  form1.controls().emplace_at&lt;button&gt;(1, <span class="stringliteral">&quot;Button 2&quot;</span>, point {50, 100}, size {200, 75}).auto_repeat(<span class="keyword">true</span>).click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label2&quot;</span>].get().text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">  };</div>
-<div class="line">  form1.controls().emplace_at&lt;label&gt;(2, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, point {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
-<div class="line">  form1.controls().emplace_back&lt;label&gt;(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, point {50, 230}, drawing::size {200, 23}, <span class="stringliteral">&quot;label2&quot;</span>);</div>
+<div class="line">  form1.controls().emplace_at&lt;label&gt;(2, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, point {50, 200}, size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
+<div class="line">  form1.controls().emplace_back&lt;label&gt;(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, point {50, 230}, size {200, 23}, <span class="stringliteral">&quot;label2&quot;</span>);</div>
 <div class="line">  application::run(form1);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:805</div></div>

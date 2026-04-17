@@ -2279,18 +2279,16 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <dl class="section user"><dt>Examples</dt><dd>The following example creates several <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> objects using the <a class="el" href="#a136df55d4d41f5cccda618cf10c9793b" title="Returns a xtd::time_span that represents a specified number of hours, where the specification is accu...">xtd::time_span::from_hours</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> gen_time_span_from_hours(<span class="keywordtype">double</span> <a class="code hl_function" href="#adfa825159a709add812d5243492ff86a">hours</a>) {</div>
-<div class="line">  <span class="comment">// Crée un objet time_span et une chaîne string à partir</span></div>
-<div class="line">  <span class="comment">// d&#39;un nombre d&#39;heures.</span></div>
+<div class="line">  <span class="comment">// Creates a `time_span` object and a string from a number of hours.</span></div>
 <div class="line">  <a class="code hl_function" href="#a2be85b2ca7d7bd66cc2ee38b3a042e2b">time_span</a> interval = <a class="code hl_function" href="#a136df55d4d41f5cccda618cf10c9793b">time_span::from_hours</a>(<a class="code hl_function" href="#adfa825159a709add812d5243492ff86a">hours</a>);</div>
-<div class="line">  <span class="keywordtype">string</span> timeInterval = interval.to_string();</div>
+<div class="line">  <span class="keywordtype">string</span> time_interval = interval.to_string();</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Remplit la fin de la chaîne string avec des espaces si elle</span></div>
-<div class="line">  <span class="comment">// ne contient pas de millisecondes.</span></div>
-<div class="line">  <span class="keywordtype">size_t</span> pIndex = timeInterval.<a class="code hl_function" href="classxtd_1_1basic__string.html#af72b5cf739b226ac5a702ff0d69f91ca">index_of</a>(<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line">  pIndex = timeInterval.<a class="code hl_function" href="classxtd_1_1basic__string.html#af72b5cf739b226ac5a702ff0d69f91ca">index_of</a>( <span class="charliteral">&#39;.&#39;</span>, pIndex );</div>
-<div class="line">  <span class="keywordflow">if</span> (pIndex &lt; 0) timeInterval += <span class="stringliteral">&quot;        &quot;</span>;</div>
+<div class="line">  <span class="comment">// Fills the end of the string with spaces if it does not contain any milliseconds.</span></div>
+<div class="line">  <span class="keyword">auto</span> index = time_interval.<a class="code hl_function" href="classxtd_1_1basic__string.html#af72b5cf739b226ac5a702ff0d69f91ca">index_of</a>(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line">  index = time_interval.<a class="code hl_function" href="classxtd_1_1basic__string.html#af72b5cf739b226ac5a702ff0d69f91ca">index_of</a>( <span class="charliteral">&#39;.&#39;</span>, index );</div>
+<div class="line">  <span class="keywordflow">if</span> (index &lt; 0) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>( <span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, <a class="code hl_function" href="#adfa825159a709add812d5243492ff86a">hours</a>, timeInterval );</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>( <span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, <a class="code hl_function" href="#adfa825159a709add812d5243492ff86a">hours</a>, time_interval );</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( ) {</div>

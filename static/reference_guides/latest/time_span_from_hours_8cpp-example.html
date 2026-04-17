@@ -87,18 +87,16 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> gen_time_span_from_hours(<span class="keywordtype">double</span> hours) {</div>
-<div class="line">  <span class="comment">// Crée un objet time_span et une chaîne string à partir</span></div>
-<div class="line">  <span class="comment">// d&#39;un nombre d&#39;heures.</span></div>
+<div class="line">  <span class="comment">// Creates a `time_span` object and a string from a number of hours.</span></div>
 <div class="line">  time_span interval = time_span::from_hours(hours);</div>
-<div class="line">  <span class="keywordtype">string</span> timeInterval = interval.to_string();</div>
+<div class="line">  <span class="keywordtype">string</span> time_interval = interval.to_string();</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Remplit la fin de la chaîne string avec des espaces si elle</span></div>
-<div class="line">  <span class="comment">// ne contient pas de millisecondes.</span></div>
-<div class="line">  <span class="keywordtype">size_t</span> pIndex = timeInterval.index_of(<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line">  pIndex = timeInterval.index_of( <span class="charliteral">&#39;.&#39;</span>, pIndex );</div>
-<div class="line">  <span class="keywordflow">if</span> (pIndex &lt; 0) timeInterval += <span class="stringliteral">&quot;        &quot;</span>;</div>
+<div class="line">  <span class="comment">// Fills the end of the string with spaces if it does not contain any milliseconds.</span></div>
+<div class="line">  <span class="keyword">auto</span> index = time_interval.index_of(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line">  index = time_interval.index_of( <span class="charliteral">&#39;.&#39;</span>, index );</div>
+<div class="line">  <span class="keywordflow">if</span> (index &lt; 0) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
-<div class="line">  console::write_line( <span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, hours, timeInterval );</div>
+<div class="line">  console::write_line( <span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, hours, time_interval );</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( ) {</div>

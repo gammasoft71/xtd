@@ -181,13 +181,13 @@ $(function() {
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> update_form() {</div>
-<div class="line">      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;drawing::size&gt;(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;drawing::size&gt;(choice_size.selected_item().tag())) : images::from_name(<span class="stringliteral">&quot;image-missing&quot;</span>,  as&lt;drawing::size&gt;(choice_size.selected_item().tag())));</div>
+<div class="line">      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;struct size&gt;(choice_size.selected_item().tag())) != image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;struct size&gt;(choice_size.selected_item().tag())) : images::from_name(<span class="stringliteral">&quot;image-missing&quot;</span>,  as&lt;struct size&gt;(choice_size.selected_item().tag())));</div>
 <div class="line">      label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);</div>
 <div class="line">      button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">      button_next.enabled(current_image_index &lt; images::names(choice_context.selected_item().value()).length() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">size_t</span> current_image_index = 0;</div>
+<div class="line">    usize current_image_index = 0;</div>
 <div class="line">    choice choice_theme;</div>
 <div class="line">    choice choice_context;</div>
 <div class="line">    choice choice_size;</div>

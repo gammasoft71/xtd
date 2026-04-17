@@ -182,7 +182,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">const</span> list&lt;float&gt; sinuses_ = {.0f, .38f, .71f, .92f, 1.0f, .92f, .71f, .38f, .0f, -.38f, -.71f, -.92f, -1.0f, -.92f, -.71f, -.38f};</div>
-<div class="line">  <span class="keywordtype">size_t</span> index_ = 0;</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> index_ = 0;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>max_min_signal_generator : <span class="keyword">public</span> signal_generator_base {</div>
@@ -195,7 +195,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">const</span> list&lt;float&gt; sinuses_ = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f};</div>
-<div class="line">  <span class="keywordtype">size_t</span> index_ = 0;</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> index_ = 0;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>graph_control : <span class="keyword">public</span> <a class="code hl_typedef" href="group__style__sheets.html#ga5438b984d4c5e0f220360f9be4596ac3">user_control</a> {</div>
@@ -316,8 +316,8 @@ $(function() {
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">size_t</span> signals_max_size() const noexcept {<span class="keywordflow">return</span> signals_max_size_;}</div>
-<div class="line">  graph_control&amp; signals_max_size(<span class="keywordtype">size_t</span> value) {</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> signals_max_size() const noexcept {<span class="keywordflow">return</span> signals_max_size_;}</div>
+<div class="line">  graph_control&amp; signals_max_size(usize value) {</div>
 <div class="line">    signals_max_size_ = value;</div>
 <div class="line">    <span class="keywordflow">while</span> (values_.count() &gt; signals_max_size_)</div>
 <div class="line">      values_.remove_at(0);</div>
@@ -386,7 +386,7 @@ $(function() {
 <div class="line">  std::optional&lt;color&gt; y_axis_line_color_;</div>
 <div class="line">  <span class="keywordtype">bool</span> y_axis_line_visible_ = <span class="keyword">true</span>;</div>
 <div class="line">  <span class="keywordtype">float</span> y_axis_line_width_ = 3.0f;</div>
-<div class="line">  <span class="keywordtype">size_t</span> signals_max_size_ = 48;</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> signals_max_size_ = 48;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_typedef" href="group__style__sheets.html#ga6b7a42f0d905d8325f9f5f4f627cb56a">form</a> {</div>
@@ -489,6 +489,7 @@ $(function() {
 <div class="ttc" id="agroup__style__sheets_html_ga5438b984d4c5e0f220360f9be4596ac3"><div class="ttname"><a href="group__style__sheets.html#ga5438b984d4c5e0f220360f9be4596ac3">xtd::forms::style_sheets::user_control</a></div><div class="ttdeci">xtd::forms::style_sheets::control user_control</div><div class="ttdoc">The user_control data allows you to specify the box of a user_control control.</div><div class="ttdef"><b>Definition</b> user_control.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga6b7a42f0d905d8325f9f5f4f627cb56a"><div class="ttname"><a href="group__style__sheets.html#ga6b7a42f0d905d8325f9f5f4f627cb56a">xtd::forms::style_sheets::form</a></div><div class="ttdeci">xtd::forms::style_sheets::control form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> form.hpp:23</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ggaa76409da314505c52983287adca0c27aa0aab81de5c4c87021772015efc184d67"><div class="ttname"><a href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aa0aab81de5c4c87021772015efc184d67">xtd::forms::style_sheets::length_unit::points</a></div><div class="ttdeci">@ points</div><div class="ttdoc">Defines points unit (1pt = 1/72 of 1in).</div><div class="ttdef"><b>Definition</b> length_unit.hpp:76</div></div>
+<div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga080226bd5ac480da97fe5cb486e6971d"><div class="ttname"><a href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">xtd::async_result</a></div><div class="ttdeci">xtd::sptr&lt; xtd::iasync_result &gt; async_result</div><div class="ttdoc">Represents the status of an asynchronous operation.</div><div class="ttdef"><b>Definition</b> async_result.hpp:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaa4259447827076a90f74415bf11af9b9aea2b2676c28c0db26d39331a336c6b92"><div class="ttname"><a href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9aea2b2676c28c0db26d39331a336c6b92">xtd::diagnostics::trace_event_type::start</a></div><div class="ttdeci">@ start</div><div class="ttdoc">Starting of a logical operation.</div><div class="ttdef"><b>Definition</b> trace_event_type.hpp:37</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaa4259447827076a90f74415bf11af9b9aef399b2d446bb37b7c32ad2cc1b6045b"><div class="ttname"><a href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9aef399b2d446bb37b7c32ad2cc1b6045b">xtd::diagnostics::trace_event_type::stop</a></div><div class="ttdeci">@ stop</div><div class="ttdoc">Stopping of a logical operation.</div><div class="ttdef"><b>Definition</b> trace_event_type.hpp:39</div></div>

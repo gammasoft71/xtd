@@ -95,7 +95,7 @@ var searchData=
   ['herb_92',['herb',['../classxtd_1_1forms_1_1emoticons.html#a654e8e89f343d5d691c898a2693a81d1',1,'xtd::forms::emoticons']]],
   ['hex_5fescape_93',['hex_escape',['../classxtd_1_1uri.html#a10cfec6cdb5107379aacc7b35f3d336d',1,'xtd::uri']]],
   ['hex_5fnumber_94',['hex_number',['../group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686aee9962efae09908eb001d66634bef241',1,'xtd']]],
-  ['hex_5funescape_95',['hex_unescape',['../classxtd_1_1uri.html#adf52e5f9d121004d087b0a646cccbc96',1,'xtd::uri']]],
+  ['hex_5funescape_95',['hex_unescape',['../classxtd_1_1uri.html#abb1ee42d1660ca5c3fb83d74d55c8646',1,'xtd::uri']]],
   ['hibernate_96',['hibernate',['../group__xtd__forms.html#gga04c4c6b18894966dae55061a6f6f8283acb1f008eebf5012c4ef9a2c36e574d61',1,'xtd::forms']]],
   ['hibiscus_97',['hibiscus',['../classxtd_1_1forms_1_1emoticons.html#ad5fdde84cee0b0eb4ed22a7119659810',1,'xtd::forms::emoticons']]],
   ['hidden_98',['hidden',['../group__xtd__core.html#gga3c48664c704ae96774328c9bde1d450aa662f707d5491e9bce8238a6c0be92190',1,'xtd::diagnostics::hidden'],['../group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a662f707d5491e9bce8238a6c0be92190',1,'xtd::io::hidden'],['../group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6a662f707d5491e9bce8238a6c0be92190',1,'xtd::forms::hidden'],['../group__style__sheets.html#ggaf113fb84f70cd93a23dd95e91bbebdd4a662f707d5491e9bce8238a6c0be92190',1,'xtd::forms::style_sheets::hidden']]],

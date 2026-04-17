@@ -86,19 +86,21 @@ $(function() {
 <p>Shows how to use <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> location = drawing::point {10, 235};</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
+<div class="line">  <span class="keyword">auto</span> location = <a id="_a0" name="_a0"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1point.html">point</a> {10, 235};</div>
+<div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
 <div class="line">  </div>
 <div class="line">  location.x = location.x + 20;</div>
 <div class="line">  location.y = location.y - 15;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
 <div class="line">  </div>
-<div class="line">  location = drawing::point {10, 10} + drawing::size {20, 50};</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
+<div class="line">  location = <a class="code hl_struct" href="structxtd_1_1drawing_1_1point.html">point</a> {10, 10} + <a id="_a2" name="_a2"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">size</a> {20, 50};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
 <div class="line">  </div>
 <div class="line">  location.offset({70, 140});</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;location = {}&quot;</span>, location);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -107,6 +109,10 @@ $(function() {
 <div class="line"><span class="comment">// location = {x=30, y=220}</span></div>
 <div class="line"><span class="comment">// location = {x=30, y=60}</span></div>
 <div class="line"><span class="comment">// location = {x=100, y=200}</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.hpp:54</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

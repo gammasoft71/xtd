@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = array&lt;string&gt; {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; query = fruits.select&lt;std::tuple&lt;size_t, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <span class="keywordtype">size_t</span> index) {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; query = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, usize index) {</div>
 <div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
 <div class="line">  });</div>
 <div class="line">  </div>
