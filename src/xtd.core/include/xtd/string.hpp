@@ -27,11 +27,11 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system strings
-  /// @remarks xtd::ustring is an alias on xtd::string.
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::string object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::string object is the content of the sequential collection of char, and unlike [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
   /// @remarks xtd::string implements xtd::basic_string and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
-  using ustring = xtd::string;
+  /// @deprecated Replaced by xtd::string - Will be removed in version 0.4.0.
+  using ustring [[deprecated("Replaced by xtd::string - Will be removed in version 0.4.0.")]] = xtd::string;
   
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
@@ -80,7 +80,9 @@ namespace xtd {
   /// @brief Converts a type_t to xtd::string.
   /// @param val A type_t value to convert.
   /// @return A string holding the converted value.
+  /// @deprecated Replaced by xtd::to_string - Will be removed in version 0.4.0.
   template<typename type_t>
+  [[deprecated("Replaced by xtd::to_string - Will be removed in version 0.4.0.")]]
   inline xtd::string to_ustring(type_t val) {
     return to_string(val);
   }
