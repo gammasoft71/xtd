@@ -26,8 +26,8 @@ Run tests:
     But was:  true
     Stack Trace: in |---OMITTED---|/assert_that.cpp:10
   FAILED  unit_tests::test.test_case3 [< 1 ms]
-    Expected: No Exception to be thrown
-    But was:  <std::range_error>
+    Expected: not string starting with "Hello"
+    But was:  "Hello, Workd"
     Stack Trace: in |---OMITTED---|/assert_that.cpp:14
 
 Test results:

@@ -11,7 +11,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case3) {
-      assert_that([] {throw index_out_of_range_exception("error");}).does().not_().throw_();
+      assert_that("Hello, Workd").does().not_().start_with("Hello");
     }
   };
 }
@@ -30,8 +30,8 @@ auto main() -> int {
 //     But was:  true
 //     Stack Trace: in |---OMITTED---|/assert_that.cpp:10
 //   FAILED  unit_tests::test.test_case3 [< 1 ms]
-//     Expected: No Exception to be thrown
-//     But was:  <xtd::index_out_of_range_exception>
+//     Expected: not string starting with "Hello"
+//     But was:  "Hello, Workd"
 //     Stack Trace: in |---OMITTED---|/assert_that.cpp:14
 //
 // Test results:
