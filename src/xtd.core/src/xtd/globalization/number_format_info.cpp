@@ -327,7 +327,7 @@ auto number_format_info::formats() -> dictionary<string, number_format_info>& {
   static auto formats = dictionary<string, number_format_info> {{"", {}}, {"en-us", {2, ".", ",", array<int32> {3}, 1, 0, "$", 1, "NaN", "-∞", "-", 3, ".", ",", array<int32> {3}, 1, 3, ".", ",", array<int32> {3}, 1, 1, "%", "‰", "∞", "+"}}};
   call_once_ {
     auto read_int32s = [](auto& br, auto count) {
-      auto ints = array<int32>(as<size>(count));
+      auto ints = array<int32>(as<usize>(count));
       for (auto i = 0; i < count; ++i)
         ints[i] = br.read_int32();
       return ints;

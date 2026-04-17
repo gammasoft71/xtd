@@ -21,7 +21,7 @@ namespace xtd::collections::tests {
     }
     
     auto test_method_(size_type) {
-      assert::are_equal(typeof_<size>(), typeof_<bit_array::size_type>());
+      assert::are_equal(typeof_<usize>(), typeof_<bit_array::size_type>());
     }
     
     auto test_method_(difference_type) {

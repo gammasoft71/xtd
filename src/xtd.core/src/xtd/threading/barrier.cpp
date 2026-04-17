@@ -17,9 +17,9 @@ using namespace xtd::threading;
 
 struct barrier::data : object {
   const threading::cancellation_token* cancellation_token = nullptr;
-  std::atomic<size> current_phase_number = 0;
-  std::atomic<size> participant_count = 0;
-  std::atomic<size> participants_remaining = 0;
+  std::atomic<usize> current_phase_number = 0;
+  std::atomic<usize> participant_count = 0;
+  std::atomic<usize> participants_remaining = 0;
   barrier::post_phase_action post_phase_action;
   bool run_post_phase_action = false;
   semaphore phase_semaphore;
@@ -33,7 +33,7 @@ barrier::barrier(size participant_count) : barrier(participant_count, {}) {
 }
 
 barrier::barrier(size participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
-  if (participant_count > as<size>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
+  if (participant_count > as<usize>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;
   data_->post_phase_action = post_phase_action;
@@ -71,7 +71,7 @@ auto barrier::add_participant() -> size {
 auto barrier::add_participants(size participant_count) -> size {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
-  if (data_->participant_count + participant_count > as<size>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
+  if (data_->participant_count + participant_count > as<usize>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->run_post_phase_action) throw_helper::throws(exception_case::invalid_operation);
   data_->participant_count += participant_count;
   data_->participants_remaining += participant_count;

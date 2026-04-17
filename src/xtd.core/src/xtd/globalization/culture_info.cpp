@@ -305,7 +305,7 @@ auto culture_info::cultures() -> dictionary<string, culture_info>& {
     auto count = br.read_int32();
     for (auto i = 0; i < count; ++i) {
       auto key = br.read_string();
-      cultures[key] = culture_info {as<xtd::globalization::culture_types>(br.read_int32()), br.read_string(), br.read_string(), as<size>(br.read_int32()), as<size>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string()};
+      cultures[key] = culture_info {as<xtd::globalization::culture_types>(br.read_int32()), br.read_string(), br.read_string(), as<usize>(br.read_int32()), as<usize>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string()};
     }
   };
   return cultures;

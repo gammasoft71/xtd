@@ -37,11 +37,11 @@ namespace xtd {
       ///
       ///   const box& current() const override {return boxes[cur_index];}
       ///   bool move_next() override {return ++cur_index < boxes.count() ? true : false;}
-      ///   void reset() override {cur_index = box_integer<size>::max_value;}
+      ///   void reset() override {cur_index = box_integer<usize>::max_value;}
       ///
       /// private:
       ///   const box_collection& boxes;
-      ///   size cur_index = box_integer<size>::max_value;
+      ///   size cur_index = box_integer<usize>::max_value;
       /// };
       /// @endcode
       /// @remarks xtd::collections::generic::ienumerator <type_t> is the base interface for all generic enumerators.
@@ -70,7 +70,7 @@ namespace xtd {
         /// private:
         ///   // Enumerators are positioned before the first element
         ///   // until the first move_next() call.
-        ///   size position_ = box_integer<size>::max_value;
+        ///   size position_ = box_integer<usize>::max_value;
         ///
         /// public:
         ///   const list<person>& people;
@@ -82,7 +82,7 @@ namespace xtd {
         ///     return position < people.count();
         ///   }
         ///
-        ///   void reset() override {position_ = box_integer<size>::max_value;}
+        ///   void reset() override {position_ = box_integer<usize>::max_value;}
         ///
         ///   const person& current() const override {
         ///     try {
@@ -117,7 +117,7 @@ namespace xtd {
         /// private:
         ///   // Enumerators are positioned before the first element
         ///   // until the first move_next() call.
-        ///   size position_ = box_integer<size>::max_value;
+        ///   size position_ = box_integer<usize>::max_value;
         ///
         /// public:
         ///   const list<person>& people;
@@ -129,7 +129,7 @@ namespace xtd {
         ///     return position < people.count();
         ///   }
         ///
-        ///   void reset() override {position_ = box_integer<size>::max_value;}
+        ///   void reset() override {position_ = box_integer<usize>::max_value;}
         ///
         ///   const person& current() const override {
         ///     try {
@@ -156,7 +156,7 @@ namespace xtd {
         /// private:
         ///   // Enumerators are positioned before the first element
         ///   // until the first move_next() call.
-        ///   size position_ = box_integer<size>::max_value;
+        ///   size position_ = box_integer<usize>::max_value;
         ///
         /// public:
         ///   const list<person>& people;
@@ -168,7 +168,7 @@ namespace xtd {
         ///     return position < people.count();
         ///   }
         ///
-        ///   void reset() override {position_ = box_integer<size>::max_value;}
+        ///   void reset() override {position_ = box_integer<usize>::max_value;}
         ///
         ///   const person& current() const override {
         ///     try {

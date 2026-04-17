@@ -50,7 +50,7 @@ auto binary_writer::flush() -> void {
 auto binary_writer::seek(size offset, std::ios::seekdir origin) -> size {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->seekp(offset, origin);
-  return static_cast<size>(stream_->tellp());
+  return static_cast<usize>(stream_->tellp());
 }
 
 

@@ -140,7 +140,7 @@ auto binary_reader::read_size() -> size {
 auto binary_reader::read_string() -> string {
   auto length = read_7bit_encoded_int();
   if (length == 0) return {};
-  return string(read_chars(length).data(), static_cast<size>(length));
+  return string(read_chars(length).data(), static_cast<usize>(length));
 }
 
 auto binary_reader::read_uint16() -> uint16 {

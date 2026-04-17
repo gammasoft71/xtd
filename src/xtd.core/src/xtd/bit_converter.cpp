@@ -165,7 +165,7 @@ size bit_converter::to_size(const array<byte>& value, size start_index) {
 }
 
 size bit_converter::to_size(const read_only_span<byte>& value, size start_index) {
-  return static_cast<size>(to_uint64(value, start_index));
+  return static_cast<usize>(to_uint64(value, start_index));
 }
 
 uint16 bit_converter::to_uint16(const array<byte>& value, size start_index) {

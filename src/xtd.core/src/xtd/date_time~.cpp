@@ -132,7 +132,7 @@ namespace {
     return day;
   }
   
-  static size to_string_custom_char_count(const string& format, usize& index, size max_char) {
+  static size to_string_custom_char_count(const string& format, size& index, size max_char) {
     auto character = format[index];
     auto count = 1_z;
     while (index + count < format.length() && format[index + count] == character) ++count;
@@ -140,7 +140,7 @@ namespace {
     return math::min(max_char, count);
   }
   
-  static string to_string_custom_date_separator(const string& format, usize& index, const culture_info& culture) {
+  static string to_string_custom_date_separator(const string& format, size& index, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, usize_object::max_value);
     auto result = string {};
     for (auto i = 0_z; i < count; ++i)
@@ -148,7 +148,7 @@ namespace {
     return result;
   }
   
-  static string to_string_custom_day(const string& format, usize& index, uint32 day, const date_time& dt, const culture_info& culture) {
+  static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
     auto day_of_week = as<int>(dt.day_of_week()) + as<int>(culture.date_time_format().first_day_of_week()) % 6;
     if (count == 4) return culture.date_time_format().day_names()[day_of_week];
@@ -157,11 +157,11 @@ namespace {
     return string::format("{:D}", day);
   }
   
-  static string to_string_custom_escaped_char(const string& format, usize& index) {
+  static string to_string_custom_escaped_char(const string& format, size& index) {
     return index + 1 < format.length() ? as<string>(format[++index]) : ""_s;
   }
   
-  static string to_string_custom_escaped_string(const string& format, usize& index) {
+  static string to_string_custom_escaped_string(const string& format, size& index) {
     auto next_index = format.chars().find_first_of(format[index], index + 1);
     if (next_index == npos) throw_helper::throws(xtd::helpers::exception_case::format);
     auto result = format.substring(index + 1, next_index - index - 1);
@@ -169,7 +169,7 @@ namespace {
     return result;
   }
   
-  static string to_string_custom_fraction(const string& format, usize& index, int64 ticks) {
+  static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
     bool remove_trailing_zeros = (format[index] == 'F');
     auto count = to_string_custom_char_count(format, index, 7_z);
     auto fraction = ticks % ticks_per_second / static_cast<int64>(math::pow(10, 7 - as<double>(count)));
@@ -180,19 +180,19 @@ namespace {
     return result;
   }
   
-  static string to_string_custom_hour(const string& format, usize& index, uint32 hour) {
+  static string to_string_custom_hour(const string& format, size& index, uint32 hour) {
     auto count = to_string_custom_char_count(format, index, 2_z);
     if (count == 2) return string::format("{:D2}", hour);
     return string::format("{:D}", hour);
   }
   
-  static string to_string_custom_minute(const string& format, usize& index, uint32 minute) {
+  static string to_string_custom_minute(const string& format, size& index, uint32 minute) {
     auto count = to_string_custom_char_count(format, index, 2_z);
     if (count == 2) return string::format("{:D2}", minute);
     return string::format("{:D}", minute);
   }
   
-  static string to_string_custom_month(const string& format, usize& index, uint32 month, const date_time& dt, const culture_info& culture) {
+  static string to_string_custom_month(const string& format, size& index, uint32 month, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
     if (count == 4) return culture.date_time_format().month_names()[month - 1];
     if (count == 3) return culture.date_time_format().abreviated_month_names()[month - 1];
@@ -200,20 +200,20 @@ namespace {
     return string::format("{:D}", month);
   }
   
-  static string to_string_custom_offset_utc(const string& format, usize& index, int64 offset_sec) {
+  static string to_string_custom_offset_utc(const string& format, size& index, int64 offset_sec) {
     auto count = to_string_custom_char_count(format, index, 3_z);
     if (count == 3) return string::format("{}{:D2}:{:D2}", offset_sec >= 0 ? "+" : "", offset_sec / 3600, math::abs(offset_sec % 3600) / 60);
     if (count == 2) return string::format("{}{:D2}", offset_sec >= 0 ? "+" : "", offset_sec / 3600);
     return string::format("{}{:D}", offset_sec >= 0 ? "+" : "", offset_sec / 3600);
   }
   
-  static string to_string_custom_second(const string& format, usize& index, uint32 second) {
+  static string to_string_custom_second(const string& format, size& index, uint32 second) {
     auto count = to_string_custom_char_count(format, index, 2_z);
     if (count == 2) return string::format("{:D2}", second);
     return string::format("{:D}", second);
   }
   
-  static string to_string_custom_time_separator(const string& format, usize& index, const culture_info& culture) {
+  static string to_string_custom_time_separator(const string& format, size& index, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, usize_object::max_value);
     auto result = string {};
     for (auto i = 0_z; i < count; ++i)
@@ -221,7 +221,7 @@ namespace {
     return result;
   }
   
-  static string to_string_custom_time_suffix(const string& format, usize& index, uint32 hour, const date_time& dt, const culture_info& culture) {
+  static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 2_z);
     auto suffix = dt.hour() < 12 ? culture.date_time_format().am_designator().to_u32string() : culture.date_time_format().pm_designator().to_u32string();
     if (string::is_empty(suffix)) return suffix;
@@ -229,12 +229,12 @@ namespace {
     return suffix;
   }
   
-  static string to_string_custom_time_zone_information(const string& format, usize& index, date_time_kind kind, int64 offset_sec) {
+  static string to_string_custom_time_zone_information(const string& format, size& index, date_time_kind kind, int64 offset_sec) {
     auto tmp_index = 0_z;
     return kind == date_time_kind::local ? to_string_custom_offset_utc("zzz", tmp_index, offset_sec) : "Z";
   }
   
-  static string to_string_custom_year(const string& format, usize& index, uint32 year) {
+  static string to_string_custom_year(const string& format, size& index, uint32 year) {
     auto count = to_string_custom_char_count(format, index, 5_z);
     if (count == 5) return string::format("{:D5}", year);
     if (count == 4) return string::format("{:D4}", year);
@@ -658,7 +658,7 @@ bool date_time::try_parse_exact(const string& text, const string& format, date_t
 }
 
 namespace {
-  bool try_parse_exact_year(const string& text, const string& format, usize& text_index, usize& format_index, uint32& year) noexcept {
+  bool try_parse_exact_year(const string& text, const string& format, size& text_index, size& format_index, uint32& year) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 1) ++count;
     if (count == 3) ++count;
@@ -668,7 +668,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_month(const string& text, const string& format, usize& text_index, usize& format_index, uint32& month, const culture_info& culture) noexcept {
+  bool try_parse_exact_month(const string& text, const string& format, size& text_index, size& format_index, uint32& month, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
       auto months = count == 3 ? culture.date_time_format().abreviated_month_names() : culture.date_time_format().month_names();
@@ -685,7 +685,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_day(const string& text, const string& format, usize& text_index, usize& format_index, uint32& day, const culture_info& culture) noexcept {
+  bool try_parse_exact_day(const string& text, const string& format, size& text_index, size& format_index, uint32& day, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
       auto days = count == 3 ? culture.date_time_format().abreviated_day_names() : culture.date_time_format().day_names();
@@ -705,7 +705,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_hour_12(const string& text, const string& format, usize& text_index, usize& format_index, uint32& hour) noexcept {
+  bool try_parse_exact_hour_12(const string& text, const string& format, size& text_index, size& format_index, uint32& hour) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto parsed_hour = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_hour) == false) return false;
@@ -715,7 +715,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_hour_24(const string& text, const string& format, usize& text_index, usize& format_index, uint32& hour) noexcept {
+  bool try_parse_exact_hour_24(const string& text, const string& format, size& text_index, size& format_index, uint32& hour) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto parsed_hour = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_hour) == false) return false;
@@ -725,7 +725,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_minute(const string& text, const string& format, usize& text_index, usize& format_index, uint32& minute) noexcept {
+  bool try_parse_exact_minute(const string& text, const string& format, size& text_index, size& format_index, uint32& minute) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto parsed_minute = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_minute) == false) return false;
@@ -735,7 +735,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_second(const string& text, const string& format, usize& text_index, usize& format_index, uint32& second) noexcept {
+  bool try_parse_exact_second(const string& text, const string& format, size& text_index, size& format_index, uint32& second) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto parsed_second = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_second) == false) return false;
@@ -745,7 +745,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_fraction(const string& text, const string& format, usize& text_index, usize& format_index, int64& fraction) noexcept {
+  bool try_parse_exact_fraction(const string& text, const string& format, size& text_index, size& format_index, int64& fraction) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 7_z);
     auto parsed_fraction = 0_u64;
     if (uint64_object::try_parse(text.substring(text_index, count), parsed_fraction) == false) return false;
@@ -754,7 +754,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_time_suffix(const string& text, const string& format, usize& text_index, usize& format_index, uint32& hour, const culture_info& culture) noexcept {
+  bool try_parse_exact_time_suffix(const string& text, const string& format, size& text_index, size& format_index, uint32& hour, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto suffixes = array<string> {culture.date_time_format().am_designator(), culture.date_time_format().pm_designator()};
     auto suffix = text.substring(text_index, count);
@@ -767,7 +767,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_offset_utc(const string& text, const string& format, usize& text_index, usize& format_index, int64& ticks) noexcept {
+  bool try_parse_exact_offset_utc(const string& text, const string& format, size& text_index, size& format_index, int64& ticks) noexcept {
     if (text[text_index] == 'Z') {
       text_index++;
       return true;
