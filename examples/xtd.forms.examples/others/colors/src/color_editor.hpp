@@ -248,7 +248,7 @@ namespace colors_example {
     event<color_editor, event_handler> color_changed;
     
   protected:
-    virtual void on_color_changed(const event_args& e) {
+    void on_color_changed(const event_args& e) {
       color_box_panel_.invalidate();
       alpha_track_bar_.value(color_.a());
       alpha_numeric_up_down_.value(color_.a());
