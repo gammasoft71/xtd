@@ -2,9 +2,9 @@
 
 using namespace xtd::globalization;
 
-class character {
+class persona {
 public:
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
   const string& name() const noexcept {return name_;}
   const string& rank() const noexcept {return rank_;}
@@ -24,12 +24,12 @@ private:
 };
 
 template<>
-string xtd::to_string(const character& value, const string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
+string xtd::to_string(const persona& value, const string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
 
-using characters = list<character>;
+using characters = list<persona>;
 
 auto main() -> int {
-  character c("Jean-Luc Picard", "Captain");
+  persona c("Jean-Luc Picard", "Captain");
   console::out << string::sprintf("%s", c.to_string()) << environment::new_line;
   console::out << string::sprintf("%s", c.to_string("F")) << environment::new_line;
   console::out << string::sprintf("%s", c.to_string("N")) << environment::new_line;

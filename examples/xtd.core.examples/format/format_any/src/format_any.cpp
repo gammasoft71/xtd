@@ -1,8 +1,8 @@
 #include <xtd/xtd>
 
-class character {
+class persona {
 public:
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
   const string& name() const noexcept {return name_;}
   const string& rank() const noexcept {return rank_;}
@@ -21,13 +21,13 @@ auto main() -> int {
   value = std::make_any<string>("Star Trek: The Next Generation");
   console::out << string::format("{}", value) << environment::new_line;
   
-  value = std::make_any<character>("Jean-Luc Picard", "Captain");
+  value = std::make_any<persona>("Jean-Luc Picard", "Captain");
   console::out << "Before register_any_stringer : " << string::format("{}", value) << environment::new_line;
   
-  register_any_stringer<character>([](auto value) {return value.to_string();});
+  register_any_stringer<persona>([](auto value) {return value.to_string();});
   console::out << "After register_any_stringer : " << string::format("{}", value) << environment::new_line;
   
-  unregister_any_stringer<character>();
+  unregister_any_stringer<persona>();
   console::out << "After unregister_any_stringer : " << string::format("{}", value) << environment::new_line;
 }
 

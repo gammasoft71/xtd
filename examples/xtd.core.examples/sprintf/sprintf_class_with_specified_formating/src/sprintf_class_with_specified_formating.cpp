@@ -2,9 +2,9 @@
 
 using namespace xtd::globalization;
 
-class character : iformatable {
+class persona : iformatable {
 public:
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
   const string& name() const noexcept {return name_;}
   const string& rank() const noexcept {return rank_;}
@@ -23,10 +23,10 @@ private:
   string rank_;
 };
 
-using characters = list<character>;
+using characters = list<persona>;
 
 auto main() -> int {
-  character c("Jean-Luc Picard", "Captain");
+  persona c("Jean-Luc Picard", "Captain");
   console::out << string::sprintf("%s", c.to_string()) << environment::new_line;
   console::out << string::sprintf("%s", c.to_string("F")) << environment::new_line;
   console::out << string::sprintf("%s", c.to_string("N")) << environment::new_line;

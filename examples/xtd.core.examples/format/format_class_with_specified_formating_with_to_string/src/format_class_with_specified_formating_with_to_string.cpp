@@ -2,10 +2,10 @@
 
 using namespace xtd::globalization;
 
-class character {
+class persona {
 public:
-  character() = default;
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  persona() = default;
+  persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
   const string& name() const noexcept {return name_;}
   const string& rank() const noexcept {return rank_;}
@@ -25,15 +25,15 @@ private:
 };
 
 template<>
-string xtd::to_string(const character& value, const string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
+string xtd::to_string(const persona& value, const string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
 
 enum class cap {title, middle, end};
 
-auto print_character(const string& text, const character& value, cap c) {
+auto print_character(const string& text, const persona& value, cap c) {
   if (c == cap::title)
     console::out
     << "┌───────────────────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
-    << "│  character                                    │   format   │      representation                      │" << environment::new_line
+    << "│  persona                                    │   format   │      representation                      │" << environment::new_line
     << "├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   
   console::out <<  "│ " << text.pad_right(45) << " │ {}         │ " << format("{}", value).pad_right(40) << " │" << environment::new_line;
@@ -48,20 +48,20 @@ auto print_character(const string& text, const character& value, cap c) {
 }
 
 auto main() -> int {
-  print_character("{}", character {}, cap::title);
-  print_character("{\"Jean-Luc Picard\", \"Captain\"}", character {"Jean-Luc Picard", "Captain"}, cap::middle);
-  print_character("{\"William Riker\", \"Commander\"}", character {"William Riker", "Commander"}, cap::middle);
-  print_character("{\"Data\", \"Commander\"}", character {"Data", "Commander"}, cap::middle);
-  print_character("{\"Beverly Crusher\", \"Commander\"}", character {"Beverly Crusher", "Commander"}, cap::middle);
-  print_character("{\"Geordi La Forge\", \"Lieutenant Commander\"}", character {"Geordi La Forge", "Lieutenant Commander"}, cap::middle);
-  print_character("{\"Worf\", \"Lieutenant Commander\"}", character {"Worf", "Lieutenant Commander"}, cap::middle);
-  print_character("{\"Tasha Yar\", \"Lieutenant\"}", character {"Tasha Yar", "Lieutenant"}, cap::end);
+  print_character("{}", persona {}, cap::title);
+  print_character("{\"Jean-Luc Picard\", \"Captain\"}", persona {"Jean-Luc Picard", "Captain"}, cap::middle);
+  print_character("{\"William Riker\", \"Commander\"}", persona {"William Riker", "Commander"}, cap::middle);
+  print_character("{\"Data\", \"Commander\"}", persona {"Data", "Commander"}, cap::middle);
+  print_character("{\"Beverly Crusher\", \"Commander\"}", persona {"Beverly Crusher", "Commander"}, cap::middle);
+  print_character("{\"Geordi La Forge\", \"Lieutenant Commander\"}", persona {"Geordi La Forge", "Lieutenant Commander"}, cap::middle);
+  print_character("{\"Worf\", \"Lieutenant Commander\"}", persona {"Worf", "Lieutenant Commander"}, cap::middle);
+  print_character("{\"Tasha Yar\", \"Lieutenant\"}", persona {"Tasha Yar", "Lieutenant"}, cap::end);
 }
 
 // This code produces the following output :
 //
 // ┌───────────────────────────────────────────────┬────────────┬──────────────────────────────────────────┐
-// │  character                                    │   format   │      representation                      │
+// │  persona                                      │   format   │      representation                      │
 // ├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
 // │ {}                                            │ {}         │  ()                                      │
 // │ {}                                            │ {:F}       │  ()                                      │

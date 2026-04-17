@@ -1,8 +1,8 @@
 #include <xtd/xtd>
 
-class character : public istringable<character> {
+class persona : public istringable<class persona> {
 public:
-  character(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
+  persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
   const string& name() const noexcept {return name_;}
   const string& rank() const noexcept {return rank_;}
@@ -14,7 +14,7 @@ private:
   string rank_;
 };
 
-using characters = std::initializer_list<character>;
+using characters = std::initializer_list<persona>;
 
 auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
