@@ -15,7 +15,6 @@
 * [startup_keyword](startup_keyword/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
 * [static](static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) keyword.
-* [static_object2](static_object2/README.md) shows how to use [xtd::static_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) class.
 * [typeof](typeof/README.md) shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
 * [using](using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/using_8h.html) method.
 

@@ -17,7 +17,6 @@ add_projects(
   startup_keyword
   static
   static_object
-  static_object2
   typeof
   using
 )
