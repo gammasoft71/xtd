@@ -121,7 +121,7 @@ namespace xtd {
         /// @param icon The icon handle .
         /// @param stream The std::ostream to save to.
         /// @warning Internal use only
-        static void save(intptr icon, std::ostream& stream, size_t raw_format);
+        static void save(intptr icon, std::ostream& stream, xtd::usize raw_format);
         
         /// @brief Converts icon to an image.
         /// @param icon The icon handle .

@@ -449,7 +449,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments);
+      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point>& points, xtd::usize offset, xtd::usize number_of_segments);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures. The drawing begins offset from the beginning of the array.
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
@@ -461,7 +461,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments);
+      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point_f>& points, xtd::usize offset, xtd::usize number_of_segments);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -473,7 +473,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
+      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point>& points, xtd::usize offset, xtd::usize number_of_segments, float tension);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -485,7 +485,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
+      void draw_curve(const pen& pen, const xtd::array<xtd::drawing::point_f>& points, xtd::usize offset, xtd::usize number_of_segments, float tension);
       
       /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
@@ -1242,7 +1242,7 @@ namespace xtd {
       /// @param characters_fitted Number of characters in the string.
       /// @param lines_filled Number of text lines in the string.
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
-      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled);
+      size_f measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, xtd::usize characters_fitted, xtd::usize lines_filled);
       
       /// @brief Multiplies the world transformation of this xtd::drawing::graphics and specified the xtd::drawing::drawing_2d::matrix.
       /// @param matrix 4x4 xtd::drawing::drawing_2d::matrix that multiplies the world transformation.

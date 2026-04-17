@@ -66,24 +66,24 @@ namespace xtd {
       /// @brief Gets a bitwise combination of class style values.
       /// @return A bitwise combination of the class style values.
       /// @remarks see class_styles.h file
-      size_t class_style() const noexcept;
+      xtd::usize class_style() const noexcept;
       /// @brief Gets a bitwise combination of class style values.
       /// @param class_style A bitwise combination of the class style values.
       /// @return Current create_param instance.
       /// @remarks see class_styles.h file
-      create_params& class_style(size_t class_style);
+      create_params& class_style(xtd::usize class_style);
       
       /// @brief Gets a bitwise combination of extended window style values.
       /// @return A bitwise combination of the extended window style values.
       /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
       /// @remarks see window_styles.h file
-      size_t ex_style() const noexcept;
+      xtd::usize ex_style() const noexcept;
       /// @brief Sets a bitwise combination of extended window style values.
       /// @param ex_style A bitwise combination of the extended window style values.
       /// @return Current create_param instance.
       /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
       /// @remarks see window_styles.h file
-      create_params& ex_style(size_t ex_style);
+      create_params& ex_style(xtd::usize ex_style);
       
       /// @brief Gets the initial height of the control.
       /// @return The numeric value that represents the initial height of the control.
@@ -120,12 +120,12 @@ namespace xtd {
       /// @brief Gets a bitwise combination of window style values.
       /// @return A bitwise combination of the window style values.
       /// @remarks The Style property controls the appearance of the control and its initial state.
-      size_t style() const noexcept;
+      xtd::usize style() const noexcept;
       /// @brief Sets a bitwise combination of window style values.
       /// @param style A bitwise combination of the window style values.
       /// @return Current create_param instance.
       /// @remarks The Style property controls the appearance of the control and its initial state.
-      create_params& style(size_t style);
+      create_params& style(xtd::usize style);
       
       /// @brief Gets the initial size of the control.
       /// @return The xtd::drawing::size that represents the initial size of the control.

@@ -117,7 +117,7 @@ namespace xtd {
       /// @param worker_threads The number of available worker threads
       /// @param completion_port_threads The number of available asynchronous I/O threads.
       /// @remarks When xtd::threading::thread_pool::get_available_threads returns, the variable specified by worker_threads contains the number of additional worker threads that can be started, and the variable specified by completion_port_threads contains the number of additional asynchronous I/O threads that can be started.
-      static auto get_available_threads(size_t& worker_threads, size_t& completion_port_threads) -> void;
+      static auto get_available_threads(xtd::usize& worker_threads, xtd::usize& completion_port_threads) -> void;
       
       /// @brief Retrieves the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
@@ -125,12 +125,12 @@ namespace xtd {
       /// @remarks When GetMaxThreads returns, the variable specified by worker_threads contains the maximum number of worker threads allowed in the thread pool, and the variable specified by completion_port_threads contains the maximum number of asynchronous I/O threads allowed in the thread pool.
       /// @remarks You can use the xtd::threading::thread_pool::get_available_threads method to determine the actual number of threads in the thread pool at any given time.
       /// @remarks You can use the xtd::threading::thread_pool::set_max_threads to set the maximum number of worker threads and asynchronous I/O threads in the thread pool.
-      static auto get_max_threads(size_t& worker_threads, size_t& completion_port_threads) -> void;
+      static auto get_max_threads(xtd::usize& worker_threads, xtd::usize& completion_port_threads) -> void;
       
       /// @brief Retrieves the number of idle threads the thread pool maintains in anticipation of new requests. Always 0 for both.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      static auto get_min_threads(size_t& worker_threads, size_t& completion_port_threads) -> void;
+      static auto get_min_threads(xtd::usize& worker_threads, xtd::usize& completion_port_threads) -> void;
       
       /// @brief Join all resources and worker threads.
       /// @remarks The join_all method waits for the end of running worker threads, but will not wait for unstarted worker threads.
@@ -218,13 +218,13 @@ namespace xtd {
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
       /// @return `true` if the change is successful; otherwise, `false`.
-      static auto set_max_threads(size_t worker_threads, size_t completion_port_threads) -> bool;
+      static auto set_max_threads(xtd::usize worker_threads, xtd::usize completion_port_threads) -> bool;
       
       /// @brief Sets the number of idle threads the thread pool maintains in anticipation of new requests.
       /// @param worker_threads The new minimum number of idle worker threads to be maintained by the thread pool.
       /// @param completion_port_threads The new minimum number of idle asynchronous I/O threads to be maintained by the thread pool.
       /// @return `true` if the change is successful; otherwise, `false`.
-      static auto set_min_threads(size_t worker_threads, size_t completion_port_threads) -> bool;
+      static auto set_min_threads(xtd::usize worker_threads, xtd::usize completion_port_threads) -> bool;
       /// @}
       
     private:
@@ -238,10 +238,10 @@ namespace xtd {
       static auto join_all_asynchronous_io_threads(int32 milliseconds_timeout) -> bool;
       static auto run() -> void;
       
-      static size_t max_threads_;
-      static size_t max_asynchronous_io_threads_;
-      static size_t min_threads_;
-      static size_t min_asynchronous_io_threads_;
+      static xtd::usize max_threads_;
+      static xtd::usize max_asynchronous_io_threads_;
+      static xtd::usize min_threads_;
+      static xtd::usize min_asynchronous_io_threads_;
       static static_data static_data_;
     };
   }

@@ -217,7 +217,7 @@ bool environment::is_64_bit_operating_system() noexcept {
 }
 
 bool environment::is_64_bit_process() noexcept {
-  return sizeof(size_t) == 8;
+  return sizeof(xtd::usize) == 8;
 }
 
 std::locale environment::locale() noexcept {
@@ -266,7 +266,7 @@ xtd::string environment::system_directory() {
   return get_folder_path(environment::special_folder::system);
 }
 
-size_t environment::system_page_size() {
+xtd::usize environment::system_page_size() {
   return native::environment::get_system_page_size();
 }
 

@@ -13,10 +13,10 @@ using namespace xtd::threading;
 using asynchronous_io_thread_list = list<thread>;
 using thread_list = list<thread>;
 
-size_t thread_pool::max_threads_ = environment::processor_count() * 25;
-size_t thread_pool::max_asynchronous_io_threads_ = environment::processor_count() * 25;
-size_t thread_pool::min_threads_ = environment::processor_count();
-size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count();
+xtd::usize thread_pool::max_threads_ = environment::processor_count() * 25;
+xtd::usize thread_pool::max_asynchronous_io_threads_ = environment::processor_count() * 25;
+xtd::usize thread_pool::min_threads_ = environment::processor_count();
+xtd::usize thread_pool::min_asynchronous_io_threads_ = environment::processor_count();
 
 struct thread_pool::static_data {
   threading::semaphore asynchronous_io_semaphore = threading::semaphore(0, as<int32>(thread_pool::max_asynchronous_io_threads_));
@@ -46,17 +46,17 @@ void thread_pool::close() {
   join_all();
 }
 
-void thread_pool::get_available_threads(size_t& worker_threads, size_t& completion_port_threads) {
+void thread_pool::get_available_threads(xtd::usize& worker_threads, xtd::usize& completion_port_threads) {
   worker_threads = max_threads_ - static_data_.thread_pool_items.count();
   completion_port_threads = max_asynchronous_io_threads_ - static_data_.thread_pool_asynchronous_io_items.count();
 }
 
-void thread_pool::get_max_threads(size_t& worker_threads, size_t& completion_port_threads) {
+void thread_pool::get_max_threads(xtd::usize& worker_threads, xtd::usize& completion_port_threads) {
   worker_threads = max_threads_;
   completion_port_threads = max_asynchronous_io_threads_;
 }
 
-void thread_pool::get_min_threads(size_t& worker_threads, size_t& completion_port_threads) {
+void thread_pool::get_min_threads(xtd::usize& worker_threads, xtd::usize& completion_port_threads) {
   worker_threads = min_threads_;
   completion_port_threads = min_asynchronous_io_threads_;
 }
@@ -112,7 +112,7 @@ registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle&
   return register_wait_for_single_object(wait_object, callback, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
 }
 
-bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_threads) {
+bool thread_pool::set_max_threads(xtd::usize worker_threads, xtd::usize completion_port_threads) {
   if (worker_threads < environment::processor_count() || completion_port_threads < environment::processor_count())
     return false;
     
@@ -125,7 +125,7 @@ bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_
   return true;
 }
 
-bool thread_pool::set_min_threads(size_t worker_threads, size_t completion_port_threads) {
+bool thread_pool::set_min_threads(xtd::usize worker_threads, xtd::usize completion_port_threads) {
   if (worker_threads >= max_threads_ || completion_port_threads >= max_asynchronous_io_threads_)
     return false;
     

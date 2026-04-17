@@ -42,10 +42,10 @@ namespace xtd {
       return enumerable::as_enumerable(source);
     }
     template<typename input_iterator_t>
-    [[nodiscard]] auto from(input_iterator_t iterator, size_t length) noexcept {
+    [[nodiscard]] auto from(input_iterator_t iterator, xtd::usize length) noexcept {
       return enumerable::as_enumerable(iterator, iterator + length);
     }
-    template<typename source_t, size_t length>
+    template<typename source_t, xtd::usize length>
     [[nodiscard]] auto from(const source_t (&array)[length]) noexcept {
       return enumerable::as_enumerable(array, array + length);
     }

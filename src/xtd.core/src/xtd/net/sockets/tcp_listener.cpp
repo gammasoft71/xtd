@@ -125,10 +125,10 @@ auto tcp_listener::pending() -> bool {
 }
 
 auto tcp_listener::start() -> void {
-  start(static_cast<size_t>(-1));
+  start(static_cast<xtd::usize>(-1));
 }
 
-auto tcp_listener::start(size_t backlog) -> void {
+auto tcp_listener::start(xtd::usize backlog) -> void {
   if (!active()) {
     data_->server_socket.bind(data_->local_end_point);
     try {

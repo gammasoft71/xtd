@@ -127,13 +127,13 @@ void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, float 
   add_curve(points, 0, points.length(), tension);
 }
 
-void graphics_path::add_curve(const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
+void graphics_path::add_curve(const array<xtd::drawing::point>& points, xtd::usize offset, xtd::usize number_of_segments, float tension) {
   auto points_f = list<point_f> {};
   std::for_each(points.begin(), points.end(), [&](const auto& point) {points_f.add(point_f(point));});
   add_curve(points_f.to_array(), offset, number_of_segments, tension);
 }
 
-void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
+void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, xtd::usize offset, xtd::usize number_of_segments, float tension) {
   auto pair_points = list<key_value_pair<float, float>> {};
   std::for_each(points.begin(), points.end(), [&](const auto& point) {pair_points.add({point.x, point.y});});
   native::graphics_path::add_curve(handle(), pair_points.to_array(), offset, number_of_segments, tension);

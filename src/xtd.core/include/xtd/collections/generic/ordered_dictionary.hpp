@@ -125,7 +125,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::ordered_dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(1) operation.
         /// @remarks xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::generic::ordered_dictionary::bucket_count are equivalent properties.
-        ordered_dictionary(size_t capacity) {
+        ordered_dictionary(xtd::usize capacity) {
           data_->keys.capacity(capacity);
           data_->items.ensure_capacity(capacity);
         }
@@ -138,7 +138,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::ordered_dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(1) operation.
         /// @remarks xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::generic::ordered_dictionary::bucket_count are equivalent properties.
-        ordered_dictionary(size_t capacity, const xtd::collections::generic::iequality_comparer<key_type>& comparer) {
+        ordered_dictionary(xtd::usize capacity, const xtd::collections::generic::iequality_comparer<key_type>& comparer) {
           data_->items = base_type(capacity, comparer);
           data_->keys.capacity(capacity);
         }

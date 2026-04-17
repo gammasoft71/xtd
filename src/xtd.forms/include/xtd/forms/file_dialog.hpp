@@ -155,13 +155,13 @@ namespace xtd {
       /// @return A value containing the index of the filter currently selected in the file dialog box. The default value is 1.
       /// @remarks Use the filter_index property to set which filtering option is shown first to the user. You can also use the value of filter_index after showing the file dialog to perform special file operations depending upon the filter chosen.
       /// @note The index value of the first filter entry is 1.
-      virtual size_t filter_index() const noexcept;
+      virtual xtd::usize filter_index() const noexcept;
       /// @brief Sets the index of the filter currently selected in the file dialog box.
       /// @param value A value containing the index of the filter currently selected in the file dialog box. The default value is 1.
       /// @return Current file_dialog.
       /// @remarks Use the filter_index property to set which filtering option is shown first to the user. You can also use the value of filter_index after showing the file dialog to perform special file operations depending upon the filter chosen.
       /// @note The index value of the first filter entry is 1.
-      virtual file_dialog& filter_index(size_t value);
+      virtual file_dialog& filter_index(xtd::usize value);
       
       /// @brief Gets the initial directory displayed by the file dialog box.
       /// @return The initial directory displayed by the file dialog box. The default is an empty string ("").
@@ -184,7 +184,7 @@ namespace xtd {
       /// @brief Gets values to initialize the file_dialog.
       /// @return A bitwise combination of internal values that initializes the file_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the file_dialog class to get and set the options.
-      size_t options() const noexcept;
+      xtd::usize options() const noexcept;
       
       /// @brief Gets a value indicating whether the dialog box restores the directory to the previously selected directory before closing.
       /// @return `true` if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, `false`. The default value is `false`.
@@ -280,8 +280,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool get_option(size_t flag) const noexcept;
-      void set_option(size_t flag, bool value);
+      bool get_option(xtd::usize flag) const noexcept;
+      void set_option(xtd::usize flag, bool value);
       /// @endcond
       
     private:

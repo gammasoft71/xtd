@@ -843,11 +843,11 @@ void graphics::interpolation_mode(intptr handle, int32 interpolation_mode) {
 }
 
 /*
-void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, xtd::usize characters_fitted, xtd::usize lines_filled, bool measure_trailing_spaces) {
   if (!handle) throw_helper::throws(exception_case::argument);
   width = 0;
   height = 0;
-  size_t line_index = 0_z;
+  xtd::usize line_index = 0_z;
   auto strings = text.split({ '\n' });
   for (const auto& string : strings) {
     wxString text_to_draw = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
@@ -868,11 +868,11 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
 }
 */
 
-void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, xtd::usize characters_fitted, xtd::usize lines_filled, bool measure_trailing_spaces) {
   if (!handle) throw_helper::throws(exception_case::argument);
   width = 0.0f;
   height = 0.0f;
-  size_t line_index = 0_z;
+  xtd::usize line_index = 0_z;
   auto strings = text.split('\n');
   wxString formated_text;
   for (const auto& string : strings) {

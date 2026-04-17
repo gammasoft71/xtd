@@ -46,14 +46,14 @@ namespace xtd {
       /// @param rect The xtd::drawing::rectangle bounds to draw within.
       /// @param index The xtd::control::control_collection index value of the item that is being drawn.
       /// @param state The control's xtd::forms::drawItem_state information.
-      draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state);
+      draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, xtd::usize index, xtd::forms::draw_item_state state);
       /// @brief Initializes a new instance of the xtd::forms::draw_item_event_args class for the specified control with the specified font, state, foreground color, background color, surface to draw on, and the bounds to draw within.
       /// @param graphics The xtd::drawing::graphics surface on which to draw.
       /// @param font The xtd::drawing::font to use, usually the parent control's Font property.
       /// @param rect The xtd::drawing::rectangle bounds to draw within.
       /// @param index The xtd::control::control_collection index value of the item that is being drawn.
       /// @param state The control's xtd::forms::drawItem_state information.
-      draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_core);
+      draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, xtd::usize index, xtd::forms::draw_item_state state, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_core);
       /// @}
       
       /// @name Public Properties
@@ -85,7 +85,7 @@ namespace xtd {
       /// @brief Gets the index value of the item that is being drawn.
       /// @return The numeric value that represents the xtd::forms::control::control_collection::operator [] value of the item being drawn.
       /// @remarks This property returns the xtd::forms::control::control_collection::operator [] value of the item being drawn in the xtd::forms::control::control_collection. This property can return xtd::forms::control::control_collection::npos if items were removed from the list.
-      size_t index() const noexcept;
+      xtd::usize index() const noexcept;
       
       /// @brief Gets the state of the item being drawn.
       /// @return The xtd::forms::draw_item_state that represents the state of the item being drawn.

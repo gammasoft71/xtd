@@ -103,7 +103,7 @@ void graphics_path::add_closed_curve(intptr handle, array<key_value_pair<float, 
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_curve(intptr handle, array<key_value_pair<float, float>> points, size_t offset, size_t number_of_segments, float tension) {
+void graphics_path::add_curve(intptr handle, array<key_value_pair<float, float>> points, xtd::usize offset, xtd::usize number_of_segments, float tension) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }

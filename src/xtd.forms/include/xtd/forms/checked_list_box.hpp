@@ -111,7 +111,7 @@ namespace xtd {
       using object_collection = layout::arranged_element_collection<item>;
       
       /// @brief Encapsulates the collection of indexes of checked items (including items in an indeterminate state)
-      using checked_index_collection = xtd::collections::generic::list<size_t>;
+      using checked_index_collection = xtd::collections::generic::list<xtd::usize>;
       
       /// @brief Encapsulates the collection of checked items, including items in an indeterminate state, in a checked_list_box control.
       using checked_item_collection = xtd::collections::generic::list<item>;
@@ -163,7 +163,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @return Current list_control.
-      list_control& selected_index(size_t selected_index) override;
+      list_control& selected_index(xtd::usize selected_index) override;
       
       selected_index_collection selected_indices() const noexcept override;
       
@@ -205,36 +205,36 @@ namespace xtd {
       /// @param index The index of the item.
       /// @return `true` if the item is checked; otherwise, `false`.
       /// @remarks get_item_checked returns `true` if the value of CheckState is checked or indeterminate for the item. To determine the specific state the item is in, use the get_item_check_state method.
-      bool get_item_checked(size_t index) const;
+      bool get_item_checked(xtd::usize index) const;
       
       /// @brief Returns a value indicating the check state of the current item.
       /// @param index The index of the item.
       /// @return One of the check_state values.
       /// @remarks The get_item_check_state method provides the ability to get the check_state value of an item, given the index. If you never set the check state of an item to indeterminate, then use the getItem_checked method.
-      forms::check_state get_item_check_state(size_t index) const;
+      forms::check_state get_item_check_state(xtd::usize index) const;
       
       /// @brief Returns the text value of the current item.
       /// @param index The index of the item.
       /// @return A string that represent the text value of the current item.
-      const xtd::string& get_item_text(size_t index) const;
+      const xtd::string& get_item_text(xtd::usize index) const;
       
       /// @brief Sets check_state for the item at the specified index to checked.
       /// @param index The index of the item to set the check state for.
       /// @param checked `true` to set the item as checked; otherwise, `false`.
       /// @remarks When a value of `true` is passed, this method sets the check_state value to checked. A value of `false` sets check_state to unchecked.
-      void set_item_checked(size_t index, bool checked);
+      void set_item_checked(xtd::usize index, bool checked);
       
       /// @brief Sets the check state of the item at the specified index.
       /// @param index The index of the item to set the check state for.
       /// @param check_state One of the check_state values.
       /// @remarks The set_item_check_state method raises the item_check event.
       /// @remarks Items whose check_state is set to indeterminate appear with a check mark in the check box, but the box is grayed to indicate the indeterminate status of the checked item.
-      void set_item_check_state(size_t index, forms::check_state check_state);
+      void set_item_check_state(xtd::usize index, forms::check_state check_state);
       
       /// @brief Sets the text value of the item at the specified index.
       /// @param index The index of the item to set the check state for.
       /// @param text A string that represent the text value.
-      void set_item_text(size_t index, const xtd::string& text);
+      void set_item_text(xtd::usize index, const xtd::string& text);
       /// @}
       
       /// @name Public Static Methods
@@ -284,20 +284,20 @@ namespace xtd {
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const object_collection& items, size_t selected_index);
+      static checked_list_box create(const object_collection& items, xtd::usize selected_index);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, and location.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const object_collection& items, size_t selected_index, const drawing::point& location);
+      static checked_list_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, location, and size.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      static checked_list_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, location, size, and name.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
@@ -305,7 +305,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      static checked_list_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
@@ -359,14 +359,14 @@ namespace xtd {
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index);
+      static checked_list_box create(const control& parent, const object_collection& items, xtd::usize selected_index);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, items, selected_index, and location.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location);
+      static checked_list_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, items, selected_index, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
@@ -374,7 +374,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      static checked_list_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, items, selected_index, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
@@ -383,7 +383,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
-      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      static checked_list_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events
@@ -422,9 +422,9 @@ namespace xtd {
       /// @}
       
     private:
-      void on_items_item_added(size_t pos, const item& item);
-      void on_items_item_removed(size_t pos, const item& item);
-      void on_items_item_updated(size_t pos, const item& item);
+      void on_items_item_added(xtd::usize pos, const item& item);
+      void on_items_item_removed(xtd::usize pos, const item& item);
+      void on_items_item_updated(xtd::usize pos, const item& item);
       void wm_command_control(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);

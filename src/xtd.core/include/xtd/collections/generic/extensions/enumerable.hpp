@@ -386,7 +386,7 @@ namespace xtd {
           /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
           /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
           /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
+          /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
           template<typename result_t>
           [[nodiscard]] auto select(const std::function<result_t(const source_t&, xtd::usize index)>& selector) const {
@@ -397,7 +397,7 @@ namespace xtd {
           /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
           /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
           /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
+          /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
           [[nodiscard]] auto select(const std::function<source_t(const source_t&, xtd::usize index)>& selector) const {
             return xtd::linq::enumerable::select(self(), selector);
@@ -430,7 +430,7 @@ namespace xtd {
           /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
           /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
+          /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, xtd::usize)>&) to filter a sequence based on a predicate that involves the index of each element.
           /// @include enumerable_where2.cpp
           auto where(const std::function<bool(const source_t&, xtd::usize)>& predicate) const {
             return xtd::linq::enumerable::where(self(), predicate);

@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
-      list_control& selected_index(size_t selected_index) override;
+      list_control& selected_index(xtd::usize selected_index) override;
       
       /// @brief Gets currently selected item in the combo_box.
       /// @return An object that represents the current selection in the control.
@@ -171,20 +171,20 @@ namespace xtd {
       /// @param items A choice::object_collection representing the items in the combo_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::combo_box::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const object_collection& items, size_t selected_index);
+      static combo_box create(const object_collection& items, xtd::usize selected_index);
       /// @brief A factory to create an xtd::forms::combo_box with specified items, selected_index, and location.
       /// @param items A choice::object_collection representing the items in the combo_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::combo_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const object_collection& items, size_t selected_index, const drawing::point& location);
+      static combo_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::combo_box with specified items, selected_index, location, and size.
       /// @param items A choice::object_collection representing the items in the combo_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::combo_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::combo_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      static combo_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::combo_box with specified items, selected_index, location, size, and name.
       /// @param items A choice::object_collection representing the items in the combo_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::combo_box::object_collection::npos is returned if no item is selected.
@@ -192,7 +192,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::combo_box.
       /// @param name The name of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      static combo_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::combo_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
@@ -246,14 +246,14 @@ namespace xtd {
       /// @param items A choice::object_collection representing the items in the combo_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::combo_box::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const control& parent, const object_collection& items, size_t selected_index);
+      static combo_box create(const control& parent, const object_collection& items, xtd::usize selected_index);
       /// @brief A factory to create an xtd::forms::combo_box with specified parent, items, selected_index, and location.
       /// @param parent The parent that contains the new created xtd::forms::combo_box.
       /// @param items A choice::object_collection representing the items in the combo_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::combo_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location);
+      static combo_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::combo_box with specified parent, items, selected_index, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::combo_box.
       /// @param items A choice::object_collection representing the items in the combo_box.
@@ -261,7 +261,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::combo_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      static combo_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::combo_box with specified parent, items, selected_index, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::combo_box.
       /// @param items A choice::object_collection representing the items in the combo_box.
@@ -270,7 +270,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::combo_box.
       /// @param name The name of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
-      static combo_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      static combo_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
       /// @name Public Events
@@ -326,9 +326,9 @@ namespace xtd {
       /// @}
       
     private:
-      void on_items_item_added(size_t pos, const item& item);
-      void on_items_item_removed(size_t pos, const item& item);
-      void on_items_item_updated(size_t pos, const item& item);
+      void on_items_item_added(xtd::usize pos, const item& item);
+      void on_items_item_removed(xtd::usize pos, const item& item);
+      void on_items_item_updated(xtd::usize pos, const item& item);
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
       void wm_mouse_double_click(message& message);

@@ -642,7 +642,7 @@ namespace xtd {
     /// @param index The location in pattern where the hexadecimal representation of a character begins.
     /// @return Char The character represented by the hexadecimal encoding at position index. If the character at index is not hexadecimal encoded, the character at index is returned. The value of index is incremented to point to the character following the one returned.
     /// @exception xtd::argument_out_of_range_exception index is less than 0 or greater than or equal to the number of characters in pattern.
-    static char hex_unescape(const xtd::string& pattern, size_t& index);
+    static char hex_unescape(const xtd::string& pattern, xtd::usize& index);
     
     /// @brief  Determines whether a specified character is a valid hexadecimal digit.
     /// @param character The character to validate.
@@ -655,7 +655,7 @@ namespace xtd {
     /// @param index The location in pattern to check for hexadecimal encoding.
     /// @return bool A bool value that is `true` if pattern is hexadecimal encoded at the specified location; otherwise, `false`.
     /// @remarks The is_hex_encoding method checks for hexadecimal encoding that follows the pattern "%hexhex" in a string, where "hex" is a digit from 0 to 9 or a letter from A-F (case-insensitive).
-    static bool is_hex_encoding(const xtd::string& pattern, size_t index);
+    static bool is_hex_encoding(const xtd::string& pattern, xtd::usize index);
     
     /// @brief Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.
     /// @param uri_string The string used to attempt to construct a xtd::uri.

@@ -123,7 +123,7 @@ namespace xtd {
           using base_type = internal_base_type; ///< Underlying vector type.
           using const_base_type = const base_type; ///< Const version of base_type.
           using allocator_type = typename base_type::allocator_type; ///< Allocator type.
-          using size_type = size_t; ///< Type used for sizes.
+          using size_type = std::size_t; ///< Type used for sizes.
           using difference_type = std::ptrdiff_t; ///< Type used for differences between iterators.
           using reference = value_type&; ///< Reference to element.
           using const_reference = const value_type&; ///< Const reference to element.

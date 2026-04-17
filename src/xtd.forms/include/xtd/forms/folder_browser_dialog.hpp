@@ -117,8 +117,8 @@ namespace xtd {
       /// @}
       
     private:
-      bool get_option(size_t flag) const noexcept;
-      void set_option(size_t flag, bool value);
+      bool get_option(xtd::usize flag) const noexcept;
+      void set_option(xtd::usize flag, bool value);
       
       xtd::sptr<data> data_;
     };

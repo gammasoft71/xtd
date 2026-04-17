@@ -230,7 +230,7 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
         /// @include emplace.cpp
         template<typename control_t, typename ...args_t>
-        control_t& emplace_at(size_t index, args_t&& ...args) {
+        control_t& emplace_at(xtd::usize index, args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.add(std::move(control_ptr));
@@ -255,10 +255,10 @@ namespace xtd {
           return control_ref;
         }
         
-        void insert(size_t index, const control_ref& value) override;
+        void insert(xtd::usize index, const control_ref& value) override;
         
         template<typename control_t>
-        void insert(size_t index, control_t& value) {
+        void insert(xtd::usize index, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
           base::insert(index, value);
@@ -278,7 +278,7 @@ namespace xtd {
         /// @name Protected Methods
         
         /// @{
-        void on_item_removed(size_t index, control_ref& item) override {
+        void on_item_removed(xtd::usize index, control_ref& item) override {
           xtd::forms::layout::arranged_element_collection<control_ref>::on_item_removed(index, item);
           for (auto i = xtd::usize {0}; i < controls_.count(); ++i) {
             if (controls_[i].get() != &item.get()) continue;
@@ -994,12 +994,12 @@ namespace xtd {
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
       /// @exception xtd::argument_exception The child control is not in the control::control_collection.
-      size_t get_child_index(intptr child) const;
+      xtd::usize get_child_index(intptr child) const;
       
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
       /// @param throw_exception `true` to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, `false`.
-      size_t get_child_index(intptr child, bool& throw_exception) const;
+      xtd::usize get_child_index(intptr child, bool& throw_exception) const;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
@@ -2218,8 +2218,8 @@ namespace xtd {
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
       static bool is_trace_form_or_control(const string& name);
-      void on_controls_item_added(size_t, control_ref item);
-      void on_controls_item_removed(size_t, control_ref item);
+      void on_controls_item_added(xtd::usize, control_ref item);
+      void on_controls_item_removed(xtd::usize, control_ref item);
       void on_parent_size_changed(object& sender, const event_args& e);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr handle, message& message);

@@ -32,7 +32,7 @@ namespace {
   protected:
     bool IsSeekable()  const override {return true;}
     
-    size_t OnSysRead(void* buffer, size_t size) override {
+    xtd::usize OnSysRead(void* buffer, xtd::usize size) override {
       stream_.peek();
       if (stream_.fail() || stream_.bad()) m_lasterror = wxStreamError::wxSTREAM_READ_ERROR;
       else if (stream_.eof()) m_lasterror = wxStreamError::wxSTREAM_EOF;
@@ -61,7 +61,7 @@ namespace {
   protected:
     bool IsSeekable()  const override {return false;}
     
-    size_t OnSysWrite(const void* buffer, size_t size) override {
+    xtd::usize OnSysWrite(const void* buffer, xtd::usize size) override {
       if (stream_.fail() || stream_.bad()) m_lasterror = wxStreamError::wxSTREAM_WRITE_ERROR;
       stream_.write(static_cast<const std::ostream::char_type*>(buffer), size);
       return size;
@@ -72,17 +72,17 @@ namespace {
   };
   
   /*
-  size_t frame_count(std::istream& stream) {
+  xtd::usize frame_count(std::istream& stream) {
     StdInputStreamAdapter std_stream(stream);
     return wxImage::GetImageCount(std_stream);
   }
   
-  size_t frame_count(const xtd::string& filename) {
+  xtd::usize frame_count(const xtd::string& filename) {
     return wxImage::GetImageCount(wxString(convert_string::to_wstring(filename)));
   }
    */
   
-  wxBitmapType to_bitmap_type(size_t raw_format) {
+  wxBitmapType to_bitmap_type(xtd::usize raw_format) {
     switch (raw_format) {
       case IFM_BMP: return wxBitmapType::wxBITMAP_TYPE_BMP;
       case IFM_MEMORY_BMP: return wxBitmapType::wxBITMAP_TYPE_BMP_RESOURCE;
@@ -119,7 +119,7 @@ namespace {
     }
   }
   
-  size_t to_raw_format(wxBitmapType bitmap_type) {
+  xtd::usize to_raw_format(wxBitmapType bitmap_type) {
     switch (bitmap_type) {
       case wxBITMAP_TYPE_BMP: return IFM_BMP;
       case wxBITMAP_TYPE_BMP_RESOURCE: return IFM_MEMORY_BMP;
@@ -156,7 +156,7 @@ namespace {
     }
   }
   
-  size_t get_frame_resolution(const wxImage& image) {
+  xtd::usize get_frame_resolution(const wxImage& image) {
     switch (image.GetType()) {
       case wxBitmapType::wxBITMAP_TYPE_BMP: return FD_PAGE;
       case wxBitmapType::wxBITMAP_TYPE_BMP_RESOURCE: return FD_PAGE;
@@ -215,7 +215,7 @@ void image::color_palette(intptr image, array<std::tuple<xtd::byte, xtd::byte, x
   flags = 1;
 }
 
-intptr image::create(const string& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
+intptr image::create(const string& filename, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   auto extension = xtd::io::path::get_extension(filename).to_lower();
   auto bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANY;
@@ -253,7 +253,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   return reinterpret_cast<intptr>(img);
 }
 
-intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
+intptr image::create(std::istream& stream, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   auto img = new wxImage(std_stream);
@@ -267,7 +267,7 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t
   return reinterpret_cast<intptr>(img);
 }
 
-intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_resolutions) {
+intptr image::create(const char* const* bits, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   auto img = new wxImage(bits);
   if (!img->IsOk()) {
@@ -279,7 +279,7 @@ intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_re
   return reinterpret_cast<intptr>(img);
 }
 
-intptr image::create(const unsigned char* bits, int32 width, int32 height, std::map<size_t, size_t>& frame_resolutions) {
+intptr image::create(const unsigned char* bits, int32 width, int32 height, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   auto img = new wxImage(wxBitmap(reinterpret_cast<const char*>(bits), width, height).ConvertToImage());
   if (!img->IsOk()) {
@@ -347,7 +347,7 @@ void image::destroy(intptr image) {
   delete reinterpret_cast<wxImage*>(image);
 }
 
-size_t image::flags(intptr image) {
+xtd::usize image::flags(intptr image) {
   /// @todo see how to get flags dimension with wxWidgets.
   auto result = IFL_NONE;
   if (reinterpret_cast<wxImage*>(image)->HasAlpha()) result += IFL_HAS_ALPHA;
@@ -422,9 +422,9 @@ void image::physical_dimension(intptr image, int32& width, int32& height) {
   height = reinterpret_cast<wxImage*>(image)->GetHeight();
 }
 
-size_t image::pixel_format(intptr image) {
+xtd::usize image::pixel_format(intptr image) {
   /// @todo see how to get pixel format with wxWidgets.
-  size_t result = 0; // pixel_format::dont_care
+  xtd::usize result = 0; // pixel_format::dont_care
   result += 0x00200000; // pixel_format::canonical
   result += 0x00020000; // pixel_format::gdi
   if (reinterpret_cast<wxImage*>(image)->HasAlpha()) result += 0x00040000; // pixel_format::alpha
@@ -442,7 +442,7 @@ array<image::property_item> image::property_items(intptr image) {
   return {};
 }
 
-size_t image::raw_format(intptr image) {
+xtd::usize image::raw_format(intptr image) {
   return to_raw_format(reinterpret_cast<wxImage*>(image)->GetType());
 }
 
@@ -450,11 +450,11 @@ void image::save(intptr image, const string& filename) {
   reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
 
-void image::save(intptr image, const string& filename, size_t raw_format) {
+void image::save(intptr image, const string& filename, xtd::usize raw_format) {
   reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)), to_bitmap_type(raw_format));
 }
 
-void image::save(intptr image, std::ostream& stream, size_t raw_format) {
+void image::save(intptr image, std::ostream& stream, xtd::usize raw_format) {
   StdOutputStreamAdapter output_stream(stream);
   reinterpret_cast<wxImage*>(image)->SaveFile(output_stream, to_bitmap_type(raw_format));
 }

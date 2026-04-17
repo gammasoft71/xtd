@@ -139,7 +139,7 @@ namespace xtd {
     [[nodiscard]] auto equals(const box& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<value_type> {}(this->value, value.value);}
     
     /// @brief Serves as a hash function for a particular type.
-    /// @return size_t A hash code for the current object.
+    /// @return A hash code for the current object.
     [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(value);}
     
     /// @brief Returns a xtd::string that represents the current object.

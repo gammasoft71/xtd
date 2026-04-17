@@ -201,7 +201,7 @@ namespace xtd {
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         /// @remarks The curve begins at the point in the array specified by offset, and includes the number of points (segments) specified by number_of_segments.
-        void add_curve(const xtd::array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
+        void add_curve(const xtd::array<xtd::drawing::point>& points, xtd::usize offset, xtd::usize number_of_segments, float tension);
         /// @brief Adds a spline curve to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param offset he index of the element in the points array that is used as the first point in the curve.
@@ -209,7 +209,7 @@ namespace xtd {
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         /// @remarks The curve begins at the point in the array specified by offset, and includes the number of points (segments) specified by number_of_segments.
-        void add_curve(const xtd::array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
+        void add_curve(const xtd::array<xtd::drawing::point_f>& points, xtd::usize offset, xtd::usize number_of_segments, float tension);
         
         /// @brief Adds an ellipse to the current path.
         /// @param rect A xtd::drawing::rectangle that represents the bounding rectangle that defines the ellipse.

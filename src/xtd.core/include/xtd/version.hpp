@@ -270,7 +270,7 @@ namespace xtd {
     /// | 4           | major.minor.build.revision |
     /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
     /// @exception xtd::argument_exception field_count is more than 4<br>-or-<br>field_count is more than the number of components defined in the current xtd::version object.
-    xtd::string to_string(size_t field_count) const;
+    xtd::string to_string(xtd::usize field_count) const;
     
     /// @brief Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.
     /// @return The xtd::uint64 representation of the values of the major, minor, build, and revision components of the current xtd::version object.

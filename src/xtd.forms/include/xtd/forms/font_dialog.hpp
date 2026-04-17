@@ -132,24 +132,24 @@ namespace xtd {
       
       /// @brief Gets the maximum point size a user can select.
       /// @return The maximum point size a user can select. The default is 0.
-      size_t max_size() const noexcept;
+      xtd::usize max_size() const noexcept;
       /// @brief Sets the maximum point size a user can select.
       /// @param max_size The maximum point size a user can select. The default is 0.
       /// @return Current font_dialog.
-      font_dialog& max_size(size_t max_size);
+      font_dialog& max_size(xtd::usize max_size);
       
       /// @brief Gets the minimum point size a user can select.
       /// @return The minimum point size a user can select. The default is 0.
-      size_t min_size() const noexcept;
+      xtd::usize min_size() const noexcept;
       /// @brief Sets the minimum point size a user can select.
       /// @param min_size The minimum point size a user can select. The default is 0.
       /// @return Current font_dialog.
-      font_dialog& min_size(size_t min_size);
+      font_dialog& min_size(xtd::usize min_size);
       
       /// @brief Gets values to initialize the font_dialog.
       /// @return A bitwise combination of internal values that initializes the font_dialog.
       /// @remarks The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the font_dialog class to get and set the options.
-      size_t options() const noexcept;
+      xtd::usize options() const noexcept;
       
       /// @brief Gets a value indicating whether the dialog box allows selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set.
       /// @return `true` if selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set, is allowed; otherwise, `false`. The default value is `false`.
@@ -232,8 +232,8 @@ namespace xtd {
       /// @}
       
     private:
-      bool get_option(size_t flag) const noexcept;
-      void set_option(size_t flag, bool value);
+      bool get_option(xtd::usize flag) const noexcept;
+      void set_option(xtd::usize flag, bool value);
       
       xtd::sptr<data> data_;
     };

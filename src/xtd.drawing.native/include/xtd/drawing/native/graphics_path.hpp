@@ -92,7 +92,7 @@ namespace xtd {
         /// @param number_of_segments The number of segments used to draw the curve. A segment can be thought of as a line connecting two points.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @warning Internal use only
-        static void add_curve(intptr handle, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, size_t offset, size_t number_of_segments, float tension);
+        static void add_curve(intptr handle, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, xtd::usize offset, xtd::usize number_of_segments, float tension);
         
         /// @brief Adds an ellipse to the current path.
         /// @param handle The graphics_path handle.

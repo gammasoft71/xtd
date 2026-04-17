@@ -19,18 +19,18 @@
 /// @cond
 namespace __enumeration_introspection {
   constexpr auto trim(std::string_view view) -> std::string_view {
-    size_t start = view.find_first_not_of(' ');
+    auto start = view.find_first_not_of(' ');
     if (start == std::string_view::npos) return "";
-    size_t end = view.find_first_of(" =", start);
+    auto end = view.find_first_of(" =", start);
     if (end == std::string_view::npos) return view.substr(start);
     return view.substr(start, end - start);
   }
   
-  template <size_t count, size_t str_size, typename function_t>
+  template <xtd::usize count, xtd::usize str_size, typename function_t>
   constexpr auto split_trim_apply(char const(&str)[str_size], function_t func) -> void {
     std::string_view view(str, str_size - 1);
     
-    for (size_t i = 0; i < count; i++) {
+    for (auto i = xtd::usize {0}; i < count; i++) {
       auto new_pos = view.find(',');
       func(trim(view.substr(0, new_pos)));
       if (new_pos != std::string_view::npos) view = view.substr(new_pos + 1);
@@ -38,20 +38,20 @@ namespace __enumeration_introspection {
     }
   }
   
-  template <size_t count, size_t str_size>
-  constexpr auto compute_name_block_size(char const(&str)[str_size]) -> size_t {
-    size_t total = 0;
+  template <xtd::usize count, xtd::usize str_size>
+  constexpr auto compute_name_block_size(char const(&str)[str_size]) -> xtd::usize {
+    auto total = xtd::usize {0};
     split_trim_apply<count>(str, [&](std::string_view sv) {total += sv.size();});
     return total;
   }
   
-  template <size_t count, size_t str_size>
+  template <xtd::usize count, xtd::usize str_size>
   constexpr auto write_names_and_sizes(char const(&str)[str_size], char* destination, unsigned* offsets) -> void {
-    size_t current_offset = 0;
+    auto current_offset = xtd::usize {0};
     split_trim_apply<count>(str, [&](std::string_view sv) {
       char const* source = sv.data();
-      size_t size = sv.size();
-      for (size_t i = 0; i < size; i++)
+      auto size = sv.size();
+      for (auto i = xtd::usize {0}; i < size; i++)
         destination[i] = source[i];
       *offsets++ = static_cast<unsigned>(current_offset);
       destination += size; // Known errors with assignment pointer parameter.
@@ -66,7 +66,7 @@ namespace __enumeration_introspection {
     return view.substr(pos + 1);
   }
   
-  template <size_t count>
+  template <xtd::usize count>
   constexpr auto get_top_name(char const(&str)[count]) {return get_top_name(std::string_view(str, count - 1));}
   
   template<typename base_t>
@@ -130,7 +130,7 @@ namespace __enumeration_introspection {
     }
   };
   
-  template <size_t count, size_t blk_size>
+  template <xtd::usize count, xtd::usize blk_size>
   struct string_block {
     char data[blk_size] {};
     unsigned offsets[count + 1] {};
@@ -147,9 +147,9 @@ namespace __enumeration_introspection {
     using const_iterator = iterator;
     constexpr auto begin() const noexcept -> iterator {return iterator(data, offsets);}
     constexpr auto end() const noexcept -> iterator {return iterator(data, offsets + count);}
-    constexpr static auto size() noexcept -> size_t {return count;}
-    constexpr static auto block_size() noexcept -> size_t {return blk_size;}
-    constexpr auto operator [](size_t i) const noexcept -> std::string_view {
+    constexpr static auto size() noexcept -> xtd::usize {return count;}
+    constexpr static auto block_size() noexcept -> xtd::usize {return blk_size;}
+    constexpr auto operator [](xtd::usize i) const noexcept -> std::string_view {
       auto off1 = offsets[i];
       auto off2 = offsets[i + 1];
       return std::string_view(data + off1, off2 - off1);
@@ -163,8 +163,8 @@ namespace __enumeration_introspection {
   struct enum_type_info_base {
     constexpr static std::string_view qualified_type_name {name_of_type<enum_t>};
     constexpr static std::string_view type_name {get_top_name(name_of_type<enum_t>)};
-    constexpr static size_t num_states = 0;
-    constexpr static size_t size() noexcept {return 0;}
+    constexpr static xtd::usize num_states = 0;
+    constexpr static xtd::usize size() noexcept {return 0;}
   };
   
   template<typename enum_t>
@@ -173,7 +173,7 @@ namespace __enumeration_introspection {
   template<typename enum_t>
   struct enum_name_list_base : enum_type_info_base<enum_t> {
     using enum_type_info_base<enum_t>::num_states;
-    constexpr static size_t name_block_size = 0;
+    constexpr static xtd::usize name_block_size = 0;
     using block_type = string_block<num_states, name_block_size>;
     block_type name_block;
   };
@@ -201,7 +201,7 @@ namespace __enumeration_introspection {
     using const_iterator = enum_t const*;
     constexpr auto begin() const noexcept -> iterator {return values.__enumeration_internal_values__;}
     constexpr auto end() const noexcept -> iterator {return values.__enumeration_internal_values__ + super::num_states;}
-    constexpr auto operator [](size_t i) const noexcept -> enum_t const& {return values.__enumeration_internal_values__[i];}
+    constexpr auto operator [](xtd::usize i) const noexcept -> enum_t const& {return values.__enumeration_internal_values__[i];}
   };
   
   template<typename enum_t>
@@ -217,11 +217,11 @@ namespace __enumeration_introspection {
     constexpr static auto get_name_block() noexcept -> block_type const& {return name_info.name_block;}
     constexpr auto begin() const noexcept -> iterator {return name_info.name_block.begin();}
     constexpr auto end() const noexcept -> iterator {return name_info.name_block.end();}
-    constexpr auto operator [](size_t i) const noexcept -> std::string_view {return name_info.name_block[i];}
+    constexpr auto operator [](xtd::usize i) const noexcept -> std::string_view {return name_info.name_block[i];}
   };
   
   template<typename enum_t>
-  constexpr size_t num_states = enum_type_info<enum_t>::num_states;
+  constexpr xtd::usize num_states = enum_type_info<enum_t>::num_states;
   
   template<typename enum_t>
   constexpr enum_value_list<enum_t> enum_values {};
@@ -238,12 +238,12 @@ namespace __enumeration_introspection {
       using base_type = base_t; \
       [[maybe_unused]] constexpr static std::string_view qualified_type_name = __enum_introspection_concat__(namespace_name, enum_t); \
       [[maybe_unused]] constexpr static std::string_view type_name = get_top_name(__enum_introspection_concat__(namespace_name, enum_t)); \
-      constexpr static size_t num_states = []() -> size_t { \
+      constexpr static xtd::usize num_states = []() -> xtd::usize { \
         enumeration_maker<base_t> __VA_ARGS__; \
         enumeration_maker<base_t> __enum_introspection_vals[] {__VA_ARGS__}; \
         return sizeof(__enum_introspection_vals) / sizeof(enumeration_maker<base_t>); \
       }(); \
-      constexpr static size_t size() noexcept {return num_states;} \
+      constexpr static xtd::usize size() noexcept {return num_states;} \
     }; \
     template <> struct enum_value_list_base<enum_t> : enum_type_info_base<enum_t> { \
       enum_t __enumeration_internal_values__[enum_type_info_base<enum_t>::num_states]; \
@@ -251,13 +251,13 @@ namespace __enumeration_introspection {
         enumeration_maker<base_t> __VA_ARGS__; \
         value_assigner<base_t> {}, __VA_ARGS__; \
         enumeration_maker<base_t> __enum_introspection_vals[] {__VA_ARGS__}; \
-        for (size_t i = 0; i < enum_type_info_base<enum_t>::num_states; i++) \
+        for (xtd::usize i = 0; i < enum_type_info_base<enum_t>::num_states; i++) \
           this->__enumeration_internal_values__[i] = enum_t(__enum_introspection_vals[i]); \
       } \
     }; \
     template <> struct enum_name_list_base<enum_t> : enum_type_info_base<enum_t> { \
       using enum_type_info_base<enum_t>::num_states; \
-      constexpr static size_t name_block_size = compute_name_block_size<num_states>(#__VA_ARGS__); \
+      constexpr static xtd::usize name_block_size = compute_name_block_size<num_states>(#__VA_ARGS__); \
       using block_type = string_block<num_states, name_block_size>; \
       block_type name_block; \
       constexpr enum_name_list_base() : name_block([](auto& block) { \

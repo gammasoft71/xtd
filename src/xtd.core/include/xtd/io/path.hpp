@@ -224,13 +224,13 @@ namespace xtd {
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       /// @remarks The default extension length is 0.
-      [[nodiscard]] static auto get_random_file_name(size_t name_length) -> xtd::string;
+      [[nodiscard]] static auto get_random_file_name(xtd::usize name_length) -> xtd::string;
       /// @brief Returns a random folder name or file name with specified name length, and extension length.
       /// @brief name_length The name legnth.
       /// @brief extension_size The extension legnth.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
-      [[nodiscard]] static auto get_random_file_name(size_t name_size, size_t extension_size) -> xtd::string;
+      [[nodiscard]] static auto get_random_file_name(xtd::usize name_size, xtd::usize extension_size) -> xtd::string;
       
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.

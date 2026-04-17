@@ -37,11 +37,11 @@ namespace xtd {
             value
           };
           parse_status status = parse_status::selector;
-          size_t start_index = 0;
+          xtd::usize start_index = 0;
           xtd::web::css::selector current_selector;
           xtd::string current_selector_name;
           xtd::string current_key;
-          for (size_t index = 0; index < text.length(); index++) {
+          for (xtd::usize index = 0; index < text.length(); index++) {
             if (text[index] == '/' && text[index + 1] == '*') {
               // Skip comments...
               index = text.index_of("*/", index + 2);

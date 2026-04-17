@@ -276,7 +276,7 @@ string uri::hex_escape(char character) {
   return string::format("%{:X2}", convert::to_int32(character));
 }
 
-char uri::hex_unescape(const string& pattern, size_t& index) {
+char uri::hex_unescape(const string& pattern, xtd::usize& index) {
   index += 3;
   return as<char>(parse<int32>(pattern.substring(index - 2, 2), number_styles::hex_number));
 }
@@ -292,7 +292,7 @@ bool uri::is_hex_digit(char character) {
   return (character >= '0' && character <= '9') || (character >= 'A' && character <= 'F') || (character >= 'a' && character <= 'f');
 }
 
-bool uri::is_hex_encoding(const string& pattern, size_t index) {
+bool uri::is_hex_encoding(const string& pattern, xtd::usize index) {
   if (pattern.length() < index + 3)  return false;
   
   auto it = pattern.begin() + index;

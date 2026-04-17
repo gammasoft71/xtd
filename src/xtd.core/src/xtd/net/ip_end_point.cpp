@@ -69,7 +69,7 @@ auto ip_end_point::get_hash_code() const noexcept -> usize {
 
 auto ip_end_point::serialize() const -> socket_address {
   socket_address result(address_family_, address_family_ == address_family::inter_network ? 16 : 28);
-  size_t index = 2;
+  xtd::usize index = 2;
   for (xtd::byte b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
     result[index++] = b;
     

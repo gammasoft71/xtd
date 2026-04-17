@@ -466,7 +466,7 @@ namespace xtd {
         /// @param characters_fitted Number of characters in the string.
         /// @param lines_filled Number of text lines in the string.
         /// @warning Internal use only
-        static void measure_string(intptr handle, const xtd::string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces);
+        static void measure_string(intptr handle, const xtd::string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, xtd::usize characters_fitted, xtd::usize lines_filled, bool measure_trailing_spaces);
         
         /// @brief Releases a device context handle obtained by a previous call to the xtd::drawing::native::graphics::get_hdc() method of the graphics.
         /// @param handle The graphics handle.

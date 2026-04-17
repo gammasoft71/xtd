@@ -405,10 +405,10 @@ namespace xtd {
   template<typename ...types_t>
   inline xtd::string to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc);
   
-  template<typename type_t, size_t size>
+  template<typename type_t, xtd::usize size>
   inline xtd::string to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc);
   
-  template<size_t size>
+  template<xtd::usize size>
   inline xtd::string to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc);
   
   template<typename type_t, typename allocator_t>

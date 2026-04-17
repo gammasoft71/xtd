@@ -297,40 +297,40 @@ namespace xtd {
         
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
-        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @param frame_resolutions an std::map<xtd::usize, xtd::usize> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @param use_icm `true` to use color correction for this Bitmap; otherwise, `false`.
         /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr create(const xtd::string& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(const xtd::string& filename, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions);
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param use_icm `true` to use color correction for this Bitmap; otherwise, `false`.
-        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @param frame_resolutions an std::map<xtd::usize, xtd::usize> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr create(std::istream& stream, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(std::istream& stream, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions);
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
-        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @param frame_resolutions an std::map<xtd::usize, xtd::usize> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
         /// @remarks This method is used for creating an imgae from an XPM image.
         /// @warning Internal use only
-        static intptr create(const char* const* bits, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(const char* const* bits, std::map<xtd::usize, xtd::usize>& frame_resolutions);
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
         /// @param width The width for the image.
         /// @param height The height for the image.
-        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @param frame_resolutions an std::map<xtd::usize, xtd::usize> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
         /// @remarks This method is used for creating an imgae from an XBM image.
         /// @warning Internal use only
-        static intptr create(const unsigned char* bits, int32 width, int32 height, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(const unsigned char* bits, int32 width, int32 height, std::map<xtd::usize, xtd::usize>& frame_resolutions);
         /// @brief Creates an empty image from size.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
@@ -369,7 +369,7 @@ namespace xtd {
         /// @param image The image handle.
         /// @return The integer representing a bitwise combination of image flags for this Image (see image_flags.h for more information).
         /// @warning Internal use only
-        static size_t flags(intptr image);
+        static xtd::usize flags(intptr image);
         
         /// @brief Creates a bitmap from a Windows handle to an icon.
         /// @param hicon A handle to an icon.
@@ -465,13 +465,13 @@ namespace xtd {
         /// @param image The image handle.
         /// @return A pixel_format that represents the pixel format for the image.
         /// @warning Internal use only
-        static size_t pixel_format(intptr image);
+        static xtd::usize pixel_format(intptr image);
         
         /// @brief Gets the file format of the image.
         /// @param image The image handle.
         /// @return The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static size_t raw_format(intptr image);
+        static xtd::usize raw_format(intptr image);
         
         /// @brief Sets the resolution for this bitmap.
         /// @param image The image handle.
@@ -489,13 +489,13 @@ namespace xtd {
         /// @param filename The file to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr image, const xtd::string& filename, size_t raw_format);
+        static void save(intptr image, const xtd::string& filename, xtd::usize raw_format);
         /// @brief Saves image to the specified stream and raw format.
         /// @param image The image handle.
         /// @param stream The stream to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr image, std::ostream& stream, size_t raw_format);
+        static void save(intptr image, std::ostream& stream, xtd::usize raw_format);
         
         /// @brief Get the screen dpi.
         /// @return The screen dpi.

@@ -319,12 +319,12 @@ namespace xtd {
       ///
       ///     //Copy files.
       ///     array<file_info> source_files = source.get_files();
-      ///     for(size_t i = 0; i < source_files.length(); ++i)
+      ///     for (auto i = 0_z; i < source_files.length(); ++i)
       ///       file::copy(source_files[i].full_name(), target.full_name() +"\\" + source_files[i].name(), true);
       ///
       ///     //Copy directories.
       ///     array<directory_info> source_directories = source.get_directories();
-      ///     for(size_t j = 0; j < source_directories.length(); ++j)
+      ///     for (auto j = 0_z; j < source_directories.length(); ++j)
       ///       copy_directory(source_directories[j].full_name(), target.full_name() + "\\" + source_directories[j].name());
       ///   }
       ///

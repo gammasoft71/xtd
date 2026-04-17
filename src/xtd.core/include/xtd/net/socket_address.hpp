@@ -42,7 +42,7 @@ namespace xtd {
       explicit socket_address(sockets::address_family address_family);
       
       /// @brief Creates a new instance of the xtd::net::socket_address class using the specified address family and buffer size.
-      socket_address(sockets::address_family address_family, size_t buffer_size);
+      socket_address(sockets::address_family address_family, xtd::usize buffer_size);
       
       /// @brief Creates a new instance of the xtd::net::socket_address class using the specified byte buffer .
       explicit socket_address(const xtd::array<xtd::byte>& buffer);

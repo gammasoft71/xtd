@@ -132,7 +132,7 @@ namespace xtd {
     [[nodiscard]] auto equals(attribute_t value) const noexcept -> bool {return false;}
     
     /// @brief Serves as a hash function for a particular type.
-    /// @return size_t A hash code for the current object.
+    /// @return A hash code for the current object.
     [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(value);}
     
     /// @brief Converts this instance to byte.

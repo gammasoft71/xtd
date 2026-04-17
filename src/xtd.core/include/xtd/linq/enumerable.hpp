@@ -349,7 +349,7 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
       template<typename input_iterator_t>
-      [[nodiscard]] static auto as_enumerable(input_iterator_t iterator, size_t length) noexcept {
+      [[nodiscard]] static auto as_enumerable(input_iterator_t iterator, xtd::usize length) noexcept {
         return as_enumerable(iterator, iterator + length);
       }
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
@@ -360,7 +360,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
-      template<typename source_t, size_t length>
+      template<typename source_t, xtd::usize length>
       [[nodiscard]] static auto as_enumerable(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
@@ -578,7 +578,7 @@ namespace xtd {
         auto enumerator = source.get_enumerator();
         while (enumerator.move_next()) {
           auto key = key_selector(enumerator.current());
-          auto index = size_t {0};
+          auto index = xtd::usize {0};
           for (; index < keys.count(); ++index)
             if (key_comparer.equals(keys[index], key)) break;
           if (index < keys.count()) result.items[index] = {key, result.items[index].value() + 1};
@@ -738,12 +738,12 @@ namespace xtd {
       /// @param iterator The iterator.
       /// @param legnth The le,gth to iterate.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @remarks Same as as_enemerable(input_iterator_t iterator, size_t length).
+      /// @remarks Same as as_enemerable(input_iterator_t iterator, xtd::usize length).
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from5.cpp
       template<typename input_iterator_t>
-      [[nodiscard]] static auto from(input_iterator_t iterator, size_t length) noexcept {
+      [[nodiscard]] static auto from(input_iterator_t iterator, xtd::usize length) noexcept {
         return as_enumerable(iterator, iterator + length);
       }
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
@@ -755,7 +755,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from6.cpp
-      template<typename source_t, size_t length>
+      template<typename source_t, xtd::usize length>
       [[nodiscard]] static auto from(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }

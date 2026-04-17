@@ -90,11 +90,11 @@ auto path::get_random_file_name() -> string {
   return get_random_file_name(8, 3);
 }
 
-auto path::get_random_file_name(size_t name_length) -> string {
+auto path::get_random_file_name(xtd::usize name_length) -> string {
   return get_random_file_name(name_length, 0);
 }
 
-auto path::get_random_file_name(size_t name_length, size_t extension_length) -> string {
+auto path::get_random_file_name(xtd::usize name_length, xtd::usize extension_length) -> string {
   static auto valid_chars = string {'0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
   static auto rand = xtd::random {};
   auto random_file_name = string::empty_string;

@@ -327,21 +327,21 @@ void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& po
   draw_curve(pen, points, 0, points.length(), tension);
 }
 
-void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments) {
+void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points, xtd::usize offset, xtd::usize number_of_segments) {
   draw_curve(pen, points, offset, number_of_segments, 0.0f);
 }
 
-void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments) {
+void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points, xtd::usize offset, xtd::usize number_of_segments) {
   draw_curve(pen, points, offset, number_of_segments, 0.0f);
 }
 
-void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
+void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points, xtd::usize offset, xtd::usize number_of_segments, float tension) {
   auto curve_points = list<point_f> {};
   std::for_each(points.begin(), points.end(), [&](const auto& pt) {curve_points.add(point_f(pt));});
   draw_curve(pen, curve_points.to_array(), offset, number_of_segments, tension);
 }
 
-void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
+void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points, xtd::usize offset, xtd::usize number_of_segments, float tension) {
   if (offset + number_of_segments > points.length() || number_of_segments == 0) throw_helper::throws(exception_case::argument);
   auto curve_points = list<key_value_pair<float, float>> {};
   for (auto index = 0_z; index < number_of_segments; ++index)
@@ -909,7 +909,7 @@ size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::fon
   return measure_string(text, font, size_f(as<float>(width), single_object::max_value), format);
 }
 
-size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
+size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, xtd::usize characters_fitted, xtd::usize lines_filled) {
   auto string_width = 0.0f;
   auto string_height = 0.0f;
   native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, to_pixels(layout_area.width), to_pixels(layout_area.height), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), characters_fitted, lines_filled, (format.format_flags() & string_format_flags::measure_trailing_spaces) == string_format_flags::measure_trailing_spaces);

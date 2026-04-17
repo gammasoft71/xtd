@@ -193,7 +193,7 @@ namespace xtd {
     }
     
     /// @brief Serves as a hash function for a particular type.
-    /// @return size_t A hash code for the current object.
+    /// @return A hash code for the current object.
     xtd::usize get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
     
     /// @brief Resets the current object. Set the current object to null.

@@ -880,7 +880,7 @@ namespace xtd {
       ///   // Iterate through the matches that were found and display each color that
       ///   // corresponds with the enum value in the array. also display the name of
       ///   // the known_color and the ARGB components.
-      ///   for (size_t i = 0; i < color_matches.length(); ++i) {
+      ///   for (auto i = 0_z; i < color_matches.length(); ++i) {
       ///     // Display the color.
       ///     some_color = color::from_known_color(color_matches[i]);
       ///     my_brush1.color(some_color);

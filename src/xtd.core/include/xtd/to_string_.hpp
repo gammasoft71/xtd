@@ -262,15 +262,15 @@ inline std::string __xtd_range_to_string(const range_t& values, const xtd::strin
   return oss.str();
 }
 
-template<typename type_t, size_t size>
+template<typename type_t, xtd::usize size>
 inline xtd::string xtd::to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
-template<size_t size>
+template<xtd::usize size>
 inline xtd::string xtd::to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc) {
   auto result = xtd::string {"["};
-  for (auto index = size_t {0}; index < values.length(); ++index)
+  for (auto index = xtd::usize {0}; index < values.length(); ++index)
     result += (index ? ", " : "") + to_string(static_cast<bool>(values[index]), fmt, loc);
   return result + "]";
 }

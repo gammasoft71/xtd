@@ -67,7 +67,7 @@ namespace xtd {
           
         private:
           friend class arranged_element_collection;
-          size_t pos = usize_object::max_value;
+          xtd::usize pos = usize_object::max_value;
           arranged_element_collection* owner = nullptr;
         };
         
@@ -238,7 +238,7 @@ namespace xtd {
         /// @param item The object to add to the xtd::forms::layout::arranged_element_collection <type_t>.
         void add(const type_t& item) override {
           data_->items.add(item);
-          size_t index = data_->items.count() - 1;
+          xtd::usize index = data_->items.count() - 1;
           static_cast<value_type&>(self_[index]).owner = this;
           static_cast<value_type&>(self_[index]).pos = index;
           on_item_added(index, data_->items[index]);
@@ -248,7 +248,7 @@ namespace xtd {
         /// @param item The object to add to the xtd::forms::layout::arranged_element_collection <type_t>.
         virtual void add(type_t&& item) {
           data_->items.add(item);
-          size_t index = data_->items.count() - 1;
+          xtd::usize index = data_->items.count() - 1;
           static_cast<value_type&>(self_[index]).owner = this;
           static_cast<value_type&>(self_[index]).pos = index;
           on_item_added(index, data_->items[index]);
@@ -384,7 +384,7 @@ namespace xtd {
         
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
-        virtual void remove_at(size_t index) {
+        virtual void remove_at(xtd::usize index) {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           on_item_removed(index, const_cast<value_type&>(data_->items[index]));
           data_->erasing = true;
@@ -484,15 +484,15 @@ namespace xtd {
         /// @{
         /// @brief Occurs when an item is added to the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
+        event<arranged_element_collection, delegate<void(xtd::usize, type_t& item)>> item_added;
         
         /// @brief Occurs when an item is updated in the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
+        event<arranged_element_collection, delegate<void(xtd::usize, type_t& item)>> item_updated;
         
         /// @brief Occurs when an item is removed from the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
+        event<arranged_element_collection, delegate<void(xtd::usize, type_t& item)>> item_removed;
         /// @}
         
         /// @name Public Deprecatd Aliases
@@ -600,7 +600,7 @@ namespace xtd {
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
         void emplace_back(args_t&& ... args) {
           data_->items.emplace_back(args...);
-          size_t index = data_->items.count() - 1;
+          xtd::usize index = data_->items.count() - 1;
           self_[index].owner = this;
           self_[index].pos = index;
           on_item_added(index, data_->items[index]);
@@ -659,7 +659,7 @@ namespace xtd {
         /// @param pos The index which the content will be erased.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
-        void erase_at(size_t index) {
+        void erase_at(xtd::usize index) {
           remove_at(index);
         }
         
@@ -701,7 +701,7 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        void insert_at(size_t index, const type_t& value) {
+        void insert_at(xtd::usize index, const type_t& value) {
           insert(index, value);
         }
         
@@ -811,17 +811,17 @@ namespace xtd {
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_added event.
         /// @param index The index of the item.
         /// @param item The item added.
-        virtual void on_item_added(size_t index, type_t& item) {item_added(index, item);}
+        virtual void on_item_added(xtd::usize index, type_t& item) {item_added(index, item);}
         
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_updated event.
         /// @param index The index of the item.
         /// @param item The item updated.
-        virtual void on_item_updated(size_t index, type_t& item) {item_updated(index, item);}
+        virtual void on_item_updated(xtd::usize index, type_t& item) {item_updated(index, item);}
         
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_removed event.
         /// @param index The index of the item.
         /// @param item The item removed.
-        virtual void on_item_removed(size_t index, type_t& item) {item_removed(index, item);}
+        virtual void on_item_removed(xtd::usize index, type_t& item) {item_removed(index, item);}
         /// @}
         
       private:

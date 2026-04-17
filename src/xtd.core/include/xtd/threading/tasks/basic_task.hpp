@@ -21,6 +21,7 @@
 #include "../../ref.hpp"
 #include "../../scope_exit.hpp"
 #include "../../sptr.hpp"
+#include "../../usize.hpp"
 #include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -240,10 +241,10 @@ namespace xtd {
         static auto wait_all(const collection_t& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
 
         template<typename collection_t>
-        static size_t wait_any(const collection_t& tasks) {return wait_any(tasks, timeout::infinite);}
+        static xtd::usize wait_any(const collection_t& tasks) {return wait_any(tasks, timeout::infinite);}
         
         template<typename collection_t>
-        static size_t wait_any(const collection_t& tasks, int32 milliseconds_timeout) {
+        static xtd::usize wait_any(const collection_t& tasks, int32 milliseconds_timeout) {
           auto task_pointers = std::vector<itask*> {};
           for (auto& task : tasks)
             task_pointers.push_back(const_cast<decltype(&task)>(&task));
@@ -251,7 +252,7 @@ namespace xtd {
         }
         
         template<typename collection_t>
-        static size_t wait_any(const collection_t& tasks, const time_span& timeout) {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
+        static xtd::usize wait_any(const collection_t& tasks, const time_span& timeout) {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
         /// @}
         
         /// @cond

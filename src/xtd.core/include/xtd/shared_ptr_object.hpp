@@ -162,7 +162,7 @@ namespace xtd {
     element_type* get() const noexcept {return ptr_.get();}
     
     /// @brief Serves as a hash function for a particular type.
-    /// @return size_t A hash code for the current object.
+    /// @return A hash code for the current object.
     xtd::usize get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
     
     /// @brief Resets the current object. Set the current object to null.

@@ -108,7 +108,7 @@ auto main() -> int {
   console::write_line("values = {}", string::join(", ", enum_values<enum_test>));
   console::write_line("names = {}", string::join(", ", enum_names<enum_test>));
   console::write("entries = [");
-  for (size_t num_state = 0; num_state < num_states<enum_test>; ++num_state)
+  for (auto num_state = 0_z; num_state < num_states<enum_test>; ++num_state)
     console::write("{}({}, {})", num_state == 0 ? "" : ", ", enum_values<enum_test>[num_state], enum_names<enum_test>[num_state]);
   console::write_line("]");
 }

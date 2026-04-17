@@ -115,7 +115,7 @@ namespace xtd {
       /// @brief Gets values to initialize the color_dialog.
       /// @return A bitwise combination of internal values that initializes the color_dialog.
       /// @remarks The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the color_dialog class to get and set the options.
-      size_t options() const noexcept;
+      xtd::usize options() const noexcept;
       
       /// @brief Gets a value indicating whether a Help button appears in the color dialog box.
       /// @return `true` if the Help button is shown in the dialog box; otherwise, `false`. The default value is `false`.
@@ -166,8 +166,8 @@ namespace xtd {
       /// @}
       
     private:
-      bool get_option(size_t flag) const noexcept;
-      void set_option(size_t flag, bool value);
+      bool get_option(xtd::usize flag) const noexcept;
+      void set_option(xtd::usize flag, bool value);
       
       xtd::sptr<data> data_;
     };
