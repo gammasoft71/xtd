@@ -60,11 +60,11 @@ tool_bar_button& tool_bar_button::enabled(bool value) {
   return *this;
 }
 
-size_t tool_bar_button::image_index() const noexcept {
+xtd::usize tool_bar_button::image_index() const noexcept {
   return data_->image_index;
 }
 
-tool_bar_button& tool_bar_button::image_index(size_t value) {
+tool_bar_button& tool_bar_button::image_index(xtd::usize value) {
   if (data_->image_index == value) return *this;
   data_->image_index = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
@@ -175,7 +175,7 @@ tool_bar_button tool_bar_button::create_drop_down_button(const xtd::string& text
   return result;
 }
 
-tool_bar_button tool_bar_button::create_drop_down_button(size_t image_index, const xtd::forms::context_menu& drop_down_menu) {
+tool_bar_button tool_bar_button::create_drop_down_button(xtd::usize image_index, const xtd::forms::context_menu& drop_down_menu) {
   auto result = tool_bar_button {};
   result.drop_down_menu(drop_down_menu);
   result.image_index(image_index);
@@ -183,7 +183,7 @@ tool_bar_button tool_bar_button::create_drop_down_button(size_t image_index, con
   return result;
 }
 
-tool_bar_button tool_bar_button::create_drop_down_button(const xtd::string& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu) {
+tool_bar_button tool_bar_button::create_drop_down_button(const xtd::string& text, xtd::usize image_index, const xtd::forms::context_menu& drop_down_menu) {
   auto result = tool_bar_button {};
   result.drop_down_menu(drop_down_menu);
   result.image_index(image_index);
@@ -199,14 +199,14 @@ tool_bar_button tool_bar_button::create_push_button(const xtd::string& text) {
   return result;
 }
 
-tool_bar_button tool_bar_button::create_push_button(size_t image_index) {
+tool_bar_button tool_bar_button::create_push_button(xtd::usize image_index) {
   auto result = tool_bar_button {};
   result.image_index(image_index);
   result.style(xtd::forms::tool_bar_button_style::push_button);
   return result;
 }
 
-tool_bar_button tool_bar_button::create_push_button(const xtd::string& text, size_t image_index) {
+tool_bar_button tool_bar_button::create_push_button(const xtd::string& text, xtd::usize image_index) {
   auto result = tool_bar_button {};
   result.image_index(image_index);
   result.style(xtd::forms::tool_bar_button_style::push_button);
@@ -233,14 +233,14 @@ tool_bar_button tool_bar_button::create_toggle_button(const xtd::string& text) {
   return result;
 }
 
-tool_bar_button tool_bar_button::create_toggle_button(size_t image_index) {
+tool_bar_button tool_bar_button::create_toggle_button(xtd::usize image_index) {
   auto result = tool_bar_button {};
   result.image_index(image_index);
   result.style(xtd::forms::tool_bar_button_style::toggle_button);
   return result;
 }
 
-tool_bar_button tool_bar_button::create_toggle_button(const xtd::string& text, size_t image_index) {
+tool_bar_button tool_bar_button::create_toggle_button(const xtd::string& text, xtd::usize image_index) {
   auto result = tool_bar_button {};
   result.image_index(image_index);
   result.style(xtd::forms::tool_bar_button_style::toggle_button);

@@ -10,9 +10,9 @@ using namespace xtd::forms;
 struct font_dialog::data {
   drawing::color color = application::style_sheet().system_colors().control_text();
   drawing::font font = drawing::system_fonts::default_font();
-  size_t max_size = 0;
-  size_t min_size = 0;
-  size_t options = CF_TTONLY;
+  xtd::usize max_size = 0;
+  xtd::usize min_size = 0;
+  xtd::usize options = CF_TTONLY;
   bool show_color = false;
 };
 
@@ -91,25 +91,25 @@ font_dialog& font_dialog::font_must_exist(bool font_must_exist) {
   return *this;
 }
 
-size_t font_dialog::max_size() const noexcept {
+xtd::usize font_dialog::max_size() const noexcept {
   return data_->max_size;
 }
 
-font_dialog& font_dialog::max_size(size_t max_size) {
+font_dialog& font_dialog::max_size(xtd::usize max_size) {
   data_->max_size = max_size;
   return *this;
 }
 
-size_t font_dialog::min_size() const noexcept {
+xtd::usize font_dialog::min_size() const noexcept {
   return data_->min_size;
 }
 
-font_dialog& font_dialog::min_size(size_t min_size) {
+font_dialog& font_dialog::min_size(xtd::usize min_size) {
   data_->min_size = min_size;
   return *this;
 }
 
-size_t font_dialog::options() const noexcept {
+xtd::usize font_dialog::options() const noexcept {
   return data_->options;
 }
 
@@ -184,10 +184,10 @@ void font_dialog::run_sheet(intptr owner) {
   else native::font_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->font, data_->color, data_->options, data_->min_size, data_->max_size, data_->show_color);
 }
 
-bool font_dialog::get_option(size_t flag) const noexcept {
+bool font_dialog::get_option(xtd::usize flag) const noexcept {
   return (data_->options & flag) == flag;
 }
 
-void font_dialog::set_option(size_t flag, bool value) {
+void font_dialog::set_option(xtd::usize flag, bool value) {
   data_->options = value ? data_->options | flag : data_->options & ~flag;
 }

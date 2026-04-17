@@ -188,8 +188,8 @@ namespace xtd {
       /// @param handle A handle to the menu.
       virtual void destroy_menu_handle(intptr handle);
       
-      virtual void on_item_added(size_t pos, menu_item_ref item);
-      virtual void on_item_removed(size_t pos, menu_item_ref item);
+      virtual void on_item_added(xtd::usize pos, menu_item_ref item);
+      virtual void on_item_removed(xtd::usize pos, menu_item_ref item);
       /// @}
       
       /// @cond

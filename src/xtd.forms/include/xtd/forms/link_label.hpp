@@ -412,12 +412,12 @@ namespace xtd {
       /// @}
       
     private:
-      xtd::drawing::point get_text_location(size_t line) const noexcept;
+      xtd::drawing::point get_text_location(xtd::usize line) const noexcept;
       xtd::array<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const noexcept;
       xtd::drawing::font link_font() const noexcept;
-      void on_links_link_added(size_t pos, const link& link);
-      void on_links_link_removed(size_t pos, const link& link);
-      void on_links_link_updated(size_t pos, const link& link);
+      void on_links_link_added(xtd::usize pos, const link& link);
+      void on_links_link_removed(xtd::usize pos, const link& link);
+      void on_links_link_updated(xtd::usize pos, const link& link);
       
       xtd::sptr<data> data_;
     };

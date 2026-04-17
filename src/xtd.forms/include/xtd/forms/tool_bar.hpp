@@ -430,9 +430,9 @@ namespace xtd {
       bool is_system_tool_bar() const noexcept;
       tool_bar& is_system_tool_bar(bool value);
       
-      void on_item_added(size_t pos, tool_bar_button_ref item);
-      void on_item_updated(size_t pos, tool_bar_button_ref item);
-      void on_item_removed(size_t pos, tool_bar_button_ref item);
+      void on_item_added(xtd::usize pos, tool_bar_button_ref item);
+      void on_item_updated(xtd::usize pos, tool_bar_button_ref item);
+      void on_item_removed(xtd::usize pos, tool_bar_button_ref item);
       
       void resize_stretchable_separtors();
       void update_toolbar_button_control(intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);

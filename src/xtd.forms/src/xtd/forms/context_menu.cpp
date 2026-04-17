@@ -51,7 +51,7 @@ void context_menu::destroy_menu_handle(intptr handle) {
   if (handle) native::context_menu::destroy(handle);
 }
 
-void context_menu::on_item_added(size_t pos, menu_item_ref item) {
+void context_menu::on_item_added(xtd::usize pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
   item.get().menu::data_->context_menu = *this;
   item.get().menu::data_->parent = *this;
@@ -64,7 +64,7 @@ void context_menu::on_item_added(size_t pos, menu_item_ref item) {
   }
 }
 
-void context_menu::on_item_removed(size_t pos, menu_item_ref item) {
+void context_menu::on_item_removed(xtd::usize pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
   item.get().menu::data_->parent.reset();
   native::context_menu::remove_item(handle(), pos);

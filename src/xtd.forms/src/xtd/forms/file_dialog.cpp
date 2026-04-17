@@ -84,11 +84,11 @@ file_dialog& file_dialog::filter(const xtd::string& value) {
   return *this;
 }
 
-size_t file_dialog::filter_index() const noexcept {
+xtd::usize file_dialog::filter_index() const noexcept {
   return data_->filter_index;
 }
 
-file_dialog& file_dialog::filter_index(size_t value) {
+file_dialog& file_dialog::filter_index(xtd::usize value) {
   data_->filter_index = value;
   return *this;
 }
@@ -102,7 +102,7 @@ file_dialog& file_dialog::initial_directory(const xtd::string& value) {
   return *this;
 }
 
-size_t file_dialog::options() const noexcept {
+xtd::usize file_dialog::options() const noexcept {
   return data_->options;
 }
 
@@ -195,10 +195,10 @@ void file_dialog::run_sheet(intptr hwnd_owner) {
   return run_file_sheet(hwnd_owner);
 }
 
-bool file_dialog::get_option(size_t flag) const noexcept {
+bool file_dialog::get_option(xtd::usize flag) const noexcept {
   return (data_->options & flag) == flag;
 }
 
-void file_dialog::set_option(size_t flag, bool value) {
+void file_dialog::set_option(xtd::usize flag, bool value) {
   data_->options = value ? data_->options | flag : data_->options & ~flag;
 }

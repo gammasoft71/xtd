@@ -89,7 +89,7 @@ const list_box& list_box::items(const object_collection& items) {
   return *this;
 }
 
-list_control& list_box::selected_index(size_t selected_index) {
+list_control& list_box::selected_index(xtd::usize selected_index) {
   if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size");
   if (this->selected_index() == selected_index) return *this;
   set_selected_index(selected_index);
@@ -134,7 +134,7 @@ const list_box::item& list_box::selected_item() const noexcept {
 array<list_box::item> list_box::selected_items() const noexcept {
   auto itms = list<item> {};
   auto indices = selected_indices();
-  std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.add(data_->items[index]);});
+  std::for_each(indices.begin(), indices.end(), [&](xtd::usize index) {itms.add(data_->items[index]);});
   return itms.to_array();
 }
 
@@ -223,14 +223,14 @@ list_box list_box::create(const object_collection& items, const drawing::point& 
   return result;
 }
 
-list_box list_box::create(const object_collection& items, size_t selected_index) {
+list_box list_box::create(const object_collection& items, xtd::usize selected_index) {
   auto result = list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
 
-list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
+list_box list_box::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location) {
   auto result = list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -238,7 +238,7 @@ list_box list_box::create(const object_collection& items, size_t selected_index,
   return result;
 }
 
-list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+list_box list_box::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -247,7 +247,7 @@ list_box list_box::create(const object_collection& items, size_t selected_index,
   return result;
 }
 
-list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+list_box list_box::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -321,7 +321,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
   return result;
 }
 
-list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index) {
+list_box list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index) {
   auto result = list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -329,7 +329,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
   return result;
 }
 
-list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
+list_box list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location) {
   auto result = list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -338,7 +338,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
   return result;
 }
 
-list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+list_box list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -348,7 +348,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
   return result;
 }
 
-list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+list_box list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -432,19 +432,19 @@ void list_box::wnd_proc(message& message) {
   }
 }
 
-void list_box::on_items_item_added(size_t pos, const item& item) {
+void list_box::on_items_item_added(xtd::usize pos, const item& item) {
   if (is_handle_created()) native::list_box::insert_item(handle(), pos, item.value());
   auto selected = list_box::item {};
   if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
 
-void list_box::on_items_item_removed(size_t pos, const item& item)   {
+void list_box::on_items_item_removed(xtd::usize pos, const item& item)   {
   if (is_handle_created()) native::list_box::delete_item(handle(), pos);
   if (selected_index() == pos) selected_index(npos);
 }
 
-void list_box::on_items_item_updated(size_t pos, const item& item)   {
+void list_box::on_items_item_updated(xtd::usize pos, const item& item)   {
   if (is_handle_created()) native::list_box::update_item(handle(), pos, item.value());
   auto selected = list_box::item {};
   if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];

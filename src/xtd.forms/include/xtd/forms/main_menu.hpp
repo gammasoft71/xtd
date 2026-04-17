@@ -286,8 +286,8 @@ namespace xtd {
       
       intptr create_menu_handle() override;
       void destroy_menu_handle(intptr handle) override;
-      void on_item_added(size_t pos, menu_item_ref item) override;
-      void on_item_removed(size_t pos, menu_item_ref item) override;
+      void on_item_added(xtd::usize pos, menu_item_ref item) override;
+      void on_item_removed(xtd::usize pos, menu_item_ref item) override;
       /// @}
       
     private:

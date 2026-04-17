@@ -44,7 +44,7 @@ void main_menu::destroy_menu_handle(intptr handle) {
   if (handle) native::main_menu::destroy(handle);
 }
 
-void main_menu::on_item_added(size_t pos, menu_item_ref item) {
+void main_menu::on_item_added(xtd::usize pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
   item.get().menu::data_->main_menu = *this;
   item.get().menu::data_->parent = *this;
@@ -52,7 +52,7 @@ void main_menu::on_item_added(size_t pos, menu_item_ref item) {
   native::main_menu::insert_item(handle(), pos, item.get().handle(), item.get().text());
 }
 
-void main_menu::on_item_removed(size_t pos, menu_item_ref item) {
+void main_menu::on_item_removed(xtd::usize pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
   item.get().menu::data_->parent.reset();
   native::main_menu::remove_item(handle(), pos);

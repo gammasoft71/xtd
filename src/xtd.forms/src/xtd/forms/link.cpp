@@ -6,10 +6,10 @@ using namespace xtd::forms;
 struct forms::link::data {
   string description;
   bool enabled = true;
-  size_t length = 0;
+  xtd::usize length = 0;
   any_object link_data;
   string name;
-  size_t start = 0;
+  xtd::usize start = 0;
   any_object tag;
   bool visited = false;
   bool active = false;
@@ -18,12 +18,12 @@ struct forms::link::data {
 forms::link::link() : data_(xtd::new_sptr<data>()) {
 }
 
-forms::link::link(size_t start, size_t length) : data_(xtd::new_sptr<data>()) {
+forms::link::link(xtd::usize start, xtd::usize length) : data_(xtd::new_sptr<data>()) {
   data_->length = length;
   data_->start = start;
 }
 
-forms::link::link(size_t start, size_t length, const any_object& link_data) : data_(xtd::new_sptr<data>()) {
+forms::link::link(xtd::usize start, xtd::usize length, const any_object& link_data) : data_(xtd::new_sptr<data>()) {
   data_->length = length;
   data_->link_data = link_data;
   data_->start = start;
@@ -56,11 +56,11 @@ forms::link& forms::link::enabled(bool value) {
   return *this;
 }
 
-size_t forms::link::length() const noexcept {
+xtd::usize forms::link::length() const noexcept {
   return data_->length;
 }
 
-forms::link& forms::link::length(size_t value) {
+forms::link& forms::link::length(xtd::usize value) {
   data_->length = value;
   return *this;
 }
@@ -83,11 +83,11 @@ forms::link& forms::link::name(const xtd::string& value) {
   return *this;
 }
 
-size_t forms::link::start() const noexcept {
+xtd::usize forms::link::start() const noexcept {
   return data_->start;
 }
 
-forms::link& forms::link::start(size_t value) {
+forms::link& forms::link::start(xtd::usize value) {
   data_->start = value;
   return *this;
 }

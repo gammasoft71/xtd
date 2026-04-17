@@ -10,7 +10,7 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct progress_bar::data {
-  size_t marquee_animation_speed = 100;
+  xtd::usize marquee_animation_speed = 100;
   int32 maximum = 100;
   int32 minimum = 0;
   forms::orientation orientation = forms::orientation::horizontal;
@@ -26,11 +26,11 @@ progress_bar::progress_bar() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::selectable, false);
 }
 
-size_t progress_bar::marquee_animation_speed() const noexcept {
+xtd::usize progress_bar::marquee_animation_speed() const noexcept {
   return data_->marquee_animation_speed;
 }
 
-progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {
+progress_bar& progress_bar::marquee_animation_speed(xtd::usize marquee_animation_speed) {
   if (data_->marquee_animation_speed == marquee_animation_speed) return *this;
   data_->marquee_animation_speed = marquee_animation_speed;
   if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);

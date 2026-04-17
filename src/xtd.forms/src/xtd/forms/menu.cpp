@@ -168,10 +168,10 @@ void menu::merge_menu(const menu& menu_src) {
 void menu::destroy_menu_handle(intptr handle) {
 }
 
-void menu::on_item_added(size_t pos, menu_item_ref item) {
+void menu::on_item_added(xtd::usize pos, menu_item_ref item) {
 }
 
-void menu::on_item_removed(size_t pos, menu_item_ref item) {
+void menu::on_item_removed(xtd::usize pos, menu_item_ref item) {
 }
 
 void menu::create_menu() {

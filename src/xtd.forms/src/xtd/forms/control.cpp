@@ -114,7 +114,7 @@ control::control_collection::value_type control::control_collection::operator []
   return std::nullopt;
 }
 
-void control::control_collection::insert(size_t index, const control_ref& value) {
+void control::control_collection::insert(xtd::usize index, const control_ref& value) {
   for (auto it = begin(); it != end(); ++it)
     if (it->get() == value.get()) return;
   base::insert(index, value);
@@ -1029,14 +1029,14 @@ std::optional<xtd::drawing::color> control::get_fore_color() const noexcept {
   return data_->fore_color;
 }
 
-size_t control::get_child_index(intptr child) const {
+xtd::usize control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
-  for (size_t index = 0; index < controls().count(); ++index)
+  for (xtd::usize index = 0; index < controls().count(); ++index)
     if (controls()[index].get().handle() == child) return index;
   throw_helper::throws(exception_case::argument);
 }
 
-size_t control::get_child_index(intptr child, bool& throw_exception) const {
+xtd::usize control::get_child_index(intptr child, bool& throw_exception) const {
   throw_exception = false;
   try {
     return get_child_index(child);
@@ -2112,14 +2112,14 @@ bool control::is_trace_form_or_control(const string& name) {
   return name == __xtd_forms_trace_form_base_default_form_name__() || name == __xtd_forms_trace_form_base_default_text_box_name__();
 }
 
-void control::on_controls_item_added(size_t, control_ref item) {
+void control::on_controls_item_added(xtd::usize, control_ref item) {
   on_control_added(control_event_args(item.get()));
   item.get().data_->parent = data_->handle;
   if (data_->handle)
     item.get().create_control();
 }
 
-void control::on_controls_item_removed(size_t, control_ref item) {
+void control::on_controls_item_removed(xtd::usize, control_ref item) {
   on_control_removed(control_event_args(item.get()));
   item.get().data_->parent = 0;
   item.get().destroy_control();

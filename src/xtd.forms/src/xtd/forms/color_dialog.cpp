@@ -10,7 +10,7 @@ using namespace xtd::forms;
 struct color_dialog::data {
   drawing::color color = drawing::color::black;
   colors custom_colors =  colors {16_z, xtd::drawing::color::white};
-  size_t options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
+  xtd::usize options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
   xtd::string title;
 };
 
@@ -74,7 +74,7 @@ color_dialog& color_dialog::full_open(bool full_open) {
   return *this;
 }
 
-size_t color_dialog::options() const noexcept {
+xtd::usize color_dialog::options() const noexcept {
   return data_->options;
 }
 
@@ -121,10 +121,10 @@ void color_dialog::run_sheet(intptr owner) {
   else native::color_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->title, data_->color, data_->custom_colors, data_->options);
 }
 
-bool color_dialog::get_option(size_t flag) const noexcept {
+bool color_dialog::get_option(xtd::usize flag) const noexcept {
   return (data_->options & flag) == flag;
 }
 
-void color_dialog::set_option(size_t flag, bool value) {
+void color_dialog::set_option(xtd::usize flag, bool value) {
   data_->options = value ? data_->options | flag : data_->options & ~flag;
 }

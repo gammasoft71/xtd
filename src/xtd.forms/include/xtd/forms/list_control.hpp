@@ -158,11 +158,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const noexcept;
+      virtual xtd::usize selected_index() const noexcept;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
-      virtual list_control& selected_index(size_t selected_index) = 0;
+      virtual list_control& selected_index(xtd::usize selected_index) = 0;
       /// @}
       
       /// @name Public Events
@@ -207,7 +207,7 @@ namespace xtd {
       
       /// @brief Sets the currently selected item.
       /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      void set_selected_index(size_t value);
+      void set_selected_index(xtd::usize value);
       /// @}
       
     private:

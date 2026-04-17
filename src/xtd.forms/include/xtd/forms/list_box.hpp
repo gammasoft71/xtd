@@ -97,7 +97,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
-      list_control& selected_index(size_t selected_index) override;
+      list_control& selected_index(xtd::usize selected_index) override;
       
       /// @brief Gets a collection that contains the zero-based indexes of all currently selected items in the list_box.
       /// @brief A list_box.selected_index_collection containing the indexes of the currently selected items in the control. If no items are currently selected, an empty ListBox.SelectedIndexCollection is returned.
@@ -208,20 +208,20 @@ namespace xtd {
       /// @param items A choice::object_collection representing the items in the list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::list_box::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const object_collection& items, size_t selected_index);
+      static list_box create(const object_collection& items, xtd::usize selected_index);
       /// @brief A factory to create an xtd::forms::list_box with specified items, selected_index, and location.
       /// @param items A choice::object_collection representing the items in the list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const object_collection& items, size_t selected_index, const drawing::point& location);
+      static list_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::list_box with specified items, selected_index, location, and size.
       /// @param items A choice::object_collection representing the items in the list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      static list_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::list_box with specified items, selected_index, location, size, and name.
       /// @param items A choice::object_collection representing the items in the list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::list_box::object_collection::npos is returned if no item is selected.
@@ -229,7 +229,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::list_box.
       /// @param name The name of the xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      static list_box create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::list_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
@@ -283,14 +283,14 @@ namespace xtd {
       /// @param items A choice::object_collection representing the items in the list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::list_box::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const control& parent, const object_collection& items, size_t selected_index);
+      static list_box create(const control& parent, const object_collection& items, xtd::usize selected_index);
       /// @brief A factory to create an xtd::forms::list_box with specified parent, items, selected_index, and location.
       /// @param parent The parent that contains the new created xtd::forms::list_box.
       /// @param items A choice::object_collection representing the items in the list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location);
+      static list_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::list_box with specified parent, items, selected_index, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::list_box.
       /// @param items A choice::object_collection representing the items in the list_box.
@@ -298,7 +298,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      static list_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::list_box with specified parent, items, selected_index, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::list_box.
       /// @param items A choice::object_collection representing the items in the list_box.
@@ -307,7 +307,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::list_box.
       /// @param name The name of the xtd::forms::list_box.
       /// @return New xtd::forms::list_box created.
-      static list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      static list_box create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
     protected:
@@ -335,9 +335,9 @@ namespace xtd {
       /// @}
       
     private:
-      void on_items_item_added(size_t pos, const item& item);
-      void on_items_item_removed(size_t pos, const item& item);
-      void on_items_item_updated(size_t pos, const item& item);
+      void on_items_item_added(xtd::usize pos, const item& item);
+      void on_items_item_removed(xtd::usize pos, const item& item);
+      void on_items_item_updated(xtd::usize pos, const item& item);
       void wm_command_control(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);

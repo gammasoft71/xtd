@@ -91,22 +91,22 @@ namespace xtd {
       /// @brief Gets the number of characters selected in the text box.
       /// @return The number of characters selected in the text box.
       /// @remarks You can use this property to determine if any characters are currently selected in the text box control before performing operations on the selected text. When the value of the selection_length property is set to a value that is larger than the number of characters within the text of the control, the value of the selection_length property is set to the entire length of text within the control minus the value of the selection_start property (if any value is specified for the selection_start property).
-      virtual size_t selection_length() const noexcept;
+      virtual xtd::usize selection_length() const noexcept;
       /// @brief Sets the number of characters selected in the text box.
       /// @param value The number of characters selected in the text box.
       /// @return Current text_box_base instance.
       /// @remarks You can use this property to determine if any characters are currently selected in the text box control before performing operations on the selected text. When the value of the selection_length property is set to a value that is larger than the number of characters within the text of the control, the value of the selection_length property is set to the entire length of text within the control minus the value of the selection_start property (if any value is specified for the selection_start property).
-      virtual text_box_base& selection_length(size_t value);
+      virtual text_box_base& selection_length(xtd::usize value);
       
       /// @brief Gets o the starting point of text selected in the text box.
       /// @return The starting position of text selected in the text box.
       /// @remarks If no text is selected in the control, this property indicates the insertion point, or caret, for new text. If you set this property to a location beyond the length of the text in the control, the selection start position will be placed after the last character. When text is selected in the text box control, changing this property might decrease the value of the SelectionLength property. If the remaining text in the control after the position indicated by the selection_start property is less than the value of the selection_length property, the value of the selection_length property is automatically decreased. The value of the selection_start property never causes an increase in the selection_length property.
-      virtual size_t selection_start() const noexcept;
+      virtual xtd::usize selection_start() const noexcept;
       /// @brief Gets o the starting point of text selected in the text box.
       /// @param value The starting position of text selected in the text box.
       /// @return Current text_box_base instance.
       /// @remarks If no text is selected in the control, this property indicates the insertion point, or caret, for new text. If you set this property to a location beyond the length of the text in the control, the selection start position will be placed after the last character. When text is selected in the text box control, changing this property might decrease the value of the SelectionLength property. If the remaining text in the control after the position indicated by the selection_start property is less than the value of the selection_length property, the value of the selection_length property is automatically decreased. The value of the selection_start property never causes an increase in the selection_length property.
-      virtual text_box_base& selection_start(size_t value);
+      virtual text_box_base& selection_start(xtd::usize value);
       
       /// @brief Indicates whether a multiline text box control automatically wraps words to the beginning of the next line when necessary.
       /// @return `true` if the multiline text box control wraps words; `false` if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is `true`.
@@ -132,7 +132,7 @@ namespace xtd {
       /// @param start The position of the first character in the current text selection within the text box.
       /// @param length The number of characters to select.
       /// @exception argument_out_of_range_exception The value of the start parameter is less than zero.
-      virtual void select(size_t start, size_t length);
+      virtual void select(xtd::usize start, xtd::usize length);
       
       /// @brief Selects all text in the text box.
       /// @remarks This method enables you to select all text within the control. You can use this method in conjunction with the cut method, which requires text to be selected in the control, to cut the entire contents of the control and paste them into the clipboard.

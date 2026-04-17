@@ -20,16 +20,16 @@ image_list image_list::empty;
 
 image_list::image_list() : data_(xtd::new_sptr<data>()) {
   data_->handle = native::image_list::create(data_->image_size);
-  data_->images.item_added += [&](size_t pos, drawing::image & item) {
+  data_->images.item_added += [&](xtd::usize pos, drawing::image & item) {
     if (data_->image_size != item.size()) item = drawing::bitmap(item, data_->image_size);
     native::image_list::insert_item(data_->handle, pos, item);
   };
   
-  data_->images.item_removed += [&](size_t pos, const drawing::image & item) {
+  data_->images.item_removed += [&](xtd::usize pos, const drawing::image & item) {
     native::image_list::delete_item(data_->handle, pos);
   };
   
-  data_->images.item_updated += [&](size_t pos, drawing::image & item) {
+  data_->images.item_updated += [&](xtd::usize pos, drawing::image & item) {
     if (data_->image_size != item.size()) item = drawing::bitmap(item, data_->image_size);
     native::image_list::update_item(data_->handle, pos, item);
   };

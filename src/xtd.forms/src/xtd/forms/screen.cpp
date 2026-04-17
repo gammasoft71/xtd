@@ -75,9 +75,9 @@ graphics screen::create_graphics() {
 screen screen::from_control(const control& control) {
   if (control.handle() == 0) return primary_screen();
   auto index = native::screen::from_handle(control.handle());
-  if (index == std::numeric_limits<size_t>::max() && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
-  if (index == std::numeric_limits<size_t>::max()) index = native::screen::from_point(forms::cursor::position());
-  if (index == std::numeric_limits<size_t>::max()) index = 0;
+  if (index == std::numeric_limits<xtd::usize>::max() && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
+  if (index == std::numeric_limits<xtd::usize>::max()) index = native::screen::from_point(forms::cursor::position());
+  if (index == std::numeric_limits<xtd::usize>::max()) index = 0;
   return all_screens()[index];
 }
 

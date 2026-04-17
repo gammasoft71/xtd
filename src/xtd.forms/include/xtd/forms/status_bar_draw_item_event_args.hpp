@@ -39,7 +39,7 @@ namespace xtd {
       /// @param item_id The zero-based index of the panel in the xtd::forms::status_bar::status_bar_panel_collection of the xtd::forms::status_bar control.
       /// @param item_state One of the xtd::forms::draw_item_state values that represents state information about the xtd::forms::status_bar_panel.
       /// @param panel A xtd::forms::tool_bar_panel that represents the panel to draw.
-      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, size_t item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel) : draw_item_event_args(g, font, r, item_id, item_state), panel_(panel) {}
+      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, xtd::usize item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel) : draw_item_event_args(g, font, r, item_id, item_state), panel_(panel) {}
       /// @brief Initializes a new instance of the xtd::forms::status_bar_draw_item_event_args class without specifying a background and foreground color for the xtd::forms::status_bar_panel.
       /// @param g The xtd::drawing::graphics to use to draw the xtd::forms::status_bar_panel.
       /// @param font The xtd::drawing::font used to render text.
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param item_state One of the xtd::forms::draw_item_state values that represents state information about the xtd::forms::status_bar_panel.
       /// @param panel A xtd::forms::tool_bar_panel that represents the panel to draw.
       /// @param handle An internal handle.
-      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, size_t item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel, intptr handle) : draw_item_event_args(g, font, r, item_id, item_state), panel_(panel), handle_(handle) {}
+      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, xtd::usize item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel, intptr handle) : draw_item_event_args(g, font, r, item_id, item_state), panel_(panel), handle_(handle) {}
       /// @brief Initializes a new instance of the xtd::forms::status_bar_draw_item_event_args class without specifying a background and foreground color for the xtd::forms::status_bar_panel.
       /// @param g The xtd::drawing::graphics to use to draw the xtd::forms::status_bar_panel.
       /// @param font The xtd::drawing::font used to render text.
@@ -56,7 +56,7 @@ namespace xtd {
       /// @param item_id The zero-based index of the panel in the xtd::forms::status_bar::status_bar_panel_collection of the xtd::forms::status_bar control.
       /// @param item_state One of the xtd::forms::draw_item_state values that represents state information about the xtd::forms::status_bar_panel.
       /// @param panel A xtd::forms::tool_bar_panel that represents the panel to draw.
-      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, size_t item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) : draw_item_event_args(g, font, r, item_id, item_state, back_color, fore_color), panel_(panel) {}
+      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, xtd::usize item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) : draw_item_event_args(g, font, r, item_id, item_state, back_color, fore_color), panel_(panel) {}
       /// @brief Initializes a new instance of the xtd::forms::status_bar_draw_item_event_args class without specifying a background and foreground color for the xtd::forms::status_bar_panel.
       /// @param g The xtd::drawing::graphics to use to draw the xtd::forms::status_bar_panel.
       /// @param font The xtd::drawing::font used to render text.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param item_state One of the xtd::forms::draw_item_state values that represents state information about the xtd::forms::status_bar_panel.
       /// @param panel A xtd::forms::tool_bar_panel that represents the panel to draw.
       /// @param handle An internal handle.
-      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, size_t item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, intptr handle) : draw_item_event_args(g, font, r, item_id, item_state, back_color, fore_color), panel_(panel), handle_(handle) {}
+      status_bar_draw_item_event_args(xtd::drawing::graphics& g, const xtd::drawing::font& font, const xtd::drawing::rectangle& r, xtd::usize item_id, xtd::forms::draw_item_state item_state, const xtd::forms::status_bar_panel& panel, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, intptr handle) : draw_item_event_args(g, font, r, item_id, item_state, back_color, fore_color), panel_(panel), handle_(handle) {}
       /// @}
       
       /// @name Public Properties

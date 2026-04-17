@@ -352,8 +352,8 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       virtual void on_click(const event_args& e);
       
-      void on_item_added(size_t pos, menu_item_ref item) override;
-      void on_item_removed(size_t pos, menu_item_ref item) override;
+      void on_item_added(xtd::usize pos, menu_item_ref item) override;
+      void on_item_removed(xtd::usize pos, menu_item_ref item) override;
       /// @}
       
     private:

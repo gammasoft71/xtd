@@ -108,12 +108,12 @@ namespace xtd {
       /// @brief Gets the index value of the image assigned to the button.
       /// @return The index value of the xtd::drawing::image assigned to the toolbar button. The default is xtd::forms::image_list::image_collection::npos.
       /// @remarks The xtd::forms::tool_bar_button::image_index value references the indexed value of the images in an xtd::forms::tool_bar::image_list assigned to the parent xtd::forms::tool_bar control.
-      size_t image_index() const noexcept;
+      xtd::usize image_index() const noexcept;
       /// @brief Sets the index value of the image assigned to the button.
       /// @param value The index value of the xtd::drawing::image assigned to the toolbar button. The default is xtd::forms::image_list::image_collection::npos.
       /// @return This current instance.
       /// @remarks The xtd::forms::tool_bar_button::image_index value references the indexed value of the images in an xtd::forms::tool_bar::image_list assigned to the parent xtd::forms::tool_bar control.
-      tool_bar_button& image_index(size_t value);
+      tool_bar_button& image_index(xtd::usize value);
       
       /// @brief Gets the name of the button.
       /// @return The name of the button.
@@ -239,13 +239,13 @@ namespace xtd {
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @param drop_down_menu A xtd::forms::context_menu to be displayed in the drop-down toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
-      static tool_bar_button create_drop_down_button(size_t image_index, const xtd::forms::context_menu& drop_down_menu);
+      static tool_bar_button create_drop_down_button(xtd::usize image_index, const xtd::forms::context_menu& drop_down_menu);
       /// @brief A factory to create a drop-down toolbar button with specified text, image index and context menu.
       /// @param text The text displayed on the toolbar button.
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @param drop_down_menu A xtd::forms::context_menu to be displayed in the drop-down toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
-      static tool_bar_button create_drop_down_button(const xtd::string& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu);
+      static tool_bar_button create_drop_down_button(const xtd::string& text, xtd::usize image_index, const xtd::forms::context_menu& drop_down_menu);
       
       /// @brief A factory to create a toolbar button with specified text.
       /// @param text The text displayed on the toolbar button.
@@ -254,12 +254,12 @@ namespace xtd {
       /// @brief A factory to create a toolbar button with specified image index.
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
-      static tool_bar_button create_push_button(size_t image_index);
+      static tool_bar_button create_push_button(xtd::usize image_index);
       /// @brief A factory to create a toolbar button with specified text and image index.
       /// @param text The text displayed on the toolbar button.
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
-      static tool_bar_button create_push_button(const xtd::string& text, size_t image_index);
+      static tool_bar_button create_push_button(const xtd::string& text, xtd::usize image_index);
       
       /// @brief A factory to create a toolbar separator
       /// @return New xtd::forms::tool_bar_button created.
@@ -276,12 +276,12 @@ namespace xtd {
       /// @brief A factory to create a toolbar toggle button with specified image index.
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
-      static tool_bar_button create_toggle_button(size_t image_index);
+      static tool_bar_button create_toggle_button(xtd::usize image_index);
       /// @brief A factory to create a toolbar toggle button with specified text and image index.
       /// @param text The text displayed on the toolbar button.
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
-      static tool_bar_button create_toggle_button(const xtd::string& text, size_t image_index);
+      static tool_bar_button create_toggle_button(const xtd::string& text, xtd::usize image_index);
       /// @}
       
     protected:

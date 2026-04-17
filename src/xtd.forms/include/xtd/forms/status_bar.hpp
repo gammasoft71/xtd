@@ -304,9 +304,9 @@ namespace xtd {
       status_bar& is_system_status_bar(bool value);
       
       void on_control_appearance_changed(const xtd::event_args&) override;
-      void on_item_added(size_t pos, status_bar_panel_ref item);
-      void on_item_updated(size_t pos, status_bar_panel_ref item);
-      void on_item_removed(size_t pos, status_bar_panel_ref item);
+      void on_item_added(xtd::usize pos, status_bar_panel_ref item);
+      void on_item_updated(xtd::usize pos, status_bar_panel_ref item);
+      void on_item_removed(xtd::usize pos, status_bar_panel_ref item);
       
       void resize_spring_panels();
       void update_status_bar_panel_control(intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width);

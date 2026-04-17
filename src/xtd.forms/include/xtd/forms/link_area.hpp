@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::link_area class.
       /// @param start The zero-based starting location of the link area within the text of the LinkLabel.
       /// @param length The number of characters, after the starting character, to include in the link area.
-      link_area(size_t start, size_t length) noexcept;
+      link_area(xtd::usize start, xtd::usize length) noexcept;
       /// @}
       
       /// @cond
@@ -51,22 +51,22 @@ namespace xtd {
       /// @brief Gets the number of characters in the link area.
       /// @return The number of characters, including spaces, in the link area.
       /// @remarks To specify text from the xtd::forms::link_label to display as a link, set the xtd::forms::link_area::start property to the location in the text to start creating the link. After the xtd::forms::link_area::start property is set, set the value of the xtd::forms::link_area::length property to the number of characters, including the character position specified in the xtd::forms::link_area::start property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the xtd::forms::link_area::start property to zero (0) and the xtd::forms::link_area::length property to three (3).
-      size_t length() const noexcept;
+      xtd::usize length() const noexcept;
       /// @brief Sets the number of characters in the link area.
       /// @param value The number of characters, including spaces, in the link area.
       /// @return This current instance.
       /// @remarks To specify text from the xtd::forms::link_label to display as a link, set the xtd::forms::link_area::start property to the location in the text to start creating the link. After the xtd::forms::link_area::start property is set, set the value of the xtd::forms::link_area::length property to the number of characters, including the character position specified in the xtd::forms::link_area::start property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the xtd::forms::link_area::start property to zero (0) and the xtd::forms::link_area::length property to three (3).
-      link_area& length(size_t value) noexcept;
+      link_area& length(xtd::usize value) noexcept;
       
       /// @brief Gets the starting location of the link area within the text of the xtd::forms::link_label.
       /// @return The location within the text of the xtd::fors::link_label control where the link starts.
       /// @remarks To specify text from the xtd::forms::link_label to display as a link, set the xtd::forms::link_area::start property to the location in the text to start creating the link. After the xtd::forms::link_area::start property is set, set the value of the xtd::forms::link_area::length property to the number of characters, including the character position specified in the xtd::forms::link_area::start property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the xtd::forms::link_area::start property to zero (0) and the xtd::forms::link_area::length property to three (3).
-      size_t start() const noexcept;
+      xtd::usize start() const noexcept;
       /// @brief Sets the starting location of the link area within the text of the xtd::forms::link_label.
       /// @param value The location within the text of the xtd::fors::link_label control where the link starts.
       /// @return This current instance.
       /// @remarks To specify text from the xtd::forms::link_label to display as a link, set the xtd::forms::link_area::start property to the location in the text to start creating the link. After the xtd::forms::link_area::start property is set, set the value of the xtd::forms::link_area::length property to the number of characters, including the character position specified in the xtd::forms::link_area::start property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the xtd::forms::link_area::start property to zero (0) and the xtd::forms::link_area::length property to three (3).
-      link_area& start(size_t value) noexcept;
+      link_area& start(xtd::usize value) noexcept;
       /// @}
       
       /// @name Public Methods
@@ -89,8 +89,8 @@ namespace xtd {
       /// @}
       
     private:
-      size_t start_ = 0;
-      size_t length_ = 0;
+      xtd::usize start_ = 0;
+      xtd::usize length_ = 0;
     };
   }
 }

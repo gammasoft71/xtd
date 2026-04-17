@@ -50,7 +50,7 @@ const choice& choice::items(const object_collection& items) {
   return *this;
 }
 
-list_control& choice::selected_index(size_t selected_index) {
+list_control& choice::selected_index(xtd::usize selected_index) {
   if (this->selected_index() == selected_index) return *this;
   if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size");
   set_selected_index(selected_index);
@@ -76,7 +76,7 @@ choice& choice::selected_item(const item& selected_item) {
   if (it == data_->items.end())
     data_->selected_item = selected_index() != npos ? items()[selected_index()] : item {""};
   else {
-    size_t index = it - data_->items.begin();
+    xtd::usize index = it - data_->items.begin();
     selected_index(index);
     data_->selected_item = *it;
     on_selected_value_changed(event_args::empty);
@@ -158,14 +158,14 @@ choice choice::create(const object_collection& items, const drawing::point& loca
   return result;
 }
 
-choice choice::create(const object_collection& items, size_t selected_index) {
+choice choice::create(const object_collection& items, xtd::usize selected_index) {
   auto result = choice {};
   result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
 
-choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
+choice choice::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location) {
   auto result = choice {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -173,7 +173,7 @@ choice choice::create(const object_collection& items, size_t selected_index, con
   return result;
 }
 
-choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+choice choice::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = choice {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -182,7 +182,7 @@ choice choice::create(const object_collection& items, size_t selected_index, con
   return result;
 }
 
-choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+choice choice::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -256,7 +256,7 @@ choice choice::create(const control& parent, const object_collection& items, con
   return result;
 }
 
-choice choice::create(const control& parent, const object_collection& items, size_t selected_index) {
+choice choice::create(const control& parent, const object_collection& items, xtd::usize selected_index) {
   auto result = choice {};
   result.parent(parent);
   result.items().add_range(items);
@@ -264,7 +264,7 @@ choice choice::create(const control& parent, const object_collection& items, siz
   return result;
 }
 
-choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
+choice choice::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location) {
   auto result = choice {};
   result.parent(parent);
   result.items().add_range(items);
@@ -273,7 +273,7 @@ choice choice::create(const control& parent, const object_collection& items, siz
   return result;
 }
 
-choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+choice choice::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = choice {};
   result.parent(parent);
   result.items().add_range(items);
@@ -283,7 +283,7 @@ choice choice::create(const control& parent, const object_collection& items, siz
   return result;
 }
 
-choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+choice choice::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = choice {};
   result.parent(parent);
   result.items().add_range(items);
@@ -353,19 +353,19 @@ void choice::wnd_proc(message& message) {
   }
 }
 
-void choice::on_items_item_added(size_t pos, const item& item) {
+void choice::on_items_item_added(xtd::usize pos, const item& item) {
   if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
   auto selected = npos;
   if (this->selected_index() != npos && this->selected_index() < data_->items.count()) selected = this->selected_index();
   this->selected_index(selected);
 }
 
-void choice::on_items_item_removed(size_t pos, const item& item)  {
+void choice::on_items_item_removed(xtd::usize pos, const item& item)  {
   if (is_handle_created()) native::choice::delete_item(handle(), pos);
   if (selected_index() == pos) selected_index(npos);
 }
 
-void choice::on_items_item_updated(size_t pos, const item& item) {
+void choice::on_items_item_updated(xtd::usize pos, const item& item) {
   if (is_handle_created()) native::choice::update_item(handle(), pos, item.value());
   auto selected = npos;
   if (this->selected_index() != npos && this->selected_index() < data_->items.count()) selected = this->selected_index();

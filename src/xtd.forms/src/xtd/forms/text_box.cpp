@@ -77,12 +77,12 @@ text_box& text_box::placeholder_text(const xtd::string& value) {
   return *this;
 }
 
-size_t text_box::selection_length() const noexcept {
+xtd::usize text_box::selection_length() const noexcept {
   if (is_handle_created()) const_cast<text_box*>(this)->text_box_base::selection_length(native::text_box::selection_length(handle()));
   return text_box_base::selection_length();
 }
 
-size_t text_box::selection_start() const noexcept {
+xtd::usize text_box::selection_start() const noexcept {
   if (is_handle_created()) const_cast<text_box*>(this)->text_box_base::selection_start(native::text_box::selection_start(handle()));
   return text_box_base::selection_start();
 }
@@ -97,7 +97,7 @@ control& text_box::text(const string& text) {
   set_text(text);
   if (!data_->use_system_password_char && data_->password_char) {
     if (is_handle_created()) native::text_box::text(handle(), string::empty_string);
-    for (size_t count = 0; count < text.length(); count++)
+    for (xtd::usize count = 0; count < text.length(); count++)
       if (is_handle_created()) native::text_box::append(handle(), xtd::string::format("{}", data_->password_char));
   } else {
     switch (data_->character_casing) {
@@ -246,7 +246,7 @@ text_box text_box::create(const control& parent, const xtd::string& text, const 
   return result;
 }
 
-void text_box::select(size_t start, size_t length) {
+void text_box::select(xtd::usize start, xtd::usize length) {
   text_box_base::select(start, length);
   if (is_handle_created()) native::text_box::select(handle(), selection_start(), selection_length());
 }

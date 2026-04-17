@@ -13,12 +13,12 @@ struct progress_dialog::data {
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   intptr handle = 0;
   array<xtd::string> informations;
-  size_t marquee_animation_speed = 100;
+  xtd::usize marquee_animation_speed = 100;
   int32 maximum = 100;
   xtd::string message;
   int32 minimum = 0;
   bool native = false;
-  size_t options = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
+  xtd::usize options = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
   const iwin32_window* owner = nullptr;
   int32 step = 10;
   xtd::string text;
@@ -71,11 +71,11 @@ progress_dialog& progress_dialog::marquee(bool marquee) {
   return *this;
 }
 
-size_t progress_dialog::marquee_animation_speed() const noexcept {
+xtd::usize progress_dialog::marquee_animation_speed() const noexcept {
   return data_->marquee_animation_speed;
 }
 
-progress_dialog& progress_dialog::marquee_animation_speed(size_t marquee_animation_speed) {
+progress_dialog& progress_dialog::marquee_animation_speed(xtd::usize marquee_animation_speed) {
   if (data_->marquee_animation_speed == marquee_animation_speed) return *this;
   data_->marquee_animation_speed = marquee_animation_speed;
   native::progress_dialog::marquee(data_->handle, get_option(PROGDLG_MARQUEEPROGRESS), data_->marquee_animation_speed);
@@ -282,11 +282,11 @@ void progress_dialog::show_sheet(const iwin32_window& owner) {
   native::progress_dialog::show_sheet(data_->handle);
 }
 
-bool progress_dialog::get_option(size_t flag) const noexcept {
+bool progress_dialog::get_option(xtd::usize flag) const noexcept {
   return (data_->options & flag) == flag;
 }
 
-void progress_dialog::set_option(size_t flag, bool value) {
+void progress_dialog::set_option(xtd::usize flag, bool value) {
   data_->options = value ? data_->options | flag : data_->options & ~flag;
 }
 

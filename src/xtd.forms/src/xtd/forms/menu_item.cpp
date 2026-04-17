@@ -244,7 +244,7 @@ menu_item& menu_item::shortcut(xtd::forms::shortcut value) {
   if (data_->shortcut != value) {
     data_->shortcut = value;
     recreate_menu();
-    if (handle()) native::menu_item::text(handle(), data_->text, static_cast<size_t>(data_->shortcut));
+    if (handle()) native::menu_item::text(handle(), data_->text, static_cast<xtd::usize>(data_->shortcut));
   }
   return *this;
 }
@@ -257,7 +257,7 @@ menu_item& menu_item::text(const xtd::string& value) {
   if (data_->text != value) {
     data_->text = value;
     if (handle() && (is_parent() || menu::data_->main_menu.has_value() || menu::data_->context_menu.has_value())) native::menu::text(handle(), data_->text);
-    else if (handle()) native::menu_item::text(handle(), data_->text, static_cast<size_t>(data_->shortcut));
+    else if (handle()) native::menu_item::text(handle(), data_->text, static_cast<xtd::usize>(data_->shortcut));
   }
   return *this;
 }
@@ -272,7 +272,7 @@ intptr menu_item::create_menu_handle() {
   if (is_parent() || menu::data_->main_menu.has_value()) return native::menu::create();
   
   if (data_->text == "-") data_->kind = xtd::forms::menu_item_kind::separator;
-  auto handle = native::menu_item::create(menu::data_->parent.value().get().handle(), data_->text, data_->image, static_cast<int32>(data_->kind), static_cast<size_t>(data_->shortcut));
+  auto handle = native::menu_item::create(menu::data_->parent.value().get().handle(), data_->text, data_->image, static_cast<int32>(data_->kind), static_cast<xtd::usize>(data_->shortcut));
   handles_.insert({native::menu_item::menu_id(handle), xtd::ref<menu>(*this)});
   return handle;
 }
@@ -295,7 +295,7 @@ void menu_item::on_click(const event_args& e) {
   safe_click(*this, e);
 }
 
-void menu_item::on_item_added(size_t pos, menu_item_ref item) {
+void menu_item::on_item_added(xtd::usize pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
   item.get().menu::data_->context_menu = menu::data_->context_menu;
   item.get().menu::data_->main_menu = menu::data_->main_menu;
@@ -309,7 +309,7 @@ void menu_item::on_item_added(size_t pos, menu_item_ref item) {
   }
 }
 
-void menu_item::on_item_removed(size_t pos, menu_item_ref item) {
+void menu_item::on_item_removed(xtd::usize pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
   item.get().menu::data_->parent.reset();
   native::menu::remove_item(handle(), pos);

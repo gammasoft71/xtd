@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct list_control::data {
-  size_t selected_index = npos;
+  xtd::usize selected_index = npos;
 };
 
 const list_control::item list_control::item::empty;
@@ -51,7 +51,7 @@ list_control::list_control() : data_(xtd::new_sptr<data>()) {
   //fore_color_ = default_fore_color();
 }
 
-size_t list_control::selected_index() const noexcept {
+xtd::usize list_control::selected_index() const noexcept {
   return data_->selected_index;
 }
 
@@ -81,6 +81,6 @@ void list_control::on_selected_value_changed(const event_args& e) {
   safe_selected_value_changed(*this, e);
 }
 
-void list_control::set_selected_index(size_t value) {
+void list_control::set_selected_index(xtd::usize value) {
   data_->selected_index = value;
 }

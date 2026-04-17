@@ -490,7 +490,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
   return link_empty;
 }
 
-xtd::drawing::point link_label::get_text_location(size_t line_number) const noexcept {
+xtd::drawing::point link_label::get_text_location(xtd::usize line_number) const noexcept {
   auto line_index = 0_z;
   for (const auto& line : text().split('\n')) {
     auto text_location = point {};
@@ -557,17 +557,17 @@ xtd::drawing::font link_label::link_font() const noexcept {
   return {font(), xtd::drawing::font_style::underline};
 }
 
-void link_label::on_links_link_added(size_t pos, const link& link) {
+void link_label::on_links_link_added(xtd::usize pos, const link& link) {
   if (data_->links.count() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
     data_->links.remove_at(0);
   //tab_stop(true);
   invalidate();
 }
 
-void link_label::on_links_link_removed(size_t pos, const link& item) {
+void link_label::on_links_link_removed(xtd::usize pos, const link& item) {
   invalidate();
 }
 
-void link_label::on_links_link_updated(size_t pos, const link& link) {
+void link_label::on_links_link_updated(xtd::usize pos, const link& link) {
   invalidate();
 }

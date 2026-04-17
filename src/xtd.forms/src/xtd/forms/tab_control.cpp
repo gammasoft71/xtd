@@ -60,11 +60,11 @@ tab_control::tab_page_collection::iterator tab_control::tab_page_collection::ins
   return text_inserted(pos, text, name);
 }
 
-void tab_control::tab_page_collection::insert_at(size_t index, const xtd::string& text) {
+void tab_control::tab_page_collection::insert_at(xtd::usize index, const xtd::string& text) {
   return insert_at(index, text, string::empty_string);
 }
 
-void tab_control::tab_page_collection::insert_at(size_t index, const xtd::string& text, const xtd::string& name) {
+void tab_control::tab_page_collection::insert_at(xtd::usize index, const xtd::string& text, const xtd::string& name) {
   text_added(index, text, name);
 }
 
@@ -149,11 +149,11 @@ tab_control& tab_control::image_list(const forms::image_list& value) {
   return *this;
 }
 
-size_t tab_control::selected_index() const noexcept {
+xtd::usize tab_control::selected_index() const noexcept {
   return data_->selected_index;
 }
 
-tab_control& tab_control::selected_index(size_t selected_index) {
+tab_control& tab_control::selected_index(xtd::usize selected_index) {
   if (data_->selected_index == selected_index) return *this;
   if (selected_index >= tab_pages().count()) throw_helper::throws(exception_case::argument_out_of_range);
   data_->selected_index = selected_index;
@@ -286,21 +286,21 @@ void tab_control::wnd_proc(message& message) {
   }
 }
 
-size_t tab_control::get_child_index(intptr page) {
+xtd::usize tab_control::get_child_index(intptr page) {
   for (auto index = 0_z; index < controls().count(); ++index)
     if (controls()[index].get().handle() == page) return index;
   return npos;
 }
 
-void tab_control::on_tab_pages_item_added(size_t index, tab_page_ref& item) {
+void tab_control::on_tab_pages_item_added(xtd::usize index, tab_page_ref& item) {
   controls().insert(index, item.get());
 }
 
-void tab_control::on_tab_pages_item_removed(size_t index, tab_page_ref& item) {
+void tab_control::on_tab_pages_item_removed(xtd::usize index, tab_page_ref& item) {
   controls().remove_at(index);
 }
 
-void tab_control::on_tab_pages_text_added(size_t index, const string& text, const string& name) {
+void tab_control::on_tab_pages_text_added(xtd::usize index, const string& text, const string& name) {
   auto item = xtd::new_sptr<tab_page>();
   item->text(text);
   item->name(name);

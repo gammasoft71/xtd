@@ -11,7 +11,7 @@ struct folder_browser_dialog::data {
   xtd::string description;
   environment::special_folder root_folder = environment::special_folder::desktop;
   xtd::string selected_path;
-  size_t options = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+  xtd::usize options = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
 };
 
 folder_browser_dialog::folder_browser_dialog() : data_(xtd::new_sptr<data>()) {
@@ -76,10 +76,10 @@ void folder_browser_dialog::run_sheet(intptr owner) {
   else native::folder_browser_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->description, data_->root_folder, data_->selected_path, data_->options);
 }
 
-bool folder_browser_dialog::get_option(size_t flag) const noexcept {
+bool folder_browser_dialog::get_option(xtd::usize flag) const noexcept {
   return (data_->options & flag) == flag;
 }
 
-void folder_browser_dialog::set_option(size_t flag, bool value) {
+void folder_browser_dialog::set_option(xtd::usize flag, bool value) {
   data_->options = value ? data_->options | flag : data_->options & ~flag;
 }

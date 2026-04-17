@@ -6,12 +6,12 @@ using namespace xtd::forms;
 struct create_params::data {
   xtd::string caption;
   xtd::string class_name;
-  size_t class_style = 0;
-  size_t ex_style = 0;
+  xtd::usize class_style = 0;
+  xtd::usize ex_style = 0;
   drawing::point location;
   intptr param = 0;
   intptr parent = 0;
-  size_t style = 0;
+  xtd::usize style = 0;
   drawing::size size;
 };
 
@@ -45,20 +45,20 @@ create_params& create_params::class_name(const xtd::string& class_name) {
   return *this;
 }
 
-size_t create_params::class_style() const noexcept {
+xtd::usize create_params::class_style() const noexcept {
   return data_->class_style;
 }
 
-create_params& create_params::class_style(size_t class_style) {
+create_params& create_params::class_style(xtd::usize class_style) {
   data_->class_style = class_style;
   return *this;
 }
 
-size_t create_params::ex_style() const noexcept {
+xtd::usize create_params::ex_style() const noexcept {
   return data_->ex_style;
 }
 
-create_params& create_params::ex_style(size_t ex_style) {
+create_params& create_params::ex_style(xtd::usize ex_style) {
   data_->ex_style = ex_style;
   return *this;
 }
@@ -99,11 +99,11 @@ create_params& create_params::parent(intptr parent) {
   return *this;
 }
 
-size_t create_params::style() const noexcept {
+xtd::usize create_params::style() const noexcept {
   return data_->style;
 }
 
-create_params& create_params::style(size_t style) {
+create_params& create_params::style(xtd::usize style) {
   data_->style = style;
   return *this;
 }

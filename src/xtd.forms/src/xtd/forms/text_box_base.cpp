@@ -17,8 +17,8 @@ struct text_box_base::data {
   bool multiline = false;
   bool read_only = false;
   bool word_wrap = true;
-  mutable size_t selection_start = 0;
-  mutable size_t selection_length = 0;
+  mutable xtd::usize selection_start = 0;
+  mutable xtd::usize selection_length = 0;
 };
 
 bool text_box_base::accepts_tab() const noexcept {
@@ -98,20 +98,20 @@ text_box_base& text_box_base::read_only(bool value) {
   return *this;
 }
 
-size_t text_box_base::selection_length() const noexcept {
+xtd::usize text_box_base::selection_length() const noexcept {
   return data_->selection_length;
 }
 
-text_box_base& text_box_base::selection_length(size_t value) {
+text_box_base& text_box_base::selection_length(xtd::usize value) {
   select(data_->selection_start, value);
   return *this;
 }
 
-size_t text_box_base::selection_start() const noexcept {
+xtd::usize text_box_base::selection_start() const noexcept {
   return data_->selection_start;
 }
 
-text_box_base& text_box_base::selection_start(size_t value) {
+text_box_base& text_box_base::selection_start(xtd::usize value) {
   select(value, data_->selection_length);
   return *this;
 }
@@ -138,7 +138,7 @@ void text_box_base::clear() {
   text("");
 }
 
-void text_box_base::select(size_t start, size_t length) {
+void text_box_base::select(xtd::usize start, xtd::usize length) {
   if (data_->selection_start != start || length != data_->selection_length) {
     if (start > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start greater than text size");
     if (start + length > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start + length greater than text size");

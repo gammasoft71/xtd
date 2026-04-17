@@ -144,7 +144,7 @@ namespace xtd {
     /// @brief Gets current stack trace information with specified number of frames to skip.
     /// @param skip_frames The number of frames to skip.
     /// @return A string containing stack trace information. This value can be empty "".
-    static xtd::diagnostics::stack_trace stack_trace(size_t skip_frames) noexcept;
+    static xtd::diagnostics::stack_trace stack_trace(xtd::usize skip_frames) noexcept;
     
     /// @brief Gets system colors.
     /// @return A system_color_collection collection containing system colors.

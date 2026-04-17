@@ -639,18 +639,18 @@ void tool_bar::fill() {
   resume_layout();
 }
 
-void tool_bar::on_item_added(size_t pos, tool_bar_button_ref item) {
+void tool_bar::on_item_added(xtd::usize pos, tool_bar_button_ref item) {
   auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = this;
   post_recreate_handle();
 }
 
-void tool_bar::on_item_updated(size_t pos, tool_bar_button_ref item) {
+void tool_bar::on_item_updated(xtd::usize pos, tool_bar_button_ref item) {
   auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   post_recreate_handle();
 }
 
-void tool_bar::on_item_removed(size_t pos, tool_bar_button_ref item) {
+void tool_bar::on_item_removed(xtd::usize pos, tool_bar_button_ref item) {
   auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = nullptr;
   post_recreate_handle();

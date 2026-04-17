@@ -210,7 +210,7 @@ xtd::diagnostics::stack_trace system_report::stack_trace() noexcept {
   return stack_trace(0);
 }
 
-xtd::diagnostics::stack_trace system_report::stack_trace(size_t skip_frames) noexcept {
+xtd::diagnostics::stack_trace system_report::stack_trace(xtd::usize skip_frames) noexcept {
   return xtd::diagnostics::stack_trace(skip_frames, true);
 }
 

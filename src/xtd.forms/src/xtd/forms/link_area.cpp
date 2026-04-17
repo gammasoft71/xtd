@@ -3,27 +3,27 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-link_area::link_area(size_t start, size_t length) noexcept : start_(start), length_(length) {
+link_area::link_area(xtd::usize start, xtd::usize length) noexcept : start_(start), length_(length) {
 }
 
 bool link_area::is_empty() const noexcept {
   return start_ == 0 && length_ == 0;
 }
 
-size_t link_area::length() const noexcept {
+xtd::usize link_area::length() const noexcept {
   return length_;
 }
 
-link_area& link_area::length(size_t value) noexcept {
+link_area& link_area::length(xtd::usize value) noexcept {
   length_ = value;
   return *this;
 }
 
-size_t link_area::start() const noexcept {
+xtd::usize link_area::start() const noexcept {
   return start_;
 }
 
-link_area& link_area::start(size_t value) noexcept {
+link_area& link_area::start(xtd::usize value) noexcept {
   start_ = value;
   return *this;
 }

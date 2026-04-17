@@ -395,7 +395,7 @@ void status_bar::fill() {
   if (!is_system_status_bar()) std::reverse(reversed_panels.begin(), reversed_panels.end());
   if (!is_system_status_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
-  for (size_t index = 0; index < reversed_panels.count(); ++index) {
+  for (xtd::usize index = 0; index < reversed_panels.count(); ++index) {
     auto& button_item = reversed_panels[index].get();
     intptr control_handle = 0;
     if (is_system_status_bar()) {
@@ -476,18 +476,18 @@ void status_bar::fill() {
    */
 }
 
-void status_bar::on_item_added(size_t pos, status_bar_panel_ref item) {
+void status_bar::on_item_added(xtd::usize pos, status_bar_panel_ref item) {
   auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = this;
   post_recreate_handle();
 }
 
-void status_bar::on_item_updated(size_t pos, status_bar_panel_ref item) {
+void status_bar::on_item_updated(xtd::usize pos, status_bar_panel_ref item) {
   auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   post_recreate_handle();
 }
 
-void status_bar::on_item_removed(size_t pos, status_bar_panel_ref item) {
+void status_bar::on_item_removed(xtd::usize pos, status_bar_panel_ref item) {
   auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = nullptr;
   post_recreate_handle();

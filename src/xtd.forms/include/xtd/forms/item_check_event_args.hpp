@@ -41,7 +41,7 @@ namespace xtd {
       /// @param index The zero-based index of the item to change.
       /// @param new_value One of the check_state values that indicates whether to change the check box for the item to be checked, unchecked, or indeterminate.
       /// @param current_value One of the check_state values that indicates whether the check box for the item is currently checked, unchecked, or indeterminate.
-      item_check_event_args(size_t index, check_state new_value, check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
+      item_check_event_args(xtd::usize index, check_state new_value, check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
       /// @}
       
       /// @name Public Properties
@@ -55,7 +55,7 @@ namespace xtd {
       /// @brief Gets the zero-based index of the item to change.
       /// @return The zero-based index of the item to change.
       /// @remarks You can use this property to determine which item's check box in the checked_list_box is being changed.
-      size_t index() const noexcept {return index_;}
+      xtd::usize index() const noexcept {return index_;}
       
       /// @brief Gets a value indicating whether to set the check box for the item to be checked, unchecked, or indeterminate.
       /// @return One of the check_state values.
@@ -68,7 +68,7 @@ namespace xtd {
       /// @}
       
     private:
-      size_t index_ = usize_object::max_value;
+      xtd::usize index_ = usize_object::max_value;
       check_state new_value_ = check_state::indeterminate;
       check_state current_value_ = check_state::unchecked;
     };

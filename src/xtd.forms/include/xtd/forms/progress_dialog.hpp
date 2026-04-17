@@ -78,12 +78,12 @@ namespace xtd {
       /// @return The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @remarks A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.
       /// @remarks Since the marquee animation speed is a time period, setting the value to a higher number results in a slower speed and a lower number results in a faster speed.
-      size_t marquee_animation_speed() const noexcept;
+      xtd::usize marquee_animation_speed() const noexcept;
       /// @brief Sets the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param marquee_animation_speed The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @remarks A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.
       /// @remarks Since the marquee animation speed is a time period, setting the value to a higher number results in a slower speed and a lower number results in a faster speed.
-      progress_dialog& marquee_animation_speed(size_t marquee_animation_speed);
+      progress_dialog& marquee_animation_speed(xtd::usize marquee_animation_speed);
       
       /// @brief Gets the maximum value of the range of the control.
       /// @return The maximum value of the range. The default is 100.
@@ -228,8 +228,8 @@ namespace xtd {
       /// @}
       
     private:
-      bool get_option(size_t flag) const noexcept;
-      void set_option(size_t flag, bool value);
+      bool get_option(xtd::usize flag) const noexcept;
+      void set_option(xtd::usize flag, bool value);
       void recreate_dialog();
       
       xtd::sptr<data> data_;

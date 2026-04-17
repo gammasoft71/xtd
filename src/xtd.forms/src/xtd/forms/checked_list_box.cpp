@@ -106,7 +106,7 @@ const list_box& checked_list_box::items(const object_collection& items) {
   return *this;
 }
 
-list_control& checked_list_box::selected_index(size_t selected_index) {
+list_control& checked_list_box::selected_index(xtd::usize selected_index) {
   if (this->selected_index() == selected_index) return *this;
   if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size");
   set_selected_index(selected_index);
@@ -136,7 +136,7 @@ checked_list_box& checked_list_box::selected_item(const item& selected_item) {
   if (it == data_->items.end())
     data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
   else {
-    size_t index = it - data_->items.begin();
+    xtd::usize index = it - data_->items.begin();
     selected_index(index);
     data_->selected_item = *it;
     on_selected_value_changed(event_args::empty);
@@ -147,7 +147,7 @@ checked_list_box& checked_list_box::selected_item(const item& selected_item) {
 checked_list_box::selected_object_collection checked_list_box::selected_items() const noexcept {
   auto itms = selected_object_collection {};
   auto indices = selected_indices();
-  std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.add(data_->items[index]);});
+  std::for_each(indices.begin(), indices.end(), [&](xtd::usize index) {itms.add(data_->items[index]);});
   return itms;
 }
 
@@ -215,14 +215,14 @@ checked_list_box checked_list_box::create(const object_collection& items, const 
   return result;
 }
 
-checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index) {
+checked_list_box checked_list_box::create(const object_collection& items, xtd::usize selected_index) {
   auto result = checked_list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
 
-checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
+checked_list_box checked_list_box::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location) {
   auto result = checked_list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -230,7 +230,7 @@ checked_list_box checked_list_box::create(const object_collection& items, size_t
   return result;
 }
 
-checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+checked_list_box checked_list_box::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = checked_list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -239,7 +239,7 @@ checked_list_box checked_list_box::create(const object_collection& items, size_t
   return result;
 }
 
-checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+checked_list_box checked_list_box::create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.items().add_range(items);
   result.selected_index(selected_index);
@@ -313,7 +313,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index) {
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -321,7 +321,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -330,7 +330,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -340,7 +340,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
   return result;
 }
 
-checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items().add_range(items);
@@ -355,31 +355,31 @@ void checked_list_box::end_update() {
   if (is_handle_created()) native::checked_list_box::end_update(handle());
 }
 
-bool checked_list_box::get_item_checked(size_t index) const {
+bool checked_list_box::get_item_checked(xtd::usize index) const {
   return items()[index].checked();
 }
 
-forms::check_state checked_list_box::get_item_check_state(size_t index) const {
+forms::check_state checked_list_box::get_item_check_state(xtd::usize index) const {
   return items()[index].check_state();
 }
 
-const xtd::string& checked_list_box::get_item_text(size_t index) const {
+const xtd::string& checked_list_box::get_item_text(xtd::usize index) const {
   return items()[index].value();
 }
 
-void checked_list_box::set_item_checked(size_t index, bool checked) {
+void checked_list_box::set_item_checked(xtd::usize index, bool checked) {
   if (items()[index].checked() != checked) {
     items()[index] = {items()[index].value(), checked, items()[index].tag()};
   }
 }
 
-void checked_list_box::set_item_check_state(size_t index, forms::check_state check_state) {
+void checked_list_box::set_item_check_state(xtd::usize index, forms::check_state check_state) {
   if (items()[index].check_state() != check_state) {
     items()[index] = {items()[index].value(), check_state, items()[index].tag()};
   }
 }
 
-void checked_list_box::set_item_text(size_t index, const xtd::string& text) {
+void checked_list_box::set_item_text(xtd::usize index, const xtd::string& text) {
   items()[index] = {text, items()[index].checked(), items()[index].tag()};
 }
 
@@ -445,19 +445,19 @@ void checked_list_box::wnd_proc(message& message) {
   }
 }
 
-void checked_list_box::on_items_item_added(size_t pos, const item& item) {
+void checked_list_box::on_items_item_added(xtd::usize pos, const item& item) {
   if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
   checked_list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
 
-void checked_list_box::on_items_item_removed(size_t pos, const item& item)  {
+void checked_list_box::on_items_item_removed(xtd::usize pos, const item& item)  {
   if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
   if (selected_index() == pos) selected_index(npos);
 }
 
-void checked_list_box::on_items_item_updated(size_t pos, const item& item) {
+void checked_list_box::on_items_item_updated(xtd::usize pos, const item& item) {
   if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
   checked_list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
@@ -485,7 +485,7 @@ void checked_list_box::wm_mouse_up(message& message) {
 
 void checked_list_box::wm_command_control(message& message) {
   def_wnd_proc(message);
-  size_t selected = native::checked_list_box::selected_index(handle());
+  xtd::usize selected = native::checked_list_box::selected_index(handle());
   if (selected != npos) {
     forms::check_state check_state = static_cast<forms::check_state>(native::checked_list_box::check_state(handle(), selected));
     if (data_->items[selected].check_state() != check_state) {

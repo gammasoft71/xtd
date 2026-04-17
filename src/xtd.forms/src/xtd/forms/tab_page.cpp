@@ -16,7 +16,7 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct tab_page::data {
-  size_t image_index = image_list::npos;
+  xtd::usize image_index = image_list::npos;
 };
 
 tab_page::tab_page() : data_(xtd::new_sptr<data>()) {
@@ -35,11 +35,11 @@ scrollable_control& tab_page::auto_scroll(bool value) {
   return *this;
 }
 
-size_t tab_page::image_index() const noexcept {
+xtd::usize tab_page::image_index() const noexcept {
   return data_->image_index;
 }
 
-tab_page& tab_page::image_index(size_t value) {
+tab_page& tab_page::image_index(xtd::usize value) {
   if (data_->image_index == value) return *this;
   data_->image_index = value;
   if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), data_->image_index);

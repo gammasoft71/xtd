@@ -121,7 +121,7 @@ namespace xtd {
       /// @param minimum An integer that indicates the minimum value of the progress dialog.
       /// @param maximum An integer that indicates the maximum value of the progress dialog.
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
-      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed);
+      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed);
       /// @brief Displays a progress box.
       /// @param title An xtd::string that specifies the title of the progress dialog.
       /// @param message An xtd::string that specifies the message of the progress dialog.
@@ -130,7 +130,7 @@ namespace xtd {
       /// @param maximum An integer that indicates the maximum value of the progress dialog.
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
-      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const progress_box_options options);
+      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const progress_box_options options);
       
       /// @brief Displays a progress box.
       /// @param title An xtd::string that specifies the title of the progress dialog.
@@ -141,7 +141,7 @@ namespace xtd {
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param informations An xtd::array of xtd::string that specifies the information texts of the progress dialog.
-      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const xtd::array<xtd::string>& informations);
+      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const xtd::array<xtd::string>& informations);
       /// @brief Displays a progress box.
       /// @param title An xtd::string that specifies the title of the progress dialog.
       /// @param message An xtd::string that specifies the message of the progress dialog.
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param informations An xtd::array of xtd::string that specifies the information texts of the progress dialog.
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
-      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const xtd::array<xtd::string>& informations, const progress_box_options options);
+      static void show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const xtd::array<xtd::string>& informations, const progress_box_options options);
       
       /// @brief Displays a progress dialog box in front of a specified window.
       /// @param owner An If xtd::forms::iwin32_window that represents the owner window of the progress dialog box.
@@ -232,7 +232,7 @@ namespace xtd {
       /// @param minimum An integer that indicates the minimum value of the progress dialog.
       /// @param maximum An integer that indicates the maximum value of the progress dialog.
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
-      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed);
+      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed);
       /// @brief Displays a progress dialog box in front of a specified window.
       /// @param owner An If xtd::forms::iwin32_window that represents the owner window of the progress dialog box.
       /// @param title An xtd::string that specifies the title of the progress dialog.
@@ -242,7 +242,7 @@ namespace xtd {
       /// @param maximum An integer that indicates the maximum value of the progress dialog.
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
-      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const progress_box_options options);
+      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const progress_box_options options);
       
       /// @brief Displays a progress dialog box in front of a specified window.
       /// @param owner An If xtd::forms::iwin32_window that represents the owner window of the progress dialog box.
@@ -254,7 +254,7 @@ namespace xtd {
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param informations An xtd::array of xtd::string that specifies the information texts of the progress dialog.
-      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const xtd::array<xtd::string>& informations);
+      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const xtd::array<xtd::string>& informations);
       /// @brief Displays a progress dialog box in front of a specified window.
       /// @param owner An If xtd::forms::iwin32_window that represents the owner window of the progress dialog box.
       /// @param title An xtd::string that specifies the title of the progress dialog.
@@ -266,7 +266,7 @@ namespace xtd {
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param informations An xtd::array of xtd::string that specifies the information texts of the progress dialog.
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
-      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const xtd::array<xtd::string>& informations, const progress_box_options options);
+      static void show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const xtd::array<xtd::string>& informations, const progress_box_options options);
       
       /// @brief Updates progress box
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
@@ -312,7 +312,7 @@ namespace xtd {
       /// @param maximum An integer that indicates the maximum value of the progress dialog.
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
-      static void update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed);
+      static void update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed);
       /// @brief Updates progress box
       /// @param value An integer that indicates the value of the progress dialog.
       /// @param title An xtd::string that specifies the title of the progress dialog.
@@ -322,11 +322,11 @@ namespace xtd {
       /// @param marquee A boolean that Indicates progress by continuously scrolling a block across a xtd::forms::progress_bar in a marquee fashion.
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param informations An xtd::array of xtd::string that specifies the information texts of the progress dialog.
-      static void update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const xtd::array<xtd::string>& informations);
+      static void update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const xtd::array<xtd::string>& informations);
       /// @}
       
     private:
-      static void show_progress_box(const iwin32_window* owner = nullptr, const progress_box_options options = progress_box_options::none, const xtd::string& title = "Please wait..."_t, const xtd::string& message = ""_t, int32 initial_value = 0, int32 minimum = 0, int32 maximum = 100, const bool marquee = false, size_t marquee_animation_speed = 100, const xtd::array<xtd::string>& informations = {});
+      static void show_progress_box(const iwin32_window* owner = nullptr, const progress_box_options options = progress_box_options::none, const xtd::string& title = "Please wait..."_t, const xtd::string& message = ""_t, int32 initial_value = 0, int32 minimum = 0, int32 maximum = 100, const bool marquee = false, xtd::usize marquee_animation_speed = 100, const xtd::array<xtd::string>& informations = {});
       
       static xtd::uptr<progress_dialog> dialog_;
     };

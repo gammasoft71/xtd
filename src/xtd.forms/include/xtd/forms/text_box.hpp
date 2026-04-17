@@ -86,13 +86,13 @@ namespace xtd {
       /// @brief Gets the number of characters selected in the text box.
       /// @return The number of characters selected in the text box.
       /// @remarks You can use this property to determine if any characters are currently selected in the text box control before performing operations on the selected text. When the value of the selection_length property is set to a value that is larger than the number of characters within the text of the control, the value of the selection_length property is set to the entire length of text within the control minus the value of the selection_start property (if any value is specified for the selection_start property).
-      size_t selection_length() const noexcept override;
+      xtd::usize selection_length() const noexcept override;
       
       using text_box_base::selection_start;
       /// @brief Gets o the starting point of text selected in the text box.
       /// @return The starting position of text selected in the text box.
       /// @remarks If no text is selected in the control, this property indicates the insertion point, or caret, for new text. If you set this property to a location beyond the length of the text in the control, the selection start position will be placed after the last character. When text is selected in the text box control, changing this property might decrease the value of the SelectionLength property. If the remaining text in the control after the position indicated by the selection_start property is less than the value of the selection_length property, the value of the selection_length property is automatically decreased. The value of the selection_start property never causes an increase in the selection_length property.
-      size_t selection_start() const noexcept override;
+      xtd::usize selection_start() const noexcept override;
       
       const xtd::string& text() const noexcept override;
       control& text(const xtd::string& text) override;
@@ -113,7 +113,7 @@ namespace xtd {
       /// @{
       void append_text(const xtd::string& value) override;
       
-      void select(size_t start, size_t length) override;
+      void select(xtd::usize start, xtd::usize length) override;
       /// @}
       
       /// @name Public Static Methods

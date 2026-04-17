@@ -92,12 +92,12 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param pos The index before which the content will be inserted.
         /// @param text The text of element to insert.
-        void insert_at(size_t index, const xtd::string& text);
+        void insert_at(xtd::usize index, const xtd::string& text);
         /// @brief Inserts specified element at specified index.
         /// @param pos The index before which the content will be inserted.
         /// @param text The text of element to insert.
         /// @param name The name of element to insert.
-        void insert_at(size_t index, const xtd::string& text, const xtd::string& name);
+        void insert_at(xtd::usize index, const xtd::string& text, const xtd::string& name);
         /// @}
         
         /// @cond
@@ -154,7 +154,7 @@ namespace xtd {
         
       private:
         friend tab_control;
-        event<tab_page_collection, delegate<void(size_t index, const string& text, const string& name)>> text_added;
+        event<tab_page_collection, delegate<void(xtd::usize index, const string& text, const string& name)>> text_added;
         event<tab_page_collection, delegate<iterator(const_iterator pos, const string& text, const string& name)>> text_inserted;
       };
       
@@ -200,11 +200,11 @@ namespace xtd {
       
       /// @brief Gets the index of the currently selected tab page.
       /// @return The zero-based index of the currently selected tab page. The default is -1, which is also the value if no tab page is selected.
-      virtual size_t selected_index() const noexcept;
+      virtual xtd::usize selected_index() const noexcept;
       /// @brief Sets the index of the currently selected tab page.
       /// @param selected_index The zero-based index of the currently selected tab page. The default is -1, which is also the value if no tab page is selected.
       /// @return Current tab_control instance.
-      virtual tab_control& selected_index(size_t selected_index);
+      virtual tab_control& selected_index(xtd::usize selected_index);
       
       /// @brief Gets the collection of tab pages in this tab control.
       /// @return A tab_page_collection that contains the control objects in this tab_control.
@@ -301,7 +301,7 @@ namespace xtd {
       
       /// @cond
       friend class tab_page;
-      size_t get_child_index(intptr page);
+      xtd::usize get_child_index(intptr page);
       /// @endcond
       
     private:
