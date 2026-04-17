@@ -86,7 +86,7 @@ $(function() {
 <p>Shows how to use xtd::web::css:css_reader class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> write_selectors(<span class="keyword">const</span> web::css::selector_map&amp; selectors) {</div>
+<div class="line"><span class="keywordtype">void</span> write_selectors(<span class="keyword">const</span> web::css::selector_dictionary&amp; selectors) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> [name, contents] : selectors) {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{} {{&quot;</span>, name);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> [key, value] : contents.properties())</div>

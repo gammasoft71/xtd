@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> numbers = array {0, 30, 20, 15, 90, 85, 40, 75};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> query = numbers.where([](<span class="keywordtype">int</span> number, size index) {</div>
+<div class="line">  <span class="keyword">auto</span> query = numbers.where([](<span class="keywordtype">int</span> number, usize index) {</div>
 <div class="line">    <span class="keywordflow">return</span> number &lt;= as&lt;int&gt;(index * 10);</div>
 <div class="line">  });</div>
 <div class="line">  </div>

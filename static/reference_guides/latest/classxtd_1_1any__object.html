@@ -135,7 +135,7 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><span class="keyword">struct </span>std::hash&lt;foo2&gt; {</div>
-<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1hash__code.html#ad0e2045a552008b2e7c8722cd2dd274e">xtd::hash_code::combine</a>(value.value);}</div>
+<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> {<span class="keywordflow">return</span> hash_code::combine(value.value);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -166,7 +166,6 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line"><span class="comment">// a = foo2 =&gt; NA (foo2)</span></div>
 <div class="line"><span class="comment">// a = wednesday =&gt; wednesday (xtd::day_of_week)</span></div>
 <div class="ttc" id="aclassxtd_1_1any__object_html_a4aac324c61225774eae3432bc18a5a41"><div class="ttname"><a href="#a4aac324c61225774eae3432bc18a5a41">xtd::any_object::value</a></div><div class="ttdeci">auto value() const -&gt; const object &amp;</div><div class="ttdoc">Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...</div></div>
-<div class="ttc" id="aclassxtd_1_1hash__code_html_ad0e2045a552008b2e7c8722cd2dd274e"><div class="ttname"><a href="classxtd_1_1hash__code.html#ad0e2045a552008b2e7c8722cd2dd274e">xtd::hash_code::combine</a></div><div class="ttdeci">static xtd::usize combine(args_t... values) noexcept</div><div class="ttdoc">Combines values into a hash code.</div><div class="ttdef"><b>Definition</b> hash_code.hpp:70</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>

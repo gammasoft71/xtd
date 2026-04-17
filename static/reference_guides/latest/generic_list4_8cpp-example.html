@@ -101,7 +101,7 @@ $(function() {
 <div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;part&gt;(obj) &amp;&amp; equals(as&lt;part&gt;(obj));}</div>
 <div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> part&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id == other.part_id;}</div>
 <div class="line"> </div>
-<div class="line">  size get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id;}</div>
+<div class="line">  usize get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>

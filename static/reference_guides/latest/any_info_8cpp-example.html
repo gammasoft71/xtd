@@ -109,13 +109,13 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><span class="keyword">struct </span>std::hash&lt;foo2&gt; {</div>
-<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a id="a2" name="a2"></a><a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> {<span class="keywordflow">return</span> <a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1hash__code.html#ad0e2045a552008b2e7c8722cd2dd274e">xtd::hash_code::combine</a>(value.value);}</div>
+<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> {<span class="keywordflow">return</span> hash_code::combine(value.value);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">auto</span> get_any_info(<span class="keyword">const</span> type_t&amp; value) -&gt; <span class="keywordtype">string</span> {</div>
 <div class="line">  <span class="keyword">auto</span> any_value = any_object (value);</div>
-<div class="line">  <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;[value = {} ({}), any = {} ({})]&quot;</span>, value, <a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(value), any_value.value(), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(any_value.value()));</div>
+<div class="line">  <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;[value = {} ({}), any = {} ({})]&quot;</span>, value, <a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(value), any_value.value(), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(any_value.value()));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -137,7 +137,6 @@ $(function() {
 <div class="line"><span class="comment">// [value = 42 (foo1), any = 42 (foo1)]</span></div>
 <div class="line"><span class="comment">// [value = 42 (foo2), any = 42 (xtd::box&lt;foo2&gt;)]</span></div>
 <div class="line"><span class="comment">// [value = wednesday (xtd::day_of_week), any = wednesday (xtd::enum_object&lt;xtd::day_of_week&gt;)]</span></div>
-<div class="ttc" id="aclassxtd_1_1hash__code_html_ad0e2045a552008b2e7c8722cd2dd274e"><div class="ttname"><a href="classxtd_1_1hash__code.html#ad0e2045a552008b2e7c8722cd2dd274e">xtd::hash_code::combine</a></div><div class="ttdeci">static xtd::usize combine(args_t... values) noexcept</div><div class="ttdoc">Combines values into a hash code.</div><div class="ttdef"><b>Definition</b> hash_code.hpp:70</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:24</div></div>
 <div class="ttc" id="agroup__types_html_gac8e2f13523520227e0137c8f5ce7b86d"><div class="ttname"><a href="group__types.html#gac8e2f13523520227e0137c8f5ce7b86d">xtd::int32_object</a></div><div class="ttdeci">box_integer&lt; int32 &gt; int32_object</div><div class="ttdoc">Represent a boxed int32.</div><div class="ttdef"><b>Definition</b> int32_object.hpp:29</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
