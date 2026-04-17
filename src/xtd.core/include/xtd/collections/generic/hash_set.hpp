@@ -104,7 +104,7 @@ namespace xtd {
           ensure_capacity(capacity);
         }
         hash_set(hash_set&& other) noexcept = default;
-        hash_set(const hash_set& other) noexcept : data_(xtd::new_ptr<hash_set_data>(other.data_->comparer, other.data_->items, other.data_->version)) {}
+        hash_set(const hash_set& other) noexcept : data_(xtd::new_ptr<hash_set_data>(*other.data_->comparer, other.data_->items, other.data_->version)) {}
         hash_set(std::unordered_set<key_type>&& other) noexcept : data_(xtd::new_ptr<hash_set_data>(std::move(other))) {}
         hash_set(const std::unordered_set<key_type>& other) noexcept {
           for (auto iterator = other.begin(); iterator != other.end(); ++iterator)
