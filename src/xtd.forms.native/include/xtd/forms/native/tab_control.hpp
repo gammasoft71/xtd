@@ -55,17 +55,17 @@ namespace xtd {
         /// @param index The tab page index to insert.
         /// @param page The tab page handle.
         /// @warning Internal use only
-        static void insert_page(intptr control, size_t index, intptr page);
+        static void insert_page(intptr control, xtd::usize index, intptr page);
         /// @brief Gets selected tab page index.
         /// @param control Tab control window handle.
         /// @return The selected tab page index.
         /// @warning Internal use only
-        static size_t selected_index(intptr control);
+        static xtd::usize selected_index(intptr control);
         /// @brief Sets selected tab page with specified index
         /// @param control Tab control window handle.
         /// @param index The selected tab page index.
         /// @warning Internal use only
-        static void selected_index(intptr control, size_t index);
+        static void selected_index(intptr control, xtd::usize index);
         /// @}
       };
     }

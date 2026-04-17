@@ -8,35 +8,35 @@
 #endif
 /// @endcond
 
-#include <cstddef>
+#include <xtd/usize>
 
 /// @brief Normal menu item.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mi
 /// @warning Internal use only
-constexpr size_t MI_NORMAL = 0;
+constexpr xtd::usize MI_NORMAL = 0;
 /// @brief Check menu item.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mi
 /// @warning Internal use only
-constexpr size_t MI_CHECK = 1;
+constexpr xtd::usize MI_CHECK = 1;
 /// @brief Radio menu item.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mi
 /// @warning Internal use only
-constexpr size_t MI_RADIO = 2;
+constexpr xtd::usize MI_RADIO = 2;
 /// @brief Drop down menu item.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mi
 /// @warning Internal use only
-constexpr size_t MI_DROPDOWN = 3;
+constexpr xtd::usize MI_DROPDOWN = 3;
 /// @brief Separator menu item.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mi
 /// @warning Internal use only
-constexpr size_t MI_SEPARATOR = 4;
+constexpr xtd::usize MI_SEPARATOR = 4;

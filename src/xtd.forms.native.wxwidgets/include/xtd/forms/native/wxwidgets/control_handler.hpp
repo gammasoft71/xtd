@@ -107,7 +107,7 @@ namespace xtd {
         void IncrementLayoutSuspended() noexcept {++suspended_count_;}
         void DecrementLayoutSuspended() noexcept {if (suspended_count_ > 0) --suspended_count_;}
         
-        static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
+        static long common_window_style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = 0;
           
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
@@ -130,7 +130,7 @@ namespace xtd {
         std::function<intptr(intptr, int32, intptr, intptr, intptr, intptr)> def_wnd_proc;
         
       protected:
-        static long common_control_style_to_wx_style(size_t style, size_t ex_style) {
+        static long common_control_style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = 0;
           //if ((style & WS_CHILD) == WS_CHILD) wx_style |= wxCHILD;
           if ((style & WS_CLIPSIBLINGS) == WS_CLIPSIBLINGS) wx_style |= wxCLIP_SIBLINGS;
@@ -142,7 +142,7 @@ namespace xtd {
           return wx_style;
         }
         
-        static long common_container_style_to_wx_style(size_t style, size_t ex_style) {
+        static long common_container_style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           //if ((ex_style & WS_EX_CONTROLPARENT) wx_style = wxCONTROL_PARENT;

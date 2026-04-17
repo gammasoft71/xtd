@@ -47,18 +47,18 @@ namespace xtd {
         /// @param index The item index to set the check state for.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void check_state(intptr control, size_t index, int32 check_state);
+        static void check_state(intptr control, xtd::usize index, int32 check_state);
         /// @brief Gets check state from specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to set the check state for.
         /// @return The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static int32 check_state(intptr control, size_t index);
+        static int32 check_state(intptr control, xtd::usize index);
         /// @brief Deletes specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr control, size_t index);
+        static void delete_item(intptr control, xtd::usize index);
         /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
         /// @param control Checked list box window handle.
         /// @warning Internal use only
@@ -69,20 +69,20 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void insert_item(intptr control, size_t index, const xtd::string& value, int32 check_state);
+        static void insert_item(intptr control, xtd::usize index, const xtd::string& value, int32 check_state);
         /// @brief Gets selected item index.
         /// @param control Checked list box window handle.
         /// @return The selected item index.
         /// @warning Internal use only
-        static size_t selected_index(intptr control);
+        static xtd::usize selected_index(intptr control);
         /// @brief Sets selected item with specified index
         /// @param control Checked list box window handle.
         /// @param index The selected item index.
         /// @warning Internal use only
-        static void selected_index(intptr control, size_t index);
-        /// @brief Gets a size_t array of selected indices.
+        static void selected_index(intptr control, xtd::usize index);
+        /// @brief Gets a xtd::usize array of selected indices.
         /// @param control Checked list box window handle.
-        /// @return A size_t array of selected indices.
+        /// @return A xtd::usize array of selected indices.
         /// @warning Internal use only
         static xtd::array<xtd::usize> selected_indices(intptr control);
         /// @brief Updates a specified item index with specified value and check state.
@@ -91,7 +91,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void update_item(intptr control, size_t index, const xtd::string& value, int32 check_state);
+        static void update_item(intptr control, xtd::usize index, const xtd::string& value, int32 check_state);
         /// @}
       };
     }

@@ -8,81 +8,81 @@
 #endif
 /// @endcond
 
-#include <cstddef>
+#include <xtd/usize>
 
 /// @brief No button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDNONE = 0;
+constexpr xtd::usize IDNONE = 0;
 #if !defined(IDOK)
 /// @brief The OK button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDOK = 1;
+constexpr xtd::usize IDOK = 1;
 /// @brief The Cancel button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDCANCEL = 2;
+constexpr xtd::usize IDCANCEL = 2;
 /// @brief The Abort button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDABORT = 3;
+constexpr xtd::usize IDABORT = 3;
 /// @brief The Retry button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDRETRY = 4;
+constexpr xtd::usize IDRETRY = 4;
 /// @brief The Ignore button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDIGNORE = 5;
+constexpr xtd::usize IDIGNORE = 5;
 /// @brief The Yes button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDYES = 6;
+constexpr xtd::usize IDYES = 6;
 /// @brief The No button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDNO = 7;
+constexpr xtd::usize IDNO = 7;
 /// @brief The Close button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDCLOSE = 8;
+constexpr xtd::usize IDCLOSE = 8;
 /// @brief The Help button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDHELP = 9;
+constexpr xtd::usize IDHELP = 9;
 /// @brief The Try button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDTRYAGAIN = 10;
+constexpr xtd::usize IDTRYAGAIN = 10;
 /// @brief The Continue button was selected.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDCONTINUE = 11;
+constexpr xtd::usize IDCONTINUE = 11;
 #endif
 
 #if !defined(IDTIMEOUT)
@@ -91,5 +91,5 @@ constexpr size_t IDCONTINUE = 11;
 /// xtd.forms.native
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
-constexpr size_t IDTIMEOUT = 32000;
+constexpr xtd::usize IDTIMEOUT = 32000;
 #endif

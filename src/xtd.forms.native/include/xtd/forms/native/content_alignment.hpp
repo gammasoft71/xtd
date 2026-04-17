@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include <cstddef>
+#include <xtd/usize>
 
 /// @brief Content is vertically aligned at the top, and horizontally aligned on the left.
 /// @par Library
@@ -16,21 +16,21 @@
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_TOPLEFT = 0b1;
+constexpr xtd::usize CA_TOPLEFT = 0b1;
 /// @brief Content is vertically aligned at the top, and horizontally aligned at the center.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_TOPCENTER = 0b10;
+constexpr xtd::usize CA_TOPCENTER = 0b10;
 /// @brief Content is vertically aligned at the top, and horizontally aligned on the right.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_TOPRIGHT = 0b100;
+constexpr xtd::usize CA_TOPRIGHT = 0b100;
 
 /// @brief Content is vertically aligned in the middle, and horizontally aligned on the left.
 /// @par Library
@@ -38,21 +38,21 @@ constexpr size_t CA_TOPRIGHT = 0b100;
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_MIDDLELEFT = 0b10000;
+constexpr xtd::usize CA_MIDDLELEFT = 0b10000;
 /// @brief Content is vertically aligned at the middle, and horizontally aligned at the center.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_MIDDLECENTER = 0b100000;
+constexpr xtd::usize CA_MIDDLECENTER = 0b100000;
 /// @brief Content is vertically aligned at the middle, and horizontally aligned on the right.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_MIDDLERIGHT = 0b1000000;
+constexpr xtd::usize CA_MIDDLERIGHT = 0b1000000;
 
 /// @brief Content is vertically aligned in the bottom, and horizontally aligned on the left.
 /// @par Library
@@ -60,18 +60,18 @@ constexpr size_t CA_MIDDLERIGHT = 0b1000000;
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_BOTTOMLEFT = 0b100000000;
+constexpr xtd::usize CA_BOTTOMLEFT = 0b100000000;
 /// @brief Content is vertically aligned at the bottom, and horizontally aligned at the center.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_BOTTOMCENTER = 0b1000000000;
+constexpr xtd::usize CA_BOTTOMCENTER = 0b1000000000;
 /// @brief Content is vertically aligned at the bottom, and horizontally aligned on the right.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ca
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t CA_BOTTOMRIGHT = 0b10000000000;
+constexpr xtd::usize CA_BOTTOMRIGHT = 0b10000000000;

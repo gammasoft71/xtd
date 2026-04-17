@@ -41,7 +41,7 @@ namespace xtd {
         /// @param marquee `true` if progress_bar is marquee; otherwise `false`.
         /// @param animation_speed The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
         /// @warning Internal use only
-        static void marquee(intptr control, bool marquee, size_t animation_speed);
+        static void marquee(intptr control, bool marquee, xtd::usize animation_speed);
         /// @brief Sets the maximum value of the range of the control.
         /// @param control Control window handle.
         /// @param maximum The maximum value of the range.

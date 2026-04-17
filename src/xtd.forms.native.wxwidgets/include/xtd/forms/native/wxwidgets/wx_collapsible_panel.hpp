@@ -41,7 +41,7 @@ namespace xtd {
           static_cast<wxCollapsiblePane*>(control())->Collapse(true);
         }
         
-        static long style_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_container_style_to_wx_style(style, ex_style);
           
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;

@@ -50,12 +50,12 @@ namespace xtd {
         /// @param menu_item Menu item to insert.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_item(intptr main_menu, size_t pos, intptr menu_item, const xtd::string& text);
+        static void insert_item(intptr main_menu, xtd::usize pos, intptr menu_item, const xtd::string& text);
         /// @brief Remove menu item from specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
-        static void remove_item(intptr main_menu, size_t pos);
+        static void remove_item(intptr main_menu, xtd::usize pos);
         /// @}
       };
     }

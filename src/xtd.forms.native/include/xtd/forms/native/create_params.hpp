@@ -48,14 +48,14 @@ namespace xtd {
         /// @return A bitwise combination of the class style values.
         /// @remarks see class_styles.h file
         /// @warning Internal use only
-        size_t class_style = 0;
+        xtd::usize class_style = 0;
         
         /// @brief Gets or sets a bitwise combination of extended window style values.
         /// @return A bitwise combination of the extended window style values.
         /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
         /// @remarks see window_styles.h file
         /// @warning Internal use only
-        size_t ex_style = 0;
+        xtd::usize ex_style = 0;
         
         /// @brief Gets or sets the initial location of the control.
         /// @return The xtd::drawing::point that represents the initial location of the control.
@@ -76,7 +76,7 @@ namespace xtd {
         /// @return A bitwise combination of the window style values.
         /// @remarks The Style property controls the appearance of the control and its initial state.
         /// @warning Internal use only
-        size_t style = 0;
+        xtd::usize style = 0;
         
         /// @brief Gets or sets the initial size of the control.
         /// @return The xtd::drawing::size that represents the initial size of the control.

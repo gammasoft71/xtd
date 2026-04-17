@@ -342,7 +342,7 @@ namespace xtd::forms::native {
   }
   
   template<typename control_t>
-  inline void control_wrapper<control_t>:: send_mouse_message(uint32 msg, size_t virtual_key, wxEvent& event) {
+  inline void control_wrapper<control_t>:: send_mouse_message(uint32 msg, xtd::usize virtual_key, wxEvent& event) {
     wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
     wxMouseState mouse_state = wxGetMouseState();
     int32 virtual_keys = get_virtual_keys(mouse_state);

@@ -46,7 +46,7 @@ namespace xtd {
         /// @param image_list image list handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr image_list, size_t index);
+        static void delete_item(intptr image_list, xtd::usize index);
         /// @brief Destroys image list.
         /// @param image_list image list handle.
         /// @warning Internal use only
@@ -56,13 +56,13 @@ namespace xtd {
         /// @param index The image index to insert.
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
-        static void insert_item(intptr image_list, size_t index, const drawing::image& image);
+        static void insert_item(intptr image_list, xtd::usize index, const drawing::image& image);
         /// @brief Updates a specified item index with specified value.
         /// @param image_list image list handle.
         /// @param index The image index to update.
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
-        static void update_item(intptr image_list, size_t index, const drawing::image& image);
+        static void update_item(intptr image_list, xtd::usize index, const drawing::image& image);
         /// @}
       };
     }

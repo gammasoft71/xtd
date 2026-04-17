@@ -45,7 +45,7 @@ namespace xtd {
         /// @param control Domain up down window handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr control, size_t index);
+        static void delete_item(intptr control, xtd::usize index);
         /// @brief Resumes painting the domain_up_down control after painting is suspended by the begin_update method.
         /// @param control Domain up down window handle.
         /// @warning Internal use only
@@ -55,23 +55,23 @@ namespace xtd {
         /// @param index The item index to insert.
         /// @param value The text value.
         /// @warning Internal use only
-        static void insert_item(intptr control, size_t index, const xtd::string& value);
+        static void insert_item(intptr control, xtd::usize index, const xtd::string& value);
         /// @brief Gets selected item index.
         /// @param control Domain up down window handle.
         /// @return The selected item index.
         /// @warning Internal use only
-        static size_t selected_index(intptr control);
+        static xtd::usize selected_index(intptr control);
         /// @brief Sets selected item with specified index
         /// @param control Domain up down window handle.
         /// @param index The selected item index.
         /// @warning Internal use only
-        static void selected_index(intptr control, size_t index);
+        static void selected_index(intptr control, xtd::usize index);
         /// @brief Updates a specified item index with specified value.
         /// @param control Domain up down window handle.
         /// @param index The item index to update.
         /// @param value The text value.
         /// @warning Internal use only
-        static void update_item(intptr control, size_t index, const xtd::string& value);
+        static void update_item(intptr control, xtd::usize index, const xtd::string& value);
         /// @}
       };
     }

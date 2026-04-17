@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include <cstddef>
+#include <xtd/usize>
 
 /// @brief Specifies that the owner of the loading indicator control is responsible for drawing the control.
 /// @par Library
@@ -16,4 +16,4 @@
 /// @ingroup xtd_forms_native li
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t LI_OWNERDRAW = 0x00000001;
+constexpr xtd::usize LI_OWNERDRAW = 0x00000001;

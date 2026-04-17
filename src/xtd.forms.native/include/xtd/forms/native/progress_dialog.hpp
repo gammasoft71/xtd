@@ -58,7 +58,7 @@ namespace xtd {
         /// @param options A bitwise progress dialog flags value.
         /// @return The created progress dialog window handle.
         /// @warning Internal use only
-        static intptr create(intptr hwnd, const xtd::string& text, const xtd::string& message, const xtd::array<xtd::string>& informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options);
+        static intptr create(intptr hwnd, const xtd::string& text, const xtd::string& message, const xtd::array<xtd::string>& informations, xtd::usize marquee_animation_speed, int32 minimum, int32 maximum, int32 value, xtd::usize options);
         /// @brief Destroys progress dialog.
         /// @param dialog Progress dialog window handle to destroy.
         /// @warning Internal use only
@@ -72,7 +72,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param marquee tree is marquee; otherwise `false`. The default is `false`.
         /// @warning Internal use only
-        static void marquee(intptr dialog, bool marquee, size_t animation_speed);
+        static void marquee(intptr dialog, bool marquee, xtd::usize animation_speed);
         /// @brief Sets the maximum value of the range of the control.
         /// @param dialog Progress dialog window handle.
         /// @param maximum The maximum value of the range.
