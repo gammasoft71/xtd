@@ -8,7 +8,7 @@
 namespace xtd {
   /// @name Native types
   
-  /// @brief Represents an unsigned  size of any object in bytes
+  /// @brief Represents an unsigned size of any object in bytes
   /// @par Header
   /// ```cpp
   /// #include <xtd/usize>
@@ -33,7 +33,8 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
-  using size = usize;
+  /// @deprecated Replaced by xtd::usize - Will be removed in version 0.4.0.
+  using size [[deprecated("Replaced by xtd::usize - Will be removed in version 0.4.0.")]] = usize;
   /// @}
 }
 
