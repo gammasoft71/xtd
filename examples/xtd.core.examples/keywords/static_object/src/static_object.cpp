@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 namespace static_object_example {
-  class program static_object_ {
+  class program : public static_object {
   public:
     static string to_string() {return "program";}
   };
