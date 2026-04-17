@@ -208,7 +208,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 Public Fields</h2></td></tr>
 <tr class="memitem:a1c98f88990d103ede2f1f9dcbed8956b" id="r_a1c98f88990d103ede2f1f9dcbed8956b"><td class="memItemLeft">static const <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1c98f88990d103ede2f1f9dcbed8956b">invalid_handle</a></td></tr>
 <tr class="memdesc:a1c98f88990d103ede2f1f9dcbed8956b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an invalid native operating system handle. This field is read-only.  <br /></td></tr>
-<tr class="memitem:a3b3a51c59f6dfcfbb1d74734d935b837" id="r_a3b3a51c59f6dfcfbb1d74734d935b837"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3b3a51c59f6dfcfbb1d74734d935b837">wait_timeout</a></td></tr>
+<tr class="memitem:a3b3a51c59f6dfcfbb1d74734d935b837" id="r_a3b3a51c59f6dfcfbb1d74734d935b837"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3b3a51c59f6dfcfbb1d74734d935b837">wait_timeout</a></td></tr>
 <tr class="memdesc:a3b3a51c59f6dfcfbb1d74734d935b837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that a <a class="el" href="#aefe3fd2499815e01942db70202d3377e" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> operation timed out before any of the wait handles were signaled. This field is constant.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -252,13 +252,13 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a532338c38c7b487cb18b7378a85aa0e4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a532338c38c7b487cb18b7378a85aa0e4">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; bool</td></tr>
 <tr class="memdesc:a532338c38c7b487cb18b7378a85aa0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval.  <br /></td></tr>
 <tr class="memitem:aefe3fd2499815e01942db70202d3377e" id="r_aefe3fd2499815e01942db70202d3377e"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:aefe3fd2499815e01942db70202d3377e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aefe3fd2499815e01942db70202d3377e">wait_any</a> (const collection_t &amp;wait_handles) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memitem:aefe3fd2499815e01942db70202d3377e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aefe3fd2499815e01942db70202d3377e">wait_any</a> (const collection_t &amp;wait_handles) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
 <tr class="memdesc:aefe3fd2499815e01942db70202d3377e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="memitem:ac2e67c48c438e265247e549335d600e8" id="r_ac2e67c48c438e265247e549335d600e8"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:ac2e67c48c438e265247e549335d600e8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2e67c48c438e265247e549335d600e8">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memitem:ac2e67c48c438e265247e549335d600e8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2e67c48c438e265247e549335d600e8">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
 <tr class="memdesc:ac2e67c48c438e265247e549335d600e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="memitem:a3e9b481e35b54151a0661542e108f14f" id="r_a3e9b481e35b54151a0661542e108f14f"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:a3e9b481e35b54151a0661542e108f14f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3e9b481e35b54151a0661542e108f14f">wait_any</a> (const collection_t &amp;wait_handles, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memitem:a3e9b481e35b54151a0661542e108f14f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3e9b481e35b54151a0661542e108f14f">wait_any</a> (const collection_t &amp;wait_handles, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
 <tr class="memdesc:a3e9b481e35b54151a0661542e108f14f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -274,7 +274,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
@@ -851,7 +851,7 @@ template&lt;typename collection_t&gt; </div>
           <td class="memname">auto xtd::threading::wait_handle::wait_any </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>wait_handles</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td> -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -902,7 +902,7 @@ template&lt;typename collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -954,7 +954,7 @@ template&lt;typename collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -1095,7 +1095,7 @@ Override this function for all derived object </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::threading::wait_handle::wait_timeout</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::threading::wait_handle::wait_timeout</td>
         </tr>
       </table>
   </td>

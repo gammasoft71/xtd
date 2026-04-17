@@ -117,7 +117,7 @@ Inheritance diagram for xtd::drawing::point:</div>
 <div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> start_point = subtract_button.size();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Use the addition operator to get the end point.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> end_point = start_point + <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(140, 150);</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> end_point = start_point + <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(140, 150);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Draw a line between the points.</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(<a class="code hl_function" href="classxtd_1_1drawing_1_1system__pens.html#a2963793eaeac8937a9599eecdad781d6">system_pens::highlight</a>, start_point, end_point);</div>
@@ -133,7 +133,7 @@ Inheritance diagram for xtd::drawing::point:</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.hpp:45</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__pens_html_a2963793eaeac8937a9599eecdad781d6"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__pens.html#a2963793eaeac8937a9599eecdad781d6">xtd::drawing::system_pens::highlight</a></div><div class="ttdeci">static xtd::drawing::pen highlight()</div><div class="ttdoc">Gets a pen that is the color of the highlight.</div></div>
 <div class="ttc" id="agroup__fonts_html_ga5622feb39a9d16672cef53957d224571"><div class="ttname"><a href="group__fonts.html#ga5622feb39a9d16672cef53957d224571">xtd::drawing::font_style</a></div><div class="ttdeci">font_style</div><div class="ttdoc">Specifies style information applied to text. This enumeration has a flags attribute that allows a bit...</div><div class="ttdef"><b>Definition</b> font_style.hpp:17</div></div>
-<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
+<div class="ttc" id="agroup__types_html_ga0a27fff7b553c7e6da4a774353c8fa96"><div class="ttname"><a href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></div><div class="ttdeci">usize size</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:36</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="buttons_8cpp-example.html#_a0">buttons.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#_a9">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a14">graphics.cpp</a>, and <a class="el" href="tutorial_button_8cpp-example.html#_a5">tutorial_button.cpp</a>.</dd>
@@ -170,7 +170,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:ac204e77b6a4e38f5253e3ba27c79fdf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:a4da9af3899074f1835d21fe599e2d6c5" id="r_a4da9af3899074f1835d21fe599e2d6c5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4da9af3899074f1835d21fe599e2d6c5">equals</a> (const <a class="el" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> &amp;other) const noexcept override</td></tr>
 <tr class="memdesc:a4da9af3899074f1835d21fe599e2d6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:abe3126ce33527d39305468d306a8e36a" id="r_abe3126ce33527d39305468d306a8e36a"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#abe3126ce33527d39305468d306a8e36a">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memitem:abe3126ce33527d39305468d306a8e36a" id="r_abe3126ce33527d39305468d306a8e36a"><td class="memItemLeft"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#abe3126ce33527d39305468d306a8e36a">get_hash_code</a> () const noexcept override</td></tr>
 <tr class="memdesc:abe3126ce33527d39305468d306a8e36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a813937ec5b83642dc5a45335fd55fb3b" id="r_a813937ec5b83642dc5a45335fd55fb3b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a813937ec5b83642dc5a45335fd55fb3b">offset</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> dx, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> dy) noexcept</td></tr>
 <tr class="memdesc:a813937ec5b83642dc5a45335fd55fb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates this <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> by the specified amount.  <br /></td></tr>
@@ -352,7 +352,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>
@@ -407,7 +407,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>
@@ -527,7 +527,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::drawing::point::get_hash_code </td>
+          <td class="memname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> xtd::drawing::point::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1248,7 +1248,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>
@@ -1288,7 +1288,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> form_graphics = create_graphics();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Construct another point, this time using a xtd::drawing::size.</span></div>
-<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(100, 100));</div>
+<div class="line">  <a class="code hl_function" href="#ab8302a7db6391b534dd3df40b11b290d">point</a> point2(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>(100, 100));</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Call the equality operator to see if the points are equal, and if so print out their x and y values.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (point1 == point2) {</div>

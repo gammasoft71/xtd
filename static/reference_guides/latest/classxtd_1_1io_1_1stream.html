@@ -132,11 +132,11 @@ Public Properties</h2></td></tr>
 <tr class="memdesc:a3af571ec94a08bb19fa64d4cf060e5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports writing.  <br /></td></tr>
 <tr class="memitem:a502067e9af6534d3ac76d1154922a912" id="r_a502067e9af6534d3ac76d1154922a912"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a502067e9af6534d3ac76d1154922a912">is_closed</a> () const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a502067e9af6534d3ac76d1154922a912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the stream is closed.  <br /></td></tr>
-<tr class="memitem:a26c2894936ae30fe365517af63197c2e" id="r_a26c2894936ae30fe365517af63197c2e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a26c2894936ae30fe365517af63197c2e">length</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>=0</td></tr>
+<tr class="memitem:a26c2894936ae30fe365517af63197c2e" id="r_a26c2894936ae30fe365517af63197c2e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a26c2894936ae30fe365517af63197c2e">length</a> () const -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>=0</td></tr>
 <tr class="memdesc:a26c2894936ae30fe365517af63197c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets the length in bytes of the stream.  <br /></td></tr>
-<tr class="memitem:afd76669b5a92bf86dcb938fcc6258846" id="r_afd76669b5a92bf86dcb938fcc6258846"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afd76669b5a92bf86dcb938fcc6258846">position</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>=0</td></tr>
+<tr class="memitem:afd76669b5a92bf86dcb938fcc6258846" id="r_afd76669b5a92bf86dcb938fcc6258846"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afd76669b5a92bf86dcb938fcc6258846">position</a> () const -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>=0</td></tr>
 <tr class="memdesc:afd76669b5a92bf86dcb938fcc6258846"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets the position within the current stream.  <br /></td></tr>
-<tr class="memitem:a0ece2222fe99d7702dc69bf94471caf1" id="r_a0ece2222fe99d7702dc69bf94471caf1"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ece2222fe99d7702dc69bf94471caf1">position</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) -&gt; void=0</td></tr>
+<tr class="memitem:a0ece2222fe99d7702dc69bf94471caf1" id="r_a0ece2222fe99d7702dc69bf94471caf1"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ece2222fe99d7702dc69bf94471caf1">position</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> value) -&gt; void=0</td></tr>
 <tr class="memdesc:a0ece2222fe99d7702dc69bf94471caf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, sets the position within the current stream.  <br /></td></tr>
 <tr class="memitem:a247407c50f579466d9e52eeb59a89c46" id="r_a247407c50f579466d9e52eeb59a89c46"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a247407c50f579466d9e52eeb59a89c46">read_timeout</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
 <tr class="memdesc:a247407c50f579466d9e52eeb59a89c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.  <br /></td></tr>
@@ -151,25 +151,25 @@ Public Properties</h2></td></tr>
 Public Methods</h2></td></tr>
 <tr class="memitem:a58414130c97fc85d06db93c9f27ffaea" id="r_a58414130c97fc85d06db93c9f27ffaea"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a58414130c97fc85d06db93c9f27ffaea">copy_to</a> (std::ostream &amp;destination) -&gt; void</td></tr>
 <tr class="memdesc:a58414130c97fc85d06db93c9f27ffaea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream.  <br /></td></tr>
-<tr class="memitem:a3198a0d6aa410ffbf022928ab7849359" id="r_a3198a0d6aa410ffbf022928ab7849359"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3198a0d6aa410ffbf022928ab7849359">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> buffer_size) -&gt; void</td></tr>
+<tr class="memitem:a3198a0d6aa410ffbf022928ab7849359" id="r_a3198a0d6aa410ffbf022928ab7849359"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3198a0d6aa410ffbf022928ab7849359">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> buffer_size) -&gt; void</td></tr>
 <tr class="memdesc:a3198a0d6aa410ffbf022928ab7849359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.  <br /></td></tr>
 <tr class="memitem:a17c2ecf5c677286c971b8794c2e16469" id="r_a17c2ecf5c677286c971b8794c2e16469"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a17c2ecf5c677286c971b8794c2e16469">flush</a> () -&gt; void=0</td></tr>
 <tr class="memdesc:a17c2ecf5c677286c971b8794c2e16469"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device. exception <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a> An I/O error occurs.  <br /></td></tr>
-<tr class="memitem:afe15845ac389ebe506e6a4552d7aca16" id="r_afe15845ac389ebe506e6a4552d7aca16"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afe15845ac389ebe506e6a4552d7aca16">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memitem:afe15845ac389ebe506e6a4552d7aca16" id="r_afe15845ac389ebe506e6a4552d7aca16"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afe15845ac389ebe506e6a4552d7aca16">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
 <tr class="memdesc:afe15845ac389ebe506e6a4552d7aca16"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
-<tr class="memitem:afe39cfb29ed87fd7c455c83b405b5d1b" id="r_afe39cfb29ed87fd7c455c83b405b5d1b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afe39cfb29ed87fd7c455c83b405b5d1b">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>=0</td></tr>
-<tr class="memitem:adf4105631ca776eb6742d27a2daf9711" id="r_adf4105631ca776eb6742d27a2daf9711"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adf4105631ca776eb6742d27a2daf9711">read_at_least</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> minimum_bytes, bool throw_on_end_of_stream=true) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memitem:afe39cfb29ed87fd7c455c83b405b5d1b" id="r_afe39cfb29ed87fd7c455c83b405b5d1b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afe39cfb29ed87fd7c455c83b405b5d1b">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> offset, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>=0</td></tr>
+<tr class="memitem:adf4105631ca776eb6742d27a2daf9711" id="r_adf4105631ca776eb6742d27a2daf9711"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adf4105631ca776eb6742d27a2daf9711">read_at_least</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> minimum_bytes, bool throw_on_end_of_stream=true) -&gt; <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td></tr>
 <tr class="memdesc:adf4105631ca776eb6742d27a2daf9711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads at least a minimum number of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
 <tr class="memitem:a48e24120901a801b47c48e3d90eef6e6" id="r_a48e24120901a801b47c48e3d90eef6e6"><td class="memItemLeft"><a id="a48e24120901a801b47c48e3d90eef6e6" name="a48e24120901a801b47c48e3d90eef6e6"></a>
 virtual auto&#160;</td><td class="memItemRight"><b>read_byte</b> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
 <tr class="memitem:a2b089e94b3a66e3269ec2dc977137a1e" id="r_a2b089e94b3a66e3269ec2dc977137a1e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2b089e94b3a66e3269ec2dc977137a1e">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; void</td></tr>
 <tr class="memdesc:a2b089e94b3a66e3269ec2dc977137a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes from the current stream and advances the position within the stream until the buffer is filled.  <br /></td></tr>
-<tr class="memitem:a1de5e450098d89999d54a622336d8faf" id="r_a1de5e450098d89999d54a622336d8faf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1de5e450098d89999d54a622336d8faf">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; void</td></tr>
+<tr class="memitem:a1de5e450098d89999d54a622336d8faf" id="r_a1de5e450098d89999d54a622336d8faf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1de5e450098d89999d54a622336d8faf">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> offset, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; void</td></tr>
 <tr class="memdesc:a1de5e450098d89999d54a622336d8faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads <span class="tt">count</span> number of bytes from the current stream and advances the position within the stream.  <br /></td></tr>
-<tr class="memitem:aa997bcfe8c222dfceed177cfb190a319" id="r_aa997bcfe8c222dfceed177cfb190a319"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aa997bcfe8c222dfceed177cfb190a319">set_length</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) -&gt; void=0</td></tr>
+<tr class="memitem:aa997bcfe8c222dfceed177cfb190a319" id="r_aa997bcfe8c222dfceed177cfb190a319"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aa997bcfe8c222dfceed177cfb190a319">set_length</a> (<a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> value) -&gt; void=0</td></tr>
 <tr class="memitem:a60a8f2dc19aada29bc69bdff6523854d" id="r_a60a8f2dc19aada29bc69bdff6523854d"><td class="memItemLeft"><a id="a60a8f2dc19aada29bc69bdff6523854d" name="a60a8f2dc19aada29bc69bdff6523854d"></a>
 virtual auto&#160;</td><td class="memItemRight"><b>write</b> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; const <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; buffer) -&gt; void</td></tr>
-<tr class="memitem:a9c372910c897a610ac0e95586b417a5e" id="r_a9c372910c897a610ac0e95586b417a5e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c372910c897a610ac0e95586b417a5e">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; void=0</td></tr>
+<tr class="memitem:a9c372910c897a610ac0e95586b417a5e" id="r_a9c372910c897a610ac0e95586b417a5e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c372910c897a610ac0e95586b417a5e">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> offset, <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a> count) -&gt; void=0</td></tr>
 <tr class="memitem:a49fad02f992e3e7d79ce5f3288730b9e" id="r_a49fad02f992e3e7d79ce5f3288730b9e"><td class="memItemLeft"><a id="a49fad02f992e3e7d79ce5f3288730b9e" name="a49fad02f992e3e7d79ce5f3288730b9e"></a>
 virtual auto&#160;</td><td class="memItemRight"><b>write_byte</b> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value) -&gt; void</td></tr>
 </table><table class="memberdecls">
@@ -184,7 +184,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
@@ -398,7 +398,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
           <td class="memname">virtual auto xtd::io::stream::length </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -434,7 +434,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
           <td class="memname">virtual auto xtd::io::stream::position </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -472,7 +472,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="memname">virtual auto xtd::io::stream::position </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt;  void</td>
         </tr>
       </table>
@@ -701,7 +701,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;) -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -759,7 +759,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
           <td class="memname">virtual auto xtd::io::stream::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -798,12 +798,12 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -831,12 +831,12 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>minimum_bytes</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>minimum_bytes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>throw_on_end_of_stream</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>throw_on_end_of_stream</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -908,12 +908,12 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -952,7 +952,7 @@ The range specified by the combination of offset and count exceeds the length of
         <tr>
           <td class="memname">virtual auto xtd::io::stream::set_length </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt;  void</td>
         </tr>
       </table>
@@ -984,12 +984,12 @@ The range specified by the combination of offset and count exceeds the length of
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>

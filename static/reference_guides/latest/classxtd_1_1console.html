@@ -190,7 +190,7 @@ Public Static Properties</h2></td></tr>
 <tr class="memdesc:a0f09e1eb23d2db4aff593752ec0cd71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the column position of the cursor within the buffer area.  <br /></td></tr>
 <tr class="memitem:a448e64640fd42aafed0ffc5ae5576b98" id="r_a448e64640fd42aafed0ffc5ae5576b98"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a448e64640fd42aafed0ffc5ae5576b98">cursor_size</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
 <tr class="memdesc:a448e64640fd42aafed0ffc5ae5576b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the height of the cursor within a character cell.  <br /></td></tr>
-<tr class="memitem:aef0b9be91c87d9a763d34f3bd8aae534" id="r_aef0b9be91c87d9a763d34f3bd8aae534"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aef0b9be91c87d9a763d34f3bd8aae534">cursor_size</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>) -&gt; void</td></tr>
+<tr class="memitem:aef0b9be91c87d9a763d34f3bd8aae534" id="r_aef0b9be91c87d9a763d34f3bd8aae534"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aef0b9be91c87d9a763d34f3bd8aae534">cursor_size</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>) -&gt; void</td></tr>
 <tr class="memdesc:aef0b9be91c87d9a763d34f3bd8aae534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the height of the cursor within a character cell.  <br /></td></tr>
 <tr class="memitem:aca8aa1751b62e7b95c38886af12e7444" id="r_aca8aa1751b62e7b95c38886af12e7444"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aca8aa1751b62e7b95c38886af12e7444">cursor_top</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
 <tr class="memdesc:aca8aa1751b62e7b95c38886af12e7444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the row position of the cursor within the buffer area.  <br /></td></tr>
@@ -1073,9 +1073,9 @@ Public Static Methods</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_size = <a class="code hl_function" href="#a448e64640fd42aafed0ffc5ae5576b98">console::cursor_size</a>();</div>
 <div class="line">  <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m0);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> : sizes) {</div>
-<div class="line">    <a class="code hl_function" href="#a448e64640fd42aafed0ffc5ae5576b98">console::cursor_size</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>);</div>
-<div class="line">    <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m1, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> : sizes) {</div>
+<div class="line">    <a class="code hl_function" href="#a448e64640fd42aafed0ffc5ae5576b98">console::cursor_size</a>(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>);</div>
+<div class="line">    <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m1, <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>);</div>
 <div class="line">    <a class="code hl_function" href="#ae00a63e08eddf0cc082b77bed86091e0">console::read_key</a>();</div>
 <div class="line">  }</div>
 <div class="line">  console::cursor_size(save_cursor_size);</div>
@@ -1098,7 +1098,7 @@ Public Static Methods</h2></td></tr>
 <div class="line"><span class="comment">// Cursor size = 100%. (Press any key to continue...)</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a448e64640fd42aafed0ffc5ae5576b98"><div class="ttname"><a href="#a448e64640fd42aafed0ffc5ae5576b98">xtd::console::cursor_size</a></div><div class="ttdeci">static auto cursor_size() -&gt; int32</div><div class="ttdoc">Gets or sets the height of the cursor within a character cell.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae00a63e08eddf0cc082b77bed86091e0"><div class="ttname"><a href="#ae00a63e08eddf0cc082b77bed86091e0">xtd::console::read_key</a></div><div class="ttdeci">static auto read_key() -&gt; console_key_info</div><div class="ttdoc">Obtains the next character or function key pressed by the user. The pressed key is displayed in the c...</div></div>
-<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
+<div class="ttc" id="agroup__types_html_ga0a27fff7b553c7e6da4a774353c8fa96"><div class="ttname"><a href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">xtd::size</a></div><div class="ttdeci">usize size</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:36</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1129,7 +1129,7 @@ Public Static Methods</h2></td></tr>
 <p>Sets the height of the cursor within a character cell. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size</a></td><td>The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100. </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96" title="Represents an unsigned size of any object in bytes.">size</a></td><td>The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1148,9 +1148,9 @@ Public Static Methods</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_size = <a class="code hl_function" href="#a448e64640fd42aafed0ffc5ae5576b98">console::cursor_size</a>();</div>
 <div class="line">  <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m0);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> : sizes) {</div>
-<div class="line">    <a class="code hl_function" href="#a448e64640fd42aafed0ffc5ae5576b98">console::cursor_size</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>);</div>
-<div class="line">    <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m1, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a> : sizes) {</div>
+<div class="line">    <a class="code hl_function" href="#a448e64640fd42aafed0ffc5ae5576b98">console::cursor_size</a>(<a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>);</div>
+<div class="line">    <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m1, <a class="code hl_typedef" href="group__types.html#ga0a27fff7b553c7e6da4a774353c8fa96">size</a>);</div>
 <div class="line">    <a class="code hl_function" href="#ae00a63e08eddf0cc082b77bed86091e0">console::read_key</a>();</div>
 <div class="line">  }</div>
 <div class="line">  console::cursor_size(save_cursor_size);</div>

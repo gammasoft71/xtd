@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/size_object.hpp File Reference</title>
+		<title>xtd: xtd.core/include/xtd/ssize_object.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -84,30 +84,24 @@ $(function() {
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">size_object.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">ssize_object.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="box__integer_8hpp_source.html">box_integer.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="xtd_8core_2include_2xtd_2size_8hpp_source.html">size.hpp</a>&quot;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__system.html#gaa59c1fb30e22f8371bd5798f177e3042" title="Represent a boxed size_t.">xtd::size_object</a> alias. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
-</div>
-<p><a href="size__object_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
-<tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Aliases</h2></td></tr>
-<tr class="memitem:gaa59c1fb30e22f8371bd5798f177e3042" id="r_gaa59c1fb30e22f8371bd5798f177e3042"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="group__system.html#gaa59c1fb30e22f8371bd5798f177e3042">xtd::size_object</a></td></tr>
-<tr class="memdesc:gaa59c1fb30e22f8371bd5798f177e3042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed size_t.  <br /></td></tr>
-</table>
-</div><!-- contents -->
+<a href="ssize__object_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="box__integer_8hpp.html">box_integer.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="ssize_8hpp.html">ssize.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="group__system.html#gae837e5b8b0c23ab7a1643a0219aa08fd">   28</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__system.html#gae837e5b8b0c23ab7a1643a0219aa08fd">ssize_object</a> = <a class="code hl_class" href="classxtd_1_1box__integer.html">box_integer&lt;xtd::ssize&gt;</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="ttc" id="abox__integer_8hpp_html"><div class="ttname"><a href="box__integer_8hpp.html">box_integer.hpp</a></div><div class="ttdoc">Contains xtd::box_integer class.</div></div>
+<div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.hpp:55</div></div>
+<div class="ttc" id="agroup__system_html_gae837e5b8b0c23ab7a1643a0219aa08fd"><div class="ttname"><a href="group__system.html#gae837e5b8b0c23ab7a1643a0219aa08fd">xtd::ssize_object</a></div><div class="ttdeci">box_integer&lt; xtd::ssize &gt; ssize_object</div><div class="ttdoc">Represent a boxed xtd::ssize.</div><div class="ttdef"><b>Definition</b> ssize_object.hpp:28</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
+<div class="ttc" id="assize_8hpp_html"><div class="ttname"><a href="ssize_8hpp.html">ssize.hpp</a></div><div class="ttdoc">Contains xtd::ssize type.</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
