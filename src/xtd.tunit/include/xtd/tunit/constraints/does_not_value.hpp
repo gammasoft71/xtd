@@ -19,6 +19,10 @@ namespace xtd {
   namespace tunit {
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
+      /// @cond
+      template<typename actual_t> class does_value;
+      /// @endcond
+      
       template<typename actual_t>
       class does_not_value : public actual_value<actual_t> {
       public:
@@ -105,6 +109,9 @@ namespace xtd {
         does_not_value() = default;
         does_not_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         does_not_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
+        
+      private:
+        template<typename value_t> friend class does_value;
         /// @}
       };
     }
