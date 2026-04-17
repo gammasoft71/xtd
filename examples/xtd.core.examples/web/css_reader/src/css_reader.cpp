@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-void write_selectors(const web::css::selector_map& selectors) {
+void write_selectors(const web::css::selector_dictionary& selectors) {
   for (auto [name, contents] : selectors) {
     console::write_line("{} {{", name);
     for (auto [key, value] : contents.properties())
