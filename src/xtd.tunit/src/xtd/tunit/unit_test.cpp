@@ -28,7 +28,7 @@ bool unit_test::repeat_tests() const noexcept {
   return settings::default_settings().repeat_test() != 1;
 }
 
-size_t unit_test::test_cases_count() const noexcept {
+xtd::usize unit_test::test_cases_count() const noexcept {
   auto count = 0_z;
   for (const auto& test_class : test_classes())
     if (test_class.test()->test_count())
@@ -36,14 +36,14 @@ size_t unit_test::test_cases_count() const noexcept {
   return count;
 }
 
-size_t unit_test::test_count() const noexcept {
+xtd::usize unit_test::test_count() const noexcept {
   auto count = 0_z;
   for (const auto& test_class : test_classes())
     count += test_class.test()->test_count();
   return count;
 }
 
-size_t unit_test::aborted_test_count() const noexcept {
+xtd::usize unit_test::aborted_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& test_class : test_classes())
     for (const auto& test : test_class.test()->tests())
@@ -65,7 +65,7 @@ time_span unit_test::elapsed_time() const noexcept {
   return end_time_point_ - start_time_point_;
 }
 
-size_t unit_test::ignored_test_count() const noexcept {
+xtd::usize unit_test::ignored_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& test_class : test_classes())
     count += test_class.test()->ignored_test_count();
@@ -80,7 +80,7 @@ array<string> unit_test::ignored_test_names() const noexcept {
   return array<string>(names);
 }
 
-size_t unit_test::failed_test_count() const noexcept {
+xtd::usize unit_test::failed_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& test_class : test_classes())
     for (const auto& test : test_class.test()->tests())
@@ -96,7 +96,7 @@ array<string> unit_test::failed_test_names() const noexcept {
   return array<string>(names);
 }
 
-size_t unit_test::succeed_test_count() const noexcept {
+xtd::usize unit_test::succeed_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& test_class : test_classes())
     for (const auto& test : test_class.test()->tests())

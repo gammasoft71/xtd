@@ -54,7 +54,7 @@ namespace {
       if (value_ - minimum_ > 0) Update(value_ - minimum_);
     }
     
-    void marquee(bool marquee, size_t animation_speed) {
+    void marquee(bool marquee, xtd::usize animation_speed) {
       animation_speed_ = animation_speed;
       if (marquee) timer_marquee.Start(static_cast<int32>(animation_speed));
       else timer_marquee.Stop();
@@ -70,14 +70,14 @@ namespace {
     }
     
   private:
-    size_t animation_speed_ = 0;
+    xtd::usize animation_speed_ = 0;
     int32 maximum_ = 0;
     int32 minimum_ = 0;
     wxTimer timer_marquee;
     int32 value_ = 0;
   };
   
-  int32 options_to_wx_style(size_t options) {
+  int32 options_to_wx_style(xtd::usize options) {
     int32 wx_style = wxPD_AUTO_HIDE;
     
     if ((options & PROGDLG_MODAL) == PROGDLG_MODAL) wx_style |= wxPD_APP_MODAL;
@@ -102,7 +102,7 @@ bool progress_dialog::cancelled(intptr dialog) {
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasCancelled();
 }
 
-intptr progress_dialog::create(intptr hwnd, const string& text, const string& message, const array<string>& informations, size_t animation_speed, int32 minimum, int32 maximum, int32 value, size_t options) {
+intptr progress_dialog::create(intptr hwnd, const string& text, const string& message, const array<string>& informations, xtd::usize animation_speed, int32 minimum, int32 maximum, int32 value, xtd::usize options) {
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
@@ -123,7 +123,7 @@ void progress_dialog::informations(intptr dialog, const array<string>& informati
   // doesn't exists on wxWidgets
 }
 
-void progress_dialog::marquee(intptr dialog, bool marquee, size_t animation_speed) {
+void progress_dialog::marquee(intptr dialog, bool marquee, xtd::usize animation_speed) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->marquee(marquee, animation_speed);
 }

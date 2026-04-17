@@ -35,7 +35,7 @@ void tab_control::image_list(intptr control, intptr image_list) {
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetImageList(reinterpret_cast<wxImageList*>(image_list));
 }
 
-void tab_control::insert_page(intptr control, size_t index, intptr page) {
+void tab_control::insert_page(intptr control, xtd::usize index, intptr page) {
   if (!control || !page || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -44,7 +44,7 @@ void tab_control::insert_page(intptr control, size_t index, intptr page) {
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->InsertPage(index, reinterpret_cast<control_handler*>(page)->control(), wxEmptyString);
 }
 
-size_t tab_control::selected_index(intptr control) {
+xtd::usize tab_control::selected_index(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -53,11 +53,11 @@ size_t tab_control::selected_index(intptr control) {
   return static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
-void tab_control::selected_index(intptr control, size_t index) {
+void tab_control::selected_index(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
-  if (index != std::numeric_limits<size_t>::max()) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
+  if (index != std::numeric_limits<xtd::usize>::max()) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }

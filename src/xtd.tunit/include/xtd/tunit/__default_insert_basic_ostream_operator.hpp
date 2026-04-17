@@ -44,9 +44,9 @@ inline static void __print(std::ostream& os, const value_t& value) {
 template<typename value_t>
 requires (!xtd::stream_insertable<value_t>)
 inline static void __print(std::ostream& os, const value_t& value) {
-  auto size = std::min(sizeof(value), size_t {32});
+  auto size = std::min(sizeof(value), xtd::usize {32});
   os << size << "-byte object <";
-  for (size_t index = 0; index != size; index++)
+  for (xtd::usize index = 0; index != size; index++)
     os << (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
   os << (size < sizeof(value) ? "-..." : "") << ">";
 }
@@ -170,14 +170,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const xtd::char8*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != '\0'; index++)
+    for (xtd::usize index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != '\0'; index++)
+    for (xtd::usize index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
@@ -194,14 +194,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, xtd::char8> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != '\0'; index++)
+    for (xtd::usize index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != '\0'; index++)
+    for (xtd::usize index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
@@ -215,14 +215,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const xtd::char16*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char16* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != '\0'; index++)
+    for (xtd::usize index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char16>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char16*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char16>::print(os, value[index]);
     os << "\"";
   }
@@ -239,14 +239,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, xtd::char16> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char16* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char16>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char16*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char16>::print(os, value[index]);
     os << "\"";
   }
@@ -263,14 +263,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const xtd::char32*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char32* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char32>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char32*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char32>::print(os, value[index]);
     os << "\"";
   }
@@ -287,14 +287,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, xtd::char32> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char32* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char32>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char32*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char32>::print(os, value[index]);
     os << "\"";
   }
@@ -311,14 +311,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const wchar_t*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const wchar_t* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, wchar_t>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const wchar_t*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, wchar_t>::print(os, value[index]);
     os << "\"";
   }
@@ -335,14 +335,14 @@ template<typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, wchar_t> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const wchar_t* const & value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, wchar_t>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const wchar_t*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (xtd::usize index = 0; value[index] != L'\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, wchar_t>::print(os, value[index]);
     os << "\"";
   }
@@ -410,9 +410,9 @@ std::basic_ostream < char_t, char_traits_t >& __print_sequence_container(std::ba
   return os << "]";
 }
 
-template < class char_t, typename char_traits_t, typename value_t, size_t Size >
-struct __tunit_value_printer < char_t, char_traits_t, std::array < value_t, Size>> {
-  static void print(std::basic_ostream < char_t, char_traits_t >& os, const std::array < value_t, Size >& values) {
+template < class char_t, typename char_traits_t, typename value_t, xtd::usize size >
+struct __tunit_value_printer < char_t, char_traits_t, std::array < value_t, size>> {
+  static void print(std::basic_ostream < char_t, char_traits_t >& os, const std::array < value_t, size >& values) {
     __print_sequence_container(os, values.begin(), values.end());
   }
 };

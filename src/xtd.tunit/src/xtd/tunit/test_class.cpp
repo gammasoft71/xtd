@@ -15,35 +15,35 @@ string test_class::name() const noexcept {
   return name_;
 }
 
-size_t test_class::test_count() const noexcept {
+xtd::usize test_class::test_count() const noexcept {
   auto count = 0_z;
   for (const auto& method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name())) count++;
   return count;
 }
 
-size_t test_class::aborted_test_count() const noexcept {
+xtd::usize test_class::aborted_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.aborted()) count++;
   return count;
 }
 
-size_t test_class::failed_test_count() const noexcept {
+xtd::usize test_class::failed_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.failed()) count++;
   return count;
 }
 
-size_t test_class::ignored_test_count() const noexcept {
+xtd::usize test_class::ignored_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.ignored()) count++;
   return count;
 }
 
-size_t test_class::succeed_test_count() const noexcept {
+xtd::usize test_class::succeed_test_count() const noexcept {
   auto count = 0_z;
   for (const auto& method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.succeed()) count++;

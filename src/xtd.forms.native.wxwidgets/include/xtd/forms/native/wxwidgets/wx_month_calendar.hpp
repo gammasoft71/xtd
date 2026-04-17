@@ -54,7 +54,7 @@ namespace xtd {
           #endif
         }
         
-        static long style_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & MCS_WEEKNUMBERS) == MCS_WEEKNUMBERS) wx_style |= wxCAL_SHOW_WEEK_NUMBERS;
@@ -75,39 +75,39 @@ namespace xtd {
       public:
         static void change_attribute_dates(wx_month_calendar* wx_month_calendar) {
           wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(wx_month_calendar->control())->calendarCtrl;
-          for (size_t day = 1; day <= 31; ++day)
+          for (xtd::usize day = 1; day <= 31; ++day)
             wx_calendar_ctrl->ResetAttr(day);
           for (const auto& date : wx_month_calendar->annually_bolded_dates) {
             if (static_cast<uint32>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
-              if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
-                *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
+              if (wx_calendar_ctrl->GetAttr(static_cast<xtd::usize>(date.day())) != nullptr)
+                *attr = *wx_calendar_ctrl->GetAttr(static_cast<xtd::usize>(date.day()));
               wxFont font = attr->GetFont();
               font = font.MakeBold();
               attr->SetFont(font);
-              wx_calendar_ctrl->SetAttr(static_cast<size_t>(date.day()), attr);
+              wx_calendar_ctrl->SetAttr(static_cast<xtd::usize>(date.day()), attr);
             }
           }
           
           for (const auto& date : wx_month_calendar->monthly_bolded_dates) {
             wxCalendarDateAttr* attr = new wxCalendarDateAttr();
-            if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
-              *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
+            if (wx_calendar_ctrl->GetAttr(static_cast<xtd::usize>(date.day())) != nullptr)
+              *attr = *wx_calendar_ctrl->GetAttr(static_cast<xtd::usize>(date.day()));
             wxFont font = attr->GetFont();
             font = font.MakeBold();
             attr->SetFont(font);
-            wx_calendar_ctrl->SetAttr(static_cast<size_t>(date.day()), attr);
+            wx_calendar_ctrl->SetAttr(static_cast<xtd::usize>(date.day()), attr);
           }
           
           for (const auto& date : wx_month_calendar->bolded_dates) {
             if (static_cast<uint32>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month() && static_cast<uint32>(wx_calendar_ctrl->GetDate().GetYear()) == date.year()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
-              if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
-                *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
+              if (wx_calendar_ctrl->GetAttr(static_cast<xtd::usize>(date.day())) != nullptr)
+                *attr = *wx_calendar_ctrl->GetAttr(static_cast<xtd::usize>(date.day()));
               wxFont font = attr->GetFont();
               font = font.MakeBold();
               attr->SetFont(font);
-              wx_calendar_ctrl->SetAttr(static_cast<size_t>(date.day()), attr);
+              wx_calendar_ctrl->SetAttr(static_cast<xtd::usize>(date.day()), attr);
             }
           }
           

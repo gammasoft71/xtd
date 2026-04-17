@@ -39,7 +39,7 @@ namespace xtd {
           #endif
         }
         
-        static long style_to_wx_style_date_picker(size_t style, size_t ex_style) {
+        static long style_to_wx_style_date_picker(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & DTS_UPDOWN) == DTS_UPDOWN) wx_style |= wxDP_SPIN;
@@ -51,7 +51,7 @@ namespace xtd {
           return wx_style;
         }
         
-        static long style_to_wx_style_time_picker(size_t style, size_t ex_style) {
+        static long style_to_wx_style_time_picker(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           return wx_style;

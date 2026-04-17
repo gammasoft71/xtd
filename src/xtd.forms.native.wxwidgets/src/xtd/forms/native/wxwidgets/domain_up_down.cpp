@@ -21,7 +21,7 @@ void domain_up_down::begin_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void domain_up_down::delete_item(intptr control, size_t index) {
+void domain_up_down::delete_item(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -40,7 +40,7 @@ void domain_up_down::end_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void domain_up_down::insert_item(intptr control, size_t index, const string& value) {
+void domain_up_down::insert_item(intptr control, xtd::usize index, const string& value) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -50,7 +50,7 @@ void domain_up_down::insert_item(intptr control, size_t index, const string& val
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }
 
-size_t domain_up_down::selected_index(intptr control) {
+xtd::usize domain_up_down::selected_index(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -59,7 +59,7 @@ size_t domain_up_down::selected_index(intptr control) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelectedIndex();
 }
 
-void domain_up_down::selected_index(intptr control, size_t index) {
+void domain_up_down::selected_index(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -68,7 +68,7 @@ void domain_up_down::selected_index(intptr control, size_t index) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedIndex(index);
 }
 
-void domain_up_down::update_item(intptr control, size_t index, const string& value) {
+void domain_up_down::update_item(intptr control, xtd::usize index, const string& value) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());

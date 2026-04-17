@@ -23,7 +23,7 @@ void checked_list_box::begin_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void checked_list_box::check_state(intptr control, size_t index, int32 check_state) {
+void checked_list_box::check_state(intptr control, xtd::usize index, int32 check_state) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -32,7 +32,7 @@ void checked_list_box::check_state(intptr control, size_t index, int32 check_sta
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32>(index), check_state != 0);
 }
 
-int32 checked_list_box::check_state(intptr control, size_t index) {
+int32 checked_list_box::check_state(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -41,7 +41,7 @@ int32 checked_list_box::check_state(intptr control, size_t index) {
   return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsChecked(static_cast<int32>(index));
 }
 
-void checked_list_box::delete_item(intptr control, size_t index) {
+void checked_list_box::delete_item(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -59,7 +59,7 @@ void checked_list_box::end_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void checked_list_box::insert_item(intptr control, size_t index, const string& value, int32 check_state) {
+void checked_list_box::insert_item(intptr control, xtd::usize index, const string& value, int32 check_state) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -72,21 +72,21 @@ void checked_list_box::insert_item(intptr control, size_t index, const string& v
   #endif
 }
 
-size_t checked_list_box::selected_index(intptr control) {
+xtd::usize checked_list_box::selected_index(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
   if (static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->HasMultipleSelection()) {
-    std::vector<size_t> indices = selected_indices(control);
-    if (indices.empty()) return std::numeric_limits<size_t>::max();
+    std::vector<xtd::usize> indices = selected_indices(control);
+    if (indices.empty()) return std::numeric_limits<xtd::usize>::max();
     return indices[0];
   }
   return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
-void checked_list_box::selected_index(intptr control, size_t index) {
+void checked_list_box::selected_index(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -109,7 +109,7 @@ array<xtd::usize> checked_list_box::selected_indices(intptr control) {
   
 }
 
-void checked_list_box::update_item(intptr control, size_t index, const xtd::string& value, int32 check_state) {
+void checked_list_box::update_item(intptr control, xtd::usize index, const xtd::string& value, int32 check_state) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());

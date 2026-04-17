@@ -43,7 +43,7 @@ void main_menu::destroy(intptr main_menu) {
   reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }
 
-void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, const string& text) {
+void main_menu::insert_item(intptr main_menu, xtd::usize pos, intptr menu_item, const string& text) {
   if (main_menu == 0) throw_helper::throws(exception_case::argument);
   if (menu_item == 0) throw_helper::throws(exception_case::argument);
   
@@ -56,7 +56,7 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
   // it is placed in front of the "Help" menu.
   if (is_help_item(convert_string::to_wstring(text))) {
     bool has_window_menu = false;
-    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
+    for (xtd::usize index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
       auto title = wx_main_menu->GetMenu(index)->GetTitle();
       if (is_window_item(title.c_str().AsWChar())) has_window_menu = true;
     }
@@ -67,7 +67,7 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
   wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text).chars().c_str());
 }
 
-void main_menu::remove_item(intptr main_menu, size_t pos) {
+void main_menu::remove_item(intptr main_menu, xtd::usize pos) {
   if (main_menu == 0) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxMenuBar*>(main_menu)->Remove(pos);
 }

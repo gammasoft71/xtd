@@ -60,7 +60,7 @@ namespace xtd {
           
           upDown->SetRange(0, static_cast<int32>(items.GetCount()) - 1);
           upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent & event) {
-            if (index == std::numeric_limits<size_t>::max())
+            if (index == std::numeric_limits<xtd::usize>::max())
               upDown->SetValue(static_cast<int32>(items.GetCount() - 1));
             index = items.GetCount() - 1 - upDown->GetValue();
             SetTextWithSelectedIndex();
@@ -78,11 +78,11 @@ namespace xtd {
         
         void SetValue(const wxString& value) { textBox->SetValue(value); }
         
-        size_t GetSelectedIndex() const { return index; }
+        xtd::usize GetSelectedIndex() const { return index; }
         
-        void SetSelectedIndex(size_t index) {
+        void SetSelectedIndex(xtd::usize index) {
           this->index = index;
-          if (index != std::numeric_limits<size_t>::max()) upDown->SetValue(static_cast<int32>(items.GetCount() - 1 - index));
+          if (index != std::numeric_limits<xtd::usize>::max()) upDown->SetValue(static_cast<int32>(items.GetCount() - 1 - index));
           else upDown->SetValue(static_cast<int32>(items.GetCount() - 1));
           SetTextWithSelectedIndex();
         }
@@ -96,13 +96,13 @@ namespace xtd {
         }
         
         void SetTextWithSelectedIndex() {
-          if (index != std::numeric_limits<size_t>::max()) textBox->SetValue(items[index]);
+          if (index != std::numeric_limits<xtd::usize>::max()) textBox->SetValue(items[index]);
         }
         
         wxTextCtrl* textBox;
         wxSpinButton* upDown;
         wxArrayString items;
-        size_t index = std::numeric_limits<size_t>::max();
+        xtd::usize index = std::numeric_limits<xtd::usize>::max();
       };
       
       class wx_domain_up_down : public control_handler {
@@ -126,7 +126,7 @@ namespace xtd {
           #endif
         }
         
-        static long style_to_wx_text_box_style(size_t style, size_t ex_style) {
+        static long style_to_wx_text_box_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_DEFAULT;
@@ -136,7 +136,7 @@ namespace xtd {
           return wx_style;
         }
         
-        static long style_to_wx_spin_style(size_t style, size_t ex_style) {
+        static long style_to_wx_spin_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & UDS_WRAP) == UDS_WRAP) wx_style |= wxSP_WRAP;

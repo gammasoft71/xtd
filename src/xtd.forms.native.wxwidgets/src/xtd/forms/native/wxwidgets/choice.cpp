@@ -23,7 +23,7 @@ void choice::begin_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void choice::delete_item(intptr control, size_t index) {
+void choice::delete_item(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -41,7 +41,7 @@ void choice::end_update(intptr control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void choice::insert_item(intptr control, size_t index, const string& value) {
+void choice::insert_item(intptr control, xtd::usize index, const string& value) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -50,7 +50,7 @@ void choice::insert_item(intptr control, size_t index, const string& value) {
   static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value).chars().c_str(), static_cast<int32>(index));
 }
 
-size_t choice::selected_index(intptr control) {
+xtd::usize choice::selected_index(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -59,7 +59,7 @@ size_t choice::selected_index(intptr control) {
   return static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
-void choice::selected_index(intptr control, size_t index) {
+void choice::selected_index(intptr control, xtd::usize index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
@@ -68,7 +68,7 @@ void choice::selected_index(intptr control, size_t index) {
   return static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
-void choice::update_item(intptr control, size_t index, const string& value) {
+void choice::update_item(intptr control, xtd::usize index, const string& value) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());

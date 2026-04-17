@@ -47,12 +47,12 @@ namespace xtd {
             static_cast<wxGauge*>(control())->Pulse();
         }
         
-        void marquee(bool marquee, size_t animation_speed) {
+        void marquee(bool marquee, xtd::usize animation_speed) {
           if (marquee) timer_marquee.Start(static_cast<int32>(animation_speed));
           else timer_marquee.Stop();
         }
         
-        static long style_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & PBS_SMOOTH) == PBS_SMOOTH) wx_style |= wxGA_SMOOTH;

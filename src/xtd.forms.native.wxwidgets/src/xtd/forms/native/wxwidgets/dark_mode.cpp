@@ -24,7 +24,7 @@ namespace {
   }
   
   template<typename T>
-  constexpr T DataDirectoryFromModuleBase(void* moduleBase, size_t entryID) {
+  constexpr T DataDirectoryFromModuleBase(void* moduleBase, xtd::usize entryID) {
     auto dosHdr = reinterpret_cast<PIMAGE_DOS_HEADER>(moduleBase);
     auto ntHdr = RVA2VA<PIMAGE_NT_HEADERS>(moduleBase, dosHdr->e_lfanew);
     auto dataDir = ntHdr->OptionalHeader.DataDirectory;

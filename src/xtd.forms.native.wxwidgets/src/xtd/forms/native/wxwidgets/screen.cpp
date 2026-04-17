@@ -23,39 +23,39 @@ intptr screen::create_graphics() {
   return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
-size_t screen::count() {
+xtd::usize screen::count() {
   application::initialize();
   return wxDisplay::GetCount();
 }
 
-int32 screen::bits_per_pixel(size_t index) {
+int32 screen::bits_per_pixel(xtd::usize index) {
   application::initialize();
   return wxDisplay(static_cast<int32>(index)).GetCurrentMode().GetDepth();
 }
 
-rectangle screen::bounds(size_t index) {
+rectangle screen::bounds(xtd::usize index) {
   application::initialize();
   wxRect bounds = wxDisplay(static_cast<int32>(index)).GetGeometry();
   return {bounds.GetX(), bounds.GetY(), bounds.GetWidth(), bounds.GetHeight()};
 }
 
-std::string screen::device_name(size_t index) {
+std::string screen::device_name(xtd::usize index) {
   application::initialize();
   string device_name = xtd::convert_string::to_string(wxDisplay(static_cast<int32>(index)).GetName().c_str().AsWChar());
   return xtd::string::is_empty(device_name) ? string::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
-int32 screen::pixels_per_inch(size_t index) {
+int32 screen::pixels_per_inch(xtd::usize index) {
   application::initialize();
   return wxDisplay(static_cast<int32>(index)).GetPPI().GetHeight();
 }
 
-bool screen::primary(size_t index) {
+bool screen::primary(xtd::usize index) {
   application::initialize();
   return wxDisplay(static_cast<int32>(index)).IsPrimary();
 }
 
-double screen::scale_factor(size_t index) {
+double screen::scale_factor(xtd::usize index) {
   application::initialize();
   return wxDisplay(static_cast<int32>(index)).GetScaleFactor();
 }
@@ -65,18 +65,18 @@ int32 screen::standard_pixels_per_inch() {
   return wxDisplay::GetStdPPIValue();
 }
 
-rectangle screen::working_area(size_t index) {
+rectangle screen::working_area(xtd::usize index) {
   application::initialize();
   wxRect working_area = wxDisplay(static_cast<int32>(index)).GetClientArea();
   return {working_area.GetX(), working_area.GetY(), working_area.GetWidth(), working_area.GetHeight()};
 }
 
-size_t screen::from_handle(intptr handle) {
+xtd::usize screen::from_handle(intptr handle) {
   application::initialize();
   return wxDisplay::GetFromWindow(reinterpret_cast<control_handler*>(handle)->control());
 }
 
-size_t screen::from_point(const point& point) {
+xtd::usize screen::from_point(const point& point) {
   application::initialize();
   return wxDisplay::GetFromPoint(wxPoint(point.x, point.y));
 }

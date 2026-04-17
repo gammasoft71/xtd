@@ -267,7 +267,7 @@ namespace xtd {
           SetPosition(location);
         }
         
-        static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr parent) {
+        static long form_style_to_wx_style(xtd::usize style, xtd::usize ex_style, xtd::usize class_style, intptr parent) {
           long wx_style = common_container_style_to_wx_style(style, ex_style);
           
           wx_style |= wxFRAME_SHAPED;
@@ -293,7 +293,7 @@ namespace xtd {
           return wx_style;
         }
         
-        static long panel_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
+        static long panel_style_to_wx_style(xtd::usize style, xtd::usize ex_style, xtd::usize class_style) {
           long wx_style = wxTAB_TRAVERSAL | wxBORDER_NONE;
           
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;

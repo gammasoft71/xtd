@@ -75,8 +75,8 @@ namespace xtd {
         
         if_expected.seekg(0, std::ios::end);
         if_actual.seekg(0, std::ios::end);
-        size_t size_expected = static_cast<size_t>(if_expected.tellg());
-        size_t size_actual = static_cast<size_t>(if_actual.tellg());
+        xtd::usize size_expected = static_cast<xtd::usize>(if_expected.tellg());
+        xtd::usize size_actual = static_cast<xtd::usize>(if_actual.tellg());
         if (size_expected != size_actual) {
           fail("istream length " + to_string(size_expected), to_string(size_actual), message, stack_frame);
           return;
@@ -84,7 +84,7 @@ namespace xtd {
         
         if_expected.seekg(0, std::ios::beg);
         if_actual.seekg(0, std::ios::beg);
-        for (size_t offset = 0; offset < size_actual; ++offset) {
+        for (xtd::usize offset = 0; offset < size_actual; ++offset) {
           char_t value_expected = static_cast<char_t>(if_expected.get());
           char_t value_actual = static_cast<char_t>(if_actual.get());
           if (value_expected != value_actual) {
@@ -197,8 +197,8 @@ namespace xtd {
         
         if_expected.seekg(0, std::ios::end);
         if_actual.seekg(0, std::ios::end);
-        size_t size_expected = static_cast<size_t>(if_expected.tellg());
-        size_t size_actual = static_cast<size_t>(if_actual.tellg());
+        xtd::usize size_expected = static_cast<xtd::usize>(if_expected.tellg());
+        xtd::usize size_actual = static_cast<xtd::usize>(if_actual.tellg());
         if (size_expected != size_actual) {
           assert::succeed(message, stack_frame);
           return;
@@ -206,7 +206,7 @@ namespace xtd {
         
         if_expected.seekg(0, std::ios::beg);
         if_actual.seekg(0, std::ios::beg);
-        for (size_t offset = 0; offset < size_actual; ++offset) {
+        for (xtd::usize offset = 0; offset < size_actual; ++offset) {
           char_t value_expected = static_cast<char_t>(if_expected.get());
           char_t value_actual = static_cast<char_t>(if_actual.get());
           if (value_expected != value_actual) {

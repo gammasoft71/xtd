@@ -100,7 +100,7 @@ void status_bar::update_status_bar_item(intptr status_bar, intptr handle, int32 
     return;
   }
   
-  if (static_cast<size_t>(handle) > reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size() - 1) throw_helper::throws(exception_case::argument);
+  if (static_cast<xtd::usize>(handle) > reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size() - 1) throw_helper::throws(exception_case::argument);
   
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.push_back(to_wx_style(border_style));
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts.push_back(convert_string::to_wstring(text).chars().c_str());

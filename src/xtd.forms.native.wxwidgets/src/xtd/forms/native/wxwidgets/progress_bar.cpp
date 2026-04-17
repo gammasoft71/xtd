@@ -39,7 +39,7 @@ void progress_bar::minimum(intptr control, int32 minimum) {
   static_cast<wxGauge*>(reinterpret_cast<control_handler*>(control)->control())->SetRange(reinterpret_cast<wx_progress_bar*>(control)->maximum_ - reinterpret_cast<wx_progress_bar*>(control)->minimum_);
 }
 
-void progress_bar::marquee(intptr control, bool marquee, size_t animation_speed) {
+void progress_bar::marquee(intptr control, bool marquee, xtd::usize animation_speed) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());

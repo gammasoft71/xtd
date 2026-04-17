@@ -30,7 +30,7 @@ namespace {
 #endif
 
 #if defined(__WXGTK__)
-bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, size_t options) {
+bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, xtd::usize options) {
   auto dialog = gtk_color_chooser_dialog_new(title == "" ? "Color" : title.chars().c_str(), hwnd == 0 ? nullptr : GTK_WINDOW(reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle()));
   gtk_color_chooser_set_use_alpha(GTK_COLOR_CHOOSER(dialog), (options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   GdkRGBA gdk_rgba {static_cast<double>(color.r()) / 255, static_cast<double>(color.g()) / 255, static_cast<double>(color.b()) / 255, static_cast<double>(color.a()) / 255};
@@ -44,12 +44,12 @@ bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::co
   return result;
 }
 #else
-bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, size_t options) {
+bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, xtd::usize options) {
   wxColourData color_data;
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
   color_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
-  for (size_t index = 0; index < custom_colors.length(); ++index)
+  for (xtd::usize index = 0; index < custom_colors.length(); ++index)
     color_data.SetCustomColour(static_cast<int32>(index), wxColour(custom_colors[index].r(), custom_colors[index].g(), custom_colors[index].b(), custom_colors[index].a()));
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
@@ -62,7 +62,7 @@ bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::co
     wxColour colour = dialog.GetColourData().GetColour();
     color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
   }
-  for (size_t index = 0; index < custom_colors.length(); ++index) {
+  for (xtd::usize index = 0; index < custom_colors.length(); ++index) {
     wxColour custom_colour = dialog.GetColourData().GetCustomColour(static_cast<int32>(index));
     custom_colors[index] = xtd::drawing::color::from_argb(custom_colour.Alpha(), custom_colour.Red(), custom_colour.Green(), custom_colour.Blue());
   }
@@ -70,6 +70,6 @@ bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::co
 }
 #endif
 
-void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, size_t options) {
+void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, xtd::usize options) {
   on_dialog_closed(run_dialog(hwnd, title, color, custom_colors, options));
 }

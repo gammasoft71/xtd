@@ -25,7 +25,7 @@ namespace {
 }
 #endif
 
-bool font_dialog::run_dialog(intptr hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
+bool font_dialog::run_dialog(intptr hwnd, drawing::font& font, drawing::color& color, xtd::usize options, xtd::usize min_size, xtd::usize max_size, bool show_color) {
   wxFontData font_data;
   font_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
   font_data.SetInitialFont(*reinterpret_cast<wxFont*>(font.handle()));
@@ -43,6 +43,6 @@ bool font_dialog::run_dialog(intptr hwnd, drawing::font& font, drawing::color& c
   return true;
 }
 
-void font_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
+void font_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, drawing::font& font, drawing::color& color, xtd::usize options, xtd::usize min_size, xtd::usize max_size, bool show_color) {
   on_dialog_closed(run_dialog(hwnd, font, color, options, min_size, max_size, show_color));
 }

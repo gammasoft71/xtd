@@ -31,7 +31,7 @@ namespace {
   };
   #endif
   
-  wxWindowPtr<FileDialog> create_file_dialog(intptr hwnd, bool open_dialog, const string& default_ext, string& file_name, std::vector<string>& file_names, const string& filter, size_t filter_index, const string& initial_directory, size_t options, bool support_multi_dotted_extensions, const string& title) {
+  wxWindowPtr<FileDialog> create_file_dialog(intptr hwnd, bool open_dialog, const string& default_ext, string& file_name, std::vector<string>& file_names, const string& filter, xtd::usize filter_index, const string& initial_directory, xtd::usize options, bool support_multi_dotted_extensions, const string& title) {
     long wx_style = open_dialog ? wxFD_OPEN : wxFD_SAVE;
     if ((options & OFN_NODEREFERENCELINKS) == OFN_NODEREFERENCELINKS) wx_style |= wxFD_NO_FOLLOW;
     if ((options & OFN_FILEMUSTEXIST) == OFN_FILEMUSTEXIST) wx_style |= wxFD_FILE_MUST_EXIST;
@@ -44,7 +44,7 @@ namespace {
     return file_dialog;
   }
   
-  void get_results(const FileDialog& dialog, size_t options, string& file_name, std::vector<string>& file_names) {
+  void get_results(const FileDialog& dialog, xtd::usize options, string& file_name, std::vector<string>& file_names) {
     if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT)
       file_name = convert_string::to_string(dialog.GetPath().c_str().AsWChar());
     else {
@@ -56,14 +56,14 @@ namespace {
   }
 }
 
-bool file_dialog::run_open_dialog(intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, size_t filter_index, const string& initial_directory, size_t options, bool support_multi_dotted_extensions, const string& title) {
+bool file_dialog::run_open_dialog(intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, xtd::usize filter_index, const string& initial_directory, xtd::usize options, bool support_multi_dotted_extensions, const string& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, true, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
   auto result = dialog->ShowModal() == wxID_OK;
   if (result) get_results(*dialog, options, file_name, file_names);
   return result;
 }
 
-void file_dialog::run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, size_t filter_index, const string& initial_directory, size_t options, bool support_multi_dotted_extensions, const string& title) {
+void file_dialog::run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, xtd::usize filter_index, const string& initial_directory, xtd::usize options, bool support_multi_dotted_extensions, const string& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, true, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, options, &file_name, &file_names](wxWindowModalDialogEvent & event) {
     auto result = event.GetReturnCode() == wxID_OK;
@@ -73,14 +73,14 @@ void file_dialog::run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, int
   dialog->ShowWindowModal();
 }
 
-bool file_dialog::run_save_dialog(intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, size_t filter_index, const string& initial_directory, size_t options, bool support_multi_dotted_extensions, const string& title) {
+bool file_dialog::run_save_dialog(intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, xtd::usize filter_index, const string& initial_directory, xtd::usize options, bool support_multi_dotted_extensions, const string& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, false, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
   auto result = dialog->ShowModal() == wxID_OK;
   if (result) file_name = dialog->GetPath().c_str().AsWChar();
   return result;
 }
 
-void file_dialog::run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, size_t filter_index, const string& initial_directory, size_t options, bool support_multi_dotted_extensions, const string& title) {
+void file_dialog::run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const string& default_ext, string& file_name, list<string>& file_names, const string& filter, xtd::usize filter_index, const string& initial_directory, xtd::usize options, bool support_multi_dotted_extensions, const string& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, false, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &file_name](wxWindowModalDialogEvent & event) {
     auto result = event.GetReturnCode() == wxID_OK;

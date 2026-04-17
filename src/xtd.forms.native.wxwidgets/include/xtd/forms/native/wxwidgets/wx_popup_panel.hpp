@@ -150,7 +150,7 @@ namespace xtd {
           #endif
         }
         
-        static long popup_panel_style_to_wx_style(size_t style, size_t ex_style) {
+        static long popup_panel_style_to_wx_style(xtd::usize style, xtd::usize ex_style) {
           long wx_style = common_container_style_to_wx_style(style, ex_style);
           
           wx_style |= wxFRAME_SHAPED | wxPU_CONTAINS_CONTROLS;
@@ -162,7 +162,7 @@ namespace xtd {
           return wx_style;
         }
         
-        static long panel_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
+        static long panel_style_to_wx_style(xtd::usize style, xtd::usize ex_style, xtd::usize class_style) {
           long wx_style = wxBORDER_NONE;
           
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;

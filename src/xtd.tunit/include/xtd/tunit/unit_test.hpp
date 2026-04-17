@@ -61,15 +61,15 @@ namespace xtd {
       
       /// @brief Gets the test cases count.
       /// @return The test cases count.
-      size_t test_cases_count() const noexcept;
+      xtd::usize test_cases_count() const noexcept;
       
       /// @brief Gets the test count.
       /// @return The test count.
-      size_t test_count() const noexcept;
+      xtd::usize test_count() const noexcept;
       
       /// @brief Gets the aborted test count.
       /// @return The aborted test count.
-      size_t aborted_test_count() const noexcept;
+      xtd::usize aborted_test_count() const noexcept;
       
       /// @brief Gets the array of aborted test names.
       /// @return The array of aborted test names.
@@ -81,7 +81,7 @@ namespace xtd {
       
       /// @brief Gets the ignored test count.
       /// @return The ignored test count.
-      size_t ignored_test_count() const noexcept;
+      xtd::usize ignored_test_count() const noexcept;
       
       /// @brief Gets the array of ignored test names.
       /// @return The array of ignored test names.
@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @brief Gets the failed test count.
       /// @return The failed test count.
-      size_t failed_test_count() const noexcept;
+      xtd::usize failed_test_count() const noexcept;
       
       /// @brief Gets the array of failed test names.
       /// @return The array of failed test names.
@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @brief Gets the succeed test count.
       /// @return The succeed test count.
-      size_t succeed_test_count() const noexcept;
+      xtd::usize succeed_test_count() const noexcept;
       
       /// @brief Gets the array of succeed test names.
       /// @return The array of succeed test names.

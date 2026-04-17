@@ -31,7 +31,7 @@ namespace {
 }
 
 void __reset_tool_bar_tools_styles__(wxToolBar* toolBar) {
-  for (size_t index = 0; index < toolBar->GetToolsCount(); ++index) {
+  for (xtd::usize index = 0; index < toolBar->GetToolsCount(); ++index) {
     auto wx_tool_bar_tool = toolBar->GetToolByPos(static_cast<xtd::int32>(index));
     wx_tool_bar_tool->*get(wxToolBarToolBase_m_dropdownMenu()) = nullptr;
     wx_tool_bar_tool->*get(wxToolBarToolBase_m_toolStyle()) = wxTOOL_STYLE_BUTTON;

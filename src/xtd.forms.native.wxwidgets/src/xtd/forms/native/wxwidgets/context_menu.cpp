@@ -19,13 +19,13 @@ void context_menu::destroy(intptr context_menu) {
   delete reinterpret_cast<wxMenu*>(context_menu);
 }
 
-void context_menu::insert_item(intptr context_menu, size_t pos, intptr menu_item) {
+void context_menu::insert_item(intptr context_menu, xtd::usize pos, intptr menu_item) {
   if (context_menu == 0) throw_helper::throws(exception_case::argument);
   if (menu_item == 0) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->Insert(pos, reinterpret_cast<wxMenuItem*>(menu_item));
 }
 
-void context_menu::insert_menu(intptr context_menu, size_t pos, intptr menu_item, const string& text) {
+void context_menu::insert_menu(intptr context_menu, xtd::usize pos, intptr menu_item, const string& text) {
   if (context_menu == 0) throw_helper::throws(exception_case::argument);
   if (menu_item == 0) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text).chars().c_str(), reinterpret_cast<wxMenu*>(menu_item));
@@ -36,7 +36,7 @@ intptr context_menu::native_handle(intptr context_menu) {
   return context_menu;
 }
 
-void context_menu::remove_item(intptr context_menu, size_t pos) {
+void context_menu::remove_item(intptr context_menu, xtd::usize pos) {
   if (context_menu == 0) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->Remove(reinterpret_cast<wxMenu*>(context_menu)->FindItemByPosition(pos));
 }
