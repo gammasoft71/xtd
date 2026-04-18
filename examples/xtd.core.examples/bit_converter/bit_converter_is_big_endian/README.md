@@ -21,5 +21,5 @@ xtdc run
 This example of the bit_converter::is_big_endian field generates
 the following output when run on x86-class computers.
  
-is_big_endian:  false
+is_big_endian: false
 ```
