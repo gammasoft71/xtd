@@ -18,11 +18,12 @@ xtdc run
 ## Output
 
 ```
-a = one => one (xtd::string)
-a = Tue Jan  5 00:00:00 1971 => Tue Jan  5 00:00:00 1971 (xtd::date_time)
+a = gammasoft => Gammasoft (xtd::basic_string<char, std::char_traits<char>, std::allocator<char>>)
+a = 1/5/1971 0:00:00 AM => 1/5/1971 (xtd::date_time)
 a = 42 => 42 (int)
 a = 0.42 => 0.42 (double)
 a = 42 => 42 (foo1)
-a = foo2 => NA (foo2)
+a = 42 => 42 (foo2)
+a = 42 => 42 (foo3)
 a = wednesday => wednesday (xtd::day_of_week)
 ```
