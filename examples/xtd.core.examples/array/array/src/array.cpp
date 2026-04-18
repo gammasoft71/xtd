@@ -20,7 +20,7 @@ auto main() -> int {
   // show the my_array4 values
   console::write_line("The my_array3 contains the following values: {}", my_array3);
   
-  auto index = 0;
+  auto index = 0_z;
   // show the my_array4 values
   console::write_line("The my_array4 contains the following values:");
   for (auto value : my_array4)
