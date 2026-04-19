@@ -86,30 +86,18 @@ $(function() {
 <p>Shows how to use bit_converter::endianness method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>bit_converter_endianness_example {</div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="comment">// The main entry point for the application.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      console::write_line(</div>
-<div class="line">        <span class="stringliteral">&quot;This example of the bit_converter::endianness field &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;generates \nthe following output when run on &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;x86-class computers.\n&quot;</span>);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;endianness:  {}&quot;</span>,</div>
-<div class="line">        bit_converter::endianness);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  println(<span class="stringliteral">&quot;This example of the bit_converter::endianness field generates\n&quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;the following output when run on x86-class computers.\n&quot;</span>);</div>
+<div class="line">  println(<span class="stringliteral">&quot;endianness: {}&quot;</span>, bit_converter::endianness);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(bit_converter_endianness_example::program::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> This example of the bit_converter::endianness field generates</span></div>
-<div class="line"><span class="comment"> the following output when run on x86-class computers.</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment"> endianness:  little</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This example of the bit_converter::endianness field generates</span></div>
+<div class="line"><span class="comment">// the following output when run on x86-class computers.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// endianness: little</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

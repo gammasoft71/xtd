@@ -2449,30 +2449,20 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <dl class="section remark"><dt>Remarks</dt><dd>Different computer architectures store data using different <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> orders. "Big-endian" means the most significant <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the left end of a word. "Little-endian" means the most significant <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the right end of a word. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the is_big_endian field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>bit_converter_is_big_endian_example {</div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="comment">// The main entry point for the application.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(</div>
-<div class="line">        <span class="stringliteral">&quot;This example of the bit_converter::is_big_endian field &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;generates \nthe following output when run on &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;x86-class computers.\n&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;is_big_endian:  {}&quot;</span>,</div>
-<div class="line">        <a class="code hl_variable" href="#a604c4e12079655a803ed3a3e78dde225">bit_converter::is_big_endian</a>);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;This example of the bit_converter::is_big_endian field generates\n&quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;the following output when run on x86-class computers.\n&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;is_big_endian: {}&quot;</span>, <a class="code hl_variable" href="#a604c4e12079655a803ed3a3e78dde225">bit_converter::is_big_endian</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(bit_converter_is_big_endian_example::program::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> This example of the bit_converter::is_big_endian field generates</span></div>
-<div class="line"><span class="comment"> the following output when run on x86-class computers.</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment"> is_big_endian:  false</span></div>
-<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This example of the bit_converter::is_big_endian field generates</span></div>
+<div class="line"><span class="comment">// the following output when run on x86-class computers.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// is_big_endian: false</span></div>
 <div class="ttc" id="aclassxtd_1_1bit__converter_html_a604c4e12079655a803ed3a3e78dde225"><div class="ttname"><a href="#a604c4e12079655a803ed3a3e78dde225">xtd::bit_converter::is_big_endian</a></div><div class="ttdeci">static constexpr bool is_big_endian</div><div class="ttdoc">Indicates the xtd::byte order (&quot;endianness&quot;) in which data is stored in this computer architecture.</div><div class="ttdef"><b>Definition</b> bit_converter.hpp:76</div></div>
+<div class="ttc" id="anamespacextd_html_a2401d67caeff9e2d61d33b4b1e13a488"><div class="ttname"><a href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">xtd::println</a></div><div class="ttdeci">void println(FILE *file)</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2502,29 +2492,18 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <dl class="section remark"><dt>Remarks</dt><dd>Different computer architectures store data using different <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> orders. "Big-endian" means the most significant <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the left end of a word. "Little-endian" means the most significant <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the right end of a word. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the is_little_endian field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>bit_converter_is_litte_endian_example {</div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="comment">// The main entry point for the application.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(</div>
-<div class="line">        <span class="stringliteral">&quot;This example of the bit_converter::is_little_endian field &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;generates \nthe following output when run on &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;x86-class computers.\n&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;is_little_endian:  {}&quot;</span>,</div>
-<div class="line">        <a class="code hl_variable" href="#a163edd918104e0923f51d774809313b9">bit_converter::is_little_endian</a>);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;This example of the bit_converter::is_little_endian field generates\n&quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;the following output when run on x86-class computers.\n&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;is_little_endian: {}&quot;</span>, <a class="code hl_variable" href="#a163edd918104e0923f51d774809313b9">bit_converter::is_little_endian</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(bit_converter_is_litte_endian_example::program::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> This example of the bit_converter::is_little_endian field generates</span></div>
-<div class="line"><span class="comment"> the following output when run on x86-class computers.</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment"> is_little_endian:  true</span></div>
-<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This example of the bit_converter::is_little_endian field generates</span></div>
+<div class="line"><span class="comment">// the following output when run on x86-class computers.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// is_little_endian: true</span></div>
 <div class="ttc" id="aclassxtd_1_1bit__converter_html_a163edd918104e0923f51d774809313b9"><div class="ttname"><a href="#a163edd918104e0923f51d774809313b9">xtd::bit_converter::is_little_endian</a></div><div class="ttdeci">static constexpr bool is_little_endian</div><div class="ttdoc">Indicates the xtd::byte order (&quot;endianness&quot;) in which data is stored in this computer architecture.</div><div class="ttdef"><b>Definition</b> bit_converter.hpp:83</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2555,29 +2534,18 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <dl class="section remark"><dt>Remarks</dt><dd>Different computer architectures store data using different <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> orders. "Big-endian" means the most significant <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the left end of a word. "Little-endian" means the most significant <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the right end of a word. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the endianness field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>bit_converter_endianness_example {</div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="comment">// The main entry point for the application.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(</div>
-<div class="line">        <span class="stringliteral">&quot;This example of the bit_converter::endianness field &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;generates \nthe following output when run on &quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;x86-class computers.\n&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;endianness:  {}&quot;</span>,</div>
-<div class="line">        <a class="code hl_variable" href="#a74775c90de1b900dda7995b804274b1b">bit_converter::endianness</a>);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;This example of the bit_converter::endianness field generates\n&quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;the following output when run on x86-class computers.\n&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;endianness: {}&quot;</span>, <a class="code hl_variable" href="#a74775c90de1b900dda7995b804274b1b">bit_converter::endianness</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(bit_converter_endianness_example::program::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment"> This example of the bit_converter::endianness field generates</span></div>
-<div class="line"><span class="comment"> the following output when run on x86-class computers.</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment"> endianness:  little</span></div>
-<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This example of the bit_converter::endianness field generates</span></div>
+<div class="line"><span class="comment">// the following output when run on x86-class computers.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// endianness: little</span></div>
 <div class="ttc" id="aclassxtd_1_1bit__converter_html_a74775c90de1b900dda7995b804274b1b"><div class="ttname"><a href="#a74775c90de1b900dda7995b804274b1b">xtd::bit_converter::endianness</a></div><div class="ttdeci">static constexpr endian endianness</div><div class="ttdoc">Indicates the xtd::byte order (&quot;endianness&quot;) in which data is stored in this computer architecture.</div><div class="ttdef"><b>Definition</b> bit_converter.hpp:90</div></div>
 </div><!-- fragment --> </dd></dl>
 
