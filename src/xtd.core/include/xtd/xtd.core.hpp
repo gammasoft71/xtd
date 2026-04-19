@@ -116,6 +116,7 @@
 #include "expressions/expression.hpp"
 #include "expressions/expression_base.hpp"
 #include "expressions/expression_operand.hpp"
+#include "expressions/multiplication_expression.hpp"
 #include "expressions/placeholder.hpp"
 #include "expressions/placeholder_base.hpp"
 #include "exception_services/exception_dispatch_info.hpp"

@@ -1001,6 +1001,8 @@ add_sources(
   "include/xtd/expressions/expression_base"
   "include/xtd/expressions/expression_operand.hpp"
   "include/xtd/expressions/expression_operand"
+  "include/xtd/expressions/multiplication_expression.hpp"
+  "include/xtd/expressions/multiplication_expression"
   "include/xtd/expressions/placeholder.hpp"
   "include/xtd/expressions/placeholder"
   "include/xtd/expressions/placeholder_base.hpp"
