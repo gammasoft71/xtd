@@ -61,16 +61,12 @@ namespace xtd {
     ///   println("add1 result => {}", add1(42));
     ///   auto add2 = _1 + _2;
     ///   println("add2 result => {}", add2(42, 15));
-    ///   println("add2 result => {}", add2("Hello, "_s, "world!"_s));
-    ///   println("add2 result => {}", add2(date_time {2026, 4, 19, 10, 42, 0}, 3_min + 12_s));
     /// }
     ///
     /// // This code produces the following output :
     /// //
     /// // add1 result => 52
     /// // add2 result => 57
-    /// // add2 result => Hello, world!
-    /// // add2 result => 4/19/2026 10:45:12 AM
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
