@@ -30,12 +30,6 @@ namespace xtd {
     /// @name Public Variables
     
     /// @{
-    /// @brief The xtd::expressions::_ placeholder instance is used by expression that have only one arguement.
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core expressions
-    /// @remarks The xtd::expressions::_ is an alias on xtd::expressions::_1
-    inline constexpr placeholder<0> _{};
     /// @brief The xtd::expressions::_1 placeholder instance is first argument used by expression.
     /// @par Library
     /// xtd.core
@@ -176,6 +170,13 @@ namespace xtd {
     /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
     /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<9> _10{};
+
+    /// @brief The xtd::expressions::_ placeholder instance is used by expression that have only one arguement.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The xtd::expressions::_ is an alias on xtd::expressions::_1
+    inline constexpr auto& _ = _1;
     /// @}
   }
 }
