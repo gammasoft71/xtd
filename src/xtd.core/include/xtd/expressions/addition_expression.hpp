@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::addition_expression is the addition_expression expression.
+    /// @brief The xtd::expressions::addition_expression is the addition expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -31,7 +31,7 @@ namespace xtd {
       
       /// @{
       /// @brief Add the specified arguments.
-      /// @param args the rfuments to adds.
+      /// @param args the arguments to adds.
       /// @return The result of addition.
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) + right(std::forward<args_t>(args)...);}
       /// @}
