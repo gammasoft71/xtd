@@ -120,6 +120,7 @@
 #include "expressions/placeholder.hpp"
 #include "expressions/placeholder_base.hpp"
 #include "expressions/remainder_expression.hpp"
+#include "expressions/subtraction_expression.hpp"
 #include "exception_services/exception_dispatch_info.hpp"
 #include "globalization/culture_info.hpp"
 #include "globalization/culture_not_found_exception.hpp"
