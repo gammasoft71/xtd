@@ -58,7 +58,7 @@ namespace xtd {
     /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
     /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<1> _2{};
-    /// @brief The xtd::expressions::_3 placeholder instance is thrid argument used by expression.
+    /// @brief The xtd::expressions::_3 placeholder instance is third argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -100,7 +100,7 @@ namespace xtd {
     /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
     /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<4> _5{};
-    /// @brief The xtd::expressions::_6 placeholder instance is sith argument used by expression.
+    /// @brief The xtd::expressions::_6 placeholder instance is sixth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -128,7 +128,7 @@ namespace xtd {
     /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
     /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<6> _7{};
-    /// @brief The xtd::expressions::_8 placeholder instance is heighth argument used by expression.
+    /// @brief The xtd::expressions::_8 placeholder instance is eighth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -171,7 +171,7 @@ namespace xtd {
     /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<9> _10{};
 
-    /// @brief The xtd::expressions::_ placeholder instance is used by expression that have only one arguement.
+    /// @brief The xtd::expressions::_ placeholder instance is used by expression that have only one argument.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
