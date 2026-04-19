@@ -40,141 +40,141 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<0> _1{};
     /// @brief The xtd::expressions::_2 placeholder instance is second argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<1> _2{};
     /// @brief The xtd::expressions::_3 placeholder instance is thrid argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<2> _3{};
     /// @brief The xtd::expressions::_4 placeholder instance is fourth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<3> _4{};
     /// @brief The xtd::expressions::_5 placeholder instance is fifth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<4> _5{};
     /// @brief The xtd::expressions::_6 placeholder instance is sith argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<5> _6{};
     /// @brief The xtd::expressions::_7 placeholder instance is seventh argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<6> _7{};
     /// @brief The xtd::expressions::_8 placeholder instance is heighth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<7> _8{};
     /// @brief The xtd::expressions::_9 placeholder instance is ninth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<8> _9{};
     /// @brief The xtd::expressions::_10 placeholder instance is tenth argument used by expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks xtd::expressions contains the top ten top of xtd::expressions::placeholder. If you need an eleventh or plus you can defined if yourself like this :
+    /// @remarks xtd::expressions contains the first ten entries from xtd::expressions::placeholder. If you need an eleventh entry or more, you can define them yourself as follows:
     /// ```cpp
     /// inline constexpr xtd::expressions::placeholder<10> _11{};
     /// inline constexpr xtd::expressions::placeholder<11> _12{};
     /// //...
     /// inline constexpr xtd::expressions::placeholder<99> _100{};
     /// ```
-    /// @remarks The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
-    /// @remarks In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
+    /// @warning The more arguments there are and the more complex the expression is, the longer it will take the compiler to compile the expression.
+    /// @warning In this case, we strongly encourage you to use a standard C++ lambda expression or to use another expression library.
     inline constexpr placeholder<9> _10{};
     /// @}
   }
