@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::subtraction_expression is the addition expression.
+    /// @brief The xtd::expressions::subtraction_expression is the subtraction expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -61,7 +61,6 @@ namespace xtd {
     ///   println("sub1 result => {}", sub1(42));
     ///   auto sub2 = _1 - _2;
     ///   println("sub2 result => {}", sub2(42, 12));
-    ///   println();
     /// }
     ///
     /// // This code produces the following output :
