@@ -21,5 +21,6 @@ var searchData=
   ['mouse_5fevent_5fargs_18',['mouse_event_args',['../classxtd_1_1forms_1_1mouse__event__args.html',1,'xtd::forms']]],
   ['multicast_5foption_19',['multicast_option',['../classxtd_1_1net_1_1sockets_1_1multicast__option.html',1,'xtd::net::sockets']]],
   ['multipliable_20',['multipliable',['../structxtd_1_1multipliable.html',1,'xtd']]],
-  ['mutex_21',['mutex',['../classxtd_1_1threading_1_1mutex.html',1,'xtd::threading']]]
+  ['multiplication_5fexpression_21',['multiplication_expression',['../structxtd_1_1expressions_1_1multiplication__expression.html',1,'xtd::expressions']]],
+  ['mutex_22',['mutex',['../classxtd_1_1threading_1_1mutex.html',1,'xtd::threading']]]
 ];

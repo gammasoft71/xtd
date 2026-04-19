@@ -43,5 +43,6 @@ var searchData=
   ['multicast_5foption_2ehpp_40',['multicast_option.hpp',['../multicast__option_8hpp.html',1,'']]],
   ['multipliable_2ehpp_41',['multipliable.hpp',['../multipliable_8hpp.html',1,'']]],
   ['multipliable_5f_2ehpp_42',['multipliable_.hpp',['../multipliable___8hpp.html',1,'']]],
-  ['mutex_2ehpp_43',['mutex.hpp',['../mutex_8hpp.html',1,'']]]
+  ['multiplication_5fexpression_2ehpp_43',['multiplication_expression.hpp',['../multiplication__expression_8hpp.html',1,'']]],
+  ['mutex_2ehpp_44',['mutex.hpp',['../mutex_8hpp.html',1,'']]]
 ];
