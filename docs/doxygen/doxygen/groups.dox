@@ -170,6 +170,10 @@
     |   |     /// @brief Contains diagnostics definitions.
     |   |     /// @ingroup system
     |   |     /// @defgroup diagnostics diagnostics
+    |   |- expressions
+    |   |     /// @brief Contains expressions definitions
+    |   |     /// @ingroup system
+    |   |     /// @defgroup expressions expressions
     |   |- extensions
     |   |     /// @brief Contains interfaces extensions.
     |   |     /// @ingroup system
