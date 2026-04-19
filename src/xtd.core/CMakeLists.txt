@@ -993,6 +993,8 @@ add_sources(
   "include/xtd/expressions/as_expression"
   "include/xtd/expressions/constant.hpp"
   "include/xtd/expressions/constant"
+  "include/xtd/expressions/division_expression.hpp"
+  "include/xtd/expressions/division_expression"
   "include/xtd/expressions/expression.hpp"
   "include/xtd/expressions/expression"
   "include/xtd/expressions/expression_base.hpp"
