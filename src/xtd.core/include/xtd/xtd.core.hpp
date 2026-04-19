@@ -118,6 +118,7 @@
 #include "expressions/expression_base.hpp"
 #include "expressions/expression_operand.hpp"
 #include "expressions/multiplication_expression.hpp"
+#include "expressions/not_equal_to_expression.hpp"
 #include "expressions/placeholder.hpp"
 #include "expressions/placeholder_base.hpp"
 #include "expressions/remainder_expression.hpp"
