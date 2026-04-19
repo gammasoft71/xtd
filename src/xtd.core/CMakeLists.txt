@@ -1007,6 +1007,8 @@ add_sources(
   "include/xtd/expressions/placeholder"
   "include/xtd/expressions/placeholder_base.hpp"
   "include/xtd/expressions/placeholder_base"
+  "include/xtd/expressions/remainder_expression.hpp"
+  "include/xtd/expressions/remainder_expression"
   "include/xtd/exception_services/exception_dispatch_info.hpp"
   "include/xtd/exception_services/exception_dispatch_info"
   "include/xtd/globalization/culture_info"
