@@ -132,7 +132,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Displays the contents of the ordered_dictionary from its keys and values</span></div>
-<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t&gt;</div>
+<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t&gt;</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_contents(<span class="keyword">const</span> icollection&lt;key_t&gt;&amp; key_collection, <span class="keyword">const</span> icollection&lt;value_t&gt;&amp; value_collection, usize dictionary_size) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> my_keys = array&lt;string&gt;(dictionary_size);</div>
 <div class="line">    <span class="keyword">auto</span> my_values = array&lt;string&gt;(dictionary_size);</div>

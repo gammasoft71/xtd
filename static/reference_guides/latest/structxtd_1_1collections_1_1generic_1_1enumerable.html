@@ -110,19 +110,19 @@ struct xtd::collections::generic::enumerable&lt; type_t &gt;</div><p>Represents 
 <div class="line">  <span class="keyword">co_yield</span> 12;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;collections::<span class="keyword">generic</span>::enumerable enumerable_t&gt;</div>
+<div class="line"><span class="keyword">template</span>&lt;collections::<span class="keyword">generic</span>::enumerable enumerable_t&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">auto</span> enumerate(enumerable_t&amp;&amp; <a class="code hl_concept" href="conceptxtd_1_1collections_1_1generic_1_1enumerable.html">enumerable</a>) -&gt; <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator&lt;enumerable_value_type&lt;enumerable_t&gt;</a>&gt; {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : <a class="code hl_concept" href="conceptxtd_1_1collections_1_1generic_1_1enumerable.html">enumerable</a>)</div>
 <div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : enumerate(<a class="code hl_class" href="classxtd_1_1array.html">array</a> {5, 1, 3, 4, 2}).select([](<span class="keyword">auto</span> v) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a> * 2;}).order())</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : enumerate(<a class="code hl_class" href="classxtd_1_1array.html">array</a> {5, 1, 3, 4, 2}).select(_ * 2).order())</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : enumerate(list {10, 6, 8, 9, 7}).select(_ * 3).order())</div>
 <div class="line">    println(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : enumerate(list {10, 6, 8, 9, 7}).select([](<span class="keyword">auto</span> v) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a> * 3;}).order())</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : enumerate(int_generator()).<a class="code hl_variable" href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">select</a>([](<span class="keyword">auto</span> v) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a> * 4;}).order())</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : enumerate(int_generator()).select(_ * 4).order())</div>
+<div class="line">    println(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -144,8 +144,6 @@ struct xtd::collections::generic::enumerable&lt; type_t &gt;</div><p>Represents 
 <div class="line"><span class="comment">// 60</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1enumerable__generator_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a></div><div class="ttdoc">Represents an enumerable enumerable_generator.</div><div class="ttdef"><b>Definition</b> enumerable_generator.hpp:24</div></div>
-<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">xtd::console_key::v</a></div><div class="ttdeci">@ v</div><div class="ttdoc">The V key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:130</div></div>
 <div class="ttc" id="anamespacextd_html_a2401d67caeff9e2d61d33b4b1e13a488"><div class="ttname"><a href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">xtd::println</a></div><div class="ttdeci">void println(FILE *file)</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
