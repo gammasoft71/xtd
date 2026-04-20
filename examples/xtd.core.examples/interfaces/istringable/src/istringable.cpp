@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-class persona : public istringable<class persona> {
+class persona : public istringable<persona> {
 public:
   persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
