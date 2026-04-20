@@ -46,7 +46,7 @@ public:
   }
   
   // Displays the contents of the ordered_dictionary from its keys and values
-  template<class key_t, class value_t>
+  template<typename key_t, typename value_t>
   static auto display_contents(const icollection<key_t>& key_collection, const icollection<value_t>& value_collection, usize dictionary_size) -> void {
     auto my_keys = array<string>(dictionary_size);
     auto my_values = array<string>(dictionary_size);
