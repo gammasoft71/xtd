@@ -15,9 +15,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::method_type struct is used by xtd::expressions::method.
-    template <typename method_t>
+    template <typename method_t, typename... args_t>
     struct method_type {
       method_t method;
+      std::tuple<args_t...> args;
     };
     
     /// @brief The xtd::expressions::method is use to bind object method.
@@ -25,11 +26,11 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
-    template <typename method_t>
-    constexpr auto method(method_t method) {
-      return method_type<method_t>{method};
+    template <typename method_t, typename... args_t>
+    constexpr auto method(method_t method, args_t&&... args) {
+      return method_type<method_t, std::decay_t<args_t>...> {method, std::tuple<std::decay_t<args_t>...>(std::forward<args_t>(args)...)};
     }
-
+    
     /// @name Public Operators
     
     /// @{
@@ -48,7 +49,7 @@ namespace xtd {
     /// auto main() -> int {
     ///   auto fct1 = _^method(&string::to_upper);
     ///   println("fct1 result => {}", fct1("Hello"_s));
-    ///   auto fct2 = _^method(&string::substring, 7, 6);
+    ///   auto fct2 = _^method(overload<usize, usize>{}(&string::substring), 7, 6);
     ///   println("fct2 result => {}", fct2("Hello, World!"_s));
     /// }
     ///
@@ -57,14 +58,16 @@ namespace xtd {
     /// // fct1 result => HELLO
     /// // fct2 result => World!
     /// ```
-    template <typename expression_t, typename method_t>
-    constexpr auto operator ^(expression_t expression, method_type<method_t> method) {
-      return [=](auto&&... args) {
-        auto&& obj = expression(std::forward<decltype(args)>(args)...);
-        if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*method.method)();
-        else return (obj.*method.method)();
+    template <typename expression_t, typename method_t, typename... stored_args_t>
+    constexpr auto operator ^(expression_t expression, method_type<method_t, stored_args_t...> method) {
+      return [=](auto&&... call_args) {
+        auto&& obj = expression(std::forward<decltype(call_args)>(call_args)...);
+        auto invoke = [&](auto&&... unpacked_args) {
+          if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*method.method)(std::forward<decltype(unpacked_args)>(unpacked_args)...);
+          else return (obj.*method.method)(std::forward<decltype(unpacked_args)>(unpacked_args)...);
+        };
+        return std::apply(invoke, method.args);
       };
-    }
-    /// @}
+    }    /// @}
   }
 }
