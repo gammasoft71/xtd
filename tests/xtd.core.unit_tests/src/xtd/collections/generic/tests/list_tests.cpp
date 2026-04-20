@@ -888,7 +888,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(7, items[xtd::epos]);
     }
     
-    auto test_method_(cast_opertor_to_std_vector) {
+    auto test_method_(cast_operator_to_std_vector) {
       auto items = list {1, 2, 3, 4, 5};
       auto result = std::vector<int> {};
       collection_assert::is_empty(result);

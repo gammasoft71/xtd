@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::not_equal_to_expression opertor.
+/// @brief Contains xtd::expressions::not_equal_to_expression operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
