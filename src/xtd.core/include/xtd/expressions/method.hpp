@@ -28,9 +28,8 @@ namespace xtd {
     /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
     template <typename method_t, typename... args_t>
     constexpr auto method(method_t method, args_t&&... args) {
-      return method_type<method_t, std::decay_t<args_t>...> {method, std::tuple<std::decay_t<args_t>...>(std::forward<args_t>(args)...)};
+      return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
-    
     /// @name Public Operators
     
     /// @{
@@ -47,27 +46,34 @@ namespace xtd {
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto fct1 = _^method(&string::to_upper);
+    ///   auto fct1 = _ | method(&string::to_upper);
     ///   println("fct1 result => {}", fct1("Hello"_s));
-    ///   auto fct2 = _^method(overload<usize, usize>{}(&string::substring), 7, 6);
+    ///   auto fct2 = _ | method(overload<usize, usize>{}(&string::substring), 7, 6);
     ///   println("fct2 result => {}", fct2("Hello, World!"_s));
+    ///   auto fct3 = _1 | method(overload<usize, usize>{}(&string::substring), _2, _3);
+    ///   println("fct3 result => {}", fct3("Hello, World!"_s, 7, 6));
     /// }
     ///
     /// // This code produces the following output :
     /// //
     /// // fct1 result => HELLO
     /// // fct2 result => World!
+    /// // fct3 result => World!
     /// ```
     template <typename expression_t, typename method_t, typename... stored_args_t>
-    constexpr auto operator ^(expression_t expression, method_type<method_t, stored_args_t...> method) {
+    constexpr auto operator |(expression_t expression, method_type<method_t, stored_args_t...> method) {
       return [=](auto&&... call_args) {
         auto&& obj = expression(std::forward<decltype(call_args)>(call_args)...);
-        auto invoke = [&](auto&&... unpacked_args) {
-          if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*method.method)(std::forward<decltype(unpacked_args)>(unpacked_args)...);
-          else return (obj.*method.method)(std::forward<decltype(unpacked_args)>(unpacked_args)...);
+        auto invoke = [&](auto&&... evaluated_args) {
+          if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*method.method)(std::forward<decltype(evaluated_args)>(evaluated_args)...);
+          else return (obj.*method.method)(std::forward<decltype(evaluated_args)>(evaluated_args)...);
         };
-        return std::apply(invoke, method.args);
+        auto eval_arg = [&](auto&& expr) -> decltype(auto) {return expr(std::forward<decltype(call_args)>(call_args)...);};
+        return std::apply([&](auto&&... exprs) {return invoke(eval_arg(exprs)...);}, method.args);
       };
-    }    /// @}
+    }
+    /// @}
   }
 }
+
+#include "alternative_bind_operator.hpp"

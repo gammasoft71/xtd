@@ -50,7 +50,7 @@ namespace xtd {
     ///     int value;
     ///   };
     ///
-    ///   auto mem1 = _^member(&foo::value);
+    ///   auto mem1 = _ | member(&foo::value);
     ///   println("mem1 result => {}", mem1(foo {42}));
     /// }
     ///
@@ -59,7 +59,7 @@ namespace xtd {
     /// // mem1 result => 42
     /// ```
     template <typename expression_t, typename member_t>
-    constexpr auto operator ^(expression_t expression, member_type<member_t> member) {
+    constexpr auto operator |(expression_t expression, member_type<member_t> member) {
       return [=](auto&&... args) {
         auto&& obj = expression(std::forward<decltype(args)>(args)...);
         if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*member.member);
@@ -69,3 +69,5 @@ namespace xtd {
     /// @}
   }
 }
+
+#include "alternative_bind_operator.hpp"
