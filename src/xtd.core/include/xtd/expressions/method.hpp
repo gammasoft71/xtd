@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::method bind opertor.
+/// @brief Contains xtd::expressions::method bind operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
