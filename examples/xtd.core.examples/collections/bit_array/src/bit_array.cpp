@@ -49,7 +49,7 @@ public:
     print_values(my_ba5, 8);
   }
     
-  template<class object_t>
+  template<typename object_t>
   static auto print_values(const ienumerable<object_t>& my_list, int my_width) -> void {
     auto i = my_width;
     for (auto obj : my_list) {
