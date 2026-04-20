@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd::expressions::method_type&lt; method_t &gt; Struct Template Reference</title>
+		<title>xtd: xtd::expressions::method_type&lt; method_t, args_t &gt; Struct Template Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -87,19 +87,21 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structxtd_1_1expressions_1_1method__type-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::expressions::method_type&lt; method_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__expressions.html">expressions</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::expressions::method_type&lt; method_t, args_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__expressions.html">expressions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename method_t&gt;<br />
-struct xtd::expressions::method_type&lt; method_t &gt;</div><p>The <a class="el" href="structxtd_1_1expressions_1_1method__type.html" title="The xtd::expressions::method_type contains the method type.">xtd::expressions::method_type</a> contains the method type. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename method_t, typename... args_t&gt;<br />
+struct xtd::expressions::method_type&lt; method_t, args_t &gt;</div><p>The <a class="el" href="structxtd_1_1expressions_1_1method__type.html" title="The xtd::expressions::method_type contains the method type.">xtd::expressions::method_type</a> contains the method type. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1method__type.html" title="The xtd::expressions::method_type contains the method type.">xtd::expressions::method_type</a> struct is used by <a class="el" href="group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1method__type.html" title="The xtd::expressions::method_type contains the method type.">xtd::expressions::method_type</a> struct is used by <a class="el" href="group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a>. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a136b914b984ecb54ba4753e3e0f7c911" id="r_a136b914b984ecb54ba4753e3e0f7c911"><td class="memItemLeft"><a id="a136b914b984ecb54ba4753e3e0f7c911" name="a136b914b984ecb54ba4753e3e0f7c911"></a>
+<tr class="memitem:a913dbcbc793c59386523653a90005c03" id="r_a913dbcbc793c59386523653a90005c03"><td class="memItemLeft"><a id="a913dbcbc793c59386523653a90005c03" name="a913dbcbc793c59386523653a90005c03"></a>
 method_t&#160;</td><td class="memItemRight"><b>method</b></td></tr>
+<tr class="memitem:a66a4201970934fe2f99ff184978a9897" id="r_a66a4201970934fe2f99ff184978a9897"><td class="memItemLeft"><a id="a66a4201970934fe2f99ff184978a9897" name="a66a4201970934fe2f99ff184978a9897"></a>
+std::tuple&lt; args_t... &gt;&#160;</td><td class="memItemRight"><b>args</b></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/expressions/<a class="el" href="method_8hpp_source.html">method.hpp</a></li>

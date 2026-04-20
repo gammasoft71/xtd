@@ -94,15 +94,16 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="as__expression_8hpp_source.html">as_expression.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="expression__operand_8hpp_source.html">expression_operand.hpp</a>&quot;</code><br />
 <code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;<a class="el" href="alternative__bind__operator_8hpp_source.html">alternative_bind_operator.hpp</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> bind opertor. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> bind operator. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="method_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:xtd_3A_3Aexpressions_3A_3Amethod_5Ftype_3C_20method_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Amethod_5Ftype_3C_20method_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1method__type.html">xtd::expressions::method_type&lt; method_t &gt;</a></td></tr>
+<tr class="memitem:xtd_3A_3Aexpressions_3A_3Amethod_5Ftype_3C_20method_5Ft_2C_20args_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Amethod_5Ftype_3C_20method_5Ft_2C_20args_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1method__type.html">xtd::expressions::method_type&lt; method_t, args_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1method__type.html" title="The xtd::expressions::method_type contains the method type.">xtd::expressions::method_type</a> contains the method type.  <a href="structxtd_1_1expressions_1_1method__type.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -114,15 +115,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa48b33b2c7390639bac44931392cfd5b" id="r_gaa48b33b2c7390639bac44931392cfd5b"><td class="memTemplParams" colspan="2">template&lt;typename method_t&gt; </td></tr>
-<tr class="memitem:gaa48b33b2c7390639bac44931392cfd5b template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b">xtd::expressions::method</a> (method_t method)</td></tr>
-<tr class="memdesc:gaa48b33b2c7390639bac44931392cfd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method.  <br /></td></tr>
+<tr class="memitem:gacbb2cd3a94ae11bdc47e1cf74f79d6ac" id="r_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><td class="memTemplParams" colspan="2">template&lt;typename method_t, typename... args_t&gt; </td></tr>
+<tr class="memitem:gacbb2cd3a94ae11bdc47e1cf74f79d6ac template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a> (method_t method, args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:gaab980eb155bff2ea24a5fd49321ba930" id="r_gaab980eb155bff2ea24a5fd49321ba930"><td class="memTemplParams" colspan="2">template&lt;typename expression_t, typename method_t&gt; </td></tr>
-<tr class="memitem:gaab980eb155bff2ea24a5fd49321ba930 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#gaab980eb155bff2ea24a5fd49321ba930">xtd::expressions::operator^</a> (expression_t expression, <a class="el" href="structxtd_1_1expressions_1_1method__type.html">method_type</a>&lt; method_t &gt; <a class="el" href="group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b">method</a>)</td></tr>
-<tr class="memdesc:gaab980eb155bff2ea24a5fd49321ba930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind method operator.  <br /></td></tr>
+<tr class="memitem:ga4d1ccf77c53fe6dd3c85b0f44a60e30e" id="r_ga4d1ccf77c53fe6dd3c85b0f44a60e30e"><td class="memTemplParams" colspan="2">template&lt;typename expression_t, typename method_t, typename... stored_args_t&gt; </td></tr>
+<tr class="memitem:ga4d1ccf77c53fe6dd3c85b0f44a60e30e template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga4d1ccf77c53fe6dd3c85b0f44a60e30e">xtd::expressions::operator|</a> (expression_t expression, <a class="el" href="structxtd_1_1expressions_1_1method__type.html">method_type</a>&lt; method_t, stored_args_t... &gt; <a class="el" href="group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">method</a>)</td></tr>
+<tr class="memdesc:ga4d1ccf77c53fe6dd3c85b0f44a60e30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind method operator.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->

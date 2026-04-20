@@ -156,7 +156,7 @@ var searchData=
   ['message_5fbox_5ffont_153',['message_box_font',['../classxtd_1_1drawing_1_1system__fonts.html#a350e6feed250e84400c2e3983cf8529c',1,'xtd::drawing::system_fonts']]],
   ['message_5fdialog_154',['message_dialog',['../classxtd_1_1forms_1_1message__dialog.html#a54546d1e324f89606f697102eb5ddbe8',1,'xtd::forms::message_dialog']]],
   ['message_5floop_155',['message_loop',['../classxtd_1_1forms_1_1application.html#ae514ee1ee37c31c89ab5b75d8b71271e',1,'xtd::forms::application']]],
-  ['method_156',['method',['../classxtd_1_1tunit_1_1test.html#aaa874d9e2ad7fb889e14f12892ea2eed',1,'xtd::tunit::test::method()'],['../group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b',1,'xtd::expressions::method()']]],
+  ['method_156',['method',['../classxtd_1_1tunit_1_1test.html#aaa874d9e2ad7fb889e14f12892ea2eed',1,'xtd::tunit::test::method()'],['../group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac',1,'xtd::expressions::method()']]],
   ['mexico_157',['mexico',['../classxtd_1_1forms_1_1countries.html#a2de59cd2303b3a5daf7deedaa630f505',1,'xtd::forms::countries']]],
   ['microseconds_158',['microseconds',['../classxtd_1_1time__span.html#a81a7a60f72dc7bf1e4d5a4487ad228bf',1,'xtd::time_span']]],
   ['mid_5feast_5fenabled_159',['mid_east_enabled',['../classxtd_1_1forms_1_1system__information.html#a82b2d6ecde5d9ccf2825784f2efcd329',1,'xtd::forms::system_information']]],

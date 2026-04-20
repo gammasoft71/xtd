@@ -265,7 +265,7 @@ var searchData=
   ['message_5fnotifier_5fbutton_262',['message_notifier_button',['../classxtd_1_1forms_1_1message__notifier__button.html',1,'xtd::forms']]],
   ['message_5fsize_263',['message_size',['../group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71ade5f4bc2f8a4690176e22e83196b9fd3',1,'xtd::net::sockets']]],
   ['meta_264',['meta',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae9a23cbc455158951716b440c3d165e0',1,'xtd::forms']]],
-  ['method_265',['method',['../classxtd_1_1tunit_1_1test.html#aaa874d9e2ad7fb889e14f12892ea2eed',1,'xtd::tunit::test::method()'],['../group__expressions.html#gaa48b33b2c7390639bac44931392cfd5b',1,'xtd::expressions::method()']]],
+  ['method_265',['method',['../classxtd_1_1tunit_1_1test.html#aaa874d9e2ad7fb889e14f12892ea2eed',1,'xtd::tunit::test::method()'],['../group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac',1,'xtd::expressions::method()']]],
   ['method_2ehpp_266',['method.hpp',['../method_8hpp.html',1,'']]],
   ['method_5ftype_267',['method_type',['../structxtd_1_1expressions_1_1method__type.html',1,'xtd::expressions']]],
   ['methods_5fto_5fskip_268',['METHODS_TO_SKIP',['../classxtd_1_1diagnostics_1_1stack__trace.html#a5e858d2e05dce2a8e089f8a50824aaef',1,'xtd::diagnostics::stack_trace']]],
