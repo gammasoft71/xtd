@@ -1,6 +1,6 @@
 # addition_expression
 
-Shows how to use [addition_expression](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
+Shows how to use [xtd::expressions::operator +](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
 
 ## Sources
 
