@@ -192,7 +192,8 @@
 
 ## [Expressions](expressions/README.md)
 
-* [addition_expression](expressions/addition_expression/README.md) Shows how to use [addition_expression](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
+* [addition_expression](expressions/addition_expression/README.md) Shows how to use [xtd::expressions::operator +](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
+* [division_expression](expressions/division_expression/README.md) Shows how to use [xtd::expressions::operator /](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga26429abdfbcb94b8bda0ef50e026e5bc) expression.
 
 ## [Format](format/README.md)
 
