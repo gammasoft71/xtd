@@ -21,6 +21,7 @@ add_projects(
   environment
   enumerations
   exceptions
+  expressions
   format
   generic_collections
   globalization

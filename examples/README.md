@@ -25,6 +25,7 @@
 * [Enumerations](xtd.core.examples/enumerations/README.md) contains enumerations (enum, enum class and enum struct) examples.
 * [Environment](xtd.core.examples/environment/README.md) contains environment examples.
 * [Exceptions](xtd.core.examples/exceptions/README.md) contains exceptions examples.
+* [Expressions](xtd.core.examples/expressions/README.md) contains expressions examples.
 * [Format](xtd.core.examples/format/README.md) contains format examples.
 * [Generic collections](xtd.core.examples/generic_collections/README.md) contains genric collections examples.
 * [Globalization](xtd.core.examples/globalization/README.md) contains globalization examples.

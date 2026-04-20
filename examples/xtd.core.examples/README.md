@@ -190,6 +190,10 @@
 * [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__exception.html) exception.
 * [user_defined_exception](exceptions/user_defined_exception/README.md) shows how to use [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) exception.
 
+## [Expressions](expressions/README.md)
+
+* [addition_expression](expressions/addition_expression/README.md) Shows how to use [addition_expression](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
+
 ## [Format](format/README.md)
 
 * [format](format/format/README.md) shows how to use [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) method.
