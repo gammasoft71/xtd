@@ -902,8 +902,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_select.cpp
-      template<typename result_t, typename source_t, typename predicate_t>
-      [[nodiscard]] static auto select(const ienumerable<source_t>& source, predicate_t&& selector) {
+      template<typename result_t, typename source_t>
+      [[nodiscard]] static auto select(const ienumerable<source_t>& source, auto&& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
         auto index = xtd::usize {0};
         for (const auto& item : source)
@@ -919,8 +919,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
-      template<typename source_t, typename predicate_t>
-      [[nodiscard]] static auto select(const ienumerable<source_t>& source, predicate_t&& selector) {
+      template<typename source_t>
+      [[nodiscard]] static auto select(const ienumerable<source_t>& source, auto&& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::usize {0};
         for (const auto& item : source)
@@ -961,8 +961,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, xtd::usize)>&) to filter a sequence based on a predicate that involves the index of each element.
       /// @include enumerable_where2.cpp
-      template<typename source_t, typename predicate_t>
-      [[nodiscard]] static auto where(const ienumerable<source_t>& source, predicate_t&& predicate) {
+      template<typename source_t>
+      [[nodiscard]] static auto where(const ienumerable<source_t>& source, auto&& predicate) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::usize {0};
         for (const auto& item : source)
