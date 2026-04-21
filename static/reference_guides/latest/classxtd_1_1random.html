@@ -304,6 +304,12 @@ Public Methods</h2></td></tr>
 <tr class="memitem:a9db5b7d015f55c274c45b6059b159a9f" id="r_a9db5b7d015f55c274c45b6059b159a9f"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:a9db5b7d015f55c274c45b6059b159a9f template"><td class="memItemLeft">value_t&#160;</td><td class="memItemRight"><a class="el" href="#a9db5b7d015f55c274c45b6059b159a9f">next</a> (value_t min_value, value_t max_value) const</td></tr>
 <tr class="memdesc:a9db5b7d015f55c274c45b6059b159a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
+<tr class="memitem:ae7d36b4b5e9db7b2bc7a1dffa89cbea3" id="r_ae7d36b4b5e9db7b2bc7a1dffa89cbea3"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae7d36b4b5e9db7b2bc7a1dffa89cbea3">next_byte</a> () const</td></tr>
+<tr class="memdesc:ae7d36b4b5e9db7b2bc7a1dffa89cbea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
+<tr class="memitem:a401961584380d7472f8a83f5eb0fee23" id="r_a401961584380d7472f8a83f5eb0fee23"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a401961584380d7472f8a83f5eb0fee23">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const</td></tr>
+<tr class="memdesc:a401961584380d7472f8a83f5eb0fee23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
+<tr class="memitem:a295eb633599b17811484458dffd44a1a" id="r_a295eb633599b17811484458dffd44a1a"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a295eb633599b17811484458dffd44a1a">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> min_value, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const</td></tr>
+<tr class="memdesc:a295eb633599b17811484458dffd44a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
 <tr class="memitem:af8dee61c03a83ef71bf478f603094111" id="r_af8dee61c03a83ef71bf478f603094111"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af8dee61c03a83ef71bf478f603094111">next_bytes</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const</td></tr>
 <tr class="memdesc:af8dee61c03a83ef71bf478f603094111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
 <tr class="memitem:adc73b84dc61ce01f1ecc602d450afc17" id="r_adc73b84dc61ce01f1ecc602d450afc17"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#adc73b84dc61ce01f1ecc602d450afc17">next_bytes</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const</td></tr>
@@ -856,6 +862,123 @@ template&lt;typename value_t&gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The next(value_t, value_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value. </dd>
+<dd>
+Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer. </dd></dl>
+
+</div>
+</div>
+<a id="ae7d36b4b5e9db7b2bc7a1dffa89cbea3" name="ae7d36b4b5e9db7b2bc7a1dffa89cbea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d36b4b5e9db7b2bc7a1dffa89cbea3">&#9670;&#160;</a></span>next_byte() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a nonnegative random number. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits&lt;int32&gt;::max()) </dd></dl>
+
+</div>
+</div>
+<a id="a401961584380d7472f8a83f5eb0fee23" name="a401961584380d7472f8a83f5eb0fee23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401961584380d7472f8a83f5eb0fee23">&#9670;&#160;</a></span>next_byte() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a nonnegative random number less than the specified maximum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_value</td><td>The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 64-bit signed integer greater than or equal to zero and less than max_value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">argument_out_of_range_exception</a></td><td>max_value is less than zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0. </dd></dl>
+
+</div>
+</div>
+<a id="a295eb633599b17811484458dffd44a1a" name="a295eb633599b17811484458dffd44a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295eb633599b17811484458dffd44a1a">&#9670;&#160;</a></span>next_byte() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random number within a specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min_value</td><td>The inclusive lower bound of the random number returned </td></tr>
+    <tr><td class="paramname">max_value</td><td>The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 8-bit unsigned integer greater than or equal to min_value and less than max_value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">argument_out_of_range_exception</a></td><td>min_value is greater than max_value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The next(<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a>, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value. </dd>
 <dd>
 Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer. </dd></dl>
 

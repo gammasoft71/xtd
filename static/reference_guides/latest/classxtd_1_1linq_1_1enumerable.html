@@ -3399,7 +3399,7 @@ template&lt;typename type_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9" title="Generates a sequence of integral numbers within a specified range.">xtd::linq::enumerable::range</a> to generate a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> x) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select(_ * _);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(num);</div>
@@ -3418,7 +3418,6 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
 <div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:862</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3470,7 +3469,7 @@ template&lt;typename type_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9" title="Generates a sequence of integral numbers within a specified range.">xtd::linq::enumerable::range</a> to generate a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> x) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select(_ * _);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(num);</div>

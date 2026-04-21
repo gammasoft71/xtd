@@ -87,7 +87,7 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = enumerable::range(1, 10).select([](<span class="keywordtype">int</span> x) {<span class="keywordflow">return</span> x * x;});</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = enumerable::range(1, 10).select(_ * _);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
 <div class="line">    console::write_line(num);</div>
