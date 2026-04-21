@@ -18,23 +18,23 @@ auto main() -> int {
 
   // xtd::linq query
   auto query1 = from(names)
-    .where(delegate_(auto s) {return s.length() == 5;})
-    .order_by(delegate_(auto s) {return s;})
-    .select(delegate_(auto s) {return s.to_upper();});
+    .where([](auto s) {return s.length() == 5;})
+    .order_by([](auto s) {return s;})
+    .select([](auto s) {return s.to_upper();});
   println(query1);
   
   // xtd::ranges query
   auto query2 = names
-    | where(delegate_(auto s) {return s.length() == 5;})
-    | order_by(delegate_(auto s) {return s;})
-    | select(delegate_(auto s) {return s.to_upper();});
+    | where([](auto s) {return s.length() == 5;})
+    | order_by([](auto s) {return s;})
+    | select([](auto s) {return s.to_upper();});
   println(query2);
   
   // std::ranges combined with xtd::ranges query
   auto query3 = names
-    | std::views::filter(delegate_(auto s) {return s.length() == 5;})
-    | xtd::views::order_by(delegate_(auto s) {return s;})
-    | std::views::transform(delegate_(auto s) {return s.to_upper();});
+    | std::views::filter([](auto s) {return s.length() == 5;})
+    | xtd::views::order_by([](auto s) {return s;})
+    | std::views::transform([](auto s) {return s.to_upper();});
   println(query3);
 }
 
