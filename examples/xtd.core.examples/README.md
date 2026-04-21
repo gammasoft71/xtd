@@ -90,6 +90,12 @@
 * [to_ustring](convert/to_ustring/README.md) shows how to use [xtd::convert::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a1de05be36bc70b03e74ec7d9586b0199) method and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class.
 * [unsafe_as](convert/unsafe_as/README.md) shows how to use [xtd::unsafe::as](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1unsafe.html) operator.
 
+## [Convert_string](convert_string/README.md)
+
+* [as_string](Convert_string/as_string/README.md) shows how to use [xtd::as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operator.
+* [convert_string](Convert_string/convert_string/README.md) shows how to use [xtd::as](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) converters.
+* [string_to_string](Convert_string/string_to_string/README.md) shows how to use [xtd::basic_string::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__string.html) methods.
+
 ## [Coroutines](coroutines/README.md)
 
 * [coroutine_task](coroutines/coroutine_task/README.md) Shows how to use coroutine with [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).

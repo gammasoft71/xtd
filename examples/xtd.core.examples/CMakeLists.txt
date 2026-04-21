@@ -14,6 +14,7 @@ add_projects(
   configuration
   console
   convert
+  convert_string
   coroutines
   date_time
   delegates
