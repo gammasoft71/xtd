@@ -15,11 +15,11 @@ template <forward_iterable iterable_t>
 }
 
 auto main() -> int {
-  for (auto item : iterate(std::vector {5, 1, 3, 4, 2}).select([](auto v) {return v * 2;}).order())
+  for (auto item : iterate(std::vector {5, 1, 3, 4, 2}).select(_ * 2).order())
     println("{,2}", item);
-  for (auto item : iterate(list {10, 6, 8, 9, 7}).select([](auto v) {return v * 3;}).order())
+  for (auto item : iterate(list {10, 6, 8, 9, 7}).select(_ * 3).order())
     println("{,2}", item);
-  for (auto item : iterate(int_generator()).select([](auto v) {return v * 4;}).order())
+  for (auto item : iterate(int_generator()).select(_ * 4).order())
     println("{,2}", item);
 }
 
