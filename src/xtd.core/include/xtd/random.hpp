@@ -165,6 +165,25 @@ namespace xtd {
     float next(float min_value, float max_value) const;
     /// @endcond
     
+    
+    /// @brief Returns a nonnegative random number.
+    /// @return A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
+    virtual xtd::byte next_byte() const;
+    /// @brief Returns a nonnegative random number less than the specified maximum.
+    /// @param max_value The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero.
+    /// @return A 64-bit signed integer greater than or equal to zero and less than max_value
+    /// @exception argument_out_of_range_exception max_value is less than zero.
+    /// @remarks The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
+    virtual xtd::byte next_byte(xtd::byte max_value) const;
+    /// @brief Returns a random number within a specified range.
+    /// @param min_value The inclusive lower bound of the random number returned
+    /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
+    /// @return A 8-bit unsigned integer greater than or equal to min_value and less than max_value
+    /// @exception argument_out_of_range_exception min_value is greater than max_value.
+    /// @remarks The next(int32, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
+    /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
+    virtual xtd::byte next_byte(xtd::byte min_value, xtd::byte max_value) const;
+
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().

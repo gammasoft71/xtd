@@ -75,6 +75,18 @@ float random::next(float min_value, float max_value) const {
   return static_cast<float>(min_value + (sample() * (max_value - min_value)));
 }
 
+byte random::next_byte() const {
+  return next_byte(byte_object::max_value);
+}
+
+byte random::next_byte(byte max_value) const {
+  return next_byte(0_u8, max_value);
+}
+
+byte random::next_byte(byte min_value, byte max_value) const {
+  return as<byte>(next(min_value, max_value));
+}
+
 void random::next_bytes(span<byte>& buffer) const {
   for (auto index = 0_z; index < buffer.length(); index++)
     buffer[index] = next<byte>(0, byte_object::max_value);
