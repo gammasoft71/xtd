@@ -24,7 +24,6 @@ namespace xtd {
       /// @param left The left operand.
       /// @param right The right operand.
       constexpr subtraction_expression(auto&& left, auto&& right) : left {std::forward<decltype(left)>(left)}, right {std::forward<decltype(right)>(right)} {}
-      template <typename... args_t>
       /// @}
       
       /// @name Public Operators
@@ -33,6 +32,7 @@ namespace xtd {
       /// @brief Subtract the specified arguments.
       /// @param args the arguments to subtract.
       /// @return The result of addition.
+      template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) - right(std::forward<args_t>(args)...);}
       /// @}
       
