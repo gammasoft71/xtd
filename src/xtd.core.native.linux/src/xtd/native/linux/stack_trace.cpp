@@ -1,4 +1,5 @@
 #include <version>
+/* Temporry removed while gcc and clang not stable for std::stacktrace on linux.
 #if __cpp_lib_stacktrace >= 202011l
 
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -35,7 +36,7 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
 }
 
 #else
-
+*/
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>
 #include "../../../../include/xtd/native/linux/shell_execute.hpp"
@@ -145,4 +146,4 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   }
   return frames;
 }
-#endif
+//#endif
