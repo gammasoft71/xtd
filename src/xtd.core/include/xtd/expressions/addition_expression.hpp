@@ -24,7 +24,6 @@ namespace xtd {
       /// @param left The left operand.
       /// @param right The right operand.
       constexpr addition_expression(auto&& left, auto&& right) : left {std::forward<decltype(left)>(left)}, right {std::forward<decltype(right)>(right)} {}
-      template <typename... args_t>
       /// @}
       
       /// @name Public Operators
@@ -33,6 +32,7 @@ namespace xtd {
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
       /// @return The result of addition.
+      template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) + right(std::forward<args_t>(args)...);}
       /// @}
       
@@ -70,7 +70,9 @@ namespace xtd {
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
-    constexpr auto operator +(left_t left, right_t right) {return addition_expression<decltype(as_expression(left)), decltype(as_expression(right))> {as_expression(left), as_expression(right)};}
+    constexpr auto operator +(left_t left, right_t right) {
+      return addition_expression<decltype(as_expression(left)), decltype(as_expression(right))> {as_expression(left), as_expression(right)};
+    }
     /// @}
   }
 }
