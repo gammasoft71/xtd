@@ -43,9 +43,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::addition_expression object with specified left and right operands.
-      /// @param left The left operand.
-      /// @param right The right operand.
+      /// @brief Initialize a new xtd::expressions::addition_expression object with specified expression and member operands.
+      /// @param expression The expression operand.
+      /// @param member The member operand.
       constexpr member_expression(auto&& expression, auto&& member) : expression {std::forward<decltype(expression)>(expression)}, member {std::forward<decltype(member)>(member)} {}
       /// @}
       
@@ -86,6 +86,37 @@ namespace xtd {
     ///     int value;
     ///   };
     ///
+    ///   auto mem1 = _*member(&foo::value);
+    ///   println("mem1 result => {}", mem1(foo {42}));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // mem1 result => 42
+    /// ```
+    template <typename expression_t, typename member_t>
+    requires expression_operand<expression_t, member_type<member_t>>
+    constexpr auto operator *(expression_t expression, member_type<member_t> member) {
+      return member_expression<decltype(as_expression(expression)), member_t> {as_expression(expression), member.member};
+    }
+
+    /// @brief Bind member operator.
+    /// @param expression The expression that associate to the  binded member.
+    /// @param member The binded mehtod to execute.
+    /// @return The result of the binded member.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::not_equal_to_expression.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   struct foo {
+    ///     int value;
+    ///   };
+    ///
     ///   auto mem1 = _ | member(&foo::value);
     ///   println("mem1 result => {}", mem1(foo {42}));
     /// }
@@ -97,10 +128,8 @@ namespace xtd {
     template <typename expression_t, typename member_t>
     requires expression_operand<expression_t, member_type<member_t>>
     constexpr auto operator |(expression_t expression, member_type<member_t> member) {
-      return member_expression<decltype(as_expression(expression)), member_t> {as_expression(expression), member.member};
+      return std::forward<expression_t>(expression) * std::forward<member_type<member_t>>(member);
     }
     /// @}
   }
 }
-
-#include "alternative_bind_operator.hpp"

@@ -989,8 +989,6 @@ add_sources(
   "include/xtd/diagnostics/trace_switch"
   "include/xtd/expressions/addition_expression.hpp"
   "include/xtd/expressions/addition_expression"
-  "include/xtd/expressions/alternative_bind_operator.hpp"
-  "include/xtd/expressions/alternative_bind_operator"
   "include/xtd/expressions/as_expression.hpp"
   "include/xtd/expressions/as_expression"
   "include/xtd/expressions/constant.hpp"

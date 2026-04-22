@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/expressions/alternative_bind_operator.hpp>
