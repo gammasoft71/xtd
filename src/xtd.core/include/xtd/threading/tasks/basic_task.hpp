@@ -148,7 +148,6 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        auto continue_with(std::function<void()> continuation) -> void {continue_with(xtd::action<> {continuation});}
         auto continue_with(xtd::action<> continuation) -> void {
           auto call_now = false;
           
