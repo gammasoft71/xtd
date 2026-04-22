@@ -37,6 +37,6 @@ namespace xtd {
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <xtd::usize index_t>
     constexpr auto as_expression(placeholder<index_t> p) {return p;}
+    /// @}
   }
-  /// @}
 }
