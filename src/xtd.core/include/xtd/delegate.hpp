@@ -89,6 +89,13 @@ namespace xtd {
     delegate(delegate&&) = default;
     delegate(const delegate& other) {*data_ = *other.data_;}
     delegate& operator =(const delegate& other) {*data_ = *other.data_; return *this;}
+
+    template <typename fct_t>
+    requires (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&> &&
+    std::convertible_to<std::invoke_result_t<fct_t&>, result_t>
+    delegate(fct_t&& f) {data_->functions.push_back(function_t(std::forward<fct_t>(f)));}
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
@@ -446,6 +453,20 @@ namespace xtd {
 
     template<class object1_t, typename object2_t, typename... args_t>
     delegate(const object1_t& object, result_t(object2_t::*method)(args_t...)) noexcept {data_->functions.push_back(function_t(std::bind_front(method, const_cast<object1_t*>(&object))));}
+
+    template <typename fct_t>
+    requires (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&, arguments_t...> &&
+    std::convertible_to<std::invoke_result_t<fct_t&, arguments_t...>, result_t>
+    delegate(fct_t&& f) {data_->functions.push_back(function_t(std::forward<fct_t>(f)));}
+
+    template <typename fct_t>
+    requires (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, no_arguments_function_t>) &&
+    std::invocable<fct_t&> &&
+    std::convertible_to<std::invoke_result_t<fct_t&>, result_t>
+    delegate(fct_t&& f) {data_->no_arguments_functions.push_back(no_arguments_function_t(std::forward<fct_t>(f)));}
     /// @endcond
     
     /// @name Public Properties
