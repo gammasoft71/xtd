@@ -30,6 +30,42 @@ namespace xtd {
       return member_type<member_t>{member};
     }
     
+    /// @{
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @param value The value to convert.
+    /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
+    template <typename expression_t, typename member_t>
+    struct member_expression : expression_base {
+      /// @name Public Constructors
+      
+      /// @{
+      /// @brief Initialize a new xtd::expressions::addition_expression object with specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      constexpr member_expression(auto&& expression, auto&& member) : expression {std::forward<decltype(expression)>(expression)}, member {std::forward<decltype(member)>(member)} {}
+      /// @}
+      
+      /// @name Public Operators
+      
+      /// @{
+      /// @brief Add the specified arguments.
+      /// @param args the arguments to add.
+      /// @return The result of addition.
+      constexpr decltype(auto) operator()(auto&&... args) const {
+        auto&& obj = expression(std::forward<decltype(args)>(args)...);
+        if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*member);
+        else return (obj.*member);
+      }
+      
+    private:
+      expression_t expression;
+      member_t member;
+    };
+    
     /// @name Public Operators
     
     /// @{
@@ -59,12 +95,9 @@ namespace xtd {
     /// // mem1 result => 42
     /// ```
     template <typename expression_t, typename member_t>
+    requires expression_operand<expression_t, member_type<member_t>>
     constexpr auto operator |(expression_t expression, member_type<member_t> member) {
-      return [=](auto&&... args) {
-        auto&& obj = expression(std::forward<decltype(args)>(args)...);
-        if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*member.member);
-        else return (obj.*member.member);
-      };
+      return member_expression<decltype(as_expression(expression)), member_t> {as_expression(expression), member.member};
     }
     /// @}
   }
