@@ -30,6 +30,47 @@ namespace xtd {
     constexpr auto method(method_t method, args_t&&... args) {
       return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
+    
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @param value The value to convert.
+    /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
+    template <typename expression_t, typename method_t>
+    struct method_expression : expression_base {
+      /// @name Public Constructors
+      
+      /// @{
+      /// @brief Initialize a new xtd::expressions::addition_expression object with specified expression and method operands.
+      /// @param expression The expression operand.
+      /// @param method The method operand.
+      constexpr method_expression(auto&& expression, auto&& method) : expression {std::forward<decltype(expression)>(expression)}, method {std::forward<decltype(method)>(method)} {}
+      /// @}
+      
+      /// @name Public Operators
+      
+      /// @{
+      /// @brief Add the specified arguments.
+      /// @param args the arguments to add.
+      /// @return The result of addition.
+      template <typename... call_args_t>
+      constexpr decltype(auto) operator()(call_args_t&&... call_args) const {
+        auto&& obj = expression(std::forward<call_args_t>(call_args)...);
+        auto invoke = [&](auto&&... evaluated_args) -> decltype(auto) {
+          if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*method.method)(std::forward<decltype(evaluated_args)>(evaluated_args)...);
+          else return (obj.*method.method)(std::forward<decltype(evaluated_args)>(evaluated_args)...);
+        };
+        auto eval_arg = [&](auto&& expr) -> decltype(auto) {return expr(std::forward<call_args_t>(call_args)...);};
+        return std::apply([&](auto&&... exprs) -> decltype(auto) {return invoke(eval_arg(exprs)...);}, method.args);
+      }
+      
+    private:
+      expression_t expression;
+      method_t method;
+    };
+
     /// @name Public Operators
     
     /// @{
@@ -62,18 +103,10 @@ namespace xtd {
     /// ```
     template <typename expression_t, typename method_t, typename... stored_args_t>
     requires expression_operand<expression_t, method_type<method_t, stored_args_t...>>
-    constexpr auto operator *(expression_t expression, method_type<method_t, stored_args_t...> method) {
-      return [=](auto&&... call_args) {
-        auto&& obj = expression(std::forward<decltype(call_args)>(call_args)...);
-        auto invoke = [&](auto&&... evaluated_args) {
-          if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*method.method)(std::forward<decltype(evaluated_args)>(evaluated_args)...);
-          else return (obj.*method.method)(std::forward<decltype(evaluated_args)>(evaluated_args)...);
-        };
-        auto eval_arg = [&](auto&& expr) -> decltype(auto) {return expr(std::forward<decltype(call_args)>(call_args)...);};
-        return std::apply([&](auto&&... exprs) {return invoke(eval_arg(exprs)...);}, method.args);
-      };
+    constexpr auto operator*(expression_t expression, method_type<method_t, stored_args_t...> method) {
+      return method_expression<decltype(as_expression(expression)), method_type<method_t, stored_args_t...>>{as_expression(expression), method};
     }
-
+    
     /// @brief Bind method alternative operator.
     /// @param expression The expression that associate to the  binded method.
     /// @param method The binded mehtod to execute.
