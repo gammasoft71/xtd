@@ -30,7 +30,6 @@ namespace xtd {
       return member_type<member_t>{member};
     }
     
-    /// @{
     /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
     /// @param value The value to convert.
     /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
