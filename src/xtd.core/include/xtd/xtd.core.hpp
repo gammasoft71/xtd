@@ -117,7 +117,7 @@
 #include "expressions/expression.hpp"
 #include "expressions/expression_base.hpp"
 #include "expressions/expression_operand.hpp"
-#include "expressions/member.hpp"
+#include "expressions/member_expression.hpp"
 #include "expressions/method_expression.hpp"
 #include "expressions/multiplication_expression.hpp"
 #include "expressions/not_equal_to_expression.hpp"
