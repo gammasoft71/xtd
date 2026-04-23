@@ -110,6 +110,7 @@
 #include "expressions/addition_expression.hpp"
 #include "expressions/as_expression.hpp"
 #include "expressions/bitwise_and_expression.hpp"
+#include "expressions/bitwise_or_expression.hpp"
 #include "expressions/constant.hpp"
 #include "expressions/division_expression.hpp"
 #include "expressions/equal_to_expression.hpp"
