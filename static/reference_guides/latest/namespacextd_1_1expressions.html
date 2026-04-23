@@ -86,6 +86,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">xtd::expressions Namespace Reference</div></div>
 </div><!--header-->
@@ -99,6 +100,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a> is the addition expression.  <a href="structxtd_1_1expressions_1_1addition__expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:bitwise_5Fand_5Fexpression" id="r_bitwise_5Fand_5Fexpression"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html">bitwise_and_expression</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a> is the bitwise and expression.  <a href="structxtd_1_1expressions_1_1bitwise__and__expression.html#details">More...</a><br /></td></tr>
+<tr class="memitem:bitwise_5For_5Fexpression" id="r_bitwise_5For_5Fexpression"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1bitwise__or__expression.html">bitwise_or_expression</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1bitwise__or__expression.html" title="The xtd::expressions::bitwise_or_expression is the bitwise or expression.">xtd::expressions::bitwise_or_expression</a> is the bitwise or expression.  <a href="structxtd_1_1expressions_1_1bitwise__or__expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:constant" id="r_constant"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1constant.html">constant</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1constant.html" title="The xtd::expressions::constant is the constant wrapper.">xtd::expressions::constant</a> is the constant wrapper.  <a href="structxtd_1_1expressions_1_1constant.html#details">More...</a><br /></td></tr>
 <tr class="memitem:division_5Fexpression" id="r_division_5Fexpression"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1division__expression.html">division_expression</a></td></tr>
@@ -127,6 +130,133 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1remainder__expression.html" title="The xtd::expressions::remainder_expression is the remainder expression.">xtd::expressions::remainder_expression</a> is the remainder expression.  <a href="structxtd_1_1expressions_1_1remainder__expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:subtraction_5Fexpression" id="r_subtraction_5Fexpression"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1subtraction__expression.html">subtraction_expression</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1subtraction__expression.html" title="The xtd::expressions::subtraction_expression is the subtraction expression.">xtd::expressions::subtraction_expression</a> is the subtraction expression.  <a href="structxtd_1_1expressions_1_1subtraction__expression.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a418395dc9383e37eb269a52b25b74683" id="r_a418395dc9383e37eb269a52b25b74683"><td class="memItemLeft"><a id="a418395dc9383e37eb269a52b25b74683" name="a418395dc9383e37eb269a52b25b74683"></a>enum class &#160;</td><td class="memItemRight"><b>operator_precedence</b> { <br />
+&#160;&#160;<b>placeholder</b>
+, <br />
+&#160;&#160;<b>constante</b>
+, <br />
+&#160;&#160;<b>scope_resolution</b>
+, <br />
+&#160;&#160;<b>postfix_increment</b>
+, <br />
+&#160;&#160;<b>postfix_decrement</b>
+, <br />
+&#160;&#160;<b>functional_cast</b>
+, <br />
+&#160;&#160;<b>function_call</b>
+, <br />
+&#160;&#160;<b>subscript</b>
+, <br />
+&#160;&#160;<b>member_access</b>
+, <br />
+&#160;&#160;<b>prefix_increment</b>
+, <br />
+&#160;&#160;<b>prefix_decrement</b>
+, <br />
+&#160;&#160;<b>unary_plus</b>
+, <br />
+&#160;&#160;<b>unary_minus</b>
+, <br />
+&#160;&#160;<b>logical_not</b>
+, <br />
+&#160;&#160;<b>bitwise_not</b>
+, <br />
+&#160;&#160;<b>c_ctyle_cast</b>
+, <br />
+&#160;&#160;<b>indirection</b>
+, <br />
+&#160;&#160;<b>address_of</b>
+, <br />
+&#160;&#160;<b>reflection</b>
+, <br />
+&#160;&#160;<b>size_of</b>
+, <br />
+&#160;&#160;<b>await</b>
+, <br />
+&#160;&#160;<b>new_allocation</b>
+, <br />
+&#160;&#160;<b>delete_dallocation</b>
+, <br />
+&#160;&#160;<b>pointer_to_member</b>
+, <br />
+&#160;&#160;<b>multiplication</b>
+, <br />
+&#160;&#160;<b>division</b>
+, <br />
+&#160;&#160;<b>remainder</b>
+, <br />
+&#160;&#160;<b>addition</b>
+, <br />
+&#160;&#160;<b>subtraction</b>
+, <br />
+&#160;&#160;<b>bitwise_left</b>
+, <br />
+&#160;&#160;<b>bitwise_right</b>
+, <br />
+&#160;&#160;<b>three_way_compar</b>
+, <br />
+&#160;&#160;<b>relational</b>
+, <br />
+&#160;&#160;<b>less</b>
+, <br />
+&#160;&#160;<b>less_or_euqal</b>
+, <br />
+&#160;&#160;<b>greather</b>
+, <br />
+&#160;&#160;<b>greather_or_euqal</b>
+, <br />
+&#160;&#160;<b>equality</b>
+, <br />
+&#160;&#160;<b>equal</b>
+, <br />
+&#160;&#160;<b>not_equal</b>
+, <br />
+&#160;&#160;<b>bitwise_and</b>
+, <br />
+&#160;&#160;<b>bitwise_xor</b>
+, <br />
+&#160;&#160;<b>bitwise_or</b>
+, <br />
+&#160;&#160;<b>logical_and</b>
+, <br />
+&#160;&#160;<b>logical_or</b>
+, <br />
+&#160;&#160;<b>ternary</b>
+, <br />
+&#160;&#160;<b>throws</b>
+, <br />
+&#160;&#160;<b>yield</b>
+, <br />
+&#160;&#160;<b>assignment</b>
+, <br />
+&#160;&#160;<b>compound_assignment</b>
+, <br />
+&#160;&#160;<b>compound_sum_assignment</b>
+, <br />
+&#160;&#160;<b>compound_difference_assignment</b>
+, <br />
+&#160;&#160;<b>compound_product_assignment</b>
+, <br />
+&#160;&#160;<b>compound_quotient_assignment</b>
+, <br />
+&#160;&#160;<b>compound_remaider_assignment</b>
+, <br />
+&#160;&#160;<b>compound_bitwise_left_assignment</b>
+, <br />
+&#160;&#160;<b>compound_bitwise_right_assignment</b>
+, <br />
+&#160;&#160;<b>compound_bitwise_and_assignment</b>
+, <br />
+&#160;&#160;<b>compound_bitwise_xor_assignment</b>
+, <br />
+&#160;&#160;<b>compound_bitwise_or_assignment</b>
+, <br />
+&#160;&#160;<b>comma</b>
+<br />
+ }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -176,6 +306,9 @@ Public Operators</h2></td></tr>
 <tr class="memitem:ga3bf8711e2078009183728cca32a64fe8" id="r_ga3bf8711e2078009183728cca32a64fe8"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga3bf8711e2078009183728cca32a64fe8 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga3bf8711e2078009183728cca32a64fe8">operator&amp;</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga3bf8711e2078009183728cca32a64fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:ga7536b7f60fb7611a779aa9f08d4e170d" id="r_ga7536b7f60fb7611a779aa9f08d4e170d"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:ga7536b7f60fb7611a779aa9f08d4e170d template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga7536b7f60fb7611a779aa9f08d4e170d">operator|</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:ga7536b7f60fb7611a779aa9f08d4e170d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:ga26429abdfbcb94b8bda0ef50e026e5bc" id="r_ga26429abdfbcb94b8bda0ef50e026e5bc"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga26429abdfbcb94b8bda0ef50e026e5bc template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga26429abdfbcb94b8bda0ef50e026e5bc">operator/</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga26429abdfbcb94b8bda0ef50e026e5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide the specified left and right operands.  <br /></td></tr>

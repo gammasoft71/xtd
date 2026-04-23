@@ -85,6 +85,7 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structxtd_1_1expressions_1_1bitwise__and__expression-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::expressions::bitwise_and_expression&lt; left_t, right_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__expressions.html">expressions</a></div></div></div>
 </div><!--header-->
@@ -102,14 +103,14 @@ Inheritance diagram for xtd::expressions::bitwise_and_expression&lt; left_t, rig
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename left_t, typename right_t&gt;<br />
 struct xtd::expressions::bitwise_and_expression&lt; left_t, right_t &gt;</div><p>The <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a> is the bitwise and expression. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a> struct is used by <a class="el" href="group__expressions.html#ga321430ccf4bd434a3948168926149fbb" title="Subtract the specified left and right operands.">xtd::expressions::operator -()</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a> struct is used by <a class="el" href="group__expressions.html#ga7536b7f60fb7611a779aa9f08d4e170d" title="Subtract the specified left and right operands.">xtd::expressions::operator |()</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//auto bit_and1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
 <div class="line">  <span class="keyword">auto</span> bit_and1 = <a class="code hl_variable" href="group__expressions.html#ga332d0751ae7ddddf41db7ed5331e149e">_</a> &amp; 0x0F;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;sub1 result =&gt; {}&quot;</span>, bit_and1(42));</div>
-<div class="line">  <span class="comment">//auto bit_and2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;}</span></div>
+<div class="line">  <span class="comment">//auto bit_and2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp; _2;}</span></div>
 <div class="line">  <span class="keyword">auto</span> bit_and2 = <a class="code hl_variable" href="group__expressions.html#ga7889a0654a035c09156edbed7fd7ae97">_1</a> &amp; <a class="code hl_variable" href="group__expressions.html#ga4cd249005888976f4e5ccad64d45856a">_2</a>;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_and2 result =&gt; {}&quot;</span>, bit_and2(42, 0xF0));</div>
 <div class="line">}</div>
@@ -118,12 +119,17 @@ struct xtd::expressions::bitwise_and_expression&lt; left_t, right_t &gt;</div><p
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// bit_and1 result =&gt; 10</span></div>
 <div class="line"><span class="comment">// bit_and2 result =&gt; 8</span></div>
-<div class="ttc" id="agroup__expressions_html_ga332d0751ae7ddddf41db7ed5331e149e"><div class="ttname"><a href="group__expressions.html#ga332d0751ae7ddddf41db7ed5331e149e">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto &amp; _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:179</div></div>
-<div class="ttc" id="agroup__expressions_html_ga4cd249005888976f4e5ccad64d45856a"><div class="ttname"><a href="group__expressions.html#ga4cd249005888976f4e5ccad64d45856a">xtd::expressions::_2</a></div><div class="ttdeci">constexpr placeholder&lt; 1 &gt; _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:60</div></div>
-<div class="ttc" id="agroup__expressions_html_ga7889a0654a035c09156edbed7fd7ae97"><div class="ttname"><a href="group__expressions.html#ga7889a0654a035c09156edbed7fd7ae97">xtd::expressions::_1</a></div><div class="ttdeci">constexpr placeholder&lt; 0 &gt; _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:46</div></div>
+<div class="ttc" id="agroup__expressions_html_ga332d0751ae7ddddf41db7ed5331e149e"><div class="ttname"><a href="group__expressions.html#ga332d0751ae7ddddf41db7ed5331e149e">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto &amp; _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:190</div></div>
+<div class="ttc" id="agroup__expressions_html_ga4cd249005888976f4e5ccad64d45856a"><div class="ttname"><a href="group__expressions.html#ga4cd249005888976f4e5ccad64d45856a">xtd::expressions::_2</a></div><div class="ttdeci">constexpr placeholder&lt; 1 &gt; _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:71</div></div>
+<div class="ttc" id="agroup__expressions_html_ga7889a0654a035c09156edbed7fd7ae97"><div class="ttname"><a href="group__expressions.html#ga7889a0654a035c09156edbed7fd7ae97">xtd::expressions::_1</a></div><div class="ttdeci">constexpr placeholder&lt; 0 &gt; _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:57</div></div>
 <div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a4982aa50025a5d875b5e928f4e101bb5" id="r_a4982aa50025a5d875b5e928f4e101bb5"><td class="memItemLeft"><a id="a4982aa50025a5d875b5e928f4e101bb5" name="a4982aa50025a5d875b5e928f4e101bb5"></a>
+static constexpr operator_precedence&#160;</td><td class="memItemRight"><b>precedence</b></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
 <tr class="memitem:a661327642248af270e9fd7ecb4fac702" id="r_a661327642248af270e9fd7ecb4fac702"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a661327642248af270e9fd7ecb4fac702">bitwise_and_expression</a> (auto &amp;&amp;left, auto &amp;&amp;right)</td></tr>
@@ -134,6 +140,13 @@ Public Operators</h2></td></tr>
 <tr class="memitem:add01f69382b142fadfc6cb6f445b6525" id="r_add01f69382b142fadfc6cb6f445b6525"><td class="memTemplParams" colspan="2">template&lt;typename... args_t&gt; </td></tr>
 <tr class="memitem:add01f69382b142fadfc6cb6f445b6525 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#add01f69382b142fadfc6cb6f445b6525">operator()</a> (args_t &amp;&amp;... args) const</td></tr>
 <tr class="memdesc:add01f69382b142fadfc6cb6f445b6525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified arguments.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_structxtd_1_1expressions_1_1expression__base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_structxtd_1_1expressions_1_1expression__base')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="structxtd_1_1expressions_1_1expression__base.html">xtd::expressions::expression_base</a></td></tr>
+<tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base" id="r_ac17893893be7b0c64b55794105a14981"><td class="memTemplParams" colspan="2">
+template&lt;typename expression_t&gt; </td></tr>
+<tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>print_with_parens</b> (std::ostream &amp;os, const expression_t &amp;expr, operator_precedence parent_precedence) -&gt; void</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a661327642248af270e9fd7ecb4fac702" name="a661327642248af270e9fd7ecb4fac702"></a>
