@@ -15,6 +15,8 @@ namespace xtd {
     /// @remarks The xtd::expressions::constant struct is used by xtd::expressions::as_expression methods.
     template <typename type_t>
     struct constant {
+      static constexpr operator_precedence precedence = operator_precedence::constante;
+      
       /// @name Public Constructors
       
       /// @{

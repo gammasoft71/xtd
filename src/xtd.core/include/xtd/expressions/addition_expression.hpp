@@ -17,6 +17,8 @@ namespace xtd {
     /// @remarks The xtd::expressions::addition_expression struct is used by xtd::expressions::operator +().
     template <typename left_t, typename right_t>
     struct addition_expression : expression_base {
+      static constexpr operator_precedence precedence = operator_precedence::addition;
+      
       /// @name Public Constructors
       
       /// @{
@@ -36,11 +38,20 @@ namespace xtd {
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) + right(std::forward<args_t>(args)...);}
       /// @}
       
+      /// @cond
+      friend inline auto operator <<(std::ostream& os, const addition_expression& e) -> std::ostream& {
+        print_with_parens(os, e.left, e.precedence);
+        os << " + ";
+        print_with_parens(os, e.right, e.precedence);
+        return os;
+      }
+      /// @endcond
+
     private:
       left_t left;
       right_t right;
     };
-    
+
     /// @name Public Operators
     
     /// @{

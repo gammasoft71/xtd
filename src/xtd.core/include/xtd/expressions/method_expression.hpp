@@ -40,6 +40,8 @@ namespace xtd {
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename expression_t, typename method_t>
     struct method_expression : expression_base {
+      static constexpr operator_precedence precedence = operator_precedence::member_access;
+      
       /// @name Public Constructors
       
       /// @{

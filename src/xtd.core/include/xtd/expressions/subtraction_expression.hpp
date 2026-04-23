@@ -4,6 +4,7 @@
 #pragma once
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
+#include "operator_precedence.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,6 +18,8 @@ namespace xtd {
     /// @remarks The xtd::expressions::subtraction_expression struct is used by xtd::expressions::operator -().
     template <typename left_t, typename right_t>
     struct subtraction_expression : expression_base {
+      static constexpr operator_precedence precedence = operator_precedence::subtraction;
+
       /// @name Public Constructors
       
       /// @{
@@ -36,6 +39,15 @@ namespace xtd {
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) - right(std::forward<args_t>(args)...);}
       /// @}
       
+      /// @cond
+      friend inline auto operator <<(std::ostream& os, const subtraction_expression& e) -> std::ostream& {
+        print_with_parens(os, e.left, e.precedence);
+        os << " - ";
+        print_with_parens(os, e.right, e.precedence);
+        return os;
+      }
+      /// @endcond
+
     private:
       left_t left;
       right_t right;

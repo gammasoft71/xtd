@@ -2,8 +2,12 @@
 /// @brief Contains xtd::expressions::placeholder struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "operator_precedence.hpp"
 #include "placeholder_base.hpp"
+#include <concepts>
+#include <ostream>
 #include <tuple>
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,8 +17,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    template <size_t index_t>
+    template <size_t index>
     struct placeholder : placeholder_base {
+      static constexpr operator_precedence precedence = operator_precedence::placeholder;
+
       /// @name Public Operators
       
       /// @{
@@ -22,10 +28,15 @@ namespace xtd {
       /// @return The placeholder value.
       template <typename... args_t>
       constexpr decltype(auto) operator()(args_t&&... args) const {
-        return std::get<index_t>(std::forward_as_tuple(std::forward<args_t>(args)...));
+        return std::get<index>(std::forward_as_tuple(std::forward<args_t>(args)...));
       }
       /// @}
     };
+
+    /// @cond
+    template <size_t index>
+    inline auto operator <<(std::ostream& os, const placeholder<index>&) -> std::ostream& {return os << "_" << (index + 1);}
+    /// @endcond
 
     /// @name Public Variables
     
