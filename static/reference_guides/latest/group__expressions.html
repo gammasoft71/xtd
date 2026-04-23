@@ -93,6 +93,8 @@ $(function() {
 Classes</h2></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Aaddition_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Aaddition_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1addition__expression.html">xtd::expressions::addition_expression&lt; left_t, right_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a> is the addition expression.  <a href="structxtd_1_1expressions_1_1addition__expression.html#details">More...</a><br /></td></tr>
+<tr class="memitem:xtd_3A_3Aexpressions_3A_3Abitwise_5Fand_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Abitwise_5Fand_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html">xtd::expressions::bitwise_and_expression&lt; left_t, right_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a> is the bitwise and expression.  <a href="structxtd_1_1expressions_1_1bitwise__and__expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Aconstant_3C_20type_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Aconstant_3C_20type_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1constant.html">xtd::expressions::constant&lt; type_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1constant.html" title="The xtd::expressions::constant is the constant wrapper.">xtd::expressions::constant</a> is the constant wrapper.  <a href="structxtd_1_1expressions_1_1constant.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Adivision_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Adivision_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1division__expression.html">xtd::expressions::division_expression&lt; left_t, right_t &gt;</a></td></tr>
@@ -157,10 +159,19 @@ Public Variables</h2></td></tr>
 <tr class="memdesc:ga332d0751ae7ddddf41db7ed5331e149e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga332d0751ae7ddddf41db7ed5331e149e" title="The xtd::expressions::_ placeholder instance is used by expression that have only one argument.">xtd::expressions::_</a> placeholder instance is used by expression that have only one argument.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Functions</h2></td></tr>
+<tr class="memitem:ga4e24719e8e7d8b398476bb663745d12d" id="r_ga4e24719e8e7d8b398476bb663745d12d"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:ga4e24719e8e7d8b398476bb663745d12d template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d">xtd::expressions::as_expression</a> (type_t value)</td></tr>
+<tr class="memdesc:ga4e24719e8e7d8b398476bb663745d12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd...">xtd::expressions::as_expression</a> method convert a type as <a class="el" href="structxtd_1_1expressions_1_1expression__base.html" title="The xtd::expressions::expression_base is the base class for expression objects.">xtd::expressions::expression_base</a> or <a class="el" href="structxtd_1_1expressions_1_1constant.html" title="The xtd::expressions::constant is the constant wrapper.">xtd::expressions::constant</a>.  <br /></td></tr>
+<tr class="memitem:ga47139e8d794c60705d887cbb7db181e2" id="r_ga47139e8d794c60705d887cbb7db181e2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index_t&gt; </td></tr>
+<tr class="memitem:ga47139e8d794c60705d887cbb7db181e2 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga47139e8d794c60705d887cbb7db181e2">xtd::expressions::as_expression</a> (<a class="el" href="structxtd_1_1expressions_1_1placeholder.html">placeholder</a>&lt; index_t &gt; p)</td></tr>
+<tr class="memdesc:ga47139e8d794c60705d887cbb7db181e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd...">xtd::expressions::as_expression</a> method convert a specified placeholder with specified index into <a class="el" href="structxtd_1_1expressions_1_1placeholder.html" title="The xtd::expressions::placeholder object is placeholder for all expressions.">xtd::expressions::placeholder</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:ga2595c35e5a97bfe1a900ce48f63a755b" id="r_ga2595c35e5a97bfe1a900ce48f63a755b"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
-<tr class="memitem:ga2595c35e5a97bfe1a900ce48f63a755b template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga2595c35e5a97bfe1a900ce48f63a755b">xtd::expressions::operator+</a> (left_t left, right_t right)</td></tr>
-<tr class="memdesc:ga2595c35e5a97bfe1a900ce48f63a755b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:ga3bf8711e2078009183728cca32a64fe8" id="r_ga3bf8711e2078009183728cca32a64fe8"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:ga3bf8711e2078009183728cca32a64fe8 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga3bf8711e2078009183728cca32a64fe8">xtd::expressions::operator&amp;</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:ga3bf8711e2078009183728cca32a64fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:ga26429abdfbcb94b8bda0ef50e026e5bc" id="r_ga26429abdfbcb94b8bda0ef50e026e5bc"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga26429abdfbcb94b8bda0ef50e026e5bc template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga26429abdfbcb94b8bda0ef50e026e5bc">xtd::expressions::operator/</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga26429abdfbcb94b8bda0ef50e026e5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide the specified left and right operands.  <br /></td></tr>
@@ -191,79 +202,8 @@ Public Operators</h2></td></tr>
 <tr class="memitem:ga321430ccf4bd434a3948168926149fbb" id="r_ga321430ccf4bd434a3948168926149fbb"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga321430ccf4bd434a3948168926149fbb template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga321430ccf4bd434a3948168926149fbb">xtd::expressions::operator-</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga321430ccf4bd434a3948168926149fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Public Functions</h2></td></tr>
-<tr class="memitem:ga4e24719e8e7d8b398476bb663745d12d" id="r_ga4e24719e8e7d8b398476bb663745d12d"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:ga4e24719e8e7d8b398476bb663745d12d template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d">xtd::expressions::as_expression</a> (type_t value)</td></tr>
-<tr class="memdesc:ga4e24719e8e7d8b398476bb663745d12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd...">xtd::expressions::as_expression</a> method convert a type as <a class="el" href="structxtd_1_1expressions_1_1expression__base.html" title="The xtd::expressions::expression_base is the base class for expression objects.">xtd::expressions::expression_base</a> or <a class="el" href="structxtd_1_1expressions_1_1constant.html" title="The xtd::expressions::constant is the constant wrapper.">xtd::expressions::constant</a>.  <br /></td></tr>
-<tr class="memitem:ga47139e8d794c60705d887cbb7db181e2" id="r_ga47139e8d794c60705d887cbb7db181e2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index_t&gt; </td></tr>
-<tr class="memitem:ga47139e8d794c60705d887cbb7db181e2 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga47139e8d794c60705d887cbb7db181e2">xtd::expressions::as_expression</a> (<a class="el" href="structxtd_1_1expressions_1_1placeholder.html">placeholder</a>&lt; index_t &gt; p)</td></tr>
-<tr class="memdesc:ga47139e8d794c60705d887cbb7db181e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd...">xtd::expressions::as_expression</a> method convert a specified placeholder with specified index into <a class="el" href="structxtd_1_1expressions_1_1placeholder.html" title="The xtd::expressions::placeholder object is placeholder for all expressions.">xtd::expressions::placeholder</a>.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ga2595c35e5a97bfe1a900ce48f63a755b" name="ga2595c35e5a97bfe1a900ce48f63a755b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2595c35e5a97bfe1a900ce48f63a755b">&#9670;&#160;</a></span>operator+()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename left_t, typename right_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::expressions::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="addition__expression_8hpp.html">addition_expression.hpp</a>&gt;</code></p>
-
-<p>Add the specified left and right operands. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
-    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The result of addition. </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> add1 = <a class="code hl_variable" href="#ga332d0751ae7ddddf41db7ed5331e149e">_</a> + 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add1 result =&gt; {}&quot;</span>, add1(42));</div>
-<div class="line">  <span class="keyword">auto</span> add2 = <a class="code hl_variable" href="#ga7889a0654a035c09156edbed7fd7ae97">_1</a> + <a class="code hl_variable" href="#ga4cd249005888976f4e5ccad64d45856a">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add2 result =&gt; {}&quot;</span>, add2(42, 15));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// add1 result =&gt; 52</span></div>
-<div class="line"><span class="comment">// add2 result =&gt; 57</span></div>
-<div class="ttc" id="agroup__expressions_html_ga332d0751ae7ddddf41db7ed5331e149e"><div class="ttname"><a href="#ga332d0751ae7ddddf41db7ed5331e149e">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto &amp; _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:179</div></div>
-<div class="ttc" id="agroup__expressions_html_ga4cd249005888976f4e5ccad64d45856a"><div class="ttname"><a href="#ga4cd249005888976f4e5ccad64d45856a">xtd::expressions::_2</a></div><div class="ttdeci">constexpr placeholder&lt; 1 &gt; _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:60</div></div>
-<div class="ttc" id="agroup__expressions_html_ga7889a0654a035c09156edbed7fd7ae97"><div class="ttname"><a href="#ga7889a0654a035c09156edbed7fd7ae97">xtd::expressions::_1</a></div><div class="ttdeci">constexpr placeholder&lt; 0 &gt; _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:46</div></div>
-<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <a id="ga4e24719e8e7d8b398476bb663745d12d" name="ga4e24719e8e7d8b398476bb663745d12d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4e24719e8e7d8b398476bb663745d12d">&#9670;&#160;</a></span>as_expression() <span class="overload">[1/2]</span></h2>
 
@@ -340,6 +280,70 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 <dl class="section return"><dt>Returns</dt><dd>The same placeholder. </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ga4e24719e8e7d8b398476bb663745d12d" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd...">xtd::expressions::as_expression</a> method is used by <a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> operators. </dd></dl>
+
+</div>
+</div>
+<a id="ga3bf8711e2078009183728cca32a64fe8" name="ga3bf8711e2078009183728cca32a64fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bf8711e2078009183728cca32a64fe8">&#9670;&#160;</a></span>operator&amp;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::expressions::operator&amp; </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="bitwise__and__expression_8hpp.html">bitwise_and_expression.hpp</a>&gt;</code></p>
+
+<p>Subtract the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of addition. </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1bitwise__and__expression.html" title="The xtd::expressions::bitwise_and_expression is the bitwise and expression.">xtd::expressions::bitwise_and_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">//auto bit_and1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> bit_and1 = <a class="code hl_variable" href="#ga332d0751ae7ddddf41db7ed5331e149e">_</a> &amp; 0x0F;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;sub1 result =&gt; {}&quot;</span>, bit_and1(42));</div>
+<div class="line">  <span class="comment">//auto bit_and2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;}</span></div>
+<div class="line">  <span class="keyword">auto</span> bit_and2 = <a class="code hl_variable" href="#ga7889a0654a035c09156edbed7fd7ae97">_1</a> &amp; <a class="code hl_variable" href="#ga4cd249005888976f4e5ccad64d45856a">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_and2 result =&gt; {}&quot;</span>, bit_and2(42, 0xF0));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// bit_and1 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// bit_and2 result =&gt; 8</span></div>
+<div class="ttc" id="agroup__expressions_html_ga332d0751ae7ddddf41db7ed5331e149e"><div class="ttname"><a href="#ga332d0751ae7ddddf41db7ed5331e149e">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto &amp; _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:179</div></div>
+<div class="ttc" id="agroup__expressions_html_ga4cd249005888976f4e5ccad64d45856a"><div class="ttname"><a href="#ga4cd249005888976f4e5ccad64d45856a">xtd::expressions::_2</a></div><div class="ttdeci">constexpr placeholder&lt; 1 &gt; _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:60</div></div>
+<div class="ttc" id="agroup__expressions_html_ga7889a0654a035c09156edbed7fd7ae97"><div class="ttname"><a href="#ga7889a0654a035c09156edbed7fd7ae97">xtd::expressions::_1</a></div><div class="ttdeci">constexpr placeholder&lt; 0 &gt; _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:46</div></div>
+<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
