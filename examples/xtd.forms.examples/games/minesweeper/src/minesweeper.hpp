@@ -100,7 +100,7 @@ namespace minesweeper {
     menu_item game_separator3_menu_item_ {"-"};
     menu_item game_best_times_menu_item_ {"Best &times...", xtd::event_handler {[&] {high_scores_dialog().show_sheet_dialog(*this);}}};
     menu_item game_separator4_menu_item_ {"-"};
-    menu_item game_exit_menu_item_ {drawing::texts::exit(), xtd::event_handler {overload_<>(application::exit)}};
+    menu_item game_exit_menu_item_ {drawing::texts::exit(), xtd::event_handler {overload<>(application::exit)}};
     menu_item game_menu_item_ {"&Game", {game_new_game_menu_item_, game_separator1_menu_item_, game_beginner_menu_item_, game_inermediate_menu_item_, game_expert_menu_item_, game_custom_menu_item_, game_separator2_menu_item_, game_marks_menu_item_, game_original_color_menu_item_, game_separator3_menu_item_, game_best_times_menu_item_, game_separator4_menu_item_, game_exit_menu_item_}};
     menu_item help_content_menu_item_ {"&Contents", xtd::event_handler {*this, &minesweeper_form::on_help_content_menu_click}, shortcut::f1};
     menu_item help_search_menu_item_ {"&Search for Help On...", xtd::event_handler {[&] {}}};
