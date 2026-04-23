@@ -228,7 +228,7 @@ auto ip_address::network_to_host_order(uint64 network) -> uint64 {
 }
 
 auto ip_address::parse(const string& str) -> ip_address {
-  block_scope_(const auto& address_parts = str.split('.')) {
+  using_(const auto& address_parts = str.split('.')) {
     if (address_parts.length() == 4) {
       auto addresses = array<byte>(4);
       for (auto index = 0_z; index < address_parts.length(); ++index)
@@ -246,7 +246,7 @@ auto ip_address::parse(const string& str) -> ip_address {
     work_ip_string = work_ip_string.remove(work_ip_string.index_of('%'));
   };
   
-  block_scope_(list<string> address_parts = work_ip_string.split(':')) {
+  using_(list<string> address_parts = work_ip_string.split(':')) {
     for (auto it = address_parts.items().begin(); it != address_parts.items().end(); ++it) {
       if (xtd::string::is_empty(*it)) {
         *it = "0";

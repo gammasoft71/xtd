@@ -21,15 +21,15 @@ class program {
 private:
 public:
   static auto main() {
-    block_scope_(std::ofstream os = file::append_text("log.txt")) {
-      block_scope_(stream_writer w(os)) {
+    using_(std::ofstream os = file::append_text("log.txt")) {
+      using_(stream_writer w(os)) {
         log("Test1", w);
         log("Test2", w);
       }
     }
     
-    block_scope_(std::ifstream is = file::open_text("log.txt")) {
-      block_scope_(stream_reader r(is)) {
+    using_(std::ifstream is = file::open_text("log.txt")) {
+      using_(stream_reader r(is)) {
         dump_log(r);
       }
     }

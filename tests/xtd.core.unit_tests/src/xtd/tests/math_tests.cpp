@@ -187,104 +187,104 @@ namespace xtd::tests {
     }
     
     auto test_method_(div_rem_int32) {
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(1073741, math::div_rem(std::numeric_limits<int32>::max(), as<int32>(2000), remainder));
         assert::are_equal(1647, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(6, math::div_rem(as<int32>(13952), as<int32>(2000), remainder));
         assert::are_equal(1952, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(0, math::div_rem(as<int32>(0), as<int32>(2000), remainder));
         assert::are_equal(0, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(-7, math::div_rem(as<int32>(-14032), as<int32>(2000), remainder));
         assert::are_equal(-32, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(-1073741, math::div_rem(std::numeric_limits<int32>::lowest(), as<int32>(2000), remainder));
         assert::are_equal(-1648, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(-1073741, math::div_rem(std::numeric_limits<int32>::max(), as<int32>(-2000), remainder));
         assert::are_equal(1647, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(-6, math::div_rem(as<int32>(13952), as<int32>(-2000), remainder));
         assert::are_equal(1952, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(0, math::div_rem(as<int32>(0), as<int32>(-2000), remainder));
         assert::are_equal(0, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(7, math::div_rem(as<int32>(-14032), as<int32>(-2000), remainder));
         assert::are_equal(-32, remainder);
       }
       
-      block_scope_(int32 remainder = 0) {
+      using_(int32 remainder = 0) {
         assert::are_equal(1073741, math::div_rem(std::numeric_limits<int32>::lowest(), as<int32>(-2000), remainder));
         assert::are_equal(-1648, remainder);
       }
     }
     
     auto test_method_(div_rem_int64) {
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(4611686018427387LL, math::div_rem(std::numeric_limits<int64>::max(), as<int64>(2000), remainder));
         assert::are_equal(1807, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(6, math::div_rem(as<int64>(13952), as<int64>(2000), remainder));
         assert::are_equal(1952, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(0, math::div_rem(as<int64>(0), as<int64>(2000), remainder));
         assert::are_equal(0, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(-7, math::div_rem(as<int64>(-14032), as<int64>(2000), remainder));
         assert::are_equal(-32, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(-4611686018427387LL, math::div_rem(std::numeric_limits<int64>::lowest(), as<int64>(2000), remainder));
         assert::are_equal(-1808, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(-4611686018427387LL, math::div_rem(std::numeric_limits<int64>::max(), as<int64>(-2000), remainder));
         assert::are_equal(1807, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(-6, math::div_rem(as<int64>(13952), as<int64>(-2000), remainder));
         assert::are_equal(1952, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(0, math::div_rem(as<int64>(0), as<int64>(-2000), remainder));
         assert::are_equal(0, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(7, math::div_rem(as<int64>(-14032), as<int64>(-2000), remainder));
         assert::are_equal(-32, remainder);
       }
       
-      block_scope_(int64 remainder = 0) {
+      using_(int64 remainder = 0) {
         assert::are_equal(4611686018427387LL, math::div_rem(std::numeric_limits<int64>::lowest(), as<int64>(-2000), remainder));
         assert::are_equal(-1808, remainder);
       }
