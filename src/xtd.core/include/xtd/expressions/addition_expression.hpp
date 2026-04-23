@@ -53,20 +53,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @par Examples
     /// The following example shows how to use xtd::expressions::addition_expression.
-    /// ```cpp
-    /// #include <xtd/xtd>
-    ///
-    /// auto main() -> int {
-    ///   auto add1 = _ + 10;
-    ///   println("add1 result => {}", add1(42));
-    ///   auto add2 = _1 + _2;
-    ///   println("add2 result => {}", add2(42, 15));
-    /// }
-    ///
-    /// // This code produces the following output :
-    /// //
-    /// // add1 result => 52
-    /// // add2 result => 57
+    /// @include addition_expression.cpp
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
