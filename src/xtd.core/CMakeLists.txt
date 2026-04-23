@@ -995,6 +995,8 @@ add_sources(
   "include/xtd/expressions/addition_expression"
   "include/xtd/expressions/as_expression.hpp"
   "include/xtd/expressions/as_expression"
+  "include/xtd/expressions/bitwise_and_expression.hpp"
+  "include/xtd/expressions/bitwise_and_expression"
   "include/xtd/expressions/constant.hpp"
   "include/xtd/expressions/constant"
   "include/xtd/expressions/division_expression.hpp"
