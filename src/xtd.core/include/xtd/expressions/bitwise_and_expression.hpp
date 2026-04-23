@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks The xtd::expressions::bitwise_and_expression struct is used by xtd::expressions::operator -().
+    /// @remarks The xtd::expressions::bitwise_and_expression struct is used by xtd::expressions::operator |().
     /// @par Examples
     /// The following example shows how to use xtd::expressions::bitwise_and_expression.
     /// ```cpp
@@ -24,7 +24,7 @@ namespace xtd {
     ///   //auto bit_and1 = [](auto&& _) {return _ & 0x0F;};
     ///   auto bit_and1 = _ & 0x0F;
     ///   println("sub1 result => {}", bit_and1(42));
-    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 + _2;}
+    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;}
     ///   auto bit_and2 = _1 & _2;
     ///   println("bit_and2 result => {}", bit_and2(42, 0xF0));
     /// }
@@ -79,7 +79,7 @@ namespace xtd {
     ///   //auto bit_and1 = [](auto&& _) {return _ & 0x0F;};
     ///   auto bit_and1 = _ & 0x0F;
     ///   println("sub1 result => {}", bit_and1(42));
-    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 + _2;}
+    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;}
     ///   auto bit_and2 = _1 & _2;
     ///   println("bit_and2 result => {}", bit_and2(42, 0xF0));
     /// }
