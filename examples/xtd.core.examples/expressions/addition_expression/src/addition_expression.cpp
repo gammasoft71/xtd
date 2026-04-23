@@ -8,13 +8,13 @@ struct foo {
 };
 
 auto main() -> int {
-  // auto add1 = [](auto a) {return a + 10;}
+  //auto add1 = [](auto a) {return a + 10;}
   auto add1 = _ + 10;
 
   println("add1 resul => {}", add1(42));
   println();
 
-  // auto add2 = [](auto a, auto b) {return a + b;}
+  //auto add2 = [](auto a, auto b) {return a + b;}
   auto add2 = _1 + _2;
 
   println("add2 resul => {}", add2(42, 10));
@@ -23,7 +23,7 @@ auto main() -> int {
   println("add2 resul => {}", add2(foo {42}, foo {10}));
   println();
 
-  // auto add3 = [](auto a, auto b, auto, c) {return a + 10 + b + c;}
+  //auto add3 = [](auto a, auto b, auto, c) {return a + 10 + b + c;}
   auto add3 = _1 + 10 + _2  + _3;
 
   println("add3 resul => {}", add3(22, 18, 2));
