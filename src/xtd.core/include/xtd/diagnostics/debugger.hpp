@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::debugger class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
 #include "../core_export.hpp"
 #include "../static.hpp"
 #include "../string.hpp"

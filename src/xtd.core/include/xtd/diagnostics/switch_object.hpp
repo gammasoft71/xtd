@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::switch_object class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
 #include "../collections/specialized/string_dictionary.hpp"
 #include "../array.hpp"
 #include "../iequatable.hpp"

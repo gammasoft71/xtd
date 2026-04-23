@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::debug class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
 #include "../add_last_arg_to_command.hpp"
 #include "../core_export.hpp"
 #include "../environment.hpp"

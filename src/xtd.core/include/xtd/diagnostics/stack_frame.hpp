@@ -3,8 +3,6 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
-#include <cstdint>
-#include <vector>
 #include "source_location.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
