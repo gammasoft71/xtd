@@ -8,7 +8,6 @@
 #include <xtd/date_time>
 #include <xtd/string>
 #include <cstdint>
-#include <cstdlib>
 #include <xtd/optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -276,7 +275,7 @@ namespace xtd {
       bool count_tests_ = false;
       bool enable_stack_trace_ = false;
       xtd::date_time end_time_;
-      int32 exit_status_ = EXIT_SUCCESS;
+      int32 exit_status_ = 0;
       xtd::string file_name_ = xtd::io::path::get_full_path(xtd::reflection::assembly::get_executing_assembly().location());
       xtd::array<string> filter_tests_ = {"*.*"};
       bool gtest_compatibility_ = false;

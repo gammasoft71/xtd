@@ -8,10 +8,6 @@
 #include "../static.hpp"
 #include "../string.hpp"
 #include <algorithm>
-#include <cstdlib>
-#include <random>
-#include <regex>
-#include <sstream>
 
 //#include <iostream>
 

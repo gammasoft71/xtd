@@ -1,5 +1,4 @@
 #include "main_form.hpp"
-#include <list>
 #include <xtd/char32_object>
 #include <xtd/environment>
 #include <xtd/exception>
@@ -16,6 +15,8 @@
 #include <xtd/io/directory_not_found_exception>
 #include <xtd/io/file_info>
 #include <xtd/io/path>
+#include <list>
+#include <regex>
 
 using namespace xtd;
 using namespace xtd::collections::generic;

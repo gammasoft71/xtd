@@ -2,8 +2,6 @@
 /// @brief Contains [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library headers.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "std.hpp"
-
 #include "check_cpp_version.hpp"
 #include "check_cpp_exceptions.hpp"
 #include "check_cpp_rtti.hpp"

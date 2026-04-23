@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "enum.hpp"
-#include <cstdlib>
+//#include <cstdlib>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,9 +17,9 @@ namespace xtd {
   /// @remarks For more information about exit_status, see [EXIT_status](https://en.cppreference.com/w/cpp/utility/program/EXIT_status.html).
   enum class exit_status {
     /// @brief Successful execution of a program. Is equal to [EXIT_SUCCESS](https://en.cppreference.com/w/cpp/utility/program/EXIT_status.html).
-    success = EXIT_SUCCESS,
+    success = 0, //EXIT_SUCCESS,
     /// @brief Unsuccessful execution of a program. Is equal to [EXIT_FAILURE](https://en.cppreference.com/w/cpp/utility/program/EXIT_status.html).
-    failure = EXIT_FAILURE,
+    failure = 1, //EXIT_FAILURE,
   };
 }
 
