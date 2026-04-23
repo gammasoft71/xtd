@@ -111,7 +111,7 @@ main_form::main_form() {
   startup_open_project_button_.size({350, 100});
   startup_open_project_button_.font({startup_open_project_button_.font(), 14.0});
   startup_open_project_button_.anchor(anchor_styles::top | anchor_styles::right);
-  startup_open_project_button_.click += {*this, overload_<>(&main_form::open_project)};
+  startup_open_project_button_.click += {*this, overload<>(&main_form::open_project)};
   
   startup_run_project_button_.parent(startup_panel_);
   startup_run_project_button_.image(images::from_name("system-run", drawing::size {48, 48}));
@@ -122,7 +122,7 @@ main_form::main_form() {
   startup_run_project_button_.size({350, 100});
   startup_run_project_button_.font({startup_run_project_button_.font(), 14.0});
   startup_run_project_button_.anchor(anchor_styles::top | anchor_styles::right);
-  startup_run_project_button_.click += {*this, overload_<>(&main_form::run_project)};
+  startup_run_project_button_.click += {*this, overload<>(&main_form::run_project)};
   
   startup_new_project_button_.parent(startup_panel_);
   startup_new_project_button_.image(images::from_name("document-new", drawing::size {48, 48}));
@@ -133,7 +133,7 @@ main_form::main_form() {
   startup_new_project_button_.size({350, 100});
   startup_new_project_button_.font({startup_new_project_button_.font(), 14.0});
   startup_new_project_button_.anchor(anchor_styles::top | anchor_styles::right);
-  startup_new_project_button_.click += {*this, overload_<>(&main_form::new_project)};
+  startup_new_project_button_.click += {*this, overload<>(&main_form::new_project)};
   
   startup_open_xtd_examples_button_.parent(startup_panel_);
   startup_open_xtd_examples_button_.image(images::from_name("xtd", drawing::size {48, 48}));
