@@ -873,7 +873,7 @@ The <a class="el" href="#a5cae4facc4186e5a89bc400c25ed3006" title="Returns an en
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a4f6991e4be7cecab37f7fc74d2dd25a2"><div class="ttname"><a href="#a4f6991e4be7cecab37f7fc74d2dd25a2">xtd::io::directory::exists</a></div><div class="ttdeci">static auto exists(const xtd::string &amp;path) -&gt; bool</div><div class="ttdoc">Determines whether the given path refers to an existing directory on disk.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file_html_a178c4938dbf396e1b4230c4d699fc58b"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">xtd::io::file::exists</a></div><div class="ttdeci">static auto exists(const xtd::string &amp;path) noexcept -&gt; bool</div><div class="ttdoc">Determines whether the specified file exists.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.hpp:37</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.hpp:33</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -2720,7 +2720,7 @@ The directory is being used by another process. </td></tr>
               try {
                 directory::create_directory(sub_path);
          
-                block_scope_(stream_writer writer(sub_path + R"(\example.txt)")) {
+                using_(stream_writer writer(sub_path + R"(\example.txt)")) {
                   writer.write_line("content added");
                 }
          

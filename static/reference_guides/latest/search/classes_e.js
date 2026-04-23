@@ -19,5 +19,5 @@ var searchData=
   ['out_5fof_5fmemory_5fexception_16',['out_of_memory_exception',['../classxtd_1_1out__of__memory__exception.html',1,'xtd']]],
   ['output_5fdata_5freceived_5fevent_17',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
   ['overflow_5fexception_18',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
-  ['overload_19',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
+  ['overload_5ftype_19',['overload_type',['../structxtd_1_1overload__type.html',1,'xtd']]]
 ];

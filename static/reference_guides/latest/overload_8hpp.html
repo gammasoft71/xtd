@@ -91,21 +91,18 @@ $(function() {
   <div class="headertitle"><div class="title">overload.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="const__overload_8hpp_source.html">const_overload.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="non__const__overload_8hpp_source.html">non_const_overload.hpp</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="structxtd_1_1overload.html" title="Represents class that use to determine one of const and non const overloaded methods.">xtd::overload</a> class. </p>
+<div class="textblock"><p>Contains xtd::overload. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="overload_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:xtd_3A_3Anon_5Fconst_5Foverload_3C_20args_5Ft_20_3E" id="r_xtd_3A_3Anon_5Fconst_5Foverload_3C_20args_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1non__const__overload.html">xtd::non_const_overload&lt; args_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents class that use to determine one of non const overloaded methods.  <a href="structxtd_1_1non__const__overload.html#details">More...</a><br /></td></tr>
-<tr class="memitem:xtd_3A_3Aconst_5Foverload_3C_20args_5Ft_20_3E" id="r_xtd_3A_3Aconst_5Foverload_3C_20args_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1const__overload.html">xtd::const_overload&lt; args_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents class that use to determine one of const overloaded methods.  <a href="structxtd_1_1const__overload.html#details">More...</a><br /></td></tr>
-<tr class="memitem:xtd_3A_3Aoverload_3C_20args_5Ft_20_3E" id="r_xtd_3A_3Aoverload_3C_20args_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1overload.html">xtd::overload&lt; args_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents class that use to determine one of const and non const overloaded methods.  <a href="structxtd_1_1overload.html#details">More...</a><br /></td></tr>
+<tr class="memitem:xtd_3A_3Aoverload_5Ftype_3C_20args_5Ft_20_3E" id="r_xtd_3A_3Aoverload_5Ftype_3C_20args_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1overload__type.html">xtd::overload_type&lt; args_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents class that use to determine one of const and non const overloaded methods.  <a href="structxtd_1_1overload__type.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -116,10 +113,12 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:ga93032605a652548319ef755164012601" id="r_ga93032605a652548319ef755164012601"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#ga93032605a652548319ef755164012601">overload_</a></td></tr>
 <tr class="memdesc:ga93032605a652548319ef755164012601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper keyword that use to determine one of const and non const overloaded methods.  <br /></td></tr>
-<tr class="memitem:ga3faae72dc22c5ec5248d0df67d8124d4" id="r_ga3faae72dc22c5ec5248d0df67d8124d4"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">const_overload_</a></td></tr>
-<tr class="memdesc:ga3faae72dc22c5ec5248d0df67d8124d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper keyword that use to determine one of const overloaded methods.  <br /></td></tr>
-<tr class="memitem:gab677ff30cf9fc2ac2be398be3c79193f" id="r_gab677ff30cf9fc2ac2be398be3c79193f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">non_const_overload_</a></td></tr>
-<tr class="memdesc:gab677ff30cf9fc2ac2be398be3c79193f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper keyword that use to determine one of non const overloaded methods.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public name</h2></td></tr>
+<tr class="memitem:aac461ab79e84c36c2c51ed083cc256ff" id="r_aac461ab79e84c36c2c51ed083cc256ff"><td class="memTemplParams" colspan="2"><a id="aac461ab79e84c36c2c51ed083cc256ff" name="aac461ab79e84c36c2c51ed083cc256ff"></a>
+template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:aac461ab79e84c36c2c51ed083cc256ff template"><td class="memItemLeft">constexpr <a class="el" href="structxtd_1_1overload__type.html">overload_type</a>&lt; args_t... &gt;&#160;</td><td class="memItemRight"><b>xtd::overload</b></td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
