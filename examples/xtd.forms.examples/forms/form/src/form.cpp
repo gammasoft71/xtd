@@ -18,7 +18,7 @@ public:
     button_exit.text("Exit");
     button_exit.auto_size(true);
     button_exit.location({100, 10});
-    button_exit.click += overload_<>(&application::exit);
+    button_exit.click += overload<>(&application::exit);
     
     button_exit_thread.parent(*this);
     button_exit_thread.text("Exit thread");
