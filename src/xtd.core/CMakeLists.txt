@@ -993,6 +993,8 @@ add_sources(
   "include/xtd/diagnostics/trace_switch"
   "include/xtd/expressions/addition_expression.hpp"
   "include/xtd/expressions/addition_expression"
+  "include/xtd/expressions/and_expression.hpp"
+  "include/xtd/expressions/and_expression"
   "include/xtd/expressions/as_expression.hpp"
   "include/xtd/expressions/as_expression"
   "include/xtd/expressions/bitwise_and_expression.hpp"
