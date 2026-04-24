@@ -17,6 +17,7 @@ namespace xtd {
     /// @remarks The xtd::expressions::method_type struct is used by xtd::expressions::method.
     template <typename method_t, typename... args_t>
     struct method_type {
+      const char* name = nullptr;
       method_t method;
       std::tuple<args_t...> args;
     };
@@ -28,9 +29,18 @@ namespace xtd {
     /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
     template <typename method_t, typename... args_t>
     constexpr auto method(method_t method, args_t&&... args) {
-      return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
+      return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{nullptr, method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
-    
+    /// @brief The xtd::expressions::method is use to bind object method.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
+    template <typename method_t, typename... args_t>
+    constexpr auto method(const char* name, method_t method, args_t&&... args) {
+      return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{name, method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
+    }
+
     /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
     /// @param value The value to convert.
     /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
@@ -72,7 +82,12 @@ namespace xtd {
       /// @cond
       friend inline auto operator <<(std::ostream& os, const method_expression& e) -> std::ostream& {
         print_with_parens(os, e.expression, e.precedence);
-        os << "." << type_of(e.method);
+        os << "." << (e.method.name != nullptr ? e.method.name : type_of(e.method.method).full_name().c_str()) << "(";
+        std::apply([&os](auto&&... args) {
+          bool first = true;
+          ((os << (first ? "" : ", "), os << args, first = false), ...);
+        }, e.method.args);
+        os << ")";
         return os;
       }
       /// @endcond
