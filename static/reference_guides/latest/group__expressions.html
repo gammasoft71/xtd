@@ -131,9 +131,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga582c6dbb71dfc746f9e4b69ba90ed2b6" id="r_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><td class="memTemplParams" colspan="2">template&lt;typename member_t&gt; </td></tr>
 <tr class="memitem:ga582c6dbb71dfc746f9e4b69ba90ed2b6 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a> (member_t member)</td></tr>
 <tr class="memdesc:ga582c6dbb71dfc746f9e4b69ba90ed2b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6" title="The xtd::expressions::member is use to bind object member.">xtd::expressions::member</a> is use to bind object member.  <br /></td></tr>
+<tr class="memitem:gae30235adf2ba01d9de2359607fb6b329" id="r_gae30235adf2ba01d9de2359607fb6b329"><td class="memTemplParams" colspan="2">template&lt;typename member_t&gt; </td></tr>
+<tr class="memitem:gae30235adf2ba01d9de2359607fb6b329 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gae30235adf2ba01d9de2359607fb6b329">xtd::expressions::member</a> (const char *name, member_t member)</td></tr>
+<tr class="memdesc:gae30235adf2ba01d9de2359607fb6b329"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6" title="The xtd::expressions::member is use to bind object member.">xtd::expressions::member</a> is use to bind object member.  <br /></td></tr>
 <tr class="memitem:gacbb2cd3a94ae11bdc47e1cf74f79d6ac" id="r_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><td class="memTemplParams" colspan="2">template&lt;typename method_t, typename... args_t&gt; </td></tr>
 <tr class="memitem:gacbb2cd3a94ae11bdc47e1cf74f79d6ac template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a> (method_t method, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method.  <br /></td></tr>
+<tr class="memitem:gafcd7ec16880015763b89af7e7b208ef5" id="r_gafcd7ec16880015763b89af7e7b208ef5"><td class="memTemplParams" colspan="2">template&lt;typename method_t, typename... args_t&gt; </td></tr>
+<tr class="memitem:gafcd7ec16880015763b89af7e7b208ef5 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gafcd7ec16880015763b89af7e7b208ef5">xtd::expressions::method</a> (const char *name, method_t method, args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:gafcd7ec16880015763b89af7e7b208ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Variables</h2></td></tr>
@@ -529,7 +535,7 @@ template&lt;typename left_t, typename right_t&gt; </div>
 </div>
 </div>
 <a id="ga582c6dbb71dfc746f9e4b69ba90ed2b6" name="ga582c6dbb71dfc746f9e4b69ba90ed2b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6">&#9670;&#160;</a></span>member()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6">&#9670;&#160;</a></span>member() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -544,6 +550,43 @@ template&lt;typename member_t&gt; </div>
           <td>(</td>
           <td class="paramtype">member_t</td>          <td class="paramname"><span class="paramname"><em>member</em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="member__expression_8hpp.html">member_expression.hpp</a>&gt;</code></p>
+
+<p>The <a class="el" href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6" title="The xtd::expressions::member is use to bind object member.">xtd::expressions::member</a> is use to bind object member. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6" title="The xtd::expressions::member is use to bind object member.">xtd::expressions::member</a> mzthod is used by xtd::expressions::operator ^(). </dd></dl>
+
+</div>
+</div>
+<a id="gae30235adf2ba01d9de2359607fb6b329" name="gae30235adf2ba01d9de2359607fb6b329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae30235adf2ba01d9de2359607fb6b329">&#9670;&#160;</a></span>member() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename member_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::expressions::member </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">member_t</td>          <td class="paramname"><span class="paramname"><em>member</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -616,7 +659,7 @@ template&lt;typename expression_t, typename member_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// mem1 result =&gt; 42</span></div>
-<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:29</div></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:30</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -681,7 +724,7 @@ template&lt;typename expression_t, typename member_t&gt; </div>
 </div>
 </div>
 <a id="gacbb2cd3a94ae11bdc47e1cf74f79d6ac" name="gacbb2cd3a94ae11bdc47e1cf74f79d6ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">&#9670;&#160;</a></span>method()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">&#9670;&#160;</a></span>method() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -694,6 +737,48 @@ template&lt;typename method_t, typename... args_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::expressions::method </td>
           <td>(</td>
+          <td class="paramtype">method_t</td>          <td class="paramname"><span class="paramname"><em>method</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="method__expression_8hpp.html">method_expression.hpp</a>&gt;</code></p>
+
+<p>The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> mzthod is used by xtd::expressions::operator ^(). </dd></dl>
+
+</div>
+</div>
+<a id="gafcd7ec16880015763b89af7e7b208ef5" name="gafcd7ec16880015763b89af7e7b208ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafcd7ec16880015763b89af7e7b208ef5">&#9670;&#160;</a></span>method() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename method_t, typename... args_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::expressions::method </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">method_t</td>          <td class="paramname"><span class="paramname"><em>method</em></span>, </td>
         </tr>
         <tr>
@@ -776,7 +861,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 <div class="line"><span class="comment">// fct3 result =&gt; World!</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a056e8a1ba3ad4dbad75ed46bdacd9227"><div class="ttname"><a href="classxtd_1_1basic__string.html#a056e8a1ba3ad4dbad75ed46bdacd9227">xtd::basic_string&lt; char &gt;::substring</a></div><div class="ttdeci">auto substring(xtd::usize start_index) const -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:865</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a2095a4dd9dbf5c5b0945458539b94a3d"><div class="ttname"><a href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">xtd::basic_string&lt; char &gt;::to_upper</a></div><div class="ttdeci">auto to_upper() const noexcept -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:944</div></div>
-<div class="ttc" id="agroup__expressions_html_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><div class="ttname"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a></div><div class="ttdeci">constexpr auto method(method_t method, args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::expressions::method is use to bind object method.</div><div class="ttdef"><b>Definition</b> method_expression.hpp:30</div></div>
+<div class="ttc" id="agroup__expressions_html_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><div class="ttname"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a></div><div class="ttdeci">constexpr auto method(method_t method, args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::expressions::method is use to bind object method.</div><div class="ttdef"><b>Definition</b> method_expression.hpp:31</div></div>
 <div class="ttc" id="agroup__expressions_html_gad5b40364c2bb5b5f23b1e6bd4fd21375"><div class="ttname"><a href="#gad5b40364c2bb5b5f23b1e6bd4fd21375">xtd::expressions::_3</a></div><div class="ttdeci">constexpr placeholder&lt; 2 &gt; _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:85</div></div>
 </div><!-- fragment --> </dd></dl>
 
