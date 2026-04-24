@@ -17,7 +17,7 @@ namespace xtd {
     /// @remarks The xtd::expressions::and_expression struct is used by xtd::expressions::operator &&().
     template <typename left_t, typename right_t>
     struct and_expression : expression_base {
-      static constexpr operator_precedence precedence = operator_precedence::equal;
+      static constexpr operator_precedence precedence = operator_precedence::logical_and;
       
       /// @name Public Constructors
       
