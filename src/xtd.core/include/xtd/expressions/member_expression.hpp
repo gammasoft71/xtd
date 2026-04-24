@@ -62,6 +62,14 @@ namespace xtd {
         else return (obj.*member);
       }
       
+      /// @cond
+      friend inline auto operator <<(std::ostream& os, const member_expression& e) -> std::ostream& {
+        print_with_parens(os, e.expression, e.precedence);
+        os << "." << type_of(e.member);
+        return os;
+      }
+      /// @endcond
+
     private:
       expression_t expression;
       member_t member;

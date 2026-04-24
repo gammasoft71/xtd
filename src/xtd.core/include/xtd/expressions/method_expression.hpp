@@ -67,7 +67,16 @@ namespace xtd {
         auto eval_arg = [&](auto&& expr) -> decltype(auto) {return expr(std::forward<call_args_t>(call_args)...);};
         return std::apply([&](auto&&... exprs) -> decltype(auto) {return invoke(eval_arg(exprs)...);}, method.args);
       }
+      /// @}
       
+      /// @cond
+      friend inline auto operator <<(std::ostream& os, const method_expression& e) -> std::ostream& {
+        print_with_parens(os, e.expression, e.precedence);
+        os << "." << type_of(e.method);
+        return os;
+      }
+      /// @endcond
+
     private:
       expression_t expression;
       method_t method;
