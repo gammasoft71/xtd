@@ -20,6 +20,7 @@ namespace xtd {
       function_call = 2,                      // `a()`
       subscript = 2,                          // `a[]`
       member_access = 2,                      // `a.b` `a->b`
+      method_access = 2,                      // `a.b` `a->b`
       prefix_increment = 2,                   // `++a`
       prefix_decrement = 2,                   // `--a`
       unary_plus = 2,                         // `+a`
