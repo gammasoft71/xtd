@@ -41,7 +41,7 @@ namespace xtd {
       /// @cond
       friend inline auto operator <<(std::ostream& os, const greater_expression& e) -> std::ostream& {
         print_with_parens(os, e.left, e.precedence);
-        os << " == ";
+        os << " > ";
         print_with_parens(os, e.right, e.precedence);
         return os;
       }
