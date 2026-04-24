@@ -28,7 +28,7 @@ namespace xtd {
     /// @remarks The xtd::expressions::member mzthod is used by xtd::expressions::operator ^().
     template <typename member_t>
     constexpr auto member(member_t member) {
-      return member_type<member_t>{nullptr, member};
+      return member_type<member_t>{"<member>", member};
     }
     /// @brief The xtd::expressions::member is use to bind object member.
     /// @par Library
@@ -75,7 +75,7 @@ namespace xtd {
       /// @cond
       friend inline auto operator <<(std::ostream& os, const member_expression& e) -> std::ostream& {
         print_with_parens(os, e.expression, e.precedence);
-        os << "." << (e.member.name ? e.member.name :  type_of(e.member.member).full_name().c_str());
+        os << "." << e.member.name;
         return os;
       }
       /// @endcond

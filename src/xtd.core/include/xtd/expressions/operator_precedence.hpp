@@ -10,6 +10,7 @@ namespace xtd {
   namespace expressions {
     enum class operator_precedence {
       // https://en.cppreference.com/cpp/language/operator_precedence
+      highest = 0,
       placeholder = 0,                        // `_1`
       constante = 0,                          // 42
       scope_resolution = 1,                   // `a::b`
@@ -71,6 +72,7 @@ namespace xtd {
       compound_bitwise_xor_assignment = 16,   // `a ^= b`
       compound_bitwise_or_assignment = 16,    // `a |= b`
       comma = 17,                             // `a, b`
+      lowest = 18,
     };
   }
 }

@@ -29,7 +29,7 @@ namespace xtd {
     /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
     template <typename method_t, typename... args_t>
     constexpr auto method(method_t method, args_t&&... args) {
-      return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{nullptr, method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
+      return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{"<method>", method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
     /// @brief The xtd::expressions::method is use to bind object method.
     /// @par Library
@@ -82,10 +82,10 @@ namespace xtd {
       /// @cond
       friend inline auto operator <<(std::ostream& os, const method_expression& e) -> std::ostream& {
         print_with_parens(os, e.expression, e.precedence);
-        os << "." << (e.method.name != nullptr ? e.method.name : type_of(e.method.method).full_name().c_str()) << "(";
+        os << "." << e.method.name << "(";
         std::apply([&os](auto&&... args) {
           bool first = true;
-          ((os << (first ? "" : ", "), os << args, first = false), ...);
+          ((os << (first ? "" : ", "), print_with_parens(os, args, operator_precedence::lowest), first = false), ...);
         }, e.method.args);
         os << ")";
         return os;
