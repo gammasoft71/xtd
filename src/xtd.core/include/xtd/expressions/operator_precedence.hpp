@@ -47,8 +47,8 @@ namespace xtd {
       relational = 9,                         // `a < b`,  `a <= b` `a > b` `a >= b`
       less = 9,                               // `a < b`
       less_or_euqal = 9,                      // `a <= b`
-      greather = 9 ,                          // `a > b`
-      greather_or_euqal = 9,                  // `a >= b`
+      greater = 9 ,                           // `a > b`
+      greater_or_euqal = 9,                   // `a >= b`
       equality = 10,                          // `a == b` // `a != b`
       equal = 10,                             // `a == b`
       not_equal = 10,                         // `a != b`
