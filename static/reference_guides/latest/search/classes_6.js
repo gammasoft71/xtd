@@ -6,8 +6,9 @@ var searchData=
   ['graphics_5fstate_3',['graphics_state',['../classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html',1,'xtd::drawing::drawing_2d']]],
   ['gray_5fcolors_4',['gray_colors',['../classxtd_1_1drawing_1_1gray__colors.html',1,'xtd::drawing']]],
   ['grayscale_5feffect_5',['grayscale_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1grayscale__effect.html',1,'xtd::drawing::imaging::effects']]],
-  ['greater_5fthan_5fcomparable_6',['greater_than_comparable',['../structxtd_1_1greater__than__comparable.html',1,'xtd']]],
-  ['green_5fcolors_7',['green_colors',['../classxtd_1_1drawing_1_1green__colors.html',1,'xtd::drawing']]],
-  ['group_5fbox_8',['group_box',['../classxtd_1_1forms_1_1group__box.html',1,'xtd::forms']]],
-  ['guid_9',['guid',['../classxtd_1_1guid.html',1,'xtd']]]
+  ['greater_5fexpression_6',['greater_expression',['../structxtd_1_1expressions_1_1greater__expression.html',1,'xtd::expressions']]],
+  ['greater_5fthan_5fcomparable_7',['greater_than_comparable',['../structxtd_1_1greater__than__comparable.html',1,'xtd']]],
+  ['green_5fcolors_8',['green_colors',['../classxtd_1_1drawing_1_1green__colors.html',1,'xtd::drawing']]],
+  ['group_5fbox_9',['group_box',['../classxtd_1_1forms_1_1group__box.html',1,'xtd::forms']]],
+  ['guid_10',['guid',['../classxtd_1_1guid.html',1,'xtd']]]
 ];
