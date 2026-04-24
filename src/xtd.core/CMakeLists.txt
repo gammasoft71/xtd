@@ -1011,6 +1011,8 @@ add_sources(
   "include/xtd/expressions/expression_base"
   "include/xtd/expressions/expression_operand.hpp"
   "include/xtd/expressions/expression_operand"
+  "include/xtd/expressions/greater_expression.hpp"
+  "include/xtd/expressions/greater_expression"
   "include/xtd/expressions/member_expression.hpp"
   "include/xtd/expressions/member_expression"
   "include/xtd/expressions/method_expression.hpp"
