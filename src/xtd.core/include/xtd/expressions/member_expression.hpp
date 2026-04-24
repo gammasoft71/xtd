@@ -17,6 +17,7 @@ namespace xtd {
     /// @remarks The xtd::expressions::member_type struct is used by xtd::expressions::member.
     template <typename member_t>
     struct member_type {
+      const char* name = nullptr;
       member_t member;
     };
     
@@ -27,7 +28,16 @@ namespace xtd {
     /// @remarks The xtd::expressions::member mzthod is used by xtd::expressions::operator ^().
     template <typename member_t>
     constexpr auto member(member_t member) {
-      return member_type<member_t>{member};
+      return member_type<member_t>{nullptr, member};
+    }
+    /// @brief The xtd::expressions::member is use to bind object member.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The xtd::expressions::member mzthod is used by xtd::expressions::operator ^().
+    template <typename member_t>
+    constexpr auto member(const char* name, member_t member) {
+      return member_type<member_t>{name, member};
     }
     
     /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
@@ -58,14 +68,14 @@ namespace xtd {
       /// @return The result of addition.
       constexpr decltype(auto) operator()(auto&&... args) const {
         auto&& obj = expression(std::forward<decltype(args)>(args)...);
-        if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*member);
-        else return (obj.*member);
+        if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*member.member);
+        else return (obj.*member.member);
       }
       
       /// @cond
       friend inline auto operator <<(std::ostream& os, const member_expression& e) -> std::ostream& {
         print_with_parens(os, e.expression, e.precedence);
-        os << "." << type_of(e.member);
+        os << "." << (e.member.name ? e.member.name :  type_of(e.member.member).full_name().c_str());
         return os;
       }
       /// @endcond
@@ -106,7 +116,7 @@ namespace xtd {
     template <typename expression_t, typename member_t>
     requires expression_operand<expression_t, member_type<member_t>>
     constexpr auto operator *(expression_t expression, member_type<member_t> member) {
-      return member_expression<decltype(as_expression(expression)), member_t> {as_expression(expression), member.member};
+      return member_expression<decltype(as_expression(expression)), member_type<member_t>> {as_expression(expression), member};
     }
 
     /// @brief Bind member operator.
