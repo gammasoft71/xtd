@@ -50,7 +50,7 @@ namespace xtd {
       /// @name Public Operators
       
       /// @{
-      /// @brief Subtract the specified arguments.
+      /// @brief Bitwise and the specified arguments.
       /// @param args the arguments to bitwise and.
       /// @return The result of bitwise and.
       template <typename... args_t>
