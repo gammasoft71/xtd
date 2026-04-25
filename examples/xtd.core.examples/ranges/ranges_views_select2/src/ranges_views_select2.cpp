@@ -2,7 +2,7 @@
 
 auto main() -> int {
   auto numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  console::write_line("numbers = {}", select(numbers, [](auto n) {return n * n;}));
+  console::write_line("numbers = {}", select(numbers, _ * _));
 }
 
 // This code produces the following output :
