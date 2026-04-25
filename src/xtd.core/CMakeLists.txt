@@ -1037,6 +1037,8 @@ add_sources(
   "include/xtd/expressions/not_equal_expression"
   "include/xtd/expressions/operator_precedence.hpp"
   "include/xtd/expressions/operator_precedence"
+  "include/xtd/expressions/or_expression.hpp"
+  "include/xtd/expressions/or_expression"
   "include/xtd/expressions/placeholder.hpp"
   "include/xtd/expressions/placeholder"
   "include/xtd/expressions/placeholder_base.hpp"
