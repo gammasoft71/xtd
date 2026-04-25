@@ -129,6 +129,7 @@
 #include "expressions/method_expression.hpp"
 #include "expressions/multiplication_expression.hpp"
 #include "expressions/not_equal_expression.hpp"
+#include "expressions/or_expression.hpp"
 #include "expressions/placeholder.hpp"
 #include "expressions/placeholder_base.hpp"
 #include "expressions/remainder_expression.hpp"
