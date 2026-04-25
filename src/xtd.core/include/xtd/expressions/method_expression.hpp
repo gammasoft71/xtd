@@ -66,7 +66,7 @@ namespace xtd {
       /// @{
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
-      /// @return The result of addition.
+      /// @return The result of method.
       template <typename... call_args_t>
       constexpr decltype(auto) operator()(call_args_t&&... call_args) const {
         auto&& obj = expression(std::forward<call_args_t>(call_args)...);
