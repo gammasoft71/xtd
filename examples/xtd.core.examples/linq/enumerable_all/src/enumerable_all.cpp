@@ -17,7 +17,7 @@ auto main() -> int {
   };
   
   // Determine whether all pet names in the array start with 'B'.
-  bool all_start_with_b = pets.all([](const pet& pet) {
+  bool all_start_with_b = pets.all([](auto&& pet) {
     return pet.name.starts_with("B");
   });
   
