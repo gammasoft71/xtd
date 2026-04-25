@@ -34,10 +34,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _1;
@@ -55,10 +53,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2;
@@ -76,10 +72,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3;
@@ -97,10 +91,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4;
@@ -118,10 +110,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4 + _5;
@@ -139,10 +129,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4 + _5 + _6;
@@ -160,10 +148,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4 + _5 + _6 + _7;
@@ -181,10 +167,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4 + _5 + _6 + _7 + _8;
@@ -202,10 +186,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4 + _5 + _6 + _7 + _8 + _9;
@@ -223,10 +205,8 @@ namespace xtd {
     /// inline constexpr auto _12 = xtd::expressions::arg<12>;
     /// //...
     /// inline constexpr auto _100 = xtd::expressions::arg<100>;
+    /// //...
     /// ```
-    /// @note Extremely deep or exponentially growing expressions may lead to very large compile-time types and excessive compilation times.
-    /// @note This typically occurs with recursive expression composition patterns such as: `expr = expr * expr + constant;`
-    /// @note In such cases, prefer standard C++ lambda expressions or break the expression into smaller parts.
     /// @par Examples
     /// ```cpp
     /// auto expr = _1 + _2 + _3 + _4 + _5 + _6 + _7 + _8 + _9 + _10;
