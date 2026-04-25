@@ -2,7 +2,7 @@
 
 auto main() -> int {
   auto numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  console::write_line("numbers = {}", numbers | where([](auto n) {return n <= 5;}));
+  console::write_line("numbers = {}", numbers | where(_ <= 5));
 }
 
 // This code produces the following output :
