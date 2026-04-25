@@ -58,7 +58,7 @@ namespace xtd {
     /// @brief Equal to the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of addition.
+    /// @return The result of greater or equal.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
