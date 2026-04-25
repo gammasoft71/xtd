@@ -122,6 +122,7 @@
 #include "expressions/expression_operand.hpp"
 #include "expressions/greater_expression.hpp"
 #include "expressions/less_expression.hpp"
+#include "expressions/less_or_equal_expression.hpp"
 #include "expressions/member_expression.hpp"
 #include "expressions/method_expression.hpp"
 #include "expressions/multiplication_expression.hpp"

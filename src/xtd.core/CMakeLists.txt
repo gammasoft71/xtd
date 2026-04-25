@@ -1021,6 +1021,8 @@ add_sources(
   "include/xtd/expressions/greater_expression"
   "include/xtd/expressions/less_expression.hpp"
   "include/xtd/expressions/less_expression"
+  "include/xtd/expressions/less_or_equal_expression.hpp"
+  "include/xtd/expressions/less_or_equal_expression"
   "include/xtd/expressions/member_expression.hpp"
   "include/xtd/expressions/member_expression"
   "include/xtd/expressions/method_expression.hpp"
