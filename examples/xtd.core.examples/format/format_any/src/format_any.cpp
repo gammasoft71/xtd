@@ -24,7 +24,7 @@ auto main() -> int {
   value = std::make_any<persona>("Jean-Luc Picard", "Captain");
   console::out << "Before register_any_stringer : " << string::format("{}", value) << environment::new_line;
   
-  register_any_stringer<persona>([](auto value) {return value.to_string();});
+  register_any_stringer<persona>(_*method(&persona::to_string));
   console::out << "After register_any_stringer : " << string::format("{}", value) << environment::new_line;
   
   unregister_any_stringer<persona>();
