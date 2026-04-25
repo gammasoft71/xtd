@@ -24,7 +24,7 @@ namespace xtd {
     ///   //auto bit_and1 = [](auto&& _) {return _ & 0x0F;};
     ///   auto bit_and1 = _ & 0x0F;
     ///   println("sub1 result => {}", bit_and1(42));
-    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;}
+    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;};
     ///   auto bit_and2 = _1 & _2;
     ///   println("bit_and2 result => {}", bit_and2(42, 0xF0));
     /// }
@@ -52,7 +52,7 @@ namespace xtd {
       /// @{
       /// @brief Subtract the specified arguments.
       /// @param args the arguments to bitwise and.
-      /// @return The result of addition.
+      /// @return The result of bitwise and.
       template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) & right(std::forward<args_t>(args)...);}
       /// @}
@@ -77,7 +77,7 @@ namespace xtd {
     /// @brief Subtract the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of addition.
+    /// @return The result of bitwise and.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -90,7 +90,7 @@ namespace xtd {
     ///   //auto bit_and1 = [](auto&& _) {return _ & 0x0F;};
     ///   auto bit_and1 = _ & 0x0F;
     ///   println("sub1 result => {}", bit_and1(42));
-    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;}
+    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;};
     ///   auto bit_and2 = _1 & _2;
     ///   println("bit_and2 result => {}", bit_and2(42, 0xF0));
     /// }
