@@ -126,7 +126,7 @@
 #include "expressions/member_expression.hpp"
 #include "expressions/method_expression.hpp"
 #include "expressions/multiplication_expression.hpp"
-#include "expressions/not_equal_to_expression.hpp"
+#include "expressions/not_equal_expression.hpp"
 #include "expressions/placeholder.hpp"
 #include "expressions/placeholder_base.hpp"
 #include "expressions/remainder_expression.hpp"
