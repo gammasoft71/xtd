@@ -109,6 +109,8 @@
 #include "diagnostics/trace_switch.hpp"
 #include "expressions/addition_expression.hpp"
 #include "expressions/and_expression.hpp"
+#include "expressions/arg.hpp"
+#include "expressions/args.hpp"
 #include "expressions/as_expression.hpp"
 #include "expressions/bitwise_and_expression.hpp"
 #include "expressions/bitwise_or_expression.hpp"
