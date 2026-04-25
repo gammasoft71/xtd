@@ -7,10 +7,8 @@ auto main() -> int {
   auto words = sentence.split(' ').items();
   
   // Prepend each word to the beginning of the new sentence to reverse the word order.
-  auto reversed = from(words).aggregate([](const string& working_sentence, const string& next) {
-    return next + " " + working_sentence;
-  });
-  
+  auto reversed = from(words).aggregate(_2 + " " + _1);
+
   console::write_line(reversed.quoted());
 }
 
