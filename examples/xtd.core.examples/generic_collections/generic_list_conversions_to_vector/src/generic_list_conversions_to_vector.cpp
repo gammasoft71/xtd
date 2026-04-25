@@ -19,7 +19,7 @@ auto main() -> int {
   
   // xtd::collections::generic::list<xtd::string> -> std::vector<std::string>
   auto v3 = std::vector<std::string> {l.count()};
-  std::transform(l.begin(), l.end(), v3.begin(), [](const auto& s) {return s;}); // manual transform
+  std::transform(l.begin(), l.end(), v3.begin(), _); // manual transform
   println("v3 = {}", v3);
   
   // Move xtd::collections::generic::list<xtd::string> -> std::vector<xtd::string>
