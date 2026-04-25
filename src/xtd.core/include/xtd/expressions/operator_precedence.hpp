@@ -12,7 +12,7 @@ namespace xtd {
       // https://en.cppreference.com/cpp/language/operator_precedence
       highest = 0,
       placeholder = 0,                        // `_1`
-      constante = 0,                          // 42
+      constant = 0,                           // 42
       scope_resolution = 1,                   // `a::b`
       postfix_increment = 1,                  // `a++`
       postfix_decrement = 1,                  // `a--`
@@ -46,14 +46,14 @@ namespace xtd {
       three_way_compar = 8,                   // `a <=> b`
       relational = 9,                         // `a < b`,  `a <= b` `a > b` `a >= b`
       less = 9,                               // `a < b`
-      less_or_euqal = 9,                      // `a <= b`
+      less_or_equal = 9,                      // `a <= b`
       greater = 9 ,                           // `a > b`
       greater_or_euqal = 9,                   // `a >= b`
       equality = 10,                          // `a == b` // `a != b`
       equal = 10,                             // `a == b`
       not_equal = 10,                         // `a != b`
       bitwise_and = 11,                       // `a & b`
-      bitwise_xor = 11,                       // `a ^ b`
+      bitwise_xor = 12,                       // `a ^ b`
       bitwise_or = 13,                        // `a | b`
       logical_and = 14,                       // `a && b`
       logical_or = 15,                        // `a || b`
@@ -66,7 +66,7 @@ namespace xtd {
       compound_difference_assignment = 16,    // `a -= b`
       compound_product_assignment = 16,       // `a *= b`
       compound_quotient_assignment = 16,      // `a /= b`
-      compound_remaider_assignment = 16,      // `a %= b`
+      compound_remainder_assignment = 16,     // `a %= b`
       compound_bitwise_left_assignment = 16,  // `a <<= b`
       compound_bitwise_right_assignment = 16, // `a >>= b`
       compound_bitwise_and_assignment = 16,   // `a &= b`
