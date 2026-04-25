@@ -16,7 +16,7 @@ auto main() -> int {
     pet {.name = "Whiskers", .vaccinated = false}
   };
   
-  auto number_unvaccinated = pets.count([](const pet& pet) {return !pet.vaccinated;});
+  auto number_unvaccinated = pets.count(_*member(&pet::vaccinated) == false);
   console::write_line("There are {} unvaccinated animals.", number_unvaccinated);
 }
 
