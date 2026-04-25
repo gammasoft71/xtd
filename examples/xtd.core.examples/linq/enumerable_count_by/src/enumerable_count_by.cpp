@@ -21,7 +21,7 @@ auto main() -> int {
     {"Eve", "A"}
   };
   
-  const auto& query = students.count_by<string>([](const auto& student) {return student.score;});
+  const auto& query = students.count_by<string>(_*member(&student::score));
   
   for (const auto& [score, count] : query)
     console::write_line("Students with a {}-score: {}", score, count);
