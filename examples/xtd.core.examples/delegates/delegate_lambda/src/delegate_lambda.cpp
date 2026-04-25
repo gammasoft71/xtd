@@ -2,7 +2,7 @@
 
 auto main() -> int {
   // use delegate as std::function
-  auto writer = delegate<void(const string& str)> {[](const string & str)  {
+  auto writer = delegate<void(const string& str)> {[](auto&& str) {
     console::out << str << environment::new_line;
   }};
   
