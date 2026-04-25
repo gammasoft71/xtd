@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::not_equal_to_expression is the not equal tp expression.
+    /// @brief The xtd::expressions::not_equal_to_expression is the not equal expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -32,8 +32,8 @@ namespace xtd {
       
       /// @{
       /// @brief Equal to the specified arguments.
-      /// @param args the arguments to equal to.
-      /// @return The result of addition.
+      /// @param args the arguments to not equal.
+      /// @return The result of not equal.
       template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) != right(std::forward<args_t>(args)...);}
       /// @}
@@ -58,7 +58,7 @@ namespace xtd {
     /// @brief Equal to the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of addition.
+    /// @return The result of not equal.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
