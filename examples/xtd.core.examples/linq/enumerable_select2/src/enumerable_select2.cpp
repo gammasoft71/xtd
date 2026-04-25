@@ -56,8 +56,8 @@ auto main() -> int {
   // Produce a filtered sequence of unmodified students.
   const ienumerable<student>& student_query1 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select([](const student& student) {return student;});
+    .where(_*member(&student::id) > 111)
+    .select(_);
 
   console::write_line("student_query1: select range_variable");
   for (const student& student : student_query1)
@@ -66,8 +66,8 @@ auto main() -> int {
   // Produce a filtered sequence of elements that contain only one property of each student.
   const ienumerable<string>& student_query2 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<string>([](const student& student) {return student.last;});
+    .where(_*member(&student::id) > 111)
+    .select<string>(_*member(&student::last));
   
   console::write_line();
   console::write_line("student_query2: select range_variable.property");
@@ -77,8 +77,8 @@ auto main() -> int {
   // Produce a filtered sequence of objects created by a method call on each student.
   const ienumerable<contact_info>& student_query3 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<contact_info>([&](const student& student) {return student.get_contact_info(contact_list, student.id);});
+    .where(_*member(&student::id) > 111)
+    .select<contact_info>([&](auto&& student) {return student.get_contact_info(contact_list, student.id);});
   
   console::write_line();
   console::write_line("student_query3: select range_variable.method");
@@ -88,8 +88,8 @@ auto main() -> int {
   // Produce a filtered sequence of ints from the internal array inside each student.
   const ienumerable<int>& student_query4 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<int>([](const student& student) {return student.scores[0];});
+    .where(_*member(&student::id) > 111)
+    .select<int>([](auto&& student) {return student.scores[0];});
   
   console::write_line();
   console::write_line("student_query4: select range_variable[index]");
@@ -99,8 +99,8 @@ auto main() -> int {
   // Produce a filtered sequence of doubles that are the result of an expression.
   const ienumerable<double>& student_query5 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<double>([](const student& student) {return student.scores[0] * 1.1;});
+    .where(_*member(&student::id) > 111)
+    .select<double>([](auto&& student) {return student.scores[0] * 1.1;});
   
   console::write_line();
   console::write_line("student_query5: select expression");
@@ -110,8 +110,8 @@ auto main() -> int {
   // Produce a filtered sequence of doubles that are the result of a method call.
   const ienumerable<double>& student_query6 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<double>([](const student& student) {return student.scores.average();});
+    .where(_*member(&student::id) > 111)
+    .select<double>([](auto&& student) {return student.scores.average();});
   
   console::write_line();
   console::write_line("student_query6: select expression2");
@@ -121,8 +121,8 @@ auto main() -> int {
   // Produce a filtered sequence of tuple type that contain only two properties from each student.
   const auto& student_query7 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<std::tuple<string, string>>([](const student& student) {return std::make_tuple(student.first, student.last);});
+    .where(_*member(&student::id) > 111)
+    .select<std::tuple<string, string>>([](auto&& student) {return std::make_tuple(student.first, student.last);});
   
   console::write_line();
   console::write_line("student_query7: select tuple type");
@@ -134,8 +134,8 @@ auto main() -> int {
   // Use named types if you need to pass the query variable across a method boundary.
   const auto& student_query8 =
     from(students)
-    .where([](const student& student) {return student.id > 111;})
-    .select<score_info>([](const student& student) {return score_info {.average = student.scores.average(), .id = student.id};});
+    .where(_*member(&student::id) > 111)
+    .select<score_info>([](auto&& student) {return score_info {.average = student.scores.average(), .id = student.id};});
   
   console::write_line();
   console::write_line("student_query8: select named type");
