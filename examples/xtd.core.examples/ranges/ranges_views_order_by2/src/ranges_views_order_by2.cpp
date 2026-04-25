@@ -2,7 +2,7 @@
 
 auto main() -> int {
   auto numbers = array {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};
-  console::write_line("numbers = {}", order_by(numbers, [](auto n) {return n;}));
+  console::write_line("numbers = {}", order_by(numbers, _));
 }
 
 // This code produces the following output :
