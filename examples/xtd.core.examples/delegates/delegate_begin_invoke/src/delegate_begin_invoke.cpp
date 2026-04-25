@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto d1 = delegate<int(const string&)> {[](const string& name) -> int {
+  auto d1 = delegate<int(const string&)> {[](auto&& name) {
     console::write_line("(Thread {}) Hello {}!", thread::current_thread().managed_thread_id(), name);
     return name == "xtd" ? 42 : 24;
   }};
