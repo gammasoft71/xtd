@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::equal_to_expression operator.
+/// @brief Contains xtd::expressions::equal_expression operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -10,22 +10,22 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::equal_to_expression is the equal expression.
+    /// @brief The xtd::expressions::equal_expression is the equal expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks The xtd::expressions::equal_to_expression struct is used by xtd::expressions::operator ==().
+    /// @remarks The xtd::expressions::equal_expression struct is used by xtd::expressions::operator ==().
     template <typename left_t, typename right_t>
-    struct equal_to_expression : expression_base {
+    struct equal_expression : expression_base {
       static constexpr operator_precedence precedence = operator_precedence::equal;
       
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::equal_to_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::equal_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr equal_to_expression(auto&& left, auto&& right) : left {std::forward<decltype(left)>(left)}, right {std::forward<decltype(right)>(right)} {}
+      constexpr equal_expression(auto&& left, auto&& right) : left {std::forward<decltype(left)>(left)}, right {std::forward<decltype(right)>(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -39,7 +39,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const equal_to_expression& e) -> std::ostream& {
+      friend inline auto operator <<(std::ostream& os, const equal_expression& e) -> std::ostream& {
         print_with_parens(os, e.left, e.precedence);
         os << " == ";
         print_with_parens(os, e.right, e.precedence);
@@ -63,7 +63,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::equal_to_expression.
+    /// The following example shows how to use xtd::expressions::equal_expression.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -81,7 +81,7 @@ namespace xtd {
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
-    constexpr auto operator ==(left_t left, right_t right) {return equal_to_expression<decltype(as_expression(left)), decltype(as_expression(right))> {as_expression(left), as_expression(right)};}
+    constexpr auto operator ==(left_t left, right_t right) {return equal_expression<decltype(as_expression(left)), decltype(as_expression(right))> {as_expression(left), as_expression(right)};}
     /// @}
   }
 }

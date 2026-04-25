@@ -116,7 +116,7 @@
 #include "expressions/bitwise_or_expression.hpp"
 #include "expressions/constant.hpp"
 #include "expressions/division_expression.hpp"
-#include "expressions/equal_to_expression.hpp"
+#include "expressions/equal_expression.hpp"
 #include "expressions/expression.hpp"
 #include "expressions/expression_base.hpp"
 #include "expressions/expression_operand.hpp"
