@@ -68,16 +68,16 @@ namespace xtd {
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto eq1 = _ && true;
-    ///   println("eq1 result => {}", eq1(true));
-    ///   auto eq2 = _1 > _2;
-    ///   println("eq2 result => {}", eq2(true, false));
+    ///   auto and1 = _ && true;
+    ///   println("and1 result => {}", and1(true));
+    ///   auto and2 = _1 && _2;
+    ///   println("and2 result => {}", and2(true, false));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // eq1 result => true
-    /// // eq2 result => false
+    /// // and1 result => true
+    /// // and2 result => false
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
