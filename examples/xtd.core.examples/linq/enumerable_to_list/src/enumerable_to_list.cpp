@@ -1,9 +1,9 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  array<string> fruits = {"apple", "passionfruit", "banana", "mango", "orange", "blueberry", "grape", "strawberry"};
+  auto fruits = array<string> {"apple", "passionfruit", "banana", "mango", "orange", "blueberry", "grape", "strawberry"};
   
-  list<usize> lengths = fruits.select<usize>([](const string& fruit) {return fruit.length();}).to_list();
+  auto lengths = fruits.select<usize>(_*method(&string::length)).to_list();
   
   for (auto length : lengths)
     console::write_line(length);
