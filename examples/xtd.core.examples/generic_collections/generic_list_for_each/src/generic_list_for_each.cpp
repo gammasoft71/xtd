@@ -11,7 +11,7 @@ public:
 
     names.for_each(action<const string&> {print});
     
-    names.for_each(action<const string&> {[](const string& name) {
+    names.for_each(action<const string&> {[](auto&& name) {
       console::write_line(name);
     }});
   }
