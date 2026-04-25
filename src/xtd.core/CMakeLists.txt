@@ -1019,6 +1019,8 @@ add_sources(
   "include/xtd/expressions/expression_operand"
   "include/xtd/expressions/greater_expression.hpp"
   "include/xtd/expressions/greater_expression"
+  "include/xtd/expressions/greater_or_equal_expression.hpp"
+  "include/xtd/expressions/greater_or_equal_expression"
   "include/xtd/expressions/less_expression.hpp"
   "include/xtd/expressions/less_expression"
   "include/xtd/expressions/less_or_equal_expression.hpp"
