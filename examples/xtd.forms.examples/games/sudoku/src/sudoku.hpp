@@ -3,6 +3,8 @@
 #include <xtd/array>
 #include <xtd/istringable>
 #include <xtd/random>
+#include <xtd/expressions/division_expression>
+#include <xtd/expressions/multiplication_expression>
 
 namespace sudoku {
   class sudoku : public xtd::istringable<sudoku> {
@@ -78,7 +80,7 @@ namespace sudoku {
     sudoku() = default;
     
     auto check_grid(int line, int col, int value) const noexcept -> bool {
-      auto block = [](int i) noexcept { return (i / 3) * 3; };
+      auto block = (_ / 3) * 3;
       
       for (auto i = 0; i < grid_size; ++i)
         if (grid_(line, i) == value || grid_(i, col) == value)
