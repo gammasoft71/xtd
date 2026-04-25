@@ -18,10 +18,8 @@ auto main() -> int {
   };
   
   // Determine whether all pet names in the array start with 'B'.
-  bool unvaccinated = enumerable::from(pets.begin(), pets.end()).any([](const pet& pet) {
-    return pet.age > 1 && !pet.vaccinated;
-  });
-  
+  bool unvaccinated = from(pets.begin(), pets.end()).any(_*member(&pet::age) > 1 && _*member(&pet::vaccinated) == false);
+
   console::write_line("There {} unvaccinated animals over age one.", unvaccinated ? "are" : "are not any");
 }
 
