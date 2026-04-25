@@ -21,8 +21,8 @@ auto main() -> int {
   fill_large_log_file(file);
   
   auto lines = read_all_lines_generator(file)
-    .where([](auto line) {return line.contains("ERROR");})
-    .select([](auto line) {return string::format("0x{:X8}", as<int32>(line.replace("ERROR ", "")));})
+    .where([](auto&& line) {return line.contains("ERROR");})
+    .select([](auto&& line) {return string::format("0x{:X8}", as<int32>(line.replace("ERROR ", "")));})
     .distinct();
   
   println("Read file {}...", file);
