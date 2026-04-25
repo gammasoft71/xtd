@@ -33,7 +33,7 @@ namespace xtd {
       /// @{
       /// @brief Performs a modulo on the specified arguments.
       /// @param args the arguments to perorm modulo.
-      /// @return The result of addition.
+      /// @return The result of remainder.
       template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) % right(std::forward<args_t>(args)...);}
       /// @}
