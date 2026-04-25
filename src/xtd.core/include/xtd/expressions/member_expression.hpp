@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
-      /// @return The result of addition.
+      /// @return The result of member.
       constexpr decltype(auto) operator()(auto&&... args) const {
         auto&& obj = expression(std::forward<decltype(args)>(args)...);
         if constexpr (std::is_pointer_v<std::decay_t<decltype(obj)>>) return (obj->*member.member);
