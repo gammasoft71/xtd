@@ -58,7 +58,7 @@ namespace xtd {
     /// @brief Equal to the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of addition.
+    /// @return The result of less.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -68,16 +68,16 @@ namespace xtd {
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto eq1 = _ < 10;
-    ///   println("eq1 result => {}", eq1(42));
-    ///   auto eq2 = _1 < _2;
-    ///   println("eq2 result => {}", eq2(42, 52));
+    ///   auto less1 = _ < 10;
+    ///   println("less1 result => {}", less1(42));
+    ///   auto less2 = _1 < _2;
+    ///   println("less2 result => {}", less2(42, 52));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // eq1 result => false
-    /// // eq2 result => true
+    /// // less1 result => false
+    /// // less2 result => true
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
