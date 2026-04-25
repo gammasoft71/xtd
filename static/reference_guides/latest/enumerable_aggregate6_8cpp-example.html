@@ -92,9 +92,9 @@ $(function() {
 <div class="line">  <span class="comment">// Determine whether any string in the array is longer than &quot;banana&quot;.</span></div>
 <div class="line">  <span class="keyword">auto</span> longest_name =</div>
 <div class="line">  from(fruits).aggregate(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
-<div class="line">    [](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; longest, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
+<div class="line">    [](<span class="keyword">auto</span>&amp;&amp; longest, <span class="keyword">auto</span>&amp;&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
 <div class="line">    <span class="comment">// Return the final result as an upper case string.</span></div>
-<div class="line">    [](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
+<div class="line">    [](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;The fruit with the longest name is {}&quot;</span>, longest_name);</div>
 <div class="line">}</div>

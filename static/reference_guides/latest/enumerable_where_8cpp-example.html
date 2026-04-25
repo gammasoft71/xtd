@@ -87,9 +87,9 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> fruits = array {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> fruits = array {<span class="stringliteral">&quot;apple&quot;</span>_s, <span class="stringliteral">&quot;passionfruit&quot;</span>_s, <span class="stringliteral">&quot;banana&quot;</span>_s, <span class="stringliteral">&quot;mango&quot;</span>_s, <span class="stringliteral">&quot;orange&quot;</span>_s, <span class="stringliteral">&quot;blueberry&quot;</span>_s, <span class="stringliteral">&quot;grape&quot;</span>_s, <span class="stringliteral">&quot;strawberry&quot;</span>_s};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> query = fruits.where([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.length() &lt; 6;});</div>
+<div class="line">  <span class="keyword">auto</span> query = fruits.where(_*method(&amp;string::length) &lt; 6);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fruit : query)</div>
 <div class="line">    console::write_line(fruit);</div>

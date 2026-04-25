@@ -88,7 +88,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | where([](<span class="keyword">auto</span> n) {<span class="keywordflow">return</span> n &lt;= 5;}));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | where(_ &lt;= 5));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>

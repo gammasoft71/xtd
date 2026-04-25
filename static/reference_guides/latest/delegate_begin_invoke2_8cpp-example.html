@@ -89,9 +89,9 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;(main) thread id = {}&quot;</span>, thread::current_thread().managed_thread_id());</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> d1 = delegate&lt;void(int)&gt;([](<span class="keyword">auto</span> value) {</div>
+<div class="line">  <span class="keyword">auto</span> d1 = delegate&lt;void(<span class="keywordtype">int</span>)&gt; {[](<span class="keyword">auto</span> value) {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;(invoker) thread id = {}, value = {}&quot;</span>, thread::current_thread().managed_thread_id(), value);</div>
-<div class="line">  });</div>
+<div class="line">  }};</div>
 <div class="line">  </div>
 <div class="line">  d1(42);</div>
 <div class="line">  d1.end_invoke(d1.begin_invoke(24));</div>

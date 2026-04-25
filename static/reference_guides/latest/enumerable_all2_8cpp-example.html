@@ -103,7 +103,7 @@ $(function() {
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = enumerable::from(pets.begin(), pets.end()).all([](<span class="keyword">const</span> pet&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = from(pets.begin(), pets.end()).all([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>

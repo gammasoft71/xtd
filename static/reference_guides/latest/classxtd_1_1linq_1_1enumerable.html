@@ -455,10 +455,8 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> words = sentence.split(<span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Prepend each word to the beginning of the new sentence to reverse the word order.</span></div>
-<div class="line">  <span class="keyword">auto</span> reversed = words.aggregate([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; working_sentence, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; next) {</div>
-<div class="line">    <span class="keywordflow">return</span> next + <span class="stringliteral">&quot; &quot;</span> + working_sentence;</div>
-<div class="line">  });</div>
-<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> reversed = words.aggregate(_2 + <span class="stringliteral">&quot; &quot;</span> + _1);</div>
+<div class="line"> </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(reversed.quoted());</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -526,10 +524,10 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> ints = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Count the even numbers in the array, using a seed value of 0.</span></div>
-<div class="line">  <span class="keyword">auto</span> num_even = ints.aggregate(0, [](<span class="keywordtype">int</span> total, <span class="keywordtype">int</span> next) {</div>
+<div class="line">  <span class="keyword">auto</span> num_even = ints.aggregate(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
 <div class="line">    <span class="keywordflow">return</span> next % 2 == 0 ? total + 1 : total;</div>
 <div class="line">  });</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The number of even integers is: {}&quot;</span>, num_even);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -598,10 +596,10 @@ template&lt;typename accumulate_t, typename source_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> ints = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Count the even numbers in the array, using a seed value of 0.</span></div>
-<div class="line">  <span class="keyword">auto</span> num_even = ints.aggregate(0, [](<span class="keywordtype">int</span> total, <span class="keywordtype">int</span> next) {</div>
+<div class="line">  <span class="keyword">auto</span> num_even = ints.aggregate(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
 <div class="line">    <span class="keywordflow">return</span> next % 2 == 0 ? total + 1 : total;</div>
 <div class="line">  });</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The number of even integers is: {}&quot;</span>, num_even);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -675,9 +673,9 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether any string in the array is longer than &quot;banana&quot;.</span></div>
 <div class="line">  <span class="keyword">auto</span> longest_name = fruits.aggregate(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
-<div class="line">     [](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; longest, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">length</a>() ? next : longest;},</div>
+<div class="line">     [](<span class="keyword">auto</span>&amp;&amp; longest, <span class="keyword">auto</span>&amp;&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
 <div class="line">     <span class="comment">// Return the final result as an upper case string.</span></div>
-<div class="line">     [](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
+<div class="line">     [](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
 <div class="line"> </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;The fruit with the longest name is {}&quot;</span>, longest_name);</div>
 <div class="line">}</div>
@@ -685,7 +683,6 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The fruit with the longest name is PASSIONFRUIT</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets the number of characters in the current xtd::basic_string object.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:380</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -755,9 +752,9 @@ template&lt;typename result_t, typename accumulate_t, typename source_t&gt; </di
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether any string in the array is longer than &quot;banana&quot;.</span></div>
 <div class="line">  <span class="keyword">auto</span> longest_name = fruits.aggregate(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
-<div class="line">     [](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; longest, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">length</a>() ? next : longest;},</div>
+<div class="line">     [](<span class="keyword">auto</span>&amp;&amp; longest, <span class="keyword">auto</span>&amp;&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
 <div class="line">     <span class="comment">// Return the final result as an upper case string.</span></div>
-<div class="line">     [](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
+<div class="line">     [](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
 <div class="line"> </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;The fruit with the longest name is {}&quot;</span>, longest_name);</div>
 <div class="line">}</div>
@@ -832,7 +829,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.all([](<span class="keyword">const</span> pet&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.all([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
@@ -967,7 +964,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.all([](<span class="keyword">const</span> pet&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.all([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
@@ -2057,7 +2054,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">    pet {.name = <span class="stringliteral">&quot;Whiskers&quot;</span>, .vaccinated = <span class="keyword">false</span>}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> number_unvaccinated = pets.<a class="code hl_function" href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">count</a>([](<span class="keyword">const</span> pet&amp; pet) {<span class="keywordflow">return</span> !pet.vaccinated;});</div>
+<div class="line">  <span class="keyword">auto</span> number_unvaccinated = pets.<a class="code hl_function" href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">count</a>(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;pet::vaccinated) == <span class="keyword">false</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;There are {} unvaccinated animals.&quot;</span>, number_unvaccinated);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -2065,6 +2062,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_a63ea4c7a305ecdff5882d1cf2336c739"><div class="ttname"><a href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">xtd::basic_array::count</a></div><div class="ttdeci">auto count() const noexcept -&gt; size_type override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:72</div></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:30</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2184,7 +2182,7 @@ template&lt;typename key_t, typename source_t&gt; </div>
 <div class="line">    {<span class="stringliteral">&quot;Eve&quot;</span>, <span class="stringliteral">&quot;A&quot;</span>}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = students.count_by&lt;<span class="keywordtype">string</span>&gt;([](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; student) {<span class="keywordflow">return</span> student.score;});</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = students.count_by&lt;<span class="keywordtype">string</span>&gt;(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::score));</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [score, count] : query)</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Students with a {}-score: {}&quot;</span>, score, count);</div>
@@ -2197,6 +2195,7 @@ template&lt;typename key_t, typename source_t&gt; </div>
 <div class="line"><span class="comment">// Students with a C-score: 1</span></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html_a1f8bbde943d2e5ecf565734c60e23903"><div class="ttname"><a href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">xtd::iequatable::equals</a></div><div class="ttdeci">virtual bool equals(const type_t &amp;) const noexcept=0</div><div class="ttdoc">Indicates whether the current object is equal to another object of the same type.</div></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div><div class="ttdef"><b>Definition</b> uri_components.hpp:29</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div><div class="ttdef"><b>Definition</b> platform_id.hpp:60</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -2277,7 +2276,7 @@ template&lt;typename key_t, typename source_t&gt; </div>
 <div class="line">    {<span class="stringliteral">&quot;Eve&quot;</span>, <span class="stringliteral">&quot;A&quot;</span>}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = students.count_by&lt;<span class="keywordtype">string</span>&gt;([](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; student) {<span class="keywordflow">return</span> student.score;});</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = students.count_by&lt;<span class="keywordtype">string</span>&gt;(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::score));</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [score, count] : query)</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Students with a {}-score: {}&quot;</span>, score, count);</div>
@@ -3594,10 +3593,10 @@ template&lt;typename result_t, typename source_t&gt; </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> index) {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> index) {</div>
 <div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
 <div class="line">  });</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : query)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
 <div class="line">}</div>
@@ -3610,7 +3609,6 @@ template&lt;typename result_t, typename source_t&gt; </div>
 <div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
 <div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
 <div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
-<div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3665,10 +3663,10 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> index) {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> index) {</div>
 <div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
 <div class="line">  });</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : query)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
 <div class="line">}</div>
@@ -3772,9 +3770,9 @@ template&lt;typename source_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a452f69ae6e7daea4c93977fc2ba8b044" title="Creates a xtd::collections::generic::list &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;ty...">xtd::linq::enumerable::to_list</a> to force immediate query evaluation and return a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains the query results. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> fruits = {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  list&lt;usize&gt; lengths = fruits.select&lt;<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a>&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.length();}).to_list();</div>
+<div class="line">  <span class="keyword">auto</span> lengths = fruits.select&lt;<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a>&gt;(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>)).to_list();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a> : lengths)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>);</div>
@@ -3790,6 +3788,8 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// 9</span></div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:380</div></div>
+<div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3842,9 +3842,9 @@ template&lt;typename source_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ac345cc9c4ac523f74273a28cd26bb04b" title="Filters a sequence of values based on a predicate.">xtd::linq::enumerable::where</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function&lt;bool (const source_t&amp;)&gt;&amp;) to filter a sequence. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;apple&quot;</span>_s, <span class="stringliteral">&quot;passionfruit&quot;</span>_s, <span class="stringliteral">&quot;banana&quot;</span>_s, <span class="stringliteral">&quot;mango&quot;</span>_s, <span class="stringliteral">&quot;orange&quot;</span>_s, <span class="stringliteral">&quot;blueberry&quot;</span>_s, <span class="stringliteral">&quot;grape&quot;</span>_s, <span class="stringliteral">&quot;strawberry&quot;</span>_s};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.where([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">length</a>() &lt; 6;});</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.where(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) &lt; 6);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fruit : query)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(fruit);</div>
@@ -3861,9 +3861,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {0, 30, 20, 15, 90, 85, 40, 75};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = numbers.where([](<span class="keywordtype">int</span> <a class="code hl_concept" href="conceptxtd_1_1number.html">number</a>, <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> index) {</div>
-<div class="line">    <span class="keywordflow">return</span> number &lt;= as&lt;int&gt;(index * 10);</div>
-<div class="line">  });</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = numbers.where(_1 &lt;= _2 * 10);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_concept" href="conceptxtd_1_1number.html">number</a> : query)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_concept" href="conceptxtd_1_1number.html">number</a>);</div>

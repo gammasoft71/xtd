@@ -90,10 +90,10 @@ $(function() {
 <div class="line">  <span class="keyword">auto</span> ints = array {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Count the even numbers in the array, using a seed value of 0.</span></div>
-<div class="line">  <span class="keyword">auto</span> num_even = ints.aggregate(0, [](<span class="keywordtype">int</span> total, <span class="keywordtype">int</span> next) {</div>
+<div class="line">  <span class="keyword">auto</span> num_even = ints.aggregate(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
 <div class="line">    <span class="keywordflow">return</span> next % 2 == 0 ? total + 1 : total;</div>
 <div class="line">  });</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;The number of even integers is: {}&quot;</span>, num_even);</div>
 <div class="line">}</div>
 <div class="line"> </div>

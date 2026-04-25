@@ -142,8 +142,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of unmodified students.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;student&gt;&amp; student_query1 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .<a class="code hl_variable" href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">select</a>([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student;});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select(_);</div>
 <div class="line"> </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query1: select range_variable&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> student&amp; student : student_query1)</div>
@@ -152,8 +152,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of elements that contain only one property of each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;string&gt;&amp; student_query2 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;string&gt;([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.last;});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;<span class="keywordtype">string</span>&gt;(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::last));</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query2: select range_variable.property&quot;</span>);</div>
@@ -163,8 +163,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of objects created by a method call on each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;contact_info&gt;&amp; student_query3 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;contact_info&gt;([&amp;](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.get_contact_info(contact_list, student.id);});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;contact_info&gt;([&amp;](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.get_contact_info(contact_list, student.id);});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query3: select range_variable.method&quot;</span>);</div>
@@ -174,8 +174,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of ints from the internal array inside each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;int&gt;&amp; student_query4 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;int&gt;([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.scores[0];});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;<span class="keywordtype">int</span>&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.scores[0];});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query4: select range_variable[index]&quot;</span>);</div>
@@ -185,8 +185,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of doubles that are the result of an expression.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;double&gt;&amp; student_query5 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;double&gt;([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.scores[0] * 1.1;});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;<span class="keywordtype">double</span>&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.scores[0] * 1.1;});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query5: select expression&quot;</span>);</div>
@@ -196,8 +196,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of doubles that are the result of a method call.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;double&gt;&amp; student_query6 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;double&gt;([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.scores.average();});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;<span class="keywordtype">double</span>&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.scores.average();});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query6: select expression2&quot;</span>);</div>
@@ -207,8 +207,8 @@ $(function() {
 <div class="line">  <span class="comment">// Produce a filtered sequence of tuple type that contain only two properties from each student.</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; student_query7 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;std::tuple&lt;string, string&gt;&gt;([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> std::make_tuple(student.first, student.last);});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;std::tuple&lt;string, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> std::make_tuple(student.first, student.last);});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query7: select tuple type&quot;</span>);</div>
@@ -220,8 +220,8 @@ $(function() {
 <div class="line">  <span class="comment">// Use named types if you need to pass the query variable across a method boundary.</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; student_query8 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">from</a>(students)</div>
-<div class="line">    .where([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> student.id &gt; 111;})</div>
-<div class="line">    .select&lt;score_info&gt;([](<span class="keyword">const</span> student&amp; student) {<span class="keywordflow">return</span> score_info {.average = student.scores.average(), .id = student.id};});</div>
+<div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
+<div class="line">    .select&lt;score_info&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> score_info {.average = student.scores.average(), .id = student.id};});</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query8: select named type&quot;</span>);</div>
@@ -270,8 +270,9 @@ $(function() {
 <div class="line"><span class="comment">// ID = 112, Average = 72.25</span></div>
 <div class="line"><span class="comment">// ID = 113, Average = 84.5</span></div>
 <div class="line"><span class="comment">// ID = 114, Average = 88.25</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:24</div></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:30</div></div>
 <div class="ttc" id="agroup__linq_html_ga415cf78e6a2102413a1b88ccd0516df6"><div class="ttname"><a href="group__linq.html#ga415cf78e6a2102413a1b88ccd0516df6">xtd::linq::from</a></div><div class="ttdeci">auto from(collection_t &amp;&amp;source) noexcept</div><div class="ttdoc">Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> from.hpp:28</div></div>
-<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 <div class="ttc" id="anamespacextd_html_a31261a8eef815d75bbe44a418ea4023f"><div class="ttname"><a href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">xtd::first</a></div><div class="ttdeci">read_only_span&lt; type_t, count &gt; first() const</div><div class="ttdoc">Obtains a subspan consisting of the first count elements of the sequence.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:282</div></div>
 <div class="ttc" id="anamespacextd_html_a4587cc977656d48247ea110023c4d79d"><div class="ttname"><a href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">xtd::last</a></div><div class="ttdeci">read_only_span&lt; type_t, count &gt; last() const</div><div class="ttdoc">Obtains a subspan consisting of the last N elements of the sequence.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:307</div></div>

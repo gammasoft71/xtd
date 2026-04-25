@@ -104,23 +104,23 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// xtd::linq query</span></div>
 <div class="line">  <span class="keyword">auto</span> query1 = from(names)</div>
-<div class="line">    .where([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.length() == 5;})</div>
-<div class="line">    .order_by([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s;})</div>
-<div class="line">    .select([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.to_upper();});</div>
+<div class="line">    .where(_*method(&amp;string::length) == 5)</div>
+<div class="line">    .order_by(_)</div>
+<div class="line">    .select(_*method(&amp;string::to_upper));</div>
 <div class="line">  println(query1);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query2 = names</div>
-<div class="line">    | where([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.length() == 5;})</div>
-<div class="line">    | order_by([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s;})</div>
-<div class="line">    | select([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.to_upper();});</div>
+<div class="line">    | where(_*method(&amp;string::length) == 5)</div>
+<div class="line">    | order_by(_)</div>
+<div class="line">    | select(_*method(&amp;string::to_upper));</div>
 <div class="line">  println(query2);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// std::ranges combined with xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query3 = names</div>
-<div class="line">    | std::views::filter([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.length() == 5;})</div>
-<div class="line">    | <a id="_a0" name="_a0"></a><a class="code hl_variable" href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::views::order_by</a>([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s;})</div>
-<div class="line">    | std::views::transform([](<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.to_upper();});</div>
+<div class="line">    | std::views::filter(_*method(&amp;string::length) == 5)</div>
+<div class="line">    | <a id="a0" name="a0"></a><a class="code hl_variable" href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::views::order_by</a>(_)</div>
+<div class="line">    | std::views::transform(_*method(&amp;string::to_upper));</div>
 <div class="line">  println(query3);</div>
 <div class="line">}</div>
 <div class="line"> </div>

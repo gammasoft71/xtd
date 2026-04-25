@@ -29,7 +29,7 @@ var searchData=
   ['enumerator_3c_20xtd_3a_3aany_5fobject_20_3e_26',['enumerator&lt; xtd::any_object &gt;',['../structxtd_1_1collections_1_1generic_1_1enumerator.html',1,'xtd::collections::generic']]],
   ['enumerator_3c_3e_27',['enumerator&lt;&gt;',['../structxtd_1_1collections_1_1generic_1_1enumerator_3_4.html',1,'xtd::collections::generic']]],
   ['environment_28',['environment',['../classxtd_1_1environment.html',1,'xtd']]],
-  ['equal_5fto_5fexpression_29',['equal_to_expression',['../structxtd_1_1expressions_1_1equal__to__expression.html',1,'xtd::expressions']]],
+  ['equal_5fexpression_29',['equal_expression',['../structxtd_1_1expressions_1_1equal__expression.html',1,'xtd::expressions']]],
   ['equality_5fcomparer_30',['equality_comparer',['../classxtd_1_1collections_1_1generic_1_1equality__comparer.html',1,'xtd::collections::generic']]],
   ['equality_5foperators_31',['equality_operators',['../classxtd_1_1extensions_1_1equality__operators.html',1,'xtd::extensions']]],
   ['equality_5foperators_3c_20adjustment_5frule_2c_20iequatable_3c_20adjustment_5frule_20_3e_20_3e_32',['equality_operators&lt; adjustment_rule, iequatable&lt; adjustment_rule &gt; &gt;',['../classxtd_1_1extensions_1_1equality__operators.html',1,'xtd::extensions']]],

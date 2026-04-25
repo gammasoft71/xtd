@@ -90,9 +90,9 @@ $(function() {
 <div class="line">  <span class="keyword">auto</span> message_target = action&lt;const string&amp;&gt; {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">if</span> (environment::get_command_line_args().length() &gt; 1)</div>
-<div class="line">    message_target = [](<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; message) {forms::message_box::show(message);};</div>
+<div class="line">    message_target = [](<span class="keyword">auto</span>&amp;&amp; message) {forms::message_box::show(message);};</div>
 <div class="line">  <span class="keywordflow">else</span></div>
-<div class="line">    message_target = [](<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; message) {console::write_line(message);};</div>
+<div class="line">    message_target = [](<span class="keyword">auto</span>&amp;&amp; message) {console::write_line(message);};</div>
 <div class="line">    </div>
 <div class="line">  message_target(<span class="stringliteral">&quot;Hello, World!&quot;</span>);</div>
 <div class="line">}</div>

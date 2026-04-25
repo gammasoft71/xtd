@@ -10,7 +10,7 @@ var searchData=
   ['new_5fuptr_2ehpp_7',['new_uptr.hpp',['../new__uptr_8hpp.html',1,'']]],
   ['nine_5fsegment_5fdisplay_2ehpp_8',['nine_segment_display.hpp',['../nine__segment__display_8hpp.html',1,'']]],
   ['non_5fconst_5foverload_2ehpp_9',['non_const_overload.hpp',['../non__const__overload_8hpp.html',1,'']]],
-  ['not_5fequal_5fto_5fexpression_2ehpp_10',['not_equal_to_expression.hpp',['../not__equal__to__expression_8hpp.html',1,'']]],
+  ['not_5fequal_5fexpression_2ehpp_10',['not_equal_expression.hpp',['../not__equal__expression_8hpp.html',1,'']]],
   ['not_5ffinite_5fnumber_5fexception_2ehpp_11',['not_finite_number_exception.hpp',['../not__finite__number__exception_8hpp.html',1,'']]],
   ['not_5fimplemented_5fexception_2ehpp_12',['not_implemented_exception.hpp',['../not__implemented__exception_8hpp.html',1,'']]],
   ['not_5fsupported_5fexception_2ehpp_13',['not_supported_exception.hpp',['../not__supported__exception_8hpp.html',1,'']]],

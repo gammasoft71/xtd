@@ -93,10 +93,8 @@ $(function() {
 <div class="line">  <span class="keyword">auto</span> words = sentence.split(<span class="charliteral">&#39; &#39;</span>).items();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Prepend each word to the beginning of the new sentence to reverse the word order.</span></div>
-<div class="line">  <span class="keyword">auto</span> reversed = from(words).aggregate([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; working_sentence, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; next) {</div>
-<div class="line">    <span class="keywordflow">return</span> next + <span class="stringliteral">&quot; &quot;</span> + working_sentence;</div>
-<div class="line">  });</div>
-<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> reversed = from(words).aggregate(_2 + <span class="stringliteral">&quot; &quot;</span> + _1);</div>
+<div class="line"> </div>
 <div class="line">  console::write_line(reversed.quoted());</div>
 <div class="line">}</div>
 <div class="line"> </div>

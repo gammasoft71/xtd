@@ -102,13 +102,14 @@ $(function() {
 <div class="line">    pet {.name = <span class="stringliteral">&quot;Whiskers&quot;</span>, .vaccinated = <span class="keyword">false</span>}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> number_unvaccinated = pets.count([](<span class="keyword">const</span> pet&amp; pet) {<span class="keywordflow">return</span> !pet.vaccinated;});</div>
+<div class="line">  <span class="keyword">auto</span> number_unvaccinated = pets.count(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;pet::vaccinated) == <span class="keyword">false</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;There are {} unvaccinated animals.&quot;</span>, number_unvaccinated);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:30</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

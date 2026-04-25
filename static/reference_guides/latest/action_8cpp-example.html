@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> names = list {<span class="stringliteral">&quot;Bruce&quot;</span>, <span class="stringliteral">&quot;Alfred&quot;</span>, <span class="stringliteral">&quot;Tim&quot;</span>, <span class="stringliteral">&quot;Richard&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> print = action&lt;const string&amp;&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; value) {</div>
+<div class="line">  <span class="keyword">auto</span> print = action&lt;const string&amp;&gt; {[](<span class="keyword">auto</span>&amp;&amp; value) {</div>
 <div class="line">    console::write_line(value);</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line">  names.for_each(print);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// The following demonstrates the lambda of c++ to display the contents of the list to the console.</span></div>
-<div class="line">  names.for_each([](<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; value) {</div>
+<div class="line">  names.for_each([](<span class="keyword">auto</span>&amp;&amp; value) {</div>
 <div class="line">    console::write_line(value);</div>
 <div class="line">  });</div>
 <div class="line">}</div>

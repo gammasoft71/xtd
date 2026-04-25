@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/expressions/equal_to_expression.hpp File Reference</title>
+		<title>xtd: xtd.core/include/xtd/expressions/arg.hpp File Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -85,25 +85,17 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">equal_to_expression.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">arg.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="as__expression_8hpp_source.html">as_expression.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="expression__operand_8hpp_source.html">expression_operand.hpp</a>&quot;</code><br />
-<code>#include &lt;utility&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="placeholder_8hpp_source.html">placeholder.hpp</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="structxtd_1_1expressions_1_1equal__to__expression.html" title="The xtd::expressions::equal_to_expression is the equal to expression.">xtd::expressions::equal_to_expression</a> operator. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__expressions.html#ga424cc1e54f0ab7d65830650697480d72" title="The xtd::expressions::arg instance is the index argument used by expression.">xtd::expressions::arg</a> variable. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
 </div>
-<p><a href="equal__to__expression_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="arg_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:xtd_3A_3Aexpressions_3A_3Aequal_5Fto_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Aequal_5Fto_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1equal__to__expression.html">xtd::expressions::equal_to_expression&lt; left_t, right_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1equal__to__expression.html" title="The xtd::expressions::equal_to_expression is the equal to expression.">xtd::expressions::equal_to_expression</a> is the equal to expression.  <a href="structxtd_1_1expressions_1_1equal__to__expression.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
@@ -112,10 +104,10 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacextd_1_1expressions"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Public Operators</h2></td></tr>
-<tr class="memitem:ga87a3aa25245b912f4d89eed536522bec" id="r_ga87a3aa25245b912f4d89eed536522bec"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
-<tr class="memitem:ga87a3aa25245b912f4d89eed536522bec template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga87a3aa25245b912f4d89eed536522bec">xtd::expressions::operator==</a> (left_t left, right_t right)</td></tr>
-<tr class="memdesc:ga87a3aa25245b912f4d89eed536522bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equal to the specified left and right operands.  <br /></td></tr>
+Public Variables</h2></td></tr>
+<tr class="memitem:ga424cc1e54f0ab7d65830650697480d72" id="r_ga424cc1e54f0ab7d65830650697480d72"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
+<tr class="memitem:ga424cc1e54f0ab7d65830650697480d72 template"><td class="memItemLeft">constexpr <a class="el" href="structxtd_1_1expressions_1_1placeholder.html">xtd::expressions::placeholder</a>&lt; index - 1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga424cc1e54f0ab7d65830650697480d72">xtd::expressions::arg</a></td></tr>
+<tr class="memdesc:ga424cc1e54f0ab7d65830650697480d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__expressions.html#ga424cc1e54f0ab7d65830650697480d72" title="The xtd::expressions::arg instance is the index argument used by expression.">xtd::expressions::arg</a> instance is the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
