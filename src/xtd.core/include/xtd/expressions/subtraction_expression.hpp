@@ -34,7 +34,7 @@ namespace xtd {
       /// @{
       /// @brief Subtract the specified arguments.
       /// @param args the arguments to subtract.
-      /// @return The result of addition.
+      /// @return The result of subtraction.
       template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) - right(std::forward<args_t>(args)...);}
       /// @}
@@ -59,7 +59,7 @@ namespace xtd {
     /// @brief Subtract the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of addition.
+    /// @return The result of subtraction.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
