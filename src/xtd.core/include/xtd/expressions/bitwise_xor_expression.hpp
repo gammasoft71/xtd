@@ -91,7 +91,7 @@ namespace xtd {
     ///   auto bit_xor1 = _ ^ 0x0F;
     ///   println("bit_xor1 result => {}", bit_xor1(42));
     ///   //auto bit_xor2 = [](auto&& _1, auto&& _2) {return _1 ^ _2;};
-    ///   auto bit_xor2 = _1 ` _2;
+    ///   auto bit_xor2 = _1 ^ _2;
     ///   println("bit_xor2 result => {}", bit_xor2(42, 0xF0));
     /// }
     ///
