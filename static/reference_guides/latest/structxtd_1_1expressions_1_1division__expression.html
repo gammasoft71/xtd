@@ -112,8 +112,8 @@ static constexpr operator_precedence&#160;</td><td class="memItemRight"><b>prece
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:a9ca2db3b6e79deb3fcf4c219ac18c754" id="r_a9ca2db3b6e79deb3fcf4c219ac18c754"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a9ca2db3b6e79deb3fcf4c219ac18c754">division_expression</a> (auto &amp;&amp;left, auto &amp;&amp;right)</td></tr>
-<tr class="memdesc:a9ca2db3b6e79deb3fcf4c219ac18c754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1division__expression.html" title="The xtd::expressions::division_expression is the division expression.">xtd::expressions::division_expression</a> object with specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a355831cff846373cee55f921fbf7592b" id="r_a355831cff846373cee55f921fbf7592b"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a355831cff846373cee55f921fbf7592b">division_expression</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a355831cff846373cee55f921fbf7592b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1division__expression.html" title="The xtd::expressions::division_expression is the division expression.">xtd::expressions::division_expression</a> object with specified left and right operands.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
@@ -129,8 +129,8 @@ template&lt;typename expression_t&gt; </td></tr>
 <tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>print_with_parens</b> (std::ostream &amp;os, const expression_t &amp;expr, operator_precedence parent_precedence) -&gt; void</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9ca2db3b6e79deb3fcf4c219ac18c754" name="a9ca2db3b6e79deb3fcf4c219ac18c754"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ca2db3b6e79deb3fcf4c219ac18c754">&#9670;&#160;</a></span>division_expression()</h2>
+<a id="a355831cff846373cee55f921fbf7592b" name="a355831cff846373cee55f921fbf7592b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355831cff846373cee55f921fbf7592b">&#9670;&#160;</a></span>division_expression()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,12 +143,12 @@ template&lt;typename left_t, typename right_t&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structxtd_1_1expressions_1_1division__expression.html">xtd::expressions::division_expression</a>&lt; left_t, right_t &gt;::division_expression </td>
           <td>(</td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

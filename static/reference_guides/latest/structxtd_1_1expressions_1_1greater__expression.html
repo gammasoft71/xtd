@@ -112,8 +112,8 @@ static constexpr operator_precedence&#160;</td><td class="memItemRight"><b>prece
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:a2d4c5948b8787cd0183eccf7cfc4206b" id="r_a2d4c5948b8787cd0183eccf7cfc4206b"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a2d4c5948b8787cd0183eccf7cfc4206b">greater_expression</a> (auto &amp;&amp;left, auto &amp;&amp;right)</td></tr>
-<tr class="memdesc:a2d4c5948b8787cd0183eccf7cfc4206b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1greater__expression.html" title="The xtd::expressions::greater_expression is the greater expression.">xtd::expressions::greater_expression</a> object with specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a745f7dd4fa171f095ab6c525342992bb" id="r_a745f7dd4fa171f095ab6c525342992bb"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a745f7dd4fa171f095ab6c525342992bb">greater_expression</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a745f7dd4fa171f095ab6c525342992bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1greater__expression.html" title="The xtd::expressions::greater_expression is the greater expression.">xtd::expressions::greater_expression</a> object with specified left and right operands.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
@@ -129,8 +129,8 @@ template&lt;typename expression_t&gt; </td></tr>
 <tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>print_with_parens</b> (std::ostream &amp;os, const expression_t &amp;expr, operator_precedence parent_precedence) -&gt; void</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2d4c5948b8787cd0183eccf7cfc4206b" name="a2d4c5948b8787cd0183eccf7cfc4206b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d4c5948b8787cd0183eccf7cfc4206b">&#9670;&#160;</a></span>greater_expression()</h2>
+<a id="a745f7dd4fa171f095ab6c525342992bb" name="a745f7dd4fa171f095ab6c525342992bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745f7dd4fa171f095ab6c525342992bb">&#9670;&#160;</a></span>greater_expression()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,12 +143,12 @@ template&lt;typename left_t, typename right_t&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structxtd_1_1expressions_1_1greater__expression.html">xtd::expressions::greater_expression</a>&lt; left_t, right_t &gt;::greater_expression </td>
           <td>(</td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

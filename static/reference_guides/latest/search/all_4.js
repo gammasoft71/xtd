@@ -294,7 +294,7 @@ var searchData=
   ['divisible_291',['divisible',['../structxtd_1_1divisible.html',1,'xtd::divisible&lt; type_t &gt;'],['../conceptxtd_1_1divisible.html',1,'xtd']]],
   ['divisible_2ehpp_292',['divisible.hpp',['../divisible_8hpp.html',1,'']]],
   ['divisible_5f_2ehpp_293',['divisible_.hpp',['../divisible___8hpp.html',1,'']]],
-  ['division_5fexpression_294',['division_expression',['../structxtd_1_1expressions_1_1division__expression.html',1,'xtd::expressions::division_expression&lt; left_t, right_t &gt;'],['../structxtd_1_1expressions_1_1division__expression.html#a9ca2db3b6e79deb3fcf4c219ac18c754',1,'xtd::expressions::division_expression::division_expression()']]],
+  ['division_5fexpression_294',['division_expression',['../structxtd_1_1expressions_1_1division__expression.html',1,'xtd::expressions::division_expression&lt; left_t, right_t &gt;'],['../structxtd_1_1expressions_1_1division__expression.html#a355831cff846373cee55f921fbf7592b',1,'xtd::expressions::division_expression::division_expression()']]],
   ['division_5fexpression_2ehpp_295',['division_expression.hpp',['../division__expression_8hpp.html',1,'']]],
   ['divot_296',['divot',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fcca98386267ae3a3d5ead3c053b52bb1305',1,'xtd::drawing::drawing_2d']]],
   ['diya_5flamp_297',['diya_lamp',['../classxtd_1_1forms_1_1emoticons.html#a59994849a08a4fb720e676154455c7b5',1,'xtd::forms::emoticons']]],

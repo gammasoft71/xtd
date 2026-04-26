@@ -112,8 +112,8 @@ static constexpr operator_precedence&#160;</td><td class="memItemRight"><b>prece
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
-<tr class="memitem:a3078c832d995536cfdcf92226b603d87" id="r_a3078c832d995536cfdcf92226b603d87"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a3078c832d995536cfdcf92226b603d87">less_or_equal_expression</a> (auto &amp;&amp;left, auto &amp;&amp;right)</td></tr>
-<tr class="memdesc:a3078c832d995536cfdcf92226b603d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1less__or__equal__expression.html" title="The xtd::expressions::less_or_equal_expression is the less or equal expression.">xtd::expressions::less_or_equal_expression</a> object with specified left and right operands.  <br /></td></tr>
+<tr class="memitem:af19e7f0176bbd84807efc777eb49e928" id="r_af19e7f0176bbd84807efc777eb49e928"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#af19e7f0176bbd84807efc777eb49e928">less_or_equal_expression</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:af19e7f0176bbd84807efc777eb49e928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1less__or__equal__expression.html" title="The xtd::expressions::less_or_equal_expression is the less or equal expression.">xtd::expressions::less_or_equal_expression</a> object with specified left and right operands.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
@@ -129,8 +129,8 @@ template&lt;typename expression_t&gt; </td></tr>
 <tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>print_with_parens</b> (std::ostream &amp;os, const expression_t &amp;expr, operator_precedence parent_precedence) -&gt; void</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3078c832d995536cfdcf92226b603d87" name="a3078c832d995536cfdcf92226b603d87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3078c832d995536cfdcf92226b603d87">&#9670;&#160;</a></span>less_or_equal_expression()</h2>
+<a id="af19e7f0176bbd84807efc777eb49e928" name="af19e7f0176bbd84807efc777eb49e928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19e7f0176bbd84807efc777eb49e928">&#9670;&#160;</a></span>less_or_equal_expression()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,12 +143,12 @@ template&lt;typename left_t, typename right_t&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structxtd_1_1expressions_1_1less__or__equal__expression.html">xtd::expressions::less_or_equal_expression</a>&lt; left_t, right_t &gt;::less_or_equal_expression </td>
           <td>(</td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
