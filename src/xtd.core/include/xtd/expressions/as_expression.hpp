@@ -15,28 +15,42 @@ namespace xtd {
     /// @name Public Functions
     
     /// @{
-    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base.
     /// @param value The value to convert.
-    /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @raturn The result as xtd::expressions::expression_base.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename type_t>
-    constexpr auto as_expression(type_t value) {
-      if constexpr (std::is_base_of_v<expression_base, type_t>) return value;
-      else return constant<type_t>{value};
+    requires std::is_base_of_v<expression_base, std::decay_t<type_t>>
+    constexpr decltype(auto) as_expression(type_t&& value) {
+      return std::forward<type_t>(value);
     }
-
-    /// @brief The xtd::expressions::as_expression method convert a specified placeholder with specified index into xtd::expressions::placeholder.
-    /// @param value The palceholder to convert.
-    /// @return  The same placeholder.
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::placeholder_base.
+    /// @param value The value to convert.
+    /// @raturn The result as xtd::expressions::placeholder_base.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
-    template <xtd::usize index_t>
-    constexpr auto as_expression(placeholder<index_t> p) {return p;}
+    template <typename type_t>
+    requires std::is_base_of_v<placeholder_base, std::decay_t<type_t>>
+    constexpr decltype(auto) as_expression(type_t&& value) {
+      return std::forward<type_t>(value);
+    }
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::constant.
+    /// @param value The value to convert.
+    /// @raturn The result as xtd::expressions::constant.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
+    template <typename type_t>
+    requires (!std::is_base_of_v<expression_base, std::decay_t<type_t>> && !std::is_base_of_v<placeholder_base, std::decay_t<type_t>>)
+    constexpr auto as_expression(type_t&& value) {
+      return constant<std::decay_t<type_t>> {std::forward<type_t>(value)};
+    }
     /// @}
   }
 }

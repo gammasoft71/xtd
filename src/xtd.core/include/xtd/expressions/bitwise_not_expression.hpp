@@ -40,7 +40,7 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new xtd::expressions::bitwise_not_expression object with specified value operand.
       /// @param value The value operand.
-      constexpr bitwise_not_expression(auto&& value) : value {std::forward<decltype(value)>(value)} {}
+      constexpr bitwise_not_expression(auto value) : value {std::move(value)} {}
       /// @}
       
       /// @name Public Operators
@@ -60,7 +60,7 @@ namespace xtd {
       
       /// @cond
       friend inline auto operator <<(std::ostream& os, const bitwise_not_expression& e) -> std::ostream& {
-        os << " ~";
+        os << "~";
         print_with_parens(os, e.value, e.precedence);
         return os;
       }
@@ -98,7 +98,7 @@ namespace xtd {
     template <typename value_t>
     requires expression<value_t>
     constexpr auto operator ~(value_t value) {
-      return bitwise_not_expression<decltype(as_expression(value))> {as_expression(value)};
+      return bitwise_not_expression<std::decay_t<decltype(as_expression(value))>> {as_expression(value)};
     }
     /// @}
   }

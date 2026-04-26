@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::addition_expression object with specified expression and method operands.
       /// @param expression The expression operand.
       /// @param method The method operand.
-      constexpr method_expression(auto&& expression, auto&& method) : expression {std::forward<decltype(expression)>(expression)}, method {std::forward<decltype(method)>(method)} {}
+      constexpr method_expression(auto expression, auto method) : expression {std::move(expression)}, method {std::move(method)} {}
       /// @}
       
       /// @name Public Operators
@@ -130,7 +130,7 @@ namespace xtd {
     template <typename expression_t, typename method_t, typename... stored_args_t>
     requires expression_operand<expression_t, method_type<method_t, stored_args_t...>>
     constexpr auto operator*(expression_t expression, method_type<method_t, stored_args_t...> method) {
-      return method_expression<decltype(as_expression(expression)), method_type<method_t, stored_args_t...>>{as_expression(expression), method};
+      return method_expression<std::decay_t<decltype(as_expression(expression))>, method_type<method_t, stored_args_t...>>{as_expression(expression), method};
     }
     
     /// @brief Bind method alternative operator.

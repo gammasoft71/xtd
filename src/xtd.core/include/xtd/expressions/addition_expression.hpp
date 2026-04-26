@@ -28,7 +28,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::addition_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr addition_expression(auto&& left, auto&& right) : left {std::forward<decltype(left)>(left)}, right {std::forward<decltype(right)>(right)} {}
+      constexpr addition_expression(auto left, auto right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -71,7 +71,7 @@ namespace xtd {
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
     constexpr auto operator +(left_t left, right_t right) {
-      return addition_expression<decltype(as_expression(left)), decltype(as_expression(right))> {as_expression(left), as_expression(right)};
+      return addition_expression<std::decay_t<decltype(as_expression(left))>, std::decay_t<decltype(as_expression(right))>> {as_expression(left), as_expression(right)};
     }
     /// @}
   }
