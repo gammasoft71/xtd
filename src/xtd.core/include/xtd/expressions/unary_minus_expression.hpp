@@ -46,7 +46,7 @@ namespace xtd {
       /// @endcond
 
     private:
-      value_t value;
+      [[no_unique_address]] value_t value;
     };
 
     /// @name Public Operators

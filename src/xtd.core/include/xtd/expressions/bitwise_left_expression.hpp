@@ -73,8 +73,8 @@ namespace xtd {
       /// @endcond
 
     private:
-      left_t left;
-      right_t right;
+      [[no_unique_address]] left_t left;
+      [[no_unique_address]] right_t right;
     };
 
     /// @name Public Operators

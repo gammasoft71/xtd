@@ -93,8 +93,8 @@ namespace xtd {
       /// @endcond
 
     private:
-      expression_t expression;
-      method_t method;
+      [[no_unique_address]] expression_t expression;
+      [[no_unique_address]] method_t method;
     };
 
     /// @name Public Operators
