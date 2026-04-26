@@ -103,7 +103,59 @@ Inheritance diagram for xtd::expressions::addition_expression&lt; left_t, right_
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename left_t, typename right_t&gt;<br />
 struct xtd::expressions::addition_expression&lt; left_t, right_t &gt;</div><p>The <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a> is the addition expression. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a> struct is used by xtd::expressions::operator +(). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a> struct is used by <a class="el" href="group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b" title="Add the specified left and right operands.">xtd::expressions::operator +()</a>. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1addition__expression.html" title="The xtd::expressions::addition_expression is the addition expression.">xtd::expressions::addition_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>foo {</div>
+<div class="line">  <span class="keywordtype">int</span> value;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> foo&amp; f) -&gt; std::ostream&amp; {<span class="keywordflow">return</span> os &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.value;}</div>
+<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator +(<span class="keyword">const</span> foo&amp; a, <span class="keyword">const</span> foo&amp; b) -&gt; foo {<span class="keywordflow">return</span> foo {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>.value + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>.value};}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">//auto add1 = [](auto&amp;&amp; a) {return a + 10;}</span></div>
+<div class="line">  <span class="keyword">auto</span> add1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> + 10;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;add1 resul =&gt; {}&quot;</span>, add1(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">//auto add2 = [](auto&amp;&amp; a, auto&amp;&amp; b) {return a + b;}</span></div>
+<div class="line">  <span class="keyword">auto</span> add2 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(42, 10));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(<span class="stringliteral">&quot;Hello, &quot;</span>_s, <span class="stringliteral">&quot;world!&quot;</span>));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(date_time {2026, 4, 20, 21, 12, 36}, 7_min + 24_s));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(foo {42}, foo {10}));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">//auto add3 = [](auto&amp;&amp; a, auto&amp;&amp; b, auto&amp;&amp; c) {return a + 10 + b + c;}</span></div>
+<div class="line">  <span class="keyword">auto</span> add3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + 10 + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>  + <a class="code hl_variable" href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">_3</a>;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;add3 resul =&gt; {}&quot;</span>, add3(22, 18, 2));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// add1 resul =&gt; 52</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// add2 resul =&gt; 52</span></div>
+<div class="line"><span class="comment">// add2 resul =&gt; Hello, world!</span></div>
+<div class="line"><span class="comment">// add2 resul =&gt; 4/20/2026 9:20:00 PM</span></div>
+<div class="line"><span class="comment">// add2 resul =&gt; 52</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// add3 resul =&gt; 52</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:24</div></div>
+<div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:63</div></div>
+<div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:82</div></div>
+<div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:44</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:98</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
+<div class="ttc" id="anamespacextd_html_a2401d67caeff9e2d61d33b4b1e13a488"><div class="ttname"><a href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">xtd::println</a></div><div class="ttdeci">void println(FILE *file)</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
