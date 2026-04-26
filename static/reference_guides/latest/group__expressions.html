@@ -143,6 +143,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1remainder__expression.html" title="The xtd::expressions::remainder_expression is the remainder expression.">xtd::expressions::remainder_expression</a> is the remainder expression.  <a href="structxtd_1_1expressions_1_1remainder__expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Asubtraction_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Asubtraction_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1subtraction__expression.html">xtd::expressions::subtraction_expression&lt; left_t, right_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1subtraction__expression.html" title="The xtd::expressions::subtraction_expression is the subtraction expression.">xtd::expressions::subtraction_expression</a> is the subtraction expression.  <a href="structxtd_1_1expressions_1_1subtraction__expression.html#details">More...</a><br /></td></tr>
+<tr class="memitem:xtd_3A_3Aexpressions_3A_3Athree_5Fway_5Fcomparison_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Athree_5Fway_5Fcomparison_5Fexpression_3C_20left_5Ft_2C_20right_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1three__way__comparison__expression.html">xtd::expressions::three_way_comparison_expression&lt; left_t, right_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1three__way__comparison__expression.html" title="The xtd::expressions::three_way_comparison_expression is the three_way_comparison expression.">xtd::expressions::three_way_comparison_expression</a> is the three_way_comparison expression.  <a href="structxtd_1_1expressions_1_1three__way__comparison__expression.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -252,6 +254,9 @@ Public Operators</h2></td></tr>
 <tr class="memitem:ga321430ccf4bd434a3948168926149fbb" id="r_ga321430ccf4bd434a3948168926149fbb"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga321430ccf4bd434a3948168926149fbb template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga321430ccf4bd434a3948168926149fbb">xtd::expressions::operator-</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga321430ccf4bd434a3948168926149fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:ga0138d79c9045a3fd52b6874d19cad3ac" id="r_ga0138d79c9045a3fd52b6874d19cad3ac"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:ga0138d79c9045a3fd52b6874d19cad3ac template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga0138d79c9045a3fd52b6874d19cad3ac">xtd::expressions::operator&lt;=&gt;</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:ga0138d79c9045a3fd52b6874d19cad3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equal to the specified left and right operands.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Functions</h2></td></tr>
@@ -1732,6 +1737,66 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// sub1 result =&gt; 32</span></div>
 <div class="line"><span class="comment">// sub2 result =&gt; 30</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga0138d79c9045a3fd52b6874d19cad3ac" name="ga0138d79c9045a3fd52b6874d19cad3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0138d79c9045a3fd52b6874d19cad3ac">&#9670;&#160;</a></span>operator&lt;=&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::expressions::operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="three__way__comparison__expression_8hpp.html">three_way_comparison_expression.hpp</a>&gt;</code></p>
+
+<p>Equal to the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of three_way_comparison. </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1three__way__comparison__expression.html" title="The xtd::expressions::three_way_comparison_expression is the three_way_comparison expression.">xtd::expressions::three_way_comparison_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">//auto three_way_comparison1 = [](auto _) {return _ &lt;=&gt; 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> three_way_comparison1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_ &lt;=&gt;</a> 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;three_way_comparison1 result =&gt; {}&quot;</span>, three_way_comparison1(42));</div>
+<div class="line">  <span class="comment">//auto three_way_comparison2 = [](auto _1, auto _2) {return _1 &lt;=&gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> three_way_comparison2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1 &lt;=&gt;</a> <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;three_way_comparison2 result =&gt; {}&quot;</span>, three_way_comparison2(42, 42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// three_way_comparison1 result =&gt; greater</span></div>
+<div class="line"><span class="comment">// three_way_comparison2 result =&gt; equivalent</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
