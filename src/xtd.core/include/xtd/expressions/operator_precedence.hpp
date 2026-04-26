@@ -43,7 +43,7 @@ namespace xtd {
       subtraction = 6,                        // `a - b`
       bitwise_left = 7,                       // `a << b`
       bitwise_right = 7,                      // `a >> b`
-      three_way_compar = 8,                   // `a <=> b`
+      three_way_comparison = 8,               // `a <=> b`
       relational = 9,                         // `a < b`,  `a <= b` `a > b` `a >= b`
       less = 9,                               // `a < b`
       less_or_equal = 9,                      // `a <= b`
