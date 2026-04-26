@@ -22,7 +22,7 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new xtd::expressions::constant object with specified constant value.
       /// @param value The constant value.
-      constexpr constant(auto&& value) : value_ {value} {}
+      constexpr constant(type_t value) : value_ {std::move(value)} {}
       /// @}
       
       /// @name Public Operators
@@ -39,7 +39,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      type_t value_;
+      [[no_unique_address]] type_t value_;
     };
   }
 }

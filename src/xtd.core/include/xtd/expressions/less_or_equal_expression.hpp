@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::less_or_equal_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr less_or_equal_expression(auto left, auto right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr less_or_equal_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators

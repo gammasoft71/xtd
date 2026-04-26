@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::multiplication_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr multiplication_expression(auto left, auto right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr multiplication_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators

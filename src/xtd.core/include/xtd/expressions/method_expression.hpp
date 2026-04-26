@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::addition_expression object with specified expression and method operands.
       /// @param expression The expression operand.
       /// @param method The method operand.
-      constexpr method_expression(auto expression, auto method) : expression {std::move(expression)}, method {std::move(method)} {}
+      constexpr method_expression(expression_t expression, method_t method) : expression {std::move(expression)}, method {std::move(method)} {}
       /// @}
       
       /// @name Public Operators

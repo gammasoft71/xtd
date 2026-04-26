@@ -41,7 +41,7 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new xtd::expressions::not_expression object with specified value operand.
       /// @param value The value operand.
-      constexpr not_expression(auto value) : value {std::move(value)} {}
+      constexpr not_expression(value_t value) : value {std::move(value)} {}
       /// @}
       
       /// @name Public Operators

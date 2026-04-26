@@ -24,7 +24,7 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new xtd::expressions::unary_minus_expression object with specified value operand.
       /// @param value The value operand.
-      constexpr unary_minus_expression(auto value) : value {std::move(value)} {}
+      constexpr unary_minus_expression(value_t value) : value {std::move(value)} {}
       /// @}
       
       /// @name Public Operators

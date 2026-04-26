@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::or_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr or_expression(auto left, auto right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr or_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
