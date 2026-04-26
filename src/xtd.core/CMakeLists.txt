@@ -1003,6 +1003,8 @@ add_sources(
   "include/xtd/expressions/as_expression"
   "include/xtd/expressions/bitwise_and_expression.hpp"
   "include/xtd/expressions/bitwise_and_expression"
+  "include/xtd/expressions/bitwise_left_expression.hpp"
+  "include/xtd/expressions/bitwise_left_expression"
   "include/xtd/expressions/bitwise_or_expression.hpp"
   "include/xtd/expressions/bitwise_or_expression"
   "include/xtd/expressions/bitwise_xor_expression.hpp"
