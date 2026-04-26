@@ -4,6 +4,7 @@
 #pragma once
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
+#include "../numeric.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -15,6 +16,21 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::bitwise_not_expression struct is used by xtd::expressions::operator ~().
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::bitwise_not_expression.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   //auto bit_not1 = [](auto _) {return static_cast<decltype(_)>(~_);};
+    ///   auto bit_not1 = ~_;
+    ///   println("bit_not1 result => 0b{:B}", bit_not1(42_u8));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // bit_not1 result => 0b11010101
+    /// ```
     template <typename value_t>
     struct bitwise_not_expression : expression_base {
       static constexpr operator_precedence precedence = operator_precedence::bitwise_not;
@@ -34,7 +50,12 @@ namespace xtd {
       /// @param args the arguments to add.
       /// @return The result of bitwise not.
       template <typename... args_t>
-      constexpr auto operator()(args_t&&... args) const {return ~value(std::forward<args_t>(args)...);}
+      constexpr auto operator()(args_t&&... args) const {
+        auto&& v = value(std::forward<args_t>(args)...);
+        using result_t = std::decay_t<decltype(v)>;
+        if constexpr (xtd::numeric<result_t>) return static_cast<result_t>(~v);
+        else return ~v;
+      }
       /// @}
       
       /// @cond
@@ -61,7 +82,19 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @par Examples
     /// The following example shows how to use xtd::expressions::bitwise_not_expression.
-    /// @include bitwise_not_expression.cpp
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   //auto bit_not1 = [](auto _) {return static_cast<decltype(_)>(~_);};
+    ///   auto bit_not1 = ~_;
+    ///   println("bit_not1 result => 0b{:B}", bit_not1(42_u8));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // bit_not1 result => 0b11010101
+    /// ```
     template <typename value_t>
     requires expression<value_t>
     constexpr auto operator ~(value_t value) {
