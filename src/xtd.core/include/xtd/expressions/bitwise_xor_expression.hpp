@@ -4,6 +4,7 @@
 #pragma once
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
+#include "../numeric.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -54,7 +55,13 @@ namespace xtd {
       /// @param args the arguments to bitwise xor.
       /// @return The result of xor.
       template <typename... args_t>
-      constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) ^ right(std::forward<args_t>(args)...);}
+      constexpr auto operator()(args_t&&... args) const {
+        auto&& l = left(std::forward<args_t>(args)...);
+        auto&& r = right(std::forward<args_t>(args)...);
+        using result_t = std::decay_t<decltype(l & r)>;
+        if constexpr (xtd::numeric<result_t>) return static_cast<result_t>(l ^ r);
+        else return l ^ r;
+      }
       /// @}
       
       /// @cond
