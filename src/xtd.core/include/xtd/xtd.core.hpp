@@ -114,6 +114,7 @@
 #include "expressions/as_expression.hpp"
 #include "expressions/bitwise_and_expression.hpp"
 #include "expressions/bitwise_left_expression.hpp"
+#include "expressions/bitwise_not_expression.hpp"
 #include "expressions/bitwise_or_expression.hpp"
 #include "expressions/bitwise_right_expression.hpp"
 #include "expressions/bitwise_xor_expression.hpp"
