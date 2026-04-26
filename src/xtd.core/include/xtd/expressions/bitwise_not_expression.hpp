@@ -96,9 +96,10 @@ namespace xtd {
     /// // bit_not1 result => 0b11010101
     /// ```
     template <typename value_t>
-    requires expression<value_t>
+    requires expression_operand<value_t>
     constexpr auto operator ~(value_t value) {
-      return bitwise_not_expression<std::decay_t<decltype(as_expression(value))>> {as_expression(value)};
+      auto expression = as_expression(value);
+      return bitwise_not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
     }
     /// @}
   }

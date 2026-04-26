@@ -2,6 +2,7 @@
 /// @brief Contains xtd::expressions::placeholder_base struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "expression_base.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,7 +12,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    struct placeholder_base {
+    struct placeholder_base : expression_base {
     };
   }
 }

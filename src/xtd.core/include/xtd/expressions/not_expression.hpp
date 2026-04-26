@@ -94,9 +94,10 @@ namespace xtd {
     /// // not1 result => true
     /// ```
     template <typename value_t>
-    requires expression<value_t>
+    requires expression_operand<value_t>
     constexpr auto operator !(value_t value) {
-      return not_expression<std::decay_t<decltype(as_expression(value))>> {as_expression(value)};
+      auto expression = as_expression(value);
+      return not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
     }
     /// @}
   }

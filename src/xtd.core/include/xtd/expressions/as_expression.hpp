@@ -4,7 +4,7 @@
 #pragma once
 #include "args.hpp"
 #include "constant.hpp"
-#include "expression_base.hpp"
+#include "expression_operand.hpp"
 #include "../usize.hpp"
 #include <type_traits>
 
@@ -23,19 +23,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename type_t>
-    requires std::is_base_of_v<expression_base, std::decay_t<type_t>>
-    constexpr decltype(auto) as_expression(type_t&& value) {
-      return std::forward<type_t>(value);
-    }
-    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::placeholder_base.
-    /// @param value The value to convert.
-    /// @raturn The result as xtd::expressions::placeholder_base.
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core expressions
-    /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
-    template <typename type_t>
-    requires std::is_base_of_v<placeholder_base, std::decay_t<type_t>>
+    requires expression_operand<type_t>
     constexpr decltype(auto) as_expression(type_t&& value) {
       return std::forward<type_t>(value);
     }
@@ -47,7 +35,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename type_t>
-    requires (!std::is_base_of_v<expression_base, std::decay_t<type_t>> && !std::is_base_of_v<placeholder_base, std::decay_t<type_t>>)
+    requires (!expression_operand<type_t>)
     constexpr auto as_expression(type_t&& value) {
       return constant<std::decay_t<type_t>> {std::forward<type_t>(value)};
     }

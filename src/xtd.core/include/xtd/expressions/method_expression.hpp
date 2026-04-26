@@ -128,9 +128,10 @@ namespace xtd {
     /// // fct3 result => World!
     /// ```
     template <typename expression_t, typename method_t, typename... stored_args_t>
-    requires expression_operand<expression_t, method_type<method_t, stored_args_t...>>
+    requires expression_operand<expression_t> || expression_operand<method_type<method_t, stored_args_t...>>
     constexpr auto operator*(expression_t expression, method_type<method_t, stored_args_t...> method) {
-      return method_expression<std::decay_t<decltype(as_expression(expression))>, method_type<method_t, stored_args_t...>>{as_expression(expression), method};
+      auto expr = as_expression(expression);
+      return method_expression<std::decay_t<decltype(expr)>, method_type<method_t, stored_args_t...>> {std::move(expr), std::move(method)};
     }
     
     /// @brief Bind method alternative operator.
@@ -161,7 +162,7 @@ namespace xtd {
     /// // fct3 result => World!
     /// ```
     template <typename expression_t, typename method_t, typename... stored_args_t>
-    requires expression_operand<expression_t, method_type<method_t, stored_args_t...>>
+    requires expression_operand<expression_t> || expression_operand<method_type<method_t, stored_args_t...>>
     constexpr auto operator |(expression_t expression, method_type<method_t, stored_args_t...> method) {
       return std::forward<expression_t>(expression) * std::forward<method_type<method_t, stored_args_t...>>(method);
     }

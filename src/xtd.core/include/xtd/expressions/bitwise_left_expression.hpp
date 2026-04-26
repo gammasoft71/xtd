@@ -107,9 +107,11 @@ namespace xtd {
     /// // bit_left2 result => 672
     /// ```
     template <typename left_t, typename right_t>
-    requires expression_operand<left_t, right_t> && (!std::is_base_of_v<std::ostream, std::remove_reference_t<left_t>>)
+    requires expression_operand<left_t> || expression_operand<right_t> && (!std::is_base_of_v<std::ostream, std::remove_reference_t<left_t>>)
     constexpr auto operator <<(left_t left, right_t right) {
-      return bitwise_left_expression<std::decay_t<decltype(as_expression(left))>, std::decay_t<decltype(as_expression(right))>> {as_expression(left), as_expression(right)};
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return bitwise_left_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @}
   }

@@ -2,7 +2,9 @@
 /// @brief Contains xtd::expressions::expression_operand concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "expression.hpp"
+#include "expression_base.hpp"
+#include <concepts>
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,8 +14,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    template <typename left_t, typename right_t>
+    //template <typename left_t, typename right_t>
+    //concept expression_operand =
+    //expression<left_t> || expression<right_t>;
+    template <typename type_t>
     concept expression_operand =
-    expression<left_t> || expression<right_t>;
+    std::is_base_of_v<expression_base, std::decay_t<type_t>>;
   }
 }

@@ -1019,8 +1019,6 @@ add_sources(
   "include/xtd/expressions/division_expression"
   "include/xtd/expressions/equal_expression.hpp"
   "include/xtd/expressions/equal_expression"
-  "include/xtd/expressions/expression.hpp"
-  "include/xtd/expressions/expression"
   "include/xtd/expressions/expression_base.hpp"
   "include/xtd/expressions/expression_base"
   "include/xtd/expressions/expression_operand.hpp"

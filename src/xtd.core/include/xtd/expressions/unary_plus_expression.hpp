@@ -63,9 +63,10 @@ namespace xtd {
     /// The following example shows how to use xtd::expressions::unary_plus_expression.
     /// @include unary_plus_expression.cpp
     template <typename value_t>
-    requires expression<value_t>
+    requires expression_operand<value_t>
     constexpr auto operator +(value_t value) {
-      return unary_plus_expression<std::decay_t<decltype(as_expression(value))>> {as_expression(value)};
+      auto expression = as_expression(value);
+      return unary_plus_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
     }
     /// @}
   }

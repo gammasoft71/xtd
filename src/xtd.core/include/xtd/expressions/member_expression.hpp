@@ -114,9 +114,10 @@ namespace xtd {
     /// // mem1 result => 42
     /// ```
     template <typename expression_t, typename member_t>
-    requires expression_operand<expression_t, member_type<member_t>>
+    requires expression_operand<expression_t> || expression_operand<member_type<member_t>>
     constexpr auto operator *(expression_t expression, member_type<member_t> member) {
-      return member_expression<std::decay_t<decltype(as_expression(expression))>, member_type<member_t>> {as_expression(expression), member};
+      auto expr = as_expression(expression);
+      return member_expression<std::decay_t<decltype(expr)>, member_type<member_t>> {std::move(expr), std::move(member)};
     }
 
     /// @brief Bind member operator.
@@ -145,7 +146,7 @@ namespace xtd {
     /// // mem1 result => 42
     /// ```
     template <typename expression_t, typename member_t>
-    requires expression_operand<expression_t, member_type<member_t>>
+    requires expression_operand<expression_t> || expression_operand<member_type<member_t>>
     constexpr auto operator |(expression_t expression, member_type<member_t> member) {
       return std::forward<expression_t>(expression) * std::forward<member_type<member_t>>(member);
     }
