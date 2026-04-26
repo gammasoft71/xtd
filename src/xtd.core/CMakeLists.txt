@@ -1054,6 +1054,8 @@ add_sources(
   "include/xtd/expressions/subtraction_expression"
   "include/xtd/expressions/three_way_comparison_expression.hpp"
   "include/xtd/expressions/three_way_comparison_expression"
+  "include/xtd/expressions/unary_minus_expression.hpp"
+  "include/xtd/expressions/unary_minus_expression"
   "include/xtd/expressions/unary_plus_expression.hpp"
   "include/xtd/expressions/unary_plus_expression"
   "include/xtd/exception_services/exception_dispatch_info.hpp"
