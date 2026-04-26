@@ -137,6 +137,7 @@
 #include "expressions/remainder_expression.hpp"
 #include "expressions/subtraction_expression.hpp"
 #include "expressions/three_way_comparison_expression.hpp"
+#include "expressions/unary_plus_expression.hpp"
 #include "exception_services/exception_dispatch_info.hpp"
 #include "globalization/culture_info.hpp"
 #include "globalization/culture_not_found_exception.hpp"

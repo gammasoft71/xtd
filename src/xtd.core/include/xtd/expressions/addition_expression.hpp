@@ -15,6 +15,9 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::addition_expression struct is used by xtd::expressions::operator +().
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::addition_expression.
+    /// @include addition_expression.cpp
     template <typename left_t, typename right_t>
     struct addition_expression : expression_base {
       static constexpr operator_precedence precedence = operator_precedence::addition;
@@ -65,7 +68,6 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use xtd::expressions::addition_expression.
     /// @include addition_expression.cpp
-    /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t, right_t>
     constexpr auto operator +(left_t left, right_t right) {
