@@ -1041,6 +1041,8 @@ add_sources(
   "include/xtd/expressions/multiplication_expression"
   "include/xtd/expressions/not_equal_expression.hpp"
   "include/xtd/expressions/not_equal_expression"
+  "include/xtd/expressions/not_expression.hpp"
+  "include/xtd/expressions/not_expression"
   "include/xtd/expressions/operator_precedence.hpp"
   "include/xtd/expressions/operator_precedence"
   "include/xtd/expressions/or_expression.hpp"
