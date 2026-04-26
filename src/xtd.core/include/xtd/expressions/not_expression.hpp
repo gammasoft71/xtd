@@ -15,6 +15,23 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::operator !().
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::not_expression.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   //auto not1 = [](auto _) {return !_;};
+    ///   auto not1 = !_;
+    ///   println("not1 result => {}", not1(true));
+    ///   println("not1 result => {}", not1(false));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // not1 result => false
+    /// // not1 result => true
+    /// ```
     template <typename value_t>
     struct not_expression : expression_base {
       static constexpr operator_precedence precedence = operator_precedence::logical_not;
@@ -61,7 +78,21 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @par Examples
     /// The following example shows how to use xtd::expressions::not_expression.
-    /// @include not_expression.cpp
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   //auto not1 = [](auto _) {return !_;};
+    ///   auto not1 = !_;
+    ///   println("not1 result => {}", not1(true));
+    ///   println("not1 result => {}", not1(false));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // not1 result => false
+    /// // not1 result => true
+    /// ```
     template <typename value_t>
     requires expression<value_t>
     constexpr auto operator !(value_t value) {
