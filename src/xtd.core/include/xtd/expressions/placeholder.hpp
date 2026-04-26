@@ -22,7 +22,7 @@ namespace xtd {
     /// auto expr = placeholder<0> {} + placeholder<1> {} + placeholder<2> {} + placeholder<4> {} + placeholder<5> {};
     /// println("expr result => {}", expr(10, 20, 30, 40, 50)); // expr result => 150
     /// ```
-    /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_ ... xtd::expressions::_10 instead que xtd::expressions::placeholder.
+    /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead que xtd::expressions::placeholder.
     template <size_t index>
     struct placeholder : placeholder_base {
       static constexpr operator_precedence precedence = operator_precedence::placeholder;
