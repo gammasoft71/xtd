@@ -4,6 +4,7 @@
 #pragma once
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
+#include "expression_stream.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -44,12 +45,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const or_expression& e) -> std::ostream& {
-        print_with_parens(os, e.left, e.precedence);
-        os << " || ";
-        print_with_parens(os, e.right, e.precedence);
-        return os;
-      }
+      friend inline auto operator <<(std::ostream& os, const or_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " || " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
