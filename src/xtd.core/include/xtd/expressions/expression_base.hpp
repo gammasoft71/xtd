@@ -20,7 +20,7 @@ namespace xtd {
       template<typename expression_t>
       static auto print_with_parens(std::ostream& os, const expression_t& expr, operator_precedence parent_precedence) -> void {
         if (parent_precedence < expression_t::precedence) os << "(" << expr << ")";
-        else  os << expr;
+        else os << expr;
       }
     };
     
