@@ -4,6 +4,7 @@
 #pragma once
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
+#include "expression_stream.hpp"
 #include "../numeric.hpp"
 #include <utility>
 
@@ -64,11 +65,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const bitwise_not_expression& e) -> std::ostream& {
-        os << "~";
-        print_with_parens(os, e.value, e.precedence);
-        return os;
-      }
+      friend inline auto operator <<(std::ostream& os, const bitwise_not_expression& e) -> std::ostream& {return os << "~" << expression_stream {e.value, e.precedence};}
       /// @endcond
 
     private:
