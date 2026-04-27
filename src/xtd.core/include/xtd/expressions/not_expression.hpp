@@ -34,7 +34,12 @@ namespace xtd {
     /// ```
     template <typename value_t>
     struct not_expression : expression_base {
+      /// @name Public Fields
+      
+      /// @{
+      /// @brief The operator precedence. That contains one of xtd::expressions::operator_precedence values.
       static constexpr operator_precedence precedence = operator_precedence::logical_not;
+      /// @}
       
       /// @name Public Constructors
       
