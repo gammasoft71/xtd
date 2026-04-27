@@ -3,10 +3,6 @@
 struct pet {
   string name;
   bool vaccinated = false;
-  
-  friend bool operator ==(const pet& lhs, const pet& rhs) noexcept {
-    return lhs.name == rhs.name && lhs.vaccinated == rhs.vaccinated;
-  }
 };
 
 auto main() -> int {
