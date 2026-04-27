@@ -25,7 +25,12 @@ namespace xtd {
     /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead que xtd::expressions::placeholder.
     template <size_t index>
     struct placeholder : placeholder_base {
+      /// @name Public Fields
+      
+      /// @{
+      /// @brief The operator precedence. That contains one of xtd::expressions::operator_precedence values.
       static constexpr operator_precedence precedence = operator_precedence::placeholder;
+      /// @}
 
       /// @name Public Operators
       
