@@ -85,7 +85,6 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structxtd_1_1expressions_1_1method__expression-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::expressions::method_expression&lt; expression_t, method_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__expressions.html">expressions</a></div></div></div>
 </div><!--header-->
@@ -111,10 +110,10 @@ struct xtd::expressions::method_expression&lt; expression_t, method_t &gt;</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__expressions.html#ga4c762643b244dc3bcd271b36bf912fc7" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base.">xtd::expressions::as_expression</a> method is used by <a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> operators. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a53c00e5a8a55cf1df620c3b07e8a4d76" id="r_a53c00e5a8a55cf1df620c3b07e8a4d76"><td class="memItemLeft"><a id="a53c00e5a8a55cf1df620c3b07e8a4d76" name="a53c00e5a8a55cf1df620c3b07e8a4d76"></a>
-static constexpr operator_precedence&#160;</td><td class="memItemRight"><b>precedence</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Fields</h2></td></tr>
+<tr class="memitem:a53c00e5a8a55cf1df620c3b07e8a4d76" id="r_a53c00e5a8a55cf1df620c3b07e8a4d76"><td class="memItemLeft">static constexpr operator_precedence&#160;</td><td class="memItemRight"><a class="el" href="#a53c00e5a8a55cf1df620c3b07e8a4d76">precedence</a></td></tr>
+<tr class="memdesc:a53c00e5a8a55cf1df620c3b07e8a4d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operator precedence. That contains one of xtd::expressions::operator_precedence values.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -126,13 +125,6 @@ Public Operators</h2></td></tr>
 <tr class="memitem:a8f04334ef36cd326ba62d6d2ce94a21a" id="r_a8f04334ef36cd326ba62d6d2ce94a21a"><td class="memTemplParams" colspan="2">template&lt;typename... call_args_t&gt; </td></tr>
 <tr class="memitem:a8f04334ef36cd326ba62d6d2ce94a21a template"><td class="memItemLeft">constexpr decltype(auto)&#160;</td><td class="memItemRight"><a class="el" href="#a8f04334ef36cd326ba62d6d2ce94a21a">operator()</a> (call_args_t &amp;&amp;... call_args) const</td></tr>
 <tr class="memdesc:a8f04334ef36cd326ba62d6d2ce94a21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the specified arguments.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_static_methods_structxtd_1_1expressions_1_1expression__base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_structxtd_1_1expressions_1_1expression__base')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="structxtd_1_1expressions_1_1expression__base.html">xtd::expressions::expression_base</a></td></tr>
-<tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base" id="r_ac17893893be7b0c64b55794105a14981"><td class="memTemplParams" colspan="2">
-template&lt;typename expression_t&gt; </td></tr>
-<tr class="memitem:ac17893893be7b0c64b55794105a14981 inherit pub_static_methods_structxtd_1_1expressions_1_1expression__base template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>print_with_parens</b> (std::ostream &amp;os, const expression_t &amp;expr, operator_precedence parent_precedence) -&gt; void</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a60ac91b0289d9ee8901a9da45b8fc07f" name="a60ac91b0289d9ee8901a9da45b8fc07f"></a>
@@ -211,6 +203,33 @@ template&lt;typename... call_args_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of method. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a53c00e5a8a55cf1df620c3b07e8a4d76" name="a53c00e5a8a55cf1df620c3b07e8a4d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53c00e5a8a55cf1df620c3b07e8a4d76">&#9670;&#160;</a></span>precedence</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename expression_t, typename method_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">operator_precedence <a class="el" href="structxtd_1_1expressions_1_1method__expression.html">xtd::expressions::method_expression</a>&lt; expression_t, method_t &gt;::precedence</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The operator precedence. That contains one of xtd::expressions::operator_precedence values. </p>
 
 </div>
 </div>

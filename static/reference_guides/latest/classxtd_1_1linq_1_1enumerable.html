@@ -2041,10 +2041,6 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="keyword">struct </span>pet {</div>
 <div class="line">  <span class="keywordtype">string</span> name;</div>
 <div class="line">  <span class="keywordtype">bool</span> vaccinated = <span class="keyword">false</span>;</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
-<div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.vaccinated == rhs.vaccinated;</div>
-<div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -2062,7 +2058,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_a63ea4c7a305ecdff5882d1cf2336c739"><div class="ttname"><a href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">xtd::basic_array::count</a></div><div class="ttdeci">auto count() const noexcept -&gt; size_type override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:72</div></div>
-<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:30</div></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:31</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

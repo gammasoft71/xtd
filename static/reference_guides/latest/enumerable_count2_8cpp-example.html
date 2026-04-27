@@ -89,10 +89,6 @@ $(function() {
 <div class="line"><span class="keyword">struct </span>pet {</div>
 <div class="line">  <span class="keywordtype">string</span> name;</div>
 <div class="line">  <span class="keywordtype">bool</span> vaccinated = <span class="keyword">false</span>;</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
-<div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.vaccinated == rhs.vaccinated;</div>
-<div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -109,7 +105,7 @@ $(function() {
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
-<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:30</div></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:31</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
