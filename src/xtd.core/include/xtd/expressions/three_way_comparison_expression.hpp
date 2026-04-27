@@ -17,7 +17,12 @@ namespace xtd {
     /// @remarks The xtd::expressions::three_way_comparison_expression struct is used by xtd::expressions::operator <=>().
     template <typename left_t, typename right_t>
     struct three_way_comparison_expression : expression_base {
+      /// @name Public Fields
+      
+      /// @{
+      /// @brief The operator precedence. That contains one of xtd::expressions::operator_precedence values.
       static constexpr operator_precedence precedence = operator_precedence::three_way_comparison;
+      /// @}
       
       /// @name Public Constructors
       
