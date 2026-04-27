@@ -17,7 +17,12 @@ namespace xtd {
     /// @remarks The xtd::expressions::equal_expression struct is used by xtd::expressions::operator ==().
     template <typename left_t, typename right_t>
     struct equal_expression : expression_base {
+      /// @name Public Fields
+      
+      /// @{
+      /// @brief The operator precedence. That contains one of xtd::expressions::operator_precedence values.
       static constexpr operator_precedence precedence = operator_precedence::equal;
+      /// @}
       
       /// @name Public Constructors
       
