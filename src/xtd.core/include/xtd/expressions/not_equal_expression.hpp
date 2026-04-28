@@ -12,6 +12,12 @@ namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
     /// @brief The xtd::expressions::not_equal_expression is the not equal expression.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/not_equal_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -60,6 +66,12 @@ namespace xtd {
     /// @param left The left operand.
     /// @param right The right operand.
     /// @return The result of not equal.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/not_equal_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
