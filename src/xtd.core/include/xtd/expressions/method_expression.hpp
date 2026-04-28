@@ -12,6 +12,12 @@ namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
     /// @brief The xtd::expressions::method_type contains the method type.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/method_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -24,6 +30,12 @@ namespace xtd {
     };
     
     /// @brief The xtd::expressions::method is use to bind object method.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/method_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -33,6 +45,12 @@ namespace xtd {
       return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{"<method>", method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
     /// @brief The xtd::expressions::method is use to bind object method.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/method_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -45,6 +63,12 @@ namespace xtd {
     /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression or xtd::expressions::constant.
     /// @param value The value to convert.
     /// @raturn The result as xtd::expressions::expression or xtd::expressions::constant.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/method_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -109,6 +133,12 @@ namespace xtd {
     /// @param expression The expression that associate to the  binded method.
     /// @param method The binded mehtod to execute.
     /// @return The result of the binded method.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/method_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -143,6 +173,12 @@ namespace xtd {
     /// @param expression The expression that associate to the  binded method.
     /// @param method The binded mehtod to execute.
     /// @return The result of the binded method.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/method_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
