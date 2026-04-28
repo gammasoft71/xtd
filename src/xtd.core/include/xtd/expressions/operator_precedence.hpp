@@ -10,7 +10,7 @@ namespace xtd {
   namespace expressions {
     /// @brief Specifies the operator precedence.
     /// @par Namespace
-    /// xtd
+    /// xtd::expressions
     /// @par Header
     /// ```cpp
     /// #include <xtd/expressions/operator_precedence>
