@@ -13,6 +13,12 @@ namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
     /// @brief The xtd::expressions::expression is the base class for expression objects.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
