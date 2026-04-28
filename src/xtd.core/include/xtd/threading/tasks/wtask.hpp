@@ -66,11 +66,6 @@ namespace xtd {
         wtask(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) : task<result_t>(func, state) {}
         /// @}
         
-        /// @cond
-        wtask(const std::function<result_t()>& func) : task<result_t>(func) {}
-        wtask(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) : task<result_t>(func, cancellation_token) {}
-        wtask(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) : task<result_t>(func, state) {}
-        
         ~wtask() {task<result_t>::wait();}
         /// @endcond
         

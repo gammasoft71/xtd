@@ -71,13 +71,6 @@ namespace xtd {
         task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
         task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {}
         /// @}
-
-        /// @cond
-        task(const std::function<void()>& action) : basic_task<> {action} {}
-        task(const std::function<void()>& action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {}
-        task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
-        task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {}
-        /// @endcond
         
         /// @name Public Static Methods
         

@@ -78,14 +78,6 @@ namespace xtd {
         task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {}
         /// @}
 
-        /// @cond
-        task(const std::function<result_t()>& func) : basic_task<result_t> {func} {}
-        task(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {}
-        task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) : basic_task<result_t> {func, state} {}
-        task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {}
-        /// @endcond
-
-        
         /// @name Public Properties
         
         /// @{

@@ -80,39 +80,22 @@ namespace xtd {
         /// @}
         
         /// @cond
-        basic_task(const std::function<void()>& func) {
-          data_->func = func;
-        }
-        basic_task(const std::function<void()>& func, const xtd::threading::cancellation_token& cancellation_token) {
-          data_->func = func;
-          data_->cancellation_token = cancellation_token;
-        }
-        basic_task(const std::function<void(const xtd::any_object&)>& func, const xtd::any_object& state) {
-          data_->parameterized_func = func;
-          data_->state = &state;
-        }
-        basic_task(const std::function<void(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) {
-          data_->parameterized_func = func;
-          data_->state = &state;
-          data_->cancellation_token = cancellation_token;
-        }
-
         template<typename create_result_t>
-        basic_task(const std::function<create_result_t()>& func) {
+        basic_task(const xtd::func<create_result_t>& func) {
           data_->func = func;
         }
         template<typename create_result_t>
-        basic_task(const std::function<create_result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) {
+        basic_task(const xtd::func<create_result_t>& func, const xtd::threading::cancellation_token& cancellation_token) {
           data_->func = func;
           data_->cancellation_token = cancellation_token;
         }
         template<typename create_result_t>
-        basic_task(const std::function<create_result_t(const xtd::any_object&)>& func, const xtd::any_object& state) {
+        basic_task(const xtd::func<create_result_t, const xtd::any_object&>& func, const xtd::any_object& state) {
           data_->parameterized_func = func;
           data_->state = &state;
         }
         template<typename create_result_t>
-        basic_task(const std::function<create_result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) {
+        basic_task(const xtd::func<create_result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) {
           data_->parameterized_func = func;
           data_->state = &state;
           data_->cancellation_token = cancellation_token;
@@ -255,11 +238,6 @@ namespace xtd {
         /// @}
         
         /// @cond
-        [[nodiscard]] static auto run(const std::function<result_t()>& func) -> task<result_t>;
-        [[nodiscard]] static auto run(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
-        [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> task<result_t>;
-        [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
-
         template<typename ...items_t>
         static auto wait_all(items_t... items) -> bool {return wait_all(xtd::threading::timeout::infinite, items...);}
         template<typename ...items_t>

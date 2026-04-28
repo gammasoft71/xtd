@@ -48,15 +48,6 @@ namespace xtd {
 
         template<typename ...args_t>
         static auto invoke(args_t... args) -> void {invoke(xtd::array<xtd::action<>> {xtd::action<> {std::forward<args_t>(args)}...});}
-
-        /// @cond
-        static auto invoke(const xtd::array<std::function<void()>>& actions) -> void {
-          xtd::collections::generic::list<xtd::threading::tasks::task<>> tasks;
-          for (const auto& action : actions)
-            tasks.add(xtd::threading::tasks::task<>::factory().start_new(action));
-          task<>::wait_all(tasks);
-        }
-        /// @endcond
       };
     }
   }
