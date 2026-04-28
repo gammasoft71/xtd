@@ -13,6 +13,12 @@ namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
     /// @brief The xtd::expressions::bitwise_xor_expression is the bitwise xor expression.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/bitwise_xor_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -86,6 +92,12 @@ namespace xtd {
     /// @param left The left operand.
     /// @param right The right operand.
     /// @return The result of bitwise xor.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/bitwise_xor_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
