@@ -18,6 +18,12 @@ namespace xtd {
     /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression.
     /// @param value The value to convert.
     /// @raturn The result as xtd::expressions::expression.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/as_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
@@ -30,6 +36,12 @@ namespace xtd {
     /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::constant.
     /// @param value The value to convert.
     /// @raturn The result as xtd::expressions::constant.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/as_expression>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
