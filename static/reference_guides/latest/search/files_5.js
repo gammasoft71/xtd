@@ -54,7 +54,7 @@ var searchData=
   ['exit_5fmode_2ehpp_51',['exit_mode.hpp',['../exit__mode_8hpp.html',1,'']]],
   ['exit_5fstatus_2ehpp_52',['exit_status.hpp',['../exit__status_8hpp.html',1,'']]],
   ['export_2ehpp_53',['export.hpp',['../export_8hpp.html',1,'']]],
-  ['expression_5fbase_2ehpp_54',['expression_base.hpp',['../expression__base_8hpp.html',1,'']]],
+  ['expression_2ehpp_54',['expression.hpp',['../expression_8hpp.html',1,'']]],
   ['expression_5foperand_2ehpp_55',['expression_operand.hpp',['../expression__operand_8hpp.html',1,'']]],
   ['expression_5fstream_2ehpp_56',['expression_stream.hpp',['../expression__stream_8hpp.html',1,'']]],
   ['extended_5fcolors_2ehpp_57',['extended_colors.hpp',['../extended__colors_8hpp.html',1,'']]]

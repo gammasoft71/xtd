@@ -253,6 +253,6 @@ var searchData=
   ['exception_5fdialog_250',['exception_dialog',['../classxtd_1_1forms_1_1exception__dialog.html',1,'xtd::forms']]],
   ['exception_5fdispatch_5finfo_251',['exception_dispatch_info',['../classxtd_1_1exception__services_1_1exception__dispatch__info.html',1,'xtd::exception_services']]],
   ['exit_5fevent_252',['exit_event',['../classxtd_1_1diagnostics_1_1process_1_1exit__event.html',1,'xtd::diagnostics::process']]],
-  ['expression_5fbase_253',['expression_base',['../structxtd_1_1expressions_1_1expression__base.html',1,'xtd::expressions']]],
+  ['expression_253',['expression',['../structxtd_1_1expressions_1_1expression.html',1,'xtd::expressions']]],
   ['expression_5fstream_254',['expression_stream',['../structxtd_1_1expressions_1_1expression__stream.html',1,'xtd::expressions']]]
 ];

@@ -795,12 +795,14 @@ var searchData=
   ['func_792',['func',['../group__delegates.html#ga17814178399a734d83f7c7ee1ca15365',1,'xtd']]],
   ['func_2ehpp_793',['func.hpp',['../func_8hpp.html',1,'']]],
   ['function_794',['function',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14',1,'xtd::forms']]],
-  ['function_5fcollection_795',['function_collection',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#a407ca4134bf0160330459651a8d559ca',1,'xtd::delegate&lt; result_t()&gt;::function_collection'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::function_collection']]],
-  ['function_5fkey_796',['function_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea1a1e214da8bf1d97f44f9db50a9e081d',1,'xtd::forms']]],
-  ['function_5fname_797',['function_name',['../classxtd_1_1diagnostics_1_1source__location.html#ac4f0be2258c3c5f0eb905ceee6389b01',1,'xtd::diagnostics::source_location']]],
-  ['function_5ft_798',['function_t',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#aeafec892cd1ae6df66769bc6297b5b11',1,'xtd::delegate&lt; result_t()&gt;::function_t'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ab3232024d27cfcb7f0411b19519e6a12',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::function_t']]],
-  ['functions_799',['functions',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#a4516ed6e4fc4a9049549340d193a0524',1,'xtd::delegate&lt; result_t()&gt;::functions()'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6ce94bf368156e4e3a73e2fcd261ae32',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::functions()']]],
-  ['funeral_5furn_800',['funeral_urn',['../classxtd_1_1forms_1_1emoticons.html#ad23437f3b24eeba19dc75caa539ec344',1,'xtd::forms::emoticons']]],
-  ['fusion_5fe_5finvalid_5fname_801',['FUSION_E_INVALID_NAME',['../classxtd_1_1h__result.html#a6ac0d868c254e83dbcca03edc10467b5',1,'xtd::h_result']]],
-  ['fusion_5fe_5fref_5fdef_5fmismatch_802',['FUSION_E_REF_DEF_MISMATCH',['../classxtd_1_1h__result.html#a29f4bc439b56379703ad4cac08490ea0',1,'xtd::h_result']]]
+  ['function_5fcall_795',['function_call',['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683ae423a7b1e880ec8b604e2f4fe9886da0',1,'xtd::expressions']]],
+  ['function_5fcollection_796',['function_collection',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#a407ca4134bf0160330459651a8d559ca',1,'xtd::delegate&lt; result_t()&gt;::function_collection'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::function_collection']]],
+  ['function_5fkey_797',['function_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea1a1e214da8bf1d97f44f9db50a9e081d',1,'xtd::forms']]],
+  ['function_5fname_798',['function_name',['../classxtd_1_1diagnostics_1_1source__location.html#ac4f0be2258c3c5f0eb905ceee6389b01',1,'xtd::diagnostics::source_location']]],
+  ['function_5ft_799',['function_t',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#aeafec892cd1ae6df66769bc6297b5b11',1,'xtd::delegate&lt; result_t()&gt;::function_t'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ab3232024d27cfcb7f0411b19519e6a12',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::function_t']]],
+  ['functional_5fcast_800',['functional_cast',['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683ad5eb08377dc699401faf6ae548c053ba',1,'xtd::expressions']]],
+  ['functions_801',['functions',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#a4516ed6e4fc4a9049549340d193a0524',1,'xtd::delegate&lt; result_t()&gt;::functions()'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6ce94bf368156e4e3a73e2fcd261ae32',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::functions()']]],
+  ['funeral_5furn_802',['funeral_urn',['../classxtd_1_1forms_1_1emoticons.html#ad23437f3b24eeba19dc75caa539ec344',1,'xtd::forms::emoticons']]],
+  ['fusion_5fe_5finvalid_5fname_803',['FUSION_E_INVALID_NAME',['../classxtd_1_1h__result.html#a6ac0d868c254e83dbcca03edc10467b5',1,'xtd::h_result']]],
+  ['fusion_5fe_5fref_5fdef_5fmismatch_804',['FUSION_E_REF_DEF_MISMATCH',['../classxtd_1_1h__result.html#a29f4bc439b56379703ad4cac08490ea0',1,'xtd::h_result']]]
 ];
