@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::less_expression struct is used by xtd::expressions::operator <().
     template <typename left_t, typename right_t>
-    struct less_expression : expression_base {
+    struct less_expression : expression {
       /// @name Public Fields
       
       /// @{

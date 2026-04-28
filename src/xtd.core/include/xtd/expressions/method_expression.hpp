@@ -42,15 +42,15 @@ namespace xtd {
       return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{name, method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
 
-    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression or xtd::expressions::constant.
     /// @param value The value to convert.
-    /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @raturn The result as xtd::expressions::expression or xtd::expressions::constant.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename expression_t, typename method_t>
-    struct method_expression : expression_base {
+    struct method_expression : expression {
       /// @name Public Fields
       
       /// @{

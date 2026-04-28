@@ -41,15 +41,15 @@ namespace xtd {
       return member_type<member_t>{name, member};
     }
     
-    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression or xtd::expressions::constant.
     /// @param value The value to convert.
-    /// @raturn The result as xtd::expressions::expression_base or xtd::expressions::constant.
+    /// @raturn The result as xtd::expressions::expression or xtd::expressions::constant.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename expression_t, typename member_t>
-    struct member_expression : expression_base {
+    struct member_expression : expression {
       /// @name Public Fields
       
       /// @{

@@ -20,7 +20,7 @@ namespace xtd {
     /// The following example shows how to use xtd::expressions::addition_expression.
     /// @include addition_expression.cpp
     template <typename left_t, typename right_t>
-    struct addition_expression : expression_base {
+    struct addition_expression : expression {
       /// @name Public Fields
       
       /// @{

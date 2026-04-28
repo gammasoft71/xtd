@@ -15,9 +15,9 @@ namespace xtd {
     /// @name Public Functions
     
     /// @{
-    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression_base.
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::expression.
     /// @param value The value to convert.
-    /// @raturn The result as xtd::expressions::expression_base.
+    /// @raturn The result as xtd::expressions::expression.
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions

@@ -37,7 +37,7 @@ namespace xtd {
     /// // bit_xor2 result => 218
     /// ```
     template <typename left_t, typename right_t>
-    struct bitwise_xor_expression : expression_base {
+    struct bitwise_xor_expression : expression {
       /// @name Public Fields
       
       /// @{

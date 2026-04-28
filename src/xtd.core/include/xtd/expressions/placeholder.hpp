@@ -32,6 +32,12 @@ namespace xtd {
       static constexpr operator_precedence precedence = operator_precedence::placeholder;
       /// @}
 
+      /// @name Public Constructors
+      
+      /// @{
+      placeholder() = default;
+      /// @}
+
       /// @name Public Operators
       
       /// @{

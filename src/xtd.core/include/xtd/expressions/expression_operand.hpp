@@ -2,7 +2,7 @@
 /// @brief Contains xtd::expressions::expression_operand concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "expression_base.hpp"
+#include "expression.hpp"
 #include <concepts>
 #include <type_traits>
 
@@ -19,6 +19,6 @@ namespace xtd {
     //expression<left_t> || expression<right_t>;
     template <typename type_t>
     concept expression_operand =
-    std::is_base_of_v<expression_base, std::decay_t<type_t>>;
+    std::is_base_of_v<expression, std::decay_t<type_t>>;
   }
 }

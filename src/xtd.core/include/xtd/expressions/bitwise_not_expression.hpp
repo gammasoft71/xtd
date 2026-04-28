@@ -33,7 +33,7 @@ namespace xtd {
     /// // bit_not1 result => 0b11010101
     /// ```
     template <typename value_t>
-    struct bitwise_not_expression : expression_base {
+    struct bitwise_not_expression : expression {
       /// @name Public Fields
       
       /// @{

@@ -37,7 +37,7 @@ namespace xtd {
     /// // bit_left2 result => 672
     /// ```
     template <typename left_t, typename right_t>
-    struct bitwise_left_expression : expression_base {
+    struct bitwise_left_expression : expression {
       /// @name Public Fields
       
       /// @{

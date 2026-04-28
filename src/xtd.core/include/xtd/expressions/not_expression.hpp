@@ -34,7 +34,7 @@ namespace xtd {
     /// // not1 result => true
     /// ```
     template <typename value_t>
-    struct not_expression : expression_base {
+    struct not_expression : expression {
       /// @name Public Fields
       
       /// @{

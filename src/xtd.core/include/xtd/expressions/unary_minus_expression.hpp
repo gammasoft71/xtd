@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::unary_minus_expression struct is used by xtd::expressions::operator -().
     template <typename value_t>
-    struct unary_minus_expression : expression_base {
+    struct unary_minus_expression : expression {
       /// @name Public Fields
       
       /// @{
