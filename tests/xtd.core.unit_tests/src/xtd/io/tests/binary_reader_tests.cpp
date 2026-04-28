@@ -25,15 +25,6 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(binary_reader_tests) {
-    /*
-    struct memory_stream : std::stringstream {
-      memory_stream() : std::stringstream {std::ios_base::in | std::ios_base::out | std::ios_base::binary} {}
-    
-      using std::stringstream::write;
-      void write(const array<byte>& bytes) {write(bytes, 0_z, bytes.length());}
-      void write(const array<byte>& bytes, size offset, size count) {write(reinterpret_cast<const char*>(bytes.data() + offset), count);}
-    };*/
-    
     auto test_method_(read_boolean) {
       auto stream = memory_stream {};
       stream.write(bit_converter::get_bytes(true));
