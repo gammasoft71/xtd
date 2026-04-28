@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "any.hpp"
+#include "expressions/expression_operand.hpp"
 #include "argument_null_exception.hpp"
 #include "async_result.hpp"
 #include "iequatable.hpp"
@@ -91,7 +92,8 @@ namespace xtd {
     delegate& operator =(const delegate& other) {*data_ = *other.data_; return *this;}
 
     template <typename fct_t>
-    requires (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
     (!std::same_as<std::decay_t<fct_t>, function_t>) &&
     std::invocable<fct_t&> &&
     std::convertible_to<std::invoke_result_t<fct_t&>, result_t>
@@ -285,20 +287,20 @@ namespace xtd {
     /// @}
     
     /// @cond
-    auto operator +(const delegate& other) const noexcept -> delegate {
+    [[nodiscard]] auto operator +(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    auto operator +(const function_t& function) const noexcept -> delegate {
+    [[nodiscard]] auto operator +(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
     template<class fn_t>
-    auto operator +(fn_t function) const noexcept -> delegate {
+    [[nodiscard]] auto operator +(fn_t function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
@@ -320,20 +322,20 @@ namespace xtd {
       return *this;
     }
     
-    auto operator -(const delegate& other) const noexcept -> delegate {
+    [[nodiscard]] auto operator -(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    auto operator -(const function_t& function) const noexcept -> delegate {
+    [[nodiscard]] auto operator -(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
     template<class fn_t>
-    auto operator -(fn_t function) const noexcept -> delegate {
+    [[nodiscard]] auto operator -(fn_t function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
@@ -423,16 +425,11 @@ namespace xtd {
     delegate(delegate&&) = default;
     delegate(const delegate& other) {*data_ = *other.data_;}
     delegate& operator =(const delegate& other) {*data_ = *other.data_; return *this;}
-    delegate(const delegate<result_t()>& delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
     /// @param function the method instance.
     delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
-    
-    /// @cond
-    delegate(const no_arguments_function_t& function) noexcept {data_->no_arguments_functions.push_back(function);} // Can't be explicit by design.
-    /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
@@ -455,18 +452,23 @@ namespace xtd {
     delegate(const object1_t& object, result_t(object2_t::*method)(args_t...)) noexcept {data_->functions.push_back(function_t(std::bind_front(method, const_cast<object1_t*>(&object))));}
 
     template <typename fct_t>
-    requires (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
     (!std::same_as<std::decay_t<fct_t>, function_t>) &&
-    std::invocable<fct_t&, arguments_t...> &&
-    std::convertible_to<std::invoke_result_t<fct_t&, arguments_t...>, result_t>
+    std::invocable<fct_t&, arguments_t...>
     delegate(fct_t&& f) {data_->functions.push_back(function_t(std::forward<fct_t>(f)));}
 
     template <typename fct_t>
-    requires (!std::same_as<std::decay_t<fct_t>, delegate>) &&
-    (!std::same_as<std::decay_t<fct_t>, no_arguments_function_t>) &&
-    std::invocable<fct_t&> &&
-    std::convertible_to<std::invoke_result_t<fct_t&>, result_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&>
     delegate(fct_t&& f) {data_->no_arguments_functions.push_back(no_arguments_function_t(std::forward<fct_t>(f)));}
+
+    template <typename expression_t>
+    requires xtd::expressions::expression_operand<expression_t> &&
+    requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
+    delegate(expression_t&& expression) {data_->functions.push_back(function_t(std::forward<expression_t>(expression)));}
     /// @endcond
     
     /// @name Public Properties
@@ -669,11 +671,37 @@ namespace xtd {
     /// @}
     
     /// @cond
-    template<class type_t>
-    auto operator =(const type_t& function) noexcept -> delegate& {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&, arguments_t...>
+    auto operator =(fct_t&& function) noexcept -> delegate& {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->functions.push_back(function_t(function));
+      return *this;
+    }
+    
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&>
+    auto operator =(fct_t&& function) noexcept -> delegate& {
+      data_->no_arguments_functions.clear();
+      data_->functions.clear();
+      data_->no_arguments_functions.push_back(no_arguments_function_t(function));
+      return *this;
+    }
+    
+    template <typename expression_t>
+    requires xtd::expressions::expression_operand<expression_t> &&
+    requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
+    auto operator =(expression_t&& expression) noexcept -> delegate& {
+      data_->no_arguments_functions.clear();
+      data_->functions.clear();
+      data_->functions.push_back(function_t(expression));
       return *this;
     }
     
@@ -684,35 +712,46 @@ namespace xtd {
       return *this;
     }
     
-    auto operator =(const no_arguments_function_t& function) noexcept -> delegate& {
-      data_->no_arguments_functions.clear();
-      data_->functions.clear();
-      data_->no_arguments_functions.push_back(function);
-      return *this;
-    }
-    
-    auto operator +(const delegate& other) const noexcept -> delegate {
+    [[nodiscard]] auto operator +(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    auto operator +(const no_arguments_function_t& function) const noexcept -> delegate {
+    [[nodiscard]] auto operator +(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    auto operator +(const function_t& function) const noexcept -> delegate {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&, arguments_t...>
+    [[nodiscard]] auto operator +(fct_t&& function) noexcept -> delegate {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    template<class fn_t>
-    auto operator +(fn_t function) const noexcept -> delegate {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&>
+    [[nodiscard]] auto operator +(fct_t&& function) noexcept -> delegate {
       delegate result = *this;
       result += function;
+      return result;
+    }
+    
+    template <typename expression_t>
+    requires xtd::expressions::expression_operand<expression_t> &&
+    requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
+    [[nodiscard]] auto operator +(expression_t&& expression) noexcept -> delegate {
+      delegate result = *this;
+      result += expression;
       return result;
     }
     
@@ -721,44 +760,79 @@ namespace xtd {
       return *this;
     }
     
-    auto operator +=(const no_arguments_function_t& function) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(function));
-      return *this;
-    }
-    
     auto operator +=(const function_t& function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    template<class fn_t>
-    auto operator +=(fn_t function) noexcept -> delegate& {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&, arguments_t...>
+    auto operator +=(fct_t&& function) noexcept -> delegate& {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    auto operator -(const delegate& other) const noexcept -> delegate {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&>
+    auto operator +=(fct_t&& function) noexcept -> delegate& {
+      *this = delegate::combine(*this, delegate(function));
+      return *this;
+    }
+    
+    template <typename expression_t>
+    requires xtd::expressions::expression_operand<expression_t> &&
+    requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
+    auto operator +=(expression_t&& expression) noexcept -> delegate& {
+      *this = delegate::combine(*this, delegate(expression));
+      return *this;
+    }
+    
+    [[nodiscard]] auto operator -(const delegate& other) const noexcept -> delegate {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    auto operator -(const no_arguments_function_t& function) const noexcept -> delegate {
+    [[nodiscard]] auto operator -(const function_t& function) const noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    auto operator -(const function_t& function) const noexcept -> delegate {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&, arguments_t...>
+    [[nodiscard]] auto operator -(fct_t&& function) noexcept -> delegate {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    template<class fn_t>
-    auto operator -(fn_t function) const noexcept -> delegate {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&>
+    [[nodiscard]] auto operator -(fct_t&& function) noexcept -> delegate {
       delegate result = *this;
       result -= function;
+      return result;
+    }
+    
+    template <typename expression_t>
+    requires xtd::expressions::expression_operand<expression_t> &&
+    requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
+    [[nodiscard]] auto operator -(expression_t&& expression) noexcept -> delegate {
+      delegate result = *this;
+      result -= expression;
       return result;
     }
     
@@ -767,19 +841,36 @@ namespace xtd {
       return *this;
     }
     
-    auto operator -=(const no_arguments_function_t& function) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(function));
-      return *this;
-    }
-    
     auto operator -=(const function_t& function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
-    template<class fn_t>
-    auto operator -=(fn_t function) noexcept -> delegate& {
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&, arguments_t...>
+    auto operator -=(fct_t&& function) noexcept -> delegate& {
       *this = delegate::remove(*this, delegate(function));
+      return *this;
+    }
+    
+    template <typename fct_t>
+    requires (!xtd::expressions::expression_operand<fct_t>) &&
+    (!std::same_as<std::decay_t<fct_t>, delegate>) &&
+    (!std::same_as<std::decay_t<fct_t>, function_t>) &&
+    std::invocable<fct_t&>
+    auto operator -=(fct_t&& function) noexcept -> delegate& {
+      *this = delegate::remove(*this, delegate(function));
+      return *this;
+    }
+    
+    template <typename expression_t>
+    requires xtd::expressions::expression_operand<expression_t> &&
+    requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
+    auto operator -=(expression_t&& expression) noexcept -> delegate& {
+      *this = delegate::remove(*this, delegate(expression));
       return *this;
     }
     /// @endcond
