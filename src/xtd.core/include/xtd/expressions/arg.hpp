@@ -12,6 +12,12 @@ namespace xtd {
     
     /// @{
     /// @brief The xtd::expressions::arg instance is the `index` argument used by expression.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/arg>
+    /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
