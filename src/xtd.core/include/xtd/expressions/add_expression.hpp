@@ -62,6 +62,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
 
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::add(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return add_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
