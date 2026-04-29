@@ -17,7 +17,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     struct placeholder_base : expression {
     protected:
       /// @name Protected Constructors

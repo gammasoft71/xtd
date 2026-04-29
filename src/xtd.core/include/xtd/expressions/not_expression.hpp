@@ -20,7 +20,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::operator !().
     /// @par Examples
     /// The following example shows how to use xtd::expressions::not_expression.

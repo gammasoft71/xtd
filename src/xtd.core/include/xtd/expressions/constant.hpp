@@ -17,7 +17,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::constant struct is used by xtd::expressions::as_expression methods.
     template <typename type_t>
     struct constant {

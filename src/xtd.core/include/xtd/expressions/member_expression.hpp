@@ -20,7 +20,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::member_type struct is used by xtd::expressions::member.
     template <typename member_t>
     struct member_type {
@@ -70,7 +70,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename expression_t, typename member_t>
     struct member_expression : expression {

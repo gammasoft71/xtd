@@ -20,7 +20,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::and_also_expression struct is used by xtd::expressions::operator &&().
     template <typename left_t, typename right_t>
     struct and_also_expression : expression {

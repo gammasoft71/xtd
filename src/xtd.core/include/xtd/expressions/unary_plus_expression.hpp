@@ -20,7 +20,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::unary_plus_expression struct is used by xtd::expressions::operator +().
     template <typename value_t>
     struct unary_plus_expression : expression {
