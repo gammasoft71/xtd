@@ -36,7 +36,7 @@ namespace xtd {
     ///
     ///   println();
     ///   auto expr2 = expression::multiply(expression::add(_1, _2), value);
-    ///    println("expr2 resutl = {}", expr2(10, 20));
+    ///   println("expr2 resutl = {}", expr2(10, 20));
     ///   println("expr2 = {}", expr2);
     ///   println("type_of(expr2) = {}", type_of(expr2));
     /// }
