@@ -100,7 +100,8 @@ namespace xtd {
       // Next optimization
       //if constexpr (is_constant_false_v<decltype(l)>) return left_expression;
       //else if constexpr (is_constant_true_v<decltype(l)>) return right_expression;
-      else return and_also_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      //else
+      return and_also_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @}
   }
