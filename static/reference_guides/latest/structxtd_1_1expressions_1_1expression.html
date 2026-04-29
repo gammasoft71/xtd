@@ -139,7 +139,7 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;type_of(expr1) = {}&quot;</span>, type_of(expr1));</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = expression::multiply(expression::add(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>), value);</div>
+<div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>), value);</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr2 resutl = {}&quot;</span>, expr2(10, 20));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2);</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;type_of(expr2) = {}&quot;</span>, type_of(expr2));</div>
@@ -157,17 +157,131 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:81</div></div>
 <div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:56</div></div>
 <div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a16e44e068234e060cf540866e0ac6411"><div class="ttname"><a href="#a16e44e068234e060cf540866e0ac6411">xtd::expressions::expression::add</a></div><div class="ttdeci">static constexpr auto add(left_t left, right_t right)</div><div class="ttdoc">Add the specified left and right operands.</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a1ee729d0c81dd0ff199c28bc4c61443f"><div class="ttname"><a href="#a1ee729d0c81dd0ff199c28bc4c61443f">xtd::expressions::expression::multiply</a></div><div class="ttdeci">static constexpr auto multiply(left_t left, right_t right)</div><div class="ttdoc">Multiply the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a16e44e068234e060cf540866e0ac6411" id="r_a16e44e068234e060cf540866e0ac6411"><td class="memTemplParams" colspan="2"><a id="a16e44e068234e060cf540866e0ac6411" name="a16e44e068234e060cf540866e0ac6411"></a>
-template&lt;typename left_t, typename right_t&gt; </td></tr>
-<tr class="memitem:a16e44e068234e060cf540866e0ac6411 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><b>add</b> (left_t left, right_t right)</td></tr>
-<tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f" id="r_a1ee729d0c81dd0ff199c28bc4c61443f"><td class="memTemplParams" colspan="2"><a id="a1ee729d0c81dd0ff199c28bc4c61443f" name="a1ee729d0c81dd0ff199c28bc4c61443f"></a>
-template&lt;typename left_t, typename right_t&gt; </td></tr>
-<tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><b>multiply</b> (left_t left, right_t right)</td></tr>
+<tr class="memitem:a16e44e068234e060cf540866e0ac6411" id="r_a16e44e068234e060cf540866e0ac6411"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a16e44e068234e060cf540866e0ac6411 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a16e44e068234e060cf540866e0ac6411">add</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a16e44e068234e060cf540866e0ac6411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f" id="r_a1ee729d0c81dd0ff199c28bc4c61443f"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ee729d0c81dd0ff199c28bc4c61443f">multiply</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a1ee729d0c81dd0ff199c28bc4c61443f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the specified left and right operands.  <br /></td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a16e44e068234e060cf540866e0ac6411" name="a16e44e068234e060cf540866e0ac6411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e44e068234e060cf540866e0ac6411">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::add </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of add. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::expressions::expressiosn::add. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> add1 = <a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add1 result =&gt; {}&quot;</span>, add1(40));</div>
+<div class="line">  <span class="keyword">auto</span> add2 = <a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add2 result =&gt; {}&quot;</span>, add2(40, 20));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// add1 result =&gt; 50</span></div>
+<div class="line"><span class="comment">// add2 result =&gt; 60</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:30</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a1ee729d0c81dd0ff199c28bc4c61443f" name="a1ee729d0c81dd0ff199c28bc4c61443f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee729d0c81dd0ff199c28bc4c61443f">&#9670;&#160;</a></span>multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::multiply </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiply the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of multiply. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::expressions::expressiosn::multiply. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> mul1 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul1 result =&gt; {}&quot;</span>, mul1(5));</div>
+<div class="line">  <span class="keyword">auto</span> mul2 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul2 result =&gt; {}&quot;</span>, mul2(4, 15));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// mul1 result =&gt; 50</span></div>
+<div class="line"><span class="comment">// mul2 result =&gt; 60</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/expressions/<a class="el" href="expression_8hpp_source.html">expression.hpp</a></li>
 </ul>
