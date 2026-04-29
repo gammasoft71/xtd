@@ -43,9 +43,10 @@ var searchData=
   ['resize_5feffect_2ehpp_40',['resize_effect.hpp',['../resize__effect_8hpp.html',1,'']]],
   ['resources_2ehpp_41',['resources.hpp',['../resources_8hpp.html',1,'']]],
   ['rgb_2ehpp_42',['rgb.hpp',['../rgb_8hpp.html',1,'']]],
-  ['right_5fto_5fleft_2ehpp_43',['right_to_left.hpp',['../right__to__left_8hpp.html',1,'']]],
-  ['rotate_5fflip_5feffect_2ehpp_44',['rotate_flip_effect.hpp',['../rotate__flip__effect_8hpp.html',1,'']]],
-  ['rotate_5fflip_5ftype_2ehpp_45',['rotate_flip_type.hpp',['../rotate__flip__type_8hpp.html',1,'']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_2ehpp_46',['run_worker_completed_event_args.hpp',['../run__worker__completed__event__args_8hpp.html',1,'']]],
-  ['run_5fworker_5fcompleted_5fevent_5fhandler_2ehpp_47',['run_worker_completed_event_handler.hpp',['../run__worker__completed__event__handler_8hpp.html',1,'']]]
+  ['right_5fshift_5fexpression_2ehpp_43',['right_shift_expression.hpp',['../right__shift__expression_8hpp.html',1,'']]],
+  ['right_5fto_5fleft_2ehpp_44',['right_to_left.hpp',['../right__to__left_8hpp.html',1,'']]],
+  ['rotate_5fflip_5feffect_2ehpp_45',['rotate_flip_effect.hpp',['../rotate__flip__effect_8hpp.html',1,'']]],
+  ['rotate_5fflip_5ftype_2ehpp_46',['rotate_flip_type.hpp',['../rotate__flip__type_8hpp.html',1,'']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_2ehpp_47',['run_worker_completed_event_args.hpp',['../run__worker__completed__event__args_8hpp.html',1,'']]],
+  ['run_5fworker_5fcompleted_5fevent_5fhandler_2ehpp_48',['run_worker_completed_event_handler.hpp',['../run__worker__completed__event__handler_8hpp.html',1,'']]]
 ];

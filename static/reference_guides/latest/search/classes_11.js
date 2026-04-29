@@ -52,6 +52,7 @@ var searchData=
   ['resize_5feffect_49',['resize_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html',1,'xtd::drawing::imaging::effects']]],
   ['resources_50',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
   ['rgb_51',['rgb',['../structxtd_1_1drawing_1_1helpers_1_1rgb.html',1,'xtd::drawing::helpers']]],
-  ['rotate_5fflip_5feffect_52',['rotate_flip_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1rotate__flip__effect.html',1,'xtd::drawing::imaging::effects']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_53',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
+  ['right_5fshift_5fexpression_52',['right_shift_expression',['../structxtd_1_1expressions_1_1right__shift__expression.html',1,'xtd::expressions']]],
+  ['rotate_5fflip_5feffect_53',['rotate_flip_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1rotate__flip__effect.html',1,'xtd::drawing::imaging::effects']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_54',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
 ];
