@@ -55,10 +55,52 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
+      /// @brief Add the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of add.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expressiosn::add.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto add1 = expression::add(_, 10);
+      ///   println("add1 result => {}", add1(40));
+      ///   auto add2 = expression::add(_1, _2);
+      ///   println("add2 result => {}", add2(40, 20));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // add1 result => 50
+      /// // add2 result => 60
+      /// ```
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto add(left_t left, right_t right);
       
+      /// @brief Multiply the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of multiply.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expressiosn::multiply.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto mul1 = expression::multiply(_, 10);
+      ///   println("mul1 result => {}", mul1(5));
+      ///   auto mul2 = expression::multiply(_1, _2);
+      ///   println("mul2 result => {}", mul2(4, 15));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // mul1 result => 50
+      /// // mul2 result => 60
+      /// ```
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto multiply(left_t left, right_t right);
