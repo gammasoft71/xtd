@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::bitwise_not_expression operator.
+/// @brief Contains xtd::expressions::not_expression operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,19 +12,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::bitwise_not_expression is the bitwise not expression.
+    /// @brief The xtd::expressions::not_expression is the bitwise not expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/bitwise_not_expression>
+    /// #include <xtd/expressions/not_expression>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::bitwise_not_expression struct is used by xtd::expressions::operator ~().
+    /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::operator ~().
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::bitwise_not_expression.
+    /// The following example shows how to use xtd::expressions::not_expression.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -39,7 +39,7 @@ namespace xtd {
     /// // bit_not1 result => 0b11010101
     /// ```
     template <typename value_t>
-    struct bitwise_not_expression : expression {
+    struct not_expression : expression {
       /// @name Public Fields
       
       /// @{
@@ -50,9 +50,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::bitwise_not_expression object with specified value operand.
+      /// @brief Initialize a new xtd::expressions::not_expression object with specified value operand.
       /// @param value The value operand.
-      constexpr bitwise_not_expression(value_t value) : value {std::move(value)} {}
+      constexpr not_expression(value_t value) : value {std::move(value)} {}
       /// @}
       
       /// @name Public Operators
@@ -71,7 +71,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const bitwise_not_expression& e) -> std::ostream& {return os << "~" << expression_stream {e.value, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const not_expression& e) -> std::ostream& {return os << "~" << expression_stream {e.value, e.precedence};}
       /// @endcond
 
     private:
@@ -89,13 +89,13 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/bitwise_not_expression>
+    /// #include <xtd/expressions/not_expression>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::bitwise_not_expression.
+    /// The following example shows how to use xtd::expressions::not_expression.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -113,7 +113,7 @@ namespace xtd {
     requires expression_operand<value_t>
     constexpr auto operator ~(value_t value) {
       auto expression = as_expression(value);
-      return bitwise_not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
+      return not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
     }
     /// @}
   }
