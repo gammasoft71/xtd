@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/expressions/addition_expression.hpp>

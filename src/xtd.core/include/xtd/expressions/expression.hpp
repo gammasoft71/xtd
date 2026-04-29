@@ -23,6 +23,18 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     struct expression {
+      /// @name Public Static Methods
+      
+      /// @{
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto add(left_t left, right_t right);
+      
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto multiply(left_t left, right_t right);
+      /// @}
+
     protected:
       /// @name Protected Constructors
       
