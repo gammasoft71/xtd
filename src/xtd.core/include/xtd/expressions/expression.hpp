@@ -12,7 +12,7 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::expression is the base class for expression objects.
+    /// @brief Provides the base class from which the classes that represent expression tree nodes are derived. It also contains static factory methods to create the various node types. This is an abstract class.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
@@ -22,6 +22,35 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
+    /// @par Examples
+    /// The following example shos how to use xd::expressions::expression calss.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   auto value = 30;
+    ///   auto expr1 = (_1 + _2) * value;
+    ///   println("expr1 resutl = {}", expr1(10, 20));
+    ///   println("expr1 = {}", expr1);
+    ///   println("type_of(expr1) = {}", type_of(expr1));
+    ///
+    ///   println();
+    ///   auto expr2 = expression::multiply(expression::add(_1, _2), value);
+    ///    println("expr2 resutl = {}", expr2(10, 20));
+    ///   println("expr2 = {}", expr2);
+    ///   println("type_of(expr2) = {}", type_of(expr2));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // expr1 resutl = 900
+    /// // expr1 = (_1 + _2) * 30
+    /// // type_of(expr1) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<0ul>, xtd::expressions::placeholder<1ul>>, xtd::expressions::constant<int>>
+    /// //
+    /// // expr2 resutl = 900
+    /// // expr2 = (_1 + _2) * 30
+    /// // type_of(expr2) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<0ul>, xtd::expressions::placeholder<1ul>>, xtd::expressions::constant<int>>
+    /// ```
     struct expression {
       /// @name Public Static Methods
       
