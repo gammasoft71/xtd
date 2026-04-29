@@ -75,7 +75,7 @@ namespace xtd {
     /// @brief Multiply the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of division.
+    /// @return The result of multiply.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
