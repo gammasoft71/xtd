@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shos how to use xd::expressions::expression calss.
+    /// The following example shos how to use xtd::expressions::expression class.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
