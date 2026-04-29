@@ -1,10 +1,10 @@
-# addition_expression
+# add_expression
 
 Shows how to use [xtd::expressions::operator +](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
 
 ## Sources
 
-* [src/addition_expression.cpp](src/addition_expression.cpp)
+* [src/add_expression.cpp](src/add_expression.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
