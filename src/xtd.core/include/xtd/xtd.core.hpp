@@ -113,7 +113,7 @@
 #include "expressions/arg.hpp"
 #include "expressions/args.hpp"
 #include "expressions/as_expression.hpp"
-#include "expressions/bitwise_left_expression.hpp"
+#include "expressions/left_shift_expression.hpp"
 #include "expressions/bitwise_not_expression.hpp"
 #include "expressions/bitwise_or_expression.hpp"
 #include "expressions/bitwise_right_expression.hpp"

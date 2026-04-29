@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/expressions/bitwise_left_expression.hpp>

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::bitwise_left_expression operator.
+/// @brief Contains xtd::expressions::left_shift_expression operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,19 +12,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::bitwise_left_expression is the bitwise left expression.
+    /// @brief The xtd::expressions::left_shift_expression is the bitwise left expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/bitwise_left_expression>
+    /// #include <xtd/expressions/left_shift_expression>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::bitwise_left_expression struct is used by xtd::expressions::operator <<().
+    /// @remarks The xtd::expressions::left_shift_expression struct is used by xtd::expressions::operator <<().
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::bitwise_left_expression.
+    /// The following example shows how to use xtd::expressions::left_shift_expression.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -43,7 +43,7 @@ namespace xtd {
     /// // bit_left2 result => 672
     /// ```
     template <typename left_t, typename right_t>
-    struct bitwise_left_expression : expression {
+    struct left_shift_expression : expression {
       /// @name Public Fields
       
       /// @{
@@ -54,10 +54,10 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::bitwise_left_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::left_shift_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr bitwise_left_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr left_shift_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -76,7 +76,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const bitwise_left_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " << " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const left_shift_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " << " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -95,13 +95,13 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/bitwise_left_expression>
+    /// #include <xtd/expressions/left_shift_expression>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::bitwise_left_expression.
+    /// The following example shows how to use xtd::expressions::left_shift_expression.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -124,7 +124,7 @@ namespace xtd {
     constexpr auto operator <<(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return bitwise_left_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return left_shift_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @}
   }
