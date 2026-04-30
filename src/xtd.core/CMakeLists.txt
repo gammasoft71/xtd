@@ -1025,6 +1025,8 @@ add_sources(
   "include/xtd/expressions/greater_than_expression"
   "include/xtd/expressions/greater_than_or_equal_expression.hpp"
   "include/xtd/expressions/greater_than_or_equal_expression"
+  "include/xtd/expressions/invocation_expression.hpp"
+  "include/xtd/expressions/invocation_expression"
   "include/xtd/expressions/left_shift_expression.hpp"
   "include/xtd/expressions/left_shift_expression"
   "include/xtd/expressions/less_than_expression.hpp"
