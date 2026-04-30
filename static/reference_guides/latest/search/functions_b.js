@@ -125,8 +125,9 @@ var searchData=
   ['logical_5fand_5fexpression_122',['logical_and_expression',['../structxtd_1_1expressions_1_1logical__and__expression.html#ab56264dc0747196e38b7065531b543cf',1,'xtd::expressions::logical_and_expression']]],
   ['logical_5fnot_5fexpression_123',['logical_not_expression',['../structxtd_1_1expressions_1_1logical__not__expression.html#ab53da1b2e248c2d514901086ce522c03',1,'xtd::expressions::logical_not_expression']]],
   ['logical_5foperation_5fstack_124',['logical_operation_stack',['../classxtd_1_1diagnostics_1_1trace__event__cache.html#aaf09cc351e22032d662525605aa66737',1,'xtd::diagnostics::trace_event_cache']]],
-  ['long_5flength_125',['long_length',['../classxtd_1_1basic__array.html#a59e5c7b4cfb9357fa83500c67604e206',1,'xtd::basic_array']]],
-  ['long_5fversion_126',['long_version',['../classxtd_1_1forms_1_1about__dialog.html#a49033e331c6c49d78b1efe850ac8147b',1,'xtd::forms::about_dialog::long_version() const noexcept'],['../classxtd_1_1forms_1_1about__dialog.html#aa185a0e4cc57f18fdcf15d165e51bcca',1,'xtd::forms::about_dialog::long_version(const xtd::string &amp;long_version)']]],
-  ['luminance_5ftable_127',['luminance_table',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#aa3258cc5d7c3ef95bf1eae81b06fe7a8',1,'xtd::drawing::imaging::encoder']]],
-  ['luxembourg_128',['luxembourg',['../classxtd_1_1forms_1_1countries.html#acb1e17137da00cc805da5843d49f3c2f',1,'xtd::forms::countries']]]
+  ['logical_5for_5fexpression_125',['logical_or_expression',['../structxtd_1_1expressions_1_1logical__or__expression.html#a5c3d6c171949c2ce778effb67ee88468',1,'xtd::expressions::logical_or_expression']]],
+  ['long_5flength_126',['long_length',['../classxtd_1_1basic__array.html#a59e5c7b4cfb9357fa83500c67604e206',1,'xtd::basic_array']]],
+  ['long_5fversion_127',['long_version',['../classxtd_1_1forms_1_1about__dialog.html#a49033e331c6c49d78b1efe850ac8147b',1,'xtd::forms::about_dialog::long_version() const noexcept'],['../classxtd_1_1forms_1_1about__dialog.html#aa185a0e4cc57f18fdcf15d165e51bcca',1,'xtd::forms::about_dialog::long_version(const xtd::string &amp;long_version)']]],
+  ['luminance_5ftable_128',['luminance_table',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#aa3258cc5d7c3ef95bf1eae81b06fe7a8',1,'xtd::drawing::imaging::encoder']]],
+  ['luxembourg_129',['luxembourg',['../classxtd_1_1forms_1_1countries.html#acb1e17137da00cc805da5843d49f3c2f',1,'xtd::forms::countries']]]
 ];
