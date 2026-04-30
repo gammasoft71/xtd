@@ -113,6 +113,7 @@
 #include "expressions/arg.hpp"
 #include "expressions/args.hpp"
 #include "expressions/as_expression.hpp"
+#include "expressions/binary_expression.hpp"
 #include "expressions/xor_expression.hpp"
 #include "expressions/constant.hpp"
 #include "expressions/division_expression.hpp"
