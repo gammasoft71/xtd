@@ -102,6 +102,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base class from which the classes that represent expression tree nodes are derived. It also contains static factory methods to create the various node types. This is an abstract class.  <a href="structxtd_1_1expressions_1_1expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Aexpression_5Fstream_3C_20expression_5Ft_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Aexpression_5Fstream_3C_20expression_5Ft_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression__stream.html">xtd::expressions::expression_stream&lt; expression_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1expression__stream.html" title="The xtd::expressions::expression_stream is the streamable class for expression objects.">xtd::expressions::expression_stream</a> is the streamable class for expression objects.  <a href="structxtd_1_1expressions_1_1expression__stream.html#details">More...</a><br /></td></tr>
+<tr class="memitem:xtd_3A_3Aexpressions_3A_3Ainvocation_5Fexpression" id="r_xtd_3A_3Aexpressions_3A_3Ainvocation_5Fexpression"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1invocation__expression.html">xtd::expressions::invocation_expression</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1invocation__expression.html" title="The xtd::expressions::invocation_expression is the base class for xtd::expressions::placeholder.">xtd::expressions::invocation_expression</a> is the base class for <a class="el" href="structxtd_1_1expressions_1_1placeholder.html" title="The xtd::expressions::placeholder object is placeholder for all expressions.">xtd::expressions::placeholder</a>.  <a href="structxtd_1_1expressions_1_1invocation__expression.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Aplaceholder_3C_20index_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Aplaceholder_3C_20index_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1placeholder.html">xtd::expressions::placeholder&lt; index &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1expressions_1_1placeholder.html" title="The xtd::expressions::placeholder object is placeholder for all expressions.">xtd::expressions::placeholder</a> object is placeholder for all expressions.  <a href="structxtd_1_1expressions_1_1placeholder.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Aplaceholder_5Fexpression" id="r_xtd_3A_3Aexpressions_3A_3Aplaceholder_5Fexpression"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1placeholder__expression.html">xtd::expressions::placeholder_expression</a></td></tr>
@@ -170,7 +172,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a50c9b5e7cf3a731ea31c43f9a14c781b">xtd::expressions::operator_precedence::division</a>
 , <br />
-&#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a8e2bb981f1bb93f356b6974a54a40fd7">xtd::expressions::operator_precedence::remainder</a>
+&#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a5dcb4a1ea5a35da52691d50c8313c333">xtd::expressions::operator_precedence::modulo</a>
 , <br />
 &#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a2b2ae8740b2b5403b5075bd7cbc6ceaa">xtd::expressions::operator_precedence::addition</a>
 , <br />
@@ -226,7 +228,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683acbfcec4ed8c97dea9783550493a6f4b7">xtd::expressions::operator_precedence::compound_quotient_assignment</a>
 , <br />
-&#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a0359ec67e7aec87fc47cf8022f6656fe">xtd::expressions::operator_precedence::compound_remainder_assignment</a>
+&#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a40c4746351bb4851daea68ae32dea855">xtd::expressions::operator_precedence::compound_modulo_assignment</a>
 , <br />
 &#160;&#160;<a class="el" href="#gga418395dc9383e37eb269a52b25b74683a2b4651061488449e563c0cc61a7f0bfc">xtd::expressions::operator_precedence::compound_bitwise_left_assignment</a>
 , <br />
@@ -299,6 +301,9 @@ Public Operators</h2></td></tr>
 <tr class="memitem:ga3bf8711e2078009183728cca32a64fe8" id="r_ga3bf8711e2078009183728cca32a64fe8"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga3bf8711e2078009183728cca32a64fe8 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga3bf8711e2078009183728cca32a64fe8">xtd::expressions::operator&amp;</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga3bf8711e2078009183728cca32a64fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:ga0138d79c9045a3fd52b6874d19cad3ac" id="r_ga0138d79c9045a3fd52b6874d19cad3ac"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:ga0138d79c9045a3fd52b6874d19cad3ac template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga0138d79c9045a3fd52b6874d19cad3ac">xtd::expressions::operator&lt;=&gt;</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:ga0138d79c9045a3fd52b6874d19cad3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equal to the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:ga26429abdfbcb94b8bda0ef50e026e5bc" id="r_ga26429abdfbcb94b8bda0ef50e026e5bc"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga26429abdfbcb94b8bda0ef50e026e5bc template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga26429abdfbcb94b8bda0ef50e026e5bc">xtd::expressions::operator/</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga26429abdfbcb94b8bda0ef50e026e5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide the specified left and right operands.  <br /></td></tr>
@@ -335,6 +340,9 @@ Public Operators</h2></td></tr>
 <tr class="memitem:ga4d1ccf77c53fe6dd3c85b0f44a60e30e" id="r_ga4d1ccf77c53fe6dd3c85b0f44a60e30e"><td class="memTemplParams" colspan="2">template&lt;typename expression_t, typename method_t, typename... stored_args_t&gt; </td></tr>
 <tr class="memitem:ga4d1ccf77c53fe6dd3c85b0f44a60e30e template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga4d1ccf77c53fe6dd3c85b0f44a60e30e">xtd::expressions::operator|</a> (expression_t <a class="el" href="structxtd_1_1expressions_1_1expression.html">expression</a>, <a class="el" href="structxtd_1_1expressions_1_1method__type.html">method_type</a>&lt; method_t, stored_args_t... &gt; <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">method</a>)</td></tr>
 <tr class="memdesc:ga4d1ccf77c53fe6dd3c85b0f44a60e30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind method alternative operator.  <br /></td></tr>
+<tr class="memitem:ga7ef2a1883d554d284cf372d04b839e73" id="r_ga7ef2a1883d554d284cf372d04b839e73"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:ga7ef2a1883d554d284cf372d04b839e73 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga7ef2a1883d554d284cf372d04b839e73">xtd::expressions::operator%</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:ga7ef2a1883d554d284cf372d04b839e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a modulo on the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:gad9a0ab28f9179c913949115818cb1cc5" id="r_gad9a0ab28f9179c913949115818cb1cc5"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:gad9a0ab28f9179c913949115818cb1cc5 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gad9a0ab28f9179c913949115818cb1cc5">xtd::expressions::operator*</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:gad9a0ab28f9179c913949115818cb1cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the specified left and right operands.  <br /></td></tr>
@@ -350,18 +358,12 @@ Public Operators</h2></td></tr>
 <tr class="memitem:ga7536b7f60fb7611a779aa9f08d4e170d" id="r_ga7536b7f60fb7611a779aa9f08d4e170d"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga7536b7f60fb7611a779aa9f08d4e170d template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga7536b7f60fb7611a779aa9f08d4e170d">xtd::expressions::operator|</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga7536b7f60fb7611a779aa9f08d4e170d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
-<tr class="memitem:ga7ef2a1883d554d284cf372d04b839e73" id="r_ga7ef2a1883d554d284cf372d04b839e73"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
-<tr class="memitem:ga7ef2a1883d554d284cf372d04b839e73 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga7ef2a1883d554d284cf372d04b839e73">xtd::expressions::operator%</a> (left_t left, right_t right)</td></tr>
-<tr class="memdesc:ga7ef2a1883d554d284cf372d04b839e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a modulo on the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:ga70f1fd2576c6cb0cab141483778f3e04" id="r_ga70f1fd2576c6cb0cab141483778f3e04"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga70f1fd2576c6cb0cab141483778f3e04 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga70f1fd2576c6cb0cab141483778f3e04">xtd::expressions::operator&gt;&gt;</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga70f1fd2576c6cb0cab141483778f3e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:ga321430ccf4bd434a3948168926149fbb" id="r_ga321430ccf4bd434a3948168926149fbb"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:ga321430ccf4bd434a3948168926149fbb template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga321430ccf4bd434a3948168926149fbb">xtd::expressions::operator-</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ga321430ccf4bd434a3948168926149fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
-<tr class="memitem:ga0138d79c9045a3fd52b6874d19cad3ac" id="r_ga0138d79c9045a3fd52b6874d19cad3ac"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
-<tr class="memitem:ga0138d79c9045a3fd52b6874d19cad3ac template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga0138d79c9045a3fd52b6874d19cad3ac">xtd::expressions::operator&lt;=&gt;</a> (left_t left, right_t right)</td></tr>
-<tr class="memdesc:ga0138d79c9045a3fd52b6874d19cad3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equal to the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:gad826466e1249223736d8ae4876a24cd6" id="r_gad826466e1249223736d8ae4876a24cd6"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:gad826466e1249223736d8ae4876a24cd6 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gad826466e1249223736d8ae4876a24cd6">xtd::expressions::operator-</a> (value_t value)</td></tr>
 <tr class="memdesc:gad826466e1249223736d8ae4876a24cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the specified left and right operands.  <br /></td></tr>
@@ -464,7 +466,7 @@ Public Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a50c9b5e7cf3a731ea31c43f9a14c781b" name="gga418395dc9383e37eb269a52b25b74683a50c9b5e7cf3a731ea31c43f9a14c781b"></a>division&#160;</td><td class="fielddoc"><p>Represnets the division operator precedence (<span class="tt">a / b</span>). </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a8e2bb981f1bb93f356b6974a54a40fd7" name="gga418395dc9383e37eb269a52b25b74683a8e2bb981f1bb93f356b6974a54a40fd7"></a>remainder&#160;</td><td class="fielddoc"><p>Represnets the remainder operator precedence (<span class="tt">a % b</span>). </p>
+<tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a5dcb4a1ea5a35da52691d50c8313c333" name="gga418395dc9383e37eb269a52b25b74683a5dcb4a1ea5a35da52691d50c8313c333"></a>modulo&#160;</td><td class="fielddoc"><p>Represnets the modulo operator precedence (<span class="tt">a % b</span>). </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a2b2ae8740b2b5403b5075bd7cbc6ceaa" name="gga418395dc9383e37eb269a52b25b74683a2b2ae8740b2b5403b5075bd7cbc6ceaa"></a>addition&#160;</td><td class="fielddoc"><p>Represnets the addition operator precedence (<span class="tt">a + b</span>). </p>
 </td></tr>
@@ -520,7 +522,7 @@ Public Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683acbfcec4ed8c97dea9783550493a6f4b7" name="gga418395dc9383e37eb269a52b25b74683acbfcec4ed8c97dea9783550493a6f4b7"></a>compound_quotient_assignment&#160;</td><td class="fielddoc"><p>Represnets the compound quotient assignment operator precedence (<span class="tt">a /= b</span>). </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a0359ec67e7aec87fc47cf8022f6656fe" name="gga418395dc9383e37eb269a52b25b74683a0359ec67e7aec87fc47cf8022f6656fe"></a>compound_remainder_assignment&#160;</td><td class="fielddoc"><p>Represnets the compound remainder assignment operator precedence (<span class="tt">a %= b</span>). </p>
+<tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a40c4746351bb4851daea68ae32dea855" name="gga418395dc9383e37eb269a52b25b74683a40c4746351bb4851daea68ae32dea855"></a>compound_modulo_assignment&#160;</td><td class="fielddoc"><p>Represnets the compound modulo assignment operator precedence (<span class="tt">a %= b</span>). </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga418395dc9383e37eb269a52b25b74683a2b4651061488449e563c0cc61a7f0bfc" name="gga418395dc9383e37eb269a52b25b74683a2b4651061488449e563c0cc61a7f0bfc"></a>compound_bitwise_left_assignment&#160;</td><td class="fielddoc"><p>Represnets the compound bitwise left assignment operator precedence (<span class="tt">a &lt;&lt;= b</span>). </p>
 </td></tr>
@@ -781,6 +783,69 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
+<a id="ga0138d79c9045a3fd52b6874d19cad3ac" name="ga0138d79c9045a3fd52b6874d19cad3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0138d79c9045a3fd52b6874d19cad3ac">&#9670;&#160;</a></span>operator&lt;=&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::expressions::operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="compare__three__way__expression_8hpp.html">compare_three_way_expression.hpp</a>&gt;</code></p>
+
+<p>Equal to the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of three_way_comparison. </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/compare_three_way_expression&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1compare__three__way__expression.html" title="The xtd::expressions::compare_three_way_expression is the three_way_comparison expression.">xtd::expressions::compare_three_way_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">//auto three_way_comparison1 = [](auto _) {return _ &lt;=&gt; 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> three_way_comparison1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_ &lt;=&gt;</a> 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;three_way_comparison1 result =&gt; {}&quot;</span>, three_way_comparison1(42));</div>
+<div class="line">  <span class="comment">//auto three_way_comparison2 = [](auto _1, auto _2) {return _1 &lt;=&gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> three_way_comparison2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1 &lt;=&gt;</a> <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;three_way_comparison2 result =&gt; {}&quot;</span>, three_way_comparison2(42, 42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// three_way_comparison1 result =&gt; greater</span></div>
+<div class="line"><span class="comment">// three_way_comparison2 result =&gt; equivalent</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga26429abdfbcb94b8bda0ef50e026e5bc" name="ga26429abdfbcb94b8bda0ef50e026e5bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga26429abdfbcb94b8bda0ef50e026e5bc">&#9670;&#160;</a></span>operator/()</h2>
 
@@ -959,7 +1024,7 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// greater1 result =&gt; true</span></div>
-<div class="line"><span class="comment">// eq2greater2result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater2 result =&gt; false</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1497,11 +1562,11 @@ template&lt;typename method_t, typename... args_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="method__expression_8hpp.html">method_expression.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="method__call__expression_8hpp.html">method_call_expression.hpp</a>&gt;</code></p>
 
 <p>The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_expression&gt;</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_call_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> mzthod is used by <a class="el" href="#gaa03e59f1f067f46e35b5972e6c8cff13" title="Subtract the specified left and right operands.">xtd::expressions::operator ^()</a>. </dd></dl>
@@ -1542,11 +1607,11 @@ template&lt;typename method_t, typename... args_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="method__expression_8hpp.html">method_expression.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="method__call__expression_8hpp.html">method_call_expression.hpp</a>&gt;</code></p>
 
 <p>The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> is use to bind object method. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_expression&gt;</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_call_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::method</a> mzthod is used by <a class="el" href="#gaa03e59f1f067f46e35b5972e6c8cff13" title="Subtract the specified left and right operands.">xtd::expressions::operator ^()</a>. </dd></dl>
@@ -1582,7 +1647,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="method__expression_8hpp.html">method_expression.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="method__call__expression_8hpp.html">method_call_expression.hpp</a>&gt;</code></p>
 
 <p>Bind method operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1594,7 +1659,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the binded method. </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_expression&gt;</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_call_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::expressions::not_equal_to_expression. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -1616,7 +1681,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a056e8a1ba3ad4dbad75ed46bdacd9227"><div class="ttname"><a href="classxtd_1_1basic__string.html#a056e8a1ba3ad4dbad75ed46bdacd9227">xtd::basic_string&lt; char &gt;::substring</a></div><div class="ttdeci">auto substring(xtd::usize start_index) const -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:865</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a2095a4dd9dbf5c5b0945458539b94a3d"><div class="ttname"><a href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">xtd::basic_string&lt; char &gt;::to_upper</a></div><div class="ttdeci">auto to_upper() const noexcept -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:944</div></div>
 <div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:106</div></div>
-<div class="ttc" id="agroup__expressions_html_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><div class="ttname"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a></div><div class="ttdeci">constexpr auto method(method_t method, args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::expressions::method is use to bind object method.</div><div class="ttdef"><b>Definition</b> method_expression.hpp:44</div></div>
+<div class="ttc" id="agroup__expressions_html_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><div class="ttname"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a></div><div class="ttdeci">constexpr auto method(method_t method, args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::expressions::method is use to bind object method.</div><div class="ttdef"><b>Definition</b> method_call_expression.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1650,7 +1715,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="method__expression_8hpp.html">method_expression.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="method__call__expression_8hpp.html">method_call_expression.hpp</a>&gt;</code></p>
 
 <p>Bind method alternative operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1662,7 +1727,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the binded method. </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_expression&gt;</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/method_call_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::expressions::not_equal_to_expression. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -1681,6 +1746,67 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 <div class="line"><span class="comment">// fct1 result =&gt; HELLO</span></div>
 <div class="line"><span class="comment">// fct2 result =&gt; World!</span></div>
 <div class="line"><span class="comment">// fct3 result =&gt; World!</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga7ef2a1883d554d284cf372d04b839e73" name="ga7ef2a1883d554d284cf372d04b839e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7ef2a1883d554d284cf372d04b839e73">&#9670;&#160;</a></span>operator%()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::expressions::operator% </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="modulo__expression_8hpp.html">modulo_expression.hpp</a>&gt;</code></p>
+
+<p>Performs a modulo on the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of division. </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/modulo_expression&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1modulo__expression.html" title="The xtd::expressions::modulo_expression is the modulo expression.">xtd::expressions::modulo_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> mod1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> % 5;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mod1 result =&gt; {}&quot;</span>, mod1(17));</div>
+<div class="line">  <span class="keyword">auto</span> mod2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> % <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mod2 result =&gt; {}&quot;</span>, mod2(15, 4));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// mod1 result =&gt; 2</span></div>
+<div class="line"><span class="comment">// mod2 result =&gt; 3</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1986,67 +2112,6 @@ template&lt;typename left_t, typename right_t&gt; </div>
 
 </div>
 </div>
-<a id="ga7ef2a1883d554d284cf372d04b839e73" name="ga7ef2a1883d554d284cf372d04b839e73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7ef2a1883d554d284cf372d04b839e73">&#9670;&#160;</a></span>operator%()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename left_t, typename right_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::expressions::operator% </td>
-          <td>(</td>
-          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="remainder__expression_8hpp.html">remainder_expression.hpp</a>&gt;</code></p>
-
-<p>Performs a modulo on the specified left and right operands. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
-    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The result of division. </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/remainder_expression&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1remainder__expression.html" title="The xtd::expressions::remainder_expression is the remainder expression.">xtd::expressions::remainder_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> mod1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> % 5;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mod1 result =&gt; {}&quot;</span>, mod1(17));</div>
-<div class="line">  <span class="keyword">auto</span> mod2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> % <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mod2 result =&gt; {}&quot;</span>, mod2(15, 4));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// mod1 result =&gt; 2</span></div>
-<div class="line"><span class="comment">// mod2 result =&gt; 3</span></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <a id="ga70f1fd2576c6cb0cab141483778f3e04" name="ga70f1fd2576c6cb0cab141483778f3e04"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga70f1fd2576c6cb0cab141483778f3e04">&#9670;&#160;</a></span>operator&gt;&gt;()</h2>
 
@@ -2139,7 +2204,7 @@ template&lt;typename left_t, typename right_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="subtraction__expression_8hpp.html">subtraction_expression.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="subtract__expression_8hpp.html">subtract_expression.hpp</a>&gt;</code></p>
 
 <p>Subtract the specified left and right operands. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -2149,12 +2214,12 @@ template&lt;typename left_t, typename right_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The result of subtraction. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of subtract. </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/subtract_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1subtraction__expression.html" title="The xtd::expressions::subtraction_expression is the subtraction expression.">xtd::expressions::subtraction_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1subtract__expression.html" title="The xtd::expressions::subtract_expression is the subtract expression.">xtd::expressions::subtract_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> sub1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> - 10;</div>
@@ -2167,69 +2232,6 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// sub1 result =&gt; 32</span></div>
 <div class="line"><span class="comment">// sub2 result =&gt; 30</span></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="ga0138d79c9045a3fd52b6874d19cad3ac" name="ga0138d79c9045a3fd52b6874d19cad3ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0138d79c9045a3fd52b6874d19cad3ac">&#9670;&#160;</a></span>operator&lt;=&gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename left_t, typename right_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::expressions::operator&lt;=&gt; </td>
-          <td>(</td>
-          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="three__way__comparison__expression_8hpp.html">three_way_comparison_expression.hpp</a>&gt;</code></p>
-
-<p>Equal to the specified left and right operands. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
-    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The result of three_way_comparison. </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/three_way_comparison_expression&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1three__way__comparison__expression.html" title="The xtd::expressions::three_way_comparison_expression is the three_way_comparison expression.">xtd::expressions::three_way_comparison_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto three_way_comparison1 = [](auto _) {return _ &lt;=&gt; 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> three_way_comparison1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_ &lt;=&gt;</a> 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;three_way_comparison1 result =&gt; {}&quot;</span>, three_way_comparison1(42));</div>
-<div class="line">  <span class="comment">//auto three_way_comparison2 = [](auto _1, auto _2) {return _1 &lt;=&gt; _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> three_way_comparison2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1 &lt;=&gt;</a> <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;three_way_comparison2 result =&gt; {}&quot;</span>, three_way_comparison2(42, 42));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// three_way_comparison1 result =&gt; greater</span></div>
-<div class="line"><span class="comment">// three_way_comparison2 result =&gt; equivalent</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
