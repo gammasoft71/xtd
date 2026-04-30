@@ -91,7 +91,7 @@ namespace xtd {
     /// // This code produces the following output :
     /// //
     /// // greater1 result => true
-    /// // eq2greater2result => false
+    /// // greater2 result => false
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
