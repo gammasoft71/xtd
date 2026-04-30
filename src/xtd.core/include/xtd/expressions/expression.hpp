@@ -60,19 +60,19 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of add.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expressiosn::add.
+      /// The following example shows how to use xtd::expressions::expression::add.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
-      ///   auto add1 = expression::add(_, 10);
+      ///   auto add1 = _ + 10;
       ///   println("add1 result => {}", add1(40));
-      ///   auto add2 = _ + 10;
+      ///   auto add2 = expression::add(_, 10);
       ///   println("add2 result => {}", add2(40));
       ///   println();
-      ///   auto add3 = expression::add(_1, _2);
+      ///   auto add3 = _1 + _2;
       ///   println("add3 result => {}", add3(40, 20));
-      ///   auto add4 = _1 + _2;
+      ///   auto add4 = expression::add(_1, _2);
       ///   println("add4 result => {}", add4(40, 20));
       /// }
       ///
@@ -93,19 +93,19 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of multiply.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expressiosn::multiply.
+      /// The following example shows how to use xtd::expressions::expression::multiply.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
-      ///   auto mul1 = expression::multiply(_, 10);
+      ///   auto mul1 = _ * 10;
       ///   println("mul1 result => {}", mul1(5));
-      ///   auto mul2 = _ * 10;
+      ///   auto mul2 = expression::multiply(_, 10);
       ///   println("mul2 result => {}", mul2(5));
       ///   println();
-      ///   auto mul3 = expression::multiply(_1, _2);
+      ///   auto mul3 = _1 * _2;
       ///   println("mul3 result => {}", mul3(4, 15));
-      ///   auto mul4 = _1 * _2;
+      ///   auto mul4 = expression::multiply(_1, _2);
       ///   println("mul4 result => {}", mul4(4, 15));
       /// }
       ///
