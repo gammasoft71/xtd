@@ -105,14 +105,14 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <area href="structxtd_1_1expressions_1_1add__expression.html" title="The xtd::expressions::add_expression is the add expression." alt="xtd::expressions::add_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,112,812,136"/>
 <area href="structxtd_1_1expressions_1_1and__also__expression.html" title="The xtd::expressions::and_also_expression is the and alse expression." alt="xtd::expressions::and_also_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,168,812,192"/>
 <area href="structxtd_1_1expressions_1_1and__expression.html" title="The xtd::expressions::and_expression is the bitwise and expression." alt="xtd::expressions::and_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,224,812,248"/>
-<area href="structxtd_1_1expressions_1_1division__expression.html" title="The xtd::expressions::division_expression is the division expression." alt="xtd::expressions::division_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,280,812,304"/>
+<area href="structxtd_1_1expressions_1_1divide__expression.html" title="The xtd::expressions::divide_expression is the division expression." alt="xtd::expressions::divide_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,280,812,304"/>
 <area href="structxtd_1_1expressions_1_1equal__expression.html" title="The xtd::expressions::equal_expression is the equal expression." alt="xtd::expressions::equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,336,812,360"/>
-<area href="structxtd_1_1expressions_1_1greater__expression.html" title="The xtd::expressions::greater_expression is the greater expression." alt="xtd::expressions::greater_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,392,812,416"/>
-<area href="structxtd_1_1expressions_1_1greater__or__equal__expression.html" title="The xtd::expressions::greater_or_equal_expression is the greater or equal expression." alt="xtd::expressions::greater_or_equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,448,812,472"/>
+<area href="structxtd_1_1expressions_1_1greater__than__expression.html" title="The xtd::expressions::greater_than_expression is the greater expression." alt="xtd::expressions::greater_than_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,392,812,416"/>
+<area href="structxtd_1_1expressions_1_1greater__than__or__equal__expression.html" title="The xtd::expressions::greater_than_or_equal_expression is the greater or equal expression." alt="xtd::expressions::greater_than_or_equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,448,812,472"/>
 <area href="structxtd_1_1expressions_1_1left__shift__expression.html" title="The xtd::expressions::left_shift_expression is the bitwise left expression." alt="xtd::expressions::left_shift_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,504,812,528"/>
-<area href="structxtd_1_1expressions_1_1less__expression.html" title="The xtd::expressions::less_expression is the less expression." alt="xtd::expressions::less_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,560,812,584"/>
-<area href="structxtd_1_1expressions_1_1less__or__equal__expression.html" title="The xtd::expressions::less_or_equal_expression is the less or equal expression." alt="xtd::expressions::less_or_equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,616,812,640"/>
-<area href="structxtd_1_1expressions_1_1multiplication__expression.html" title="The xtd::expressions::multiplication_expression is the multiplication expression." alt="xtd::expressions::multiplication_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,672,812,696"/>
+<area href="structxtd_1_1expressions_1_1less__than__expression.html" title="The xtd::expressions::less_than_expression is the less expression." alt="xtd::expressions::less_than_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,560,812,584"/>
+<area href="structxtd_1_1expressions_1_1less__than__or__equal__expression.html" title="The xtd::expressions::less_than_or_equal_expression is the less or equal expression." alt="xtd::expressions::less_than_or_equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,616,812,640"/>
+<area href="structxtd_1_1expressions_1_1multiply__expression.html" title="The xtd::expressions::multiply_expression is the multiplication expression." alt="xtd::expressions::multiply_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,672,812,696"/>
 <area href="structxtd_1_1expressions_1_1not__equal__expression.html" title="The xtd::expressions::not_equal_expression is the not equal expression." alt="xtd::expressions::not_equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,728,812,752"/>
 <area href="structxtd_1_1expressions_1_1or__else__expression.html" title="The xtd::expressions::or_else_expression is the or expression." alt="xtd::expressions::or_else_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,784,812,808"/>
 <area href="structxtd_1_1expressions_1_1or__expression.html" title="The xtd::expressions::or_expression is the bitwise or expression." alt="xtd::expressions::or_expression&lt; left_t, right_t &gt;" shape="rect" coords="411,840,812,864"/>
@@ -215,19 +215,27 @@ template&lt;typename left_t, typename right_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of add. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::expressions::expressiosn::add. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a16e44e068234e060cf540866e0ac6411" title="Add the specified left and right operands.">xtd::expressions::expression::add</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> add1 = <a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <span class="keyword">auto</span> add1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> + 10;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add1 result =&gt; {}&quot;</span>, add1(40));</div>
-<div class="line">  <span class="keyword">auto</span> add2 = <a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add2 result =&gt; {}&quot;</span>, add2(40, 20));</div>
+<div class="line">  <span class="keyword">auto</span> add2 = <a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add2 result =&gt; {}&quot;</span>, add2(40));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="keyword">auto</span> add3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add3 result =&gt; {}&quot;</span>, add3(40, 20));</div>
+<div class="line">  <span class="keyword">auto</span> add4 = <a class="code hl_function" href="#a16e44e068234e060cf540866e0ac6411">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add4 result =&gt; {}&quot;</span>, add4(40, 20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// add1 result =&gt; 50</span></div>
-<div class="line"><span class="comment">// add2 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// add2 result =&gt; 50</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// add3 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// add4 result =&gt; 60</span></div>
 <div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:30</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -271,19 +279,27 @@ template&lt;typename left_t, typename right_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of multiply. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::expressions::expressiosn::multiply. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a1ee729d0c81dd0ff199c28bc4c61443f" title="Multiply the specified left and right operands.">xtd::expressions::expression::multiply</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> mul1 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <span class="keyword">auto</span> mul1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> * 10;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul1 result =&gt; {}&quot;</span>, mul1(5));</div>
-<div class="line">  <span class="keyword">auto</span> mul2 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul2 result =&gt; {}&quot;</span>, mul2(4, 15));</div>
+<div class="line">  <span class="keyword">auto</span> mul2 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul2 result =&gt; {}&quot;</span>, mul2(5));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="keyword">auto</span> mul3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> * <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul3 result =&gt; {}&quot;</span>, mul3(4, 15));</div>
+<div class="line">  <span class="keyword">auto</span> mul4 = <a class="code hl_function" href="#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mul4 result =&gt; {}&quot;</span>, mul4(4, 15));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// mul1 result =&gt; 50</span></div>
-<div class="line"><span class="comment">// mul2 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// mul2 result =&gt; 50</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// mul3 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// mul4 result =&gt; 60</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
