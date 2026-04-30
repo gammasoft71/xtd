@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/expressions/less_or_equal_expression.hpp>
