@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::subtraction_expression operator.
+/// @brief Contains xtd::expressions::subtract_expression operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,7 +12,7 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::subtraction_expression is the subtraction expression.
+    /// @brief The xtd::expressions::subtract_expression is the subtract expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
@@ -22,9 +22,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::subtraction_expression struct is used by xtd::expressions::operator -().
+    /// @remarks The xtd::expressions::subtract_expression struct is used by xtd::expressions::operator -().
     template <typename left_t, typename right_t>
-    struct subtraction_expression : binary_expression {
+    struct subtract_expression : binary_expression {
       /// @name Public Fields
       
       /// @{
@@ -35,10 +35,10 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::subtraction_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::subtract_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr subtraction_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr subtract_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -46,13 +46,13 @@ namespace xtd {
       /// @{
       /// @brief Subtract the specified arguments.
       /// @param args the arguments to subtract.
-      /// @return The result of subtraction.
+      /// @return The result of subtract.
       template <typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) - right(std::forward<args_t>(args)...);}
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const subtraction_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " - " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const subtract_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " - " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -66,7 +66,7 @@ namespace xtd {
     /// @brief Subtract the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of subtraction.
+    /// @return The result of subtract.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
@@ -77,7 +77,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::subtraction_expression.
+    /// The following example shows how to use xtd::expressions::subtract_expression.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -98,7 +98,7 @@ namespace xtd {
     constexpr auto operator -(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return subtraction_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return subtract_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @}
   }
