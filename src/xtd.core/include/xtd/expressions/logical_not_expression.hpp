@@ -5,6 +5,7 @@
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
 #include "expression_stream.hpp"
+#include "unary_expression.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -40,7 +41,7 @@ namespace xtd {
     /// // not1 result => true
     /// ```
     template <typename value_t>
-    struct logical_not_expression : expression {
+    struct logical_not_expression : unary_expression {
       /// @name Public Fields
       
       /// @{

@@ -5,6 +5,7 @@
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
 #include "expression_stream.hpp"
+#include "unary_expression.hpp"
 #include "../numeric.hpp"
 #include <utility>
 
@@ -39,7 +40,7 @@ namespace xtd {
     /// // bit_not1 result => 0b11010101
     /// ```
     template <typename value_t>
-    struct not_expression : expression {
+    struct not_expression : unary_expression {
       /// @name Public Fields
       
       /// @{

@@ -5,6 +5,7 @@
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
 #include "expression_stream.hpp"
+#include "unary_expression.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -23,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::unary_minus_expression struct is used by xtd::expressions::operator -().
     template <typename value_t>
-    struct unary_minus_expression : expression {
+    struct unary_minus_expression : unary_expression {
       /// @name Public Fields
       
       /// @{
