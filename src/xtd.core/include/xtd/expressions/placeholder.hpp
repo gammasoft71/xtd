@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "operator_precedence.hpp"
-#include "placeholder_base.hpp"
+#include "placeholder_expression.hpp"
 #include <concepts>
 #include <ostream>
 #include <tuple>
@@ -30,7 +30,7 @@ namespace xtd {
     /// ```
     /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead que xtd::expressions::placeholder.
     template <size_t index>
-    struct placeholder : placeholder_base {
+    struct placeholder : placeholder_expression {
       /// @name Public Fields
       
       /// @{
