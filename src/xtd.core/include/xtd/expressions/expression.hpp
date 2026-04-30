@@ -88,6 +88,39 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto add(left_t left, right_t right);
       
+      /// @brief Bitwise and the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of add.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::and_.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto and1 = _ & 0x0F;
+      ///   println("and1 result => {:B}", and1(42));
+      ///   auto and2 = expression::and_(_, 0x0F);
+      ///   println("and2 result => {:B}", and2(42));
+      ///   println();
+      ///   auto and3 = _1 & _2;
+      ///   println("and3 result => {:B}", and3(42, 0xF0));
+      ///   auto and4 = expression::and_(_1, _2);
+      ///   println("and4 result => {:B}", and4(42, 0xF0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // and1 result => 1010
+      /// // and2 result => 1010
+      /// //
+      /// // and3 result => 100000
+      /// // and4 result => 100000
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto and_(left_t left, right_t right);
+      
       /// @brief Multiply the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
@@ -98,15 +131,15 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
-      ///   auto mul1 = _ * 10;
-      ///   println("mul1 result => {}", mul1(5));
-      ///   auto mul2 = expression::multiply(_, 10);
-      ///   println("mul2 result => {}", mul2(5));
+      ///   auto multiply1 = _ * 10;
+      ///   println("multiply1 result => {}", multiply1(5));
+      ///   auto multiply2 = expression::multiply(_, 10);
+      ///   println("multiply2 result => {}", multiply2(5));
       ///   println();
-      ///   auto mul3 = _1 * _2;
-      ///   println("mul3 result => {}", mul3(4, 15));
-      ///   auto mul4 = expression::multiply(_1, _2);
-      ///   println("mul4 result => {}", mul4(4, 15));
+      ///   auto multiply3 = _1 * _2;
+      ///   println("multiply3 result => {}", multiply3(4, 15));
+      ///   auto multiply4 = expression::multiply(_1, _2);
+      ///   println("multiply4 result => {}", multiply4(4, 15));
       /// }
       ///
       /// // This code produces the following output :

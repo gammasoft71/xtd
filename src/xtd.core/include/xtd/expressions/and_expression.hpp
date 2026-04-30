@@ -23,26 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::and_expression struct is used by xtd::expressions::operator |().
-    /// @par Examples
-    /// The following example shows how to use xtd::expressions::and_expression.
-    /// ```cpp
-    /// #include <xtd/xtd>
-    ///
-    /// auto main() -> int {
-    ///   //auto bit_and1 = [](auto&& _) {return _ & 0x0F;};
-    ///   auto bit_and1 = _ & 0x0F;
-    ///   println("sub1 result => {}", bit_and1(42));
-    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;};
-    ///   auto bit_and2 = _1 & _2;
-    ///   println("bit_and2 result => {}", bit_and2(42, 0xF0));
-    /// }
-    ///
-    /// // This code produces the following output :
-    /// //
-    /// // bit_and1 result => 10
-    /// // bit_and2 result => 8
-    /// ```
+    /// @remarks The xtd::expressions::and_expression struct is used by xtd::expressions::expression::and_ method.
     template <typename left_t, typename right_t>
     struct and_expression : binary_expression {
       /// @name Public Fields
@@ -86,6 +67,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::and_(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return and_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -103,31 +94,33 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::and_expression.
+    /// The following example shows how to use xtd::expressions::expression::and_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   //auto bit_and1 = [](auto&& _) {return _ & 0x0F;};
-    ///   auto bit_and1 = _ & 0x0F;
-    ///   println("sub1 result => {}", bit_and1(42));
-    ///   //auto bit_and2 = [](auto&& _1, auto&& _2) {return _1 & _2;};
-    ///   auto bit_and2 = _1 & _2;
-    ///   println("bit_and2 result => {}", bit_and2(42, 0xF0));
+    ///   auto and1 = _ & 0x0F;
+    ///   println("and1 result => {:B}", and1(42));
+    ///   auto and2 = expression::and_(_, 0x0F);
+    ///   println("and2 result => {:B}", and2(42));
+    ///   println();
+    ///   auto and3 = _1 & _2;
+    ///   println("and3 result => {:B}", and3(42, 0xF0));
+    ///   auto and4 = expression::and_(_1, _2);
+    ///   println("and4 result => {:B}", and4(42, 0xF0));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // bit_and1 result => 10
-    /// // bit_and2 result => 8
+    /// // and1 result => 1010
+    /// // and2 result => 1010
+    /// //
+    /// // and3 result => 100000
+    /// // and4 result => 100000
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator &(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return and_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator &(left_t left, right_t right) {return expression::and_(std::move(left), std::move(right));}
     /// @}
   }
 }
