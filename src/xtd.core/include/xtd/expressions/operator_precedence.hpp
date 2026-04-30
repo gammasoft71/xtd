@@ -76,8 +76,8 @@ namespace xtd {
       multiplication = 5,
       /// @brief Represnets the division operator precedence (`a / b`).
       division = 5,
-      /// @brief Represnets the remainder operator precedence (`a % b`).
-      remainder = 5,
+      /// @brief Represnets the modulo operator precedence (`a % b`).
+      modulo = 5,
       /// @brief Represnets the addition operator precedence (`a + b`).
       addition = 6,
       /// @brief Represnets the subtraction operator precedence (`a - b`).
@@ -132,8 +132,8 @@ namespace xtd {
       compound_product_assignment = 16,
       /// @brief Represnets the compound quotient assignment operator precedence (`a /= b`).
       compound_quotient_assignment = 16,
-      /// @brief Represnets the compound remainder assignment operator precedence (`a %= b`).
-      compound_remainder_assignment = 16,
+      /// @brief Represnets the compound modulo assignment operator precedence (`a %= b`).
+      compound_modulo_assignment = 16,
       /// @brief Represnets the compound bitwise left assignment operator precedence (`a <<= b`).
       compound_bitwise_left_assignment = 16,
       /// @brief Represnets the compound bitwise right assignment operator precedence (`a >>= b`).
