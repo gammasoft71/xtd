@@ -12,7 +12,7 @@ var searchData=
   ['picture_5fbox_9',['picture_box',['../classxtd_1_1forms_1_1picture__box.html',1,'xtd::forms']]],
   ['pink_5fcolors_10',['pink_colors',['../classxtd_1_1drawing_1_1pink__colors.html',1,'xtd::drawing']]],
   ['placeholder_11',['placeholder',['../structxtd_1_1expressions_1_1placeholder.html',1,'xtd::expressions']]],
-  ['placeholder_5fbase_12',['placeholder_base',['../structxtd_1_1expressions_1_1placeholder__base.html',1,'xtd::expressions']]],
+  ['placeholder_5fexpression_12',['placeholder_expression',['../structxtd_1_1expressions_1_1placeholder__expression.html',1,'xtd::expressions']]],
   ['places_5fsystem_5fimages_13',['places_system_images',['../classxtd_1_1drawing_1_1places__system__images.html',1,'xtd::drawing']]],
   ['platform_5fnot_5fsupported_5fexception_14',['platform_not_supported_exception',['../classxtd_1_1platform__not__supported__exception.html',1,'xtd']]],
   ['point_15',['point',['../structxtd_1_1drawing_1_1point.html',1,'xtd::drawing']]],
