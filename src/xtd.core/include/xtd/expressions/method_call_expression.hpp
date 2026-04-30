@@ -5,6 +5,7 @@
 #include "as_expression.hpp"
 #include "expression_operand.hpp"
 #include "expression_stream.hpp"
+#include "invocation_expression.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -16,7 +17,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/method_expression>
+    /// #include <xtd/expressions/method_call_expression>
     /// ```
     /// @par Library
     /// xtd.core
@@ -34,7 +35,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/method_expression>
+    /// #include <xtd/expressions/method_call_expression>
     /// ```
     /// @par Library
     /// xtd.core
@@ -49,7 +50,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/method_expression>
+    /// #include <xtd/expressions/method_call_expression>
     /// ```
     /// @par Library
     /// xtd.core
@@ -67,14 +68,14 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/method_expression>
+    /// #include <xtd/expressions/method_call_expression>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename expression_t, typename method_t>
-    struct method_expression : expression {
+    struct method_call_expression : invocation_expression {
       /// @name Public Fields
       
       /// @{
@@ -88,7 +89,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::add_expression object with specified expression and method operands.
       /// @param expression The expression operand.
       /// @param method The method operand.
-      constexpr method_expression(expression_t expression, method_t method) : expression {std::move(expression)}, method {std::move(method)} {}
+      constexpr method_call_expression(expression_t expression, method_t method) : expression {std::move(expression)}, method {std::move(method)} {}
       /// @}
       
       /// @name Public Operators
@@ -110,7 +111,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const method_expression& e) -> std::ostream& {
+      friend inline auto operator <<(std::ostream& os, const method_call_expression& e) -> std::ostream& {
         os << expression_stream {e.expression, e.precedence} << "." << e.method.name << "(";
         std::apply([&os](auto&&... args) {
           bool first = true;
@@ -137,7 +138,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/method_expression>
+    /// #include <xtd/expressions/method_call_expression>
     /// ```
     /// @par Library
     /// xtd.core
@@ -166,7 +167,7 @@ namespace xtd {
     requires expression_operand<expression_t> || expression_operand<method_type<method_t, stored_args_t...>>
     constexpr auto operator*(expression_t expression, method_type<method_t, stored_args_t...> method) {
       auto expr = as_expression(expression);
-      return method_expression<std::decay_t<decltype(expr)>, method_type<method_t, stored_args_t...>> {std::move(expr), std::move(method)};
+      return method_call_expression<std::decay_t<decltype(expr)>, method_type<method_t, stored_args_t...>> {std::move(expr), std::move(method)};
     }
     
     /// @brief Bind method alternative operator.
@@ -177,7 +178,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/method_expression>
+    /// #include <xtd/expressions/method_call_expression>
     /// ```
     /// @par Library
     /// xtd.core

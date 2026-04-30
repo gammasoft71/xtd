@@ -129,7 +129,7 @@
 #include "expressions/less_than_or_equal_expression.hpp"
 #include "expressions/logical_not_expression.hpp"
 #include "expressions/member_expression.hpp"
-#include "expressions/method_expression.hpp"
+#include "expressions/method_call_expression.hpp"
 #include "expressions/modulo_expression.hpp"
 #include "expressions/multiply_expression.hpp"
 #include "expressions/not_equal_expression.hpp"
