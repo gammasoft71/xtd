@@ -2,6 +2,7 @@
 /// @brief Contains xtd::expressions::constant struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "constant_expression.hpp"
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -20,7 +21,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::constant struct is used by xtd::expressions::as_expression methods.
     template <typename type_t>
-    struct constant {
+    struct constant : constant_expression {
       /// @name Public Fields
       
       /// @{

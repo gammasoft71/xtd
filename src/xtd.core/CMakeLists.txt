@@ -1009,6 +1009,8 @@ add_sources(
   "include/xtd/expressions/conditional_expression"
   "include/xtd/expressions/constant.hpp"
   "include/xtd/expressions/constant"
+  "include/xtd/expressions/constant_expression.hpp"
+  "include/xtd/expressions/constant_expression"
   "include/xtd/expressions/division_expression.hpp"
   "include/xtd/expressions/division_expression"
   "include/xtd/expressions/equal_expression.hpp"
