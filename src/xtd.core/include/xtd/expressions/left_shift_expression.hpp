@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
+#include "binary_expression.hpp"
 #include "expression_operand.hpp"
 #include "expression_stream.hpp"
 #include "../numeric.hpp"
@@ -43,7 +44,7 @@ namespace xtd {
     /// // bit_left2 result => 672
     /// ```
     template <typename left_t, typename right_t>
-    struct left_shift_expression : expression {
+    struct left_shift_expression : binary_expression {
       /// @name Public Fields
       
       /// @{

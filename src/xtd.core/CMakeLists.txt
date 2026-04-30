@@ -1003,6 +1003,8 @@ add_sources(
   "include/xtd/expressions/args"
   "include/xtd/expressions/as_expression.hpp"
   "include/xtd/expressions/as_expression"
+  "include/xtd/expressions/binary_expression.hpp"
+  "include/xtd/expressions/binary_expression"
   "include/xtd/expressions/constant.hpp"
   "include/xtd/expressions/constant"
   "include/xtd/expressions/division_expression.hpp"

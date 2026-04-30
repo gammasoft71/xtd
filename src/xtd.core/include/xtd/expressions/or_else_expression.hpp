@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
+#include "binary_expression.hpp"
 #include "expression_operand.hpp"
 #include "expression_stream.hpp"
 #include <utility>
@@ -23,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::or_else_expression struct is used by xtd::expressions::operator ||().
     template <typename left_t, typename right_t>
-    struct or_else_expression : expression {
+    struct or_else_expression : binary_expression {
       /// @name Public Fields
       
       /// @{
