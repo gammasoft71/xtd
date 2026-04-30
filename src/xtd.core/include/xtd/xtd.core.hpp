@@ -117,7 +117,7 @@
 #include "expressions/conditional_expression.hpp"
 #include "expressions/xor_expression.hpp"
 #include "expressions/constant.hpp"
-#include "expressions/division_expression.hpp"
+#include "expressions/divide_expression.hpp"
 #include "expressions/equal_expression.hpp"
 #include "expressions/expression.hpp"
 #include "expressions/expression_operand.hpp"
