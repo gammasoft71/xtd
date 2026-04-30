@@ -80,7 +80,7 @@ namespace xtd {
     /// @brief Equal to the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of and also.
+    /// @return The result of logical and.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header

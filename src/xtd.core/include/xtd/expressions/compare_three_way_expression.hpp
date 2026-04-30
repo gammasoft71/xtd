@@ -60,13 +60,27 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::compare_three_way(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return compare_three_way_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::spaceship(left_t left, right_t right) {return expression::compare_three_way(std::move(left), std::move(right));}
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
     /// @brief Equal to the specified left and right operands.
     /// @param left The left operand.
     /// @param right The right operand.
-    /// @return The result of three_way_comparison.
+    /// @return The result of compare three way.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
@@ -97,11 +111,7 @@ namespace xtd {
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator <=>(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return compare_three_way_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator <=>(left_t left, right_t right) {return expression::compare_three_way(std::move(left), std::move(right));}
     /// @}
   }
 }

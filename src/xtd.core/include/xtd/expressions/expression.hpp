@@ -124,7 +124,7 @@ namespace xtd {
       /// @brief Logical and the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      /// @return The result of add.
+      /// @return The result of logical and.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::and_also.
@@ -156,10 +156,43 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_also(left_t left, right_t right);
       
+      /// @brief Compare three way the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of compare three way.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::compare_three_way.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto compare_three_way1 = _ <=> 10;
+      ///   println("compare_three_way1 result => {}", compare_three_way1(42));
+      ///   auto compare_three_way2 =  expression::compare_three_way(_, 10);
+      ///   println("compare_three_way2 result => {}", compare_three_way2(42));
+      ///   println();
+      ///   auto compare_three_way3 = _1 <=> _2;
+      ///   println("compare_three_way3 result => {}", compare_three_way3(42, 42));
+      ///   auto compare_three_way4 =  expression::compare_three_way(_1, _2);
+      ///   println("compare_three_way4 result => {}", compare_three_way4(42, 42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // compare_three_way1 result => greater
+      /// // compare_three_way2 result => greater
+      /// //
+      /// // compare_three_way3 result => equivalent
+      /// // compare_three_way4 result => equivalent
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto compare_three_way(left_t left, right_t right);
+
       /// @brief Logical and the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      /// @return The result of add.
+      /// @return The result of logical and.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::logical_and.
@@ -223,6 +256,39 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto multiply(left_t left, right_t right);
+      
+      /// @brief Compare three way the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of compare three way.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::spaceship.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto cspaceship1 = _ <=> 10;
+      ///   println("spaceship1 result => {}", spaceship1(42));
+      ///   auto spaceship2 =  expression::spaceship(_, 10);
+      ///   println("spaceship2 result => {}", spaceship(42));
+      ///   println();
+      ///   auto spaceship3 = _1 <=> _2;
+      ///   println("spaceship3 result => {}", spaceship3(42, 42));
+      ///   auto spaceship4 =  expression::spaceship(_1, _2);
+      ///   println("spaceship4 result => {}", spaceship4(42, 42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // spaceship1 result => greater
+      /// // spaceship2 result => greater
+      /// //
+      /// // spaceship3 result => equivalent
+      /// // spaceship4 result => equivalent
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto spaceship(left_t left, right_t right);
       /// @}
 
     protected:
