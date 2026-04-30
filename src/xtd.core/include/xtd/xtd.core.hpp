@@ -108,7 +108,7 @@
 #include "diagnostics/trace_source.hpp"
 #include "diagnostics/trace_switch.hpp"
 #include "expressions/add_expression.hpp"
-#include "expressions/and_also_expression.hpp"
+#include "expressions/logical_and_expression.hpp"
 #include "expressions/and_expression.hpp"
 #include "expressions/arg.hpp"
 #include "expressions/args.hpp"

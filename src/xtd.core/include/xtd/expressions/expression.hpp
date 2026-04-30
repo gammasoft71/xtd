@@ -121,6 +121,76 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_(left_t left, right_t right);
       
+      /// @brief Logical and the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of add.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::and_also.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto value = true;
+      ///   auto and_also1 = _ && value;
+      ///   println("and_also1 result => {}", and_also1(42 % 2 == 0));
+      ///   auto and_also2 = expression::and_also(_, value);
+      ///   println("and_also2 result => {}", and_also2(42 % 2 == 0));
+      ///   println();
+      ///   auto and_also3 = _1 && _2;
+      ///   println("and_also3 result => {}", and_also3(42 % 2 == 0, 42 % 8 == 0));
+      ///   auto and_also4 = expression::and_also(_1, _2);
+      ///   println("and_also4 result => {}", and_also4(42 % 2 == 0, 42 % 8 == 0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // and_also1 result => true
+      /// // and_also2 result => true
+      /// //
+      /// // and_also3 result => false
+      /// // and_also4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto and_also(left_t left, right_t right);
+      
+      /// @brief Logical and the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of add.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::logical_and.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto value = true;
+      ///   auto logical_and1 = _ && value;
+      ///   println("logical_and1 result => {}", logical_and1(42 % 2 == 0));
+      ///   auto logical_and2 = expression::logical_and(_, value);
+      ///   println("logical_and2 result => {}", logical_and2(42 % 2 == 0));
+      ///   println();
+      ///   auto logical_and3 = _1 && _2;
+      ///   println("and_also3 result => {}", logical_and3(42 % 2 == 0, 42 % 8 == 0));
+      ///   auto logical_and4 = expression::logical_and(_1, _2);
+      ///   println("logical_and4 result => {}", logical_and4(42 % 2 == 0, 42 % 8 == 0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // logical_and1 result => true
+      /// // logical_and2 result => true
+      /// //
+      /// // logical_and3 result => false
+      /// // logical_and4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto logical_and(left_t left, right_t right);
+
       /// @brief Multiply the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
