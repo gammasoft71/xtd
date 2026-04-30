@@ -140,7 +140,7 @@
 #include "expressions/placeholder_expression.hpp"
 #include "expressions/right_shift_expression.hpp"
 #include "expressions/subtract_expression.hpp"
-#include "expressions/three_way_comparison_expression.hpp"
+#include "expressions/compare_three_way_expression.hpp"
 #include "expressions/unary_expression.hpp"
 #include "expressions/unary_minus_expression.hpp"
 #include "expressions/unary_plus_expression.hpp"
