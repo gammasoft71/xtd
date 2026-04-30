@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::multiply_expression struct is used by xtd::expressions::operator *().
+    /// @remarks The xtd::expressions::multiply_expression struct is used by xtd::expressions::expression::multiply method.
     template <typename left_t, typename right_t>
     struct multiply_expression : binary_expression {
       /// @name Public Fields
@@ -87,21 +87,29 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::multiply_expression.
+    /// The following example shows how to use xtd::expressions::expression::multiply.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto mul1 = _ * 10;
-    ///   println("mul1 result => {}", mul1(5));
-    ///   auto mul2 = _1 * _2;
-    ///   println("mul2 result => {}", mul2(4, 15));
+    ///   auto multiply1 = _ * 10;
+    ///   println("multiply1 result => {}", multiply1(5));
+    ///   auto multiply2 = expression::multiply(_, 10);
+    ///   println("multiply2 result => {}", multiply2(5));
+    ///   println();
+    ///   auto multiply3 = _1 * _2;
+    ///   println("multiply3 result => {}", multiply3(4, 15));
+    ///   auto multiply4 = expression::multiply(_1, _2);
+    ///   println("multiply4 result => {}", multiply4(4, 15));
     /// }
     ///
     /// // This code produces the following output :
     /// //
     /// // mul1 result => 50
-    /// // mul2 result => 60
+    /// // mul2 result => 50
+    /// //
+    /// // mul3 result => 60
+    /// // mul4 result => 60
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
