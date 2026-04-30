@@ -121,10 +121,12 @@ var searchData=
   ['log_118',['log',['../classxtd_1_1diagnostics_1_1debugger.html#aa24ab79f31c6f34fdd68cdd79760071a',1,'xtd::diagnostics::debugger::log()'],['../classxtd_1_1math.html#ae3b3a3b95045d8a0a4f44b4d9b6547f3',1,'xtd::math::log(double value)'],['../classxtd_1_1math.html#a676df1283e8533a3a1d9fd536d2afa17',1,'xtd::math::log(double a, double new_base)']]],
   ['log10_119',['log10',['../classxtd_1_1math.html#ae0ad33d3c6248e4aee1343f38d5c28de',1,'xtd::math']]],
   ['log_5ffile_5fname_120',['log_file_name',['../classxtd_1_1diagnostics_1_1default__trace__listener.html#a59e0e8e6154d5333ca84ebbabbd4c914',1,'xtd::diagnostics::default_trace_listener::log_file_name() const noexcept -&gt; xtd::string'],['../classxtd_1_1diagnostics_1_1default__trace__listener.html#a569c33177bd63d4e80cb88a9ebc035a5',1,'xtd::diagnostics::default_trace_listener::log_file_name(const xtd::string log_file_name) noexcept -&gt; void']]],
-  ['logical_5fnot_5fexpression_121',['logical_not_expression',['../structxtd_1_1expressions_1_1logical__not__expression.html#ab53da1b2e248c2d514901086ce522c03',1,'xtd::expressions::logical_not_expression']]],
-  ['logical_5foperation_5fstack_122',['logical_operation_stack',['../classxtd_1_1diagnostics_1_1trace__event__cache.html#aaf09cc351e22032d662525605aa66737',1,'xtd::diagnostics::trace_event_cache']]],
-  ['long_5flength_123',['long_length',['../classxtd_1_1basic__array.html#a59e5c7b4cfb9357fa83500c67604e206',1,'xtd::basic_array']]],
-  ['long_5fversion_124',['long_version',['../classxtd_1_1forms_1_1about__dialog.html#a49033e331c6c49d78b1efe850ac8147b',1,'xtd::forms::about_dialog::long_version() const noexcept'],['../classxtd_1_1forms_1_1about__dialog.html#aa185a0e4cc57f18fdcf15d165e51bcca',1,'xtd::forms::about_dialog::long_version(const xtd::string &amp;long_version)']]],
-  ['luminance_5ftable_125',['luminance_table',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#aa3258cc5d7c3ef95bf1eae81b06fe7a8',1,'xtd::drawing::imaging::encoder']]],
-  ['luxembourg_126',['luxembourg',['../classxtd_1_1forms_1_1countries.html#acb1e17137da00cc805da5843d49f3c2f',1,'xtd::forms::countries']]]
+  ['logical_5fand_121',['logical_and',['../structxtd_1_1expressions_1_1expression.html#af4d83c8368dd701a9c958cd59d99f734',1,'xtd::expressions::expression']]],
+  ['logical_5fand_5fexpression_122',['logical_and_expression',['../structxtd_1_1expressions_1_1logical__and__expression.html#ab56264dc0747196e38b7065531b543cf',1,'xtd::expressions::logical_and_expression']]],
+  ['logical_5fnot_5fexpression_123',['logical_not_expression',['../structxtd_1_1expressions_1_1logical__not__expression.html#ab53da1b2e248c2d514901086ce522c03',1,'xtd::expressions::logical_not_expression']]],
+  ['logical_5foperation_5fstack_124',['logical_operation_stack',['../classxtd_1_1diagnostics_1_1trace__event__cache.html#aaf09cc351e22032d662525605aa66737',1,'xtd::diagnostics::trace_event_cache']]],
+  ['long_5flength_125',['long_length',['../classxtd_1_1basic__array.html#a59e5c7b4cfb9357fa83500c67604e206',1,'xtd::basic_array']]],
+  ['long_5fversion_126',['long_version',['../classxtd_1_1forms_1_1about__dialog.html#a49033e331c6c49d78b1efe850ac8147b',1,'xtd::forms::about_dialog::long_version() const noexcept'],['../classxtd_1_1forms_1_1about__dialog.html#aa185a0e4cc57f18fdcf15d165e51bcca',1,'xtd::forms::about_dialog::long_version(const xtd::string &amp;long_version)']]],
+  ['luminance_5ftable_127',['luminance_table',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#aa3258cc5d7c3ef95bf1eae81b06fe7a8',1,'xtd::drawing::imaging::encoder']]],
+  ['luxembourg_128',['luxembourg',['../classxtd_1_1forms_1_1countries.html#acb1e17137da00cc805da5843d49f3c2f',1,'xtd::forms::countries']]]
 ];

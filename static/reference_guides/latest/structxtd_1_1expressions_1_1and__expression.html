@@ -106,27 +106,7 @@ struct xtd::expressions::and_expression&lt; left_t, right_t &gt;</div><p>The <a 
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/and_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1and__expression.html" title="The xtd::expressions::and_expression is the bitwise and expression.">xtd::expressions::and_expression</a> struct is used by <a class="el" href="group__expressions.html#ga42623471011e75b6e7ea39da252f166c" title="Bind member operator.">xtd::expressions::operator |()</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1and__expression.html" title="The xtd::expressions::and_expression is the bitwise and expression.">xtd::expressions::and_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto bit_and1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_and1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &amp; 0x0F;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;sub1 result =&gt; {}&quot;</span>, bit_and1(42));</div>
-<div class="line">  <span class="comment">//auto bit_and2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp; _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_and2 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &amp; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_and2 result =&gt; {}&quot;</span>, bit_and2(42, 0xF0));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// bit_and1 result =&gt; 10</span></div>
-<div class="line"><span class="comment">// bit_and2 result =&gt; 8</span></div>
-<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:30</div></div>
-<div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:81</div></div>
-<div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:56</div></div>
-<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
-</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1and__expression.html" title="The xtd::expressions::and_expression is the bitwise and expression.">xtd::expressions::and_expression</a> struct is used by <a class="el" href="structxtd_1_1expressions_1_1expression.html#ad95526648064fd19e3d77fb8c9215d20" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a> method. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Fields</h2></td></tr>
@@ -149,6 +129,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a16e44e068234e060cf540866e0ac6411" id="r_a16e44e068234e060cf540866e0ac6411"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a16e44e068234e060cf540866e0ac6411 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a16e44e068234e060cf540866e0ac6411">add</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a16e44e068234e060cf540866e0ac6411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:ad95526648064fd19e3d77fb8c9215d20" id="r_ad95526648064fd19e3d77fb8c9215d20"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:ad95526648064fd19e3d77fb8c9215d20 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#ad95526648064fd19e3d77fb8c9215d20">and_</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:ad95526648064fd19e3d77fb8c9215d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise and the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a0771350ec5813a3e5e6aadd15e283496" id="r_a0771350ec5813a3e5e6aadd15e283496"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a0771350ec5813a3e5e6aadd15e283496 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a0771350ec5813a3e5e6aadd15e283496">and_also</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a0771350ec5813a3e5e6aadd15e283496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical and the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:af4d83c8368dd701a9c958cd59d99f734" id="r_af4d83c8368dd701a9c958cd59d99f734"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:af4d83c8368dd701a9c958cd59d99f734 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#af4d83c8368dd701a9c958cd59d99f734">logical_and</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:af4d83c8368dd701a9c958cd59d99f734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical and the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f" id="r_a1ee729d0c81dd0ff199c28bc4c61443f"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a1ee729d0c81dd0ff199c28bc4c61443f">multiply</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a1ee729d0c81dd0ff199c28bc4c61443f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the specified left and right operands.  <br /></td></tr>

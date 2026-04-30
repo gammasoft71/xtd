@@ -61,5 +61,6 @@ var searchData=
   ['lock_5fguard_58',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
   ['lock_5frecursion_5fexception_59',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]],
   ['logical_60',['logical',['../structxtd_1_1logical.html',1,'xtd']]],
-  ['logical_5fnot_5fexpression_61',['logical_not_expression',['../structxtd_1_1expressions_1_1logical__not__expression.html',1,'xtd::expressions']]]
+  ['logical_5fand_5fexpression_61',['logical_and_expression',['../structxtd_1_1expressions_1_1logical__and__expression.html',1,'xtd::expressions']]],
+  ['logical_5fnot_5fexpression_62',['logical_not_expression',['../structxtd_1_1expressions_1_1logical__not__expression.html',1,'xtd::expressions']]]
 ];

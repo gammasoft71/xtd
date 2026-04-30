@@ -46,5 +46,6 @@ var searchData=
   ['lock_5frecursion_5fexception_2ehpp_43',['lock_recursion_exception.hpp',['../lock__recursion__exception_8hpp.html',1,'']]],
   ['logical_2ehpp_44',['logical.hpp',['../logical_8hpp.html',1,'']]],
   ['logical_5f_2ehpp_45',['logical_.hpp',['../logical___8hpp.html',1,'']]],
-  ['logical_5fnot_5fexpression_2ehpp_46',['logical_not_expression.hpp',['../logical__not__expression_8hpp.html',1,'']]]
+  ['logical_5fand_5fexpression_2ehpp_46',['logical_and_expression.hpp',['../logical__and__expression_8hpp.html',1,'']]],
+  ['logical_5fnot_5fexpression_2ehpp_47',['logical_not_expression.hpp',['../logical__not__expression_8hpp.html',1,'']]]
 ];
