@@ -92,8 +92,8 @@ namespace xtd {
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto multiply1 = _ * 10;
     ///   // auto multiply1 = [](auto&& _) {return _ * 10;};
+    ///   auto multiply1 = _ * 10;
     ///   println("multiply1 result => {}", multiply1(5));
     ///   auto multiply2 = expression::multiply(_, 10);
     ///   println("multiply2 result => {}", multiply2(5));
@@ -115,11 +115,7 @@ namespace xtd {
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator *(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return multiply_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator *(left_t left, right_t right) {return expression::multiply(std::move(left), std::move(right));}
     /// @}
   }
 }
