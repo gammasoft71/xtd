@@ -88,6 +88,26 @@ namespace xtd {
       /// ```
       template <size_t index>
       static constexpr auto arg();
+      
+      /// @brief Gets the constant value.
+      /// @param value The constnt value.
+      /// @return The constant value expression.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::constant.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto const1 =  expression::constant(10) + _ + expression::constant(30);
+      ///   println("const1 result => {}", const1(20));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // const1 result => 60
+      /// ```
+      template <typename type_t>
+      static constexpr auto constant(type_t value);
       /// @}
 
       /// @name Public Static Methods

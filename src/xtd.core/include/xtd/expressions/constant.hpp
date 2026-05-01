@@ -53,5 +53,10 @@ namespace xtd {
     private:
       [[no_unique_address]] type_t value_;
     };
+    
+    /// @cond
+    template <typename type_t>
+    constexpr auto expression::constant(type_t value) {return xtd::expressions::constant {std::move(value)};}
+    /// @endcond
   }
 }
