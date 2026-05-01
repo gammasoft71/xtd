@@ -87,21 +87,31 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::greater_than_or_equal_expression.
+    /// The following example shows how to use xtd::expressions::expression::greater_than_or_equal.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto geq1 = _ >= 10;
-    ///   println("geq1 result => {}", geq1(42));
-    ///   auto geq2 = _1 >= _2;
-    ///   println("geq2 result => {}", geq2(32, 42));
+    ///   // auto greater_than_or_equal1 = [](auto&& _) {return _ >= 10;};
+    ///   auto greater_than_or_equal1 = _ > 10;
+    ///   println("greater_than_or_equal1 result => {}", greater_than_or_equal1(42));
+    ///   auto greater_than_or_equal2 = expression::greater_than_or_equal(_, 10);
+    ///   println("greater_than_or_equal2 result => {}", greater_than2(42));
+    ///   println();
+    ///   // auto greater_than_or_equal3 = [](auto&& _1, auto&& _2) {return _1 >= _2;};
+    ///   auto greater_than_or_equal3 = _1 > _2;
+    ///   println("greater_than_or_equal3 result => {}", greater_than_or_equal2(32, 42));
+    ///   auto greater_than_or_equal4 = expression::greater_than_or_equal(_1, _2);
+    ///   println("greater_than_or_equal4 result => {}", greater_than_or_equal4(32, 42));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // geq1 result => true
-    /// // geq2 result => false
+    /// // greater_than_or_equal1 result => true
+    /// // greater_than_or_equal2 result => true
+    /// //
+    /// // greater_than_or_equal3 result => false
+    /// // greater_than_or_equal4 result => false
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
