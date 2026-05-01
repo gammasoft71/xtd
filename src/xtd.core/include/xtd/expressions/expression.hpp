@@ -267,6 +267,41 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto equal(left_t left, right_t right);
+      
+      /// @brief Greater than the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of greater than.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::greater_than.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto greater_than1 = [](auto&& _) {return _ > 10;};
+      ///   auto greater_than1 = _ > 10;
+      ///   println("greater_than1 result => {}", greater_than1(42));
+      ///   auto greater_than2 = expression::greater_than(_, 10);
+      ///   println("greater_than2 result => {}", greater_than2(42));
+      ///   println();
+      ///   // auto greater_than3 = [](auto&& _1, auto&& _2) {return _1 > _2;};
+      ///   auto greater_than3 = _1 > _2;
+      ///   println("greater_than3 result => {}", greater_than3(42, 42));
+      ///   auto greater_than4 = expression::greater_than(_1, _2);
+      ///   println("greater_than4 result => {}", greater_than4(42, 42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // equagreater_than1l1 result => true
+      /// // greater_than2 result => true
+      /// //
+      /// // greater_than2 result => false
+      /// // greater_than4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto greater_than(left_t left, right_t right);
 
       /// @brief Logical and the specified left and right operands.
       /// @param left The left operand.

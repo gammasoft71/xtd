@@ -60,6 +60,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::greater_than(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return greater_than_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -77,29 +87,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::greater_than_expression.
+    /// The following example shows how to use xtd::expressions::expression::greater_than.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto greater1 = _ > 10;
-    ///   println("greater1 result => {}", greater1(42));
-    ///   auto greater2 = _1 > _2;
-    ///   println("greater2 result => {}", greater2(42, 42));
+    ///   // auto greater_than1 = [](auto&& _) {return _ > 10;};
+    ///   auto greater_than1 = _ > 10;
+    ///   println("greater_than1 result => {}", greater_than1(42));
+    ///   auto greater_than2 = expression::greater_than(_, 10);
+    ///   println("greater_than2 result => {}", greater_than2(42));
+    ///   println();
+    ///   // auto greater_than3 = [](auto&& _1, auto&& _2) {return _1 > _2;};
+    ///   auto greater_than3 = _1 > _2;
+    ///   println("greater_than3 result => {}", greater_than3(42, 42));
+    ///   auto greater_than4 = expression::greater_than(_1, _2);
+    ///   println("greater_than4 result => {}", greater_than4(42, 42));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // greater1 result => true
-    /// // greater2 result => false
+    /// // equagreater_than1l1 result => true
+    /// // greater_than2 result => true
+    /// //
+    /// // greater_than2 result => false
+    /// // greater_than4 result => false
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator >(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return greater_than_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator >(left_t left, right_t right) {return expression::greater_than(std::move(left), std::move(right));}
     /// @}
   }
 }
