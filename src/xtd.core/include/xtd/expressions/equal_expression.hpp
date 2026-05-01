@@ -60,6 +60,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::equal(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return equal_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -77,29 +87,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::equal_expression.
+    /// The following example shows how to use xtd::expressions::expression::equal.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto eq1 = _ == 10;
-    ///   println("eq1 result => {}", eq1(42));
-    ///   auto eq2 = _1 == _2;
-    ///   println("eq2 result => {}", eq2(42, 42));
+    ///   // auto equal1 = [](auto&& _) {return _ == 10;};
+    ///   auto equal1 = _ == 10;
+    ///   println("equal1 result => {}", equal1(42));
+    ///   auto equal2 = expression::equal(_, 10);
+    ///   println("equal2 result => {}", equal2(42));
+    ///   println();
+    ///   // auto equal3 = [](auto&& _1, auto&& _2) {return _1 == _2;};
+    ///   auto equal3 = _1 == _2;
+    ///   println("equal3 result => {}", equal3(42, 42));
+    ///   auto equal4 = expression::equal(_1, _2);
+    ///   println("equal4 result => {}", equal4(42, 42));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // eq1 result => false
-    /// // eq2 result => true
+    /// // equal1 result => false
+    /// // equal2 result => false
+    /// //
+    /// // equal3 result => true
+    /// // equal4 result => true
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator ==(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return equal_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator ==(left_t left, right_t right) {return expression::equal(std::move(left), std::move(right));}
     /// @}
   }
 }

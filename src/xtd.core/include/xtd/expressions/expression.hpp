@@ -94,7 +94,7 @@ namespace xtd {
       /// @brief Bitwise and the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      /// @return The result of add.
+      /// @return The result of bitwise and.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::and_.
       /// ```cpp
@@ -201,7 +201,7 @@ namespace xtd {
       /// @brief Divide the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      /// @return The result of add.
+      /// @return The result of devide.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::divide.
       /// ```cpp
@@ -215,7 +215,7 @@ namespace xtd {
       ///   println("divide2 result => {}", divide2(50));
       ///   println();
       ///   // auto divide3 = [](auto&& _1, auto&& _2) {return _1 / _2;};
-      ///   auto divide3 = _1 3 _2;
+      ///   auto divide3 = _1 / _2;
       ///   println("add3 result => {}", divide3(60, 15));
       ///   auto divide4 = expression::divide(_1, _2);
       ///   println("add4 result => {}", divide4(60, 15));
@@ -232,7 +232,42 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto divide(left_t left, right_t right);
-      
+     
+      /// @brief Equal the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of equal.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::equal.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto equal1 = [](auto&& _) {return _ == 10;};
+      ///   auto equal1 = _ == 10;
+      ///   println("equal1 result => {}", equal1(42));
+      ///   auto equal2 = expression::equal(_, 10);
+      ///   println("equal2 result => {}", equal2(42));
+      ///   println();
+      ///   // auto equal3 = [](auto&& _1, auto&& _2) {return _1 == _2;};
+      ///   auto equal3 = _1 == _2;
+      ///   println("equal3 result => {}", equal3(42, 42));
+      ///   auto equal4 = expression::equal(_1, _2);
+      ///   println("equal4 result => {}", equal4(42, 42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // equal1 result => false
+      /// // equal2 result => false
+      /// //
+      /// // equal3 result => true
+      /// // equal4 result => true
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto equal(left_t left, right_t right);
+
       /// @brief Logical and the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
