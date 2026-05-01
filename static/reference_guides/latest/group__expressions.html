@@ -385,6 +385,9 @@ Public Static Properties</h2></td></tr>
 <tr class="memitem:ga2a510526157a4ccf4cc31e6cee826883" id="r_ga2a510526157a4ccf4cc31e6cee826883"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
 <tr class="memitem:ga2a510526157a4ccf4cc31e6cee826883 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga2a510526157a4ccf4cc31e6cee826883">xtd::expressions::expression::arg</a> ()</td></tr>
 <tr class="memdesc:ga2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga424cc1e54f0ab7d65830650697480d72" title="The xtd::expressions::arg instance is the index argument used by expression.">xtd::expressions::arg</a> instance is the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
+<tr class="memitem:gabae93668f6c41d1c857f12649666930b" id="r_gabae93668f6c41d1c857f12649666930b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:gabae93668f6c41d1c857f12649666930b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gabae93668f6c41d1c857f12649666930b">xtd::expressions::expression::constant</a> (type_t value)</td></tr>
+<tr class="memdesc:gabae93668f6c41d1c857f12649666930b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the constant value.  <br /></td></tr>
 </table>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga418395dc9383e37eb269a52b25b74683" name="ga418395dc9383e37eb269a52b25b74683"></a>
@@ -2544,6 +2547,56 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// bit_xor1 result =&gt; 37</span></div>
 <div class="line"><span class="comment">// bit_xor2 result =&gt; 218</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="gabae93668f6c41d1c857f12649666930b" name="gabae93668f6c41d1c857f12649666930b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabae93668f6c41d1c857f12649666930b">&#9670;&#160;</a></span>constant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::constant </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="expression_8hpp.html">expression.hpp</a>&gt;</code></p>
+
+<p>Gets the constant value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The constnt value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The constant value expression. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#gabae93668f6c41d1c857f12649666930b" title="Gets the constant value.">xtd::expressions::expression::constant</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> const1 =  <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(10) + <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> + <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(30);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;const1 result =&gt; {}&quot;</span>, const1(20));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// const1 result =&gt; 60</span></div>
+<div class="ttc" id="agroup__expressions_html_gabae93668f6c41d1c857f12649666930b"><div class="ttname"><a href="#gabae93668f6c41d1c857f12649666930b">xtd::expressions::expression::constant</a></div><div class="ttdeci">static constexpr auto constant(type_t value)</div><div class="ttdoc">Gets the constant value.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
