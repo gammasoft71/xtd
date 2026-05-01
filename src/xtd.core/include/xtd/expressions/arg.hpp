@@ -8,6 +8,11 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
+    /// @cond
+    template <size_t index>
+    constexpr auto expression::arg() {return xtd::expressions::placeholder<index - 1> {};}
+    /// @endcond
+    
     /// @name Public Variables
     
     /// @{

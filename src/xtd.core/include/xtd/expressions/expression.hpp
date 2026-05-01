@@ -53,6 +53,43 @@ namespace xtd {
     /// // type_of(expr2) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<0ul>, xtd::expressions::placeholder<1ul>>, xtd::expressions::constant<int>>
     /// ```
     struct expression {
+      /// @name Public Static Properties
+      
+      /// @{
+      /// @brief The xtd::expressions::arg instance is the `index` argument used by expression.
+      /// @par Namespace
+      /// xtd::expressions
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/expressions/arg>
+      /// ```
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core expressions
+      /// @remarks The index start from 1 to N.
+      /// @par Examples
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto expr1 = _1 + _2 + _3 + _4 + _5;
+      ///   println("expr1 result => {}", expr1(10, 20, 30, 40, 50));
+      ///   auto expr2 = arg<1> + arg<2> + arg<3> + arg<4> + arg<5>;
+      ///   println("expr2 result => {}", expr2(10, 20, 30, 40, 50));
+      ///   auto expr3 = expression::arg<1>() + expression::arg<2>() + expression::arg<3>() + expression::arg<4>() + expression::arg<5>();
+      ///   println("expr3 result => {}", expr3(10, 20, 30, 40, 50));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // expr1 result => 150
+      /// // expr2 result => 150
+      /// // expr3 result => 150
+      /// ```
+      template <size_t index>
+      static constexpr auto arg();
+      /// @}
+
       /// @name Public Static Methods
       
       /// @{
