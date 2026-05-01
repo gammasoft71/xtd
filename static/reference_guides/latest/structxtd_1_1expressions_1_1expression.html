@@ -137,6 +137,111 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The following tables show the expressions by type : </dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Arithmetic  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a16e44e068234e060cf540866e0ac6411" title="Add the specified left and right operands.">xtd::expressions::expression::add</a>  </td><td class="markdownTableBodyNone"><code>a + b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::subtract  </td><td class="markdownTableBodyNone"><code>a - b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::unary_plus  </td><td class="markdownTableBodyNone"><code>+a</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::unary_minus<br  />
+xtd::expressions::expression::negate  </td><td class="markdownTableBodyNone"><code>-a</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a1ee729d0c81dd0ff199c28bc4c61443f" title="Multiply the specified left and right operands.">xtd::expressions::expression::multiply</a>  </td><td class="markdownTableBodyNone"><code>a * b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a2118d0d6f7410797c366df90045e7b7b" title="Divide the specified left and right operands.">xtd::expressions::expression::divide</a>  </td><td class="markdownTableBodyNone"><code>a / b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::modulo  </td><td class="markdownTableBodyNone"><code>a % b</code>  </td></tr>
+</table>
+</dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Relational  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ad8490c493e4e8dba69a953b52e9dda9f" title="Equal the specified left and right operands.">xtd::expressions::expression::equal</a>  </td><td class="markdownTableBodyNone"><code>a == b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::not_equal  </td><td class="markdownTableBodyNone"><code>a != b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a21efdb123f7fc32c7ee057dcfac80ac5" title="Greater than the specified left and right operands.">xtd::expressions::expression::greater_than</a>  </td><td class="markdownTableBodyNone"><code>a &gt; b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::less_than  </td><td class="markdownTableBodyNone"><code>a &lt; b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a7dff025971cae8d5b7d37e8cc8acbd2f" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>  </td><td class="markdownTableBodyNone"><code>a &gt;= b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::less_than_or_equal  </td><td class="markdownTableBodyNone"><code>a &lt;= b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a863c9b673cd138a83f857d0d06005df3" title="Compare three way the specified left and right operands.">xtd::expressions::expression::compare_three_way</a><br  />
+<a class="el" href="#a0afc042f7a62c6d359f2775b4a130eb1" title="Compare three way the specified left and right operands.">xtd::expressions::expression::spaceship</a>  </td><td class="markdownTableBodyNone"><code>a &lt;=&gt; b</code>  </td></tr>
+</table>
+</dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Logical  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::logical_not  </td><td class="markdownTableBodyNone"><code>!a</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#af4d83c8368dd701a9c958cd59d99f734" title="Logical and the specified left and right operands.">xtd::expressions::expression::logical_and</a><br  />
+<a class="el" href="#a0771350ec5813a3e5e6aadd15e283496" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a>  </td><td class="markdownTableBodyNone"><code>a &amp;&amp; b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::logical_or<br  />
+xtd::expressions::expression::or_else  </td><td class="markdownTableBodyNone"><code>a || b</code>  </td></tr>
+</table>
+</dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Bitwise  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::not  </td><td class="markdownTableBodyNone"><code>~a</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#ad95526648064fd19e3d77fb8c9215d20" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a>  </td><td class="markdownTableBodyNone"><code>a &amp; b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::or_  </td><td class="markdownTableBodyNone"><code>a | b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::xor_  </td><td class="markdownTableBodyNone"><code>a ^ b</code>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::left_shift  </td><td class="markdownTableBodyNone"><code>a &lt;&lt; b</code>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">xtd::expressions::expression::right_shift  </td><td class="markdownTableBodyNone"><code>a &gt;&gt; b</code>  </td></tr>
+</table>
+</dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Member and pointer  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6" title="The xtd::expressions::member is use to bind object member.">xtd::expressions::expression::member</a>  </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="group__expressions.html#gacbb2cd3a94ae11bdc47e1cf74f79d6ac" title="The xtd::expressions::method is use to bind object method.">xtd::expressions::expression::method</a>  </td><td class="markdownTableBodyNone"></td></tr>
+</table>
+</dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Conditional  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">xtd::expressions::expression::if_then_else  </td><td class="markdownTableBodyNone"><code>a ? b : c</code>  </td></tr>
+</table>
+</dd>
+<dd>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Others  </th><th class="markdownTableHeadNone">operator  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#abae93668f6c41d1c857f12649666930b" title="Gets the constant value.">xtd::expressions::expression::constant</a>  </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a2a510526157a4ccf4cc31e6cee826883" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>  </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a1b061396ff3e57e5c65ea10d370fa4a9" title="Gets the index placeholder used by expression.">xtd::expressions::expression::placeholder</a>  </td><td class="markdownTableBodyNone"></td></tr>
+</table>
+</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shos how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html" title="Provides the base class from which the classes that represent expression tree nodes are derived....">xtd::expressions::expression</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
