@@ -98,13 +98,17 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
-      ///   auto const1 =  expression::constant(10) + _ + expression::constant(30);
+      ///   auto value = 30;
+      ///   auto const1 =  10 + _ + value;
       ///   println("const1 result => {}", const1(20));
+      ///   auto const2 =  expression::constant(10) + _ + expression::constant(value);
+      ///   println("const2 result => {}", const2(20));
       /// }
       ///
       /// // This code produces the following output :
       /// //
       /// // const1 result => 60
+      /// // const2 result => 60
       /// ```
       template <typename type_t>
       static constexpr auto constant(type_t value);
