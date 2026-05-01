@@ -19,7 +19,38 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::constant struct is used by xtd::expressions::as_expression methods.
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::expression::constant.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   // auto constant1 = [] {return 10;};
+    ///   auto constant1 =  constant {10};
+    ///   println("constant1 result => {}", constant1());
+    ///   auto constant2 =  expression::constant(10);
+    ///   println("constant2 result => {}", constant2());
+    ///   auto value = 30;
+    ///   //auto constant3 = [value] {return value;};
+    ///   auto constant3 =  constant {value};
+    ///   println("constant3 result => {}", constant3());
+    ///   auto constant4 =  expression::constant(value);
+    ///   println("constant4 result => {}", constant4());
+    ///   println();
+    ///   //auto expr1 = [value] {return 10 + 20 + value;};
+    ///   auto expr1 = 10 + constant {20} + expression::constant(value);
+    ///   println("expr1 result => {}", expr1());
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // constant1 result => 10
+    /// // constant2 result => 10
+    /// // constant2 result => 30
+    /// // constant4 result => 30
+    /// //
+    /// // expr1 result => 60
+    /// ```
     template <typename type_t>
     struct constant : constant_expression {
       /// @name Public Fields
