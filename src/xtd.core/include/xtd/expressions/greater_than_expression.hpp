@@ -107,10 +107,10 @@ namespace xtd {
     ///
     /// // This code produces the following output :
     /// //
-    /// // equagreater_than1l1 result => true
+    /// // greater_than1 result => true
     /// // greater_than2 result => true
     /// //
-    /// // greater_than2 result => false
+    /// // greater_than3 result => false
     /// // greater_than4 result => false
     /// ```
     template <typename left_t, typename right_t>

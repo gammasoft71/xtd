@@ -293,15 +293,50 @@ namespace xtd {
       ///
       /// // This code produces the following output :
       /// //
-      /// // equagreater_than1l1 result => true
+      /// // greater_than1 result => true
       /// // greater_than2 result => true
       /// //
-      /// // greater_than2 result => false
+      /// // greater_than3 result => false
       /// // greater_than4 result => false
       /// ```
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto greater_than(left_t left, right_t right);
+      
+      /// @brief Greater than or equzl the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of greater than or equal.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::greater_than_or_equal.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto greater_than_or_equal1 = [](auto&& _) {return _ > 10;};
+      ///   auto greater_than_or_equal1 = _ > 10;
+      ///   println("greater_than_or_equal1 result => {}", greater_than_or_equal1(42));
+      ///   auto greater_than_or_equal2 = expression::greater_than_or_equal(_, 10);
+      ///   println("greater_than_or_equal2 result => {}", greater_than2(42));
+      ///   println();
+      ///   // auto greater_than_or_equal3 = [](auto&& _1, auto&& _2) {return _1 > _2;};
+      ///   auto greater_than_or_equal3 = _1 > _2;
+      ///   println("greater_than_or_equal3 result => {}", greater_than_or_equal2(32, 42));
+      ///   auto greater_than_or_equal4 = expression::greater_than_or_equal(_1, _2);
+      ///   println("greater_than_or_equal4 result => {}", greater_than_or_equal4(32, 42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // greater_than_or_equal1 result => true
+      /// // greater_than_or_equal2 result => true
+      /// //
+      /// // greater_than_or_equal3 result => false
+      /// // greater_than_or_equal4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto greater_than_or_equal(left_t left, right_t right);
 
       /// @brief Logical and the specified left and right operands.
       /// @param left The left operand.
