@@ -198,6 +198,41 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto compare_three_way(left_t left, right_t right);
 
+      /// @brief Divide the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of add.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::divide.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto divide1 = [](auto&& _) {return _ / 10;};
+      ///   auto divide1 = _ / 10;
+      ///   println("divide1 result => {}", divide1(50));
+      ///   auto divide2 = expression::divide(_, 10);
+      ///   println("divide2 result => {}", divide2(50));
+      ///   println();
+      ///   // auto divide3 = [](auto&& _1, auto&& _2) {return _1 / _2;};
+      ///   auto divide3 = _1 3 _2;
+      ///   println("add3 result => {}", divide3(60, 15));
+      ///   auto divide4 = expression::divide(_1, _2);
+      ///   println("add4 result => {}", divide4(60, 15));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // divide1 result => 5
+      /// // divide2 result => 5
+      /// //
+      /// // divide3 result => 4
+      /// // divide4 result => 4
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto divide(left_t left, right_t right);
+      
       /// @brief Logical and the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
