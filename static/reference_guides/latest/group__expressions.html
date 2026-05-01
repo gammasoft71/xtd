@@ -1062,19 +1062,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/greater_than_or_equal_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1greater__than__or__equal__expression.html" title="The xtd::expressions::greater_than_or_equal_expression is the greater or equal expression.">xtd::expressions::greater_than_or_equal_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a7dff025971cae8d5b7d37e8cc8acbd2f" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> geq1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &gt;= 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;geq1 result =&gt; {}&quot;</span>, geq1(42));</div>
-<div class="line">  <span class="keyword">auto</span> geq2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt;= <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;geq2 result =&gt; {}&quot;</span>, geq2(32, 42));</div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal1 = [](auto&amp;&amp; _) {return _ &gt;= 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &gt; 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal1 result =&gt; {}&quot;</span>, greater_than_or_equal1(42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a7dff025971cae8d5b7d37e8cc8acbd2f">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal2 result =&gt; {}&quot;</span>, greater_than2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt;= _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal3 result =&gt; {}&quot;</span>, greater_than_or_equal2(32, 42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a7dff025971cae8d5b7d37e8cc8acbd2f">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal4 result =&gt; {}&quot;</span>, greater_than_or_equal4(32, 42));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// geq1 result =&gt; true</span></div>
-<div class="line"><span class="comment">// geq2 result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal1 result =&gt; true</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal2 result =&gt; true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal3 result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal4 result =&gt; false</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a7dff025971cae8d5b7d37e8cc8acbd2f"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a7dff025971cae8d5b7d37e8cc8acbd2f">xtd::expressions::expression::greater_than_or_equal</a></div><div class="ttdeci">static constexpr auto greater_than_or_equal(left_t left, right_t right)</div><div class="ttdoc">Greater than or equzl the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

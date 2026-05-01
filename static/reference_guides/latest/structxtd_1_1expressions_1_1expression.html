@@ -952,13 +952,13 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a7dff025971cae8d5b7d37e8cc8acbd2f" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto greater_than_or_equal1 = [](auto&amp;&amp; _) {return _ &gt; 10;};</span></div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal1 = [](auto&amp;&amp; _) {return _ &gt;= 10;};</span></div>
 <div class="line">  <span class="keyword">auto</span> greater_than_or_equal1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &gt; 10;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal1 result =&gt; {}&quot;</span>, greater_than_or_equal1(42));</div>
 <div class="line">  <span class="keyword">auto</span> greater_than_or_equal2 = <a class="code hl_function" href="#a7dff025971cae8d5b7d37e8cc8acbd2f">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal2 result =&gt; {}&quot;</span>, greater_than2(42));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
-<div class="line">  <span class="comment">// auto greater_than_or_equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt; _2;};</span></div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt;= _2;};</span></div>
 <div class="line">  <span class="keyword">auto</span> greater_than_or_equal3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal3 result =&gt; {}&quot;</span>, greater_than_or_equal2(32, 42));</div>
 <div class="line">  <span class="keyword">auto</span> greater_than_or_equal4 = <a class="code hl_function" href="#a7dff025971cae8d5b7d37e8cc8acbd2f">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
