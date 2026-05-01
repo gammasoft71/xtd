@@ -846,19 +846,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/divide_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1divide__expression.html" title="The xtd::expressions::divide_expression is the division expression.">xtd::expressions::divide_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a2118d0d6f7410797c366df90045e7b7b" title="Divide the specified left and right operands.">xtd::expressions::expression::divide</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> div1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> / 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;div1 result =&gt; {}&quot;</span>, div1(50));</div>
-<div class="line">  <span class="keyword">auto</span> div2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> / <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;div2 result =&gt; {}&quot;</span>, div2(60, 15));</div>
+<div class="line">  <span class="comment">// auto divide1 = [](auto&amp;&amp; _) {return _ / 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> divide1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> / 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;divide1 result =&gt; {}&quot;</span>, divide1(50));</div>
+<div class="line">  <span class="keyword">auto</span> divide2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a2118d0d6f7410797c366df90045e7b7b">expression::divide</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;divide2 result =&gt; {}&quot;</span>, divide2(50));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto divide3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 / _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> divide3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> / <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add3 result =&gt; {}&quot;</span>, divide3(60, 15));</div>
+<div class="line">  <span class="keyword">auto</span> divide4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a2118d0d6f7410797c366df90045e7b7b">expression::divide</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;add4 result =&gt; {}&quot;</span>, divide4(60, 15));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// div1 result =&gt; 5</span></div>
-<div class="line"><span class="comment">// div2 result =&gt; 4</span></div>
+<div class="line"><span class="comment">// divide1 result =&gt; 5</span></div>
+<div class="line"><span class="comment">// divide2 result =&gt; 5</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// divide3 result =&gt; 4</span></div>
+<div class="line"><span class="comment">// divide4 result =&gt; 4</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a2118d0d6f7410797c366df90045e7b7b"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a2118d0d6f7410797c366df90045e7b7b">xtd::expressions::expression::divide</a></div><div class="ttdeci">static constexpr auto divide(left_t left, right_t right)</div><div class="ttdoc">Divide the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -907,19 +918,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/equal_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1equal__expression.html" title="The xtd::expressions::equal_expression is the equal expression.">xtd::expressions::equal_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#ad8490c493e4e8dba69a953b52e9dda9f" title="Equal the specified left and right operands.">xtd::expressions::expression::equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> eq1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> == 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;eq1 result =&gt; {}&quot;</span>, eq1(42));</div>
-<div class="line">  <span class="keyword">auto</span> eq2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> == <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;eq2 result =&gt; {}&quot;</span>, eq2(42, 42));</div>
+<div class="line">  <span class="comment">// auto equal1 = [](auto&amp;&amp; _) {return _ == 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> equal1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> == 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;equal1 result =&gt; {}&quot;</span>, equal1(42));</div>
+<div class="line">  <span class="keyword">auto</span> equal2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ad8490c493e4e8dba69a953b52e9dda9f">expression::equal</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;equal2 result =&gt; {}&quot;</span>, equal2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 == _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> equal3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> == <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;equal3 result =&gt; {}&quot;</span>, equal3(42, 42));</div>
+<div class="line">  <span class="keyword">auto</span> equal4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ad8490c493e4e8dba69a953b52e9dda9f">expression::equal</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;equal4 result =&gt; {}&quot;</span>, equal4(42, 42));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// eq1 result =&gt; false</span></div>
-<div class="line"><span class="comment">// eq2 result =&gt; true</span></div>
+<div class="line"><span class="comment">// equal1 result =&gt; false</span></div>
+<div class="line"><span class="comment">// equal2 result =&gt; false</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// equal3 result =&gt; true</span></div>
+<div class="line"><span class="comment">// equal4 result =&gt; true</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_ad8490c493e4e8dba69a953b52e9dda9f"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#ad8490c493e4e8dba69a953b52e9dda9f">xtd::expressions::expression::equal</a></div><div class="ttdeci">static constexpr auto equal(left_t left, right_t right)</div><div class="ttdoc">Equal the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -968,19 +990,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/greater_than_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1greater__than__expression.html" title="The xtd::expressions::greater_than_expression is the greater expression.">xtd::expressions::greater_than_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a21efdb123f7fc32c7ee057dcfac80ac5" title="Greater than the specified left and right operands.">xtd::expressions::expression::greater_than</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> greater1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &gt; 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater1 result =&gt; {}&quot;</span>, greater1(42));</div>
-<div class="line">  <span class="keyword">auto</span> greater2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater2 result =&gt; {}&quot;</span>, greater2(42, 42));</div>
+<div class="line">  <span class="comment">// auto greater_than1 = [](auto&amp;&amp; _) {return _ &gt; 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &gt; 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than1 result =&gt; {}&quot;</span>, greater_than1(42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a21efdb123f7fc32c7ee057dcfac80ac5">expression::greater_than</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than2 result =&gt; {}&quot;</span>, greater_than2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto greater_than3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than3 result =&gt; {}&quot;</span>, greater_than3(42, 42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a21efdb123f7fc32c7ee057dcfac80ac5">expression::greater_than</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than4 result =&gt; {}&quot;</span>, greater_than4(42, 42));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// greater1 result =&gt; true</span></div>
-<div class="line"><span class="comment">// greater2 result =&gt; false</span></div>
+<div class="line"><span class="comment">// equagreater_than1l1 result =&gt; true</span></div>
+<div class="line"><span class="comment">// greater_than2 result =&gt; true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// greater_than2 result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater_than4 result =&gt; false</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a21efdb123f7fc32c7ee057dcfac80ac5"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a21efdb123f7fc32c7ee057dcfac80ac5">xtd::expressions::expression::greater_than</a></div><div class="ttdeci">static constexpr auto greater_than(left_t left, right_t right)</div><div class="ttdoc">Greater than the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1974,8 +2007,8 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a1ee729d0c81dd0ff199c28bc4c61443f" title="Multiply the specified left and right operands.">xtd::expressions::expression::multiply</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> multiply1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> * 10;</div>
 <div class="line">  <span class="comment">// auto multiply1 = [](auto&amp;&amp; _) {return _ * 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> multiply1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> * 10;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;multiply1 result =&gt; {}&quot;</span>, multiply1(5));</div>
 <div class="line">  <span class="keyword">auto</span> multiply2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a1ee729d0c81dd0ff199c28bc4c61443f">expression::multiply</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;multiply2 result =&gt; {}&quot;</span>, multiply2(5));</div>
