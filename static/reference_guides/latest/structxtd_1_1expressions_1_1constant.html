@@ -106,7 +106,39 @@ struct xtd::expressions::constant&lt; type_t &gt;</div><p>The <a class="el" href
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/constant&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1constant.html" title="The xtd::expressions::constant is the constant wrapper.">xtd::expressions::constant</a> struct is used by <a class="el" href="group__expressions.html#ga4c762643b244dc3bcd271b36bf912fc7" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression.">xtd::expressions::as_expression</a> methods. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b" title="Gets the constant value.">xtd::expressions::expression::constant</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto constant1 = [] {return 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> constant1 =  <a class="code hl_function" href="#a25697cdf7b6c11e256eedcf5c94c0f64">constant</a> {10};</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant1 result =&gt; {}&quot;</span>, constant1());</div>
+<div class="line">  <span class="keyword">auto</span> constant2 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">expression::constant</a>(10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant2 result =&gt; {}&quot;</span>, constant2());</div>
+<div class="line">  <span class="keyword">auto</span> value = 30;</div>
+<div class="line">  <span class="comment">//auto constant3 = [value] {return value;};</span></div>
+<div class="line">  <span class="keyword">auto</span> constant3 =  <a class="code hl_struct" href="structxtd_1_1expressions_1_1constant.html">constant</a> {value};</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant3 result =&gt; {}&quot;</span>, constant3());</div>
+<div class="line">  <span class="keyword">auto</span> constant4 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">expression::constant</a>(value);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant4 result =&gt; {}&quot;</span>, constant4());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">//auto expr1 = [value] {return 20 + value;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_function" href="#a25697cdf7b6c11e256eedcf5c94c0f64">constant</a> {20} + <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">expression::constant</a>(value);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// constant1 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// constant2 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// constant3 result =&gt; 30</span></div>
+<div class="line"><span class="comment">// constant4 result =&gt; 30</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// expr1 result =&gt; 50</span></div>
+<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1constant_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1constant.html">xtd::expressions::constant</a></div><div class="ttdoc">The xtd::expressions::constant is the constant wrapper.</div><div class="ttdef"><b>Definition</b> constant.hpp:55</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1constant_html_a25697cdf7b6c11e256eedcf5c94c0f64"><div class="ttname"><a href="#a25697cdf7b6c11e256eedcf5c94c0f64">xtd::expressions::constant::constant</a></div><div class="ttdeci">constexpr constant(type_t value)</div><div class="ttdoc">Initialize a new xtd::expressions::constant object with specified constant value.</div><div class="ttdef"><b>Definition</b> constant.hpp:68</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_abae93668f6c41d1c857f12649666930b"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">xtd::expressions::expression::constant</a></div><div class="ttdeci">static constexpr auto constant(type_t value)</div><div class="ttdoc">Gets the constant value.</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Fields</h2></td></tr>
@@ -126,15 +158,6 @@ Public Operators</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="memitem:a2a510526157a4ccf4cc31e6cee826883" id="r_a2a510526157a4ccf4cc31e6cee826883"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
-<tr class="memitem:a2a510526157a4ccf4cc31e6cee826883 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a2a510526157a4ccf4cc31e6cee826883">arg</a> ()</td></tr>
-<tr class="memdesc:a2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
-<tr class="memitem:abae93668f6c41d1c857f12649666930b" id="r_abae93668f6c41d1c857f12649666930b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:abae93668f6c41d1c857f12649666930b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">constant</a> (type_t value)</td></tr>
-<tr class="memdesc:abae93668f6c41d1c857f12649666930b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the constant value.  <br /></td></tr>
-<tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9" id="r_a1b061396ff3e57e5c65ea10d370fa4a9"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
-<tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a1b061396ff3e57e5c65ea10d370fa4a9">placeholder</a> ()</td></tr>
-<tr class="memdesc:a1b061396ff3e57e5c65ea10d370fa4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> placeholder used by expression.  <br /></td></tr>
 <tr class="memitem:a16e44e068234e060cf540866e0ac6411" id="r_a16e44e068234e060cf540866e0ac6411"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a16e44e068234e060cf540866e0ac6411 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a16e44e068234e060cf540866e0ac6411">add</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a16e44e068234e060cf540866e0ac6411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the specified left and right operands.  <br /></td></tr>
@@ -144,9 +167,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a0771350ec5813a3e5e6aadd15e283496" id="r_a0771350ec5813a3e5e6aadd15e283496"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a0771350ec5813a3e5e6aadd15e283496 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a0771350ec5813a3e5e6aadd15e283496">and_also</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a0771350ec5813a3e5e6aadd15e283496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical and the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a2a510526157a4ccf4cc31e6cee826883" id="r_a2a510526157a4ccf4cc31e6cee826883"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
+<tr class="memitem:a2a510526157a4ccf4cc31e6cee826883 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a2a510526157a4ccf4cc31e6cee826883">arg</a> ()</td></tr>
+<tr class="memdesc:a2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
 <tr class="memitem:a863c9b673cd138a83f857d0d06005df3" id="r_a863c9b673cd138a83f857d0d06005df3"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a863c9b673cd138a83f857d0d06005df3 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a863c9b673cd138a83f857d0d06005df3">compare_three_way</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a863c9b673cd138a83f857d0d06005df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:abae93668f6c41d1c857f12649666930b" id="r_abae93668f6c41d1c857f12649666930b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:abae93668f6c41d1c857f12649666930b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">constant</a> (type_t value)</td></tr>
+<tr class="memdesc:abae93668f6c41d1c857f12649666930b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the constant value.  <br /></td></tr>
 <tr class="memitem:a2118d0d6f7410797c366df90045e7b7b" id="r_a2118d0d6f7410797c366df90045e7b7b"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a2118d0d6f7410797c366df90045e7b7b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a2118d0d6f7410797c366df90045e7b7b">divide</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a2118d0d6f7410797c366df90045e7b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide the specified left and right operands.  <br /></td></tr>
@@ -165,6 +194,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f" id="r_a1ee729d0c81dd0ff199c28bc4c61443f"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a1ee729d0c81dd0ff199c28bc4c61443f">multiply</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a1ee729d0c81dd0ff199c28bc4c61443f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9" id="r_a1b061396ff3e57e5c65ea10d370fa4a9"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
+<tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a1b061396ff3e57e5c65ea10d370fa4a9">placeholder</a> ()</td></tr>
+<tr class="memdesc:a1b061396ff3e57e5c65ea10d370fa4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> placeholder used by expression.  <br /></td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1" id="r_a0afc042f7a62c6d359f2775b4a130eb1"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a0afc042f7a62c6d359f2775b4a130eb1">spaceship</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a0afc042f7a62c6d359f2775b4a130eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
