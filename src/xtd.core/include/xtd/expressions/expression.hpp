@@ -22,6 +22,57 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
+    /// @remarks The following tables show the expressions by type :
+    /// @remarks
+    ///   | Arithmetic                                                                        | operator            |
+    ///   | --------------------------------------------------------------------------------- | ------------------- |
+    ///   | xtd::expressions::expression::add                                                 | <code>a + b</code>  |
+    ///   | xtd::expressions::expression::subtract                                            | <code>a - b</code>  |
+    ///   | xtd::expressions::expression::unary_plus                                          | <code>+a</code>     |
+    ///   | xtd::expressions::expression::unary_minus<br>xtd::expressions::expression::negate | <code>-a</code>     |
+    ///   | xtd::expressions::expression::multiply                                            | <code>a * b</code>  |
+    ///   | xtd::expressions::expression::divide                                              | <code>a / b</code>  |
+    ///   | xtd::expressions::expression::modulo                                              | <code>a % b</code>  |
+    /// @remarks
+    ///   | Relational                                                                                 | operator             |
+    ///   | ------------------------------------------------------------------------------------------ | -------------------- |
+    ///   | xtd::expressions::expression::equal                                                        | <code>a == b</code>  |
+    ///   | xtd::expressions::expression::not_equal                                                    | <code>a != b</code>  |
+    ///   | xtd::expressions::expression::greater_than                                                 | <code>a > b</code>   |
+    ///   | xtd::expressions::expression::less_than                                                    | <code>a < b</code>   |
+    ///   | xtd::expressions::expression::greater_than_or_equal                                        | <code>a >= b</code>  |
+    ///   | xtd::expressions::expression::less_than_or_equal                                           | <code>a <= b</code>  |
+    ///   | xtd::expressions::expression::compare_three_way<br>xtd::expressions::expression::spaceship | <code>a <=> b</code> |
+    /// @remarks
+    ///   | Logical                                                                             | operator              |
+    ///   | ----------------------------------------------------------------------------------- | --------------------- |
+    ///   | xtd::expressions::expression::logical_not                                           | <code>!a</code>       |
+    ///   | xtd::expressions::expression::logical_and<br>xtd::expressions::expression::and_also | <code>a && b</code>   |
+    ///   | xtd::expressions::expression::logical_or<br>xtd::expressions::expression::or_else   | <code>a \|\| b</code> |
+    /// @remarks
+    ///   | Bitwise                                   | operator |
+    ///   | ----------------------------------------- | ------------------- |
+    ///   | xtd::expressions::expression::not         | <code>~a</code>     |
+    ///   | xtd::expressions::expression::and_        | <code>a & b</code>  |
+    ///   | xtd::expressions::expression::or_         | <code>a \| b</code> |
+    ///   | xtd::expressions::expression::xor_        | <code>a ^ b</code>  |
+    ///   | xtd::expressions::expression::left_shift  | <code>a << b</code> |
+    ///   | xtd::expressions::expression::right_shift | <code>a >> b</code> |
+    /// @remarks
+    ///   | Member and pointer                        | operator |
+    ///   | ----------------------------------------- | -------- |
+    ///   | xtd::expressions::expression::member      |          |
+    ///   | xtd::expressions::expression::method      |          |
+    /// @remarks
+    ///   | Conditional                                | operator               |
+    ///   | ------------------------------------------ | ---------------------- |
+    ///   | xtd::expressions::expression::if_then_else | <code>a ? b : c</code> |
+    /// @remarks
+    ///   | Others                                    | operator |
+    ///   | ----------------------------------------- | -------- |
+    ///   | xtd::expressions::expression::constant    |          |
+    ///   | xtd::expressions::expression::arg         |          |
+    ///   | xtd::expressions::expression::placeholder |          |
     /// @par Examples
     /// The following example shos how to use xtd::expressions::expression class.
     /// ```cpp
