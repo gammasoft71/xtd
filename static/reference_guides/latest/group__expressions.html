@@ -2589,13 +2589,17 @@ template&lt;typename type_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#gabae93668f6c41d1c857f12649666930b" title="Gets the constant value.">xtd::expressions::expression::constant</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> const1 =  <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(10) + <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> + <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(30);</div>
+<div class="line">  <span class="keyword">auto</span> value = 30;</div>
+<div class="line">  <span class="keyword">auto</span> const1 =  10 + <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> + value;</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;const1 result =&gt; {}&quot;</span>, const1(20));</div>
+<div class="line">  <span class="keyword">auto</span> const2 =  <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(10) + <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> + <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(value);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;const2 result =&gt; {}&quot;</span>, const2(20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// const1 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// const2 result =&gt; 60</span></div>
 <div class="ttc" id="agroup__expressions_html_gabae93668f6c41d1c857f12649666930b"><div class="ttname"><a href="#gabae93668f6c41d1c857f12649666930b">xtd::expressions::expression::constant</a></div><div class="ttdeci">static constexpr auto constant(type_t value)</div><div class="ttdoc">Gets the constant value.</div></div>
 </div><!-- fragment --> </dd></dl>
 
