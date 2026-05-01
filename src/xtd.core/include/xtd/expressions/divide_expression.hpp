@@ -99,7 +99,7 @@ namespace xtd {
     ///   println("divide2 result => {}", divide2(50));
     ///   println();
     ///   // auto divide3 = [](auto&& _1, auto&& _2) {return _1 / _2;};
-    ///   auto divide3 = _1 3 _2;
+    ///   auto divide3 = _1 / _2;
     ///   println("add3 result => {}", divide3(60, 15));
     ///   auto divide4 = expression::divide(_1, _2);
     ///   println("add4 result => {}", divide4(60, 15));
