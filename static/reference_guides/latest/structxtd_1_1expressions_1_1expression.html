@@ -171,6 +171,12 @@ Inheritance diagram for xtd::expressions::expression:</div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Static Properties</h2></td></tr>
+<tr class="memitem:ga2a510526157a4ccf4cc31e6cee826883" id="r_ga2a510526157a4ccf4cc31e6cee826883"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
+<tr class="memitem:ga2a510526157a4ccf4cc31e6cee826883 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#ga2a510526157a4ccf4cc31e6cee826883">arg</a> ()</td></tr>
+<tr class="memdesc:ga2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__expressions.html#ga424cc1e54f0ab7d65830650697480d72" title="The xtd::expressions::arg instance is the index argument used by expression.">xtd::expressions::arg</a> instance is the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
 <tr class="memitem:a16e44e068234e060cf540866e0ac6411" id="r_a16e44e068234e060cf540866e0ac6411"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a16e44e068234e060cf540866e0ac6411 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a16e44e068234e060cf540866e0ac6411">add</a> (left_t left, right_t right)</td></tr>
@@ -193,6 +199,9 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a21efdb123f7fc32c7ee057dcfac80ac5" id="r_a21efdb123f7fc32c7ee057dcfac80ac5"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a21efdb123f7fc32c7ee057dcfac80ac5 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a21efdb123f7fc32c7ee057dcfac80ac5">greater_than</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a21efdb123f7fc32c7ee057dcfac80ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greater than the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a7dff025971cae8d5b7d37e8cc8acbd2f" id="r_a7dff025971cae8d5b7d37e8cc8acbd2f"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a7dff025971cae8d5b7d37e8cc8acbd2f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a7dff025971cae8d5b7d37e8cc8acbd2f">greater_than_or_equal</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a7dff025971cae8d5b7d37e8cc8acbd2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greater than or equzl the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:af4d83c8368dd701a9c958cd59d99f734" id="r_af4d83c8368dd701a9c958cd59d99f734"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:af4d83c8368dd701a9c958cd59d99f734 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#af4d83c8368dd701a9c958cd59d99f734">logical_and</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:af4d83c8368dd701a9c958cd59d99f734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical and the specified left and right operands.  <br /></td></tr>
@@ -658,12 +667,78 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// equagreater_than1l1 result =&gt; true</span></div>
+<div class="line"><span class="comment">// greater_than1 result =&gt; true</span></div>
 <div class="line"><span class="comment">// greater_than2 result =&gt; true</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// greater_than2 result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater_than3 result =&gt; false</span></div>
 <div class="line"><span class="comment">// greater_than4 result =&gt; false</span></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a21efdb123f7fc32c7ee057dcfac80ac5"><div class="ttname"><a href="#a21efdb123f7fc32c7ee057dcfac80ac5">xtd::expressions::expression::greater_than</a></div><div class="ttdeci">static constexpr auto greater_than(left_t left, right_t right)</div><div class="ttdoc">Greater than the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a7dff025971cae8d5b7d37e8cc8acbd2f" name="a7dff025971cae8d5b7d37e8cc8acbd2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dff025971cae8d5b7d37e8cc8acbd2f">&#9670;&#160;</a></span>greater_than_or_equal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::greater_than_or_equal </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Greater than or equzl the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of greater than or equal. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a7dff025971cae8d5b7d37e8cc8acbd2f" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal1 = [](auto&amp;&amp; _) {return _ &gt; 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &gt; 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal1 result =&gt; {}&quot;</span>, greater_than_or_equal1(42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal2 = <a class="code hl_function" href="#a7dff025971cae8d5b7d37e8cc8acbd2f">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal2 result =&gt; {}&quot;</span>, greater_than2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal3 result =&gt; {}&quot;</span>, greater_than_or_equal2(32, 42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal4 = <a class="code hl_function" href="#a7dff025971cae8d5b7d37e8cc8acbd2f">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;greater_than_or_equal4 result =&gt; {}&quot;</span>, greater_than_or_equal4(32, 42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal1 result =&gt; true</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal2 result =&gt; true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal3 result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal4 result =&gt; false</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a7dff025971cae8d5b7d37e8cc8acbd2f"><div class="ttname"><a href="#a7dff025971cae8d5b7d37e8cc8acbd2f">xtd::expressions::expression::greater_than_or_equal</a></div><div class="ttdeci">static constexpr auto greater_than_or_equal(left_t left, right_t right)</div><div class="ttdoc">Greater than or equzl the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
