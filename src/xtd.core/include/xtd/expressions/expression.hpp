@@ -56,35 +56,37 @@ namespace xtd {
       /// @name Public Static Properties
       
       /// @{
-      /// @brief The xtd::expressions::arg instance is the `index` argument used by expression.
-      /// @par Namespace
-      /// xtd::expressions
-      /// @par Header
-      /// ```cpp
-      /// #include <xtd/expressions/arg>
-      /// ```
-      /// @par Library
-      /// xtd.core
-      /// @ingroup xtd_core expressions
+      /// @brief Gets the `index` argument used by expression.
       /// @remarks The index start from 1 to N.
       /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::arg.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
-      ///   auto expr1 = _1 + _2 + _3 + _4 + _5;
-      ///   println("expr1 result => {}", expr1(10, 20, 30, 40, 50));
-      ///   auto expr2 = arg<1> + arg<2> + arg<3> + arg<4> + arg<5>;
-      ///   println("expr2 result => {}", expr2(10, 20, 30, 40, 50));
-      ///   auto expr3 = expression::arg<1>() + expression::arg<2>() + expression::arg<3>() + expression::arg<4>() + expression::arg<5>();
-      ///   println("expr3 result => {}", expr3(10, 20, 30, 40, 50));
+      ///   // auto placeholder1 = [](auto&& _) {return _;};
+      ///   auto arg1 = _;
+      ///   println("arg1 result => {}", arg1(10));
+      ///   auto arg2 = _1;
+      ///   println("arg2 result => {}", arg2(10));
+      ///   auto arg3 = arg<1> {};
+      ///   println("arg3 result => {}", arg3(10));
+      ///   auto arg4 = expression::arg<1>();
+      ///   println("arg4 result => {}", arg4(10));
+      ///   println();
+      ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
+      ///   auto expr1 = _1 + arg<2> + expression::arg<3>();
+      ///   println("expr1 result => {}", expr1(10, 20, 30));
       /// }
       ///
       /// // This code produces the following output :
       /// //
-      /// // expr1 result => 150
-      /// // expr2 result => 150
-      /// // expr3 result => 150
+      /// // arg1 result => 10
+      /// // arg2 result => 10
+      /// // arg3 result => 10
+      /// // arg4 result => 10
+      /// //
+      /// // expr1 result => 60
       /// ```
       template <size_t index>
       static constexpr auto arg();
@@ -112,6 +114,42 @@ namespace xtd {
       /// ```
       template <typename type_t>
       static constexpr auto constant(type_t value);
+
+      /// @brief Gets the `index` placeholder used by expression.
+      /// @remarks The index start from 0 to N.
+      /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::placeholder.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::placeholder.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto placeholder1 = [](auto&& _) {return _;};
+      ///   auto placeholder1 = _;
+      ///   println("placeholder1 result => {}", placeholder1(10));
+      ///   auto placeholder2 = _1;
+      ///   println("placeholder2 result => {}", placeholder2(10));
+      ///   auto placeholder3 = placeholder<0> {};
+      ///   println("placeholder3 result => {}", placeholder3(10));
+      ///   auto placeholder4 = expression::placeholder<0>();
+      ///   println("placeholder4 result => {}", placeholder4(10));
+      ///   println();
+      ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
+      ///   auto expr1 = _1 + placeholder<1> {} + expression::placeholder<2>();
+      ///   println("expr1 result => {}", expr1(10, 20, 30));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // placeholder1 result => 10
+      /// // placeholder2 result => 10
+      /// // placeholder3 result => 10
+      /// // placeholder4 result => 10
+      /// //
+      /// // expr1 result => 60
+      /// ```
+      template <size_t index>
+      static constexpr auto placeholder();
       /// @}
 
       /// @name Public Static Methods
