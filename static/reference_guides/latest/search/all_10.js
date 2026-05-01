@@ -216,7 +216,7 @@ var searchData=
   ['pixels_213',['pixels',['../group__style__sheets.html#ggaa76409da314505c52983287adca0c27aad399848208da8b80a306af0fd62bb03f',1,'xtd::forms::style_sheets']]],
   ['pixels_5fper_5finch_214',['pixels_per_inch',['../classxtd_1_1forms_1_1screen.html#a285f0b14a293a69164cb605a4f359068',1,'xtd::forms::screen']]],
   ['place_5fof_5fworship_215',['place_of_worship',['../classxtd_1_1forms_1_1emoticons.html#af152acbdf9059467b171c1792d58f03c',1,'xtd::forms::emoticons']]],
-  ['placeholder_216',['placeholder',['../structxtd_1_1expressions_1_1placeholder.html',1,'xtd::expressions::placeholder&lt; index &gt;'],['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683a6a99c575ab87f8c7d1ed1e52e7e349ce',1,'xtd::expressions::placeholder']]],
+  ['placeholder_216',['placeholder',['../structxtd_1_1expressions_1_1placeholder.html',1,'xtd::expressions::placeholder&lt; index &gt;'],['../structxtd_1_1expressions_1_1expression.html#a1b061396ff3e57e5c65ea10d370fa4a9',1,'xtd::expressions::expression::placeholder()'],['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683a6a99c575ab87f8c7d1ed1e52e7e349ce',1,'xtd::expressions::placeholder']]],
   ['placeholder_2ehpp_217',['placeholder.hpp',['../placeholder_8hpp.html',1,'']]],
   ['placeholder_5fexpression_218',['placeholder_expression',['../structxtd_1_1expressions_1_1placeholder__expression.html',1,'xtd::expressions']]],
   ['placeholder_5fexpression_2ehpp_219',['placeholder_expression.hpp',['../placeholder__expression_8hpp.html',1,'']]],

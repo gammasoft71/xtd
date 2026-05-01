@@ -379,15 +379,6 @@ Public Functions</h2></td></tr>
 <tr class="memitem:ga4c762643b244dc3bcd271b36bf912fc7" id="r_ga4c762643b244dc3bcd271b36bf912fc7"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:ga4c762643b244dc3bcd271b36bf912fc7 template"><td class="memItemLeft">constexpr decltype(auto)&#160;</td><td class="memItemRight"><a class="el" href="#ga4c762643b244dc3bcd271b36bf912fc7">xtd::expressions::as_expression</a> (type_t &amp;&amp;value)</td></tr>
 <tr class="memdesc:ga4c762643b244dc3bcd271b36bf912fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga4c762643b244dc3bcd271b36bf912fc7" title="The xtd::expressions::as_expression method convert a type as xtd::expressions::expression.">xtd::expressions::as_expression</a> method convert a type as <a class="el" href="structxtd_1_1expressions_1_1expression.html" title="Provides the base class from which the classes that represent expression tree nodes are derived....">xtd::expressions::expression</a>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Public Static Properties</h2></td></tr>
-<tr class="memitem:ga2a510526157a4ccf4cc31e6cee826883" id="r_ga2a510526157a4ccf4cc31e6cee826883"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
-<tr class="memitem:ga2a510526157a4ccf4cc31e6cee826883 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga2a510526157a4ccf4cc31e6cee826883">xtd::expressions::expression::arg</a> ()</td></tr>
-<tr class="memdesc:ga2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="#ga424cc1e54f0ab7d65830650697480d72" title="The xtd::expressions::arg instance is the index argument used by expression.">xtd::expressions::arg</a> instance is the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
-<tr class="memitem:gabae93668f6c41d1c857f12649666930b" id="r_gabae93668f6c41d1c857f12649666930b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:gabae93668f6c41d1c857f12649666930b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gabae93668f6c41d1c857f12649666930b">xtd::expressions::expression::constant</a> (type_t value)</td></tr>
-<tr class="memdesc:gabae93668f6c41d1c857f12649666930b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the constant value.  <br /></td></tr>
 </table>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga418395dc9383e37eb269a52b25b74683" name="ga418395dc9383e37eb269a52b25b74683"></a>
@@ -951,63 +942,6 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">// equal3 result =&gt; true</span></div>
 <div class="line"><span class="comment">// equal4 result =&gt; true</span></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_ad8490c493e4e8dba69a953b52e9dda9f"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#ad8490c493e4e8dba69a953b52e9dda9f">xtd::expressions::expression::equal</a></div><div class="ttdeci">static constexpr auto equal(left_t left, right_t right)</div><div class="ttdoc">Equal the specified left and right operands.</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="ga2a510526157a4ccf4cc31e6cee826883" name="ga2a510526157a4ccf4cc31e6cee826883"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2a510526157a4ccf4cc31e6cee826883">&#9670;&#160;</a></span>arg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr auto xtd::expressions::expression::arg </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="expression_8hpp.html">expression.hpp</a>&gt;</code></p>
-
-<p>The <a class="el" href="#ga424cc1e54f0ab7d65830650697480d72" title="The xtd::expressions::arg instance is the index argument used by expression.">xtd::expressions::arg</a> instance is the <span class="tt">index</span> argument used by expression. </p>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/arg&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The index start from 1 to N. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a> + <a class="code hl_variable" href="#gac705fd840359c016dad779817f2f7c36">_3</a> + <a class="code hl_variable" href="#ga08e2f457a02a5aadddc748b9cebe94c2">_4</a> + <a class="code hl_variable" href="#ga5020b04fb781f2e97a932ffd37ca9b96">_5</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1(10, 20, 30, 40, 50));</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">arg&lt;1&gt;</a> + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">arg&lt;2&gt;</a> + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">arg&lt;3&gt;</a> + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">arg&lt;4&gt;</a> + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">arg&lt;5&gt;</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr2 result =&gt; {}&quot;</span>, expr2(10, 20, 30, 40, 50));</div>
-<div class="line">  <span class="keyword">auto</span> expr3 = <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;1&gt;</a>() + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;2&gt;</a>() + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;3&gt;</a>() + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;4&gt;</a>() + <a class="code hl_function" href="#ga2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;5&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr3 result =&gt; {}&quot;</span>, expr3(10, 20, 30, 40, 50));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 result =&gt; 150</span></div>
-<div class="line"><span class="comment">// expr2 result =&gt; 150</span></div>
-<div class="line"><span class="comment">// expr3 result =&gt; 150</span></div>
-<div class="ttc" id="agroup__expressions_html_ga08e2f457a02a5aadddc748b9cebe94c2"><div class="ttname"><a href="#ga08e2f457a02a5aadddc748b9cebe94c2">xtd::expressions::_4</a></div><div class="ttdeci">constexpr auto _4</div><div class="ttdoc">The xtd::expressions::_4 placeholder instance is fourth argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:131</div></div>
-<div class="ttc" id="agroup__expressions_html_ga2a510526157a4ccf4cc31e6cee826883"><div class="ttname"><a href="#ga2a510526157a4ccf4cc31e6cee826883">xtd::expressions::expression::arg</a></div><div class="ttdeci">static constexpr auto arg()</div><div class="ttdoc">The xtd::expressions::arg instance is the index argument used by expression.</div></div>
-<div class="ttc" id="agroup__expressions_html_ga5020b04fb781f2e97a932ffd37ca9b96"><div class="ttname"><a href="#ga5020b04fb781f2e97a932ffd37ca9b96">xtd::expressions::_5</a></div><div class="ttdeci">constexpr auto _5</div><div class="ttdoc">The xtd::expressions::_5 placeholder instance is fifth argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:156</div></div>
-<div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:106</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1895,6 +1829,7 @@ template&lt;typename expression_t, typename method_t, typename... stored_args_t&
 <div class="line"><span class="comment">// fct3 result =&gt; World!</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a056e8a1ba3ad4dbad75ed46bdacd9227"><div class="ttname"><a href="classxtd_1_1basic__string.html#a056e8a1ba3ad4dbad75ed46bdacd9227">xtd::basic_string&lt; char &gt;::substring</a></div><div class="ttdeci">auto substring(xtd::usize start_index) const -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:865</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a2095a4dd9dbf5c5b0945458539b94a3d"><div class="ttname"><a href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">xtd::basic_string&lt; char &gt;::to_upper</a></div><div class="ttdeci">auto to_upper() const noexcept -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:944</div></div>
+<div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:106</div></div>
 <div class="ttc" id="agroup__expressions_html_gacbb2cd3a94ae11bdc47e1cf74f79d6ac"><div class="ttname"><a href="#gacbb2cd3a94ae11bdc47e1cf74f79d6ac">xtd::expressions::method</a></div><div class="ttdeci">constexpr auto method(method_t method, args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::expressions::method is use to bind object method.</div><div class="ttdef"><b>Definition</b> method_call_expression.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2551,60 +2486,6 @@ template&lt;typename left_t, typename right_t&gt; </div>
 
 </div>
 </div>
-<a id="gabae93668f6c41d1c857f12649666930b" name="gabae93668f6c41d1c857f12649666930b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabae93668f6c41d1c857f12649666930b">&#9670;&#160;</a></span>constant()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr auto xtd::expressions::expression::constant </td>
-          <td>(</td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="expression_8hpp.html">expression.hpp</a>&gt;</code></p>
-
-<p>Gets the constant value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The constnt value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The constant value expression. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#gabae93668f6c41d1c857f12649666930b" title="Gets the constant value.">xtd::expressions::expression::constant</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> value = 30;</div>
-<div class="line">  <span class="keyword">auto</span> const1 =  10 + <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> + value;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;const1 result =&gt; {}&quot;</span>, const1(20));</div>
-<div class="line">  <span class="keyword">auto</span> const2 =  <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(10) + <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> + <a class="code hl_function" href="#gabae93668f6c41d1c857f12649666930b">expression::constant</a>(value);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;const2 result =&gt; {}&quot;</span>, const2(20));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// const1 result =&gt; 60</span></div>
-<div class="line"><span class="comment">// const2 result =&gt; 60</span></div>
-<div class="ttc" id="agroup__expressions_html_gabae93668f6c41d1c857f12649666930b"><div class="ttname"><a href="#gabae93668f6c41d1c857f12649666930b">xtd::expressions::expression::constant</a></div><div class="ttdeci">static constexpr auto constant(type_t value)</div><div class="ttdoc">Gets the constant value.</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
 <a id="ga424cc1e54f0ab7d65830650697480d72" name="ga424cc1e54f0ab7d65830650697480d72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga424cc1e54f0ab7d65830650697480d72">&#9670;&#160;</a></span>arg</h2>
@@ -2636,9 +2517,34 @@ template&lt;size_t index&gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The index start from 1 to N. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> expr = <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;1&gt;</a> + <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;2&gt;</a> + <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;3&gt;</a> + <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;4&gt;</a> + <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;5&gt;</a>;</div>
-<div class="line"><a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr result =&gt; {}&quot;</span>, expr(10, 20, 30, 40, 50)); <span class="comment">// expr result =&gt; 150</span></div>
-<div class="ttc" id="agroup__expressions_html_ga424cc1e54f0ab7d65830650697480d72"><div class="ttname"><a href="#ga424cc1e54f0ab7d65830650697480d72">xtd::expressions::arg</a></div><div class="ttdeci">constexpr xtd::expressions::placeholder&lt; index - 1 &gt; arg</div><div class="ttdoc">The xtd::expressions::arg instance is the index argument used by expression.</div><div class="ttdef"><b>Definition</b> arg.hpp:36</div></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a2a510526157a4ccf4cc31e6cee826883" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto placeholder1 = [](auto&amp;&amp; _) {return _;};</span></div>
+<div class="line">  <span class="keyword">auto</span> arg1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;arg1 result =&gt; {}&quot;</span>, arg1(10));</div>
+<div class="line">  <span class="keyword">auto</span> arg2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;arg2 result =&gt; {}&quot;</span>, arg2(10));</div>
+<div class="line">  <span class="keyword">auto</span> arg3 = <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;1&gt;</a> {};</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;arg3 result =&gt; {}&quot;</span>, arg3(10));</div>
+<div class="line">  <span class="keyword">auto</span> arg4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;1&gt;</a>();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;arg4 result =&gt; {}&quot;</span>, arg4(10));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _1, auto&amp;&amp; _2, auto&amp;&amp; _3) {return _1 + _2 + _3;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="#ga424cc1e54f0ab7d65830650697480d72">arg&lt;2&gt;</a> + <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a2a510526157a4ccf4cc31e6cee826883">expression::arg&lt;3&gt;</a>();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1(10, 20, 30));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// arg1 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// arg2 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// arg3 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// arg4 result =&gt; 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// expr1 result =&gt; 60</span></div>
+<div class="ttc" id="agroup__expressions_html_ga424cc1e54f0ab7d65830650697480d72"><div class="ttname"><a href="#ga424cc1e54f0ab7d65830650697480d72">xtd::expressions::arg</a></div><div class="ttdeci">constexpr xtd::expressions::placeholder&lt; index - 1 &gt; arg</div><div class="ttdoc">The xtd::expressions::arg instance is the index argument used by expression.</div><div class="ttdef"><b>Definition</b> arg.hpp:61</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a2a510526157a4ccf4cc31e6cee826883"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a2a510526157a4ccf4cc31e6cee826883">xtd::expressions::expression::arg</a></div><div class="ttdeci">static constexpr auto arg()</div><div class="ttdoc">Gets the index argument used by expression.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2837,6 +2743,7 @@ template&lt;size_t index&gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> expr = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a> + <a class="code hl_variable" href="#gac705fd840359c016dad779817f2f7c36">_3</a> + <a class="code hl_variable" href="#ga08e2f457a02a5aadddc748b9cebe94c2">_4</a>;</div>
 <div class="line"><a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr result =&gt; {}&quot;</span>, expr(10, 20, 30, 40)); <span class="comment">// expr result =&gt; 100</span></div>
+<div class="ttc" id="agroup__expressions_html_ga08e2f457a02a5aadddc748b9cebe94c2"><div class="ttname"><a href="#ga08e2f457a02a5aadddc748b9cebe94c2">xtd::expressions::_4</a></div><div class="ttdeci">constexpr auto _4</div><div class="ttdoc">The xtd::expressions::_4 placeholder instance is fourth argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:131</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2878,6 +2785,7 @@ template&lt;size_t index&gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> expr = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a> + <a class="code hl_variable" href="#gac705fd840359c016dad779817f2f7c36">_3</a> + <a class="code hl_variable" href="#ga08e2f457a02a5aadddc748b9cebe94c2">_4</a> + <a class="code hl_variable" href="#ga5020b04fb781f2e97a932ffd37ca9b96">_5</a>;</div>
 <div class="line"><a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr result =&gt; {}&quot;</span>, expr(10, 20, 30, 40, 50)); <span class="comment">// expr result =&gt; 150</span></div>
+<div class="ttc" id="agroup__expressions_html_ga5020b04fb781f2e97a932ffd37ca9b96"><div class="ttname"><a href="#ga5020b04fb781f2e97a932ffd37ca9b96">xtd::expressions::_5</a></div><div class="ttdeci">constexpr auto _5</div><div class="ttdoc">The xtd::expressions::_5 placeholder instance is fifth argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:156</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
