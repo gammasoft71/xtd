@@ -37,8 +37,8 @@ namespace xtd {
     ///   auto constant4 =  expression::constant(value);
     ///   println("constant4 result => {}", constant4());
     ///   println();
-    ///   //auto expr1 = [value] {return 10 + 20 + value;};
-    ///   auto expr1 = 10 + constant {20} + expression::constant(value);
+    ///   //auto expr1 = [value] {return 20 + value;};
+    ///   auto expr1 = constant {20} + expression::constant(value);
     ///   println("expr1 result => {}", expr1());
     /// }
     ///
@@ -46,10 +46,10 @@ namespace xtd {
     /// //
     /// // constant1 result => 10
     /// // constant2 result => 10
-    /// // constant2 result => 30
+    /// // constant3 result => 30
     /// // constant4 result => 30
     /// //
-    /// // expr1 result => 60
+    /// // expr1 result => 50
     /// ```
     template <typename type_t>
     struct constant : constant_expression {
