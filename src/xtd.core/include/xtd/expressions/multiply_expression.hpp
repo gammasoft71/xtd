@@ -93,10 +93,12 @@ namespace xtd {
     ///
     /// auto main() -> int {
     ///   auto multiply1 = _ * 10;
+    ///   // auto multiply1 = [](auto&& _) {return _ * 10;};
     ///   println("multiply1 result => {}", multiply1(5));
     ///   auto multiply2 = expression::multiply(_, 10);
     ///   println("multiply2 result => {}", multiply2(5));
     ///   println();
+    ///   // auto multiply3 = [](auto&& _1, auto&& _2) {return _1 * _2;};
     ///   auto multiply3 = _1 * _2;
     ///   println("multiply3 result => {}", multiply3(4, 15));
     ///   auto multiply4 = expression::multiply(_1, _2);

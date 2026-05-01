@@ -96,12 +96,17 @@ namespace xtd {
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   //auto three_way_comparison1 = [](auto _) {return _ <=> 10;};
-    ///   auto three_way_comparison1 = _ <=> 10;
-    ///   println("three_way_comparison1 result => {}", three_way_comparison1(42));
-    ///   //auto three_way_comparison2 = [](auto _1, auto _2) {return _1 <=> _2;};
-    ///   auto three_way_comparison2 = _1 <=> _2;
-    ///   println("three_way_comparison2 result => {}", three_way_comparison2(42, 42));
+    ///   // auto compare_three_way1 = [value](auto&& _) {return _ <=> 10;};
+    ///   auto compare_three_way1 = _ <=> 10;
+    ///   println("compare_three_way1 result => {}", compare_three_way1(42));
+    ///   auto compare_three_way2 =  expression::compare_three_way(_, 10);
+    ///   println("compare_three_way2 result => {}", compare_three_way2(42));
+    ///   println();
+    ///   //auto compare_three_way3 = [](auto&& _1, auto&& _2) {return _1 <=> _2;};
+    ///   auto compare_three_way3 = _1 <=> _2;
+    ///   println("compare_three_way3 result => {}", compare_three_way3(42, 42));
+    ///   auto compare_three_way4 =  expression::compare_three_way(_1, _2);
+    ///   println("compare_three_way4 result => {}", compare_three_way4(42, 42));
     /// }
     ///
     /// // This code produces the following output :

@@ -97,11 +97,13 @@ namespace xtd {
     ///
     /// auto main() -> int {
     ///   auto value = true;
+    ///   // auto logical_and1 = [value](auto&& _) {return _ && value;};
     ///   auto logical_and1 = _ && value;
     ///   println("logical_and1 result => {}", logical_and1(42 % 2 == 0));
     ///   auto logical_and2 = expression::logical_and(_, value);
     ///   println("logical_and2 result => {}", logical_and2(42 % 2 == 0));
     ///   println();
+    ///   // auto logical_and3 = [](auto&& _1, auto&& _2) {return _1 && _2;};
     ///   auto logical_and3 = _1 && _2;
     ///   println("and_also3 result => {}", logical_and3(42 % 2 == 0, 42 % 8 == 0));
     ///   auto logical_and4 = expression::logical_and(_1, _2);

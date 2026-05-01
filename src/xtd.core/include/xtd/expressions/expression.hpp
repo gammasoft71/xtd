@@ -29,6 +29,7 @@ namespace xtd {
     ///
     /// auto main() -> int {
     ///   auto value = 30;
+    ///   // auto expr1 = [](auto&& _1, auto&& _2) {return (_1 + _2) * value;};
     ///   auto expr1 = (_1 + _2) * value;
     ///   println("expr1 resutl = {}", expr1(10, 20));
     ///   println("expr1 = {}", expr1);
@@ -65,11 +66,13 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
+      ///   // auto add1 = [](auto&& _) {return _ + 10;};
       ///   auto add1 = _ + 10;
       ///   println("add1 result => {}", add1(40));
       ///   auto add2 = expression::add(_, 10);
       ///   println("add2 result => {}", add2(40));
       ///   println();
+      ///   // auto add3 = [](auto&& _1, auto&& _2) {return _1 + _2;};
       ///   auto add3 = _1 + _2;
       ///   println("add3 result => {}", add3(40, 20));
       ///   auto add4 = expression::add(_1, _2);
@@ -98,11 +101,13 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
+      ///   // auto and1 = [](auto&& _) {return _ & 0x0F;};
       ///   auto and1 = _ & 0x0F;
       ///   println("and1 result => {:B}", and1(42));
       ///   auto and2 = expression::and_(_, 0x0F);
       ///   println("and2 result => {:B}", and2(42));
       ///   println();
+      ///   // auto and3 = [](auto&& _1, auto&& _2) {return _1 & _2;};
       ///   auto and3 = _1 & _2;
       ///   println("and3 result => {:B}", and3(42, 0xF0));
       ///   auto and4 = expression::and_(_1, _2);
@@ -133,11 +138,13 @@ namespace xtd {
       ///
       /// auto main() -> int {
       ///   auto value = true;
+      ///   // auto and_also1 = [value](auto&& _) {return _ && value;};
       ///   auto and_also1 = _ && value;
       ///   println("and_also1 result => {}", and_also1(42 % 2 == 0));
       ///   auto and_also2 = expression::and_also(_, value);
       ///   println("and_also2 result => {}", and_also2(42 % 2 == 0));
       ///   println();
+      ///   // auto and_also3 = [](auto&& _1, auto&& _2) {return _1 && _2;};
       ///   auto and_also3 = _1 && _2;
       ///   println("and_also3 result => {}", and_also3(42 % 2 == 0, 42 % 8 == 0));
       ///   auto and_also4 = expression::and_also(_1, _2);
@@ -166,11 +173,13 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
+      ///   // auto compare_three_way1 = [value](auto&& _) {return _ <=> 10;};
       ///   auto compare_three_way1 = _ <=> 10;
       ///   println("compare_three_way1 result => {}", compare_three_way1(42));
       ///   auto compare_three_way2 =  expression::compare_three_way(_, 10);
       ///   println("compare_three_way2 result => {}", compare_three_way2(42));
       ///   println();
+      ///   //auto compare_three_way3 = [](auto&& _1, auto&& _2) {return _1 <=> _2;};
       ///   auto compare_three_way3 = _1 <=> _2;
       ///   println("compare_three_way3 result => {}", compare_three_way3(42, 42));
       ///   auto compare_three_way4 =  expression::compare_three_way(_1, _2);
@@ -201,11 +210,13 @@ namespace xtd {
       ///
       /// auto main() -> int {
       ///   auto value = true;
+      ///   // auto logical_and1 = [value](auto&& _) {return _ && value;};
       ///   auto logical_and1 = _ && value;
       ///   println("logical_and1 result => {}", logical_and1(42 % 2 == 0));
       ///   auto logical_and2 = expression::logical_and(_, value);
       ///   println("logical_and2 result => {}", logical_and2(42 % 2 == 0));
       ///   println();
+      ///   // auto logical_and3 = [](auto&& _1, auto&& _2) {return _1 && _2;};
       ///   auto logical_and3 = _1 && _2;
       ///   println("and_also3 result => {}", logical_and3(42 % 2 == 0, 42 % 8 == 0));
       ///   auto logical_and4 = expression::logical_and(_1, _2);
@@ -234,11 +245,13 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
+      ///   // auto multiply1 = [](auto&& _) {return _ * 10;};
       ///   auto multiply1 = _ * 10;
       ///   println("multiply1 result => {}", multiply1(5));
       ///   auto multiply2 = expression::multiply(_, 10);
       ///   println("multiply2 result => {}", multiply2(5));
       ///   println();
+      ///   // auto multiply3 = [](auto&& _1, auto&& _2) {return _1 * _2;};
       ///   auto multiply3 = _1 * _2;
       ///   println("multiply3 result => {}", multiply3(4, 15));
       ///   auto multiply4 = expression::multiply(_1, _2);
@@ -267,11 +280,13 @@ namespace xtd {
       /// #include <xtd/xtd>
       ///
       /// auto main() -> int {
+      ///   // auto cspaceship1 = [value](auto&& _) {return _ <=> 10;};
       ///   auto cspaceship1 = _ <=> 10;
       ///   println("spaceship1 result => {}", spaceship1(42));
       ///   auto spaceship2 =  expression::spaceship(_, 10);
       ///   println("spaceship2 result => {}", spaceship(42));
       ///   println();
+      ///   //auto spaceship3 = [](auto&& _1, auto&& _2) {return _1 <=> _2;};
       ///   auto spaceship3 = _1 <=> _2;
       ///   println("spaceship3 result => {}", spaceship3(42, 42));
       ///   auto spaceship4 =  expression::spaceship(_1, _2);
