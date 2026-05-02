@@ -29,6 +29,7 @@ namespace xtd {
     ///   auto [operand_one, operand_two] = args<2>();
     ///   auto expr1 = operand_one + operand_two;
     ///   println("expr1 result => {}", expr1(10, 20));
+    ///   //auto expr2 = [](auto&& _1, auto&& _2) {return _1 + _2;};
     ///   auto expr2 = _1 + _2;
     ///   println("expr2 result => {}", expr2(10, 20));
     /// }
