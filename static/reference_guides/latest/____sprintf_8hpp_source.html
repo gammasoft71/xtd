@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span> &lt;&gt;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __sprintf&lt;char&gt;(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) -&gt; std::basic_string&lt;char&gt; {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  va_list args;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  va_list <a class="code hl_function" href="group__expressions.html#gacea22e940dce5924428e5e334eb8572a">args</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  va_start(args, fmt);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::basic_string&lt;char&gt; formatted_string(vsnprintf(<span class="keyword">nullptr</span>, 0, fmt, args), 0);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  va_end(args);</div>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;&gt;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __sprintf&lt;xtd::wchar&gt;(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga438e2b3e86176afb074a70ed50f6c302">xtd::wchar</a>* fmt, ...) -&gt; std::basic_string&lt;xtd::wchar&gt; {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  va_list args;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  va_list <a class="code hl_function" href="group__expressions.html#gacea22e940dce5924428e5e334eb8572a">args</a>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a> = 1024;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a> = 0;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::basic_string&lt;xtd::wchar&gt; formatted_string;</div>
@@ -136,6 +136,7 @@ $(function() {
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">if</span> (formatted_string == L<span class="stringliteral">&quot;NAN&quot;</span>) formatted_string = {<span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;n&#39;</span>};</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">return</span> formatted_string;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="ttc" id="agroup__expressions_html_gacea22e940dce5924428e5e334eb8572a"><div class="ttname"><a href="group__expressions.html#gacea22e940dce5924428e5e334eb8572a">xtd::expressions::args</a></div><div class="ttdeci">constexpr auto args()</div><div class="ttdoc">Generates a set of positional placeholders that can be decomposed using structured bindings to build ...</div><div class="ttdef"><b>Definition</b> args.hpp:43</div></div>
 <div class="ttc" id="agroup__types_html_ga438e2b3e86176afb074a70ed50f6c302"><div class="ttname"><a href="group__types.html#ga438e2b3e86176afb074a70ed50f6c302">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> wchar.hpp:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">xtd::diagnostics::source_levels::error</a></div><div class="ttdeci">@ error</div><div class="ttdoc">Allows critical and error events through.</div><div class="ttdef"><b>Definition</b> source_levels.hpp:31</div></div>
 <div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>

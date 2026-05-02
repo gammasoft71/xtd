@@ -36,7 +36,7 @@ var searchData=
   ['aqua_33',['aqua',['../classxtd_1_1drawing_1_1color.html#a5792acf0b8a2c4c149b6964d49547ece',1,'xtd::drawing::color']]],
   ['aquamarine_34',['aquamarine',['../classxtd_1_1drawing_1_1color.html#ad40af5e304bb52a604f189b44923ac63',1,'xtd::drawing::color']]],
   ['aquarius_35',['aquarius',['../classxtd_1_1forms_1_1emoticons.html#a26650af929bcdeb60723268a7bd21673',1,'xtd::forms::emoticons']]],
-  ['arg_36',['arg',['../group__expressions.html#ga424cc1e54f0ab7d65830650697480d72',1,'xtd::expressions']]],
+  ['arg_36',['arg',['../group__expressions.html#gaea1e40ed40e3795497204f134d6e9f81',1,'xtd::expressions']]],
   ['aries_37',['aries',['../classxtd_1_1forms_1_1emoticons.html#a82371a1c8da92b40410ebec463cf1dda',1,'xtd::forms::emoticons']]],
   ['arrow_5fpointing_5frightwards_5fthen_5fcurving_5fdownwards_38',['arrow_pointing_rightwards_then_curving_downwards',['../classxtd_1_1forms_1_1emoticons.html#a3fd50b3d8804fc2bba14982a8a3850a5',1,'xtd::forms::emoticons']]],
   ['arrow_5fpointing_5frightwards_5fthen_5fcurving_5fupwards_39',['arrow_pointing_rightwards_then_curving_upwards',['../classxtd_1_1forms_1_1emoticons.html#a0383c66a2e1ddf905ed972cfd49bd9b2',1,'xtd::forms::emoticons']]],
