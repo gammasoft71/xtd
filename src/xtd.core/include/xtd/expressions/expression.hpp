@@ -605,6 +605,41 @@ namespace xtd {
       template <size_t index>
       static constexpr auto placeholder();
 
+      /// @brief Right shift the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of right shift.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::right_shift.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto right_shift1 = [](auto&& _) {return _ >> 2;};
+      ///   auto right_shift1 = _ >> 2;
+      ///   println("right_shift1 result => {}", right_shift1(42));
+      ///   auto right_shift2 = expression::right_shift(_, 2);
+      ///   println("right_shift2 result => {}", right_shift2(42));
+      ///   println();
+      ///   // auto right_shift3 = [](auto&& _1, auto&& _2) {return _1 >> _2;};
+      ///   auto right_shift3 = _1 >> _2;
+      ///   println("right_shift3 result => {}", right_shift3(42, 4));
+      ///   auto right_shift4 = expression::right_shift(_1, _2);
+      ///   println("right_shift4 result => {}", right_shift4(42, 4));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // right_shift1 result => 10
+      /// // right_shift2 result => 10
+      /// //
+      /// // right_shift3 result => 2
+      /// // right_shift4 result => 2
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto right_shift(left_t left, right_t right);
+
       /// @brief Compare three way the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
