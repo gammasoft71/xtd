@@ -207,9 +207,9 @@ xtd::expressions::expression::or_else  </td><td class="markdownTableBodyNone"><c
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">xtd::expressions::expression::xor_  </td><td class="markdownTableBodyNone"><code>a ^ b</code>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">xtd::expressions::expression::left_shift  </td><td class="markdownTableBodyNone"><code>a &lt;&lt; b</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#a1ea2c8fd2522c24cbb91418b76488ae8" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>  </td><td class="markdownTableBodyNone"><code>a &lt;&lt; b</code>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">xtd::expressions::expression::right_shift  </td><td class="markdownTableBodyNone"><code>a &gt;&gt; b</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#abeebd03995d698ba91b3110c3c7a67f1" title="Right shift the specified left and right operands.">xtd::expressions::expression::right_shift</a>  </td><td class="markdownTableBodyNone"><code>a &gt;&gt; b</code>  </td></tr>
 </table>
 </dd>
 <dd>
@@ -310,12 +310,18 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:af4d83c8368dd701a9c958cd59d99f734" id="r_af4d83c8368dd701a9c958cd59d99f734"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:af4d83c8368dd701a9c958cd59d99f734 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#af4d83c8368dd701a9c958cd59d99f734">logical_and</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:af4d83c8368dd701a9c958cd59d99f734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical and the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a1ea2c8fd2522c24cbb91418b76488ae8" id="r_a1ea2c8fd2522c24cbb91418b76488ae8"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a1ea2c8fd2522c24cbb91418b76488ae8 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ea2c8fd2522c24cbb91418b76488ae8">left_shift</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a1ea2c8fd2522c24cbb91418b76488ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left shift the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f" id="r_a1ee729d0c81dd0ff199c28bc4c61443f"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ee729d0c81dd0ff199c28bc4c61443f">multiply</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a1ee729d0c81dd0ff199c28bc4c61443f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9" id="r_a1b061396ff3e57e5c65ea10d370fa4a9"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
 <tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1b061396ff3e57e5c65ea10d370fa4a9">placeholder</a> ()</td></tr>
 <tr class="memdesc:a1b061396ff3e57e5c65ea10d370fa4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> placeholder used by expression.  <br /></td></tr>
+<tr class="memitem:abeebd03995d698ba91b3110c3c7a67f1" id="r_abeebd03995d698ba91b3110c3c7a67f1"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:abeebd03995d698ba91b3110c3c7a67f1 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#abeebd03995d698ba91b3110c3c7a67f1">right_shift</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:abeebd03995d698ba91b3110c3c7a67f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right shift the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1" id="r_a0afc042f7a62c6d359f2775b4a130eb1"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a0afc042f7a62c6d359f2775b4a130eb1">spaceship</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a0afc042f7a62c6d359f2775b4a130eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
@@ -1045,6 +1051,72 @@ template&lt;typename left_t, typename right_t&gt; </div>
 
 </div>
 </div>
+<a id="a1ea2c8fd2522c24cbb91418b76488ae8" name="a1ea2c8fd2522c24cbb91418b76488ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea2c8fd2522c24cbb91418b76488ae8">&#9670;&#160;</a></span>left_shift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::left_shift </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Left shift the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of left shift. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a1ea2c8fd2522c24cbb91418b76488ae8" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto left_shift1 = [](auto&amp;&amp; _) {return _ &lt;&lt; 2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> left_shift1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &lt;&lt; 2;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift1 result =&gt; {}&quot;</span>, left_shift1(42));</div>
+<div class="line">  <span class="keyword">auto</span> left_shift2 = <a class="code hl_function" href="#a1ea2c8fd2522c24cbb91418b76488ae8">expression::left_shift</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift2 result =&gt; {}&quot;</span>, left_shift2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto left_shift3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &lt;&lt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> left_shift3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &lt;&lt; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift3 result =&gt; {}&quot;</span>, left_shift3(42, 4));</div>
+<div class="line">  <span class="keyword">auto</span> left_shift4 = <a class="code hl_function" href="#a1ea2c8fd2522c24cbb91418b76488ae8">expression::left_shift</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift4 result =&gt; {}&quot;</span>, left_shift4(42, 4));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// left_shift1 result =&gt; 168</span></div>
+<div class="line"><span class="comment">// left_shift2 result =&gt; 168</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// left_shift3 result =&gt; 672</span></div>
+<div class="line"><span class="comment">// left_shift4 result =&gt; 672</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a1ea2c8fd2522c24cbb91418b76488ae8"><div class="ttname"><a href="#a1ea2c8fd2522c24cbb91418b76488ae8">xtd::expressions::expression::left_shift</a></div><div class="ttdeci">static constexpr auto left_shift(left_t left, right_t right)</div><div class="ttdoc">Left shift the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a1ee729d0c81dd0ff199c28bc4c61443f" name="a1ee729d0c81dd0ff199c28bc4c61443f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ee729d0c81dd0ff199c28bc4c61443f">&#9670;&#160;</a></span>multiply()</h2>
 
@@ -1167,6 +1239,72 @@ Prefer the <a class="el" href="#a2a510526157a4ccf4cc31e6cee826883" title="Gets t
 <div class="line"><span class="comment">// expr1 result =&gt; 60</span></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a1b061396ff3e57e5c65ea10d370fa4a9"><div class="ttname"><a href="#a1b061396ff3e57e5c65ea10d370fa4a9">xtd::expressions::expression::placeholder</a></div><div class="ttdeci">static constexpr auto placeholder()</div><div class="ttdoc">Gets the index placeholder used by expression.</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1placeholder_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1placeholder.html">xtd::expressions::placeholder</a></div><div class="ttdoc">The xtd::expressions::placeholder object is placeholder for all expressions.</div><div class="ttdef"><b>Definition</b> placeholder.hpp:58</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="abeebd03995d698ba91b3110c3c7a67f1" name="abeebd03995d698ba91b3110c3c7a67f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeebd03995d698ba91b3110c3c7a67f1">&#9670;&#160;</a></span>right_shift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::right_shift </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Right shift the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of right shift. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#abeebd03995d698ba91b3110c3c7a67f1" title="Right shift the specified left and right operands.">xtd::expressions::expression::right_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto right_shift1 = [](auto&amp;&amp; _) {return _ &gt;&gt; 2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> right_shift1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &gt;&gt; 2;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift1 result =&gt; {}&quot;</span>, right_shift1(42));</div>
+<div class="line">  <span class="keyword">auto</span> right_shift2 = <a class="code hl_function" href="#abeebd03995d698ba91b3110c3c7a67f1">expression::right_shift</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift2 result =&gt; {}&quot;</span>, right_shift2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto right_shift3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt;&gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> right_shift3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt;&gt; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift3 result =&gt; {}&quot;</span>, right_shift3(42, 4));</div>
+<div class="line">  <span class="keyword">auto</span> right_shift4 = <a class="code hl_function" href="#abeebd03995d698ba91b3110c3c7a67f1">expression::right_shift</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift4 result =&gt; {}&quot;</span>, right_shift4(42, 4));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// right_shift1 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// right_shift2 result =&gt; 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// right_shift3 result =&gt; 2</span></div>
+<div class="line"><span class="comment">// right_shift4 result =&gt; 2</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_abeebd03995d698ba91b3110c3c7a67f1"><div class="ttname"><a href="#abeebd03995d698ba91b3110c3c7a67f1">xtd::expressions::expression::right_shift</a></div><div class="ttdeci">static constexpr auto right_shift(left_t left, right_t right)</div><div class="ttdoc">Right shift the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

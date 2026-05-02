@@ -86,7 +86,7 @@ var searchData=
   ['left_5fright_5falignment_83',['left_right_alignment',['../group__xtd__forms.html#gaf03abe699bdd07a5a192b816895f409e',1,'xtd::forms']]],
   ['left_5fright_5falignment_2ehpp_84',['left_right_alignment.hpp',['../left__right__alignment_8hpp.html',1,'']]],
   ['left_5fright_5farrow_85',['left_right_arrow',['../classxtd_1_1forms_1_1emoticons.html#a6d8ffdb0555f9132ef4de4f0bc2c7421',1,'xtd::forms::emoticons']]],
-  ['left_5fshift_86',['left_shift',['../classxtd_1_1collections_1_1bit__array.html#a10acef27ddcf8e338406d501b277e53d',1,'xtd::collections::bit_array']]],
+  ['left_5fshift_86',['left_shift',['../classxtd_1_1collections_1_1bit__array.html#a10acef27ddcf8e338406d501b277e53d',1,'xtd::collections::bit_array::left_shift()'],['../structxtd_1_1expressions_1_1expression.html#a1ea2c8fd2522c24cbb91418b76488ae8',1,'xtd::expressions::expression::left_shift()']]],
   ['left_5fshift_5fexpression_87',['left_shift_expression',['../structxtd_1_1expressions_1_1left__shift__expression.html',1,'xtd::expressions::left_shift_expression&lt; left_t, right_t &gt;'],['../structxtd_1_1expressions_1_1left__shift__expression.html#a0a7720799a69f1ec77459cf7d24226e3',1,'xtd::expressions::left_shift_expression::left_shift_expression()']]],
   ['left_5fshift_5fexpression_2ehpp_88',['left_shift_expression.hpp',['../left__shift__expression_8hpp.html',1,'']]],
   ['left_5fspeech_5fbubble_89',['left_speech_bubble',['../classxtd_1_1forms_1_1emoticons.html#a90888e29627f8af2e16672c366e6ac6c',1,'xtd::forms::emoticons']]],

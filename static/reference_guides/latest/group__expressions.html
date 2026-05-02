@@ -1134,21 +1134,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/left_shift_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1left__shift__expression.html" title="The xtd::expressions::left_shift_expression is the bitwise left expression.">xtd::expressions::left_shift_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a1ea2c8fd2522c24cbb91418b76488ae8" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto bit_left1 = [](auto&amp;&amp; _) {return _ &lt;&lt; 2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_left1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &lt;&lt; 2;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_left1 result =&gt; {}&quot;</span>, bit_left1(42));</div>
-<div class="line">  <span class="comment">//auto bit_left2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &lt;&lt; _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_left2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &lt;&lt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_left2 result =&gt; {}&quot;</span>, bit_left2(42, 4));</div>
+<div class="line">  <span class="comment">// auto left_shift1 = [](auto&amp;&amp; _) {return _ &lt;&lt; 2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> left_shift1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &lt;&lt; 2;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift1 result =&gt; {}&quot;</span>, left_shift1(42));</div>
+<div class="line">  <span class="keyword">auto</span> left_shift2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a1ea2c8fd2522c24cbb91418b76488ae8">expression::left_shift</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift2 result =&gt; {}&quot;</span>, left_shift2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto left_shift3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &lt;&lt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> left_shift3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &lt;&lt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift3 result =&gt; {}&quot;</span>, left_shift3(42, 4));</div>
+<div class="line">  <span class="keyword">auto</span> left_shift4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a1ea2c8fd2522c24cbb91418b76488ae8">expression::left_shift</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;left_shift4 result =&gt; {}&quot;</span>, left_shift4(42, 4));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// bit_left1 result =&gt; 168</span></div>
-<div class="line"><span class="comment">// bit_left2 result =&gt; 672</span></div>
+<div class="line"><span class="comment">// left_shift1 result =&gt; 168</span></div>
+<div class="line"><span class="comment">// left_shift2 result =&gt; 168</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// left_shift3 result =&gt; 672</span></div>
+<div class="line"><span class="comment">// left_shift4 result =&gt; 672</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a1ea2c8fd2522c24cbb91418b76488ae8"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a1ea2c8fd2522c24cbb91418b76488ae8">xtd::expressions::expression::left_shift</a></div><div class="ttdeci">static constexpr auto left_shift(left_t left, right_t right)</div><div class="ttdoc">Left shift the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2266,21 +2275,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/right_shift_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1right__shift__expression.html" title="The xtd::expressions::right_shift_expression is the bitwise right expression.">xtd::expressions::right_shift_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#abeebd03995d698ba91b3110c3c7a67f1" title="Right shift the specified left and right operands.">xtd::expressions::expression::right_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto bit_right1 = [](auto&amp;&amp; _) {return _ &gt;&gt; 2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_right1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &gt;&gt; 2;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_right1 result =&gt; {}&quot;</span>, bit_right1(42));</div>
-<div class="line">  <span class="comment">//auto bit_right2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt;&gt; _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_right2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt;&gt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_right2 result =&gt; {}&quot;</span>, bit_right2(42, 4));</div>
+<div class="line">  <span class="comment">// auto right_shift1 = [](auto&amp;&amp; _) {return _ &gt;&gt; 2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> right_shift1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> &gt;&gt; 2;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift1 result =&gt; {}&quot;</span>, right_shift1(42));</div>
+<div class="line">  <span class="keyword">auto</span> right_shift2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#abeebd03995d698ba91b3110c3c7a67f1">expression::right_shift</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift2 result =&gt; {}&quot;</span>, right_shift2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto right_shift3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt;&gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> right_shift3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt;&gt; <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift3 result =&gt; {}&quot;</span>, right_shift3(42, 4));</div>
+<div class="line">  <span class="keyword">auto</span> right_shift4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#abeebd03995d698ba91b3110c3c7a67f1">expression::right_shift</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;right_shift4 result =&gt; {}&quot;</span>, right_shift4(42, 4));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// bit_right1 result =&gt; 10</span></div>
-<div class="line"><span class="comment">// bit_right2 result =&gt; 2</span></div>
+<div class="line"><span class="comment">// right_shift1 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// right_shift2 result =&gt; 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// right_shift3 result =&gt; 2</span></div>
+<div class="line"><span class="comment">// right_shift4 result =&gt; 2</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_abeebd03995d698ba91b3110c3c7a67f1"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#abeebd03995d698ba91b3110c3c7a67f1">xtd::expressions::expression::right_shift</a></div><div class="ttdeci">static constexpr auto right_shift(left_t left, right_t right)</div><div class="ttdoc">Right shift the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
