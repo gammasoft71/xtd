@@ -35,13 +35,13 @@ namespace xtd {
     ///   println("placeholder1 result => {}", placeholder1(10));
     ///   auto placeholder2 = _1;
     ///   println("placeholder2 result => {}", placeholder2(10));
-    ///   auto placeholder3 = placeholder<0> {};
+    ///   auto placeholder3 = placeholder<1> {};
     ///   println("placeholder3 result => {}", placeholder3(10));
-    ///   auto placeholder4 = expression::placeholder<0>();
+    ///   auto placeholder4 = expression::placeholder<1>();
     ///   println("placeholder4 result => {}", placeholder4(10));
     ///   println();
     ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
-    ///   auto expr1 = _1 + placeholder<1> {} + expression::placeholder<2>();
+    ///   auto expr1 = _1 + placeholder<2> {} + expression::placeholder<3>();
     ///   println("expr1 result => {}", expr1(10, 20, 30));
     /// }
     ///
@@ -76,7 +76,7 @@ namespace xtd {
       /// @return The placeholder value.
       template <typename... args_t>
       constexpr decltype(auto) operator()(args_t&&... args) const {
-        return std::get<index>(std::forward_as_tuple(std::forward<args_t>(args)...));
+        return std::get<index - 1>(std::forward_as_tuple(std::forward<args_t>(args)...));
       }
       /// @}
     };
@@ -86,7 +86,7 @@ namespace xtd {
     constexpr auto expression::placeholder() {return xtd::expressions::placeholder<index> {};}
 
     template <size_t index>
-    inline auto operator <<(std::ostream& os, const placeholder<index>&) -> std::ostream& {return os << "_" << (index + 1);}
+    inline auto operator <<(std::ostream& os, const placeholder<index>&) -> std::ostream& {return os << "_" << index;}
     /// @endcond
   }
 }

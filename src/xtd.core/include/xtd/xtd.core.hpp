@@ -138,6 +138,7 @@
 #include "expressions/or_expression.hpp"
 #include "expressions/placeholder.hpp"
 #include "expressions/placeholder_expression.hpp"
+#include "expressions/placeholders.hpp"
 #include "expressions/right_shift_expression.hpp"
 #include "expressions/subtract_expression.hpp"
 #include "expressions/compare_three_way_expression.hpp"

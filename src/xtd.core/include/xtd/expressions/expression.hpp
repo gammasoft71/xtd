@@ -97,11 +97,11 @@ namespace xtd {
     /// //
     /// // expr1 resutl = 900
     /// // expr1 = (_1 + _2) * 30
-    /// // type_of(expr1) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<0ul>, xtd::expressions::placeholder<1ul>>, xtd::expressions::constant<int>>
+    /// // type_of(expr1) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<1ul>, xtd::expressions::placeholder<2ul>>, xtd::expressions::constant<int>>
     /// //
     /// // expr2 resutl = 900
     /// // expr2 = (_1 + _2) * 30
-    /// // type_of(expr2) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<0ul>, xtd::expressions::placeholder<1ul>>, xtd::expressions::constant<int>>
+    /// // type_of(expr2) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<1ul>, xtd::expressions::placeholder<2ul>>, xtd::expressions::constant<int>>
     /// ```
     struct expression {
       /// @name Public Static Methods
@@ -570,7 +570,7 @@ namespace xtd {
       static constexpr auto multiply(left_t left, right_t right);
       
       /// @brief Gets the `index` placeholder used by expression.
-      /// @remarks The index start from 0 to N.
+      /// @remarks The index start from 1 to N.
       /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::placeholder.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::placeholder.
@@ -583,13 +583,13 @@ namespace xtd {
       ///   println("placeholder1 result => {}", placeholder1(10));
       ///   auto placeholder2 = _1;
       ///   println("placeholder2 result => {}", placeholder2(10));
-      ///   auto placeholder3 = placeholder<0> {};
+      ///   auto placeholder3 = placeholder<1> {};
       ///   println("placeholder3 result => {}", placeholder3(10));
-      ///   auto placeholder4 = expression::placeholder<0>();
+      ///   auto placeholder4 = expression::placeholder<1>();
       ///   println("placeholder4 result => {}", placeholder4(10));
       ///   println();
       ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
-      ///   auto expr1 = _1 + placeholder<1> {} + expression::placeholder<2>();
+      ///   auto expr1 = _1 + placeholder<2> {} + expression::placeholder<3>();
       ///   println("expr1 result => {}", expr1(10, 20, 30));
       /// }
       ///

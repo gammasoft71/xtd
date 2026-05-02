@@ -10,7 +10,7 @@ namespace xtd {
   namespace expressions {
     /// @cond
     template <size_t index>
-    constexpr auto expression::arg() {return xtd::expressions::placeholder<index - 1> {};}
+    constexpr auto expression::arg() {return xtd::expressions::placeholder<index> {};}
     /// @endcond
     
     /// @name Public Variables
@@ -58,7 +58,7 @@ namespace xtd {
     /// // expr1 result => 60
     /// ```
     template <size_t index>
-    inline constexpr xtd::expressions::placeholder<index - 1> arg {};
+    inline constexpr xtd::expressions::placeholder<index> arg {};
     /// @}
   }
 }
