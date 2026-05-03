@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::divide_expression struct is used by xtd::expressions::operator /().
+    /// @remarks The xtd::expressions::divide_expression struct is used by xtd::expressions::expression::divide expression.
     template <typename left_t, typename right_t>
     struct divide_expression : binary_expression {
       /// @name Public Fields
