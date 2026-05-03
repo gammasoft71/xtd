@@ -846,7 +846,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line"> </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd_1_1collections_1_1generic.html#a614e3ce4c6a572d1067a6c01dba5641c">add</a>(<span class="keyword">const</span> any_object&amp; value) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (count_ &lt; contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">length</a>()) {</div>
-<div class="line">        contents_[count_] = value;</div>
+<div class="line">        contents_[count_] = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">        count_++;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
@@ -874,7 +874,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">        <span class="keywordflow">for</span> (usize i = <a class="code hl_function" href="namespacextd_1_1collections_1_1generic.html#a7458d2f90cdba798da61c2da98a6eb1d">count</a>() - 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &gt; index; --<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">          contents_[i] = contents_[i - 1];</div>
 <div class="line">        </div>
-<div class="line">        contents_[index] = value;</div>
+<div class="line">        contents_[index] = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -949,6 +949,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line"><span class="comment">// List contains &quot;ten&quot;: false</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_a9d5d3b513ccae2470ae034fac4cb85ad"><div class="ttname"><a href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">xtd::basic_array::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:122</div></div>
+<div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
 <div class="ttc" id="agroup__system_html_gafc1840f9ae5425b9783c380d424eac43"><div class="ttname"><a href="group__system.html#gafc1840f9ae5425b9783c380d424eac43">xtd::npos</a></div><div class="ttdeci">constexpr xtd::usize npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a0b6870aa765b78724e8120131cf32773"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html#a0b6870aa765b78724e8120131cf32773">xtd::collections::generic::remove</a></div><div class="ttdeci">virtual auto remove(const type_t &amp;item) -&gt; bool=0</div><div class="ttdoc">Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html_a301328e900575a6fa0ff1ec59ae16bc6"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html#a301328e900575a6fa0ff1ec59ae16bc6">xtd::collections::generic::sync_root</a></div><div class="ttdeci">virtual auto sync_root() const noexcept -&gt; const xtd::object &amp;=0</div><div class="ttdoc">Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...</div></div>

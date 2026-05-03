@@ -110,36 +110,36 @@ struct xtd::stringable&lt; value_t &gt;</div><p>Represents the stringable concep
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>my_stringable_string : <span class="keyword">public</span> istringable&lt;my_stringable_string&gt; {</div>
-<div class="line">  my_stringable_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) : value {value} {}</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> value;}</div>
+<div class="line">  my_stringable_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) : <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a> {<a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>} {}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> value;</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>my_streamable_string {</div>
-<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> my_streamable_string&amp; value) <span class="keyword">noexcept</span> -&gt; std::ostream&amp; {<span class="keywordflow">return</span> os &lt;&lt; value.value;}</div>
+<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> my_streamable_string&amp; value) <span class="keyword">noexcept</span> -&gt; std::ostream&amp; {<span class="keywordflow">return</span> os &lt;&lt; <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>.value;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> value;</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>my_object_string : <span class="keyword">public</span> object {</div>
-<div class="line">  my_object_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) : value {value} {}</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> value;}</div>
+<div class="line">  my_object_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) : <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a> {<a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>} {}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> value;</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>my_to_string_string {</div>
-<div class="line">  <span class="keywordtype">string</span> value;</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a>(<span class="keyword">const</span> my_to_string_string&amp; value, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc) -&gt; <span class="keywordtype">string</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> value.value;</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>.value;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>my_string {</div>
-<div class="line">  <span class="keywordtype">string</span> value;</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> log_to_console(<span class="keyword">const</span> stringable <span class="keyword">auto</span>&amp; value) <span class="keyword">noexcept</span> {</div>
@@ -181,6 +181,7 @@ struct xtd::stringable&lt; value_t &gt;</div><p>Represents the stringable concep
 <div class="line"><span class="comment">//    at main in stringable.cpp:line 62</span></div>
 <div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:42</div></div>
+<div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:21</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 </div><!-- fragment --> </dd></dl>

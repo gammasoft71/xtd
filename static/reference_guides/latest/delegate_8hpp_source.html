@@ -763,15 +763,39 @@ $(function() {
 <div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;data&gt;</a> data_ = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;data&gt;</a>();</div>
 <div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>  };</div>
 </div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>}</div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span></div>
-<div class="foldopen" id="foldopen00917" data-start="" data-end="">
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno"><a class="line" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">  917</a></span><span class="preprocessor">#define delegate_ \</span></div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span><span class="preprocessor">  [&amp;]</span></div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span></div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <span class="comment">// Deduction guides for xtd::delegate</span></div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  <span class="comment">// {</span></div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>  <span class="keyword">struct </span>function_traits;</div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>  </div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> result_t, <span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>  <span class="keyword">struct </span>function_traits&lt;result_t(args_t...)&gt; {<span class="keyword">using </span>signature = result_t(args_t...);};</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>  </div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> result_t, <span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>  <span class="keyword">struct </span>function_traits&lt;result_t(*)(args_t...)&gt; : function_traits&lt;result_t(args_t...)&gt; {};</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>  </div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> class_t, <span class="keyword">typename</span> result_t, <span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  <span class="keyword">struct </span>function_traits&lt;result_t(class_t::*)(args_t...) const&gt; : function_traits&lt;result_t(args_t...)&gt; {};</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>  </div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>  <span class="keyword">struct </span>function_traits : function_traits&lt;decltype(&amp;type_t::operator())&gt; {};</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  </div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>  delegate(function_t) -&gt; delegate&lt;typename function_traits&lt;function_t&gt;::signature&gt;;</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>  </div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> result_t, <span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>  delegate(std::function&lt;result_t(args_t...)&gt;) -&gt; delegate&lt;result_t(args_t...)&gt;;</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>  <span class="comment">// }</span></div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>}</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span></div>
+<div class="foldopen" id="foldopen00943" data-start="" data-end="">
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno"><a class="line" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">  943</a></span><span class="preprocessor">#define delegate_ \</span></div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span><span class="preprocessor">  [&amp;]</span></div>
 </div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span> </div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span><span class="comment">// Required for begin_invoke and end_invoke methods implementation.</span></div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span><span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">threading/thread_pool.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span> </div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span><span class="comment">// Required for begin_invoke and end_invoke methods implementation.</span></div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span><span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">threading/thread_pool.hpp</a>&quot;</span></div>
 <div class="ttc" id="aany_8hpp_html"><div class="ttname"><a href="any_8hpp.html">any.hpp</a></div><div class="ttdoc">Contains xtd::any type and std::bad_any_cast exception.</div></div>
 <div class="ttc" id="aargument__null__exception_8hpp_html"><div class="ttname"><a href="argument__null__exception_8hpp.html">argument_null_exception.hpp</a></div><div class="ttdoc">Contains xtd::argument_null_exception exception.</div></div>
 <div class="ttc" id="aasync__result_8hpp_html"><div class="ttname"><a href="async__result_8hpp.html">async_result.hpp</a></div><div class="ttdoc">Contains xtd::async_result alias.</div></div>

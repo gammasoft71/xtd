@@ -115,6 +115,8 @@ Public Fields</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
+<tr class="memitem:ada1822cd6b92a7d1f5e9f936d6ea5630" id="r_ada1822cd6b92a7d1f5e9f936d6ea5630"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ada1822cd6b92a7d1f5e9f936d6ea5630">not_equal_expression</a> ()=default</td></tr>
+<tr class="memdesc:ada1822cd6b92a7d1f5e9f936d6ea5630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1not__equal__expression.html" title="The xtd::expressions::not_equal_expression is the not equal expression.">xtd::expressions::not_equal_expression</a> object.  <br /></td></tr>
 <tr class="memitem:ab604d5a944f9cbeee173b0289c52ec08" id="r_ab604d5a944f9cbeee173b0289c52ec08"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ab604d5a944f9cbeee173b0289c52ec08">not_equal_expression</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:ab604d5a944f9cbeee173b0289c52ec08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1expressions_1_1not__equal__expression.html" title="The xtd::expressions::not_equal_expression is the not equal expression.">xtd::expressions::not_equal_expression</a> object with specified left and right operands.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -141,9 +143,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a863c9b673cd138a83f857d0d06005df3" id="r_a863c9b673cd138a83f857d0d06005df3"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a863c9b673cd138a83f857d0d06005df3 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a863c9b673cd138a83f857d0d06005df3">compare_three_way</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a863c9b673cd138a83f857d0d06005df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
-<tr class="memitem:abae93668f6c41d1c857f12649666930b" id="r_abae93668f6c41d1c857f12649666930b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:abae93668f6c41d1c857f12649666930b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#abae93668f6c41d1c857f12649666930b">constant</a> (type_t value)</td></tr>
-<tr class="memdesc:abae93668f6c41d1c857f12649666930b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the constant value.  <br /></td></tr>
+<tr class="memitem:a3962a43a6b277819f145124edf446c0a" id="r_a3962a43a6b277819f145124edf446c0a"><td class="memTemplParams" colspan="2">template&lt;auto constant_value&gt; </td></tr>
+<tr class="memitem:a3962a43a6b277819f145124edf446c0a template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a">constant</a> ()</td></tr>
+<tr class="memdesc:a3962a43a6b277819f145124edf446c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the constant value.  <br /></td></tr>
 <tr class="memitem:a2118d0d6f7410797c366df90045e7b7b" id="r_a2118d0d6f7410797c366df90045e7b7b"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a2118d0d6f7410797c366df90045e7b7b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a2118d0d6f7410797c366df90045e7b7b">divide</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a2118d0d6f7410797c366df90045e7b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide the specified left and right operands.  <br /></td></tr>
@@ -174,10 +176,42 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1" id="r_a0afc042f7a62c6d359f2775b4a130eb1"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#a0afc042f7a62c6d359f2775b4a130eb1">spaceship</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a0afc042f7a62c6d359f2775b4a130eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:ab60c84b43ed66b9d27be1678fcc0a305" id="r_ab60c84b43ed66b9d27be1678fcc0a305"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:ab60c84b43ed66b9d27be1678fcc0a305 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1expression.html#ab60c84b43ed66b9d27be1678fcc0a305">value</a> (type_t value)</td></tr>
+<tr class="memdesc:ab60c84b43ed66b9d27be1678fcc0a305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value value.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ada1822cd6b92a7d1f5e9f936d6ea5630" name="ada1822cd6b92a7d1f5e9f936d6ea5630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1822cd6b92a7d1f5e9f936d6ea5630">&#9670;&#160;</a></span>not_equal_expression() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxtd_1_1expressions_1_1not__equal__expression.html">xtd::expressions::not_equal_expression</a>&lt; left_t, right_t &gt;::not_equal_expression </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize a new <a class="el" href="structxtd_1_1expressions_1_1not__equal__expression.html" title="The xtd::expressions::not_equal_expression is the not equal expression.">xtd::expressions::not_equal_expression</a> object. </p>
+
+</div>
+</div>
 <a id="ab604d5a944f9cbeee173b0289c52ec08" name="ab604d5a944f9cbeee173b0289c52ec08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab604d5a944f9cbeee173b0289c52ec08">&#9670;&#160;</a></span>not_equal_expression()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab604d5a944f9cbeee173b0289c52ec08">&#9670;&#160;</a></span>not_equal_expression() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

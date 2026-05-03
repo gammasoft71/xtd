@@ -890,11 +890,9 @@ template&lt;typename type_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span>if stored reference is empty; otherwise <span class="tt">false</span>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#abe088108cb5eeafb4e2f8ebc562c1411" title="Gets the stored reference.">xtd::reference_wrapper_object::get</a> and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
-<div class="line">  <span class="keywordflow">if</span> (value.<a class="code hl_function" href="#afafde3394b42c46275e3773d41e02909">is_empty</a>()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.<a class="code hl_function" href="#abe088108cb5eeafb4e2f8ebc562c1411">get</a>());</div>
+<div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1reference__wrapper__object_html_abe088108cb5eeafb4e2f8ebc562c1411"><div class="ttname"><a href="#abe088108cb5eeafb4e2f8ebc562c1411">xtd::reference_wrapper_object::get</a></div><div class="ttdeci">type &amp; get() const</div><div class="ttdoc">Gets the stored reference.</div><div class="ttdef"><b>Definition</b> reference_wrapper_object.hpp:190</div></div>
-<div class="ttc" id="aclassxtd_1_1reference__wrapper__object_html_afafde3394b42c46275e3773d41e02909"><div class="ttname"><a href="#afafde3394b42c46275e3773d41e02909">xtd::reference_wrapper_object::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdoc">Checks if the stored reference is empty.</div><div class="ttdef"><b>Definition</b> reference_wrapper_object.hpp:128</div></div>
 <div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1115,8 +1113,8 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#abe088108cb5eeafb4e2f8ebc562c1411" title="Gets the stored reference.">xtd::reference_wrapper_object::get</a> and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
-<div class="line">  <span class="keywordflow">if</span> (value.<a class="code hl_function" href="#afafde3394b42c46275e3773d41e02909">is_empty</a>()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.<a class="code hl_function" href="#abe088108cb5eeafb4e2f8ebc562c1411">get</a>());</div>
+<div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1327,8 +1325,8 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a797caf8684653405aaa2bb593aab8d08" title="Gets the stored object.">xtd::reference_wrapper_object::to_object</a> and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
-<div class="line">  <span class="keywordflow">if</span> (value.<a class="code hl_function" href="#afafde3394b42c46275e3773d41e02909">is_empty</a>()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.<a class="code hl_function" href="#abe088108cb5eeafb4e2f8ebc562c1411">get</a>());</div>
+<div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1888,8 +1886,8 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use xtd::reference_wrapper_object::operator type&amp; and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
-<div class="line">  <span class="keywordflow">if</span> (value.<a class="code hl_function" href="#afafde3394b42c46275e3773d41e02909">is_empty</a>()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.<a class="code hl_function" href="#abe088108cb5eeafb4e2f8ebc562c1411">get</a>());</div>
+<div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 

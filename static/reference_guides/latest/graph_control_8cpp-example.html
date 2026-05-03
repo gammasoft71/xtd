@@ -130,7 +130,7 @@ $(function() {
 <div class="line">  <span class="keywordtype">bool</span> enabled() const noexcept {<span class="keywordflow">return</span> enabled_;}</div>
 <div class="line">  signal_generator_base&amp; enabled(<span class="keywordtype">bool</span> value) <span class="keyword">noexcept</span> {</div>
 <div class="line">    <span class="keywordflow">if</span> (enabled_ == value) <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line">    enabled_ = value;</div>
+<div class="line">    enabled_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">if</span> (enabled_) generator_result_ = generator_.begin_invoke();</div>
 <div class="line">    <span class="keywordflow">else</span> generator_.end_invoke(generator_result_);</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
@@ -138,7 +138,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">const</span> time_span&amp; interval() const noexcept {<span class="keywordflow">return</span> interval_;}</div>
 <div class="line">  signal_generator_base&amp; interval(<span class="keyword">const</span> time_span&amp; value) <span class="keyword">noexcept</span> {</div>
-<div class="line">    interval_ = value;</div>
+<div class="line">    interval_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -206,19 +206,19 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  color signal_trace_color() const noexcept {<span class="keywordflow">return</span> signal_trace_color_;}</div>
 <div class="line">  graph_control&amp; signal_trace_color(color value) <span class="keyword">noexcept</span> {</div>
-<div class="line">    signal_trace_color_ = value;</div>
+<div class="line">    signal_trace_color_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">float</span> signal_trace_width() const noexcept {<span class="keywordflow">return</span> signal_trace_width_;}</div>
 <div class="line">  graph_control&amp; signal_trace_width(<span class="keywordtype">float</span> value) {</div>
-<div class="line">    signal_trace_width_ = value;</div>
+<div class="line">    signal_trace_width_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  color grid_horizontal_line_color() const noexcept {<span class="keywordflow">return</span> grid_horizontal_line_color_.value_or(back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color()));}</div>
 <div class="line">  graph_control&amp; grid_horizontal_line_color(color value) <span class="keyword">noexcept</span> {</div>
-<div class="line">    grid_horizontal_line_color_ = value;</div>
+<div class="line">    grid_horizontal_line_color_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  graph_control&amp; grid_horizontal_line_color(std::nullptr_t) <span class="keyword">noexcept</span> {</div>
@@ -228,25 +228,25 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">int</span> grid_horizontal_line_spacing() const noexcept {<span class="keywordflow">return</span> grid_horizontal_line_spacing_;}</div>
 <div class="line">  graph_control&amp; grid_horizontal_line_spacing(<span class="keywordtype">int</span> value) {</div>
-<div class="line">    grid_horizontal_line_spacing_ = value;</div>
+<div class="line">    grid_horizontal_line_spacing_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">bool</span> grid_horizontal_line_visible() const noexcept {<span class="keywordflow">return</span> grid_horizontal_line_visible_;}</div>
 <div class="line">  graph_control&amp; grid_horizontal_line_visible(<span class="keywordtype">bool</span> value) {</div>
-<div class="line">    grid_horizontal_line_visible_ = value;</div>
+<div class="line">    grid_horizontal_line_visible_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">float</span> grid_horizontal_line_width() const noexcept {<span class="keywordflow">return</span> grid_horizontal_line_width_;}</div>
 <div class="line">  graph_control&amp; grid_horizontal_line_width(<span class="keywordtype">float</span> value) {</div>
-<div class="line">    grid_horizontal_line_width_ = value;</div>
+<div class="line">    grid_horizontal_line_width_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  color grid_vertical_line_color() const noexcept {<span class="keywordflow">return</span> grid_vertical_line_color_.value_or(back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color()));}</div>
 <div class="line">  graph_control&amp; grid_vertical_line_color(color value) <span class="keyword">noexcept</span> {</div>
-<div class="line">    grid_vertical_line_color_ = value;</div>
+<div class="line">    grid_vertical_line_color_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  graph_control&amp; grid_vertical_line_color(std::nullptr_t) <span class="keyword">noexcept</span> {</div>
@@ -256,25 +256,25 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">int</span> grid_vertical_line_spacing() const noexcept {<span class="keywordflow">return</span> grid_vertical_line_spacing_;}</div>
 <div class="line">  graph_control&amp; grid_vertical_line_spacing(<span class="keywordtype">int</span> value) {</div>
-<div class="line">    grid_vertical_line_spacing_ = value;</div>
+<div class="line">    grid_vertical_line_spacing_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">bool</span> grid_vertical_line_visible() const noexcept {<span class="keywordflow">return</span> grid_vertical_line_visible_;}</div>
 <div class="line">  graph_control&amp; grid_vertical_line_visible(<span class="keywordtype">bool</span> value) {</div>
-<div class="line">    grid_vertical_line_visible_ = value;</div>
+<div class="line">    grid_vertical_line_visible_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">float</span> grid_vertical_line_width() const noexcept {<span class="keywordflow">return</span> grid_vertical_line_width_;}</div>
 <div class="line">  graph_control&amp; grid_vertical_line_width(<span class="keywordtype">float</span> value) {</div>
-<div class="line">    grid_vertical_line_width_ = value;</div>
+<div class="line">    grid_vertical_line_width_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  color x_axis_line_color() const noexcept {<span class="keywordflow">return</span> x_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));}</div>
 <div class="line">  graph_control&amp; x_axis_line_color(color value) <span class="keyword">noexcept</span> {</div>
-<div class="line">    x_axis_line_color_ = value;</div>
+<div class="line">    x_axis_line_color_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  graph_control&amp; x_axis_line_color(std::nullptr_t) <span class="keyword">noexcept</span> {</div>
@@ -284,19 +284,19 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">bool</span> x_axis_line_visible() const noexcept {<span class="keywordflow">return</span> x_axis_line_visible_;}</div>
 <div class="line">  graph_control&amp; x_axis_line_visible(<span class="keywordtype">bool</span> value) {</div>
-<div class="line">    x_axis_line_visible_ = value;</div>
+<div class="line">    x_axis_line_visible_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">float</span> x_axis_line_width() const noexcept {<span class="keywordflow">return</span> x_axis_line_width_;}</div>
 <div class="line">  graph_control&amp; x_axis_line_width(<span class="keywordtype">float</span> value) {</div>
-<div class="line">    x_axis_line_width_ = value;</div>
+<div class="line">    x_axis_line_width_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  color y_axis_line_color() const noexcept {<span class="keywordflow">return</span> y_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));}</div>
 <div class="line">  graph_control&amp; y_axis_line_color(color value) <span class="keyword">noexcept</span> {</div>
-<div class="line">    y_axis_line_color_ = value;</div>
+<div class="line">    y_axis_line_color_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  graph_control&amp; y_axis_line_color(std::nullptr_t) <span class="keyword">noexcept</span> {</div>
@@ -306,19 +306,19 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">bool</span> y_axis_line_visible() const noexcept {<span class="keywordflow">return</span> y_axis_line_visible_;}</div>
 <div class="line">  graph_control&amp; y_axis_line_visible(<span class="keywordtype">bool</span> value) {</div>
-<div class="line">    y_axis_line_visible_ = value;</div>
+<div class="line">    y_axis_line_visible_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">float</span> y_axis_line_width() const noexcept {<span class="keywordflow">return</span> y_axis_line_width_;}</div>
 <div class="line">  graph_control&amp; y_axis_line_width(<span class="keywordtype">float</span> value) {</div>
-<div class="line">    y_axis_line_width_ = value;</div>
+<div class="line">    y_axis_line_width_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> signals_max_size() const noexcept {<span class="keywordflow">return</span> signals_max_size_;}</div>
 <div class="line">  graph_control&amp; signals_max_size(usize value) {</div>
-<div class="line">    signals_max_size_ = value;</div>
+<div class="line">    signals_max_size_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">    <span class="keywordflow">while</span> (values_.count() &gt; signals_max_size_)</div>
 <div class="line">      values_.remove_at(0);</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
@@ -484,7 +484,8 @@ $(function() {
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(form1::main);</div>
-<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:917</div></div>
+<div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:943</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga5438b984d4c5e0f220360f9be4596ac3"><div class="ttname"><a href="group__style__sheets.html#ga5438b984d4c5e0f220360f9be4596ac3">xtd::forms::style_sheets::user_control</a></div><div class="ttdeci">xtd::forms::style_sheets::control user_control</div><div class="ttdoc">The user_control data allows you to specify the box of a user_control control.</div><div class="ttdef"><b>Definition</b> user_control.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga6b7a42f0d905d8325f9f5f4f627cb56a"><div class="ttname"><a href="group__style__sheets.html#ga6b7a42f0d905d8325f9f5f4f627cb56a">xtd::forms::style_sheets::form</a></div><div class="ttdeci">xtd::forms::style_sheets::control form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> form.hpp:23</div></div>
