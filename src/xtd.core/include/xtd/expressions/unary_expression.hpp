@@ -18,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    struct unary_expression : expression {
+    struct unary_expression : private expression {
     protected:
       /// @name Protected Constructors
       

@@ -18,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    struct conditional_expression : expression {
+    struct conditional_expression : private expression {
     protected:
       /// @name Protected Constructors
       

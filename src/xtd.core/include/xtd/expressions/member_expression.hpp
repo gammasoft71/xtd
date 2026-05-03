@@ -73,7 +73,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template <typename expression_t, typename member_t>
-    struct member_expression : expression {
+    struct member_expression : private expression {
       /// @name Public Fields
       
       /// @{
