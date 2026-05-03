@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::and_expression struct is used by xtd::expressions::expression::and_ method.
+    /// @remarks The xtd::expressions::and_expression struct is used by xtd::expressions::expression::and_ expression.
     template <typename left_t, typename right_t>
     struct and_expression : binary_expression {
       /// @name Public Fields
