@@ -145,6 +145,8 @@
 #include "expressions/unary_expression.hpp"
 #include "expressions/unary_minus_expression.hpp"
 #include "expressions/unary_plus_expression.hpp"
+#include "expressions/value.hpp"
+#include "expressions/value_expression.hpp"
 #include "expressions/xor_expression.hpp"
 #include "exception_services/exception_dispatch_info.hpp"
 #include "globalization/culture_info.hpp"
