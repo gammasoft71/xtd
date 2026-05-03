@@ -131,7 +131,7 @@ namespace xtd {
     ///   auto xor3 = _1 ^ _2;
     ///   println("xor3 result => {:B}", xor3(42, 0xF0));
     ///   auto xor4 = expression::xor_(_1, _2);
-    ///   println("or4 result => {:B}", xor4(42, 0xF0));
+    ///   println("xor4 result => {:B}", xor4(42, 0xF0));
     /// }
     ///
     /// // This code produces the following output :
@@ -144,7 +144,7 @@ namespace xtd {
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator ^(left_t left, right_t right) {return expression::or_(std::move(left), std::move(right));}
+    constexpr auto operator ^(left_t left, right_t right) {return expression::xor_(std::move(left), std::move(right));}
     /// @}
   }
 }
