@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::less_than_or_equal_expression struct is used by xtd::expressions::operator <=().
+    /// @remarks The xtd::expressions::less_than_or_equal_expression struct is used by xtd::expressions::expression::less_than_or_equal expression.
     template <typename left_t, typename right_t>
     struct less_than_or_equal_expression : binary_expression {
       /// @name Public Fields
