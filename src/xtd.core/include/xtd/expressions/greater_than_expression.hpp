@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::greater_than_expression struct is used by xtd::expressions::operator >().
+    /// @remarks The xtd::expressions::greater_than_expression struct is used by xtd::expressions::expression::greater_than expression.
     template <typename left_t, typename right_t>
     struct greater_than_expression : binary_expression {
       /// @name Public Fields
