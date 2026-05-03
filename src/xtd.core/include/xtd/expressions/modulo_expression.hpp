@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::modulo_expression struct is used by xtd::expressions::operator %().
+    /// @remarks The xtd::expressions::modulo_expression struct is used by xtd::expressions::expression::modulo expression.
     template <typename left_t, typename right_t>
     struct modulo_expression : binary_expression {
       /// @name Public Fields
@@ -63,6 +63,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::modulo(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return modulo_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -80,29 +90,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::modulo_expression.
+    /// The following example shows how to use xtd::expressions::expression::modulo.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto mod1 = _ % 5;
-    ///   println("mod1 result => {}", mod1(17));
-    ///   auto mod2 = _1 % _2;
-    ///   println("mod2 result => {}", mod2(15, 4));
+    ///   // auto modulo1 = [](auto&& _) {return _ % 10;};
+    ///   auto modulo1 = _ % 10;
+    ///   println("modulo1 result => {}", modulo1(27));
+    ///   auto modulo2 = expression::modulo(_, 10);
+    ///   println("modulo2 result => {}", modulo2(27));
+    ///   println();
+    ///   // auto modulo3 = [](auto&& _1, auto&& _2) {return _1 % _2;};
+    ///   auto modulo3 = _1 % _2;
+    ///   println("modulo3 result => {}", modulo3(64, 6));
+    ///   auto modulo4 = expression::modulo(_1, _2);
+    ///   println("modulo4 result => {}", modulo4(64, 6));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // mod1 result => 2
-    /// // mod2 result => 3
+    /// // mul1 result => 7
+    /// // mul2 result => 7
+    /// //
+    /// // mul3 result => 4
+    /// // mul4 result => 4
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator %(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return modulo_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator %(left_t left, right_t right) {return expression::modulo(std::move(left), std::move(right));}
     /// @}
   }
 }

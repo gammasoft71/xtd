@@ -669,6 +669,41 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto logical_or(left_t left, right_t right);
 
+      /// @brief Modulo the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of modulo.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::modulo.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto modulo1 = [](auto&& _) {return _ % 10;};
+      ///   auto modulo1 = _ % 10;
+      ///   println("modulo1 result => {}", modulo1(27));
+      ///   auto modulo2 = expression::modulo(_, 10);
+      ///   println("modulo2 result => {}", modulo2(27));
+      ///   println();
+      ///   // auto modulo3 = [](auto&& _1, auto&& _2) {return _1 % _2;};
+      ///   auto modulo3 = _1 % _2;
+      ///   println("modulo3 result => {}", modulo3(64, 6));
+      ///   auto modulo4 = expression::modulo(_1, _2);
+      ///   println("modulo4 result => {}", modulo4(64, 6));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // mul1 result => 7
+      /// // mul2 result => 7
+      /// //
+      /// // mul3 result => 4
+      /// // mul4 result => 4
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto modulo(left_t left, right_t right);
+
       /// @brief Multiply the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
