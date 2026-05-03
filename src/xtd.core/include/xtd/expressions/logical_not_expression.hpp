@@ -52,6 +52,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::logical_not_expression object.
+      constexpr logical_not_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::logical_not_expression object with specified value operand.
       /// @param value The value operand.
       constexpr logical_not_expression(value_t value) : value {std::move(value)} {}
