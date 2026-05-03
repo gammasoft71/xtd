@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    /// @remarks The xtd::expressions::xor_expression struct is used by xtd::expressions::operator ^().
+    /// @remarks The xtd::expressions::xor_expression struct is used by xtd::expressions::expression::xor_ expression.
     /// @par Examples
     /// The following example shows how to use xtd::expressions::xor_expression.
     /// ```cpp
@@ -88,6 +88,16 @@ namespace xtd {
       [[no_unique_address]] left_t left;
       [[no_unique_address]] right_t right;
     };
+    
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::xor_(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return xor_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
 
     /// @name Public Operators
     
@@ -106,31 +116,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::xor_expression.
+    /// The following example shows how to use xtd::expressions::expression::xor_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   //auto bit_xor1 = [](auto&& _) {return _ ^ 0x0F;};
-    ///   auto bit_xor1 = _ ^ 0x0F;
-    ///   println("bit_xor1 result => {}", bit_xor1(42));
-    ///   //auto bit_xor2 = [](auto&& _1, auto&& _2) {return _1 ^ _2;};
-    ///   auto bit_xor2 = _1 ^ _2;
-    ///   println("bit_xor2 result => {}", bit_xor2(42, 0xF0));
+    ///   // auto or1 = [](auto&& _) {return _ ^ 0x0F;};
+    ///   auto xor1 = _ ^ 0x0F;
+    ///   println("xor1 result => {:B}", xor1(42));
+    ///   auto xor2 = expression::xor_(_, 0x0F);
+    ///   println("xor2 result => {:B}", xor2(42));
+    ///   println();
+    ///   // auto xor3 = [](auto&& _1, auto&& _2) {return _1 ^ _2;};
+    ///   auto xor3 = _1 ^ _2;
+    ///   println("xor3 result => {:B}", xor3(42, 0xF0));
+    ///   auto xor4 = expression::xor_(_1, _2);
+    ///   println("or4 result => {:B}", xor4(42, 0xF0));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // bit_xor1 result => 37
-    /// // bit_xor2 result => 218
+    /// // xor1 result => 100101
+    /// // xor2 result => 100101
+    /// //
+    /// // xor3 result => 11010010
+    /// // xor4 result => 11010010
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator ^(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return xor_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator ^(left_t left, right_t right) {return expression::or_(std::move(left), std::move(right));}
     /// @}
   }
 }
