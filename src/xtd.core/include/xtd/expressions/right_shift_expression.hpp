@@ -36,6 +36,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::right_shift_expression object.
+      constexpr right_shift_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::right_shift_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
