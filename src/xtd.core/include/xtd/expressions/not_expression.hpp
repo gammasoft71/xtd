@@ -51,6 +51,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::not_expression object.
+      constexpr not_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::not_expression object with specified value operand.
       /// @param value The value operand.
       constexpr not_expression(value_t value) : value {std::move(value)} {}
