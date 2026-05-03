@@ -24,8 +24,10 @@ namespace xtd {
       highest = 0,
       /// @brief Represnets the placeholder operator precedence (`_1`).
       placeholder = 0,
-      /// @brief Represnets the constant operator precedence (`42`).
+      /// @brief Represnets the constant operator precedence (`constant<42>`).
       constant = 0,
+      /// @brief Represnets the constant operator precedence (`42`).
+      value = 0,
       /// @brief Represnets the scope resolution operator precedence (`a::b`).
       scope_resolution = 1,
       /// @brief Represnets the postfix increment operator precedence (`a++`).
