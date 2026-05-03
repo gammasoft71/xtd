@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::unary_plus_expression struct is used by xtd::expressions::operator +().
+    /// @remarks The xtd::expressions::unary_plus_expression struct is used by xtd::expressions::expression::unary_plus expression.
     template <typename value_t>
     struct unary_plus_expression : unary_expression {
       /// @name Public Fields
@@ -60,6 +60,15 @@ namespace xtd {
     private:
       [[no_unique_address]] value_t value;
     };
+    
+    /// @cond
+    template <typename vakue_t>
+    requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
+    constexpr auto expression::unary_plus(vakue_t value) {
+      auto expression = as_expression(value);
+      return unary_plus_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
+    }
+    /// @endcond
 
     /// @name Public Operators
     
@@ -78,14 +87,26 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::unary_plus_expression.
-    /// @include unary_plus_expression.cpp
+    /// The following example shows how to use xtd::expressions::expression::unary_plus.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   // auto unary_plus1 = [value](auto&& _) {return +_;};
+    ///   auto unary_plus1 = +_;
+    ///   println("unary_plus1 result => {}", unary_plus1(42));
+    ///   auto unary_plus2 = expression::unary_plus(_);
+    ///   println("unary_plus2 result => {}", unary_plus2(42));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // unary_plus1 result => 42
+    /// // unary_plus2 result => 42
+    /// ```
     template <typename value_t>
     requires expression_operand<value_t>
-    constexpr auto operator +(value_t value) {
-      auto expression = as_expression(value);
-      return unary_plus_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
-    }
+    constexpr auto operator +(value_t value) {return expression::unary_plus(std::move(value));}
     /// @}
   }
 }

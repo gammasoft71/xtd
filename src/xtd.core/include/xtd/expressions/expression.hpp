@@ -935,6 +935,33 @@ namespace xtd {
       template <typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto unary_minus(value_t value);
+      
+      /// @brief Unary plus the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of unary plus.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::unary_plus
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::unary_plus.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto unary_plus1 = [value](auto&& _) {return +_;};
+      ///   auto unary_plus1 = +_;
+      ///   println("unary_plus1 result => {}", unary_plus1(42));
+      ///   auto unary_plus2 = expression::unary_plus(_);
+      ///   println("unary_plus2 result => {}", unary_plus2(42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // unary_plus1 result => 42
+      /// // unary_plus2 result => 42
+      /// ```
+      template <typename value_t>
+      requires std::is_base_of_v<expression, std::decay_t<value_t>>
+      static constexpr auto unary_plus(value_t value);
 
       /// @brief Gets the value value.
       /// @param value The value value.
