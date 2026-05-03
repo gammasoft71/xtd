@@ -84,6 +84,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::member_expression object.
+      constexpr member_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::add_expression object with specified expression and member operands.
       /// @param expression The expression operand.
       /// @param member The member operand.
