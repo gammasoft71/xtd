@@ -71,6 +71,7 @@ namespace xtd {
     ///   | Others                                    | operator |
     ///   | ----------------------------------------- | -------- |
     ///   | xtd::expressions::expression::constant    |          |
+    ///   | xtd::expressions::expression::value       |          |
     ///   | xtd::expressions::expression::arg         |          |
     ///   | xtd::expressions::expression::placeholder |          |
     /// @par Examples
@@ -294,19 +295,19 @@ namespace xtd {
       ///
       /// auto main() -> int {
       ///   // auto constant1 = [] {return 10;};
-      ///   auto constant1 =  constant {10};
+      ///   auto constant1 =  constant<10> {};
       ///   println("constant1 result => {}", constant1());
-      ///   auto constant2 =  expression::constant(10);
+      ///   auto constant2 =  expression::constant<10>();
       ///   println("constant2 result => {}", constant2());
       ///   auto value = 30;
       ///   //auto constant3 = [value] {return value;};
-      ///   auto constant3 =  constant {value};
+      ///   auto constant3 =  constant<value> {};
       ///   println("constant3 result => {}", constant3());
-      ///   auto constant4 =  expression::constant(value);
+      ///   auto constant4 =  expression::constant<value>();
       ///   println("constant4 result => {}", constant4());
       ///   println();
       ///   //auto expr1 = [value] {return 20 + value;};
-      ///   auto expr1 = constant {20} + expression::constant(value);
+      ///   auto expr1 = constant<20> {} + expression::constant<value>();
       ///   println("expr1 result => {}", expr1());
       /// }
       ///
@@ -319,8 +320,8 @@ namespace xtd {
       /// //
       /// // expr1 result => 50
       /// ```
-      template <typename type_t>
-      static constexpr auto constant(type_t value);
+      template <auto constant_value>
+      static constexpr auto constant();
 
       /// @brief Divide the specified left and right operands.
       /// @param left The left operand.
@@ -674,6 +675,44 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto spaceship(left_t left, right_t right);
+      
+      /// @brief Gets the value value.
+      /// @param value The value value.
+      /// @return The value value expression.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::value.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto value1 = [] {return 10;};
+      ///   auto value1 =  value {10};
+      ///   println("value1 result => {}", value1());
+      ///   auto value2 =  expression::value(10);
+      ///   println("value2 result => {}", value2());
+      ///   auto value = 30;
+      ///   //auto value3 = [value] {return value;};
+      ///   auto value3 =  value {value};
+      ///   println("value3 result => {}", value3());
+      ///   auto value4 =  expression::value(value);
+      ///   println("value4 result => {}", value4());
+      ///   println();
+      ///   //auto expr1 = [value] {return 20 + value;};
+      ///   auto expr1 = value {20} + expression::value(value);
+      ///   println("expr1 result => {}", expr1());
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // value1 result => 10
+      /// // value2 result => 10
+      /// // value3 result => 30
+      /// // value4 result => 30
+      /// //
+      /// // expr1 result => 50
+      /// ```
+      template <typename type_t>
+      static constexpr auto value(type_t value);
       /// @}
 
     protected:
