@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::logical_or_expression struct is used by xtd::expressions::operator ||().
+    /// @remarks The xtd::expressions::logical_or_expression struct is used by xtd::expressions::expression::logical_or expression.
     template <typename left_t, typename right_t>
     struct logical_or_expression : binary_expression {
       /// @name Public Fields
@@ -63,6 +63,19 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::or_else(left_t left, right_t right) {return expression::logical_or(std::move(left), std::move(right));}
+    
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::logical_or(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return logical_or_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+
     /// @name Public Operators
     
     /// @{
@@ -80,29 +93,36 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::logical_or_expression.
+    /// The following example shows how to use xtd::expressions::expression::logical_or.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto or1 = _ || true;
-    ///   println("or1 result => {}", or1(false));
-    ///   auto or2 = _1 || _2;
-    ///   println("or2 result => {}", or2(true, false));
+    ///   auto value = true;
+    ///   // auto logical_or1 = [value](auto&& _) {return _ || value;};
+    ///   auto logical_or1 = _ || value;
+    ///   println("logical_or1 result => {}", logical_or1(42 % 2 == 0));
+    ///   auto logical_or2 = expression::logical_or(_, value);
+    ///   println("logical_or2 result => {}", logical_or2(42 % 2 == 0));
+    ///   println();
+    ///   // auto logical_or3 = [](auto&& _1, auto&& _2) {return _1 || _2;};
+    ///   auto logical_or3 = _1 || _2;
+    ///   println("and_also3 result => {}", logical_or3(42 % 2 != 0, 42 % 8 == 0));
+    ///   auto logical_or4 = expression::logical_or(_1, _2);
+    ///   println("logical_or4 result => {}", logical_or4(42 % 2 != 0, 42 % 8 == 0));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // or1 result => true
-    /// // or2 result => true
+    /// // logical_or1 result => true
+    /// // logical_or2 result => true
+    /// //
+    /// // logical_or3 result => false
+    /// // logical_or4 result => false
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator ||(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return logical_or_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator ||(left_t left, right_t right) {return expression::logical_or(std::move(left), std::move(right));}
     /// @}
   }
 }

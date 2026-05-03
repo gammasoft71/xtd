@@ -632,6 +632,43 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto logical_not(value_t value);
 
+      /// @brief Logical or the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of logical or.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_or
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::logical_or.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto value = true;
+      ///   // auto logical_or1 = [value](auto&& _) {return _ || value;};
+      ///   auto logical_or1 = _ || value;
+      ///   println("logical_or1 result => {}", logical_or1(42 % 2 == 0));
+      ///   auto logical_or2 = expression::logical_or(_, value);
+      ///   println("logical_or2 result => {}", logical_or2(42 % 2 == 0));
+      ///   println();
+      ///   // auto logical_or3 = [](auto&& _1, auto&& _2) {return _1 || _2;};
+      ///   auto logical_or3 = _1 || _2;
+      ///   println("and_also3 result => {}", logical_or3(42 % 2 != 0, 42 % 8 == 0));
+      ///   auto logical_or4 = expression::logical_or(_1, _2);
+      ///   println("logical_or4 result => {}", logical_or4(42 % 2 != 0, 42 % 8 == 0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // logical_or1 result => true
+      /// // logical_or2 result => true
+      /// //
+      /// // logical_or3 result => false
+      /// // logical_or4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto logical_or(left_t left, right_t right);
+
       /// @brief Multiply the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
@@ -666,7 +703,44 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto multiply(left_t left, right_t right);
-      
+ 
+      /// @brief Logical or the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of logical or.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::or_else
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::or_else.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   auto value = true;
+      ///   // auto or_else1 = [value](auto&& _) {return _ || value;};
+      ///   auto or_else1 = _ || value;
+      ///   println("or_else1 result => {}", or_else1(42 % 2 == 0));
+      ///   auto or_else2 = expression::or_else(_, value);
+      ///   println("or_else2 result => {}", or_else2(42 % 2 == 0));
+      ///   println();
+      ///   // auto or_else3 = [](auto&& _1, auto&& _2) {return _1 || _2;};
+      ///   auto or_else3 = _1 || _2;
+      ///   println("and_also3 result => {}", or_else3(42 % 2 != 0, 42 % 8 == 0));
+      ///   auto or_else4 = expression::or_else(_1, _2);
+      ///   println("or_else4 result => {}", or_else4(42 % 2 != 0, 42 % 8 == 0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // or_else1 result => true
+      /// // or_else2 result => true
+      /// //
+      /// // or_else3 result => false
+      /// // or_else4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto or_else(left_t left, right_t right);
+
       /// @brief Gets the `index` placeholder used by expression.
       /// @remarks The index start from 1 to N.
       /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::placeholder.
