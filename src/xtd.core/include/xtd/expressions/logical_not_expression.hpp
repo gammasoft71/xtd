@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::logical_not_expression struct is used by xtd::expressions::operator !().
+    /// @remarks The xtd::expressions::logical_not_expression struct is used by xtd::expressions::expression::logical_not.
     /// @par Examples
     /// The following example shows how to use xtd::expressions::logical_not_expression.
     /// ```cpp
@@ -77,6 +77,15 @@ namespace xtd {
     private:
       [[no_unique_address]] value_t value;
     };
+    
+    /// @cond
+    template <typename vakue_t>
+    requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
+    constexpr auto expression::logical_not(vakue_t value) {
+      auto expression = as_expression(value);
+      return logical_not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
+    }
+    /// @endcond
 
     /// @name Public Operators
     
@@ -95,28 +104,26 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::logical_not_expression.
+    /// The following example shows how to use xtd::expressions::expression::logical_not.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   //auto not1 = [](auto _) {return !_;};
-    ///   auto not1 = !_;
-    ///   println("not1 result => {}", not1(true));
-    ///   println("not1 result => {}", not1(false));
+    ///   // auto logical_not1 = [value](auto&& _) {return !_;};
+    ///   auto logical_not1 = !_;
+    ///   println("logical_not1 result => {}", logical_not1(false));
+    ///   auto logical_not2 = expression::logical_not(_);
+    ///   println("logical_not2 result => {}", logical_not2(false));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // not1 result => false
-    /// // not1 result => true
+    /// // logical_not1 result => true
+    /// // logical_not2 result => true
     /// ```
     template <typename value_t>
     requires expression_operand<value_t>
-    constexpr auto operator !(value_t value) {
-      auto expression = as_expression(value);
-      return logical_not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
-    }
+    constexpr auto operator !(value_t value) {return expression::logical_not(std::move(value));}
     /// @}
   }
 }
