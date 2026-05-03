@@ -117,11 +117,11 @@ namespace xtd {
     ///
     /// // This code produces the following output :
     /// //
-    /// // or1 result => 1010
-    /// // or2 result => 1010
+    /// // or1 result => 101111
+    /// // or2 result => 101111
     /// //
-    /// // or3 result => 100
-    /// // or4 result => 100
+    /// // or3 result => 11111010
+    /// // or4 result => 11111010
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
