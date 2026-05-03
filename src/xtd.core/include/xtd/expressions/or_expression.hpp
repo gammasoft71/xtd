@@ -55,6 +55,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::or_expression object.
+      constexpr or_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::or_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
