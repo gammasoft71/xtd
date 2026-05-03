@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::subtract_expression struct is used by xtd::expressions::operator -().
+    /// @remarks The xtd::expressions::subtract_expression struct is used by xtd::expressions::expression::subtract expression.
     template <typename left_t, typename right_t>
     struct subtract_expression : binary_expression {
       /// @name Public Fields
@@ -63,6 +63,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::subtract(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return subtract_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -80,29 +90,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::subtract_expression.
+    /// The following example shows how to use xtd::expressions::expression::subtract.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto sub1 = _ - 10;
-    ///   println("sub1 result => {}", sub1(42));
-    ///   auto sub2 = _1 - _2;
-    ///   println("sub2 result => {}", sub2(42, 12));
+    ///   // auto subtract1 = [](auto&& _) {return _ - 10;};
+    ///   auto subtract1 = _ - 10;
+    ///   println("subtract1 result => {}", subtract1(40));
+    ///   auto subtract2 = expression::subtract(_, 10);
+    ///   println("subtract2 result => {}", subtract2(40));
+    ///   println();
+    ///   // auto subtract3 = [](auto&& _1, auto&& _2) {return _1 - _2;};
+    ///   auto subtract3 = _1 - _2;
+    ///   println("subtract3 result => {}", subtract3(40, 20));
+    ///   auto subtract4 = expression::subtract(_1, _2);
+    ///   println("subtract4 result => {}", subtract4(40, 20));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // sub1 result => 32
-    /// // sub2 result => 30
+    /// // subtract1 result => 30
+    /// // subtract2 result => 30
+    /// //
+    /// // subtract3 result => 20
+    /// // subtract4 result => 20
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator -(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return subtract_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator -(left_t left, right_t right) {return expression::subtract(std::move(left), std::move(right));}
     /// @}
   }
 }

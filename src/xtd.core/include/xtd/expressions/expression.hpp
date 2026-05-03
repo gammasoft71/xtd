@@ -1006,6 +1006,41 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto spaceship(left_t left, right_t right);
       
+      /// @brief Subtract the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of subtract.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::subtract.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto subtract1 = [](auto&& _) {return _ - 10;};
+      ///   auto subtract1 = _ - 10;
+      ///   println("subtract1 result => {}", subtract1(40));
+      ///   auto subtract2 = expression::subtract(_, 10);
+      ///   println("subtract2 result => {}", subtract2(40));
+      ///   println();
+      ///   // auto subtract3 = [](auto&& _1, auto&& _2) {return _1 - _2;};
+      ///   auto subtract3 = _1 - _2;
+      ///   println("subtract3 result => {}", subtract3(40, 20));
+      ///   auto subtract4 = expression::subtract(_1, _2);
+      ///   println("subtract4 result => {}", subtract4(40, 20));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // subtract1 result => 30
+      /// // subtract2 result => 30
+      /// //
+      /// // subtract3 result => 20
+      /// // subtract4 result => 20
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto subtract(left_t left, right_t right);
+      
       /// @brief Unary minus the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
@@ -1118,7 +1153,7 @@ namespace xtd {
       ///   auto xor3 = _1 ^ _2;
       ///   println("xor3 result => {:B}", xor3(42, 0xF0));
       ///   auto xor4 = expression::xor_(_1, _2);
-      ///   println("or4 result => {:B}", xor4(42, 0xF0));
+      ///   println("xor4 result => {:B}", xor4(42, 0xF0));
       /// }
       ///
       /// // This code produces the following output :
