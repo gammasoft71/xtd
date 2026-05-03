@@ -2,7 +2,7 @@
 /// @brief Contains xtd::expressions::constant struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "constant_expression.hpp"
+#include "value_expression.hpp"
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -26,19 +26,19 @@ namespace xtd {
     ///
     /// auto main() -> int {
     ///   // auto constant1 = [] {return 10;};
-    ///   auto constant1 =  constant {10};
+    ///   auto constant1 =  constant<10> {};
     ///   println("constant1 result => {}", constant1());
-    ///   auto constant2 =  expression::constant(10);
+    ///   auto constant2 =  expression::constant<10>();
     ///   println("constant2 result => {}", constant2());
     ///   auto value = 30;
     ///   //auto constant3 = [value] {return value;};
-    ///   auto constant3 =  constant {value};
+    ///   auto constant3 =  constant<value> {};
     ///   println("constant3 result => {}", constant3());
-    ///   auto constant4 =  expression::constant(value);
+    ///   auto constant4 =  expression::constant<value>();
     ///   println("constant4 result => {}", constant4());
     ///   println();
     ///   //auto expr1 = [value] {return 20 + value;};
-    ///   auto expr1 = constant {20} + expression::constant(value);
+    ///   auto expr1 = constant<20> {} + expression::constant<value>();
     ///   println("expr1 result => {}", expr1());
     /// }
     ///
@@ -51,8 +51,8 @@ namespace xtd {
     /// //
     /// // expr1 result => 50
     /// ```
-    template <typename type_t>
-    struct constant : constant_expression {
+    template <auto constant_value>
+    struct constant : value_expression {
       /// @name Public Fields
       
       /// @{
@@ -63,31 +63,32 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::constant object with specified constant value.
-      /// @param value The constant value.
-      constexpr constant(type_t value) : value_ {std::move(value)} {}
+      /// @brief Initialize a new xtd::expressions::constant object.
+      constexpr constant() = default;
       /// @}
+      
       
       /// @name Public Operators
       
       /// @{
       /// @brief Gets the constant value.
       /// @return The constant value.
-      template <typename... args_t>
-      constexpr auto operator()(args_t&&...) const {return value_;}
+      constexpr auto operator()(auto&&...) const {
+        return value_;
+      }
       /// @}
-
+      
       /// @cond
       friend auto operator <<(std::ostream& os, constant c) -> std::ostream& {return os << c.value_;}
       /// @endcond
       
     private:
-      [[no_unique_address]] type_t value_;
+      static constexpr auto value_ = constant_value;
     };
     
     /// @cond
-    template <typename type_t>
-    constexpr auto expression::constant(type_t value) {return xtd::expressions::constant {std::move(value)};}
+    template <auto constant_value>
+    constexpr auto expression::constant() {return xtd::expressions::constant<constant_value> {};}
     /// @endcond
   }
 }
