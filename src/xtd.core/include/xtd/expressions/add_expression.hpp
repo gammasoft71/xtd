@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::add_expression struct is used by xtd::expressions::expression::add method.
+    /// @remarks The xtd::expressions::add_expression struct is used by xtd::expressions::expression::add expression.
     template <typename left_t, typename right_t>
     struct add_expression : binary_expression {
       /// @name Public Fields
