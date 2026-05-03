@@ -2107,19 +2107,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/not_equal_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1not__equal__expression.html" title="The xtd::expressions::not_equal_expression is the not equal expression.">xtd::expressions::not_equal_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a59f44691cb01efc44362f7ffeecc55f8" title="Not equal the specified left and right operands.">xtd::expressions::expression::not_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> neq1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> != 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;neq1 result =&gt; {}&quot;</span>, neq1(42));</div>
-<div class="line">  <span class="keyword">auto</span> neq2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> != <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;neq2 result =&gt; {}&quot;</span>, neq2(42, 42));</div>
+<div class="line">  <span class="comment">// auto not_equal1 = [](auto&amp;&amp; _) {return _ != 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> not_equal1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> != 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not_equal1 result =&gt; {}&quot;</span>, not_equal1(42));</div>
+<div class="line">  <span class="keyword">auto</span> not_equal2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a59f44691cb01efc44362f7ffeecc55f8">expression::not_equal</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not_equal2 result =&gt; {}&quot;</span>, not_equal2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto not_equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 != _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> not_equal3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> != <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not_equal3 result =&gt; {}&quot;</span>, not_equal3(42, 42));</div>
+<div class="line">  <span class="keyword">auto</span> not_equal4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a59f44691cb01efc44362f7ffeecc55f8">expression::not_equal</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not_equal4 result =&gt; {}&quot;</span>, not_equal4(42, 42));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// neq1 result =&gt; true</span></div>
-<div class="line"><span class="comment">// neq2 result =&gt; false</span></div>
+<div class="line"><span class="comment">// not_equal1 result =&gt; true</span></div>
+<div class="line"><span class="comment">// not_equal2 result =&gt; true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// not_equal3 result =&gt; false</span></div>
+<div class="line"><span class="comment">// not_equal4 result =&gt; false</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a59f44691cb01efc44362f7ffeecc55f8"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a59f44691cb01efc44362f7ffeecc55f8">xtd::expressions::expression::not_equal</a></div><div class="ttdeci">static constexpr auto not_equal(left_t left, right_t right)</div><div class="ttdoc">Not equal the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2164,17 +2175,21 @@ template&lt;typename value_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/not_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1not__expression.html" title="The xtd::expressions::not_expression is the bitwise not expression.">xtd::expressions::not_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a16ec6804d6806b28ab75f3c70ad85869" title="Bitwise not the specified left and right operands.">xtd::expressions::expression::not_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto bit_not1 = [](auto _) {return static_cast&lt;decltype(_)&gt;(~_);};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_not1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">~_</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_not1 result =&gt; 0b{:B}&quot;</span>, bit_not1(42_u8));</div>
+<div class="line">  <span class="comment">//auto not1 = [](auto _) {return static_cast&lt;decltype(_)&gt;(~_);};</span></div>
+<div class="line">  <span class="keyword">auto</span> not1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">~_</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not1 result =&gt; {:B}&quot;</span>, not1(42_u8));</div>
+<div class="line">  <span class="keyword">auto</span> not2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a16ec6804d6806b28ab75f3c70ad85869">expression::not_</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_plus2 result =&gt; {:B}&quot;</span>, not2(42));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// bit_not1 result =&gt; 0b11010101</span></div>
+<div class="line"><span class="comment">// not1 result =&gt; 11010101</span></div>
+<div class="line"><span class="comment">// not2 result =&gt; 11010101</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a16ec6804d6806b28ab75f3c70ad85869"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a16ec6804d6806b28ab75f3c70ad85869">xtd::expressions::expression::not_</a></div><div class="ttdeci">static constexpr auto not_(value_t value)</div><div class="ttdoc">Bitwise not the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2284,21 +2299,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/or_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1or__expression.html" title="The xtd::expressions::or_expression is the bitwise or expression.">xtd::expressions::or_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#ad2b47ac76a0746f2ab4cb6278d4b8fdf" title="Bitwise or the specified left and right operands.">xtd::expressions::expression::or_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto bit_or1 = [](auto&amp;&amp; _) {return _ | 0x0F;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_or1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> | 0x0F;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_or1 result =&gt; {}&quot;</span>, bit_or1(42));</div>
-<div class="line">  <span class="comment">//auto bit_or2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 | _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_or2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> | <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_or2 result =&gt; {}&quot;</span>, bit_or2(42, 0xF0));</div>
+<div class="line">  <span class="comment">// auto or1 = [](auto&amp;&amp; _) {return _ | 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> or1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> | 0x0F;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;or1 result =&gt; {:B}&quot;</span>, or1(42));</div>
+<div class="line">  <span class="keyword">auto</span> or2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ad2b47ac76a0746f2ab4cb6278d4b8fdf">expression::or_</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 0x0F);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;or2 result =&gt; {:B}&quot;</span>, or2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto or3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 | _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> or3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> | <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;or3 result =&gt; {:B}&quot;</span>, or3(42, 0xF0));</div>
+<div class="line">  <span class="keyword">auto</span> or4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ad2b47ac76a0746f2ab4cb6278d4b8fdf">expression::or_</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;or4 result =&gt; {:B}&quot;</span>, or4(42, 0xF0));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// bit_or1 result =&gt; 10</span></div>
-<div class="line"><span class="comment">// bit_or2 result =&gt; 8</span></div>
+<div class="line"><span class="comment">// or1 result =&gt; 1010</span></div>
+<div class="line"><span class="comment">// or2 result =&gt; 1010</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// or3 result =&gt; 100</span></div>
+<div class="line"><span class="comment">// or4 result =&gt; 100</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_ad2b47ac76a0746f2ab4cb6278d4b8fdf"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#ad2b47ac76a0746f2ab4cb6278d4b8fdf">xtd::expressions::expression::or_</a></div><div class="ttdeci">static constexpr auto or_(left_t left, right_t right)</div><div class="ttdoc">Bitwise or the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2535,7 +2559,22 @@ template&lt;typename value_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/unari_plus_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1unary__plus__expression.html" title="The xtd::expressions::unary_plus_expression is the unary plus expression.">xtd::expressions::unary_plus_expression</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#af6396184c565b86341a17b8c1b2bef29" title="Unary plus the specified left and right operands.">xtd::expressions::expression::unary_plus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto unary_plus1 = [value](auto&amp;&amp; _) {return +_;};</span></div>
+<div class="line">  <span class="keyword">auto</span> unary_plus1 = +<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_plus1 result =&gt; {}&quot;</span>, unary_plus1(42));</div>
+<div class="line">  <span class="keyword">auto</span> unary_plus2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#af6396184c565b86341a17b8c1b2bef29">expression::unary_plus</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_plus2 result =&gt; {}&quot;</span>, unary_plus2(42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// unary_plus1 result =&gt; 42</span></div>
+<div class="line"><span class="comment">// unary_plus2 result =&gt; 42</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_af6396184c565b86341a17b8c1b2bef29"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#af6396184c565b86341a17b8c1b2bef29">xtd::expressions::expression::unary_plus</a></div><div class="ttdeci">static constexpr auto unary_plus(value_t value)</div><div class="ttdoc">Unary plus the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
