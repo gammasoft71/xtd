@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::less_than_expression struct is used by xtd::expressions::expression::less_than.
+    /// @remarks The xtd::expressions::less_than_expression struct is used by xtd::expressions::expression::less_than expression.
     template <typename left_t, typename right_t>
     struct less_than_expression : binary_expression {
       /// @name Public Fields
