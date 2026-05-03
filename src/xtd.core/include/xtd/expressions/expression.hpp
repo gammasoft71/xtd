@@ -738,7 +738,34 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto multiply(left_t left, right_t right);
- 
+      
+      /// @brief Unary minus the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of unary minus.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::negate
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::negate.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto negate1 = [value](auto&& _) {return -_;};
+      ///   auto negate1 = -_;
+      ///   println("negate1 result => {}", negate1(42));
+      ///   auto negate2 = expression::negate(_);
+      ///   println("negate2 result => {}", negate2(42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // negate1 result => -42
+      /// // negate2 result => -42
+      /// ```
+      template <typename value_t>
+      requires std::is_base_of_v<expression, std::decay_t<value_t>>
+      static constexpr auto negate(value_t value);
+
       /// @brief Logical or the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
@@ -882,6 +909,33 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto spaceship(left_t left, right_t right);
       
+      /// @brief Unary minus the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of unary minus.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::unary_minus
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::unary_minus.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto unary_minus1 = [value](auto&& _) {return -_;};
+      ///   auto unary_minus1 = -_;
+      ///   println("unary_minus1 result => {}", unary_minus1(42));
+      ///   auto unary_minus2 = expression::unary_minus(_);
+      ///   println("unary_minus2 result => {}", unary_minus2(42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // unary_minus1 result => -42
+      /// // unary_minus2 result => -42
+      /// ```
+      template <typename value_t>
+      requires std::is_base_of_v<expression, std::decay_t<value_t>>
+      static constexpr auto unary_minus(value_t value);
+
       /// @brief Gets the value value.
       /// @param value The value value.
       /// @return The value value expression.
