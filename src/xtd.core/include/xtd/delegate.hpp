@@ -900,6 +900,32 @@ namespace xtd {
     
     xtd::sptr<data> data_ = xtd::new_sptr<data>();
   };
+
+  /// @cond
+  // Deduction guides for xtd::delegate
+  // {
+  template<typename>
+  struct function_traits;
+  
+  template<typename result_t, typename... args_t>
+  struct function_traits<result_t(args_t...)> {using signature = result_t(args_t...);};
+  
+  template<typename result_t, typename... args_t>
+  struct function_traits<result_t(*)(args_t...)> : function_traits<result_t(args_t...)> {};
+  
+  template<typename class_t, typename result_t, typename... args_t>
+  struct function_traits<result_t(class_t::*)(args_t...) const> : function_traits<result_t(args_t...)> {};
+  
+  template<typename type_t>
+  struct function_traits : function_traits<decltype(&type_t::operator())> {};
+  
+  template<typename function_t>
+  delegate(function_t) -> delegate<typename function_traits<function_t>::signature>;
+  
+  template<typename result_t, typename... args_t>
+  delegate(std::function<result_t(args_t...)>) -> delegate<result_t(args_t...)>;
+  // }
+  /// @endcond
 }
 
 /// @brief The declaration of a delegate type is similar to a method signature. It has a return value and any number of parameters of any type
