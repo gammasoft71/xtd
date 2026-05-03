@@ -827,6 +827,41 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto not_equal(left_t left, right_t right);
+      
+      /// @brief Bitwise or the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of bitwise or.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::or_.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto or1 = [](auto&& _) {return _ | 0x0F;};
+      ///   auto or1 = _ | 0x0F;
+      ///   println("or1 result => {:B}", or1(42));
+      ///   auto or2 = expression::or_(_, 0x0F);
+      ///   println("or2 result => {:B}", or2(42));
+      ///   println();
+      ///   // auto or3 = [](auto&& _1, auto&& _2) {return _1 | _2;};
+      ///   auto or3 = _1 | _2;
+      ///   println("or3 result => {:B}", or3(42, 0xF0));
+      ///   auto or4 = expression::or_(_1, _2);
+      ///   println("or4 result => {:B}", or4(42, 0xF0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // or1 result => 1010
+      /// // or2 result => 1010
+      /// //
+      /// // or3 result => 100
+      /// // or4 result => 100
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto or_(left_t left, right_t right);
 
       /// @brief Logical or the specified left and right operands.
       /// @param left The left operand.

@@ -23,26 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::or_expression struct is used by xtd::expressions::operator |().
-    /// @par Examples
-    /// The following example shows how to use xtd::expressions::or_expression.
-    /// ```cpp
-    /// #include <xtd/xtd>
-    ///
-    /// auto main() -> int {
-    ///   //auto bit_or1 = [](auto&& _) {return _ | 0x0F;};
-    ///   auto bit_or1 = _ | 0x0F;
-    ///   println("bit_or1 result => {}", bit_or1(42));
-    ///   //auto bit_or2 = [](auto&& _1, auto&& _2) {return _1 | _2;};
-    ///   auto bit_or2 = _1 | _2;
-    ///   println("bit_or2 result => {}", bit_or2(42, 0xF0));
-    /// }
-    ///
-    /// // This code produces the following output :
-    /// //
-    /// // bit_or1 result => 47
-    /// // bit_or2 result => 250
-    /// ```
+    /// @remarks The xtd::expressions::or_expression struct is used by xtd::expressions::expression::or_ expression.
     template <typename left_t, typename right_t>
     struct or_expression : binary_expression {
       /// @name Public Fields
@@ -88,6 +69,16 @@ namespace xtd {
       [[no_unique_address]] left_t left;
       [[no_unique_address]] right_t right;
     };
+    
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::or_(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return or_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
 
     /// @name Public Operators
     
@@ -106,31 +97,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::or_expression.
+    /// The following example shows how to use xtd::expressions::expression::or_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   //auto bit_or1 = [](auto&& _) {return _ | 0x0F;};
-    ///   auto bit_or1 = _ | 0x0F;
-    ///   println("bit_or1 result => {}", bit_or1(42));
-    ///   //auto bit_or2 = [](auto&& _1, auto&& _2) {return _1 | _2;};
-    ///   auto bit_or2 = _1 | _2;
-    ///   println("bit_or2 result => {}", bit_or2(42, 0xF0));
+    ///   // auto or1 = [](auto&& _) {return _ | 0x0F;};
+    ///   auto or1 = _ | 0x0F;
+    ///   println("or1 result => {:B}", or1(42));
+    ///   auto or2 = expression::or_(_, 0x0F);
+    ///   println("or2 result => {:B}", or2(42));
+    ///   println();
+    ///   // auto or3 = [](auto&& _1, auto&& _2) {return _1 | _2;};
+    ///   auto or3 = _1 | _2;
+    ///   println("or3 result => {:B}", or3(42, 0xF0));
+    ///   auto or4 = expression::or_(_1, _2);
+    ///   println("or4 result => {:B}", or4(42, 0xF0));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // bit_or1 result => 10
-    /// // bit_or2 result => 8
+    /// // or1 result => 1010
+    /// // or2 result => 1010
+    /// //
+    /// // or3 result => 100
+    /// // or4 result => 100
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator |(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return or_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator |(left_t left, right_t right) {return expression::or_(std::move(left), std::move(right));}
     /// @}
   }
 }
