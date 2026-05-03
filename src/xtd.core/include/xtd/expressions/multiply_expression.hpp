@@ -35,6 +35,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::multiply_expression object.
+      constexpr multiply_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::multiply_expression object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
