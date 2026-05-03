@@ -765,6 +765,33 @@ namespace xtd {
       template <typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto negate(value_t value);
+      
+      /// @brief Bitwise not the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of bistwise not.
+      /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::not_
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::not_.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   //auto not1 = [](auto _) {return static_cast<decltype(_)>(~_);};
+      ///   auto not1 = ~_;
+      ///   println("not1 result => {:B}", not1(42_u8));
+      ///   auto not2 = expression::not_(_);
+      ///   println("unary_plus2 result => {:B}", not2(42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // not1 result => 11010101
+      /// // not2 result => 11010101
+      /// ```
+      template <typename value_t>
+      requires std::is_base_of_v<expression, std::decay_t<value_t>>
+      static constexpr auto not_(value_t value);
 
       /// @brief Logical or the specified left and right operands.
       /// @param left The left operand.

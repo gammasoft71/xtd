@@ -23,22 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::operator ~().
-    /// @par Examples
-    /// The following example shows how to use xtd::expressions::not_expression.
-    /// ```cpp
-    /// #include <xtd/xtd>
-    ///
-    /// auto main() -> int {
-    ///   //auto bit_not1 = [](auto _) {return static_cast<decltype(_)>(~_);};
-    ///   auto bit_not1 = ~_;
-    ///   println("bit_not1 result => 0b{:B}", bit_not1(42_u8));
-    /// }
-    ///
-    /// // This code produces the following output :
-    /// //
-    /// // bit_not1 result => 0b11010101
-    /// ```
+    /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::expression::not_ expression.
     template <typename value_t>
     struct not_expression : unary_expression {
       /// @name Public Fields
@@ -81,6 +66,15 @@ namespace xtd {
     private:
       [[no_unique_address]] value_t value;
     };
+    
+    /// @cond
+    template <typename vakue_t>
+    requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
+    constexpr auto expression::not_(vakue_t value) {
+      auto expression = as_expression(value);
+      return not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
+    }
+    /// @endcond
 
     /// @name Public Operators
     
@@ -99,26 +93,26 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::not_expression.
+    /// The following example shows how to use xtd::expressions::expression::not_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   //auto bit_not1 = [](auto _) {return static_cast<decltype(_)>(~_);};
-    ///   auto bit_not1 = ~_;
-    ///   println("bit_not1 result => 0b{:B}", bit_not1(42_u8));
+    ///   //auto not1 = [](auto _) {return static_cast<decltype(_)>(~_);};
+    ///   auto not1 = ~_;
+    ///   println("not1 result => {:B}", not1(42_u8));
+    ///   auto not2 = expression::not_(_);
+    ///   println("unary_plus2 result => {:B}", not2(42));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // bit_not1 result => 0b11010101
+    /// // not1 result => 11010101
+    /// // not2 result => 11010101
     /// ```
     template <typename value_t>
     requires expression_operand<value_t>
-    constexpr auto operator ~(value_t value) {
-      auto expression = as_expression(value);
-      return not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
-    }
+    constexpr auto operator ~(value_t value) {return expression::not_(std::move(value));}
     /// @}
   }
 }
