@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "args.hpp"
-#include "constant.hpp"
+#include "value.hpp"
 #include "expression_operand.hpp"
 #include "../usize.hpp"
 #include <type_traits>
@@ -33,9 +33,9 @@ namespace xtd {
     constexpr decltype(auto) as_expression(type_t&& value) {
       return std::forward<type_t>(value);
     }
-    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::constant.
+    /// @brief The xtd::expressions::as_expression method convert a type as xtd::expressions::value.
     /// @param value The value to convert.
-    /// @raturn The result as xtd::expressions::constant.
+    /// @raturn The result as xtd::expressions::value.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
@@ -49,7 +49,7 @@ namespace xtd {
     template <typename type_t>
     requires (!expression_operand<type_t>)
     constexpr auto as_expression(type_t&& value) {
-      return constant<std::decay_t<type_t>> {std::forward<type_t>(value)};
+      return xtd::expressions::value<std::decay_t<type_t>> {std::forward<type_t>(value)};
     }
     /// @}
   }
