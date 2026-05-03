@@ -35,6 +35,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initialize a new xtd::expressions::unary_plus_expression object.
+      constexpr unary_plus_expression() = default;
+      
       /// @brief Initialize a new xtd::expressions::unary_plus_expression object with specified value operand.
       /// @param value The value operand.
       constexpr unary_plus_expression(value_t value) : value {std::move(value)} {}
