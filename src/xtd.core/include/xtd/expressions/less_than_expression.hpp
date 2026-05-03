@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::less_than_expression struct is used by xtd::expressions::operator <().
+    /// @remarks The xtd::expressions::less_than_expression struct is used by xtd::expressions::expression::less_than.
     template <typename left_t, typename right_t>
     struct less_than_expression : binary_expression {
       /// @name Public Fields
@@ -63,6 +63,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::less_than(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return less_than_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -80,29 +90,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::less_than_expression.
+    /// The following example shows how to use xtd::expressions::expression::less_than.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto less1 = _ < 10;
-    ///   println("less1 result => {}", less1(42));
-    ///   auto less2 = _1 < _2;
-    ///   println("less2 result => {}", less2(42, 52));
+    ///   // auto less_than1 = [](auto&& _) {return _ < 10;};
+    ///   auto less_than1 = _ < 10;
+    ///   println("less_than1 result => {}", less_than1(42));
+    ///   auto less_than2 = expression::less_than(_, 10);
+    ///   println("less_than2 result => {}", less_than2(42));
+    ///   println();
+    ///   // auto less_than3 = [](auto&& _1, auto&& _2) {return _1 < _2;};
+    ///   auto less_than3 = _1 < _2;
+    ///   println("less_than3 result => {}", less_than3(42, 52));
+    ///   auto less_than4 = expression::less_than(_1, _2);
+    ///   println("less_than4 result => {}", less_than4(42, (52)));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // less1 result => false
-    /// // less2 result => true
+    /// // greater_than1 result => false
+    /// // greater_than2 result => false
+    /// //
+    /// // greater_than3 result => true
+    /// // greater_than4 result => true
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator <(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return less_than_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator <(left_t left, right_t right) {return expression::less_than(std::move(left), std::move(right));}
     /// @}
   }
 }

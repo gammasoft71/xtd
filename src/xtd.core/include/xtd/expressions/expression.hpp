@@ -534,6 +534,41 @@ namespace xtd {
       template <typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto left_shift(left_t left, right_t right);
+      
+      /// @brief Less than the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of less than.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::less_than.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto less_than1 = [](auto&& _) {return _ < 10;};
+      ///   auto less_than1 = _ < 10;
+      ///   println("less_than1 result => {}", less_than1(42));
+      ///   auto less_than2 = expression::less_than(_, 10);
+      ///   println("less_than2 result => {}", less_than2(42));
+      ///   println();
+      ///   // auto less_than3 = [](auto&& _1, auto&& _2) {return _1 < _2;};
+      ///   auto less_than3 = _1 < _2;
+      ///   println("less_than3 result => {}", less_than3(42, 52));
+      ///   auto less_than4 = expression::less_than(_1, _2);
+      ///   println("less_than4 result => {}", less_than4(42, (52)));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // greater_than1 result => false
+      /// // greater_than2 result => false
+      /// //
+      /// // greater_than3 result => true
+      /// // greater_than4 result => true
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto less_than(left_t left, right_t right);
 
       /// @brief Multiply the specified left and right operands.
       /// @param left The left operand.
