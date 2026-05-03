@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::compare_three_way_expression struct is used by xtd::expressions::operator <=>().
+    /// @remarks The xtd::expressions::compare_three_way_expression struct is used by xtd::expressions::expression::compare_three_way expression.
     template <typename left_t, typename right_t>
     struct compare_three_way_expression : binary_expression {
       /// @name Public Fields
