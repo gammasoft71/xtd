@@ -1963,19 +1963,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/modulo_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1modulo__expression.html" title="The xtd::expressions::modulo_expression is the modulo expression.">xtd::expressions::modulo_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a40f8b1eee37e9cd1bb5bc91e73403373" title="Modulo the specified left and right operands.">xtd::expressions::expression::modulo</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> mod1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> % 5;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mod1 result =&gt; {}&quot;</span>, mod1(17));</div>
-<div class="line">  <span class="keyword">auto</span> mod2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> % <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;mod2 result =&gt; {}&quot;</span>, mod2(15, 4));</div>
+<div class="line">  <span class="comment">// auto modulo1 = [](auto&amp;&amp; _) {return _ % 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> modulo1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> % 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo1 result =&gt; {}&quot;</span>, modulo1(27));</div>
+<div class="line">  <span class="keyword">auto</span> modulo2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a40f8b1eee37e9cd1bb5bc91e73403373">expression::modulo</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo2 result =&gt; {}&quot;</span>, modulo2(27));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto modulo3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 % _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> modulo3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> % <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo3 result =&gt; {}&quot;</span>, modulo3(64, 6));</div>
+<div class="line">  <span class="keyword">auto</span> modulo4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a40f8b1eee37e9cd1bb5bc91e73403373">expression::modulo</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo4 result =&gt; {}&quot;</span>, modulo4(64, 6));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// mod1 result =&gt; 2</span></div>
-<div class="line"><span class="comment">// mod2 result =&gt; 3</span></div>
+<div class="line"><span class="comment">// mul1 result =&gt; 7</span></div>
+<div class="line"><span class="comment">// mul2 result =&gt; 7</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// mul3 result =&gt; 4</span></div>
+<div class="line"><span class="comment">// mul4 result =&gt; 4</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a40f8b1eee37e9cd1bb5bc91e73403373"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a40f8b1eee37e9cd1bb5bc91e73403373">xtd::expressions::expression::modulo</a></div><div class="ttdeci">static constexpr auto modulo(left_t left, right_t right)</div><div class="ttdoc">Modulo the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2465,7 +2476,22 @@ template&lt;typename value_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/unari_minus_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1unary__minus__expression.html" title="The xtd::expressions::unary_minus_expression is the unary minus expression.">xtd::expressions::unary_minus_expression</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#aae51b08e2467574e41200414b339b748" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto unary_minus1 = [value](auto&amp;&amp; _) {return -_;};</span></div>
+<div class="line">  <span class="keyword">auto</span> unary_minus1 = -<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_minus1 result =&gt; {}&quot;</span>, unary_minus1(42));</div>
+<div class="line">  <span class="keyword">auto</span> unary_minus2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#aae51b08e2467574e41200414b339b748">expression::unary_minus</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_minus2 result =&gt; {}&quot;</span>, unary_minus2(42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// unary_minus1 result =&gt; -42</span></div>
+<div class="line"><span class="comment">// unary_minus2 result =&gt; -42</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_aae51b08e2467574e41200414b339b748"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#aae51b08e2467574e41200414b339b748">xtd::expressions::expression::unary_minus</a></div><div class="ttdeci">static constexpr auto unary_minus(value_t value)</div><div class="ttdoc">Unary minus the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>

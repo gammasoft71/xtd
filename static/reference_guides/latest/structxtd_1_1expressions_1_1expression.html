@@ -149,14 +149,14 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">xtd::expressions::expression::unary_plus  </td><td class="markdownTableBodyNone"><code>+a</code>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">xtd::expressions::expression::unary_minus<br  />
-xtd::expressions::expression::negate  </td><td class="markdownTableBodyNone"><code>-a</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#aae51b08e2467574e41200414b339b748" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a><br  />
+<a class="el" href="#a1096ce8c6601e61adef2dedc6606b807" title="Unary minus the specified left and right operands.">xtd::expressions::expression::negate</a>  </td><td class="markdownTableBodyNone"><code>-a</code>  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#a1ee729d0c81dd0ff199c28bc4c61443f" title="Multiply the specified left and right operands.">xtd::expressions::expression::multiply</a>  </td><td class="markdownTableBodyNone"><code>a * b</code>  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="#a2118d0d6f7410797c366df90045e7b7b" title="Divide the specified left and right operands.">xtd::expressions::expression::divide</a>  </td><td class="markdownTableBodyNone"><code>a / b</code>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">xtd::expressions::expression::modulo  </td><td class="markdownTableBodyNone"><code>a % b</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#a40f8b1eee37e9cd1bb5bc91e73403373" title="Modulo the specified left and right operands.">xtd::expressions::expression::modulo</a>  </td><td class="markdownTableBodyNone"><code>a % b</code>  </td></tr>
 </table>
 </dd>
 <dd>
@@ -328,9 +328,15 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a419840eb8b067408a6c0a9733e6dd10b" id="r_a419840eb8b067408a6c0a9733e6dd10b"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a419840eb8b067408a6c0a9733e6dd10b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a419840eb8b067408a6c0a9733e6dd10b">logical_or</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a419840eb8b067408a6c0a9733e6dd10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical or the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a40f8b1eee37e9cd1bb5bc91e73403373" id="r_a40f8b1eee37e9cd1bb5bc91e73403373"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a40f8b1eee37e9cd1bb5bc91e73403373 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a40f8b1eee37e9cd1bb5bc91e73403373">modulo</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a40f8b1eee37e9cd1bb5bc91e73403373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modulo the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f" id="r_a1ee729d0c81dd0ff199c28bc4c61443f"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a1ee729d0c81dd0ff199c28bc4c61443f template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ee729d0c81dd0ff199c28bc4c61443f">multiply</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a1ee729d0c81dd0ff199c28bc4c61443f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a1096ce8c6601e61adef2dedc6606b807" id="r_a1096ce8c6601e61adef2dedc6606b807"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a1096ce8c6601e61adef2dedc6606b807 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1096ce8c6601e61adef2dedc6606b807">negate</a> (value_t <a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>)</td></tr>
+<tr class="memdesc:a1096ce8c6601e61adef2dedc6606b807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a87e41391a93e8ac00e036a6eaad0231c" id="r_a87e41391a93e8ac00e036a6eaad0231c"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a87e41391a93e8ac00e036a6eaad0231c template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a87e41391a93e8ac00e036a6eaad0231c">or_else</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a87e41391a93e8ac00e036a6eaad0231c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical or the specified left and right operands.  <br /></td></tr>
@@ -343,6 +349,9 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1" id="r_a0afc042f7a62c6d359f2775b4a130eb1"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a0afc042f7a62c6d359f2775b4a130eb1">spaceship</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a0afc042f7a62c6d359f2775b4a130eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:aae51b08e2467574e41200414b339b748" id="r_aae51b08e2467574e41200414b339b748"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:aae51b08e2467574e41200414b339b748 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#aae51b08e2467574e41200414b339b748">unary_minus</a> (value_t <a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>)</td></tr>
+<tr class="memdesc:aae51b08e2467574e41200414b339b748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:ab60c84b43ed66b9d27be1678fcc0a305" id="r_ab60c84b43ed66b9d27be1678fcc0a305"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:ab60c84b43ed66b9d27be1678fcc0a305 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> (type_t value)</td></tr>
 <tr class="memdesc:ab60c84b43ed66b9d27be1678fcc0a305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value value.  <br /></td></tr>
@@ -1393,6 +1402,72 @@ template&lt;typename left_t, typename right_t&gt; </div>
 
 </div>
 </div>
+<a id="a40f8b1eee37e9cd1bb5bc91e73403373" name="a40f8b1eee37e9cd1bb5bc91e73403373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f8b1eee37e9cd1bb5bc91e73403373">&#9670;&#160;</a></span>modulo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::modulo </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modulo the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of modulo. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a40f8b1eee37e9cd1bb5bc91e73403373" title="Modulo the specified left and right operands.">xtd::expressions::expression::modulo</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto modulo1 = [](auto&amp;&amp; _) {return _ % 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> modulo1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> % 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo1 result =&gt; {}&quot;</span>, modulo1(27));</div>
+<div class="line">  <span class="keyword">auto</span> modulo2 = <a class="code hl_function" href="#a40f8b1eee37e9cd1bb5bc91e73403373">expression::modulo</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo2 result =&gt; {}&quot;</span>, modulo2(27));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto modulo3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 % _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> modulo3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> % <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo3 result =&gt; {}&quot;</span>, modulo3(64, 6));</div>
+<div class="line">  <span class="keyword">auto</span> modulo4 = <a class="code hl_function" href="#a40f8b1eee37e9cd1bb5bc91e73403373">expression::modulo</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;modulo4 result =&gt; {}&quot;</span>, modulo4(64, 6));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// mul1 result =&gt; 7</span></div>
+<div class="line"><span class="comment">// mul2 result =&gt; 7</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// mul3 result =&gt; 4</span></div>
+<div class="line"><span class="comment">// mul4 result =&gt; 4</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a40f8b1eee37e9cd1bb5bc91e73403373"><div class="ttname"><a href="#a40f8b1eee37e9cd1bb5bc91e73403373">xtd::expressions::expression::modulo</a></div><div class="ttdeci">static constexpr auto modulo(left_t left, right_t right)</div><div class="ttdoc">Modulo the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a1ee729d0c81dd0ff199c28bc4c61443f" name="a1ee729d0c81dd0ff199c28bc4c61443f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ee729d0c81dd0ff199c28bc4c61443f">&#9670;&#160;</a></span>multiply()</h2>
 
@@ -1454,6 +1529,60 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// mul3 result =&gt; 60</span></div>
 <div class="line"><span class="comment">// mul4 result =&gt; 60</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a1096ce8c6601e61adef2dedc6606b807" name="a1096ce8c6601e61adef2dedc6606b807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1096ce8c6601e61adef2dedc6606b807">&#9670;&#160;</a></span>negate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::negate </td>
+          <td>(</td>
+          <td class="paramtype">value_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unary minus the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of unary minus. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a0771350ec5813a3e5e6aadd15e283496" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#a1096ce8c6601e61adef2dedc6606b807" title="Unary minus the specified left and right operands.">xtd::expressions::expression::negate</a> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a1096ce8c6601e61adef2dedc6606b807" title="Unary minus the specified left and right operands.">xtd::expressions::expression::negate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto negate1 = [value](auto&amp;&amp; _) {return -_;};</span></div>
+<div class="line">  <span class="keyword">auto</span> negate1 = -<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;negate1 result =&gt; {}&quot;</span>, negate1(42));</div>
+<div class="line">  <span class="keyword">auto</span> negate2 = <a class="code hl_function" href="#a1096ce8c6601e61adef2dedc6606b807">expression::negate</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;negate2 result =&gt; {}&quot;</span>, negate2(42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// negate1 result =&gt; -42</span></div>
+<div class="line"><span class="comment">// negate2 result =&gt; -42</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a1096ce8c6601e61adef2dedc6606b807"><div class="ttname"><a href="#a1096ce8c6601e61adef2dedc6606b807">xtd::expressions::expression::negate</a></div><div class="ttdeci">static constexpr auto negate(value_t value)</div><div class="ttdoc">Unary minus the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1715,6 +1844,60 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <div class="line"><span class="comment">// spaceship3 result =&gt; equivalent</span></div>
 <div class="line"><span class="comment">// spaceship4 result =&gt; equivalent</span></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a0afc042f7a62c6d359f2775b4a130eb1"><div class="ttname"><a href="#a0afc042f7a62c6d359f2775b4a130eb1">xtd::expressions::expression::spaceship</a></div><div class="ttdeci">static constexpr auto spaceship(left_t left, right_t right)</div><div class="ttdoc">Compare three way the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aae51b08e2467574e41200414b339b748" name="aae51b08e2467574e41200414b339b748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae51b08e2467574e41200414b339b748">&#9670;&#160;</a></span>unary_minus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::unary_minus </td>
+          <td>(</td>
+          <td class="paramtype">value_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unary minus the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of unary minus. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a0771350ec5813a3e5e6aadd15e283496" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#aae51b08e2467574e41200414b339b748" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aae51b08e2467574e41200414b339b748" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto unary_minus1 = [value](auto&amp;&amp; _) {return -_;};</span></div>
+<div class="line">  <span class="keyword">auto</span> unary_minus1 = -<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_minus1 result =&gt; {}&quot;</span>, unary_minus1(42));</div>
+<div class="line">  <span class="keyword">auto</span> unary_minus2 = <a class="code hl_function" href="#aae51b08e2467574e41200414b339b748">expression::unary_minus</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;unary_minus2 result =&gt; {}&quot;</span>, unary_minus2(42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// unary_minus1 result =&gt; -42</span></div>
+<div class="line"><span class="comment">// unary_minus2 result =&gt; -42</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_aae51b08e2467574e41200414b339b748"><div class="ttname"><a href="#aae51b08e2467574e41200414b339b748">xtd::expressions::expression::unary_minus</a></div><div class="ttdeci">static constexpr auto unary_minus(value_t value)</div><div class="ttdoc">Unary minus the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

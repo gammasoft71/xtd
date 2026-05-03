@@ -52,7 +52,7 @@ var searchData=
   ['unamused_5fface_49',['unamused_face',['../classxtd_1_1forms_1_1emoticons.html#a74e02fd00f968276d4d469cc599ed163',1,'xtd::forms::emoticons']]],
   ['unary_5fexpression_50',['unary_expression',['../structxtd_1_1expressions_1_1unary__expression.html',1,'xtd::expressions']]],
   ['unary_5fexpression_2ehpp_51',['unary_expression.hpp',['../unary__expression_8hpp.html',1,'']]],
-  ['unary_5fminus_52',['unary_minus',['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683a4087f1ffc05f4eab1b923856a05c6d12',1,'xtd::expressions']]],
+  ['unary_5fminus_52',['unary_minus',['../structxtd_1_1expressions_1_1expression.html#aae51b08e2467574e41200414b339b748',1,'xtd::expressions::expression::unary_minus()'],['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683a4087f1ffc05f4eab1b923856a05c6d12',1,'xtd::expressions::unary_minus']]],
   ['unary_5fminus_5fexpression_53',['unary_minus_expression',['../structxtd_1_1expressions_1_1unary__minus__expression.html',1,'xtd::expressions::unary_minus_expression&lt; value_t &gt;'],['../structxtd_1_1expressions_1_1unary__minus__expression.html#ae357dd1603582f43440959f3e1777848',1,'xtd::expressions::unary_minus_expression::unary_minus_expression()=default'],['../structxtd_1_1expressions_1_1unary__minus__expression.html#a50ca702aac79beaa62716b340d229402',1,'xtd::expressions::unary_minus_expression::unary_minus_expression(value_t value)']]],
   ['unary_5fminus_5fexpression_2ehpp_54',['unary_minus_expression.hpp',['../unary__minus__expression_8hpp.html',1,'']]],
   ['unary_5fplus_55',['unary_plus',['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683ac4bb485390e425b490b0706d4f408467',1,'xtd::expressions']]],
