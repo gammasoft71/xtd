@@ -792,6 +792,41 @@ namespace xtd {
       template <typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto not_(value_t value);
+      
+      /// @brief Not equal the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of not equal.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::not_equal.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto not_equal1 = [](auto&& _) {return _ != 10;};
+      ///   auto not_equal1 = _ != 10;
+      ///   println("not_equal1 result => {}", not_equal1(42));
+      ///   auto not_equal2 = expression::not_equal(_, 10);
+      ///   println("not_equal2 result => {}", not_equal2(42));
+      ///   println();
+      ///   // auto not_equal3 = [](auto&& _1, auto&& _2) {return _1 != _2;};
+      ///   auto not_equal3 = _1 != _2;
+      ///   println("not_equal3 result => {}", not_equal3(42, 42));
+      ///   auto not_equal4 = expression::not_equal(_1, _2);
+      ///   println("not_equal4 result => {}", not_equal4(42, 42));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // not_equal1 result => true
+      /// // not_equal2 result => true
+      /// //
+      /// // not_equal3 result => false
+      /// // not_equal4 result => false
+      /// ```
+      template <typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto not_equal(left_t left, right_t right);
 
       /// @brief Logical or the specified left and right operands.
       /// @param left The left operand.

@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::not_equal_expression struct is used by xtd::expressions::operator !=().
+    /// @remarks The xtd::expressions::not_equal_expression struct is used by xtd::expressions::expression::not_equal expression.
     template <typename left_t, typename right_t>
     struct not_equal_expression : binary_expression {
       /// @name Public Fields
@@ -63,6 +63,16 @@ namespace xtd {
       [[no_unique_address]] right_t right;
     };
     
+    /// @cond
+    template <typename left_t, typename right_t>
+    requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+    constexpr auto expression::not_equal(left_t left, right_t right) {
+      auto left_expression = as_expression(left);
+      auto right_expression = as_expression(right);
+      return not_equal_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+    }
+    /// @endcond
+
     /// @name Public Operators
     
     /// @{
@@ -80,29 +90,35 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::not_equal_expression.
+    /// The following example shows how to use xtd::expressions::expression::not_equal.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// auto main() -> int {
-    ///   auto neq1 = _ != 10;
-    ///   println("neq1 result => {}", neq1(42));
-    ///   auto neq2 = _1 != _2;
-    ///   println("neq2 result => {}", neq2(42, 42));
+    ///   // auto not_equal1 = [](auto&& _) {return _ != 10;};
+    ///   auto not_equal1 = _ != 10;
+    ///   println("not_equal1 result => {}", not_equal1(42));
+    ///   auto not_equal2 = expression::not_equal(_, 10);
+    ///   println("not_equal2 result => {}", not_equal2(42));
+    ///   println();
+    ///   // auto not_equal3 = [](auto&& _1, auto&& _2) {return _1 != _2;};
+    ///   auto not_equal3 = _1 != _2;
+    ///   println("not_equal3 result => {}", not_equal3(42, 42));
+    ///   auto not_equal4 = expression::not_equal(_1, _2);
+    ///   println("not_equal4 result => {}", not_equal4(42, 42));
     /// }
     ///
     /// // This code produces the following output :
     /// //
-    /// // neq1 result => true
-    /// // neq2 result => false
+    /// // not_equal1 result => true
+    /// // not_equal2 result => true
+    /// //
+    /// // not_equal3 result => false
+    /// // not_equal4 result => false
     /// ```
     template <typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
-    constexpr auto operator !=(left_t left, right_t right) {
-      auto left_expression = as_expression(left);
-      auto right_expression = as_expression(right);
-      return not_equal_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
-    }
+    constexpr auto operator !=(left_t left, right_t right) {return expression::not_equal(std::move(left), std::move(right));}
     /// @}
   }
 }
