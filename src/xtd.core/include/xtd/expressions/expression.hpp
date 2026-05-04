@@ -52,7 +52,7 @@ namespace xtd {
     /// @remarks
     ///   | Bitwise                                   | operator |
     ///   | ----------------------------------------- | ------------------- |
-    ///   | xtd::expressions::expression::not         | <code>~a</code>     |
+    ///   | xtd::expressions::expression::not_        | <code>~a</code>     |
     ///   | xtd::expressions::expression::and_        | <code>a & b</code>  |
     ///   | xtd::expressions::expression::or_         | <code>a \| b</code> |
     ///   | xtd::expressions::expression::xor_        | <code>a ^ b</code>  |
