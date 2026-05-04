@@ -562,13 +562,13 @@ inline std::string __tunit_codepoint_to_string(xtd::char32 codepoint) {
 
 inline xtd::string __tunit_to_string(const xtd::char8& value) {
   std::stringstream ss;
-  ss << xtd::string(__tunit_codepoint_to_string(value)).quoted().chars();
+  ss << xtd::string(__tunit_codepoint_to_string(static_cast<xtd::char32>(value))).quoted().chars();
   return ss.str();
 }
 
 inline xtd::string __tunit_to_string(const xtd::char16& value) {
   std::stringstream ss;
-  ss << xtd::string(__tunit_codepoint_to_string(value)).quoted().chars();
+  ss << xtd::string(__tunit_codepoint_to_string(static_cast<xtd::char32>(value))).quoted().chars();
   return ss.str();
 }
 
@@ -580,7 +580,7 @@ inline xtd::string __tunit_to_string(const xtd::char32& value) {
 
 inline xtd::string __tunit_to_string(const wchar_t& value) {
   std::stringstream ss;
-  ss << xtd::string(__tunit_codepoint_to_string(value)).quoted().chars();
+  ss << xtd::string(__tunit_codepoint_to_string(static_cast<xtd::char32>(value))).quoted().chars();
   return ss.str();
 }
 
@@ -606,7 +606,7 @@ inline xtd::string __tunit_to_string(const std::u16string& value) {
   std::string result;
   result += "\"";
   for (auto codepoint : value)
-    result += __tunit_codepoint_to_string(codepoint);
+    result += __tunit_codepoint_to_string(static_cast<xtd::char32>(codepoint));
   result += "\"";
   return result;
 }
@@ -624,7 +624,7 @@ inline xtd::string __tunit_to_string(const std::wstring& value) {
   std::string result;
   result += "\"";
   for (auto codepoint : value)
-    result += __tunit_codepoint_to_string(codepoint);
+    result += __tunit_codepoint_to_string(static_cast<xtd::char32>(codepoint));
   result += "\"";
   return result;
 }
