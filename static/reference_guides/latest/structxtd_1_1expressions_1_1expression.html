@@ -145,7 +145,7 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#a16e44e068234e060cf540866e0ac6411" title="Add the specified left and right operands.">xtd::expressions::expression::add</a>  </td><td class="markdownTableBodyNone"><code>a + b</code>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">xtd::expressions::expression::subtract  </td><td class="markdownTableBodyNone"><code>a - b</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#a78363bb120e0d0fe2d6defe91d046f48" title="Subtract the specified left and right operands.">xtd::expressions::expression::subtract</a>  </td><td class="markdownTableBodyNone"><code>a - b</code>  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#af6396184c565b86341a17b8c1b2bef29" title="Unary plus the specified left and right operands.">xtd::expressions::expression::unary_plus</a>  </td><td class="markdownTableBodyNone"><code>+a</code>  </td></tr>
 <tr class="markdownTableRowEven">
@@ -205,7 +205,7 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#ad2b47ac76a0746f2ab4cb6278d4b8fdf" title="Bitwise or the specified left and right operands.">xtd::expressions::expression::or_</a>  </td><td class="markdownTableBodyNone"><code>a | b</code>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">xtd::expressions::expression::xor_  </td><td class="markdownTableBodyNone"><code>a ^ b</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#a0a463b1a77371f55a7d451902413aa8b" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>  </td><td class="markdownTableBodyNone"><code>a ^ b</code>  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#a1ea2c8fd2522c24cbb91418b76488ae8" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>  </td><td class="markdownTableBodyNone"><code>a &lt;&lt; b</code>  </td></tr>
 <tr class="markdownTableRowEven">
@@ -358,6 +358,9 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1" id="r_a0afc042f7a62c6d359f2775b4a130eb1"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
 <tr class="memitem:a0afc042f7a62c6d359f2775b4a130eb1 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a0afc042f7a62c6d359f2775b4a130eb1">spaceship</a> (left_t left, right_t right)</td></tr>
 <tr class="memdesc:a0afc042f7a62c6d359f2775b4a130eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare three way the specified left and right operands.  <br /></td></tr>
+<tr class="memitem:a78363bb120e0d0fe2d6defe91d046f48" id="r_a78363bb120e0d0fe2d6defe91d046f48"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a78363bb120e0d0fe2d6defe91d046f48 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a78363bb120e0d0fe2d6defe91d046f48">subtract</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a78363bb120e0d0fe2d6defe91d046f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:aae51b08e2467574e41200414b339b748" id="r_aae51b08e2467574e41200414b339b748"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:aae51b08e2467574e41200414b339b748 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#aae51b08e2467574e41200414b339b748">unary_minus</a> (value_t <a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>)</td></tr>
 <tr class="memdesc:aae51b08e2467574e41200414b339b748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus the specified left and right operands.  <br /></td></tr>
@@ -367,6 +370,9 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:ab60c84b43ed66b9d27be1678fcc0a305" id="r_ab60c84b43ed66b9d27be1678fcc0a305"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:ab60c84b43ed66b9d27be1678fcc0a305 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> (type_t value)</td></tr>
 <tr class="memdesc:ab60c84b43ed66b9d27be1678fcc0a305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value value.  <br /></td></tr>
+<tr class="memitem:a0a463b1a77371f55a7d451902413aa8b" id="r_a0a463b1a77371f55a7d451902413aa8b"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; </td></tr>
+<tr class="memitem:a0a463b1a77371f55a7d451902413aa8b template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a463b1a77371f55a7d451902413aa8b">xor_</a> (left_t left, right_t right)</td></tr>
+<tr class="memdesc:a0a463b1a77371f55a7d451902413aa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitwise xor the specified left and right operands.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a16e44e068234e060cf540866e0ac6411" name="a16e44e068234e060cf540866e0ac6411"></a>
@@ -2046,6 +2052,72 @@ template&lt;typename left_t, typename right_t&gt; </div>
 
 </div>
 </div>
+<a id="a78363bb120e0d0fe2d6defe91d046f48" name="a78363bb120e0d0fe2d6defe91d046f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78363bb120e0d0fe2d6defe91d046f48">&#9670;&#160;</a></span>subtract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::subtract </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subtract the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of subtract. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a78363bb120e0d0fe2d6defe91d046f48" title="Subtract the specified left and right operands.">xtd::expressions::expression::subtract</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto subtract1 = [](auto&amp;&amp; _) {return _ - 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> subtract1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> - 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract1 result =&gt; {}&quot;</span>, subtract1(40));</div>
+<div class="line">  <span class="keyword">auto</span> subtract2 = <a class="code hl_function" href="#a78363bb120e0d0fe2d6defe91d046f48">expression::subtract</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract2 result =&gt; {}&quot;</span>, subtract2(40));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto subtract3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 - _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> subtract3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> - <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract3 result =&gt; {}&quot;</span>, subtract3(40, 20));</div>
+<div class="line">  <span class="keyword">auto</span> subtract4 = <a class="code hl_function" href="#a78363bb120e0d0fe2d6defe91d046f48">expression::subtract</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract4 result =&gt; {}&quot;</span>, subtract4(40, 20));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// subtract1 result =&gt; 30</span></div>
+<div class="line"><span class="comment">// subtract2 result =&gt; 30</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// subtract3 result =&gt; 20</span></div>
+<div class="line"><span class="comment">// subtract4 result =&gt; 20</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a78363bb120e0d0fe2d6defe91d046f48"><div class="ttname"><a href="#a78363bb120e0d0fe2d6defe91d046f48">xtd::expressions::expression::subtract</a></div><div class="ttdeci">static constexpr auto subtract(left_t left, right_t right)</div><div class="ttdoc">Subtract the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="aae51b08e2467574e41200414b339b748" name="aae51b08e2467574e41200414b339b748"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae51b08e2467574e41200414b339b748">&#9670;&#160;</a></span>unary_minus()</h2>
 
@@ -2215,6 +2287,72 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// value4 result =&gt; 30</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// expr1 result =&gt; 50</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a0a463b1a77371f55a7d451902413aa8b" name="a0a463b1a77371f55a7d451902413aa8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a463b1a77371f55a7d451902413aa8b">&#9670;&#160;</a></span>xor_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename left_t, typename right_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto xtd::expressions::expression::xor_ </td>
+          <td>(</td>
+          <td class="paramtype">left_t</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">right_t</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bitwise xor the specified left and right operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left operand. </td></tr>
+    <tr><td class="paramname">right</td><td>The right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of bitwise xor. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a0a463b1a77371f55a7d451902413aa8b" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto or1 = [](auto&amp;&amp; _) {return _ ^ 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> xor1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> ^ 0x0F;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor1 result =&gt; {:B}&quot;</span>, xor1(42));</div>
+<div class="line">  <span class="keyword">auto</span> xor2 = <a class="code hl_function" href="#a0a463b1a77371f55a7d451902413aa8b">expression::xor_</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 0x0F);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor2 result =&gt; {:B}&quot;</span>, xor2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto xor3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 ^ _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> xor3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> ^ <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor3 result =&gt; {:B}&quot;</span>, xor3(42, 0xF0));</div>
+<div class="line">  <span class="keyword">auto</span> xor4 = <a class="code hl_function" href="#a0a463b1a77371f55a7d451902413aa8b">expression::xor_</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor4 result =&gt; {:B}&quot;</span>, xor4(42, 0xF0));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// xor1 result =&gt; 100101</span></div>
+<div class="line"><span class="comment">// xor2 result =&gt; 100101</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// xor3 result =&gt; 11010010</span></div>
+<div class="line"><span class="comment">// xor4 result =&gt; 11010010</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a0a463b1a77371f55a7d451902413aa8b"><div class="ttname"><a href="#a0a463b1a77371f55a7d451902413aa8b">xtd::expressions::expression::xor_</a></div><div class="ttdeci">static constexpr auto xor_(left_t left, right_t right)</div><div class="ttdoc">Bitwise xor the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

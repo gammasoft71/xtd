@@ -2443,19 +2443,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/subtract_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1subtract__expression.html" title="The xtd::expressions::subtract_expression is the subtract expression.">xtd::expressions::subtract_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a78363bb120e0d0fe2d6defe91d046f48" title="Subtract the specified left and right operands.">xtd::expressions::expression::subtract</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> sub1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> - 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;sub1 result =&gt; {}&quot;</span>, sub1(42));</div>
-<div class="line">  <span class="keyword">auto</span> sub2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> - <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;sub2 result =&gt; {}&quot;</span>, sub2(42, 12));</div>
+<div class="line">  <span class="comment">// auto subtract1 = [](auto&amp;&amp; _) {return _ - 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> subtract1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> - 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract1 result =&gt; {}&quot;</span>, subtract1(40));</div>
+<div class="line">  <span class="keyword">auto</span> subtract2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a78363bb120e0d0fe2d6defe91d046f48">expression::subtract</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract2 result =&gt; {}&quot;</span>, subtract2(40));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto subtract3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 - _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> subtract3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> - <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract3 result =&gt; {}&quot;</span>, subtract3(40, 20));</div>
+<div class="line">  <span class="keyword">auto</span> subtract4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a78363bb120e0d0fe2d6defe91d046f48">expression::subtract</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;subtract4 result =&gt; {}&quot;</span>, subtract4(40, 20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// sub1 result =&gt; 32</span></div>
-<div class="line"><span class="comment">// sub2 result =&gt; 30</span></div>
+<div class="line"><span class="comment">// subtract1 result =&gt; 30</span></div>
+<div class="line"><span class="comment">// subtract2 result =&gt; 30</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// subtract3 result =&gt; 20</span></div>
+<div class="line"><span class="comment">// subtract4 result =&gt; 20</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a78363bb120e0d0fe2d6defe91d046f48"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a78363bb120e0d0fe2d6defe91d046f48">xtd::expressions::expression::subtract</a></div><div class="ttdeci">static constexpr auto subtract(left_t left, right_t right)</div><div class="ttdoc">Subtract the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2622,21 +2633,30 @@ template&lt;typename left_t, typename right_t&gt; </div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/xor_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1xor__expression.html" title="The xtd::expressions::xor_expression is the bitwise xor expression.">xtd::expressions::xor_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a0a463b1a77371f55a7d451902413aa8b" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto bit_xor1 = [](auto&amp;&amp; _) {return _ ^ 0x0F;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_xor1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> ^ 0x0F;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_xor1 result =&gt; {}&quot;</span>, bit_xor1(42));</div>
-<div class="line">  <span class="comment">//auto bit_xor2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 ^ _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> bit_xor2 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> ^ <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;bit_xor2 result =&gt; {}&quot;</span>, bit_xor2(42, 0xF0));</div>
+<div class="line">  <span class="comment">// auto or1 = [](auto&amp;&amp; _) {return _ ^ 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> xor1 = <a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a> ^ 0x0F;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor1 result =&gt; {:B}&quot;</span>, xor1(42));</div>
+<div class="line">  <span class="keyword">auto</span> xor2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a0a463b1a77371f55a7d451902413aa8b">expression::xor_</a>(<a class="code hl_variable" href="#ga130423906ed7125e321bf42e00dafae9">_</a>, 0x0F);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor2 result =&gt; {:B}&quot;</span>, xor2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <span class="comment">// auto xor3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 ^ _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> xor3 = <a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a> ^ <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor3 result =&gt; {:B}&quot;</span>, xor3(42, 0xF0));</div>
+<div class="line">  <span class="keyword">auto</span> xor4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a0a463b1a77371f55a7d451902413aa8b">expression::xor_</a>(<a class="code hl_variable" href="#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;xor4 result =&gt; {:B}&quot;</span>, xor4(42, 0xF0));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// bit_xor1 result =&gt; 37</span></div>
-<div class="line"><span class="comment">// bit_xor2 result =&gt; 218</span></div>
+<div class="line"><span class="comment">// xor1 result =&gt; 100101</span></div>
+<div class="line"><span class="comment">// xor2 result =&gt; 100101</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// xor3 result =&gt; 11010010</span></div>
+<div class="line"><span class="comment">// xor4 result =&gt; 11010010</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a0a463b1a77371f55a7d451902413aa8b"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a0a463b1a77371f55a7d451902413aa8b">xtd::expressions::expression::xor_</a></div><div class="ttdeci">static constexpr auto xor_(left_t left, right_t right)</div><div class="ttdoc">Bitwise xor the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
