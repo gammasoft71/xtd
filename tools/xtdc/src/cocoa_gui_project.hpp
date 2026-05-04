@@ -47,7 +47,7 @@ namespace xtdc_command {
         "# Options",
         "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")",
         "set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})",
-        xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", xtd::date_time::now()),
+        xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:yyyy}\")", xtd::date_time::now()),
         xtd::string::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
         xtd::string::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name),
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
@@ -63,7 +63,7 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         "/// @file",
         "/// @brief Contains Window1 class.",
-        "#import <Cocoa/Cocoa>",
+        "#import <Cocoa/Cocoa.h>",
         "",
         "/// @brief Represents the main NSWindow",
         "@interface Window1 : NSWindow {",
@@ -104,7 +104,7 @@ namespace xtdc_command {
         "#import \"Window1.h\"",
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[]) -> int {",
+        "int main(int argc, char* argv[]) {",
         "  [NSApplication sharedApplication];",
         "  [[[[Window1 alloc] init] autorelease] makeMainWindow];",
         "  [NSApp run];",
@@ -132,7 +132,7 @@ namespace xtdc_command {
       lines.add("# Options");
       lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")");
       lines.add("set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})");
-      lines.add(xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", xtd::date_time::now()));
+      lines.add(xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:yyyy}\")", xtd::date_time::now()));
       lines.add(xtd::string::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name));
       lines.add(xtd::string::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name));
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
