@@ -316,6 +316,9 @@ namespace xtd {
     /// @param last The first iterator of substring.
     template<typename input_iterator_t>
     basic_string(input_iterator_t first, input_iterator_t last) : chars_(first, last) {}
+    /// @brief Initializes a new instance of xtd::basic_string with specified ienumerable.
+    /// @param items The ienumerable to convert to basic_string.
+    basic_string(const xtd::collections::generic::ienumerable<char_t>& items) : chars_(items.begin(), items.end()) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified std::basic_string_view.
     /// @param str The std::basic_string_view string.
     basic_string(const std::basic_string_view<char_t>& str) : chars_(str) {}
