@@ -646,13 +646,13 @@ $(function() {
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span> </div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span><span class="keyword">inline</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> __tunit_to_string(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga222bc4d0543ff9a28877597b0bdc3b98">xtd::char8</a>&amp; value) {</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>  std::stringstream ss;</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>  ss &lt;&lt; <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>(__tunit_codepoint_to_string(value)).<a class="code hl_function" href="classxtd_1_1basic__string.html#ab42a3aaabc119c9749ea2dfa3213b062">quoted</a>().chars();</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>  ss &lt;&lt; xtd::string(__tunit_codepoint_to_string(static_cast&lt;xtd::char32&gt;(value))).quoted().chars();</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>  <span class="keywordflow">return</span> ss.str();</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>}</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span> </div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keyword">inline</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> __tunit_to_string(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gaa8cad5eec279a2f84d8b8d2392b2201c">xtd::char16</a>&amp; value) {</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  std::stringstream ss;</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>  ss &lt;&lt; <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>(__tunit_codepoint_to_string(value)).<a class="code hl_function" href="classxtd_1_1basic__string.html#ab42a3aaabc119c9749ea2dfa3213b062">quoted</a>().chars();</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>  ss &lt;&lt; xtd::string(__tunit_codepoint_to_string(static_cast&lt;xtd::char32&gt;(value))).quoted().chars();</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>  <span class="keywordflow">return</span> ss.str();</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>}</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span> </div>
@@ -664,7 +664,7 @@ $(function() {
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span> </div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="keyword">inline</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> __tunit_to_string(<span class="keyword">const</span> <span class="keywordtype">wchar_t</span>&amp; value) {</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>  std::stringstream ss;</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  ss &lt;&lt; <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>(__tunit_codepoint_to_string(value)).<a class="code hl_function" href="classxtd_1_1basic__string.html#ab42a3aaabc119c9749ea2dfa3213b062">quoted</a>().chars();</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  ss &lt;&lt; xtd::string(__tunit_codepoint_to_string(static_cast&lt;xtd::char32&gt;(value))).quoted().chars();</div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>  <span class="keywordflow">return</span> ss.str();</div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>}</div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
@@ -690,7 +690,7 @@ $(function() {
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  std::string result;</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  result += <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> codepoint : value)</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    result += __tunit_codepoint_to_string(codepoint);</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    result += __tunit_codepoint_to_string(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">xtd::char32</a><span class="keyword">&gt;</span>(codepoint));</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>  result += <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>}</div>
@@ -708,7 +708,7 @@ $(function() {
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  std::string result;</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>  result += <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> codepoint : value)</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    result += __tunit_codepoint_to_string(codepoint);</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    result += __tunit_codepoint_to_string(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">xtd::char32</a><span class="keyword">&gt;</span>(codepoint));</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  result += <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>}</div>
@@ -767,7 +767,7 @@ $(function() {
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>  ss &lt;&lt; reinterpret_cast &lt; xtd::intptr &gt; (value);</div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>  <span class="keywordflow">return</span> ss.str();</div>
 <div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>}</div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_ab42a3aaabc119c9749ea2dfa3213b062"><div class="ttname"><a href="classxtd_1_1basic__string.html#ab42a3aaabc119c9749ea2dfa3213b062">xtd::basic_string::quoted</a></div><div class="ttdeci">auto quoted() const -&gt; basic_string</div><div class="ttdoc">Allows insertion and extraction of quoted strings, such as the ones found in CSV or XML.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:671</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_ab42a3aaabc119c9749ea2dfa3213b062"><div class="ttname"><a href="classxtd_1_1basic__string.html#ab42a3aaabc119c9749ea2dfa3213b062">xtd::basic_string::quoted</a></div><div class="ttdeci">auto quoted() const -&gt; basic_string</div><div class="ttdoc">Allows insertion and extraction of quoted strings, such as the ones found in CSV or XML.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:674</div></div>
 <div class="ttc" id="aconceptxtd_1_1stream__insertable_html"><div class="ttname"><a href="conceptxtd_1_1stream__insertable.html">xtd::stream_insertable</a></div><div class="ttdef"><b>Definition</b> stream_insertable.hpp:13</div></div>
 <div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
 <div class="ttc" id="agroup__strings_html_ga2a1c504cef5a83ac0d4dec15817b0511"><div class="ttname"><a href="group__strings.html#ga2a1c504cef5a83ac0d4dec15817b0511">xtd::u8string</a></div><div class="ttdeci">xtd::basic_string&lt; xtd::char8 &gt; u8string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:76</div></div>
