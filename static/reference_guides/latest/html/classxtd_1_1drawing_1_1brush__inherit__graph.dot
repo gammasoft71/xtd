@@ -1,0 +1,30 @@
+digraph "xtd::drawing::brush"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="xtd::drawing::brush",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Defines objects used to fill the interiors of graphical shapes such as rectangles,..."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="xtd::object",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1object.html",tooltip="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...."];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="xtd::iequatable\< brush \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1iequatable.html",tooltip=" "];
+  Node4 -> Node3 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="xtd::interface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1interface.html",tooltip="Represent an interface class."];
+  Node5 -> Node3 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="xtd::extensions::equality\l_operators\< brush, iequatable\l\< brush \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1extensions_1_1equality__operators.html",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="xtd::drawing::drawing\l_2d::conical_gradient_brush",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1drawing_1_1drawing__2d_1_1conical__gradient__brush.html",tooltip="Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited."];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="xtd::drawing::drawing\l_2d::hatch_brush",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html",tooltip="Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background co..."];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="xtd::drawing::drawing\l_2d::linear_gradient_brush",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html",tooltip="Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited."];
+  Node1 -> Node9 [id="edge8_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="xtd::drawing::drawing\l_2d::radial_gradient_brush",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush.html",tooltip="Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited."];
+  Node1 -> Node10 [id="edge9_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="xtd::drawing::solid\l_brush",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1drawing_1_1solid__brush.html",tooltip="Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes,..."];
+  Node1 -> Node11 [id="edge10_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="xtd::drawing::texture\l_brush",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classxtd_1_1drawing_1_1texture__brush.html",tooltip="Each property of the xtd::drawing::texture_brush class is a xtd::drawing::brush object that uses an i..."];
+}

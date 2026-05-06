@@ -1,0 +1,26 @@
+digraph "forms"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node2 [id="Node000002",label="application",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__application.html",tooltip="Containes application definitions."];
+  Node3 [id="Node000003",label="components",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__components.html",tooltip="Components are objects that an application uses in conjunction with another window."];
+  Node4 [id="Node000004",label="containers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__containers.html",tooltip="Containers are container for other controls."];
+  Node5 [id="Node000005",label="controls",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__controls.html",tooltip="Controls are children windows that an application uses in conjunction with another window to enable i..."];
+  Node6 [id="Node000006",label="dialogs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__dialogs.html",tooltip="Dalogs consist of the open file, save file, open folder, find and replace, print, page setup,..."];
+  Node7 [id="Node000007",label="forms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__forms.html",tooltip="Contains forms definitions."];
+  Node1 [id="Node000001",label="forms",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="All needed for GUI application."];
+  Node8 [id="Node000008",label="menus and toolbars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__menus__and__toolbars.html",tooltip="Contains menus and toolbars definitions."];
+  Node9 [id="Node000009",label="renderers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__renderers.html",tooltip="Contains control renderers definitions."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+}

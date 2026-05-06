@@ -1,0 +1,17 @@
+digraph "strings"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node1 [id="Node000001",label="strings",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains mutable and immutable texts as a sequence of UTF-8, UTF-16 and TD-32 code units."];
+  Node2 [id="Node000002",label="system",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__system.html",tooltip="Contains system classes."];
+  Node4 [id="Node000004",label="text",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__text.html",tooltip="Contains text definitions."];
+  Node3 [id="Node000003",label="xtd.core",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__core.html",tooltip="The xtd.core library contains all fundamental classes to access Hardware, Os, System,..."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="xtd::basic_string\nxtd::text::basic_string\l_builder", color="orange", dir="none", style="dashed"];
+  Node1->Node2 [shape=plaintext, label="xtd::basic_string\nxtd::text::basic_string\l_builder", color="orange", dir="none", style="dashed"];
+  Node1->Node4 [shape=plaintext, label="xtd::text::basic_string\l_builder", color="orange", dir="none", style="dashed"];
+}

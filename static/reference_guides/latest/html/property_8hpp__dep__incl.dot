@@ -1,0 +1,19 @@
+digraph "xtd.core/include/xtd/web/css/property.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="xtd.core/include/xtd\l/web/css/property.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains xtd::web::css::property class."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="xtd.core/include/xtd\l/web/css/property_dictionary.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$property__dictionary_8hpp.html",tooltip="Contains xtd::web::css::property_dictionary alias."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="xtd.core/include/xtd\l/web/css/selector.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$selector_8hpp.html",tooltip="Contains xtd::web::css::selector class."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="xtd.core/include/xtd\l/web/css/selector_dictionary.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$selector__dictionary_8hpp.html",tooltip="Contains xtd::web::css::selector_dictionary alias."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="xtd.core/include/xtd\l/web/css/css_reader.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$css__reader_8hpp.html",tooltip="Contains xtd::web::css::reader class."];
+  Node4 -> Node6 [id="edge5_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="xtd.core/include/xtd\l/web/css/css_writer.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$css__writer_8hpp.html",tooltip="Contains xtd::web::css::writer class."];
+}

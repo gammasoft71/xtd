@@ -1,0 +1,51 @@
+digraph "xtd.tunit/include/xtd/tunit/test_method_attribute.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="xtd.tunit/include/xtd\l/tunit/test_method_attribute.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains xtd::tunit::test_method_attribute class."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="xtd.tunit/include/xtd\l/tunit/test_class.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test__class_8hpp.html",tooltip="Contains xtd::tunit::test_class class."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="xtd.tunit/include/xtd\l/tunit/class_event_args.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class__event__args_8hpp.html",tooltip="Contains xtd::tunit::class_event_args class."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="xtd.tunit/include/xtd\l/tunit/event_listener.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$event__listener_8hpp.html",tooltip="Contains xtd::tunit::event_listener class."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="xtd.tunit/include/xtd\l/tunit/ostream_event\l_listener.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ostream__event__listener_8hpp.html",tooltip="Contains xtd::tunit::ostream_event_listener class."];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="xtd.tunit/include/xtd\l/tunit/ostream_unit_test.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ostream__unit__test_8hpp.html",tooltip="Contains xtd::tunit::ostream_event_listener class."];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="xtd.tunit/include/xtd\l/tunit/console_unit_test.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$console__unit__test_8hpp.html",tooltip="Contains xtd::tunit::console_unit_test class."];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="xtd.tunit/include/xtd\l/xtd.tunit.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$xtd_8tunit_8hpp.html",tooltip="Contains xtd.tunit library headers."];
+  Node6 -> Node8 [id="edge8_Node000006_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node8 [id="edge9_Node000005_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node9 [id="edge10_Node000004_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="xtd.tunit/include/xtd\l/tunit/unit_test.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$unit__test_8hpp.html",tooltip="Contains xtd::tunit::unit_test class."];
+  Node9 -> Node7 [id="edge11_Node000009_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node6 [id="edge12_Node000009_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node10 [id="edge13_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="xtd.tunit/include/xtd\l/tunit/test_class_attribute.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test__class__attribute_8hpp.html",tooltip="Contains xtd::tunit::test_class_attribute class."];
+  Node10 -> Node11 [id="edge14_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="xtd.tunit/include/xtd\l/tunit/register_test\l_class_types.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$register__test__class__types_8hpp.html",tooltip="Contains xtd::tunit::register_test_class_types class."];
+  Node11 -> Node12 [id="edge15_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="xtd.tunit/include/xtd\l/tunit/generic_test_class.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$generic__test__class_8hpp.html",tooltip="Contains generic_test_class_ helper."];
+  Node12 -> Node8 [id="edge16_Node000012_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node8 [id="edge17_Node000011_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node8 [id="edge18_Node000010_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node8 [id="edge19_Node000009_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node8 [id="edge20_Node000004_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 -> Node8 [id="edge21_Node000003_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node13 [id="edge22_Node000002_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="xtd.tunit/include/xtd\l/tunit/registered_test\l_class.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$registered__test__class_8hpp.html",tooltip="Contains xtd::tunit::registered_test_class class."];
+  Node13 -> Node9 [id="edge23_Node000013_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node8 [id="edge24_Node000013_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node14 [id="edge25_Node000002_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="xtd.tunit/include/xtd\l/tunit/test_event_args.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test__event__args_8hpp.html",tooltip="Contains xtd::tunit::test_event_args class."];
+  Node14 -> Node4 [id="edge26_Node000014_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node8 [id="edge27_Node000014_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node8 [id="edge28_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node8 [id="edge29_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

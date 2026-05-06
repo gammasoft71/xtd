@@ -1,0 +1,29 @@
+digraph "xtd.forms/include/xtd/forms/character_casing.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="xtd.forms/include/xtd\l/forms/character_casing.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains xtd::forms::character_casing enum class."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="xtd.forms/include/xtd\l/forms/input_box.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$input__box_8hpp.html",tooltip="Contains xtd::forms::input_box control."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="xtd.forms/include/xtd\l/xtd.forms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$xtd_8forms_8hpp.html",tooltip="Contains xtd.forms library headers."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="xtd.forms/include/xtd\l/forms/input_dialog.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$input__dialog_8hpp.html",tooltip="Contains xtd::forms::input_dialog dialog."];
+  Node4 -> Node3 [id="edge4_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="xtd.forms/include/xtd\l/forms/text_box.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$text__box_8hpp.html",tooltip="Contains xtd::forms::text_box control."];
+  Node5 -> Node6 [id="edge6_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="xtd.forms/include/xtd\l/forms/trace_form_base.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$trace__form__base_8hpp.html",tooltip="Contains xtd::forms::trace_form_base dialog."];
+  Node6 -> Node7 [id="edge7_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="xtd.forms/include/xtd\l/forms/debug_form.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$debug__form_8hpp.html",tooltip="Contains xtd::forms::debug_form form."];
+  Node7 -> Node3 [id="edge8_Node000007_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node8 [id="edge9_Node000006_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="xtd.forms/include/xtd\l/forms/trace_form.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$trace__form_8hpp.html",tooltip="Contains xtd::forms::trace_form dialog."];
+  Node8 -> Node3 [id="edge10_Node000008_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node3 [id="edge11_Node000006_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node3 [id="edge12_Node000005_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge13_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

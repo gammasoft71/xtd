@@ -1,0 +1,21 @@
+digraph "xtd.core/include/xtd/web"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_8bddd848f68e3e28b5aa5e234df2e4b1 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="xtd", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html",tooltip=""]
+  dir_542c9d25259ad96780b291a0ddab28d3 [label="collections", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_542c9d25259ad96780b291a0ddab28d3.html",tooltip=""];
+  dir_b9306ad9f757b5b63585630c898f2040 [label="io", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_b9306ad9f757b5b63585630c898f2040.html",tooltip=""];
+  subgraph clusterdir_c52e9d94cdf6381ff7513773ffbb764c {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_c52e9d94cdf6381ff7513773ffbb764c.html",tooltip=""]
+    dir_c52e9d94cdf6381ff7513773ffbb764c [shape=plaintext, label="web"];
+  dir_c00f62ab1f0e172d5b99b3a26f8d581f [label="css", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_c00f62ab1f0e172d5b99b3a26f8d581f.html",tooltip=""];
+  }
+  }
+  dir_c00f62ab1f0e172d5b99b3a26f8d581f->dir_542c9d25259ad96780b291a0ddab28d3 [headlabel="2", labeldistance=1.5 headhref="dir_000003_000000.html" href="dir_000003_000000.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_c00f62ab1f0e172d5b99b3a26f8d581f->dir_b9306ad9f757b5b63585630c898f2040 [headlabel="2", labeldistance=1.5 headhref="dir_000003_000028.html" href="dir_000003_000028.html" color="steelblue1" fontcolor="steelblue1"];
+}

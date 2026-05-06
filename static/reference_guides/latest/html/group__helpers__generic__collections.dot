@@ -1,0 +1,14 @@
+digraph "helpers"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node2 [id="Node000002",label="generic",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__generic__collections.html",tooltip="Contains generic collections definitions."];
+  Node1 [id="Node000001",label="helpers",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains generic collections helpers definitions."];
+  Node3 [id="Node000003",label="xtd.core",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__core.html",tooltip="The xtd.core library contains all fundamental classes to access Hardware, Os, System,..."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="xtd::collections::generic\l::helpers::comparer\nxtd::collections::generic\l::helpers::equator\nxtd::collections::generic\l::helpers::hasher\nxtd::collections::generic\l::helpers::lesser\nxtd::collections::generic\l::helpers::raw_array\nxtd::collections::generic\l::helpers::raw_queue\nxtd::collections::generic\l::helpers::raw_stack\nxtd::collections::generic\l::helpers::wrap_pointer\l_iterator", color="orange", dir="none", style="dashed"];
+}

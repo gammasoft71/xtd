@@ -1,0 +1,23 @@
+digraph "xtd.forms/include/xtd/forms/visual_styles/form_state.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="xtd.forms/include/xtd\l/forms/visual_styles\l/form_state.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains xtd::forms::visual_styles::form_state enum class."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="xtd.forms/include/xtd\l/forms/form_renderer.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$form__renderer_8hpp.html",tooltip="Contains xtd::forms::form_renderer static class."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="xtd.forms/include/xtd\l/xtd.forms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$xtd_8forms_8hpp.html",tooltip="Contains xtd.forms library headers."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="xtd.forms/include/xtd\l/forms/panel_renderer.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$panel__renderer_8hpp.html",tooltip="Contains xtd::forms::panel_renderer static class."];
+  Node4 -> Node3 [id="edge4_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="xtd.forms/include/xtd\l/forms/status_bar_renderer.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$status__bar__renderer_8hpp.html",tooltip="Contains xtd::forms::status_bar_renderer static class."];
+  Node5 -> Node3 [id="edge6_Node000005_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge7_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="xtd.forms/include/xtd\l/forms/tool_bar_renderer.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$tool__bar__renderer_8hpp.html",tooltip="Contains xtd::forms::tool_bar_renderer static class."];
+  Node6 -> Node3 [id="edge8_Node000006_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge9_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

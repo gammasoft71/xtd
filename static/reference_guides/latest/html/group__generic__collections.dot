@@ -1,0 +1,20 @@
+digraph "generic"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node2 [id="Node000002",label="collections",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__collections.html",tooltip="Contains collections definitions."];
+  Node3 [id="Node000003",label="extensions",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__extensions__generic__collections.html",tooltip="Contain generic collections and interfaces extensions."];
+  Node1 [id="Node000001",label="generic",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains generic collections definitions."];
+  Node4 [id="Node000004",label="helpers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__helpers__generic__collections.html",tooltip="Contains generic collections helpers definitions."];
+  Node6 [id="Node000006",label="interfaces",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__interfaces.html",tooltip="Contains interfaces definitions."];
+  Node5 [id="Node000005",label="xtd.core",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__core.html",tooltip="The xtd.core library contains all fundamental classes to access Hardware, Os, System,..."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, label="xtd::collections::generic\l::comparer\nxtd::collections::generic\l::dictionary\nxtd::collections::generic\l::empty_comparer\nxtd::collections::generic\l::enumerable_generator\nxtd::collections::generic\l::enumerator\nxtd::collections::generic\l::enumerator\<\>\nxtd::collections::generic\l::equality_comparer\nxtd::collections::generic\l::hash_set\nxtd::collections::generic\l::icomparer\nxtd::collections::generic\l::idictionary\nxtd::collections::generic\l::ienumerable\nxtd::collections::generic\l::ienumerable_abstract\nxtd::collections::generic\l::ienumerator\nxtd::collections::generic\l::iequality_comparer\nxtd::collections::generic\l::iset\nxtd::collections::generic\l::key_value_pair\nxtd::collections::generic\l::key_value_pair\< \>\nxtd::collections::generic\l::linked_list\nxtd::collections::generic\l::linked_list_node\nxtd::collections::generic\l::list\nxtd::collections::generic\l::ordered_dictionary\nxtd::collections::generic\l::queue\nxtd::collections::generic\l::stack", color="orange", dir="none", style="dashed"];
+  Node1->Node6 [shape=plaintext, label="xtd::collections::generic\l::equality_comparer\nxtd::collections::generic\l::icomparer\nxtd::collections::generic\l::idictionary\nxtd::collections::generic\l::ienumerable\nxtd::collections::generic\l::ienumerator\nxtd::collections::generic\l::iequality_comparer\nxtd::collections::generic\l::iset", color="orange", dir="none", style="dashed"];
+}

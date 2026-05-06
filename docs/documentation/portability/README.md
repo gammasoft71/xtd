@@ -4,7 +4,7 @@ The Portability section provides information about supported Operating Systems, 
 
 ## C++20
 
-xtd 0.2.0 and later requires **C++20 or above**.
+xtd 1.0.0 and later requires **C++20 or above**.
 
 As of 2020, C++20 is the name for the most recent major revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
 

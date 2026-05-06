@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="xtd::forms::list_control\l::item::sorter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classxtd_1_1forms_1_1list__control_1_1item_1_1sorter.html",tooltip="Represent the sorter class used by list_control::object_collection collection."];
+}

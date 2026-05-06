@@ -1,0 +1,19 @@
+digraph "xtd.forms/include/xtd/forms/date_range_event_handler.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="xtd.forms/include/xtd\l/forms/date_range_event\l_handler.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Contains xtd::forms::date_range_event_handler event handler."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="date_range_event_args.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$date__range__event__args_8hpp.html",tooltip="Contains xtd::forms::date_range_event_args event args."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="xtd/date_time",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="xtd/event_args",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="cstdint",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="xtd/event_handler",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+}

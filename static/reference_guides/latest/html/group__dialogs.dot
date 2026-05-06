@@ -1,0 +1,16 @@
+digraph "dialogs"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node4 [id="Node000004",label="debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__debug.html",tooltip="All needed for debugging and tracing."];
+  Node1 [id="Node000001",label="dialogs",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Dalogs consist of the open file, save file, open folder, find and replace, print, page setup,..."];
+  Node2 [id="Node000002",label="forms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__gui.html",tooltip="All needed for GUI application."];
+  Node3 [id="Node000003",label="xtd.forms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__forms.html",tooltip="The xtd.forms library contains classes for creating Windows-based applications that take full advanta..."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="xtd::forms::about_box\nxtd::forms::about_dialog\nxtd::forms::assert_box\nxtd::forms::assert\l_dialog\nxtd::forms::busy_box\nxtd::forms::busy_dialog\nxtd::forms::color_box\nxtd::forms::color_dialog\nxtd::forms::debug_message_box\nxtd::forms::debug_message\l_dialog\nxtd::forms::exception_box\nxtd::forms::exception\l_dialog\nxtd::forms::find_box\nxtd::forms::find_dialog\nxtd::forms::folder\l_browser_box\nxtd::forms::folder\l_browser_dialog\nxtd::forms::font_box\nxtd::forms::font_dialog\nxtd::forms::input_box\nxtd::forms::input_dialog\nxtd::forms::message_box\nxtd::forms::message\l_dialog\nxtd::forms::open_file_box\nxtd::forms::open_file\l_dialog\nxtd::forms::progress_box\nxtd::forms::progress\l_dialog\nxtd::forms::replace_box\nxtd::forms::replace\l_dialog\nxtd::forms::save_file_box\nxtd::forms::save_file\l_dialog\nxtd::forms::trace_message_box\nxtd::forms::trace_message\l_dialog\nxtd::forms::xtd_about_box\nxtd::forms::xtd_about\l_dialog", color="orange", dir="none", style="dashed"];
+  Node1->Node4 [shape=plaintext, label="xtd::forms::debug_message_box\nxtd::forms::debug_message\l_dialog\nxtd::forms::trace_message_box\nxtd::forms::trace_message\l_dialog", color="orange", dir="none", style="dashed"];
+}

@@ -1,0 +1,18 @@
+digraph "events"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node1 [id="Node000001",label="events",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="events are event args and event handler needed to response to window messages."];
+  Node5 [id="Node000005",label="unit tests",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__tunit.html",tooltip="Contains unit tests definitions."];
+  Node2 [id="Node000002",label="xtd.core",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__core.html",tooltip="The xtd.core library contains all fundamental classes to access Hardware, Os, System,..."];
+  Node3 [id="Node000003",label="xtd.forms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__forms.html",tooltip="The xtd.forms library contains classes for creating Windows-based applications that take full advanta..."];
+  Node4 [id="Node000004",label="xtd.tunit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__xtd__tunit.html",tooltip="The xtd.tunit library contains components needed for unit testing."];
+  Node1->Node2 [shape=plaintext, label="xtd::console_cancel\l_event_args\nxtd::diagnostics::data\l_received_event_args\nxtd::diagnostics::process\l::error_data_received_event\nxtd::diagnostics::process\l::exit_event\nxtd::diagnostics::process\l::output_data_received_event\nxtd::event_args\nxtd::program_exit_event_args\nxtd::signal_cancel\l_event_args\nxtd::timers::elapsed\l_event_args", color="orange", dir="none", style="dashed"];
+  Node1->Node3 [shape=plaintext, label="xtd::forms::animation\l_updated_event_args\nxtd::forms::cancel\l_event_args\nxtd::forms::color_picker\l_event_args\nxtd::forms::control\l_event_args\nxtd::forms::date_range\l_event_args\nxtd::forms::dialog\l_closed_event_args\nxtd::forms::do_work\l_event_args\nxtd::forms::draw_item\l_event_args\nxtd::forms::find_event_args\nxtd::forms::font_picker\l_event_args\nxtd::forms::form_closed\l_event_args\nxtd::forms::form_closing\l_event_args\nxtd::forms::help_event_args\nxtd::forms::item_check\l_event_args\nxtd::forms::key_event_args\nxtd::forms::key_press\l_event_args\nxtd::forms::link_label\l_clicked_event_args\nxtd::forms::mouse_event_args\nxtd::forms::paint_event_args\nxtd::forms::progress\l_changed_event_args\nxtd::forms::replace\l_event_args\nxtd::forms::run_worker\l_completed_event_args\nxtd::forms::status\l_bar_draw_item_event_args\nxtd::forms::status\l_bar_panel_click_event_args\nxtd::forms::tool_bar\l_button_click_event_args\nxtd::threading::thread\l_exception_event_args", color="orange", dir="none", style="dashed"];
+  Node1->Node4 [shape=plaintext, label="xtd::tunit::class_event_args\nxtd::tunit::test_event_args\nxtd::tunit::tunit_event_args", color="orange", dir="none", style="dashed"];
+  Node1->Node5 [shape=plaintext, label="xtd::tunit::class_event_args\nxtd::tunit::test_event_args\nxtd::tunit::tunit_event_args", color="orange", dir="none", style="dashed"];
+}

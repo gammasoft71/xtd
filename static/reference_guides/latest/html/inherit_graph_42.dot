@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="xtd::collections::generic\l::helpers::lesser\< value_t \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html",tooltip="Implements a function object for compare data."];
+}
