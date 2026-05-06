@@ -32,7 +32,7 @@
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em; text-align: right;">
 							<div id="projectname">xtd
-								<span id="projectnumber">0.2.0</span>
+								<span id="projectnumber">1.0.0</span>
 							</div>
 						</td>
 					</tr>
@@ -83,16 +83,16 @@ $(function() {
   <div class="headertitle"><div class="title">enumerable_select.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> method.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ae403abfe22dae3148786edc992a6d1ea" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = array&lt;string&gt; {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; query = fruits.select&lt;std::tuple&lt;size_t, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <span class="keywordtype">size_t</span> index) {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; query = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> index) {</div>
 <div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
 <div class="line">  });</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : query)</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
 <div class="line">}</div>

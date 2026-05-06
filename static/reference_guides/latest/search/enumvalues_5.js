@@ -92,5 +92,7 @@ var searchData=
   ['full_5fopen_89',['full_open',['../group__xtd__forms.html#gga2eb5191f396b67ceb2ccab03798d6ec0ac9973c5be077ffa76254741e94856041',1,'xtd::forms']]],
   ['full_5fscreen_90',['full_screen',['../group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4a4fd9a9adf52567d2df028c45cfe35d6e',1,'xtd::forms']]],
   ['function_91',['function',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14',1,'xtd::forms']]],
-  ['function_5fkey_92',['function_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea1a1e214da8bf1d97f44f9db50a9e081d',1,'xtd::forms']]]
+  ['function_5fcall_92',['function_call',['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683ae423a7b1e880ec8b604e2f4fe9886da0',1,'xtd::expressions']]],
+  ['function_5fkey_93',['function_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea1a1e214da8bf1d97f44f9db50a9e081d',1,'xtd::forms']]],
+  ['functional_5fcast_94',['functional_cast',['../group__expressions.html#gga418395dc9383e37eb269a52b25b74683ad5eb08377dc699401faf6ae548c053ba',1,'xtd::expressions']]]
 ];

@@ -32,7 +32,7 @@
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em; text-align: right;">
 							<div id="projectname">xtd
-								<span id="projectnumber">0.2.0</span>
+								<span id="projectnumber">1.0.0</span>
 							</div>
 						</td>
 					</tr>
@@ -102,7 +102,7 @@ Inheritance diagram for xtd::foreground_color:</div>
 <div class="textblock"><p>Represent foreground color output manipulator class. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> method. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classxtd_1_1console.html#a356cc51385da6fa60e75d10a8c01b6ab" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> method. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">xtd::background_color</a> and <a class="el" href="classxtd_1_1foreground__color.html" title="Represent foreground color output manipulator class.">xtd::foreground_color</a> properties to variables. It then changes the foreground color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current background, and it changes the background color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd:::reset_color class to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -141,7 +141,7 @@ Inheritance diagram for xtd::foreground_color:</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a70caf80623c8b653dc6b15d10ea52454">console::output_code_page</a>(65001);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac068660c7820020683cf45cd766410fc">console::output_code_page</a>(65001);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0ul; index &lt; logo.length(); ++index)</div>
 <div class="line">    std::cout &lt;&lt; (index == 0 || index == logo.length() - 1 ? <span class="stringliteral">&quot;       &quot;</span> : <span class="stringliteral">&quot;     &quot;</span>) &lt;&lt; <a class="code hl_class" href="classxtd_1_1background__color.html">background_color</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">console_color::white</a>) &lt;&lt; <a class="code hl_class" href="classxtd_1_1foreground__color.html">foreground_color</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73">console_color::dark_blue</a>) &lt;&lt; logo[index] &lt;&lt; <a class="code hl_class" href="classxtd_1_1reset__color.html">reset_color</a>() &lt;&lt; std::endl;</div>
@@ -190,7 +190,7 @@ Inheritance diagram for xtd::foreground_color:</div>
 <div class="line"><span class="comment">// (c++, c#, objective-c, ...).</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1background__color_html"><div class="ttname"><a href="classxtd_1_1background__color.html">xtd::background_color</a></div><div class="ttdoc">Represent background color output manipulator class.</div><div class="ttdef"><b>Definition</b> background_color.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a70caf80623c8b653dc6b15d10ea52454"><div class="ttname"><a href="classxtd_1_1console.html#a70caf80623c8b653dc6b15d10ea52454">xtd::console::output_code_page</a></div><div class="ttdeci">static int32 output_code_page()</div><div class="ttdoc">Gets the code page the console uses to write output.</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ac068660c7820020683cf45cd766410fc"><div class="ttname"><a href="classxtd_1_1console.html#ac068660c7820020683cf45cd766410fc">xtd::console::output_code_page</a></div><div class="ttdeci">static auto output_code_page() -&gt; int32</div><div class="ttdoc">Gets the code page the console uses to write output.</div></div>
 <div class="ttc" id="aclassxtd_1_1foreground__color_html"><div class="ttname"><a href="classxtd_1_1foreground__color.html">xtd::foreground_color</a></div><div class="ttdoc">Represent foreground color output manipulator class.</div><div class="ttdef"><b>Definition</b> foreground_color.hpp:20</div></div>
 <div class="ttc" id="aclassxtd_1_1reset__color_html"><div class="ttname"><a href="classxtd_1_1reset__color.html">xtd::reset_color</a></div><div class="ttdoc">Represent reset color output manipulator class.</div><div class="ttdef"><b>Definition</b> reset_color.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73">xtd::console_color::dark_blue</a></div><div class="ttdeci">@ dark_blue</div><div class="ttdoc">The color dark blue.</div><div class="ttdef"><b>Definition</b> console_color.hpp:26</div></div>
@@ -211,8 +211,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6e48ffbad2ee99afb6dbff032a18345e" id="r_a6e48ffbad2ee99afb6dbff032a18345e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6e48ffbad2ee99afb6dbff032a18345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
@@ -297,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a70caf80623c8b653dc6b15d10ea52454">console::output_code_page</a>(65001);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac068660c7820020683cf45cd766410fc">console::output_code_page</a>(65001);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0ul; index &lt; logo.length(); ++index)</div>
 <div class="line">    std::cout &lt;&lt; (index == 0 || index == logo.length() - 1 ? <span class="stringliteral">&quot;       &quot;</span> : <span class="stringliteral">&quot;     &quot;</span>) &lt;&lt; <a class="code hl_class" href="classxtd_1_1background__color.html">background_color</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">console_color::white</a>) &lt;&lt; <a class="code hl_class" href="classxtd_1_1foreground__color.html">foreground_color</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73">console_color::dark_blue</a>) &lt;&lt; logo[index] &lt;&lt; <a class="code hl_class" href="classxtd_1_1reset__color.html">reset_color</a>() &lt;&lt; std::endl;</div>

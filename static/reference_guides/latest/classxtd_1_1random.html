@@ -32,7 +32,7 @@
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em; text-align: right;">
 							<div id="projectname">xtd
-								<span id="projectnumber">0.2.0</span>
+								<span id="projectnumber">1.0.0</span>
 							</div>
 						</td>
 					</tr>
@@ -178,40 +178,40 @@ To improve performance, create one random object to generate many random numbers
 <div class="line">  <span class="keyword">auto</span> bytes = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(5);</div>
 <div class="line">  rand.next_bytes(bytes);</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Five random byte values:&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Five random byte values:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> byte_value : bytes)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,5}&quot;</span>, byte_value);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,5}&quot;</span>, byte_value);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random integers.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Five random integer values:&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Five random integer values:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,15:N0}&quot;</span>, rand.next());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,15:N0}&quot;</span>, rand.next());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random integers between 0 and 100.//</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Five random integers between 0 and 100:&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Five random integers between 0 and 100:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,8:N0}&quot;</span>, rand.next(101));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,8:N0}&quot;</span>, rand.next(101));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random integers from 50 to 100.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Five random integers between 50 and 100:&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Five random integers between 50 and 100:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,8:N0}&quot;</span>, rand.next(50, 101));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,8:N0}&quot;</span>, rand.next(50, 101));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random floating point values from 0 to 1.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Five Doubles:&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Five Doubles:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,8:N3}&quot;</span>, rand.next_double());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,8:N3}&quot;</span>, rand.next_double());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random floating point values from 0 to 5.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Five Doubles between 0 and 5:&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Five Doubles between 0 and 5:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,8:N3}&quot;</span>, rand.next_double() * 5);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,8:N3}&quot;</span>, rand.next_double() * 5);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
@@ -228,8 +228,8 @@ To improve performance, create one random object to generate many random numbers
 <div class="line"><span class="comment">//    0.186   0.070   0.021   0.892   0.313</span></div>
 <div class="line"><span class="comment">// Five Doubles between 0 and 5:</span></div>
 <div class="line"><span class="comment">//    2.938   0.848   0.060   3.667   0.042</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:480</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example generates a random integer that it uses as an index to retrieve a string value from an array. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -280,12 +280,12 @@ Public Properties</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a488124343e9a0c6fe2adbf8f8fabee12" id="r_a488124343e9a0c6fe2adbf8f8fabee12"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a488124343e9a0c6fe2adbf8f8fabee12 template"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a488124343e9a0c6fe2adbf8f8fabee12">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
-<tr class="memdesc:a488124343e9a0c6fe2adbf8f8fabee12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
-<tr class="memitem:a924868cdb915007f3c140c8229053eec" id="r_a924868cdb915007f3c140c8229053eec"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a924868cdb915007f3c140c8229053eec template"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a924868cdb915007f3c140c8229053eec">get_items</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
-<tr class="memdesc:a924868cdb915007f3c140c8229053eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
+<tr class="memitem:a9df95fbc405bafaf82705fb2f82bdf7e" id="r_a9df95fbc405bafaf82705fb2f82bdf7e"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a9df95fbc405bafaf82705fb2f82bdf7e template"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9df95fbc405bafaf82705fb2f82bdf7e">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
+<tr class="memdesc:a9df95fbc405bafaf82705fb2f82bdf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
+<tr class="memitem:aafcf2203d0e14b17463477eb77946cec" id="r_aafcf2203d0e14b17463477eb77946cec"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:aafcf2203d0e14b17463477eb77946cec template"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aafcf2203d0e14b17463477eb77946cec">get_items</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
+<tr class="memdesc:aafcf2203d0e14b17463477eb77946cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
 <tr class="memitem:a22ca985c4bb87949751e62d55d2bf192" id="r_a22ca985c4bb87949751e62d55d2bf192"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:a22ca985c4bb87949751e62d55d2bf192 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a22ca985c4bb87949751e62d55d2bf192">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;destination)</td></tr>
 <tr class="memdesc:a22ca985c4bb87949751e62d55d2bf192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified span with items chosen at random from the provided set of choices.  <br /></td></tr>
@@ -304,6 +304,12 @@ Public Methods</h2></td></tr>
 <tr class="memitem:a9db5b7d015f55c274c45b6059b159a9f" id="r_a9db5b7d015f55c274c45b6059b159a9f"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:a9db5b7d015f55c274c45b6059b159a9f template"><td class="memItemLeft">value_t&#160;</td><td class="memItemRight"><a class="el" href="#a9db5b7d015f55c274c45b6059b159a9f">next</a> (value_t min_value, value_t max_value) const</td></tr>
 <tr class="memdesc:a9db5b7d015f55c274c45b6059b159a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
+<tr class="memitem:ae7d36b4b5e9db7b2bc7a1dffa89cbea3" id="r_ae7d36b4b5e9db7b2bc7a1dffa89cbea3"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae7d36b4b5e9db7b2bc7a1dffa89cbea3">next_byte</a> () const</td></tr>
+<tr class="memdesc:ae7d36b4b5e9db7b2bc7a1dffa89cbea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
+<tr class="memitem:a401961584380d7472f8a83f5eb0fee23" id="r_a401961584380d7472f8a83f5eb0fee23"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a401961584380d7472f8a83f5eb0fee23">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const</td></tr>
+<tr class="memdesc:a401961584380d7472f8a83f5eb0fee23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
+<tr class="memitem:a295eb633599b17811484458dffd44a1a" id="r_a295eb633599b17811484458dffd44a1a"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a295eb633599b17811484458dffd44a1a">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> min_value, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const</td></tr>
+<tr class="memdesc:a295eb633599b17811484458dffd44a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
 <tr class="memitem:af8dee61c03a83ef71bf478f603094111" id="r_af8dee61c03a83ef71bf478f603094111"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af8dee61c03a83ef71bf478f603094111">next_bytes</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const</td></tr>
 <tr class="memdesc:af8dee61c03a83ef71bf478f603094111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
 <tr class="memitem:adc73b84dc61ce01f1ecc602d450afc17" id="r_adc73b84dc61ce01f1ecc602d450afc17"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#adc73b84dc61ce01f1ecc602d450afc17">next_bytes</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const</td></tr>
@@ -340,8 +346,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a6e48ffbad2ee99afb6dbff032a18345e" id="r_a6e48ffbad2ee99afb6dbff032a18345e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6e48ffbad2ee99afb6dbff032a18345e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
@@ -499,8 +505,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a488124343e9a0c6fe2adbf8f8fabee12" name="a488124343e9a0c6fe2adbf8f8fabee12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a488124343e9a0c6fe2adbf8f8fabee12">&#9670;&#160;</a></span>get_items() <span class="overload">[1/3]</span></h2>
+<a id="a9df95fbc405bafaf82705fb2f82bdf7e" name="a9df95fbc405bafaf82705fb2f82bdf7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df95fbc405bafaf82705fb2f82bdf7e">&#9670;&#160;</a></span>get_items() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +524,7 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -539,8 +545,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a924868cdb915007f3c140c8229053eec" name="a924868cdb915007f3c140c8229053eec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924868cdb915007f3c140c8229053eec">&#9670;&#160;</a></span>get_items() <span class="overload">[2/3]</span></h2>
+<a id="aafcf2203d0e14b17463477eb77946cec" name="aafcf2203d0e14b17463477eb77946cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafcf2203d0e14b17463477eb77946cec">&#9670;&#160;</a></span>get_items() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -558,7 +564,7 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -856,6 +862,123 @@ template&lt;typename value_t&gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The next(value_t, value_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value. </dd>
+<dd>
+Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer. </dd></dl>
+
+</div>
+</div>
+<a id="ae7d36b4b5e9db7b2bc7a1dffa89cbea3" name="ae7d36b4b5e9db7b2bc7a1dffa89cbea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d36b4b5e9db7b2bc7a1dffa89cbea3">&#9670;&#160;</a></span>next_byte() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a nonnegative random number. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits&lt;int32&gt;::max()) </dd></dl>
+
+</div>
+</div>
+<a id="a401961584380d7472f8a83f5eb0fee23" name="a401961584380d7472f8a83f5eb0fee23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401961584380d7472f8a83f5eb0fee23">&#9670;&#160;</a></span>next_byte() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a nonnegative random number less than the specified maximum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_value</td><td>The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 64-bit signed integer greater than or equal to zero and less than max_value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">argument_out_of_range_exception</a></td><td>max_value is less than zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0. </dd></dl>
+
+</div>
+</div>
+<a id="a295eb633599b17811484458dffd44a1a" name="a295eb633599b17811484458dffd44a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295eb633599b17811484458dffd44a1a">&#9670;&#160;</a></span>next_byte() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random number within a specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min_value</td><td>The inclusive lower bound of the random number returned </td></tr>
+    <tr><td class="paramname">max_value</td><td>The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 8-bit unsigned integer greater than or equal to min_value and less than max_value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">argument_out_of_range_exception</a></td><td>min_value is greater than max_value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The next(<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a>, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value. </dd>
 <dd>
 Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer. </dd></dl>
 

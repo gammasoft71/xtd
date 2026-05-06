@@ -32,7 +32,7 @@
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em; text-align: right;">
 							<div id="projectname">xtd
-								<span id="projectnumber">0.2.0</span>
+								<span id="projectnumber">1.0.0</span>
 							</div>
 						</td>
 					</tr>
@@ -181,13 +181,13 @@ $(function() {
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> update_form() {</div>
-<div class="line">      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;drawing::size&gt;(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;drawing::size&gt;(choice_size.selected_item().tag())) : images::from_name(<span class="stringliteral">&quot;image-missing&quot;</span>,  as&lt;drawing::size&gt;(choice_size.selected_item().tag())));</div>
+<div class="line">      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;struct size&gt;(choice_size.selected_item().tag())) != image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;struct size&gt;(choice_size.selected_item().tag())) : images::from_name(<span class="stringliteral">&quot;image-missing&quot;</span>,  as&lt;struct size&gt;(choice_size.selected_item().tag())));</div>
 <div class="line">      label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);</div>
 <div class="line">      button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">      button_next.enabled(current_image_index &lt; images::names(choice_context.selected_item().value()).length() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">size_t</span> current_image_index = 0;</div>
+<div class="line">    usize current_image_index = 0;</div>
 <div class="line">    choice choice_theme;</div>
 <div class="line">    choice choice_context;</div>
 <div class="line">    choice choice_size;</div>
@@ -201,7 +201,7 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:932</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:943</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

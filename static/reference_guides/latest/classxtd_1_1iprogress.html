@@ -32,7 +32,7 @@
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em; text-align: right;">
 							<div id="projectname">xtd
-								<span id="projectnumber">0.2.0</span>
+								<span id="projectnumber">1.0.0</span>
 							</div>
 						</td>
 					</tr>
@@ -128,7 +128,7 @@ class xtd::iprogress&lt; type_t &gt;</div><p>Defines a provider for progress upd
 <div class="line">  generic_progress&amp; minimum(<span class="keywordtype">int</span> minimum) <span class="keyword">noexcept</span> {</div>
 <div class="line">    minimum_ = minimum;</div>
 <div class="line">    maximum_ = math::max(maximum(), minimum);</div>
-<div class="line">    value_ = math::max(value(), minimum);</div>
+<div class="line">    value_ = math::max(<a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>(), minimum);</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -138,10 +138,10 @@ class xtd::iprogress&lt; type_t &gt;</div><p>Defines a provider for progress upd
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">float</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100a354f047ba64552895b016bbdd60ab174">percent</a>() const noexcept {<span class="keywordflow">return</span> maximum_ - minimum_ ? as&lt;float&gt;(value() - minimum()) / (maximum() - minimum()) : 1;}</div>
+<div class="line">  <span class="keywordtype">float</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100a354f047ba64552895b016bbdd60ab174">percent</a>() const noexcept {<span class="keywordflow">return</span> maximum_ - minimum_ ? as&lt;float&gt;(<a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>() - minimum()) / (maximum() - minimum()) : 1;}</div>
 <div class="line">  </div>
 <div class="line">  generic_progress&amp; increment(<span class="keywordtype">int</span> increment) <span class="keyword">noexcept</span> {</div>
-<div class="line">    value(value() + increment);</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>(<a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>() + increment);</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -151,8 +151,8 @@ class xtd::iprogress&lt; type_t &gt;</div><p>Defines a provider for progress upd
 <div class="line">    <span class="keywordflow">return</span> perform_step();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> value() const noexcept {<span class="keywordflow">return</span> value_;}</div>
-<div class="line">  generic_progress&amp; value(<span class="keywordtype">int</span> value) <span class="keyword">noexcept</span> {</div>
+<div class="line">  <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>() const noexcept {<span class="keywordflow">return</span> value_;}</div>
+<div class="line">  generic_progress&amp; <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>(<span class="keywordtype">int</span> value) <span class="keyword">noexcept</span> {</div>
 <div class="line">    value_ = math::clamp(value, minimum(), maximum());</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
@@ -176,7 +176,7 @@ class xtd::iprogress&lt; type_t &gt;</div><p>Defines a provider for progress upd
 <div class="line">  print_generic_progress() = <span class="keywordflow">default</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> report(<span class="keyword">const</span> generic_progress&amp; value) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;completion={,3}%, message=\&quot;{}\&quot;&quot;</span>, as&lt;int&gt;(value.percent() * 100), value.message());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;completion={,3}%, message=\&quot;{}\&quot;&quot;</span>, as&lt;int&gt;(<a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>.percent() * 100), <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>.message());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -211,6 +211,7 @@ class xtd::iprogress&lt; type_t &gt;</div><p>Defines a provider for progress upd
 <div class="line"><span class="comment">// completion= 80%, message=&quot;Device updated 3&quot;</span></div>
 <div class="line"><span class="comment">// completion=100%, message=&quot;Device closed&quot;</span></div>
 <div class="line"><span class="comment">// Ended</span></div>
+<div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggab29b04bbaf914660d81ba98475d8a100a354f047ba64552895b016bbdd60ab174"><div class="ttname"><a href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100a354f047ba64552895b016bbdd60ab174">xtd::forms::size_type::percent</a></div><div class="ttdeci">@ percent</div><div class="ttdoc">The control should be sized as a percentage of the parent container.</div><div class="ttdef"><b>Definition</b> size_type.hpp:28</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
