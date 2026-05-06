@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 3.20)
 # For example xtd 1.2.3 (major = 1, minor = 2, build = 3 and revision = -1)
 # project(xtd VERSION 1.2.3)
 
-project(xtd VERSION 0.2)
+project(xtd VERSION 1.0)
 
 ################################################################################
 # Options

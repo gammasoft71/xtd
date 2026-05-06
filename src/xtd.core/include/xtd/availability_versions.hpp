@@ -21,9 +21,9 @@
 // #include <xtd/xtd>
 //
 // auto main() -> int {
-// #if defined(__XTD_42_42_42__)
+// #if defined(__XTD_42_42_42__) // This version does not exist is just for example
 //   auto s = xtd::xstring("Hello, World!");
-// #elif defined(__XTD_0_2_0__)
+// #elif defined(__XTD_1_0_0__)
 //   auto s = xtd::string("Hello, World!");
 // #else
 //   auto s = xtd::ustring("Hello, World!");
@@ -31,8 +31,8 @@
 //   xtd::console::write_line(s);
 // }
 
-#define __XTD_0_1_0__ 10000
-#define __XTD_0_1_1__ 10100
-#define __XTD_0_1_2__ 10200
-#define __XTD_0_2_0__ 20000
+#define __XTD_0_1_0__   10000
+#define __XTD_0_1_1__   10100
+#define __XTD_0_1_2__   10200
+#define __XTD_1_0_0__ 1000000
 /// @endcond

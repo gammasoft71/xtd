@@ -27,11 +27,11 @@
 // These macros are defined to match other libraries and/or frameworks.
 // But instead of using these old practices, it's better to use the xtd::environment::version property.
 
-#define __XTD_VERSION__ 20000
-#define __XTD_VERSION_MAJOR__ 0
-#define __XTD_VERSION_MINOR__ 2
+#define __XTD_VERSION__ 1000000
+#define __XTD_VERSION_MAJOR__ 1
+#define __XTD_VERSION_MINOR__ 0
 #define __XTD_VERSION_BUILD__ 0
 #define __XTD_VERSION_REVISION__ 0
-#define __XTD_VERSION_STRING__ "0.2.0"
-#define __XTD_VERSION_FULL_STRING__ "xtd 0.2.0"
+#define __XTD_VERSION_STRING__ "1.0.0"
+#define __XTD_VERSION_FULL_STRING__ "xtd 1.0.0"
 /// @endcond
