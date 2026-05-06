@@ -187,7 +187,7 @@ See [xtdc](../tools/xtdc/README.md) for more info.
 
 ## Uninstall
 
-Since the version 0.2.0 you can easily uninstall xtd with one command.
+Since the version 1.0.0 you can easily uninstall xtd with one command.
 
 ### Windows
 

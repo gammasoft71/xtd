@@ -2,7 +2,7 @@
 
 # Release Notes
 
-![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
+![1.0.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - xtd::forms::message_notifier - [#180](https://github.com/gammasoft71/xtd/issues/180)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
@@ -117,9 +117,9 @@
 
 ## Incompatibility list
 
-* xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 0.2.0 and are not compatible with the previous version. See [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
-* Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
-* Windows users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "C:\Program Files\xtd\share\xtd\themes" directory before the new installation.
+* xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 1.0.0 and are not compatible with the previous version. See [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
+* Linux and macOS users : if you have cloned and instlled a version 1.0.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
+* Windows users : if you have cloned and instlled a version 1.0.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "C:\Program Files\xtd\share\xtd\themes" directory before the new installation.
 
 ______________________________________________________________________________________________
 
