@@ -11,9 +11,9 @@ if [ -z ${xtd_version+x} ]; then
   exit 1
 fi
 # Check if the system is SerenityOS
-if [[ "$(uname -s)" == "SerenityOS" ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]] || [[ "$(uname -s)" == "SerenityOS" ]]; then
   # SerenityOS does not require sudo or root privileges
-  echo "Running on SerenityOS, no sudo required."
+  echo "Running on $OS_NAME, no sudo required."
 else
     if [[ "$(id -u)" -ne 0 && -z "$(command -v sudo)" ]]; then
       echo "---------------------------------------------------------------"
