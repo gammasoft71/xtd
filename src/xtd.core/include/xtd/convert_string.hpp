@@ -1103,25 +1103,25 @@ namespace xtd {
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.
+    /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 1.2.0.
     template<typename string_t>
-    [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.")]] [[nodiscard]] static auto to_ustring(const string_t& str) noexcept -> const xtd::string& {return to_string(str);}
+    [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 1.2.0.")]] [[nodiscard]] static auto to_ustring(const string_t& str) noexcept -> const xtd::string& {return to_string(str);}
     /// @brief Converts string_t to xtd::string.
     /// @param str string to convert.
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.
+    /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 1.2.0.
     template<typename char_t>
-    [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.")]] [[nodiscard]] static auto to_ustring(const char_t* str) noexcept -> const xtd::string& {return to_string(str);}
+    [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 1.2.0.")]] [[nodiscard]] static auto to_ustring(const char_t* str) noexcept -> const xtd::string& {return to_string(str);}
     /// @brief Converts string_t to xtd::string.
     /// @param str string to convert.
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.
+    /// @deprecated Replaced by xtd::convert_string::to_string - Will be removed in version 1.2.0.
     template<typename char_t>
-    [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 0.4.0.")]] [[nodiscard]] static auto to_ustring(char_t* str) noexcept -> const xtd::string& {return to_string(str);}
+    [[deprecated("Replaced by xtd::convert_string::to_string - Will be removed in version 1.2.0.")]] [[nodiscard]] static auto to_ustring(char_t* str) noexcept -> const xtd::string& {return to_string(str);}
     /// @}
   };
 }

@@ -499,11 +499,11 @@ namespace xtd {
         
         /// @{
         /// @brief Represents the reverse iterator type of the collection.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
-        using reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::reverse_iterator;
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 1.2.0.
+        using reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 1.2.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::reverse_iterator;
         /// @brief Represents the const reverse iterator type of the collection.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
-        using const_reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::const_reverse_iterator - Will be removed in version 0.4.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::const_reverse_iterator;
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 1.2.0.
+        using const_reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::const_reverse_iterator - Will be removed in version 1.2.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::const_reverse_iterator;
         /// @}
         
         /// @name Public Deprecatd Properties
@@ -511,8 +511,8 @@ namespace xtd {
         /// @{
         /// @brief Returns the maximum possible number of elements.
         /// @return The maximum possible number of elements.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 1.2.0.")]]
         size_type max_size() const noexcept {return data_->items.max_size();}
         /// @}
         
@@ -522,8 +522,8 @@ namespace xtd {
         /// @brief Access specified element with bounds checking.
         /// @param pos The position of the element to return.
         /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [] - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [] - Will be removed in version 1.2.0.")]]
         reference at(size_type pos) {
           data_->items[pos].pos = pos;
           data_->items[pos].owner = this;
@@ -532,55 +532,55 @@ namespace xtd {
         /// @brief Access specified element with bounds checking.
         /// @param pos The position of the element to return.
         /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [] - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [] - Will be removed in version 1.2.0.")]]
         const_reference at(size_type pos) const {return data_->items.at(pos);}
         
         /// @brief Access the last element.
         /// @return The last element.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.")]]
         reference back() {return data_->items.back();}
         /// @brief Access the last element.
         /// @return The last element.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.")]]
         const_reference back() const {return data_->items.back();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 1.2.0.")]]
         const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 1.2.0.")]]
         const_reverse_iterator crend() const noexcept {return data_->items.crend();}
         
         /// @brief Access the first element.
         /// @return The first element.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.")]]
         reference front() {return data_->items.front();}
         /// @brief Access the first element.
         /// @return The first element.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.")]]
         const_reference front() const {return data_->items.front();}
         
         /// @brief Returns the associated allocator
         /// @return The associate allocator.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().get_allocator - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().get_allocator - Will be removed in version 1.2.0.")]]
         auto get_allocator() const noexcept {return data_->items.get_allocator();}
         
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param args The arguments to forward to the constructor of the element
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.
         template<typename ...args_t>
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.")]]
         void emplace(xtd::collections::generic::list<value_type>::const_iterator pos, args_t&& ... args) {
           auto index = pos - items().begin();
           data_->inserting = true;
@@ -595,9 +595,9 @@ namespace xtd {
         
         /// @brief Adds an element to the end.
         /// @param args The arguments to forward to the constructor of the element
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.
         template<typename ...args_t>
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.")]]
         void emplace_back(args_t&& ... args) {
           data_->items.emplace_back(args...);
           xtd::usize index = data_->items.count() - 1;
@@ -609,8 +609,8 @@ namespace xtd {
         
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.")]]
         auto erase(xtd::collections::generic::list<value_type>::iterator pos) {
           on_item_removed(pos - items().begin(), *pos);
           data_->erasing = true;
@@ -620,8 +620,8 @@ namespace xtd {
         }
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.")]]
         auto erase(xtd::collections::generic::list<value_type>::const_iterator pos) {
           on_item_removed(pos - items().begin(), const_cast<value_type&>(*pos));
           data_->erasing = true;
@@ -633,8 +633,8 @@ namespace xtd {
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
         /// @param first The last iterator range which the content will be erased.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.")]]
         auto erase(xtd::collections::generic::list<value_type>::iterator first, xtd::collections::generic::list<value_type>::iterator last) {
           auto result = items().end();
           auto index = first - items().begin();
@@ -645,8 +645,8 @@ namespace xtd {
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
         /// @param first The last iterator range which the content will be erased.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.")]]
         auto erase(xtd::collections::generic::list<value_type>::const_iterator first, xtd::collections::generic::list<value_type>::const_iterator last) {
           auto result = items().end();
           auto index = first - items().begin();
@@ -657,8 +657,8 @@ namespace xtd {
         
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.")]]
         void erase_at(xtd::usize index) {
           remove_at(index);
         }
@@ -666,8 +666,8 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.")]]
         auto insert(xtd::collections::generic::list<value_type>::const_iterator pos, const type_t& value) {
           auto index = pos - items().begin();
           data_->inserting = true;
@@ -682,8 +682,8 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.")]]
         auto insert(xtd::collections::generic::list<value_type>::const_iterator pos, type_t&& value) {
           auto index = pos - items().begin();
           data_->inserting = true;
@@ -699,108 +699,108 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.")]]
         void insert_at(xtd::usize index, const type_t& value) {
           insert(index, value);
         }
         
         /// @brief Removes the last element of the container.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 1.2.0.")]]
         void pop_back() {
           if (count() != 0) remove_at(count() - 1);
         }
         
         /// @brief Adds an element to the end.
         /// @param item The element to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.")]]
         void push_back(const type_t& item) {
           add(item);
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.")]]
         void push_back(type_t&& item) {
           add(std::move(item));
         }
         
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
         void push_back_range(const arranged_element_collection& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
         void push_back_range(const std::vector<type_t>& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
         void push_back_range(const std::initializer_list<type_t>& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         template<typename collection_t>
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
         void push_back_range(collection_t&& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         template<typename iterator_t>
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
         void push_back_range(iterator_t begin, iterator_t end) {
           add_range(begin, end);
         }
         
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 1.2.0.")]]
         std::vector<type_t> to_vector() const noexcept {return to_array();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.")]]
         auto rbegin() noexcept {return data_->items.rbegin();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.")]]
         auto rbegin() const noexcept {return data_->items.rbegin();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.")]]
         auto rend() noexcept {return data_->items.rend();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.")]]
         auto rend() const noexcept {return data_->items.rend();}
         
         /// @brief Reserves storage.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().reserve - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().reserve - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().reserve - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().reserve - Will be removed in version 1.2.0.")]]
         void reserve(size_type size) {data_->items.reserve(size);}
         
         /// @brief Reduces memory usage by freeing unused memory.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().shrink_to_fit - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().shrink_to_fit - Will be removed in version 0.4.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().shrink_to_fit - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().shrink_to_fit - Will be removed in version 1.2.0.")]]
         void shrink_to_fit() {data_->items.shrink_to_fit();}
         /// @}
         

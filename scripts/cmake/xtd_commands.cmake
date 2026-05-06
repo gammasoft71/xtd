@@ -412,7 +412,7 @@ macro(target_type TYPE)
   
   include(${CMAKE_CURRENT_SOURCE_DIR}/properties/resourcestrings.cmake OPTIONAL)
   if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/resourcestrings.cmake)
-    message(DEPRECATION "The properties/resourcestrings.cmake file is deprecated use properties/resource_strings.cmake file instead - Will be removed in version 0.4.0.")
+    message(DEPRECATION "The properties/resourcestrings.cmake file is deprecated use properties/resource_strings.cmake file instead - Will be removed in version 1.2.0.")
     set(CMAKE_RESOURCESTRINGS properties/resourcestrings.cmake)
     auto_source_group(${CMAKE_RESOURCESTRINGS})
   endif ()

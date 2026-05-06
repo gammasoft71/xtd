@@ -195,8 +195,8 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the bitmap class from the specified data xpm.
       /// @param bits The data xpm used to load the image.
-      /// @deprecated Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 1.2.0.")]]
       explicit bitmap(const char* const* bits);
       /// @}
       

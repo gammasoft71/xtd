@@ -12,7 +12,7 @@ io_exception::io_exception(const optional<string>& message, const stack_frame& s
   error_code(h_result::make_error_code(h_result::COR_E_IO));
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 io_exception::io_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : system_exception(message, stack_frame) {
   error_code(error);

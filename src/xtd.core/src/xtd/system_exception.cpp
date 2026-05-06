@@ -30,7 +30,7 @@ const xtd::string& system_exception::name() const noexcept {
   return (name = get_type().full_name());
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 system_exception::system_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : exception(message, stack_frame) {
   error_code(error);

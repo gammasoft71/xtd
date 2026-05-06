@@ -12,7 +12,7 @@ file_format_exception::file_format_exception(const std::optional<string>& messag
   error_code(h_result::make_error_code(h_result::COR_E_FORMAT));
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 file_format_exception::file_format_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : format_exception(message, stack_frame) {
   error_code(error);

@@ -10,7 +10,7 @@ cookie_exception::cookie_exception(const stack_frame& stack_frame) : format_exce
 cookie_exception::cookie_exception(const std::optional<string>& message, const stack_frame& stack_frame) : format_exception(message, stack_frame) {
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 cookie_exception::cookie_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : format_exception(message, stack_frame) {
   error_code(error);

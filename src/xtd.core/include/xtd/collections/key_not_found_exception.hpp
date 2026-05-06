@@ -4,9 +4,9 @@
 #pragma once
 /*
 #if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/collections/generic/key_not_found_exception.hpp> - Will be removed in version 0.4.0.")
+#  pragma message("Deprecated : Replaced by #include <xtd/collections/generic/key_not_found_exception.hpp> - Will be removed in version 1.2.0.")
 #else
-#  warning "Deprecated : Replaced by #include <xtd/collections/generic/key_not_found_exception.hpp> - Will be removed in version 0.4.0."
+#  warning "Deprecated : Replaced by #include <xtd/collections/generic/key_not_found_exception.hpp> - Will be removed in version 1.2.0."
 #endif
  */
 #include "generic/key_not_found_exception.hpp"
@@ -33,8 +33,8 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an key_not_found_exception.
     /// @include key_not_found_exception.cpp
-    /// @deprecated Use xtd::collections::generic::key_not_found_exception - Will be removed in version 0.4.0.
-    class [[deprecated("Use xtd::collections::generic::key_not_found_exception - Will be removed in version 0.4.0.")]] key_not_found_exception : public xtd::system_exception {
+    /// @deprecated Use xtd::collections::generic::key_not_found_exception - Will be removed in version 1.2.0.
+    class [[deprecated("Use xtd::collections::generic::key_not_found_exception - Will be removed in version 1.2.0.")]] key_not_found_exception : public xtd::system_exception {
     public:
       /// @name Public Constructors
       
@@ -67,53 +67,53 @@ namespace xtd {
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
       /// @remarks Message is set with the default message associate to the exception.
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param error Error code associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::error_code - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the property xtd::exception::help_link - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Create a new instance of class key_not_found_exception
       /// @param message Message string associate to the exception.
@@ -121,8 +121,8 @@ namespace xtd {
       /// @param error Error code associate to the exception.
       /// @param help_link Help link string associate to the exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
+      /// @deprecated Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::collections::key_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 1.2.0.")]]
       key_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
     };

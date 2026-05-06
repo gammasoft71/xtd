@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections
-    /// @deprecated Replaced by xtd::collections::dictionary_entry - Will be removed in version 0.4.0.
-    using any_pair [[deprecated("Replaced by xtd::collections::dictionary_entry - Will be removed in version 0.4.0.")]] = xtd::collections::dictionary_entry;
+    /// @deprecated Replaced by xtd::collections::dictionary_entry - Will be removed in version 1.2.0.
+    using any_pair [[deprecated("Replaced by xtd::collections::dictionary_entry - Will be removed in version 1.2.0.")]] = xtd::collections::dictionary_entry;
   }
 }

@@ -10,7 +10,7 @@ web_exception::web_exception(const stack_frame& stack_frame) : invalid_operation
 web_exception::web_exception(const std::optional<string>& message, const stack_frame& stack_frame) : invalid_operation_exception(message, stack_frame) {
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 web_exception::web_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : invalid_operation_exception(message, stack_frame) {
   error_code(error);

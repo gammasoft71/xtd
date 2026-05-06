@@ -33,7 +33,7 @@ auto socket_exception::socket_error() const noexcept -> xtd::net::sockets::socke
   return socket_error_;
 }
 
-/// @todo to remove deprecated in version 0.4.0
+/// @todo to remove deprecated in version 1.2.0
 /// @{
 socket_exception::socket_exception(const string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message, stack_frame) {
   error_code(error);

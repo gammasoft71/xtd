@@ -11,7 +11,7 @@ format_exception::format_exception(const std::optional<xtd::string>& message, co
   error_code(h_result::make_error_code(h_result::COR_E_FORMAT));
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 format_exception::format_exception(const xtd::string& message, const std::error_code& error, const xtd::diagnostics::stack_frame& stack_frame) : system_exception(message, stack_frame) {
   error_code(error);

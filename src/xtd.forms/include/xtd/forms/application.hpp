@@ -445,21 +445,21 @@ namespace xtd {
       /// @{
       /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is dark mode enabled; otherwise `false`.
-      /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.")]]
       static bool dark_mode_enabled() noexcept;
       
       /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is light mode enabled; otherwise `false`.
-      /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.")]]
       static bool light_mode_enabled() noexcept;
       
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return `true` if visual styles are enabled; otherwise, `false`.
       /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
-      /// @deprecated Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::visual_styles - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::visual_styles - Will be removed in version 1.2.0.")]]
       static bool use_visual_styles() noexcept;
       /// @}
       
@@ -469,31 +469,31 @@ namespace xtd {
       /// @brief Enables button images for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method has an effect only on linux.
-      /// @deprecated Replaced by xtd::application::button_images - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::button_images - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::button_images - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::button_images - Will be removed in version 1.2.0.")]]
       static void enable_button_images();
       
       /// @brief Enables dark mode for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, the dark mode is enabled automatically if the system is in dark mode.
       /// @remarks xtd::forms::application::enable_dark_mode sets the application in dark mode even if your system is in light mode.
-      /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.")]]
       static void enable_dark_mode();
       
       /// @brief Enables light mode for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, the light mode is enabled automatically if the system is in light mode.
       /// @remarks xtd::forms::application::enable_light_mode sets the application in light mode even if your system is in dark mode.
-      /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.")]]
       static void enable_light_mode();
       
       /// @brief Enables menu images  for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method has an effect only on linux.
-      /// @deprecated Replaced by xtd::application::menu_images - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::application::menu_images - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::application::menu_images - Will be removed in version 1.2.0.
+      [[deprecated("Replaced by xtd::application::menu_images - Will be removed in version 1.2.0.")]]
       static void enable_menu_images();
       /// @}
       

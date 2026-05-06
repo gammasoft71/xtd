@@ -650,38 +650,38 @@ namespace xtd {
     /// @{
     /// @brief Represents the smallest positive Double value greater than zero. This field is constant.
     /// @remarks The value of this field is 4.94066e-324.
-    /// @deprecated Replaced by xtd::double_object::epsilon - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::epsilon - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::epsilon - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::epsilon - Will be removed in version 1.2.0.")]]
     static constexpr double epsilon = xtd::double_object::epsilon;
     /// @brief Represents infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<double>::infinity().
-    /// @deprecated Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::positive_infinity - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 1.2.0.")]]
     static constexpr double infinity = xtd::double_object::positive_infinity;
     /// @brief Represents the largest possible value of double. This field is constant.
     /// @remarks The value of this field is  1.7976931348623157E+308.
-    /// @deprecated Replaced by xtd::double_object::max_value - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::max_value - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::max_value - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::max_value - Will be removed in version 1.2.0.")]]
     static constexpr double max_value = xtd::double_object::max_value;
     /// @brief Represents the smallest possible value of double. This field is constant.
     /// @remarks The value of this field is -1.7976931348623157E+308.
-    /// @deprecated Replaced by xtd::double_object::min_value - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::min_value - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::min_value - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::min_value - Will be removed in version 1.2.0.")]]
     static constexpr double min_value = xtd::double_object::min_value;
     /// @brief Represents not a number (NaN). This field is constant.
     /// @remarks The value of this field is std::numeric_limits<double>::quiet_NaN().
-    /// @deprecated Replaced by xtd::double_object::NaN - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::NaN - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::NaN - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::NaN - Will be removed in version 1.2.0.")]]
     static constexpr double NaN = xtd::double_object::NaN;
     /// @brief Represents negative infinity. This field is constant.
     /// @remarks The value of this field is -std::numeric_limits<double>::infinity().
-    /// @deprecated Replaced by xtd::double_object::negative_infinity - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::negative_infinity - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::negative_infinity - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::negative_infinity - Will be removed in version 1.2.0.")]]
     static constexpr double negative_infinity = xtd::double_object::negative_infinity;
     /// @brief Represents positive infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<double>::infinity().
-    /// @deprecated Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::positive_infinity - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 1.2.0.")]]
     static constexpr double positive_infinity = xtd::double_object::positive_infinity;
     /// @}
     
@@ -691,29 +691,29 @@ namespace xtd {
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return `true` if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, `false`.
-    /// @deprecated Replaced by xtd::double_object::is_infinity - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::is_infinity - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::is_infinity - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::is_infinity - Will be removed in version 1.2.0.")]]
     static bool is_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to negative infinity.
     /// @param value A double-precision floating-point number.
     /// @return `true` if value evaluates to xtd::math::negative_infinity; otherwise, `false`.
-    /// @deprecated Replaced by xtd::double_object::is_negative_infinity - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::is_negative_infinity - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::is_negative_infinity - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::is_negative_infinity - Will be removed in version 1.2.0.")]]
     static bool is_negative_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return `true` if value evaluates to xtd::math::positive_infinity; otherwise, `false`.
-    /// @deprecated Replaced by xtd::double_object::is_positive_infinity - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::is_positive_infinity - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::is_positive_infinity - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::is_positive_infinity - Will be removed in version 1.2.0.")]]
     static bool is_positive_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
     /// @param value A double-precision floating-point number.
     /// @return `true` if value evaluates to not a number; otherwise, `false`.
-    /// @deprecated Replaced by xtd::double_object::is_NaN - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::double_object::is_NaN - Will be removed in version 0.4.0.")]]
+    /// @deprecated Replaced by xtd::double_object::is_NaN - Will be removed in version 1.2.0.
+    [[deprecated("Replaced by xtd::double_object::is_NaN - Will be removed in version 1.2.0.")]]
     static bool is_NaN(double value) noexcept;
     /// @}
   };

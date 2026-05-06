@@ -26,7 +26,7 @@ auto file_not_found_exception::message() const noexcept -> const string& {
   return message_;
 }
 
-/// @todo remove deprecated in version 0.4.0
+/// @todo remove deprecated in version 1.2.0
 /// @{
 file_not_found_exception::file_not_found_exception(const string& message, const std::error_code& error, const stack_frame& stack_frame) : io_exception(message, stack_frame), defined_message_ {true} {
   error_code(error);
