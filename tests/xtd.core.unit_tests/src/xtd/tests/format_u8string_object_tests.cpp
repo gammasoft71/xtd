@@ -68,7 +68,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_point_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {format(u8"{0:, }", point {42, 24});});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u8"{0:, }", point {42, 24});});
     }
   };
 }
