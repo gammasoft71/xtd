@@ -205,7 +205,7 @@ namespace xtd {
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
-    static type_t parse(const xtd::string& value, xtd::number_styles styles) {return xtd::parse<type_t>(value, styles);}
+    static auto parse(const xtd::string& value, xtd::number_styles styles) -> type_t {return xtd::parse<type_t>(value, styles);}
 
     /// @brief Converts the value of a Unicode character to its lowercase equivalent.
     /// @param c The Unicode character to convert.
@@ -221,7 +221,7 @@ namespace xtd {
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
-    static bool try_parse(const xtd::string& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
+    static auto try_parse(const xtd::string& value, type_t& result, xtd::number_styles styles) -> bool {return xtd::try_parse<type_t>(value, result, styles);}
     /// @}
   };
 }
