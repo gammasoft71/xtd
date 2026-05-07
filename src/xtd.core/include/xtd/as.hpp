@@ -7,6 +7,7 @@
 #include "shared_ptr_object.hpp"
 #include "types.hpp"
 #include <memory>
+#include <variant>
 #define __XTD_CORE_INTERNAL__
 #include "internal/__as_enum.hpp"
 #include "internal/__as_generic.hpp"
@@ -117,6 +118,24 @@ inline auto xtd::array<>::copy(const array<source_type_t, source_rank, source_al
   
   for (auto i = xtd::usize {}; i < length; ++i)
     destination_array.data_->items[destination_index + i] = as<destination_type_t>(source_array.data_->items[source_index + i]);
+}
+
+namespace xtd {
+  template<typename type_t, typename ...args_t>
+  [[nodiscard]] inline auto as(const std::variant<args_t...>& value) -> type_t {
+    std::visit([&](auto&& arg) {
+      if constexpr (!std::is_same_v<std::decay_t<decltype(arg)>, std::remove_cvref_t<type_t>>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    }, value);
+    return std::get<type_t>(value);
+  }
+  
+  template<typename type_t, typename ...args_t>
+  [[nodiscard]] inline auto as(std::variant<args_t...>& value) -> type_t {
+    std::visit([&](auto&& arg) {
+      if constexpr (!std::is_same_v<std::decay_t<decltype(arg)>, std::remove_cvref_t<type_t>>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    }, value);
+    return std::get<type_t>(value);
+  }
 }
 
 namespace std {
