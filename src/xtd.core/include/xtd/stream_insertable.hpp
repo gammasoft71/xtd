@@ -10,5 +10,5 @@
 namespace xtd {
   // Since Doxygen does not work properly with the C++ concept, the documentation for this concept is declared in xtd/stream_insertable_.hpp
   template<typename value_t>
-  concept stream_insertable = requires(std::ostream& os, value_t&& v) {os << std::forward<value_t>(v);};
+  concept stream_insertable = requires(std::ostream& os, const value_t& v) {os << v;} || requires(std::ostream& os, value_t& v) {os << v;};
 }
