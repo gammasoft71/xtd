@@ -27,7 +27,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_without_format_argument_separator) {
-      assert::throws<format_exception>([] {format(u"{0F}", static_cast<type_t>(42.24));});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto s = format(u"{0F}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_left_alignment) {
@@ -55,7 +55,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_alignment_invalid) {
-      assert::throws<format_exception>([] {format(u"{0,a}", static_cast<type_t>(42.24));});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto s = format(u"{0,a}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_currency_argument) {
@@ -73,15 +73,15 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_currency_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:C100}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:C100}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_currency_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:C-5}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:C-5}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_currency_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Ca}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Ca}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_exponencial_argument) {
@@ -103,15 +103,15 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_exponencial_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:E100}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:E100}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_exponencial_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:E-8}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:E-8}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_exponencial_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Ea}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Ea}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_fixed_point_argument) {
@@ -130,15 +130,15 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_fixed_point_argument_and_three_digitis_precision) {
-      assert::throws<format_exception>([] {format(u"{0F100}", static_cast<type_t>(42.24));});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto s = format(u"{0F100}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_fixed_point_argument_and_negative_precision) {
-      assert::throws<format_exception>([] {format(u"{0F-4}", static_cast<type_t>(42.24));});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto s = format(u"{0F-4}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_fixed_point_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Fa}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Fa}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_general_argument) {
@@ -173,23 +173,23 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_decimals_with_general_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:G100}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:G100}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_general_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:G-4}", static_cast<type_t>(42.0));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:G-4}", static_cast<type_t>(42.0));});
     }
     
     auto test_method_(format_with_decimals_with_general_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:G-4}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:G-4}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_decimals_with_general_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Ga}", static_cast<type_t>(42.0));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Ga}", static_cast<type_t>(42.0));});
     }
     
     auto test_method_(format_with_general_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Ga}", static_cast<type_t>(42.24));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Ga}", static_cast<type_t>(42.24));});
     }
     
     auto test_method_(format_with_number_argument) {
@@ -214,15 +214,15 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_number_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:N100}", static_cast<type_t>(1234567.89));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:N100}", static_cast<type_t>(1234567.89));});
     }
     
     auto test_method_(format_with_number_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:N-4}", static_cast<type_t>(1234567.89));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:N-4}", static_cast<type_t>(1234567.89));});
     }
     
     auto test_method_(format_with_number_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Na}", static_cast<type_t>(1234567.89));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Na}", static_cast<type_t>(1234567.89));});
     }
     
     auto test_method_(format_with_percent_argument) {
@@ -238,15 +238,15 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_percent_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:P100}", static_cast<type_t>(0.42));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:P100}", static_cast<type_t>(0.42));});
     }
     
     auto test_method_(format_with_percent_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:P-2}", static_cast<type_t>(0.42));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:P-2}", static_cast<type_t>(0.42));});
     }
     
     auto test_method_(format_with_percent_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:Pa}", static_cast<type_t>(0.42));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:Pa}", static_cast<type_t>(0.42));});
     }
     
     auto test_method_(format_with_alignment_before_format) {
@@ -254,11 +254,11 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_alignmentafter_format) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:F,6}", static_cast<type_t>(42.0));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:F,6}", static_cast<type_t>(42.0));});
     }
     
     auto test_method_(format_with_invalid_format) {
-      assert::throws<xtd::format_exception>([] {format(u"{0:V}", static_cast<type_t>(42.0));});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u"{0:V}", static_cast<type_t>(42.0));});
     }
   };
 }
