@@ -582,18 +582,14 @@ namespace xtd {
   template<typename type_t, typename ...args_t>
   [[nodiscard]] inline auto is(const std::variant<args_t...>& value) -> bool {
     auto result = false;
-    std::visit([&](auto&& arg) {
-      if constexpr (std::is_same_v<std::remove_cvref_t<std::decay_t<decltype(arg)>>, std::remove_cvref_t<type_t>>) result = true;
-    }, value);
+    std::visit([&](auto&& arg) {if constexpr (std::is_same_v<std::remove_cvref_t<std::decay_t<decltype(arg)>>, std::remove_cvref_t<type_t>>) result = true;}, value);
     return result;
   }
   
   template<typename type_t, typename ...args_t>
   [[nodiscard]] inline auto is(std::variant<args_t...>& value) -> bool {
     auto result = false;
-    std::visit([&](auto&& arg) {
-      if constexpr (std::is_same_v<std::remove_cvref_t<std::decay_t<decltype(arg)>>, std::remove_cvref_t<type_t>>) result = true;
-    }, value);
+    std::visit([&](auto&& arg) {if constexpr (std::is_same_v<std::remove_cvref_t<std::decay_t<decltype(arg)>>, std::remove_cvref_t<type_t>>) result = true;}, value);
     return result;
   }
   /// @endcond
