@@ -169,7 +169,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(version) {
-      assert::are_equal(xtd::version{ 0, 2, 0 }, environment::version());
+      assert::are_equal(xtd::version {1, 0, 0}, environment::version());
     }
     
     auto test_method_(working_set) {
