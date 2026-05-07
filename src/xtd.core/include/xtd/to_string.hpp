@@ -462,6 +462,9 @@ namespace xtd {
   template<typename key_t, typename compare_t, typename allocator_t>
   inline xtd::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   
+  template<typename ...args_t>
+  inline xtd::string to_string(const std::variant<args_t...>& value, const xtd::string& fmt, const std::locale& loc);
+
   template<typename type_t>
   inline xtd::string to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il);
   

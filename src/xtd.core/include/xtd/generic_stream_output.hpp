@@ -77,20 +77,6 @@ inline std::ostream& operator <<(std::ostream& os, const std::tuple<types_t ... 
   return os << ")";
 }
 
-namespace std {
-  template<typename ...args_t>
-  std::ostream& operator <<(std::ostream& os, const std::variant<args_t...>& value) {
-    std::visit([&](auto && t){os << t;}, value);
-    return os;
-  }
-
-  template<typename ...args_t>
-  std::ostream& operator <<(std::ostream& os, std::variant<args_t...>& value) {
-    std::visit([&](auto && t){os << t;}, value);
-    return os;
-  }
-}
-
 template<typename iterator_t>
 requires xtd::stream_insertable<std::iter_value_t<iterator_t>>
 inline void __xtd_console_print_container(std::ostream& os, const iterator_t& begin, const iterator_t& end) {
