@@ -32,7 +32,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const foreground_color& color) {
+    friend auto operator <<(std::ostream& os, const foreground_color& color) -> std::ostream& {
       if (!console::is_output_redirected() && os.rdbuf() == console::out.rdbuf())
         console::foreground_color(color.color_);
       return os;
