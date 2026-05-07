@@ -6,6 +6,7 @@
 #include "enum_object.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
+#include "integer.hpp"
 #include "invalid_operation_exception.hpp"
 #include "is.hpp"
 #include "object.hpp"
@@ -197,7 +198,7 @@ namespace xtd {
   };
   
   template<typename type_t>
-  requires (!std::is_null_pointer_v<type_t> && (!std::integral<type_t> || std::same_as<type_t, bool>))
+  requires (!std::is_null_pointer_v<type_t> /*&& !xtd::integer<type_t>*/)
   [[nodiscard]] auto is(any_object& o) -> bool {
     if (!o.has_value()) return false;
     if (is<box<type_t>>(o.value())) return true;
@@ -205,15 +206,15 @@ namespace xtd {
   }
   
   template<typename type_t>
-  requires (!std::is_null_pointer_v<type_t> && (!std::integral<type_t> || std::same_as<type_t, bool>))
+  requires (!std::is_null_pointer_v<type_t> /*&& !xtd::integer<type_t>*/)
   [[nodiscard]] auto is(const any_object& o) -> bool {
     if (!o.has_value()) return false;
     if (is<box<type_t>>(o.value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
-  
+  /*
   template<typename type_t>
-  requires (!std::is_null_pointer_v<type_t> && std::integral<type_t> && !std::same_as<type_t, bool>)
+  requires (!std::is_null_pointer_v<type_t> && xtd::integer<type_t>)
   [[nodiscard]] auto is(any_object& o) -> bool {
     if (!o.has_value()) return false;
     if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::box_integer<type_t>::is_valid(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);
@@ -230,7 +231,7 @@ namespace xtd {
   }
   
   template<typename type_t>
-  requires (!std::is_null_pointer_v<type_t> && std::integral<type_t> && !std::same_as<type_t, bool>)
+  requires (!std::is_null_pointer_v<type_t> && xtd::integer<type_t>)
   [[nodiscard]] auto is(const any_object& o) -> bool {
     if (!o.has_value()) return false;
     if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::box_integer<type_t>::is_valid(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);
@@ -244,7 +245,7 @@ namespace xtd {
     if (xtd::is<xtd::box_integer<xtd::uint64>>(o.value())) return xtd::box_integer<type_t>::is_valid(static_cast<const xtd::box_integer<xtd::uint64>&>(o.value()).value);
     if (xtd::is<xtd::box_integer<xtd::ulong>>(o.value())) return xtd::box_integer<type_t>::is_valid(static_cast<const xtd::box_integer<xtd::ulong>&>(o.value()).value);
     return false;
-  }
+  }*/
 
   template<typename type_t>
   requires std::is_null_pointer_v<type_t>
