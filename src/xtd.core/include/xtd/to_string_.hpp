@@ -388,9 +388,8 @@ inline xtd::string xtd::to_string(const std::unordered_set<key_t, compare_t, all
 
 template<typename ...args_t>
 inline xtd::string xtd::to_string(const std::variant<args_t...>& value, const xtd::string& fmt, const std::locale& loc) {
-  auto result = xtd::string::empty_string;
-  std::visit([&](auto && t){result = xtd::to_string(t, fmt, loc);}, value);
-  return result;
+  if (value.valueless_by_exception()) return "(valueless_by_exception)";
+  return std::visit([&](auto && t){return xtd::to_string(t, fmt, loc);}, value);
 }
 
 template<typename type_t>
