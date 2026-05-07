@@ -123,17 +123,13 @@ inline auto xtd::array<>::copy(const array<source_type_t, source_rank, source_al
 namespace xtd {
   template<typename type_t, typename ...args_t>
   [[nodiscard]] inline auto as(const std::variant<args_t...>& value) -> type_t {
-    std::visit([&](auto&& arg) {
-      if constexpr (!std::is_same_v<std::decay_t<decltype(arg)>, std::remove_cvref_t<type_t>>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-    }, value);
+    std::visit([&](auto&& arg) {if constexpr (!std::is_same_v<std::decay_t<decltype(arg)>, std::remove_cvref_t<type_t>>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);}, value);
     return std::get<type_t>(value);
   }
   
   template<typename type_t, typename ...args_t>
   [[nodiscard]] inline auto as(std::variant<args_t...>& value) -> type_t {
-    std::visit([&](auto&& arg) {
-      if constexpr (!std::is_same_v<std::decay_t<decltype(arg)>, std::remove_cvref_t<type_t>>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-    }, value);
+    std::visit([&](auto&& arg) {if constexpr (!std::is_same_v<std::decay_t<decltype(arg)>, std::remove_cvref_t<type_t>>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);}, value);
     return std::get<type_t>(value);
   }
 }
