@@ -82,11 +82,11 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_false_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {format(U"{0:e}", true);});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(U"{0:e}", true);});
     }
     
     auto test_method_(format_true_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {format(U"{0:z1}", true);});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(U"{0:z1}", true);});
     }
   };
 }
