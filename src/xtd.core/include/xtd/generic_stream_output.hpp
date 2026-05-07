@@ -27,6 +27,7 @@
 #include <vector>
 
 /// @cond
+/// @todo Remove all std type stream input operator and replace it by xtd::to_string
 extern std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__;
 
 inline std::ostream& operator <<(std::ostream& os, const std::exception& value) {
@@ -76,14 +77,19 @@ inline std::ostream& operator <<(std::ostream& os, const std::tuple<types_t ... 
   return os << ")";
 }
 
-/*
-template<typename ...args_t>
-inline std::ostream& operator <<(std::ostream& os, const std::variant<args_t ...>& value) {
-  std::visit([&](auto && t){
-    os << t;
-  }, value);
-  return os;
-}*/
+namespace std {
+  template<typename ...args_t>
+  std::ostream& operator <<(std::ostream& os, const std::variant<args_t...>& value) {
+    std::visit([&](auto && t){os << t;}, value);
+    return os;
+  }
+
+  template<typename ...args_t>
+  std::ostream& operator <<(std::ostream& os, std::variant<args_t...>& value) {
+    std::visit([&](auto && t){os << t;}, value);
+    return os;
+  }
+}
 
 template<typename iterator_t>
 requires xtd::stream_insertable<std::iter_value_t<iterator_t>>
