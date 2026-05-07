@@ -46,7 +46,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {format(u8"{0:e}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32});});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(u8"{0:e}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32});});
     }
     
     auto test_method_(format_with_constant_argument) {
