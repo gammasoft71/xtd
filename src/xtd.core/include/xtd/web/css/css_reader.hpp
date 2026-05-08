@@ -4,8 +4,6 @@
 #pragma once
 #include "selector_dictionary.hpp"
 #include "../../io/stream_reader.hpp"
-#include "../../argument_exception.hpp"
-#include "../../format_exception.hpp"
 #include "../../object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
