@@ -100,7 +100,7 @@ Inheritance diagram for xtd::collections::generic::dictionary&lt; key_t, value_t
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt;<br />
 class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</div><p>Represents a collection of keys and values. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t, <span class="keyword">typename</span> hasher_t = xtd::collections::<span class="keyword">generic</span>::helpers::hasher&lt;key_t&gt;, <span class="keyword">typename</span> equator_t = <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator&lt;key_t&gt;</a>, <span class="keyword">typename</span> allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9">xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;</a>&gt;&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a50b15016f1b91a266a8beec12ab89584">dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt;key_t, value_t&gt;;</div>
@@ -446,7 +446,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::key_type</td>
@@ -464,7 +464,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::mapped_type</td>
@@ -482,7 +482,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::value_type</td>
@@ -500,7 +500,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::size_type</td>
@@ -518,7 +518,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::base_value_type</td>
@@ -536,7 +536,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::base_type</td>
@@ -554,7 +554,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::key_collection</td>
@@ -572,7 +572,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::value_collection</td>
@@ -590,7 +590,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::equator</td>
@@ -608,7 +608,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::hasher</td>
@@ -627,7 +627,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -682,7 +682,7 @@ This constructor is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -765,7 +765,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -806,7 +806,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -846,7 +846,7 @@ Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1diction
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -892,7 +892,7 @@ This constructor is an O(1) operation. </dd>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -945,7 +945,7 @@ This constructor is an O(1) operation. </dd>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1000,7 +1000,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1046,7 +1046,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1082,7 +1082,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1118,7 +1118,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1154,7 +1154,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1196,7 +1196,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1239,7 +1239,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
 template&lt;class init_key_t, typename init_value_t&gt; </div>
 <table class="mlabels">
@@ -1286,7 +1286,7 @@ xtd::collections::generic::dictionary::bucket_count and <a class="el" href="#a7e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
 template&lt;class input_iterator_t&gt; </div>
 <table class="mlabels">
@@ -1338,7 +1338,7 @@ xtd::collections::generic::dictionary::bucket_count and <a class="el" href="#a7e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1369,7 +1369,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1400,7 +1400,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1435,7 +1435,7 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1465,7 +1465,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1495,7 +1495,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1530,7 +1530,7 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1565,7 +1565,7 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1615,7 +1615,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1656,7 +1656,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1686,7 +1686,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1722,7 +1722,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1761,7 +1761,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1798,7 +1798,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1844,7 +1844,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1880,7 +1880,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1910,7 +1910,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1949,7 +1949,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1985,7 +1985,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2025,7 +2025,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2057,7 +2057,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2099,7 +2099,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2131,7 +2131,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2173,7 +2173,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2216,7 +2216,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2252,7 +2252,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2288,7 +2288,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2324,7 +2324,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2360,7 +2360,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2396,7 +2396,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
 template&lt;class init_key_t, typename init_value_t&gt; </div>
 <table class="mlabels">
@@ -2434,7 +2434,7 @@ template&lt;class init_key_t, typename init_value_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2480,7 +2480,7 @@ You can also use the <span class="tt">operator []</span> to add new elements by 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2527,7 +2527,7 @@ You can also use the <span class="tt">operator []</span> to add new elements by 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2557,7 +2557,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2587,7 +2587,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
