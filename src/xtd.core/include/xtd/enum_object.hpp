@@ -7,7 +7,6 @@
 #include "enum_collection.hpp"
 #include "enum_register.hpp"
 #include "enum_set_attribute.hpp"
-#include "format_exception.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
 #include "iformatable.hpp"
