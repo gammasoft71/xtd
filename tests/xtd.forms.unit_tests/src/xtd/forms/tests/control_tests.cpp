@@ -4,6 +4,8 @@
 #include <xtd/forms/form>
 #include <xtd/forms/window_messages>
 #include <xtd/diagnostics/debugger>
+#include <xtd/argument_exception>
+#include <xtd/invalid_cast_exception>
 #include <xtd/invalid_operation_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
