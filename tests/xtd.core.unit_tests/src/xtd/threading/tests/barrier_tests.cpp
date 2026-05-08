@@ -1,6 +1,7 @@
 #include <xtd/threading/barrier>
 #include <xtd/threading/thread>
 #include <xtd/threading/interlocked>
+#include <xtd/argument_exception>
 #include <xtd/xtd.tunit>
 #include <utility>
 
