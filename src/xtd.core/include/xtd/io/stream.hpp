@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::stream class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "io_exception.hpp"
 #include "seek_origin.hpp"
 #include "../threading/manual_reset_event.hpp"
 #include "../abstract_object.hpp"
