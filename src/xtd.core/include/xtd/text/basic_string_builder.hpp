@@ -3,11 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../basic_string.hpp"
-#include "../argument_exception.hpp"
-#include "../argument_out_of_range_exception.hpp"
 #include "../environment.hpp"
-#include "../index_out_of_range_exception.hpp"
-#include "../null_pointer_exception.hpp"
 #include "../numeric_literals.hpp"
 #include <iterator>
 ///
