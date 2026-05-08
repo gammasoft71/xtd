@@ -1,6 +1,7 @@
 #include <xtd/forms/progress_bar>
 #include <xtd/forms/form>
 #include <xtd/diagnostics/debugger>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/valid>
 #include <xtd/tunit/test_class_attribute>
