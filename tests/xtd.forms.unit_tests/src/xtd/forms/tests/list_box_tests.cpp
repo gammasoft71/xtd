@@ -1,5 +1,6 @@
 #include <xtd/forms/list_box>
 #include <xtd/forms/form>
+#include <xtd/argument_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
