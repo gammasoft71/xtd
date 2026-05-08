@@ -5,7 +5,6 @@
 #include "mutex.hpp"
 #include "thread.hpp"
 #include "../func.hpp"
-#include "../invalid_operation_exception.hpp"
 #include "../object.hpp"
 #include "../time_span.hpp"
 #include <map>
