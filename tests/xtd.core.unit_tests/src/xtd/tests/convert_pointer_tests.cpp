@@ -1,4 +1,5 @@
 #include <xtd/convert_pointer>
+#include <xtd/argument_null_exception>
 #include <xtd/environment>
 #include <xtd/guid>
 #include <xtd/tunit/assert>

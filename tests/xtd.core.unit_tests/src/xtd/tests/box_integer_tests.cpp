@@ -1,4 +1,5 @@
 #include <xtd/box_integer>
+#include <xtd/format_exception>
 #include <strstream>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/generic_test_class>

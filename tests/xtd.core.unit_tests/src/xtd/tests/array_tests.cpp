@@ -1,6 +1,8 @@
 #include <xtd/array>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
 #include <xtd/environment>
+#include <xtd/index_out_of_range_exception>
 #include <xtd/collections/generic/list>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>

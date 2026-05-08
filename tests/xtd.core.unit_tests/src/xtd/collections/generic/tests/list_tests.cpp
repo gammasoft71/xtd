@@ -1,7 +1,10 @@
 #include <xtd/collections/generic/list>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
 #include <xtd/boolean>
 #include <xtd/environment>
+#include <xtd/index_out_of_range_exception>
+#include <xtd/invalid_operation_exception>
 #include <xtd/usize_object>
 #include <xtd/lock>
 #include <xtd/tunit/collection_assert>

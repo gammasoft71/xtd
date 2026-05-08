@@ -1,5 +1,7 @@
 #include <xtd/collections/array_list>
 #include <xtd/collections/comparer>
+#include <xtd/argument_exception>
+#include <xtd/index_out_of_range_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/test_class_attribute>

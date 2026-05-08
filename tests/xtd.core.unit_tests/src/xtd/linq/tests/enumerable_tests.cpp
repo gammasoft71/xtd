@@ -1,9 +1,11 @@
 #include <xtd/linq/enumerable>
 #include <xtd/collections/generic/equality_comparer.hpp>
 #include <xtd/collections/generic/list>
+#include <xtd/argument_exception>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
 #include <xtd/icomparable>
+#include <xtd/invalid_cast_exception>
 #include <xtd/invalid_operation_exception>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>

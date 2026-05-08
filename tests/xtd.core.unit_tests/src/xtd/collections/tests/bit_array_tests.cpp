@@ -1,4 +1,6 @@
 #include <xtd/collections/bit_array>
+#include <xtd/argument_exception>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>

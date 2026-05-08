@@ -1,4 +1,6 @@
 #include <xtd/serialization/yaml>
+#include <xtd/invalid_cast_exception>
+#include <xtd/invalid_operation_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

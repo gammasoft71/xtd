@@ -1,4 +1,6 @@
 #include <xtd/collections/generic/linked_list>
+#include <xtd/invalid_cast_exception>
+#include <xtd/invalid_operation_exception>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

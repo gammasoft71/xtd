@@ -1,6 +1,7 @@
 #include <xtd/configuration/file_settings>
 #include <xtd/io/file>
 #include <xtd/io/file_not_found_exception>
+#include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/file_assume>

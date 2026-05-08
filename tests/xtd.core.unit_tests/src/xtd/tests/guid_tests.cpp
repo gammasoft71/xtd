@@ -1,5 +1,6 @@
-#include <map>
 #include <xtd/guid>
+#include <xtd/format_exception>
+#include <map>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

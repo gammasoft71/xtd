@@ -1,5 +1,6 @@
-#include <exception>
 #include <xtd/convert>
+#include <xtd/argument_exception>
+#include <xtd/format_exception>
 #include <xtd/overflow_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

@@ -1,11 +1,14 @@
 #include <xtd/basic_string>
 #include <xtd/argument_exception>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/char16>
 #include <xtd/char32>
 #include <xtd/char8>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/environment>
 #include <xtd/index_out_of_range_exception>
+#include <xtd/invalid_cast_exception>
+#include <xtd/invalid_operation_exception>
 #include <xtd/usize_object>
 #include <xtd/wchar>
 #include <xtd/collections/generic/list>

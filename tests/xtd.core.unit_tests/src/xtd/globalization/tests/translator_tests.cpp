@@ -1,5 +1,6 @@
 #include <xtd/globalization/translator>
 #include <xtd/globalization/culture_info>
+#include <xtd/argument_exception>
 #include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
