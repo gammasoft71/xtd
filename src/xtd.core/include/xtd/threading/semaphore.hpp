@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::semaphore class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "semaphore_full_exception.hpp"
 #include "wait_handle.hpp"
 #include "../icomparable.hpp"
 #include "../iequatable.hpp"
