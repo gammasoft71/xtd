@@ -2,17 +2,12 @@
 /// @brief Contains xtd::collections::generic::dictionary <key_t, value_t> class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "helpers/allocator.hpp"
-#include "helpers/equator.hpp"
-#include "helpers/hasher.hpp"
-#include "helpers/iterator.hpp"
-#include "idictionary.hpp"
-#include "key_not_found_exception.hpp"
-#include "../../argument_out_of_range_exception.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__dictionary_definition.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "../../new_ptr.hpp"
 #include "../../ptr.hpp"
 #include <cmath>
-#include <unordered_map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -63,7 +58,7 @@ namespace xtd {
       /// for (const auto& [key, value] : my_dictionary)
       ///   console::write_line("key = {}, value = {}", key, value);
       /// ```
-      template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>
+      template<typename key_t, typename value_t, typename hasher_t, typename equator_t, typename allocator_t>
       class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
         /// @name Public Aliases

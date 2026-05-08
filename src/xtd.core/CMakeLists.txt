@@ -1136,6 +1136,7 @@ add_sources(
   "include/xtd/internal/__currency_formatter.hpp"
   "include/xtd/internal/__date_time_formatter.hpp"
   "include/xtd/internal/__delegate.hpp"
+  "include/xtd/internal/__dictionary_definition.hpp"
   "include/xtd/internal/__duration_formatter.hpp"
   "include/xtd/internal/__enum_formatter.hpp"
   "include/xtd/internal/__enum_definition_to_enum_collection.hpp"
