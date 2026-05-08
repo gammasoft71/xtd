@@ -5,8 +5,6 @@
 #include "socket.hpp"
 #include "../../io/file_access.hpp"
 #include "../../io/stream.hpp"
-#include "../../object_closed_exception.hpp"
-#include "../../not_supported_exception.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
