@@ -1,4 +1,5 @@
 #include <xtd/stringable>
+#include <xtd/argument_exception>
 #include <xtd/fixed_array>
 #include <xtd/collections/generic/linked_list>
 #include <xtd/collections/generic/hash_set>
@@ -48,7 +49,7 @@ namespace xtd::tests {
     
     auto test_method_(with_exception) {
       assert_that(stringable<argument_exception>).is().true_();
-      assert_that(stringable < argument_exception && >).is().true_();
+      assert_that(stringable<argument_exception&&>).is().true_();
       assert_that(stringable<argument_exception&>).is().true_();
       assert_that(stringable<const argument_exception&>).is().true_();
     }
