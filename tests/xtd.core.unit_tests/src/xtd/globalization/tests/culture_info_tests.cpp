@@ -1,4 +1,5 @@
 #include <xtd/globalization/culture_info>
+#include <xtd/globalization/culture_not_found_exception>
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/culture_info>
 #undef __XTD_CORE_NATIVE_LIBRARY__
