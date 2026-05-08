@@ -3,6 +3,7 @@
 #include <xtd/net/ip_end_point>
 #include <xtd/environment>
 #include <xtd/object_closed_exception>
+#include <xtd/not_supported_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/assume>
 #include <xtd/tunit/test_class_attribute>
