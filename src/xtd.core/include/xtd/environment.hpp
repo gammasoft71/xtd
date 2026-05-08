@@ -9,7 +9,6 @@
 #include "io/directory.hpp"
 #include "io/path.hpp"
 #include "argument_collection.hpp"
-#include "argument_exception.hpp"
 #include "as.hpp"
 #include "availability_versions.hpp"
 #include "compiler.hpp"
