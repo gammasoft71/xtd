@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/list.hpp"
-#include "argument_out_of_range_exception.hpp"
 #include "day_of_week.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
