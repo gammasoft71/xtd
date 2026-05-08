@@ -8,6 +8,8 @@
 #include <xtd/collections/generic/list>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
+#include <xtd/invalid_cast_exception>
+#include <xtd/invalid_operation_exception>
 #include <xtd/object_closed_exception>
 
 using namespace xtd::collections::generic;
