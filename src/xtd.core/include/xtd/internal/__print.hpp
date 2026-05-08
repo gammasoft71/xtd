@@ -11,9 +11,7 @@
 
 #include <cstdio>
 #include <ostream>
-#include "../io/io_exception.hpp"
 #include "../environment.hpp"
-#include "../null_pointer_exception.hpp"
 
 /// @cond
 inline auto __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) -> void {
