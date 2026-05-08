@@ -1,4 +1,5 @@
 #include <xtd/diagnostics/debugger>
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/forms/properties/resources>
 #include <xtd/forms/form>
 #include <xtd/forms/tab_control>
