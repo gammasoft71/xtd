@@ -8,7 +8,6 @@
 #include "hash_code.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
-#include "invalid_cast_exception.hpp"
 #include "iequatable.hpp"
 #include "iformatable.hpp"
 #include "istringable.hpp"
