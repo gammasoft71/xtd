@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
-#include "culture_not_found_exception.hpp"
 #include "date_time_format_info.hpp"
 #include "number_format_info.hpp"
 #include "../collections/generic/dictionary.hpp"
