@@ -4,6 +4,7 @@
 #include <xtd/tunit/valid>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
+#include <xtd/argument_exception>
 #include <xtd/environment>
 #include <xtd/usize_object>
 #include <xtd/string_comparer>
