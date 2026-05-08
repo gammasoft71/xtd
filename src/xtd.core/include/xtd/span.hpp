@@ -6,12 +6,9 @@
 #include "internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
-#include "argument_null_exception.hpp"
-#include "argument_out_of_range_exception.hpp"
 #include "array.hpp"
 #include "dynamic_extent.hpp"
 #include "iequatable.hpp"
-#include "index_out_of_range_exception.hpp"
 #include "is.hpp"
 #include "null.hpp"
 #include "object.hpp"
