@@ -4,10 +4,8 @@
 #pragma once
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/iequality_comparer.hpp"
-#include "argument_exception.hpp"
 #include "as.hpp"
 #include "is.hpp"
-#include "not_implemented_exception.hpp"
 #include "string_comparison.hpp"
 #include "basic_string.hpp"
 
