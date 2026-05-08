@@ -7,7 +7,6 @@
 #include "icomparable.hpp"
 #include "iequatable.hpp"
 #include "integer.hpp"
-#include "invalid_operation_exception.hpp"
 #include "is.hpp"
 #include "object.hpp"
 
