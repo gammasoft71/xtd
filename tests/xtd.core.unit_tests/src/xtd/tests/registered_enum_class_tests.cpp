@@ -1,5 +1,6 @@
 #include <xtd/as>
 #include <xtd/enum_class>
+#include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
