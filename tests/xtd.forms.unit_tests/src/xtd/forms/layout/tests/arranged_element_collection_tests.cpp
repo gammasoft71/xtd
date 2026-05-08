@@ -1,6 +1,7 @@
-#include <algorithm>
-#include <xtd/string>
 #include <xtd/forms/layout/arranged_element_collection>
+#include <xtd/string>
+#include <xtd/argument_out_of_range_exception>
+#include <algorithm>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
