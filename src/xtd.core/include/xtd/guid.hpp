@@ -140,31 +140,31 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const guid& value) const noexcept override;
+    [[nodiscard]] auto compare_to(const guid& value) const noexcept -> xtd::int32 override;
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override;
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param g The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const guid& g) const noexcept override;
+    [[nodiscard]] auto equals(const guid& g) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
-    xtd::array<xtd::byte> to_byte_array() const noexcept;
+    [[nodiscard]] auto to_byte_array() const noexcept -> xtd::array<xtd::byte>;
     
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return The value of this xtd::guid, formatted by using the "D" format specifier as follows:
     /// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     /// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the string::to_string method on the returned string.
     /// @remarks This method provides a default GUID format that is sufficient for typical use; however, other versions of this method that take a format parameter provide a few common format variations.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @brief Returns a string representation of the value of this xtd::guid instance, according to the provided format specifier.
     /// @param format A single format specifier that indicates how to format the value of this xtd::guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.
     /// @return The value of this xtd::guid, represented as a series of lowercase hexadecimal digits in the specified format.
@@ -182,7 +182,7 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    string to_string(const string& format) const;
+    [[nodiscard]] auto to_string(const string& format) const -> xtd::string;
     /// @brief Returns a string representation of the value of this xtd::guid instance, according to the provided format specifier, and locale.
     /// @param format A single format specifier that indicates how to format the value of this xtd::guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.
     /// @param culture An xtd::globalization::culture_info object that contains culture information.
@@ -201,7 +201,7 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    string to_string(const string& format, const globalization::culture_info& culture) const override;
+    [[nodiscard]] auto to_string(const string& format, const globalization::culture_info& culture) const -> xtd::string override;
     /// @}
     
     /// @name Public Static Methods
@@ -211,7 +211,7 @@ namespace xtd {
     /// @return A new GUID object.
     /// @remarks This is a convenient static method that you can call to get a new guid.
     /// @remarks The chance that the value of the new guid will be all zeros or equal to any other guid is very low. You can determine whether a GUID consists of all zeros by comparing it to guid::empty().
-    static guid new_guid() noexcept;
+    [[nodiscard]] static auto new_guid() noexcept -> guid;
     /// @}
     
     /// @cond
