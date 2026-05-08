@@ -1,6 +1,8 @@
 #include <xtd/threading/semaphore>
+#include <xtd/threading/semaphore_full_exception>
 #include <xtd/threading/thread>
 #include <xtd/collections/generic/list>
+#include <xtd/argument_exception>
 #include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
