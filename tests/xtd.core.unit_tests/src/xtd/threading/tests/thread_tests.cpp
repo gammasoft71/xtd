@@ -4,7 +4,10 @@
 #include <xtd/threading/interlocked>
 #include <xtd/diagnostics/stopwatch>
 #include <xtd/collections/generic/list>
+#include <xtd/argument_exception>
 #include <xtd/environment>
+#include <xtd/invalid_cast_exception>
+#include <xtd/invalid_operation_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>
