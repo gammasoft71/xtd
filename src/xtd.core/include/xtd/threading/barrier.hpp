@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::barrier exception.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "barrier_post_phase_exception.hpp"
 #include "cancellation_token.hpp"
 #include "../action.hpp"
 #include "../object.hpp"
