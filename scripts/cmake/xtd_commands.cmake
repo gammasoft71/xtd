@@ -2309,7 +2309,7 @@ if (XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL)
   if (MSVC)
     add_compile_options(/W4 /wd4100 /wd4101 /wd4127 /wd4458 /wd4459 /wd4996 /wd5105)
   else()
-    add_compile_options(-Wall -Wextra -Wno-unused-parameter -Wno-unknown-pragmas -pedantic)
+    add_compile_options(-Wall -Wextra -Wno-trigraphs -Wno-unused-parameter -Wno-unknown-pragmas -pedantic)
   endif()
 endif()
 
@@ -2337,8 +2337,8 @@ if (MSVC)
   # But this is not a problem at the moment. If there is ever a problem or doubt, it should be addressed and removed it.
   # For more information ee https://learn.microsoft.com/en-us/windows/win32/learnwin32/winmain--the-application-entry-point
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
-  else()
-    add_compile_options(-Wno-c++20-extensions)
+else()
+  add_compile_options(-Wno-c++20-extensions)
 endif ()
 
 # The following linker option is used to remove : "ld: warning: ignoring duplicate libraries:" with XCode 15 on macOS
