@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__dictionary_definition.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "list.hpp"
 #include "../../new_ptr.hpp"
 #include "../../ptr.hpp"
 #include <cmath>

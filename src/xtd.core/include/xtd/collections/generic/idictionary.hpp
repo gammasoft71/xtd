@@ -4,7 +4,10 @@
 #pragma once
 #include "icollection.hpp"
 #include "key_value_pair.hpp"
-#include "list.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__list_definition.hpp"
+#undef __XTD_CORE_INTERNAL__
+//#include "list.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
