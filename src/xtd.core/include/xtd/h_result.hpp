@@ -6,6 +6,7 @@
 #include "static.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__array_definition.hpp"
+#include "internal/__dictionary_definition.hpp"
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include <unordered_map>
@@ -344,12 +345,12 @@ namespace xtd {
     /// @brief Provides a generic fail test for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return `true` is failed; otherwise `false`.
-    static bool failed(int32 h_result) noexcept;
+    static auto failed(xtd::int32 h_result) noexcept -> bool;
     
     /// @brief Gets the code portion of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The code portion of `h_result`.
-    static int32 get_code(int32 h_result) noexcept;
+    [[nodiscard]] static auto get_code(xtd::int32 h_result) noexcept -> xtd::int32;
     
     /// @brief The facility of the specified HRESULT, which indicates what API or framework originated this error.
     /// @param h_result The HRESULT value.
@@ -485,29 +486,29 @@ namespace xtd {
     /// | FACILITY_USERMODE_SDBUS                           | 2305    | 0x901 |
     /// | FACILITY_JSCRIPT                                  | 2306    | 0x902 |
     /// | FACILITY_PIDGENX                                  | 2561    | 0xA01 |
-    static int32 get_facility(int32 h_result) noexcept;
+    [[nodiscard]] static auto get_facility(int32 h_result) noexcept -> xtd::int32;
     
     /// @brief Gets an array of HRESULT.
     /// @return An array of HRESULT.
-    static const xtd::array<int32>& get_h_results() noexcept;
+    [[nodiscard]] static auto get_h_results() noexcept -> const xtd::array<xtd::int32>&;
     
     /// @brief Gets the message of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The message of `h_result`.
-    static string get_message(int32 h_result) noexcept;
+    [[nodiscard]] static auto get_message(xtd::int32 h_result) noexcept -> xtd::string;
     
     /// @brief Gets The HRESULT messages.
     /// @return The h_result messages.
-    static const std::unordered_map<int32, string>& get_messages() noexcept;
+    [[nodiscard]] static auto get_messages() noexcept -> const xtd::collections::generic::dictionary<xtd::int32, xtd::string>&;
     
     /// @brief Gets the name of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The name of `h_result`.
-    static string get_name(int32 h_result) noexcept;
+    [[nodiscard]] static auto get_name(xtd::int32 h_result) noexcept -> xtd::string;
     
     /// @brief Gets The HRESULT names.
     /// @return The h_result names.
-    static const std::unordered_map<int32, string>& get_names() noexcept;
+    [[nodiscard]] static auto get_names() noexcept -> const xtd::collections::generic::dictionary<xtd::int32, xtd::string>&;
     
     /// @brief The severity of the specified HRESULT, which indicates what API or framework originated this error.
     /// @param h_result The HRESULT value.
@@ -517,31 +518,31 @@ namespace xtd {
     /// | ---------------- | ------- | --- |
     /// | SEVERITY_SUCCESS | 0       | 0x0 |
     /// | SEVERITY_ERROR   | 1       | 0x1 |
-    static int32 get_severity(int32 h_result) noexcept;
+    [[nodiscard]] static auto get_severity(xtd::int32 h_result) noexcept -> xtd::int32;
     
     /// @brief Obtains a reference to the static error category object for HRESULT errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the HRESULT error codes.
     /// @return A reference to the static object of unspecified runtime type, derived from [std::error_category](https://en.cppreference.com/w/cpp/error/error_category).
-    static const std::error_category& h_result_category() noexcept;
+    [[nodiscard]] static auto h_result_category() noexcept -> const std::error_category&;
     
     /// @brief Provides a generic is error test for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return `true` is error; otherwise `false`.
-    static bool is_error(int32 h_result) noexcept;
+    [[nodiscard]] static auto is_error(xtd::int32 h_result) noexcept -> bool;
     
     /// @brief Creates error code value for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return Error code corresponding to `h_result`.
-    static std::error_code make_error_code(int h_result) noexcept;
+    [[nodiscard]] static auto make_error_code(xtd::int32 h_result) noexcept -> std::error_code;
     
     /// @brief Provides a generic success test for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return `true` is secceeded; otherwise `false`.
-    static bool succeeded(int32 h_result) noexcept;
+    static auto succeeded(xtd::int32 h_result) noexcept -> bool;
     
     /// @brief Gets the name of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The name of `h_result`.
-    static string to_string(int32 h_result) noexcept;
+    [[nodiscard]] static auto to_string(xtd::int32 h_result) noexcept -> xtd::string;
     /// &}
   };
 }

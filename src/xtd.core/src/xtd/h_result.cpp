@@ -3,6 +3,7 @@
 #include "../../include/xtd/h_result.hpp"
 #include "../../include/xtd/string.hpp"
 #include "../../include/xtd/uint32.hpp"
+#include "../../include/xtd/collections/generic/dictionary.hpp"
 #include "../../include/xtd/collections/generic/list.hpp"
 
 using namespace xtd;
@@ -32,13 +33,12 @@ const xtd::array<int32>& h_result::get_h_results() noexcept {
 }
 
 string h_result::get_message(int32 h_result) noexcept {
-  auto iterator = get_messages().find(h_result);
-  if (iterator == get_messages().end()) return string::format("Unknown h_result 0x{:X8} ({})", static_cast<uint32>(h_result), h_result);
-  return iterator->second;
+  if (!get_messages().contains_key(h_result)) return string::format("Unknown h_result 0x{:X8} ({})", static_cast<uint32>(h_result), h_result);
+  return get_messages()[h_result];
 }
 
-const std::unordered_map<int32, string>& h_result::get_names() noexcept {
-  static auto h_result_names = std::unordered_map<int32, string> {
+const dictionary<int32, string>& h_result::get_names() noexcept {
+  static auto h_result_names = dictionary<int32, string> {
     {S_OK, "S_OK"},
     {S_FALSE, "S_FALSE"},
     {COR_E_ABANDONEDMUTEX, "COR_E_ABANDONEDMUTEX"},
@@ -164,13 +164,12 @@ const std::unordered_map<int32, string>& h_result::get_names() noexcept {
 }
 
 string h_result::get_name(int32 h_result) noexcept {
-  auto iterator = get_names().find(h_result);
-  if (iterator == get_names().end()) return string::format("0x{:X8}", static_cast<uint32>(h_result));
-  return iterator->second;
+  if (!get_names().contains_key(h_result)) return string::format("0x{:X8}", static_cast<uint32>(h_result));
+  return get_names()[h_result];
 }
 
-const std::unordered_map<int32, string>& h_result::get_messages() noexcept {
-  static auto h_result_messages = std::unordered_map<int32, string> {
+const dictionary<int32, string>& h_result::get_messages() noexcept {
+  static auto h_result_messages = dictionary<int32, string> {
     {S_OK, "Operation successful."},
     {S_FALSE, "Operation successful but returned no results."},
     {COR_E_ABANDONEDMUTEX, "The wait completed due to an abandoned mutex."},
