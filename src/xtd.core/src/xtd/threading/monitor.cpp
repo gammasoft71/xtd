@@ -26,6 +26,7 @@ struct monitor::item {
   std::optional<string> name;
   thread_local_object<intptr> thread_id {[] {return thread::invalid_thread_id;}};
   monitor::condition_variable condition_variable;
+  friend auto operator ==(const item&, const item) noexcept -> bool {return false;}
 };
 
 struct monitor::static_data {
@@ -55,7 +56,7 @@ void monitor::exit_ptr(object_ptr obj) {
   if (--(*monitor_data->used_count) == 0) {
     saved = get_static_data().monitor_items[obj.first];
     if (obj.second) delete reinterpret_cast<const string*>(obj.first);
-    get_static_data().monitor_items.erase(obj.first);
+    get_static_data().monitor_items.remove(obj.first);
     monitor_data = &saved;
   }
   monitor_data->thread_id.value(thread::invalid_thread_id);
@@ -78,8 +79,7 @@ intptr monitor::get_string_ptr(const string& str) {
 }
 
 bool monitor::is_entered_ptr(object_ptr obj) noexcept {
-  auto found = get_static_data().monitor_items.find(obj.first) != get_static_data().monitor_items.end();
-  return found;
+  return get_static_data().monitor_items.contains_key(obj.first);
 }
 
 void monitor::pulse_ptr(object_ptr obj) {
@@ -115,7 +115,7 @@ bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lo
       auto str = reinterpret_cast<const string*>(obj.first);
       i.name = *str;
     }
-    get_static_data().monitor_items.insert({obj.first, i});
+    get_static_data().monitor_items.add({obj.first, i});
   }
   item* monitor_data = &get_static_data().monitor_items[obj.first];
   ++(*monitor_data->used_count);

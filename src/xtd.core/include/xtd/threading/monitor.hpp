@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "timeout.hpp"
+#include "../collections/generic/dictionary.hpp"
 #include "../diagnostics/stack_frame.hpp"
 #include "../core_export.hpp"
 #include "../static.hpp"
@@ -129,7 +130,7 @@ namespace xtd {
       class condition_variable;
       class critical_section;
       struct item;
-      using item_collection = std::unordered_map<intptr, item>;
+      using item_collection = xtd::collections::generic::dictionary<intptr, item>;
       using object_ptr = std::pair<intptr, bool>;
       struct static_data;
       
