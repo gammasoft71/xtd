@@ -1,7 +1,7 @@
 var searchData=
 [
   ['h_5fresult_0',['h_result',['../classxtd_1_1exception.html#ad2e281525752641926b7d04b07071325',1,'xtd::exception::h_result() const noexcept -&gt; xtd::int32'],['../classxtd_1_1exception.html#a0a417328976cb9fff60d915f6108dbbb',1,'xtd::exception::h_result(xtd::int32 value) noexcept -&gt; void']]],
-  ['h_5fresult_5fcategory_1',['h_result_category',['../classxtd_1_1h__result.html#afbc513b52bed26bad87a486d82fd04f0',1,'xtd::h_result::h_result_category()'],['../group__exceptions.html#gabdfb4794a3a452a732efef515728583a',1,'xtd::h_result_category()']]],
+  ['h_5fresult_5fcategory_1',['h_result_category',['../classxtd_1_1h__result.html#a7fabc0ae0e42993670aa5f71941b711a',1,'xtd::h_result::h_result_category()'],['../group__exceptions.html#gabdfb4794a3a452a732efef515728583a',1,'xtd::h_result_category()']]],
   ['h_5fscroll_2',['h_scroll',['../classxtd_1_1forms_1_1scrollable__control.html#ad1fde1362c31081fe8e38456187e190d',1,'xtd::forms::scrollable_control::h_scroll() const noexcept'],['../classxtd_1_1forms_1_1scrollable__control.html#a4a8e8f035f1f4c28a8fc4d4d72ba185a',1,'xtd::forms::scrollable_control::h_scroll(bool h_scroll)']]],
   ['h_5fscroll_5fbar_3',['h_scroll_bar',['../classxtd_1_1forms_1_1h__scroll__bar.html#a1603053c848c347847595d1e36be7d22',1,'xtd::forms::h_scroll_bar']]],
   ['haiti_4',['haiti',['../classxtd_1_1forms_1_1countries.html#ae9abef1da20112e46ae5ae0c3471921d',1,'xtd::forms::countries']]],
