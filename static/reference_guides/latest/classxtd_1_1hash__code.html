@@ -115,8 +115,8 @@ Inheritance diagram for xtd::hash_code:</div>
 <div class="line">  <span class="keywordtype">int</span> order_id() const noexcept {<span class="keywordflow">return</span> order_id_;}</div>
 <div class="line">  <span class="keywordtype">int</span> order_line_id() const noexcept {<span class="keywordflow">return</span> order_line_id_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;order_order_line&gt;</a>(obj) &amp;&amp; <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(as&lt;order_order_line&gt;(obj));}</div>
-<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(<span class="keyword">const</span> order_order_line&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> order_id_ == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.order_id_ &amp;&amp; order_line_id_ == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.order_line_id_;}</div>
+<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">equals</a>(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">is&lt;order_order_line&gt;</a>(obj) &amp;&amp; <a class="code hl_function" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">equals</a>(as&lt;order_order_line&gt;(obj));}</div>
+<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">equals</a>(<span class="keyword">const</span> order_order_line&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> order_id_ == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.order_id_ &amp;&amp; order_line_id_ == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.order_line_id_;}</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> <a class="code hl_function" href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">get_hash_code</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> hash_code::combine(order_id_, order_line_id_);}</div>
 <div class="line">  </div>
@@ -139,10 +139,10 @@ Inheritance diagram for xtd::hash_code:</div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Item count: 2.</span></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html_a7d6bef3a3d8b4d071c801e9f74c2f6b2"><div class="ttname"><a href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">xtd::object::equals</a></div><div class="ttdeci">virtual auto equals(const object &amp;obj) const noexcept -&gt; bool</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga59b26eda7fb7d0dc8c9968f4a2f78984"><div class="ttname"><a href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">xtd::is</a></div><div class="ttdeci">auto is(xtd::any value) -&gt; bool</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div><div class="ttdef"><b>Definition</b> platform_id.hpp:60</div></div>
 <div class="ttc" id="anamespacextd_html_ae3fac1dc7497fb3abeb98589f00e987e"><div class="ttname"><a href="namespacextd.html#ae3fac1dc7497fb3abeb98589f00e987e">xtd::get_hash_code</a></div><div class="ttdeci">xtd::usize get_hash_code() const noexcept override</div><div class="ttdoc">Serves as a hash function for a particular type.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:293</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -160,39 +160,39 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:adc145208c8f68cb460ebcbb8d08687fd" id="r_adc145208c8f68cb460ebcbb8d08687fd"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:adc145208c8f68cb460ebcbb8d08687fd template"><td class="memItemLeft"><a class="el" href="#a686e1e2d91bc53dd5b887aee010dcccd">hash_code</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#adc145208c8f68cb460ebcbb8d08687fd">add</a> (const type_t &amp;value) noexcept</td></tr>
-<tr class="memdesc:adc145208c8f68cb460ebcbb8d08687fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a single value to the hash code.  <br /></td></tr>
-<tr class="memitem:acde30b2a194bd55b7eee01157a07d9a9" id="r_acde30b2a194bd55b7eee01157a07d9a9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acde30b2a194bd55b7eee01157a07d9a9">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:acde30b2a194bd55b7eee01157a07d9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:adbae7eebebd873673981226f3ca1eb23" id="r_adbae7eebebd873673981226f3ca1eb23"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#adbae7eebebd873673981226f3ca1eb23">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:adbae7eebebd873673981226f3ca1eb23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:af11c303b8667684bc5a369560a28338f" id="r_af11c303b8667684bc5a369560a28338f"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#af11c303b8667684bc5a369560a28338f">to_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:af11c303b8667684bc5a369560a28338f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the final hash code after consecutive <a class="el" href="#adc145208c8f68cb460ebcbb8d08687fd" title="Adds a single value to the hash code.">xtd::hash_code::add</a> invocations.  <br /></td></tr>
+<tr class="memitem:a0e5cc6f371becdb52643ea6e1660e3d3" id="r_a0e5cc6f371becdb52643ea6e1660e3d3"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:a0e5cc6f371becdb52643ea6e1660e3d3 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0e5cc6f371becdb52643ea6e1660e3d3">add</a> (const type_t &amp;value) noexcept -&gt; <a class="el" href="#a686e1e2d91bc53dd5b887aee010dcccd">hash_code</a> &amp;</td></tr>
+<tr class="memdesc:a0e5cc6f371becdb52643ea6e1660e3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a single value to the hash code.  <br /></td></tr>
+<tr class="memitem:a2323f0b59e65e958e08e15eec1febaa6" id="r_a2323f0b59e65e958e08e15eec1febaa6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2323f0b59e65e958e08e15eec1febaa6">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a2323f0b59e65e958e08e15eec1febaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:ad18a88b581c6c3c6300861c5621b0dc2" id="r_ad18a88b581c6c3c6300861c5621b0dc2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad18a88b581c6c3c6300861c5621b0dc2">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:ad18a88b581c6c3c6300861c5621b0dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a0cb3f085e17affc8e60e2a1fd76c0a8a" id="r_a0cb3f085e17affc8e60e2a1fd76c0a8a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0cb3f085e17affc8e60e2a1fd76c0a8a">to_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a0cb3f085e17affc8e60e2a1fd76c0a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the final hash code after consecutive <a class="el" href="#a0e5cc6f371becdb52643ea6e1660e3d3" title="Adds a single value to the hash code.">xtd::hash_code::add</a> invocations.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:ad0e2045a552008b2e7c8722cd2dd274e" id="r_ad0e2045a552008b2e7c8722cd2dd274e"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
-<tr class="memitem:ad0e2045a552008b2e7c8722cd2dd274e template"><td class="memItemLeft">static <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad0e2045a552008b2e7c8722cd2dd274e">combine</a> (args_t... values) noexcept</td></tr>
-<tr class="memdesc:ad0e2045a552008b2e7c8722cd2dd274e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines values into a hash code.  <br /></td></tr>
+<tr class="memitem:a06f873ac494f5d85bedd87c53aad6ec7" id="r_a06f873ac494f5d85bedd87c53aad6ec7"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a06f873ac494f5d85bedd87c53aad6ec7 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a06f873ac494f5d85bedd87c53aad6ec7">combine</a> (args_t... values) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a06f873ac494f5d85bedd87c53aad6ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines values into a hash code.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
-<tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
-<tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
-<tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="memitem:aeb2a619fcb313fde8d247463c1f2df18" id="r_aeb2a619fcb313fde8d247463c1f2df18"><td class="memItemLeft">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a> () const</td></tr>
-<tr class="memdesc:aeb2a619fcb313fde8d247463c1f2df18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
+<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
+<tr class="memdesc:af61724b0e7644ebd79a01995e0505f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2" id="r_a3dcdc5069d11bada985f1e34914e92e2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
+<tr class="memdesc:a3dcdc5069d11bada985f1e34914e92e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="memitem:a4a2f2b475b43f587551ec12d10f1715d" id="r_a4a2f2b475b43f587551ec12d10f1715d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">to_string</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a4a2f2b475b43f587551ec12d10f1715d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a" id="r_aef39d8952f92922c11e94ad920043c6a"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aef39d8952f92922c11e94ad920043c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0" id="r_a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a686e1e2d91bc53dd5b887aee010dcccd" name="a686e1e2d91bc53dd5b887aee010dcccd"></a>
@@ -223,8 +223,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="adc145208c8f68cb460ebcbb8d08687fd" name="adc145208c8f68cb460ebcbb8d08687fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc145208c8f68cb460ebcbb8d08687fd">&#9670;&#160;</a></span>add()</h2>
+<a id="a0e5cc6f371becdb52643ea6e1660e3d3" name="a0e5cc6f371becdb52643ea6e1660e3d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e5cc6f371becdb52643ea6e1660e3d3">&#9670;&#160;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,10 +235,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a686e1e2d91bc53dd5b887aee010dcccd">hash_code</a> &amp; xtd::hash_code::add </td>
+          <td class="memname">auto xtd::hash_code::add </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#a686e1e2d91bc53dd5b887aee010dcccd">hash_code</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -265,8 +265,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="acde30b2a194bd55b7eee01157a07d9a9" name="acde30b2a194bd55b7eee01157a07d9a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acde30b2a194bd55b7eee01157a07d9a9">&#9670;&#160;</a></span>equals()</h2>
+<a id="a2323f0b59e65e958e08e15eec1febaa6" name="a2323f0b59e65e958e08e15eec1febaa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2323f0b59e65e958e08e15eec1febaa6">&#9670;&#160;</a></span>equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,15 +275,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::hash_code::equals </td>
+          <td class="memname">auto xtd::hash_code::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -297,12 +297,12 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the specified object is equal to the current object. otherwise, <span class="tt">false</span>. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">xtd::object</a>.</p>
 
 </div>
 </div>
-<a id="adbae7eebebd873673981226f3ca1eb23" name="adbae7eebebd873673981226f3ca1eb23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbae7eebebd873673981226f3ca1eb23">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="ad18a88b581c6c3c6300861c5621b0dc2" name="ad18a88b581c6c3c6300861c5621b0dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad18a88b581c6c3c6300861c5621b0dc2">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,15 +311,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::hash_code::get_hash_code </td>
+          <td class="memname">auto xtd::hash_code::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -327,12 +327,12 @@ template&lt;typename type_t&gt; </div>
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a4818d9d8dba01bffd5e642fd66117d1c">xtd::object</a>.</p>
 
 </div>
 </div>
-<a id="af11c303b8667684bc5a369560a28338f" name="af11c303b8667684bc5a369560a28338f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af11c303b8667684bc5a369560a28338f">&#9670;&#160;</a></span>to_hash_code()</h2>
+<a id="a0cb3f085e17affc8e60e2a1fd76c0a8a" name="a0cb3f085e17affc8e60e2a1fd76c0a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb3f085e17affc8e60e2a1fd76c0a8a">&#9670;&#160;</a></span>to_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,27 +341,27 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::hash_code::to_hash_code </td>
+          <td class="memname">auto xtd::hash_code::to_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Calculates the final hash code after consecutive <a class="el" href="#adc145208c8f68cb460ebcbb8d08687fd" title="Adds a single value to the hash code.">xtd::hash_code::add</a> invocations. </p>
+<p>Calculates the final hash code after consecutive <a class="el" href="#a0e5cc6f371becdb52643ea6e1660e3d3" title="Adds a single value to the hash code.">xtd::hash_code::add</a> invocations. </p>
 <dl class="section return"><dt>Returns</dt><dd>The calculated hash code. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method must be called at most once per instance of <a class="el" href="classxtd_1_1hash__code.html" title="Combines the hash code for multiple values into a single hash code.">xtd::hash_code</a>. </dd></dl>
 
 </div>
 </div>
-<a id="ad0e2045a552008b2e7c8722cd2dd274e" name="ad0e2045a552008b2e7c8722cd2dd274e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0e2045a552008b2e7c8722cd2dd274e">&#9670;&#160;</a></span>combine()</h2>
+<a id="a06f873ac494f5d85bedd87c53aad6ec7" name="a06f873ac494f5d85bedd87c53aad6ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f873ac494f5d85bedd87c53aad6ec7">&#9670;&#160;</a></span>combine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,15 +372,15 @@ template&lt;typename ... args_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::hash_code::combine </td>
+          <td class="memname">auto xtd::hash_code::combine </td>
           <td>(</td>
           <td class="paramtype">args_t...</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

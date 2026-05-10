@@ -78,7 +78,7 @@ var searchData=
   ['police_5fofficer_75',['police_officer',['../classxtd_1_1forms_1_1emoticons.html#abb4ae8cda1e5319bdc11615076ff63b0',1,'xtd::forms::emoticons']]],
   ['poodle_76',['poodle',['../classxtd_1_1forms_1_1emoticons.html#adb92e4f15b7d9b418ad118e4cce604c0',1,'xtd::forms::emoticons']]],
   ['popcorn_77',['popcorn',['../classxtd_1_1forms_1_1emoticons.html#a63bce6ebe8bfa3ec70a865d2ea5c3c92',1,'xtd::forms::emoticons']]],
-  ['positive_5finfinity_78',['positive_infinity',['../classxtd_1_1box__floating__point.html#a97a1688011f651b30b6c4ed223d8e540',1,'xtd::box_floating_point::positive_infinity'],['../classxtd_1_1math.html#a286fa28f76555d660a6108f39cb72ec5',1,'xtd::math::positive_infinity']]],
+  ['positive_5finfinity_78',['positive_infinity',['../classxtd_1_1box__floating__point.html#a97a1688011f651b30b6c4ed223d8e540',1,'xtd::box_floating_point::positive_infinity'],['../classxtd_1_1math.html#ac18b715a023b8f4a745cba62a78b3b77',1,'xtd::math::positive_infinity']]],
   ['postal_5fhorn_79',['postal_horn',['../classxtd_1_1forms_1_1emoticons.html#ab5210d314f9d32fc17a72d606dd49c2c',1,'xtd::forms::emoticons']]],
   ['postbox_80',['postbox',['../classxtd_1_1forms_1_1emoticons.html#ab136c69de96e89d36ade41e83e061b96',1,'xtd::forms::emoticons']]],
   ['pot_5fof_5ffood_81',['pot_of_food',['../classxtd_1_1forms_1_1emoticons.html#a933f230f34031f5bd798b743340bf37e',1,'xtd::forms::emoticons']]],

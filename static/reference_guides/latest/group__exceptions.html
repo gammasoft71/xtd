@@ -224,8 +224,8 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:gabdfb4794a3a452a732efef515728583a" id="r_gabdfb4794a3a452a732efef515728583a"><td class="memItemLeft">const std::error_category &amp;&#160;</td><td class="memItemRight"><a class="el" href="#gabdfb4794a3a452a732efef515728583a">xtd::h_result_category</a> () noexcept</td></tr>
 <tr class="memdesc:gabdfb4794a3a452a732efef515728583a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to the static error category object for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> error codes.  <br /></td></tr>
-<tr class="memitem:gae80914ccdaf9b80666bcafb1c633373e" id="r_gae80914ccdaf9b80666bcafb1c633373e"><td class="memItemLeft">std::error_code&#160;</td><td class="memItemRight"><a class="el" href="#gae80914ccdaf9b80666bcafb1c633373e">xtd::make_error_code</a> (int <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
-<tr class="memdesc:gae80914ccdaf9b80666bcafb1c633373e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates error code value for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> <span class="tt"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></span>.  <br /></td></tr>
+<tr class="memitem:ga66cb3a7bf598179d4205d92fd0d69881" id="r_ga66cb3a7bf598179d4205d92fd0d69881"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga66cb3a7bf598179d4205d92fd0d69881">xtd::make_error_code</a> (int <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept -&gt; std::error_code</td></tr>
+<tr class="memdesc:ga66cb3a7bf598179d4205d92fd0d69881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates error code value for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> <span class="tt"><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></span>.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ga20c7adbb7647c62ac8f58fad6baf5b5b" name="ga20c7adbb7647c62ac8f58fad6baf5b5b"></a>
@@ -282,8 +282,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gae80914ccdaf9b80666bcafb1c633373e" name="gae80914ccdaf9b80666bcafb1c633373e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae80914ccdaf9b80666bcafb1c633373e">&#9670;&#160;</a></span>make_error_code()</h2>
+<a id="ga66cb3a7bf598179d4205d92fd0d69881" name="ga66cb3a7bf598179d4205d92fd0d69881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66cb3a7bf598179d4205d92fd0d69881">&#9670;&#160;</a></span>make_error_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,15 +292,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::error_code xtd::make_error_code </td>
+          <td class="memname">auto xtd::make_error_code </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h_result</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  std::error_code</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

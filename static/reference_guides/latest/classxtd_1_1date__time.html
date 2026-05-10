@@ -189,7 +189,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> roughly_equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; time, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; time_with_window, <span class="keywordtype">int</span> window_in_seconds, <span class="keywordtype">int</span> frequency_in_seconds) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">    <span class="keyword">auto</span> delta = <a class="code hl_function" href="classxtd_1_1convert.html#a1cb5aa53887262ed1629d6aace7d7262">convert::to_int32</a>((time_with_window - time).total_seconds_duration().count()) % frequency_in_seconds;</div>
 <div class="line">    delta = delta &gt; window_in_seconds ? frequency_in_seconds - delta : delta;</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1math.html#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(delta) &lt; window_in_seconds;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1math.html#a13a8665e3df7c72539fca0cb890045f5">math::abs</a>(delta) &lt; window_in_seconds;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -207,7 +207,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line"><span class="comment">// d1 (10/23/2025 1:04:56 AM) ~= d8 (10/23/2025 3:05:01 AM): true</span></div>
 <div class="line"><span class="comment">// d1 (10/23/2025 1:04:56 AM) ~= d9 (10/23/2025 3:04:51 AM): true</span></div>
 <div class="ttc" id="aclassxtd_1_1convert_html_a1cb5aa53887262ed1629d6aace7d7262"><div class="ttname"><a href="classxtd_1_1convert.html#a1cb5aa53887262ed1629d6aace7d7262">xtd::convert::to_int32</a></div><div class="ttdeci">static auto to_int32(xtd::any value) -&gt; xtd::int32</div><div class="ttdoc">Convert xtd::any to int32.</div></div>
-<div class="ttc" id="aclassxtd_1_1math_html_a2d05200926a60c8309120b7b288e22e5"><div class="ttname"><a href="classxtd_1_1math.html#a2d05200926a60c8309120b7b288e22e5">xtd::math::abs</a></div><div class="ttdeci">static decimal abs(decimal value)</div><div class="ttdoc">Returns the absolute value of a decimal number.</div></div>
+<div class="ttc" id="aclassxtd_1_1math_html_a13a8665e3df7c72539fca0cb890045f5"><div class="ttname"><a href="classxtd_1_1math.html#a13a8665e3df7c72539fca0cb890045f5">xtd::math::abs</a></div><div class="ttdeci">static auto abs(xtd::decimal value) -&gt; xtd::decimal</div><div class="ttdoc">Returns the absolute value of a decimal number.</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a45f9901d0370bc0facb9220619e6cbd7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a45f9901d0370bc0facb9220619e6cbd7">xtd::console_key::d6</a></div><div class="ttdeci">@ d6</div><div class="ttdoc">The 6 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:80</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a83c2d09a5dd1d1c5f4f7f484450be380"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83c2d09a5dd1d1c5f4f7f484450be380">xtd::console_key::d8</a></div><div class="ttdeci">@ d8</div><div class="ttdoc">The 8 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:84</div></div>
@@ -415,17 +415,17 @@ static auto&#160;</td><td class="memItemRight"><b>try_parse_exact</b> (const <a 
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
-<tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
-<tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
-<tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
+<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
+<tr class="memdesc:af61724b0e7644ebd79a01995e0505f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2" id="r_a3dcdc5069d11bada985f1e34914e92e2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
+<tr class="memdesc:a3dcdc5069d11bada985f1e34914e92e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a" id="r_aef39d8952f92922c11e94ad920043c6a"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aef39d8952f92922c11e94ad920043c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0" id="r_a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9af33e7a4b6e3f10f19133e026c1bc0e" name="a9af33e7a4b6e3f10f19133e026c1bc0e"></a>
@@ -2586,7 +2586,7 @@ If the current instance represents the leap day in a leap year, the return value
 <td class="markdownTableBodyNone">Greater than zero  </td><td class="markdownTableBodyNone">This instance is greater than obj.  </td></tr>
 </table>
 
-<p>Implements <a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">xtd::icomparable&lt; date_time &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1icomparable.html#aac32c8be775390ba1bae0f75a7b0bada">xtd::icomparable&lt; date_time &gt;</a>.</p>
 
 </div>
 </div>
@@ -2622,7 +2622,7 @@ If the current instance represents the leap day in a leap year, the return value
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the specified object is equal to the current object. otherwise, <span class="tt">false</span>. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -2658,7 +2658,7 @@ If the current instance represents the leap day in a leap year, the return value
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current object is equal to the other parameter; otherwise, <span class="tt">false</span>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">xtd::iequatable&lt; date_time &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1iequatable.html#a3384503ae1dcbd8796549e4c04cbf1d9">xtd::iequatable&lt; date_time &gt;</a>.</p>
 
 </div>
 </div>
@@ -2688,7 +2688,7 @@ If the current instance represents the leap day in a leap year, the return value
 <p>Serves as a hash function for a particular type. </p>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6e48ffbad2ee99afb6dbff032a18345e">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a4818d9d8dba01bffd5e642fd66117d1c">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -3336,7 +3336,7 @@ The value returned by the <a class="el" href="#ae887408c7a842070b7758663c260632a
 <dl class="section return"><dt>Returns</dt><dd>A string representation of the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The return value is identical to the value returned by specifying the "G" standard <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> format string with the xtd::date_time::to_string(const xtd::string&amp;) method. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">xtd::object</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -4515,7 +4515,7 @@ The put string formatting codes for <a class="el" href="#a7b0e527f340b197e3a1834
 </table>
 </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">xtd::iformatable</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1iformatable.html#a81776ad45d250662381448b27ddb2630">xtd::iformatable</a>.</p>
 
 </div>
 </div>

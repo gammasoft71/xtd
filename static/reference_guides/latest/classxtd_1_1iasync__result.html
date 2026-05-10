@@ -164,18 +164,18 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a1723de28865cc254e3186ee12e794105" id="r_a1723de28865cc254e3186ee12e794105"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1723de28865cc254e3186ee12e794105">async_state</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a1723de28865cc254e3186ee12e794105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a user-defined object that qualifies or contains information about an asynchronous operation.  <br /></td></tr>
-<tr class="memitem:a643da6a18f0a1a8c0bdbc332842514ed" id="r_a643da6a18f0a1a8c0bdbc332842514ed"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a643da6a18f0a1a8c0bdbc332842514ed">async_wait_handle</a> () noexcept=0</td></tr>
-<tr class="memdesc:a643da6a18f0a1a8c0bdbc332842514ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is used to wait for an asynchronous operation to complete.  <br /></td></tr>
-<tr class="memitem:afff9b81a7c710af100a1e301b2b6c2df" id="r_afff9b81a7c710af100a1e301b2b6c2df"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#afff9b81a7c710af100a1e301b2b6c2df">completed_synchronously</a> () const noexcept=0</td></tr>
-<tr class="memdesc:afff9b81a7c710af100a1e301b2b6c2df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the asynchronous operation completed synchronously.  <br /></td></tr>
-<tr class="memitem:a73cc691010dd7db6993bb99ff231f11f" id="r_a73cc691010dd7db6993bb99ff231f11f"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a73cc691010dd7db6993bb99ff231f11f">is_completed</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a73cc691010dd7db6993bb99ff231f11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the asynchronous operation has completed.  <br /></td></tr>
+<tr class="memitem:a5573c36e3a2d1f1175e83f29bee4618f" id="r_a5573c36e3a2d1f1175e83f29bee4618f"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a5573c36e3a2d1f1175e83f29bee4618f">async_state</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a>=0</td></tr>
+<tr class="memdesc:a5573c36e3a2d1f1175e83f29bee4618f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a user-defined object that qualifies or contains information about an asynchronous operation.  <br /></td></tr>
+<tr class="memitem:a11d3673e26b4d3fa4da194b887588241" id="r_a11d3673e26b4d3fa4da194b887588241"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a11d3673e26b4d3fa4da194b887588241">async_wait_handle</a> () noexcept -&gt; <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp;=0</td></tr>
+<tr class="memdesc:a11d3673e26b4d3fa4da194b887588241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is used to wait for an asynchronous operation to complete.  <br /></td></tr>
+<tr class="memitem:ac7966f3cd1c48c02c9a7d0e1b8bc849c" id="r_ac7966f3cd1c48c02c9a7d0e1b8bc849c"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac7966f3cd1c48c02c9a7d0e1b8bc849c">completed_synchronously</a> () const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:ac7966f3cd1c48c02c9a7d0e1b8bc849c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the asynchronous operation completed synchronously.  <br /></td></tr>
+<tr class="memitem:a02cabaccc9aeb5e12976b535e0fd8f83" id="r_a02cabaccc9aeb5e12976b535e0fd8f83"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a02cabaccc9aeb5e12976b535e0fd8f83">is_completed</a> () const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:a02cabaccc9aeb5e12976b535e0fd8f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the asynchronous operation has completed.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a1723de28865cc254e3186ee12e794105" name="a1723de28865cc254e3186ee12e794105"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1723de28865cc254e3186ee12e794105">&#9670;&#160;</a></span>async_state()</h2>
+<a id="a5573c36e3a2d1f1175e83f29bee4618f" name="a5573c36e3a2d1f1175e83f29bee4618f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5573c36e3a2d1f1175e83f29bee4618f">&#9670;&#160;</a></span>async_state()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,15 +184,15 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> xtd::iasync_result::async_state </td>
+          <td class="memname">virtual auto xtd::iasync_result::async_state </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -205,8 +205,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a643da6a18f0a1a8c0bdbc332842514ed" name="a643da6a18f0a1a8c0bdbc332842514ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a643da6a18f0a1a8c0bdbc332842514ed">&#9670;&#160;</a></span>async_wait_handle()</h2>
+<a id="a11d3673e26b4d3fa4da194b887588241" name="a11d3673e26b4d3fa4da194b887588241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d3673e26b4d3fa4da194b887588241">&#9670;&#160;</a></span>async_wait_handle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,30 +215,30 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp; xtd::iasync_result::async_wait_handle </td>
+          <td class="memname">virtual auto xtd::iasync_result::async_wait_handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is used to wait for an asynchronous operation to complete. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is used to wait for an asynchronous operation to complete. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The return value allows the client to wait for an asynchronous operation to complete instead of polling <a class="el" href="#a73cc691010dd7db6993bb99ff231f11f" title="Gets a value that indicates whether the asynchronous operation has completed.">xtd::iasync_result::is_completed</a> until the operation concludes. The return value can be used to perform a wait operation. </dd></dl>
-<dl class="section user"><dt>Notes to Implementers</dt><dd>The object that implements <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> does not need to create the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> until the <a class="el" href="#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> property is read. It is the choice of the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> implementer. However, if the implementer creates <a class="el" href="#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a>, it is the responsibility of the implementer to signal the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that will terminate the wait at the appropriate time. Once created, <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> <a class="el" href="#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> should be kept alive until the user calls the method that concludes the asynchronous operation. At that time the object behind <a class="el" href="#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> can be discarded. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The return value allows the client to wait for an asynchronous operation to complete instead of polling <a class="el" href="#a02cabaccc9aeb5e12976b535e0fd8f83" title="Gets a value that indicates whether the asynchronous operation has completed.">xtd::iasync_result::is_completed</a> until the operation concludes. The return value can be used to perform a wait operation. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>The object that implements <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> does not need to create the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> until the <a class="el" href="#a11d3673e26b4d3fa4da194b887588241" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> property is read. It is the choice of the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> implementer. However, if the implementer creates <a class="el" href="#a11d3673e26b4d3fa4da194b887588241" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a>, it is the responsibility of the implementer to signal the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that will terminate the wait at the appropriate time. Once created, <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> <a class="el" href="#a11d3673e26b4d3fa4da194b887588241" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> should be kept alive until the user calls the method that concludes the asynchronous operation. At that time the object behind <a class="el" href="#a11d3673e26b4d3fa4da194b887588241" title="Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> can be discarded. </dd></dl>
 <dl class="section user"><dt>Notes to Callers</dt><dd>Clients that wait for the operation to complete (as opposed to polling) use this property to obtain a synchronization object to wait on. </dd></dl>
 <dl class="section user"><dt>Notes to Implementers </dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="afff9b81a7c710af100a1e301b2b6c2df" name="afff9b81a7c710af100a1e301b2b6c2df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff9b81a7c710af100a1e301b2b6c2df">&#9670;&#160;</a></span>completed_synchronously()</h2>
+<a id="ac7966f3cd1c48c02c9a7d0e1b8bc849c" name="ac7966f3cd1c48c02c9a7d0e1b8bc849c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7966f3cd1c48c02c9a7d0e1b8bc849c">&#9670;&#160;</a></span>completed_synchronously()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,15 +247,15 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::iasync_result::completed_synchronously </td>
+          <td class="memname">virtual auto xtd::iasync_result::completed_synchronously </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -267,8 +267,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a73cc691010dd7db6993bb99ff231f11f" name="a73cc691010dd7db6993bb99ff231f11f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73cc691010dd7db6993bb99ff231f11f">&#9670;&#160;</a></span>is_completed()</h2>
+<a id="a02cabaccc9aeb5e12976b535e0fd8f83" name="a02cabaccc9aeb5e12976b535e0fd8f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02cabaccc9aeb5e12976b535e0fd8f83">&#9670;&#160;</a></span>is_completed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,15 +277,15 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::iasync_result::is_completed </td>
+          <td class="memname">virtual auto xtd::iasync_result::is_completed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

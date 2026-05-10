@@ -2895,12 +2895,12 @@ template&lt;typename pointer_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s2); <span class="comment">// test fails.</span></div>
 <div class="ttc" id="agroup__types_html_ga6c0a708a117d3b2967d6767f96b82baf"><div class="ttname"><a href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a></div><div class="ttdeci">xtd::unique_ptr_object&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga6380fbc5438993d147b093cfa5718caf"><div class="ttname"><a href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr</a></div><div class="ttdeci">uptr&lt; type_t &gt; new_uptr(args_t &amp;&amp;... args)</div><div class="ttdoc">xtd::new_uptr operator. This operator creates a xtd::uptr object.</div><div class="ttdef"><b>Definition</b> new_uptr.hpp:24</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga58b3bd7439b8f4e2d266fbb718405919"><div class="ttname"><a href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">xtd::new_uptr</a></div><div class="ttdeci">auto new_uptr(args_t &amp;&amp;... args) -&gt; xtd::uptr&lt; type_t &gt;</div><div class="ttdoc">xtd::new_uptr operator. This operator creates a xtd::uptr object.</div><div class="ttdef"><b>Definition</b> new_uptr.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2948,7 +2948,7 @@ template&lt;typename pointer_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
@@ -2993,12 +2993,12 @@ template&lt;typename pointer_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s2); <span class="comment">// test fails.</span></div>
 <div class="ttc" id="agroup__types_html_ga25ad7ded61d1d55ea98a57f5316b786b"><div class="ttname"><a href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a></div><div class="ttdeci">xtd::shared_ptr_object&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7cc491fa6479b6976a467c83b82a902e"><div class="ttname"><a href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr</a></div><div class="ttdeci">sptr&lt; type_t &gt; new_sptr(args_t &amp;&amp;... args)</div><div class="ttdoc">xtd::new_sptr operator creates a xtd::sptr object.</div><div class="ttdef"><b>Definition</b> new_sptr.hpp:24</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gafabadb4a0bd04633d8e527c5cc0ae6cb"><div class="ttname"><a href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr</a></div><div class="ttdeci">auto new_sptr(args_t &amp;&amp;... args) -&gt; xtd::sptr&lt; type_t &gt;</div><div class="ttdoc">xtd::new_sptr operator creates a xtd::sptr object.</div><div class="ttdef"><b>Definition</b> new_sptr.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3046,7 +3046,7 @@ template&lt;typename pointer_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s1 = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
@@ -3092,7 +3092,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Always <span class="tt">true</span>, a <a class="el" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5" title="The xtd::uptr object is a weak pointer.">xtd::wptr</a> can't be equal to nullptr by construction or assignation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s1 = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s1); <span class="comment">// test ok.</span></div>
@@ -3147,7 +3147,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Always <span class="tt">true</span>, a <a class="el" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5" title="The xtd::uptr object is a weak pointer.">xtd::wptr</a> can't be equal to nullptr by construction or assignation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s1 = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s2;</div>
 <div class="line"><a class="code hl_function" href="#ad49b6966457a20f495c6ec686f482869">xtd::tunit::valid::is_not_null</a>(s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
@@ -3578,7 +3578,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s1;</div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s2); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -3629,7 +3629,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s1;</div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">xtd::new_uptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -3674,7 +3674,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s1;</div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s2); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -3725,7 +3725,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s1;</div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> s2 = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -3770,7 +3770,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Always <span class="tt">false</span>, a <a class="el" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5" title="The xtd::uptr object is a weak pointer.">xtd::wptr</a> can't be equal to nullptr by construction or assignation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s1;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s2 = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;</div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s1); <span class="comment">// test fails.</span></div>
@@ -3823,7 +3823,7 @@ template&lt;typename pointer_t&gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Always <span class="tt">false</span>, a <a class="el" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5" title="The xtd::uptr object is a weak pointer.">xtd::wptr</a> can't be equal to nullptr by construction or assignation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;std::string&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="group__xtd__core.html#gafabadb4a0bd04633d8e527c5cc0ae6cb">xtd::new_sptr&lt;std::string&gt;</a>(<span class="stringliteral">&quot;Anything&quot;</span>);</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s1;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga3235581010412bba1c1f741f3c3abfb5">xtd::wptr&lt;std::string&gt;</a> s2 = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;</div>
 <div class="line"><a class="code hl_function" href="#ae09005a4c46a6afb30a975973cbdb1c1">xtd::tunit::valid::is_null</a>(s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>

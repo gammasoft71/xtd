@@ -102,19 +102,19 @@ Inheritance diagram for xtd::ihashable:</div>
 <div class="textblock"><p>Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This interface is implemented by types whose values can be hashed (for example, the numeric and string classes). A value type or class implements the <span class="tt"><a class="el" href="#ad063f886aa7e42fdc5552a20a06d14ce" title="Serves as a hash function for a particular type.">get_hash_code</a></span> method to create a type-specific method suitable for determining the hash code of the instance. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This interface is implemented by types whose values can be hashed (for example, the numeric and string classes). A value type or class implements the <span class="tt"><a class="el" href="#ae8772a5ffb34928451dcf58de9d7a250" title="Serves as a hash function for a particular type.">get_hash_code</a></span> method to create a type-specific method suitable for determining the hash code of the instance. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1ihashable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::ihashable</a> interface defines the <a class="el" href="#ad063f886aa7e42fdc5552a20a06d14ce" title="Serves as a hash function for a particular type.">xtd::ihashable::get_hash_code</a> method, which determines the hash code of the instance. </dd></dl>
+The <a class="el" href="classxtd_1_1ihashable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::ihashable</a> interface defines the <a class="el" href="#ae8772a5ffb34928451dcf58de9d7a250" title="Serves as a hash function for a particular type.">xtd::ihashable::get_hash_code</a> method, which determines the hash code of the instance. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1ihashable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::ihashable</a> interface. <div class="fragment"></div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ad063f886aa7e42fdc5552a20a06d14ce" id="r_ad063f886aa7e42fdc5552a20a06d14ce"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad063f886aa7e42fdc5552a20a06d14ce">get_hash_code</a> () const noexcept=0</td></tr>
-<tr class="memdesc:ad063f886aa7e42fdc5552a20a06d14ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:ae8772a5ffb34928451dcf58de9d7a250" id="r_ae8772a5ffb34928451dcf58de9d7a250"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ae8772a5ffb34928451dcf58de9d7a250">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>=0</td></tr>
+<tr class="memdesc:ae8772a5ffb34928451dcf58de9d7a250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ad063f886aa7e42fdc5552a20a06d14ce" name="ad063f886aa7e42fdc5552a20a06d14ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad063f886aa7e42fdc5552a20a06d14ce">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="ae8772a5ffb34928451dcf58de9d7a250" name="ae8772a5ffb34928451dcf58de9d7a250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8772a5ffb34928451dcf58de9d7a250">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,15 +123,15 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::ihashable::get_hash_code </td>
+          <td class="memname">virtual auto xtd::ihashable::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
