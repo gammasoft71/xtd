@@ -76,5 +76,5 @@ namespace xtd {
   /// ```
   /// @see is_value_type
   template<typename value_t>
-  inline constexpr bool is_value_type_v = is_value_type<xtd::raw_type<value_t>>::value;
+  inline constexpr auto is_value_type_v = is_value_type<xtd::raw_type<value_t>>::value;
 }
