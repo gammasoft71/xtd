@@ -23,6 +23,6 @@ namespace xtd {
   /// if (items.index_of(42) == npos)
   ///   console::write_line("Value not found");
   /// ```
-  inline constexpr xtd::usize npos = std::numeric_limits<xtd::usize>::max();
+  inline constexpr auto npos = std::numeric_limits<xtd::usize>::max();
   /// @}
 }
