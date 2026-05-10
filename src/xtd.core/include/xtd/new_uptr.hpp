@@ -21,13 +21,13 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::make_unique](https://en.cppreference.com/w/cpp/memory/xtd::uptr/make_unique).
   template<typename type_t, typename ...args_t>
-  uptr<type_t> new_uptr(args_t&& ... args) {return uptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
+  [[nodiscard]] auto new_uptr(args_t&& ... args) -> xtd::uptr<type_t> {return uptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @cond
   template<typename type_t>
-  uptr<type_t> new_uptr(const type_t& arg) {return uptr<type_t> {new type_t(arg)};}
+  [[nodiscard]] auto new_uptr(const type_t& arg) -> xtd::uptr<type_t> {return uptr<type_t> {new type_t(arg)};}
   
   template<typename type_t>
-  uptr<type_t> new_uptr() {return uptr<type_t>(new type_t);}
+  [[nodiscard]] auto  new_uptr() -> xtd::uptr<type_t> {return uptr<type_t>(new type_t);}
   /// @endcond
 }
