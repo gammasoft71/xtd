@@ -34,7 +34,7 @@ namespace xtd {
     /// Implement this property to allow the caller of an asynchronous operation to obtain an application-defined object specified at the start of the operation.
     /// @par Notes to Callers
     /// This object can be used to pass state information for the asynchronous operation to an AsyncCallback that you provide.
-    virtual xtd::any_object async_state() const noexcept = 0;
+    [[nodiscard]] virtual auto async_state() const noexcept -> xtd::any_object = 0;
     
     /// @brief Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.
     /// @return A xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.
@@ -44,14 +44,14 @@ namespace xtd {
     /// @par Notes to Callers
     /// Clients that wait for the operation to complete (as opposed to polling) use this property to obtain a synchronization object to wait on.
     /// @par Notes to Implementers
-    virtual xtd::threading::wait_handle& async_wait_handle() noexcept = 0;
+    [[nodiscard]] virtual auto async_wait_handle() noexcept -> xtd::threading::wait_handle& = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation completed synchronously.
     /// @return `true` if the asynchronous operation completed synchronously; otherwise, `false`.
     /// @remarks If the synchronous completion of the call is detected in the xtd::async_callback delegate, it is probable that the thread that initiated the asynchronous operation is the current thread.
     /// @par Notes to Callers
     /// Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return `true` for an asynchronous I/O operation if the I/O request was small.
-    virtual bool completed_synchronously() const noexcept = 0;
+    [[nodiscard]] virtual auto completed_synchronously() const noexcept -> bool = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation has completed.
     /// @return `true` if the operation is complete; otherwise, `false`.
@@ -60,7 +60,7 @@ namespace xtd {
     /// Implementers will typically return the value of a private field or internal test as the value of this property.
     /// @par Notes to Callers
     /// Clients that poll for operation status (as opposed to waiting on a synchronization object) use this property to determine the status of the operation.
-    virtual bool is_completed() const noexcept = 0;
+    [[nodiscard]] virtual auto is_completed() const noexcept -> bool = 0;
     /// @}
   };
 }
