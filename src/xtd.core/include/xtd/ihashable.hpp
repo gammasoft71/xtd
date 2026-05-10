@@ -25,7 +25,7 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    virtual xtd::usize get_hash_code() const noexcept = 0;
+    [[nodiscard]] virtual auto get_hash_code() const noexcept -> xtd::usize = 0;
     /// @}
   };
 }
