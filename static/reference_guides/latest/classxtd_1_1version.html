@@ -179,7 +179,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <div class="line"><span class="keyword">enum class</span> version_time {earlier = -1, same = 0, later = 1 };</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;version_time&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;version_time&gt;</a> {{version_time::earlier, <span class="stringliteral">&quot;earlier&quot;</span>}, {version_time::same, <span class="stringliteral">&quot;same&quot;</span>}, {version_time::later, <span class="stringliteral">&quot;later&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> values() noexcept {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;version_time&gt;</a> {{version_time::earlier, <span class="stringliteral">&quot;earlier&quot;</span>}, {version_time::same, <span class="stringliteral">&quot;same&quot;</span>}, {version_time::later, <span class="stringliteral">&quot;later&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>

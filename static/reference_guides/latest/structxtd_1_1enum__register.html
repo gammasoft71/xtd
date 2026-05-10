@@ -85,7 +85,7 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structxtd_1_1enum__register-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::enum_register&lt; enum_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a></div></div></div>
 </div><!--header-->
@@ -117,7 +117,7 @@ See <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.cor
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;enum_test&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;enum_test&gt;</a> {{enum_test::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {enum_test::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}, {enum_test::value_three, <span class="stringliteral">&quot;value_three&quot;</span>}, {enum_test::value_four, <span class="stringliteral">&quot;value_four&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="#ac820615987347bc1e8dba693b32c1e51">values</a>() noexcept {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;enum_test&gt;</a> {{enum_test::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {enum_test::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}, {enum_test::value_three, <span class="stringliteral">&quot;value_three&quot;</span>}, {enum_test::value_four, <span class="stringliteral">&quot;value_four&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -138,6 +138,7 @@ See <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.cor
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
 <div class="ttc" id="agroup__xtd__core_html_ga292bc25e10c2a6b7d9439b94d566d346"><div class="ttname"><a href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:24</div></div>
+<div class="ttc" id="astructxtd_1_1enum__register_html_ac820615987347bc1e8dba693b32c1e51"><div class="ttname"><a href="#ac820615987347bc1e8dba693b32c1e51">xtd::enum_register::values</a></div><div class="ttdeci">static auto values() noexcept</div><div class="ttdef"><b>Definition</b> enum_register.hpp:55</div></div>
 </div><!-- fragment --> The following code show how to use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> operator for an enum flags. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> text_attribute {</div>
@@ -151,11 +152,11 @@ See <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.cor
 <div class="line">text_attribute operator|(text_attribute lhs, text_attribute rhs) {<span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>text_attribute<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>std::underlying_type&lt;text_attribute&gt;::type<span class="keyword">&gt;</span>(lhs) | <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;text_attribute&gt;::type<span class="keyword">&gt;</span>(rhs));}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__set__attribute.html">xtd::enum_set_attribute</a>&lt;text_attribute&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">xtd::enum_attribute::flags</a>;}</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1enum__set__attribute.html#afd4aecbb474f96d606219781250f60f2">attribute</a>() noexcept {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">xtd::enum_attribute::flags</a>;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;text_attribute&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;text_attribute&gt;</a> {{text_attribute::normal, <span class="stringliteral">&quot;normal&quot;</span>}, {text_attribute::bold, <span class="stringliteral">&quot;bold&quot;</span>}, {text_attribute::italic, <span class="stringliteral">&quot;italic&quot;</span>}, {text_attribute::underline, <span class="stringliteral">&quot;underline&quot;</span>}, {text_attribute::strikeout, <span class="stringliteral">&quot;strikeout&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="#ac820615987347bc1e8dba693b32c1e51">values</a>() noexcept {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;text_attribute&gt;</a> {{text_attribute::normal, <span class="stringliteral">&quot;normal&quot;</span>}, {text_attribute::bold, <span class="stringliteral">&quot;bold&quot;</span>}, {text_attribute::italic, <span class="stringliteral">&quot;italic&quot;</span>}, {text_attribute::underline, <span class="stringliteral">&quot;underline&quot;</span>}, {text_attribute::strikeout, <span class="stringliteral">&quot;strikeout&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -168,17 +169,18 @@ See <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.cor
 <div class="line">}</div>
 <div class="ttc" id="agroup__xtd__core_html_gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf"><div class="ttname"><a href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">xtd::enum_attribute::flags</a></div><div class="ttdeci">@ flags</div><div class="ttdoc">Enum flags attribute.</div><div class="ttdef"><b>Definition</b> enum_attribute.hpp:26</div></div>
 <div class="ttc" id="astructxtd_1_1enum__set__attribute_html"><div class="ttname"><a href="structxtd_1_1enum__set__attribute.html">xtd::enum_set_attribute</a></div><div class="ttdoc">Provides the set attribute struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_set_attribute.hpp:36</div></div>
+<div class="ttc" id="astructxtd_1_1enum__set__attribute_html_afd4aecbb474f96d606219781250f60f2"><div class="ttname"><a href="structxtd_1_1enum__set__attribute.html#afd4aecbb474f96d606219781250f60f2">xtd::enum_set_attribute::attribute</a></div><div class="ttdeci">static auto attribute() noexcept</div><div class="ttdef"><b>Definition</b> enum_set_attribute.hpp:55</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_flags_without_helpers_8cpp-example.html#_a2">enum_class_flags_without_helpers.cpp</a>, <a class="el" href="enum_class_without_helper_8cpp-example.html#_a0">enum_class_without_helper.cpp</a>, <a class="el" href="format_enum_8cpp-example.html#_a0">format_enum.cpp</a>, <a class="el" href="format_enum_class_8cpp-example.html#_a0">format_enum_class.cpp</a>, <a class="el" href="format_enum_class_flags_8cpp-example.html#_a1">format_enum_class_flags.cpp</a>, <a class="el" href="format_enum_class_flags_without_helper_8cpp-example.html#_a2">format_enum_class_flags_without_helper.cpp</a>, <a class="el" href="sprintf_enum_8cpp-example.html#_a0">sprintf_enum.cpp</a>, and <a class="el" href="sprintf_enum_class_8cpp-example.html#_a0">sprintf_enum_class.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_flags_without_helpers_8cpp-example.html#_a3">enum_class_flags_without_helpers.cpp</a>, <a class="el" href="enum_class_without_helper_8cpp-example.html#_a0">enum_class_without_helper.cpp</a>, <a class="el" href="format_enum_8cpp-example.html#_a0">format_enum.cpp</a>, <a class="el" href="format_enum_class_8cpp-example.html#_a0">format_enum_class.cpp</a>, <a class="el" href="format_enum_class_flags_8cpp-example.html#_a1">format_enum_class_flags.cpp</a>, <a class="el" href="format_enum_class_flags_without_helper_8cpp-example.html#_a3">format_enum_class_flags_without_helper.cpp</a>, <a class="el" href="sprintf_enum_8cpp-example.html#_a0">sprintf_enum.cpp</a>, and <a class="el" href="sprintf_enum_class_8cpp-example.html#_a0">sprintf_enum_class.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a3b2b1faad00803f23272a76a646e6f64" id="r_a3b2b1faad00803f23272a76a646e6f64"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3b2b1faad00803f23272a76a646e6f64">operator auto</a> () const noexcept</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac820615987347bc1e8dba693b32c1e51" id="r_ac820615987347bc1e8dba693b32c1e51"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac820615987347bc1e8dba693b32c1e51">values</a> () noexcept</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a3b2b1faad00803f23272a76a646e6f64" name="a3b2b1faad00803f23272a76a646e6f64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b2b1faad00803f23272a76a646e6f64">&#9670;&#160;</a></span>operator auto()</h2>
+<a id="ac820615987347bc1e8dba693b32c1e51" name="ac820615987347bc1e8dba693b32c1e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac820615987347bc1e8dba693b32c1e51">&#9670;&#160;</a></span>values()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,30 +191,32 @@ template&lt;typename enum_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt; enum_t &gt;::operator auto </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt; enum_t &gt;::values </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Allows to register an enumeration that can be used by <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a>. </p><dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346" title="Represents a pair of an enum_t value and a string of an enum of type enum_t.">xtd::enum_collection</a> collection that represent enumeration. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>To register an enumeration just override <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to register the values enum class. <div class="fragment"><div class="line"><span class="keyword">enum class</span> values {</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to register the values enum class. <div class="fragment"><div class="line"><span class="keyword">enum class</span> <a class="code hl_function" href="#ac820615987347bc1e8dba693b32c1e51">values</a> {</div>
 <div class="line">  value_one,</div>
 <div class="line">  value_two</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register&lt;values&gt;</a> {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;values&gt;</a> {{values::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {values::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="#ac820615987347bc1e8dba693b32c1e51">values</a>() noexcept {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;values&gt;</a> {{values::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {values::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}};}</div>
 <div class="line">};</div>
 </div><!-- fragment --> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_flags_without_helpers_8cpp-example.html#a4">enum_class_flags_without_helpers.cpp</a>, <a class="el" href="enum_class_without_helper_8cpp-example.html#a1">enum_class_without_helper.cpp</a>, <a class="el" href="format_enum_8cpp-example.html#a1">format_enum.cpp</a>, <a class="el" href="format_enum_class_8cpp-example.html#a1">format_enum_class.cpp</a>, <a class="el" href="format_enum_class_flags_8cpp-example.html#a2">format_enum_class_flags.cpp</a>, <a class="el" href="format_enum_class_flags_without_helper_8cpp-example.html#a4">format_enum_class_flags_without_helper.cpp</a>, <a class="el" href="sprintf_enum_8cpp-example.html#a1">sprintf_enum.cpp</a>, and <a class="el" href="sprintf_enum_class_8cpp-example.html#a1">sprintf_enum_class.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
