@@ -165,7 +165,7 @@ namespace xtd {
     ///   unsubscribe();
     /// }
     /// ```
-    virtual void on_completed() noexcept = 0;
+    virtual auto on_completed() noexcept -> void = 0;
     
     /// @brief Notifies the observer that the provider has experienced an error condition.
     /// @param error n object that provides additional information about the error.
@@ -176,7 +176,7 @@ namespace xtd {
     ///   console::write_line("{}: The location cannot be determined.", name());
     /// }
     /// ```
-    virtual void on_error(const std::exception& error) noexcept = 0;
+    virtual auto on_error(const std::exception& error) noexcept -> void = 0;
     
     /// @brief Provides the observer with new data.
     /// @param value The current notification information.
@@ -187,7 +187,7 @@ namespace xtd {
     ///   console::write_line("{}: The current location is {}, {}", name(), value.latitude(), value.longitude());
     /// }
     /// ```
-    virtual void on_next(const type_t& value) noexcept = 0;
+    virtual auto on_next(const type_t& value) noexcept -> void = 0;
     /// @}
   };
 }
