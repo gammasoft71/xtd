@@ -159,11 +159,11 @@ namespace xtd {
     /// @{
     /// @brief Notifies the provider that an observer is to receive notifications.
     /// @param observer The object that is to receive notifications.
-    virtual void subscribe(iobserver<type_t>& observer) noexcept = 0;
+    virtual auto subscribe(iobserver<type_t>& observer) noexcept -> void = 0;
     
     /// @brief Notifies the provider that an observer no longer wants to receive notifications.
     /// @param observer The object that no longer wants to receive notifications.
-    virtual void unsubscribe(iobserver<type_t>& observer) noexcept = 0;
+    virtual auto unsubscribe(iobserver<type_t>& observer) noexcept -> void = 0;
     /// @}
   };
 }
