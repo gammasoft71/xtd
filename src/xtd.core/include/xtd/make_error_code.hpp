@@ -14,5 +14,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core exceptions
-  std::error_code make_error_code(int h_result) noexcept;
+  [[nodiscard]] auto make_error_code(int h_result) noexcept -> std::error_code;
 }
