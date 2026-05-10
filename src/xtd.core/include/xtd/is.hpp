@@ -14,43 +14,43 @@
 namespace xtd {
   /// @cond
   template<typename value_t>
-  inline bool is(bool value) {return false;}
+  [[nodiscard]] inline auto is(bool value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(char value) {return false;}
+  [[nodiscard]] inline auto is(char value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(char16 value) {return false;}
+  [[nodiscard]] inline auto is(char16 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(char32 value) {return false;}
+  [[nodiscard]] inline auto is(char32 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(char8 value) {return false;}
+  [[nodiscard]] inline auto is(char8 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(wchar value) {return false;}
+  [[nodiscard]] inline auto is(wchar value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(decimal value) {return false;}
+  [[nodiscard]] inline auto is(decimal value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(double value) {return false;}
+  [[nodiscard]] inline auto is(double value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(float value) {return false;}
+  [[nodiscard]] inline auto is(float value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(sbyte value) {return false;}
+  [[nodiscard]] inline auto is(sbyte value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(int16 value) {return false;}
+  [[nodiscard]] inline auto is(int16 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(int32 value) {return false;}
+  [[nodiscard]] inline auto is(int32 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(int64 value) {return false;}
+  [[nodiscard]] inline auto is(int64 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(slong value) {return false;}
+  [[nodiscard]] inline auto is(slong value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(xtd::byte value) {return false;}
+  [[nodiscard]] inline auto is(xtd::byte value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(uint16 value) {return false;}
+  [[nodiscard]] inline auto is(uint16 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(uint32 value) {return false;}
+  [[nodiscard]] inline auto is(uint32 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(uint64 value) {return false;}
+  [[nodiscard]] inline auto is(uint64 value) -> bool {return false;}
   template<typename value_t>
-  inline bool is(xtd::ulong value) {return false;}
+  [[nodiscard]] inline auto is(xtd::ulong value) -> bool {return false;}
   /// @endcond
   
   /// @brief Checks if the result of an expression is compatible with a given type.
@@ -71,7 +71,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<bool>(bool value) {
+  [[nodiscard]] inline auto is<bool>(bool value) -> bool {
     return true;
   }
   
@@ -93,7 +93,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<char>(char value) {
+  [[nodiscard]] inline auto is<char>(char value) -> bool {
     return true;
   }
   
@@ -115,7 +115,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<char16>(char16 value) {
+  [[nodiscard]] inline auto is<char16>(char16 value) -> bool {
     return true;
   }
   
@@ -137,7 +137,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<char32>(char32 value) {
+  [[nodiscard]] inline auto is<char32>(char32 value) -> bool {
     return true;
   }
   
@@ -159,7 +159,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<char8>(char8 value) {
+  [[nodiscard]] inline auto is<char8>(char8 value) -> bool {
     return true;
   }
   
@@ -181,7 +181,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<wchar>(wchar value) {
+  [[nodiscard]] inline auto is<wchar>(wchar value) -> bool {
     return true;
   }
   
@@ -203,7 +203,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<decimal>(decimal value) {
+  [[nodiscard]] inline auto is<decimal>(decimal value) -> bool {
     return true;
   }
   
@@ -225,7 +225,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<double>(double value) {
+  [[nodiscard]] inline auto is<double>(double value) -> bool {
     return true;
   }
   
@@ -247,7 +247,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<float>(float value) {
+  [[nodiscard]] inline auto is<float>(float value) -> bool {
     return true;
   }
   
@@ -269,7 +269,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<sbyte>(sbyte value) {
+  [[nodiscard]] inline auto is<sbyte>(sbyte value) -> bool {
     return true;
   }
   
@@ -291,7 +291,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<int16>(int16 value) {
+  [[nodiscard]] inline auto is<int16>(int16 value) -> bool {
     return true;
   }
   
@@ -313,7 +313,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<int32>(int32 value) {
+  [[nodiscard]] inline auto is<int32>(int32 value) -> bool {
     return true;
   }
   
@@ -335,7 +335,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<int64>(int64 value) {
+  [[nodiscard]] inline auto is<int64>(int64 value) -> bool {
     return true;
   }
   
@@ -357,7 +357,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<slong>(slong value) {
+  [[nodiscard]] inline auto is<slong>(slong value) -> bool {
     return true;
   }
   
@@ -379,7 +379,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<xtd::byte>(xtd::byte value) {
+  [[nodiscard]] inline auto is<xtd::byte>(xtd::byte value) -> bool {
     return true;
   }
   
@@ -401,7 +401,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<uint16>(uint16 value) {
+  [[nodiscard]] inline auto is<uint16>(uint16 value) -> bool {
     return true;
   }
   
@@ -423,7 +423,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<uint32>(uint32 value) {
+  [[nodiscard]] inline auto is<uint32>(uint32 value) -> bool {
     return true;
   }
   
@@ -445,7 +445,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<uint64>(uint64 value) {
+  [[nodiscard]] inline auto is<uint64>(uint64 value) -> bool {
     return true;
   }
   
@@ -467,7 +467,7 @@ namespace xtd {
   /// }
   /// ```
   template<>
-  inline bool is<xtd::ulong>(xtd::ulong value) {
+  [[nodiscard]] inline auto is<xtd::ulong>(xtd::ulong value) -> bool {
     return true;
   }
   
@@ -482,7 +482,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename type_t>
-  bool is(xtd::any value) {
+  [[nodiscard]] auto is(xtd::any value) -> bool {
     try {
       xtd::any_cast<type_t>(value);
       return true;
@@ -493,7 +493,7 @@ namespace xtd {
 
   /// @cond
   template<>
-  inline bool is<xtd::null_ptr>(xtd::any value) {
+  [[nodiscard]] inline auto is<xtd::null_ptr>(xtd::any value) -> bool {
     return !value.has_value();
   }
   /// @endcond
@@ -509,7 +509,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  inline bool is<xtd::any>(xtd::any value) {
+  [[nodiscard]] inline auto is<xtd::any>(xtd::any value) -> bool {
     return true;
   }
   
@@ -524,7 +524,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename type_t, typename param_t>
-  bool is(const param_t* value) {
+  [[nodiscard]] auto is(const param_t* value) -> bool {
     try {
       if (value == nullptr) return false;
       return dynamic_cast<const type_t*>(value) != nullptr;
@@ -544,7 +544,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename type_t, typename param_t>
-  bool is(const param_t& value) {
+  [[nodiscard]] auto is(const param_t& value) -> bool {
     return is<type_t>(&value);
   }
   
@@ -560,7 +560,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<typename type_t, typename param_t>
   requires (std::is_polymorphic_v<type_t> && std::is_polymorphic_v<param_t> && !std::is_null_pointer_v<type_t>)
-  bool is(param_t* value) {
+  [[nodiscard]] auto is(param_t* value) -> bool {
     if (value == nullptr) return false;
     return dynamic_cast<type_t*>(value) != nullptr;
   }
@@ -568,14 +568,14 @@ namespace xtd {
   /// @cond
   template<typename type_t, typename param_t>
   requires ((!std::is_polymorphic_v<type_t> || !std::is_polymorphic_v<param_t>) && !std::is_null_pointer_v<type_t>)
-  bool is(param_t* value) {
+  [[nodiscard]] auto is(param_t* value) -> bool {
     if (value == nullptr) return false;
     return typeid(type_t).name() == typeid(param_t).name();
   }
   
   template<typename type_t, typename param_t>
   requires std::is_null_pointer_v<type_t>
-  bool is(param_t* value) {
+  [[nodiscard]] auto is(param_t* value) -> bool {
     return value == nullptr;
   }
 
@@ -605,7 +605,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename type_t, typename param_t>
-  bool is(param_t& value) {
+  [[nodiscard]] auto is(param_t& value) -> bool {
     return is<type_t>(&value);
   }
   
@@ -620,7 +620,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename new_type, typename current_type>
-  bool is(xtd::sptr<current_type>& value) {
+  [[nodiscard]] auto is(xtd::sptr<current_type>& value) -> bool {
     auto result = std::dynamic_pointer_cast<new_type>(value.pointer());
     if (result) return true;
     return false;
