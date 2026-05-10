@@ -42,6 +42,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::threading::thread_priority> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::threading::thread_priority> {{xtd::threading::thread_priority::lowest, "lowest"}, {xtd::threading::thread_priority::below_normal, "below_normal"}, {xtd::threading::thread_priority::normal, "normal"}, {xtd::threading::thread_priority::above_normal, "above_normal"}, {xtd::threading::thread_priority::highest, "highest"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::threading::thread_priority> {{xtd::threading::thread_priority::lowest, "lowest"}, {xtd::threading::thread_priority::below_normal, "below_normal"}, {xtd::threading::thread_priority::normal, "normal"}, {xtd::threading::thread_priority::above_normal, "above_normal"}, {xtd::threading::thread_priority::highest, "highest"}};}
 };
 /// @endcond

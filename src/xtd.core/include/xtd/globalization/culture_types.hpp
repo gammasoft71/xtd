@@ -36,6 +36,6 @@ namespace xtd {
 flags_attribute_(xtd::globalization, culture_types);
 
 template<> struct xtd::enum_register<xtd::globalization::culture_types> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::globalization::culture_types> { {xtd::globalization::culture_types::neutral_cultures, "neutral_cultures"}, {xtd::globalization::culture_types::specific_cultures, "specific_cultures"}, {xtd::globalization::culture_types::installed_win32_cultures, "installed_win32_cultures"}, {xtd::globalization::culture_types::all_cultures, "all_cultures"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::globalization::culture_types> { {xtd::globalization::culture_types::neutral_cultures, "neutral_cultures"}, {xtd::globalization::culture_types::specific_cultures, "specific_cultures"}, {xtd::globalization::culture_types::installed_win32_cultures, "installed_win32_cultures"}, {xtd::globalization::culture_types::all_cultures, "all_cultures"}};}
 };
 /// @endcond

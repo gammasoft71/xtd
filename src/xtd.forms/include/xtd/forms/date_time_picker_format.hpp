@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::date_time_picker_format> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::date_time_picker_format> {{xtd::forms::date_time_picker_format::long_format, "long_format"}, {xtd::forms::date_time_picker_format::short_format, "short_format"}, {xtd::forms::date_time_picker_format::time, "time"}, {xtd::forms::date_time_picker_format::custom, "custom"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::date_time_picker_format> {{xtd::forms::date_time_picker_format::long_format, "long_format"}, {xtd::forms::date_time_picker_format::short_format, "short_format"}, {xtd::forms::date_time_picker_format::time, "time"}, {xtd::forms::date_time_picker_format::custom, "custom"}};}
 };
 /// @endcond

@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing_2d::compositing_quality> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::compositing_quality> {{xtd::drawing::drawing_2d::compositing_quality::invalid, "invalid"}, {xtd::drawing::drawing_2d::compositing_quality::default_value, "default_value"}, {xtd::drawing::drawing_2d::compositing_quality::high_speed, "high_speed"}, {xtd::drawing::drawing_2d::compositing_quality::high_quality, "high_quality"}, {xtd::drawing::drawing_2d::compositing_quality::gamma_corrected, "gamma_corrected"}, {xtd::drawing::drawing_2d::compositing_quality::assume_linear, "assume_linear"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::compositing_quality> {{xtd::drawing::drawing_2d::compositing_quality::invalid, "invalid"}, {xtd::drawing::drawing_2d::compositing_quality::default_value, "default_value"}, {xtd::drawing::drawing_2d::compositing_quality::high_speed, "high_speed"}, {xtd::drawing::drawing_2d::compositing_quality::high_quality, "high_quality"}, {xtd::drawing::drawing_2d::compositing_quality::gamma_corrected, "gamma_corrected"}, {xtd::drawing::drawing_2d::compositing_quality::assume_linear, "assume_linear"}};}
 };
 /// @endcond

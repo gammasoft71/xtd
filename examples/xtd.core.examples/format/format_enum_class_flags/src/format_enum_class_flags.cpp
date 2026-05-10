@@ -13,7 +13,7 @@ flags_attribute_(, text_styles);
 
 // Only this operator is needed for text_styles enum class to be recognized by xtd::string::format().
 template<> struct xtd::enum_register<text_styles> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<text_styles> {{text_styles::normal, "normal"}, {text_styles::bold, "bold"}, {text_styles::italic, "italic"}, {text_styles::underline, "underline"}, {text_styles::strikeout, "strikeout"}};}
+  static auto values() noexcept {return xtd::enum_collection<text_styles> {{text_styles::normal, "normal"}, {text_styles::bold, "bold"}, {text_styles::italic, "italic"}, {text_styles::underline, "underline"}, {text_styles::strikeout, "strikeout"}};}
 };
 
 enum class cap {title, middle, end};

@@ -40,6 +40,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing_2d::linear_gradient_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::linear_gradient_mode> {{xtd::drawing::drawing_2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing_2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing_2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing_2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::linear_gradient_mode> {{xtd::drawing::drawing_2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing_2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing_2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing_2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
 };
 /// @endcond

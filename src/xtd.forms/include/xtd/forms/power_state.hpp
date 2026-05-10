@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::power_state> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::power_state> {{xtd::forms::power_state::suspend, "suspend"}, {xtd::forms::power_state::hibernate, "hibernate"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::power_state> {{xtd::forms::power_state::suspend, "suspend"}, {xtd::forms::power_state::hibernate, "hibernate"}};}
 };
 /// @endcond

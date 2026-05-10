@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::left_right_alignment> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::left_right_alignment> {{xtd::forms::left_right_alignment::left, "left"}, {xtd::forms::left_right_alignment::right, "right"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::left_right_alignment> {{xtd::forms::left_right_alignment::left, "left"}, {xtd::forms::left_right_alignment::right, "right"}};}
 };
 /// @endcond

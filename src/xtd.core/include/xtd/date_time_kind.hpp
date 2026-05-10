@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::date_time_kind> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::date_time_kind> {{xtd::date_time_kind::unspecified, "unspecified"}, {xtd::date_time_kind::utc, "utc"}, {xtd::date_time_kind::local, "local"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::date_time_kind> {{xtd::date_time_kind::unspecified, "unspecified"}, {xtd::date_time_kind::utc, "utc"}, {xtd::date_time_kind::local, "local"}};}
 };
 /// @endcond

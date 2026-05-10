@@ -24,6 +24,6 @@ namespace minesweeper {
 
 /// @cond
 template<> struct xtd::enum_register<minesweeper::cell_state> {
-  explicit operator auto() const noexcept {return enum_collection<minesweeper::cell_state> {{minesweeper::cell_state::unchecked, "unchecked"}, {minesweeper::cell_state::checked, "checked"}, {minesweeper::cell_state::flag, "flag"}, {minesweeper::cell_state::question, "question"}, {minesweeper::cell_state::mine, "mine"}, {minesweeper::cell_state::exploded_mine, "exploded_mine"}, {minesweeper::cell_state::error, "error"}};}
+  static auto values() noexcept {return enum_collection<minesweeper::cell_state> {{minesweeper::cell_state::unchecked, "unchecked"}, {minesweeper::cell_state::checked, "checked"}, {minesweeper::cell_state::flag, "flag"}, {minesweeper::cell_state::question, "question"}, {minesweeper::cell_state::mine, "mine"}, {minesweeper::cell_state::exploded_mine, "exploded_mine"}, {minesweeper::cell_state::error, "error"}};}
 };
 /// @endcond

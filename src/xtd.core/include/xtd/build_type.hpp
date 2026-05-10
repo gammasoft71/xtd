@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::build_type> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::build_type> {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::build_type> {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
 };
 /// @endcond

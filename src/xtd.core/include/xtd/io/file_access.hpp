@@ -28,6 +28,6 @@ namespace xtd {
 flags_attribute_(xtd::io, file_access);
 
 template<> struct xtd::enum_register<xtd::io::file_access> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::io::file_access> {{xtd::io::file_access::read, L"read"}, {xtd::io::file_access::write, L"write"}, {xtd::io::file_access::read_write, L"read_write"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::io::file_access> {{xtd::io::file_access::read, L"read"}, {xtd::io::file_access::write, L"write"}, {xtd::io::file_access::read_write, L"read_write"}};}
 };
 /// @endcond

@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::combo_box_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::combo_box_style> {{xtd::forms::combo_box_style::simple, "simple"}, {xtd::forms::combo_box_style::drop_down, "drop_down"}, {xtd::forms::combo_box_style::drop_down_list, "drop_down_list"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::combo_box_style> {{xtd::forms::combo_box_style::simple, "simple"}, {xtd::forms::combo_box_style::drop_down, "drop_down"}, {xtd::forms::combo_box_style::drop_down_list, "drop_down_list"}};}
 };
 /// @endcond

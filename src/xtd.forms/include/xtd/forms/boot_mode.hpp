@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::boot_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::boot_mode> {{xtd::forms::boot_mode::normal, "normal"}, {xtd::forms::boot_mode::fail_safe, "fail_safe"}, {xtd::forms::boot_mode::fail_safe_with_network, "fail_safe_with_network"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::boot_mode> {{xtd::forms::boot_mode::normal, "normal"}, {xtd::forms::boot_mode::fail_safe, "fail_safe"}, {xtd::forms::boot_mode::fail_safe_with_network, "fail_safe_with_network"}};}
 };
 /// @endcond

@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::io::seek_origin> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::io::seek_origin> {{xtd::io::seek_origin::begin, L"begin"}, {xtd::io::seek_origin::current, L"current"}, {xtd::io::seek_origin::end, L"end"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::io::seek_origin> {{xtd::io::seek_origin::begin, L"begin"}, {xtd::io::seek_origin::current, L"current"}, {xtd::io::seek_origin::end, L"end"}};}
 };
 /// @endcond

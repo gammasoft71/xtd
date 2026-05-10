@@ -38,6 +38,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::trace_level> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::trace_level> {{xtd::diagnostics::trace_level::off, "off"}, {xtd::diagnostics::trace_level::error, "error"}, {xtd::diagnostics::trace_level::warning, "warning"}, {xtd::diagnostics::trace_level::info, "info"}, {xtd::diagnostics::trace_level::verbose, "verbose"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::diagnostics::trace_level> {{xtd::diagnostics::trace_level::off, "off"}, {xtd::diagnostics::trace_level::error, "error"}, {xtd::diagnostics::trace_level::warning, "warning"}, {xtd::diagnostics::trace_level::info, "info"}, {xtd::diagnostics::trace_level::verbose, "verbose"}};}
 };
 /// @endcond

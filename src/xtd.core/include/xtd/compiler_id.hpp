@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::compiler_id> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::compiler_id> {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::msvc, "msvc"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}, {xtd::compiler_id::apple_clang, "apple_clang"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::compiler_id> {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::msvc, "msvc"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}, {xtd::compiler_id::apple_clang, "apple_clang"}};}
 };
 /// @endcond

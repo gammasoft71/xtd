@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tick_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::tick_style> {{xtd::forms::tick_style::none, "none"}, {xtd::forms::tick_style::top_left, "top_left"}, {xtd::forms::tick_style::bottom_right, "bottom_right"}, {xtd::forms::tick_style::both, "both"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::tick_style> {{xtd::forms::tick_style::none, "none"}, {xtd::forms::tick_style::top_left, "top_left"}, {xtd::forms::tick_style::bottom_right, "bottom_right"}, {xtd::forms::tick_style::both, "both"}};}
 };
 /// @endcond

@@ -23,6 +23,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::exit_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::exit_mode> {{xtd::exit_mode::normal, "normal"}, {xtd::exit_mode::quick, "quick"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::exit_mode> {{xtd::exit_mode::normal, "normal"}, {xtd::exit_mode::quick, "quick"}};}
 };
 /// @endcond

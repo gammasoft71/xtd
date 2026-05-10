@@ -42,6 +42,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::day_of_week> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::day_of_week> {{xtd::day_of_week::sunday, "sunday"}, {xtd::day_of_week::monday, "monday"}, {xtd::day_of_week::tuesday, "tuesday"}, {xtd::day_of_week::wednesday, "wednesday"}, {xtd::day_of_week::thursday, "thursday"}, {xtd::day_of_week::friday, "friday"}, {xtd::day_of_week::saturday, "saturday"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::day_of_week> {{xtd::day_of_week::sunday, "sunday"}, {xtd::day_of_week::monday, "monday"}, {xtd::day_of_week::tuesday, "tuesday"}, {xtd::day_of_week::wednesday, "wednesday"}, {xtd::day_of_week::thursday, "thursday"}, {xtd::day_of_week::friday, "friday"}, {xtd::day_of_week::saturday, "saturday"}};}
 };
 /// @endcond

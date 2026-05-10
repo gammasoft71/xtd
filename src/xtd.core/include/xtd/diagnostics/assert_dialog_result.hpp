@@ -35,6 +35,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::assert_dialog_result> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::assert_dialog_result> {{xtd::diagnostics::assert_dialog_result::abort, "abort"}, {xtd::diagnostics::assert_dialog_result::retry, "retry"}, {xtd::diagnostics::assert_dialog_result::ignore, "ignore"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::diagnostics::assert_dialog_result> {{xtd::diagnostics::assert_dialog_result::abort, "abort"}, {xtd::diagnostics::assert_dialog_result::retry, "retry"}, {xtd::diagnostics::assert_dialog_result::ignore, "ignore"}};}
 };
 /// @endcond

@@ -56,10 +56,10 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_set_attribute<xtd::threading::tasks::task_creation_options> {
-  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
+  static auto attribute() noexcept {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<xtd::threading::tasks::task_creation_options> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::threading::tasks::task_creation_options> {{xtd::threading::tasks::task_creation_options::none, "none"}, {xtd::threading::tasks::task_creation_options::prefer_fairness, "prefer_fairness"}, {xtd::threading::tasks::task_creation_options::long_running, "long_running"}, {xtd::threading::tasks::task_creation_options::attached_to_parent, "attached_to_parent"}, {xtd::threading::tasks::task_creation_options::deny_child_attach, "deny_child_attach"}, {xtd::threading::tasks::task_creation_options::hide_scheduler, "hide_scheduler"}, {xtd::threading::tasks::task_creation_options::run_continuations_asynchronously, "run_continuations_asynchronously"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::threading::tasks::task_creation_options> {{xtd::threading::tasks::task_creation_options::none, "none"}, {xtd::threading::tasks::task_creation_options::prefer_fairness, "prefer_fairness"}, {xtd::threading::tasks::task_creation_options::long_running, "long_running"}, {xtd::threading::tasks::task_creation_options::attached_to_parent, "attached_to_parent"}, {xtd::threading::tasks::task_creation_options::deny_child_attach, "deny_child_attach"}, {xtd::threading::tasks::task_creation_options::hide_scheduler, "hide_scheduler"}, {xtd::threading::tasks::task_creation_options::run_continuations_asynchronously, "run_continuations_asynchronously"}};}
 };
 /// @endcond

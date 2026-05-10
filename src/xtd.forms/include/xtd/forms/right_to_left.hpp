@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::right_to_left> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::right_to_left> {{xtd::forms::right_to_left::no, "no"}, {xtd::forms::right_to_left::yes, "yes"}, {xtd::forms::right_to_left::inherit, "inherit"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::right_to_left> {{xtd::forms::right_to_left::no, "no"}, {xtd::forms::right_to_left::yes, "yes"}, {xtd::forms::right_to_left::inherit, "inherit"}};}
 };
 /// @endcond

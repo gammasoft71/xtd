@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::imaging::image_lock_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::imaging::image_lock_mode> {{xtd::drawing::imaging::image_lock_mode::read_only, "read_only"}, {xtd::drawing::imaging::image_lock_mode::write_only, "write_only"}, {xtd::drawing::imaging::image_lock_mode::read_write, "read_write"}, {xtd::drawing::imaging::image_lock_mode::user_input_buffer, "user_input_buffer"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::drawing::imaging::image_lock_mode> {{xtd::drawing::imaging::image_lock_mode::read_only, "read_only"}, {xtd::drawing::imaging::image_lock_mode::write_only, "write_only"}, {xtd::drawing::imaging::image_lock_mode::read_write, "read_write"}, {xtd::drawing::imaging::image_lock_mode::user_input_buffer, "user_input_buffer"}};}
 };
 /// @endcond

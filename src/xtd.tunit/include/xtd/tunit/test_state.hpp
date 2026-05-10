@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::tunit::test_state> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::tunit::test_state> {{xtd::tunit::test_state::considered, "considered"}, {xtd::tunit::test_state::ignored, "ignored"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::tunit::test_state> {{xtd::tunit::test_state::considered, "considered"}, {xtd::tunit::test_state::ignored, "ignored"}};}
 };
 /// @endcond

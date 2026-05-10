@@ -38,6 +38,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::target_id> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::target_id> {{xtd::target_id::unknown, "unknown"}, {xtd::target_id::console_application, "console_application"}, {xtd::target_id::gui_application, "gui_application"}, {xtd::target_id::test_application, "test_application"}, {xtd::target_id::interface_library, "interface_library"}, {xtd::target_id::module_library, "module_library"}, {xtd::target_id::shared_library, "shared_library"}, {xtd::target_id::static_library, "static_library"}, {xtd::target_id::custom_target, "custom_target"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::target_id> {{xtd::target_id::unknown, "unknown"}, {xtd::target_id::console_application, "console_application"}, {xtd::target_id::gui_application, "gui_application"}, {xtd::target_id::test_application, "test_application"}, {xtd::target_id::interface_library, "interface_library"}, {xtd::target_id::module_library, "module_library"}, {xtd::target_id::shared_library, "shared_library"}, {xtd::target_id::static_library, "static_library"}, {xtd::target_id::custom_target, "custom_target"}};}
 };
 /// @endcond

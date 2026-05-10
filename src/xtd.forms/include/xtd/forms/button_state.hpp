@@ -43,6 +43,6 @@ flags_attribute_(xtd::forms, button_state);
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::button_state> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::button_state> {{xtd::forms::button_state::normal, "normal"}, {xtd::forms::button_state::inactive, "inactive"}, {xtd::forms::button_state::pushed, "pushed"}, {xtd::forms::button_state::checked, "checked"}, {xtd::forms::button_state::flat, "flat"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::button_state> {{xtd::forms::button_state::normal, "normal"}, {xtd::forms::button_state::inactive, "inactive"}, {xtd::forms::button_state::pushed, "pushed"}, {xtd::forms::button_state::checked, "checked"}, {xtd::forms::button_state::flat, "flat"}};}
 };
 /// @endcond

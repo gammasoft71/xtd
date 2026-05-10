@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::input_box_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::input_box_style> {{xtd::forms::input_box_style::normal, "normal"}, {xtd::forms::input_box_style::multiline, "multiline"}, {xtd::forms::input_box_style::password, "password"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::input_box_style> {{xtd::forms::input_box_style::normal, "normal"}, {xtd::forms::input_box_style::multiline, "multiline"}, {xtd::forms::input_box_style::password, "password"}};}
 };
 /// @endcond

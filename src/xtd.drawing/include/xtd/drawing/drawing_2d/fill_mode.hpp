@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing_2d::fill_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::fill_mode> {{xtd::drawing::drawing_2d::fill_mode::alternate, "alternate"}, {xtd::drawing::drawing_2d::fill_mode::winding, "winding"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::fill_mode> {{xtd::drawing::drawing_2d::fill_mode::alternate, "alternate"}, {xtd::drawing::drawing_2d::fill_mode::winding, "winding"}};}
 };
 /// @endcond

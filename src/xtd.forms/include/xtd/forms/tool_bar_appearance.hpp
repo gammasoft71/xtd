@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tool_bar_appearance> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::tool_bar_appearance> {{xtd::forms::tool_bar_appearance::normal, "normal"}, {xtd::forms::tool_bar_appearance::flat, "flat"}, {xtd::forms::tool_bar_appearance::system, "system"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::tool_bar_appearance> {{xtd::forms::tool_bar_appearance::normal, "normal"}, {xtd::forms::tool_bar_appearance::flat, "flat"}, {xtd::forms::tool_bar_appearance::system, "system"}};}
 };
 /// @endcond

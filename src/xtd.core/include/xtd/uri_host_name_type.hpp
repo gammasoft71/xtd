@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::uri_host_name_type> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::uri_host_name_type> {{xtd::uri_host_name_type::unknown, "unknown"}, {xtd::uri_host_name_type::basic, "basic"}, {xtd::uri_host_name_type::dns, "dns"}, {xtd::uri_host_name_type::ip_v4, "ip_v4"}, {xtd::uri_host_name_type::ip_v6, "ip_v6"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::uri_host_name_type> {{xtd::uri_host_name_type::unknown, "unknown"}, {xtd::uri_host_name_type::basic, "basic"}, {xtd::uri_host_name_type::dns, "dns"}, {xtd::uri_host_name_type::ip_v4, "ip_v4"}, {xtd::uri_host_name_type::ip_v6, "ip_v6"}};}
 };
 /// @endcond

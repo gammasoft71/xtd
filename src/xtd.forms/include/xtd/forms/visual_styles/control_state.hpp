@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::visual_styles::control_state> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::visual_styles::control_state> {{xtd::forms::visual_styles::control_state::normal, "normal"}, {xtd::forms::visual_styles::control_state::hot, "hot"}, {xtd::forms::visual_styles::control_state::pressed, "pressed"}, {xtd::forms::visual_styles::control_state::disabled, "disabled"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::visual_styles::control_state> {{xtd::forms::visual_styles::control_state::normal, "normal"}, {xtd::forms::visual_styles::control_state::hot, "hot"}, {xtd::forms::visual_styles::control_state::pressed, "pressed"}, {xtd::forms::visual_styles::control_state::disabled, "disabled"}};}
 };
 /// @endcond

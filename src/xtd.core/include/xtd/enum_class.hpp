@@ -30,7 +30,7 @@
 #define enum_class_ut_(namespace_name, enum_class_t, underlying_t, ...) \
   namespace namespace_name {enum class enum_class_t : underlying_t { __VA_ARGS__ };} \
   __enum_introspection__(namespace_name, enum_class_t, underlying_t, __VA_ARGS__) \
-  template<> struct xtd::enum_register<namespace_name::enum_class_t> {explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_t>(#__VA_ARGS__);}}
+  template<> struct xtd::enum_register<namespace_name::enum_class_t> {static auto values() noexcept {return __enum_definition_to_enum_collection__<namespace_name::enum_class_t>(#__VA_ARGS__);}}
 
 /// @brief Provides the registration struct for enum class.
 /// @par Header

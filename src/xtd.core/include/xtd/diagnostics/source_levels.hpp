@@ -47,6 +47,6 @@ namespace xtd {
 flags_attribute_(xtd::diagnostics, source_levels);
 
 template<> struct xtd::enum_register<xtd::diagnostics::source_levels> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::source_levels> {{xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}, {xtd::diagnostics::source_levels::all, "all"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::diagnostics::source_levels> {{xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}, {xtd::diagnostics::source_levels::all, "all"}};}
 };
 /// @endcond

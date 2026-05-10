@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::process_window_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::process_window_style> {{xtd::diagnostics::process_window_style::normal, "normal"}, {xtd::diagnostics::process_window_style::hidden, "hidden"}, {xtd::diagnostics::process_window_style::minimized, "minimized"}, {xtd::diagnostics::process_window_style::maximized, "maximized"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::diagnostics::process_window_style> {{xtd::diagnostics::process_window_style::normal, "normal"}, {xtd::diagnostics::process_window_style::hidden, "hidden"}, {xtd::diagnostics::process_window_style::minimized, "minimized"}, {xtd::diagnostics::process_window_style::maximized, "maximized"}};}
 };
 /// @endcond

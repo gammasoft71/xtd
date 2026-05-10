@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::message_dialog_default_button> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::message_dialog_default_button> {{xtd::forms::message_dialog_default_button::button1, "button1"}, {xtd::forms::message_dialog_default_button::button2, "button2"}, {xtd::forms::message_dialog_default_button::button3, "button3"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::message_dialog_default_button> {{xtd::forms::message_dialog_default_button::button1, "button1"}, {xtd::forms::message_dialog_default_button::button2, "button2"}, {xtd::forms::message_dialog_default_button::button3, "button3"}};}
 };
 /// @endcond

@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::character_casing> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::character_casing> {{xtd::forms::character_casing::normal, "normal"}, {xtd::forms::character_casing::upper, "upper"}, {xtd::forms::character_casing::lower, "lower"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::character_casing> {{xtd::forms::character_casing::normal, "normal"}, {xtd::forms::character_casing::upper, "upper"}, {xtd::forms::character_casing::lower, "lower"}};}
 };
 /// @endcond

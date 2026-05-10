@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing_2d::dash_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::dash_style> {{xtd::drawing::drawing_2d::dash_style::solid, "solid"}, {xtd::drawing::drawing_2d::dash_style::dash, "dash"}, {xtd::drawing::drawing_2d::dash_style::dot, "dot"}, {xtd::drawing::drawing_2d::dash_style::dash_dot, "dash_dot"}, {xtd::drawing::drawing_2d::dash_style::dash_dot_dot, "dash_dot_dot"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::dash_style> {{xtd::drawing::drawing_2d::dash_style::solid, "solid"}, {xtd::drawing::drawing_2d::dash_style::dash, "dash"}, {xtd::drawing::drawing_2d::dash_style::dot, "dot"}, {xtd::drawing::drawing_2d::dash_style::dash_dot, "dash_dot"}, {xtd::drawing::drawing_2d::dash_style::dash_dot_dot, "dash_dot_dot"}};}
 };
 /// @endcond

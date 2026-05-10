@@ -306,13 +306,13 @@ namespace xtd {
     
     [[nodiscard]] static auto attribute() noexcept -> xtd::enum_attribute {
       if (attribute_.has_value()) return attribute_.value();
-      attribute_ = xtd::enum_attribute(enum_set_attribute<enum_type>());
+      attribute_ = xtd::enum_attribute(enum_set_attribute<enum_type>::attribute());
       return attribute_.value();
     }
     
     [[nodiscard]] static auto entries() noexcept -> enum_collection<enum_type>& {
       if (entries_.has_value()) return entries_.value();
-      entries_ = enum_collection<enum_type>(enum_register<enum_type>());
+      entries_ = enum_collection<enum_type>(enum_register<enum_type>::values());
       return entries_.value();
     };
     

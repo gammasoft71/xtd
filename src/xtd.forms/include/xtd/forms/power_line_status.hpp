@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::power_line_status> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::power_line_status> {{xtd::forms::power_line_status::offline, "offline"}, {xtd::forms::power_line_status::online, "online"}, {xtd::forms::power_line_status::unknown, "unknown"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::power_line_status> {{xtd::forms::power_line_status::offline, "offline"}, {xtd::forms::power_line_status::online, "online"}, {xtd::forms::power_line_status::unknown, "unknown"}};}
 };
 /// @endcond

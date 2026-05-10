@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::threading::event_reset_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::threading::event_reset_mode> {{xtd::threading::event_reset_mode::auto_reset, "auto_reset"}, {xtd::threading::event_reset_mode::manual_reset, "manual_reset"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::threading::event_reset_mode> {{xtd::threading::event_reset_mode::auto_reset, "auto_reset"}, {xtd::threading::event_reset_mode::manual_reset, "manual_reset"}};}
 };
 /// @endcond

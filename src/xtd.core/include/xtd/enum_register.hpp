@@ -49,9 +49,9 @@ namespace xtd {
     ///
     /// template<>
     /// xtd::enum_register<values> {
-    ///   explicit operator auto() const noexcept {return xtd::enum_collection<values> {{values::value_one, "value_one"}, {values::value_two, "value_two"}};}
+    ///   static auto values() noexcept {return xtd::enum_collection<values> {{values::value_one, "value_one"}, {values::value_two, "value_two"}};}
     /// };
     /// ```
-    explicit operator auto() const noexcept {return xtd::enum_collection<enum_t> {};}
+    static auto values() noexcept {return xtd::enum_collection<enum_t> {};}
   };
 }

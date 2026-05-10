@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::exit_status> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::exit_status> {{xtd::exit_status::success, "success"}, {xtd::exit_status::failure, "failure"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::exit_status> {{xtd::exit_status::success, "success"}, {xtd::exit_status::failure, "failure"}};}
 };
 /// @endcond

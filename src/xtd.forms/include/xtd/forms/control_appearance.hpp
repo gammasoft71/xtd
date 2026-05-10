@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::control_appearance> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::control_appearance> {{xtd::forms::control_appearance::standard, "standard"}, {xtd::forms::control_appearance::system, "system"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::control_appearance> {{xtd::forms::control_appearance::standard, "standard"}, {xtd::forms::control_appearance::system, "system"}};}
 };
 /// @endcond

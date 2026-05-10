@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::size_type> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::size_type> {{xtd::forms::size_type::auto_size, "auto_size"}, {xtd::forms::size_type::absolute, "absolute"}, {xtd::forms::size_type::percent, "percent"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::size_type> {{xtd::forms::size_type::auto_size, "auto_size"}, {xtd::forms::size_type::absolute, "absolute"}, {xtd::forms::size_type::percent, "percent"}};}
 };
 /// @endcond

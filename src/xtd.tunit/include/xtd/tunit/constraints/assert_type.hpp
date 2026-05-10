@@ -21,6 +21,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::tunit::constraints::assert_type> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::tunit::constraints::assert_type> {{xtd::tunit::constraints::assert_type::assert, "assert"}, {xtd::tunit::constraints::assert_type::valid, "valid"}, {xtd::tunit::constraints::assert_type::assume, "assume"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::tunit::constraints::assert_type> {{xtd::tunit::constraints::assert_type::assert, "assert"}, {xtd::tunit::constraints::assert_type::valid, "valid"}, {xtd::tunit::constraints::assert_type::assume, "assume"}};}
 };
 /// @endcond

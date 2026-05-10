@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::status_bar_panel_border_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::status_bar_panel_border_style> {{xtd::forms::status_bar_panel_border_style::none, "none"}, {xtd::forms::status_bar_panel_border_style::outset, "outset"}, {xtd::forms::status_bar_panel_border_style::inset, "inset"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::status_bar_panel_border_style> {{xtd::forms::status_bar_panel_border_style::none, "none"}, {xtd::forms::status_bar_panel_border_style::outset, "outset"}, {xtd::forms::status_bar_panel_border_style::inset, "inset"}};}
 };
 /// @endcond

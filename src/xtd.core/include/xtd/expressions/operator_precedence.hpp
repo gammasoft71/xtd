@@ -156,6 +156,6 @@ namespace xtd {
 
 /// @cond
 //template<> struct xtd::enum_register<xtd::expressions::operator_precedence> {
-//  explicit operator auto() const noexcept { return xtd::enum_collection<xtd::expressions::operator_precedence> {{xtd::expressions::operator_precedence::lowest, "lowest"}, {xtd::expressions::operator_precedence::equality, "equality"}, {xtd::expressions::operator_precedence::additive, "additive"}, {xtd::expressions::operator_precedence::multiplicative, "multiplicative"}, {xtd::expressions::operator_precedence::primary, "primary"}};}
+//  static auto values() noexcept {return xtd::enum_collection<xtd::expressions::operator_precedence> {{xtd::expressions::operator_precedence::lowest, "lowest"}, {xtd::expressions::operator_precedence::equality, "equality"}, {xtd::expressions::operator_precedence::additive, "additive"}, {xtd::expressions::operator_precedence::multiplicative, "multiplicative"}, {xtd::expressions::operator_precedence::primary, "primary"}};}
 //};
 /// @endcond

@@ -11,11 +11,11 @@ enum class text_attribute {
 text_attribute operator|(text_attribute lhs, text_attribute rhs) {return static_cast<text_attribute>(static_cast<std::underlying_type<text_attribute>::type>(lhs) | static_cast<std::underlying_type<text_attribute>::type>(rhs));}
 
 template<> struct xtd::enum_set_attribute<text_attribute> {
-  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
+  static auto attribute() noexcept {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<text_attribute> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<text_attribute> {{text_attribute::normal, "normal"}, {text_attribute::bold, "bold"}, {text_attribute::italic, "italic"}, {text_attribute::underline, "underline"}, {text_attribute::strikeout, "strikeout"}};}
+  static auto values() noexcept {return xtd::enum_collection<text_attribute> {{text_attribute::normal, "normal"}, {text_attribute::bold, "bold"}, {text_attribute::italic, "italic"}, {text_attribute::underline, "underline"}, {text_attribute::strikeout, "strikeout"}};}
 };
 
 auto main() -> int {

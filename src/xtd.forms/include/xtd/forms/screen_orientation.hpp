@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::screen_orientation> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::screen_orientation> {{xtd::forms::screen_orientation::angle_0, "angle_0"}, {xtd::forms::screen_orientation::angle_90, "angle_90"}, {xtd::forms::screen_orientation::angle_180, "angle_180"}, {xtd::forms::screen_orientation::angle_270, "angle_270"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::forms::screen_orientation> {{xtd::forms::screen_orientation::angle_0, "angle_0"}, {xtd::forms::screen_orientation::angle_90, "angle_90"}, {xtd::forms::screen_orientation::angle_180, "angle_180"}, {xtd::forms::screen_orientation::angle_270, "angle_270"}};}
 };
 /// @endcond

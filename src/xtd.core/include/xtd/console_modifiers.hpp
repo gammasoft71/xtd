@@ -33,7 +33,7 @@ namespace xtd {
 flags_attribute_(xtd, console_modifiers);
 
 template<> struct xtd::enum_register<xtd::console_modifiers> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::console_modifiers> {{xtd::console_modifiers::none, "none"}, {xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::console_modifiers> {{xtd::console_modifiers::none, "none"}, {xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
 };
 /// @endcond
 

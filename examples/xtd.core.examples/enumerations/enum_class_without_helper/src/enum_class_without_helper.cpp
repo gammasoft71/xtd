@@ -8,7 +8,7 @@ enum class enum_test {
 };
 
 template<> struct xtd::enum_register<enum_test> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<enum_test> {{enum_test::value_one, "value_one"}, {enum_test::value_two, "value_two"}, {enum_test::value_three, "value_three"}, {enum_test::value_four, "value_four"}};}
+  static auto values() noexcept {return xtd::enum_collection<enum_test> {{enum_test::value_one, "value_one"}, {enum_test::value_two, "value_two"}, {enum_test::value_three, "value_three"}, {enum_test::value_four, "value_four"}};}
 };
 
 auto main() -> int {

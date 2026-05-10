@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing_2d::flush_intention> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::flush_intention> {{xtd::drawing::drawing_2d::flush_intention::flush, "flush"}, {xtd::drawing::drawing_2d::flush_intention::sync, "sync"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::flush_intention> {{xtd::drawing::drawing_2d::flush_intention::flush, "flush"}, {xtd::drawing::drawing_2d::flush_intention::sync, "sync"}};}
 };
 /// @endcond

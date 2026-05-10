@@ -44,6 +44,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::threading::tasks::task_status> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::threading::tasks::task_status> {{xtd::threading::tasks::task_status::created, "created"}, {xtd::threading::tasks::task_status::waiting_for_activation, "waiting_for_activation"}, {xtd::threading::tasks::task_status::waiting_to_run, "waiting_to_run"}, {xtd::threading::tasks::task_status::running, "running"}, {xtd::threading::tasks::task_status::waiting_for_children_to_complete, "waiting_for_children_to_complete"}, {xtd::threading::tasks::task_status::ran_to_completion, "ran_to_completion"}, {xtd::threading::tasks::task_status::canceled, "canceled"}, {xtd::threading::tasks::task_status::faulted, "faulted"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::threading::tasks::task_status> {{xtd::threading::tasks::task_status::created, "created"}, {xtd::threading::tasks::task_status::waiting_for_activation, "waiting_for_activation"}, {xtd::threading::tasks::task_status::waiting_to_run, "waiting_to_run"}, {xtd::threading::tasks::task_status::running, "running"}, {xtd::threading::tasks::task_status::waiting_for_children_to_complete, "waiting_for_children_to_complete"}, {xtd::threading::tasks::task_status::ran_to_completion, "ran_to_completion"}, {xtd::threading::tasks::task_status::canceled, "canceled"}, {xtd::threading::tasks::task_status::faulted, "faulted"}};}
 };
 /// @endcond
