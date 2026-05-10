@@ -40,7 +40,7 @@ namespace xtd {
     /// @param value The value to add to the hash code.
     /// @return The current instance.
     template<typename type_t>
-    hash_code& add(const type_t& value) noexcept {
+    auto add(const type_t& value) noexcept -> hash_code&  {
       hash_code_ = hash_combine(hash_code_, xtd::collections::generic::helpers::hasher<type_t> {}(value));
       return *this;
     }
@@ -48,16 +48,16 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const xtd::object& other) const noexcept override;
+    [[nodiscard]] auto equals(const xtd::object& other) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Calculates the final hash code after consecutive xtd::hash_code::add invocations.
     /// @return The calculated hash code.
     /// @remarks This method must be called at most once per instance of xtd::hash_code.
-    xtd::usize to_hash_code() const noexcept;
+    [[nodiscard]] auto to_hash_code() const noexcept -> xtd::usize;
     /// @}
     
     /// @name Public Static Methods
@@ -67,15 +67,15 @@ namespace xtd {
     /// @param values The values to combine into the hash code.
     /// @return The hash code that represents the values.
     template<typename ...args_t>
-    static xtd::usize combine(args_t... values) noexcept {return combine_iterator(generate_uniqueness_seed(), values...);}
+    [[nodiscard]] static auto combine(args_t... values) noexcept -> xtd::usize {return combine_iterator(generate_uniqueness_seed(), values...);}
     /// @}
     
   private:
     template<typename type_t, typename ...args_t>
-    static xtd::usize combine_iterator(xtd::usize seed, const type_t& value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}
-    static xtd::usize combine_iterator(xtd::usize seed) noexcept;
-    static xtd::usize hash_combine(xtd::usize seed, xtd::usize value) noexcept;
-    static xtd::usize generate_uniqueness_seed() noexcept;
+    [[nodiscard]] static auto combine_iterator(xtd::usize seed, const type_t& value, args_t... values) noexcept -> xtd::usize {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}
+    [[nodiscard]] static auto combine_iterator(xtd::usize seed) noexcept -> xtd::usize;
+    [[nodiscard]] static auto hash_combine(xtd::usize seed, xtd::usize value) noexcept -> xtd::usize;
+    [[nodiscard]] static auto generate_uniqueness_seed() noexcept -> xtd::usize;
     
     xtd::usize hash_code_ = generate_uniqueness_seed();
   };
