@@ -54,10 +54,10 @@ namespace xtd {
     
     /// @cond
     object(const object&) = default;
-    object& operator =(const object&) = default;
+    auto operator =(const object&) -> object& = default;
     virtual ~object() = default;
-    bool operator ==(const object& obj) const noexcept;
-    bool operator !=(const object& obj) const noexcept;
+    auto operator ==(const object& obj) const noexcept -> bool;
+    auto operator !=(const object& obj) const noexcept -> bool;
     /// @endcond
     
     /// @name Public Methods
@@ -69,18 +69,18 @@ namespace xtd {
     /// @par Examples
     /// The following code example compares the current instance with another object.
     /// @include object_equals.cpp
-    virtual bool equals(const object& obj) const noexcept;
+    [[nodiscard]] virtual auto equals(const object& obj) const noexcept -> bool;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    virtual xtd::usize get_hash_code() const noexcept;
+    [[nodiscard]] virtual auto get_hash_code() const noexcept -> xtd::usize;
     
     /// @brief Gets the type of the current instance.
     /// @return The type instance that represents the exact runtime type of the current instance.
     /// @par Examples
     /// The following code example demonstrates that xtd::object::get_type returns the runtime type of the current instance.
     /// @include object_get_type.cpp
-    virtual type_object get_type() const noexcept;
+    [[nodiscard]] virtual auto get_type() const noexcept -> type_object;
     
     /// @brief Creates a shallow copy of the current object.
     /// @return A shallow copy of the current object.
@@ -99,14 +99,14 @@ namespace xtd {
     /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
     /// * Use reflection with recursion to perform the deep copy operation.
     template<typename object_t>
-    xtd::unique_ptr_object<object_t> memberwise_clone() const;
+    [[nodiscard]] auto memberwise_clone() const -> xtd::unique_ptr_object<object_t>;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     /// @par Examples
     /// The following code example demonstrates what to_string returns.
     /// @include object_to_string.cpp
-    virtual xtd::string to_string() const;
+    [[nodiscard]] virtual auto to_string() const -> xtd::string;
     /// @}
     
     /// @name Public Static Methods
@@ -120,7 +120,7 @@ namespace xtd {
     /// The following code example compares different objects.
     /// @include object_equals2.cpp
     template<typename object_a_t, typename object_b_t>
-    static bool equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
+    [[nodiscard]] static auto equals(const object_a_t& object_a, const object_b_t& object_b) noexcept -> bool {
       static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
       return object_a == object_b;
@@ -134,7 +134,7 @@ namespace xtd {
     /// The following code example uses xtd::object::reference_equals to determine if two objects are the same instance.
     /// @include object_reference_equals.cpp
     template<typename object_a_t, typename object_b_t>
-    static bool reference_equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
+    [[nodiscard]] static auto reference_equals(const object_a_t& object_a, const object_b_t& object_b) noexcept -> bool {
       static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
       return &object_a == &object_b;
@@ -142,7 +142,7 @@ namespace xtd {
     /// @}
   };
   /// @cond
-  std::ostream& operator <<(std::ostream& os, const xtd::object& obj) noexcept;
+  auto operator <<(std::ostream& os, const xtd::object& obj) noexcept -> std::ostream&;
   /// @endcond
 }
 
