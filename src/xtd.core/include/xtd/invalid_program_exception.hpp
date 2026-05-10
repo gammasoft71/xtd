@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "The system detected an invalid program.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "The system detected an invalid program.";}
   };
 }

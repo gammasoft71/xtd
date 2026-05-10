@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Index was outside the bounds of the array.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Index was outside the bounds of the array.";}
   };
 }

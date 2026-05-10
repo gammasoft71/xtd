@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "The time zone cannot be found.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "The time zone cannot be found.";}
   };
 }

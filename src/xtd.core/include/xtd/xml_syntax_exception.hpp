@@ -81,6 +81,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Syntax error in XML.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Syntax error in XML.";}
   };
 }

@@ -86,7 +86,7 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Attempted to operate on an array with the incorrect number of dimensions.";}
-    const std::error_code default_error() const noexcept {return {h_result::COR_E_RANK, h_result::h_result_category()};}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Attempted to operate on an array with the incorrect number of dimensions.";}
+    [[nodiscard]] static auto default_error() noexcept -> std::error_code {return {h_result::COR_E_RANK, h_result::h_result_category()};}
   };
 }

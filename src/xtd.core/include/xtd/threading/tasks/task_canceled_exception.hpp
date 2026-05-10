@@ -88,7 +88,7 @@ namespace xtd {
         /// @endcond
         
       private:
-        const char* default_message() const noexcept {return "A task was canceled.";}
+        [[nodiscard]] static auto default_message() noexcept -> const char* {return "A task was canceled.";}
       };
     }
   }

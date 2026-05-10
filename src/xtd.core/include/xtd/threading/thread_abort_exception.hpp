@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Thread was being aborted.";}
+      [[nodiscard]] static auto default_message() noexcept -> const char* {return "Thread was being aborted.";}
     };
   }
 }

@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Object pointer not set to an instance of an object.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Object pointer not set to an instance of an object.";}
   };
 }

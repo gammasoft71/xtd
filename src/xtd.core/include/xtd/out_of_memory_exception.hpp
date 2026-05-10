@@ -85,6 +85,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Insufficient memory to continue the execution of the program";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Insufficient memory to continue the execution of the program";}
   };
 }

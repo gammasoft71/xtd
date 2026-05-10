@@ -81,6 +81,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Attempted to perform an unauthorized operation.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Attempted to perform an unauthorized operation.";}
   };
 }

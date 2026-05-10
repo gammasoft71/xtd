@@ -172,6 +172,6 @@ namespace xtd {
     /// @}
     
   private:
-    [[nodiscard]] auto default_message() const noexcept -> const char* {return "Specified argument is out of range of valid values.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Specified argument is out of range of valid values.";}
   };
 }

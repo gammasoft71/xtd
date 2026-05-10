@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Operation is not supported on this platform.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Operation is not supported on this platform.";}
   };
 }

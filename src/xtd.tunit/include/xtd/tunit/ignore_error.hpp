@@ -86,7 +86,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "Abort error.";}
+      [[nodiscard]] static auto default_message() noexcept -> const char* {return "Abort error.";}
     };
   }
 }

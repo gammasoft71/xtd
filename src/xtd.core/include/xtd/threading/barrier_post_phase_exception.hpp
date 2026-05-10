@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      [[nodiscard]] auto default_message() const noexcept -> const char* {return "The post_phase_action failed with an exception.";}
+      [[nodiscard]] static auto default_message() noexcept -> const char* {return "The post_phase_action failed with an exception.";}
     };
   }
 }

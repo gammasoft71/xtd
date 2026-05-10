@@ -86,7 +86,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Thread was in an invalid state for the operation being executed.";}
+      [[nodiscard]] static auto default_message() noexcept -> const char* {return "Thread was in an invalid state for the operation being executed.";}
     };
   }
 }

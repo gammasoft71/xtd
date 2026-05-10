@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Specified cast is not valid.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Specified cast is not valid.";}
   };
 }

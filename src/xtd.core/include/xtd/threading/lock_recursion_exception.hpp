@@ -90,7 +90,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Exception of type 'xtd::threading::lock_recursion_exception' was thrown.";}
+      [[nodiscard]] static auto default_message() noexcept -> const char* {return "Exception of type 'xtd::threading::lock_recursion_exception' was thrown.";}
     };
   }
 }

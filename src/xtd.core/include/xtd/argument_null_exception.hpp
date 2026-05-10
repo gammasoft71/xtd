@@ -120,6 +120,6 @@ namespace xtd {
     /// @}
     
   private:
-    [[nodiscard]] auto default_message() const noexcept -> const char* {return "Value cannot be null.";}
+    [[nodiscard]] static auto default_message() noexcept -> const char* {return "Value cannot be null.";}
   };
 }
