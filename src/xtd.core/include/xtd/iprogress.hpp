@@ -23,7 +23,7 @@ namespace xtd {
     /// @{
     /// @brief Reports a progress update.
     /// @param value The value of the updated progress.
-    virtual void report(const type_t& value) noexcept = 0;
+    virtual auto report(const type_t& value) noexcept -> void = 0;
     /// @}
   };
 }
