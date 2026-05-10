@@ -30,7 +30,7 @@ namespace xtd {
     /// @{
     /// @brief Gets a string that represents the current object.
     /// @return A string that represents the current object.
-    virtual xtd::string to_string() const = 0;
+    [[nodiscard]] virtual auto to_string() const -> xtd::string = 0;
     /// @}
   };
 }
