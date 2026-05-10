@@ -36,7 +36,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse_default_with_two_leading_plus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("++42");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("++42");});
     }
     
     auto test_method_(parse_default_with_leading_minus_sign) {
@@ -44,78 +44,78 @@ namespace xtd::tests {
         assert::are_equal(static_cast<type_t>(-42), xtd::parse<type_t>("-42"));
       #if !defined (__linux__)
       else
-        assert::throws<format_exception>([] {xtd::parse<type_t>("-42");});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("-42");});
       #endif
     }
     
     auto test_method_(parse_default_with_two_leading_minus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("--42");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("--42");});
     }
     
     auto test_method_(parse_default_with_trailing_plus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("42+");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42+");});
     }
     
     auto test_method_(parse_default_with_two_trailing_plus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("42++");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42++");});
     }
     
     auto test_method_(parse_default_with_trailing_minus_sign) {
       if (std::is_signed<type_t>::value)
-        assert::throws<format_exception>([] {xtd::parse<type_t>("42-");});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42-");});
       #if !defined (__linux__)
       else
-        assert::throws<format_exception>([] {xtd::parse<type_t>("42-", number_styles::number);});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42-", number_styles::number);});
       #endif
     }
     
     auto test_method_(parse_default_with_two_trailing_minus_sign) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("42--");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42--");});
     }
     
     auto test_method_(parse_default_with_parentheses) {
       if (std::is_signed<type_t>::value)
-        assert::throws<format_exception>([] {xtd::parse<type_t>("(42)");});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("(42)");});
       else
-        assert::throws<format_exception>([] {xtd::parse<type_t>("(42)");});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("(42)");});
     }
     
     auto test_method_(parse_default_with_two_parentheses) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("((42))");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("((42))");});
     }
     
     auto test_method_(parse_default_with_decimal_point) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("42.0");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42.0");});
     }
     
     auto test_method_(parse_default_with_two_decimal_point) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("4.2.0");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("4.2.0");});
     }
     
     auto test_method_(parse_default_with_thousands) {
       if (!std::is_same<type_t, sbyte>::value && !std::is_same<type_t, char>::value && !std::is_same<type_t, unsigned char>::value)
-        assert::throws<format_exception>([] {xtd::parse<type_t>("1,234");});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("1,234");});
     }
     
     auto test_method_(parse_default_with_two_thousands) {
       if (!std::is_same<type_t, sbyte>::value && !std::is_same<type_t, char>::value && !std::is_same<type_t, unsigned char>::value)
-        assert::throws<format_exception>([] {xtd::parse<type_t>("1,,234");});
+        assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("1,,234");});
     }
     
     auto test_method_(parse_default_with_exponent) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("4E+01");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("4E+01");});
     }
     
     auto test_method_(parse_default_with_leading_currency_symbol) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("$42");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("$42");});
     }
     
     auto test_method_(parse_default_with_trailing_currency_symbol) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("42$");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("42$");});
     }
     
     auto test_method_(parse_default_with_binary_specifier) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("0b101010");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("0b101010");});
     }
     
     auto test_method_(parse_default_with_octal_specifier) {
@@ -123,11 +123,11 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse_default_with_hexa_specifier) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("0x2A");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("0x2A");});
     }
     
     auto test_method_(parse_default_invalid) {
-      assert::throws<format_exception>([] {xtd::parse<type_t>("z42");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto r = xtd::parse<type_t>("z42");});
     }
   };
 }
