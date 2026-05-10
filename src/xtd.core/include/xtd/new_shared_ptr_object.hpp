@@ -21,7 +21,7 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_shared_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared) with xtd::shared_ptr_object instead [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
   template<typename type_t, typename ...args_t>
-  shared_ptr_object<type_t> new_shared_ptr_object(args_t&& ... args) {return shared_ptr_object<type_t> {new type_t(std::forward<args_t>(args)...)};}
+  [[nodiscard]] auto new_shared_ptr_object(args_t&& ... args) -> xtd::shared_ptr_object<type_t> {return xtd::shared_ptr_object<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @brief xtd::new_shared_ptr_object operator creates a xtd::shared_ptr_object object.
   /// @par Library
@@ -37,7 +37,7 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_shared_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared) with xtd::shared_ptr_object instead [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
   template<typename type_t>
-  shared_ptr_object<type_t> new_shared_ptr_object(const type_t& arg) {return shared_ptr_object<type_t> {new type_t(arg)};}
+  [[nodiscard]] auto new_shared_ptr_object(const type_t& arg) -> xtd::shared_ptr_object<type_t> {return xtd::shared_ptr_object<type_t> {new type_t(arg)};}
   
   /// @brief xtd::new_shared_ptr_object operator creates a xtd::shared_ptr_object object.
   /// @par Library
@@ -53,5 +53,5 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_shared_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared) with xtd::shared_ptr_object instead [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
   template<typename type_t>
-  shared_ptr_object<type_t> new_shared_ptr_object() {return shared_ptr_object<type_t>(new type_t);}
+  [[nodiscard]] auto new_shared_ptr_object() -> xtd::shared_ptr_object<type_t> {return xtd::shared_ptr_object<type_t>(new type_t);}
 }
