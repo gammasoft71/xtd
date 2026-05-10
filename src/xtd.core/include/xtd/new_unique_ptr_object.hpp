@@ -21,7 +21,7 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_unique_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/unique_ptr/make_shared) with xtd::unique_ptr_object instead [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr).
   template<typename type_t, typename ...args_t>
-  unique_ptr_object<type_t> new_unique_ptr_object(args_t&& ... args) {return unique_ptr_object<type_t> {new type_t(std::forward<args_t>(args)...)};}
+  [[nodiscard]] auto new_unique_ptr_object(args_t&& ... args) -> xtd::unique_ptr_object<type_t> {return xtd::unique_ptr_object<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @brief xtd::new_unique_ptr_object operator creates a xtd::unique_ptr_object object.
   /// @par Library
@@ -37,7 +37,7 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_unique_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/unique_ptr/make_shared) with xtd::unique_ptr_object instead [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr).
   template<typename type_t>
-  unique_ptr_object<type_t> new_unique_ptr_object(const type_t& arg) {return unique_ptr_object<type_t> {new type_t(arg)};}
+  [[nodiscard]] auto new_unique_ptr_object(const type_t& arg) -> xtd::unique_ptr_object<type_t> {return xtd::unique_ptr_object<type_t> {new type_t(arg)};}
   
   /// @brief xtd::new_unique_ptr_object operator creates a xtd::unique_ptr_object object.
   /// @par Library
@@ -53,5 +53,5 @@ namespace xtd {
   /// @endcode
   /// @remarks The xtd::new_unique_ptr_object is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/unique_ptr/make_shared) with xtd::unique_ptr_object instead [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr).
   template<typename type_t>
-  unique_ptr_object<type_t> new_unique_ptr_object() {return unique_ptr_object<type_t>(new type_t);}
+  [[nodiscard]] auto new_unique_ptr_object() -> xtd::unique_ptr_object<type_t> {return xtd::unique_ptr_object<type_t>(new type_t);}
 }
