@@ -4,6 +4,8 @@
 #pragma once
 #include "iequatable.hpp"
 #include "object.hpp"
+#include "ptr.hpp"
+#include "ref.hpp"
 #include "type.hpp"
 #include "string.hpp"
 
@@ -34,29 +36,24 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system types
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
-  class type_object : public object, public xtd::iequatable<type_object> {
+  class type_object : public xtd::object, public xtd::iequatable<type_object> {
   public:
-    /// @cond
-    type_object(const type_object&) noexcept = default;
-    type_object& operator=(const type_object&) noexcept;
-    /// @endcond
-    
     /// @par Public Properties
     /// @{
     /// @brief Gets the fully qualified name of the type_object, including the namespace of the type_object.
     /// @return The fully qualified name of the type_object, including the namespace of the type_object.
     /// @remarks For example, the fully qualified name of the xtd::string type is xtd::string.
-    xtd::string full_name() const noexcept;
+    [[nodiscard]] auto full_name() const noexcept -> xtd::string;
     
     /// @brief Gets the name of the type_object.
     /// @return The name of the type_object.
     /// @remarks For example, the name of the xtd::string type is string.
-    xtd::string name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> xtd::string;
     
     /// @brief Gets the namespace of the type_object.
     /// @return The namespace of the type_object.
     /// @remarks For example, the namespace of the xtd::string type is xtd::
-    xtd::string namespace_() const noexcept;
+    [[nodiscard]] auto namespace_() const noexcept -> xtd::string;
     /// @}
     
     /// @par Public Methods
@@ -64,19 +61,19 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override;
+    [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param type The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const type_object& type) const noexcept override;
+    [[nodiscard]] auto equals(const type_object& type) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
@@ -89,7 +86,7 @@ namespace xtd {
     type_object() noexcept;
     type_object(const xtd::type& type) noexcept;
     
-    const xtd::type& type_;
+    xtd::ptr<xtd::ref<const xtd::type>> type_;
   };
   /// @}
 }

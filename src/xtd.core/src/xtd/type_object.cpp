@@ -17,55 +17,71 @@ namespace {
     if (name.contains("xtd::text::basic_string_builder<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>")) name = name.replace("xtd::text::basic_string_builder<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>", "xtd::text::u8string_builder");
     if (name.contains("xtd::text::basic_string_builder<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>")) name = name.replace("xtd::text::basic_string_builder<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>", "xtd::text::wstring_builder");
 
+    if (name.contains("xtd::collections::generic::ordered_dictionary<xtd::any_object, xtd::any_object, std::allocator<std::pair<xtd::any_object const, xtd::any_object>>>")) name = name.replace("xtd::collections::generic::ordered_dictionary<xtd::any_object, xtd::any_object, std::allocator<std::pair<xtd::any_object const, xtd::any_object>>>", "xtd::collections::specialized::ordered_dictionary");
+    if (name.contains("xtd::collections::generic::list<xtd::string, std::allocator<xtd::string>>")) name = name.replace("xtd::collections::generic::list<xtd::string, std::allocator<xtd::string>>", "xtd::collections::specialized::string_collection");
+    if (name.contains("xtd::collections::generic::dictionary<xtd::string, xtd::string, xtd::collections::generic::helpers::hasher<xtd::string>, xtd::collections::generic::helpers::equator<xtd::string>, std::allocator<std::pair<xtd::string const, xtd::string>>>")) name = name.replace("xtd::collections::generic::dictionary<xtd::string, xtd::string, xtd::collections::generic::helpers::hasher<xtd::string>, xtd::collections::generic::helpers::equator<xtd::string>, std::allocator<std::pair<xtd::string const, xtd::string>>>", "xtd::collections::specialized::string_dictionary");
+    if (name.contains("xtd::collections::generic::key_value_pair<xtd::string, xtd::string>")) name = name.replace("xtd::collections::generic::key_value_pair<xtd::string, xtd::string>", "xtd::collections::specialized::string_key_value_pair");
+
+    if (name.contains("xtd::collections::generic::list<xtd::any_object, std::allocator<xtd::any_object>>")) name = name.replace("xtd::collections::generic::list<xtd::any_object, std::allocator<xtd::any_object>>", "xtd::collections::array_list");
+    if (name.contains("xtd::collections::generic::comparer<xtd::any_object>")) name = name.replace("xtd::collections::generic::comparer<xtd::any_object>", "xtd::collections::comparer");
+    if (name.contains("xtd::collections::generic::key_value_pair<xtd::any_object, xtd::any_object>")) name = name.replace("xtd::collections::generic::key_value_pair<xtd::any_object, xtd::any_object>", "xtd::collections::dictionary_entry");
+    if (name.contains("xtd::collections::generic::enumerator<xtd::any_object>")) name = name.replace("xtd::collections::generic::enumerator<xtd::any_object>", "xtd::collections::enumerator");
+    if (name.contains("xtd::collections::generic::dictionary<xtd::any_object, xtd::any_object, xtd::collections::generic::helpers::hasher<xtd::any_object>, xtd::collections::generic::helpers::equator<xtd::any_object>, std::allocator<std::pair<xtd::any_object const, xtd::any_object>>>")) name = name.replace("xtd::collections::generic::dictionary<xtd::any_object, xtd::any_object, xtd::collections::generic::helpers::hasher<xtd::any_object>, xtd::collections::generic::helpers::equator<xtd::any_object>, std::allocator<std::pair<xtd::any_object const, xtd::any_object>>>", "xtd::collections::hashtable");
+    if (name.contains("xtd::collections::generic::icollection<xtd::any_object>")) name = name.replace("xtd::collections::generic::icollection<xtd::any_object>", "xtd::collections::icollection");
+    if (name.contains("xtd::collections::generic::icomparer<xtd::any_object>")) name = name.replace("xtd::collections::generic::icomparer<xtd::any_object>", "xtd::collections::icomparer");
+    if (name.contains("xtd::collections::generic::idictionary<xtd::any_object, xtd::any_object>")) name = name.replace("xtd::collections::generic::idictionary<xtd::any_object, xtd::any_object>", "xtd::collections::idictionary");
+    if (name.contains("xtd::collections::generic::ienumerable<xtd::any_object>")) name = name.replace("xtd::collections::generic::ienumerable<xtd::any_object>", "xtd::collections::ienumerable");
+    if (name.contains("xtd::collections::generic::ienumerator<xtd::any_object>")) name = name.replace("xtd::collections::generic::ienumerator<xtd::any_object>", "xtd::collections::ienumerator");
+    if (name.contains("xtd::collections::generic::iequality_comparer<xtd::any_object>")) name = name.replace("xtd::collections::generic::iequality_comparer<xtd::any_object>", "xtd::collections::iequality_comparer");
+    if (name.contains("xtd::collections::generic::ilist<xtd::any_object>")) name = name.replace("xtd::collections::generic::ilist<xtd::any_object>", "xtd::collections::ilist");
+    if (name.contains("xtd::collections::generic::queue<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>")) name = name.replace("xtd::collections::generic::queue<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>", "xtd::collections::queue");
+    if (name.contains("xtd::collections::generic::sorted_list<xtd::any_object, std::allocator<xtd::any_object>>")) name = name.replace("xtd::collections::generic::list<xtd::any_object, std::allocator<xtd::any_object>>", "xtd::collections::sorted_list");
+    if (name.contains("xtd::collections::generic::stack<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>")) name = name.replace("xtd::collections::generic::stack<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>", "xtd::collections::stack");
+
     if ((name.contains("xtd::span<") || name.contains("xtd::read_only_span<")) && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
     return name;
   }
 }
 
-type_object::type_object() noexcept : type_(typeid(*this)) {
+type_object::type_object() noexcept : type_ {new_ptr<ref<const type>>(typeid(*this))} {
 }
 
-type_object::type_object(const type& type) noexcept : type_(type) {
+type_object::type_object(const type& t) noexcept : type_ {new_ptr<ref<const type>>(t)} {
 }
 
-type_object& type_object::operator=(const type_object& value) noexcept {
-  memcpy(reinterpret_cast<void*>(const_cast<type*>(&type_)), reinterpret_cast<void*>(const_cast<type*>(&value.type_)), sizeof(value.type_));
-  return *this;
-}
-
-string type_object::full_name() const noexcept {
-  auto name = string::demangle(type_.name());
+auto type_object::full_name() const noexcept -> string {
+  auto name = string::demangle(type_->get().name());
   return normalize_xtd_type_name(name);
 }
 
-string type_object::name() const noexcept {
-  auto full_name = this->full_name();
-  auto length = full_name.index_of("<");
-  if (length == string::npos) length = full_name.length();
-  if (full_name.last_index_of("::", 0, length) == string::npos) return full_name;
-  return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
+auto type_object::name() const noexcept -> string {
+  auto name = full_name();
+  auto length = name.index_of("<");
+  if (length == string::npos) length = name.length();
+  if (name.last_index_of("::", 0, length) == string::npos) return name;
+  return name.substring(name.last_index_of("::", 0, length) + 2);
 }
 
-string type_object::namespace_() const noexcept {
-  auto full_name = this->full_name();
-  auto length = full_name.index_of("<");
-  if (length == string::npos) length = full_name.length();
-  if (full_name.last_index_of("::", 0, length) == string::npos) return full_name;
-  return full_name.remove(full_name.last_index_of("::", 0, length));
+auto type_object::namespace_() const noexcept -> string {
+  auto name = full_name();
+  auto length = name.index_of("<");
+  if (length == string::npos) length = name.length();
+  if (name.last_index_of("::", 0, length) == string::npos) return name;
+  return name.remove(name.last_index_of("::", 0, length));
 }
 
-bool type_object::equals(const object& obj) const noexcept {
+auto type_object::equals(const object& obj) const noexcept -> bool {
   return is<type_object>(obj) && equals(static_cast<const type_object&>(obj));
 }
 
-bool type_object::equals(const type_object& type) const noexcept {
-  return type_ == type.type_;
+auto type_object::equals(const type_object& type) const noexcept -> bool {
+  return *type_ == *type.type_;
 }
 
-usize type_object::get_hash_code() const noexcept {
+auto type_object::get_hash_code() const noexcept -> usize {
   return hash_code::combine(full_name());
 }
 
-string type_object::to_string() const noexcept {
+auto type_object::to_string() const noexcept -> string {
   return full_name();
 }
