@@ -106,7 +106,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned char parse<unsigned char>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned char>(str, styles);}
+  [[nodiscard]] inline xtd::byte parse<xtd::byte>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::byte>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -115,7 +115,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline short parse<short>(const std::string& str, number_styles styles) {return __parse_number<short>(str, styles);}
+  [[nodiscard]] inline xtd::int16 parse<xtd::int16>(const std::string& str, number_styles styles) {return __parse_number<xtd::int16>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -124,7 +124,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned short parse<unsigned short>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned short>(str, styles);}
+  [[nodiscard]] inline xtd::uint16 parse<xtd::uint16>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::uint16>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -133,7 +133,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline int parse<int>(const std::string& str, number_styles styles) {return __parse_number<int>(str, styles);}
+  [[nodiscard]] inline xtd::int32 parse<xtd::int32>(const std::string& str, number_styles styles) {return __parse_number<xtd::int32>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -142,7 +142,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned int parse<unsigned int>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned int>(str, styles);}
+  [[nodiscard]] inline xtd::uint32 parse<xtd::uint32>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::uint32>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -151,7 +151,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long parse<long>(const std::string& str, number_styles styles) {return __parse_number<long>(str, styles);}
+  [[nodiscard]] inline xtd::int64 parse<xtd::int64>(const std::string& str, number_styles styles) {return __parse_number<xtd::int64>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -160,7 +160,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned long parse<unsigned long>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned long>(str, styles);}
+  [[nodiscard]] inline xtd::uint64 parse<xtd::uint64>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::uint64>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -169,7 +169,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long long parse<long long>(const std::string& str, number_styles styles) {return __parse_number<long long>(str, styles);}
+  [[nodiscard]] inline xtd::slong parse<xtd::slong>(const std::string& str, number_styles styles) {return __parse_number<xtd::slong>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -178,7 +178,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned long long parse<unsigned long long>(const std::string& str, number_styles styles) {return __parse_unsigned_number<unsigned long long>(str, styles);}
+  [[nodiscard]] inline xtd::ulong parse<xtd::ulong>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::ulong>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -187,7 +187,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline float parse<float>(const std::string& str, number_styles styles) {return __parse_floating_point_number<float>(str, styles, std::locale());}
+  [[nodiscard]] inline xtd::single parse<xtd::single>(const std::string& str, number_styles styles) {return __parse_floating_point_number<xtd::single>(str, styles, std::locale());}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -196,7 +196,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline float parse<float>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<float>(str, styles, locale);}
+  [[nodiscard]] inline xtd::single parse<xtd::single>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<xtd::single>(str, styles, locale);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -223,7 +223,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long double parse<long double>(const std::string& str, number_styles styles) {return __parse_floating_point_number<long double>(str, styles, std::locale());}
+  [[nodiscard]] inline xtd::decimal parse<xtd::decimal>(const std::string& str, number_styles styles) {return __parse_floating_point_number<xtd::decimal>(str, styles, std::locale());}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -232,7 +232,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long double parse<long double>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<long double>(str, styles, locale);}
+  [[nodiscard]] inline xtd::decimal parse<xtd::decimal>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<xtd::decimal>(str, styles, locale);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -259,7 +259,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned char parse<unsigned char>(const std::string& str) {return parse<unsigned char>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::byte parse<xtd::byte>(const std::string& str) {return parse<xtd::byte>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -268,7 +268,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline short parse<short>(const std::string& str) {return parse<short>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::int16 parse<xtd::int16>(const std::string& str) {return parse<xtd::int16>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -277,7 +277,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned short parse<unsigned short>(const std::string& str) {return parse<unsigned short>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::uint16 parse<xtd::uint16>(const std::string& str) {return parse<xtd::uint16>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -286,7 +286,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline int parse<int>(const std::string& str) {return parse<int>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::int32 parse<xtd::int32>(const std::string& str) {return parse<xtd::int32>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -295,7 +295,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned int parse<unsigned int>(const std::string& str) {return parse<unsigned int>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::uint32 parse<xtd::uint32>(const std::string& str) {return parse<xtd::uint32>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -304,7 +304,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long parse<long>(const std::string& str) {return parse<long>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::int64 parse<xtd::int64>(const std::string& str) {return parse<xtd::int64>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -313,7 +313,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned long parse<unsigned long>(const std::string& str) {return parse<unsigned long>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::uint64 parse<xtd::uint64>(const std::string& str) {return parse<xtd::uint64>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -322,7 +322,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long long parse<long long>(const std::string& str) {return parse<long long>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::slong parse<xtd::slong>(const std::string& str) {return parse<xtd::slong>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -331,7 +331,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline unsigned long long parse<unsigned long long>(const std::string& str) {return parse<unsigned long long>(str, number_styles::integer);}
+  [[nodiscard]] inline xtd::ulong parse<xtd::ulong>(const std::string& str) {return parse<xtd::ulong>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -340,7 +340,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline float parse<float>(const std::string& str) {return parse<float>(str, number_styles::fixed_point);}
+  [[nodiscard]] inline xtd::single parse<xtd::single>(const std::string& str) {return parse<xtd::single>(str, number_styles::fixed_point);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -358,7 +358,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline long double parse<long double>(const std::string& str) {return parse<long double>(str, number_styles::fixed_point);}
+  [[nodiscard]] inline xtd::decimal parse<xtd::decimal>(const std::string& str) {return parse<xtd::decimal>(str, number_styles::fixed_point);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
