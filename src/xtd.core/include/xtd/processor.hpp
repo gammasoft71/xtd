@@ -39,23 +39,23 @@ namespace xtd {
     /// @{
     /// @brief Gets a xtd::platform_id enumeration value that identifies the operating system platform.
     /// @return xtd::platform_id One of the xtd::platform_id values.
-    xtd::architecture_id architecture() const noexcept;
+    [[nodiscard]] auto architecture() const noexcept -> xtd::architecture_id;
     
     /// @brief Gets architecture string.
     /// @return The architecture string.
-    xtd::string architecture_string() const noexcept;
+    [[nodiscard]] auto architecture_string() const noexcept -> xtd::string;
     
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    uint32 core_count() const noexcept;
+    [[nodiscard]] auto core_count() const noexcept -> xtd::uint32;
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return `true` if the operating system is 64-bit; otherwise, `false`.
-    bool is_64_bit() const noexcept;
+    [[nodiscard]] auto is_64_bit() const noexcept -> bool;
     
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
-    xtd::string name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> xtd::string;
     /// @}
     
     /// @name Public Methods
@@ -63,11 +63,11 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Converts the value of this processor object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
