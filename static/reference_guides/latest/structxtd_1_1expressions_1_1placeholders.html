@@ -103,10 +103,10 @@ struct xtd::expressions::placeholders&lt; count &gt;</div><p>Generates a set of 
 <div class="line">  <span class="comment">//auto expr1 = [](auto&amp;&amp; operand_one, auto&amp;&amp; operand_two) {return operand_one + operand_two;};</span></div>
 <div class="line">  <span class="keyword">auto</span> [operand_one, operand_two] = <a class="code hl_struct" href="structxtd_1_1expressions_1_1placeholders.html">placeholders&lt;2&gt;</a>();</div>
 <div class="line">  <span class="keyword">auto</span> expr1 = operand_one + operand_two;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1(10, 20));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1(10, 20));</div>
 <div class="line">  <span class="comment">//auto expr2 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
 <div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr2 result =&gt; {}&quot;</span>, expr2(10, 20));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr2 result =&gt; {}&quot;</span>, expr2(10, 20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -115,7 +115,7 @@ struct xtd::expressions::placeholders&lt; count &gt;</div><p>Generates a set of 
 <div class="line"><span class="comment">// expr2 result =&gt; 30</span></div>
 <div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:117</div></div>
 <div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:92</div></div>
-<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1placeholders_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1placeholders.html">xtd::expressions::placeholders</a></div><div class="ttdoc">Generates a set of positional placeholders that can be decomposed using structured bindings to build ...</div><div class="ttdef"><b>Definition</b> placeholders.hpp:42</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">

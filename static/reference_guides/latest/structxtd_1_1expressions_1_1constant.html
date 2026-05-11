@@ -111,19 +111,19 @@ struct xtd::expressions::constant&lt; constant_value &gt;</div><p>The <a class="
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto constant1 = [] {return 10;};</span></div>
 <div class="line">  <span class="keyword">auto</span> constant1 =  <a class="code hl_function" href="#ae2e21ddf88dfc8342ff7366057c791c4">constant&lt;10&gt;</a> {};</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant1 result =&gt; {}&quot;</span>, constant1());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant1 result =&gt; {}&quot;</span>, constant1());</div>
 <div class="line">  <span class="keyword">auto</span> constant2 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a">expression::constant&lt;10&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant2 result =&gt; {}&quot;</span>, constant2());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant2 result =&gt; {}&quot;</span>, constant2());</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a> = 30;</div>
 <div class="line">  <span class="comment">//auto constant3 = [value] {return value;};</span></div>
 <div class="line">  <span class="keyword">auto</span> constant3 =  <a class="code hl_struct" href="structxtd_1_1expressions_1_1constant.html">constant&lt;value&gt;</a> {};</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant3 result =&gt; {}&quot;</span>, constant3());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant3 result =&gt; {}&quot;</span>, constant3());</div>
 <div class="line">  <span class="keyword">auto</span> constant4 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a">expression::constant&lt;value&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;constant4 result =&gt; {}&quot;</span>, constant4());</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant4 result =&gt; {}&quot;</span>, constant4());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
 <div class="line">  <span class="comment">//auto expr1 = [value] {return 20 + value;};</span></div>
 <div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_function" href="#ae2e21ddf88dfc8342ff7366057c791c4">constant&lt;20&gt;</a> {} + <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a">expression::constant&lt;value&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -134,7 +134,7 @@ struct xtd::expressions::constant&lt; constant_value &gt;</div><p>The <a class="
 <div class="line"><span class="comment">// constant4 result =&gt; 30</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// expr1 result =&gt; 50</span></div>
-<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1constant_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1constant.html">xtd::expressions::constant</a></div><div class="ttdoc">The xtd::expressions::constant is the constant wrapper.</div><div class="ttdef"><b>Definition</b> constant.hpp:55</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1constant_html_ae2e21ddf88dfc8342ff7366057c791c4"><div class="ttname"><a href="#ae2e21ddf88dfc8342ff7366057c791c4">xtd::expressions::constant::constant</a></div><div class="ttdeci">constexpr constant()=default</div><div class="ttdoc">Initialize a new xtd::expressions::constant object.</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a3962a43a6b277819f145124edf446c0a"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a">xtd::expressions::expression::constant</a></div><div class="ttdeci">static constexpr auto constant()</div><div class="ttdoc">Gets the constant value.</div></div>

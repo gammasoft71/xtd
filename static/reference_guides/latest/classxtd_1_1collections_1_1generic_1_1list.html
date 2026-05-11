@@ -341,21 +341,21 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <div class="line">    .where(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) == 5)</div>
 <div class="line">    .order_by(_)</div>
 <div class="line">    .select(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(query1);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(query1);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query2 = names</div>
 <div class="line">    | where(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) == 5)</div>
 <div class="line">    | order_by(_)</div>
 <div class="line">    | select(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(query2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(query2);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// std::ranges combined with xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query3 = names</div>
 <div class="line">    | std::views::filter(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) == 5)</div>
 <div class="line">    | <a class="code hl_variable" href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::views::order_by</a>(_)</div>
 <div class="line">    | std::views::transform(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(query3);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(query3);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -366,7 +366,7 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a2095a4dd9dbf5c5b0945458539b94a3d"><div class="ttname"><a href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">xtd::basic_string&lt; char &gt;::to_upper</a></div><div class="ttdeci">auto to_upper() const noexcept -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:947</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
 <div class="ttc" id="agroup__ranges_html_ga7afb21b332d0583925f7568616d4f5c4"><div class="ttname"><a href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::ranges::views::order_by</a></div><div class="ttdeci">constexpr auto order_by</div><div class="ttdoc">The xtd::ranges::views::order_by instance.</div><div class="ttdef"><b>Definition</b> order_by.hpp:40</div></div>
-<div class="ttc" id="anamespacextd_html_a2401d67caeff9e2d61d33b4b1e13a488"><div class="ttname"><a href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">xtd::println</a></div><div class="ttdeci">void println(FILE *file)</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 </div><!-- fragment --> </li>
 </ul>
 </dd></dl>
@@ -4502,7 +4502,7 @@ template&lt;typename action_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the xtd::action &lt;type_t&gt; delegate to print the contents of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object. In this example the <span class="tt"><a class="el" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27" title="Writes the text representation of the specified value to the file output stream.">print</a></span> method is used to display the contents of the list to the console. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the xtd::action &lt;type_t&gt; delegate to print the contents of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object. In this example the <span class="tt"><a class="el" href="namespacextd.html#acc254a8fb992301bd841ef41a46d9063" title="Writes the text representation of the specified value to the file output stream.">print</a></span> method is used to display the contents of the list to the console. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -4513,7 +4513,7 @@ template&lt;typename action_t&gt; </div>
 <div class="line">    names.add(<span class="stringliteral">&quot;Tim&quot;</span>);</div>
 <div class="line">    names.add(<span class="stringliteral">&quot;Richard&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    names.for_each(action&lt;const string&amp;&gt; {<a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>});</div>
+<div class="line">    names.for_each(action&lt;const string&amp;&gt; {<a class="code hl_function" href="namespacextd.html#acc254a8fb992301bd841ef41a46d9063">print</a>});</div>
 <div class="line">    </div>
 <div class="line">    names.for_each(action&lt;const string&amp;&gt; {[](<span class="keyword">auto</span>&amp;&amp; name) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(name);</div>
@@ -4521,7 +4521,7 @@ template&lt;typename action_t&gt; </div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#acc254a8fb992301bd841ef41a46d9063">print</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s) {</div>
 <div class="line">    console::write_line(s);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -4538,7 +4538,7 @@ template&lt;typename action_t&gt; </div>
 <div class="line"><span class="comment">// Alfred</span></div>
 <div class="line"><span class="comment">// Tim</span></div>
 <div class="line"><span class="comment">// Richard</span></div>
-<div class="ttc" id="anamespacextd_html_aa7ce9a70ea867f52d614f508f8911d27"><div class="ttname"><a href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">xtd::print</a></div><div class="ttdeci">void print(FILE *file, arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the file output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:19</div></div>
+<div class="ttc" id="anamespacextd_html_acc254a8fb992301bd841ef41a46d9063"><div class="ttname"><a href="namespacextd.html#acc254a8fb992301bd841ef41a46d9063">xtd::print</a></div><div class="ttdeci">auto print(FILE *file, arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the file output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:19</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The xtd::action &lt;type_t&gt; is a delegate to a method that performs an action on the object passed to it. The elements of the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are individually passed to the xtd::action &lt;type_t&gt; delegate. </dd>
 <dd>

@@ -112,8 +112,8 @@ struct xtd::expressions::logical_not_expression&lt; value_t &gt;</div><p>The <a 
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//auto not1 = [](auto _) {return !_;};</span></div>
 <div class="line">  <span class="keyword">auto</span> not1 = !<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not1 result =&gt; {}&quot;</span>, not1(<span class="keyword">true</span>));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;not1 result =&gt; {}&quot;</span>, not1(<span class="keyword">false</span>));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;not1 result =&gt; {}&quot;</span>, not1(<span class="keyword">true</span>));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;not1 result =&gt; {}&quot;</span>, not1(<span class="keyword">false</span>));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -121,7 +121,7 @@ struct xtd::expressions::logical_not_expression&lt; value_t &gt;</div><p>The <a 
 <div class="line"><span class="comment">// not1 result =&gt; false</span></div>
 <div class="line"><span class="comment">// not1 result =&gt; true</span></div>
 <div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:66</div></div>
-<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>

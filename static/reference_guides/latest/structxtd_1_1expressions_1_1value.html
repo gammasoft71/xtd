@@ -111,19 +111,19 @@ struct xtd::expressions::value&lt; type_t &gt;</div><p>The <a class="el" href="s
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto value1 = [] {return 10;};</span></div>
 <div class="line">  <span class="keyword">auto</span> value1 =  <a class="code hl_function" href="#a884ee8f6b6cf7bc732b05501de43b556">value</a> {10};</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value1 result =&gt; {}&quot;</span>, value1());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value1 result =&gt; {}&quot;</span>, value1());</div>
 <div class="line">  <span class="keyword">auto</span> value2 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ab60c84b43ed66b9d27be1678fcc0a305">expression::value</a>(10);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value2 result =&gt; {}&quot;</span>, value2());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value2 result =&gt; {}&quot;</span>, value2());</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a> = 30;</div>
 <div class="line">  <span class="comment">//auto value3 = [value] {return value;};</span></div>
 <div class="line">  <span class="keyword">auto</span> value3 =  <a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a> {<a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a>};</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value3 result =&gt; {}&quot;</span>, value3());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value3 result =&gt; {}&quot;</span>, value3());</div>
 <div class="line">  <span class="keyword">auto</span> value4 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ab60c84b43ed66b9d27be1678fcc0a305">expression::value</a>(<a class="code hl_function" href="#a884ee8f6b6cf7bc732b05501de43b556">value</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;value4 result =&gt; {}&quot;</span>, value4());</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value4 result =&gt; {}&quot;</span>, value4());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
 <div class="line">  <span class="comment">//auto expr1 = [value] {return 20 + value;};</span></div>
 <div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_function" href="#a884ee8f6b6cf7bc732b05501de43b556">value</a> {20} + <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#ab60c84b43ed66b9d27be1678fcc0a305">expression::value</a>(<a class="code hl_function" href="#a884ee8f6b6cf7bc732b05501de43b556">value</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1());</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -134,7 +134,7 @@ struct xtd::expressions::value&lt; type_t &gt;</div><p>The <a class="el" href="s
 <div class="line"><span class="comment">// value4 result =&gt; 30</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// expr1 result =&gt; 50</span></div>
-<div class="ttc" id="anamespacextd_html_a21b702f46c6118c65f906f5564dc9e4d"><div class="ttname"><a href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">xtd::println</a></div><div class="ttdeci">void println()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div><div class="ttdef"><b>Definition</b> println.hpp:167</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_ab60c84b43ed66b9d27be1678fcc0a305"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#ab60c84b43ed66b9d27be1678fcc0a305">xtd::expressions::expression::value</a></div><div class="ttdeci">static constexpr auto value(type_t value)</div><div class="ttdoc">Gets the value value.</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1value_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1value.html">xtd::expressions::value</a></div><div class="ttdoc">The xtd::expressions::value is the value wrapper.</div><div class="ttdef"><b>Definition</b> value.hpp:55</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1value_html_a884ee8f6b6cf7bc732b05501de43b556"><div class="ttname"><a href="#a884ee8f6b6cf7bc732b05501de43b556">xtd::expressions::value::value</a></div><div class="ttdeci">constexpr value(type_t value)</div><div class="ttdoc">Initialize a new xtd::expressions::value object with specified value value.</div><div class="ttdef"><b>Definition</b> value.hpp:68</div></div>

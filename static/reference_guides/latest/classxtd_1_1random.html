@@ -113,7 +113,7 @@ The random number generation starts from a seed value. If the same seed is used 
 <div class="line">  <span class="keyword">auto</span> rnd1 = <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">  <span class="keyword">auto</span> rnd2 = <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">  </div>
-<div class="line">  rnd1.<a class="code hl_function" href="#af8dee61c03a83ef71bf478f603094111">next_bytes</a>(bytes1);</div>
+<div class="line">  rnd1.<a class="code hl_function" href="#a66eb0fc1e4118c925c46ef2d53439797">next_bytes</a>(bytes1);</div>
 <div class="line">  rnd2.next_bytes(bytes2);</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;First Series:&quot;</span>);</div>
@@ -159,7 +159,7 @@ The random number generation starts from a seed value. If the same seed is used 
 <div class="line"><span class="comment">//    46  191  226   53  118  198  148   29   76  106</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:42</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html_af8dee61c03a83ef71bf478f603094111"><div class="ttname"><a href="#af8dee61c03a83ef71bf478f603094111">xtd::random::next_bytes</a></div><div class="ttdeci">virtual void next_bytes(xtd::span&lt; xtd::byte &gt; &amp;buffer) const</div><div class="ttdoc">Fills the elements of a specified array of bytes with random numbers.</div></div>
+<div class="ttc" id="aclassxtd_1_1random_html_a66eb0fc1e4118c925c46ef2d53439797"><div class="ttname"><a href="#a66eb0fc1e4118c925c46ef2d53439797">xtd::random::next_bytes</a></div><div class="ttdeci">virtual auto next_bytes(xtd::span&lt; xtd::byte &gt; &amp;buffer) const -&gt; void</div><div class="ttdoc">Fills the elements of a specified array of bytes with random numbers.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd>
 <dd>
@@ -167,7 +167,7 @@ This problem can be avoided by creating a single random object rather than multi
 <dd>
 To improve performance, create one random object to generate many random numbers over time, instead of repeatedly creating a new random objects to generate one random number. </dd></dl>
 <dl class="section user"><dt>Notes to Callers</dt><dd>The implementation of the random number generator in the random class is not guaranteed to remain the same across major versions of the xtd. As a result, your application code should not assume that the same seed will result in the same pseudo-random sequence in different versions of the xtd. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>In xtd, the behavior of the <a class="el" href="#a629a30d5ddd8035f45afe7d982fda712" title="Returns a nonnegative random number.">random::next()</a>, random::next(int32, int32), and next_bytes methods have changed so that these methods do not necessarily call the derived class implementation of the sample method. As a result, typenamees derived from Random that target the xtd should also virtual these three methods. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>In xtd, the behavior of the <a class="el" href="#a565fba72ee5fa860f4b283b02975aa7a" title="Returns a nonnegative random number.">random::next()</a>, random::next(int32, int32), and next_bytes methods have changed so that these methods do not necessarily call the derived class implementation of the sample method. As a result, typenamees derived from Random that target the xtd should also virtual these three methods. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates a single random number generator and calls its next_bytes, next, and next_double methods to generate sequences of random numbers within different ranges. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -259,86 +259,86 @@ To improve performance, create one random object to generate many random numbers
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:af5a84d2617f754220f6a383520bfa98f" id="r_af5a84d2617f754220f6a383520bfa98f"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#af5a84d2617f754220f6a383520bfa98f">sample</a> () const</td></tr>
-<tr class="memdesc:af5a84d2617f754220f6a383520bfa98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number between 0.0 and 1.0.  <br /></td></tr>
+<tr class="memitem:ab6ec7d64eb5578a4e098e11b17b81128" id="r_ab6ec7d64eb5578a4e098e11b17b81128"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ab6ec7d64eb5578a4e098e11b17b81128">sample</a> () const -&gt; double</td></tr>
+<tr class="memdesc:ab6ec7d64eb5578a4e098e11b17b81128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number between 0.0 and 1.0.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
 <tr class="memitem:ae7c9a9db253259056ee6335a9bce03e1" id="r_ae7c9a9db253259056ee6335a9bce03e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae7c9a9db253259056ee6335a9bce03e1">random</a> ()</td></tr>
 <tr class="memdesc:ae7c9a9db253259056ee6335a9bce03e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the random class, using a default generated seed value.  <br /></td></tr>
-<tr class="memitem:a1a7051d544f0240c80ffe29f1bcc7272" id="r_a1a7051d544f0240c80ffe29f1bcc7272"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1a7051d544f0240c80ffe29f1bcc7272">random</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> seed)</td></tr>
-<tr class="memdesc:a1a7051d544f0240c80ffe29f1bcc7272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the random class, using a specified seed value.  <br /></td></tr>
+<tr class="memitem:a4b370e4d0df619727cc4003ec23a4050" id="r_a4b370e4d0df619727cc4003ec23a4050"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4b370e4d0df619727cc4003ec23a4050">random</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> seed)</td></tr>
+<tr class="memdesc:a4b370e4d0df619727cc4003ec23a4050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the random class, using a specified seed value.  <br /></td></tr>
 <tr class="memitem:a6045f00b6bc17b697dadc2af233a8d95" id="r_a6045f00b6bc17b697dadc2af233a8d95"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6045f00b6bc17b697dadc2af233a8d95">random</a> (std::random_device &amp;random_device)</td></tr>
 <tr class="memdesc:a6045f00b6bc17b697dadc2af233a8d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the random class, using a specified random device value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a9232964c7b2e42d70fc4cce10f920232" id="r_a9232964c7b2e42d70fc4cce10f920232"><td class="memItemLeft">const std::default_random_engine &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9232964c7b2e42d70fc4cce10f920232">generator</a> () const noexcept</td></tr>
-<tr class="memdesc:a9232964c7b2e42d70fc4cce10f920232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying generator.  <br /></td></tr>
-<tr class="memitem:a2bb89be8de6e3c56d30b60a7f2d65ef5" id="r_a2bb89be8de6e3c56d30b60a7f2d65ef5"><td class="memItemLeft">std::default_random_engine &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2bb89be8de6e3c56d30b60a7f2d65ef5">generator</a> () noexcept</td></tr>
-<tr class="memdesc:a2bb89be8de6e3c56d30b60a7f2d65ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying generator.  <br /></td></tr>
+<tr class="memitem:aae904a99863631d818a708c51ac6593a" id="r_aae904a99863631d818a708c51ac6593a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae904a99863631d818a708c51ac6593a">generator</a> () const noexcept -&gt; const std::default_random_engine &amp;</td></tr>
+<tr class="memdesc:aae904a99863631d818a708c51ac6593a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying generator.  <br /></td></tr>
+<tr class="memitem:aae007185eff2fd97ab7c2c96df52921b" id="r_aae007185eff2fd97ab7c2c96df52921b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae007185eff2fd97ab7c2c96df52921b">generator</a> () noexcept -&gt; std::default_random_engine &amp;</td></tr>
+<tr class="memdesc:aae007185eff2fd97ab7c2c96df52921b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying generator.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a9df95fbc405bafaf82705fb2f82bdf7e" id="r_a9df95fbc405bafaf82705fb2f82bdf7e"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a9df95fbc405bafaf82705fb2f82bdf7e template"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9df95fbc405bafaf82705fb2f82bdf7e">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
-<tr class="memdesc:a9df95fbc405bafaf82705fb2f82bdf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
-<tr class="memitem:aafcf2203d0e14b17463477eb77946cec" id="r_aafcf2203d0e14b17463477eb77946cec"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:aafcf2203d0e14b17463477eb77946cec template"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aafcf2203d0e14b17463477eb77946cec">get_items</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
-<tr class="memdesc:aafcf2203d0e14b17463477eb77946cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
-<tr class="memitem:a22ca985c4bb87949751e62d55d2bf192" id="r_a22ca985c4bb87949751e62d55d2bf192"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a22ca985c4bb87949751e62d55d2bf192 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a22ca985c4bb87949751e62d55d2bf192">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;destination)</td></tr>
-<tr class="memdesc:a22ca985c4bb87949751e62d55d2bf192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified span with items chosen at random from the provided set of choices.  <br /></td></tr>
-<tr class="memitem:a629a30d5ddd8035f45afe7d982fda712" id="r_a629a30d5ddd8035f45afe7d982fda712"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a629a30d5ddd8035f45afe7d982fda712">next</a> () const</td></tr>
-<tr class="memdesc:a629a30d5ddd8035f45afe7d982fda712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
-<tr class="memitem:aa84d66b9325be46249dd993ee4ce5d41" id="r_aa84d66b9325be46249dd993ee4ce5d41"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:aa84d66b9325be46249dd993ee4ce5d41 template"><td class="memItemLeft">value_t&#160;</td><td class="memItemRight"><a class="el" href="#aa84d66b9325be46249dd993ee4ce5d41">next</a> () const</td></tr>
-<tr class="memdesc:aa84d66b9325be46249dd993ee4ce5d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
-<tr class="memitem:a21cd84ee32adac0f38fa7915be0b233c" id="r_a21cd84ee32adac0f38fa7915be0b233c"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a21cd84ee32adac0f38fa7915be0b233c">next</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> max_value) const</td></tr>
-<tr class="memdesc:a21cd84ee32adac0f38fa7915be0b233c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
-<tr class="memitem:a01b67bd04320dbf44e91cd243e904115" id="r_a01b67bd04320dbf44e91cd243e904115"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a01b67bd04320dbf44e91cd243e904115 template"><td class="memItemLeft">value_t&#160;</td><td class="memItemRight"><a class="el" href="#a01b67bd04320dbf44e91cd243e904115">next</a> (value_t max_value) const</td></tr>
-<tr class="memdesc:a01b67bd04320dbf44e91cd243e904115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
-<tr class="memitem:a0f5ab9c6f5e3354837cd3ec740ee207b" id="r_a0f5ab9c6f5e3354837cd3ec740ee207b"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0f5ab9c6f5e3354837cd3ec740ee207b">next</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> min_value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> max_value) const</td></tr>
-<tr class="memdesc:a0f5ab9c6f5e3354837cd3ec740ee207b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
-<tr class="memitem:a9db5b7d015f55c274c45b6059b159a9f" id="r_a9db5b7d015f55c274c45b6059b159a9f"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a9db5b7d015f55c274c45b6059b159a9f template"><td class="memItemLeft">value_t&#160;</td><td class="memItemRight"><a class="el" href="#a9db5b7d015f55c274c45b6059b159a9f">next</a> (value_t min_value, value_t max_value) const</td></tr>
-<tr class="memdesc:a9db5b7d015f55c274c45b6059b159a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
-<tr class="memitem:ae7d36b4b5e9db7b2bc7a1dffa89cbea3" id="r_ae7d36b4b5e9db7b2bc7a1dffa89cbea3"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae7d36b4b5e9db7b2bc7a1dffa89cbea3">next_byte</a> () const</td></tr>
-<tr class="memdesc:ae7d36b4b5e9db7b2bc7a1dffa89cbea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
-<tr class="memitem:a401961584380d7472f8a83f5eb0fee23" id="r_a401961584380d7472f8a83f5eb0fee23"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a401961584380d7472f8a83f5eb0fee23">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const</td></tr>
-<tr class="memdesc:a401961584380d7472f8a83f5eb0fee23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
-<tr class="memitem:a295eb633599b17811484458dffd44a1a" id="r_a295eb633599b17811484458dffd44a1a"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight"><a class="el" href="#a295eb633599b17811484458dffd44a1a">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> min_value, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const</td></tr>
-<tr class="memdesc:a295eb633599b17811484458dffd44a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
-<tr class="memitem:af8dee61c03a83ef71bf478f603094111" id="r_af8dee61c03a83ef71bf478f603094111"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af8dee61c03a83ef71bf478f603094111">next_bytes</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const</td></tr>
-<tr class="memdesc:af8dee61c03a83ef71bf478f603094111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
-<tr class="memitem:adc73b84dc61ce01f1ecc602d450afc17" id="r_adc73b84dc61ce01f1ecc602d450afc17"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#adc73b84dc61ce01f1ecc602d450afc17">next_bytes</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const</td></tr>
-<tr class="memdesc:adc73b84dc61ce01f1ecc602d450afc17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
-<tr class="memitem:a3b3a3230f08a0faf168e3ba47f2195c3" id="r_a3b3a3230f08a0faf168e3ba47f2195c3"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a3b3a3230f08a0faf168e3ba47f2195c3">next_double</a> () const</td></tr>
-<tr class="memdesc:a3b3a3230f08a0faf168e3ba47f2195c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number between 0.0 and 1.0.  <br /></td></tr>
-<tr class="memitem:ada66aa49deda40731ffdb43f29bf7e16" id="r_ada66aa49deda40731ffdb43f29bf7e16"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:ada66aa49deda40731ffdb43f29bf7e16 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ada66aa49deda40731ffdb43f29bf7e16">next_values</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;buffer) const</td></tr>
-<tr class="memdesc:ada66aa49deda40731ffdb43f29bf7e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> of bytes with random numbers.  <br /></td></tr>
-<tr class="memitem:ae1d9caedcdaba46d8cc34736d8547a40" id="r_ae1d9caedcdaba46d8cc34736d8547a40"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:ae1d9caedcdaba46d8cc34736d8547a40 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae1d9caedcdaba46d8cc34736d8547a40">next_values</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;buffer) const</td></tr>
-<tr class="memdesc:ae1d9caedcdaba46d8cc34736d8547a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
-<tr class="memitem:aceed8b8fa23d15d6234b4272ad82f21f" id="r_aceed8b8fa23d15d6234b4272ad82f21f"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#aceed8b8fa23d15d6234b4272ad82f21f">next_int64</a> () const</td></tr>
-<tr class="memdesc:aceed8b8fa23d15d6234b4272ad82f21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
-<tr class="memitem:a9a6b94113b830b77f344643f079158d6" id="r_a9a6b94113b830b77f344643f079158d6"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9a6b94113b830b77f344643f079158d6">next_int64</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> max_value) const</td></tr>
-<tr class="memdesc:a9a6b94113b830b77f344643f079158d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
-<tr class="memitem:a5281cced24b7192940a6a58974b17342" id="r_a5281cced24b7192940a6a58974b17342"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5281cced24b7192940a6a58974b17342">next_int64</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> min_value, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> max_value) const</td></tr>
-<tr class="memdesc:a5281cced24b7192940a6a58974b17342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
-<tr class="memitem:a44b6d3fba58558e76eb892110635912e" id="r_a44b6d3fba58558e76eb892110635912e"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">single</a>&#160;</td><td class="memItemRight"><a class="el" href="#a44b6d3fba58558e76eb892110635912e">next_single</a> () const</td></tr>
-<tr class="memdesc:a44b6d3fba58558e76eb892110635912e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number between 0.0 and 1.0.  <br /></td></tr>
-<tr class="memitem:a5e528d44e971ca388304266b5938dfb9" id="r_a5e528d44e971ca388304266b5938dfb9"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a5e528d44e971ca388304266b5938dfb9 template"><td class="memItemLeft"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5e528d44e971ca388304266b5938dfb9">shuffle</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;values) const</td></tr>
-<tr class="memdesc:a5e528d44e971ca388304266b5938dfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an in-place shuffle of a span.  <br /></td></tr>
-<tr class="memitem:ad6ff7460de8c4cbe51ef1a34a40cf49e" id="r_ad6ff7460de8c4cbe51ef1a34a40cf49e"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:ad6ff7460de8c4cbe51ef1a34a40cf49e template"><td class="memItemLeft">collection_t &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad6ff7460de8c4cbe51ef1a34a40cf49e">shuffle</a> (collection_t &amp;values) const</td></tr>
-<tr class="memdesc:ad6ff7460de8c4cbe51ef1a34a40cf49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an in-place shuffle of an array.  <br /></td></tr>
-<tr class="memitem:afab08aecc22a0fc3bd3f17f84df3d6c6" id="r_afab08aecc22a0fc3bd3f17f84df3d6c6"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:afab08aecc22a0fc3bd3f17f84df3d6c6 template"><td class="memItemLeft">collection_t&#160;</td><td class="memItemRight"><a class="el" href="#afab08aecc22a0fc3bd3f17f84df3d6c6">shuffle</a> (const collection_t &amp;values) const</td></tr>
-<tr class="memdesc:afab08aecc22a0fc3bd3f17f84df3d6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an in-place shuffle of an array.  <br /></td></tr>
+<tr class="memitem:a5c90e2e4c661b637c2100784353e93c4" id="r_a5c90e2e4c661b637c2100784353e93c4"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a5c90e2e4c661b637c2100784353e93c4 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c90e2e4c661b637c2100784353e93c4">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a5c90e2e4c661b637c2100784353e93c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
+<tr class="memitem:aa076d38989536d15349d62fbc6da2671" id="r_aa076d38989536d15349d62fbc6da2671"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:aa076d38989536d15349d62fbc6da2671 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa076d38989536d15349d62fbc6da2671">get_items</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;choices, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:aa076d38989536d15349d62fbc6da2671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated with items chosen at random from the provided set of choices.  <br /></td></tr>
+<tr class="memitem:a6884f55eba32df4e45bf0cb76af56671" id="r_a6884f55eba32df4e45bf0cb76af56671"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a6884f55eba32df4e45bf0cb76af56671 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6884f55eba32df4e45bf0cb76af56671">get_items</a> (const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;choices, <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;destination) -&gt; void</td></tr>
+<tr class="memdesc:a6884f55eba32df4e45bf0cb76af56671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified span with items chosen at random from the provided set of choices.  <br /></td></tr>
+<tr class="memitem:a565fba72ee5fa860f4b283b02975aa7a" id="r_a565fba72ee5fa860f4b283b02975aa7a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a565fba72ee5fa860f4b283b02975aa7a">next</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a565fba72ee5fa860f4b283b02975aa7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
+<tr class="memitem:a68a9b761265636eae1753202385714c1" id="r_a68a9b761265636eae1753202385714c1"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a68a9b761265636eae1753202385714c1 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a68a9b761265636eae1753202385714c1">next</a> () const -&gt; value_t</td></tr>
+<tr class="memdesc:a68a9b761265636eae1753202385714c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
+<tr class="memitem:ab4f3187e5d6848f026ad096c578ec9a3" id="r_ab4f3187e5d6848f026ad096c578ec9a3"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4f3187e5d6848f026ad096c578ec9a3">next</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> max_value) const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ab4f3187e5d6848f026ad096c578ec9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
+<tr class="memitem:ab03444bd19c2ad4e68d6dd060188e4b5" id="r_ab03444bd19c2ad4e68d6dd060188e4b5"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:ab03444bd19c2ad4e68d6dd060188e4b5 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab03444bd19c2ad4e68d6dd060188e4b5">next</a> (value_t max_value) const -&gt; value_t</td></tr>
+<tr class="memdesc:ab03444bd19c2ad4e68d6dd060188e4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
+<tr class="memitem:a83334057b3ce162dad7fd8b73ed3339a" id="r_a83334057b3ce162dad7fd8b73ed3339a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a83334057b3ce162dad7fd8b73ed3339a">next</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> min_value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> max_value) const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a83334057b3ce162dad7fd8b73ed3339a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
+<tr class="memitem:a82421e8a1d3b2b80bf18e31ef8dc0838" id="r_a82421e8a1d3b2b80bf18e31ef8dc0838"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a82421e8a1d3b2b80bf18e31ef8dc0838 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a82421e8a1d3b2b80bf18e31ef8dc0838">next</a> (value_t min_value, value_t max_value) const -&gt; value_t</td></tr>
+<tr class="memdesc:a82421e8a1d3b2b80bf18e31ef8dc0838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
+<tr class="memitem:af5f678c4a3b1acf61e0ccfb7f7a5e48f" id="r_af5f678c4a3b1acf61e0ccfb7f7a5e48f"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#af5f678c4a3b1acf61e0ccfb7f7a5e48f">next_byte</a> () const -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td></tr>
+<tr class="memdesc:af5f678c4a3b1acf61e0ccfb7f7a5e48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
+<tr class="memitem:a54543de355b96b259613e24889b2d641" id="r_a54543de355b96b259613e24889b2d641"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a54543de355b96b259613e24889b2d641">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td></tr>
+<tr class="memdesc:a54543de355b96b259613e24889b2d641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
+<tr class="memitem:a53a3b29f10c67e856b8314e85b837f2b" id="r_a53a3b29f10c67e856b8314e85b837f2b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a53a3b29f10c67e856b8314e85b837f2b">next_byte</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> min_value, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> max_value) const -&gt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td></tr>
+<tr class="memdesc:a53a3b29f10c67e856b8314e85b837f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
+<tr class="memitem:a66eb0fc1e4118c925c46ef2d53439797" id="r_a66eb0fc1e4118c925c46ef2d53439797"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a66eb0fc1e4118c925c46ef2d53439797">next_bytes</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const -&gt; void</td></tr>
+<tr class="memdesc:a66eb0fc1e4118c925c46ef2d53439797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
+<tr class="memitem:a5afd3dc5a01ea133791e1263e25c7b0f" id="r_a5afd3dc5a01ea133791e1263e25c7b0f"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a5afd3dc5a01ea133791e1263e25c7b0f">next_bytes</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) const -&gt; void</td></tr>
+<tr class="memdesc:a5afd3dc5a01ea133791e1263e25c7b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
+<tr class="memitem:a56f8b5a2563ba9b6f63db62108acd616" id="r_a56f8b5a2563ba9b6f63db62108acd616"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a56f8b5a2563ba9b6f63db62108acd616">next_double</a> () const -&gt; double</td></tr>
+<tr class="memdesc:a56f8b5a2563ba9b6f63db62108acd616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number between 0.0 and 1.0.  <br /></td></tr>
+<tr class="memitem:a6e1acca96954a49510c0454015e4487a" id="r_a6e1acca96954a49510c0454015e4487a"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a6e1acca96954a49510c0454015e4487a template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e1acca96954a49510c0454015e4487a">next_values</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;buffer) const -&gt; void</td></tr>
+<tr class="memdesc:a6e1acca96954a49510c0454015e4487a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> of bytes with random numbers.  <br /></td></tr>
+<tr class="memitem:adf4bd082558166db0d331ecc36b312a8" id="r_adf4bd082558166db0d331ecc36b312a8"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:adf4bd082558166db0d331ecc36b312a8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adf4bd082558166db0d331ecc36b312a8">next_values</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;buffer) const -&gt; void</td></tr>
+<tr class="memdesc:adf4bd082558166db0d331ecc36b312a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of a specified array of bytes with random numbers.  <br /></td></tr>
+<tr class="memitem:a4e58f4e434f75ac749efa7cc7a607cd4" id="r_a4e58f4e434f75ac749efa7cc7a607cd4"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e58f4e434f75ac749efa7cc7a607cd4">next_int64</a> () const -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:a4e58f4e434f75ac749efa7cc7a607cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number.  <br /></td></tr>
+<tr class="memitem:a03d695c9ca969fe55d22a91666b5e5f1" id="r_a03d695c9ca969fe55d22a91666b5e5f1"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a03d695c9ca969fe55d22a91666b5e5f1">next_int64</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> max_value) const -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:a03d695c9ca969fe55d22a91666b5e5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a nonnegative random number less than the specified maximum.  <br /></td></tr>
+<tr class="memitem:a2a3f2081c5fb9a6363307e08aaf55d3d" id="r_a2a3f2081c5fb9a6363307e08aaf55d3d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a3f2081c5fb9a6363307e08aaf55d3d">next_int64</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> min_value, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> max_value) const -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:a2a3f2081c5fb9a6363307e08aaf55d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number within a specified range.  <br /></td></tr>
+<tr class="memitem:ac24714b5b38d37ef028e6c780b48803e" id="r_ac24714b5b38d37ef028e6c780b48803e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac24714b5b38d37ef028e6c780b48803e">next_single</a> () const -&gt; <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a></td></tr>
+<tr class="memdesc:ac24714b5b38d37ef028e6c780b48803e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number between 0.0 and 1.0.  <br /></td></tr>
+<tr class="memitem:a8763ec88d75b24298f71cbe68717d1df" id="r_a8763ec88d75b24298f71cbe68717d1df"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a8763ec88d75b24298f71cbe68717d1df template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8763ec88d75b24298f71cbe68717d1df">shuffle</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;values) const -&gt; <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;</td></tr>
+<tr class="memdesc:a8763ec88d75b24298f71cbe68717d1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an in-place shuffle of a span.  <br /></td></tr>
+<tr class="memitem:ae6c658b2ecade82536e3b07f1070cc65" id="r_ae6c658b2ecade82536e3b07f1070cc65"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
+<tr class="memitem:ae6c658b2ecade82536e3b07f1070cc65 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae6c658b2ecade82536e3b07f1070cc65">shuffle</a> (collection_t &amp;values) const -&gt; collection_t &amp;</td></tr>
+<tr class="memdesc:ae6c658b2ecade82536e3b07f1070cc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an in-place shuffle of an array.  <br /></td></tr>
+<tr class="memitem:ae0a66fd3a7f952b3f9488cebf71b2bf1" id="r_ae0a66fd3a7f952b3f9488cebf71b2bf1"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
+<tr class="memitem:ae0a66fd3a7f952b3f9488cebf71b2bf1 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae0a66fd3a7f952b3f9488cebf71b2bf1">shuffle</a> (const collection_t &amp;values) const -&gt; collection_t</td></tr>
+<tr class="memdesc:ae0a66fd3a7f952b3f9488cebf71b2bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an in-place shuffle of an array.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -382,8 +382,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a7051d544f0240c80ffe29f1bcc7272" name="a1a7051d544f0240c80ffe29f1bcc7272"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a7051d544f0240c80ffe29f1bcc7272">&#9670;&#160;</a></span>random() <span class="overload">[2/3]</span></h2>
+<a id="a4b370e4d0df619727cc4003ec23a4050" name="a4b370e4d0df619727cc4003ec23a4050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b370e4d0df619727cc4003ec23a4050">&#9670;&#160;</a></span>random() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::random::random </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>seed</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>          <td class="paramname"><span class="paramname"><em>seed</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -449,8 +449,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a9232964c7b2e42d70fc4cce10f920232" name="a9232964c7b2e42d70fc4cce10f920232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9232964c7b2e42d70fc4cce10f920232">&#9670;&#160;</a></span>generator() <span class="overload">[1/2]</span></h2>
+<a id="aae904a99863631d818a708c51ac6593a" name="aae904a99863631d818a708c51ac6593a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae904a99863631d818a708c51ac6593a">&#9670;&#160;</a></span>generator() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,15 +459,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::default_random_engine &amp; xtd::random::generator </td>
+          <td class="memname">auto xtd::random::generator </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const std::default_random_engine &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -477,8 +477,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2bb89be8de6e3c56d30b60a7f2d65ef5" name="a2bb89be8de6e3c56d30b60a7f2d65ef5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bb89be8de6e3c56d30b60a7f2d65ef5">&#9670;&#160;</a></span>generator() <span class="overload">[2/2]</span></h2>
+<a id="aae007185eff2fd97ab7c2c96df52921b" name="aae007185eff2fd97ab7c2c96df52921b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae007185eff2fd97ab7c2c96df52921b">&#9670;&#160;</a></span>generator() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,15 +487,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::default_random_engine &amp; xtd::random::generator </td>
+          <td class="memname">auto xtd::random::generator </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  std::default_random_engine &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -505,8 +505,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9df95fbc405bafaf82705fb2f82bdf7e" name="a9df95fbc405bafaf82705fb2f82bdf7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9df95fbc405bafaf82705fb2f82bdf7e">&#9670;&#160;</a></span>get_items() <span class="overload">[1/3]</span></h2>
+<a id="a5c90e2e4c661b637c2100784353e93c4" name="a5c90e2e4c661b637c2100784353e93c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c90e2e4c661b637c2100784353e93c4">&#9670;&#160;</a></span>get_items() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -517,19 +517,19 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; xtd::random::get_items </td>
+          <td class="memname">auto xtd::random::get_items </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>choices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -545,8 +545,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="aafcf2203d0e14b17463477eb77946cec" name="aafcf2203d0e14b17463477eb77946cec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafcf2203d0e14b17463477eb77946cec">&#9670;&#160;</a></span>get_items() <span class="overload">[2/3]</span></h2>
+<a id="aa076d38989536d15349d62fbc6da2671" name="aa076d38989536d15349d62fbc6da2671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa076d38989536d15349d62fbc6da2671">&#9670;&#160;</a></span>get_items() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -557,19 +557,19 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; xtd::random::get_items </td>
+          <td class="memname">auto xtd::random::get_items </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>choices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -585,8 +585,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a22ca985c4bb87949751e62d55d2bf192" name="a22ca985c4bb87949751e62d55d2bf192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22ca985c4bb87949751e62d55d2bf192">&#9670;&#160;</a></span>get_items() <span class="overload">[3/3]</span></h2>
+<a id="a6884f55eba32df4e45bf0cb76af56671" name="a6884f55eba32df4e45bf0cb76af56671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6884f55eba32df4e45bf0cb76af56671">&#9670;&#160;</a></span>get_items() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -597,14 +597,14 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::random::get_items </td>
+          <td class="memname">auto xtd::random::get_items </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacextd.html#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>choices</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -625,8 +625,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a629a30d5ddd8035f45afe7d982fda712" name="a629a30d5ddd8035f45afe7d982fda712"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a629a30d5ddd8035f45afe7d982fda712">&#9670;&#160;</a></span>next() <span class="overload">[1/6]</span></h2>
+<a id="a565fba72ee5fa860f4b283b02975aa7a" name="a565fba72ee5fa860f4b283b02975aa7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565fba72ee5fa860f4b283b02975aa7a">&#9670;&#160;</a></span>next() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -635,15 +635,15 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::random::next </td>
+          <td class="memname">virtual auto xtd::random::next </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -655,8 +655,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="aa84d66b9325be46249dd993ee4ce5d41" name="aa84d66b9325be46249dd993ee4ce5d41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa84d66b9325be46249dd993ee4ce5d41">&#9670;&#160;</a></span>next() <span class="overload">[2/6]</span></h2>
+<a id="a68a9b761265636eae1753202385714c1" name="a68a9b761265636eae1753202385714c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68a9b761265636eae1753202385714c1">&#9670;&#160;</a></span>next() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -667,15 +667,15 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">value_t xtd::random::next </td>
+          <td class="memname">auto xtd::random::next </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; value_t</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -685,8 +685,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a21cd84ee32adac0f38fa7915be0b233c" name="a21cd84ee32adac0f38fa7915be0b233c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21cd84ee32adac0f38fa7915be0b233c">&#9670;&#160;</a></span>next() <span class="overload">[3/6]</span></h2>
+<a id="ab4f3187e5d6848f026ad096c578ec9a3" name="ab4f3187e5d6848f026ad096c578ec9a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f3187e5d6848f026ad096c578ec9a3">&#9670;&#160;</a></span>next() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -695,15 +695,15 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::random::next </td>
+          <td class="memname">virtual auto xtd::random::next </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -726,8 +726,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a01b67bd04320dbf44e91cd243e904115" name="a01b67bd04320dbf44e91cd243e904115"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b67bd04320dbf44e91cd243e904115">&#9670;&#160;</a></span>next() <span class="overload">[4/6]</span></h2>
+<a id="ab03444bd19c2ad4e68d6dd060188e4b5" name="ab03444bd19c2ad4e68d6dd060188e4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03444bd19c2ad4e68d6dd060188e4b5">&#9670;&#160;</a></span>next() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -738,15 +738,15 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">value_t xtd::random::next </td>
+          <td class="memname">auto xtd::random::next </td>
           <td>(</td>
           <td class="paramtype">value_t</td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; value_t</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -769,8 +769,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a0f5ab9c6f5e3354837cd3ec740ee207b" name="a0f5ab9c6f5e3354837cd3ec740ee207b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f5ab9c6f5e3354837cd3ec740ee207b">&#9670;&#160;</a></span>next() <span class="overload">[5/6]</span></h2>
+<a id="a83334057b3ce162dad7fd8b73ed3339a" name="a83334057b3ce162dad7fd8b73ed3339a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83334057b3ce162dad7fd8b73ed3339a">&#9670;&#160;</a></span>next() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -779,19 +779,19 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::random::next </td>
+          <td class="memname">virtual auto xtd::random::next </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -817,8 +817,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="a9db5b7d015f55c274c45b6059b159a9f" name="a9db5b7d015f55c274c45b6059b159a9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9db5b7d015f55c274c45b6059b159a9f">&#9670;&#160;</a></span>next() <span class="overload">[6/6]</span></h2>
+<a id="a82421e8a1d3b2b80bf18e31ef8dc0838" name="a82421e8a1d3b2b80bf18e31ef8dc0838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82421e8a1d3b2b80bf18e31ef8dc0838">&#9670;&#160;</a></span>next() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -829,19 +829,19 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">value_t xtd::random::next </td>
+          <td class="memname">auto xtd::random::next </td>
           <td>(</td>
           <td class="paramtype">value_t</td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">value_t</td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const</td>
+          <td class="paramtype">value_t</td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const -&gt; value_t</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -867,8 +867,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="ae7d36b4b5e9db7b2bc7a1dffa89cbea3" name="ae7d36b4b5e9db7b2bc7a1dffa89cbea3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7d36b4b5e9db7b2bc7a1dffa89cbea3">&#9670;&#160;</a></span>next_byte() <span class="overload">[1/3]</span></h2>
+<a id="af5f678c4a3b1acf61e0ccfb7f7a5e48f" name="af5f678c4a3b1acf61e0ccfb7f7a5e48f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5f678c4a3b1acf61e0ccfb7f7a5e48f">&#9670;&#160;</a></span>next_byte() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -877,15 +877,15 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td class="memname">virtual auto xtd::random::next_byte </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -895,8 +895,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="a401961584380d7472f8a83f5eb0fee23" name="a401961584380d7472f8a83f5eb0fee23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a401961584380d7472f8a83f5eb0fee23">&#9670;&#160;</a></span>next_byte() <span class="overload">[2/3]</span></h2>
+<a id="a54543de355b96b259613e24889b2d641" name="a54543de355b96b259613e24889b2d641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54543de355b96b259613e24889b2d641">&#9670;&#160;</a></span>next_byte() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -905,15 +905,15 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td class="memname">virtual auto xtd::random::next_byte </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -936,8 +936,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="a295eb633599b17811484458dffd44a1a" name="a295eb633599b17811484458dffd44a1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a295eb633599b17811484458dffd44a1a">&#9670;&#160;</a></span>next_byte() <span class="overload">[3/3]</span></h2>
+<a id="a53a3b29f10c67e856b8314e85b837f2b" name="a53a3b29f10c67e856b8314e85b837f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a3b29f10c67e856b8314e85b837f2b">&#9670;&#160;</a></span>next_byte() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -946,19 +946,19 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::random::next_byte </td>
+          <td class="memname">virtual auto xtd::random::next_byte </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const -&gt;  <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -984,8 +984,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="af8dee61c03a83ef71bf478f603094111" name="af8dee61c03a83ef71bf478f603094111"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8dee61c03a83ef71bf478f603094111">&#9670;&#160;</a></span>next_bytes() <span class="overload">[1/2]</span></h2>
+<a id="a66eb0fc1e4118c925c46ef2d53439797" name="a66eb0fc1e4118c925c46ef2d53439797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66eb0fc1e4118c925c46ef2d53439797">&#9670;&#160;</a></span>next_bytes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -994,10 +994,10 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::random::next_bytes </td>
+          <td class="memname">virtual auto xtd::random::next_bytes </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1020,8 +1020,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="adc73b84dc61ce01f1ecc602d450afc17" name="adc73b84dc61ce01f1ecc602d450afc17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc73b84dc61ce01f1ecc602d450afc17">&#9670;&#160;</a></span>next_bytes() <span class="overload">[2/2]</span></h2>
+<a id="a5afd3dc5a01ea133791e1263e25c7b0f" name="a5afd3dc5a01ea133791e1263e25c7b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5afd3dc5a01ea133791e1263e25c7b0f">&#9670;&#160;</a></span>next_bytes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1030,10 +1030,10 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::random::next_bytes </td>
+          <td class="memname">virtual auto xtd::random::next_bytes </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1054,8 +1054,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="a3b3a3230f08a0faf168e3ba47f2195c3" name="a3b3a3230f08a0faf168e3ba47f2195c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b3a3230f08a0faf168e3ba47f2195c3">&#9670;&#160;</a></span>next_double()</h2>
+<a id="a56f8b5a2563ba9b6f63db62108acd616" name="a56f8b5a2563ba9b6f63db62108acd616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f8b5a2563ba9b6f63db62108acd616">&#9670;&#160;</a></span>next_double()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1064,15 +1064,15 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double xtd::random::next_double </td>
+          <td class="memname">virtual auto xtd::random::next_double </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  double</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1083,8 +1083,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="ada66aa49deda40731ffdb43f29bf7e16" name="ada66aa49deda40731ffdb43f29bf7e16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada66aa49deda40731ffdb43f29bf7e16">&#9670;&#160;</a></span>next_values() <span class="overload">[1/2]</span></h2>
+<a id="a6e1acca96954a49510c0454015e4487a" name="a6e1acca96954a49510c0454015e4487a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1acca96954a49510c0454015e4487a">&#9670;&#160;</a></span>next_values() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1095,10 +1095,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::random::next_values </td>
+          <td class="memname">auto xtd::random::next_values </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1119,8 +1119,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="ae1d9caedcdaba46d8cc34736d8547a40" name="ae1d9caedcdaba46d8cc34736d8547a40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1d9caedcdaba46d8cc34736d8547a40">&#9670;&#160;</a></span>next_values() <span class="overload">[2/2]</span></h2>
+<a id="adf4bd082558166db0d331ecc36b312a8" name="adf4bd082558166db0d331ecc36b312a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4bd082558166db0d331ecc36b312a8">&#9670;&#160;</a></span>next_values() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1131,10 +1131,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::random::next_values </td>
+          <td class="memname">auto xtd::random::next_values </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1155,8 +1155,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="aceed8b8fa23d15d6234b4272ad82f21f" name="aceed8b8fa23d15d6234b4272ad82f21f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceed8b8fa23d15d6234b4272ad82f21f">&#9670;&#160;</a></span>next_int64() <span class="overload">[1/3]</span></h2>
+<a id="a4e58f4e434f75ac749efa7cc7a607cd4" name="a4e58f4e434f75ac749efa7cc7a607cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e58f4e434f75ac749efa7cc7a607cd4">&#9670;&#160;</a></span>next_int64() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1165,15 +1165,15 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::random::next_int64 </td>
+          <td class="memname">virtual auto xtd::random::next_int64 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1183,8 +1183,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a9a6b94113b830b77f344643f079158d6" name="a9a6b94113b830b77f344643f079158d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a6b94113b830b77f344643f079158d6">&#9670;&#160;</a></span>next_int64() <span class="overload">[2/3]</span></h2>
+<a id="a03d695c9ca969fe55d22a91666b5e5f1" name="a03d695c9ca969fe55d22a91666b5e5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d695c9ca969fe55d22a91666b5e5f1">&#9670;&#160;</a></span>next_int64() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1193,15 +1193,15 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::random::next_int64 </td>
+          <td class="memname">virtual auto xtd::random::next_int64 </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1224,8 +1224,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a5281cced24b7192940a6a58974b17342" name="a5281cced24b7192940a6a58974b17342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5281cced24b7192940a6a58974b17342">&#9670;&#160;</a></span>next_int64() <span class="overload">[3/3]</span></h2>
+<a id="a2a3f2081c5fb9a6363307e08aaf55d3d" name="a2a3f2081c5fb9a6363307e08aaf55d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a3f2081c5fb9a6363307e08aaf55d3d">&#9670;&#160;</a></span>next_int64() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1234,19 +1234,19 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::random::next_int64 </td>
+          <td class="memname">virtual auto xtd::random::next_int64 </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>&#160;) const -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1272,8 +1272,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="a44b6d3fba58558e76eb892110635912e" name="a44b6d3fba58558e76eb892110635912e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44b6d3fba58558e76eb892110635912e">&#9670;&#160;</a></span>next_single()</h2>
+<a id="ac24714b5b38d37ef028e6c780b48803e" name="ac24714b5b38d37ef028e6c780b48803e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24714b5b38d37ef028e6c780b48803e">&#9670;&#160;</a></span>next_single()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1282,15 +1282,15 @@ Unlike the other overloads of the next method, which return only non-negative va
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">single</a> xtd::random::next_single </td>
+          <td class="memname">virtual auto xtd::random::next_single </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1300,8 +1300,8 @@ Unlike the other overloads of the next method, which return only non-negative va
 
 </div>
 </div>
-<a id="a5e528d44e971ca388304266b5938dfb9" name="a5e528d44e971ca388304266b5938dfb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e528d44e971ca388304266b5938dfb9">&#9670;&#160;</a></span>shuffle() <span class="overload">[1/3]</span></h2>
+<a id="a8763ec88d75b24298f71cbe68717d1df" name="a8763ec88d75b24298f71cbe68717d1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8763ec88d75b24298f71cbe68717d1df">&#9670;&#160;</a></span>shuffle() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1312,10 +1312,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp; xtd::random::shuffle </td>
+          <td class="memname">auto xtd::random::shuffle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; value_t &gt; &amp;</td>
         </tr>
       </table>
   </td>
@@ -1335,8 +1335,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="ad6ff7460de8c4cbe51ef1a34a40cf49e" name="ad6ff7460de8c4cbe51ef1a34a40cf49e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6ff7460de8c4cbe51ef1a34a40cf49e">&#9670;&#160;</a></span>shuffle() <span class="overload">[2/3]</span></h2>
+<a id="ae6c658b2ecade82536e3b07f1070cc65" name="ae6c658b2ecade82536e3b07f1070cc65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c658b2ecade82536e3b07f1070cc65">&#9670;&#160;</a></span>shuffle() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1347,10 +1347,10 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">collection_t &amp; xtd::random::shuffle </td>
+          <td class="memname">auto xtd::random::shuffle </td>
           <td>(</td>
           <td class="paramtype">collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; collection_t &amp;</td>
         </tr>
       </table>
   </td>
@@ -1370,8 +1370,8 @@ template&lt;typename collection_t&gt; </div>
 
 </div>
 </div>
-<a id="afab08aecc22a0fc3bd3f17f84df3d6c6" name="afab08aecc22a0fc3bd3f17f84df3d6c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afab08aecc22a0fc3bd3f17f84df3d6c6">&#9670;&#160;</a></span>shuffle() <span class="overload">[3/3]</span></h2>
+<a id="ae0a66fd3a7f952b3f9488cebf71b2bf1" name="ae0a66fd3a7f952b3f9488cebf71b2bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a66fd3a7f952b3f9488cebf71b2bf1">&#9670;&#160;</a></span>shuffle() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1382,10 +1382,10 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">collection_t xtd::random::shuffle </td>
+          <td class="memname">auto xtd::random::shuffle </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; collection_t</td>
         </tr>
       </table>
   </td>
@@ -1405,8 +1405,8 @@ template&lt;typename collection_t&gt; </div>
 
 </div>
 </div>
-<a id="af5a84d2617f754220f6a383520bfa98f" name="af5a84d2617f754220f6a383520bfa98f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5a84d2617f754220f6a383520bfa98f">&#9670;&#160;</a></span>sample()</h2>
+<a id="ab6ec7d64eb5578a4e098e11b17b81128" name="ab6ec7d64eb5578a4e098e11b17b81128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6ec7d64eb5578a4e098e11b17b81128">&#9670;&#160;</a></span>sample()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1415,15 +1415,15 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double xtd::random::sample </td>
+          <td class="memname">virtual auto xtd::random::sample </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  double</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
