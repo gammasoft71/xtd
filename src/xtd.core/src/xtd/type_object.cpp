@@ -3,6 +3,25 @@
 
 using namespace xtd;
 
+namespace {
+  auto normalize_xtd_type_name(string& name) -> string& {
+    if (name.contains("xtd::basic_string<char, std::char_traits<char>, std::allocator<char>>")) name = name.replace("xtd::basic_string<char, std::char_traits<char>, std::allocator<char>>", "xtd::string");
+    if (name.contains("xtd::basic_string<char16_t, std::char_traits<char16_t>, std::allocator<char16_t>>")) name = name.replace("xtd::basic_string<char16_t, std::char_traits<char16_t>, std::allocator<char16_t>>", "xtd::u16string");
+    if (name.contains("xtd::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>")) name = name.replace("xtd::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>", "xtd::u32string");
+    if (name.contains("xtd::basic_string<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>")) name = name.replace("xtd::basic_string<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>", "xtd::u8string");
+    if (name.contains("xtd::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>")) name = name.replace("xtd::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>", "xtd::wstring");
+
+    if (name.contains("xtd::text::basic_string_builder<char, std::char_traits<char>, std::allocator<char>>")) name = name.replace("xtd::text::basic_string_builder<char, std::char_traits<char>, std::allocator<char>>", "xtd::text::string_builder");
+    if (name.contains("xtd::text::basic_string_builder<char16_t, std::char_traits<char16_t>, std::allocator<char16_t>>")) name = name.replace("xtd::text::basic_string_builder<char16_t, std::char_traits<char16_t>, std::allocator<char16_t>>", "xtd::text::u16string_builder");
+    if (name.contains("xtd::text::basic_string_builder<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>")) name = name.replace("xtd::text::basic_string_builder<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>", "xtd::text::u32string_builder");
+    if (name.contains("xtd::text::basic_string_builder<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>")) name = name.replace("xtd::text::basic_string_builder<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>", "xtd::text::u8string_builder");
+    if (name.contains("xtd::text::basic_string_builder<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>")) name = name.replace("xtd::text::basic_string_builder<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>", "xtd::text::wstring_builder");
+
+    if ((name.contains("xtd::span<") || name.contains("xtd::read_only_span<")) && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
+    return name;
+  }
+}
+
 type_object::type_object() noexcept : type_(typeid(*this)) {
 }
 
@@ -15,7 +34,8 @@ type_object& type_object::operator=(const type_object& value) noexcept {
 }
 
 string type_object::full_name() const noexcept {
-  return string::demangle(type_.name());
+  auto name = string::demangle(type_.name());
+  return normalize_xtd_type_name(name);
 }
 
 string type_object::name() const noexcept {
