@@ -124,7 +124,7 @@ $(function() {
 <div class="line">  icon(properties::resources::ball_ico());</div>
 <div class="line">  start_position(form_start_position::manual);</div>
 <div class="line">  <span class="keyword">auto</span> working_area = screen::from_control(*this).working_area();</div>
-<div class="line">  <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>({working_area.left() + working_area.width / 2 - <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>().width / 2, working_area.bottom() - <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>().height});</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>({working_area.left() + working_area.width / 2 - <a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>().width / 2, working_area.bottom() - <a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>().height});</div>
 <div class="line">  top_most(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Inertia animation + bounces</span></div>
@@ -221,8 +221,8 @@ $(function() {
 <div class="line">  color(settings_form_.settings().color());</div>
 <div class="line">  opacity(settings_form_.settings().opacity());</div>
 <div class="line">  light_point_color(settings_form_.settings().light_point_color());</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(settings_form_.settings().size());</div>
-<div class="line">  <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>({<a class="code hl_enumvalue" href="group__xtd__drawing.html#gga1fa23df0cbf09589187247035b61b504a811882fecd5c7618d7099ebbd39ea254">left</a>(), screen::from_control(*this).working_area().bottom() - <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>().height});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>(settings_form_.settings().size());</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>({<a class="code hl_enumvalue" href="group__xtd__drawing.html#gga1fa23df0cbf09589187247035b61b504a811882fecd5c7618d7099ebbd39ea254">left</a>(), screen::from_control(*this).working_area().bottom() - <a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>().height});</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> main_form::on_settings_menu_item_click(<a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
@@ -238,7 +238,7 @@ $(function() {
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:30</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">xtd::forms::bounds_specified::width</a></div><div class="ttdeci">@ width</div><div class="ttdoc">Specifies that the width of the control is defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:32</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a></div><div class="ttdeci">@ fill</div><div class="ttdoc">All the control&#39;s edges are docked to the all edges of its containing control and sized appropriately...</div><div class="ttdef"><b>Definition</b> dock_style.hpp:35</div></div>
-<div class="ttc" id="anamespacextd_html_ac6d22d2703cdaac732df137dc46abd78"><div class="ttname"><a href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">xtd::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:238</div></div>
+<div class="ttc" id="anamespacextd_html_ad1e549152bf4d9f98e51b0ea225af532"><div class="ttname"><a href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">xtd::size</a></div><div class="ttdeci">constexpr auto size() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:217</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

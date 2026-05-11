@@ -147,7 +147,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> reload_button = button::create(main_form, <span class="stringliteral">&quot;&amp;Reload&quot;</span>, {170, 10});</div>
 <div class="line">  reload_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">    main_form.client_size(settings::default_settings().<a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>());</div>
+<div class="line">    main_form.client_size(settings::default_settings().<a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>());</div>
 <div class="line">    main_form.location(settings::default_settings().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>());</div>
 <div class="line">    main_form.back_color(settings::default_settings().back_color());</div>
 <div class="line">    back_color_picker.color(settings::default_settings().back_color());</div>
@@ -166,7 +166,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:942</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:30</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:13</div></div>
-<div class="ttc" id="anamespacextd_html_ac6d22d2703cdaac732df137dc46abd78"><div class="ttname"><a href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">xtd::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:238</div></div>
+<div class="ttc" id="anamespacextd_html_ad1e549152bf4d9f98e51b0ea225af532"><div class="ttname"><a href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">xtd::size</a></div><div class="ttdeci">constexpr auto size() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:217</div></div>
 </div><!-- fragment --><p> • properties/settings.cmake : </p><div class="fragment"><div class="line">setting_include(xtd/drawing/point)</div>
 <div class="line">setting_include(xtd/drawing/size)</div>
 <div class="line">setting_include(xtd/drawing/system_colors)</div>
@@ -235,10 +235,10 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @brief Gets the size user setting property.</span></div>
 <div class="line">    <span class="comment">// @return A xtd::drawing::size value.</span></div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>() const noexcept -&gt; xtd::drawing::size {<span class="keywordflow">return</span> size_;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>() const noexcept -&gt; xtd::drawing::size {<span class="keywordflow">return</span> size_;}</div>
 <div class="line">    <span class="comment">// @brief Sets the size user setting property.</span></div>
 <div class="line">    <span class="comment">// @param value A xtd::drawing::size value.</span></div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#ac6d22d2703cdaac732df137dc46abd78">size</a>(xtd::drawing::size value) <span class="keyword">noexcept</span> -&gt; settings&amp; {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#ad1e549152bf4d9f98e51b0ea225af532">size</a>(xtd::drawing::size value) <span class="keyword">noexcept</span> -&gt; settings&amp; {</div>
 <div class="line">      size_ = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
 <div class="line">      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">    }</div>

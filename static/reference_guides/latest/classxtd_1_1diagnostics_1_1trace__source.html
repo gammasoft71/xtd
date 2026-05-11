@@ -160,10 +160,10 @@ Public Methods</h2></td></tr>
 <tr class="memitem:a63fcf05bc449265959e66047a6fa8704" id="r_a63fcf05bc449265959e66047a6fa8704"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a63fcf05bc449265959e66047a6fa8704">flush</a> () -&gt; void</td></tr>
 <tr class="memdesc:a63fcf05bc449265959e66047a6fa8704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all the trace listeners in the trace listener collection.  <br /></td></tr>
 <tr class="memitem:adcf94e9f84ccdbc31933ab352917ea68" id="r_adcf94e9f84ccdbc31933ab352917ea68"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
-<tr class="memitem:adcf94e9f84ccdbc31933ab352917ea68 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adcf94e9f84ccdbc31933ab352917ea68">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const object_t &amp;<a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>) -&gt; void</td></tr>
+<tr class="memitem:adcf94e9f84ccdbc31933ab352917ea68 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adcf94e9f84ccdbc31933ab352917ea68">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const object_t &amp;<a class="el" href="namespacextd.html#a56b8af7b1b3a63e90e33cc756a1c7aff">data</a>) -&gt; void</td></tr>
 <tr class="memdesc:adcf94e9f84ccdbc31933ab352917ea68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.  <br /></td></tr>
 <tr class="memitem:aa852d2067d1eabf35da652eb9832f59d" id="r_aa852d2067d1eabf35da652eb9832f59d"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
-<tr class="memitem:aa852d2067d1eabf35da652eb9832f59d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa852d2067d1eabf35da652eb9832f59d">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;<a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>) -&gt; void</td></tr>
+<tr class="memitem:aa852d2067d1eabf35da652eb9832f59d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa852d2067d1eabf35da652eb9832f59d">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;<a class="el" href="namespacextd.html#a56b8af7b1b3a63e90e33cc756a1c7aff">data</a>) -&gt; void</td></tr>
 <tr class="memdesc:aa852d2067d1eabf35da652eb9832f59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.  <br /></td></tr>
 <tr class="memitem:ab9de821d64edba7e39726ee952d010df" id="r_ab9de821d64edba7e39726ee952d010df"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab9de821d64edba7e39726ee952d010df">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id) -&gt; void</td></tr>
 <tr class="memdesc:ab9de821d64edba7e39726ee952d010df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type and event identifier.  <br /></td></tr>
@@ -513,7 +513,7 @@ template&lt;typename object_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">event_type</td><td>One of the enumeration values that specifies the event type of the trace data. </td></tr>
     <tr><td class="paramname">id</td><td>A numeric identifier for the event. </td></tr>
-    <tr><td class="paramname"><a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51" title="Gets direct access to the underlying contiguous storage.">data</a></td><td>The trace data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="namespacextd.html#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data</a></td><td>The trace data. </td></tr>
   </table>
   </dd>
 </dl>
@@ -562,7 +562,7 @@ template&lt;typename object_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">event_type</td><td>One of the enumeration values that specifies the event type of the trace data. </td></tr>
     <tr><td class="paramname">id</td><td>A numeric identifier for the event. </td></tr>
-    <tr><td class="paramname"><a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51" title="Gets direct access to the underlying contiguous storage.">data</a></td><td>The trace data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="namespacextd.html#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data</a></td><td>The trace data. </td></tr>
   </table>
   </dd>
 </dl>
