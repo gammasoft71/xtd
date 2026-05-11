@@ -7,6 +7,7 @@
 * [to_int32](to_int32/README.md) shows how to use [xtd::convert::to_int32](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a4d52bf96c567e100f5aba3eca94abe2b) method.
 * [to_string](to_string/README.md) shows how to use [xtd::convert::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a1de05be36bc70b03e74ec7d9586b0199) method and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class.
 * [unsafe_as](unsafe_as/README.md) shows how to use [xtd::unsafe::as](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1unsafe.html) operator.
+* [variant](variant/README.md) shows how to use [xtd::as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operator with std::variant.
 
 ## Build and run any project
 

@@ -9,5 +9,6 @@ add_projects(
   to_int32
   to_string
   unsafe_as
+  variant
 )
 
