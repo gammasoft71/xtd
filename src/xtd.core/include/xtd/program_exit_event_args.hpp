@@ -36,7 +36,7 @@ namespace xtd {
     /// @{
     /// @brief Gets the exit mode.
     /// @return One of the xtd::exit_mode enumeration values.
-    xtd::exit_mode exit_mode() const noexcept {return exit_mode_;}
+    [[nodiscard]] auto exit_mode() const noexcept -> xtd::exit_mode {return exit_mode_;}
     /// @}
     
   private:
