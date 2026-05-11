@@ -49,7 +49,7 @@ namespace xtd {
     
     /// @brief Initializes a new instance of the random class, using a specified seed value.
     /// @param seed A number used to calculate a starting value for the pseudo-random number sequence.
-    explicit random(uint32 seed);
+    explicit random(xtd::uint32 seed);
     
     /// @brief Initializes a new instance of the random class, using a specified random device value.
     /// @param random_device A random device value.
@@ -67,10 +67,10 @@ namespace xtd {
     /// @{
     /// @brief Gets the underlying generator
     /// @return The underlying generator.
-    const std::default_random_engine& generator() const noexcept;
+    [[nodiscard]] auto generator() const noexcept -> const std::default_random_engine&;
     /// @brief Gets the underlying generator
     /// @return The underlying generator.
-    std::default_random_engine& generator() noexcept;
+    [[nodiscard]] auto generator() noexcept -> std::default_random_engine&;
     /// @}
     
     /// @name Public Methods
@@ -80,7 +80,7 @@ namespace xtd {
     /// @param choices Set of choices.
     /// @param length The length of the populated array.
     template<typename value_t>
-    xtd::array<value_t> get_items(const xtd::read_only_span<value_t>& choices, xtd::usize length) {
+    [[nodiscard]] auto get_items(const xtd::read_only_span<value_t>& choices, xtd::usize length) -> xtd::array<value_t> {
       auto result = array<value_t>(length);
       auto span_result = span<value_t>(result);
       get_items(choices, span_result);
@@ -90,25 +90,25 @@ namespace xtd {
     /// @param choices Set of choices.
     /// @param length The length of the populated array.
     template<typename value_t>
-    xtd::array<value_t> get_items(const xtd::array<value_t>& choices, xtd::usize length) {
+    [[nodiscard]] auto get_items(const xtd::array<value_t>& choices, xtd::usize length) -> xtd::array<value_t> {
       return get_items(read_only_span<value_t>(choices), length);
     }
     /// @brief Fills the elements of a specified span with items chosen at random from the provided set of choices.
     /// @param choices Set of choices.
     /// @param destination The elements to fill.
     template<typename value_t>
-    void get_items(const xtd::read_only_span<value_t>& choices, xtd::span<value_t>& destination) {
+    auto get_items(const xtd::read_only_span<value_t>& choices, xtd::span<value_t>& destination) -> void {
       for (auto& item : destination)
         item = choices[next(choices.length())];
     }
     
     /// @brief Returns a nonnegative random number.
     /// @return A 32-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
-    virtual int32 next() const;
+    [[nodiscard]] virtual auto next() const -> xtd::int32;
     /// @brief Returns a nonnegative random number.
     /// @return A value_t greater than or equal to zero and less than std::numeric_limits<value_t>::max()
     template<typename value_t>
-    value_t next() const {
+    [[nodiscard]] auto next() const -> value_t {
       return next(xtd::box_integer<value_t>::max_value);
     }
     
@@ -117,14 +117,14 @@ namespace xtd {
     /// @return A 32-bit signed integer greater than or equal to zero and less than max_value
     /// @exception argument_out_of_range_exception max_value is less than zero.
     /// @remarks The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
-    virtual int32 next(int32 max_value) const;
+    [[nodiscard]] virtual auto next(xtd::int32 max_value) const -> xtd::int32;
     /// @brief Returns a nonnegative random number less than the specified maximum.
     /// @param max_value The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero.
     /// @return A value_t greater than or equal to zero and less than max_value
     /// @exception argument_out_of_range_exception max_value is less than zero.
     /// @remarks The next(value_t) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
     template<typename value_t>
-    value_t next(value_t max_value) const {
+    [[nodiscard]] auto next(value_t max_value) const -> value_t {
       return static_cast<value_t>(next(value_t {}, max_value));
     }
     
@@ -135,7 +135,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception min_value is greater than max_value.
     /// @remarks The next(int32, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
-    virtual int32 next(int32 min_value, int32 max_value) const;
+    [[nodiscard]] virtual auto next(xtd::int32 min_value, xtd::int32 max_value) const -> xtd::int32;
     /// @brief Returns a random number within a specified range.
     /// @param min_value The inclusive lower bound of the random number returned
     /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
@@ -144,7 +144,7 @@ namespace xtd {
     /// @remarks The next(value_t, value_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
     template<typename value_t>
-    value_t next(value_t min_value, value_t max_value) const {
+    [[nodiscard]] auto next(value_t min_value, value_t max_value) const -> value_t {
       if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (min_value == max_value) return min_value;
       return min_value + static_cast<value_t>(math::round(sample() * (max_value - 1 - min_value)));
@@ -152,27 +152,27 @@ namespace xtd {
     
     /// @cond
     template<xtd::boolean>
-    xtd::boolean next() const {return static_cast<xtd::boolean>(next(0, 2));}
-    xtd::boolean next(xtd::boolean max_value) const;
-    decimal next(decimal max_value) const;
-    double next(double max_value) const;
-    float next(float max_value) const;
-    xtd::boolean next(xtd::boolean min_value, xtd::boolean max_value) const;
-    decimal next(decimal min_value, decimal max_value) const;
-    double next(double min_value, double max_value) const;
-    float next(float min_value, float max_value) const;
+    [[nodiscard]] auto next() const -> xtd::boolean {return static_cast<xtd::boolean>(next(0, 2));}
+    [[nodiscard]] auto next(xtd::boolean max_value) const -> xtd::boolean;
+    [[nodiscard]] auto next(xtd::decimal max_value) const -> xtd::decimal;
+    [[nodiscard]] auto next(double max_value) const -> double;
+    [[nodiscard]] auto next(xtd::single max_value) const -> xtd::single;
+    [[nodiscard]] auto next(xtd::boolean min_value, xtd::boolean max_value) const -> xtd::boolean;
+    [[nodiscard]] auto next(xtd::decimal min_value, xtd::decimal max_value) const -> xtd::decimal;
+    [[nodiscard]] auto next(double min_value, double max_value) const -> double;
+    [[nodiscard]] auto next(xtd::single min_value, xtd::single max_value) const -> xtd::single;
     /// @endcond
     
     
     /// @brief Returns a nonnegative random number.
     /// @return A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
-    virtual xtd::byte next_byte() const;
+    [[nodiscard]] virtual auto next_byte() const -> xtd::byte;
     /// @brief Returns a nonnegative random number less than the specified maximum.
     /// @param max_value The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero.
     /// @return A 64-bit signed integer greater than or equal to zero and less than max_value
     /// @exception argument_out_of_range_exception max_value is less than zero.
     /// @remarks The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
-    virtual xtd::byte next_byte(xtd::byte max_value) const;
+    [[nodiscard]] virtual auto next_byte(xtd::byte max_value) const -> xtd::byte;
     /// @brief Returns a random number within a specified range.
     /// @param min_value The inclusive lower bound of the random number returned
     /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
@@ -180,27 +180,27 @@ namespace xtd {
     /// @exception argument_out_of_range_exception min_value is greater than max_value.
     /// @remarks The next(int32, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
-    virtual xtd::byte next_byte(xtd::byte min_value, xtd::byte max_value) const;
+    [[nodiscard]] virtual auto next_byte(xtd::byte min_value, xtd::byte max_value) const -> xtd::byte;
 
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
-    virtual void next_bytes(xtd::span<xtd::byte>& buffer) const;
+    virtual auto next_bytes(xtd::span<xtd::byte>& buffer) const -> void;
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
-    virtual void next_bytes(xtd::array<xtd::byte>& buffer) const;
+    virtual auto next_bytes(xtd::array<xtd::byte>& buffer) const -> void;
     
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
     /// @remarks This method is the public version of the protected method, sample
-    virtual double next_double() const;
+    [[nodiscard]] virtual auto next_double() const -> double;
     
     /// @brief Fills the elements of a specified xtd::span of bytes with random numbers.
     /// @param buffer An xtd::span of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<typename value_t>
-    void next_values(xtd::span<value_t>& buffer) const {
+    auto next_values(xtd::span<value_t>& buffer) const -> void {
       for (auto index = 0_z; index < buffer.length(); ++index)
         buffer[index] = next<value_t>();
     }
@@ -209,20 +209,20 @@ namespace xtd {
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<typename value_t>
-    void next_values(xtd::array<value_t>& buffer) const {
+    auto next_values(xtd::array<value_t>& buffer) const -> void {
       auto span_buffer = span<value_t> {buffer};
       next_values(span_buffer);
     }
     
     /// @brief Returns a nonnegative random number.
     /// @return A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
-    virtual int64 next_int64() const;
+    [[nodiscard]] virtual auto next_int64() const -> xtd::int64;
     /// @brief Returns a nonnegative random number less than the specified maximum.
     /// @param max_value The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero.
     /// @return A 64-bit signed integer greater than or equal to zero and less than max_value
     /// @exception argument_out_of_range_exception max_value is less than zero.
     /// @remarks The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
-    virtual int64 next_int64(int64 max_value) const;
+    [[nodiscard]] virtual auto next_int64(int64 max_value) const -> xtd::int64;
     /// @brief Returns a random number within a specified range.
     /// @param min_value The inclusive lower bound of the random number returned
     /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
@@ -230,16 +230,16 @@ namespace xtd {
     /// @exception argument_out_of_range_exception min_value is greater than max_value.
     /// @remarks The next(int32, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
-    virtual int64 next_int64(int64 min_value, int64 max_value) const;
+    [[nodiscard]] virtual auto next_int64(int64 min_value, int64 max_value) const -> xtd::int64;
     
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A single-precision floating point number greater than or equal to 0.0, and less than 1.0.
-    virtual single next_single() const;
+    [[nodiscard]] virtual auto next_single() const -> xtd::single;
     
     /// @brief Performs an in-place shuffle of a span.
     /// @param values The span to shuffle.
     template<typename value_t>
-    xtd::span<value_t>& shuffle(xtd::span<value_t>& values) const {
+    auto shuffle(xtd::span<value_t>& values) const -> xtd::span<value_t>& {
       for (auto index = 0_z; index < values.length() - 1; ++index)
         std::swap(values[index], values[next(index, values.length())]);
       return values;
@@ -247,7 +247,7 @@ namespace xtd {
     /// @brief Performs an in-place shuffle of an array.
     /// @param values The array to shuffle.
     template<typename collection_t>
-    collection_t& shuffle(collection_t& values) const {
+    auto shuffle(collection_t& values) const -> collection_t& {
       auto span_values = span<typename collection_t::value_type> {values};
       shuffle(span_values);
       return values;
@@ -255,7 +255,7 @@ namespace xtd {
     /// @brief Performs an in-place shuffle of an array.
     /// @param values The array to shuffle.
     template<typename collection_t>
-    collection_t shuffle(const collection_t& values) const {
+    auto shuffle(const collection_t& values) const -> collection_t {
       auto result = values;
       shuffle(result);
       return result;
@@ -266,7 +266,7 @@ namespace xtd {
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
     /// @remarks To produce a different random distribution or a different random number generator principle, derive a class from the random class and virtual the sample method.
-    virtual double sample() const;
+    [[nodiscard]] virtual auto sample() const -> double;
     
   private:
     mutable std::default_random_engine generator_;
