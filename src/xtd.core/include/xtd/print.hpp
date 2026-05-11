@@ -16,13 +16,13 @@ namespace xtd {
   /// @param value The value to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename arg_t>
-  void print(FILE* file, arg_t&& value) {
+  auto print(FILE* file, arg_t&& value) -> void {
     __xtd_print_with_file_write__(false, file, string::format("{}",  value));
   }
   
   /// @cond
   template<typename type_t>
-  void print(FILE* file, std::initializer_list<type_t>&& il) {
+  auto print(FILE* file, std::initializer_list<type_t>&& il) -> void {
     __xtd_print_with_file_write__(false, file, string::format("{}",  il));
   }
   /// @endcond
@@ -34,7 +34,7 @@ namespace xtd {
   /// @param values Values to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename ...args_t>
-  void print(FILE* file, const xtd::string& fmt, args_t&& ... values) {
+  auto print(FILE* file, const xtd::string& fmt, args_t&& ... values) -> void {
     __xtd_print_with_file_write__(false, file, string::format(fmt, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -44,7 +44,7 @@ namespace xtd {
   /// @param values Values to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename ...args_t>
-  void print(FILE* file, const char* fmt, args_t&& ... values) {
+  auto print(FILE* file, const char* fmt, args_t&& ... values) -> void {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -54,7 +54,7 @@ namespace xtd {
   /// @param values Values to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename ...args_t>
-  void print(FILE* file, const char8_t* fmt, args_t&& ... values) {
+  auto print(FILE* file, const char8_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -64,7 +64,7 @@ namespace xtd {
   /// @param values Values to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename ...args_t>
-  void print(FILE* file, const char16_t* fmt, args_t&& ... values) {
+  auto print(FILE* file, const char16_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -74,7 +74,7 @@ namespace xtd {
   /// @param values Values to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename ...args_t>
-  void print(FILE* file, const char32_t* fmt, args_t&& ... values) {
+  auto print(FILE* file, const char32_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -84,7 +84,7 @@ namespace xtd {
   /// @param values Values to write,
   /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<typename ...args_t>
-  void print(FILE* file, const wchar_t* fmt, args_t&& ... values) {
+  auto print(FILE* file, const wchar_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   
@@ -93,13 +93,13 @@ namespace xtd {
   /// @param os The output stream to insert data into.
   /// @param value The value to write,
   template<typename arg_t>
-  void print(std::ostream& os, arg_t&& value) {
+  auto print(std::ostream& os, arg_t&& value) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format("{}",  value));
   }
   
   /// @cond
   template<typename type_t>
-  void print(std::ostream& os, std::initializer_list<type_t>&& il) {
+  auto print(std::ostream& os, std::initializer_list<type_t>&& il) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format("{}",  il));
   }
   /// @endcond
@@ -110,7 +110,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(std::ostream& os, const xtd::string& fmt, args_t&& ... values) {
+  auto print(std::ostream& os, const xtd::string& fmt, args_t&& ... values) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format(fmt, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -119,7 +119,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(std::ostream& os, const char* fmt, args_t&& ... values) {
+  auto print(std::ostream& os, const char* fmt, args_t&& ... values) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -128,7 +128,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(std::ostream& os, const char8_t* fmt, args_t&& ... values) {
+  auto print(std::ostream& os, const char8_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -137,7 +137,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(std::ostream& os, const char16_t* fmt, args_t&& ... values) {
+  auto print(std::ostream& os, const char16_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -146,7 +146,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(std::ostream& os, const char32_t* fmt, args_t&& ... values) {
+  auto print(std::ostream& os, const char32_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -155,7 +155,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(std::ostream& os, const wchar_t* fmt, args_t&& ... values) {
+  auto print(std::ostream& os, const wchar_t* fmt, args_t&& ... values) -> void {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   
@@ -163,11 +163,11 @@ namespace xtd {
   /// @tparam arg_t The type of the value to write.
   /// @param value The value to write,
   template<typename arg_t>
-  void print(arg_t&& value) {print(stdout, value);}
+  auto print(arg_t&& value) -> void {print(stdout, value);}
   
   /// @cond
   template<typename type_t>
-  void print(std::initializer_list<type_t>&& il) {print(stdout, il);}
+  auto print(std::initializer_list<type_t>&& il) -> void {print(stdout, il);}
   /// @endcond
   
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
@@ -175,36 +175,35 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(const xtd::string& fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
+  auto print(const xtd::string& fmt, args_t&& ... values) -> void {print(stdout, fmt, std::forward<args_t>(values)...);}
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(const char* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
+  auto print(const char* fmt, args_t&& ... values) -> void {print(stdout, fmt, std::forward<args_t>(values)...);}
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(const char8_t* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
+  auto print(const char8_t* fmt, args_t&& ... values) -> void {print(stdout, fmt, std::forward<args_t>(values)...);}
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(const char16_t* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
+  auto print(const char16_t* fmt, args_t&& ... values) -> void {print(stdout, fmt, std::forward<args_t>(values)...);}
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(const char32_t* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
+  auto print(const char32_t* fmt, args_t&& ... values) -> void {print(stdout, fmt, std::forward<args_t>(values)...);}
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<typename ...args_t>
-  void print(const wchar_t* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
-  
+  auto print(const wchar_t* fmt, args_t&& ... values) -> void {print(stdout, fmt, std::forward<args_t>(values)...);}
 }
