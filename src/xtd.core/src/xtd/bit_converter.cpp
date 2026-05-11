@@ -109,7 +109,7 @@ bool bit_converter::to_boolean(const array<byte>& value, usize start_index) {
 }
 
 bool bit_converter::to_boolean(const read_only_span<xtd::byte>& value, usize start_index) {
-  return static_cast<bool>(value.at(start_index));
+  return static_cast<bool>(value[start_index]);
 }
 
 char32 bit_converter::to_char(const array<byte>& value, usize start_index) {
@@ -173,7 +173,7 @@ uint16 bit_converter::to_uint16(const array<byte>& value, usize start_index) {
 }
 
 uint16 bit_converter::to_uint16(const read_only_span<byte>& value, usize start_index) {
-  return static_cast<uint16>(value.at(start_index)) + (static_cast<uint16>(value.at(start_index + 1)) << 8);
+  return static_cast<uint16>(value[start_index]) + (static_cast<uint16>(value[start_index + 1]) << 8);
 }
 
 uint32 bit_converter::to_uint32(const array<byte>& value, usize start_index) {
@@ -181,7 +181,7 @@ uint32 bit_converter::to_uint32(const array<byte>& value, usize start_index) {
 }
 
 uint32 bit_converter::to_uint32(const read_only_span<byte>& value, usize start_index) {
-  return static_cast<uint32>(value.at(start_index)) + (static_cast<uint32>(value.at(start_index + 1)) << 8) + (static_cast<uint32>(value.at(start_index + 2)) << 16) + (static_cast<uint32>(value.at(start_index + 3)) << 24);
+  return static_cast<uint32>(value[start_index]) + (static_cast<uint32>(value[start_index + 1]) << 8) + (static_cast<uint32>(value[start_index + 2]) << 16) + (static_cast<uint32>(value[start_index + 3]) << 24);
 }
 
 uint64 bit_converter::to_uint64(const array<byte>& value, usize start_index) {
@@ -189,7 +189,7 @@ uint64 bit_converter::to_uint64(const array<byte>& value, usize start_index) {
 }
 
 uint64 bit_converter::to_uint64(const read_only_span<byte>& value, usize start_index) {
-  return static_cast<uint64>(value.at(start_index)) + (static_cast<uint64>(value.at(start_index + 1)) << 8) + (static_cast<uint64>(value.at(start_index + 2)) << 16) + (static_cast<uint64>(value.at(start_index + 3)) << 24) + (static_cast<uint64>(value.at(start_index + 4)) << 32) + (static_cast<uint64>(value.at(start_index + 5)) << 40) + (static_cast<uint64>(value.at(start_index + 6)) << 48) + (static_cast<uint64>(value.at(start_index + 7)) << 56);
+  return static_cast<uint64>(value[start_index]) + (static_cast<uint64>(value[start_index + 1]) << 8) + (static_cast<uint64>(value[start_index + 2]) << 16) + (static_cast<uint64>(value[start_index + 3]) << 24) + (static_cast<uint64>(value[start_index + 4]) << 32) + (static_cast<uint64>(value[start_index + 5]) << 40) + (static_cast<uint64>(value[start_index + 6]) << 48) + (static_cast<uint64>(value[start_index + 7]) << 56);
 }
 
 string bit_converter::to_string(const array<byte>& value) {
