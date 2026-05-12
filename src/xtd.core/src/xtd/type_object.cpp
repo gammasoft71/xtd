@@ -16,7 +16,10 @@ namespace {
     if (name.contains("xtd::text::basic_string_builder<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>")) name = name.replace("xtd::text::basic_string_builder<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>", "xtd::text::u32string_builder");
     if (name.contains("xtd::text::basic_string_builder<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>")) name = name.replace("xtd::text::basic_string_builder<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>", "xtd::text::u8string_builder");
     if (name.contains("xtd::text::basic_string_builder<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>")) name = name.replace("xtd::text::basic_string_builder<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>", "xtd::text::wstring_builder");
-
+    
+    if (name.contains("xtd::read_only_span<") && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
+    if (name.contains("xtd::span<") && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
+    
     if (name.contains("xtd::collections::generic::ordered_dictionary<xtd::any_object, xtd::any_object, std::allocator<std::pair<xtd::any_object const, xtd::any_object>>>")) name = name.replace("xtd::collections::generic::ordered_dictionary<xtd::any_object, xtd::any_object, std::allocator<std::pair<xtd::any_object const, xtd::any_object>>>", "xtd::collections::specialized::ordered_dictionary");
     if (name.contains("xtd::collections::generic::list<xtd::string, std::allocator<xtd::string>>")) name = name.replace("xtd::collections::generic::list<xtd::string, std::allocator<xtd::string>>", "xtd::collections::specialized::string_collection");
     if (name.contains("xtd::collections::generic::dictionary<xtd::string, xtd::string, xtd::collections::generic::helpers::hasher<xtd::string>, xtd::collections::generic::helpers::equator<xtd::string>, std::allocator<std::pair<xtd::string const, xtd::string>>>")) name = name.replace("xtd::collections::generic::dictionary<xtd::string, xtd::string, xtd::collections::generic::helpers::hasher<xtd::string>, xtd::collections::generic::helpers::equator<xtd::string>, std::allocator<std::pair<xtd::string const, xtd::string>>>", "xtd::collections::specialized::string_dictionary");
@@ -37,8 +40,9 @@ namespace {
     if (name.contains("xtd::collections::generic::queue<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>")) name = name.replace("xtd::collections::generic::queue<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>", "xtd::collections::queue");
     if (name.contains("xtd::collections::generic::sorted_list<xtd::any_object, std::allocator<xtd::any_object>>")) name = name.replace("xtd::collections::generic::list<xtd::any_object, std::allocator<xtd::any_object>>", "xtd::collections::sorted_list");
     if (name.contains("xtd::collections::generic::stack<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>")) name = name.replace("xtd::collections::generic::stack<xtd::any_object, std::deque<xtd::any_object, std::allocator<xtd::any_object>>>", "xtd::collections::stack");
-
-    if ((name.contains("xtd::span<") || name.contains("xtd::read_only_span<")) && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
+    
+    if (name.contains("xtd::collections::generic::sorted_dictionary<xtd::string, xtd::web::css::property>")) name = name.replace("xtd::collections::generic::sorted_dictionary<xtd::string, xtd::web::css::property>", "xtd::web::css::property_dictionary");
+    
     return name;
   }
 }
@@ -66,7 +70,7 @@ auto type_object::namespace_() const noexcept -> string {
   auto name = full_name();
   auto length = name.index_of("<");
   if (length == string::npos) length = name.length();
-  if (name.last_index_of("::", 0, length) == string::npos) return name;
+  if (name.last_index_of("::", 0, length) == string::npos) return "";
   return name.remove(name.last_index_of("::", 0, length));
 }
 
