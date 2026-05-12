@@ -95,8 +95,9 @@ Inheritance diagram for xtd::collections::generic::enumerator&lt; type_t &gt;:</
  <div class="center">
   <img src="structxtd_1_1collections_1_1generic_1_1enumerator.png" usemap="#xtd_3A_3Acollections_3A_3Ageneric_3A_3Aenumerator_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd_3A_3Acollections_3A_3Ageneric_3A_3Aenumerator_3C_20type_5Ft_20_3E_map" name="xtd_3A_3Acollections_3A_3Ageneric_3A_3Aenumerator_3C_20type_5Ft_20_3E_map">
-<area href="classxtd_1_1collections_1_1generic_1_1ienumerator.html" title="Supports a simple iteration over a generic collection." alt="xtd::collections::generic::ienumerator&lt; type_t &gt;" shape="rect" coords="0,56,274,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,274,24"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,274,80"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerator.html" title="Supports a simple iteration over a generic collection." alt="xtd::collections::generic::ienumerator&lt; type_t &gt;" shape="rect" coords="284,56,558,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="284,0,558,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
@@ -134,6 +135,25 @@ Public Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
+<tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
+<tr class="memitem:a7d6bef3a3d8b4d071c801e9f74c2f6b2" id="r_a7d6bef3a3d8b4d071c801e9f74c2f6b2"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a7d6bef3a3d8b4d071c801e9f74c2f6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a4818d9d8dba01bffd5e642fd66117d1c" id="r_a4818d9d8dba01bffd5e642fd66117d1c"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4818d9d8dba01bffd5e642fd66117d1c">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a4818d9d8dba01bffd5e642fd66117d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
+<tr class="memdesc:af61724b0e7644ebd79a01995e0505f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2" id="r_a3dcdc5069d11bada985f1e34914e92e2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
+<tr class="memdesc:a3dcdc5069d11bada985f1e34914e92e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="memitem:a4a2f2b475b43f587551ec12d10f1715d" id="r_a4a2f2b475b43f587551ec12d10f1715d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">to_string</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a4a2f2b475b43f587551ec12d10f1715d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a" id="r_aef39d8952f92922c11e94ad920043c6a"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aef39d8952f92922c11e94ad920043c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0" id="r_a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acba4550321d197cbfbb1f26ddf25ea3c" name="acba4550321d197cbfbb1f26ddf25ea3c"></a>
