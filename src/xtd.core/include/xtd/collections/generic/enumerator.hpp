@@ -5,6 +5,7 @@
 #include "ienumerator.hpp"
 #include "../../helpers/throw_helper.hpp"
 #include "../../new_ptr.hpp"
+#include "../../object.hpp"
 #include "../../static.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -35,7 +36,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::enumerator <type_t> class is used to encapsulate an xtd::collections::generic::ienumerator <type_t>.
       template<typename type_t>
-      struct enumerator : ienumerator<type_t> {
+      struct enumerator : xtd::object, ienumerator<type_t> {
         /// @name Public Constructors
         
         /// @{
