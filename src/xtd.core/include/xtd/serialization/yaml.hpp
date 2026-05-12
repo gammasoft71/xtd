@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::serialization::yaml alias.
+/// @brief Contains xtd::serialization::yaml class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/dictionary.hpp"
