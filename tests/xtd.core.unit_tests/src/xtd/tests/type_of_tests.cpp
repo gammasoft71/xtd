@@ -379,6 +379,66 @@ namespace xtd::tests {
       assert::are_equal("xtd::collections::generic", type.namespace_());
     }
 
+    auto test_method_(generic_queue_with_any_object_type) {
+      auto type = type_of<xtd::collections::generic::queue<xtd::any_object>>();
+      assert::are_equal("xtd::collections::queue", type.full_name());
+      assert::are_equal("queue", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+    
+    auto test_method_(generic_queue_with_any_object_value) {
+      auto type = type_of(xtd::collections::generic::queue<xtd::any_object> {});
+      assert::are_equal(xtd::collections::generic::queue<xtd::any_object> {}.get_type(), type);
+      assert::are_equal("xtd::collections::queue", type.full_name());
+      assert::are_equal("queue", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+    
+    auto test_method_(generic_queue_type) {
+      auto type = type_of<xtd::collections::generic::queue<int>>();
+      assert::are_equal("xtd::collections::generic::queue<int, std::deque<int, std::allocator<int>>>", type.full_name());
+      assert::are_equal("queue<int, std::deque<int, std::allocator<int>>>", type.name());
+      assert::are_equal("xtd::collections::generic", type.namespace_());
+    }
+    
+    auto test_method_(generic_queue_value) {
+      auto type = type_of(xtd::collections::generic::queue<int> {});
+      assert::are_equal(xtd::collections::generic::queue<int> {}.get_type(), type);
+      assert::are_equal("xtd::collections::generic::queue<int, std::deque<int, std::allocator<int>>>", type.full_name());
+      assert::are_equal("queue<int, std::deque<int, std::allocator<int>>>", type.name());
+      assert::are_equal("xtd::collections::generic", type.namespace_());
+    }
+
+    auto test_method_(generic_stack_with_any_object_type) {
+      auto type = type_of<xtd::collections::generic::stack<xtd::any_object>>();
+      assert::are_equal("xtd::collections::stack", type.full_name());
+      assert::are_equal("stack", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+    
+    auto test_method_(generic_stack_with_any_object_value) {
+      auto type = type_of(xtd::collections::generic::stack<xtd::any_object> {});
+      assert::are_equal(xtd::collections::generic::stack<xtd::any_object> {}.get_type(), type);
+      assert::are_equal("xtd::collections::stack", type.full_name());
+      assert::are_equal("stack", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+    
+    auto test_method_(generic_stack_type) {
+      auto type = type_of<xtd::collections::generic::stack<int>>();
+      assert::are_equal("xtd::collections::generic::stack<int, std::deque<int, std::allocator<int>>>", type.full_name());
+      assert::are_equal("stack<int, std::deque<int, std::allocator<int>>>", type.name());
+      assert::are_equal("xtd::collections::generic", type.namespace_());
+    }
+    
+    auto test_method_(generic_stack_value) {
+      auto type = type_of(xtd::collections::generic::stack<int> {});
+      assert::are_equal(xtd::collections::generic::stack<int> {}.get_type(), type);
+      assert::are_equal("xtd::collections::generic::stack<int, std::deque<int, std::allocator<int>>>", type.full_name());
+      assert::are_equal("stack<int, std::deque<int, std::allocator<int>>>", type.name());
+      assert::are_equal("xtd::collections::generic", type.namespace_());
+    }
+
     auto test_method_(collections_array_list_type) {
       auto type = type_of<xtd::collections::array_list>();
       assert::are_equal("xtd::collections::array_list", type.full_name());
@@ -478,6 +538,46 @@ namespace xtd::tests {
       auto type = type_of<xtd::collections::ilist>();
       assert::are_equal("xtd::collections::ilist", type.full_name());
       assert::are_equal("ilist", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+
+    auto test_method_(collections_queue_type) {
+      auto type = type_of<xtd::collections::queue>();
+      assert::are_equal("xtd::collections::queue", type.full_name());
+      assert::are_equal("queue", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+    
+    auto test_method_(collections_queue_value) {
+      auto type = type_of(xtd::collections::queue {});
+      assert::are_equal(xtd::collections::queue {}.get_type(), type);
+      assert::are_equal("xtd::collections::queue", type.full_name());
+      assert::are_equal("queue", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+
+    /* xtd::collections::generic::sorted_list is not yet implemented
+    auto test_method_(collections_sorted_list_type) {
+      auto type = type_of<xtd::collections::sorted_list>();
+      assert::are_equal("xtd::collections::sorted_list", type.full_name());
+      assert::are_equal("sorted_list", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+    
+    auto test_method_(collections_sorted_list_value) {
+      auto type = type_of(xtd::collections::sorted_list {});
+      assert::are_equal(xtd::collections::sorted_list {}.get_type(), type);
+      assert::are_equal("xtd::collections::sorted_list", type.full_name());
+      assert::are_equal("sorted_list", type.name());
+      assert::are_equal("xtd::collections", type.namespace_());
+    }
+     */
+
+    auto test_method_(collections_stack_value) {
+      auto type = type_of(xtd::collections::stack {});
+      assert::are_equal(xtd::collections::stack {}.get_type(), type);
+      assert::are_equal("xtd::collections::stack", type.full_name());
+      assert::are_equal("stack", type.name());
       assert::are_equal("xtd::collections", type.namespace_());
     }
 
