@@ -16,6 +16,8 @@
 #include <xtd/collections/queue>
 #include <xtd/collections/sorted_list>
 #include <xtd/collections/stack>
+#include <xtd/read_only_span>
+#include <xtd/span>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -653,6 +655,66 @@ namespace xtd::tests {
       assert::are_equal(wstring::empty_string.get_type(), type);
       assert::are_equal("xtd::wstring", type.full_name());
       assert::are_equal("wstring", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+    
+    auto test_method_(read_only_span_type) {
+      auto type = type_of<read_only_span<int>>();
+      assert::are_equal("xtd::read_only_span<int, xtd::dynamic_extent>", type.full_name());
+      assert::are_equal("read_only_span<int, xtd::dynamic_extent>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+    
+    auto test_method_(read_only_span_with_size_type) {
+      auto type = type_of<read_only_span<int, 5>>();
+      assert::are_equal("xtd::read_only_span<int, 5ul>", type.full_name());
+      assert::are_equal("read_only_span<int, 5ul>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+    
+    auto test_method_(read_only_span_value) {
+      auto type = type_of(read_only_span<int> {});
+      assert::are_equal(read_only_span<int> {}.get_type(), type);
+      assert::are_equal("xtd::read_only_span<int, xtd::dynamic_extent>", type.full_name());
+      assert::are_equal("read_only_span<int, xtd::dynamic_extent>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+    
+    auto test_method_(read_only_span_with_size_value) {
+      auto type = type_of(read_only_span<int, 5> {});
+      assert::are_equal(read_only_span<int, 5> {}.get_type(), type);
+      assert::are_equal("xtd::read_only_span<int, 5ul>", type.full_name());
+      assert::are_equal("read_only_span<int, 5ul>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+
+    auto test_method_(span_type) {
+      auto type = type_of<span<int>>();
+      assert::are_equal("xtd::span<int, xtd::dynamic_extent>", type.full_name());
+      assert::are_equal("span<int, xtd::dynamic_extent>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+    
+    auto test_method_(span_with_size_type) {
+      auto type = type_of<span<int, 5>>();
+      assert::are_equal("xtd::span<int, 5ul>", type.full_name());
+      assert::are_equal("span<int, 5ul>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+
+    auto test_method_(span_value) {
+      auto type = type_of(span<int> {});
+      assert::are_equal(span<int> {}.get_type(), type);
+      assert::are_equal("xtd::span<int, xtd::dynamic_extent>", type.full_name());
+      assert::are_equal("span<int, xtd::dynamic_extent>", type.name());
+      assert::are_equal("xtd", type.namespace_());
+    }
+    
+    auto test_method_(span_with_size_value) {
+      auto type = type_of(span<int, 5> {});
+      assert::are_equal(span<int, 5> {}.get_type(), type);
+      assert::are_equal("xtd::span<int, 5ul>", type.full_name());
+      assert::are_equal("span<int, 5ul>", type.name());
       assert::are_equal("xtd", type.namespace_());
     }
   };
