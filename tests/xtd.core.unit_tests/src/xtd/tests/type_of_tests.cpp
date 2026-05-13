@@ -1,4 +1,6 @@
 #include <xtd/type_of>
+#include <xtd/web/css/property_dictionary>
+#include <xtd/web/css/selector_dictionary>
 #include <xtd/collections/specialized/ordered_dictionary>
 #include <xtd/collections/specialized/string_collection>
 #include <xtd/collections/specialized/string_dictionary>
@@ -72,6 +74,38 @@ namespace xtd::tests {
       assert::are_equal("xtd::tests::type_of_tests", type.namespace_());
     }
     
+    /* xtd::collections::generic::sorted_dictionary is not yet implemented
+    auto test_method_(web_css_property_dictionary_type) {
+      auto type = type_of<xtd::web::css::property_dictionary>();
+      assert::are_equal("xtd::web::css::property_dictionary", type.full_name());
+      assert::are_equal("property_dictionary", type.name());
+      assert::are_equal("xtd::web::css", type.namespace_());
+    }
+
+    auto test_method_(web_css_property_dictionary_value) {
+      auto type = type_of(xtd::web::css::property_dictionary {});
+      assert::are_equal(xtd::web::css::property_dictionary {}.get_type(), type);
+      assert::are_equal("xtd::web::css::property_dictionary", type.full_name());
+      assert::are_equal("property_dictionary", type.name());
+      assert::are_equal("xtd::web::css", type.namespace_());
+    }
+
+    auto test_method_(web_css_selector_dictionary_type) {
+      auto type = type_of<xtd::web::css::selector_dictionary>();
+      assert::are_equal("xtd::web::css::selector_dictionary", type.full_name());
+      assert::are_equal("selector_dictionary", type.name());
+      assert::are_equal("xtd::web::css", type.namespace_());
+    }
+    
+    auto test_method_(web_css_selector_dictionary_value) {
+      auto type = type_of(xtd::web::css::selector_dictionary {});
+      assert::are_equal(xtd::web::css::selector_dictionary {}.get_type(), type);
+      assert::are_equal("xtd::web::css::selector_dictionary", type.full_name());
+      assert::are_equal("property_dictionary", type.name());
+      assert::are_equal("xtd::web::css", type.namespace_());
+    }
+     */
+
     auto test_method_(specialized_ordered_dictionary_type) {
       auto type = type_of<xtd::collections::specialized::ordered_dictionary>();
       assert::are_equal("xtd::collections::specialized::ordered_dictionary", type.full_name());
@@ -86,7 +120,7 @@ namespace xtd::tests {
       assert::are_equal("ordered_dictionary", type.name());
       assert::are_equal("xtd::collections::specialized", type.namespace_());
     }
-    
+
     auto test_method_(specialized_string_collection_type) {
       auto type = type_of<xtd::collections::specialized::string_collection>();
       assert::are_equal("xtd::collections::specialized::string_collection", type.full_name());
