@@ -28,7 +28,7 @@
 namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
-    /// @brief The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and asynchronous code. The main types are xtd::threading::tasks::task which represents an asynchronous operation that can be waited on and cancelled, and xtd::threading::tasks::task <result_t>, which is a task that can return a value. The xtd::threading::tasks::task_factory class provides static methods for creating and starting tasks, and the xtd::threading::tasks::task_scheduler class provides the default thread scheduling infrastructure.
+    /// @brief The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and asynchronous code. The main types are xtd::threading::tasks::task which represents an asynchronous operation that can be waited on and canceled, and xtd::threading::tasks::task <result_t>, which is a task that can return a value. The xtd::threading::tasks::task_factory class provides static methods for creating and starting tasks, and the xtd::threading::tasks::task_scheduler class provides the default thread scheduling infrastructure.
     namespace tasks {
       /// @cond
       template<typename result_t = void>
@@ -169,16 +169,17 @@ namespace xtd {
         /// @return `true` if the xtd::threading::tasks::task completed execution within the allotted time; otherwise, `false`.
         auto wait(xtd::int32 milliseconds_timeout) -> bool override {
           auto cancellation_token = xtd::threading::cancellation_token {};
-          return wait(milliseconds_timeout, cancellation_token);
+          return wait(milliseconds_timeout, data_->cancellation_token ? *data_->cancellation_token : cancellation_token);
         }
         /// @brief Waits for the xtd::threading::tasks::task to complete execution with specified milliseconds timout and cancellation token.
         /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite (-1) to wait indefinitely.
         /// @return `true` if the xtd::threading::tasks::task completed execution within the allotted time; otherwise, `false`.
         auto wait(xtd::int32 milliseconds_timeout, xtd::threading::cancellation_token& cancellation_token) -> bool override {
           auto& cancellation_token_wait_handle = cancellation_token.wait_handle();
-          auto result = xtd::threading::wait_handle::wait_any(milliseconds_timeout, &data_->end_event, &cancellation_token_wait_handle);
+          auto result = xtd::threading::wait_handle::wait_any(milliseconds_timeout, &cancellation_token_wait_handle, &data_->end_event);
+          if (result == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
           if (data_->status == xtd::threading::tasks::task_status::faulted) rethrow_exception();
-          return result;
+          return result == 1;
         }
         /// @brief Waits for the xtd::threading::tasks::task to complete execution with specified timout.
         /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::threading::timeout::infinite_time_span that represents -1 milliseconds to wait indefinitely.
