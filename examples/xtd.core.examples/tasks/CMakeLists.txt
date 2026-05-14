@@ -6,5 +6,6 @@ find_package(xtd REQUIRED)
 add_projects(
   tasks
   task
+  task_completion_source
   task_delay
 )

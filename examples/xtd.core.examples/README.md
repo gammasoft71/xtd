@@ -499,6 +499,7 @@
 
 * [tasks](tasks/tasks/README.md) shows how to use [xtd::threading::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
 * [task](tasks/task/README.md) shows how to use [xtd::threading::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
+* [task_completion_source](tasks/task_completion_source/README.md) shows how to use [xtd::threading::tasks:task_completion_source](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_1_1completion_1_1source.html) class.
 * [task_delay](tasks/task_delay/README.md) shows how to use [xtd::threading::tasks:task::delay](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) method.
 
 ## [text](text/README.md)
