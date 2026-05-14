@@ -81,7 +81,7 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        [[nodiscard]] auto result() const noexcept -> const result_t& {
+        [[nodiscard]] auto result() const -> const result_t& {
           if (!basic_task<result_t>::is_completed()) static_cast<basic_task<result_t>&>(const_cast<task&>(*this)).wait();
           return basic_task<result_t>::data_->result;
         }
