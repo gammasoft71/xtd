@@ -42,6 +42,10 @@ auto cancellation_token_source::token() const noexcept -> const cancellation_tok
   return data_->token;
 }
 
+auto cancellation_token_source::token() noexcept -> cancellation_token& {
+  return data_->token;
+}
+
 auto cancellation_token_source::can_be_canceled() const noexcept -> bool {
   return data_->can_be_canceled;
 }
@@ -51,5 +55,5 @@ auto cancellation_token_source::wait_handle() noexcept -> threading::wait_handle
 }
 
 auto cancellation_token_source::cancel() -> void {
-  data_->token.data_->wait_handle.set();
+  as<xtd::threading::manual_reset_event>(data_->token.wait_handle()).set();
 }
