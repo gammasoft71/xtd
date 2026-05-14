@@ -1462,6 +1462,8 @@ add_sources(
   "include/xtd/threading/tasks/task"
   "include/xtd/threading/tasks/task_canceled_exception.hpp"
   "include/xtd/threading/tasks/task_canceled_exception"
+  "include/xtd/threading/tasks/task_completion_source.hpp"
+  "include/xtd/threading/tasks/task_completion_source"
   "include/xtd/threading/tasks/task_creation_options.hpp"
   "include/xtd/threading/tasks/task_creation_options"
   "include/xtd/threading/tasks/task_factory.hpp"
