@@ -60,10 +60,6 @@ namespace xtd {
       
       /// @cond
       cancellation_token();
-      cancellation_token(cancellation_token&&) = default;
-      cancellation_token(const cancellation_token&) = default;
-      auto operator=(cancellation_token&&) -> cancellation_token& = default;
-      auto operator=(const cancellation_token&) -> cancellation_token& = default;
       /// @endcond
       
       /// @name Public Properties
