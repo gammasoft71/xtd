@@ -57,6 +57,7 @@ namespace xtd {
       /// @{
       [[nodiscard]] auto is_cancellation_requested() const noexcept -> bool;
       
+      [[nodiscard]] auto token() noexcept -> cancellation_token&;
       [[nodiscard]] auto token() const noexcept -> const cancellation_token&;
       /// @}
       
