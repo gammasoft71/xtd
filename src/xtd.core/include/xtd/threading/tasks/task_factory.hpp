@@ -34,7 +34,7 @@ namespace xtd {
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
         template<typename result_t>
-        auto start_new(const xtd::func<result_t>& action) const -> xtd::threading::tasks::task<result_t> {
+        [[nodiscard]] auto start_new(const xtd::func<result_t>& action) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action};
           t.start();
           return t;
@@ -44,7 +44,7 @@ namespace xtd {
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
         template<typename result_t>
-        auto start_new(const xtd::func<result_t>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
+        [[nodiscard]] auto start_new(const xtd::func<result_t>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, cancellation_token};
           t.start();
           return t;
@@ -54,7 +54,7 @@ namespace xtd {
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
         template<typename result_t>
-        auto start_new(const xtd::func<result_t, const xtd::any_object&>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<result_t> {
+        [[nodiscard]] auto start_new(const xtd::func<result_t, const xtd::any_object&>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, state};
           t.start();
           return t;
@@ -64,7 +64,7 @@ namespace xtd {
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
         template<typename result_t>
-        auto start_new(const xtd::func<result_t, const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
+        [[nodiscard]] auto start_new(const xtd::func<result_t, const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action, state, cancellation_token};
           t.start();
           return t;
@@ -73,22 +73,22 @@ namespace xtd {
         /// @}
 
         /// @cond
-        auto start_new(const xtd::action<>& action) const -> xtd::threading::tasks::task<> {
+        [[nodiscard]] auto start_new(const xtd::action<>& action) const -> xtd::threading::tasks::task<> {
           auto t = xtd::threading::tasks::task<> {action};
           t.start();
           return t;
         }
-        auto start_new(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<> {
+        [[nodiscard]] auto start_new(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<> {
           auto t = xtd::threading::tasks::task<> {action, cancellation_token};
           t.start();
           return t;
         }
-        auto start_new(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<> {
+        [[nodiscard]] auto start_new(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<> {
           auto t = xtd::threading::tasks::task<> {action, state};
           t.start();
           return t;
         }
-        auto start_new(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<> {
+        [[nodiscard]] auto start_new(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<> {
           auto t = xtd::threading::tasks::task<> {action, state, cancellation_token};
           t.start();
           return t;
