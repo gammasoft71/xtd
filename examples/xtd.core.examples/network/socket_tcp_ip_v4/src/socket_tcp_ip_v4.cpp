@@ -1,47 +1,37 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto terminate_app = false;
-  
-  auto server = thread {[&] {
+  auto server = jthread::start_new([] {
     auto server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
     server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});
     server_socket.listen();
     auto new_socket = server_socket.accept();
-    
-    while (!terminate_app) {
-      auto buffer = array<byte>(256);
-      auto number_of_byte_received = new_socket.receive(buffer);
-      if (number_of_byte_received) console::write_line(string {buffer.begin(), buffer.begin() + number_of_byte_received});
+    auto buffer = array<byte>(4_z);
+    for (auto counter = 0; counter != -1;) {
+      new_socket.receive(buffer);
+      counter = bit_converter::to_int32(buffer, 0);
+      if (counter != -1) console::write_line("recv => {}", counter);
     }
-  }};
+  });
+  thread::sleep(100_ms); // wait server ready before connect client
   
-  auto client = thread {[&] {
+  auto client = jthread::start_new([] {
     auto client_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
     client_socket.connect(net::ip_address::loopback, 9400);
-    
-    auto counter = 0;
-    while (!terminate_app) {
-      auto str = string::format("counter={}", ++counter);
-      client_socket.send(array<byte> {str.begin(), str.end()});
+    for (auto counter = 1; counter <= 100; ++counter) {
+      client_socket.send(bit_converter::get_bytes(counter));
       thread::sleep(50_ms);
     }
-  }};
-
-  server.start();
-  client.start();
-
-  console::read_key();
-  terminate_app = true;
-  server.join();
-  client.join();
+    client_socket.send(bit_converter::get_bytes(-1));
+  });
 }
 
 // This code produces the following output :
 //
-// counter=1
-// counter=2
-// counter=3
-// counter=4
-// counter=5
+// recv => 1
+// recv => 2
+// recv => 3
 // ...
+// recv => 98
+// recv => 99
+// recv => 100
