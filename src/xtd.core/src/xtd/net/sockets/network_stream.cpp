@@ -33,7 +33,6 @@ auto network_stream::can_seek() const noexcept -> bool {
   return false;
 }
 
-
 auto network_stream::can_timeout() const noexcept -> bool {
   return true;
 }
