@@ -11,10 +11,9 @@ public:
   
   auto text() const -> const xtd::string& {return text_;}
   auto text(const xtd::string& text) -> void {
-    if (text_ != text) {
-      text_ = text;
-      on_text_changed(xtd::event_args::empty);
-    }
+    if (text_ == text) return;
+    text_ = text;
+    on_text_changed(xtd::event_args::empty);
   }
   
   xtd::event<control, xtd::event_handler> text_changed;
