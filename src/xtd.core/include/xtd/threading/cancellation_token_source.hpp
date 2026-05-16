@@ -47,9 +47,6 @@ namespace xtd {
       
       /// @cond
       cancellation_token_source();
-      cancellation_token_source(const cancellation_token_source& cancellation_token_source);
-      auto operator=(const cancellation_token_source& cancellation_token_source) -> xtd::threading::cancellation_token_source&;
-      ~cancellation_token_source();
       /// @endcond
       
       /// @name Public Properties
