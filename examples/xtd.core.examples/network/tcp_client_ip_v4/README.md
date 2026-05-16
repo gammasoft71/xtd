@@ -18,10 +18,11 @@ xtdc run
 ## Output
 
 ```
-counter=1
-counter=2
-counter=3
-counter=4
-counter=5
+recv => 1
+recv => 2
+recv => 3
 ...
+recv => 98
+recv => 99
+recv => 100
 ```
