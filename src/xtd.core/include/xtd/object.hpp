@@ -53,8 +53,6 @@ namespace xtd {
     /// @}
     
     /// @cond
-    object(const object&) = default;
-    auto operator =(const object&) -> object& = default;
     virtual ~object() = default;
     auto operator ==(const object& obj) const noexcept -> bool;
     auto operator !=(const object& obj) const noexcept -> bool;
