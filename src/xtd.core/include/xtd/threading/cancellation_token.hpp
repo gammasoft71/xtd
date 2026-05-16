@@ -108,14 +108,10 @@ namespace xtd {
       
     private:
       friend class cancellation_token_source;
-      explicit cancellation_token(cancellation_token_source& token_source);
-      
-      struct data {
-        bool canceled = false;
-        cancellation_token_source* token_source = nullptr;
-        xtd::threading::manual_reset_event wait_handle {false};
-      };
-      xtd::sptr<data> data_ = xtd::new_sptr<data>();
+      explicit cancellation_token(const cancellation_token_source& token_source);
+      auto cancel() -> void;
+
+      xtd::sptr<data> data_;
       
     };
   }
