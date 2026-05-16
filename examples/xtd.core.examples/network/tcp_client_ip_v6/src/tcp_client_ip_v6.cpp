@@ -1,45 +1,35 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto terminate_app = false;
-  
-  auto server = thread {[&] {
+  auto server = jthread::start_new([] {
     auto listener = net::sockets::tcp_listener {net::ip_end_point(net::ip_address::ip_v6_any, 9400)};
     listener.start();
     auto stream = listener.accept_tcp_client().get_stream();
-    auto reader = stream_reader {stream};
-    
-    while (!terminate_app)
-      if (stream.data_available()) console::write_line(reader.read_line());
-  }};
-  
-  auto client = thread {[&] {
+    auto reader = binary_reader {stream};
+    for (auto counter = reader.read_int32(); counter != -1; counter = reader.read_int32())
+      console::write_line("recv => {}", counter);
+  });
+  thread::sleep(100_ms); // wait server ready before connect client
+
+  auto client = jthread::start_new([] {
     auto client = net::sockets::tcp_client {net::sockets::address_family::inter_network_v6};
     client.connect(net::ip_address::ip_v6_loopback, 9400);
     auto stream = client.get_stream();
-    auto writer = stream_writer {stream};
-    
-    auto counter = 0;
-    while (!terminate_app) {
-      writer.write_line("counter={}", ++counter);
+    auto writer = binary_writer {stream};
+    for (auto counter = 1; counter <= 100; ++counter) {
+      writer.write(counter);
       thread::sleep(50_ms);
     }
-  }};
-
-  server.start();
-  client.start();
-
-  console::read_key();
-  terminate_app = true;
-  server.join();
-  client.join();
+    writer.write(-1);
+  });
 }
 
 // This code produces the following output :
 //
-// counter=1
-// counter=2
-// counter=3
-// counter=4
-// counter=5
+// recv => 1
+// recv => 2
+// recv => 3
 // ...
+// recv => 98
+// recv => 99
+// recv => 100
