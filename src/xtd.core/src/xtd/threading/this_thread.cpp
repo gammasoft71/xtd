@@ -3,48 +3,47 @@
 
 using namespace xtd;
 using namespace xtd::threading;
-using namespace xtd::threading::this_thread;
 
-intptr handle() noexcept {
+intptr this_thread::handle() noexcept {
   return thread::current_thread().handle();
 }
 
-int32 managed_thread_id() noexcept {
+int32 this_thread::managed_thread_id() noexcept {
   return thread::current_thread().managed_thread_id();
 }
 
-string name() noexcept {
+string this_thread::name() noexcept {
   return thread::current_thread().name();
 }
 
-void name(const string& name) {
+void this_thread::name(const string& name) {
   thread::current_thread().name(name);
 }
 
-thread_priority priority() noexcept {
+thread_priority this_thread::priority() noexcept {
   return thread::current_thread().priority();
 }
 
-void priority(thread_priority priority) {
+void this_thread::priority(thread_priority priority) {
   thread::current_thread().priority(priority);
 }
 
-intptr thread_id() noexcept {
+intptr this_thread::thread_id() noexcept {
   return thread::current_thread().thread_id();
 }
 
-intptr get_id() noexcept {
+intptr this_thread::get_id() noexcept {
   return thread::current_thread().thread_id();
 }
 
-void sleep_for(const time_span& sleep_duration) {
+void this_thread::sleep_for(const time_span& sleep_duration) {
   thread::sleep(sleep_duration);
 }
 
-void sleep_until(const date_time& sleep_time) {
+void this_thread::sleep_until(const date_time& sleep_time) {
   thread::sleep(sleep_time - date_time::now());
 }
 
-bool yield() noexcept {
+bool this_thread::yield() noexcept {
   return thread::yield();
 }
