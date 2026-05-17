@@ -264,6 +264,14 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2" id="r_a3dcdc5069d11bada985f1e34914e92e2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
 <tr class="memdesc:a3dcdc5069d11bada985f1e34914e92e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="memitem:a1df476f130e12474c9545ed6f4da7672" id="r_a1df476f130e12474c9545ed6f4da7672"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a1df476f130e12474c9545ed6f4da7672">add</a> (const <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &amp;item) -&gt; void=0</td></tr>
+<tr class="memdesc:a1df476f130e12474c9545ed6f4da7672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a0b8f76803fe712675c13d76b7c8266eb" id="r_a0b8f76803fe712675c13d76b7c8266eb"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a0b8f76803fe712675c13d76b7c8266eb">contains</a> (const <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &amp;item) const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:a0b8f76803fe712675c13d76b7c8266eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.  <br /></td></tr>
+<tr class="memitem:abc02fa45dee8546346bfddf0dca201b6" id="r_abc02fa45dee8546346bfddf0dca201b6"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#abc02fa45dee8546346bfddf0dca201b6">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index) const -&gt; void=0</td></tr>
+<tr class="memdesc:abc02fa45dee8546346bfddf0dca201b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the xtd::collections::generic::icollection &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
+<tr class="memitem:a7999cf985e213bc24114b15e905c9390" id="r_a7999cf985e213bc24114b15e905c9390"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a7999cf985e213bc24114b15e905c9390">remove</a> (const <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &amp;item) -&gt; bool=0</td></tr>
+<tr class="memdesc:a7999cf985e213bc24114b15e905c9390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:aef39d8952f92922c11e94ad920043c6a" id="r_aef39d8952f92922c11e94ad920043c6a"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:aef39d8952f92922c11e94ad920043c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
@@ -996,7 +1004,7 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1008,6 +1016,8 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
 The capacity is always greater than or equal to <a class="el" href="#a43af2f1b3d4c79d88fcdc2474660ea0b" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a>. If <a class="el" href="#a43af2f1b3d4c79d88fcdc2474660ea0b" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a> exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements. </dd>
 <dd>
 Getting the value of this property is an O(1) operation. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a702ed77641f55f97b8ab083d0c141124">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -1283,13 +1293,15 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a43af2f1b3d4c79d88fcdc2474660ea0b" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a> property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a49bbdeefc2b05a12934f05338008de79">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -1471,13 +1483,15 @@ template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collec
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7" title="Supports a simple iteration over a non-generic collection.">xtd::collections::enumerator</a> structure for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a8d0a93ddf639f8c35c5627713068917d">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
 </div>
 </div>

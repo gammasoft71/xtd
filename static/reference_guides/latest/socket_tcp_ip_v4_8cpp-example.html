@@ -87,50 +87,40 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> terminate_app = <span class="keyword">false</span>;</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> server = thread {[&amp;] {</div>
+<div class="line">  <span class="keyword">auto</span> server = jthread::start_new([] {</div>
 <div class="line">    <span class="keyword">auto</span> server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};</div>
 <div class="line">    server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});</div>
 <div class="line">    server_socket.listen();</div>
 <div class="line">    <span class="keyword">auto</span> new_socket = server_socket.accept();</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
-<div class="line">      <span class="keyword">auto</span> buffer = array&lt;byte&gt;(256);</div>
-<div class="line">      <span class="keyword">auto</span> number_of_byte_received = new_socket.receive(buffer);</div>
-<div class="line">      <span class="keywordflow">if</span> (number_of_byte_received) console::write_line(<span class="keywordtype">string</span> {buffer.begin(), buffer.begin() + number_of_byte_received});</div>
+<div class="line">    <span class="keyword">auto</span> buffer = array&lt;byte&gt;(4_z);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> counter = 0; counter != -1;) {</div>
+<div class="line">      new_socket.receive(buffer);</div>
+<div class="line">      counter = bit_converter::to_int32(buffer, 0);</div>
+<div class="line">      <span class="keywordflow">if</span> (counter != -1) console::write_line(<span class="stringliteral">&quot;recv =&gt; {}&quot;</span>, counter);</div>
 <div class="line">    }</div>
-<div class="line">  }};</div>
+<div class="line">  });</div>
+<div class="line">  thread::sleep(100_ms); <span class="comment">// wait server ready before connect client</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> client = thread {[&amp;] {</div>
+<div class="line">  <span class="keyword">auto</span> client = jthread::start_new([] {</div>
 <div class="line">    <span class="keyword">auto</span> client_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};</div>
 <div class="line">    client_socket.connect(net::ip_address::loopback, 9400);</div>
-<div class="line">    </div>
-<div class="line">    <span class="keyword">auto</span> counter = 0;</div>
-<div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
-<div class="line">      <span class="keyword">auto</span> str = string::format(<span class="stringliteral">&quot;counter={}&quot;</span>, ++counter);</div>
-<div class="line">      client_socket.send(array&lt;byte&gt; {str.begin(), str.end()});</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> counter = 1; counter &lt;= 100; ++counter) {</div>
+<div class="line">      client_socket.send(bit_converter::get_bytes(counter));</div>
 <div class="line">      thread::sleep(50_ms);</div>
 <div class="line">    }</div>
-<div class="line">  }};</div>
-<div class="line"> </div>
-<div class="line">  server.start();</div>
-<div class="line">  client.start();</div>
-<div class="line"> </div>
-<div class="line">  console::read_key();</div>
-<div class="line">  terminate_app = <span class="keyword">true</span>;</div>
-<div class="line">  server.join();</div>
-<div class="line">  client.join();</div>
+<div class="line">    client_socket.send(bit_converter::get_bytes(-1));</div>
+<div class="line">  });</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// counter=1</span></div>
-<div class="line"><span class="comment">// counter=2</span></div>
-<div class="line"><span class="comment">// counter=3</span></div>
-<div class="line"><span class="comment">// counter=4</span></div>
-<div class="line"><span class="comment">// counter=5</span></div>
+<div class="line"><span class="comment">// recv =&gt; 1</span></div>
+<div class="line"><span class="comment">// recv =&gt; 2</span></div>
+<div class="line"><span class="comment">// recv =&gt; 3</span></div>
 <div class="line"><span class="comment">// ...</span></div>
+<div class="line"><span class="comment">// recv =&gt; 98</span></div>
+<div class="line"><span class="comment">// recv =&gt; 99</span></div>
+<div class="line"><span class="comment">// recv =&gt; 100</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

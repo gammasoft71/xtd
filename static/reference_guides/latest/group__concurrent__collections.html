@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: tcp_client_ip_v4.cpp</title>
+		<title>xtd: concurrent</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -80,46 +80,20 @@ $(function() {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">tcp_client_ip_v4.cpp</div></div>
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">concurrent <div class="ingroups"><a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> server = jthread::start_new([] {</div>
-<div class="line">    <span class="keyword">auto</span> listener = net::sockets::tcp_listener::create(9400);</div>
-<div class="line">    listener.start();</div>
-<div class="line">    <span class="keyword">auto</span> stream = listener.accept_tcp_client().get_stream();</div>
-<div class="line">    <span class="keyword">auto</span> reader = binary_reader {stream};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> counter = reader.read_int32(); counter != -1; counter = reader.read_int32())</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;recv =&gt; {}&quot;</span>, counter);</div>
-<div class="line">  });</div>
-<div class="line">  thread::sleep(100_ms); <span class="comment">// wait server ready before connect client</span></div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> client = jthread::start_new([] {</div>
-<div class="line">    <span class="keyword">auto</span> client = net::sockets::tcp_client {};</div>
-<div class="line">    client.connect(net::ip_address::loopback, 9400);</div>
-<div class="line">    <span class="keyword">auto</span> stream = client.get_stream();</div>
-<div class="line">    <span class="keyword">auto</span> writer = binary_writer {stream};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> counter = 1; counter &lt;= 100; ++counter) {</div>
-<div class="line">      writer.write(counter);</div>
-<div class="line">      thread::sleep(50_ms);</div>
-<div class="line">    }</div>
-<div class="line">    writer.write(-1);</div>
-<div class="line">  });</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// recv =&gt; 1</span></div>
-<div class="line"><span class="comment">// recv =&gt; 2</span></div>
-<div class="line"><span class="comment">// recv =&gt; 3</span></div>
-<div class="line"><span class="comment">// ...</span></div>
-<div class="line"><span class="comment">// recv =&gt; 98</span></div>
-<div class="line"><span class="comment">// recv =&gt; 99</span></div>
-<div class="line"><span class="comment">// recv =&gt; 100</span></div>
-</div><!-- fragment --> </div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
+<div class="textblock"><p>Contains concurrent collections definitions. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E" id="r_xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines methods to manipulate thread-safe collections intended for producer/consumer usage. This interface provides a unified representation for producer/consumer collections so that higher level abstractions such as xtd::collections::concurrent::blocking_collection &lt;type_t&gt; can use the collection as the underlying storage mechanism.  <a href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html#details">More...</a><br /></td></tr>
+</table>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
