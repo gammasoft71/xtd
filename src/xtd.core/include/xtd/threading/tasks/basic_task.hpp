@@ -47,7 +47,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core threading tasks
       template<typename result_t = void>
-      class basic_task : public itask, public xtd::iasync_result {
+      class basic_task : public object, public itask, public xtd::iasync_result {
       public:
         struct yield_awaiter;
         
