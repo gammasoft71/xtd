@@ -127,7 +127,11 @@ namespace xtd {
         /// @param other The collection of items to remove from the set.
         /// @remarks This method is an O(`n`) operation, where `n` is the number of elements in the other parameter.
         virtual auto except_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept -> void = 0;
-        
+
+        /// @brief Returns an enumerator that iterates through a collection.
+        /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
+        [[nodiscard]] virtual auto get_enumerator() const -> xtd::collections::generic::enumerator<type_t> = 0;
+
         /// @brief Modifies the current set so that it contains only elements that are also in a specified collection.
         /// @param other The collection to compare to the current set.
         /// @remarks This method ignores any duplicate elements in `other`.
