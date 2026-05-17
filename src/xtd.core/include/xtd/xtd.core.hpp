@@ -22,6 +22,7 @@
 #include "collections/queue.hpp"
 #include "collections/sorted_list.hpp"
 #include "collections/stack.hpp"
+#include "collections/concurrent/iproducer_consumer_collection.hpp"
 #include "collections/generic/extensions/enumerable.hpp"
 #include "collections/generic/extensions/enumerable_iterators.hpp"
 #include "collections/generic/helpers/allocator.hpp"
