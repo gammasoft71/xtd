@@ -9,6 +9,7 @@
 #include <list>
 #include <map>
 #include <sstream>
+#include <thread>
 #include <vector>
 #include <fcntl.h>
 #include <termios.h>
@@ -245,9 +246,10 @@ namespace {
       }
       if (!inputs.is_empty()) return to_key_info(inputs.pop());
       
-      do
+      do {
+        std::this_thread::yield();
         inputs.add(terminal::terminal_.getch());
-      while (terminal::terminal_.key_available());
+      } while (terminal::terminal_.key_available());
       
       auto it = key_info::keys.find(inputs.to_string());
       if (it != key_info::keys.end()) {

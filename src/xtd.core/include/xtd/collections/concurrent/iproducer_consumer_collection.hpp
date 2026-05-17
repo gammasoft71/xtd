@@ -2,11 +2,7 @@
 /// @brief Contains xtd::collections::concurrent::iproducer_consumer_collection <type_t> interface.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "icollection.hpp"
-#include "../../bpos.hpp"
-#include "../../epos.hpp"
-#include "../../npos.hpp"
-#include "../../usize.hpp"
+#include "../generic/icollection.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
