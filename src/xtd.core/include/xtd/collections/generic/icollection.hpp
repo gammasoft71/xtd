@@ -128,6 +128,10 @@ namespace xtd {
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         virtual auto copy_to(xtd::array<type_t>& array, xtd::usize array_index) const -> void = 0;
         
+        /// @brief Returns an enumerator that iterates through a collection.
+        /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
+        [[nodiscard]] virtual auto get_enumerator() const -> xtd::collections::generic::enumerator<type_t> = 0;
+
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::icollection <type_t>.
         /// @param item The object to remove from the xtd::collections::generic::icollection <type_t>.
         /// @return `true` if item was successfully removed from the xtd::collections::generic::icollection <type_t>; otherwise, `false`. This method also returns `false` if item is not found in the original xtd::collections::generic::icollection <type_t>.
