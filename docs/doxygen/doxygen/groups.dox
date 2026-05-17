@@ -138,6 +138,10 @@
     |   |   | /// @brief Contains collections definitions.
     |   |   | /// @ingroup system
     |   |   | /// @defgroup collections collections
+    |   |   |- concurrent_collections
+    |   |   |     /// @brief Contains concurrent collections definitions.
+    |   |   |     /// @ingroup collections
+    |   |   |     /// @defgroup concurrent_collections concurrent
     |   |   |- generic_collections
     |   |   |   | /// @brief Contains generic collections definitions.
     |   |   |   | /// @ingroup collections
