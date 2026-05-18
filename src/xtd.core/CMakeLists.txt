@@ -817,6 +817,8 @@ add_sources(
   "include/xtd/collections/stack"
   "include/xtd/collections/vector_list.hpp"
   "include/xtd/collections/vector_list"
+  "include/xtd/collections/concurrent/concurrent_bag.hpp"
+  "include/xtd/collections/concurrent/concurrent_bag"
   "include/xtd/collections/concurrent/iproducer_consumer_collection.hpp"
   "include/xtd/collections/concurrent/iproducer_consumer_collection"
   "include/xtd/collections/generic/extensions/collection_common.hpp"
