@@ -44,13 +44,13 @@ namespace xtd {
         /// @remarks The following code example shows how to lock the collection using the xtd::collections::concurrent::iproducer_consumer_collection::sync_root property during the entire enumeration.
         /// ```cpp
         /// icollection& my_collection = some_collection;
-        /// lock(my_collection.sync_root()) {
+        /// lock_(my_collection.sync_root()) {
         ///   for (const auto& item : my_collection) {
         ///     // Insert your code here.
         ///   }
         /// }
         /// ```
-        [[nodiscard]] virtual auto is_synchronize() const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_synchronized() const noexcept -> bool = 0;
 
         /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
         /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
