@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "iproducer_consumer_collection.hpp"
-#include "../generic/list.hpp"
-#include "../../lock.hpp"
+#include "../generic/queue.hpp"
+#include "../../lock_guard.hpp"
 #include "../../new_ptr.hpp"
 #include <atomic>
 
@@ -29,7 +29,7 @@ namespace xtd {
       /// xtd::collections::concurrent
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core concurrent_collections interfaces
+      /// @ingroup xtd_core concurrent_collections
       template<typename type_t>
       class concurrent_bag : public xtd::object, public xtd::collections::concurrent::iproducer_consumer_collection<type_t> {
       public:
@@ -40,10 +40,8 @@ namespace xtd {
         concurrent_bag() = default;
         /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_bag <type_t> class that contains elements copied from the specified collection.
         concurrent_bag(const xtd::collections::generic::ienumerable<type_t>& collection) {
-          init_current_thread_storage();
-          if (!local_storage_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_supported);
-          local_storage_->add_range(collection);
-          count_ = local_storage_->count();
+          for (const auto& item : collection)
+            add(item);
         }
         /// @}
 
@@ -107,7 +105,7 @@ namespace xtd {
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
         [[nodiscard]] auto to_array() const -> xtd::array<type_t> override {
           auto result = xtd::collections::generic::list<type_t> {};
-          lock_(storages_) {
+          lock_guard_(storages_) {
             for (const auto& [thread_id, storage] : storages_)
               result.add_range(*storage);
           }
@@ -125,7 +123,7 @@ namespace xtd {
         auto try_add(const type_t& item) -> bool override {
           init_current_thread_storage();
           if (!local_storage_) return false;
-          local_storage_->add(item);
+          local_storage_->enqueue(item);
           ++count_;
           return true;
         }
@@ -136,18 +134,10 @@ namespace xtd {
         auto try_peek(type_t& item) const -> bool {
           init_current_thread_storage();
           if (!local_storage_) return false;
-          if (local_storage_->count()) {
-            item = (*local_storage_)[0];
-            --count_;
-            return true;
-          }
-          lock_(storages_) {
+          if (local_storage_->count()) return local_storage_->try_peek(item);
+          lock_guard_(storages_) {
             for (auto& [thread_id, storage] : storages_) {
-              if (storage->count()) {
-                item = (*storage)[0];
-                --count_;
-                return true;
-              }
+              if (storage->count()) return storage->try_peek(item);
             }
           }
           return false;
@@ -160,18 +150,20 @@ namespace xtd {
           init_current_thread_storage();
           if (!local_storage_) return false;
           if (local_storage_->count()) {
-            item = (*local_storage_)[0];
-            local_storage_->remove_at(0);
-            --count_;
-            return true;
+            auto result = local_storage_->try_dequeue(item);
+            if (result) {
+              --count_;
+              return true;
+            }
           }
-          lock_(storages_) {
+          lock_guard_(storages_) {
             for (auto& [thread_id, storage] : storages_) {
               if (storage->count()) {
-                item = (*storage)[0];
-                storage->remove_at(0);
-                --count_;
-                return true;
+                auto result = storage->try_dequeue(item);
+                if (result) {
+                  --count_;
+                  return true;
+                }
               }
             }
           }
@@ -186,15 +178,15 @@ namespace xtd {
 
         auto init_current_thread_storage() const -> void {
           if (local_storage_) return;
-          lock_(storages_) {
+          lock_guard_(storages_) {
             auto id = xtd::threading::thread::current_thread().thread_id();
-            storages_.add(id, new_ptr<xtd::collections::generic::list<type_t>>());
+            storages_.add(id, new_ptr<xtd::collections::generic::queue<type_t>>());
             local_storage_ = storages_[id].get();
           }
         }
         
-        inline static thread_local xtd::collections::generic::list<type_t>* local_storage_ = nullptr;
-        mutable xtd::collections::generic::dictionary<intptr, xtd::ptr<xtd::collections::generic::list<type_t>>> storages_;
+        inline static thread_local xtd::collections::generic::queue<type_t>* local_storage_ = nullptr;
+        mutable xtd::collections::generic::dictionary<intptr, xtd::ptr<xtd::collections::generic::queue<type_t>>> storages_;
         std::atomic<xtd::usize> count_ = 0;
       };
     }
