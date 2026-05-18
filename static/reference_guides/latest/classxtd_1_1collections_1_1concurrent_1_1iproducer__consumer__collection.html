@@ -93,8 +93,11 @@ $(function() {
 Inheritance diagram for xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.png" alt=""/>
- </div></div>
+  <img src="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.png" usemap="#xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E_map" alt=""/>
+  <map id="xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E_map" name="xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E_map">
+<area href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects." alt="xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;" shape="rect" coords="0,112,404,136"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
 class xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt;</div><p>Defines methods to manipulate thread-safe collections intended for producer/consumer usage. This interface provides a unified representation for producer/consumer collections so that higher level abstractions such as xtd::collections::concurrent::blocking_collection &lt;type_t&gt; can use the collection as the underlying storage mechanism. </p>
@@ -111,8 +114,8 @@ class xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt
 Public Properties</h2></td></tr>
 <tr class="memitem:ae280412d3c0841922a5771afb85499de" id="r_ae280412d3c0841922a5771afb85499de"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ae280412d3c0841922a5771afb85499de">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>=0</td></tr>
 <tr class="memdesc:ae280412d3c0841922a5771afb85499de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the xtd::collections::generic::icollection.  <br /></td></tr>
-<tr class="memitem:a40013be845062520802d01ca3fae835a" id="r_a40013be845062520802d01ca3fae835a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a40013be845062520802d01ca3fae835a">is_synchronize</a> () const noexcept -&gt; bool=0</td></tr>
-<tr class="memdesc:a40013be845062520802d01ca3fae835a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the xtd::collections::generic::icollection is synchronized (thread safe).  <br /></td></tr>
+<tr class="memitem:acdab40a22077e52e57dfa835053fd354" id="r_acdab40a22077e52e57dfa835053fd354"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#acdab40a22077e52e57dfa835053fd354">is_synchronized</a> () const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:acdab40a22077e52e57dfa835053fd354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the xtd::collections::generic::icollection is synchronized (thread safe).  <br /></td></tr>
 <tr class="memitem:a59012c22f4da931bf0bf2b5cd9bf8b6a" id="r_a59012c22f4da931bf0bf2b5cd9bf8b6a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a59012c22f4da931bf0bf2b5cd9bf8b6a">sync_root</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1object.html">object</a> &amp;=0</td></tr>
 <tr class="memdesc:a59012c22f4da931bf0bf2b5cd9bf8b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -158,10 +161,12 @@ template&lt;typename type_t&gt; </div>
 <p>Gets the number of elements contained in the xtd::collections::generic::icollection. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements contained in the xtd::collections::generic::icollection. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a46b7084045fce6981d17917528abc92e">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+
 </div>
 </div>
-<a id="a40013be845062520802d01ca3fae835a" name="a40013be845062520802d01ca3fae835a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40013be845062520802d01ca3fae835a">&#9670;&#160;</a></span>is_synchronize()</h2>
+<a id="acdab40a22077e52e57dfa835053fd354" name="acdab40a22077e52e57dfa835053fd354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdab40a22077e52e57dfa835053fd354">&#9670;&#160;</a></span>is_synchronized()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +177,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection</a>&lt; type_t &gt;::is_synchronize </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection</a>&lt; type_t &gt;::is_synchronized </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -194,13 +199,16 @@ Most collection classes in the <a class="el" href="namespacextd_1_1collections.h
 Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads. </dd>
 <dd>
 The following code example shows how to lock the collection using the <a class="el" href="#a59012c22f4da931bf0bf2b5cd9bf8b6a" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::concurrent::iproducer_consumer_collection::sync_root</a> property during the entire enumeration. <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec">icollection</a>&amp; my_collection = some_collection;</div>
-<div class="line">lock(my_collection.sync_root()) {</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(my_collection.sync_root()) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : my_collection) {</div>
 <div class="line">    <span class="comment">// Insert your code here.</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__collections_html_ga1b47db13b305f030158b2fa55445a9ec"><div class="ttname"><a href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec">xtd::collections::icollection</a></div><div class="ttdeci">generic::icollection&lt; xtd::any_object &gt; icollection</div><div class="ttdoc">Defines size, enumerators, and synchronization methods for all nongeneric collections.</div><div class="ttdef"><b>Definition</b> icollection.hpp:32</div></div>
+<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:68</div></div>
 </div><!-- fragment --> </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a028f24e52cb7e1986aab7127822262c5">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -252,7 +260,6 @@ In the absence of a <span class="tt">synchronized</span> method on a collection,
 <div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
 <div class="ttc" id="aconceptxtd_1_1enumeration_html"><div class="ttname"><a href="conceptxtd_1_1enumeration.html">xtd::enumeration</a></div><div class="ttdef"><b>Definition</b> enumeration.hpp:12</div></div>
 <div class="ttc" id="agroup__collections_html_ga2633655cae697fc737d19f6a541167d7"><div class="ttname"><a href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">xtd::collections::enumerator</a></div><div class="ttdeci">generic::enumerator&lt; xtd::any_object &gt; enumerator</div><div class="ttdoc">Supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:28</div></div>
-<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:68</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga59b26eda7fb7d0dc8c9968f4a2f78984"><div class="ttname"><a href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">xtd::is</a></div><div class="ttdeci">auto is(xtd::any value) -&gt; bool</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div><div class="ttdef"><b>Definition</b> platform_id.hpp:60</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
@@ -304,6 +311,8 @@ template&lt;typename type_t&gt; </div>
   </dd>
 </dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a49c2428e41c4b2c64d39db175bfbaa80">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="abbe7dc42ca19b8e43cb1aa8125872f10" name="abbe7dc42ca19b8e43cb1aa8125872f10"></a>
@@ -333,6 +342,8 @@ template&lt;typename type_t&gt; </div>
 
 <p>Returns an enumerator that iterates through a collection. </p>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::enumerator</a> object that can be used to iterate through the collection. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#acc97b4d7e0517487e8bf6db793a59fd2">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -364,6 +375,8 @@ template&lt;typename type_t&gt; </div>
 <p>Copies the elements contained in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html" title="Defines methods to manipulate thread-safe collections intended for producer/consumer usage....">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t&gt; to a new array. </p>
 <dl class="section return"><dt>Returns</dt><dd>A new array containing the elements copied from the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html" title="Defines methods to manipulate thread-safe collections intended for producer/consumer usage....">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a1bf6be9a8ada206d40f98dc2eb7d7613">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -401,6 +414,8 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the object was added successfully; otherwise, <span class="tt">false</span>. @exceprion <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> The item was invalid for this collection. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#af4cb966c41274fd41bad629dc312ab24">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="a98eb738722c7d4040175103df006d35f" name="a98eb738722c7d4040175103df006d35f"></a>
@@ -436,6 +451,8 @@ template&lt;typename type_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if an object was removed and returned successfully; otherwise, <span class="tt">false</span>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#ad6b6ec148adac9e2f21a26a5e05e4bed">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
