@@ -44,6 +44,8 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class.
+      /// @remarks The initial state is `false` and The mode is set to xtd::threading::event_reset_mode::auto_reset and the name is empty string ("").
       event_wait_handle();
       /// @brief Initializes a new instance of the xtd::threading::event_wait_handle class, specifying whether the wait handle is initially signaled.
       /// @param initial_state `true` to set the initial state to signaled; `false` to set it to nonsignaled.
