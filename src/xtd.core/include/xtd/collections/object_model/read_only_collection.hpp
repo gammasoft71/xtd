@@ -4,6 +4,7 @@
 #pragma once
 #include "../generic/ilist.hpp"
 #include "../../helpers/throw_helper.hpp"
+#include "../../string.hpp"
 #include "../../usize.hpp"
 #include <limits>
 
@@ -107,7 +108,7 @@ namespace xtd {
         /// @remarks To prevent any modifications to `list`, expose `list` only through this wrapper.
         /// @remarks A collection that is read-only is simply a collection with a wrapper that prevents modifying the collection; therefore, if changes are made to the underlying collection, the read-only collection reflects those changes.
         /// @remarks This constructor is an O(1) operation.
-        explicit read_only_collection(const generic::ilist<value_type>& list) : items_(list) {}
+        explicit read_only_collection(const xtd::collections::generic::ilist<value_type>& list) : items_(list) {}
         /// @}
         
         /// @name Public Properties
@@ -204,6 +205,10 @@ namespace xtd {
         /// @remarks This method determines equality using the default comparer xtd::collections::generic::equality_comparer::default_comparer.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::object_model::read_only_collection::count.
         [[nodiscard]] auto index_of(const type_t& item) const noexcept -> xtd::usize override {return items_.index_of(item);}
+        
+        /// @brief Returns a xtd::string that represents the current object.
+        /// @return A string that represents the current object.
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
         /// @}
         
         /// @name Public Operators
@@ -258,6 +263,14 @@ namespace xtd {
         auto remove_at(xtd::usize index) -> void override {}
         base_type items_;
       };
+
+      /// @cond
+      // Deduction guides for xtd::collections::object_model::list
+      // {
+      template<typename type_t>
+      read_only_collection(const xtd::collections::generic::ilist<type_t>&) -> read_only_collection<type_t>;
+      // }
+      /// @endcond
     }
   }
 }
