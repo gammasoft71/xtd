@@ -40,7 +40,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::auto_reset_event class.
       /// @remarks The initial state is `false`.
-      auto_reset_event() = default;
+      auto_reset_event() : auto_reset_event {false} {}
       /// @brief Initializes a new instance of the xtd::threading::auto_reset_event class with a bool value indicating whether to set the initial state to signaled.
       /// @param initial_state `true` to set the initial state to signaled; `false` to set the initial state to non-signaled.
       explicit auto_reset_event(bool initial_state) : event_wait_handle(initial_state, event_reset_mode::auto_reset) {}
