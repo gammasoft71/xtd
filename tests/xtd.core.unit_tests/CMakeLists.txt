@@ -6,6 +6,7 @@ include("../../scripts/cmake/xtd_commands.cmake")
 include("../../scripts/cmake/xtd_version.cmake")
 add_sources(
   "src/main.cpp"
+  "src/xtd/collections/concurrent/tests/concurrent_bag_tests.cpp"
   "src/xtd/collections/generic/helpers/tests/raw_array_tests.cpp"
   "src/xtd/collections/generic/helpers/tests/raw_queue_tests.cpp"
   "src/xtd/collections/generic/helpers/tests/raw_stack_tests.cpp"
