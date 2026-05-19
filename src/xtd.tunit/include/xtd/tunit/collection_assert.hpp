@@ -685,7 +685,7 @@ namespace xtd {
       }
       
       template<typename collection_t>
-      static bool empty(const collection_t collection) {return collection.begin() == collection.end();}
+      static bool empty(const collection_t& collection) {return collection.begin() == collection.end();}
     };
   }
 }
