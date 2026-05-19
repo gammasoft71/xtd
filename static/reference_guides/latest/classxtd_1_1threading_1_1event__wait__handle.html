@@ -110,9 +110,10 @@ Inheritance diagram for xtd::threading::event_wait_handle:</div>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><p>Represents a thread synchronization event. </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span>event_wait_handle : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1icomparable.html">xtd::icomparable</a> &lt; xtd::threading::event_wait_handle &gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::threading::event_wait_handle&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1icomparable.html">xtd::icomparable</a> &lt; xtd::threading::event_wait_handle &gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::threading::event_wait_handle&gt;</div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html_a85f1a2411c7d6de7b29492c296e94d4f"><div class="ttname"><a href="#a85f1a2411c7d6de7b29492c296e94d4f">xtd::threading::event_wait_handle::event_wait_handle</a></div><div class="ttdeci">event_wait_handle()</div><div class="ttdoc">Initializes a new instance of the xtd::threading::event_wait_handle class.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a></div><div class="ttdoc">Encapsulates operating system specific objects that wait for exclusive access to shared resources.</div><div class="ttdef"><b>Definition</b> wait_handle.hpp:52</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/event_wait_handle&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -136,7 +137,7 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">  <span class="comment">// The event_wait_handle used to demonstrate the difference</span></div>
 <div class="line">  <span class="comment">// between auto_reset and manual_reset synchronization events.</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> event_wait_handle ewh;</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_function" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> ewh;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// A counter to make sure all threads are started and</span></div>
 <div class="line">  <span class="comment">// blocked before any are released. A Long is used to show</span></div>
@@ -147,7 +148,7 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">  <span class="comment">// An auto_reset event that allows the main thread to block</span></div>
 <div class="line">  <span class="comment">// until an exiting thread has decremented the count.</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> event_wait_handle clear_count {<span class="keyword">false</span>, <a class="code hl_enumvalue" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794">event_reset_mode::auto_reset</a>};</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_function" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> clear_count {<span class="keyword">false</span>, <a class="code hl_enumvalue" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794">event_reset_mode::auto_reset</a>};</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
@@ -294,6 +295,8 @@ Manual reset events are like gates. When the event is not signaled, threads that
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
+<tr class="memitem:a85f1a2411c7d6de7b29492c296e94d4f" id="r_a85f1a2411c7d6de7b29492c296e94d4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> ()</td></tr>
+<tr class="memdesc:a85f1a2411c7d6de7b29492c296e94d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class.  <br /></td></tr>
 <tr class="memitem:a955143ff0600450c82aa495a98584569" id="r_a955143ff0600450c82aa495a98584569"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a955143ff0600450c82aa495a98584569">event_wait_handle</a> (bool initial_state)</td></tr>
 <tr class="memdesc:a955143ff0600450c82aa495a98584569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled.  <br /></td></tr>
 <tr class="memitem:a760903b091315fbf4172451183bddb74" id="r_a760903b091315fbf4172451183bddb74"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a760903b091315fbf4172451183bddb74">event_wait_handle</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name)</td></tr>
@@ -323,10 +326,10 @@ Public Methods</h2></td></tr>
 <tr class="memitem:af49ca0e066d4a1c01c6ed7e3021edbc6" id="r_af49ca0e066d4a1c01c6ed7e3021edbc6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af49ca0e066d4a1c01c6ed7e3021edbc6">close</a> () -&gt; void override</td></tr>
 <tr class="memdesc:af49ca0e066d4a1c01c6ed7e3021edbc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
 <tr class="memitem:a6ce7b3d82f179cd75c9ec190c1d9e775" id="r_a6ce7b3d82f179cd75c9ec190c1d9e775"><td class="memItemLeft"><a id="a6ce7b3d82f179cd75c9ec190c1d9e775" name="a6ce7b3d82f179cd75c9ec190c1d9e775"></a>
-auto&#160;</td><td class="memItemRight"><b>compare_to</b> (const event_wait_handle &amp;value) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> override</td></tr>
+auto&#160;</td><td class="memItemRight"><b>compare_to</b> (const <a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> &amp;value) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> override</td></tr>
 <tr class="memitem:ad0e9394064d04041fa4f054acca6011d" id="r_ad0e9394064d04041fa4f054acca6011d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0e9394064d04041fa4f054acca6011d">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:ad0e9394064d04041fa4f054acca6011d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a51b613810352cddd5a46ae8271705b0b" id="r_a51b613810352cddd5a46ae8271705b0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a51b613810352cddd5a46ae8271705b0b">equals</a> (const event_wait_handle &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memitem:a51b613810352cddd5a46ae8271705b0b" id="r_a51b613810352cddd5a46ae8271705b0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a51b613810352cddd5a46ae8271705b0b">equals</a> (const <a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> &amp;other) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a51b613810352cddd5a46ae8271705b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:a37be5a0e9f438e7ed43ae7e648001960" id="r_a37be5a0e9f438e7ed43ae7e648001960"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a37be5a0e9f438e7ed43ae7e648001960">reset</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a37be5a0e9f438e7ed43ae7e648001960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of the event to nonsignaled, causing threads to block.  <br /></td></tr>
@@ -335,9 +338,9 @@ auto&#160;</td><td class="memItemRight"><b>compare_to</b> (const event_wait_hand
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a0c7e01f4786633d8d28b60e7ae649555" id="r_a0c7e01f4786633d8d28b60e7ae649555"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c7e01f4786633d8d28b60e7ae649555">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name) -&gt; event_wait_handle</td></tr>
+<tr class="memitem:a0c7e01f4786633d8d28b60e7ae649555" id="r_a0c7e01f4786633d8d28b60e7ae649555"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c7e01f4786633d8d28b60e7ae649555">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name) -&gt; <a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a></td></tr>
 <tr class="memdesc:a0c7e01f4786633d8d28b60e7ae649555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named synchronization event, if it already exists.  <br /></td></tr>
-<tr class="memitem:a1966fd9412be4ba777d5bf8bf853fc77" id="r_a1966fd9412be4ba777d5bf8bf853fc77"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1966fd9412be4ba777d5bf8bf853fc77">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, event_wait_handle &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memitem:a1966fd9412be4ba777d5bf8bf853fc77" id="r_a1966fd9412be4ba777d5bf8bf853fc77"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1966fd9412be4ba777d5bf8bf853fc77">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, <a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> &amp;result) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a1966fd9412be4ba777d5bf8bf853fc77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -410,8 +413,28 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad7a701628e47b725c0bc15400085d714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1abstract__object.html" title="Represent an abstract class.">xtd::abstract_object</a> class.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a85f1a2411c7d6de7b29492c296e94d4f" name="a85f1a2411c7d6de7b29492c296e94d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f1a2411c7d6de7b29492c296e94d4f">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::threading::event_wait_handle::event_wait_handle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The initial state is <span class="tt">false</span> and The mode is set to <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a> and the name is empty string (""). </dd></dl>
+
+</div>
+</div>
 <a id="a955143ff0600450c82aa495a98584569" name="a955143ff0600450c82aa495a98584569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a955143ff0600450c82aa495a98584569">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a955143ff0600450c82aa495a98584569">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +468,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a760903b091315fbf4172451183bddb74" name="a760903b091315fbf4172451183bddb74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a760903b091315fbf4172451183bddb74">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a760903b091315fbf4172451183bddb74">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,7 +502,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a4eff717a4a4fb46b680571fbac644a08" name="a4eff717a4a4fb46b680571fbac644a08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eff717a4a4fb46b680571fbac644a08">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eff717a4a4fb46b680571fbac644a08">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,7 +532,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a3ab9de433771519832c4d51790b2231a" name="a3ab9de433771519832c4d51790b2231a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ab9de433771519832c4d51790b2231a">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab9de433771519832c4d51790b2231a">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -539,7 +562,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a336864fc266cf2ada02b7ff51ea9cfd7" name="a336864fc266cf2ada02b7ff51ea9cfd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a336864fc266cf2ada02b7ff51ea9cfd7">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a336864fc266cf2ada02b7ff51ea9cfd7">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +598,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="afd2cae6b22eca173f8c84769ea2a0424" name="afd2cae6b22eca173f8c84769ea2a0424"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd2cae6b22eca173f8c84769ea2a0424">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2cae6b22eca173f8c84769ea2a0424">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -612,7 +635,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a3c6fe1973c3c6832cc7ad345547a7e3a" name="a3c6fe1973c3c6832cc7ad345547a7e3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c6fe1973c3c6832cc7ad345547a7e3a">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6fe1973c3c6832cc7ad345547a7e3a">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -665,7 +688,7 @@ If a system event with the name specified for the name parameter already exists,
 </div>
 </div>
 <a id="a938171d15cb45d457af20f06d321f121" name="a938171d15cb45d457af20f06d321f121"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a938171d15cb45d457af20f06d321f121">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[8/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a938171d15cb45d457af20f06d321f121">&#9670;&#160;</a></span>event_wait_handle() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -868,7 +891,7 @@ If the initial state of the event is nonsignaled, threads that wait on the event
         <tr>
           <td class="memname">auto xtd::threading::event_wait_handle::equals </td>
           <td>(</td>
-          <td class="paramtype">const event_wait_handle &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
         </tr>
       </table>
@@ -958,7 +981,7 @@ If the initial state of the event is nonsignaled, threads that wait on the event
           <td class="memname">auto xtd::threading::event_wait_handle::open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td> -&gt;  event_wait_handle</td>
+          <td> -&gt;  <a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a></td>
         </tr>
       </table>
   </td>
@@ -1014,7 +1037,7 @@ Multiple calls to this method that use the same value for name do not necessaril
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">event_wait_handle &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype"><a class="el" href="#a85f1a2411c7d6de7b29492c296e94d4f">event_wait_handle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
