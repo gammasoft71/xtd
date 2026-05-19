@@ -37,7 +37,7 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      manual_reset_event() = default;
+      manual_reset_event() : manual_reset_event {false} {}
       /// @brief Initializes a new instance of the xtd::threading::manual_reset_event class with a bool value indicating whether to set the initial state to signaled.
       /// @param initial_state `true` to set the initial state signaled; `false` to set the initial state to nonsignaled.
       /// @remarks If the initial state of a xtd::threading::manual_reset_event is signaled (that is, if it is created by passing `true` for initialState), threads that wait on the xtd::threading::manual_reset_event do not block. If the initial state is nonsignaled, threads block until the xtd::threading::event_wait_handle::set method is called.
