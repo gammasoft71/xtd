@@ -134,7 +134,7 @@ $(function() {
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>          <span class="keywordtype">bool</span> await_ready() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> this-&gt;task.is_completed();}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          <span class="keywordtype">void</span> await_suspend(std::coroutine_handle&lt;&gt; handle) {this-&gt;task.continue_with([handle] {handle.resume();});}</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          result_t await_resume() {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          <span class="keyword">const</span> result_t&amp; await_resume() {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> (this-&gt;task.is_faulted()) this-&gt;task.rethrow_exception();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span> this-&gt;task.result();</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          }</div>
