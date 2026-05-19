@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections
-    using sorted_list = generic::list<xtd::any_object>;
+    using sorted_list = generic::sorted_list<xtd::any_object, xtd::any_object>;
   }
 }
