@@ -52,7 +52,7 @@ namespace xtd {
           
           bool await_ready() const noexcept {return this->task.is_completed();}
           void await_suspend(std::coroutine_handle<> handle) {this->task.continue_with([handle] {handle.resume();});}
-          result_t await_resume() {
+          const result_t& await_resume() {
             if (this->task.is_faulted()) this->task.rethrow_exception();
             return this->task.result();
           }
