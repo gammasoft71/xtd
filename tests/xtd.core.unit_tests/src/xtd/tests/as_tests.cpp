@@ -225,7 +225,7 @@ namespace xtd::tests {
       
       derived o;
       derived& d = o;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto result = as<other>(d);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = as<other>(d);});
     }
     
     auto test_method_(const_ref_as_base) {
@@ -244,7 +244,7 @@ namespace xtd::tests {
       
       derived o;
       const derived& d = o;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto result = as<other>(d);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = as<other>(d);});
     }
     
     auto test_method_(ptr_as_base) {
@@ -263,7 +263,7 @@ namespace xtd::tests {
       
       derived o;
       derived* d = &o;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto result = as<other>(d);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = as<other>(d);});
     }
     
     auto test_method_(const_ptr_as_base) {
@@ -282,7 +282,7 @@ namespace xtd::tests {
       
       derived o;
       const derived* d = &o;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto result = as<other>(d);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = as<other>(d);});
     }
     
   };

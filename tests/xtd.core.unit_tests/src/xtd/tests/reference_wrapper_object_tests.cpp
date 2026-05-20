@@ -23,19 +23,19 @@ namespace xtd::tests {
     
     auto test_method_(empty) {
       assert::is_true(reference_wrapper_object<int>::empty.is_empty());
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<int>::empty.get();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<int>::empty.get();});
     }
     
     auto test_method_(create_with_no_param) {
       auto r = reference_wrapper_object<int> {};
       assert::is_true(r.is_empty());
-      assert::throws<null_pointer_exception>([&] {r.get();});
+      assert::throws<null_pointer_exception>([&] {[[maybe_unused]] auto _ = r.get();});
     }
     
     auto test_method_(create_with_null) {
       auto r = reference_wrapper_object<int> {null};
       assert::is_true(r.is_empty());
-      assert::throws<null_pointer_exception>([&] {r.get();});
+      assert::throws<null_pointer_exception>([&] {[[maybe_unused]] auto _ = r.get();});
     }
     
     auto test_method_(create_with_integer) {
@@ -49,7 +49,7 @@ namespace xtd::tests {
       auto r1 = reference_wrapper_object<int> {};
       auto r2 = reference_wrapper_object<int> {r1};
       assert::is_true(r2.is_empty());
-      assert::throws<null_pointer_exception>([&] {r2.get();});
+      assert::throws<null_pointer_exception>([&] {[[maybe_unused]] auto _ = r2.get();});
     }
     
     auto test_method_(create_with_reference_wrapper_object) {
@@ -137,7 +137,7 @@ namespace xtd::tests {
       assert::are_equal(typeof_<std::reference_wrapper<string>>(), typeof_(r2));
       assert::are_equal("value", r2.get());
       
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<int>::empty.reference();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<int>::empty.reference();});
     }
     
     auto test_method_(compare_to) {
@@ -199,7 +199,7 @@ namespace xtd::tests {
       auto r3 = r1;
       auto r4 = r2;
       
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<int>::empty.get();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<int>::empty.get();});
       assert::are_equal(s1, r1.get());
       assert::are_equal(s2, r2.get());
       assert::are_equal(r3.get(), r1.get());
@@ -265,7 +265,7 @@ namespace xtd::tests {
       auto s = string {"value"};
       assert::are_equal("value", reference_wrapper_object<string> {s}.to_object());
       assert::are_equal(42, reference_wrapper_object<int> {i}.to_object());
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<object> {}.to_object();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<object> {}.to_object();});
     }
     
     auto test_method_(to_object_with_specified_type) {
@@ -273,7 +273,7 @@ namespace xtd::tests {
       auto s = string {"value"};
       assert::are_equal("value", reference_wrapper_object<object> {s}.to_object<string>());
       assert::are_equal(42, reference_wrapper_object<int> {i}.to_object<byte>());
-      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto v = reference_wrapper_object<object> {}.to_object<string>();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<object> {}.to_object<string>();});
     }
     
     auto test_method_(to_reference) {
@@ -281,7 +281,7 @@ namespace xtd::tests {
       auto s = string {"value"};
       assert::are_equal("value", reference_wrapper_object<string> {s}.to_reference());
       assert::are_equal(42, reference_wrapper_object<int> {i}.to_reference());
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<object> {}.to_reference();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<object> {}.to_reference();});
     }
     
     auto test_method_(to_reference_with_specified_type) {
@@ -289,7 +289,7 @@ namespace xtd::tests {
       auto s = string {"value"};
       assert::are_equal("value", reference_wrapper_object<object> {s}.to_reference<string>());
       assert::are_equal(42, reference_wrapper_object<int> {i}.to_reference<byte>());
-      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto v = reference_wrapper_object<object> {}.to_reference<string>();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto _ = reference_wrapper_object<object> {}.to_reference<string>();});
     }
     
     auto test_method_(to_string) {

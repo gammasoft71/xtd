@@ -59,7 +59,7 @@ namespace xtd::tests {
       assert::are_equal(as<int16>(10328), math::abs(as<int16>(10328)));
       assert::are_equal(as<int16>(0), math::abs(as<int16>(0)));
       assert::are_equal(as<int16>(1476), math::abs(as<int16>(-1476)));
-      assert::throws<overflow_exception>([] {[[maybe_unused]] auto r = math::abs(std::numeric_limits<int16>::lowest());});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto _ = math::abs(std::numeric_limits<int16>::lowest());});
     }
     
     auto test_method_(abs_int32) {
@@ -67,7 +67,7 @@ namespace xtd::tests {
       assert::are_equal(16921, math::abs(16921));
       assert::are_equal(0, math::abs(0));
       assert::are_equal(804128, math::abs(-804128));
-      assert::throws<overflow_exception>([] {[[maybe_unused]] auto r = math::abs(std::numeric_limits<int32>::lowest());});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto _ = math::abs(std::numeric_limits<int32>::lowest());});
     }
     
     auto test_method_(abs_int64) {
@@ -75,7 +75,7 @@ namespace xtd::tests {
       assert::are_equal(as<int64>(109013), math::abs(as<int64>(109013)));
       assert::are_equal(as<int64>(0), math::abs(as<int64>(0)));
       assert::are_equal(as<int64>(6871982), math::abs(as<int64>(-6871982)));
-      assert::throws<overflow_exception>([] {[[maybe_unused]] auto r = math::abs(std::numeric_limits<int64>::lowest());});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto _ = math::abs(std::numeric_limits<int64>::lowest());});
     }
     
     auto test_method_(abs_sbyte) {
@@ -83,7 +83,7 @@ namespace xtd::tests {
       assert::are_equal(as<sbyte>(98), math::abs(as<sbyte>(98)));
       assert::are_equal(as<sbyte>(0), math::abs(as<sbyte>(0)));
       assert::are_equal(as<sbyte>(32), math::abs(as<sbyte>(-32)));
-      assert::throws<overflow_exception>([] {[[maybe_unused]] auto r = math::abs(std::numeric_limits<sbyte>::lowest());});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto _ = math::abs(std::numeric_limits<sbyte>::lowest());});
     }
     
     auto test_method_(abs_llong) {
@@ -91,7 +91,7 @@ namespace xtd::tests {
       assert::are_equal(109013ll, math::abs(109013ll));
       assert::are_equal(0ll, math::abs(0ll));
       assert::are_equal(6871982ll, math::abs(-6871982ll));
-      assert::throws<overflow_exception>([] {[[maybe_unused]] auto r = math::abs(std::numeric_limits<slong>::lowest());});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto _ = math::abs(std::numeric_limits<slong>::lowest());});
     }
     
     auto test_method_(acos) {
@@ -577,14 +577,14 @@ namespace xtd::tests {
       assert::are_equal(-1.0l, math::sign(-10.0l));
       assert::are_equal(0.0l, math::sign(0.0l));
       assert::are_equal(1.0l, math::sign(10.0l));
-      assert::throws<arithmetic_exception>([] {[[maybe_unused]] auto r = math::sign(std::numeric_limits<decimal>::quiet_NaN());});
+      assert::throws<arithmetic_exception>([] {[[maybe_unused]] auto _ = math::sign(std::numeric_limits<decimal>::quiet_NaN());});
     }
     
     auto test_method_(sign_double) {
       assert::are_equal(-1.0, math::sign(-10.0));
       assert::are_equal(0.0, math::sign(0.0));
       assert::are_equal(1.0, math::sign(10.0));
-      assert::throws<arithmetic_exception>([] {[[maybe_unused]] auto r = math::sign(double_object::NaN);});
+      assert::throws<arithmetic_exception>([] {[[maybe_unused]] auto _ = math::sign(double_object::NaN);});
     }
     
     auto test_method_(sign_int16) {
@@ -615,7 +615,7 @@ namespace xtd::tests {
       assert::are_equal(-1.0f, math::sign(-10.0f));
       assert::are_equal(0.0f, math::sign(0.0f));
       assert::are_equal(1.0f, math::sign(10.0f));
-      assert::throws<arithmetic_exception>([] {[[maybe_unused]] auto r = math::sign(std::numeric_limits<float>::quiet_NaN());});
+      assert::throws<arithmetic_exception>([] {[[maybe_unused]] auto _ = math::sign(std::numeric_limits<float>::quiet_NaN());});
     }
     
     auto test_method_(sin) {

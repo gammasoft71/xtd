@@ -59,7 +59,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_tuesday_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto s = format(L"{0:e}", day::tuesday);});
+      assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto _ = format(L"{0:e}", day::tuesday);});
     }
   };
 }

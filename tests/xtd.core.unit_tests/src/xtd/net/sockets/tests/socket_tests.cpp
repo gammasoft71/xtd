@@ -27,27 +27,27 @@ namespace xtd::net::sockets::tests {
     auto test_method_(default_constructor) {
       socket s;
       assert::are_equal(address_family::unspecified, s.address_family());
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.available();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.blocking();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.available();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.blocking();});
       assert::is_false(s.connected());
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.dont_fragment();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.dual_mode();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.enable_broadcast();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.exclusive_address_use();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.dont_fragment();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.dual_mode();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.enable_broadcast();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.exclusive_address_use();});
       assert::is_zero(s.handle());
       assert::is_false(s.is_bound());
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.linger_state();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.local_end_point();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.multicast_loopback();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.no_delay();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.linger_state();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.local_end_point();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.multicast_loopback();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.no_delay();});
       assert::are_equal(protocol_type::unspecified, s.protocol_type());
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.receive_buffer_size();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.receive_timeout();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.remote_end_point();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.send_buffer_size();});
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.send_timeout();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.receive_buffer_size();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.receive_timeout();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.remote_end_point();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.send_buffer_size();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.send_timeout();});
       assert::are_equal(socket_type::unknown, s.socket_type());
-      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = s.ttl();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto _ = s.ttl();});
     }
     
     auto test_method_(constructor_with_socket_type_stream_and_protocol_type_tcp) {
@@ -57,9 +57,9 @@ namespace xtd::net::sockets::tests {
       assert::is_zero(s.available());
       assert::is_true(s.blocking());
       assert::is_false(s.connected());
-      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto result = s.dont_fragment();});
+      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto _ = s.dont_fragment();});
       assert::is_true(s.dual_mode());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.enable_broadcast();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.enable_broadcast();});
       assert::is_false(s.exclusive_address_use());
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
@@ -67,7 +67,7 @@ namespace xtd::net::sockets::tests {
       assert::is_false(linger.enabled());
       assert::is_zero(linger.linger_time());
       assert::is_null(s.local_end_point());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.multicast_loopback();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.multicast_loopback();});
       assert::is_false(s.no_delay());
       assert::are_equal(protocol_type::tcp, s.protocol_type());
       assert::is_not_zero(s.receive_buffer_size());
@@ -87,9 +87,9 @@ namespace xtd::net::sockets::tests {
       assert::is_zero(s.available());
       assert::is_true(s.blocking());
       assert::is_false(s.connected());
-      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto result = s.dont_fragment();});
+      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto _ = s.dont_fragment();});
       assert::is_true(s.dual_mode());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.enable_broadcast();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.enable_broadcast();});
       assert::is_false(s.exclusive_address_use());
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
@@ -97,7 +97,7 @@ namespace xtd::net::sockets::tests {
       assert::is_false(linger.enabled());
       assert::is_zero(linger.linger_time());
       assert::is_null(s.local_end_point());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.multicast_loopback();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.multicast_loopback();});
       assert::is_false(s.no_delay());
       assert::are_equal(protocol_type::tcp, s.protocol_type());
       assert::is_not_zero(s.receive_buffer_size());
@@ -120,8 +120,8 @@ namespace xtd::net::sockets::tests {
       assert::is_false(s.connected());
       if (environment::os_version().is_windows_platform()) assert::is_true(s.dont_fragment());
       else assert::is_false(s.dont_fragment());
-      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto result = s.dual_mode();});
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.enable_broadcast();});
+      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto _ = s.dual_mode();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.enable_broadcast();});
       assert::is_false(s.exclusive_address_use());
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
@@ -129,7 +129,7 @@ namespace xtd::net::sockets::tests {
       assert::is_false(linger.enabled());
       assert::is_zero(linger.linger_time());
       assert::is_null(s.local_end_point());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.multicast_loopback();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.multicast_loopback();});
       assert::is_false(s.no_delay());
       assert::are_equal(protocol_type::tcp, s.protocol_type());
       assert::is_not_zero(s.receive_buffer_size());
@@ -150,15 +150,15 @@ namespace xtd::net::sockets::tests {
       assert::is_true(s.blocking());
       assert::is_false(s.connected());
       assert::is_false(s.dont_fragment());
-      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto result = s.dual_mode();});
+      assert::throws<not_supported_exception>([&] {[[maybe_unused]] auto _ = s.dual_mode();});
       assert::is_false(s.enable_broadcast());
       assert::is_false(s.exclusive_address_use());
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.linger_state();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.linger_state();});
       assert::is_null(s.local_end_point());
       assert::is_true(s.multicast_loopback());
-      assert::throws<socket_exception>([&] {[[maybe_unused]] auto result = s.no_delay();});
+      assert::throws<socket_exception>([&] {[[maybe_unused]] auto _ = s.no_delay();});
       assert::are_equal(protocol_type::udp, s.protocol_type());
       assert::is_not_zero(s.receive_buffer_size());
       assert::is_zero(s.receive_timeout());

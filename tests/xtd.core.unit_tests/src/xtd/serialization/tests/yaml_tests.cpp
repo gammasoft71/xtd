@@ -24,12 +24,12 @@ namespace xtd::serialization::tests {
       assert::is_true(is<null_ptr>(v["null"]));
       assert::is_true(v.is<null_ptr>("null"));
       assert::is_true(v.is_null("null"));
-      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto r = as<int>(v["null"]);});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto _ = as<int>(v["null"]);});
       
       assert::is_false(is<null_ptr>(v["not null"]));
       assert::is_false(v.is<null_ptr>("not null"));
       assert::is_false(v.is_null("not null"));
-      assert::does_not_throw([&] {[[maybe_unused]] auto r = as<int>(v["not null"]);});
+      assert::does_not_throw([&] {[[maybe_unused]] auto _ = as<int>(v["not null"]);});
     }
     
     auto test_method_(yaml_with_boolean) {
@@ -47,7 +47,7 @@ namespace xtd::serialization::tests {
       assert::is_false(is<boolean>(v["not boolean"]));
       assert::is_false(v.is<boolean>("not boolean"));
       assert::is_false(v.is_boolean("not boolean"));
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto r = as<boolean>(v["not boolean"]);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = as<boolean>(v["not boolean"]);});
     }
     
     auto test_method_(yaml_with_integer) {
@@ -61,7 +61,7 @@ namespace xtd::serialization::tests {
       assert::is_true(as<int64>(v["integer"]));
 
       assert::is_false(is<int64>(v["not integer"]));
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto r = as<int64>(v["not integer"]);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = as<int64>(v["not integer"]);});
     }
   };
 }

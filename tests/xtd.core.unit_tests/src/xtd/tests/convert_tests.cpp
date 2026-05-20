@@ -39,7 +39,7 @@ namespace xtd::tests {
     
     auto test_method_(to_any_from_char8) {
       char8 value = u8'a';
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_any(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_any(value);});
       }
       
         auto test_method_(to_any_from_char16) {
@@ -154,7 +154,7 @@ namespace xtd::tests {
       
         auto test_method_(to_any_from_literal_char8) {
         const char8* value = u8"42";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_any(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_any(value);});
       }
       
         auto test_method_(to_any_from_literal_char16) {
@@ -186,7 +186,7 @@ namespace xtd::tests {
       
         auto test_method_(to_boolean_from_any_failed) {
         any value = "not a bool";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
       }
       
         auto test_method_(to_boolean_from_bool) {
@@ -205,27 +205,27 @@ namespace xtd::tests {
       
         auto test_method_(to_boolean_from_char) {
         char value = 'a';
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
       }
       
         auto test_method_(to_boolean_from_char8) {
         char8 value = u8'a';
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_char16) {
       char16 value = u'a';
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_char32) {
       char32 value = U'a';
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_wchar) {
       wchar value = L'a';
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_decimal) {
@@ -318,7 +318,7 @@ namespace xtd::tests {
       value = "false";
       assert::is_false(convert::to_boolean(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_std_string) {
@@ -327,7 +327,7 @@ namespace xtd::tests {
       value = "false";
       assert::is_false(convert::to_boolean(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_u8string) {
@@ -336,7 +336,7 @@ namespace xtd::tests {
       value = u8"false";
       assert::is_false(convert::to_boolean(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_u16string) {
@@ -345,7 +345,7 @@ namespace xtd::tests {
       value = u"false";
       assert::is_false(convert::to_boolean(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_u32string) {
@@ -354,7 +354,7 @@ namespace xtd::tests {
       value = U"false";
       assert::is_false(convert::to_boolean(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_wstring) {
@@ -363,7 +363,7 @@ namespace xtd::tests {
       value = L"false";
       assert::is_false(convert::to_boolean(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_literal_char) {
@@ -372,7 +372,7 @@ namespace xtd::tests {
       value = "false";
       assert::is_false(convert::to_boolean(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_literal_char8) {
@@ -381,7 +381,7 @@ namespace xtd::tests {
       value = u8"false";
       assert::is_false(convert::to_boolean(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_literal_char16) {
@@ -390,7 +390,7 @@ namespace xtd::tests {
       value = u"false";
       assert::is_false(convert::to_boolean(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_literal_char32) {
@@ -399,7 +399,7 @@ namespace xtd::tests {
       value = U"false";
       assert::is_false(convert::to_boolean(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_literal_wchar) {
@@ -408,7 +408,7 @@ namespace xtd::tests {
       value = L"false";
       assert::is_false(convert::to_boolean(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_boolean(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_boolean(value);});
     }
     
     auto test_method_(to_boolean_from_values) {
@@ -427,7 +427,7 @@ namespace xtd::tests {
     
     auto test_method_(to_byte_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
     }
     
     auto test_method_(to_byte_from_bool) {
@@ -464,7 +464,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_byte(value));
         value = u'\u01FF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_char32) {
@@ -473,7 +473,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_byte(value));
         value = U'\U000001FF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_wchar) {
@@ -482,7 +482,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_byte(value));
         value = L'\x01FF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_decimal) {
@@ -495,9 +495,9 @@ namespace xtd::tests {
         value = 0.0l;
         assert::is_zero(convert::to_byte(value));
         value = -0.1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256.0l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_double) {
@@ -510,9 +510,9 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_byte(value));
         value = -0.1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_float) {
@@ -525,9 +525,9 @@ namespace xtd::tests {
         value = 0.0f;
         assert::is_zero(convert::to_byte(value));
         value = -0.1f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256.0f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_int16) {
@@ -536,9 +536,9 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_byte(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_int32) {
@@ -547,9 +547,9 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_byte(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_int64) {
@@ -558,9 +558,9 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_byte(value));
         value = -1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_llong) {
@@ -569,9 +569,9 @@ namespace xtd::tests {
         value = 0ll;
         assert::is_zero(convert::to_byte(value));
         value = -1ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
         value = 256ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_sbyte) {
@@ -580,7 +580,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_byte(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_uint16) {
@@ -589,7 +589,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_byte(value));
         value = 256u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_uint32) {
@@ -598,7 +598,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_byte(value));
         value = 256u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_uint64) {
@@ -607,7 +607,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_byte(value));
         value = 256lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_ullong) {
@@ -616,7 +616,7 @@ namespace xtd::tests {
         value = 0llu;
         assert::is_zero(convert::to_byte(value));
         value = 256llu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_string) {
@@ -625,7 +625,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_byte(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_string_with_base) {
@@ -633,7 +633,7 @@ namespace xtd::tests {
         assert::are_equal(42u, convert::to_byte(u8"052", 8));
         assert::are_equal(42u, convert::to_byte(u"42", 10));
         assert::are_equal(42u, convert::to_byte(U"2A", 16));
-        assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(L"42", 4);});
+        assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(L"42", 4);});
       }
       
         auto test_method_(to_byte_from_std_string) {
@@ -642,7 +642,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_byte(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_u8string) {
@@ -651,7 +651,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_byte(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_u16string) {
@@ -660,7 +660,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_byte(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_u32string) {
@@ -669,7 +669,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_byte(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_wstring) {
@@ -678,7 +678,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_byte(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_literal_char) {
@@ -687,7 +687,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_byte(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_literal_char8) {
@@ -696,7 +696,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_byte(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_literal_char16) {
@@ -705,7 +705,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_byte(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_literal_char32) {
@@ -714,7 +714,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_byte(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_literal_wchar) {
@@ -723,7 +723,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_byte(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_byte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_byte(value);});
       }
       
         auto test_method_(to_byte_from_values) {
@@ -742,12 +742,12 @@ namespace xtd::tests {
       
         auto test_method_(to_char_from_any_failed) {
         any value = "not a char";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       }
       
         auto test_method_(to_char_from_bool) {
         bool value = true;
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       }
       
         auto test_method_(to_char_from_byte) {
@@ -777,7 +777,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char(value));
       value = u'\u01FF';
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_char32) {
@@ -786,7 +786,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char(value));
       value = U'\U000001FF';
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_wchar) {
@@ -795,7 +795,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char(value));
       value = L'\x01FF';
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_decimal) {
@@ -808,9 +808,9 @@ namespace xtd::tests {
       value = 0.0l;
       assert::is_zero(convert::to_char(value));
       value = -0.1l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256.0l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_double) {
@@ -823,9 +823,9 @@ namespace xtd::tests {
       value = 0.0;
       assert::is_zero(convert::to_char(value));
       value = -0.1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256.0;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_float) {
@@ -838,9 +838,9 @@ namespace xtd::tests {
       value = 0.0f;
       assert::is_zero(convert::to_char(value));
       value = -0.1f;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256.0f;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_int16) {
@@ -849,9 +849,9 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_int32) {
@@ -860,9 +860,9 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_int64) {
@@ -871,9 +871,9 @@ namespace xtd::tests {
       value = 0l;
       assert::is_zero(convert::to_char(value));
       value = -1l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_llong) {
@@ -882,9 +882,9 @@ namespace xtd::tests {
       value = 0ll;
       assert::is_zero(convert::to_char(value));
       value = -1ll;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
       value = 256ll;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_sbyte) {
@@ -893,7 +893,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_uint16) {
@@ -902,7 +902,7 @@ namespace xtd::tests {
       value = 0u;
       assert::is_zero(convert::to_char(value));
       value = 256u;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_uint32) {
@@ -911,7 +911,7 @@ namespace xtd::tests {
       value = 0u;
       assert::is_zero(convert::to_char(value));
       value = 256u;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_uint64) {
@@ -920,7 +920,7 @@ namespace xtd::tests {
       value = 0lu;
       assert::is_zero(convert::to_char(value));
       value = 256lu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_ullong) {
@@ -929,84 +929,84 @@ namespace xtd::tests {
       value = 0llu;
       assert::is_zero(convert::to_char(value));
       value = 256llu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_string) {
       string value = "a";
       assert::are_equal('a', convert::to_char(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_std_string) {
       std::string value = "a";
       assert::are_equal('a', convert::to_char(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal('a', convert::to_char(value));
       value = u8"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_u16string) {
       std::u16string value = u"a";
       assert::are_equal('a', convert::to_char(value));
       value = u"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_u32string) {
       std::u32string value = U"a";
       assert::are_equal('a', convert::to_char(value));
       value = U"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_wstring) {
       std::wstring value = L"a";
       assert::are_equal('a', convert::to_char(value));
       value = L"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_literal_char) {
       const char* value = "a";
       assert::are_equal('a', convert::to_char(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal('a', convert::to_char(value));
       value = u8"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_literal_char16) {
       const char16* value = u"a";
       assert::are_equal('a', convert::to_char(value));
       value = u"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_literal_char32) {
       const char32* value = U"a";
       assert::are_equal('a', convert::to_char(value));
       value = U"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_literal_wchar) {
       const wchar* value = L"a";
       assert::are_equal('a', convert::to_char(value));
       value = L"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char(value);});
     }
     
     auto test_method_(to_char_from_values) {
@@ -1024,12 +1024,12 @@ namespace xtd::tests {
     
     auto test_method_(to_char8_from_any_failed) {
       any value = "not a char";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_bool) {
       bool value = true;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_byte) {
@@ -1059,7 +1059,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char8(value));
         value = u'\u01FF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_char32) {
@@ -1068,7 +1068,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char8(value));
       value = U'\U000001FF';
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_wchar) {
@@ -1077,7 +1077,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char8(value));
         value = L'\x01FF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_decimal) {
@@ -1090,9 +1090,9 @@ namespace xtd::tests {
       value = 0.0l;
       assert::is_zero(convert::to_char8(value));
       value = -0.1l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       value = 256.0l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_double) {
@@ -1105,9 +1105,9 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_char8(value));
         value = -0.1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
         value = 256.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_float) {
@@ -1120,9 +1120,9 @@ namespace xtd::tests {
       value = 0.0f;
       assert::is_zero(convert::to_char8(value));
       value = -0.1f;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       value = 256.0f;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_int16) {
@@ -1131,9 +1131,9 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char8(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
         value = 256;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_int32) {
@@ -1142,9 +1142,9 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char8(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       value = 256;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_int64) {
@@ -1153,9 +1153,9 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_char8(value));
         value = -1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
         value = 256l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_llong) {
@@ -1164,9 +1164,9 @@ namespace xtd::tests {
       value = 0ll;
       assert::is_zero(convert::to_char8(value));
       value = -1ll;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       value = 256ll;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_sbyte) {
@@ -1175,7 +1175,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char8(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_uint16) {
@@ -1184,7 +1184,7 @@ namespace xtd::tests {
       value = 0u;
       assert::is_zero(convert::to_char8(value));
       value = 256u;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_uint32) {
@@ -1193,7 +1193,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_char8(value));
         value = 256u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_uint64) {
@@ -1202,7 +1202,7 @@ namespace xtd::tests {
       value = 0lu;
       assert::is_zero(convert::to_char8(value));
       value = 256lu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_ullong) {
@@ -1211,84 +1211,84 @@ namespace xtd::tests {
         value = 0llu;
         assert::is_zero(convert::to_char8(value));
         value = 256llu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_string) {
         string value = "a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_std_string) {
       std::string value = "a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_u8string) {
         std::u8string value = u8"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = u8"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_u16string) {
       std::u16string value = u"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = u"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_u32string) {
         std::u32string value = U"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = U"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_wstring) {
       std::wstring value = L"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = L"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_literal_char) {
         const char* value = "a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = u8"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_literal_char16) {
         const char16* value = u"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = u"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_literal_char32) {
       const char32* value = U"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = U"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
       }
       
         auto test_method_(to_char8_from_literal_wchar) {
         const wchar* value = L"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = L"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char8(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char8(value);});
     }
     
     auto test_method_(to_char8_from_values) {
@@ -1307,12 +1307,12 @@ namespace xtd::tests {
     
     auto test_method_(to_char16_from_any_failed) {
       any value = "not a char";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
     }
     
     auto test_method_(to_char16_from_bool) {
       bool value = true;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
     }
     
     auto test_method_(to_char16_from_byte) {
@@ -1349,7 +1349,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char16(value));
         value = U'\U0001FFFF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_wchar) {
@@ -1369,9 +1369,9 @@ namespace xtd::tests {
         value = 0.0l;
         assert::is_zero(convert::to_char16(value));
         value = -0.1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
         value = 65536.0l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_double) {
@@ -1384,9 +1384,9 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_char16(value));
         value = -0.1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
         value = 65536.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_float) {
@@ -1399,9 +1399,9 @@ namespace xtd::tests {
         value = 0.0f;
         assert::is_zero(convert::to_char16(value));
         value = -0.1f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
         value = 65536.0f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_int16) {
@@ -1410,7 +1410,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char16(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_int32) {
@@ -1419,9 +1419,9 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char16(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
         value = 65536;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_int64) {
@@ -1430,9 +1430,9 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_char16(value));
         value = -1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
         value = 65536l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_llong) {
@@ -1441,9 +1441,9 @@ namespace xtd::tests {
         value = 0ll;
         assert::is_zero(convert::to_char16(value));
         value = -1ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
         value = 65536ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_sbyte) {
@@ -1452,7 +1452,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_char16(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_uint16) {
@@ -1468,7 +1468,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_char16(value));
         value = 65536u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_uint64) {
@@ -1477,7 +1477,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_char16(value));
         value = 65536lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_ullong) {
@@ -1486,84 +1486,84 @@ namespace xtd::tests {
         value = 0llu;
         assert::is_zero(convert::to_char16(value));
         value = 65536llu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_string) {
         string value = "a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_std_string) {
         std::string value = "a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_u8string) {
         std::u8string value = u8"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u8"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_u16string) {
         std::u16string value = u"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_u32string) {
         std::u32string value = U"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = U"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_wstring) {
         std::wstring value = L"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = L"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_literal_char) {
         const char* value = "a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_literal_char8) {
         const char8* value = u8"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u8"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_literal_char16) {
         const char16* value = u"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_literal_char32) {
         const char32* value = U"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = U"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_literal_wchar) {
         const wchar* value = L"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = L"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char16(value);});
       }
       
         auto test_method_(to_char16_from_values) {
@@ -1582,12 +1582,12 @@ namespace xtd::tests {
       
         auto test_method_(to_char32_from_any_failed) {
         any value = "not a char";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
       }
       
         auto test_method_(to_char32_from_bool) {
         bool value = true;
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
       }
       
         auto test_method_(to_char32_from_byte) {
@@ -1642,9 +1642,9 @@ namespace xtd::tests {
       value = 0.0l;
       assert::is_zero(convert::to_char32(value));
       value = -0.1l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
       value = 4294967296.0l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_double) {
@@ -1657,9 +1657,9 @@ namespace xtd::tests {
       value = 0.0;
       assert::is_zero(convert::to_char32(value));
       value = -0.1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
       value = 4294967296.0;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_float) {
@@ -1672,7 +1672,7 @@ namespace xtd::tests {
       value = 0.0f;
       assert::is_zero(convert::to_char32(value));
       value = -0.1f;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_int16) {
@@ -1681,7 +1681,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char32(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_int32) {
@@ -1690,7 +1690,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char32(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_int64) {
@@ -1699,9 +1699,9 @@ namespace xtd::tests {
       value = 0l;
       assert::is_zero(convert::to_char32(value));
       value = -1l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
       value = 4294967296l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_llong) {
@@ -1710,7 +1710,7 @@ namespace xtd::tests {
       value = 0ll;
       assert::is_zero(convert::to_char32(value));
       value = -1ll;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_sbyte) {
@@ -1719,7 +1719,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_char32(value));
       value = -1;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_uint16) {
@@ -1742,7 +1742,7 @@ namespace xtd::tests {
       value = 0lu;
       assert::is_zero(convert::to_char32(value));
       value = 4294967296lu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_ullong) {
@@ -1756,77 +1756,77 @@ namespace xtd::tests {
       string value = "a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_std_string) {
       std::string value = "a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u8"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_u16string) {
       std::u16string value = u"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_u32string) {
       std::u32string value = U"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = U"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_wstring) {
       std::wstring value = L"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = L"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_literal_char) {
       const char* value = "a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = "ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u8"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_literal_char16) {
       const char16* value = u"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_literal_char32) {
       const char32* value = U"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = U"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_literal_wchar) {
       const wchar* value = L"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = L"ab";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_char32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_char32(value);});
     }
     
     auto test_method_(to_char32_from_values) {
@@ -1845,12 +1845,12 @@ namespace xtd::tests {
     
     auto test_method_(to_wchar_from_any_failed) {
       any value = "not a char";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
     }
     
     auto test_method_(to_wchar_from_bool) {
       bool value = true;
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
     }
     
     auto test_method_(to_wchar_from_byte) {
@@ -1887,7 +1887,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_wchar(value));
         value = U'\U0001FFFF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_wchar) {
@@ -1907,9 +1907,9 @@ namespace xtd::tests {
         value = 0.0l;
         assert::is_zero(convert::to_wchar(value));
         value = -0.1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
         value = 65536.0l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_double) {
@@ -1922,9 +1922,9 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_wchar(value));
         value = -0.1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
         value = 65536.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_float) {
@@ -1937,9 +1937,9 @@ namespace xtd::tests {
         value = 0.0f;
         assert::is_zero(convert::to_wchar(value));
         value = -0.1f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
         value = 65536.0f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_int16) {
@@ -1948,7 +1948,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_wchar(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_int32) {
@@ -1957,9 +1957,9 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_wchar(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
         value = 65536;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_int64) {
@@ -1968,9 +1968,9 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_wchar(value));
         value = -1l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
         value = 65536l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_llong) {
@@ -1979,9 +1979,9 @@ namespace xtd::tests {
         value = 0ll;
         assert::is_zero(convert::to_wchar(value));
         value = -1ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
         value = 65536ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_sbyte) {
@@ -1990,7 +1990,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_wchar(value));
         value = -1;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_uint16) {
@@ -2006,7 +2006,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_wchar(value));
         value = 65536u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_uint64) {
@@ -2015,7 +2015,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_wchar(value));
         value = 65536lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_ullong) {
@@ -2024,84 +2024,84 @@ namespace xtd::tests {
         value = 0llu;
         assert::is_zero(convert::to_wchar(value));
         value = 65536llu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_string) {
         string value = "a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_std_string) {
         std::string value = "a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_u8string) {
         std::u8string value = u8"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u8"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_u16string) {
         std::u16string value = u"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_u32string) {
         std::u32string value = U"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = U"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_wstring) {
         std::wstring value = L"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = L"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_literal_char) {
         const char* value = "a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = "ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_literal_char8) {
         const char8* value = u8"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u8"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_literal_char16) {
         const char16* value = u"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_literal_char32) {
         const char32* value = U"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = U"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_literal_wchar) {
         const wchar* value = L"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = L"ab";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_wchar(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_wchar(value);});
       }
       
         auto test_method_(to_wchar_from_values) {
@@ -2120,7 +2120,7 @@ namespace xtd::tests {
       
         auto test_method_(to_decimal_from_any_failed) {
         any value = "not a byte";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
       }
       
         auto test_method_(to_decimal_from_bool) {
@@ -2263,7 +2263,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_decimal(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_std_string) {
@@ -2272,7 +2272,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_decimal(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_u8string) {
@@ -2281,7 +2281,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_decimal(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_u16string) {
@@ -2290,7 +2290,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_decimal(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_u32string) {
@@ -2299,7 +2299,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_decimal(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_wstring) {
@@ -2308,7 +2308,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_decimal(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_literal_char) {
@@ -2317,7 +2317,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_decimal(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_literal_char8) {
@@ -2326,7 +2326,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_decimal(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_literal_char16) {
@@ -2335,7 +2335,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_decimal(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_literal_char32) {
@@ -2344,7 +2344,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_decimal(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_literal_wchar) {
@@ -2353,7 +2353,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_decimal(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_decimal(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_decimal(value);});
     }
     
     auto test_method_(to_decimal_from_values) {
@@ -2372,7 +2372,7 @@ namespace xtd::tests {
     
     auto test_method_(to_double_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
     }
     
     auto test_method_(to_double_from_bool) {
@@ -2515,7 +2515,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_double(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_std_string) {
@@ -2524,7 +2524,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_double(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_u8string) {
@@ -2533,7 +2533,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_double(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_u16string) {
@@ -2542,7 +2542,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_double(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_u32string) {
@@ -2551,7 +2551,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_double(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_wstring) {
@@ -2560,7 +2560,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_double(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_literal_char) {
@@ -2569,7 +2569,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_double(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_literal_char8) {
@@ -2578,7 +2578,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_double(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_literal_char16) {
@@ -2587,7 +2587,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_double(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_literal_char32) {
@@ -2596,7 +2596,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_double(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_literal_wchar) {
@@ -2605,7 +2605,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_double(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_double(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_double(value);});
       }
       
         auto test_method_(to_double_from_values) {
@@ -2624,7 +2624,7 @@ namespace xtd::tests {
       
         auto test_method_(to_single_from_any_failed) {
         any value = "not a byte";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
       }
       
         auto test_method_(to_single_from_bool) {
@@ -2767,7 +2767,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_single(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_std_string) {
@@ -2776,7 +2776,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_single(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_u8string) {
@@ -2785,7 +2785,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_single(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_u16string) {
@@ -2794,7 +2794,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_single(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_u32string) {
@@ -2803,7 +2803,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_single(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_wstring) {
@@ -2812,7 +2812,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_single(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_literal_char) {
@@ -2821,7 +2821,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_single(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_literal_char8) {
@@ -2830,7 +2830,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_single(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_literal_char16) {
@@ -2839,7 +2839,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_single(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_literal_char32) {
@@ -2848,7 +2848,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_single(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_literal_wchar) {
@@ -2857,7 +2857,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_single(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_single(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_single(value);});
     }
     
     auto test_method_(to_single_from_values) {
@@ -2876,7 +2876,7 @@ namespace xtd::tests {
     
     auto test_method_(to_int16_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
     }
     
     auto test_method_(to_int16_from_bool) {
@@ -2920,7 +2920,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_int16(value));
         value = U'\U0001FFFF';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_wchar) {
@@ -2940,7 +2940,7 @@ namespace xtd::tests {
         value = 0.0l;
         assert::is_zero(convert::to_int16(value));
         value = 32768.0l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_double) {
@@ -2953,7 +2953,7 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_int16(value));
         value = 32768.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_float) {
@@ -2966,7 +2966,7 @@ namespace xtd::tests {
         value = 0.0f;
         assert::is_zero(convert::to_int16(value));
         value = 32768.0f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_int16) {
@@ -2982,7 +2982,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_int16(value));
         value = 32768;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_int64) {
@@ -2991,7 +2991,7 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_int16(value));
         value = 32768l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_llong) {
@@ -3000,7 +3000,7 @@ namespace xtd::tests {
         value = 0ll;
         assert::is_zero(convert::to_int16(value));
         value = 32768ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_sbyte) {
@@ -3016,7 +3016,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_int16(value));
         value = 32768u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_uint32) {
@@ -3025,7 +3025,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_int16(value));
         value = 32768u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_uint64) {
@@ -3034,7 +3034,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_int16(value));
         value = 32768lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_ullong) {
@@ -3043,7 +3043,7 @@ namespace xtd::tests {
         value = 0llu;
         assert::is_zero(convert::to_int16(value));
         value = 32768llu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_string) {
@@ -3052,7 +3052,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_int16(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_string_with_base) {
@@ -3060,7 +3060,7 @@ namespace xtd::tests {
         assert::are_equal(42, convert::to_int16(u8"052", 8));
         assert::are_equal(42, convert::to_int16(u"42", 10));
         assert::are_equal(42, convert::to_int16(U"2A", 16));
-        assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(L"42", 4);});
+        assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(L"42", 4);});
       }
       
         auto test_method_(to_int16_from_std_string) {
@@ -3069,7 +3069,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_int16(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_u8string) {
@@ -3078,7 +3078,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_int16(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_u16string) {
@@ -3087,7 +3087,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_int16(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_u32string) {
@@ -3096,7 +3096,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_int16(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_wstring) {
@@ -3105,7 +3105,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_int16(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_literal_char) {
@@ -3114,7 +3114,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_int16(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_literal_char8) {
@@ -3123,7 +3123,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_int16(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_literal_char16) {
@@ -3132,7 +3132,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_int16(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_literal_char32) {
@@ -3141,7 +3141,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_int16(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_literal_wchar) {
@@ -3150,7 +3150,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_int16(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int16(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int16(value);});
       }
       
         auto test_method_(to_int16_from_values) {
@@ -3169,7 +3169,7 @@ namespace xtd::tests {
       
         auto test_method_(to_int32_from_any_failed) {
         any value = "not a byte";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
       }
       
         auto test_method_(to_int32_from_bool) {
@@ -3231,7 +3231,7 @@ namespace xtd::tests {
       value = 0.0l;
       assert::is_zero(convert::to_int32(value));
       value = 2147483648.0l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_double) {
@@ -3244,7 +3244,7 @@ namespace xtd::tests {
       value = 0.0;
       assert::is_zero(convert::to_int32(value));
       value = 2147483648.0;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_float) {
@@ -3278,7 +3278,7 @@ namespace xtd::tests {
       value = 0l;
       assert::is_zero(convert::to_int32(value));
       value = 2147483648l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_llong) {
@@ -3308,7 +3308,7 @@ namespace xtd::tests {
       value = 0u;
       assert::is_zero(convert::to_int32(value));
       value = 2147483648u;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_uint64) {
@@ -3317,7 +3317,7 @@ namespace xtd::tests {
       value = 0lu;
       assert::is_zero(convert::to_int32(value));
       value = 2147483648lu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_ullong) {
@@ -3326,7 +3326,7 @@ namespace xtd::tests {
       value = 0llu;
       assert::is_zero(convert::to_int32(value));
       value = 2147483648llu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_string) {
@@ -3335,7 +3335,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_int32(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_string_with_base) {
@@ -3343,7 +3343,7 @@ namespace xtd::tests {
       assert::are_equal(42, convert::to_int32(u8"052", 8));
       assert::are_equal(42, convert::to_int32(u"42", 10));
       assert::are_equal(42, convert::to_int32(U"2A", 16));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(L"42", 4);});
+      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(L"42", 4);});
     }
     
     auto test_method_(to_int32_from_std_string) {
@@ -3352,7 +3352,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_int32(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_u8string) {
@@ -3361,7 +3361,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_int32(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_u16string) {
@@ -3370,7 +3370,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_int32(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_u32string) {
@@ -3379,7 +3379,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_int32(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_wstring) {
@@ -3388,7 +3388,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_int32(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_literal_char) {
@@ -3397,7 +3397,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_int32(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_literal_char8) {
@@ -3406,7 +3406,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_int32(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_literal_char16) {
@@ -3415,7 +3415,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_int32(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_literal_char32) {
@@ -3424,7 +3424,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_int32(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_literal_wchar) {
@@ -3433,7 +3433,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_int32(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int32(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int32(value);});
     }
     
     auto test_method_(to_int32_from_values) {
@@ -3452,7 +3452,7 @@ namespace xtd::tests {
     
     auto test_method_(to_int64_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
     }
     
     auto test_method_(to_int64_from_bool) {
@@ -3592,7 +3592,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_int64(value));
         value = 9223372036854775808lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_ullong) {
@@ -3608,7 +3608,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_int64(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_string_with_base) {
@@ -3616,7 +3616,7 @@ namespace xtd::tests {
         assert::are_equal(42, convert::to_int64(u8"052", 8));
         assert::are_equal(42, convert::to_int64(u"42", 10));
         assert::are_equal(42, convert::to_int64(U"2A", 16));
-        assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(L"42", 4);});
+        assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(L"42", 4);});
       }
       
         auto test_method_(to_int64_from_std_string) {
@@ -3625,7 +3625,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_int64(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_u8string) {
@@ -3634,7 +3634,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_int64(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_u16string) {
@@ -3643,7 +3643,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_int64(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_u32string) {
@@ -3652,7 +3652,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_int64(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_wstring) {
@@ -3661,7 +3661,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_int64(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_literal_char) {
@@ -3670,7 +3670,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_int64(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_literal_char8) {
@@ -3679,7 +3679,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_int64(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_literal_char16) {
@@ -3688,7 +3688,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_int64(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_literal_char32) {
@@ -3697,7 +3697,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_int64(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_literal_wchar) {
@@ -3706,7 +3706,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_int64(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_int64(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_int64(value);});
       }
       
         auto test_method_(to_int64_from_values) {
@@ -3725,7 +3725,7 @@ namespace xtd::tests {
       
         auto test_method_(to_llong_from_any_failed) {
         any value = "not a byte";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
       }
       
         auto test_method_(to_llong_from_bool) {
@@ -3865,7 +3865,7 @@ namespace xtd::tests {
       value = 0lu;
       assert::is_zero(convert::to_llong(value));
       value = 9223372036854775808lu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_ullong) {
@@ -3881,7 +3881,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_llong(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_string_with_base) {
@@ -3889,7 +3889,7 @@ namespace xtd::tests {
       assert::are_equal(42, convert::to_llong(u8"052", 8));
       assert::are_equal(42, convert::to_llong(u"42", 10));
       assert::are_equal(42, convert::to_llong(U"2A", 16));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(L"42", 4);});
+      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(L"42", 4);});
     }
     
     auto test_method_(to_llong_from_std_string) {
@@ -3898,7 +3898,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_llong(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_u8string) {
@@ -3907,7 +3907,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_llong(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_u16string) {
@@ -3916,7 +3916,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_llong(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_u32string) {
@@ -3925,7 +3925,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_llong(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_wstring) {
@@ -3934,7 +3934,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_llong(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_literal_char) {
@@ -3943,7 +3943,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_llong(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_literal_char8) {
@@ -3952,7 +3952,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_llong(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_literal_char16) {
@@ -3961,7 +3961,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_llong(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_literal_char32) {
@@ -3970,7 +3970,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_llong(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_literal_wchar) {
@@ -3979,7 +3979,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_llong(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_llong(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_llong(value);});
     }
     
     auto test_method_(to_llong_from_values) {
@@ -3998,7 +3998,7 @@ namespace xtd::tests {
     
     auto test_method_(to_sbyte_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
     }
     
     auto test_method_(to_sbyte_from_bool) {
@@ -4035,7 +4035,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
         value = u'\u0080';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_char32) {
@@ -4044,7 +4044,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
         value = U'\U00000080';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_wchar) {
@@ -4053,7 +4053,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
         value = L'\x0080';
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_decimal) {
@@ -4066,7 +4066,7 @@ namespace xtd::tests {
         value = 0.0l;
         assert::is_zero(convert::to_sbyte(value));
         value = 128.0l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_double) {
@@ -4079,7 +4079,7 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_sbyte(value));
         value = 128.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_float) {
@@ -4092,7 +4092,7 @@ namespace xtd::tests {
         value = 0.0f;
         assert::is_zero(convert::to_sbyte(value));
         value = 128.0f;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_int16) {
@@ -4101,7 +4101,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
         value = 128;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_int32) {
@@ -4110,7 +4110,7 @@ namespace xtd::tests {
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
         value = 128;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_int64) {
@@ -4119,7 +4119,7 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_sbyte(value));
         value = 128l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_llong) {
@@ -4128,7 +4128,7 @@ namespace xtd::tests {
         value = 0ll;
         assert::is_zero(convert::to_sbyte(value));
         value = 128ll;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_sbyte) {
@@ -4144,7 +4144,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_sbyte(value));
         value = 128u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_uint32) {
@@ -4153,7 +4153,7 @@ namespace xtd::tests {
         value = 0u;
         assert::is_zero(convert::to_sbyte(value));
         value = 128u;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_uint64) {
@@ -4162,7 +4162,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_sbyte(value));
         value = 128lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_ullong) {
@@ -4171,7 +4171,7 @@ namespace xtd::tests {
         value = 0llu;
         assert::is_zero(convert::to_sbyte(value));
         value = 128llu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_string) {
@@ -4180,7 +4180,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_sbyte(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_string_with_base) {
@@ -4188,7 +4188,7 @@ namespace xtd::tests {
         assert::are_equal(42, convert::to_sbyte(u8"052", 8));
         assert::are_equal(42, convert::to_sbyte(u"42", 10));
         assert::are_equal(42, convert::to_sbyte(U"2A", 16));
-        assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(L"42", 4);});
+        assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(L"42", 4);});
       }
       
         auto test_method_(to_sbyte_from_std_string) {
@@ -4197,7 +4197,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_sbyte(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_u8string) {
@@ -4206,7 +4206,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_sbyte(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_u16string) {
@@ -4215,7 +4215,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_sbyte(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_u32string) {
@@ -4224,7 +4224,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_sbyte(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_wstring) {
@@ -4233,7 +4233,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_sbyte(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_literal_char) {
@@ -4242,7 +4242,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_sbyte(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_literal_char8) {
@@ -4251,7 +4251,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_sbyte(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_literal_char16) {
@@ -4260,7 +4260,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_sbyte(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_literal_char32) {
@@ -4269,7 +4269,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_sbyte(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_literal_wchar) {
@@ -4278,7 +4278,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_sbyte(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_sbyte(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_sbyte(value);});
       }
       
         auto test_method_(to_sbyte_from_values) {
@@ -4297,7 +4297,7 @@ namespace xtd::tests {
       
         auto test_method_(to_uint16_from_any_failed) {
         any value = "not a byte";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
       }
       
         auto test_method_(to_uint16_from_bool) {
@@ -4341,7 +4341,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_uint16(value));
       value = U'\U0001FFFF';
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_wchar) {
@@ -4361,7 +4361,7 @@ namespace xtd::tests {
       value = 0.0l;
       assert::is_zero(convert::to_uint16(value));
       value = 65536.0l;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_double) {
@@ -4374,7 +4374,7 @@ namespace xtd::tests {
       value = 0.0;
       assert::is_zero(convert::to_uint16(value));
       value = 65536.0;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_float) {
@@ -4387,7 +4387,7 @@ namespace xtd::tests {
       value = 0.0f;
       assert::is_zero(convert::to_uint16(value));
       value = 65536.0f;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_int16) {
@@ -4403,7 +4403,7 @@ namespace xtd::tests {
       value = 0;
       assert::is_zero(convert::to_uint16(value));
       value = 65536;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_int64) {
@@ -4412,7 +4412,7 @@ namespace xtd::tests {
       value = 0l;
       assert::is_zero(convert::to_uint16(value));
       value = 65536;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_llong) {
@@ -4421,7 +4421,7 @@ namespace xtd::tests {
       value = 0ll;
       assert::is_zero(convert::to_uint16(value));
       value = 65536ll;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_sbyte) {
@@ -4444,7 +4444,7 @@ namespace xtd::tests {
       value = 0u;
       assert::is_zero(convert::to_uint16(value));
       value = 65536u;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_uint64) {
@@ -4453,7 +4453,7 @@ namespace xtd::tests {
       value = 0lu;
       assert::is_zero(convert::to_uint16(value));
       value = 65536lu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_ullong) {
@@ -4462,7 +4462,7 @@ namespace xtd::tests {
       value = 0llu;
       assert::is_zero(convert::to_uint16(value));
       value = 65536llu;
-      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_string) {
@@ -4471,7 +4471,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_uint16(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_string_with_base) {
@@ -4479,7 +4479,7 @@ namespace xtd::tests {
       assert::are_equal(42u, convert::to_uint16(u8"052", 8));
       assert::are_equal(42u, convert::to_uint16(u"42", 10));
       assert::are_equal(42u, convert::to_uint16(U"2A", 16));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(L"42", 4);});
+      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(L"42", 4);});
     }
     
     auto test_method_(to_uint16_from_std_string) {
@@ -4488,7 +4488,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_uint16(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_u8string) {
@@ -4497,7 +4497,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_uint16(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_u16string) {
@@ -4506,7 +4506,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_uint16(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_u32string) {
@@ -4515,7 +4515,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_uint16(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_wstring) {
@@ -4524,7 +4524,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_uint16(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_literal_char) {
@@ -4533,7 +4533,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_uint16(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_literal_char8) {
@@ -4542,7 +4542,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_uint16(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_literal_char16) {
@@ -4551,7 +4551,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_uint16(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_literal_char32) {
@@ -4560,7 +4560,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_uint16(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_literal_wchar) {
@@ -4569,7 +4569,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_uint16(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint16(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint16(value);});
     }
     
     auto test_method_(to_uint16_from_values) {
@@ -4588,7 +4588,7 @@ namespace xtd::tests {
     
     auto test_method_(to_uint32_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
     }
     
     auto test_method_(to_uint32_from_bool) {
@@ -4650,7 +4650,7 @@ namespace xtd::tests {
         value = 0.0l;
         assert::is_zero(convert::to_uint32(value));
         value = 4294967296.0l;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_double) {
@@ -4663,7 +4663,7 @@ namespace xtd::tests {
         value = 0.0;
         assert::is_zero(convert::to_uint32(value));
         value = 4294967296.0;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_float) {
@@ -4697,7 +4697,7 @@ namespace xtd::tests {
         value = 0l;
         assert::is_zero(convert::to_uint32(value));
         value = 4294967296;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_llong) {
@@ -4734,7 +4734,7 @@ namespace xtd::tests {
         value = 0lu;
         assert::is_zero(convert::to_uint32(value));
         value = 4294967296lu;
-        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<overflow_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_ullong) {
@@ -4750,7 +4750,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_uint32(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_string_with_base) {
@@ -4758,7 +4758,7 @@ namespace xtd::tests {
         assert::are_equal(42u, convert::to_uint32(u8"052", 8));
         assert::are_equal(42u, convert::to_uint32(u"42", 10));
         assert::are_equal(42u, convert::to_uint32(U"2A", 16));
-        assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(L"42", 4);});
+        assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(L"42", 4);});
       }
       
         auto test_method_(to_uint32_from_std_string) {
@@ -4767,7 +4767,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_uint32(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_u8string) {
@@ -4776,7 +4776,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_uint32(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_u16string) {
@@ -4785,7 +4785,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_uint32(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_u32string) {
@@ -4794,7 +4794,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_uint32(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_wstring) {
@@ -4803,7 +4803,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_uint32(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_literal_char) {
@@ -4812,7 +4812,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_uint32(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_literal_char8) {
@@ -4821,7 +4821,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_uint32(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_literal_char16) {
@@ -4830,7 +4830,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_uint32(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_literal_char32) {
@@ -4839,7 +4839,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_uint32(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_literal_wchar) {
@@ -4848,7 +4848,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_uint32(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint32(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint32(value);});
       }
       
         auto test_method_(to_uint32_from_values) {
@@ -4867,7 +4867,7 @@ namespace xtd::tests {
       
         auto test_method_(to_uint64_from_any_failed) {
         any value = "not a byte";
-        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+        assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
       }
       
         auto test_method_(to_uint64_from_bool) {
@@ -5021,7 +5021,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_uint64(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_string_with_base) {
@@ -5029,7 +5029,7 @@ namespace xtd::tests {
       assert::are_equal(42u, convert::to_uint64(u8"052", 8));
       assert::are_equal(42u, convert::to_uint64(u"42", 10));
       assert::are_equal(42u, convert::to_uint64(U"2A", 16));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(L"42", 4);});
+      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(L"42", 4);});
     }
     
     auto test_method_(to_uint64_from_std_string) {
@@ -5038,7 +5038,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_uint64(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_u8string) {
@@ -5047,7 +5047,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_uint64(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_u16string) {
@@ -5056,7 +5056,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_uint64(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_u32string) {
@@ -5065,7 +5065,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_uint64(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_wstring) {
@@ -5074,7 +5074,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_uint64(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_literal_char) {
@@ -5083,7 +5083,7 @@ namespace xtd::tests {
       value = "0";
       assert::is_zero(convert::to_uint64(value));
       value = "bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_literal_char8) {
@@ -5092,7 +5092,7 @@ namespace xtd::tests {
       value = u8"0";
       assert::is_zero(convert::to_uint64(value));
       value = u8"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_literal_char16) {
@@ -5101,7 +5101,7 @@ namespace xtd::tests {
       value = u"0";
       assert::is_zero(convert::to_uint64(value));
       value = u"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_literal_char32) {
@@ -5110,7 +5110,7 @@ namespace xtd::tests {
       value = U"0";
       assert::is_zero(convert::to_uint64(value));
       value = U"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_literal_wchar) {
@@ -5119,7 +5119,7 @@ namespace xtd::tests {
       value = L"0";
       assert::is_zero(convert::to_uint64(value));
       value = L"bad value";
-      assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_uint64(value);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_uint64(value);});
     }
     
     auto test_method_(to_uint64_from_values) {
@@ -5138,7 +5138,7 @@ namespace xtd::tests {
     
     auto test_method_(to_ullong_from_any_failed) {
       any value = "not a byte";
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
     }
     
     auto test_method_(to_ullong_from_bool) {
@@ -5292,7 +5292,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_ullong(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_string_with_base) {
@@ -5300,7 +5300,7 @@ namespace xtd::tests {
         assert::are_equal(42u, convert::to_ullong(u8"052", 8));
         assert::are_equal(42u, convert::to_ullong(u"42", 10));
         assert::are_equal(42u, convert::to_ullong(U"2A", 16));
-        assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(L"42", 4);});
+        assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(L"42", 4);});
       }
       
         auto test_method_(to_ullong_from_std_string) {
@@ -5309,7 +5309,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_ullong(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_u8string) {
@@ -5318,7 +5318,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_ullong(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_u16string) {
@@ -5327,7 +5327,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_ullong(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_u32string) {
@@ -5336,7 +5336,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_ullong(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_wstring) {
@@ -5345,7 +5345,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_ullong(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_literal_char) {
@@ -5354,7 +5354,7 @@ namespace xtd::tests {
         value = "0";
         assert::is_zero(convert::to_ullong(value));
         value = "bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_literal_char8) {
@@ -5363,7 +5363,7 @@ namespace xtd::tests {
         value = u8"0";
         assert::is_zero(convert::to_ullong(value));
         value = u8"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_literal_char16) {
@@ -5372,7 +5372,7 @@ namespace xtd::tests {
         value = u"0";
         assert::is_zero(convert::to_ullong(value));
         value = u"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_literal_char32) {
@@ -5381,7 +5381,7 @@ namespace xtd::tests {
         value = U"0";
         assert::is_zero(convert::to_ullong(value));
         value = U"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_literal_wchar) {
@@ -5390,7 +5390,7 @@ namespace xtd::tests {
         value = L"0";
         assert::is_zero(convert::to_ullong(value));
         value = L"bad value";
-        assert::throws<format_exception>([&] {[[maybe_unused]] auto v = convert::to_ullong(value);});
+        assert::throws<format_exception>([&] {[[maybe_unused]] auto _ = convert::to_ullong(value);});
       }
       
         auto test_method_(to_ullong_from_values) {
