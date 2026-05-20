@@ -38,15 +38,15 @@ namespace xtd {
     /// @{
     /// @brief Gets a value that indicates whether a signal has interrupted the current process. The default is `false`, which terminates the current process.
     /// @return `true` if the current process should resume when the event handler concludes; `false` if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If `true`, the current process continues.
-    bool cancel() const noexcept;
+    [[nodiscard]] auto cancel() const noexcept -> bool;
     
     /// @brief Sets a value that indicates whether a signal has interrupted the current process. The default is `false`, which terminates the current process.
     /// @param cancel `true` if the current process should resume when the event handler concludes; `false` if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If `true`, the current process continues.
-    void cancel(bool cancel);
+    auto cancel(bool cancel) -> void;
     
     /// @brief Gets the signal that interrupted the current process.
     /// @return One of the enumeration values that specifies the signal that interrupted the current process. There is no default value.
-    xtd::signal signal() const noexcept;
+    [[nodiscard]] auto signal() const noexcept -> xtd::signal;
     /// @}
     
   private:
