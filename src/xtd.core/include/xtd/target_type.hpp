@@ -35,31 +35,31 @@ namespace xtd {
     /// @{
     /// @brief Gets target id is console application.
     /// @return `true` if target id is console application; otherwise `false`.
-    bool is_console_application() const noexcept;
+    [[nodiscard]] auto is_console_application() const noexcept -> bool;
     
     /// @brief Gets target id is gui application.
     /// @return `true` if target id is gui application; otherwise `false`.
-    bool is_gui_application() const noexcept;
+    [[nodiscard]] auto is_gui_application() const noexcept -> bool;
     
     /// @brief Gets target id is test application.
     /// @return `true` if target id is test application; otherwise `false`.
-    bool is_test_application() const noexcept;
+    [[nodiscard]] auto is_test_application() const noexcept -> bool;
     
     /// @brief Gets target id is shared library.
     /// @return `true` if target id is shared library; otherwise `false`.
-    bool is_shared_library() const noexcept;
+    [[nodiscard]] auto is_shared_library() const noexcept -> bool;
     
     /// @brief Gets target id is static library.
     /// @return `true` if target id is static library; otherwise `false`.
-    bool is_static_library() const noexcept;
+    [[nodiscard]] auto is_static_library() const noexcept -> bool;
     
     /// @brief Gets target id name.
     /// @return The target id name.
-    string name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> xtd::string;
     
     /// @brief Gets target id value.
     /// @return One of xtd::target_id values.
-    xtd::target_id target_id() const noexcept;
+    [[nodiscard]] auto target_id() const noexcept -> xtd::target_id;
     /// @}
     
     /// @name Public Methods
@@ -67,11 +67,11 @@ namespace xtd {
     /// @{
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
