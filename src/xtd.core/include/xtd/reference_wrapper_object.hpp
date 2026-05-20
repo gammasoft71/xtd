@@ -125,17 +125,17 @@ namespace xtd {
     ///   else println("value = {}", value.get());
     /// }
     /// @endcode
-    bool is_empty() const noexcept {return !ref_.has_value();}
+    [[nodiscard]] auto is_empty() const noexcept -> bool {return !ref_.has_value();}
     
     /// @brief Returns the underlying base type reference.
     /// @return The underlying base type reference.
-    const base_type& reference() const {
+    [[nodiscard]] auto reference() const -> const base_type& {
       if (!ref_.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       return ref_.value();
     }
     /// @brief Returns the underlying base type reference.
     /// @return The underlying base type reference.
-    base_type& reference() {
+    [[nodiscard]] auto reference() -> base_type& {
       if (!ref_.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       return ref_.value();
     }
@@ -154,7 +154,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const reference_wrapper_object& obj) const noexcept override {
+    [[nodiscard]] auto compare_to(const reference_wrapper_object& obj) const noexcept -> xtd::int32 override {
       if (!ref_.has_value() && !obj.ref_.has_value()) return 0;
       if (ref_.has_value() && !obj.ref_.has_value()) return 1;
       if (!ref_.has_value() && obj.ref_.has_value()) return -1;
@@ -164,11 +164,11 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const xtd::object& value) const noexcept override {return dynamic_cast<const reference_wrapper_object*>(&value) && equals(static_cast<const reference_wrapper_object&>(value));}
+    [[nodiscard]] auto equals(const xtd::object& value) const noexcept -> bool override {return dynamic_cast<const reference_wrapper_object*>(&value) && equals(static_cast<const reference_wrapper_object&>(value));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const reference_wrapper_object& value) const noexcept override {
+    [[nodiscard]] auto equals(const reference_wrapper_object& value) const noexcept -> bool override {
       if (!ref_.has_value() && !value.ref_.has_value()) return true;
       if (ref_.has_value() && !value.ref_.has_value()) return false;
       if (!ref_.has_value() && value.ref_.has_value()) return false;
@@ -187,31 +187,31 @@ namespace xtd {
     ///   else println("value = {}", value.get());
     /// }
     /// @endcode
-    type& get() const {
+    [[nodiscard]] auto get() const -> type& {
       if (!ref_.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       return ref_.value();
     }
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
     
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    void reset() noexcept {ref_.reset();}
+    auto reset() noexcept -> void {ref_.reset();}
     /// @brief Resets the current object. Set the current object with specified reference.
     /// @param value The reference to assign the current object. It can be null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     template<typename value_t>
-    void reset(value_t&& value) noexcept {ref_ = value;}
+    auto reset(value_t&& value) noexcept -> void {ref_ = value;}
     /// @brief Resets the current object. Set the current object with specified null value.
     /// @param null The null value.
-    void reset(xtd::null_ptr null) noexcept {ref_.reset();}
+    auto reset(xtd::null_ptr null) noexcept -> void {ref_.reset();}
     
     
     /// @brief Swaps this current instance with specified reference object.
     /// @param value The reference object to swap with this current instance.
-    void swap(reference_wrapper_object& value) noexcept {std::swap(ref_, value.ref_);}
+    auto swap(reference_wrapper_object& value) noexcept -> void {std::swap(ref_, value.ref_);}
     
     /// @brief Gets the stored object.
     /// @return The stored object.
@@ -225,27 +225,27 @@ namespace xtd {
     ///   else println("value = {}", value.get());
     /// }
     /// @endcode
-    type_t& to_object() const {return get();}
+    [[nodiscard]] auto to_object() const -> type_t& {return get();}
     
     /// @brief Gets the stored object with specified `target_t` type.
     /// @return The stored object.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t to_object() const;
+    [[nodiscard]] auto to_object() const -> target_t;
     
     /// @brief Gets the stored reference.
     /// @return The stored reference.
-    type& to_reference() const {return get();}
+    [[nodiscard]] auto to_reference() const -> type& {return get();}
     
     /// @brief Gets the stored reference with specified `target_t` type.
     /// @return The stored reference.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t to_reference() const;
+    [[nodiscard]] auto to_reference() const -> target_t;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
     /// @name Public Operators
@@ -253,73 +253,73 @@ namespace xtd {
     /// @{
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
-    reference_wrapper_object& operator =(const reference_wrapper_object& value) noexcept {
+    auto operator =(const reference_wrapper_object& value) noexcept -> reference_wrapper_object&  {
       ref_ = value.ref_;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
-    reference_wrapper_object& operator =(reference_wrapper_object& value) noexcept {
+    auto operator =(reference_wrapper_object& value) noexcept -> reference_wrapper_object& {
       ref_ = value.ref_;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
-    reference_wrapper_object& operator =(reference_wrapper_object&& value) noexcept {
+    auto operator =(reference_wrapper_object&& value) noexcept -> reference_wrapper_object& {
       ref_ = std::move(value.ref_);
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
     template<typename value_t>
-    reference_wrapper_object& operator =(const reference_wrapper_object<value_t>& value) noexcept {
+    auto operator =(const reference_wrapper_object<value_t>& value) noexcept -> reference_wrapper_object& {
       ref_ = value.ref_;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
     template<typename value_t>
-    reference_wrapper_object& operator =(reference_wrapper_object<value_t>& value) noexcept {
+    auto operator =(reference_wrapper_object<value_t>& value) noexcept -> reference_wrapper_object& {
       ref_ = value.ref_;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
     template<typename value_t>
-    reference_wrapper_object& operator =(reference_wrapper_object<value_t>&& value) noexcept {
+    auto operator =(reference_wrapper_object<value_t>&& value) noexcept -> reference_wrapper_object& {
       ref_ = std::move(value.ref_);
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
     template<typename value_t>
-    reference_wrapper_object& operator =(const std::reference_wrapper<value_t>& value) noexcept {
+    auto operator =(const std::reference_wrapper<value_t>& value) noexcept -> reference_wrapper_object& {
       ref_ = value;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
     template<typename value_t>
-    reference_wrapper_object& operator =(std::reference_wrapper<value_t>& value) noexcept {
+    auto operator =(std::reference_wrapper<value_t>& value) noexcept -> reference_wrapper_object& {
       ref_ = value;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
-    reference_wrapper_object& operator =(const base_type& value) noexcept {
+    auto operator =(const base_type& value) noexcept -> reference_wrapper_object& {
       ref_ = value;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
-    reference_wrapper_object& operator =(base_type& value) noexcept {
+    auto operator =(base_type& value) noexcept -> reference_wrapper_object& {
       ref_ = value;
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
     /// @param value The value to assign.
     template<typename value_t>
-    reference_wrapper_object& operator =(value_t&& value) noexcept {
+    auto operator =(value_t&& value) noexcept -> reference_wrapper_object& {
       ref_ = value;
       return *this;
     }
@@ -336,7 +336,7 @@ namespace xtd {
     ///   else println("value = {}", value.get());
     /// }
     /// @endcode
-    operator type& () const {return get();}
+    operator type&() const {return get();}
     
     /// @brief Checks if the stored reference is not empty.
     /// @return `true`if stored reference is not empty; otherwise `false`.
@@ -346,7 +346,7 @@ namespace xtd {
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return `true` if lhs is equal to rhs; otherwise `false`.
-    friend bool operator ==(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {
+    friend auto operator ==(const reference_wrapper_object& lhs, const type_t& rhs) noexcept -> bool {
       if (!lhs.ref_.has_value()) return false;
       return &lhs.ref_.value().get() == &rhs;
     }
@@ -354,7 +354,7 @@ namespace xtd {
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return `true` if lhs is not equal to rhs; otherwise `false`.
-    friend bool operator !=(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {return !(lhs == rhs);}
+    friend auto operator !=(const reference_wrapper_object& lhs, const type_t& rhs) noexcept -> bool {return !(lhs == rhs);}
     
     /// @brief Three-way comparison operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
@@ -363,7 +363,7 @@ namespace xtd {
     /// * std::strong_ordering::less : if lhs less than rhs;
     /// * std::strong_ordering::greater : if lhs greater than rhs;
     /// * std::strong_ordering::equivalent : if lhs is equal to rhs.
-    friend std::strong_ordering operator <=>(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {
+    friend auto operator <=>(const reference_wrapper_object& lhs, const type_t& rhs) noexcept -> std::strong_ordering {
       if (!lhs.ref_.has_value()) return std::strong_ordering::less;
       if (&lhs.ref_.value().get() < &rhs) return std::strong_ordering::less;
       if (&lhs.ref_.value().get() > &rhs) return std::strong_ordering::greater;
@@ -378,7 +378,7 @@ namespace xtd {
   };
   
   template<typename type_t>
-  inline const reference_wrapper_object<type_t>  reference_wrapper_object<type_t>::empty;
+  inline const reference_wrapper_object<type_t> reference_wrapper_object<type_t>::empty;
   /// @}
   
   /// @cond
