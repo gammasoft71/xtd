@@ -69,7 +69,7 @@ namespace xtd {
       transition_time() = default;
       transition_time(const transition_time&) = default;
       transition_time(transition_time&&) = default;
-      transition_time& operator =(const transition_time&) = default;
+      auto operator =(const transition_time&) -> transition_time& = default;
       /// @endcond
       
       /// @name Public Properties
@@ -80,13 +80,13 @@ namespace xtd {
       /// @remarks The xtd::time_zone_info::transition_time::day property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is `true`.
       /// @remarks The xtd::time_zone_info::transition_time::day property value corresponds to the value of the day parameter of the xtd::time_zone_info::transition_time::create_fixed_date_rule method. If its value is greater than the number of days in the month of the transition, the transition occurs on the last day of the month.
       /// @remarks The xtd::time_zone_info::transition_time::day property indicates the day of the month on which a fixed-date rule is applied (for example, April 15). In contrast, the xtd::time_zone_info::transition_time::day_of_week property indicates the day of the week on which a floating-date rule is applied (for example, the second Sunday of November).
-      uint32 day() const noexcept;
+      [[nodiscard]] auto day() const noexcept -> xtd::uint32;
       
       /// @brief Gets the day of the week on which the time change occurs.
       /// @return The day of the week on which the time change occurs.
       /// @remarks The xtd::time_zone_info::transition_time::day_of_week property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is `false`.
       /// @remarks The xtd::time_zone_info::transition_time::day_of_week property indicates the day of the week on which a floating-date rule is applied (for example, the second Sunday of November). In contrast, the xtd::time_zone_info::transition_time::day property indicates the day of the month on which a fixed-date rule is applied (for example, April 15).
-      xtd::day_of_week day_of_week() const noexcept;
+      [[nodiscard]] auto day_of_week() const noexcept -> xtd::day_of_week;
       
       /// @brief Gets a value indicating whether the time change occurs at a fixed date and time (such as November 1) or a floating date and time (such as the last Sunday of October).
       /// @return `true` if the time change rule is fixed-date; `false` if the time change rule is floating-date.
@@ -99,20 +99,20 @@ namespace xtd {
       /// | transition_time::week        | Unused                      | Valid                        |
       /// | transition_time::month       | Valid                       | Valid                        |
       /// | transition_time::time_of_day | Valid                       | Valid                        |
-      bool is_fixed_rule() const noexcept;
+      [[nodiscard]] auto is_fixed_rule() const noexcept -> bool;
       
       /// @brief Gets the month in which the time change occurs.
       /// @return The month in which the time change occurs.
       /// @remarks Valid values for the xtd::time_zone_info::transition_time::month property range from 1 to 12.
       /// @remarks The xtd::time_zone_info::transition_time::month property is used for both fixed-date and floating-date rules.
-      uint32 month() const noexcept;
+      [[nodiscard]] auto month() const noexcept -> xtd::uint32;
       
       /// @brief Gets the hour, minute, and second at which the time change occurs.
       /// @return The time of day at which the time change occurs.
       /// @remarks For transitions from standard time to daylight saving time, the xtd::time_zone_info::transition_time::time_of_day value represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time.
       /// @remarks The xtd::time_zone_info::transition_time::time_of_day property defines only the time of a time change, but not its date. The date is determined by the xtd::time_zone_info::transition_time::month and xtd::time_zone_info::transition_time::day properties for fixed-rule changes, and by the xtd::time_zone_info::transition_time::month, xtd::time_zone_info::transition_time::week, and xtd::time_zone_info::transition_time::day_of_week properties for floating-rule changes. The date component of this xtd::date_time value is ignored; the value of the year, month, and day is always 1.
       /// @remarks The xtd::time_zone_info::transition_time::time_of_day property is used for both fixed-date and floating-date transitions.
-      xtd::date_time time_of_day() const noexcept;
+      [[nodiscard]] auto time_of_day() const noexcept -> xtd::date_time;
       
       /// @brief Gets the week of the month in which a time change occurs.
       /// @return The week of the month in which the time change occurs.
@@ -126,7 +126,7 @@ namespace xtd {
       /// | 4                             | The fourth occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month. |
       /// | 5                             | The last occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.   |
       /// @remarks For example, if a transition occurs on the first Sunday of March, the value of the xtd::time_zone_info::transition_time::week property is 1. If it occurs on the last Sunday of March, the value of the xtd::time_zone_info::transition_time::week property is 5.
-      uint32 week() const noexcept;
+      [[nodiscard]] auto week() const noexcept -> xtd::uint32;
       /// @}
       
       /// @name Public Static Methods
@@ -141,7 +141,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12.<br>-or-<br>The day parameter is less than 1 or greater than 31.
       /// @remarks This method creates a fixed-date rule (that is, a time change that occurs on a specific day of a specific month). For example, a time change that always occurs on October 28 follows a fixed-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the timeOfDay argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
-      static transition_time create_fixed_date_rule(date_time time_of_day, uint32 month, uint32 day);
+      [[nodiscard]] static auto create_fixed_date_rule(xtd::date_time time_of_day, xtd::uint32 month, xtd::uint32 day) -> transition_time;
       
       /// @brief Defines a time change that uses a floating-date rule (that is, a time change that occurs on a specific day of a specific week of a specific month).
       /// @param time_of_day The time at which the time change occurs. This parameter corresponds to the xtd::time_zone_info::transition_time::ttime_of_day property.
@@ -153,29 +153,29 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12.<br>-or-<br>The week parameter is less than 1 or greater than 5.
       /// @remarks This method creates a floating-date rule (that is, a time change that occurs on a specific day of a specific week of a specific month). For example, a time change that occurs on the last Sunday of October follows a floating-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the time_of_day argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
-      static transition_time create_floating_date_rule(date_time time_of_day, uint32 month, uint32 week, xtd::day_of_week day_of_week);
+      [[nodiscard]] static auto create_floating_date_rule(xtd::date_time time_of_day, xtd::uint32 month, xtd::uint32 week, xtd::day_of_week day_of_week) -> transition_time;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param tt The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const transition_time& tt) const noexcept override;
+      [[nodiscard]] auto equals(const transition_time& tt) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
     private:
-      uint32 day_ = 0;
+      xtd::uint32 day_ = 0;
       xtd::day_of_week day_of_week_ = xtd::day_of_week::sunday;
       bool is_fixed_date_rule_ = true;
-      uint32 month_ = 0;
+      xtd::uint32 month_ = 0;
       xtd::date_time time_of_day_;
-      uint32 week_ = 0;
+      xtd::uint32 week_ = 0;
     };
     
     /// @brief Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
@@ -200,7 +200,7 @@ namespace xtd {
       adjustment_rule() = default;
       adjustment_rule(const adjustment_rule&) = default;
       adjustment_rule(adjustment_rule&&) = default;
-      adjustment_rule& operator =(const adjustment_rule&) = default;
+      auto operator =(const adjustment_rule&) -> adjustment_rule& = default;
       /// @endcond
       
       /// @name Public Properties
@@ -211,14 +211,14 @@ namespace xtd {
       /// @remarks The value of the xtd::time_zone_info::adjustment_rule::date_end property is a date value without a time component.
       /// @remarks Because the end date of the current adjustment rule is typically not known, you can assign @verbatim date_time::max_value().date() @endverbatim to the xtd::time_zone_info::adjustment_rule::date_end property when you create a custom adjustment rule.
       /// @warning Unless there is a compelling reason to do otherwise, you should define the adjustment rule's end date to occur within the time interval during which the time zone observes standard time. Unless there is a compelling reason to do so, you should not define the adjustment rule's end date to occur within the time interval during which the time zone observes daylight saving time. For example, if a time zone's transition from daylight saving time occurs on the third Sunday of March and its transition to daylight saving time occurs on the first Sunday of October, the effective end date of the adjustment rule should not be December 31 of a particular year, since that date occurs within the period of daylight saving time.
-      const xtd::date_time& date_end() const noexcept;
+      [[nodiscard]] auto date_end() const noexcept -> const xtd::date_time&;
       
       /// @brief Gets the date when the adjustment rule takes effect.
       /// @return A xtd::date_time value that indicates when the adjustment rule takes effect.
       /// @remarks The value of the xtd::time_zone_info::adjustment_rule::date_start property is a date value without a time component. It defines the date on which a particular adjustment rule goes into effect. This is the date in which a set of transitions (which typically are defined by one transition to daylight savings time and one transition back to standard time) go into effect. For example, an adjustment rule might go into effect on January 1, 2017, that provides for a transition to daylight savings time on the second Sunday of March and for a transition back to standard time on the first Sunday of November. Note that the starting date of the adjustment rule is not tied to the date of the first transition.
       /// @remarks You can assign @verbatim date_time::min_value().date() @endverbatim to the xtd::time_zone_info::adjustment_rule::date_end property when you create a custom adjustment rule for use in a time zone-aware application that does not have to work with historic time zone information.
       /// @warning Unless there is a compelling reason to do otherwise, you should define the adjustment rule's start date to occur within the time interval during which the time zone observes standard time. Unless there is a compelling reason to do so, you should not define the adjustment rule's start date to occur within the time interval during which the time zone observes daylight saving time. For example, if a time zone's transition from daylight saving time occurs on the third Sunday of March and its transition to daylight saving time occurs on the first Sunday of October, the effective start date of the adjustment rule should not be January 1 of a particular year, since that date occurs within the period of daylight saving time.
-      const xtd::date_time& date_start() const noexcept;
+      [[nodiscard]] auto date_start() const noexcept -> const xtd::date_time&;
       
       /// @brief Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC).
       /// @return A xtd::time_span object that indicates the amount of time to add to the standard time changes as a result of the adjustment rule.
@@ -229,17 +229,17 @@ namespace xtd {
       /// @remarks The value of the xtd::time_zone_info::adjustment_rule::daylight_delta property can range from 14 hours to -14 hours.
       /// @note The xtd::time_zone_info::adjustment_rule::daylight_delta property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone.
       /// @remarks The most common value of the xtd::time_zone_info::adjustment_rule::daylight_delta property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour.
-      xtd::time_span daylight_delta() const noexcept;
+      [[nodiscard]] auto daylight_delta() const noexcept -> xtd::time_span;
       
       /// @brief Gets information about the annual transition from daylight saving time back to standard time.
       /// @return A xtd::time_zone_info::transition_time object that defines the annual transition from daylight saving time back to the time zone's standard time.
       /// @remarks The xtd::time_zone_info::transition_time object returned by the xtd::time_zone_info::transition_time::daylight_transition_end property defines either a fixed-date rule or a floating-date rule for the return to standard time. A fixed-date rule provides the month, day, and time of day on which the transition occurs. A floating-date rule provides the month, week, day of the week, and time of day on which the transition occurs.
-      transition_time daylight_transition_end() const noexcept;
+      [[nodiscard]] auto daylight_transition_end() const noexcept -> transition_time;
       
       /// @brief Gets information about the annual transition from standard time to daylight saving time.
       /// @return A xtd::time_zone_info::transition_time object that defines the annual transition from a time zone's standard time to daylight saving time.
       /// @remarks The xtd::time_zone_info::transition_time object returned by the xtd::time_zone_info::transition_time::daylight_transition_start property defines either a fixed-date rule or a floating-date rule for the transition to daylight saving time. A fixed-date rule provides the month, day, and time of day on which the transition occurs. A floating-date rule provides the month, the week, the day of the week, and the time of day on which the transition occurs.
-      transition_time daylight_transition_start() const noexcept;
+      [[nodiscard]] auto daylight_transition_start() const noexcept -> transition_time;
       /// @}
       
       /// @name Public Methods
@@ -248,15 +248,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param ar The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const adjustment_rule& ar) const noexcept override;
+      [[nodiscard]] auto equals(const adjustment_rule& ar) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
     private:
@@ -270,10 +270,10 @@ namespace xtd {
     
     /// @cond
     time_zone_info() = default;
-    time_zone_info(const string& id, const ticks& base_utc_offset, const string& daylight_name, const string& display_name, const string& standard_name, bool supports_daylight_saving_time);
+    time_zone_info(const xtd::string& id, const xtd::ticks& base_utc_offset, const xtd::string& daylight_name, const xtd::string& display_name, const xtd::string& standard_name, bool supports_daylight_saving_time);
     time_zone_info(const time_zone_info&) = default;
     time_zone_info(time_zone_info&&) = default;
-    time_zone_info& operator =(const time_zone_info&) = default;
+    auto operator =(const time_zone_info&) -> time_zone_info& = default;
     /// @endcond
     
     /// @name Public Properties
@@ -287,7 +287,7 @@ namespace xtd {
     /// @note The BaseUtcOffset property differs from the GetUtcOffset method in the following ways:
     /// * The BaseUtcOffset property returns the difference between UTC and the time zone's standard time; the GetUtcOffset method returns the difference between UTC and the time zone's time at a particular point in time.
     /// * The GetUtcOffset method reflects the application of any adjustment rules to the time zone; the BaseUtcOffset property does not.
-    ticks base_utc_offset() const noexcept;
+    [[nodiscard]] auto base_utc_offset() const noexcept -> xtd::ticks;
     
     /// @brief Gets the display name for the current time zone's daylight saving time.
     /// @return string The display name for the time zone's daylight saving time.
@@ -295,7 +295,7 @@ namespace xtd {
     /// @remarks A DaylightName property whose value is not string.Empty or null does not necessarily indicate that the time zone supports daylight saving time. To determine whether the time zone supports daylight saving time, check the value of its SupportsDaylightSavingTime property.
     /// @remarks In most cases, the DaylightName property of time zones defined in the registry is not string.Empty or null. However, the DaylightName property of custom time zones can be set to string.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string) or the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string, string, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is `true`. Therefore, your code should never assume that the value of the DaylightName property is not null or empty.
     /// @remarks The DaylightName property is equivalent to the DaylightName property of the TimeZone class.
-    const string& daylight_name() const noexcept;
+    [[nodiscard]] auto daylight_name() const noexcept -> const xtd::string&;
     
     /// @brief Gets the general display name that represents the time zone.
     /// @return string The time zone's general display name.
@@ -307,24 +307,24 @@ namespace xtd {
     /// (GMT-02:00) Mid-Atlantic
     /// (GMT-07:00) Mountain Time (US & Canada)
     /// ```
-    const string& display_name() const noexcept;
+    [[nodiscard]] auto display_name() const noexcept -> const xtd::string&;
     
     /// @brief Gets the time zone identifier.
     /// @return string The time zone identifier.
     /// @remarks The time zone identifier is a key string that uniquely identifies a particular time zone. It can be passed as a parameter to the FindSystemTimeZoneById method to retrieve a particular time zone from the registry.
-    const string& id() const noexcept;
+    [[nodiscard]] auto id() const noexcept -> const xtd::string&;
     
     /// @brief Gets the display name for the time zone's standard time.
     /// @return The display name of the time zone's standard time.
     /// @remarks The display name is localized based on the culture installed with the Windows operating system.
     /// @remarks The StandardName property is identical to the StandardName property of the TimeZone class.
     /// @remarks The value of the StandardName property is usually, but not always, identical to that of the Id property.
-    const string& standard_name() const noexcept;
+    [[nodiscard]] auto standard_name() const noexcept -> const xtd::string&;
     
     /// @brief Gets a value indicating whether the time zone has any daylight saving time rules.*
     /// @return bool `true` if the time zone supports daylight saving time; otherwise, `false`.
     /// @remarks The value of the SupportsDaylightSavingTime property for the local time zone returned by the time_zone_info.Local property reflects the setting of the Control Panel Date and Time application's checkbox that defines whether the system automatically adjusts for daylight saving time. If it is unchecked, or if no checkbox is displayed for a time zone, the value of this property is `false`.
-    bool supports_daylight_saving_time() const noexcept;
+    [[nodiscard]] auto supports_daylight_saving_time() const noexcept -> bool;
     /// @}
     
     /// @name Public Static Properties
@@ -332,41 +332,41 @@ namespace xtd {
     /// @{
     /// @brief Gets a time_zone_info object that represents the local time zone.
     /// @return time_zone_info An object that represents the local time zone.
-    static const time_zone_info& local() noexcept;
+    [[nodiscard]] static auto local() noexcept -> const time_zone_info&;
     
     /// @brief Gets a time_zone_info object that represents the Coordinated Universal Time (UTC) zone.
     /// @return time_zone_info An object that represents the Coordinated Universal Time (UTC) zone.
-    static const time_zone_info& utc() noexcept;
+    [[nodiscard]] static auto utc() noexcept -> const time_zone_info&;
     /// @}
     
     /// @name Public Methods
     
     /// @{
-    int32 compare_to(const time_zone_info& tzi) const noexcept override;
+    [[nodiscard]] auto compare_to(const time_zone_info& tzi) const noexcept -> xtd::int32 override;
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override;
+    [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param tzi The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const time_zone_info& tzi) const noexcept override;
+    [[nodiscard]] auto equals(const time_zone_info& tzi) const noexcept -> bool override;
     
     /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
     /// @return An array of objects for this time zone.
-    array<adjustment_rule> get_adjustment_rules() const noexcept;
+    [[nodiscard]] auto get_adjustment_rules() const noexcept -> xtd::array<adjustment_rule>;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current xtd::time_zone_info object.
     /// @param date_time A date and time value.
     /// @return `true` if the date_time parameter is a daylight saving time; otherwise, `false`.
-    bool is_daylight_saving_time(const xtd::date_time& date_time) const noexcept;
+    [[nodiscard]] auto is_daylight_saving_time(const xtd::date_time& date_time) const noexcept -> bool;
     
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
     /// @name Public Static Methods
@@ -376,59 +376,59 @@ namespace xtd {
     /// @param dateTime The date and time to convert.
     /// @return date_time The Coordinated Universal Time (UTC) that corresponds to the dateTime parameter. The xtd::date_time value's Kind property is always set to xtd::date_timeKind.Utc.
     /// @exception xtd::argument_exception time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns `true`.
-    static xtd::date_time convert_time_to_utc(const xtd::date_time& date_time);
+    [[nodiscard]] static auto convert_time_to_utc(const xtd::date_time& date_time) -> xtd::date_time;
     
     /// @brief Returns a sorted collection of all the time zones about which information is available on the local system.
     /// @return An read-only Array of time_zone_info objects.
-    static const std::list<time_zone_info>& get_system_time_zones() noexcept;
+    [[nodiscard]] static auto get_system_time_zones() noexcept -> const xtd::collections::generic::list<time_zone_info>&;
     
     /// @brief Converts a time to the time in a particular time zone.
     /// @param date_time The date and time to convert.
     /// @param destination_time_zone The time zone to convert dateTime to.
     /// @return The date and time in the destination time zone.
     /// @exception xtd::argument_exception The value of the date_time parameter represents an invalid time.
-    static xtd::date_time convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone);
+    [[nodiscard]] static auto convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone) -> xtd::date_time;
     /// @brief Converts a time from one time zone to another.
     /// @param date_time The date and time to convert.
     /// @param source_time_zone The time zone of date_time.
     /// @param destination_time_zone The time zone to convert date_time to.
     /// @return The date and time in the destination time zone that corresponds to the dateTime parameter in the source time zone.
     /// @exception xtd::argument_exception The xtd::date_time::kind property of the date_time parameter is xtd::date_time_kind::local, but the source_time_tone parameter does not equal xtd::date_time_kind::local.<br>-or-<br>The xtd::date_time::kind property of the date_time parameter is xtd::date_time_kind::utc, but the source_time_zone parameter does not equal xtd::date_time_kind::utc.<br>-or-<br>The date_time parameter is an invalid time (that is, it represents a time that does not exist because of a time zone's adjustment rules).
-    static xtd::date_time convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone, const xtd::time_zone_info& destination_time_zone);
+    [[nodiscard]] static auto convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone, const xtd::time_zone_info& destination_time_zone) -> xtd::date_time;
     
     /// @brief Converts a time to the time in another time zone based on the time zone's identifier.
     /// @param date_time The date and time to convert.
     /// @param destination_time_zone_id The identifier of the destination time zone.
     /// @return The date and time in the destination time zone.
-    static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& destination_time_zone_id);
+    [[nodiscard]] static auto convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& destination_time_zone_id) -> xtd::date_time;
     /// @brief Converts a time from one time zone to another based on time zone identifiers.
     /// @param date_time The date and time to convert.
     /// @param source_time_zone_id The identifier of the source time zone.
     /// @param destintion_time_zone_id The identifier of the destination time zone.
     /// @return The date and time in the destination time zone that corresponds to the dateTime parameter in the source time zone.
-    static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& source_time_zone_id, const xtd::string& destination_time_zone_id);
+    [[nodiscard]] static auto convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::string& source_time_zone_id, const xtd::string& destination_time_zone_id) -> xtd::date_time;
     
     /// @brief Converts a Coordinated Universal Time (UTC) to the time in a specified time zone.
     /// @param date_time The Coordinated Universal Time (UTC).
     /// @param destination_time_zone The time zone to convert dateTime to.
     /// @return The date and time in the destination time zone. Its xtd::date_time::kind property is xtd::date_time_kind::utc if destination_time_zone is xtd::date_time_kind::utc; otherwise, its xtd::date_time::kind property is xtd::date_time_kind::unspecified.
-    static xtd::date_time convert_from_utc(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone);
+    [[nodiscard]] static auto convert_from_utc(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone) -> xtd::date_time;
     
     /// @brief Converts the time in a specified time zone to Coordinated Universal Time (UTC).
     /// @param date_time The date and time to convert.
     /// @param source_time_zone The time zone of dateTime.
     /// @return The Coordinated Universal Time (UTC) that corresponds to the date_time parameter. The xtd::date_time object's xtd::date_time::kind property is always set to xtd::date_time_kind::utc.
-    static xtd::date_time convert_to_utc(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone);
+    [[nodiscard]] static auto convert_to_utc(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone) -> xtd::date_time;
     /// @brief Converts the specified date and time to Coordinated Universal Time (UTC).
     /// @param date_time The date and time to convert.
     /// @return The Coordinated Universal Time (UTC) that corresponds to the date_time parameter. The xtd::date_time value's xtd::date_time::kind property is always set to xtd::date_time_kind::utc.
-    static xtd::date_time convert_to_utc(const xtd::date_time& date_time);
+    [[nodiscard]] static auto convert_to_utc(const xtd::date_time& date_time) -> xtd::date_time;
     
     /// @brief Retrieves a time_zone_info object from the registry based on its identifier.
     /// @param id The time zone identifier, which corresponds to the Id property.
     /// @return An object whose identifier is the value of the id parameter.
     /// @exception xtd::time_zone_not_found_exception The time zone identifier specified by id was not found. This means that a registry key whose name matches id does not exist, or that the key exists but does not contain any time zone data.
-    static time_zone_info time_find_system_time_zone_by_id(const string& id);
+    [[nodiscard]] static auto time_find_system_time_zone_by_id(const string& id) -> time_zone_info;
     /// @}
     
   private:
