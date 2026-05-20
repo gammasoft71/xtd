@@ -102,35 +102,35 @@ namespace xtd {
     /// @{
     /// @brief Checks whether the managed object is managed only by the current xtd::shared_ptr_object object.
     /// @return `true` if the managed object is managed only by the current xtd::shared_ptr_object object; otherwise `false`.
-    bool is_unique() const noexcept {return use_count() == xtd::usize {1};}
+    [[nodiscard]] auto is_unique() const noexcept -> bool {return use_count() == xtd::usize {1};}
     
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The xtd::shared_ptr_object to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
     template<typename value_t>
-    bool owner_before(const shared_ptr_object<value_t>& other) const noexcept {return ptr_.owner_before(other.ptr_);}
+    [[nodiscard]] auto owner_before(const shared_ptr_object<value_t>& other) const noexcept -> bool {return ptr_.owner_before(other.ptr_);}
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The xtd::shared_ptr_object::base_type to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
     template<typename value_t>
-    bool owner_before(const std::shared_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
+    [[nodiscard]] auto owner_before(const std::shared_ptr<value_t>& other) const noexcept -> bool {return ptr_.owner_before(other);}
     /// @brief Provides owner-based ordering of shared pointers.
     /// @param other The std::weak_ptr to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
     template<typename value_t>
-    bool owner_before(const std::weak_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
+    [[nodiscard]] auto owner_before(const std::weak_ptr<value_t>& other) const noexcept -> bool {return ptr_.owner_before(other);}
     
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
-    const base_type& pointer() const noexcept {return ptr_;}
+    [[nodiscard]] auto pointer() const noexcept -> const base_type& {return ptr_;}
     
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
-    base_type& pointer() noexcept {return ptr_;}
+    [[nodiscard]] auto pointer() noexcept -> base_type& {return ptr_;}
     
     /// @brief Gets the number of xtd::shared_ptr_object objects referring to the same managed object.
     /// @return The number of xtd::shared_ptr_object objects referring to the same managed object.
-    xtd::usize use_count() const noexcept {return static_cast<xtd::usize>(ptr_.use_count());}
+    [[nodiscard]] auto use_count() const noexcept -> xtd::usize {return static_cast<xtd::usize>(ptr_.use_count());}
     /// @}
     
     /// @name Public Methods
@@ -146,64 +146,64 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const shared_ptr_object& obj) const noexcept override {return to_pointer() < obj.to_pointer() ? -1 : to_pointer() > obj.to_pointer() ? 1 : 0;}
+    [[nodiscard]] auto compare_to(const shared_ptr_object& obj) const noexcept -> xtd::int32 override {return to_pointer() < obj.to_pointer() ? -1 : to_pointer() > obj.to_pointer() ? 1 : 0;}
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const xtd::object& value) const noexcept override {return dynamic_cast<const shared_ptr_object*>(&value) && equals(static_cast<const shared_ptr_object&>(value));}
+    [[nodiscard]] auto equals(const xtd::object& value) const noexcept -> bool override {return dynamic_cast<const shared_ptr_object*>(&value) && equals(static_cast<const shared_ptr_object&>(value));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const shared_ptr_object& value) const noexcept override {return ptr_ == value.ptr_;}
+    [[nodiscard]] auto equals(const shared_ptr_object& value) const noexcept -> bool override {return ptr_ == value.ptr_;}
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    element_type* get() const noexcept {return ptr_.get();}
+    [[nodiscard]] auto get() const noexcept -> element_type* {return ptr_.get();}
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
     
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    void reset() noexcept {ptr_.reset();}
+    auto reset() noexcept -> void {ptr_.reset();}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param ptr The pointer to assign the current object. It can be null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     template<typename pointer_t>
-    void reset(pointer_t* ptr) noexcept {ptr_.reset(ptr);}
+    auto reset(pointer_t* ptr) noexcept -> void {ptr_.reset(ptr);}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param null The null pointer.
-    void reset(xtd::null_ptr null) noexcept {ptr_.reset();}
+    auto reset(xtd::null_ptr null) noexcept -> void {ptr_.reset();}
     
     /// @brief Swaps this current instance with specified shared pointer object.
     /// @param ptr The shared pointer object to swap with this current instance.
-    void swap(shared_ptr_object& ptr) noexcept {ptr_.swap(ptr.ptr_);}
+    auto swap(shared_ptr_object& ptr) noexcept -> void {ptr_.swap(ptr.ptr_);}
     
     /// @brief Gets the stored object.
     /// @return The stored object.
-    type_t& to_object() const noexcept {return *to_pointer();}
+    [[nodiscard]] auto to_object() const noexcept -> type_t& {return *to_pointer();}
     
     /// @brief Gets the stored object with specified `target_t` type.
     /// @return The stored object.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t to_object() const;
+    [[nodiscard]] auto to_object() const -> target_t;
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    element_type* to_pointer() const noexcept {return get();}
+    [[nodiscard]] auto to_pointer() const noexcept -> element_type* {return get();}
     
     /// @brief Gets the stored pointer with specified `target_t` type.
     /// @return The stored pointer.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t* to_pointer() const;
+    [[nodiscard]] auto to_pointer() const -> target_t*;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
     /// @name Public Operators
@@ -211,14 +211,14 @@ namespace xtd {
     /// @{
     /// @brief Assignment operator with specified xtd::shared_ptr_object value.
     /// @param value The value to assign.
-    shared_ptr_object& operator =(shared_ptr_object&& value) noexcept {
+    auto operator =(shared_ptr_object&& value) noexcept -> shared_ptr_object& {
       ptr_ = std::move(value.ptr_);
       return *this;
     }
     
     /// @brief Assignment operator with specified xtd::shared_ptr_object value.
     /// @param value The value to assign.
-    shared_ptr_object& operator =(const shared_ptr_object& value) noexcept {
+    auto operator =(const shared_ptr_object& value) noexcept -> shared_ptr_object& {
       ptr_ = value.ptr_;
       return *this;
     }
@@ -226,7 +226,7 @@ namespace xtd {
     /// @brief Assignment operator with specified xtd::shared_ptr_object value.
     /// @param value The value to assign.
     template<typename value_t>
-    shared_ptr_object& operator =(shared_ptr_object<value_t>&& value) noexcept {
+    auto operator =(shared_ptr_object<value_t>&& value) noexcept -> shared_ptr_object& {
       ptr_ = std::move(value.ptr_);
       return *this;
     }
@@ -234,7 +234,7 @@ namespace xtd {
     /// @brief Assignment operator with specified xtd::shared_ptr_object value.
     /// @param value The value to assign.
     template<typename value_t>
-    shared_ptr_object& operator =(const shared_ptr_object<value_t>& value) noexcept {
+    auto operator =(const shared_ptr_object<value_t>& value) noexcept -> shared_ptr_object& {
       ptr_ = value.ptr_;
       return *this;
     }
@@ -242,7 +242,7 @@ namespace xtd {
     /// @brief Assignment operator with specified std::shared_ptr value.
     /// @param value The value to assign.
     template<typename value_t>
-    shared_ptr_object& operator =(std::shared_ptr<value_t>&& value) noexcept {
+    auto operator =(std::shared_ptr<value_t>&& value) noexcept -> shared_ptr_object& {
       ptr_ = std::move(value);
       return *this;
     }
@@ -250,23 +250,23 @@ namespace xtd {
     /// @brief Assignment operator with specified std::shared_ptr value.
     /// @param value The value to assign.
     template<typename value_t>
-    shared_ptr_object& operator =(const std::shared_ptr<value_t>& value) noexcept {
+    auto operator =(const std::shared_ptr<value_t>& value) noexcept -> shared_ptr_object& {
       ptr_ = value;
       return *this;
     }
     
     /// @brief Gets the stored object.
     /// @return The stored object.
-    type_t& operator *() const noexcept {return ptr_.operator * ();}
+    auto operator *() const noexcept -> type_t& {return ptr_.operator * ();}
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    type_t* operator ->() const noexcept {return ptr_.operator ->();}
+    auto operator ->() const noexcept -> type_t* {return ptr_.operator ->();}
     
     /// @brief Provides indexed access to the stored array.
     /// @param index The array index.
     /// @return A reference to the index-th element of the array, i.e., `get()[index]`.
-    element_type& operator[](std::ptrdiff_t index) const {return ptr_.operator [](index);}
+    auto operator[](std::ptrdiff_t index) const -> element_type& {return ptr_.operator [](index);}
     
     /// @brief Checks if the stored pointer is not null.
     /// @return `true`if stored pointer is non null; otherwise `false`.
