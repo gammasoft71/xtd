@@ -36,44 +36,44 @@ namespace xtd {
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(int val);
+  [[nodiscard]] auto to_string(int val) -> xtd::string;
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(unsigned val);
+  [[nodiscard]] auto to_string(unsigned val) -> xtd::string;
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(long val);
+  [[nodiscard]] auto to_string(long val) -> xtd::string;
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(unsigned long val);
+  [[nodiscard]] auto to_string(unsigned long val) -> xtd::string;
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(long long val);
+  [[nodiscard]] auto to_string(long long val) -> xtd::string;
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(unsigned long long val);
+  [[nodiscard]] auto to_string(unsigned long long val) -> xtd::string;
   /// @brief Converts a floating point to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_string(float val);
+  [[nodiscard]] auto to_string(float val) -> xtd::string;
   /// @brief Converts a floating point integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(double val);
+  [[nodiscard]] auto to_string(double val) -> xtd::string;
   /// @brief Converts a floating point to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  xtd::string to_string(long double val);
+  [[nodiscard]] auto to_string(long double val) -> xtd::string;
   /// @brief Converts a type_t to xtd::string.
   /// @param val A type_t value to convert.
   /// @return A string holding the converted value.
   template<typename type_t>
-  inline xtd::string to_string(type_t val) {
+  [[nodiscard]] inline auto to_string(type_t val) -> xtd::string {
     return string::format("{}", val);
   }
   
@@ -83,7 +83,7 @@ namespace xtd {
   /// @deprecated Replaced by xtd::to_string - Will be removed in version 1.2.0.
   template<typename type_t>
   [[deprecated("Replaced by xtd::to_string - Will be removed in version 1.2.0.")]]
-  inline xtd::string to_ustring(type_t val) {
+  [[nodiscard]] inline auto to_ustring(type_t val) -> xtd::string {
     return to_string(val);
   }
 }
