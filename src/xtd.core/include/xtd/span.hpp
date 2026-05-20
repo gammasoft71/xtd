@@ -190,8 +190,8 @@ namespace xtd {
     constexpr span(span&& items) = default;
     constexpr span(const span& items) = default;
     
-    span& operator =(span&& items) = default;
-    span& operator =(const span& items) = default;
+    auto operator =(span&& items) -> span& = default;
+    auto operator =(const span& items) -> span& = default;
     /// @endcond
     
     /// @name Public Fields
