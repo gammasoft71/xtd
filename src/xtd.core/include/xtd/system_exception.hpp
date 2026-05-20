@@ -48,25 +48,25 @@ namespace xtd {
     /// @return A string represent file path where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 1.2.0.
     [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_name - Will be removed in version 1.2.0.")]]
-    virtual const xtd::string& file_path() const noexcept;
+    [[nodiscard]] virtual auto file_path() const noexcept -> const xtd::string&;
     
     /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 1.2.0.
     [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_file_line_number - Will be removed in version 1.2.0.")]]
-    virtual xtd::usize line_number() const noexcept;
+    [[nodiscard]] virtual auto line_number() const noexcept -> xtd::usize;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred
     /// @deprecated Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 1.2.0.
     [[deprecated("Replaced by xtd::exception::get_last_stack_frame().get_method - Will be removed in version 1.2.0.")]]
-    virtual const xtd::string& member_name() const noexcept;
+    [[nodiscard]] virtual auto member_name() const noexcept -> const xtd::string&;
     
     /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
     /// @deprecated Replaced by xtd::exception::get_type().full_name() - Will be removed in version 1.2.0.
     [[deprecated("Replaced by xtd::exception::get_type().full_name() - Will be removed in version 1.2.0.")]]
-    virtual const xtd::string& name() const noexcept;
+    [[nodiscard]] virtual auto name() const noexcept -> const xtd::string&;
     /// @}
     
     /// @name Public Deprecated Constructors
