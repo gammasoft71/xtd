@@ -18,7 +18,7 @@ xtdc run
 ## Output
 
 ```
-strings.size = 5
+strings.length = 5
 One
 Two
 Three
