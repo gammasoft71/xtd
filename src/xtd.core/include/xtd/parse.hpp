@@ -31,7 +31,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::string& str) {
+  [[nodiscard]] inline auto parse(const std::string& str) -> value_t {
     if (std::is_enum<value_t>::value) return __parse_enum<value_t>(str);
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found");
   }
@@ -43,7 +43,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::string& str, const std::locale& locale) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::string& str, const std::locale& locale) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -52,7 +52,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::string& str, const std::string& fmt) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::string& str, const std::string& fmt) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline std::string parse<std::string>(const std::string& str) {return str;}
+  [[nodiscard]] inline auto parse<std::string>(const std::string& str) -> std::string {return str;}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -70,7 +70,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::string& str, number_styles) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::string& str, number_styles) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -79,7 +79,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::string& str, number_styles, const std::locale& locale) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::string& str, number_styles, const std::locale& locale) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -88,7 +88,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::sbyte parse<xtd::sbyte>(const std::string& str, number_styles styles) {return __parse_number<xtd::sbyte>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::sbyte>(const std::string& str, number_styles styles) -> xtd::sbyte {return __parse_number<xtd::sbyte>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -97,7 +97,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline char parse<char>(const std::string& str, number_styles styles) {return __parse_number<char>(str, styles);}
+  [[nodiscard]] inline auto parse<char>(const std::string& str, number_styles styles) -> char {return __parse_number<char>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -106,7 +106,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::byte parse<xtd::byte>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::byte>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::byte>(const std::string& str, number_styles styles) -> xtd::byte {return __parse_unsigned_number<xtd::byte>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -115,7 +115,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::int16 parse<xtd::int16>(const std::string& str, number_styles styles) {return __parse_number<xtd::int16>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::int16>(const std::string& str, number_styles styles) -> xtd::int16 {return __parse_number<xtd::int16>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -124,7 +124,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::uint16 parse<xtd::uint16>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::uint16>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::uint16>(const std::string& str, number_styles styles) -> xtd::uint16 {return __parse_unsigned_number<xtd::uint16>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -133,7 +133,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::int32 parse<xtd::int32>(const std::string& str, number_styles styles) {return __parse_number<xtd::int32>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::int32>(const std::string& str, number_styles styles) -> xtd::int32 {return __parse_number<xtd::int32>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -142,7 +142,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::uint32 parse<xtd::uint32>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::uint32>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::uint32>(const std::string& str, number_styles styles) -> xtd::uint32 {return __parse_unsigned_number<xtd::uint32>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -151,7 +151,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::int64 parse<xtd::int64>(const std::string& str, number_styles styles) {return __parse_number<xtd::int64>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::int64>(const std::string& str, number_styles styles) -> xtd::int64 {return __parse_number<xtd::int64>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -160,7 +160,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::uint64 parse<xtd::uint64>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::uint64>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::uint64>(const std::string& str, number_styles styles) -> xtd::uint64 {return __parse_unsigned_number<xtd::uint64>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -169,7 +169,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::slong parse<xtd::slong>(const std::string& str, number_styles styles) {return __parse_number<xtd::slong>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::slong>(const std::string& str, number_styles styles) -> xtd::slong {return __parse_number<xtd::slong>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -178,7 +178,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::ulong parse<xtd::ulong>(const std::string& str, number_styles styles) {return __parse_unsigned_number<xtd::ulong>(str, styles);}
+  [[nodiscard]] inline auto parse<xtd::ulong>(const std::string& str, number_styles styles) -> xtd::ulong {return __parse_unsigned_number<xtd::ulong>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -187,7 +187,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::single parse<xtd::single>(const std::string& str, number_styles styles) {return __parse_floating_point_number<xtd::single>(str, styles, std::locale());}
+  [[nodiscard]] inline auto parse<xtd::single>(const std::string& str, number_styles styles) -> xtd::single {return __parse_floating_point_number<xtd::single>(str, styles, std::locale());}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -196,7 +196,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::single parse<xtd::single>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<xtd::single>(str, styles, locale);}
+  [[nodiscard]] inline auto parse<xtd::single>(const std::string& str, number_styles styles, const std::locale& locale) -> xtd::single {return __parse_floating_point_number<xtd::single>(str, styles, locale);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -205,7 +205,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline double parse<double>(const std::string& str, number_styles styles) {return __parse_floating_point_number<double>(str, styles, std::locale());}
+  [[nodiscard]] inline auto parse<double>(const std::string& str, number_styles styles) -> double {return __parse_floating_point_number<double>(str, styles, std::locale());}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -214,7 +214,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline double parse<double>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<double>(str, styles, locale);}
+  [[nodiscard]] inline auto parse<double>(const std::string& str, number_styles styles, const std::locale& locale) -> double {return __parse_floating_point_number<double>(str, styles, locale);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -223,7 +223,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::decimal parse<xtd::decimal>(const std::string& str, number_styles styles) {return __parse_floating_point_number<xtd::decimal>(str, styles, std::locale());}
+  [[nodiscard]] inline auto parse<xtd::decimal>(const std::string& str, number_styles styles) -> xtd::decimal {return __parse_floating_point_number<xtd::decimal>(str, styles, std::locale());}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -232,7 +232,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::decimal parse<xtd::decimal>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<xtd::decimal>(str, styles, locale);}
+  [[nodiscard]] inline auto parse<xtd::decimal>(const std::string& str, number_styles styles, const std::locale& locale) -> xtd::decimal {return __parse_floating_point_number<xtd::decimal>(str, styles, locale);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -241,7 +241,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::sbyte parse<xtd::sbyte>(const std::string& str) {return parse<xtd::sbyte>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::sbyte>(const std::string& str) -> xtd::sbyte {return parse<xtd::sbyte>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -250,7 +250,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline char parse<char>(const std::string& str) {return parse<char>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<char>(const std::string& str) -> char {return parse<char>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -259,7 +259,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::byte parse<xtd::byte>(const std::string& str) {return parse<xtd::byte>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::byte>(const std::string& str) -> xtd::byte {return parse<xtd::byte>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -268,7 +268,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::int16 parse<xtd::int16>(const std::string& str) {return parse<xtd::int16>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::int16>(const std::string& str) -> xtd::int16 {return parse<xtd::int16>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -277,7 +277,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::uint16 parse<xtd::uint16>(const std::string& str) {return parse<xtd::uint16>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::uint16>(const std::string& str) -> xtd::uint16 {return parse<xtd::uint16>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -286,7 +286,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::int32 parse<xtd::int32>(const std::string& str) {return parse<xtd::int32>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::int32>(const std::string& str) -> xtd::int32 {return parse<xtd::int32>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -295,7 +295,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::uint32 parse<xtd::uint32>(const std::string& str) {return parse<xtd::uint32>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::uint32>(const std::string& str) -> xtd::uint32 {return parse<xtd::uint32>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -304,7 +304,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::int64 parse<xtd::int64>(const std::string& str) {return parse<xtd::int64>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::int64>(const std::string& str) -> xtd::int64 {return parse<xtd::int64>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -313,7 +313,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::uint64 parse<xtd::uint64>(const std::string& str) {return parse<xtd::uint64>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::uint64>(const std::string& str) -> xtd::uint64 {return parse<xtd::uint64>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -322,7 +322,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::slong parse<xtd::slong>(const std::string& str) {return parse<xtd::slong>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::slong>(const std::string& str) -> xtd::slong {return parse<xtd::slong>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -331,7 +331,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::ulong parse<xtd::ulong>(const std::string& str) {return parse<xtd::ulong>(str, number_styles::integer);}
+  [[nodiscard]] inline auto parse<xtd::ulong>(const std::string& str) -> xtd::ulong {return parse<xtd::ulong>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -340,7 +340,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::single parse<xtd::single>(const std::string& str) {return parse<xtd::single>(str, number_styles::fixed_point);}
+  [[nodiscard]] inline auto parse<xtd::single>(const std::string& str) -> xtd::single {return parse<xtd::single>(str, number_styles::fixed_point);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -349,7 +349,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline double parse<double>(const std::string& str) {return parse<double>(str, number_styles::fixed_point);}
+  [[nodiscard]] inline auto parse<double>(const std::string& str) -> double {return parse<double>(str, number_styles::fixed_point);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -358,7 +358,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline xtd::decimal parse<xtd::decimal>(const std::string& str) {return parse<xtd::decimal>(str, number_styles::fixed_point);}
+  [[nodiscard]] inline auto parse<xtd::decimal>(const std::string& str) -> xtd::decimal {return parse<xtd::decimal>(str, number_styles::fixed_point);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -367,7 +367,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  [[nodiscard]] inline bool parse<bool>(const std::string& str) {
+  [[nodiscard]] inline auto parse<bool>(const std::string& str) -> bool {
     std::string lower_str = str;
     while (lower_str.size() > 0 && (lower_str[0] == 9 || lower_str[0] == 10 || lower_str[0] == 11 || lower_str[0] == 12 || lower_str[0] == 13 || lower_str[0] == 32))
       lower_str.erase(0, 1);
@@ -386,7 +386,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::wstring& str) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::wstring& str) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -395,7 +395,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::u16string& str) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::u16string& str) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -404,7 +404,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline value_t parse(const std::u32string& str) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
+  [[nodiscard]] inline auto parse(const std::u32string& str) -> value_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -413,7 +413,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<char>& str, value_t& value) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<char>& str, value_t& value) noexcept -> bool {
     try {
       value = parse<value_t>(str);
       return true;
@@ -428,7 +428,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char16>& str, value_t& value) noexcept -> bool {
     try {
       value = parse<value_t>(str);
       return true;
@@ -443,7 +443,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char32>& str, value_t& value) noexcept -> bool {
     try {
       value = parse<value_t>(str);
       return true;
@@ -458,7 +458,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char8>& str, value_t& value) noexcept -> bool {
     try {
       value = parse<value_t>(str);
       return true;
@@ -473,7 +473,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::wchar>& str, value_t& value) noexcept -> bool {
     try {
       value = parse<value_t>(str);
       return true;
@@ -489,7 +489,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<char>& str, value_t& value, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<char>& str, value_t& value, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, locale);
       return true;
@@ -504,7 +504,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char16>& str, value_t& value, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, locale);
       return true;
@@ -519,7 +519,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char32>& str, value_t& value, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, locale);
       return true;
@@ -534,7 +534,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char8>& str, value_t& value, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, locale);
       return true;
@@ -549,7 +549,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, locale);
       return true;
@@ -565,7 +565,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t, typename char_t>
-  [[nodiscard]] inline bool try_parse(const char_t* str, value_t& value) noexcept {
+  [[nodiscard]] inline auto try_parse(const char_t* str, value_t& value) noexcept -> bool {
     return try_parse(std::basic_string<char_t>(str), value);
   }
   
@@ -576,7 +576,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t, typename char_t>
-  [[nodiscard]] inline bool try_parse(const char_t* str, value_t& value, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const char_t* str, value_t& value, const std::locale& locale) noexcept -> bool {
     return try_parse(std::basic_string<char_t>(str), value, locale);
   }
   
@@ -587,7 +587,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<char>& str, value_t& value, number_styles style) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<char>& str, value_t& value, number_styles style) noexcept -> bool {
     try {
       value = parse<value_t>(str, style);
       return true;
@@ -602,7 +602,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style) noexcept -> bool {
     try {
       value = parse<value_t>(str, style);
       return true;
@@ -617,7 +617,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style) noexcept -> bool {
     try {
       value = parse<value_t>(str, style);
       return true;
@@ -632,7 +632,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style) noexcept -> bool {
     try {
       value = parse<value_t>(str, style);
       return true;
@@ -647,7 +647,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style) noexcept -> bool {
     try {
       value = parse<value_t>(str, style);
       return true;
@@ -663,7 +663,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<char>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<char>& str, value_t& value, number_styles style, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, style, locale);
       return true;
@@ -678,7 +678,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, style, locale);
       return true;
@@ -693,7 +693,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, style, locale);
       return true;
@@ -708,7 +708,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, style, locale);
       return true;
@@ -723,7 +723,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  [[nodiscard]] inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style, const std::locale& locale) noexcept -> bool {
     try {
       value = parse<value_t>(str, style, locale);
       return true;
@@ -739,7 +739,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t, typename char_t>
-  [[nodiscard]] inline bool try_parse(const char_t* str, value_t& value, number_styles style) noexcept {
+  [[nodiscard]] inline auto try_parse(const char_t* str, value_t& value, number_styles style) noexcept -> bool {
     return try_parse(std::basic_string<char_t>(str), value, style);
   }
   
@@ -750,7 +750,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t, typename char_t>
-  [[nodiscard]] inline bool try_parse(const char_t* str, value_t& value, number_styles style, const std::locale& locale) noexcept {
+  [[nodiscard]] inline auto try_parse(const char_t* str, value_t& value, number_styles style, const std::locale& locale) noexcept -> bool {
     return try_parse(std::basic_string<char_t>(str), value, style, locale);
   }
 }
