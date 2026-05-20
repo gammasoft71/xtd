@@ -3,14 +3,14 @@
 auto main() -> int {
   auto strings = string("One Two Three\tFour\nFive").split();
   
-  console::write_line("strings.size = {}", strings.length());
+  console::write_line("strings.length = {}", strings.length());
   for (auto string : strings)
     console::write_line(string);
 }
 
 // This code produces the following output :
 //
-// strings.size = 5
+// strings.length = 5
 // One
 // Two
 // Three
