@@ -113,29 +113,29 @@ Inheritance diagram for xtd::time_zone_info::adjustment_rule:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> class defines the effective start and end dates of a particular time change to and from daylight saving time, respectively, as well as its delta (the exact amount by which the adjustment causes the time zone's standard time to change). In addition, two properties return xtd::txtd::time_zone_info::transition_time objects that define when each transition to and from standard time occurs. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>An instance of the <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> class is immutable. Once an object has been created, its values cannot be modified. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To create a <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> object, call the static xtd::time_zone_info::adjustment_rule::create_adjustment_rule method. You can then supply an array of <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> objects to two of the overloads of the xtd::time_zone_info::create_custom_time_zone method. To retrieve the adjustment rules of a particular time zone, call its <a class="el" href="classxtd_1_1time__zone__info.html#aae75233b81ff96c118c21b715da908a1" title="Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::tim...">xtd::time_zone_info::get_adjustment_rules</a> method, which returns an array of <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> objects. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To create a <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> object, call the static xtd::time_zone_info::adjustment_rule::create_adjustment_rule method. You can then supply an array of <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> objects to two of the overloads of the xtd::time_zone_info::create_custom_time_zone method. To retrieve the adjustment rules of a particular time zone, call its <a class="el" href="classxtd_1_1time__zone__info.html#a692c92f9f05df3711d50243265521a98" title="Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::tim...">xtd::time_zone_info::get_adjustment_rules</a> method, which returns an array of <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html" title="Provides information about a time zone adjustment, such as the transition to and from daylight saving...">xtd::time_zone_info::adjustment_rule</a> objects. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a2b2785a1b23ad5425805473c83529f4d" id="r_a2b2785a1b23ad5425805473c83529f4d"><td class="memItemLeft">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2b2785a1b23ad5425805473c83529f4d">date_end</a> () const noexcept</td></tr>
-<tr class="memdesc:a2b2785a1b23ad5425805473c83529f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date when the adjustment rule ceases to be in effect.  <br /></td></tr>
-<tr class="memitem:a80c02257d7cfe31b136e06ed9ee3359c" id="r_a80c02257d7cfe31b136e06ed9ee3359c"><td class="memItemLeft">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a80c02257d7cfe31b136e06ed9ee3359c">date_start</a> () const noexcept</td></tr>
-<tr class="memdesc:a80c02257d7cfe31b136e06ed9ee3359c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date when the adjustment rule takes effect.  <br /></td></tr>
-<tr class="memitem:a16e7591b059bde1ba07b7c4290d6f26b" id="r_a16e7591b059bde1ba07b7c4290d6f26b"><td class="memItemLeft"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight"><a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b">daylight_delta</a> () const noexcept</td></tr>
-<tr class="memdesc:a16e7591b059bde1ba07b7c4290d6f26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC).  <br /></td></tr>
-<tr class="memitem:af04d42714d439049f098d939c3d68daa" id="r_af04d42714d439049f098d939c3d68daa"><td class="memItemLeft"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a>&#160;</td><td class="memItemRight"><a class="el" href="#af04d42714d439049f098d939c3d68daa">daylight_transition_end</a> () const noexcept</td></tr>
-<tr class="memdesc:af04d42714d439049f098d939c3d68daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets information about the annual transition from daylight saving time back to standard time.  <br /></td></tr>
-<tr class="memitem:a582be177baba482724ab4673cb29e6cd" id="r_a582be177baba482724ab4673cb29e6cd"><td class="memItemLeft"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a>&#160;</td><td class="memItemRight"><a class="el" href="#a582be177baba482724ab4673cb29e6cd">daylight_transition_start</a> () const noexcept</td></tr>
-<tr class="memdesc:a582be177baba482724ab4673cb29e6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets information about the annual transition from standard time to daylight saving time.  <br /></td></tr>
+<tr class="memitem:a9510c3b5782b3e21beb32d535f87ccf2" id="r_a9510c3b5782b3e21beb32d535f87ccf2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9510c3b5782b3e21beb32d535f87ccf2">date_end</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:a9510c3b5782b3e21beb32d535f87ccf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date when the adjustment rule ceases to be in effect.  <br /></td></tr>
+<tr class="memitem:a41ee61b7c80bbc8fb1814ff90c4118c5" id="r_a41ee61b7c80bbc8fb1814ff90c4118c5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a41ee61b7c80bbc8fb1814ff90c4118c5">date_start</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:a41ee61b7c80bbc8fb1814ff90c4118c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date when the adjustment rule takes effect.  <br /></td></tr>
+<tr class="memitem:aed6ff967a6c5cfad6a0daa668e42857c" id="r_aed6ff967a6c5cfad6a0daa668e42857c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aed6ff967a6c5cfad6a0daa668e42857c">daylight_delta</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a></td></tr>
+<tr class="memdesc:aed6ff967a6c5cfad6a0daa668e42857c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC).  <br /></td></tr>
+<tr class="memitem:abed38db1304d7f17fcb7b41c11ab2bc8" id="r_abed38db1304d7f17fcb7b41c11ab2bc8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abed38db1304d7f17fcb7b41c11ab2bc8">daylight_transition_end</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a></td></tr>
+<tr class="memdesc:abed38db1304d7f17fcb7b41c11ab2bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets information about the annual transition from daylight saving time back to standard time.  <br /></td></tr>
+<tr class="memitem:abd566f16815c7d17bea428b4caed2c3e" id="r_abd566f16815c7d17bea428b4caed2c3e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abd566f16815c7d17bea428b4caed2c3e">daylight_transition_start</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a></td></tr>
+<tr class="memdesc:abd566f16815c7d17bea428b4caed2c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets information about the annual transition from standard time to daylight saving time.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ab643c50053c8dc866c9c1e27d3b965a9" id="r_ab643c50053c8dc866c9c1e27d3b965a9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ab643c50053c8dc866c9c1e27d3b965a9">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:ab643c50053c8dc866c9c1e27d3b965a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a57a14d068034f10dc3f15cb1bafd5d3b" id="r_a57a14d068034f10dc3f15cb1bafd5d3b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a57a14d068034f10dc3f15cb1bafd5d3b">equals</a> (const <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html">adjustment_rule</a> &amp;ar) const noexcept override</td></tr>
-<tr class="memdesc:a57a14d068034f10dc3f15cb1bafd5d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a46eb5e7d5886c0dc86f9a1db5cfed9f4" id="r_a46eb5e7d5886c0dc86f9a1db5cfed9f4"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a46eb5e7d5886c0dc86f9a1db5cfed9f4">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a46eb5e7d5886c0dc86f9a1db5cfed9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a7bbe64dc0bc4df42a5c7fc719f479ce8" id="r_a7bbe64dc0bc4df42a5c7fc719f479ce8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7bbe64dc0bc4df42a5c7fc719f479ce8">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a7bbe64dc0bc4df42a5c7fc719f479ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:ad5351c0842ad4d54fe551659d584b8d9" id="r_ad5351c0842ad4d54fe551659d584b8d9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad5351c0842ad4d54fe551659d584b8d9">equals</a> (const <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html">adjustment_rule</a> &amp;ar) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ad5351c0842ad4d54fe551659d584b8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:ac2b3aa7b08658d054d44beb0e2c11f04" id="r_ac2b3aa7b08658d054d44beb0e2c11f04"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2b3aa7b08658d054d44beb0e2c11f04">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:ac2b3aa7b08658d054d44beb0e2c11f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -158,8 +158,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a2b2785a1b23ad5425805473c83529f4d" name="a2b2785a1b23ad5425805473c83529f4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b2785a1b23ad5425805473c83529f4d">&#9670;&#160;</a></span>date_end()</h2>
+<a id="a9510c3b5782b3e21beb32d535f87ccf2" name="a9510c3b5782b3e21beb32d535f87ccf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9510c3b5782b3e21beb32d535f87ccf2">&#9670;&#160;</a></span>date_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,30 +168,30 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::time_zone_info::adjustment_rule::date_end </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::date_end </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the date when the adjustment rule ceases to be in effect. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that indicates the end date of the adjustment rule. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a2b2785a1b23ad5425805473c83529f4d" title="Gets the date when the adjustment rule ceases to be in effect.">xtd::time_zone_info::adjustment_rule::date_end</a> property is a date value without a time component. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a9510c3b5782b3e21beb32d535f87ccf2" title="Gets the date when the adjustment rule ceases to be in effect.">xtd::time_zone_info::adjustment_rule::date_end</a> property is a date value without a time component. </dd>
 <dd>
-Because the end date of the current adjustment rule is typically not known, you can assign <pre class="fragment">date_time::max_value().date() </pre> to the <a class="el" href="#a2b2785a1b23ad5425805473c83529f4d" title="Gets the date when the adjustment rule ceases to be in effect.">xtd::time_zone_info::adjustment_rule::date_end</a> property when you create a custom adjustment rule. </dd></dl>
+Because the end date of the current adjustment rule is typically not known, you can assign <pre class="fragment">date_time::max_value().date() </pre> to the <a class="el" href="#a9510c3b5782b3e21beb32d535f87ccf2" title="Gets the date when the adjustment rule ceases to be in effect.">xtd::time_zone_info::adjustment_rule::date_end</a> property when you create a custom adjustment rule. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Unless there is a compelling reason to do otherwise, you should define the adjustment rule's end date to occur within the time interval during which the time zone observes standard time. Unless there is a compelling reason to do so, you should not define the adjustment rule's end date to occur within the time interval during which the time zone observes daylight saving time. For example, if a time zone's transition from daylight saving time occurs on the third Sunday of March and its transition to daylight saving time occurs on the first Sunday of October, the effective end date of the adjustment rule should not be December 31 of a particular year, since that date occurs within the period of daylight saving time. </dd></dl>
 
 </div>
 </div>
-<a id="a80c02257d7cfe31b136e06ed9ee3359c" name="a80c02257d7cfe31b136e06ed9ee3359c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80c02257d7cfe31b136e06ed9ee3359c">&#9670;&#160;</a></span>date_start()</h2>
+<a id="a41ee61b7c80bbc8fb1814ff90c4118c5" name="a41ee61b7c80bbc8fb1814ff90c4118c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ee61b7c80bbc8fb1814ff90c4118c5">&#9670;&#160;</a></span>date_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,30 +200,30 @@ Because the end date of the current adjustment rule is typically not known, you 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::time_zone_info::adjustment_rule::date_start </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::date_start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the date when the adjustment rule takes effect. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that indicates when the adjustment rule takes effect. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a80c02257d7cfe31b136e06ed9ee3359c" title="Gets the date when the adjustment rule takes effect.">xtd::time_zone_info::adjustment_rule::date_start</a> property is a date value without a time component. It defines the date on which a particular adjustment rule goes into effect. This is the date in which a set of transitions (which typically are defined by one transition to daylight savings time and one transition back to standard time) go into effect. For example, an adjustment rule might go into effect on January 1, 2017, that provides for a transition to daylight savings time on the second Sunday of March and for a transition back to standard time on the first Sunday of November. Note that the starting date of the adjustment rule is not tied to the date of the first transition. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a41ee61b7c80bbc8fb1814ff90c4118c5" title="Gets the date when the adjustment rule takes effect.">xtd::time_zone_info::adjustment_rule::date_start</a> property is a date value without a time component. It defines the date on which a particular adjustment rule goes into effect. This is the date in which a set of transitions (which typically are defined by one transition to daylight savings time and one transition back to standard time) go into effect. For example, an adjustment rule might go into effect on January 1, 2017, that provides for a transition to daylight savings time on the second Sunday of March and for a transition back to standard time on the first Sunday of November. Note that the starting date of the adjustment rule is not tied to the date of the first transition. </dd>
 <dd>
-You can assign <pre class="fragment">date_time::min_value().date() </pre> to the <a class="el" href="#a2b2785a1b23ad5425805473c83529f4d" title="Gets the date when the adjustment rule ceases to be in effect.">xtd::time_zone_info::adjustment_rule::date_end</a> property when you create a custom adjustment rule for use in a time zone-aware application that does not have to work with historic time zone information. </dd></dl>
+You can assign <pre class="fragment">date_time::min_value().date() </pre> to the <a class="el" href="#a9510c3b5782b3e21beb32d535f87ccf2" title="Gets the date when the adjustment rule ceases to be in effect.">xtd::time_zone_info::adjustment_rule::date_end</a> property when you create a custom adjustment rule for use in a time zone-aware application that does not have to work with historic time zone information. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Unless there is a compelling reason to do otherwise, you should define the adjustment rule's start date to occur within the time interval during which the time zone observes standard time. Unless there is a compelling reason to do so, you should not define the adjustment rule's start date to occur within the time interval during which the time zone observes daylight saving time. For example, if a time zone's transition from daylight saving time occurs on the third Sunday of March and its transition to daylight saving time occurs on the first Sunday of October, the effective start date of the adjustment rule should not be January 1 of a particular year, since that date occurs within the period of daylight saving time. </dd></dl>
 
 </div>
 </div>
-<a id="a16e7591b059bde1ba07b7c4290d6f26b" name="a16e7591b059bde1ba07b7c4290d6f26b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16e7591b059bde1ba07b7c4290d6f26b">&#9670;&#160;</a></span>daylight_delta()</h2>
+<a id="aed6ff967a6c5cfad6a0daa668e42857c" name="aed6ff967a6c5cfad6a0daa668e42857c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed6ff967a6c5cfad6a0daa668e42857c">&#9670;&#160;</a></span>daylight_delta()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,34 +232,34 @@ You can assign <pre class="fragment">date_time::min_value().date() </pre> to the
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> xtd::time_zone_info::adjustment_rule::daylight_delta </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::daylight_delta </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC). </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that indicates the amount of time to add to the standard time changes as a result of the adjustment rule. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The following formula defines a time zone's daylight saving time: <div class="fragment"><div class="line">time_tone_time = <a class="code hl_function" href="classxtd_1_1time__zone__info.html#af12c8a59502ce357d3e1f1a983c8b718">base_utc_offset</a> + <a class="code hl_function" href="#a16e7591b059bde1ba07b7c4290d6f26b">daylight_delta</a> + utc_time</div>
-<div class="ttc" id="aclassxtd_1_1time__zone__info_1_1adjustment__rule_html_a16e7591b059bde1ba07b7c4290d6f26b"><div class="ttname"><a href="#a16e7591b059bde1ba07b7c4290d6f26b">xtd::time_zone_info::adjustment_rule::daylight_delta</a></div><div class="ttdeci">xtd::time_span daylight_delta() const noexcept</div><div class="ttdoc">Gets the amount of time that is required to form the time zone&#39;s daylight saving time....</div></div>
-<div class="ttc" id="aclassxtd_1_1time__zone__info_html_af12c8a59502ce357d3e1f1a983c8b718"><div class="ttname"><a href="classxtd_1_1time__zone__info.html#af12c8a59502ce357d3e1f1a983c8b718">xtd::time_zone_info::base_utc_offset</a></div><div class="ttdeci">ticks base_utc_offset() const noexcept</div><div class="ttdoc">Gets the time difference between the current time zone&#39;s standard time and Coordinated Universal Time...</div></div>
+<dl class="section remark"><dt>Remarks</dt><dd>The following formula defines a time zone's daylight saving time: <div class="fragment"><div class="line">time_tone_time = <a class="code hl_function" href="classxtd_1_1time__zone__info.html#a4b4a38284cb004f1c11897065e989c2a">base_utc_offset</a> + <a class="code hl_function" href="#aed6ff967a6c5cfad6a0daa668e42857c">daylight_delta</a> + utc_time</div>
+<div class="ttc" id="aclassxtd_1_1time__zone__info_1_1adjustment__rule_html_aed6ff967a6c5cfad6a0daa668e42857c"><div class="ttname"><a href="#aed6ff967a6c5cfad6a0daa668e42857c">xtd::time_zone_info::adjustment_rule::daylight_delta</a></div><div class="ttdeci">auto daylight_delta() const noexcept -&gt; xtd::time_span</div><div class="ttdoc">Gets the amount of time that is required to form the time zone&#39;s daylight saving time....</div></div>
+<div class="ttc" id="aclassxtd_1_1time__zone__info_html_a4b4a38284cb004f1c11897065e989c2a"><div class="ttname"><a href="classxtd_1_1time__zone__info.html#a4b4a38284cb004f1c11897065e989c2a">xtd::time_zone_info::base_utc_offset</a></div><div class="ttdeci">auto base_utc_offset() const noexcept -&gt; xtd::ticks</div><div class="ttdoc">Gets the time difference between the current time zone&#39;s standard time and Coordinated Universal Time...</div></div>
 </div><!-- fragment --> </dd>
 <dd>
-The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="Gets the amount of time that is required to form the time zone&#39;s daylight saving time....">xtd::time_zone_info::adjustment_rule::daylight_delta</a> property can range from 14 hours to -14 hours. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="Gets the amount of time that is required to form the time zone&#39;s daylight saving time....">xtd::time_zone_info::adjustment_rule::daylight_delta</a> property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The most common value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="Gets the amount of time that is required to form the time zone&#39;s daylight saving time....">xtd::time_zone_info::adjustment_rule::daylight_delta</a> property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour. </dd></dl>
+The value of the <a class="el" href="#aed6ff967a6c5cfad6a0daa668e42857c" title="Gets the amount of time that is required to form the time zone&#39;s daylight saving time....">xtd::time_zone_info::adjustment_rule::daylight_delta</a> property can range from 14 hours to -14 hours. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#aed6ff967a6c5cfad6a0daa668e42857c" title="Gets the amount of time that is required to form the time zone&#39;s daylight saving time....">xtd::time_zone_info::adjustment_rule::daylight_delta</a> property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The most common value of the <a class="el" href="#aed6ff967a6c5cfad6a0daa668e42857c" title="Gets the amount of time that is required to form the time zone&#39;s daylight saving time....">xtd::time_zone_info::adjustment_rule::daylight_delta</a> property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour. </dd></dl>
 
 </div>
 </div>
-<a id="af04d42714d439049f098d939c3d68daa" name="af04d42714d439049f098d939c3d68daa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af04d42714d439049f098d939c3d68daa">&#9670;&#160;</a></span>daylight_transition_end()</h2>
+<a id="abed38db1304d7f17fcb7b41c11ab2bc8" name="abed38db1304d7f17fcb7b41c11ab2bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed38db1304d7f17fcb7b41c11ab2bc8">&#9670;&#160;</a></span>daylight_transition_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,15 +268,15 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a> xtd::time_zone_info::adjustment_rule::daylight_transition_end </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::daylight_transition_end </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -287,8 +287,8 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
 
 </div>
 </div>
-<a id="a582be177baba482724ab4673cb29e6cd" name="a582be177baba482724ab4673cb29e6cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a582be177baba482724ab4673cb29e6cd">&#9670;&#160;</a></span>daylight_transition_start()</h2>
+<a id="abd566f16815c7d17bea428b4caed2c3e" name="abd566f16815c7d17bea428b4caed2c3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd566f16815c7d17bea428b4caed2c3e">&#9670;&#160;</a></span>daylight_transition_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,15 +297,15 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a> xtd::time_zone_info::adjustment_rule::daylight_transition_start </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::daylight_transition_start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -316,8 +316,8 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
 
 </div>
 </div>
-<a id="ab643c50053c8dc866c9c1e27d3b965a9" name="ab643c50053c8dc866c9c1e27d3b965a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab643c50053c8dc866c9c1e27d3b965a9">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a7bbe64dc0bc4df42a5c7fc719f479ce8" name="a7bbe64dc0bc4df42a5c7fc719f479ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbe64dc0bc4df42a5c7fc719f479ce8">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,15 +326,15 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::time_zone_info::adjustment_rule::equals </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::equals </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -352,8 +352,8 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
 
 </div>
 </div>
-<a id="a57a14d068034f10dc3f15cb1bafd5d3b" name="a57a14d068034f10dc3f15cb1bafd5d3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57a14d068034f10dc3f15cb1bafd5d3b">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="ad5351c0842ad4d54fe551659d584b8d9" name="ad5351c0842ad4d54fe551659d584b8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5351c0842ad4d54fe551659d584b8d9">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -362,15 +362,15 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::time_zone_info::adjustment_rule::equals </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__zone__info_1_1adjustment__rule.html">adjustment_rule</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ar</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -386,8 +386,8 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
 
 </div>
 </div>
-<a id="a46eb5e7d5886c0dc86f9a1db5cfed9f4" name="a46eb5e7d5886c0dc86f9a1db5cfed9f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46eb5e7d5886c0dc86f9a1db5cfed9f4">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="ac2b3aa7b08658d054d44beb0e2c11f04" name="ac2b3aa7b08658d054d44beb0e2c11f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2b3aa7b08658d054d44beb0e2c11f04">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,15 +396,15 @@ The value of the <a class="el" href="#a16e7591b059bde1ba07b7c4290d6f26b" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::time_zone_info::adjustment_rule::get_hash_code </td>
+          <td class="memname">auto xtd::time_zone_info::adjustment_rule::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

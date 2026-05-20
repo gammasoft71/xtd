@@ -67,7 +67,7 @@ var searchData=
   ['website_5flabel_64',['website_label',['../classxtd_1_1forms_1_1about__dialog.html#a1985baba15403bf6110c9da88d231caa',1,'xtd::forms::about_dialog::website_label() const noexcept'],['../classxtd_1_1forms_1_1about__dialog.html#ad5bf093f969b1735b4a311355977b050',1,'xtd::forms::about_dialog::website_label(const xtd::string &amp;website_label)']]],
   ['wedding_65',['wedding',['../classxtd_1_1forms_1_1emoticons.html#a3d844a5d63207aa531bdd8ec29c7c0a1',1,'xtd::forms::emoticons']]],
   ['wednesday_66',['wednesday',['../group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2aaae446086f8e81194ed115b566bf2e3d',1,'xtd::wednesday'],['../group__xtd__forms.html#gga108529868f1e8670d0a2cb08f311c36baaae446086f8e81194ed115b566bf2e3d',1,'xtd::forms::wednesday']]],
-  ['week_67',['week',['../classxtd_1_1time__zone__info_1_1transition__time.html#ad544b594698a8a7fdbe9e92325e84b7a',1,'xtd::time_zone_info::transition_time']]],
+  ['week_67',['week',['../classxtd_1_1time__zone__info_1_1transition__time.html#ad72c7f0e14248c9ca5120516ea5501de',1,'xtd::time_zone_info::transition_time']]],
   ['week_5fnumbers_68',['week_numbers',['../classxtd_1_1forms_1_1month__calendar.html#adbf081e69d9c32aebd315f4b05c69177a7c7da9c7849c25543a6bdd6fea8480b4',1,'xtd::forms::month_calendar']]],
   ['weight_5flifter_69',['weight_lifter',['../classxtd_1_1forms_1_1emoticons.html#a05c619e96195fabc5ceb36074f4158b0',1,'xtd::forms::emoticons']]],
   ['western_5fsahara_70',['western_sahara',['../classxtd_1_1forms_1_1countries.html#a8af67b55fabc591fb21675ff8273daaa',1,'xtd::forms::countries']]],

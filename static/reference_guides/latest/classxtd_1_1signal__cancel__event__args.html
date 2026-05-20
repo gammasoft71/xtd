@@ -116,12 +116,12 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a8a1f43618f197ddc3584f3640c241237" id="r_a8a1f43618f197ddc3584f3640c241237"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8a1f43618f197ddc3584f3640c241237">cancel</a> () const noexcept</td></tr>
-<tr class="memdesc:a8a1f43618f197ddc3584f3640c241237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether a signal has interrupted the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
-<tr class="memitem:a4d2a25e54ec07dd32e891cd36b544f42" id="r_a4d2a25e54ec07dd32e891cd36b544f42"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4d2a25e54ec07dd32e891cd36b544f42">cancel</a> (bool cancel)</td></tr>
-<tr class="memdesc:a4d2a25e54ec07dd32e891cd36b544f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether a signal has interrupted the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
-<tr class="memitem:a9ed9edab6741186d83c02b88f438f16a" id="r_a9ed9edab6741186d83c02b88f438f16a"><td class="memItemLeft"><a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9ed9edab6741186d83c02b88f438f16a">signal</a> () const noexcept</td></tr>
-<tr class="memdesc:a9ed9edab6741186d83c02b88f438f16a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the signal that interrupted the current process.  <br /></td></tr>
+<tr class="memitem:a45dc6321b51e573910a772ac03e518f4" id="r_a45dc6321b51e573910a772ac03e518f4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a45dc6321b51e573910a772ac03e518f4">cancel</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a45dc6321b51e573910a772ac03e518f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether a signal has interrupted the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
+<tr class="memitem:a2347b9fab99d89c1ac39c75acafb55de" id="r_a2347b9fab99d89c1ac39c75acafb55de"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2347b9fab99d89c1ac39c75acafb55de">cancel</a> (bool cancel) -&gt; void</td></tr>
+<tr class="memdesc:a2347b9fab99d89c1ac39c75acafb55de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether a signal has interrupted the current process. The default is <span class="tt">false</span>, which terminates the current process.  <br /></td></tr>
+<tr class="memitem:adcf99d661e579b9dd40de5cd35479817" id="r_adcf99d661e579b9dd40de5cd35479817"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adcf99d661e579b9dd40de5cd35479817">signal</a> () const noexcept -&gt; <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a></td></tr>
+<tr class="memdesc:adcf99d661e579b9dd40de5cd35479817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the signal that interrupted the current process.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -203,7 +203,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1signal__cancel__event__args.html" title="Provides data for the environment signal event. This class cannot be inherited.">signal_cancel_event_args</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a9ed9edab6741186d83c02b88f438f16a" title="Gets the signal that interrupted the current process.">signal</a></td><td>One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value.. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#adcf99d661e579b9dd40de5cd35479817" title="Gets the signal that interrupted the current process.">signal</a></td><td>One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value.. </td></tr>
   </table>
   </dd>
 </dl>
@@ -211,8 +211,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8a1f43618f197ddc3584f3640c241237" name="a8a1f43618f197ddc3584f3640c241237"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a1f43618f197ddc3584f3640c241237">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
+<a id="a45dc6321b51e573910a772ac03e518f4" name="a45dc6321b51e573910a772ac03e518f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45dc6321b51e573910a772ac03e518f4">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,15 +221,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::signal_cancel_event_args::cancel </td>
+          <td class="memname">auto xtd::signal_cancel_event_args::cancel </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -239,17 +239,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d2a25e54ec07dd32e891cd36b544f42" name="a4d2a25e54ec07dd32e891cd36b544f42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d2a25e54ec07dd32e891cd36b544f42">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
+<a id="a2347b9fab99d89c1ac39c75acafb55de" name="a2347b9fab99d89c1ac39c75acafb55de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2347b9fab99d89c1ac39c75acafb55de">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::signal_cancel_event_args::cancel </td>
+          <td class="memname">auto xtd::signal_cancel_event_args::cancel </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -257,15 +257,15 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets a value that indicates whether a signal has interrupted the current process. The default is <span class="tt">false</span>, which terminates the current process. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a8a1f43618f197ddc3584f3640c241237" title="Gets a value that indicates whether a signal has interrupted the current process. The default is fals...">cancel</a></td><td><span class="tt">true</span> if the current process should resume when the event handler concludes; <span class="tt">false</span> if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If <span class="tt">true</span>, the current process continues. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a45dc6321b51e573910a772ac03e518f4" title="Gets a value that indicates whether a signal has interrupted the current process. The default is fals...">cancel</a></td><td><span class="tt">true</span> if the current process should resume when the event handler concludes; <span class="tt">false</span> if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If <span class="tt">true</span>, the current process continues. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a9ed9edab6741186d83c02b88f438f16a" name="a9ed9edab6741186d83c02b88f438f16a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ed9edab6741186d83c02b88f438f16a">&#9670;&#160;</a></span>signal()</h2>
+<a id="adcf99d661e579b9dd40de5cd35479817" name="adcf99d661e579b9dd40de5cd35479817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcf99d661e579b9dd40de5cd35479817">&#9670;&#160;</a></span>signal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,15 +274,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a> xtd::signal_cancel_event_args::signal </td>
+          <td class="memname">auto xtd::signal_cancel_event_args::signal </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -179,7 +179,7 @@ var searchData=
   ['hour_176',['hour',['../classxtd_1_1date__time.html#a0757262939701265e95f60c3f401fc9d',1,'xtd::date_time']]],
   ['hourglass_177',['hourglass',['../classxtd_1_1forms_1_1emoticons.html#a98b9de5d706682ea5139e536407af357',1,'xtd::forms::emoticons']]],
   ['hourglass_5fwith_5fflowing_5fsand_178',['hourglass_with_flowing_sand',['../classxtd_1_1forms_1_1emoticons.html#a456cb716d12c339f4de9c11c651fc13f',1,'xtd::forms::emoticons']]],
-  ['hours_179',['hours',['../classxtd_1_1time__span.html#adfa825159a709add812d5243492ff86a',1,'xtd::time_span']]],
+  ['hours_179',['hours',['../classxtd_1_1time__span.html#acb800c64f92803381ff808b631c2ccf1',1,'xtd::time_span']]],
   ['house_5fbuilding_180',['house_building',['../classxtd_1_1forms_1_1emoticons.html#aad8c79cfa6dfd669bd311ce3bda910e1',1,'xtd::forms::emoticons']]],
   ['house_5fbuildings_181',['house_buildings',['../classxtd_1_1forms_1_1emoticons.html#ae043b1926c03287b195fcf74dac5a890',1,'xtd::forms::emoticons']]],
   ['house_5fwith_5fgarden_182',['house_with_garden',['../classxtd_1_1forms_1_1emoticons.html#ad26bed5fd2918723052b01936cc8069d',1,'xtd::forms::emoticons']]],

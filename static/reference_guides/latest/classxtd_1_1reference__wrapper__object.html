@@ -111,10 +111,10 @@ class xtd::reference_wrapper_object&lt; type_t &gt;</div><p>The <a class="el" hr
 <dl class="section user"><dt>Examples</dt><dd>This example shows to use <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1version.html">version</a> ver = <a class="code hl_class" href="classxtd_1_1version.html">version</a> {1, 2, 3};</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1reference__wrapper__object.html">reference_wrapper_object&lt;version&gt;</a> ver_ref = <a class="code hl_function" href="group__xtd__core.html#gad189928017235be4816078824892c8c1">create_reference_wrapper_object</a>(ver);</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, ver_ref.<a class="code hl_function" href="#ab0e5f8b4b96fef7387521a412b06c745">to_string</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, ver_ref.<a class="code hl_function" href="#a1aa05f2808e6301b211147e73fdb66df">to_string</a>());</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1reference__wrapper__object_html"><div class="ttname"><a href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a></div><div class="ttdoc">The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.</div><div class="ttdef"><b>Definition</b> reference_wrapper_object.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1reference__wrapper__object_html_ab0e5f8b4b96fef7387521a412b06c745"><div class="ttname"><a href="#ab0e5f8b4b96fef7387521a412b06c745">xtd::reference_wrapper_object::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
+<div class="ttc" id="aclassxtd_1_1reference__wrapper__object_html_a1aa05f2808e6301b211147e73fdb66df"><div class="ttname"><a href="#a1aa05f2808e6301b211147e73fdb66df">xtd::reference_wrapper_object::to_string</a></div><div class="ttdeci">auto to_string() const noexcept -&gt; xtd::string override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
 <div class="ttc" id="aclassxtd_1_1version_html"><div class="ttname"><a href="classxtd_1_1version.html">xtd::version</a></div><div class="ttdoc">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...</div><div class="ttdef"><b>Definition</b> version.hpp:115</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gad189928017235be4816078824892c8c1"><div class="ttname"><a href="group__xtd__core.html#gad189928017235be4816078824892c8c1">xtd::create_reference_wrapper_object</a></div><div class="ttdeci">auto create_reference_wrapper_object(type_t &amp;arg) noexcept -&gt; reference_wrapper_object&lt; type_t &gt;</div><div class="ttdoc">xtd::create_reference_wrapper_object operator. This operator creates a xtd::reference_wrapper_object ...</div><div class="ttdef"><b>Definition</b> create_reference_wrapper_object.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -135,34 +135,34 @@ Public Static Fields</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:a35a32013b6d91e045cd4b6fade423e41" id="r_a35a32013b6d91e045cd4b6fade423e41"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a35a32013b6d91e045cd4b6fade423e41">operator=</a> (const reference_wrapper_object &amp;value) noexcept</td></tr>
-<tr class="memdesc:a35a32013b6d91e045cd4b6fade423e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
-<tr class="memitem:a69491d02a3822a2c08fb5e44cb415978" id="r_a69491d02a3822a2c08fb5e44cb415978"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a69491d02a3822a2c08fb5e44cb415978">operator=</a> (reference_wrapper_object &amp;value) noexcept</td></tr>
-<tr class="memdesc:a69491d02a3822a2c08fb5e44cb415978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
-<tr class="memitem:a01ffa21136a0b8985d288e3c155ad3f7" id="r_a01ffa21136a0b8985d288e3c155ad3f7"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a01ffa21136a0b8985d288e3c155ad3f7">operator=</a> (reference_wrapper_object &amp;&amp;value) noexcept</td></tr>
-<tr class="memdesc:a01ffa21136a0b8985d288e3c155ad3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
-<tr class="memitem:a762fa8624615291d5606b0d6b5980aac" id="r_a762fa8624615291d5606b0d6b5980aac"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a762fa8624615291d5606b0d6b5980aac template"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a762fa8624615291d5606b0d6b5980aac">operator=</a> (const reference_wrapper_object&lt; value_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:a762fa8624615291d5606b0d6b5980aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
-<tr class="memitem:aa86dd9292f7f8f89b23bb9c59ce76303" id="r_aa86dd9292f7f8f89b23bb9c59ce76303"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:aa86dd9292f7f8f89b23bb9c59ce76303 template"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa86dd9292f7f8f89b23bb9c59ce76303">operator=</a> (reference_wrapper_object&lt; value_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:aa86dd9292f7f8f89b23bb9c59ce76303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
-<tr class="memitem:a06bf9ffd97a1deb981639a3d2042bcc8" id="r_a06bf9ffd97a1deb981639a3d2042bcc8"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a06bf9ffd97a1deb981639a3d2042bcc8 template"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a06bf9ffd97a1deb981639a3d2042bcc8">operator=</a> (reference_wrapper_object&lt; value_t &gt; &amp;&amp;value) noexcept</td></tr>
-<tr class="memdesc:a06bf9ffd97a1deb981639a3d2042bcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
-<tr class="memitem:a850c61740da0d321111a75e37cc80ab6" id="r_a850c61740da0d321111a75e37cc80ab6"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a850c61740da0d321111a75e37cc80ab6 template"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a850c61740da0d321111a75e37cc80ab6">operator=</a> (const std::reference_wrapper&lt; value_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:a850c61740da0d321111a75e37cc80ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
-<tr class="memitem:a14d4b001541267aed25b61c3d1e9eeb0" id="r_a14d4b001541267aed25b61c3d1e9eeb0"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a14d4b001541267aed25b61c3d1e9eeb0 template"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a14d4b001541267aed25b61c3d1e9eeb0">operator=</a> (std::reference_wrapper&lt; value_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:a14d4b001541267aed25b61c3d1e9eeb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
-<tr class="memitem:a374c87b0052e5818d699edca0696c4ea" id="r_a374c87b0052e5818d699edca0696c4ea"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a374c87b0052e5818d699edca0696c4ea">operator=</a> (const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;value) noexcept</td></tr>
-<tr class="memdesc:a374c87b0052e5818d699edca0696c4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
-<tr class="memitem:a11f8087c217b0d5fe86dacf2f94012d9" id="r_a11f8087c217b0d5fe86dacf2f94012d9"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a11f8087c217b0d5fe86dacf2f94012d9">operator=</a> (<a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;value) noexcept</td></tr>
-<tr class="memdesc:a11f8087c217b0d5fe86dacf2f94012d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
-<tr class="memitem:a406b0964ede0b6f643944540a37bc9da" id="r_a406b0964ede0b6f643944540a37bc9da"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a406b0964ede0b6f643944540a37bc9da template"><td class="memItemLeft">reference_wrapper_object &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a406b0964ede0b6f643944540a37bc9da">operator=</a> (value_t &amp;&amp;value) noexcept</td></tr>
-<tr class="memdesc:a406b0964ede0b6f643944540a37bc9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
+<tr class="memitem:a3ae1fa662a60e87e720b2459a29d27f6" id="r_a3ae1fa662a60e87e720b2459a29d27f6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3ae1fa662a60e87e720b2459a29d27f6">operator=</a> (const reference_wrapper_object &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:a3ae1fa662a60e87e720b2459a29d27f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
+<tr class="memitem:aa6ab359584d4cbb75760b824975210be" id="r_aa6ab359584d4cbb75760b824975210be"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa6ab359584d4cbb75760b824975210be">operator=</a> (reference_wrapper_object &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:aa6ab359584d4cbb75760b824975210be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
+<tr class="memitem:aa28db5756fea8e503489d1444eac0e76" id="r_aa28db5756fea8e503489d1444eac0e76"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa28db5756fea8e503489d1444eac0e76">operator=</a> (reference_wrapper_object &amp;&amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:aa28db5756fea8e503489d1444eac0e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
+<tr class="memitem:af1193c58f05ffea060c398d585b97461" id="r_af1193c58f05ffea060c398d585b97461"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:af1193c58f05ffea060c398d585b97461 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af1193c58f05ffea060c398d585b97461">operator=</a> (const reference_wrapper_object&lt; value_t &gt; &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:af1193c58f05ffea060c398d585b97461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
+<tr class="memitem:a4f71c8d4e8f892cf70e9dfaf0b9f97b3" id="r_a4f71c8d4e8f892cf70e9dfaf0b9f97b3"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a4f71c8d4e8f892cf70e9dfaf0b9f97b3 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4f71c8d4e8f892cf70e9dfaf0b9f97b3">operator=</a> (reference_wrapper_object&lt; value_t &gt; &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:a4f71c8d4e8f892cf70e9dfaf0b9f97b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
+<tr class="memitem:addb4eae01423330b4177b2ca6de10f78" id="r_addb4eae01423330b4177b2ca6de10f78"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:addb4eae01423330b4177b2ca6de10f78 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#addb4eae01423330b4177b2ca6de10f78">operator=</a> (reference_wrapper_object&lt; value_t &gt; &amp;&amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:addb4eae01423330b4177b2ca6de10f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> value.  <br /></td></tr>
+<tr class="memitem:af6ad16bb999ac7e1011e78b14e22bc40" id="r_af6ad16bb999ac7e1011e78b14e22bc40"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:af6ad16bb999ac7e1011e78b14e22bc40 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af6ad16bb999ac7e1011e78b14e22bc40">operator=</a> (const std::reference_wrapper&lt; value_t &gt; &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:af6ad16bb999ac7e1011e78b14e22bc40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
+<tr class="memitem:af910c415e84407a3a791f96414de3449" id="r_af910c415e84407a3a791f96414de3449"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:af910c415e84407a3a791f96414de3449 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af910c415e84407a3a791f96414de3449">operator=</a> (std::reference_wrapper&lt; value_t &gt; &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:af910c415e84407a3a791f96414de3449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
+<tr class="memitem:a6098748d9d7177793bd16592b25d222a" id="r_a6098748d9d7177793bd16592b25d222a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6098748d9d7177793bd16592b25d222a">operator=</a> (const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:a6098748d9d7177793bd16592b25d222a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
+<tr class="memitem:a0bb2ce58dd7456f28d45c6bd9f2d019c" id="r_a0bb2ce58dd7456f28d45c6bd9f2d019c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0bb2ce58dd7456f28d45c6bd9f2d019c">operator=</a> (<a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:a0bb2ce58dd7456f28d45c6bd9f2d019c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
+<tr class="memitem:ae93fcc39abfbc90cfc87632c45eca49e" id="r_ae93fcc39abfbc90cfc87632c45eca49e"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:ae93fcc39abfbc90cfc87632c45eca49e template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae93fcc39abfbc90cfc87632c45eca49e">operator=</a> (value_t &amp;&amp;value) noexcept -&gt; reference_wrapper_object &amp;</td></tr>
+<tr class="memdesc:ae93fcc39abfbc90cfc87632c45eca49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator with specified <a class="el" href="#a5a3358642228f94891d85d4ec69deb31" title="Represents the base type (std::reference_wrapper&lt;type_t&gt;).">xtd::reference_wrapper_object::base_type</a> value.  <br /></td></tr>
 <tr class="memitem:a0335e30305f02de02c9f0ca75840af0a" id="r_a0335e30305f02de02c9f0ca75840af0a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0335e30305f02de02c9f0ca75840af0a">operator type &amp;</a> () const</td></tr>
 <tr class="memdesc:a0335e30305f02de02c9f0ca75840af0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored object.  <br /></td></tr>
 <tr class="memitem:a53cc89fc148ee15af6a0d043332b133f" id="r_a53cc89fc148ee15af6a0d043332b133f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a53cc89fc148ee15af6a0d043332b133f">operator bool</a> () const noexcept</td></tr>
@@ -210,46 +210,46 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:afafde3394b42c46275e3773d41e02909" id="r_afafde3394b42c46275e3773d41e02909"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afafde3394b42c46275e3773d41e02909">is_empty</a> () const noexcept</td></tr>
-<tr class="memdesc:afafde3394b42c46275e3773d41e02909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the stored reference is empty.  <br /></td></tr>
-<tr class="memitem:a9615e74338addc652b3eb7ebd11bfcd9" id="r_a9615e74338addc652b3eb7ebd11bfcd9"><td class="memItemLeft">const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9615e74338addc652b3eb7ebd11bfcd9">reference</a> () const</td></tr>
-<tr class="memdesc:a9615e74338addc652b3eb7ebd11bfcd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type reference.  <br /></td></tr>
-<tr class="memitem:a689f24979c9049785856e90c58f73281" id="r_a689f24979c9049785856e90c58f73281"><td class="memItemLeft"><a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a689f24979c9049785856e90c58f73281">reference</a> ()</td></tr>
-<tr class="memdesc:a689f24979c9049785856e90c58f73281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type reference.  <br /></td></tr>
+<tr class="memitem:a9e855e6797876479f9f68c098488fb75" id="r_a9e855e6797876479f9f68c098488fb75"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e855e6797876479f9f68c098488fb75">is_empty</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a9e855e6797876479f9f68c098488fb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the stored reference is empty.  <br /></td></tr>
+<tr class="memitem:af53dd88d677f7f92eec84fe62c915cda" id="r_af53dd88d677f7f92eec84fe62c915cda"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af53dd88d677f7f92eec84fe62c915cda">reference</a> () const -&gt; const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;</td></tr>
+<tr class="memdesc:af53dd88d677f7f92eec84fe62c915cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type reference.  <br /></td></tr>
+<tr class="memitem:a7088d98a965a86e090534b04e204b30b" id="r_a7088d98a965a86e090534b04e204b30b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7088d98a965a86e090534b04e204b30b">reference</a> () -&gt; <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;</td></tr>
+<tr class="memdesc:a7088d98a965a86e090534b04e204b30b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type reference.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:aae4e7dd93752613d745f9ccb8ea09fba" id="r_aae4e7dd93752613d745f9ccb8ea09fba"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#aae4e7dd93752613d745f9ccb8ea09fba">compare_to</a> (const reference_wrapper_object &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:aae4e7dd93752613d745f9ccb8ea09fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
-<tr class="memitem:a1460020865ce11461dd488d895e710c9" id="r_a1460020865ce11461dd488d895e710c9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1460020865ce11461dd488d895e710c9">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:a1460020865ce11461dd488d895e710c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6769a012945736ff61d5da0d4c584e47" id="r_a6769a012945736ff61d5da0d4c584e47"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6769a012945736ff61d5da0d4c584e47">equals</a> (const reference_wrapper_object &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:a6769a012945736ff61d5da0d4c584e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:abe088108cb5eeafb4e2f8ebc562c1411" id="r_abe088108cb5eeafb4e2f8ebc562c1411"><td class="memItemLeft"><a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abe088108cb5eeafb4e2f8ebc562c1411">get</a> () const</td></tr>
-<tr class="memdesc:abe088108cb5eeafb4e2f8ebc562c1411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored reference.  <br /></td></tr>
-<tr class="memitem:a0f3af645e9875daa07b461e4b85d8ab0" id="r_a0f3af645e9875daa07b461e4b85d8ab0"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0f3af645e9875daa07b461e4b85d8ab0">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a0f3af645e9875daa07b461e4b85d8ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:a8fe7689f650e95c1002ccf75bc9c37f8" id="r_a8fe7689f650e95c1002ccf75bc9c37f8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8fe7689f650e95c1002ccf75bc9c37f8">reset</a> () noexcept</td></tr>
-<tr class="memdesc:a8fe7689f650e95c1002ccf75bc9c37f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the current object. Set the current object to null.  <br /></td></tr>
-<tr class="memitem:aefd6ebbde32b9edd7b23ea256a1bd630" id="r_aefd6ebbde32b9edd7b23ea256a1bd630"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:aefd6ebbde32b9edd7b23ea256a1bd630 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aefd6ebbde32b9edd7b23ea256a1bd630">reset</a> (value_t &amp;&amp;value) noexcept</td></tr>
-<tr class="memdesc:aefd6ebbde32b9edd7b23ea256a1bd630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the current object. Set the current object with specified reference.  <br /></td></tr>
-<tr class="memitem:aea8e7c40758f64fa495ed26bf1669815" id="r_aea8e7c40758f64fa495ed26bf1669815"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aea8e7c40758f64fa495ed26bf1669815">reset</a> (<a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">xtd::null_ptr</a> <a class="el" href="group__types.html#ga3076865c8390f78bfa45c7fbd8df1b65">null</a>) noexcept</td></tr>
-<tr class="memdesc:aea8e7c40758f64fa495ed26bf1669815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the current object. Set the current object with specified null value.  <br /></td></tr>
-<tr class="memitem:a4151e67e8c201308474722b1f1d30e1d" id="r_a4151e67e8c201308474722b1f1d30e1d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4151e67e8c201308474722b1f1d30e1d">swap</a> (reference_wrapper_object &amp;value) noexcept</td></tr>
-<tr class="memdesc:a4151e67e8c201308474722b1f1d30e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps this current instance with specified reference object.  <br /></td></tr>
-<tr class="memitem:a797caf8684653405aaa2bb593aab8d08" id="r_a797caf8684653405aaa2bb593aab8d08"><td class="memItemLeft">type_t &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a797caf8684653405aaa2bb593aab8d08">to_object</a> () const</td></tr>
-<tr class="memdesc:a797caf8684653405aaa2bb593aab8d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored object.  <br /></td></tr>
-<tr class="memitem:a6d96b3a0a1248f6fa2bc1f87ee326c65" id="r_a6d96b3a0a1248f6fa2bc1f87ee326c65"><td class="memTemplParams" colspan="2">template&lt;typename target_t&gt; </td></tr>
-<tr class="memitem:a6d96b3a0a1248f6fa2bc1f87ee326c65 template"><td class="memItemLeft">target_t&#160;</td><td class="memItemRight"><a class="el" href="#a6d96b3a0a1248f6fa2bc1f87ee326c65">to_object</a> () const</td></tr>
-<tr class="memdesc:a6d96b3a0a1248f6fa2bc1f87ee326c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored object with specified <span class="tt">target_t</span> type.  <br /></td></tr>
-<tr class="memitem:a8e01542b9fff5d52eb2cb50f9cf56c7a" id="r_a8e01542b9fff5d52eb2cb50f9cf56c7a"><td class="memItemLeft"><a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a8e01542b9fff5d52eb2cb50f9cf56c7a">to_reference</a> () const</td></tr>
-<tr class="memdesc:a8e01542b9fff5d52eb2cb50f9cf56c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored reference.  <br /></td></tr>
-<tr class="memitem:a7717115950dddb8f20d2badd0a41ff8b" id="r_a7717115950dddb8f20d2badd0a41ff8b"><td class="memTemplParams" colspan="2">template&lt;typename target_t&gt; </td></tr>
-<tr class="memitem:a7717115950dddb8f20d2badd0a41ff8b template"><td class="memItemLeft">target_t&#160;</td><td class="memItemRight"><a class="el" href="#a7717115950dddb8f20d2badd0a41ff8b">to_reference</a> () const</td></tr>
-<tr class="memdesc:a7717115950dddb8f20d2badd0a41ff8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored reference with specified <span class="tt">target_t</span> type.  <br /></td></tr>
-<tr class="memitem:ab0e5f8b4b96fef7387521a412b06c745" id="r_ab0e5f8b4b96fef7387521a412b06c745"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab0e5f8b4b96fef7387521a412b06c745">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:ab0e5f8b4b96fef7387521a412b06c745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:a92d7f35f6635075c110af13e25679c98" id="r_a92d7f35f6635075c110af13e25679c98"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a92d7f35f6635075c110af13e25679c98">compare_to</a> (const reference_wrapper_object &amp;obj) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:a92d7f35f6635075c110af13e25679c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="memitem:a03e7c26ce05eab79dc873f0259397a2c" id="r_a03e7c26ce05eab79dc873f0259397a2c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a03e7c26ce05eab79dc873f0259397a2c">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;value) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a03e7c26ce05eab79dc873f0259397a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:aea75633fbf44bf73bb060b294e41cf04" id="r_aea75633fbf44bf73bb060b294e41cf04"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aea75633fbf44bf73bb060b294e41cf04">equals</a> (const reference_wrapper_object &amp;value) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:aea75633fbf44bf73bb060b294e41cf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memitem:a788756c27aa48e32bc68b2f983d54bc8" id="r_a788756c27aa48e32bc68b2f983d54bc8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a788756c27aa48e32bc68b2f983d54bc8">get</a> () const -&gt; <a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp;</td></tr>
+<tr class="memdesc:a788756c27aa48e32bc68b2f983d54bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored reference.  <br /></td></tr>
+<tr class="memitem:a1555800475838860d8f8b2ec8ab25a51" id="r_a1555800475838860d8f8b2ec8ab25a51"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1555800475838860d8f8b2ec8ab25a51">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a1555800475838860d8f8b2ec8ab25a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a472afc83bb4fab987a1b4957b30592f4" id="r_a472afc83bb4fab987a1b4957b30592f4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a472afc83bb4fab987a1b4957b30592f4">reset</a> () noexcept -&gt; void</td></tr>
+<tr class="memdesc:a472afc83bb4fab987a1b4957b30592f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the current object. Set the current object to null.  <br /></td></tr>
+<tr class="memitem:ac248dc35cac8362491ec1a03cfe4e7a0" id="r_ac248dc35cac8362491ec1a03cfe4e7a0"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:ac248dc35cac8362491ec1a03cfe4e7a0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac248dc35cac8362491ec1a03cfe4e7a0">reset</a> (value_t &amp;&amp;value) noexcept -&gt; void</td></tr>
+<tr class="memdesc:ac248dc35cac8362491ec1a03cfe4e7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the current object. Set the current object with specified reference.  <br /></td></tr>
+<tr class="memitem:a30a6200aac6f4e78968f310d6bfc781c" id="r_a30a6200aac6f4e78968f310d6bfc781c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a30a6200aac6f4e78968f310d6bfc781c">reset</a> (<a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">xtd::null_ptr</a> <a class="el" href="group__types.html#ga3076865c8390f78bfa45c7fbd8df1b65">null</a>) noexcept -&gt; void</td></tr>
+<tr class="memdesc:a30a6200aac6f4e78968f310d6bfc781c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the current object. Set the current object with specified null value.  <br /></td></tr>
+<tr class="memitem:ac92e799b3d8ce316cfc23fb08dd14502" id="r_ac92e799b3d8ce316cfc23fb08dd14502"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac92e799b3d8ce316cfc23fb08dd14502">swap</a> (reference_wrapper_object &amp;value) noexcept -&gt; void</td></tr>
+<tr class="memdesc:ac92e799b3d8ce316cfc23fb08dd14502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps this current instance with specified reference object.  <br /></td></tr>
+<tr class="memitem:ab2b86ea83f9928e588ffb25a9e2391b2" id="r_ab2b86ea83f9928e588ffb25a9e2391b2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab2b86ea83f9928e588ffb25a9e2391b2">to_object</a> () const -&gt; type_t &amp;</td></tr>
+<tr class="memdesc:ab2b86ea83f9928e588ffb25a9e2391b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored object.  <br /></td></tr>
+<tr class="memitem:a10b6213c89e49c0ae959a0b5e1ba20f0" id="r_a10b6213c89e49c0ae959a0b5e1ba20f0"><td class="memTemplParams" colspan="2">template&lt;typename target_t&gt; </td></tr>
+<tr class="memitem:a10b6213c89e49c0ae959a0b5e1ba20f0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a10b6213c89e49c0ae959a0b5e1ba20f0">to_object</a> () const -&gt; target_t</td></tr>
+<tr class="memdesc:a10b6213c89e49c0ae959a0b5e1ba20f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored object with specified <span class="tt">target_t</span> type.  <br /></td></tr>
+<tr class="memitem:a13a6da035c4f940a3bb9597f88c672f5" id="r_a13a6da035c4f940a3bb9597f88c672f5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a13a6da035c4f940a3bb9597f88c672f5">to_reference</a> () const -&gt; <a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp;</td></tr>
+<tr class="memdesc:a13a6da035c4f940a3bb9597f88c672f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored reference.  <br /></td></tr>
+<tr class="memitem:a2ee3ae53c329de8f9f80b23b4b5bd1ae" id="r_a2ee3ae53c329de8f9f80b23b4b5bd1ae"><td class="memTemplParams" colspan="2">template&lt;typename target_t&gt; </td></tr>
+<tr class="memitem:a2ee3ae53c329de8f9f80b23b4b5bd1ae template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2ee3ae53c329de8f9f80b23b4b5bd1ae">to_reference</a> () const -&gt; target_t</td></tr>
+<tr class="memdesc:a2ee3ae53c329de8f9f80b23b4b5bd1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored reference with specified <span class="tt">target_t</span> type.  <br /></td></tr>
+<tr class="memitem:a1aa05f2808e6301b211147e73fdb66df" id="r_a1aa05f2808e6301b211147e73fdb66df"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1aa05f2808e6301b211147e73fdb66df">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a1aa05f2808e6301b211147e73fdb66df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -861,8 +861,8 @@ template&lt;typename value_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="afafde3394b42c46275e3773d41e02909" name="afafde3394b42c46275e3773d41e02909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afafde3394b42c46275e3773d41e02909">&#9670;&#160;</a></span>is_empty()</h2>
+<a id="a9e855e6797876479f9f68c098488fb75" name="a9e855e6797876479f9f68c098488fb75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e855e6797876479f9f68c098488fb75">&#9670;&#160;</a></span>is_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -873,22 +873,22 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::is_empty </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::is_empty </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Checks if the stored reference is empty. </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span>if stored reference is empty; otherwise <span class="tt">false</span>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#abe088108cb5eeafb4e2f8ebc562c1411" title="Gets the stored reference.">xtd::reference_wrapper_object::get</a> and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a788756c27aa48e32bc68b2f983d54bc8" title="Gets the stored reference.">xtd::reference_wrapper_object::get</a> and <a class="el" href="#a9e855e6797876479f9f68c098488fb75" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
 <div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
@@ -898,8 +898,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a9615e74338addc652b3eb7ebd11bfcd9" name="a9615e74338addc652b3eb7ebd11bfcd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9615e74338addc652b3eb7ebd11bfcd9">&#9670;&#160;</a></span>reference() <span class="overload">[1/2]</span></h2>
+<a id="af53dd88d677f7f92eec84fe62c915cda" name="af53dd88d677f7f92eec84fe62c915cda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53dd88d677f7f92eec84fe62c915cda">&#9670;&#160;</a></span>reference() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -910,15 +910,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reference </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reference </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -928,8 +928,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a689f24979c9049785856e90c58f73281" name="a689f24979c9049785856e90c58f73281"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a689f24979c9049785856e90c58f73281">&#9670;&#160;</a></span>reference() <span class="overload">[2/2]</span></h2>
+<a id="a7088d98a965a86e090534b04e204b30b" name="a7088d98a965a86e090534b04e204b30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7088d98a965a86e090534b04e204b30b">&#9670;&#160;</a></span>reference() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -940,15 +940,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reference </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reference </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -958,8 +958,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="aae4e7dd93752613d745f9ccb8ea09fba" name="aae4e7dd93752613d745f9ccb8ea09fba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae4e7dd93752613d745f9ccb8ea09fba">&#9670;&#160;</a></span>compare_to()</h2>
+<a id="a92d7f35f6635075c110af13e25679c98" name="a92d7f35f6635075c110af13e25679c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d7f35f6635075c110af13e25679c98">&#9670;&#160;</a></span>compare_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -970,15 +970,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::compare_to </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::compare_to </td>
           <td>(</td>
           <td class="paramtype">const reference_wrapper_object&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1004,8 +1004,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a1460020865ce11461dd488d895e710c9" name="a1460020865ce11461dd488d895e710c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1460020865ce11461dd488d895e710c9">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a03e7c26ce05eab79dc873f0259397a2c" name="a03e7c26ce05eab79dc873f0259397a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e7c26ce05eab79dc873f0259397a2c">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1016,15 +1016,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::equals </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1042,8 +1042,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a6769a012945736ff61d5da0d4c584e47" name="a6769a012945736ff61d5da0d4c584e47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6769a012945736ff61d5da0d4c584e47">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="aea75633fbf44bf73bb060b294e41cf04" name="aea75633fbf44bf73bb060b294e41cf04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea75633fbf44bf73bb060b294e41cf04">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1054,15 +1054,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::equals </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype">const reference_wrapper_object&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1078,8 +1078,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="abe088108cb5eeafb4e2f8ebc562c1411" name="abe088108cb5eeafb4e2f8ebc562c1411"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe088108cb5eeafb4e2f8ebc562c1411">&#9670;&#160;</a></span>get()</h2>
+<a id="a788756c27aa48e32bc68b2f983d54bc8" name="a788756c27aa48e32bc68b2f983d54bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a788756c27aa48e32bc68b2f983d54bc8">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1090,15 +1090,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::get </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::get </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1111,7 +1111,7 @@ template&lt;typename type_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#abe088108cb5eeafb4e2f8ebc562c1411" title="Gets the stored reference.">xtd::reference_wrapper_object::get</a> and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a788756c27aa48e32bc68b2f983d54bc8" title="Gets the stored reference.">xtd::reference_wrapper_object::get</a> and <a class="el" href="#a9e855e6797876479f9f68c098488fb75" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
 <div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
@@ -1120,8 +1120,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a0f3af645e9875daa07b461e4b85d8ab0" name="a0f3af645e9875daa07b461e4b85d8ab0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f3af645e9875daa07b461e4b85d8ab0">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a1555800475838860d8f8b2ec8ab25a51" name="a1555800475838860d8f8b2ec8ab25a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1555800475838860d8f8b2ec8ab25a51">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1132,15 +1132,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::get_hash_code </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1152,8 +1152,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a8fe7689f650e95c1002ccf75bc9c37f8" name="a8fe7689f650e95c1002ccf75bc9c37f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fe7689f650e95c1002ccf75bc9c37f8">&#9670;&#160;</a></span>reset() <span class="overload">[1/3]</span></h2>
+<a id="a472afc83bb4fab987a1b4957b30592f4" name="a472afc83bb4fab987a1b4957b30592f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a472afc83bb4fab987a1b4957b30592f4">&#9670;&#160;</a></span>reset() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1164,10 +1164,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reset </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1182,8 +1182,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="aefd6ebbde32b9edd7b23ea256a1bd630" name="aefd6ebbde32b9edd7b23ea256a1bd630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefd6ebbde32b9edd7b23ea256a1bd630">&#9670;&#160;</a></span>reset() <span class="overload">[2/3]</span></h2>
+<a id="ac248dc35cac8362491ec1a03cfe4e7a0" name="ac248dc35cac8362491ec1a03cfe4e7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac248dc35cac8362491ec1a03cfe4e7a0">&#9670;&#160;</a></span>reset() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1196,10 +1196,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reset </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reset </td>
           <td>(</td>
           <td class="paramtype">value_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1220,8 +1220,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="aea8e7c40758f64fa495ed26bf1669815" name="aea8e7c40758f64fa495ed26bf1669815"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea8e7c40758f64fa495ed26bf1669815">&#9670;&#160;</a></span>reset() <span class="overload">[3/3]</span></h2>
+<a id="a30a6200aac6f4e78968f310d6bfc781c" name="a30a6200aac6f4e78968f310d6bfc781c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a6200aac6f4e78968f310d6bfc781c">&#9670;&#160;</a></span>reset() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1232,10 +1232,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reset </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::reset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">xtd::null_ptr</a></td>          <td class="paramname"><span class="paramname"><em>null</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1255,8 +1255,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a4151e67e8c201308474722b1f1d30e1d" name="a4151e67e8c201308474722b1f1d30e1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4151e67e8c201308474722b1f1d30e1d">&#9670;&#160;</a></span>swap()</h2>
+<a id="ac92e799b3d8ce316cfc23fb08dd14502" name="ac92e799b3d8ce316cfc23fb08dd14502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac92e799b3d8ce316cfc23fb08dd14502">&#9670;&#160;</a></span>swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1267,10 +1267,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::swap </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::swap </td>
           <td>(</td>
           <td class="paramtype">reference_wrapper_object&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1290,8 +1290,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a797caf8684653405aaa2bb593aab8d08" name="a797caf8684653405aaa2bb593aab8d08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a797caf8684653405aaa2bb593aab8d08">&#9670;&#160;</a></span>to_object() <span class="overload">[1/2]</span></h2>
+<a id="ab2b86ea83f9928e588ffb25a9e2391b2" name="ab2b86ea83f9928e588ffb25a9e2391b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b86ea83f9928e588ffb25a9e2391b2">&#9670;&#160;</a></span>to_object() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1302,15 +1302,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_object </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_object </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; type_t &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1323,7 +1323,7 @@ template&lt;typename type_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a797caf8684653405aaa2bb593aab8d08" title="Gets the stored object.">xtd::reference_wrapper_object::to_object</a> and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#ab2b86ea83f9928e588ffb25a9e2391b2" title="Gets the stored object.">xtd::reference_wrapper_object::to_object</a> and <a class="el" href="#a9e855e6797876479f9f68c098488fb75" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
 <div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>
@@ -1332,8 +1332,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a6d96b3a0a1248f6fa2bc1f87ee326c65" name="a6d96b3a0a1248f6fa2bc1f87ee326c65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d96b3a0a1248f6fa2bc1f87ee326c65">&#9670;&#160;</a></span>to_object() <span class="overload">[2/2]</span></h2>
+<a id="a10b6213c89e49c0ae959a0b5e1ba20f0" name="a10b6213c89e49c0ae959a0b5e1ba20f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b6213c89e49c0ae959a0b5e1ba20f0">&#9670;&#160;</a></span>to_object() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1341,14 +1341,22 @@ template&lt;typename type_t&gt; </div>
 template&lt;typename type_t&gt; </div>
 <div class="memtemplate">
 template&lt;typename target_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">target_t <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_object </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_object </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  target_t</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the stored object with specified <span class="tt">target_t</span> type. </p>
@@ -1362,8 +1370,8 @@ template&lt;typename target_t&gt; </div>
 
 </div>
 </div>
-<a id="a8e01542b9fff5d52eb2cb50f9cf56c7a" name="a8e01542b9fff5d52eb2cb50f9cf56c7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e01542b9fff5d52eb2cb50f9cf56c7a">&#9670;&#160;</a></span>to_reference() <span class="overload">[1/2]</span></h2>
+<a id="a13a6da035c4f940a3bb9597f88c672f5" name="a13a6da035c4f940a3bb9597f88c672f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a6da035c4f940a3bb9597f88c672f5">&#9670;&#160;</a></span>to_reference() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1374,15 +1382,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_reference </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_reference </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#ae4cc2ca2b6382cb22fcecad3afe8dbe4">type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1392,8 +1400,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a7717115950dddb8f20d2badd0a41ff8b" name="a7717115950dddb8f20d2badd0a41ff8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7717115950dddb8f20d2badd0a41ff8b">&#9670;&#160;</a></span>to_reference() <span class="overload">[2/2]</span></h2>
+<a id="a2ee3ae53c329de8f9f80b23b4b5bd1ae" name="a2ee3ae53c329de8f9f80b23b4b5bd1ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee3ae53c329de8f9f80b23b4b5bd1ae">&#9670;&#160;</a></span>to_reference() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1401,14 +1409,22 @@ template&lt;typename type_t&gt; </div>
 template&lt;typename type_t&gt; </div>
 <div class="memtemplate">
 template&lt;typename target_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">target_t <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_reference </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_reference </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  target_t</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the stored reference with specified <span class="tt">target_t</span> type. </p>
@@ -1422,8 +1438,8 @@ template&lt;typename target_t&gt; </div>
 
 </div>
 </div>
-<a id="ab0e5f8b4b96fef7387521a412b06c745" name="ab0e5f8b4b96fef7387521a412b06c745"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0e5f8b4b96fef7387521a412b06c745">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a1aa05f2808e6301b211147e73fdb66df" name="a1aa05f2808e6301b211147e73fdb66df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa05f2808e6301b211147e73fdb66df">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1434,15 +1450,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1454,8 +1470,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a35a32013b6d91e045cd4b6fade423e41" name="a35a32013b6d91e045cd4b6fade423e41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35a32013b6d91e045cd4b6fade423e41">&#9670;&#160;</a></span>operator=() <span class="overload">[1/11]</span></h2>
+<a id="a3ae1fa662a60e87e720b2459a29d27f6" name="a3ae1fa662a60e87e720b2459a29d27f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae1fa662a60e87e720b2459a29d27f6">&#9670;&#160;</a></span>operator=() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1466,10 +1482,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const reference_wrapper_object&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1489,8 +1505,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a69491d02a3822a2c08fb5e44cb415978" name="a69491d02a3822a2c08fb5e44cb415978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69491d02a3822a2c08fb5e44cb415978">&#9670;&#160;</a></span>operator=() <span class="overload">[2/11]</span></h2>
+<a id="aa6ab359584d4cbb75760b824975210be" name="aa6ab359584d4cbb75760b824975210be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ab359584d4cbb75760b824975210be">&#9670;&#160;</a></span>operator=() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1501,10 +1517,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">reference_wrapper_object&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1524,8 +1540,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a01ffa21136a0b8985d288e3c155ad3f7" name="a01ffa21136a0b8985d288e3c155ad3f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01ffa21136a0b8985d288e3c155ad3f7">&#9670;&#160;</a></span>operator=() <span class="overload">[3/11]</span></h2>
+<a id="aa28db5756fea8e503489d1444eac0e76" name="aa28db5756fea8e503489d1444eac0e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28db5756fea8e503489d1444eac0e76">&#9670;&#160;</a></span>operator=() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1536,10 +1552,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">reference_wrapper_object&lt; type_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1559,8 +1575,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a762fa8624615291d5606b0d6b5980aac" name="a762fa8624615291d5606b0d6b5980aac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a762fa8624615291d5606b0d6b5980aac">&#9670;&#160;</a></span>operator=() <span class="overload">[4/11]</span></h2>
+<a id="af1193c58f05ffea060c398d585b97461" name="af1193c58f05ffea060c398d585b97461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1193c58f05ffea060c398d585b97461">&#9670;&#160;</a></span>operator=() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1573,10 +1589,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const reference_wrapper_object&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1596,8 +1612,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="aa86dd9292f7f8f89b23bb9c59ce76303" name="aa86dd9292f7f8f89b23bb9c59ce76303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa86dd9292f7f8f89b23bb9c59ce76303">&#9670;&#160;</a></span>operator=() <span class="overload">[5/11]</span></h2>
+<a id="a4f71c8d4e8f892cf70e9dfaf0b9f97b3" name="a4f71c8d4e8f892cf70e9dfaf0b9f97b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f71c8d4e8f892cf70e9dfaf0b9f97b3">&#9670;&#160;</a></span>operator=() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1610,10 +1626,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">reference_wrapper_object&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1633,8 +1649,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a06bf9ffd97a1deb981639a3d2042bcc8" name="a06bf9ffd97a1deb981639a3d2042bcc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06bf9ffd97a1deb981639a3d2042bcc8">&#9670;&#160;</a></span>operator=() <span class="overload">[6/11]</span></h2>
+<a id="addb4eae01423330b4177b2ca6de10f78" name="addb4eae01423330b4177b2ca6de10f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb4eae01423330b4177b2ca6de10f78">&#9670;&#160;</a></span>operator=() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1647,10 +1663,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">reference_wrapper_object&lt; value_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1670,8 +1686,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a850c61740da0d321111a75e37cc80ab6" name="a850c61740da0d321111a75e37cc80ab6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a850c61740da0d321111a75e37cc80ab6">&#9670;&#160;</a></span>operator=() <span class="overload">[7/11]</span></h2>
+<a id="af6ad16bb999ac7e1011e78b14e22bc40" name="af6ad16bb999ac7e1011e78b14e22bc40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6ad16bb999ac7e1011e78b14e22bc40">&#9670;&#160;</a></span>operator=() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1684,10 +1700,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const std::reference_wrapper&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1707,8 +1723,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a14d4b001541267aed25b61c3d1e9eeb0" name="a14d4b001541267aed25b61c3d1e9eeb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14d4b001541267aed25b61c3d1e9eeb0">&#9670;&#160;</a></span>operator=() <span class="overload">[8/11]</span></h2>
+<a id="af910c415e84407a3a791f96414de3449" name="af910c415e84407a3a791f96414de3449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af910c415e84407a3a791f96414de3449">&#9670;&#160;</a></span>operator=() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1721,10 +1737,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">std::reference_wrapper&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1744,8 +1760,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a374c87b0052e5818d699edca0696c4ea" name="a374c87b0052e5818d699edca0696c4ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a374c87b0052e5818d699edca0696c4ea">&#9670;&#160;</a></span>operator=() <span class="overload">[9/11]</span></h2>
+<a id="a6098748d9d7177793bd16592b25d222a" name="a6098748d9d7177793bd16592b25d222a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6098748d9d7177793bd16592b25d222a">&#9670;&#160;</a></span>operator=() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1756,10 +1772,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1779,8 +1795,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a11f8087c217b0d5fe86dacf2f94012d9" name="a11f8087c217b0d5fe86dacf2f94012d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11f8087c217b0d5fe86dacf2f94012d9">&#9670;&#160;</a></span>operator=() <span class="overload">[10/11]</span></h2>
+<a id="a0bb2ce58dd7456f28d45c6bd9f2d019c" name="a0bb2ce58dd7456f28d45c6bd9f2d019c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb2ce58dd7456f28d45c6bd9f2d019c">&#9670;&#160;</a></span>operator=() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1791,10 +1807,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5a3358642228f94891d85d4ec69deb31">base_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1814,8 +1830,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a406b0964ede0b6f643944540a37bc9da" name="a406b0964ede0b6f643944540a37bc9da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a406b0964ede0b6f643944540a37bc9da">&#9670;&#160;</a></span>operator=() <span class="overload">[11/11]</span></h2>
+<a id="ae93fcc39abfbc90cfc87632c45eca49e" name="ae93fcc39abfbc90cfc87632c45eca49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93fcc39abfbc90cfc87632c45eca49e">&#9670;&#160;</a></span>operator=() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1828,10 +1844,10 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference_wrapper_object &amp; <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">value_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; reference_wrapper_object &amp;</td>
         </tr>
       </table>
   </td>
@@ -1884,7 +1900,7 @@ template&lt;typename type_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use xtd::reference_wrapper_object::operator type&amp; and <a class="el" href="#afafde3394b42c46275e3773d41e02909" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use xtd::reference_wrapper_object::operator type&amp; and <a class="el" href="#a9e855e6797876479f9f68c098488fb75" title="Checks if the stored reference is empty.">xtd::reference_wrapper_object::is_empty</a> <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_value(<span class="keyword">const</span> reference_wrapper_object&lt;value_t&gt;&amp; value) {</div>
 <div class="line">  <span class="keywordflow">if</span> (value.is_empty()) <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value is empty&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">else</span> <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, value.get());</div>

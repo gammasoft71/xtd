@@ -174,7 +174,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="line">            time_per_parse = <a class="code hl_function" href="#af0fe3af0a3ad5204b268f015fe2f03aa">diagnostics::stopwatch::start_new</a>();</div>
 <div class="line">            </div>
 <div class="line">            <span class="keywordflow">try</span> {</div>
-<div class="line">              input_num = <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;int&gt;</a>(<span class="stringliteral">&quot;0&quot;</span>);</div>
+<div class="line">              input_num = <a class="code hl_function" href="group__xtd__core.html#ga648035372255a368b9096eb205edb9dd">parse&lt;int&gt;</a>(<span class="stringliteral">&quot;0&quot;</span>);</div>
 <div class="line">            } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp;) {</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">            }</div>
@@ -205,7 +205,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="line">            time_per_parse = <a class="code hl_function" href="#af0fe3af0a3ad5204b268f015fe2f03aa">diagnostics::stopwatch::start_new</a>();</div>
 <div class="line">            </div>
 <div class="line">            <span class="keywordflow">try</span> {</div>
-<div class="line">              input_num = <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;int&gt;</a>(<span class="stringliteral">&quot;a&quot;</span>);</div>
+<div class="line">              input_num = <a class="code hl_function" href="group__xtd__core.html#ga648035372255a368b9096eb205edb9dd">parse&lt;int&gt;</a>(<span class="stringliteral">&quot;a&quot;</span>);</div>
 <div class="line">            } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp;) {</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">            }</div>
@@ -221,7 +221,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="line">            <span class="comment">// Start a new stopwatch timer.</span></div>
 <div class="line">            time_per_parse = <a class="code hl_function" href="#af0fe3af0a3ad5204b268f015fe2f03aa">diagnostics::stopwatch::start_new</a>();</div>
 <div class="line">            </div>
-<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#ga2c48bc33df082fe187069c903961d8eb">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">              </div>
 <div class="line">            <span class="comment">// Stop the timer, and save the elapsed ticks for the operation.</span></div>
@@ -319,8 +319,8 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_acd55b8a46e42de6556ff6060b74e89d0"><div class="ttname"><a href="#acd55b8a46e42de6556ff6060b74e89d0">xtd::diagnostics::stopwatch::is_high_resolution</a></div><div class="ttdeci">static auto is_high_resolution() noexcept -&gt; bool</div><div class="ttdoc">Indicates whether the timer is based on a high-resolution performance counter. This field is read-onl...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_ad601563de338ff84ae27b4d92d71c084"><div class="ttname"><a href="#ad601563de338ff84ae27b4d92d71c084">xtd::diagnostics::stopwatch::frequency</a></div><div class="ttdeci">static auto frequency() noexcept -&gt; xtd::int64</div><div class="ttdoc">Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_af0fe3af0a3ad5204b268f015fe2f03aa"><div class="ttname"><a href="#af0fe3af0a3ad5204b268f015fe2f03aa">xtd::diagnostics::stopwatch::start_new</a></div><div class="ttdeci">static auto start_new() noexcept -&gt; xtd::diagnostics::stopwatch</div><div class="ttdoc">Initializes a new xtd::diagnostics::stopwatch instance, sets the xtd::diagnostics::stopwatch::elapsed...</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gaf38b51b1a3c788f678bb6e89f7694ee4"><div class="ttname"><a href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse</a></div><div class="ttdeci">value_t parse(const std::string &amp;str)</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:34</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gafd4d41304c110da4b815801e502cc853"><div class="ttname"><a href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">xtd::try_parse</a></div><div class="ttdeci">bool try_parse(const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value) noexcept</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:416</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga2c48bc33df082fe187069c903961d8eb"><div class="ttname"><a href="group__xtd__core.html#ga2c48bc33df082fe187069c903961d8eb">xtd::try_parse</a></div><div class="ttdeci">auto try_parse(const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value) noexcept -&gt; bool</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:416</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga648035372255a368b9096eb205edb9dd"><div class="ttname"><a href="group__xtd__core.html#ga648035372255a368b9096eb205edb9dd">xtd::parse</a></div><div class="ttdeci">auto parse(const std::string &amp;str) -&gt; value_t</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:34</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">xtd::console_key::l</a></div><div class="ttdeci">@ l</div><div class="ttdoc">The L key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:110</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -642,7 +642,7 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line">            <span class="comment">// Start a new stopwatch timer.</span></div>
 <div class="line">            time_per_parse = diagnostics::stopwatch::start_new();</div>
 <div class="line">            </div>
-<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#ga2c48bc33df082fe187069c903961d8eb">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">              </div>
 <div class="line">            <span class="comment">// Stop the timer, and save the elapsed ticks for the operation.</span></div>
@@ -905,7 +905,7 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line">            <span class="comment">// Start a new stopwatch timer.</span></div>
 <div class="line">            time_per_parse = diagnostics::stopwatch::start_new();</div>
 <div class="line">            </div>
-<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#ga2c48bc33df082fe187069c903961d8eb">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">              </div>
 <div class="line">            <span class="comment">// Stop the timer, and save the elapsed ticks for the operation.</span></div>
@@ -1325,7 +1325,7 @@ When a stopwatch instance measures more than one interval, the start method resu
 <div class="line">            <span class="comment">// Start a new stopwatch timer.</span></div>
 <div class="line">            time_per_parse = diagnostics::stopwatch::start_new();</div>
 <div class="line">            </div>
-<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__xtd__core.html#ga2c48bc33df082fe187069c903961d8eb">try_parse</a>(<span class="stringliteral">&quot;a&quot;</span>, input_num))</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">              </div>
 <div class="line">            <span class="comment">// Stop the timer, and save the elapsed ticks for the operation.</span></div>
