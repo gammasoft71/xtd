@@ -236,6 +236,12 @@ namespace xtd {
         
         template<typename collection_t>
         static xtd::usize wait_any(const collection_t& tasks, const time_span& timeout) {return wait_any(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
+
+        template<typename ...items_t>
+        static auto when_all(items_t&&... items) -> task<>;
+
+        template<typename ...items_t>
+        static auto when_any(items_t&&... items) -> task<xtd::usize>;
         /// @}
         
         /// @cond

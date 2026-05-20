@@ -165,6 +165,22 @@ namespace xtd {
       auto xtd::threading::tasks::basic_task<result_t>::run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state, cancellation_token);}
       
       template<typename result_t>
+      template<typename ...items_t>
+      auto xtd::threading::tasks::basic_task<result_t>::when_all(items_t&&... items) -> task<> {
+        return task_factory {}.start_new([&items...] mutable {
+          task<>::wait_all(std::forward<items_t>(items)...);
+        });
+      }
+      
+      template<typename result_t>
+      template<typename ...items_t>
+      auto xtd::threading::tasks::basic_task<result_t>::when_any(items_t&&... items) -> task<xtd::usize> {
+        return task_factory {}.start_new([&items...] mutable {
+          return task<>::wait_any(std::forward<items_t>(items)...);
+        });
+      }
+
+      template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::yield() -> task<result_t> {
         co_await yield_awaiter {};
       }
