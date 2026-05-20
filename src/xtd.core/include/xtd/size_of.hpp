@@ -18,7 +18,7 @@ namespace xtd {
   /// ```
   /// @remarks The size_of operator cannot be overloaded.
   template<typename type_t>
-  auto size_of() noexcept -> xtd::usize {return sizeof(type_t);}
+  [[nodiscard]] auto size_of() noexcept -> xtd::usize {return sizeof(type_t);}
   /// @brief Used to obtain the size in bytes of the object representation of type or expression.
   /// @par Examples
   /// ```cpp
@@ -30,7 +30,7 @@ namespace xtd {
   /// xtd::usize size2 = xtd::size_of(i);
   /// ```
   /// @remarks The size_of operator cannot be overloaded.
-  xtd::usize size_of(const auto& value) noexcept {return sizeof(value);}
+  [[nodiscard]] auto size_of(const auto& value) noexcept -> xtd::usize {return sizeof(value);}
   /// @brief Used to obtain the size in bytes of the object representation of type or expression.
   /// @par Examples
   /// ```cpp
@@ -42,5 +42,5 @@ namespace xtd {
   /// xtd::usize size2 = xtd::size_of(i);
   /// ```
   /// @remarks The size_of operator cannot be overloaded.
-  inline xtd::usize size_of(const xtd::type& value) noexcept {return sizeof(value);}
+  [[nodiscard]] inline auto size_of(const xtd::type& value) noexcept -> xtd::usize {return sizeof(value);}
 }
