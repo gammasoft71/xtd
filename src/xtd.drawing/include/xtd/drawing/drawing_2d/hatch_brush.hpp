@@ -48,7 +48,9 @@ namespace xtd {
         /// @}
         
         /// @cond
+        hatch_brush(hatch_brush&& value);
         hatch_brush(const hatch_brush& value);
+        hatch_brush& operator =(hatch_brush&& value);
         hatch_brush& operator =(const hatch_brush& value);
         /// @endcond
         
@@ -57,20 +59,20 @@ namespace xtd {
         /// @{
         /// @brief Gets the color of spaces between the hatch lines drawn by this hatch_brush object.
         /// @return A xtd::drawing::color structure that represents the background color for this hatch_brush.
-        xtd::drawing::color background_color() const noexcept;
+        [[nodiscard]] auto background_color() const noexcept -> xtd::drawing::color;
         
         /// @brief Gets the color of hatch lines drawn by this hatch_brush object.
         /// @return A xtd::drawing::color structure that represents the foreground color for this hatch_brush.
-        xtd::drawing::color foreground_color() const noexcept;
+        [[nodiscard]] auto foreground_color() const noexcept -> xtd::drawing::color;
         
         /// @brief Gets the hatch style of this hatch_brush object.
         /// @return One of the xtd::drawing::drawing_2d::hatch_style values that represents the pattern of this hatch_brush.
-        xtd::drawing::drawing_2d::hatch_style hatch_style() const noexcept;
+        [[nodiscard]] auto hatch_style() const noexcept -> xtd::drawing::drawing_2d::hatch_style;
         /// @}
         
       private:
         hatch_brush();
-        void recreate_handle();
+        auto recreate_handle() -> void;
         
         xtd::sptr<data> data_;
       };
