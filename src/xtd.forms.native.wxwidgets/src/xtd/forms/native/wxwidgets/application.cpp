@@ -191,7 +191,7 @@ void application::initialize() {
   if (application_initialized) return;
   application_initialized = true;
   
-  drawing::native::toolkit::initialize();
+  [[maybe_unused]] auto _ = drawing::native::toolkit::initialize();
   static_cast<wx_application*>(wxApp::GetInstance())->processIdle += process_idle;
   #if defined(__WXMSW__)
   wxRegKey key(wxRegKey::HKCU, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize");
