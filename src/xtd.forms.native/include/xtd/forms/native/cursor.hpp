@@ -42,54 +42,54 @@ namespace xtd {
         /// @brief Creates cursor.
         /// @return The created cursor handle.
         /// @warning Internal use only
-        static intptr create();
+        [[nodiscard]] static auto create() -> xtd::intptr;
         /// @brief Creates cursor with specified image and hot spot.
         /// @param image A xtd::drawing::image image will be use by cursor.
         /// @param hot_spot A xtd::drawing::point hot spot location.
         /// @return The created cursor handle.
         /// @warning Internal use only
-        static intptr create(const xtd::drawing::image& image, const drawing::point& hot_spot);
+        [[nodiscard]] static auto create(const xtd::drawing::image& image, const xtd::drawing::point& hot_spot) -> xtd::intptr;
         /// @brief Copies the cursor handle.
         /// @param cursor Cursor handle.
         /// @return An intptr that represents the cursor's handle.
         /// @warning Internal use only
-        static intptr copy(intptr cursor);
+        [[nodiscard]] static auto copy(xtd::intptr cursor) -> xtd::intptr;
         /// @brief Sets a cursor object that represents the mouse cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
-        static void current(intptr cursor);
+        static auto current(xtd::intptr cursor) -> void;
         /// @brief Destroys cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
-        static void destroy(intptr cursor);
+        static auto destroy(xtd::intptr cursor) -> void;
         /// @brief Hides cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
-        static void hide();
+        static auto hide() -> void;
         /// @brief Gets the cursor hot spot.
         /// @param cursor Cursor handle.
         /// @return A point representing the cursor hot spot.
         /// @warning Internal use only
-        static drawing::point hot_spot(intptr cursor);
+        [[nodiscard]] static auto hot_spot(xtd::intptr cursor) -> xtd::drawing::point;
         /// @brief Gets the cursor's position.
         /// @param cursor Cursor handle.
         /// @return A point that represents the cursor's position in screen coordinates.
         /// @warning Internal use only
-        static drawing::point position();
+        [[nodiscard]] static auto position() -> xtd::drawing::point;
         /// @brief Sets the cursor's position.
         /// @param cursor Cursor handle.
         /// @param position A point that represents the cursor's position in screen coordinates.
         /// @warning Internal use only
-        static void position(const drawing::point& position);
+        static auto position(const xtd::drawing::point& position) -> void;
         /// @brief Gets the size of the cursor object.
         /// @param cursor Cursor handle.
         /// @return A size that represents the width and height of the cursor.
         /// @warning Internal use only
-        static drawing::size size(intptr cursor);
+        [[nodiscard]] static auto size(xtd::intptr cursor) -> xtd::drawing::size;
         /// @brief Shows cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
-        static void show();
+        static auto show() -> void;
         /// @}
       };
     }
