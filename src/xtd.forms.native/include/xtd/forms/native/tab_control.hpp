@@ -44,28 +44,28 @@ namespace xtd {
         /// @param control Tab control window handle.
         /// @param page The page handle to delete.
         /// @warning Internal use only
-        static void delete_page(intptr control, intptr page);
+        static auto delete_page(xtd::intptr control, xtd::intptr page) -> void;
         /// @brief Sets image list.
         /// @param control Tab control window handle.
         /// @param image_list The image list handle.
         /// @warning Internal use only
-        static void image_list(intptr control, intptr image_list);
+        static auto image_list(xtd::intptr control, xtd::intptr image_list) -> void;
         /// @brief Inserts at specified tab page index a specified tab page handle.
         /// @param control Tab control window handle.
         /// @param index The tab page index to insert.
         /// @param page The tab page handle.
         /// @warning Internal use only
-        static void insert_page(intptr control, xtd::usize index, intptr page);
+        static auto insert_page(xtd::intptr control, xtd::usize index, xtd::intptr page) -> void;
         /// @brief Gets selected tab page index.
         /// @param control Tab control window handle.
         /// @return The selected tab page index.
         /// @warning Internal use only
-        static xtd::usize selected_index(intptr control);
+        [[nodiscard]] static auto selected_index(xtd::intptr control) -> xtd::usize;
         /// @brief Sets selected tab page with specified index
         /// @param control Tab control window handle.
         /// @param index The selected tab page index.
         /// @warning Internal use only
-        static void selected_index(intptr control, xtd::usize index);
+        static auto selected_index(xtd::intptr control, xtd::usize index) -> void;
         /// @}
       };
     }
