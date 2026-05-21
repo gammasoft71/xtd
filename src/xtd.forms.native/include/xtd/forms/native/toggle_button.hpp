@@ -40,7 +40,7 @@ namespace xtd {
         /// @param control Toggle button window handle.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void check_state(intptr control, int32 check_state);
+        static auto check_state(xtd::intptr control, xtd::int32 check_state) -> void;
         /// @}
       };
     }
