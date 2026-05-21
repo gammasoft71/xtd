@@ -45,7 +45,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @return `true` if user has clicked on cancel button; otherwise `false`.
         /// @warning Internal use only
-        static bool cancelled(intptr dialog);
+        [[nodiscard]] static auto cancelled(xtd::intptr dialog) -> bool;
         /// @brief Creates progress dialog.
         /// @param hwnd Parent window handle.
         /// @param text A string that specifies the title bar caption to display.
@@ -58,58 +58,58 @@ namespace xtd {
         /// @param options A bitwise progress dialog flags value.
         /// @return The created progress dialog window handle.
         /// @warning Internal use only
-        static intptr create(intptr hwnd, const xtd::string& text, const xtd::string& message, const xtd::array<xtd::string>& informations, xtd::usize marquee_animation_speed, int32 minimum, int32 maximum, int32 value, xtd::usize options);
+        [[nodiscard]] static auto create(xtd::intptr hwnd, const xtd::string& text, const xtd::string& message, const xtd::array<xtd::string>& informations, xtd::usize marquee_animation_speed, xtd::int32 minimum, xtd::int32 maximum, xtd::int32 value, xtd::usize options) -> xtd::intptr;
         /// @brief Destroys progress dialog.
         /// @param dialog Progress dialog window handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr dialog);
+        static auto destroy(xtd::intptr dialog) -> void;
         /// @brief Sets the information texts.
         /// @param dialog Progress dialog window handle.
         /// @param informations The information texts.
         /// @warning Internal use only
-        static void informations(intptr dialog, const xtd::array<xtd::string>& informations);
+        static auto informations(xtd::intptr dialog, const xtd::array<xtd::string>& informations) -> void;
         /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param dialog Progress dialog window handle.
         /// @param marquee tree is marquee; otherwise `false`. The default is `false`.
         /// @warning Internal use only
-        static void marquee(intptr dialog, bool marquee, xtd::usize animation_speed);
+        static auto marquee(xtd::intptr dialog, bool marquee, xtd::usize animation_speed) -> void;
         /// @brief Sets the maximum value of the range of the control.
         /// @param dialog Progress dialog window handle.
         /// @param maximum The maximum value of the range.
         /// @warning Internal use only
-        static void maximum(intptr dialog, int32 maximum);
+        static auto maximum(xtd::intptr dialog, xtd::int32 maximum) -> void;
         /// @brief Sets the message text.
         /// @param dialog Progress dialog window handle.
         /// @param description The message text.
         /// @warning Internal use only
-        static void message(intptr dialog, const xtd::string& message);
+        static auto message(xtd::intptr dialog, const xtd::string& message) -> void;
         /// @brief Sets the minimum value of the range of the control.
         /// @param dialog Progress dialog window handle.
         /// @param minimum The minimum value of the range.
         /// @warning Internal use only
-        static void minimum(intptr dialog, int32 minimum);
+        static auto minimum(xtd::intptr dialog, xtd::int32 minimum) -> void;
         /// @brief Resume progress dialog box after Abort button clicked.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
-        static void resume(intptr dialog);
+        static auto resume(xtd::intptr dialog) -> void;
         /// @brief Runs progress dialog box.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
-        static void show(intptr dialog);
+        static auto show(xtd::intptr dialog) -> void;
         /// @brief Runs progress dialog box as sheet.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
-        static void show_sheet(intptr dialog);
+        static auto show_sheet(xtd::intptr dialog) -> void;
         /// @brief Gets whether user has clicked on skip button.
         /// @param dialog Progress dialog window handle.
         /// @return `true` if user has clicked on skip button; otherwise `false`.
         /// @warning Internal use only
-        static bool skipped(intptr dialog);
+        [[nodiscard]] static auto skipped(xtd::intptr dialog) -> bool;
         /// @brief Sets the current position of the progress bar.
         /// @param dialog Progress dialog window handle.
         /// @param value The position within the range of the progress bar. The default is 0.
         /// @warning Internal use only
-        static void value(intptr dialog, int32 value);
+        static auto value(xtd::intptr dialog, xtd::int32 value) -> void;
         /// @}
       };
     }
