@@ -41,16 +41,16 @@ namespace xtd {
         /// @param control Button window handle.
         /// @param image A xtd::drawing::image to set.
         /// @warning Internal use only
-        static void image(intptr control, const drawing::image& image);
+        static auto image(xtd::intptr control, const drawing::image& image) -> void;
         /// @brief Sets image align.
         /// @param control Button window handle.
         /// @param align A bitwise combination of the content alignment flags.
         /// @warning Internal use only
-        static void image_align(intptr control, uint32 align);
+        static auto image_align(xtd::intptr control, xtd::uint32 align) -> void;
         /// @brief Mark button as default.
         /// @param control Button window handle.
         /// @warning Internal use only
-        static void set_default_button(intptr control);
+        static auto set_default_button(xtd::intptr control) -> void;
         /// @}
       };
     }
