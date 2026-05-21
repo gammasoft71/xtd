@@ -41,57 +41,57 @@ namespace xtd {
         /// @brief Maintains performance while items are added to the checked_list_box one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control Checked list box window handle.
         /// @warning Internal use only
-        static void begin_update(intptr control);
+        static auto begin_update(xtd::intptr control) -> void;
         /// @brief Sets check state to specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to set the check state for.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void check_state(intptr control, xtd::usize index, int32 check_state);
+        static auto check_state(xtd::intptr control, xtd::usize index, xtd::int32 check_state) -> void;
         /// @brief Gets check state from specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to set the check state for.
         /// @return The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static int32 check_state(intptr control, xtd::usize index);
+        [[nodiscard]] static auto check_state(xtd::intptr control, xtd::usize index) -> xtd::int32;
         /// @brief Deletes specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr control, xtd::usize index);
+        static auto delete_item(xtd::intptr control, xtd::usize index) -> void;
         /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
         /// @param control Checked list box window handle.
         /// @warning Internal use only
-        static void end_update(intptr control);
+        static auto end_update(xtd::intptr control) -> void;
         /// @brief Inserts at specified item index a specified value and check state.
         /// @param control Checked list box window handle.
         /// @param index The item index to insert.
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void insert_item(intptr control, xtd::usize index, const xtd::string& value, int32 check_state);
+        static auto insert_item(xtd::intptr control, xtd::usize index, const xtd::string& value, xtd::int32 check_state) -> void;
         /// @brief Gets selected item index.
         /// @param control Checked list box window handle.
         /// @return The selected item index.
         /// @warning Internal use only
-        static xtd::usize selected_index(intptr control);
+        [[nodiscard]] static auto selected_index(xtd::intptr control) -> xtd::usize;
         /// @brief Sets selected item with specified index
         /// @param control Checked list box window handle.
         /// @param index The selected item index.
         /// @warning Internal use only
-        static void selected_index(intptr control, xtd::usize index);
+        static auto selected_index(xtd::intptr control, xtd::usize index) -> void;
         /// @brief Gets a xtd::usize array of selected indices.
         /// @param control Checked list box window handle.
         /// @return A xtd::usize array of selected indices.
         /// @warning Internal use only
-        static xtd::array<xtd::usize> selected_indices(intptr control);
+        [[nodiscard]] static auto selected_indices(xtd::intptr control) -> xtd::array<xtd::usize>;
         /// @brief Updates a specified item index with specified value and check state.
         /// @param control Checked list box window handle.
         /// @param index The item index to update.
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void update_item(intptr control, xtd::usize index, const xtd::string& value, int32 check_state);
+        static auto update_item(xtd::intptr control, xtd::usize index, const xtd::string& value, xtd::int32 check_state) -> void;
         /// @}
       };
     }
