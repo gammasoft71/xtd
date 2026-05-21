@@ -49,7 +49,7 @@ namespace xtd {
         /// @param block_region_height The height of the source and destination rectangle.
         /// @param copy_pixel_operation The copy pixel operation values (see copy_pixel_operations.h for more information).
         /// @warning Internal use only
-        static void copy_from_graphics(intptr handle, intptr handle_source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation);
+        static auto copy_from_graphics(xtd::intptr handle, xtd::intptr handle_source, xtd::int32 source_x, xtd::int32 source_y, xtd::int32 destination_x, xtd::int32 destination_y, xtd::int32 block_region_width, xtd::int32 block_region_height, xtd::int32 copy_pixel_operation) -> void;
         /// @brief Clears the entire drawing surface and fills it with the specified background color.
         /// @param handle The graphics handle.
         /// @param a The alpha component of the background color of the drawing surface.
@@ -57,25 +57,25 @@ namespace xtd {
         /// @param g The green component of the background color of the drawing surface.
         /// @param b The blue component of the background color of the drawing surface.
         /// @warning Internal use only
-        static void clear(intptr handle, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
+        static auto clear(xtd::intptr handle, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) -> void;
         
         /// @brief Sets a region handle that limits the drawing region of the graphics.
         /// @param handle The graphics handle.
         /// @param region A region handle that limits the portion of the graphics that is currently available for drawing.
         /// @warning Internal use only
-        static void clip(intptr handle, intptr region);
+        static auto clip(xtd::intptr handle, xtd::intptr region) -> void;
         
         /// @brief Sets a value that specifies how composited images are drawn to the graphics.
         /// @param handle The graphics handle.
         /// @param compositing_mode This property specifies a compositing mode value (see compositing_modes.h for more information).
         /// @warning Internal use only
-        static void compositing_mode(intptr handle, int32 compositing_mode);
+        static auto compositing_mode(xtd::intptr handle, xtd::int32 compositing_mode) -> void;
         
         /// @brief Sets the rendering quality of composited images drawn to the graphics.
         /// @param handle The graphics handle.
         /// @param compositing_quality This property specifies a compositing quality value (see compositing_qualities.h for more information).
         /// @warning Internal use only
-        static void compositing_quality(intptr handle, int32 compositing_quality);
+        static auto compositing_quality(xtd::intptr handle, xtd::int32 compositing_quality) -> void;
         
         /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the graphics.
         /// @param handle The graphics handle.
@@ -87,12 +87,12 @@ namespace xtd {
         /// @param block_region_height The height of the area to be transferred.
         /// @param copy_pixel_operation The copy pixel operation values (see copy_pixel_operations.h for more information).
         /// @warning Internal use only
-        static void copy_from_screen(intptr handle, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation);
+        static auto copy_from_screen(xtd::intptr handle, xtd::int32 source_x, xtd::int32 source_y, xtd::int32 destination_x, xtd::int32 destination_y, xtd::int32 block_region_width, xtd::int32 block_region_height, xtd::int32 copy_pixel_operation) -> void;
         
         /// @brief Destroys graphics_path.
         /// @param handle The graphics handle.
         /// @warning Internal use only
-        static void destroy(intptr handle);
+        static auto destroy(xtd::intptr handle) -> void;
         
         /// @brief Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
@@ -104,7 +104,7 @@ namespace xtd {
         /// @param start_angle Angle in degrees measured clockwise from the x-axis to the starting point of the arc.
         /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to ending point of the arc.
         /// @warning Internal use only
-        static void draw_arc(intptr handle, intptr pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static auto draw_arc(xtd::intptr handle, xtd::intptr pen, float x, float y, float width, float height, float start_angle, float sweep_angle) -> void;
         
         /// @brief Draws a Bézier spline defined by four ordered pairs of coordinates that represent points.
         /// @param handle The graphics handle.
@@ -118,14 +118,14 @@ namespace xtd {
         /// @param x4 The x-coordinate of the ending point of the curve.
         /// @param y4 The y-coordinate of the ending point of the curve.
         /// @warning Internal use only
-        static void draw_bezier(intptr handle, intptr pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+        static auto draw_bezier(xtd::intptr handle, xtd::intptr pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) -> void;
         
         /// @brief Draws a series of Bézier splines from an array of xtd::collections::generic::key_value_pair<float, float> structures.
         /// @param handle The graphics handle.
         /// @param pen A pen handle that determines the color, width, and style of the curve.
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
         /// @warning Internal use only
-        static void draw_beziers(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static auto draw_beziers(xtd::intptr handle, xtd::intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points) -> void;
         
         /// @brief Draws a closed cardinal spline defined by an array of xtd::collections::generic::key_value_pair<float, float> structures using a specified tension.
         /// @param handle The graphics handle.
@@ -133,7 +133,7 @@ namespace xtd {
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that define the spline.
         /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void draw_closed_curve(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static auto draw_closed_curve(xtd::intptr handle, xtd::intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension) -> void;
         
         /// @brief Draws a cardinal spline through a specified array of xtd::collections::generic::key_value_pair<float, float> structures using a specified tension. The drawing begins offset from the beginning of the array.
         /// @param handle The graphics handle.
@@ -143,7 +143,7 @@ namespace xtd {
         /// @param number_of_segments Number of segments after the starting point to include in the curve.
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void draw_curve(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static auto draw_curve(xtd::intptr handle, xtd::intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension) -> void;
         
         /// @brief Draws an ellipse defined by a bounding rectangle specified by coordinates for the upper-left corner of the rectangle, a height, and a width.
         /// @param handle The graphics handle.
@@ -153,7 +153,7 @@ namespace xtd {
         /// @param width Width of the bounding rectangle that defines the ellipse.
         /// @param height Height of the bounding rectangle that defines the ellipse.
         /// @warning Internal use only
-        static void draw_ellipse(intptr handle, intptr pen, float x, float y, float width, float heigh);
+        static auto draw_ellipse(xtd::intptr handle, xtd::intptr pen, float x, float y, float width, float heigh) -> void;
         
         /// @brief Draws the specified image, using its original physical size, at the specified location, and size.
         /// @param handle The graphics handle.
@@ -161,7 +161,7 @@ namespace xtd {
         /// @param x The x-coordinate of the upper-left corner of the drawn image.
         /// @param y The y-coordinate of the upper-left corner of the drawn image.
         /// @warning Internal use only
-        static void draw_image(intptr handle, intptr image, float x, float y, float width, float height);
+        static auto draw_image(xtd::intptr handle, xtd::intptr image, float x, float y, float width, float height) -> void;
         
         /// @brief Draws the specified image, using its original physical size, at the specified location.
         /// @param handle The graphics handle.
@@ -171,7 +171,7 @@ namespace xtd {
         /// @param width Width of the bounding rectangle that defines the image.
         /// @param height Height of the bounding rectangle that defines the image.
         /// @warning Internal use only
-        static void draw_image(intptr handle, intptr image, float dest_x, float dest_y, float dest_width, float dest_height, float src_x, float src_y, float src_width, float src_height);
+        static auto draw_image(xtd::intptr handle, xtd::intptr image, float dest_x, float dest_y, float dest_width, float dest_height, float src_x, float src_y, float src_width, float src_height) -> void;
         
         /// @brief Draws the specified dosabled image at the specified location and size.
         /// @param handle The graphics handle.
@@ -182,7 +182,7 @@ namespace xtd {
         /// @param height Height of the bounding rectangle that defines the image.
         /// @param brightness The image brightness from 0.0 to 1.0.
         /// @warning Internal use only
-        static void draw_image_disabled(intptr handle, intptr image, float x, float y, float width, float height, float brightness);
+        static auto draw_image_disabled(xtd::intptr handle, xtd::intptr image, float x, float y, float width, float height, float brightness) -> void;
         
         /// @brief Draws a line connecting the two points specified by the coordinate pairs.
         /// @param handle The graphics handle.
@@ -192,21 +192,21 @@ namespace xtd {
         /// @param x2 The x-coordinate of the second point.
         /// @param y2 The y-coordinate of the second point.
         /// @warning Internal use only
-        static void draw_line(intptr handle, intptr pen, float x1, float y1, float x2, float y2);
+        static auto draw_line(xtd::intptr handle, xtd::intptr pen, float x1, float y1, float x2, float y2) -> void;
         
         /// @brief Draws a series of line segments that connect an array of xtd::collections::generic::key_value_pair<float, float> structures.
         /// @param handle The graphics handle.
         /// @param pen A pen handle that determines the color, width, and style of the line segments.
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the points to connect.
         /// @warning Internal use only
-        static void draw_lines(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static auto draw_lines(xtd::intptr handle, xtd::intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points) -> void;
         
         /// @brief Draws a graphics path.
         /// @param handle The graphics handle.
         /// @param pen A pen handle that determines the color, width, and style of the path.
         /// @param path A graphics path handle to draw.
         /// @warning Internal use only
-        static void draw_path(intptr handle, intptr pen, intptr graphics_path);
+        static auto draw_path(xtd::intptr handle, xtd::intptr pen, xtd::intptr graphics_path) -> void;
         
         /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
         /// @param handle The graphics handle.
@@ -218,14 +218,14 @@ namespace xtd {
         /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
         /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
         /// @warning Internal use only
-        static void draw_pie(intptr handle, intptr pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static auto draw_pie(xtd::intptr handle, xtd::intptr pen, float x, float y, float width, float height, float start_angle, float sweep_angle) -> void;
         
         /// @brief Draws a polygon defined by an array of xtd::collections::generic::key_value_pair<float, float> structures.
         /// @param handle The graphics handle.
         /// @param pen A pen handle that determines the color, width, and style of the polygon.
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the vertices of the polygon.
         /// @warning Internal use only
-        static void draw_polygon(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static auto draw_polygon(xtd::intptr handle, xtd::intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points) -> void;
         
         /// @brief Draws a rectangle specified by a coordinate pair, a width, and a height.
         /// @param handle The graphics handle.
@@ -235,14 +235,14 @@ namespace xtd {
         /// @param width The width of the rectangle to draw.
         /// @param height The height of the rectangle to draw.
         /// @warning Internal use only
-        static void draw_rectangle(intptr handle, intptr pen, float x, float y, float width, float height);
+        static auto draw_rectangle(xtd::intptr handle, xtd::intptr pen, float x, float y, float width, float height) -> void;
         
         /// @brief Draws a series of rectangles specified by std::tuple<float, float, float, float> structures.
         /// @param handle The graphics handle.
         /// @param pen A pen handle that determines the color, width, and style of the outlines of the rectangles.
         /// @param rects Array of std::tuple<float, float, float, float> structures that represent the rectangles to draw.
         /// @warning Internal use only
-        static void draw_rectangles(intptr handle, intptr pen, const xtd::array<std::tuple<float, float, float, float>>& rects);
+        static auto draw_rectangles(xtd::intptr handle, xtd::intptr pen, const xtd::array<std::tuple<float, float, float, float>>& rects) -> void;
         
         /// @brief Draws the specified text string at the specified location with the specified brush, font and angle.
         /// @param handle The graphics handle.
@@ -253,7 +253,7 @@ namespace xtd {
         /// @param y The y-coordinate of the upper-left corner of the drawn text.
         /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
         /// @warning Internal use only
-        static void draw_rotated_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float angle);
+        static auto draw_rotated_string(xtd::intptr handle, const xtd::string& text, xtd::intptr font, xtd::intptr brush, float x, float y, float angle) -> void;
         
         /// @brief Draws a rounded rectangle specified by a coordinate pair, a width, a height, and radius.
         /// @param handle The graphics handle.
@@ -264,7 +264,7 @@ namespace xtd {
         /// @param height The height of the rounded rectangle to draw.
         /// @param radius The radius of the rounded rectange angles.
         /// @warning Internal use only
-        static void draw_rounded_rectangle(intptr handle, intptr pen, float x, float y, float width, float height, float radius);
+        static auto draw_rounded_rectangle(xtd::intptr handle, xtd::intptr pen, float x, float y, float width, float height, float radius) -> void;
         
         /// @brief Draws the specified text string at the specified point with the specified brush and font handle using the formatting attributes of the format.
         /// @param handle The graphics handle.
@@ -278,7 +278,7 @@ namespace xtd {
         /// @param hot_key_prefix The hotkey prefix value (see hot_key_prefixes.h for more information).
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static void draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming);
+        static auto draw_string(xtd::intptr handle, const xtd::string& text, xtd::intptr font, xtd::intptr brush, float x, float y, xtd::int32 alignment, xtd::int32 line_alignment, xtd::int32 hot_key_prefix, xtd::int32 trimming) -> void;
         /// @brief Draws the specified text string at the specified rectangle with the specified brush and font handle using the formatting attributes of the format.
         /// @param handle The graphics handle.
         /// @param text String to draw.
@@ -294,7 +294,7 @@ namespace xtd {
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @param no_wrap True if the text wrapping between lines when formatting within a rectangle is disabled; otherwise `false`.
         /// @warning Internal use only
-        static void draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats);
+        static auto draw_string(xtd::intptr handle, const xtd::string& text, xtd::intptr font, xtd::intptr brush, float x, float y, float width, float height, xtd::int32 alignment, xtd::int32 line_alignment, xtd::int32 hot_key_prefix, xtd::int32 trimming, xtd::int32 string_formats) -> void;
         
         /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::collections::generic::key_value_pair<float, float> structures.
         /// @param handle The graphics handle.
@@ -303,7 +303,7 @@ namespace xtd {
         /// @param fill_mode A fill mode value that determines how the curve is filled (see fill_modes.h for more information).
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void fill_closed_curve(intptr handle, intptr brush, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, uint32 fill_mode, float tension);
+        static auto fill_closed_curve(xtd::intptr handle, xtd::intptr brush, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, xtd::uint32 fill_mode, float tension) -> void;
         
         /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
@@ -313,7 +313,7 @@ namespace xtd {
         /// @param width Width of the bounding rectangle that defines the ellipse.
         /// @param height Height of the bounding rectangle that defines the ellipse.
         /// @warning Internal use only
-        static void fill_ellipse(intptr handle, intptr brush, float x, float y, float width, float heigh);
+        static auto fill_ellipse(xtd::intptr handle, xtd::intptr brush, float x, float y, float width, float heigh) -> void;
         
         /// @brief Fills the interior of a graphics path.
         /// @param handle The graphics handle.
@@ -321,7 +321,7 @@ namespace xtd {
         /// @param path A graphics path handle that represents the path to fill.
         /// @param mode A fill mode value that specifies how the interiors of shapes in the graphics path are filled (see fill_modes.h for more information).
         /// @warning Internal use only
-        static void fill_path(intptr handle, intptr brush, intptr graphics_path, int32 mode);
+        static auto fill_path(xtd::intptr handle, xtd::intptr brush, xtd::intptr graphics_path, xtd::int32 mode) -> void;
         
         /// @brief Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
         /// @param handle The graphics handle.
@@ -333,7 +333,7 @@ namespace xtd {
         /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
         /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
         /// @warning Internal use only
-        static void fill_pie(intptr handle, intptr brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static auto fill_pie(xtd::intptr handle, xtd::intptr brush, float x, float y, float width, float height, float start_angle, float sweep_angle) -> void;
         
         /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::collections::generic::key_value_pair<float, float> structures using the specified fill mode.
         /// @param handle The graphics handle.
@@ -341,7 +341,7 @@ namespace xtd {
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the vertices of the polygon to fill.
         /// @param fill_mode Member of the fill mode value that determines the style of the fill (see fill_modes.h for more information).
         /// @warning Internal use only
-        static void fill_polygon(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points, int32 fill_mode);
+        static auto fill_polygon(xtd::intptr handle, xtd::intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points, xtd::int32 fill_mode) -> void;
         
         /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
@@ -351,21 +351,21 @@ namespace xtd {
         /// @param width Width of the rectangle to fill.
         /// @param height Height of the rectangle to fill.
         /// @warning Internal use only
-        static void fill_rectangle(intptr handle, intptr brush, float x, float y, float width, float height);
+        static auto fill_rectangle(xtd::intptr handle, xtd::intptr brush, float x, float y, float width, float height) -> void;
         
         /// @brief Fills the interiors of a series of rectangles specified by std::tuple<float, float, float, float> structures.
         /// @param handle The graphics handle.
         /// @param brush A brush handle that determines the characteristics of the fill.
         /// @param rects Array of std::tuple<float, float, float, float> structures that represent the rectangles to fill.
         /// @warning Internal use only
-        static void fill_rectangles(intptr handle, intptr brush, const xtd::array<std::tuple<float, float, float, float>>& rects);
+        static auto fill_rectangles(xtd::intptr handle, xtd::intptr brush, const xtd::array<std::tuple<float, float, float, float>>& rects) -> void;
         
         /// @brief Fills the interior of a region.
         /// @param handle The graphics handle.
         /// @param brush A brush handle that determines the characteristics of the fill.
         /// @param region A region handle that represents the area to fill.
         /// @warning Internal use only
-        static void fill_region(intptr handle, intptr brush, intptr region);
+        static auto fill_region(xtd::intptr handle, xtd::intptr brush, xtd::intptr region) -> void;
         
         /// @brief Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, a height, and a radius.
         /// @param handle The graphics handle.
@@ -376,55 +376,55 @@ namespace xtd {
         /// @param height Height of the rounded rectangle to fill.
         /// @param radius The radius of the rounded rectange angles.
         /// @warning Internal use only
-        static void fill_rounded_rectangle(intptr handle, intptr brush, float x, float y, float width, float height, float radius);
+        static auto fill_rounded_rectangle(xtd::intptr handle, xtd::intptr brush, float x, float y, float width, float height, float radius) -> void;
         
         /// @brief Forces execution of all pending graphics operations with the method waiting or not waiting, as specified, to return before the operations finish.
         /// @param handle The graphics handle.
         /// @param intention A flush intention value that specifies whether the method returns immediately or waits for any existing operations to finish (see flush_intentions.h for more information).
         /// @warning Internal use only
-        static void flush(intptr handle, int32 intention);
+        static auto flush(xtd::intptr handle, xtd::int32 intention) -> void;
         
         /// @brief Creates a new graphics from the specified handle to a device context.
         /// @param hdc Handle to a device context.
         /// @return This method returns a new graphics handle for the specified device context.
         /// @warning Internal use only
-        static intptr from_hdc(intptr hdc);
+        [[nodiscard]] static auto from_hdc(xtd::intptr hdc) -> xtd::intptr;
         /// @brief Creates a new graphics from the specified handle to a device contextand handle to a device.
         /// @param hdc Handle to a device context.
         /// @param hdevice Handle to a device.
         /// @return This method returns a new graphics handle for the specified device context and device.
         /// @warning Internal use only
-        static intptr from_hdc(intptr hdc, intptr hdevice);
+        [[nodiscard]] static auto from_hdc(xtd::intptr hdc, xtd::intptr hdevice) -> xtd::intptr;
         
         /// @brief Creates a new graphics from the specified handle to a window.
         /// @param hwnd Handle to a window.
         /// @return This method returns a new graphics handle for the specified window handle.
         /// @warning Internal use only
-        static intptr from_hwnd(intptr hwnd);
+        [[nodiscard]] static auto from_hwnd(xtd::intptr hwnd) -> xtd::intptr;
         
         /// @brief Creates a new graphics from the specified image.
         /// @param image image from which to create the new graphics.
         /// @return This method returns a new graphics handle for the specified Image.
         /// @warning Internal use only
-        static intptr from_image(intptr image);
+        [[nodiscard]] static auto from_image(xtd::intptr image) -> xtd::intptr;
         
         /// @brief Gets the horizontal resolution of this graphics.
         /// @param handle The graphics handle.
         /// @return The value, in dots per inch, for the horizontal resolution supported by this graphics.
         /// @warning Internal use only
-        static float get_dpi_x(intptr handle);
+        [[nodiscard]] static auto get_dpi_x(xtd::intptr handle) -> float;
         
         /// @brief Gets the vertical resolution of this graphics.
         /// @param handle The graphics handle.
         /// @return The value, in dots per inch, for the vertical resolution supported by this graphics.
         /// @warning Internal use only
-        static float get_dpi_y(intptr handle);
+        [[nodiscard]] static auto get_dpi_y(xtd::intptr handle) -> float;
         
         /// @brief Gets the handle to the device context associated with this graphics.
         /// @param handle The graphics handle.
         /// @return Handle to the device context associated with this graphics.
         /// @warning Internal use only
-        static intptr get_hdc(intptr handle);
+        [[nodiscard]] static auto get_hdc(xtd::intptr handle) -> xtd::intptr;
         
         /// @brief Gets the nearest color to the specified color.
         /// @param handle The graphics handle.
@@ -437,19 +437,19 @@ namespace xtd {
         /// @param nearest_g The green component of color that represents the nearest color to the one specified with the color parameter.
         /// @param nearest_b The blue component of color that represents the nearest color to the one specified with the color parameter.
         /// @warning Internal use only
-        static void get_nearest_color(intptr handle, xtd::byte original_a, xtd::byte original_r, xtd::byte original_g, xtd::byte original_b, xtd::byte& nearest_a, xtd::byte& nearest_r, xtd::byte& nearest_g, xtd::byte& nearest_b);
+        static auto get_nearest_color(xtd::intptr handle, xtd::byte original_a, xtd::byte original_r, xtd::byte original_g, xtd::byte original_b, xtd::byte& nearest_a, xtd::byte& nearest_r, xtd::byte& nearest_g, xtd::byte& nearest_b) -> void;
         
         /// @brief Sets the interpolation mode associated with the graphics.
         /// @param handle The graphics handle.
         /// @param interpolation_mode An interpolation mode value (see interpolation_modes.h for more information).
         /// @warning Internal use only
-        static void interpolation_mode(intptr handle, int32 interpolation_mode);
+        static auto interpolation_mode(xtd::intptr handle, xtd::int32 interpolation_mode) -> void;
         
         /// @brief Sets a value specifying how pixels are offset during rendering of this graphics.
         /// @param handle The graphics handle.
         /// @param pixel_offst_mode This property specifies a pixel offset mode value (see pixel_offst_modes.h for more information).
         /// @warning Internal use only
-        static void pixel_offset_mode(intptr handle, int32 pixel_offst_mode);
+        static auto pixel_offset_mode(xtd::intptr handle, xtd::int32 pixel_offst_mode) -> void;
         
         /// @brief Measures the specified string when drawn with the specified font and formatted with the specified format.
         /// @param handle The graphics handle.
@@ -466,37 +466,37 @@ namespace xtd {
         /// @param characters_fitted Number of characters in the string.
         /// @param lines_filled Number of text lines in the string.
         /// @warning Internal use only
-        static void measure_string(intptr handle, const xtd::string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, xtd::usize characters_fitted, xtd::usize lines_filled, bool measure_trailing_spaces);
+        static auto measure_string(xtd::intptr handle, const xtd::string& text, xtd::intptr font, float& width, float& height, float max_width, float max_height, xtd::int32 alignment, xtd::int32 line_alignment, xtd::int32 hot_key_prefix, xtd::int32 trimming, xtd::usize characters_fitted, xtd::usize lines_filled, bool measure_trailing_spaces) -> void;
         
         /// @brief Releases a device context handle obtained by a previous call to the xtd::drawing::native::graphics::get_hdc() method of the graphics.
         /// @param handle The graphics handle.
         /// @param hdc Handle to a device context obtained by a previous call to the xtd::drawing::native::graphics::get_hdc() method of the graphics.
         /// @warning Internal use only
-        static void release_hdc(intptr handle, intptr hdc);
+        static auto release_hdc(xtd::intptr handle, xtd::intptr hdc) -> void;
         
         /// @brief Resets the world transformation matrix of the graphics to the identity matrix.
         /// @param handle The graphics handle.
         /// @warning Internal use only
-        static void reset_transform(intptr handle);
+        static auto reset_transform(xtd::intptr handle) -> void;
         
         /// @brief Restores the state of the graphics to the state represented by a graphics state.
         /// @param handle The graphics handle.
         /// @param gstate A graphics state handle that represents the state to which to restore the graphics.
         /// @warning Internal use only
-        static void restore(intptr handle, intptr& gstate);
+        static auto restore(xtd::intptr handle, xtd::intptr& gstate) -> void;
         
         /// @brief Applies the specified rotation to the transformation matrix of the graphics in the specified order.
         /// @param handle The graphics handle.
         /// @param angle Angle of rotation in degrees.
         /// @param order A matrix order value that specifies whether the rotation is prepended or appended to the transformation matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void rotate_transform(intptr handle, float angle, int32 order);
+        static auto rotate_transform(xtd::intptr handle, float angle, xtd::int32 order) -> void;
         
         /// @brief Saves the current state of the graphics and identifies the saved state with a graphics state.
         /// @param handle The graphics handle.
         /// @return This method returns a graphics state handle that represents the saved state of the graphics.
         /// @warning Internal use only
-        static intptr save(intptr handle);
+        [[nodiscard]] static auto save(xtd::intptr handle) -> xtd::intptr;
         
         /// @brief Applies the specified scaling operation to the transformation matrix of the graphics in the specified order.
         /// @param handle The graphics handle.
@@ -504,37 +504,37 @@ namespace xtd {
         /// @param sy Scale factor in the y direction.
         /// @param order A matrix order value that specifies whether the scaling operation is prepended or appended to the transformation matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void scale_transform(intptr handle, float sx, float sy, int32 order);
+        static auto scale_transform(xtd::intptr handle, float sx, float sy, xtd::int32 order) -> void;
         
         /// @brief Sets the rendering quality for the graphics.
         /// @param handle The graphics handle.
         /// @param smoothing_mode A smoothing mode value (see smoothing_modes.h for more information).
         /// @warning Internal use only
-        static void smoothing_mode(intptr handle, int32 smoothing_mode);
+        static auto smoothing_mode(xtd::intptr handle, xtd::int32 smoothing_mode) -> void;
         
         /// @brief Sets the gamma correction value for rendering text.
         /// @param handle The graphics handle.
         /// @param text_contrast The gamma correction value used for rendering antialiased and ClearType text.
         /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
         /// @warning Internal use only
-        static void text_contrast(intptr handle, int32 text_contrast);
+        static auto text_contrast(xtd::intptr handle, xtd::int32 text_contrast) -> void;
         
         /// @brief Sets the rendering mode for text associated with the graphics.
         /// @param handle The graphics handle.
         /// @param text_rendering_hint A text rendering hint value (see text_rendering_hints.h for more information).
         /// @warning Internal use only
-        static void text_rendering_hint(intptr handle, int32 text_rendering_hint);
+        static auto text_rendering_hint(xtd::intptr handle, xtd::int32 text_rendering_hint) -> void;
         
         /// @brief Gets a copy of the geometric world transformation for the graphics.
         /// @param handle The graphics handle.
         /// @return A matrix handle that represents the geometric world transformation for the graphics.
         /// @warning Internal use only
-        static intptr transform(intptr handle);
+        [[nodiscard]] static auto transform(xtd::intptr handle) -> xtd::intptr;
         /// @brief Sets a copy of the geometric world transformation for the graphics.
         /// @param handle The graphics handle.
         /// @param value A matrix handle that represents the geometric world transformation for the graphics.
         /// @warning Internal use only
-        static void transform(intptr handle, intptr matrix);
+        static auto transform(xtd::intptr handle, xtd::intptr matrix) -> void;
         
         /// @brief Changes the origin of the coordinate system by prepending the specified translation to the transformation matrix of the graphics in the specified order.
         /// @param handle The graphics handle.
@@ -542,7 +542,7 @@ namespace xtd {
         /// @param dy The y-coordinate of the translation.
         /// @param order A matrix order value that specifies whether the translation is prepended or appended to the transformation matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void translate_transform(intptr handle, float dx, float dy, int32 order);
+        static auto translate_transform(xtd::intptr handle, float dx, float dy, xtd::int32 order) -> void;
         
         /// @brief Trims the specified string for a specified width with the specified font and trimming.
         /// @param handle The graphics handle.
@@ -551,7 +551,7 @@ namespace xtd {
         /// @param width The width of the text.
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static xtd::string trim_string(intptr handle, const xtd::string& text, intptr font, float width, int32 trimming);
+        [[nodiscard]] static auto trim_string(xtd::intptr handle, const xtd::string& text, xtd::intptr font, float width, xtd::int32 trimming) -> xtd::string;
         
         /// @brief Gets the bounding rectangle of the visible clipping region of the graphics.
         /// @param handle The graphics handle.
@@ -560,7 +560,7 @@ namespace xtd {
         /// @param width Width of the bounding rectangle for the visible clipping region of the graphics.
         /// @param height Height of the bounding rectangle for the visible clipping region of the graphics.
         /// @warning Internal use only
-        static void visible_clip_bounds(intptr handle, float& x, float& y, float& width, float& height);
+        static auto visible_clip_bounds(xtd::intptr handle, float& x, float& y, float& width, float& height) -> void;
         /// @}
       };
     }
