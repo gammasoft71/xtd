@@ -45,7 +45,7 @@ namespace xtd {
         /// @param enabled `true` if button is enabled; otherwise `false`.
         /// @param visible `true` if button is visible; otherwise `false`.
         /// @warning Internal use only
-        static intptr add_tool_bar_button(intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible);
+        [[nodiscard]] static auto add_tool_bar_button(xtd::intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible) -> xtd::intptr;
         /// @brief Adds tool bar drop down button.
         /// @param tool_bar The tool bar that contains the button.
         /// @param text The button text
@@ -55,7 +55,7 @@ namespace xtd {
         /// @param visible `true` if button is visible; otherwise `false`.
         /// @param drop_down_menu The context menu handle.
         /// @warning Internal use only
-        static intptr add_tool_bar_drop_down_button(intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible, intptr drop_down_menu);
+        [[nodiscard]] static auto add_tool_bar_drop_down_button(xtd::intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible, xtd::intptr drop_down_menu) -> xtd::intptr;
         /// @brief Adds tool bar toggle button.
         /// @param tool_bar The tool bar that contains the button.
         /// @param text The button text
@@ -65,27 +65,27 @@ namespace xtd {
         /// @param enabled `true` if button is enabled; otherwise `false`.
         /// @param visible `true` if button is visible; otherwise `false`.
         /// @warning Internal use only
-        static intptr add_tool_bar_toggle_button(intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+        [[nodiscard]] static auto add_tool_bar_toggle_button(xtd::intptr tool_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) -> xtd::intptr;
         /// @brief Adds tool bar separator.
         /// @param tool_bar The tool bar that contains the separator.
         /// @warning Internal use only
-        static intptr add_tool_bar_separator(intptr tool_bar);
+        [[nodiscard]] static auto add_tool_bar_separator(xtd::intptr tool_bar) -> xtd::intptr;
         /// @brief Adds tool bar stretchable separator.
         /// @param tool_bar The tool bar that contains the stretchable separator.
         /// @warning Internal use only
-        static intptr add_tool_bar_stretchable_separator(intptr tool_bar);
+        [[nodiscard]] static auto add_tool_bar_stretchable_separator(xtd::intptr tool_bar) -> xtd::intptr;
         /// @brief Adds tool bar control.
         /// @param tool_bar The tool bar that contains the control.
         /// @param control The control handle.
         /// @param text The control text
         /// @param tool_tip_text The tool tip text.
         /// @warning Internal use only
-        static intptr add_tool_bar_control(intptr tool_bar, intptr control, const xtd::string& text, const xtd::string& tool_tip_text);
+        [[nodiscard]] static auto add_tool_bar_control(xtd::intptr tool_bar, xtd::intptr control, const xtd::string& text, const xtd::string& tool_tip_text) -> xtd::intptr;
         /// @brief Sets the tool_bar that is displayed in the form.
         /// @param control Control window handle.
         /// @param tool_bar A tool bar handle that represents the tool bar to display in the form.
         /// @warning Internal use only
-        static bool set_system_tool_bar(intptr control, intptr tool_bar);
+        [[nodiscard]] static auto set_system_tool_bar(xtd::intptr control, xtd::intptr tool_bar) -> bool;
         /// @brief Updates tool bar item.
         /// @param tool_bar The tool bar that contains the button.
         /// @param handle The tool bar item handle.
@@ -96,13 +96,13 @@ namespace xtd {
         /// @param enabled `true` if button is enabled; otherwise `false`.
         /// @param visible `true` if button is visible; otherwise `false`.
         /// @warning Internal use only
-        static void update_tool_bar_item(intptr tool_bar, intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+        static auto update_tool_bar_item(xtd::intptr tool_bar, xtd::intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) -> void;
         /// @brief Gets the tool bar item rectangle
         /// @param tool_bar The tool bar that contains the button.
         /// @param handle The tool bar item handle.
         /// @return A xtd::drawing::rectangle that contains the tool bar item rectangle.
         /// @warning Internal use only
-        static xtd::drawing::rectangle tool_bar_item_rectangle(intptr tool_bar, intptr handle);
+        [[nodiscard]] static auto tool_bar_item_rectangle(xtd::intptr tool_bar, xtd::intptr handle) -> xtd::drawing::rectangle;
         /// @}
       };
     }
