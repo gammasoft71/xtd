@@ -126,10 +126,10 @@ namespace xtd {
     /// @{
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
-    const base_type& pointer() const noexcept {return ptr_;}
+    [[nodiscard]] auto pointer() const noexcept -> const base_type& {return ptr_;}
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
-    base_type& pointer() noexcept {return ptr_;}
+    [[nodiscard]] auto pointer() noexcept -> base_type& {return ptr_;}
     /// @}
     
     /// @name Public Methods
@@ -145,73 +145,73 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const unique_ptr_object& obj) const noexcept override {return to_pointer() < obj.to_pointer() ? -1 : to_pointer() > obj.to_pointer() ? 1 : 0;}
+    [[nodiscard]] auto compare_to(const unique_ptr_object& obj) const noexcept -> xtd::int32 override {return to_pointer() < obj.to_pointer() ? -1 : to_pointer() > obj.to_pointer() ? 1 : 0;}
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const xtd::object& value) const noexcept override {return dynamic_cast<const unique_ptr_object*>(&value) && equals(static_cast<const unique_ptr_object&>(value));}
+    [[nodiscard]] auto equals(const xtd::object& value) const noexcept -> bool override {return dynamic_cast<const unique_ptr_object*>(&value) && equals(static_cast<const unique_ptr_object&>(value));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const unique_ptr_object& value) const noexcept override {return ptr_ == value.ptr_;}
+    [[nodiscard]] auto equals(const unique_ptr_object& value) const noexcept -> bool override {return ptr_ == value.ptr_;}
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    element_type* get() const noexcept {return ptr_.get();}
+    [[nodiscard]] auto get() const noexcept -> element_type* {return ptr_.get();}
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
     
     /// @brief Releases the stored pointer.
     /// @return The stored pointer.
-    pointer_type release() noexcept {return ptr_.release();}
+    [[nodiscard]] auto release() noexcept -> pointer_type {return ptr_.release();}
     
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::unique_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    void reset() noexcept {ptr_.reset();}
+    auto reset() noexcept -> void {ptr_.reset();}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param ptr The pointer to assign the current object. It can be null.
     /// @remarks xtd::unique_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    void reset(pointer_type ptr) noexcept {ptr_.reset(ptr);}
+    auto reset(pointer_type ptr) noexcept -> void {ptr_.reset(ptr);}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param ptr The pointer to assign the current object. It can be null.
     /// @remarks xtd::unique_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     template<typename pointer_t>
-    void reset(pointer_t* ptr) noexcept {ptr_.reset(ptr);}
+    auto reset(pointer_t* ptr) noexcept -> void {ptr_.reset(ptr);}
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param null The null pointer.
-    void reset(xtd::null_ptr null) noexcept {ptr_.reset(null);}
+    auto reset(xtd::null_ptr null) noexcept -> void {ptr_.reset(null);}
     
     
     /// @brief Swaps this current instance with specified unique pointer object.
     /// @param ptr The unique pointer object to swap with this current instance.
-    void swap(unique_ptr_object& ptr) noexcept {ptr_.swap(ptr.ptr_);}
+    auto swap(unique_ptr_object& ptr) noexcept -> void {ptr_.swap(ptr.ptr_);}
     
     /// @brief Gets the stored object.
     /// @return The stored object.
-    type_t& to_object() const noexcept {return *to_pointer();}
+    [[nodiscard]] auto to_object() const noexcept -> type_t& {return *to_pointer();}
     
     /// @brief Gets the stored object with specified `target_t` type.
     /// @return The stored object.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t to_object() const;
+    [[nodiscard]] auto to_object() const -> target_t;
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    element_type* to_pointer() const noexcept {return get();}
+    [[nodiscard]] auto to_pointer() const noexcept -> element_type* {return get();}
     
     /// @brief Gets the stored pointer with specified `target_t` type.
     /// @return The stored pointer.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t* to_pointer() const;
+    [[nodiscard]] auto to_pointer() const -> target_t*;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
     /// @name Public Operators
@@ -219,7 +219,7 @@ namespace xtd {
     /// @{
     /// @brief Assignment operator with specified xtd::unique_ptr_object value.
     /// @param value The value to assign.
-    unique_ptr_object& operator =(unique_ptr_object&& value) noexcept {
+    auto operator =(unique_ptr_object&& value) noexcept -> unique_ptr_object& {
       ptr_ = std::move(value.ptr_);
       return *this;
     }
@@ -227,7 +227,7 @@ namespace xtd {
     /// @brief Assignment operator with specified xtd::unique_ptr_object value.
     /// @param value The value to assign.
     template<typename value_t>
-    unique_ptr_object& operator =(unique_ptr_object<value_t>&& value) noexcept {
+    auto operator =(unique_ptr_object<value_t>&& value) noexcept -> unique_ptr_object& {
       ptr_ = std::move(value.ptr_);
       return *this;
     }
@@ -235,23 +235,23 @@ namespace xtd {
     /// @brief Assignment operator with specified std::unique_ptr value.
     /// @param value The value to assign.
     template<typename value_t>
-    unique_ptr_object& operator =(std::unique_ptr<value_t>&& value) noexcept {
+    auto operator =(std::unique_ptr<value_t>&& value) noexcept -> unique_ptr_object& {
       ptr_ = std::move(value);
       return *this;
     }
     
     /// @brief Gets the stored object.
     /// @return The stored object.
-    type_t& operator *() const noexcept {return ptr_.operator * ();}
+    auto operator *() const noexcept -> type_t& {return ptr_.operator * ();}
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    type_t* operator ->() const noexcept {return ptr_.operator ->();}
+    auto operator ->() const noexcept -> type_t* {return ptr_.operator ->();}
     
     /// @brief Provides indexed access to the stored array.
     /// @param index The array index.
     /// @return A reference to the index-th element of the array, i.e., `get()[index]`.
-    element_type& operator[](std::ptrdiff_t index) const {return ptr_.operator [](index);}
+    auto operator[](std::ptrdiff_t index) const -> element_type& {return ptr_.operator [](index);}
     
     /// @brief Checks if the stored pointer is not null.
     /// @return `true`if stored pointer is non null; otherwise `false`.
@@ -270,7 +270,7 @@ namespace xtd {
     
     friend class xtd::linq::enumerable;
     
-    unique_ptr_object& operator =(const unique_ptr_object& value) noexcept {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);}
+    auto operator =(const unique_ptr_object& value) noexcept -> unique_ptr_object& {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);}
     
     base_type ptr_;
   };
@@ -293,9 +293,11 @@ namespace xtd {
   // }
 }
 
+/// @cond
 template<typename object_t>
-xtd::unique_ptr_object<object_t> xtd::object::memberwise_clone() const {
+auto xtd::object::memberwise_clone() const -> xtd::unique_ptr_object<object_t> {
   auto object_ptr = dynamic_cast<const object_t*>(this);
   if (object_ptr == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   return xtd::unique_ptr_object<object_t>(new object_t(*object_ptr));
 }
+/// @endcond
