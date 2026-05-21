@@ -45,17 +45,17 @@ namespace xtd {
         /// @brief Gets the name of the toolkit.
         /// @return The name of the toolkit.
         /// @warning Internal use only
-        static xtd::string name();
+        [[nodiscard]] static auto name() -> xtd::string;
         
         /// @brief Gets the description of the toolkit.
         /// @return The description of the toolkit.
         /// @warning Internal use only
-        static xtd::string description();
+        [[nodiscard]] static auto description() -> xtd::string;
         
         /// @brief Gets the version of the toolkit.
         /// @return The version of the toolkit.
         /// @warning Internal use only
-        static xtd::version version();
+        [[nodiscard]] static auto version() -> xtd::version;
         /// @}
       };
     }
