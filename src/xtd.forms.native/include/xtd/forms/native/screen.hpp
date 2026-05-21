@@ -46,61 +46,61 @@ namespace xtd {
         /// @brief Gets number of screens.
         /// @return Number of screens.
         /// @warning Internal use only
-        static xtd::usize count();
+        [[nodiscard]] static auto count() -> xtd::usize;
         /// @brief Creates a graphics for the screen.
         /// @return A graphics handle for the screen.
         /// @warning Internal use only
-        static intptr create_graphics();
+        [[nodiscard]] static auto create_graphics() -> xtd::intptr;
         /// @brief Gets the number of bits of memory, associated with one pixel of data.
         /// @param index The screen index.
         /// @return The number of bits of memory, associated with one pixel of data.
         /// @warning Internal use only
-        static int32 bits_per_pixel(xtd::usize index);
+        [[nodiscard]] static auto bits_per_pixel(xtd::usize index) -> xtd::int32;
         /// @brief Gets the bounds of the display.
         /// @param index The screen index.
         /// @return A xtd::drawing::rectangle, representing the bounds of the display.
         /// @warning Internal use only
-        static drawing::rectangle bounds(xtd::usize index);
+        [[nodiscard]] static auto bounds(xtd::usize index) -> xtd::drawing::rectangle;
         /// @brief Gets the device name associated with a display.
         /// @param index The screen index.
         /// @return The device name associated with a display.
         /// @warning Internal use only
-        static std::string device_name(xtd::usize index);
+        [[nodiscard]] static auto device_name(xtd::usize index) -> std::string;
         /// @brief Gets the pixels per inch of the display.
         /// @param index The screen index.
         /// @return The pixels per inch of the display.
         /// @warning Internal use only
-        static int32 pixels_per_inch(xtd::usize index);
+        [[nodiscard]] static auto pixels_per_inch(xtd::usize index) -> xtd::int32;
         /// @brief Gets a value indicating whether a particular display is the primary device.
         /// @param index The screen index.
         /// @return `true` if index display is primary; otherwise, `false`.
         /// @warning Internal use only
-        static bool primary(xtd::usize index);
+        [[nodiscard]] static auto primary(xtd::usize index) -> bool;
         /// @brief Gets the scale factor of the display.
         /// @param index The screen index.
         /// @return The scale factor of the display.
         /// @warning Internal use only
-        static double scale_factor(xtd::usize index);
+        [[nodiscard]] static auto scale_factor(xtd::usize index) -> double;
         /// @brief Gets the standard pixels per inch.
         /// @return The standard pixels per inch.
         /// @remarks The standard value is 72 for macOS; 96 for Windows and linux.
         /// @warning Internal use only
-        static int32 standard_pixels_per_inch();
+        [[nodiscard]] static auto standard_pixels_per_inch() -> xtd::int32;
         /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
         /// @param index The screen index.
         /// @return A xtd::drawing::rectangle, representing the working area of the display.
         /// @warning Internal use only
-        static drawing::rectangle working_area(xtd::usize index);
+        [[nodiscard]] static auto working_area(xtd::usize index) -> xtd::drawing::rectangle;
         /// @brief Retrieves a screen for the display that contains the largest portion of the object referred to by the specified handle.
         /// @param handle The window handle for which to retrieve the screen.
         /// @return A screen index for the display that contains the largest region of the object. In multiple display environments where no display contains any portion of the specified handle, the display closest to the object is returned.
         /// @warning Internal use only
-        static xtd::usize from_handle(intptr handle);
+        [[nodiscard]] static auto from_handle(xtd::intptr handle) -> xtd::usize;
         /// @brief Retrieves a screen for the display that contains the specified point.
         /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
         /// @return A screen index for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.
         /// @warning Internal use only
-        static xtd::usize from_point(const drawing::point& point);
+        [[nodiscard]] static auto from_point(const xtd::drawing::point& point) -> xtd::usize;
         /// @}
       };
     }
