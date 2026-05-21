@@ -43,12 +43,12 @@ namespace xtd {
         /// @param control Tab page window handle.
         /// @param image_index The image index.
         /// @warning Internal use only
-        static void image_index(intptr control, xtd::usize image_index);
+        static auto image_index(xtd::intptr control, xtd::usize image_index) -> void;
         /// @brief Sets text associate to the tab page.
         /// @param control Tab page window handle.
         /// @param text The text string.
         /// @warning Internal use only
-        static void text(intptr control, const xtd::string& text);
+        static auto text(xtd::intptr control, const xtd::string& text) -> void;
         /// @}
       };
     }
