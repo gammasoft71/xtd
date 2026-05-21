@@ -112,7 +112,7 @@ namespace xtd {
   /// //       Relationship of 1.1 to 1.1.0: earlier
   /// //       Relationship of 1.1.0.0 to 1.1.0: later
   /// ```
-  class version final : public object, public icomparable<version>, public xtd::iequatable<version> {
+  class version final : public xtd::object, public xtd::icomparable<version>, public xtd::iequatable<version> {
   public:
     /// @name Public Constructors
     
@@ -148,7 +148,7 @@ namespace xtd {
     /// | xtd::version::minor    | minor          |
     /// | xtd::version::build    | undefined (-1) |
     /// | xtd::version::revision | undefined (-1) |
-    version(int32 major, int32 minor);
+    version(xtd::int32 major, xtd::int32 minor);
     /// @brief Initializes a new instance of the xtd::version class using the specified major, minor and build values.
     /// @param major The major version number.
     /// @param minor The minor version number.
@@ -161,7 +161,7 @@ namespace xtd {
     /// | xtd::version::minor    | minor          |
     /// | xtd::version::build    | build          |
     /// | xtd::version::revision | undefined (-1) |
-    version(int32 major, int32 minor, int32 build);
+    version(xtd::int32 major, xtd::int32 minor, xtd::int32 build);
     /// @brief Initializes a new instance of the xtd::version class using the specified major, minor, build and revision values.
     /// @param major The major version number.
     /// @param minor The minor version number.
@@ -178,7 +178,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the xtd::version constructor, and xtd::version::major, xtd::version::minor, xtd::version::build, xtd::version::revision, xtd::version::major_revision, and xtd::version::minor_revision properties.
     /// @include version.cpp
-    version(int32 major, int32 minor, int32 build, int32 revision);
+    version(xtd::int32 major, xtd::int32 minor, xtd::int32 build, xtd::int32 revision);
     /// @}
     
     /// @cond
@@ -192,32 +192,32 @@ namespace xtd {
     /// @brief Gets the value of the build component of the version number for the current xtd::version object.
     /// @return The build number, or -1 if the build number is undefined.
     /// @remarks For example, if the version number is 6.2.1.3, the build number is 1. If the version number is 6.2, the build number is undefined.
-    int32 build() const noexcept;
+    [[nodiscard]] auto build() const noexcept -> xtd::int32;
     
     /// @brief Gets the value of the major component of the version number for the current xtd::version object.
     /// @return The major version number.
     /// @remarks For example, if the version number is 6.2, the major version is 6.
-    int32 major() const noexcept;
+    [[nodiscard]] auto major() const noexcept -> xtd::int32;
     
     /// @brief Gets the high 16 bits of the revision number.
     /// @return A 16-bit signed integer.
     /// @remarks Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the xtd::version::revision property to obtain the entire revision number, use the xtd::version::major_revision property to obtain the high 16 bits, and use the xtd::version::minor_revision property to obtain the low 16 bits.
-    int16 major_revision() const noexcept;
+    [[nodiscard]] auto major_revision() const noexcept -> xtd::int16;
     
     /// @brief Gets the value of the minor component of the version number for the current xtd::version object.
     /// @return The minor version number.
     /// @remarks For example, if the version number is 6.2, the minor version is 2.
-    int32 minor() const noexcept;
+    [[nodiscard]] auto minor() const noexcept -> xtd::int32;
     
     /// @brief Gets the low 16 bits of the revision number.
     /// @return A 16-bit signed integer.
     /// @remarks Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the xtd::version::revision property to obtain the entire revision number, use the xtd::version::major_revision property to obtain the high 16 bits, and use the xtd::version::minor_revision property to obtain the low 16 bits.
-    int16 minor_revision() const noexcept;
+    [[nodiscard]] auto minor_revision() const noexcept -> xtd::int16;
     
     /// @brief Gets the value of the revision component of the version number for the current xtd::version object.
     /// @return The revision number, or -1 if the revision number is undefined.
     /// @remarks For example, if the version number is 6.2.1.3, the revision number is 3. If the version number is 6.2, the revision number is undefined.
-    int32 revision() const noexcept;
+    [[nodiscard]] auto revision() const noexcept -> xtd::int32;
     /// @}
     
     /// @name Public Methods
@@ -238,26 +238,26 @@ namespace xtd {
     /// * xtd::version 1.1 is older than version 1.1.2.3
     /// * xtd::version 1.1.2 is older than version 1.1.2.4
     /// * xtd::version 1.2.5 is newer than version 1.2.3.4
-    int32 compare_to(const version& version) const noexcept override;
+    [[nodiscard]] auto compare_to(const xtd::version& version) const noexcept -> xtd::int32 override;
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override;
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param v The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const version& v) const noexcept override;
+    [[nodiscard]] auto equals(const version& v) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Converts the value of the current xtd::version object to its equivalent xtd::string representation.
     /// @return The xtd::string representation of the values of the major, minor, build, and revision components of the current xtd::version object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// For example, if you create a xtd::version object using the constructor xtd::version(1, 1), the returned string is "1.1". If you create a xtd::version object using the constructor xtd::version(1, 3, 4, 2), the returned string is "1.3.4.2".
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @brief Converts the value of the current xtd::version object to its equivalent xtd::string representation. A specified count indicates the number of components to return.
     /// @param field_count The number of components to return. The field_count ranges from 0 to 4.
     /// @return The xtd::string representation of the values of the major, minor, build, and revision components of the current xtd::version object, each separated by a period character ('.'). The field_count parameter determines how many components are returned.
@@ -270,7 +270,7 @@ namespace xtd {
     /// | 4           | major.minor.build.revision |
     /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
     /// @exception xtd::argument_exception field_count is more than 4<br>-or-<br>field_count is more than the number of components defined in the current xtd::version object.
-    xtd::string to_string(xtd::usize field_count) const;
+    [[nodiscard]] auto to_string(xtd::usize field_count) const -> xtd::string;
     
     /// @brief Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.
     /// @return The xtd::uint64 representation of the values of the major, minor, build, and revision components of the current xtd::version object.
@@ -288,7 +288,7 @@ namespace xtd {
     /// //
     /// // long_version = 1020300
     /// ```
-    xtd::uint64 to_uint64() const;
+    [[nodiscard]] auto to_uint64() const -> xtd::uint64;
     /// @}
     
     /// @name Public Static Methods
@@ -312,7 +312,7 @@ namespace xtd {
     /// // This code produces the following output :
     /// // version = 1.2.3
     /// @endcode
-    static version from_uint64(xtd::uint64 value) noexcept;
+    [[nodiscard]] static auto from_uint64(xtd::uint64 value) noexcept -> version;
     
     /// @brief Converts the string representation of a version number to an equivalent Version object.
     /// @param input A string that contains a version number to convert.
@@ -325,7 +325,7 @@ namespace xtd {
     /// @remarks where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods
     /// @warning Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the xtd::version::parse method to parse user input. Alternatively, you can call the xtd::version::try_parse method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded.
     /// @remarks The xtd::version::parse method is a convenience method; it is equivalent to calling the xtd::version(const string&) constructor.
-    static version parse(const xtd::string& input);
+    [[nodiscard]] static auto parse(const xtd::string& input) -> version;
     
     /// @brief Tries to convert the string representation of a version number to an equivalent xtd::version object, and returns a value that indicates whether the conversion succeeded.
     /// @param input A string that contains a version number to convert.
@@ -335,14 +335,14 @@ namespace xtd {
     /// For the parse operation to succeed, the input parameter must be in the following format:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods.
-    static bool try_parse(const xtd::string& input, version& result) noexcept;
+    [[nodiscard]] static auto try_parse(const xtd::string& input, version& result) noexcept -> bool;
     /// @}
     
   private:
-    int32 major_ = 0;
-    int32 minor_ = 0;
-    int32 build_ = -1;
-    int32 revision_ = -1;
+    xtd::int32 major_ = 0;
+    xtd::int32 minor_ = 0;
+    xtd::int32 build_ = -1;
+    xtd::int32 revision_ = -1;
   };
   
   /// @brief Converts the string representation of a version to its xtd::versiob equivalent.
@@ -356,7 +356,7 @@ namespace xtd {
   /// @exception xtd::format_exception value has an invalid format.
   /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
   template<>
-  inline xtd::version parse<xtd::version>(const std::string& str) {return xtd::version::parse(str);}
+  [[nodiscard]] inline auto parse<xtd::version>(const std::string& str) -> xtd::version {return xtd::version::parse(str);}
 }
 
 #include "literals/version.hpp"
