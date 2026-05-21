@@ -69,22 +69,22 @@ namespace xtd {
         /// @brief Initiazes toolkit.
         /// @return The toolkit handle.
         /// @warning Internal use only
-        static intptr initialize();
+        [[nodiscard]] static auto initialize() -> xtd::intptr;
         
         /// @brief Shutdowns toolkit.
         /// @param handle The toolkit handle.
         /// @warning Internal use only
-        static void shutdown(intptr handle);
+        static auto shutdown(xtd::intptr handle) -> void;
         
         /// @brief Gets the toolkit name.
         /// @return The toolkit name.
         /// @warning Internal use only
-        static xtd::string name();
+        [[nodiscard]] static auto name() -> xtd::string;
         
         /// @brief Gets the toolkit version.
         /// @return The toolkit version.
         /// @warning Internal use only
-        static xtd::version version();
+        [[nodiscard]] static auto version() -> xtd::version;
         /// @}
       };
     }
