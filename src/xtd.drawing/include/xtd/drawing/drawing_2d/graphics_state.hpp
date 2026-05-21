@@ -31,7 +31,9 @@ namespace xtd {
       class drawing_export_ graphics_state final : public xtd::object, public xtd::iequatable<graphics_state> {
       public:
         /// @cond
+        graphics_state(graphics_state&& value) = default;
         graphics_state(const graphics_state& value) = default;
+        graphics_state& operator =(graphics_state&& value) = default;
         graphics_state& operator =(const graphics_state& value) = default;
         /// @endcond
         
@@ -41,15 +43,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const graphics_state& other) const noexcept override;
+        [[nodiscard]] auto equals(const graphics_state& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
         
