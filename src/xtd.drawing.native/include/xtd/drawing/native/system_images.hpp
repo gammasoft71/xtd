@@ -43,7 +43,7 @@ namespace xtd {
         /// @return An image handle that contains the system image from specified name.
         /// @remarks Returns 0 if no system image.
         /// @warning Internal use only
-        static intptr from_name(const xtd::string& name, int32 width, int32 height);
+        [[nodiscard]] static auto from_name(const xtd::string& name, xtd::int32 width, xtd::int32 height) -> xtd::intptr;
         /// @}
       };
     }
