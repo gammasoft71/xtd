@@ -39,23 +39,23 @@ namespace xtd {
         /// @brief Creates main menu.
         /// @return The created main menu handle.
         /// @warning Internal use only
-        static intptr create();
+        [[nodiscard]] static auto create() -> xtd::intptr;
         /// @brief Destroys main menu.
         /// @param main_menu Main menu handle.
         /// @warning Internal use only
-        static void destroy(intptr main_menu);
+        static auto destroy(xtd::intptr main_menu) -> void;
         /// @brief Insert specified menu item to specisified position.
         /// @param main_menu Main menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_item(intptr main_menu, xtd::usize pos, intptr menu_item, const xtd::string& text);
+        static auto insert_item(xtd::intptr main_menu, xtd::usize pos, xtd::intptr menu_item, const xtd::string& text) -> void;
         /// @brief Remove menu item from specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
-        static void remove_item(intptr main_menu, xtd::usize pos);
+        static auto remove_item(xtd::intptr main_menu, xtd::usize pos) -> void;
         /// @}
       };
     }
