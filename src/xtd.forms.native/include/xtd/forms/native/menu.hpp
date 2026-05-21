@@ -42,39 +42,39 @@ namespace xtd {
         /// @brief Creates menu.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr create();
+        [[nodiscard]] static auto create() -> xtd::intptr;
         /// @brief Destroys menu.
         /// @param menu Menu handle.
         /// @warning Internal use only
-        static void destroy(intptr menu);
+        static auto destroy(xtd::intptr menu) -> void;
         /// @brief Insert specified item to specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @warning Internal use only
-        static void insert_item(intptr menu, xtd::usize pos, intptr menu_item);
+        static auto insert_item(xtd::intptr menu, xtd::usize pos, xtd::intptr menu_item) -> void;
         /// @brief Insert specified menu item to specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_menu(intptr menu, xtd::usize pos, intptr menu_item, const xtd::string& text);
+        static auto insert_menu(xtd::intptr menu, xtd::usize pos, xtd::intptr menu_item, const xtd::string& text) -> void;
         /// @brief Gets native menu handle.
         /// @param menu Menu handle.
         /// @return The native menu handle.
         /// @warning Internal use only
-        static intptr native_handle(intptr menu);
+        [[nodiscard]] static auto native_handle(xtd::intptr menu) -> xtd::intptr;
         /// @brief Remove menu item from specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
-        static void remove_item(intptr menu, xtd::usize pos);
+        static auto remove_item(xtd::intptr menu, xtd::usize pos) -> void;
         /// @brief Sets text menu.
         /// @param menu Menu handle.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void text(intptr menu, const xtd::string& text);
+        static auto text(xtd::intptr menu, const xtd::string& text) -> void;
         /// @}
       };
     }
