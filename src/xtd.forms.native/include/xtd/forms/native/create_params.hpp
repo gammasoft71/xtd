@@ -60,17 +60,17 @@ namespace xtd {
         /// @brief Gets or sets the initial location of the control.
         /// @return The xtd::drawing::point that represents the initial location of the control.
         /// @warning Internal use only
-        drawing::point location;
+        xtd::drawing::point location;
         
         /// @brief Gets or sets additional parameter information needed to create the control.
         /// @return An intptr that holds additional parameter information needed to create the control.
         /// @warning Internal use only
-        intptr param = 0;
+        xtd::intptr param = 0;
         
         /// @brief Gets or sets the control's parent.
         /// @return An intptr that contains the window handle of the control's parent.
         /// @warning Internal use only
-        intptr parent = 0;
+        xtd::intptr parent = 0;
         
         /// @brief Gets or sets a bitwise combination of window style values.
         /// @return A bitwise combination of the window style values.
@@ -81,7 +81,7 @@ namespace xtd {
         /// @brief Gets or sets the initial size of the control.
         /// @return The xtd::drawing::size that represents the initial size of the control.
         /// @warning Internal use only
-        drawing::size size;
+        xtd::drawing::size size;
         /// @}
       };
     }
