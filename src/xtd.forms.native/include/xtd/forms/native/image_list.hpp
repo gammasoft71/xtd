@@ -41,28 +41,28 @@ namespace xtd {
         /// @param image_size A xtd::drawing::size image size.
         /// @return The created control window handle.
         /// @warning Internal use only
-        static intptr create(const drawing::size& image_size);
+        [[nodiscard]] static auto create(const xtd::drawing::size& image_size) -> xtd::intptr;
         /// @brief Deletes specified image index.
         /// @param image_list image list handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr image_list, xtd::usize index);
+        static auto delete_item(xtd::intptr image_list, xtd::usize index) -> void;
         /// @brief Destroys image list.
         /// @param image_list image list handle.
         /// @warning Internal use only
-        static void destroy(intptr image_list);
+        static auto destroy(xtd::intptr image_list) -> void;
         /// @brief Inserts at specified image index a specified image.
         /// @param image_list image list handle.
         /// @param index The image index to insert.
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
-        static void insert_item(intptr image_list, xtd::usize index, const drawing::image& image);
+        static auto insert_item(xtd::intptr image_list, xtd::usize index, const xtd::drawing::image& image) -> void;
         /// @brief Updates a specified item index with specified value.
         /// @param image_list image list handle.
         /// @param index The image index to update.
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
-        static void update_item(intptr image_list, xtd::usize index, const drawing::image& image);
+        static auto update_item(xtd::intptr image_list, xtd::usize index, const xtd::drawing::image& image) -> void;
         /// @}
       };
     }
