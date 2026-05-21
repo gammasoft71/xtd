@@ -44,7 +44,7 @@ namespace xtd {
         /// @param menu_item Menu item handle.
         /// @param checked `true` if menu item is checked; otherwise `false`.
         /// @warning Internal use only
-        static void checked(intptr menu_item, bool checked);
+        static auto checked(xtd::intptr menu_item, bool checked) -> void;
         /// @brief Creates menu item with specified menu.
         /// @param menu Menu handle.
         /// @param text The text associated with this menu_item.
@@ -53,27 +53,27 @@ namespace xtd {
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr create(intptr menu, const xtd::string& text, const xtd::drawing::image& image, int32 kind, xtd::usize shortcut);
+        [[nodiscard]] static auto create(xtd::intptr menu, const xtd::string& text, const xtd::drawing::image& image, xtd::int32 kind, xtd::usize shortcut) -> xtd::intptr;
         /// @brief Destroys menu_item.
         /// @param menu_item Menu item handle.
         /// @warning Internal use only
-        static void destroy(intptr menu_item);
+        static auto destroy(xtd::intptr menu_item) -> void;
         /// @brief Enabled menu item.
         /// @param menu_item Menu item handle.
         /// @param enabled `true` if menu item is enabled; otherwise `false`.
         /// @warning Internal use only
-        static void enabled(intptr menu_item, bool enabled);
+        static auto enabled(xtd::intptr menu_item, bool enabled) -> void;
         /// @brief Gets menu id.
         /// @param menu_item Menu item handle.
         /// @return Id corresponding to menu_item handle.
         /// @warning Internal use only
-        static intptr menu_id(intptr menu_item);
+        [[nodiscard]] static auto menu_id(xtd::intptr menu_item) -> xtd::intptr;
         /// @brief Sets text menu item.
         /// @param menu_item Menu item handle.
         /// @param text The text associated with this menu_item.
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @warning Internal use only
-        static void text(intptr menu_item, const xtd::string& text, xtd::usize shortcut);
+        static auto text(xtd::intptr menu_item, const xtd::string& text, xtd::usize shortcut) -> void;
         /// @}
       };
     }
