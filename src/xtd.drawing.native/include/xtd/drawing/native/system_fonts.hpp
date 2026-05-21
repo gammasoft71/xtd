@@ -38,47 +38,47 @@ namespace xtd {
         /// @brief Gets a font that is used to display text in the title bars of windows.
         /// @return A font handle that is used to display text in the title bars of windows.
         /// @warning Internal use only
-        static intptr caption_font();
+        [[nodiscard]] static auto caption_font() -> xtd::intptr;
         
         /// @brief Gets the default font that applications can use for dialog boxes and forms.
         /// @return The default font handle of the system. The value returned will vary depending on the user's operating system and the local culture setting of their system.
         /// @warning Internal use only
-        static intptr default_font();
+        [[nodiscard]] static auto default_font() -> xtd::intptr;
         
         /// @brief Gets a font that applications can use for dialog boxes and forms.
         /// @return A font handle that can be used for dialog boxes and forms, depending on the operating system and local culture setting of the system.
         /// @warning Internal use only
-        static intptr dialog_font();
+        [[nodiscard]] static auto dialog_font() -> xtd::intptr;
         
         /// @brief Gets a font that is used for icon titles.
         /// @return A font handle that is used for icon titles.
         /// @warning Internal use only
-        static intptr icon_title_font();
+        [[nodiscard]] static auto icon_title_font() -> xtd::intptr;
         
         /// @brief Gets a font that is used for menus.
         /// @return A font handle that is used for menus.
         /// @warning Internal use only
-        static intptr menu_font();
+        [[nodiscard]] static auto menu_font() -> xtd::intptr;
         
         /// @brief Gets a font that is used for message boxes.
         /// @return A font handle that is used for message boxes.
         /// @warning Internal use only
-        static intptr message_box_font();
+        [[nodiscard]] static auto message_box_font() -> xtd::intptr;
         
         /// @brief Gets a font that is used to display text in the title bars of small windows, such as tool windows.
         /// @return A font handle that is used to display text in the title bars of small windows, such as tool windows.
         /// @warning Internal use only
-        static intptr small_caption_font();
+        [[nodiscard]] static auto small_caption_font() -> xtd::intptr;
         
         /// @brief Gets a font that is used to display text in the status bar.
         /// @return A font handle that is used to display text in the status bar.
         /// @warning Internal use only
-        static intptr status_font();
+        [[nodiscard]] static auto status_font() -> xtd::intptr;
         
         /// @brief Gets a font that is used to display text in the tool bar.
         /// @return A font handle that is used to display text in the tool bar.
         /// @warning Internal use only
-        static intptr tool_font();
+        [[nodiscard]] static auto tool_font() -> xtd::intptr;
         /// @}
       };
     }
