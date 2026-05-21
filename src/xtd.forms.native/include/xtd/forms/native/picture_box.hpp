@@ -41,11 +41,11 @@ namespace xtd {
         /// @param control Control window handle.
         /// @param image The xtd::drawing::image to display.
         /// @warning Internal use only
-        static void image(intptr control, const drawing::image& image);
+        static auto image(xtd::intptr control, const xtd::drawing::image& image) -> void;
         /// @brief Reset the image that is displayed by picture_box.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void reset(intptr control);
+        static auto reset(xtd::intptr control) -> void;
         /// @}
       };
     }
