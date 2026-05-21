@@ -41,32 +41,32 @@ namespace xtd {
         /// @param control scroll bar window handle.
         /// @param large_change A numeric value. The default is 5.
         /// @warning Internal use only
-        static void large_change(intptr control, int32 large_change);
+        static auto large_change(xtd::intptr control, xtd::int32 large_change) -> void;
         /// @brief sets the upper limit of the range this scroll_bar is working with.
         /// @param control scroll bar window handle.
         /// @param maximum The maximum value for the scroll_bar. The default is 10.
         /// @warning Internal use only
-        static void maximum(intptr control, int32 maximum);
+        static auto maximum(xtd::intptr control, xtd::int32 maximum) -> void;
         /// @brief Sets the lower limit of the range this scroll_bar is working with.
         /// @param control scroll bar window handle.
         /// @param minimum The minimum value for the scroll_bar. The default is 0.
         /// @warning Internal use only
-        static void minimum(intptr control, int32 minimum);
+        static auto minimum(xtd::intptr control, xtd::int32 minimum) -> void;
         /// @brief Sets the value added to or subtracted from the Value property when the scroll box is moved a small distance.
         /// @param control scroll bar window handle.
         /// @param small_change A numeric value. The default value is 1.
         /// @warning Internal use only
-        static void small_change(intptr control, int32 small_change);
+        static auto small_change(xtd::intptr control, xtd::int32 small_change) -> void;
         /// @brief Gets a numeric value that represents the current position of the scroll box on the scroll bar.
         /// @param control scroll bar window handle.
         /// @return A numeric value that is within the minimum and maximum range. The default value is 0.
         /// @warning Internal use only
-        static int32 value(intptr control);
+        [[nodiscard]] static auto value(xtd::intptr control) -> xtd::int32;
         /// @brief Sets a numeric value that represents the current position of the scroll box on the scroll bar.
         /// @param control scroll bar window handle.
         /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
         /// @warning Internal use only
-        static void value(intptr control, int32 value);
+        static auto value(xtd::intptr control, xtd::int32 value) -> void;
         /// @}
       };
     }
