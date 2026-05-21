@@ -238,9 +238,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15" id="r_ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga690f99e87ad4402abed7510a5e18bc15">xtd::unregister_any_stringer</a> ()</td></tr>
-<tr class="memdesc:ga690f99e87ad4402abed7510a5e18bc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister an any stringer method for a specified type.  <br /></td></tr>
+<tr class="memitem:ga770af697f7e6af6b26732a9a388f983d" id="r_ga770af697f7e6af6b26732a9a388f983d"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:ga770af697f7e6af6b26732a9a388f983d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga770af697f7e6af6b26732a9a388f983d">xtd::unregister_any_stringer</a> () -&gt; void</td></tr>
+<tr class="memdesc:ga770af697f7e6af6b26732a9a388f983d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister an any stringer method for a specified type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Aliases</h2></td></tr>
@@ -283,9 +283,9 @@ Static Methods</h2></td></tr>
 <tr class="memitem:ga483eadcc4ba91e931609196bddde6ca0" id="r_ga483eadcc4ba91e931609196bddde6ca0"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename function_t&gt; </td></tr>
 <tr class="memitem:ga483eadcc4ba91e931609196bddde6ca0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga483eadcc4ba91e931609196bddde6ca0">xtd::register_any_stringer</a> (const function_t &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; void</td></tr>
 <tr class="memdesc:ga483eadcc4ba91e931609196bddde6ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an any stringer method for a specified type.  <br /></td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9" id="r_ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9 template"><td class="memItemLeft">type_t&#160;</td><td class="memItemRight"><a class="el" href="#ga5aa911c016af5795d0482eefb481fcc9">xtd::unboxing</a> (const <a class="el" href="structxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:ga5aa911c016af5795d0482eefb481fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
+<tr class="memitem:ga5f846182668bc5124e418f8180bbd117" id="r_ga5f846182668bc5124e418f8180bbd117"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
+<tr class="memitem:ga5f846182668bc5124e418f8180bbd117 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga5f846182668bc5124e418f8180bbd117">xtd::unboxing</a> (const <a class="el" href="structxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:ga5f846182668bc5124e418f8180bbd117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ga985fe68f7af28fad14c5922db7e44d79" name="ga985fe68f7af28fad14c5922db7e44d79"></a>
@@ -674,8 +674,8 @@ template&lt;typename type_t, typename function_t&gt; </div>
 
 </div>
 </div>
-<a id="ga5aa911c016af5795d0482eefb481fcc9" name="ga5aa911c016af5795d0482eefb481fcc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5aa911c016af5795d0482eefb481fcc9">&#9670;&#160;</a></span>unboxing()</h2>
+<a id="ga5f846182668bc5124e418f8180bbd117" name="ga5f846182668bc5124e418f8180bbd117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f846182668bc5124e418f8180bbd117">&#9670;&#160;</a></span>unboxing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -686,15 +686,15 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t xtd::unboxing </td>
+          <td class="memname">auto xtd::unboxing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; type_t</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -717,8 +717,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ga690f99e87ad4402abed7510a5e18bc15" name="ga690f99e87ad4402abed7510a5e18bc15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga690f99e87ad4402abed7510a5e18bc15">&#9670;&#160;</a></span>unregister_any_stringer()</h2>
+<a id="ga770af697f7e6af6b26732a9a388f983d" name="ga770af697f7e6af6b26732a9a388f983d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga770af697f7e6af6b26732a9a388f983d">&#9670;&#160;</a></span>unregister_any_stringer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -729,10 +729,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::unregister_any_stringer </td>
+          <td class="memname">auto xtd::unregister_any_stringer </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>

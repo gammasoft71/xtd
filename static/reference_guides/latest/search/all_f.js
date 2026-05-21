@@ -404,7 +404,7 @@ var searchData=
   ['original_20image_401',['Original image',['../image_effects_page.html#OriginalImageSection',1,'']]],
   ['original_5ffont_5fname_402',['original_font_name',['../classxtd_1_1drawing_1_1font.html#afb9076d8fddc8c858f9f7d1211ed2715',1,'xtd::drawing::font']]],
   ['original_5fpath_5f_403',['original_path_',['../classxtd_1_1io_1_1file__system__info.html#aa45066e713be4415a7def84b85516072',1,'xtd::io::file_system_info']]],
-  ['original_5fstring_404',['original_string',['../classxtd_1_1uri.html#ae4412f788e6a3b2f42d072f7f7192652',1,'xtd::uri']]],
+  ['original_5fstring_404',['original_string',['../classxtd_1_1uri.html#a3f9ead606aa40bdbd152526fa5523e94',1,'xtd::uri']]],
   ['orthodox_5fcross_405',['orthodox_cross',['../classxtd_1_1forms_1_1emoticons.html#aa1b018d2b457ba3ea9875e695589d250',1,'xtd::forms::emoticons']]],
   ['os_5fsupports_5fip_5fv4_406',['os_supports_ip_v4',['../classxtd_1_1net_1_1sockets_1_1socket.html#ab61adfe49bbfe4a83542a17a53c9ff46',1,'xtd::net::sockets::socket']]],
   ['os_5fsupports_5fip_5fv6_407',['os_supports_ip_v6',['../classxtd_1_1net_1_1sockets_1_1socket.html#a5971ca76c1787256e88e5183538c227d',1,'xtd::net::sockets::socket']]],

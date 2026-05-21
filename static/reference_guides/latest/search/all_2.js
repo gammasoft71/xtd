@@ -403,7 +403,7 @@ var searchData=
   ['buffered_5fgraphics_5fcontext_2ehpp_400',['buffered_graphics_context.hpp',['../buffered__graphics__context_8hpp.html',1,'']]],
   ['bug_401',['bug',['../classxtd_1_1forms_1_1emoticons.html#afea891b4e7a1886b738872c04586f15e',1,'xtd::forms::emoticons']]],
   ['bug_5frepport_402',['bug_repport',['../classxtd_1_1distribution.html#abad1b55bd361dbf0ff4dc7ad2ec163bf',1,'xtd::distribution']]],
-  ['build_403',['build',['../classxtd_1_1version.html#aa7a3bfb1c5089058407f302c39dfd189',1,'xtd::version']]],
+  ['build_403',['build',['../classxtd_1_1version.html#ab3814646f9d22a00f9a7c96fde975cc4',1,'xtd::version']]],
   ['build_20and_20run_404',['Build and run',['../index.html#ExamplesConsoleBuildAndRunSubsubsection',1,'Build and run'],['../index.html#ExamplesFormsBuildAndRunSubsubsection',1,'Build and run'],['../index.html#ExamplesUnitTestBuildAndRunSubsubsection',1,'Build and run']]],
   ['build_20options_405',['build options',['../_c_make_build_option.html',1,'CMake build options'],['../_c_make_build_option.html#xtdBuildOptions',1,'xtd build options'],['../_c_make_build_option.html#xtUserProjectdBuildOptions',1,'xtd user project build options']]],
   ['build_20options_20commands_406',['Build options commands',['../_c_make_commands.html#BuildOptionsCommandsSection',1,'']]],

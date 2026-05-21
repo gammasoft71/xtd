@@ -148,21 +148,21 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <li>Retrieving the operating system version. The following example uses the <a class="el" href="classxtd_1_1operating__system.html#af47c82bc46df9d7fcc19da67db3b4537" title="Gets a xtd::version object that identifies the operating system.">xtd::operating_system::version</a> property to retrieve the version number of the operating system. <div class="fragment"><div class="line"><span class="comment">// Get the operating system version.</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1operating__system.html">operating_system</a> os = <a class="code hl_function" href="classxtd_1_1environment.html#abf0a6319d1ff6d958ae80bbfeba45d22">environment::os_version</a>();</div>
 <div class="line"><a class="code hl_function" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> ver = os.<a class="code hl_function" href="classxtd_1_1operating__system.html#af47c82bc46df9d7fcc19da67db3b4537">version</a>();</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operating System: {0} ({1})&quot;</span>, os.<a class="code hl_function" href="classxtd_1_1operating__system.html#ae8f1805388cc6eb4a0109ee2844fca22">version_string</a>(), ver.<a class="code hl_function" href="#adb97d4a2c23991ee27bacacf55cad226">to_string</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Operating System: {0} ({1})&quot;</span>, os.<a class="code hl_function" href="classxtd_1_1operating__system.html#ae8f1805388cc6eb4a0109ee2844fca22">version_string</a>(), ver.<a class="code hl_function" href="#a73380f480de4b9ae343ff3e439d0095b">to_string</a>());</div>
 <div class="ttc" id="aclassxtd_1_1operating__system_html"><div class="ttname"><a href="classxtd_1_1operating__system.html">xtd::operating_system</a></div><div class="ttdoc">Represents information about an operating system, such as the version and platform identifier....</div><div class="ttdef"><b>Definition</b> operating_system.hpp:25</div></div>
 <div class="ttc" id="aclassxtd_1_1operating__system_html_ae8f1805388cc6eb4a0109ee2844fca22"><div class="ttname"><a href="classxtd_1_1operating__system.html#ae8f1805388cc6eb4a0109ee2844fca22">xtd::operating_system::version_string</a></div><div class="ttdeci">auto version_string() const noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the concatenated string representation of the platform identifier, version, and service pack tha...</div></div>
 <div class="ttc" id="aclassxtd_1_1operating__system_html_af47c82bc46df9d7fcc19da67db3b4537"><div class="ttname"><a href="classxtd_1_1operating__system.html#af47c82bc46df9d7fcc19da67db3b4537">xtd::operating_system::version</a></div><div class="ttdeci">auto version() const noexcept -&gt; const xtd::version &amp;</div><div class="ttdoc">Gets a xtd::version object that identifies the operating system.</div></div>
 <div class="ttc" id="aclassxtd_1_1version_html_a3504954441aa4d0d53ace55b4f518c42"><div class="ttname"><a href="#a3504954441aa4d0d53ace55b4f518c42">xtd::version::version</a></div><div class="ttdeci">version() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::version class.</div></div>
-<div class="ttc" id="aclassxtd_1_1version_html_adb97d4a2c23991ee27bacacf55cad226"><div class="ttname"><a href="#adb97d4a2c23991ee27bacacf55cad226">xtd::version::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Converts the value of the current xtd::version object to its equivalent xtd::string representation.</div></div>
+<div class="ttc" id="aclassxtd_1_1version_html_a73380f480de4b9ae343ff3e439d0095b"><div class="ttname"><a href="#a73380f480de4b9ae343ff3e439d0095b">xtd::version::to_string</a></div><div class="ttdeci">auto to_string() const noexcept -&gt; xtd::string override</div><div class="ttdoc">Converts the value of the current xtd::version object to its equivalent xtd::string representation.</div></div>
 </div><!-- fragment --></li>
 <li>Retrieving the version of xtd. The following example uses the <a class="el" href="classxtd_1_1environment.html#abdf39bb10968bdda1c85cdca0e200dfb" title="Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.">xtd::environment::version</a> property to retrieve version information about xtd. <div class="fragment"><div class="line"><span class="comment">// Get the xtd version.</span></div>
 <div class="line"><a class="code hl_function" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> ver = <a class="code hl_function" href="classxtd_1_1environment.html#abdf39bb10968bdda1c85cdca0e200dfb">environment::version</a>();</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;xtd version {0}&quot;</span>, ver.<a class="code hl_function" href="#adb97d4a2c23991ee27bacacf55cad226">to_string</a>());</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;xtd version {0}&quot;</span>, ver.<a class="code hl_function" href="#a73380f480de4b9ae343ff3e439d0095b">to_string</a>());</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_abdf39bb10968bdda1c85cdca0e200dfb"><div class="ttname"><a href="classxtd_1_1environment.html#abdf39bb10968bdda1c85cdca0e200dfb">xtd::environment::version</a></div><div class="ttdeci">static auto version() noexcept -&gt; xtd::version</div><div class="ttdoc">Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.</div></div>
 </div><!-- fragment --> </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Comparing xtd::version objects</dt><dd>You can use the <a class="el" href="#ab77b49d5430810732b4dd085272b5735" title="Compares the current xtd::version object to a specified object and returns an indication of their rel...">xtd::version::compare_to</a> method to determine whether one <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object is earlier than, the same as, or later than a second <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object. The following example indicates that <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> 2.1 is later than <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> 2.0. <div class="fragment"><div class="line"><a class="code hl_function" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> v1(2, 0);</div>
+<dl class="section user"><dt>Comparing xtd::version objects</dt><dd>You can use the <a class="el" href="#a3290fe3574cc54dc0a8ac17b0a725bf5" title="Compares the current xtd::version object to a specified object and returns an indication of their rel...">xtd::version::compare_to</a> method to determine whether one <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object is earlier than, the same as, or later than a second <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object. The following example indicates that <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> 2.1 is later than <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> 2.0. <div class="fragment"><div class="line"><a class="code hl_function" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> v1(2, 0);</div>
 <div class="line"><a class="code hl_function" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> v2(<span class="stringliteral">&quot;2.1&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;version {0} is &quot;</span>, v1);</div>
 <div class="line"><span class="keywordflow">switch</span>(v1.compare_to(v2)) {</div>
@@ -194,7 +194,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <div class="line">  }</div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> show_relationship(<span class="keyword">const</span> version&amp; v1, <span class="keyword">const</span> version&amp; v2) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Relationship of {0} to {1}: {2}&quot;</span>, v1, v2, as&lt;version_time&gt;(v1.<a class="code hl_function" href="#ab77b49d5430810732b4dd085272b5735">compare_to</a>(v2)));</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Relationship of {0} to {1}: {2}&quot;</span>, v1, v2, as&lt;version_time&gt;(v1.<a class="code hl_function" href="#a3290fe3574cc54dc0a8ac17b0a725bf5">compare_to</a>(v2)));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -202,7 +202,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//       Relationship of 1.1 to 1.1.0: earlier</span></div>
 <div class="line"><span class="comment">//       Relationship of 1.1.0.0 to 1.1.0: later</span></div>
-<div class="ttc" id="aclassxtd_1_1version_html_ab77b49d5430810732b4dd085272b5735"><div class="ttname"><a href="#ab77b49d5430810732b4dd085272b5735">xtd::version::compare_to</a></div><div class="ttdeci">int32 compare_to(const version &amp;version) const noexcept override</div><div class="ttdoc">Compares the current xtd::version object to a specified object and returns an indication of their rel...</div></div>
+<div class="ttc" id="aclassxtd_1_1version_html_a3290fe3574cc54dc0a8ac17b0a725bf5"><div class="ttname"><a href="#a3290fe3574cc54dc0a8ac17b0a725bf5">xtd::version::compare_to</a></div><div class="ttdeci">auto compare_to(const xtd::version &amp;version) const noexcept -&gt; xtd::int32 override</div><div class="ttdoc">Compares the current xtd::version object to a specified object and returns an indication of their rel...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga292bc25e10c2a6b7d9439b94d566d346"><div class="ttname"><a href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:24</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.hpp:38</div></div>
@@ -216,53 +216,53 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a3504954441aa4d0d53ace55b4f518c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class.  <br /></td></tr>
 <tr class="memitem:a5aaab42b9083f24dcd4fa4402bf048d5" id="r_a5aaab42b9083f24dcd4fa4402bf048d5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5aaab42b9083f24dcd4fa4402bf048d5">version</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version)</td></tr>
 <tr class="memdesc:a5aaab42b9083f24dcd4fa4402bf048d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified string.  <br /></td></tr>
-<tr class="memitem:a7f0a17bda3075d568d7175a24b684f5e" id="r_a7f0a17bda3075d568d7175a24b684f5e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7f0a17bda3075d568d7175a24b684f5e">version</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd">major</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9">minor</a>)</td></tr>
-<tr class="memdesc:a7f0a17bda3075d568d7175a24b684f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major and minor values.  <br /></td></tr>
-<tr class="memitem:a804f0086fd598ab86f098bbe4a9c9a66" id="r_a804f0086fd598ab86f098bbe4a9c9a66"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a804f0086fd598ab86f098bbe4a9c9a66">version</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd">major</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9">minor</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189">build</a>)</td></tr>
-<tr class="memdesc:a804f0086fd598ab86f098bbe4a9c9a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor and build values.  <br /></td></tr>
-<tr class="memitem:a857d0621a6d60896e158fc606cde6080" id="r_a857d0621a6d60896e158fc606cde6080"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a857d0621a6d60896e158fc606cde6080">version</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd">major</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9">minor</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189">build</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb">revision</a>)</td></tr>
-<tr class="memdesc:a857d0621a6d60896e158fc606cde6080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor, build and revision values.  <br /></td></tr>
+<tr class="memitem:aa2f3795ebfe83f04606db9151e13c563" id="r_aa2f3795ebfe83f04606db9151e13c563"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa2f3795ebfe83f04606db9151e13c563">version</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee">major</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0">minor</a>)</td></tr>
+<tr class="memdesc:aa2f3795ebfe83f04606db9151e13c563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major and minor values.  <br /></td></tr>
+<tr class="memitem:a409e20d97a607a19639e01739e97450e" id="r_a409e20d97a607a19639e01739e97450e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a409e20d97a607a19639e01739e97450e">version</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee">major</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0">minor</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4">build</a>)</td></tr>
+<tr class="memdesc:a409e20d97a607a19639e01739e97450e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor and build values.  <br /></td></tr>
+<tr class="memitem:a8a4b963a797d380c897f94b2a7f775ee" id="r_a8a4b963a797d380c897f94b2a7f775ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8a4b963a797d380c897f94b2a7f775ee">version</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee">major</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0">minor</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4">build</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4">revision</a>)</td></tr>
+<tr class="memdesc:a8a4b963a797d380c897f94b2a7f775ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor, build and revision values.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:aa7a3bfb1c5089058407f302c39dfd189" id="r_aa7a3bfb1c5089058407f302c39dfd189"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189">build</a> () const noexcept</td></tr>
-<tr class="memdesc:aa7a3bfb1c5089058407f302c39dfd189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the build component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
-<tr class="memitem:a015bc6a9d0c5b3e447dc6418ea8405cd" id="r_a015bc6a9d0c5b3e447dc6418ea8405cd"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd">major</a> () const noexcept</td></tr>
-<tr class="memdesc:a015bc6a9d0c5b3e447dc6418ea8405cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the major component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
-<tr class="memitem:a936201121c688f7df24f3367bcacf7df" id="r_a936201121c688f7df24f3367bcacf7df"><td class="memItemLeft"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight"><a class="el" href="#a936201121c688f7df24f3367bcacf7df">major_revision</a> () const noexcept</td></tr>
-<tr class="memdesc:a936201121c688f7df24f3367bcacf7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the high 16 bits of the revision number.  <br /></td></tr>
-<tr class="memitem:a2eff6909a11bd61e1d6e38bda95418a9" id="r_a2eff6909a11bd61e1d6e38bda95418a9"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9">minor</a> () const noexcept</td></tr>
-<tr class="memdesc:a2eff6909a11bd61e1d6e38bda95418a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the minor component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
-<tr class="memitem:af465ca0f41e273afa5ddb2599aaa4689" id="r_af465ca0f41e273afa5ddb2599aaa4689"><td class="memItemLeft"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight"><a class="el" href="#af465ca0f41e273afa5ddb2599aaa4689">minor_revision</a> () const noexcept</td></tr>
-<tr class="memdesc:af465ca0f41e273afa5ddb2599aaa4689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the low 16 bits of the revision number.  <br /></td></tr>
-<tr class="memitem:ae9c70a097280c1c51ecb33d13ab45dbb" id="r_ae9c70a097280c1c51ecb33d13ab45dbb"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb">revision</a> () const noexcept</td></tr>
-<tr class="memdesc:ae9c70a097280c1c51ecb33d13ab45dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the revision component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
+<tr class="memitem:ab3814646f9d22a00f9a7c96fde975cc4" id="r_ab3814646f9d22a00f9a7c96fde975cc4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4">build</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ab3814646f9d22a00f9a7c96fde975cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the build component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
+<tr class="memitem:ab7920c0fb678e9db04c31482eb8e9cee" id="r_ab7920c0fb678e9db04c31482eb8e9cee"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee">major</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ab7920c0fb678e9db04c31482eb8e9cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the major component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
+<tr class="memitem:a25d0bc8bf42de912e6df72d3ee78d9bc" id="r_a25d0bc8bf42de912e6df72d3ee78d9bc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a25d0bc8bf42de912e6df72d3ee78d9bc">major_revision</a> () const noexcept -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td></tr>
+<tr class="memdesc:a25d0bc8bf42de912e6df72d3ee78d9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the high 16 bits of the revision number.  <br /></td></tr>
+<tr class="memitem:ae7cc03f5a1f66d8dac4ffd3d58f155a0" id="r_ae7cc03f5a1f66d8dac4ffd3d58f155a0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0">minor</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ae7cc03f5a1f66d8dac4ffd3d58f155a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the minor component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
+<tr class="memitem:a534eb7c35c3cb95b7fc085c7f10de824" id="r_a534eb7c35c3cb95b7fc085c7f10de824"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a534eb7c35c3cb95b7fc085c7f10de824">minor_revision</a> () const noexcept -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td></tr>
+<tr class="memdesc:a534eb7c35c3cb95b7fc085c7f10de824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the low 16 bits of the revision number.  <br /></td></tr>
+<tr class="memitem:af4b0d79e684f3df1726d2d422ab8e9a4" id="r_af4b0d79e684f3df1726d2d422ab8e9a4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4">revision</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:af4b0d79e684f3df1726d2d422ab8e9a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the revision component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ab77b49d5430810732b4dd085272b5735" id="r_ab77b49d5430810732b4dd085272b5735"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab77b49d5430810732b4dd085272b5735">compare_to</a> (const <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;<a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a>) const noexcept override</td></tr>
-<tr class="memdesc:ab77b49d5430810732b4dd085272b5735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to a specified object and returns an indication of their relative values.  <br /></td></tr>
-<tr class="memitem:acd0da6c10fc14ac331d7b956d894fd9d" id="r_acd0da6c10fc14ac331d7b956d894fd9d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acd0da6c10fc14ac331d7b956d894fd9d">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:acd0da6c10fc14ac331d7b956d894fd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a1d1719bcebb970bfc503e5be2f996c74" id="r_a1d1719bcebb970bfc503e5be2f996c74"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1d1719bcebb970bfc503e5be2f996c74">equals</a> (const <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;v) const noexcept override</td></tr>
-<tr class="memdesc:a1d1719bcebb970bfc503e5be2f996c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a23799b77d715537aa5b129a4f3b5d753" id="r_a23799b77d715537aa5b129a4f3b5d753"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a23799b77d715537aa5b129a4f3b5d753">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a23799b77d715537aa5b129a4f3b5d753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:adb97d4a2c23991ee27bacacf55cad226" id="r_adb97d4a2c23991ee27bacacf55cad226"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#adb97d4a2c23991ee27bacacf55cad226">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:adb97d4a2c23991ee27bacacf55cad226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
-<tr class="memitem:a54c61ddf5b7acf9671ed4d6dff99b065" id="r_a54c61ddf5b7acf9671ed4d6dff99b065"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a54c61ddf5b7acf9671ed4d6dff99b065">to_string</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> field_count) const</td></tr>
-<tr class="memdesc:a54c61ddf5b7acf9671ed4d6dff99b065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. A specified count indicates the number of components to return.  <br /></td></tr>
-<tr class="memitem:a24da2c3d110ed497ea1a56420f739221" id="r_a24da2c3d110ed497ea1a56420f739221"><td class="memItemLeft"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a24da2c3d110ed497ea1a56420f739221">to_uint64</a> () const</td></tr>
-<tr class="memdesc:a24da2c3d110ed497ea1a56420f739221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation.  <br /></td></tr>
+<tr class="memitem:a3290fe3574cc54dc0a8ac17b0a725bf5" id="r_a3290fe3574cc54dc0a8ac17b0a725bf5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3290fe3574cc54dc0a8ac17b0a725bf5">compare_to</a> (const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;<a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a>) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:a3290fe3574cc54dc0a8ac17b0a725bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to a specified object and returns an indication of their relative values.  <br /></td></tr>
+<tr class="memitem:a6b72f6c34b5ceca1273d168e7570ec0d" id="r_a6b72f6c34b5ceca1273d168e7570ec0d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6b72f6c34b5ceca1273d168e7570ec0d">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a6b72f6c34b5ceca1273d168e7570ec0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a555406a242aaa1b75910c888706cd141" id="r_a555406a242aaa1b75910c888706cd141"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a555406a242aaa1b75910c888706cd141">equals</a> (const <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;v) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a555406a242aaa1b75910c888706cd141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a0e14fdd8e07e4ddcd896e8482ce665fe" id="r_a0e14fdd8e07e4ddcd896e8482ce665fe"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0e14fdd8e07e4ddcd896e8482ce665fe">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a0e14fdd8e07e4ddcd896e8482ce665fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a73380f480de4b9ae343ff3e439d0095b" id="r_a73380f480de4b9ae343ff3e439d0095b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a73380f480de4b9ae343ff3e439d0095b">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a73380f480de4b9ae343ff3e439d0095b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:aa7b11c0fd8bbdffcf2286fded1725501" id="r_aa7b11c0fd8bbdffcf2286fded1725501"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa7b11c0fd8bbdffcf2286fded1725501">to_string</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> field_count) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:aa7b11c0fd8bbdffcf2286fded1725501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. A specified count indicates the number of components to return.  <br /></td></tr>
+<tr class="memitem:a72147ec559b8f7a5d997eeb1fa2ebb11" id="r_a72147ec559b8f7a5d997eeb1fa2ebb11"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a72147ec559b8f7a5d997eeb1fa2ebb11">to_uint64</a> () const -&gt; <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td></tr>
+<tr class="memdesc:a72147ec559b8f7a5d997eeb1fa2ebb11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:aa7da881aceef049faa40f526ae4de983" id="r_aa7da881aceef049faa40f526ae4de983"><td class="memItemLeft">static <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa7da881aceef049faa40f526ae4de983">from_uint64</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> value) noexcept</td></tr>
-<tr class="memdesc:aa7da881aceef049faa40f526ae4de983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object from its 64-bit integer representation.  <br /></td></tr>
-<tr class="memitem:acaec012f6d5090bbeb56fb0be343c0e4" id="r_acaec012f6d5090bbeb56fb0be343c0e4"><td class="memItemLeft">static <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a>&#160;</td><td class="memItemRight"><a class="el" href="#acaec012f6d5090bbeb56fb0be343c0e4">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;input)</td></tr>
-<tr class="memdesc:acaec012f6d5090bbeb56fb0be343c0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a version number to an equivalent Version object.  <br /></td></tr>
-<tr class="memitem:a4895a50d313b8be9c5fbbfc64704f72d" id="r_a4895a50d313b8be9c5fbbfc64704f72d"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a4895a50d313b8be9c5fbbfc64704f72d">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;input, <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;result) noexcept</td></tr>
-<tr class="memdesc:a4895a50d313b8be9c5fbbfc64704f72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to convert the string representation of a version number to an equivalent <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object, and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
+<tr class="memitem:a370b49daa5e898db9d7ac5642c4a0a0c" id="r_a370b49daa5e898db9d7ac5642c4a0a0c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a370b49daa5e898db9d7ac5642c4a0a0c">from_uint64</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> value) noexcept -&gt; <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a></td></tr>
+<tr class="memdesc:a370b49daa5e898db9d7ac5642c4a0a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object from its 64-bit integer representation.  <br /></td></tr>
+<tr class="memitem:a69096cc9422fff78ce7c5da4c1e6eed9" id="r_a69096cc9422fff78ce7c5da4c1e6eed9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a69096cc9422fff78ce7c5da4c1e6eed9">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;input) -&gt; <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a></td></tr>
+<tr class="memdesc:a69096cc9422fff78ce7c5da4c1e6eed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a version number to an equivalent Version object.  <br /></td></tr>
+<tr class="memitem:a83d01e10ef7c64a5a969fa79e6f2cb56" id="r_a83d01e10ef7c64a5a969fa79e6f2cb56"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a83d01e10ef7c64a5a969fa79e6f2cb56">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;input, <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a83d01e10ef7c64a5a969fa79e6f2cb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to convert the string representation of a version number to an equivalent <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object, and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -309,13 +309,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Property  </th><th class="markdownTableHeadNone">Value  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">0  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">0  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">0  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">0  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">-1  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">-1  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">-1  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">-1  </td></tr>
 </table>
 </dd></dl>
 
@@ -368,8 +368,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="a7f0a17bda3075d568d7175a24b684f5e" name="a7f0a17bda3075d568d7175a24b684f5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f0a17bda3075d568d7175a24b684f5e">&#9670;&#160;</a></span>version() <span class="overload">[3/5]</span></h2>
+<a id="aa2f3795ebfe83f04606db9151e13c563" name="aa2f3795ebfe83f04606db9151e13c563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f3795ebfe83f04606db9151e13c563">&#9670;&#160;</a></span>version() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,12 +377,12 @@ All defined components must be integers greater than or equal to 0. For example,
         <tr>
           <td class="memname">xtd::version::version </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>major</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>major</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minor</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>minor</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -390,8 +390,8 @@ All defined components must be integers greater than or equal to 0. For example,
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major and minor values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a></td><td>The major version number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a></td><td>The minor version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a></td><td>The major version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a></td><td>The minor version number. </td></tr>
   </table>
   </dd>
 </dl>
@@ -405,20 +405,20 @@ All defined components must be integers greater than or equal to 0. For example,
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Property  </th><th class="markdownTableHeadNone">Value  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">major  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">major  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">minor  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">minor  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">undefined (-1)  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">undefined (-1)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">undefined (-1)  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">undefined (-1)  </td></tr>
 </table>
 </dd></dl>
 
 </div>
 </div>
-<a id="a804f0086fd598ab86f098bbe4a9c9a66" name="a804f0086fd598ab86f098bbe4a9c9a66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a804f0086fd598ab86f098bbe4a9c9a66">&#9670;&#160;</a></span>version() <span class="overload">[4/5]</span></h2>
+<a id="a409e20d97a607a19639e01739e97450e" name="a409e20d97a607a19639e01739e97450e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a409e20d97a607a19639e01739e97450e">&#9670;&#160;</a></span>version() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,17 +426,17 @@ All defined components must be integers greater than or equal to 0. For example,
         <tr>
           <td class="memname">xtd::version::version </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>major</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>major</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minor</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>minor</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>build</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>build</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -444,9 +444,9 @@ All defined components must be integers greater than or equal to 0. For example,
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor and build values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a></td><td>The major version number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a></td><td>The minor version number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">build</a></td><td>The build version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a></td><td>The major version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a></td><td>The minor version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">build</a></td><td>The build version number. </td></tr>
   </table>
   </dd>
 </dl>
@@ -460,20 +460,20 @@ All defined components must be integers greater than or equal to 0. For example,
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Property  </th><th class="markdownTableHeadNone">Value  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">major  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">major  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">minor  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">minor  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">build  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">build  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">undefined (-1)  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">undefined (-1)  </td></tr>
 </table>
 </dd></dl>
 
 </div>
 </div>
-<a id="a857d0621a6d60896e158fc606cde6080" name="a857d0621a6d60896e158fc606cde6080"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a857d0621a6d60896e158fc606cde6080">&#9670;&#160;</a></span>version() <span class="overload">[5/5]</span></h2>
+<a id="a8a4b963a797d380c897f94b2a7f775ee" name="a8a4b963a797d380c897f94b2a7f775ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4b963a797d380c897f94b2a7f775ee">&#9670;&#160;</a></span>version() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,22 +481,22 @@ All defined components must be integers greater than or equal to 0. For example,
         <tr>
           <td class="memname">xtd::version::version </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>major</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>major</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minor</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>minor</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>build</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>build</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>revision</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>revision</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -504,10 +504,10 @@ All defined components must be integers greater than or equal to 0. For example,
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor, build and revision values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a></td><td>The major version number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a></td><td>The minor version number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">build</a></td><td>The build version number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">revision</a></td><td>The revision version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a></td><td>The major version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a></td><td>The minor version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">build</a></td><td>The build version number. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">revision</a></td><td>The revision version number. </td></tr>
   </table>
   </dd>
 </dl>
@@ -521,16 +521,16 @@ All defined components must be integers greater than or equal to 0. For example,
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Property  </th><th class="markdownTableHeadNone">Value  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">major  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>  </td><td class="markdownTableBodyNone">major  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">minor  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>  </td><td class="markdownTableBodyNone">minor  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">build  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>  </td><td class="markdownTableBodyNone">build  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">revision  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>  </td><td class="markdownTableBodyNone">revision  </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> constructor, and <a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>, <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>, <a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>, <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>, <a class="el" href="#a936201121c688f7df24f3367bcacf7df" title="Gets the high 16 bits of the revision number.">xtd::version::major_revision</a>, and <a class="el" href="#af465ca0f41e273afa5ddb2599aaa4689" title="Gets the low 16 bits of the revision number.">xtd::version::minor_revision</a> properties. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> constructor, and <a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">xtd::version::major</a>, <a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a>, <a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a>, <a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a>, <a class="el" href="#a25d0bc8bf42de912e6df72d3ee78d9bc" title="Gets the high 16 bits of the revision number.">xtd::version::major_revision</a>, and <a class="el" href="#a534eb7c35c3cb95b7fc085c7f10de824" title="Gets the low 16 bits of the revision number.">xtd::version::minor_revision</a> properties. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>version_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -566,8 +566,8 @@ All defined components must be integers greater than or equal to 0. For example,
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aa7a3bfb1c5089058407f302c39dfd189" name="aa7a3bfb1c5089058407f302c39dfd189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7a3bfb1c5089058407f302c39dfd189">&#9670;&#160;</a></span>build()</h2>
+<a id="ab3814646f9d22a00f9a7c96fde975cc4" name="ab3814646f9d22a00f9a7c96fde975cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3814646f9d22a00f9a7c96fde975cc4">&#9670;&#160;</a></span>build()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -576,15 +576,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::version::build </td>
+          <td class="memname">auto xtd::version::build </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -595,8 +595,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="a015bc6a9d0c5b3e447dc6418ea8405cd" name="a015bc6a9d0c5b3e447dc6418ea8405cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a015bc6a9d0c5b3e447dc6418ea8405cd">&#9670;&#160;</a></span>major()</h2>
+<a id="ab7920c0fb678e9db04c31482eb8e9cee" name="ab7920c0fb678e9db04c31482eb8e9cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7920c0fb678e9db04c31482eb8e9cee">&#9670;&#160;</a></span>major()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,15 +605,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::version::major </td>
+          <td class="memname">auto xtd::version::major </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -624,8 +624,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="a936201121c688f7df24f3367bcacf7df" name="a936201121c688f7df24f3367bcacf7df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a936201121c688f7df24f3367bcacf7df">&#9670;&#160;</a></span>major_revision()</h2>
+<a id="a25d0bc8bf42de912e6df72d3ee78d9bc" name="a25d0bc8bf42de912e6df72d3ee78d9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d0bc8bf42de912e6df72d3ee78d9bc">&#9670;&#160;</a></span>major_revision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -634,27 +634,27 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> xtd::version::major_revision </td>
+          <td class="memname">auto xtd::version::major_revision </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the high 16 bits of the revision number. </p>
 <dl class="section return"><dt>Returns</dt><dd>A 16-bit signed integer. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> property to obtain the entire revision number, use the <a class="el" href="#a936201121c688f7df24f3367bcacf7df" title="Gets the high 16 bits of the revision number.">xtd::version::major_revision</a> property to obtain the high 16 bits, and use the <a class="el" href="#af465ca0f41e273afa5ddb2599aaa4689" title="Gets the low 16 bits of the revision number.">xtd::version::minor_revision</a> property to obtain the low 16 bits. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the <a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> property to obtain the entire revision number, use the <a class="el" href="#a25d0bc8bf42de912e6df72d3ee78d9bc" title="Gets the high 16 bits of the revision number.">xtd::version::major_revision</a> property to obtain the high 16 bits, and use the <a class="el" href="#a534eb7c35c3cb95b7fc085c7f10de824" title="Gets the low 16 bits of the revision number.">xtd::version::minor_revision</a> property to obtain the low 16 bits. </dd></dl>
 
 </div>
 </div>
-<a id="a2eff6909a11bd61e1d6e38bda95418a9" name="a2eff6909a11bd61e1d6e38bda95418a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2eff6909a11bd61e1d6e38bda95418a9">&#9670;&#160;</a></span>minor()</h2>
+<a id="ae7cc03f5a1f66d8dac4ffd3d58f155a0" name="ae7cc03f5a1f66d8dac4ffd3d58f155a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0">&#9670;&#160;</a></span>minor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -663,15 +663,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::version::minor </td>
+          <td class="memname">auto xtd::version::minor </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -682,8 +682,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="af465ca0f41e273afa5ddb2599aaa4689" name="af465ca0f41e273afa5ddb2599aaa4689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af465ca0f41e273afa5ddb2599aaa4689">&#9670;&#160;</a></span>minor_revision()</h2>
+<a id="a534eb7c35c3cb95b7fc085c7f10de824" name="a534eb7c35c3cb95b7fc085c7f10de824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a534eb7c35c3cb95b7fc085c7f10de824">&#9670;&#160;</a></span>minor_revision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -692,27 +692,27 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> xtd::version::minor_revision </td>
+          <td class="memname">auto xtd::version::minor_revision </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the low 16 bits of the revision number. </p>
 <dl class="section return"><dt>Returns</dt><dd>A 16-bit signed integer. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> property to obtain the entire revision number, use the <a class="el" href="#a936201121c688f7df24f3367bcacf7df" title="Gets the high 16 bits of the revision number.">xtd::version::major_revision</a> property to obtain the high 16 bits, and use the <a class="el" href="#af465ca0f41e273afa5ddb2599aaa4689" title="Gets the low 16 bits of the revision number.">xtd::version::minor_revision</a> property to obtain the low 16 bits. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the <a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> property to obtain the entire revision number, use the <a class="el" href="#a25d0bc8bf42de912e6df72d3ee78d9bc" title="Gets the high 16 bits of the revision number.">xtd::version::major_revision</a> property to obtain the high 16 bits, and use the <a class="el" href="#a534eb7c35c3cb95b7fc085c7f10de824" title="Gets the low 16 bits of the revision number.">xtd::version::minor_revision</a> property to obtain the low 16 bits. </dd></dl>
 
 </div>
 </div>
-<a id="ae9c70a097280c1c51ecb33d13ab45dbb" name="ae9c70a097280c1c51ecb33d13ab45dbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9c70a097280c1c51ecb33d13ab45dbb">&#9670;&#160;</a></span>revision()</h2>
+<a id="af4b0d79e684f3df1726d2d422ab8e9a4" name="af4b0d79e684f3df1726d2d422ab8e9a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b0d79e684f3df1726d2d422ab8e9a4">&#9670;&#160;</a></span>revision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -721,15 +721,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::version::revision </td>
+          <td class="memname">auto xtd::version::revision </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -740,8 +740,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="ab77b49d5430810732b4dd085272b5735" name="ab77b49d5430810732b4dd085272b5735"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab77b49d5430810732b4dd085272b5735">&#9670;&#160;</a></span>compare_to()</h2>
+<a id="a3290fe3574cc54dc0a8ac17b0a725bf5" name="a3290fe3574cc54dc0a8ac17b0a725bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3290fe3574cc54dc0a8ac17b0a725bf5">&#9670;&#160;</a></span>compare_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -750,15 +750,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::version::compare_to </td>
+          <td class="memname">auto xtd::version::compare_to </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -794,8 +794,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="acd0da6c10fc14ac331d7b956d894fd9d" name="acd0da6c10fc14ac331d7b956d894fd9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd0da6c10fc14ac331d7b956d894fd9d">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a6b72f6c34b5ceca1273d168e7570ec0d" name="a6b72f6c34b5ceca1273d168e7570ec0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b72f6c34b5ceca1273d168e7570ec0d">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -804,15 +804,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::version::equals </td>
+          <td class="memname">auto xtd::version::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -830,8 +830,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="a1d1719bcebb970bfc503e5be2f996c74" name="a1d1719bcebb970bfc503e5be2f996c74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d1719bcebb970bfc503e5be2f996c74">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a555406a242aaa1b75910c888706cd141" name="a555406a242aaa1b75910c888706cd141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a555406a242aaa1b75910c888706cd141">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -840,15 +840,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::version::equals </td>
+          <td class="memname">auto xtd::version::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -866,8 +866,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="a23799b77d715537aa5b129a4f3b5d753" name="a23799b77d715537aa5b129a4f3b5d753"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23799b77d715537aa5b129a4f3b5d753">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a0e14fdd8e07e4ddcd896e8482ce665fe" name="a0e14fdd8e07e4ddcd896e8482ce665fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e14fdd8e07e4ddcd896e8482ce665fe">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -876,15 +876,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::version::get_hash_code </td>
+          <td class="memname">auto xtd::version::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -896,8 +896,8 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="adb97d4a2c23991ee27bacacf55cad226" name="adb97d4a2c23991ee27bacacf55cad226"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb97d4a2c23991ee27bacacf55cad226">&#9670;&#160;</a></span>to_string() <span class="overload">[1/2]</span></h2>
+<a id="a73380f480de4b9ae343ff3e439d0095b" name="a73380f480de4b9ae343ff3e439d0095b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73380f480de4b9ae343ff3e439d0095b">&#9670;&#160;</a></span>to_string() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -906,15 +906,15 @@ All defined components must be integers greater than or equal to 0. For example,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::version::to_string </td>
+          <td class="memname">auto xtd::version::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -926,19 +926,27 @@ All defined components must be integers greater than or equal to 0. For example,
 
 </div>
 </div>
-<a id="a54c61ddf5b7acf9671ed4d6dff99b065" name="a54c61ddf5b7acf9671ed4d6dff99b065"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54c61ddf5b7acf9671ed4d6dff99b065">&#9670;&#160;</a></span>to_string() <span class="overload">[2/2]</span></h2>
+<a id="aa7b11c0fd8bbdffcf2286fded1725501" name="aa7b11c0fd8bbdffcf2286fded1725501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b11c0fd8bbdffcf2286fded1725501">&#9670;&#160;</a></span>to_string() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::version::to_string </td>
+          <td class="memname">auto xtd::version::to_string </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>field_count</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. A specified count indicates the number of components to return. </p>
@@ -974,45 +982,8 @@ field_count is more than the number of components defined in the current <a clas
 
 </div>
 </div>
-<a id="a24da2c3d110ed497ea1a56420f739221" name="a24da2c3d110ed497ea1a56420f739221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24da2c3d110ed497ea1a56420f739221">&#9670;&#160;</a></span>to_uint64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> xtd::version::to_uint64 </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convert the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation of the values of the major, minor, build, and revision components of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">xtd::invalid_cast</td><td>if <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a> or <a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a> or <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> are greater than 99. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a24da2c3d110ed497ea1a56420f739221" title="Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.">xtd::version::to_uint64</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a>(<span class="stringliteral">&quot;long_version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">xtd::version</a> {1, 2, 3}.<a class="code hl_function" href="#a24da2c3d110ed497ea1a56420f739221">to_uint64</a>());</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// long_version = 1020300</span></div>
-<div class="ttc" id="aclassxtd_1_1version_html_a24da2c3d110ed497ea1a56420f739221"><div class="ttname"><a href="#a24da2c3d110ed497ea1a56420f739221">xtd::version::to_uint64</a></div><div class="ttdeci">xtd::uint64 to_uint64() const</div><div class="ttdoc">Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="aa7da881aceef049faa40f526ae4de983" name="aa7da881aceef049faa40f526ae4de983"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7da881aceef049faa40f526ae4de983">&#9670;&#160;</a></span>from_uint64()</h2>
+<a id="a72147ec559b8f7a5d997eeb1fa2ebb11" name="a72147ec559b8f7a5d997eeb1fa2ebb11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72147ec559b8f7a5d997eeb1fa2ebb11">&#9670;&#160;</a></span>to_uint64()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1021,15 +992,60 @@ field_count is more than the number of components defined in the current <a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> xtd::version::from_uint64 </td>
+          <td class="memname">auto xtd::version::to_uint64 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation of the values of the major, minor, build, and revision components of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_cast</td><td>if <a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a> or <a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a> or <a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> are greater than 99. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a72147ec559b8f7a5d997eeb1fa2ebb11" title="Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.">xtd::version::to_uint64</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a>(<span class="stringliteral">&quot;long_version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">xtd::version</a> {1, 2, 3}.<a class="code hl_function" href="#a72147ec559b8f7a5d997eeb1fa2ebb11">to_uint64</a>());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// long_version = 1020300</span></div>
+<div class="ttc" id="aclassxtd_1_1version_html_a72147ec559b8f7a5d997eeb1fa2ebb11"><div class="ttname"><a href="#a72147ec559b8f7a5d997eeb1fa2ebb11">xtd::version::to_uint64</a></div><div class="ttdeci">auto to_uint64() const -&gt; xtd::uint64</div><div class="ttdoc">Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a370b49daa5e898db9d7ac5642c4a0a0c" name="a370b49daa5e898db9d7ac5642c4a0a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370b49daa5e898db9d7ac5642c4a0a0c">&#9670;&#160;</a></span>from_uint64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::version::from_uint64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1042,25 +1058,25 @@ field_count is more than the number of components defined in the current <a clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> instance corresponding to the specified value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The 64-bit integer representation must follow the format: <span class="tt"><a class="el" href="#a015bc6a9d0c5b3e447dc6418ea8405cd" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a> * 1'000'000 + <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a> * 10'000 + <a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">build</a> * 100 + <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">revision</a></span>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The 64-bit integer representation must follow the format: <span class="tt"><a class="el" href="#ab7920c0fb678e9db04c31482eb8e9cee" title="Gets the value of the major component of the version number for the current xtd::version object.">major</a> * 1'000'000 + <a class="el" href="#ae7cc03f5a1f66d8dac4ffd3d58f155a0" title="Gets the value of the minor component of the version number for the current xtd::version object.">minor</a> * 10'000 + <a class="el" href="#ab3814646f9d22a00f9a7c96fde975cc4" title="Gets the value of the build component of the version number for the current xtd::version object.">build</a> * 100 + <a class="el" href="#af4b0d79e684f3df1726d2d422ab8e9a4" title="Gets the value of the revision component of the version number for the current xtd::version object.">revision</a></span>. </dd>
 <dd>
 Components beyond build and revision may be omitted (e.g., 1020000 is equivalent to version 1.2). </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use the from_uint64 method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> ver = <a class="code hl_function" href="#aa7da881aceef049faa40f526ae4de983">xtd::version::from_uint64</a>(1020300);</div>
+<div class="line">  <span class="keyword">auto</span> ver = <a class="code hl_function" href="#a370b49daa5e898db9d7ac5642c4a0a0c">xtd::version::from_uint64</a>(1020300);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, ver);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">// version = 1.2.3</span></div>
-<div class="ttc" id="aclassxtd_1_1version_html_aa7da881aceef049faa40f526ae4de983"><div class="ttname"><a href="#aa7da881aceef049faa40f526ae4de983">xtd::version::from_uint64</a></div><div class="ttdeci">static version from_uint64(xtd::uint64 value) noexcept</div><div class="ttdoc">Creates a new xtd::version object from its 64-bit integer representation.</div></div>
+<div class="ttc" id="aclassxtd_1_1version_html_a370b49daa5e898db9d7ac5642c4a0a0c"><div class="ttname"><a href="#a370b49daa5e898db9d7ac5642c4a0a0c">xtd::version::from_uint64</a></div><div class="ttdeci">static auto from_uint64(xtd::uint64 value) noexcept -&gt; version</div><div class="ttdoc">Creates a new xtd::version object from its 64-bit integer representation.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="acaec012f6d5090bbeb56fb0be343c0e4" name="acaec012f6d5090bbeb56fb0be343c0e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaec012f6d5090bbeb56fb0be343c0e4">&#9670;&#160;</a></span>parse()</h2>
+<a id="a69096cc9422fff78ce7c5da4c1e6eed9" name="a69096cc9422fff78ce7c5da4c1e6eed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69096cc9422fff78ce7c5da4c1e6eed9">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1069,15 +1085,15 @@ Components beyond build and revision may be omitted (e.g., 1020000 is equivalent
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> xtd::version::parse </td>
+          <td class="memname">auto xtd::version::parse </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1101,13 +1117,13 @@ Components beyond build and revision may be omitted (e.g., 1020000 is equivalent
 <dl class="section remark"><dt>Remarks</dt><dd>The input parameter must have the following format: <pre class="fragment">major.minor[.build[.revision]] </pre> </dd>
 <dd>
 where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the <a class="el" href="#acaec012f6d5090bbeb56fb0be343c0e4" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method to parse user input. Alternatively, you can call the <a class="el" href="#a4895a50d313b8be9c5fbbfc64704f72d" title="Tries to convert the string representation of a version number to an equivalent xtd::version object,...">xtd::version::try_parse</a> method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#acaec012f6d5090bbeb56fb0be343c0e4" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method is a convenience method; it is equivalent to calling the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version(const string&amp;)</a> constructor. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the <a class="el" href="#a69096cc9422fff78ce7c5da4c1e6eed9" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method to parse user input. Alternatively, you can call the <a class="el" href="#a83d01e10ef7c64a5a969fa79e6f2cb56" title="Tries to convert the string representation of a version number to an equivalent xtd::version object,...">xtd::version::try_parse</a> method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a69096cc9422fff78ce7c5da4c1e6eed9" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method is a convenience method; it is equivalent to calling the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version(const string&amp;)</a> constructor. </dd></dl>
 
 </div>
 </div>
-<a id="a4895a50d313b8be9c5fbbfc64704f72d" name="a4895a50d313b8be9c5fbbfc64704f72d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4895a50d313b8be9c5fbbfc64704f72d">&#9670;&#160;</a></span>try_parse()</h2>
+<a id="a83d01e10ef7c64a5a969fa79e6f2cb56" name="a83d01e10ef7c64a5a969fa79e6f2cb56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d01e10ef7c64a5a969fa79e6f2cb56">&#9670;&#160;</a></span>try_parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1116,19 +1132,19 @@ where major, minor, build, and revision are the string representations of the ve
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::version::try_parse </td>
+          <td class="memname">auto xtd::version::try_parse </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#a3504954441aa4d0d53ace55b4f518c42">version</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1142,7 +1158,7 @@ where major, minor, build, and revision are the string representations of the ve
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the input parameter was converted successfully; otherwise, <span class="tt">false</span>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a4895a50d313b8be9c5fbbfc64704f72d" title="Tries to convert the string representation of a version number to an equivalent xtd::version object,...">xtd::version::try_parse</a> method is similar to the <a class="el" href="#acaec012f6d5090bbeb56fb0be343c0e4" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method, except that it doesn't throw an exception if the conversion fails. Instead, it returns <span class="tt">false</span> if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits&lt;int32&gt;::max(). For the parse operation to succeed, the input parameter must be in the following format: <pre class="fragment">major.minor[.build[.revision]] </pre> where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a83d01e10ef7c64a5a969fa79e6f2cb56" title="Tries to convert the string representation of a version number to an equivalent xtd::version object,...">xtd::version::try_parse</a> method is similar to the <a class="el" href="#a69096cc9422fff78ce7c5da4c1e6eed9" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method, except that it doesn't throw an exception if the conversion fails. Instead, it returns <span class="tt">false</span> if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits&lt;int32&gt;::max(). For the parse operation to succeed, the input parameter must be in the following format: <pre class="fragment">major.minor[.build[.revision]] </pre> where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods. </dd></dl>
 
 </div>
 </div>
