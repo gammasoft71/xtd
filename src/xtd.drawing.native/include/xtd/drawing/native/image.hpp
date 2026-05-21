@@ -261,9 +261,9 @@ namespace xtd {
           /// | 0xA300 | property_tag_exif_file_Source                 |
           /// | 0xA301 | property_tag_exif_scene_type                  |
           /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-          int32 id = 0;
+          xtd::int32 id = 0;
           /// @brief The length (in bytes) of the value property.
-          int32 len = 0;
+          xtd::int32 len = 0;
           /// @brief An integer that defines the type of data contained in the value property.
           /// @remarks The following table shows integers and the types they represent.
           /// | Integer | Represented Type                                                                                                                                                                                                                                            |
@@ -276,7 +276,7 @@ namespace xtd {
           /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
           /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
           /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-          int32 type = 1;
+          xtd::int32 type = 1;
           /// @brief the value of the property item.
           xtd::array<xtd::byte> value;
         };
@@ -293,7 +293,7 @@ namespace xtd {
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
         /// @warning Internal use only
-        static void color_palette(intptr image, xtd::array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags);
+        static auto color_palette(xtd::intptr image, xtd::array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, xtd::int32& flags) -> void;
         
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
@@ -304,7 +304,7 @@ namespace xtd {
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr create(const xtd::string& filename, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions);
+        [[nodiscard]] static auto create(const xtd::string& filename, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions) -> xtd::intptr;
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param use_icm `true` to use color correction for this Bitmap; otherwise, `false`.
@@ -314,14 +314,14 @@ namespace xtd {
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr create(std::istream& stream, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions);
+        [[nodiscard]] static auto create(std::istream& stream, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions) -> xtd::intptr;
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
         /// @param frame_resolutions an std::map<xtd::usize, xtd::usize> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
         /// @remarks This method is used for creating an imgae from an XPM image.
         /// @warning Internal use only
-        static intptr create(const char* const* bits, std::map<xtd::usize, xtd::usize>& frame_resolutions);
+        [[nodiscard]] static auto create(const char* const* bits, std::map<xtd::usize, xtd::usize>& frame_resolutions) -> xtd::intptr;
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
         /// @param width The width for the image.
@@ -330,26 +330,26 @@ namespace xtd {
         /// @return A new image handle.
         /// @remarks This method is used for creating an imgae from an XBM image.
         /// @warning Internal use only
-        static intptr create(const unsigned char* bits, int32 width, int32 height, std::map<xtd::usize, xtd::usize>& frame_resolutions);
+        [[nodiscard]] static auto create(const unsigned char* bits, xtd::int32 width, xtd::int32 height, std::map<xtd::usize, xtd::usize>& frame_resolutions) -> xtd::intptr;
         /// @brief Creates an empty image from size.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
         /// @return A new image handle.
         /// @warning Internal use only
-        static intptr create(int32 width, int32 height);
+        [[nodiscard]] static auto create(xtd::int32 width, xtd::int32 height) -> xtd::intptr;
         /// @brief Creates an empty image from size, and horzontal and vertical resolution.
         /// @param width The width for the new image.
         /// @param height The height for the new image.
         /// @return A new image handle.
         /// @warning Internal use only
-        static intptr create(int32 width, int32 height, float horizontal_resolution, float vertical_resolution);
+        [[nodiscard]] static auto create(xtd::int32 width, xtd::int32 height, float horizontal_resolution, float vertical_resolution) -> xtd::intptr;
         /// @brief Creates an empty image from size, and pixel format.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
         /// @param format The pixel format for the new image.
         /// @return A new image handle.
         /// @warning Internal use only
-        static intptr create(int32 width, int32 height, int32 format);
+        [[nodiscard]] static auto create(xtd::int32 width, xtd::int32 height, xtd::int32 format) -> xtd::intptr;
         /// @brief Creates an empty image from size, pixel format and pixel datas.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
@@ -358,42 +358,42 @@ namespace xtd {
         /// @param scan0 Pointer to an array of bytes that contains the pixel data.
         /// @return A new image handle.
         /// @warning Internal use only
-        static intptr create(int32 width, int32 height, int32 stride, int32 format, intptr scan0);
+        [[nodiscard]] static auto create(xtd::int32 width, xtd::int32 height, xtd::int32 stride, xtd::int32 format, xtd::intptr scan0) -> xtd::intptr;
         
         /// @brief Destroys the image.
         /// @param image The image handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr image);
+        static auto destroy(xtd::intptr image) -> void;
         
         /// @brief Gets attribute flags for the pixel data of this Image.
         /// @param image The image handle.
         /// @return The integer representing a bitwise combination of image flags for this Image (see image_flags.h for more information).
         /// @warning Internal use only
-        static xtd::usize flags(intptr image);
+        [[nodiscard]] static auto flags(xtd::intptr image) -> xtd::usize;
         
         /// @brief Creates a bitmap from a Windows handle to an icon.
         /// @param hicon A handle to an icon.
         /// @return A new bitmap handle.
         /// @warning Internal use only
-        static intptr from_hicon(intptr icon);
+        [[nodiscard]] static auto from_hicon(xtd::intptr icon) -> xtd::intptr;
         
         /// @brief Get the access to the alpah from this image.
         /// @param image A handle to an image.
         /// @return An alpha pointer of the image.
         /// @warning Internal use only
-        static xtd::byte* get_alpha(intptr image);
+        [[nodiscard]] static auto get_alpha(xtd::intptr image) -> xtd::byte*;
         
         /// @brief Get the access to the data from this image.
         /// @param image A handle to an image.
         /// @return A data pointer of the image.
         /// @warning Internal use only
-        static xtd::byte* get_data(intptr image);
+        [[nodiscard]] static auto get_data(xtd::intptr image) -> xtd::byte*;
         
         /// @brief Creates a GDI bitmap object from this image.
         /// @param image A handle to an image.
         /// @return A new bitmap handle.
         /// @warning Internal use only
-        static intptr get_hbitmap(intptr image);
+        [[nodiscard]] static auto get_hbitmap(xtd::intptr image) -> xtd::intptr;
         
         /// @brief Creates a GDI bitmap object from this image.
         /// @param image A handle to an image.
@@ -403,26 +403,26 @@ namespace xtd {
         /// @param b The blue componant of the background color.
         /// @return A new bitmap handle.
         /// @warning Internal use only
-        static intptr get_hbitmap(intptr image, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
+        [[nodiscard]] static auto get_hbitmap(xtd::intptr image, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) -> xtd::intptr;
         
         /// @brief Returns the handle to an icon.
         /// @param image A handle to an image.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr get_hicon(intptr image);
+        [[nodiscard]] static auto get_hicon(xtd::intptr image) -> xtd::intptr;
         
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The horizontal resolution, in pixels per inch, of the image.
         /// @warning Internal use only
-        static float horizontal_resolution(intptr image);
+        [[nodiscard]] static auto horizontal_resolution(xtd::intptr image) -> float;
         
         /// @brief Locks a xtd::drawing::bitmap into system memory.
         /// @param image The image handle.
-        /// @param top An int32 that specifies the top of the bitmap to lock.
-        /// @param left An int32 that specifies the left of the bitmap to lock.
-        /// @param width An int32 that specifies the width of the bitmap to lock.
-        /// @param height An int32 that specifies the height of the bitmap to lock.
+        /// @param top An xtd::int32 that specifies the top of the bitmap to lock.
+        /// @param left An xtd::int32 that specifies the left of the bitmap to lock.
+        /// @param width An xtd::int32 that specifies the width of the bitmap to lock.
+        /// @param height An xtd::int32 that specifies the height of the bitmap to lock.
         /// @param flags An image lock mode value that specifies the access level (read/write) for the bitmap.
         /// @param format A pixel format value that specifies the data format of this bitmap.
         /// @param image_data_height The pixel height of the bitmap object. Also sometimes referred to as the number of scan lines.
@@ -432,7 +432,7 @@ namespace xtd {
         /// @param image_data_stride The stride width (also called scan width), in bytes, of the bitmap.
         /// @param image_data_width The pixel width of the bitmap. This can also be thought of as the number of pixels in one scan line.
         /// @return A xtd::drawing::imaging::bitmap_data that contains information about this lock operation.
-        static void lock_bits(intptr image, int32 left, int32 top, int32 width, int32 height, int32 flags, int32 format, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width);
+        static auto lock_bits(xtd::intptr image, xtd::int32 left, xtd::int32 top, xtd::int32 width, xtd::int32 height, xtd::int32 flags, xtd::int32 format, xtd::int32& image_data_height, xtd::int32& image_data_pixel_format, xtd::int32& image_data_reserved, xtd::intptr& image_data_scan0, xtd::int32& image_data_stride, xtd::int32& image_data_width) -> void;
         
         /// @brief Makes the specified color transparent for this bitmap.
         /// @param image The image handle.
@@ -440,74 +440,74 @@ namespace xtd {
         /// @param transprent_color_r The byte that represents the red component of the color to make transparent.
         /// @param transprent_color_g The byte that represents the green component of the color to make transparent.
         /// @param transprent_color_b The byte that represents the blue component of the color to make transparent.
-        static void make_transparent(intptr image, xtd::byte transparent_color_a, xtd::byte transparent_color_r, xtd::byte transparent_color_g, xtd::byte transparent_color_b);
+        static auto make_transparent(xtd::intptr image, xtd::byte transparent_color_a, xtd::byte transparent_color_r, xtd::byte transparent_color_g, xtd::byte transparent_color_b) -> void;
         
         /// @brief Gets the width and height of this image.
         /// @param image The image handle.
-        /// @param width A int32 that represents the width of the image.
-        /// @param height A int32 that represents the height of the image.
+        /// @param width A xtd::int32 that represents the width of the image.
+        /// @param height A xtd::int32 that represents the height of the image.
         /// @warning Internal use only
-        static void physical_dimension(intptr image, int32& width, int32& height);
+        static auto physical_dimension(xtd::intptr image, xtd::int32& width, xtd::int32& height) -> void;
         
         /// @brief Gets IDs of the property items stored in the image.
         /// @param image The image handle.
         /// @return An array of the property IDs, one for each property item stored in the image.
         /// @warning Internal use only
-        static xtd::array<int32> property_id_list(intptr image);
+        [[nodiscard]] static auto property_id_list(xtd::intptr image) -> xtd::array<xtd::int32>;
         
         /// @brief Gets all the property items (pieces of metadata) stored in the image.
         /// @param image The image handle.
         /// @return An array of xtd::drawing::native::image::property_item strutures, one for each property item stored in the image.
         /// @warning Internal use only
-        static xtd::array<property_item> property_items(intptr image);
+        [[nodiscard]] static auto property_items(xtd::intptr image) -> xtd::array<property_item>;
         
         /// @brief Gets the pixel format for the image.
         /// @param image The image handle.
         /// @return A pixel_format that represents the pixel format for the image.
         /// @warning Internal use only
-        static xtd::usize pixel_format(intptr image);
+        [[nodiscard]] static auto pixel_format(xtd::intptr image) -> xtd::usize;
         
         /// @brief Gets the file format of the image.
         /// @param image The image handle.
         /// @return The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static xtd::usize raw_format(intptr image);
+        [[nodiscard]] static auto raw_format(xtd::intptr image) -> xtd::usize;
         
         /// @brief Sets the resolution for this bitmap.
         /// @param image The image handle.
         /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.
         /// @param y_dpi The vertical resolution, in dots per inch, of the xtd::drawing::bitmap.
-        static void set_resolution(intptr image, int32 x_dpi, int32 y_dpi);
+        static auto set_resolution(xtd::intptr image, xtd::int32 x_dpi, xtd::int32 y_dpi) -> void;
         
         /// @brief Saves image to the specified output filename.
         /// @param image The image handle.
         /// @param filename The file to save to.
         /// @warning Internal use only
-        static void save(intptr image, const xtd::string& filename);
+        static auto save(xtd::intptr image, const xtd::string& filename) -> void;
         /// @brief Saves image to the specified output filename and raw format.
         /// @param image The image handle.
         /// @param filename The file to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr image, const xtd::string& filename, xtd::usize raw_format);
+        static auto save(xtd::intptr image, const xtd::string& filename, xtd::usize raw_format) -> void;
         /// @brief Saves image to the specified stream and raw format.
         /// @param image The image handle.
         /// @param stream The stream to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr image, std::ostream& stream, xtd::usize raw_format);
+        static auto save(xtd::intptr image, std::ostream& stream, xtd::usize raw_format) -> void;
         
         /// @brief Get the screen dpi.
         /// @return The screen dpi.
         /// @warning Internal use only
-        static float screen_dpi();
+        [[nodiscard]] static auto screen_dpi() -> float;
         
         /// @brief Gets the width and height, in pixels, of the image.
         /// @param image The image handle.
         /// @param width The width, in pixels, of the image.
         /// @param height The height, in pixels, of the image.
         /// @warning Internal use only
-        static void size(intptr image, int32& width, int32& height);
+        static auto size(xtd::intptr image, xtd::int32& width, xtd::int32& height) -> void;
         
         /// @brief Unlocks this Bitmap from system memory.
         /// @param image The image handle.
@@ -517,13 +517,13 @@ namespace xtd {
         /// @param image_data_scan0 The address of the first pixel data in the bitmap.
         /// @param image_data_stride The stride width (also called scan width), in bytes, of the bitmap.
         /// @param image_data_width The pixel width of the bitmap. This can also be thought of as the number of pixels in one scan line.
-        static void unlock_bits(intptr image, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width);
+        static auto unlock_bits(xtd::intptr image, xtd::int32& image_data_height, xtd::int32& image_data_pixel_format, xtd::int32& image_data_reserved, xtd::intptr& image_data_scan0, xtd::int32& image_data_stride, xtd::int32& image_data_width) -> void;
         
         /// @brief Gets the vertical resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The vertical resolution, in pixels per inch, of the image.
         /// @warning Internal use only
-        static float vertical_resolution(intptr image);
+        [[nodiscard]] static auto vertical_resolution(xtd::intptr image) -> float;
         /// @}
       };
     }
