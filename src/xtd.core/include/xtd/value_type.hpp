@@ -54,7 +54,7 @@ namespace xtd {
     /// @cond
     template<typename other_t>
     requires std::is_same_v<xtd::raw_type<other_t>, native_type> && (!std::is_same_v<xtd::raw_type<other_t>, value_type>)
-    value_type& operator =(other_t&& value) noexcept {__t__ = value; return *this;}
+    auto operator =(other_t&& value) noexcept -> value_type& {__t__ = value; return *this;}
     [[nodiscard]] constexpr operator native_type() const noexcept {return __t__;}
     native_type __t__ {};
     /// @endcond
@@ -63,8 +63,8 @@ namespace xtd {
   
   /// @cond
   template<typename type_t>
-  std::ostream& operator <<(std::ostream& os, const xtd::value_type<type_t>& v) {return os << v.__t__;}
-  inline std::ostream& operator <<(std::ostream& os, const xtd::value_type<bool>& v) {return os << (v ? "true" : "false");}
+  auto operator <<(std::ostream& os, const xtd::value_type<type_t>& v) -> std::ostream& {return os << v.__t__;}
+  inline auto operator <<(std::ostream& os, const xtd::value_type<bool>& v) -> std::ostream& {return os << (v ? "true" : "false");}
   /// @endcond
 }
 
