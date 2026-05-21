@@ -40,7 +40,7 @@ namespace xtd {
         /// @param control Switch button window handle.
         /// @param checked `true` if the switch button is checked; otherwise, `false`.
         /// @warning Internal use only
-        static void checked(intptr control, bool checked);
+        static auto checked(xtd::intptr control, bool checked) -> void;
         /// @}
       };
     }
