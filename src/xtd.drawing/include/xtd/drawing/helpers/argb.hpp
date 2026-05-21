@@ -44,13 +44,8 @@ namespace xtd {
         /// @brief Creates a xtd::helpers::argb struct from the specified unsigned integer value.
         /// @param value The unsigned integer value.
         /// @return an xtd::drawing::helper::argb value that contains decomposed unsigned integer value.
-        static argb from_uint32(uint32 value) noexcept {
-          return argb {
-            .a = static_cast<xtd::byte>((value & 0xFF000000) >> 24),
-            .r = static_cast<xtd::byte>((value & 0x00FF0000) >> 16),
-            .g = static_cast<xtd::byte>((value & 0x0000FF00) >> 8),
-            .b = static_cast<xtd::byte>(value & 0x000000FF)
-          };
+        [[nodiscard]] static auto from_uint32(uint32 value) noexcept -> xtd::drawing::helpers::argb {
+          return argb {.a = static_cast<xtd::byte>((value & 0xFF000000) >> 24), .r = static_cast<xtd::byte>((value & 0x00FF0000) >> 16), .g = static_cast<xtd::byte>((value & 0x0000FF00) >> 8), .b = static_cast<xtd::byte>(value & 0x000000FF)};
         }
         /// @}
       };
