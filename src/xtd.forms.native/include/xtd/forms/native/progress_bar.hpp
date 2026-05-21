@@ -41,22 +41,22 @@ namespace xtd {
         /// @param marquee `true` if progress_bar is marquee; otherwise `false`.
         /// @param animation_speed The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
         /// @warning Internal use only
-        static void marquee(intptr control, bool marquee, xtd::usize animation_speed);
+        static auto marquee(xtd::intptr control, bool marquee, xtd::usize animation_speed) -> void;
         /// @brief Sets the maximum value of the range of the control.
         /// @param control Control window handle.
         /// @param maximum The maximum value of the range.
         /// @warning Internal use only
-        static void maximum(intptr control, int32 maximum);
+        static auto maximum(xtd::intptr control, xtd::int32 maximum) -> void;
         /// @brief Sets the minimum value of the range of the control.
         /// @param control Control window handle.
         /// @param minimum The minimum value of the range.
         /// @warning Internal use only
-        static void minimum(intptr control, int32 minimum);
+        static auto minimum(xtd::intptr control, xtd::int32 minimum) -> void;
         /// @brief Sets the current position of the progress bar.
         /// @param control Control window handle.
         /// @param value The position within the range of the progress bar.
         /// @warning Internal use only
-        static void value(intptr control, int32 value);
+        static auto value(xtd::intptr control, xtd::int32 value) -> void;
         /// @}
       };
     }
