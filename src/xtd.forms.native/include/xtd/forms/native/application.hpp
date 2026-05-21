@@ -60,73 +60,73 @@ namespace xtd {
         /// @brief Gets a value indicating whether the caller can quit this application.
         /// @return `true` if the caller can quit this application; otherwise, `false`.
         /// @warning Internal use only
-        static bool allow_quit();
+        [[nodiscard]] static auto allow_quit() -> bool;
         /// @brief Cleanup all data, handles, references, ... initialized by initialize() before quit.
         /// @remarks Some toolkits are nothing to clean. Leave this method empty.
         /// @warning Internal use only
-        static void cleanup();
+        static auto cleanup() -> void;
         /// @brief Processes all Windows messages currently in the message queue.
         /// @warning Internal use only
-        static void do_events();
+        static auto do_events() -> void;
         /// @brief Processes do idle event.
         /// @warning Internal use only
-        static void do_idle();
+        static auto do_idle() -> void;
         /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
         /// @return `true` if dark mode is enabled; otherwise `false`.
         /// @warning Internal use only
-        static bool dark_mode_enabled();
+        [[nodiscard]] static auto dark_mode_enabled() -> bool;
         /// @brief Enables button images for the application.
         /// @warning Internal use only
-        static void enable_button_images(bool value);
+        static auto enable_button_images(bool value) -> void;
         /// @brief Enables dark mode for the application.
         /// @warning Internal use only
-        static void enable_dark_mode(bool value);
+        static auto enable_dark_mode(bool value) -> void;
         /// @brief Disable font size correction for the application.
         /// @warning Internal use only
-        static void enable_font_size_correction(bool value);
+        static auto enable_font_size_correction(bool value) -> void;
         /// @brief Enables light mode for the application.
         /// @warning Internal use only
-        static void enable_light_mode(bool value);
+        static auto enable_light_mode(bool value) -> void;
         /// @brief Enables menu images for the application.
         /// @warning Internal use only
-        static void enable_menu_images(bool value);
+        static auto enable_menu_images(bool value) -> void;
         /// @brief Enables system font size for the application.
         /// @warning Internal use only
-        static void enable_system_font_size(bool value);
+        static auto enable_system_font_size(bool value) -> void;
         /// @brief Enables visual styles for the application.
         /// @warning Internal use only
-        static void enable_visual_style(bool value);
+        static auto enable_visual_style(bool value) -> void;
         /// @brief Exits application.
         /// @warning Internal use only
-        static void exit();
+        static auto exit() -> void;
         /// @brief Initialize all data, handles, references, ... needed by toolkits.
         /// @remarks Some toolkits are nothing to init. Leave this method empty.
         /// @warning Internal use only
-        static void initialize();
+        static auto initialize() -> void;
         /// @brief Register a specified message filter from the message pump of the application.
         /// @param message_filter A message filter delegate to register.
         /// @warning Internal use only
-        static void register_message_filter(const delegate<bool(intptr, int32, intptr, intptr, intptr)>& message_filter);
+        static auto register_message_filter(const xtd::delegate<bool(xtd::intptr, xtd::int32, xtd::intptr, xtd::intptr, xtd::intptr)>& message_filter) -> void;
         /// @brief Register a specified thread_exception from the message pump of the application.
         /// @param thread_exception A thread exception delegate to register.
         /// @remarks The thread exception delegate return `true` if the user want quit application after exception.
         /// @warning Internal use only
-        static void register_thread_exception(const delegate<bool()>& thread_exception);
+        static auto register_thread_exception(const xtd::delegate<bool()>& thread_exception) -> void;
         /// @brief Register a specified wnd proc from the message pump of the application.
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
-        static void register_wnd_proc(const delegate<intptr(intptr, int32, intptr, intptr, intptr)>& wnd_proc);
+        static auto register_wnd_proc(const xtd::delegate<xtd::intptr(xtd::intptr, xtd::int32, xtd::intptr, xtd::intptr, xtd::intptr)>& wnd_proc) -> void;
         /// @brief Shuts down the application and starts a new instance immediately.
         /// @param exit_after_restart If this option is enabled, the current application will be closed after the new application is created.
         /// @warning Internal use only
-        static void restart(bool exit_after_restart);
+        static auto restart(bool exit_after_restart) -> void;
         /// @brief Begins running a standard application message loop on the current thread.
         /// @warning Internal use only
-        static void run();
+        static auto run() -> void;
         /// @brief Sets whether the wait cursor is used for all open forms of the application.
         /// @param use_wait_cursor `true` is the wait cursor is used for all open forms; otherwise, `false`.
         /// @warning Internal use only
-        static void use_wait_cursor(bool use_wait_cursor);
+        static auto use_wait_cursor(bool use_wait_cursor) -> void;
         /// @}
       };
     }
