@@ -46,82 +46,82 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   template<typename type_t>
-  inline type_t unboxing(const xtd::box<type_t>& value) noexcept {return value.value;}
+  [[nodiscard]] inline auto unboxing(const xtd::box<type_t>& value) noexcept -> type_t {return value.value;}
   /// @}
   
   /// @cond
   template<typename type_t>
-  inline type_t unboxing(xtd::box<type_t>& value) noexcept {return value.value;}
+  [[nodiscard]] inline auto unboxing(xtd::box<type_t>& value) noexcept -> type_t {return value.value;}
   
   template<typename type_t>
-  inline type_t unboxing(const xtd::enum_object<type_t>& value) noexcept {return value.value;}
+  [[nodiscard]] inline auto unboxing(const xtd::enum_object<type_t>& value) noexcept -> type_t {return value.value;}
   
   template<typename type_t>
-  inline type_t unboxing(xtd::enum_object<type_t>& value) noexcept {return value.value;}
+  [[nodiscard]] inline auto unboxing(xtd::enum_object<type_t>& value) noexcept -> type_t {return value.value;}
   
-  inline const object& unboxing(const object& value) noexcept {return value;}
-  inline object& unboxing(object& value) noexcept {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::object& value) noexcept -> const xtd::object& {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::object& value) noexcept -> xtd::object& {return value;}
   
-  inline const char* unboxing(const string& value) noexcept {return value.chars().c_str();}
-  inline const char* unboxing(string& value) noexcept {return value.chars().c_str();}
+  [[nodiscard]] inline auto unboxing(const xtd::string& value) noexcept -> const char* {return value.chars().c_str();}
+  [[nodiscard]] inline auto unboxing(xtd::string& value) noexcept -> const char* {return value.chars().c_str();}
   
   template<typename char_t>
-  inline const char_t* unboxing(const string& value) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, "Invalid character type");}
+  [[nodiscard]] inline auto unboxing(const xtd::string& value) -> const char_t* {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, "Invalid character type");}
   template<typename char_t>
-  inline const char_t* unboxing(string& value) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, "Invalid character type");}
+  [[nodiscard]] inline auto unboxing(xtd::string& value) -> const char_t* {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, "Invalid character type");}
   
   template<>
-  inline const char* unboxing<char>(const string& value) {return value.chars().c_str();}
+  [[nodiscard]] inline auto unboxing<char>(const xtd::string& value) -> const char* {return value.chars().c_str();}
   template<>
-  inline const char* unboxing<char>(string& value) {return value.chars().c_str();}
+  [[nodiscard]] inline auto unboxing<char>(xtd::string& value) -> const char* {return value.chars().c_str();}
   
   template<>
-  inline const char8* unboxing<char8>(const string& value) {
-    thread_local static std::u8string result;
+  [[nodiscard]] inline auto unboxing<xtd::char8>(const xtd::string& value) -> const xtd::char8* {
+    thread_local static xtd::u8string result;
     result = convert_string::to_u8string(value);
     return result.c_str();
   }
   template<>
-  inline const char8* unboxing<char8>(string& value) {
-    thread_local static std::u8string result;
+  [[nodiscard]] inline auto unboxing<xtd::char8>(xtd::string& value) -> const xtd::char8* {
+    thread_local static xtd::u8string result;
     result = convert_string::to_u8string(value);
     return result.c_str();
   }
   
   template<>
-  inline const char16* unboxing<char16>(const string& value) {
-    thread_local static std::u16string result;
+  [[nodiscard]] inline auto unboxing<xtd::char16>(const xtd::string& value) -> const xtd::char16* {
+    thread_local static xtd::u16string result;
     result = convert_string::to_u16string(value);
     return result.c_str();
   }
   template<>
-  inline const char16* unboxing<char16>(string& value) {
-    thread_local static std::u16string result;
+  [[nodiscard]] inline auto unboxing<xtd::char16>(xtd::string& value) -> const xtd::char16* {
+    thread_local static xtd::u16string result;
     result = convert_string::to_u16string(value);
     return result.c_str();
   }
   
   template<>
-  inline const char32* unboxing<char32>(const string& value) {
-    thread_local static std::u32string result;
+  [[nodiscard]] inline auto unboxing<xtd::char32>(const xtd::string& value) -> const xtd::char32* {
+    thread_local static xtd::u32string result;
     result = convert_string::to_u32string(value);
     return result.c_str();
   }
   template<>
-  inline const char32* unboxing<char32>(string& value) {
-    thread_local static std::u32string result;
+  [[nodiscard]] inline auto unboxing<char32>(xtd::string& value) -> const char32* {
+    thread_local static xtd::u32string result;
     result = convert_string::to_u32string(value);
     return result.c_str();
   }
   
   template<>
-  inline const wchar* unboxing<wchar>(const string& value) {
-    thread_local static std::wstring result;
+  [[nodiscard]] inline auto unboxing<xtd::wchar>(const xtd::string& value) -> const xtd::wchar* {
+    thread_local static xtd::wstring result;
     result = convert_string::to_wstring(value);
     return result.c_str();
   }
   template<>
-  inline const wchar* unboxing<wchar>(string& value) {
+  [[nodiscard]] inline auto unboxing<xtd::wchar>(string& value) -> const xtd::wchar* {
     thread_local static std::wstring result;
     result = convert_string::to_wstring(value);
     return result.c_str();
@@ -129,7 +129,7 @@ namespace xtd {
   
   /*
   template<typename type_t>
-  inline const type_t& unboxing(const type_t& value) noexcept {
+   [[nodiscard]] inline auto unboxing(const type_t& value) noexcept -> const type_t& {
     if (dynamic_cast<const xtd::enum_object<type_t>*>(&value) != nullptr) {
       thread_local static type_t result = dynamic_cast<const xtd::enum_object<type_t>*>(&value)->value();
       return result;
@@ -140,7 +140,7 @@ namespace xtd {
   }
   
   template<typename type_t>
-  inline type_t& unboxing(type_t& value) noexcept {
+   [[nodiscard]] inline auto unboxing(type_t& value) noexcept -> type_t& {
     if (dynamic_cast<xtd::enum_object<type_t>*>(&value) != nullptr) {
       thread_local static type_t result = dynamic_cast<xtd::enum_object<type_t>*>(&value)->value();
       return result;
@@ -152,41 +152,41 @@ namespace xtd {
   }
    */
   
-  inline char unboxing(const char& value) noexcept {return value;}
-  inline char8 unboxing(const char8& value) noexcept {return value;}
-  inline char16 unboxing(const char16& value) noexcept {return value;}
-  inline char32 unboxing(const char32& value) noexcept {return value;}
-  inline wchar unboxing(const wchar& value) noexcept {return value;}
-  inline char unboxing(char& value) noexcept {return value;}
-  inline char8 unboxing(char8& value) noexcept {return value;}
-  inline char16 unboxing(char16& value) noexcept {return value;}
-  inline char32 unboxing(char32& value) noexcept {return value;}
-  inline wchar unboxing(wchar& value) noexcept {return value;}
-  inline xtd::byte unboxing(const xtd::byte& value) noexcept {return value;}
-  inline int16 unboxing(const int16& value) noexcept {return value;}
-  inline int32 unboxing(const int32& value) noexcept {return value;}
-  inline int64 unboxing(const int64& value) noexcept {return value;}
-  inline slong unboxing(const slong& value) noexcept {return value;}
-  inline sbyte unboxing(const sbyte& value) noexcept {return value;}
-  inline uint16 unboxing(const uint16& value) noexcept {return value;}
-  inline uint32 unboxing(const uint32& value) noexcept {return value;}
-  inline uint64 unboxing(const uint64& value) noexcept {return value;}
-  inline xtd::ulong unboxing(const xtd::ulong& value) noexcept {return value;}
-  inline xtd::byte unboxing(xtd::byte& value) noexcept {return value;}
-  inline int16 unboxing(int16& value) noexcept {return value;}
-  inline int32 unboxing(int32& value) noexcept {return value;}
-  inline int64 unboxing(int64& value) noexcept {return value;}
-  inline slong unboxing(slong& value) noexcept {return value;}
-  inline sbyte unboxing(sbyte& value) noexcept {return value;}
-  inline uint16 unboxing(uint16& value) noexcept {return value;}
-  inline uint32 unboxing(uint32& value) noexcept {return value;}
-  inline uint64 unboxing(uint64& value) noexcept {return value;}
-  inline xtd::ulong unboxing(xtd::ulong& value) noexcept {return value;}
-  inline float unboxing(const float& value) noexcept {return value;}
-  inline double unboxing(const double& value) noexcept {return value;}
-  inline decimal unboxing(const decimal& value) noexcept {return value;}
-  inline float unboxing(float& value) noexcept {return value;}
-  inline double unboxing(double& value) noexcept {return value;}
-  inline decimal unboxing(decimal& value) noexcept {return value;}
+  [[nodiscard]] inline auto unboxing(const char& value) noexcept -> char {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::char8& value) noexcept -> xtd::char8 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::char16& value) noexcept -> xtd::char16 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::char32& value) noexcept -> xtd::char32 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::wchar& value) noexcept -> xtd::wchar {return value;}
+  [[nodiscard]] inline auto unboxing(char& value) noexcept -> char {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::char8& value) noexcept -> xtd::char8 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::char16& value) noexcept -> xtd::char16 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::char32& value) noexcept -> xtd::char32 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::wchar& value) noexcept -> xtd::wchar {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::byte& value) noexcept -> xtd::byte {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::int16& value) noexcept -> xtd::int16 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::int32& value) noexcept -> xtd::int32 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::int64& value) noexcept -> xtd::int64 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::slong& value) noexcept -> xtd::slong {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::sbyte& value) noexcept -> xtd::sbyte {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::uint16& value) noexcept -> xtd::uint16 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::uint32& value) noexcept -> xtd::uint32 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::uint64& value) noexcept -> xtd::uint64 {return value;}
+  [[nodiscard]] inline auto unboxing(const xtd::ulong& value) noexcept -> xtd::ulong {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::byte& value) noexcept -> xtd::byte {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::int16& value) noexcept -> xtd::int16 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::int32& value) noexcept -> xtd::int32 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::int64& value) noexcept -> xtd::int64 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::slong& value) noexcept -> xtd::slong {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::sbyte& value) noexcept -> xtd::sbyte {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::uint16& value) noexcept -> xtd::uint16 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::uint32& value) noexcept -> xtd::uint32 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::uint64& value) noexcept -> xtd::uint64 {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::ulong& value) noexcept -> xtd::ulong {return value;}
+  [[nodiscard]] inline auto unboxing(const float& value) noexcept -> float {return value;}
+  [[nodiscard]] inline auto unboxing(const double& value) noexcept -> double {return value;}
+  [[nodiscard]] inline auto unboxing(const decimal& value) noexcept -> decimal {return value;}
+  [[nodiscard]] inline auto unboxing(float& value) noexcept -> float {return value;}
+  [[nodiscard]] inline auto unboxing(double& value) noexcept -> double {return value;}
+  [[nodiscard]] inline auto unboxing(xtd::decimal& value) noexcept -> xtd::decimal {return value;}
   /// @endcond
 }
