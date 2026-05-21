@@ -42,22 +42,22 @@ namespace xtd {
         /// @param control Control window handle.
         /// @return The color selected by the user. If a color is not selected, the default value is black.
         /// @warning Internal use only
-        static drawing::color color(intptr control);
+        [[nodiscard]] static auto color(xtd::intptr control) -> xtd::drawing::color;
         /// @brief Sets the color selected by the user.
         /// @param control Control window handle.
         /// @param color The color selected by the user. If a color is not selected, the default value is black.
         /// @warning Internal use only
-        static void color(intptr control, const drawing::color& color);
+        static auto color(xtd::intptr control, const xtd::drawing::color& color) -> void;
         /// @brief Gets the selected font.
         /// @param control Control window handle.
         /// @return The selected font.
         /// @warning Internal use only
-        static drawing::font font(intptr control);
+        [[nodiscard]] static auto font(xtd::intptr control) -> xtd::drawing::font;
         /// @brief Sets the selected font.
         /// @param control Control window handle.
         /// @param font The selected font.
         /// @warning Internal use only
-        static void font(intptr control, const drawing::font& font);
+        static auto font(xtd::intptr control, const xtd::drawing::font& font) -> void;
         /// @}
       };
     }
