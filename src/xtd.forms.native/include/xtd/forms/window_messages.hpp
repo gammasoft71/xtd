@@ -1903,4 +1903,4 @@ constexpr xtd::uint32 CPN_SELCHANGE = 1;
 
 constexpr xtd::uint32 FPN_SELCHANGE = 1;
 
-xtd::intptr send_message(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam);
+auto send_message(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam) -> xtd::intptr;
