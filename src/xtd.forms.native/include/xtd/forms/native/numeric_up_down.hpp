@@ -40,32 +40,32 @@ namespace xtd {
         /// @param control Numeric up down window handle.
         /// @param decimal_place The number of decimal places to display in the spin box.
         /// @warning Internal use only
-        static void decimal_place(intptr control, int32 decimal_place);
+        static auto decimal_place(xtd::intptr control, int32 decimal_place) -> void;
         /// @brief Sets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
         /// @param control Numeric up down window handle.
         /// @param increment The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box.
         /// @warning Internal use only
-        static void increment(intptr control, double increment);
+        static auto increment(xtd::intptr control, double increment) -> void;
         /// @brief Sets the maximum value for the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param maximum The maximum value for the spin box.
         /// @warning Internal use only
-        static void maximum(intptr control, double maximum);
+        static auto maximum(xtd::intptr control, double maximum) -> void;
         /// @brief Sets the minimum value for the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param minimum The maximum value for the spin box.
         /// @warning Internal use only
-        static void minimum(intptr control, double minimum);
+        static auto minimum(xtd::intptr control, double minimum) -> void;
         /// @brief Gets the value assigned to the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @return The numeric value of the numeric_up_down control.
         /// @warning Internal use only
-        static double value(intptr control);
+        [[nodiscard]] static auto value(xtd::intptr control) -> double;
         /// @brief Sets the value assigned to the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param value The numeric value of the numeric_up_down control.
         /// @warning Internal use only
-        static void value(intptr control, double value);
+        static auto value(xtd::intptr control, double value) -> void;
         /// @}
       };
     }
