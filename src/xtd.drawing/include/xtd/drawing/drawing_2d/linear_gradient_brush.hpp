@@ -141,35 +141,35 @@ namespace xtd {
         /// @{
         /// @brief Gets the angle of the gradient.
         /// @return A float that specifies the angle of the linear gradient.
-        float angle() const noexcept;
+        [[nodiscard]] auto angle() const noexcept -> float;
         /// @brief Sets the angle of the gradient.
         /// @param value A float that specifies the angle of the linear gradient.
         /// @return Current linear_gradient_brush instance.
-        linear_gradient_brush& angle(float value) noexcept;
+        auto angle(float value) noexcept -> linear_gradient_brush&;
         
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the linear gradient.
-        const xtd::drawing::drawing_2d::gradient_stop_collection& linear_colors() const noexcept;
+        [[nodiscard]] auto linear_colors() const noexcept -> const xtd::drawing::drawing_2d::gradient_stop_collection&;
         /// @brief sets the starting and ending colors of the gradient.
         /// @param value An array of two xtd::drawing::color structures that represents the starting and ending colors of the linear gradient.
         /// @return Current linear_gradient_brush instance.
-        xtd::drawing::drawing_2d::linear_gradient_brush& linear_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& value);
+        auto linear_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& value) -> linear_gradient_brush&;
         
         /// @brief Gets a rectangular region that defines the starting and ending points of the linear gradient.
         /// @return A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the linear gradient.
-        const xtd::drawing::rectangle_f& rectangle() const noexcept;
+        [[nodiscard]] auto rectangle() const noexcept -> const xtd::drawing::rectangle_f&;
         /// @brief Sets a rectangular region that defines the starting and ending points of the linear gradient.
         /// @param value A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the linear gradient.
         /// @return Current linear_gradient_brush instance.
-        linear_gradient_brush& rectangle(const xtd::drawing::rectangle_f& value) noexcept;
+        auto rectangle(const xtd::drawing::rectangle_f& value) noexcept -> linear_gradient_brush&;
         /// @brief Sets a rectangular region that defines the starting and ending points of the linear gradient.
         /// @param value A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the linear gradient.
         /// @return Current linear_gradient_brush instance.
-        linear_gradient_brush& rectangle(const xtd::drawing::rectangle& value) noexcept;
+        auto rectangle(const xtd::drawing::rectangle& value) noexcept -> linear_gradient_brush&;
         /// @}
         
       private:
-        static float linear_gradient_mode_to_angle(xtd::drawing::drawing_2d::linear_gradient_mode);
+        [[nodiscard]] static auto linear_gradient_mode_to_angle(xtd::drawing::drawing_2d::linear_gradient_mode) -> float;
         void recreate_handle();
         
         xtd::sptr<data> data_;
