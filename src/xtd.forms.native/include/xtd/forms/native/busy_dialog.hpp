@@ -51,11 +51,11 @@ namespace xtd {
         /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no opacity). The lower the value, the more transparent.
         /// @return The created and shown busy dialog window handle.
         /// @warning Internal use only
-        static intptr create(intptr hwnd, const xtd::drawing::icon& icon, const xtd::string& text, const xtd::string& description, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, double opacity);
+        [[nodiscard]] static auto create(xtd::intptr hwnd, const xtd::drawing::icon& icon, const xtd::string& text, const xtd::string& description, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, double opacity) -> xtd::intptr;
         /// @brief Destroys busy dialog.
         /// @param dialog Busy dialog window handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr dialog);
+        static auto destroy(xtd::intptr dialog) -> void;
         /// @}
       };
     }
