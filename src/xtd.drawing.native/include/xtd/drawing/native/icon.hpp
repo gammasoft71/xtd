@@ -42,32 +42,32 @@ namespace xtd {
         /// @param filename The filename of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(const xtd::string& filename);
+        [[nodiscard]] static auto create(const xtd::string& filename) -> xtd::intptr;
         /// @brief Creates an icon from specified filename, and size.
         /// @param filename The filename of the icon.
         /// @param width The desired width of the icon.
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(const xtd::string& filename, int32 width, int32 height);
+        [[nodiscard]] static auto create(const xtd::string& filename, xtd::int32 width, xtd::int32 height) -> xtd::intptr;
         /// @brief Creates an icon from specified std::stream.
         /// @param stream The stream containing the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(std::istream& stream);
+        [[nodiscard]] static auto create(std::istream& stream) -> xtd::intptr;
         /// @brief Creates an icon from specified std::stream, and size.
         /// @param stream The stream containing the icon.
         /// @param width The desired width of the icon.
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(std::istream& stream, int32 width, int32 height);
+        [[nodiscard]] static auto create(std::istream& stream, xtd::int32 width, xtd::int32 height) -> xtd::intptr;
         /// @brief Creates an icon from bits.
         /// @param bits The bits containing the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
         /// @remarks This method is used for creating an icon from an XPM (or XBM) image.
-        static intptr create(const char* const* bits);
+        [[nodiscard]] static auto create(const char* const* bits) -> xtd::intptr;
         /// @brief Creates an icon from specified bits, and size.
         /// @param stream The bits containing the icon.
         /// @param width The desired width of the icon.
@@ -75,59 +75,59 @@ namespace xtd {
         /// @return A new icon handle.
         /// @remarks This method is used for creating an icons from an XPM (or XBM) image.
         /// @warning Internal use only
-        static intptr create(const char* const* bits, int32 width, int32 height);
+        [[nodiscard]] static auto create(const char* const* bits, xtd::int32 width, xtd::int32 height) -> xtd::intptr;
         /// @brief Creates an icon from image.
         /// @param image The image handle containing the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(intptr image);
+        [[nodiscard]] static auto create(xtd::intptr image) -> xtd::intptr;
         /// @brief Creates an icon from specified icon, and size.
         /// @param icon The icon handle containing the icon.
         /// @param width The desired width of the icon.
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr create(intptr icon, int32 width, int32 height);
+        [[nodiscard]] static auto create(xtd::intptr icon, xtd::int32 width, xtd::int32 height) -> xtd::intptr;
         
         /// @brief Destroys the icon.
         /// @param icon The icon handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr icon);
+        static auto destroy(xtd::intptr icon) -> void;
         
         /// @brief Creates an icon from handle.
         /// @param handle The icon handle .
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr from_handle(intptr handle);
+        [[nodiscard]] static auto from_handle(xtd::intptr handle) -> xtd::intptr;
         
         /// @brief Gets the height of icon.
         /// @param icon The icon handle .
         /// @return The height of icon.
         /// @warning Internal use only
-        static int32 get_height(intptr icon);
+        [[nodiscard]] static auto get_height(xtd::intptr icon) -> xtd::int32;
         
         /// @brief Gets the width of icon.
         /// @param icon The icon handle .
         /// @return The width of icon.
         /// @warning Internal use only
-        static int32 get_width(intptr icon);
+        [[nodiscard]] static auto get_width(xtd::intptr icon) -> xtd::int32;
         
         /// @brief Saves icon to the specified output filename.
         /// @param icon The icon handle .
         /// @param filename The file to save to.
         /// @warning Internal use only
-        static void save(intptr icon, const xtd::string& filename);
+        static auto save(xtd::intptr icon, const xtd::string& filename) -> void;
         /// @brief Saves icon to the specified output std::ostream.
         /// @param icon The icon handle .
         /// @param stream The std::ostream to save to.
         /// @warning Internal use only
-        static void save(intptr icon, std::ostream& stream, xtd::usize raw_format);
+        static auto save(xtd::intptr icon, std::ostream& stream, xtd::usize raw_format) -> void;
         
         /// @brief Converts icon to an image.
         /// @param icon The icon handle .
         /// @return A image handle that represents the converted icon.
         /// @warning Internal use only
-        static intptr to_image(intptr icon);
+        [[nodiscard]] static auto to_image(xtd::intptr icon) -> xtd::intptr;
         /// @}
       };
     }
