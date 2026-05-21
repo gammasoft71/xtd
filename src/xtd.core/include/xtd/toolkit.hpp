@@ -44,15 +44,15 @@ namespace xtd {
     /// @{
     /// @brief Gets the toolkit description.
     /// @return The toolkit description.
-    const xtd::string& description() const noexcept;
+    [[nodiscard]] auto description() const noexcept -> const xtd::string&;
     
     /// @brief Gets the toolkit name.
     /// @return The toolkit name.
-    const xtd::string& name() const noexcept;
+    [[nodiscard]] auto name() const noexcept -> const xtd::string&;
     
     /// @brief Gets the toolkit version.
     /// @return The toolkit version.
-    const xtd::version& version() const noexcept;
+    [[nodiscard]] auto version() const noexcept -> const xtd::version&;
     /// @}
     
     /// @name Public Methods
@@ -61,19 +61,19 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override;
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param other The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const toolkit& other) const noexcept override;
+    [[nodiscard]] auto equals(const toolkit& other) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::usize get_hash_code() const noexcept override;
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
   private:
