@@ -99,36 +99,36 @@ namespace xtd {
         /// @brief Gets the angle of the gradient.
         /// @return A float that specifies the angle of the conical gradient.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
-        float angle() const noexcept;
+        [[nodiscard]] auto angle() const noexcept -> float;
         /// @brief Sets the angle of the gradient.
         /// @param value A float that specifies the angle of the conicalconical gradient.
         /// @return Current linear_gradient_brush instance.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
-        conical_gradient_brush& angle(float value) noexcept;
+        auto angle(float value) noexcept -> conical_gradient_brush&;
         
         /// @brief Gets the center point of the conical gradient.
         /// @return A xtd::drawing::point_f structure that specifies the center point of the angle  gradient.
-        xtd::drawing::point_f center_point() const noexcept;
+        [[nodiscard]] auto center_point() const noexcept -> xtd::drawing::point_f;
         /// @brief Gets the center point of the conical gradient.
         /// @param value A xtd::drawing::point_f structure that specifies the center point of the angle  gradient.
         /// @return This current instance.
-        conical_gradient_brush& center_point(const xtd::drawing::point_f& value) noexcept;
+        auto center_point(const xtd::drawing::point_f& value) noexcept -> conical_gradient_brush&;
         /// @brief Sets the center point of the conical gradient.
         /// @param value A xtd::drawing::point_f structure that specifies the center point of the angle  gradient.
         /// @return This current instance.
-        conical_gradient_brush& center_point(const xtd::drawing::point& value) noexcept;
+        auto center_point(const xtd::drawing::point& value) noexcept -> conical_gradient_brush&;
         
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
-        const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors() const noexcept;
+        [[nodiscard]] auto conical_colors() const noexcept -> const xtd::drawing::drawing_2d::gradient_stop_collection&;
         /// @brief sets the starting and ending colors of the gradient.
         /// @param conical_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         /// @return Current conical_gradient_brush instance.
-        xtd::drawing::drawing_2d::conical_gradient_brush& conical_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors);
+        auto conical_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors) -> conical_gradient_brush&;
         /// @}
         
       private:
-        void recreate_handle();
+        auto recreate_handle() -> void;
         
         xtd::sptr<data> data_;
       };
