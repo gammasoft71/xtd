@@ -42,37 +42,37 @@ namespace xtd {
         /// @param control Text box window handle.
         /// @return The number of characters selected in the text box.
         /// @warning Internal use only
-        static xtd::usize selection_length(intptr control);
+        [[nodiscard]] static auto selection_length(xtd::intptr control) -> xtd::usize;
         /// @brief Gets o the starting point of text selected in the text box.
         /// @param control Text box window handle.
         /// @return The starting position of text selected in the text box.
         /// @warning Internal use only
-        static xtd::usize selection_start(intptr control);
+        [[nodiscard]] static auto selection_start(xtd::intptr control) -> xtd::usize;
         /// @brief Appends text to the current text of a text box.
         /// @param control Text box window handle.
         /// @param value The text to append to the current contents of the text box.
         /// @warning Internal use only
-        static void append(intptr control, const xtd::string& text);
+        static auto append(xtd::intptr control, const xtd::string& text) -> void;
         /// @brief Selects a range of text in the text box.
         /// @param control Text box window handle.
         /// @param start The position of the first character in the current text selection within the text box.
         /// @param length The number of characters to select.
         /// @warning Internal use only
-        static void select(intptr control, xtd::usize start, xtd::usize length);
+        static auto select(xtd::intptr control, xtd::usize start, xtd::usize length) -> void;
         /// @brief Gets text associate to the text box.
         /// @param control Text box window handle.
         /// @return The text string.
         /// @warning Internal use only
-        static xtd::string text(intptr control);
+        [[nodiscard]] static auto text(xtd::intptr control) -> xtd::string;
         /// @brief Sets text associate to the text box.
         /// @param control Text box window handle.
         /// @param text The text string.
         /// @warning Internal use only
-        static void text(intptr control, const xtd::string& text);
+        static auto text(xtd::intptr control, const xtd::string& text) -> void;
         /// @brief Sets the placeholder text (aka hint) associate to the text box.
         /// @return The text string.
         /// @warning Internal use only
-        static void placeholder_text(intptr control, const xtd::string& text);
+        static auto placeholder_text(xtd::intptr control, const xtd::string& text) -> void;
         /// @}
       };
     }
