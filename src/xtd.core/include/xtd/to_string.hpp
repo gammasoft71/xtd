@@ -39,7 +39,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
-  inline xtd::string to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -52,7 +52,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const bool& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const bool& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -65,7 +65,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const sbyte& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const sbyte& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -78,7 +78,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const char& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const char& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -91,7 +91,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const unsigned char& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const unsigned char& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -104,7 +104,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const short& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const short& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -117,7 +117,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const unsigned short& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const unsigned short& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -130,7 +130,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const int& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const int& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -143,7 +143,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const unsigned int& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const unsigned int& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -156,7 +156,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const long& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const long& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -169,7 +169,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const unsigned long& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const unsigned long& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -182,7 +182,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const long long& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const long long& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -195,7 +195,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const unsigned long long& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const unsigned long long& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -208,7 +208,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const float& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const float& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -221,7 +221,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const double& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const double& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -234,7 +234,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const long double& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const long double& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -247,7 +247,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const std::chrono::system_clock::time_point& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::chrono::system_clock::time_point& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -260,7 +260,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const std::tm& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::tm& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -273,7 +273,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename type_t, typename period_t>
-  inline xtd::string to_string(const std::chrono::duration<type_t, period_t>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::chrono::duration<type_t, period_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -286,7 +286,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const char8& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const char8& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -299,7 +299,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const char16& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const char16& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -312,7 +312,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const char32& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const char32& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -325,20 +325,20 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline xtd::string to_string(const wchar& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const wchar& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @cond
-  xtd::string to_string(const char* value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const char8* value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const char16* value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const char32* value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const wchar* value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const std::string& value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const xtd::string& value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const std::u8string& value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const std::u16string& value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const std::u32string& value, const xtd::string& fmt, const std::locale& loc);
-  xtd::string to_string(const std::wstring& value, const xtd::string& fmt, const std::locale& loc);
+  auto to_string(const char* value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const char8* value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const char16* value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const char32* value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const wchar* value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const std::string& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const xtd::string& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const std::u8string& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const std::u16string& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const std::u32string& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  auto to_string(const std::wstring& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   /// @endcond
   
   /// @brief Convert a specified value into a string with specified format.
@@ -351,144 +351,144 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
-  inline xtd::string to_string(const value_t& value, const xtd::string& fmt);
+  inline auto to_string(const value_t& value, const xtd::string& fmt) -> xtd::string;
   
   /// @cond
-  inline xtd::string to_string(const char*  value, const xtd::string& fmt);
+  inline auto to_string(const char*  value, const xtd::string& fmt) -> xtd::string;
   
   template<>
-  inline xtd::string to_string(const std::partial_ordering& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::partial_ordering& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<>
-  inline xtd::string to_string(const std::strong_ordering& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::strong_ordering& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<>
-  inline xtd::string to_string(const std::weak_ordering& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::weak_ordering& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename value_t>
-  inline xtd::string to_string(const value_t* value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const value_t* value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename value_t>
-  inline xtd::string to_string(value_t* const value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(value_t* const value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t>
-  inline xtd::string to_string(const std::shared_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::shared_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t>
-  inline xtd::string to_string(const std::unique_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::unique_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<>
-  inline xtd::string to_string(const xtd::any& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const xtd::any& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t>
-  inline xtd::string to_string(const std::optional<type_t>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::optional<type_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<>
-  inline xtd::string to_string(const std::nullopt_t& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::nullopt_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<>
-  inline xtd::string to_string(const std::nullptr_t&, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::nullptr_t&, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type1_t, typename type2_t>
-  inline xtd::string to_string(const std::pair<type1_t, type2_t>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::pair<type1_t, type2_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, unsigned n_t, unsigned last_t>
   struct __xtd_tuple_stringer {
-    static xtd::string to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc);
+    static auto to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   };
   
   template<typename type_t, unsigned n_t>
   struct __xtd_tuple_stringer<type_t, n_t, n_t> {
-    static xtd::string to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc);
+    static auto to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   };
   
   template<typename ...types_t>
-  inline xtd::string to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, xtd::usize size>
-  inline xtd::string to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<xtd::usize size>
-  inline xtd::string to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename allocator_t>
-  inline xtd::string to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename allocator_t>
-  inline xtd::string to_string(const std::forward_list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::forward_list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t>
-  inline xtd::string to_string(const std::initializer_list<type_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::initializer_list<type_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename allocator_t>
-  inline xtd::string to_string(const std::list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename container_t>
-  inline xtd::string to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename container_t>
-  inline xtd::string to_string(const std::priority_queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::priority_queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename container_t>
-  inline xtd::string to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t>
-  inline xtd::string to_string(const std::valarray<type_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::valarray<type_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename allocator_t>
-  inline xtd::string to_string(const std::vector<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::vector<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename key_t, typename compare_t, typename allocator_t>
-  inline xtd::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename ...args_t>
-  inline xtd::string to_string(const std::variant<args_t...>& value, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const std::variant<args_t...>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
 
   template<typename type_t>
-  inline xtd::string to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il);
+  inline auto to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il) -> xtd::string;
   
-  xtd::string to_string(const std::locale& value, const xtd::string& fmt, const std::locale& loc);
+  auto to_string(const std::locale& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   #if defined(__xtd__cpp_lib_ranges)
   //template <std::ranges::range range_t>
-  //inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);
+  //inline auto to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   //template <std::ranges::range range_t>
-  //inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);
+  //inline auto to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   #endif
   
   template<typename type_t>
-  inline xtd::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t>
-  inline xtd::string to_string(const xtd::collections::generic::helpers::raw_array<type_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline auto to_string(const xtd::collections::generic::helpers::raw_array<type_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   template<typename type_t, typename string_t>
-  inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values);
+  inline auto to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) -> string_t;
   
   template<typename type_t, typename string_t>
-  inline string_t to_string(type_t value, const std::map<type_t, string_t>& values);
+  inline auto to_string(type_t value, const std::map<type_t, string_t>& values) -> string_t;
   /// @endcond
 }
 
