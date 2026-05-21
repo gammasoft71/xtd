@@ -15,7 +15,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::drawing::native;
 
 intptr matrix::create(float m11, float m12, float m21, float m22, float dx, float dy) {
-  toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
   wxMemoryDC mdc;
   wxGraphicsContext* mgc = wxGraphicsContext::Create(mdc);
   return reinterpret_cast<intptr>(new wxGraphicsMatrix(mgc->CreateMatrix(m11, m12, m22, dx, dy)));
