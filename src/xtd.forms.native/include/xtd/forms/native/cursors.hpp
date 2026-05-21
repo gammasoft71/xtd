@@ -40,161 +40,161 @@ namespace xtd {
         /// @brief Gets the cursor that appears when an application starts.
         /// @return The cursor that represents the cursor that appears when an application starts.
         /// @warning Internal use only
-        static intptr app_starting();
+        [[nodiscard]] static auto app_starting() -> xtd::intptr;
         /// @brief Gets the arrow cursor.
         /// @return The cursor that represents the arrow cursor.
         /// @warning Internal use only
-        static intptr arrow();
+        [[nodiscard]] static auto arrow() -> xtd::intptr;
         /// @brief Gets the closed hand cursor.
         /// @return The cursor that represents the close hand cursor.
         /// @warning Internal use only
-        static intptr closed_hand();
+        [[nodiscard]] static auto closed_hand() -> xtd::intptr;
         /// @brief Gets the contextual menu cursor.
         /// @return The cursor that represents the contextual menu cursor.
         /// @warning Internal use only
-        static intptr contextual_menu();
+        [[nodiscard]] static auto contextual_menu() -> xtd::intptr;
         /// @brief Gets the cell cursor.
         /// @return The cursor that represents the cell cursor.
         /// @warning Internal use only
-        static intptr cell();
+        [[nodiscard]] static auto cell() -> xtd::intptr;
         /// @brief Gets the crosshair cursor.
         /// @return The cursor that represents the crosshair cursor.
         /// @warning Internal use only
-        static intptr cross();
+        [[nodiscard]] static auto cross() -> xtd::intptr;
         /// @brief Gets the default cursor, which is usually an arrow cursor.
         /// @return The cursor that represents the default cursor.
         /// @warning Internal use only
-        static intptr default_cursor();
+        [[nodiscard]] static auto default_cursor() -> xtd::intptr;
         /// @brief Gets the disappearing item cursor.
         /// @return The cursor that represents the disappearing item cursor.
         /// @warning Internal use only
-        static intptr disappearing_item();
+        [[nodiscard]] static auto disappearing_item() -> xtd::intptr;
         /// @brief Gets the drag copy cursor.
         /// @return The cursor that represents the drag copy cursor.
         /// @warning Internal use only
-        static intptr drag_copy();
+        [[nodiscard]] static auto drag_copy() -> xtd::intptr;
         /// @brief Gets the drag link cursor.
         /// @return The cursor that represents the drag link cursor.
         /// @warning Internal use only
-        static intptr drag_link();
+        [[nodiscard]] static auto drag_link() -> xtd::intptr;
         /// @brief Gets the hand cursor, typically used when hovering over a Web link.
         /// @return The cursor that represents the hand cursor.
         /// @warning Internal use only
-        static intptr hand();
+        [[nodiscard]] static auto hand() -> xtd::intptr;
         /// @brief Gets the Help cursor, which is a combination of an arrow and a question mark.
         /// @return The cursor that represents the Help cursor.
         /// @warning Internal use only
-        static intptr help();
+        [[nodiscard]] static auto help() -> xtd::intptr;
         /// @brief Gets the cursor that appears when the mouse is positioned over a horizontal splitter bar.
         /// @return The cursor that represents the cursor that appears when the mouse is positioned over a horizontal splitter bar.
         /// @warning Internal use only
-        static intptr hsplit();
+        [[nodiscard]] static auto hsplit() -> xtd::intptr;
         /// @brief Gets the I-beam cursor, which is used to show where the text cursor appears when the mouse is clicked.
         /// @return The cursor that represents the I-beam cursor.
         /// @warning Internal use only
-        static intptr ibeam();
+        [[nodiscard]] static auto ibeam() -> xtd::intptr;
         /// @brief Gets the cursor that indicates that a particular region is invalid for the current operation.
         /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the current operation.
         /// @warning Internal use only
-        static intptr no();
+        [[nodiscard]] static auto no() -> xtd::intptr;
         /// @brief Gets the cursor that indicates that a particular region is invalid for the current drag & drop operation.
         /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the curren drag & drop operation.
         /// @warning Internal use only
-        static intptr no_drag();
+        [[nodiscard]] static auto no_drag() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is not moving, but the window can be scrolled in both a horizontal and vertical direction.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is not moving.
         /// @warning Internal use only
-        static intptr no_move_2d();
+        [[nodiscard]] static auto no_move_2d() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is not moving, but the window can be scrolled in a horizontal direction.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is not moving.
         /// @warning Internal use only
-        static intptr no_move_horiz();
+        [[nodiscard]] static auto no_move_horiz() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is not moving, but the window can be scrolled in a vertical direction.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is not moving.
         /// @warning Internal use only
-        static intptr no_move_vert();
+        [[nodiscard]] static auto no_move_vert() -> xtd::intptr;
         /// @brief Gets the open hand cursor.
         /// @return The cursor that represents the open hand cursor.
         /// @warning Internal use only
-        static intptr open_hand();
+        [[nodiscard]] static auto open_hand() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally to the right.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally to the right.
         /// @warning Internal use only
-        static intptr pan_east();
+        [[nodiscard]] static auto pan_east() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically upward and to the right.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically upward and to the right.
         /// @warning Internal use only
-        static intptr pan_ne();
+        [[nodiscard]] static auto pan_ne() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling vertically in an upward direction.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling vertically in an upward direction.
         /// @warning Internal use only
-        static intptr pan_north();
+        [[nodiscard]] static auto pan_north() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically upward and to the left.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically upward and to the left.
         /// @warning Internal use only
-        static intptr pan_nw();
+        [[nodiscard]] static auto pan_nw() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically downward and to the right.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically downward and to the right.
         /// @warning Internal use only
-        static intptr pan_se();
+        [[nodiscard]] static auto pan_se() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling vertically in a downward direction.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling vertically in a downward direction.
         /// @warning Internal use only
-        static intptr pan_south();
+        [[nodiscard]] static auto pan_south() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically downward and to the left.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally and vertically downward and to the left.
         /// @warning Internal use only
-        static intptr pan_sw();
+        [[nodiscard]] static auto pan_sw() -> xtd::intptr;
         /// @brief Gets the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally to the left.
         /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is moving and the window is scrolling horizontally to the left.
         /// @warning Internal use only
-        static intptr pan_west();
+        [[nodiscard]] static auto pan_west() -> xtd::intptr;
         /// @brief Gets the four-headed sizing cursor, which consists of four joined arrows that point north, south, east, and west.
         /// @return The cursor that represents the four-headed sizing cursor.
         /// @warning Internal use only
-        static intptr size_all();
+        [[nodiscard]] static auto size_all() -> xtd::intptr;
         /// @brief Gets the two-headed diagonal (northeast/southwest) sizing cursor.
         /// @return The cursor that represents two-headed diagonal (northeast/southwest) sizing cursor.
         /// @warning Internal use only
-        static intptr size_nesw();
+        [[nodiscard]] static auto size_nesw() -> xtd::intptr;
         /// @brief Gets the two-headed vertical (north/south) sizing cursor.
         /// @return The cursor that represents the two-headed vertical (north/south) sizing cursor.
         /// @warning Internal use only
         /// @warning Internal use only
-        static intptr size_ns();
+        [[nodiscard]] static auto size_ns() -> xtd::intptr;
         /// @brief Gets the two-headed diagonal (northwest/southeast) sizing cursor.
         /// @return The cursor that represents the two-headed diagonal (northwest/southeast) sizing cursor.
         /// @warning Internal use only
-        static intptr size_nwse();
+        [[nodiscard]] static auto size_nwse() -> xtd::intptr;
         /// @brief Gets the two-headed diagonal (northwest/southeast) sizing cursor.
         /// @return The cursor that represents the two-headed diagonal (northwest/southeast) sizing cursor.
         /// @warning Internal use only
-        static intptr size_we();
+        [[nodiscard]] static auto size_we() -> xtd::intptr;
         /// @brief Gets the up arrow cursor, typically used to identify an insertion point.
         /// @return The cursor that represents the up arrow cursor.
         /// @warning Internal use only
-        static intptr up_arrow();
+        [[nodiscard]] static auto up_arrow() -> xtd::intptr;
         /// @brief Gets the vertical I-beam cursor, which is used to show where the text cursor appears when the mouse is clicked for vertical layout.
         /// @return The cursor that represents the vertical I-beam cursor.
         /// @warning Internal use only
-        static intptr vibeam();
+        [[nodiscard]] static auto vibeam() -> xtd::intptr;
         /// @brief Gets the cursor that appears when the mouse is positioned over a vertical splitter bar.
         /// @return The cursor that represents the cursor that appears when the mouse is positioned over a vertical splitter bar.
         /// @warning Internal use only
         /// @warning Internal use only
-        static intptr vsplit();
+        [[nodiscard]] static auto vsplit() -> xtd::intptr;
         /// @brief Gets the wait cursor, typically an hourglass shape.
         /// @return The cursor that represents the wait cursor.
         /// @warning Internal use only
-        static intptr wait_cursor();
+        [[nodiscard]] static auto wait_cursor() -> xtd::intptr;
         /// @brief Gets the zoom int cursor, typically to zoom in an object.
         /// @return The cursor that represents the zoom in cursor.
         /// @warning Internal use only
-        static intptr zoom_in();
+        [[nodiscard]] static auto zoom_in() -> xtd::intptr;
         /// @brief Gets the zoom out cursor, typically to zoom out an object.
         /// @return The cursor that represents the zoom out cursor.
         /// @warning Internal use only
-        static intptr zoom_out();
+        [[nodiscard]] static auto zoom_out() -> xtd::intptr;
         /// @}
       };
     }
