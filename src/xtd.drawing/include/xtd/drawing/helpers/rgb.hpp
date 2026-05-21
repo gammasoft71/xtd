@@ -40,7 +40,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the hue-saturation-lightness (HSL) hue value, in degrees, for this xtd::drawing::helpers::rgb structure.
         /// @return The hue, in degrees, of this xtd::drawing::helpers::rgb. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
-        float get_hue() const noexcept {
+        [[nodiscard]] auto get_hue() const noexcept -> float {
           if (r == g && g == b) return 0.0;
           
           auto rc = static_cast<float>(r) / 255.0f;
@@ -64,13 +64,13 @@ namespace xtd {
         
         /// @brief Gets the hue-saturation-lightness (HSL) lightness value for this xtd::drawing::helpers::rgb structure.
         /// @return The lightness of this xtd::drawing::helpers::rgb. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
-        float get_lightness() const noexcept {
+        [[nodiscard]] auto get_lightness() const noexcept -> float {
           return (static_cast<float>(xtd::math::max(xtd::math::max(r, g), b)) + static_cast<float>(xtd::math::min(xtd::math::min(r, g), b))) / 2.0f / 255.0f;
         }
         
         /// @brief Gets the hue-saturation-lightness (HSL) saturation value for this xtd::drawing::helpers::rgb structure.
         /// @return The saturation of this xtd::drawing::helpers::rgb. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
-        float get_saturation() const noexcept {
+        [[nodiscard]] auto get_saturation() const noexcept -> float {
           auto max = static_cast<float>(xtd::math::max(xtd::math::max(r, g), b)) / 255.0f;
           auto min = static_cast<float>(xtd::math::min(xtd::math::min(r, g), b)) / 255.0f;
           
@@ -79,7 +79,7 @@ namespace xtd {
           return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
         }
         
-        std::tuple<float, float, float> to_hsl() const noexcept {
+        [[nodiscard]] auto to_hsl() const noexcept -> std::tuple<float, float, float> {
           return {get_hue(), get_saturation(), get_lightness()};
         }
         /// @}
@@ -98,13 +98,9 @@ namespace xtd {
         /// color = fore_core * (1 - weight) + back_color * weight;
         /// ```
         /// @remarks Thus, a weight value of `1.0` will return the background color, while a value of `0.0` will return the foreground color.
-        static rgb alpha_blend(const rgb& fore_componant, const rgb& back_componant, double alpha) noexcept {
+        [[nodiscard]] static auto alpha_blend(const rgb& fore_componant, const rgb& back_componant, double alpha) noexcept -> xtd::drawing::helpers::rgb {
           alpha = xtd::math::clamp(alpha, 0.0, 1.0);
-          return rgb {
-            .r = alpha_blend(fore_componant.r, back_componant.r, alpha),
-            .g = alpha_blend(fore_componant.g, back_componant.g, alpha),
-            .b = alpha_blend(fore_componant.b, back_componant.b, alpha),
-          };
+          return rgb {.r = alpha_blend(fore_componant.r, back_componant.r, alpha), .g = alpha_blend(fore_componant.g, back_componant.g, alpha), .b = alpha_blend(fore_componant.b, back_componant.b, alpha)};
         }
         
         /// @brief Returns the weighted average color component between the two given color components.
@@ -118,7 +114,7 @@ namespace xtd {
         /// color = fore_componant * (1 - weight) + back_componant * weight;
         /// ```
         /// @remarks Thus, a weight value of `1.0` will return the background color, while a value of `0.0` will return the foreground color.
-        static xtd::byte alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double alpha) noexcept {
+        [[nodiscard]] static auto alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double alpha) noexcept -> xtd::byte {
           return static_cast<xtd::byte>(fore_componant * (1 - alpha) + back_componant * alpha);
         }
         
@@ -127,7 +123,7 @@ namespace xtd {
         /// @param saturation The xtd::drawing::helpers::rgb saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
         /// @param lightness The xtd::drawing::helpers::rgb lightness. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
         /// @return The xtd::drawing::helpers::rgb structure that this method creates.
-        static rgb from_hsl(float hue, float saturation, float lightness) noexcept {
+        [[nodiscard]] static auto from_hsl(float hue, float saturation, float lightness) noexcept -> xtd::drawing::helpers::rgb {
           // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsl-to-rgb)
           if (saturation == 0) return {static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f)};
           
