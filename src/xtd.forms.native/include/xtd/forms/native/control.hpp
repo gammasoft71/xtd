@@ -8,9 +8,7 @@
 #endif
 /// @endcond
 
-#include <map>
-#include <list>
-#include <vector>
+#include <xtd/collections/generic/dictionary>
 #include <xtd/threading/manual_reset_event>
 #include <xtd/any_object>
 #include <xtd/array>
@@ -86,31 +84,31 @@ namespace xtd {
         /// @param control Control window handle.
         /// @param color A xtd::drawing::color that represents the background color of the control.
         /// @warning Internal use only
-        static void back_color(intptr control, const drawing::color& color);
+        static auto back_color(xtd::intptr control, const xtd::drawing::color& color) -> void;
         
         /// @brief Gets the rectangle that represents the client area of the control.
         /// @param control Control window handle.
         /// @return A rectangle that represents the client area of the control.
         /// @warning Internal use only
-        static drawing::rectangle client_rectangle(intptr control);
+        [[nodiscard]] static auto client_rectangle(xtd::intptr control) -> xtd::drawing::rectangle;
         
         /// @brief Gets the height and width of the client area of the control.
         /// @param control Control window handle.
         /// @return A size that represents the dimensions of the client area of the control.
         /// @warning Internal use only
         /// @todo Check the redundancy with client_rectangle method.
-        static drawing::size client_size(intptr control);
+        [[nodiscard]] static auto client_size(xtd::intptr control) -> xtd::drawing::size;
         /// @brief Sets the height and width of the client area of the control.
         /// @param control Control window handle.
         /// @param size A size that represents the dimensions of the client area of the control.
         /// @warning Internal use only
-        static void client_size(intptr control, const drawing::size& size);
+        static auto client_size(xtd::intptr control, const xtd::drawing::size& size) -> void;
         
         /// @brief Sets the context that is displayed in the control.
         /// @param control Control handle.
         /// @param menu A menu handle that represents the menu to display in the form.
         /// @warning Internal use only
-        static void context_menu(intptr control, intptr context_menu, const xtd::drawing::point& pos);
+        static auto context_menu(xtd::intptr control, xtd::intptr context_menu, const xtd::drawing::point& pos) -> void;
         
         /// @brief Displays the shortcut menu at the specified position.
         /// @param control A control handle that specifies the control with which this shortcut menu is associated.
@@ -118,7 +116,7 @@ namespace xtd {
         /// @param pos A xtd::drawing::point that specifies the coordinates at which to display the menu. These coordinates are specified relative to the client coordinates of the control specified in the control parameter.
         /// @return Id corresponding to menu_item handle selected.
         /// @warning Internal use only
-        static intptr user_context_menu(intptr control, intptr context_menu, const xtd::drawing::point& pos);
+        [[nodiscard]] static auto user_context_menu(xtd::intptr control, xtd::intptr context_menu, const xtd::drawing::point& pos) -> xtd::intptr;
         
         /// @brief Creates control.
         /// @param create_param A xtd::forms::create_param object that contains needed parameters to create control.
@@ -159,31 +157,31 @@ namespace xtd {
         /// @remarks Read xtd::forms::create_params for other members.
         /// @note For more portability and compatibility with underlying toolkits, xtd::forms::create_params::class_name does not contains real Windows names like WC_DIALOG, WC_BUTTON,...
         /// @warning Internal use only
-        static intptr create(const create_params& create_params);
+        [[nodiscard]] static auto create(const xtd::forms::native::create_params& create_params) -> xtd::intptr;
         
         /// @brief Creates a graphics for the control.
         /// @param control Control window handle.
         /// @return A graphics handle for the control.
         /// @warning Internal use only
-        static intptr create_graphics(intptr control);
+        [[nodiscard]] static auto create_graphics(xtd::intptr control) -> xtd::intptr;
         
         /// @brief Creates a graphics for the xtd::forms::control::paint event control.
         /// @param control Control window handle.
         /// @return A graphics handle for the xtd::forms::control::paint event control.
         /// @warning Internal use only
-        static intptr create_paint_graphics(intptr control);
+        [[nodiscard]] static auto create_paint_graphics(xtd::intptr control) -> xtd::intptr;
         
         /// @brief Creates a graphics for the double buffer xtd::forms::control::paint event control.
         /// @param control Control window handle.
         /// @return A graphics handle for the double buffered xtd::forms::control::paint event control.
         /// @warning Internal use only
-        static intptr create_double_buffered_paint_graphics(intptr control);
+        [[nodiscard]] static auto create_double_buffered_paint_graphics(xtd::intptr control) -> xtd::intptr;
         
         /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
         /// @param control Control window handle.
         /// @param cursor A cursor handle that represents the cursor to display when the mouse pointer is over the control.
         /// @warning Internal use only
-        static void cursor(intptr control, intptr cursor);
+        static auto cursor(xtd::intptr control, xtd::intptr cursor) -> void;
         
         /// @brief Sends the specified message to the default window procedure.
         /// @param control Control window handle.
@@ -195,7 +193,7 @@ namespace xtd {
         /// @param handle The handle on specific operating system data
         /// @return The result of def_wnd_proc message.
         /// @warning Internal use only
-        static intptr def_wnd_proc(intptr control, intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr result, intptr handle);
+        [[nodiscard]] static auto def_wnd_proc(xtd::intptr control, xtd::intptr hwnd, xtd::uint32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr result, xtd::intptr handle) -> xtd::intptr;
         
         /// @brief Gets the default height and default width for the specified class name.
         /// @param class_name The name of the Windows class to derive the control from.
@@ -245,74 +243,73 @@ namespace xtd {
         /// *** is 34 on "gnome" environment
         /// **** is 71 on "gnome" environment
         /// @warning Internal use only
-        
-        static xtd::drawing::size default_size(const xtd::string& class_name);
+        [[nodiscard]] static auto default_size(const xtd::string& class_name) -> xtd::drawing::size;
         
         /// @brief Destroys context menu.
         /// @param control Control window handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr control);
+        static auto destroy(xtd::intptr control) -> void;
         
         /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
         /// @param control Control window handle.
         /// @param value `true` if the surface of the control should be drawn using double buffering; otherwise, `false`.
         /// @warning Internal use only
-        static void double_buffered(intptr control, bool value);
+        static auto double_buffered(xtd::intptr control, bool value) -> void;
         
         /// @brief Gets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
         /// @return `true` if the control can respond to user interaction; otherwise, `false`.
         /// @warning Internal use only
-        static bool enabled(intptr control);
+        [[nodiscard]] static auto enabled(xtd::intptr control) -> bool;
         
         /// @brief Sets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
         /// @param enabled `true` if the control can respond to user interaction; otherwise, `false`.
         /// @warning Internal use only
-        static void enabled(intptr control, bool enabled);
+        static auto enabled(xtd::intptr control, bool enabled) -> void;
         
         /// @brief Sets input focus to the control.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void focus(intptr control);
+        static auto focus(xtd::intptr control) -> void;
         
         /// @brief Gets a value indicating whether the control has input focus.
         /// @param control Control window handle.
         /// @return `true` if the control has focus; otherwise, `false`.
         /// @warning Internal use only
-        static bool focused(intptr control);
+        [[nodiscard]] static auto focused(xtd::intptr control) -> bool;
         
         /// @brief Sets the foreground color of the control.
         /// @param control Control window handle.
         /// @param color The foreground color of the control.
         /// @warning Internal use only
-        static void fore_color(intptr control, const drawing::color& color);
+        static auto fore_color(xtd::intptr control, const xtd::drawing::color& color) -> void;
         
         /// @brief Sets the font of the text displayed by the control.
         /// @param control Control window handle.
         /// @param font The xtd::drawing::font to apply to the text displayed by the control.
         /// @warning Internal use only
-        static void font(intptr control, const drawing::font& font);
+        static auto font(xtd::intptr control, const xtd::drawing::font& font) -> void;
         
         /// @brief Gets the native handle of the control.
         /// @param control Control window handle.
         /// @return The native handle.
         /// @warning Internal use only
-        static intptr native_handle(intptr control);
+        [[nodiscard]] static auto native_handle(xtd::intptr control) -> xtd::intptr;
         
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
         /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
         /// @warning Internal use only
-        static void invalidate(intptr control, const drawing::rectangle& rec, bool invalidate_children);
+        static auto invalidate(xtd::intptr control, const xtd::drawing::rectangle& rec, bool invalidate_children) -> void;
         
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param region A xtd::drawing::region that represents the region to invalidate.
         /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
         /// @warning Internal use only
-        static void invalidate(intptr control, const drawing::region& region, bool invalidate_children);
+        static auto invalidate(xtd::intptr control, const xtd::drawing::region& region, bool invalidate_children) -> void;
         
         /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments and mutex.
         /// @param control Control window handle.
@@ -321,67 +318,67 @@ namespace xtd {
         /// @param invoked A mutex for async invoke.
         /// @remarks Signal mutex when invoke is done.
         /// @warning Internal use only
-        static void invoke_in_control_thread(intptr control, delegate<void(xtd::array<xtd::any_object>)> invoker, const xtd::array<xtd::any_object>& args, xtd::sptr<xtd::threading::manual_reset_event> invoked, xtd::sptr<bool> completed);
+        static auto invoke_in_control_thread(xtd::intptr control, xtd::delegate<void(xtd::array<xtd::any_object>)> invoker, const xtd::array<xtd::any_object>& args, xtd::sptr<xtd::threading::manual_reset_event> invoked, xtd::sptr<bool> completed) -> void;
         
         /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.
         /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
         /// @warning Internal use only
-        static drawing::point location(intptr control);
+        [[nodiscard]] static auto location(xtd::intptr control) -> xtd::drawing::point;
         /// @brief Sets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.
         /// @param location
         /// @warning Internal use only
-        static void location(intptr control, const drawing::point& location);
+        static auto location(xtd::intptr control, const xtd::drawing::point& location) -> void;
         
         /// @brief Sets the maximum height and maximum width of the client area of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
-        static void maximum_client_size(intptr control, const drawing::size& size);
+        static auto maximum_client_size(xtd::intptr control, const xtd::drawing::size& size) -> void;
         
         /// @brief Sets the maximum height and maximum width of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
-        static void maximum_size(intptr control, const drawing::size& size);
+        static auto maximum_size(xtd::intptr control, const xtd::drawing::size& size) -> void;
         
         /// @brief Sets the minimum height and minimum width of the client area of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
-        static void minimum_client_size(intptr control, const drawing::size& size);
+        static auto minimum_client_size(xtd::intptr control, const xtd::drawing::size& size) -> void;
         
         /// @brief Sets the minimum height and minimum width of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
-        static void minimum_size(intptr control, const drawing::size& size);
+        static auto minimum_size(xtd::intptr control, const xtd::drawing::size& size) -> void;
         
         /// @brief Computes the location of the specified screen point into client coordinates.
         /// @param control Control window handle.
         /// @param p The screen coordinate xtd::drawing::point to convert.
         /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
         /// @warning Internal use only
-        static drawing::point point_to_client(intptr control, const drawing::point& p);
+        [[nodiscard]] static auto point_to_client(xtd::intptr control, const xtd::drawing::point& p) -> xtd::drawing::point;
         
         /// @brief Computes the location of the specified client point into screen coordinates.
         /// @param control Control window handle.
         /// @param p The client coordinate  xtd::drawing::point to convert.
         /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
         /// @warning Internal use only
-        static drawing::point point_to_screen(intptr control, const drawing::point& p);
+        [[nodiscard]] static auto point_to_screen(xtd::intptr control, const xtd::drawing::point& p) -> xtd::drawing::point;
         
         /// @brief Register a specified wnd proc from the message pump of the control.
         /// @param control Control window handle.
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
-        static void register_wnd_proc(intptr control, const delegate<intptr(intptr, int32, intptr, intptr, intptr)>& wnd_proc);
+        static auto register_wnd_proc(xtd::intptr control, const xtd::delegate<xtd::intptr(xtd::intptr, xtd::int32, xtd::intptr, xtd::intptr, xtd::intptr)>& wnd_proc) -> void;
         
         /// @brief Resumes usual layout logic.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void resume_layout(intptr control);
+        static auto resume_layout(xtd::intptr control) -> void;
         
         /// @brief Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
         /// @param control Control window handle.
@@ -393,7 +390,7 @@ namespace xtd {
         /// | 1     | yes     |
         /// | 2     | inherit |
         /// @warning Internal use only
-        static void right_to_left(intptr control, int32 value);
+        static auto right_to_left(xtd::intptr control, xtd::int32 value) -> void;
         
         /// @brief Send a message with specified hwnd, message, wparam and lparam.
         /// @param control Control window handle.
@@ -403,74 +400,73 @@ namespace xtd {
         /// @param lparam The LParam field of the message.
         /// @return The return value of the message.
         /// @warning Internal use only
-        static intptr send_message(intptr control, intptr hwnd, int32 msg, intptr wParam, intptr lParam);
+        [[nodiscard]] static auto send_message(xtd::intptr control, xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wParam, xtd::intptr lParam) -> xtd::intptr;
         
         /// @brief Gets the height and width of the control.
         /// @param control Control window handle.
         /// @return The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
-        static drawing::size size(intptr control);
+        [[nodiscard]] static auto size(xtd::intptr control) -> xtd::drawing::size;
         /// @brief Sets the height and width of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
-        static void size(intptr control, const drawing::size& size);
+        static auto size(xtd::intptr control, const xtd::drawing::size& size) -> void;
         
         /// @brief Temporarily suspends the layout logic for the control.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void suspend_layout(intptr control);
+        static auto suspend_layout(xtd::intptr control) -> void;
         
         /// @brief Gets the text associated with this control.
         /// @param control Control window handle.
         /// @return The text associated with this control.
         /// @warning Internal use only
-        static xtd::string text(intptr control);
+        [[nodiscard]] static auto text(xtd::intptr control) -> xtd::string;
         /// @brief Sets the text associated with this control.
         /// @param control Control window handle.
         /// @param text The text associated with this control.
         /// @warning Internal use only
-        static void text(intptr control, const xtd::string& text);
+        static auto text(xtd::intptr control, const xtd::string& text) -> void;
         
         /// @brief Gets the toolkit handle of the control.
         /// @param control Control window handle.
         /// @return The toolkit handle.
         /// @warning Internal use only
-        static intptr toolkit_handle(intptr control);
+        [[nodiscard]] static auto toolkit_handle(xtd::intptr control) -> xtd::intptr;
         
         /// @brief Unregister the wnd proc previously registered.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void unregister_wnd_proc(intptr control);
+        static auto unregister_wnd_proc(xtd::intptr control) -> void;
         
         /// @brief Causes the control to redraw the invalidated regions within its client area.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void update(intptr control);
+        static auto update(xtd::intptr control) -> void;
         
         /// @brief Gets a value indicating whether the control and all its child controls are displayed.
         /// @param control Control window handle.
         /// @return `true` if the control and all its child controls are displayed; otherwise, `false`.
         /// @warning Internal use only
-        static bool visible(intptr control);
+        [[nodiscard]] static auto visible(xtd::intptr control) -> bool;
         /// @brief Sets a value indicating whether the control and all its child controls are displayed.
         /// @param control Control window handle.
         /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`.
         /// @warning Internal use only
-        static void visible(intptr control, bool visible);
+        static auto visible(xtd::intptr control, bool visible) -> void;
         
         /// @brief Convert message identifiers to a string.
         /// @param control Control window handle.
-        /// @param id An int32 message id.
+        /// @param id An xtd::int32 message id.
         /// @return A string that represent the message id.
         /// @par Notes for xtd developers
         /// This method is not an API. It is needed only for debug.
         /// @warning Internal use only
-        static xtd::string message_to_string(uint32 id) {
-          static std::map<uint32, xtd::string> ids = {{ WM_NULL, "WM_NULL" }, { WM_CREATE, "WM_CREATE" }, { WM_DESTROY, "WM_DESTROY" }, { WM_MOVE, "WM_MOVE" }, { WM_SIZE, "WM_SIZE" }, { WM_ACTIVATE, "WM_ACTIVATE" }, { WM_SETFOCUS, "WM_SETFOCUS" }, { WM_KILLFOCUS, "WM_KILLFOCUS" }, { WM_ENABLE, "WM_ENABLE" }, { WM_SETREDRAW, "WM_SETREDRAW" }, { WM_SETTEXT, "WM_SETTEXT" }, { WM_GETTEXT, "WM_GETTEXT" }, { WM_GETTEXTLENGTH, "WM_GETTEXTLENGTH" }, { WM_PAINT, "WM_PAINT" }, { WM_CLOSE, "WM_CLOSE" }, { WM_QUERYENDSESSION, "WM_QUERYENDSESSION" }, { WM_QUIT, "WM_QUIT" }, { WM_QUERYOPEN, "WM_QUERYOPEN" }, { WM_ERASEBKGND, "WM_ERASEBKGND" }, { WM_SYSCOLORCHANGE, "WM_SYSCOLORCHANGE" }, { WM_ENDSESSION, "WM_ENDSESSION" }, { WM_SHOWWINDOW, "WM_SHOWWINDOW" }, { WM_WININICHANGE, "WM_WININICHANGE" }, { WM_DEVMODECHANGE, "WM_DEVMODECHANGE" }, { WM_ACTIVATEAPP, "WM_ACTIVATEAPP" }, { WM_FONTCHANGE, "WM_FONTCHANGE" }, { WM_TIMECHANGE, "WM_TIMECHANGE" }, { WM_CANCELMODE, "WM_CANCELMODE" }, { WM_SETCURSOR, "WM_SETCURSOR" }, { WM_MOUSEACTIVATE, "WM_MOUSEACTIVATE" }, { WM_CHILDACTIVATE, "WM_CHILDACTIVATE" }, { WM_QUEUESYNC, "WM_QUEUESYNC" }, { WM_GETMINMAXINFO, "WM_GETMINMAXINFO" }, { WM_PAINTICON, "WM_PAINTICON" }, { WM_ICONERASEBKGND, "WM_ICONERASEBKGND" }, { WM_NEXTDLGCTL, "WM_NEXTDLGCTL" }, { WM_SPOOLERSTATUS, "WM_SPOOLERSTATUS" }, { WM_DRAWITEM, "WM_DRAWITEM" }, { WM_MEASUREITEM, "WM_MEASUREITEM" }, { WM_DELETEITEM, "WM_DELETEITEM" }, { WM_VKEYTOITEM, "WM_VKEYTOITEM" }, { WM_CHARTOITEM, "WM_CHARTOITEM" }, { WM_SETFONT, "WM_SETFONT" }, { WM_GETFONT, "WM_GETFONT" }, { WM_SETHOTKEY, "WM_SETHOTKEY" }, { WM_GETHOTKEY, "WM_GETHOTKEY" }, { WM_QUERYDRAGICON, "WM_QUERYDRAGICON" }, { WM_COMPAREITEM, "WM_COMPAREITEM" }, { WM_GETOBJECT, "WM_GETOBJECT" }, { WM_COMPACTING, "WM_COMPACTING" }, { WM_COMMNOTIFY, "WM_COMMNOTIFY" }, { WM_WINDOWPOSCHANGING, "WM_WINDOWPOSCHANGING" }, { WM_WINDOWPOSCHANGED, "WM_WINDOWPOSCHANGED" }, { WM_POWER, "WM_POWER" }, { WM_COPYDATA, "WM_COPYDATA" }, { WM_CANCELJOURNAL, "WM_CANCELJOURNAL" }, { WM_NOTIFY, "WM_NOTIFY" }, { WM_INPUTLANGCHANGEREQUEST, "WM_INPUTLANGCHANGEREQUEST" }, { WM_INPUTLANGCHANGE, "WM_INPUTLANGCHANGE" }, { WM_TCARD, "WM_TCARD" }, { WM_HELP, "WM_HELP" }, { WM_USERCHANGED, "WM_USERCHANGED" }, { WM_NOTIFYFORMAT, "WM_NOTIFYFORMAT" }, { WM_CONTEXTMENU, "WM_CONTEXTMENU" }, { WM_STYLECHANGING, "WM_STYLECHANGING" }, { WM_STYLECHANGED, "WM_STYLECHANGED" }, { WM_DISPLAYCHANGE, "WM_DISPLAYCHANGE" }, { WM_GETICON, "WM_GETICON" }, { WM_SETICON, "WM_SETICON" }, { WM_NCCREATE, "WM_NCCREATE" }, { WM_NCDESTROY, "WM_NCDESTROY" }, { WM_NCCALCSIZE, "WM_NCCALCSIZE" }, { WM_NCHITTEST, "WM_NCHITTEST" }, { WM_NCPAINT, "WM_NCPAINT" }, { WM_NCACTIVATE, "WM_NCACTIVATE" }, { WM_GETDLGCODE, "WM_GETDLGCODE" }, { WM_SYNCPAINT, "WM_SYNCPAINT" }, { WM_NCMOUSEMOVE, "WM_NCMOUSEMOVE" }, { WM_NCLBUTTONDOWN, "WM_NCLBUTTONDOWN" }, { WM_NCLBUTTONUP, "WM_NCLBUTTONUP" }, { WM_NCLBUTTONDBLCLK, "WM_NCLBUTTONDBLCLK" }, { WM_NCRBUTTONDOWN, "WM_NCRBUTTONDOWN" }, { WM_NCRBUTTONUP, "WM_NCRBUTTONUP" }, { WM_NCRBUTTONDBLCLK, "WM_NCRBUTTONDBLCLK" }, { WM_NCMBUTTONDOWN, "WM_NCMBUTTONDOWN" }, { WM_NCMBUTTONUP, "WM_NCMBUTTONUP" }, { WM_NCMBUTTONDBLCLK, "WM_NCMBUTTONDBLCLK" }, { WM_NCXBUTTONDOWN, "WM_NCXBUTTONDOWN" }, { WM_NCXBUTTONUP, "WM_NCXBUTTONUP" }, { WM_NCXBUTTONDBLCLK, "WM_NCXBUTTONDBLCLK" }, { WM_INPUT_DEVICE_CHANGE, "WM_INPUT_DEVICE_CHANGE" }, { WM_INPUT, "WM_INPUT" }, { WM_KEYDOWN, "WM_KEYDOWN" }, { WM_KEYUP, "WM_KEYUP" }, { WM_CHAR, "WM_CHAR" }, { WM_DEADCHAR, "WM_DEADCHAR" }, { WM_SYSKEYDOWN, "WM_SYSKEYDOWN" }, { WM_SYSKEYUP, "WM_SYSKEYUP" }, { WM_SYSCHAR, "WM_SYSCHAR" }, { WM_SYSDEADCHAR, "WM_SYSDEADCHAR" }, { WM_KEYLAST, "WM_KEYLAST" }, { WM_INITDIALOG, "WM_INITDIALOG" }, { WM_COMMAND, "WM_COMMAND" }, { WM_SYSCOMMAND, "WM_SYSCOMMAND" }, { WM_TIMER, "WM_TIMER" }, { WM_HSCROLL, "WM_HSCROLL" }, { WM_VSCROLL, "WM_VSCROLL" }, { WM_INITMENU, "WM_INITMENU" }, { WM_INITMENUPOPUP, "WM_INITMENUPOPUP" }, { WM_GESTURE, "WM_GESTURE" }, { WM_GESTURENOTIFY, "WM_GESTURENOTIFY" }, { WM_MENUSELECT, "WM_MENUSELECT" }, { WM_MENUCHAR, "WM_MENUCHAR" }, { WM_ENTERIDLE, "WM_ENTERIDLE" }, { WM_MENURBUTTONUP, "WM_MENURBUTTONUP" }, { WM_MENUDRAG, "WM_MENUDRAG" }, { WM_MENUGETOBJECT, "WM_MENUGETOBJECT" }, { WM_UNINITMENUPOPUP, "WM_UNINITMENUPOPUP" }, { WM_MENUCOMMAND, "WM_MENUCOMMAND" }, { WM_CHANGEUISTATE, "WM_CHANGEUISTATE" }, { WM_UPDATEUISTATE, "WM_UPDATEUISTATE" }, { WM_QUERYUISTATE, "WM_QUERYUISTATE" }, { WM_CTLCOLORMSGBOX, "WM_CTLCOLORMSGBOX" }, { WM_CTLCOLOREDIT, "WM_CTLCOLOREDIT" }, { WM_CTLCOLORLISTBOX, "WM_CTLCOLORLISTBOX" }, { WM_CTLCOLORBTN, "WM_CTLCOLORBTN" }, { WM_CTLCOLORDLG, "WM_CTLCOLORDLG" }, { WM_CTLCOLORSCROLLBAR, "WM_CTLCOLORSCROLLBAR" }, { WM_CTLCOLORSTATIC, "WM_CTLCOLORSTATIC" }, { MN_GETHMENU, "MN_GETHMENU" }, { WM_MOUSEMOVE, "WM_MOUSEMOVE" }, { WM_LBUTTONDOWN, "WM_LBUTTONDOWN" }, { WM_LBUTTONUP, "WM_LBUTTONUP" }, { WM_LBUTTONDBLCLK, "WM_LBUTTONDBLCLK" }, { WM_RBUTTONDOWN, "WM_RBUTTONDOWN" }, { WM_RBUTTONUP, "WM_RBUTTONUP" }, { WM_RBUTTONDBLCLK, "WM_RBUTTONDBLCLK" }, { WM_MBUTTONDOWN, "WM_MBUTTONDOWN" }, { WM_MBUTTONUP, "WM_MBUTTONUP" }, { WM_MBUTTONDBLCLK, "WM_MBUTTONDBLCLK" }, { WM_MOUSEWHEEL, "WM_MOUSEWHEEL" }, { WM_XBUTTONDOWN, "WM_XBUTTONDOWN" }, { WM_XBUTTONUP, "WM_XBUTTONUP" }, { WM_XBUTTONDBLCLK, "WM_XBUTTONDBLCLK" }, { WM_MOUSEHWHEEL, "WM_MOUSEHWHEEL" }, { WM_PARENTNOTIFY, "WM_PARENTNOTIFY" }, { WM_ENTERMENULOOP, "WM_ENTERMENULOOP" }, { WM_EXITMENULOOP, "WM_EXITMENULOOP" }, { WM_NEXTMENU, "WM_NEXTMENU" }, { WM_SIZING, "WM_SIZING" }, { WM_CAPTURECHANGED, "WM_CAPTURECHANGED" }, { WM_MOVING, "WM_MOVING" }, { WM_POWERBROADCAST, "WM_POWERBROADCAST" }, { WM_DEVICECHANGE, "WM_DEVICECHANGE" }, { WM_MDICREATE, "WM_MDICREATE" }, { WM_MDIDESTROY, "WM_MDIDESTROY" }, { WM_MDIACTIVATE, "WM_MDIACTIVATE" }, { WM_MDIRESTORE, "WM_MDIRESTORE" }, { WM_MDINEXT, "WM_MDINEXT" }, { WM_MDIMAXIMIZE, "WM_MDIMAXIMIZE" }, { WM_MDITILE, "WM_MDITILE" }, { WM_MDICASCADE, "WM_MDICASCADE" }, { WM_MDIICONARRANGE, "WM_MDIICONARRANGE" }, { WM_MDIGETACTIVE, "WM_MDIGETACTIVE" }, { WM_MDISETMENU, "WM_MDISETMENU" }, { WM_ENTERSIZEMOVE, "WM_ENTERSIZEMOVE" }, { WM_EXITSIZEMOVE, "WM_EXITSIZEMOVE" }, { WM_DROPFILES, "WM_DROPFILES" }, { WM_MDIREFRESHMENU, "WM_MDIREFRESHMENU" }, { WM_POINTERDEVICECHANGE, "WM_POINTERDEVICECHANGE" }, { WM_POINTERDEVICEINRANGE, "WM_POINTERDEVICEINRANGE" }, { WM_POINTERDEVICEOUTOFRANGE, "WM_POINTERDEVICEOUTOFRANGE" }, { WM_TOUCH, "WM_TOUCH" }, { WM_NCPOINTERUPDATE, "WM_NCPOINTERUPDATE" }, { WM_NCPOINTERDOWN, "WM_NCPOINTERDOWN" }, { WM_NCPOINTERUP, "WM_NCPOINTERUP" }, { WM_POINTERUPDATE, "WM_POINTERUPDATE" }, { WM_POINTERDOWN, "WM_POINTERDOWN" }, { WM_POINTERUP, "WM_POINTERUP" }, { WM_POINTERENTER, "WM_POINTERENTER" }, { WM_POINTERLEAVE, "WM_POINTERLEAVE" }, { WM_POINTERACTIVATE, "WM_POINTERACTIVATE" }, { WM_POINTERCAPTURECHANGED, "WM_POINTERCAPTURECHANGED" }, { WM_TOUCHHITTESTING, "WM_TOUCHHITTESTING" }, { WM_POINTERWHEEL, "WM_POINTERWHEEL" }, { WM_POINTERHWHEEL, "WM_POINTERHWHEEL" }, { DM_POINTERHITTEST, "DM_POINTERHITTEST" }, { WM_IME_SETCONTEXT, "WM_IME_SETCONTEXT" }, { WM_IME_NOTIFY, "WM_IME_NOTIFY" }, { WM_IME_CONTROL, "WM_IME_CONTROL" }, { WM_IME_COMPOSITIONFULL, "WM_IME_COMPOSITIONFULL" }, { WM_IME_SELECT, "WM_IME_SELECT" }, { WM_IME_CHAR, "WM_IME_CHAR" }, { WM_IME_REQUEST, "WM_IME_REQUEST" }, { WM_IME_KEYDOWN, "WM_IME_KEYDOWN" }, { WM_IME_KEYUP, "WM_IME_KEYUP" }, { WM_MOUSEENTER, "WM_MOUSEENTER" }, { WM_MOUSEHOVER, "WM_MOUSEHOVER" }, { WM_MOUSELEAVE, "WM_MOUSELEAVE" }, { WM_NCMOUSEHOVER, "WM_NCMOUSEHOVER" }, { WM_NCMOUSELEAVE, "WM_NCMOUSELEAVE" }, { WM_WTSSESSION_CHANGE, "WM_WTSSESSION_CHANGE" }, { WM_TABLET_FIRST, "WM_TABLET_FIRST" }, { WM_TABLET_LAST, "WM_TABLET_LAST" }, { WM_DPICHANGED, "WM_DPICHANGED" }, { WM_CUT, "WM_CUT" }, { WM_COPY, "WM_COPY" }, { WM_PASTE, "WM_PASTE" }, { WM_CLEAR, "WM_CLEAR" }, { WM_UNDO, "WM_UNDO" }, { WM_RENDERFORMAT, "WM_RENDERFORMAT" }, { WM_RENDERALLFORMATS, "WM_RENDERALLFORMATS" }, { WM_DESTROYCLIPBOARD, "WM_DESTROYCLIPBOARD" }, { WM_DRAWCLIPBOARD, "WM_DRAWCLIPBOARD" }, { WM_PAINTCLIPBOARD, "WM_PAINTCLIPBOARD" }, { WM_VSCROLLCLIPBOARD, "WM_VSCROLLCLIPBOARD" }, { WM_SIZECLIPBOARD, "WM_SIZECLIPBOARD" }, { WM_ASKCBFORMATNAME, "WM_ASKCBFORMATNAME" }, { WM_CHANGECBCHAIN, "WM_CHANGECBCHAIN" }, { WM_HSCROLLCLIPBOARD, "WM_HSCROLLCLIPBOARD" }, { WM_QUERYNEWPALETTE, "WM_QUERYNEWPALETTE" }, { WM_PALETTEISCHANGING, "WM_PALETTEISCHANGING" }, { WM_PALETTECHANGED, "WM_PALETTECHANGED" }, { WM_HOTKEY, "WM_HOTKEY" }, { WM_PRINT, "WM_PRINT" }, { WM_PRINTCLIENT, "WM_PRINTCLIENT" }, { WM_APPCOMMAND, "WM_APPCOMMAND" }, { WM_THEMECHANGED, "WM_THEMECHANGED" }, { WM_CLIPBOARDUPDATE, "WM_CLIPBOARDUPDATE" }, { WM_DWMCOMPOSITIONCHANGED, "WM_DWMCOMPOSITIONCHANGED" }, { WM_DWMNCRENDERINGCHANGED, "WM_DWMNCRENDERINGCHANGED" }, { WM_DWMCOLORIZATIONCOLORCHANGED, "WM_DWMCOLORIZATIONCOLORCHANGED" }, { WM_DWMWINDOWMAXIMIZEDCHANGE, "WM_DWMWINDOWMAXIMIZEDCHANGE" }, { WM_DWMSENDICONICTHUMBNAIL, "WM_DWMSENDICONICTHUMBNAIL" }, { WM_DWMSENDICONICLIVEPREVIEWBITMAP, "WM_DWMSENDICONICLIVEPREVIEWBITMAP" }, { WM_GETTITLEBARINFOEX, "WM_GETTITLEBARINFOEX" }, { WM_HANDHELDFIRST, "WM_HANDHELDFIRST" }, { WM_HANDHELDLAST, "WM_HANDHELDLAST" }, { WM_AFXFIRST, "WM_AFXFIRST" }, { WM_AFXLAST, "WM_AFXLAST" }, { WM_PENWINFIRST, "WM_PENWINFIRST" }, { WM_PENWINLAST, "WM_PENWINLAST" }, { WM_USER, "WM_USER" }, { WM_APP, "WM_APP" }, { WM_APPIDLE, "WM_APPIDLE" }, { WM_STYLE_SHEET_CHANGED, "WM_STYLE_SHEET_CHANGED" }, { WM_MOUSEENTER, "WM_MOUSEENTER" }, { WM_RECREATE, "WM_RECREATE" }, { WM_REFLECT + WM_CTLCOLORDLG, "WM_REFLECT + WM_CTLCOLORDLG"}, { WM_REFLECT + WM_CTLCOLORMSGBOX, "WM_REFLECT + WM_CTLCOLORMSGBOX"}, { WM_REFLECT + WM_CTLCOLOR, "WM_REFLECT + WM_CTLCOLOR"}, { WM_REFLECT + WM_CTLCOLORBTN, "WM_REFLECT + WM_CTLCOLORBTN"}, { WM_REFLECT + WM_CTLCOLORSCROLLBAR, "WM_REFLECT + WM_CTLCOLORSCROLLBAR"}, { WM_REFLECT + WM_CTLCOLOREDIT, "WM_REFLECT + WM_CTLCOLOREDIT"}, { WM_REFLECT + WM_CTLCOLORLISTBOX, "WM_REFLECT + WM_CTLCOLORLISTBOX"}, { WM_REFLECT + WM_CTLCOLORSTATIC, "WM_REFLECT + WM_CTLCOLORSTATIC"}, { WM_REFLECT + WM_COMMAND, "WM_REFLECT + WM_COMMAND"}, { WM_REFLECT + WM_NOTIFY, "WM_REFLECT + WM_NOTIFY"}, { WM_REFLECT + WM_HSCROLL, "WM_REFLECT + WM_HSCROLL"}, { WM_REFLECT + WM_VSCROLL, "WM_REFLECT + WM_VSCROLL"},};
-          auto it = ids.find(id);
-          if (it != ids.end()) return it->second;
-          return string::format("{}", id);
+        [[nodiscard]] static auto message_to_string(xtd::uint32 id) -> xtd::string {
+          static xtd::collections::generic::dictionary<xtd::uint32, xtd::string> ids = {{WM_NULL, "WM_NULL"}, {WM_CREATE, "WM_CREATE"}, {WM_DESTROY, "WM_DESTROY"}, {WM_MOVE, "WM_MOVE"}, {WM_SIZE, "WM_SIZE"}, {WM_ACTIVATE, "WM_ACTIVATE"}, {WM_SETFOCUS, "WM_SETFOCUS"}, {WM_KILLFOCUS, "WM_KILLFOCUS"}, {WM_ENABLE, "WM_ENABLE"}, {WM_SETREDRAW, "WM_SETREDRAW"}, {WM_SETTEXT, "WM_SETTEXT"}, {WM_GETTEXT, "WM_GETTEXT"}, {WM_GETTEXTLENGTH, "WM_GETTEXTLENGTH"}, {WM_PAINT, "WM_PAINT"}, {WM_CLOSE, "WM_CLOSE"}, {WM_QUERYENDSESSION, "WM_QUERYENDSESSION"}, {WM_QUIT, "WM_QUIT"}, {WM_QUERYOPEN, "WM_QUERYOPEN"}, {WM_ERASEBKGND, "WM_ERASEBKGND"}, {WM_SYSCOLORCHANGE, "WM_SYSCOLORCHANGE"}, {WM_ENDSESSION, "WM_ENDSESSION"}, {WM_SHOWWINDOW, "WM_SHOWWINDOW"}, {WM_WININICHANGE, "WM_WININICHANGE"}, {WM_DEVMODECHANGE, "WM_DEVMODECHANGE"}, {WM_ACTIVATEAPP, "WM_ACTIVATEAPP"}, {WM_FONTCHANGE, "WM_FONTCHANGE"}, {WM_TIMECHANGE, "WM_TIMECHANGE"}, {WM_CANCELMODE, "WM_CANCELMODE"}, {WM_SETCURSOR, "WM_SETCURSOR"}, {WM_MOUSEACTIVATE, "WM_MOUSEACTIVATE"}, {WM_CHILDACTIVATE, "WM_CHILDACTIVATE"}, {WM_QUEUESYNC, "WM_QUEUESYNC"}, {WM_GETMINMAXINFO, "WM_GETMINMAXINFO"}, {WM_PAINTICON, "WM_PAINTICON"}, {WM_ICONERASEBKGND, "WM_ICONERASEBKGND"}, {WM_NEXTDLGCTL, "WM_NEXTDLGCTL"}, {WM_SPOOLERSTATUS, "WM_SPOOLERSTATUS"}, {WM_DRAWITEM, "WM_DRAWITEM"}, {WM_MEASUREITEM, "WM_MEASUREITEM"}, {WM_DELETEITEM, "WM_DELETEITEM"}, {WM_VKEYTOITEM, "WM_VKEYTOITEM"}, {WM_CHARTOITEM, "WM_CHARTOITEM"}, {WM_SETFONT, "WM_SETFONT"}, {WM_GETFONT, "WM_GETFONT"}, {WM_SETHOTKEY, "WM_SETHOTKEY"}, {WM_GETHOTKEY, "WM_GETHOTKEY"}, {WM_QUERYDRAGICON, "WM_QUERYDRAGICON"}, {WM_COMPAREITEM, "WM_COMPAREITEM"}, {WM_GETOBJECT, "WM_GETOBJECT"}, {WM_COMPACTING, "WM_COMPACTING"}, {WM_COMMNOTIFY, "WM_COMMNOTIFY"}, {WM_WINDOWPOSCHANGING, "WM_WINDOWPOSCHANGING"}, {WM_WINDOWPOSCHANGED, "WM_WINDOWPOSCHANGED"}, {WM_POWER, "WM_POWER"}, {WM_COPYDATA, "WM_COPYDATA"}, {WM_CANCELJOURNAL, "WM_CANCELJOURNAL"}, {WM_NOTIFY, "WM_NOTIFY"}, {WM_INPUTLANGCHANGEREQUEST, "WM_INPUTLANGCHANGEREQUEST"}, {WM_INPUTLANGCHANGE, "WM_INPUTLANGCHANGE"}, {WM_TCARD, "WM_TCARD"}, {WM_HELP, "WM_HELP"}, {WM_USERCHANGED, "WM_USERCHANGED"}, {WM_NOTIFYFORMAT, "WM_NOTIFYFORMAT"}, {WM_CONTEXTMENU, "WM_CONTEXTMENU"}, {WM_STYLECHANGING, "WM_STYLECHANGING"}, {WM_STYLECHANGED, "WM_STYLECHANGED"}, {WM_DISPLAYCHANGE, "WM_DISPLAYCHANGE"}, {WM_GETICON, "WM_GETICON"}, {WM_SETICON, "WM_SETICON"}, {WM_NCCREATE, "WM_NCCREATE"}, {WM_NCDESTROY, "WM_NCDESTROY"}, {WM_NCCALCSIZE, "WM_NCCALCSIZE"}, {WM_NCHITTEST, "WM_NCHITTEST"}, {WM_NCPAINT, "WM_NCPAINT"}, {WM_NCACTIVATE, "WM_NCACTIVATE"}, {WM_GETDLGCODE, "WM_GETDLGCODE"}, {WM_SYNCPAINT, "WM_SYNCPAINT"}, {WM_NCMOUSEMOVE, "WM_NCMOUSEMOVE"}, {WM_NCLBUTTONDOWN, "WM_NCLBUTTONDOWN"}, {WM_NCLBUTTONUP, "WM_NCLBUTTONUP"}, {WM_NCLBUTTONDBLCLK, "WM_NCLBUTTONDBLCLK"}, {WM_NCRBUTTONDOWN, "WM_NCRBUTTONDOWN"}, {WM_NCRBUTTONUP, "WM_NCRBUTTONUP"}, {WM_NCRBUTTONDBLCLK, "WM_NCRBUTTONDBLCLK"}, {WM_NCMBUTTONDOWN, "WM_NCMBUTTONDOWN"}, {WM_NCMBUTTONUP, "WM_NCMBUTTONUP"}, {WM_NCMBUTTONDBLCLK, "WM_NCMBUTTONDBLCLK"}, {WM_NCXBUTTONDOWN, "WM_NCXBUTTONDOWN"}, {WM_NCXBUTTONUP, "WM_NCXBUTTONUP"}, {WM_NCXBUTTONDBLCLK, "WM_NCXBUTTONDBLCLK"}, {WM_INPUT_DEVICE_CHANGE, "WM_INPUT_DEVICE_CHANGE"}, {WM_INPUT, "WM_INPUT"}, {WM_KEYDOWN, "WM_KEYDOWN"}, {WM_KEYUP, "WM_KEYUP"}, {WM_CHAR, "WM_CHAR"}, {WM_DEADCHAR, "WM_DEADCHAR"}, {WM_SYSKEYDOWN, "WM_SYSKEYDOWN"}, {WM_SYSKEYUP, "WM_SYSKEYUP"}, {WM_SYSCHAR, "WM_SYSCHAR"}, {WM_SYSDEADCHAR, "WM_SYSDEADCHAR"}, {WM_KEYLAST, "WM_KEYLAST"}, {WM_INITDIALOG, "WM_INITDIALOG"}, {WM_COMMAND, "WM_COMMAND"}, {WM_SYSCOMMAND, "WM_SYSCOMMAND"}, {WM_TIMER, "WM_TIMER"}, {WM_HSCROLL, "WM_HSCROLL"}, {WM_VSCROLL, "WM_VSCROLL"}, {WM_INITMENU, "WM_INITMENU"}, {WM_INITMENUPOPUP, "WM_INITMENUPOPUP"}, {WM_GESTURE, "WM_GESTURE"}, {WM_GESTURENOTIFY, "WM_GESTURENOTIFY"}, {WM_MENUSELECT, "WM_MENUSELECT"}, {WM_MENUCHAR, "WM_MENUCHAR"}, {WM_ENTERIDLE, "WM_ENTERIDLE"}, {WM_MENURBUTTONUP, "WM_MENURBUTTONUP"}, {WM_MENUDRAG, "WM_MENUDRAG"}, {WM_MENUGETOBJECT, "WM_MENUGETOBJECT"}, {WM_UNINITMENUPOPUP, "WM_UNINITMENUPOPUP"}, {WM_MENUCOMMAND, "WM_MENUCOMMAND"}, {WM_CHANGEUISTATE, "WM_CHANGEUISTATE"}, {WM_UPDATEUISTATE, "WM_UPDATEUISTATE"}, {WM_QUERYUISTATE, "WM_QUERYUISTATE"}, {WM_CTLCOLORMSGBOX, "WM_CTLCOLORMSGBOX"}, {WM_CTLCOLOREDIT, "WM_CTLCOLOREDIT"}, {WM_CTLCOLORLISTBOX, "WM_CTLCOLORLISTBOX"}, {WM_CTLCOLORBTN, "WM_CTLCOLORBTN"}, {WM_CTLCOLORDLG, "WM_CTLCOLORDLG"}, {WM_CTLCOLORSCROLLBAR, "WM_CTLCOLORSCROLLBAR"}, {WM_CTLCOLORSTATIC, "WM_CTLCOLORSTATIC"}, { MN_GETHMENU, "MN_GETHMENU"}, {WM_MOUSEMOVE, "WM_MOUSEMOVE"}, {WM_LBUTTONDOWN, "WM_LBUTTONDOWN"}, {WM_LBUTTONUP, "WM_LBUTTONUP"}, {WM_LBUTTONDBLCLK, "WM_LBUTTONDBLCLK"}, {WM_RBUTTONDOWN, "WM_RBUTTONDOWN"}, {WM_RBUTTONUP, "WM_RBUTTONUP"}, {WM_RBUTTONDBLCLK, "WM_RBUTTONDBLCLK"}, {WM_MBUTTONDOWN, "WM_MBUTTONDOWN"}, {WM_MBUTTONUP, "WM_MBUTTONUP"}, {WM_MBUTTONDBLCLK, "WM_MBUTTONDBLCLK"}, {WM_MOUSEWHEEL, "WM_MOUSEWHEEL"}, {WM_XBUTTONDOWN, "WM_XBUTTONDOWN"}, {WM_XBUTTONUP, "WM_XBUTTONUP"}, {WM_XBUTTONDBLCLK, "WM_XBUTTONDBLCLK"}, {WM_MOUSEHWHEEL, "WM_MOUSEHWHEEL"}, {WM_PARENTNOTIFY, "WM_PARENTNOTIFY"}, {WM_ENTERMENULOOP, "WM_ENTERMENULOOP"}, {WM_EXITMENULOOP, "WM_EXITMENULOOP"}, {WM_NEXTMENU, "WM_NEXTMENU"}, {WM_SIZING, "WM_SIZING"}, {WM_CAPTURECHANGED, "WM_CAPTURECHANGED"}, {WM_MOVING, "WM_MOVING"}, {WM_POWERBROADCAST, "WM_POWERBROADCAST"}, {WM_DEVICECHANGE, "WM_DEVICECHANGE"}, {WM_MDICREATE, "WM_MDICREATE"}, {WM_MDIDESTROY, "WM_MDIDESTROY"}, {WM_MDIACTIVATE, "WM_MDIACTIVATE"}, {WM_MDIRESTORE, "WM_MDIRESTORE"}, {WM_MDINEXT, "WM_MDINEXT"}, {WM_MDIMAXIMIZE, "WM_MDIMAXIMIZE"}, {WM_MDITILE, "WM_MDITILE"}, {WM_MDICASCADE, "WM_MDICASCADE"}, {WM_MDIICONARRANGE, "WM_MDIICONARRANGE"}, {WM_MDIGETACTIVE, "WM_MDIGETACTIVE"}, {WM_MDISETMENU, "WM_MDISETMENU"}, {WM_ENTERSIZEMOVE, "WM_ENTERSIZEMOVE"}, {WM_EXITSIZEMOVE, "WM_EXITSIZEMOVE"}, {WM_DROPFILES, "WM_DROPFILES"}, {WM_MDIREFRESHMENU, "WM_MDIREFRESHMENU"}, {WM_POINTERDEVICECHANGE, "WM_POINTERDEVICECHANGE"}, {WM_POINTERDEVICEINRANGE, "WM_POINTERDEVICEINRANGE"}, {WM_POINTERDEVICEOUTOFRANGE, "WM_POINTERDEVICEOUTOFRANGE"}, {WM_TOUCH, "WM_TOUCH"}, {WM_NCPOINTERUPDATE, "WM_NCPOINTERUPDATE"}, {WM_NCPOINTERDOWN, "WM_NCPOINTERDOWN"}, {WM_NCPOINTERUP, "WM_NCPOINTERUP"}, {WM_POINTERUPDATE, "WM_POINTERUPDATE"}, {WM_POINTERDOWN, "WM_POINTERDOWN"}, {WM_POINTERUP, "WM_POINTERUP"}, {WM_POINTERENTER, "WM_POINTERENTER"}, {WM_POINTERLEAVE, "WM_POINTERLEAVE"}, {WM_POINTERACTIVATE, "WM_POINTERACTIVATE"}, {WM_POINTERCAPTURECHANGED, "WM_POINTERCAPTURECHANGED"}, {WM_TOUCHHITTESTING, "WM_TOUCHHITTESTING"}, {WM_POINTERWHEEL, "WM_POINTERWHEEL"}, {WM_POINTERHWHEEL, "WM_POINTERHWHEEL"}, { DM_POINTERHITTEST, "DM_POINTERHITTEST"}, {WM_IME_SETCONTEXT, "WM_IME_SETCONTEXT"}, {WM_IME_NOTIFY, "WM_IME_NOTIFY"}, {WM_IME_CONTROL, "WM_IME_CONTROL"}, {WM_IME_COMPOSITIONFULL, "WM_IME_COMPOSITIONFULL"}, {WM_IME_SELECT, "WM_IME_SELECT"}, {WM_IME_CHAR, "WM_IME_CHAR"}, {WM_IME_REQUEST, "WM_IME_REQUEST"}, {WM_IME_KEYDOWN, "WM_IME_KEYDOWN"}, {WM_IME_KEYUP, "WM_IME_KEYUP"}, {WM_MOUSEENTER, "WM_MOUSEENTER"}, {WM_MOUSEHOVER, "WM_MOUSEHOVER"}, {WM_MOUSELEAVE, "WM_MOUSELEAVE"}, {WM_NCMOUSEHOVER, "WM_NCMOUSEHOVER"}, {WM_NCMOUSELEAVE, "WM_NCMOUSELEAVE"}, {WM_WTSSESSION_CHANGE, "WM_WTSSESSION_CHANGE"}, {WM_TABLET_FIRST, "WM_TABLET_FIRST"}, {WM_TABLET_LAST, "WM_TABLET_LAST"}, {WM_DPICHANGED, "WM_DPICHANGED"}, {WM_CUT, "WM_CUT"}, {WM_COPY, "WM_COPY"}, {WM_PASTE, "WM_PASTE"}, {WM_CLEAR, "WM_CLEAR"}, {WM_UNDO, "WM_UNDO"}, {WM_RENDERFORMAT, "WM_RENDERFORMAT"}, {WM_RENDERALLFORMATS, "WM_RENDERALLFORMATS"}, {WM_DESTROYCLIPBOARD, "WM_DESTROYCLIPBOARD"}, {WM_DRAWCLIPBOARD, "WM_DRAWCLIPBOARD"}, {WM_PAINTCLIPBOARD, "WM_PAINTCLIPBOARD"}, {WM_VSCROLLCLIPBOARD, "WM_VSCROLLCLIPBOARD"}, {WM_SIZECLIPBOARD, "WM_SIZECLIPBOARD"}, {WM_ASKCBFORMATNAME, "WM_ASKCBFORMATNAME"}, {WM_CHANGECBCHAIN, "WM_CHANGECBCHAIN"}, {WM_HSCROLLCLIPBOARD, "WM_HSCROLLCLIPBOARD"}, {WM_QUERYNEWPALETTE, "WM_QUERYNEWPALETTE"}, {WM_PALETTEISCHANGING, "WM_PALETTEISCHANGING"}, {WM_PALETTECHANGED, "WM_PALETTECHANGED"}, {WM_HOTKEY, "WM_HOTKEY"}, {WM_PRINT, "WM_PRINT"}, {WM_PRINTCLIENT, "WM_PRINTCLIENT"}, {WM_APPCOMMAND, "WM_APPCOMMAND"}, {WM_THEMECHANGED, "WM_THEMECHANGED"}, {WM_CLIPBOARDUPDATE, "WM_CLIPBOARDUPDATE"}, {WM_DWMCOMPOSITIONCHANGED, "WM_DWMCOMPOSITIONCHANGED"}, {WM_DWMNCRENDERINGCHANGED, "WM_DWMNCRENDERINGCHANGED"}, {WM_DWMCOLORIZATIONCOLORCHANGED, "WM_DWMCOLORIZATIONCOLORCHANGED"}, {WM_DWMWINDOWMAXIMIZEDCHANGE, "WM_DWMWINDOWMAXIMIZEDCHANGE"}, {WM_DWMSENDICONICTHUMBNAIL, "WM_DWMSENDICONICTHUMBNAIL"}, {WM_DWMSENDICONICLIVEPREVIEWBITMAP, "WM_DWMSENDICONICLIVEPREVIEWBITMAP"}, {WM_GETTITLEBARINFOEX, "WM_GETTITLEBARINFOEX"}, {WM_HANDHELDFIRST, "WM_HANDHELDFIRST"}, {WM_HANDHELDLAST, "WM_HANDHELDLAST"}, {WM_AFXFIRST, "WM_AFXFIRST"}, {WM_AFXLAST, "WM_AFXLAST"}, {WM_PENWINFIRST, "WM_PENWINFIRST"}, {WM_PENWINLAST, "WM_PENWINLAST"}, {WM_USER, "WM_USER"}, {WM_APP, "WM_APP"}, {WM_APPIDLE, "WM_APPIDLE"}, {WM_STYLE_SHEET_CHANGED, "WM_STYLE_SHEET_CHANGED"}, {WM_MOUSEENTER, "WM_MOUSEENTER"}, {WM_RECREATE, "WM_RECREATE"}, {WM_REFLECT + WM_CTLCOLORDLG, "WM_REFLECT + WM_CTLCOLORDLG"}, {WM_REFLECT + WM_CTLCOLORMSGBOX, "WM_REFLECT + WM_CTLCOLORMSGBOX"}, {WM_REFLECT + WM_CTLCOLOR, "WM_REFLECT + WM_CTLCOLOR"}, {WM_REFLECT + WM_CTLCOLORBTN, "WM_REFLECT + WM_CTLCOLORBTN"}, {WM_REFLECT + WM_CTLCOLORSCROLLBAR, "WM_REFLECT + WM_CTLCOLORSCROLLBAR"}, {WM_REFLECT + WM_CTLCOLOREDIT, "WM_REFLECT + WM_CTLCOLOREDIT"}, {WM_REFLECT + WM_CTLCOLORLISTBOX, "WM_REFLECT + WM_CTLCOLORLISTBOX"}, {WM_REFLECT + WM_CTLCOLORSTATIC, "WM_REFLECT + WM_CTLCOLORSTATIC"}, {WM_REFLECT + WM_COMMAND, "WM_REFLECT + WM_COMMAND"}, {WM_REFLECT + WM_NOTIFY, "WM_REFLECT + WM_NOTIFY"}, {WM_REFLECT + WM_HSCROLL, "WM_REFLECT + WM_HSCROLL"}, {WM_REFLECT + WM_VSCROLL, "WM_REFLECT + WM_VSCROLL"}};
+          if (!ids.contains_key(id)) return string::format("{}", id);
+          return ids[id];
         }
         /// @}
       };
