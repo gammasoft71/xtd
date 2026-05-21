@@ -30,7 +30,7 @@ namespace xtd {
   /// Show how to register your own class.
   /// @include format_any.cpp
   template<typename type_t>
-  inline void unregister_any_stringer() {
+  inline auto unregister_any_stringer() -> void {
     auto it = __any_stringer__.find(std::type_index(typeid(type_t)));
     if (it != __any_stringer__.cend()) __any_stringer__.erase(it);
   }
