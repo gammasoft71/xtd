@@ -42,98 +42,98 @@ namespace xtd {
         /// @brief Gets the active window tracking delay.
         /// @return The active window tracking delay, in milliseconds.
         /// @warning Internal use only
-        static int32 active_window_tracking_delay();
+        [[nodiscard]] static auto active_window_tracking_delay() -> xtd::int32;
         /// @brief Gets a value that indicates the direction in which the operating system arranges minimized windows.
         /// @return One of the ArrangeDirection values that indicates the direction in which the operating system arranges minimized windows.
         /// @warning Internal use only
-        static int32 arrange_direction();
+        [[nodiscard]] static auto arrange_direction() -> xtd::int32;
         /// @brief Gets an ArrangeStartingPosition value that indicates the starting position from which the operating system arranges minimized windows.
         /// @return One of the ArrangeStartingPosition values that indicates the starting position from which the operating system arranges minimized windows.
         /// @warning Internal use only
-        static int32 arrange_starting_position();
+        [[nodiscard]] static auto arrange_starting_position() -> xtd::int32;
         /// @brief Gets a BootMode value that indicates the boot mode the system was started in.
         /// @return One of the boot_mode values that indicates the boot mode the system was started in.
         /// @warning Internal use only
-        static int32 boot_mode();
+        [[nodiscard]] static auto boot_mode() -> xtd::int32;
         /// @brief Gets the thickness, in pixels, of a three-dimensional (3-D) style window or system control border.
         /// @return A size that indicates the width, in pixels, of a 3-D style vertical border, and the height, in pixels, of a 3-D style horizontal border.
         /// @warning Internal use only
-        static xtd::drawing::size border_3d_size();
+        [[nodiscard]] static auto border_3d_size() -> xtd::drawing::size;
         /// @brief Gets the border multiplier factor that is used when determining the thickness of a window's sizing border.
         /// @return The multiplier used to determine the thickness of a window's sizing border.
         /// @warning Internal use only
-        static int32 border_multiplier_factor();
+        [[nodiscard]] static auto border_multiplier_factor() -> xtd::int32;
         /// @brief Gets the thickness, in pixels, of a flat-style window or system control border.
         /// @return A size that indicates the width, in pixels, of a vertical border, and the height, in pixels, of a horizontal border.
         /// @warning Internal use only
-        static xtd::drawing::size border_size();
+        [[nodiscard]] static auto border_size() -> xtd::drawing::size;
         /// @brief Gets the standard size, in pixels, of a button in a window's title bar.
         /// @return A size that indicates the standard dimensions, in pixels, of a button in a window's title bar.
         /// @warning Internal use only
-        static xtd::drawing::size caption_button_size();
+        [[nodiscard]] static auto caption_button_size() -> xtd::drawing::size;
         /// @brief Gets the height, in pixels, of the standard title bar area of a window.
         /// @return The height, in pixels, of the standard title bar area of a window.
         /// @warning Internal use only
-        static int32 caption_height();
+        [[nodiscard]] static auto caption_height() -> xtd::int32;
         /// @brief Gets the caret blink time
         /// @return The caret blink time.
         /// @warning Internal use only
-        static int32 caret_blink_time();
+        [[nodiscard]] static auto caret_blink_time() -> xtd::int32;
         /// @brief Gets the width, in pixels, of the caret in edit controls.
         /// @return The width, in pixels, of the caret in edit controls.
         /// @warning Internal use only
-        static int32 caret_width();
+        [[nodiscard]] static auto caret_width() -> xtd::int32;
         /// @brief Gets the NetBIOS computer name of the local computer.
         /// @return The name of this computer.
         /// @warning Internal use only
-        static xtd::string computer_name();
+        [[nodiscard]] static auto computer_name() -> xtd::string;
         /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
         /// @return A size that indicates the maximum dimensions of a cursor in pixels.
         /// @warning Internal use only
-        static xtd::drawing::size cursor_size();
+        [[nodiscard]] static auto cursor_size() -> xtd::drawing::size;
         /// @brief Gets a value indicating whether the operating system is capable of handling double-byte character set (DBCS) characters.
         /// @return `true` if the operating system supports DBCS; otherwise, `false`.
-        static bool dbcs_enabled();
+        [[nodiscard]] static auto dbcs_enabled() -> bool;
         /// @brief Gets a value indicating whether the debug version of USER.EXE is installed.
         /// @return `true` if the debugging version of USER.EXE is installed; otherwise, `false`.
         /// @warning Internal use only
-        static bool debug_os();
+        [[nodiscard]] static auto debug_os() -> bool;
         /// @brief Gets the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
         /// @return A size that indicates the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
         /// @warning Internal use only
-        static xtd::drawing::size double_click_size();
+        [[nodiscard]] static auto double_click_size() -> xtd::drawing::size;
         /// @brief Gets the maximum number of milliseconds that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
         /// @return The maximum amount of time, in milliseconds, that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
         /// @warning Internal use only
-        static int32 double_click_time();
+        [[nodiscard]] static auto double_click_time() -> xtd::int32;
         /// @brief Gets a value indicating whether the user has enabled full window drag.
         /// @return `true` if the user has enabled full window drag; otherwise, `false`.
         /// @warning Internal use only
-        static bool drag_full_windows();
+        [[nodiscard]] static auto drag_full_windows() -> bool;
         /// @brief Gets the width and height of a rectangle centered on the point the mouse button was pressed, within which a drag operation will not begin.
         /// @return A size that specifies the area of a rectangle, in pixels, centered on the point the mouse button was pressed, within which a drag operation will not begin.
         /// @warning Internal use only
-        static xtd::drawing::size drag_size();
+        [[nodiscard]] static auto drag_size() -> xtd::drawing::size;
         /// @brief Gets the thickness, in pixels, of the frame border of a window that has a caption and is not resizable.
         /// @return A size that specifies the thickness, in pixels, of a fixed sized window border.
         /// @warning Internal use only
-        static xtd::drawing::size fixed_frame_border_size();
+        [[nodiscard]] static auto fixed_frame_border_size() -> xtd::drawing::size;
         /// @brief Gets the font smoothing contrast value used in ClearType smoothing.
         /// @return The ClearType font smoothing contrast value.
         /// @warning Internal use only
-        static int32 font_smoothing_contrast();
+        [[nodiscard]] static auto font_smoothing_contrast() -> xtd::int32;
         /// @brief Gets the current type of font smoothing.
         /// @return A value that indicates the current type of font smoothing.
         /// @warning Internal use only
-        static int32 font_smoothing_type();
+        [[nodiscard]] static auto font_smoothing_type() -> xtd::int32;
         /// @brief Gets the thickness, in pixels, of the resizing border that is drawn around the perimeter of a window that is being drag resized.
         /// @return A size that indicates the thickness, in pixels, of the width of a vertical resizing border and the height of a horizontal resizing border.
         /// @warning Internal use only
-        static xtd::drawing::size frame_border_size();
+        [[nodiscard]] static auto frame_border_size() -> xtd::drawing::size;
         /// @brief Gets the operating system is natively double buffered.
         /// @return `true` is operating system is natively double buffered; otherwise `false`.
         /// @warning Internal use only
-        static bool is_operating_system_double_buffered();
+        [[nodiscard]] static auto is_operating_system_double_buffered() -> bool;
         /// @}
       };
     }
