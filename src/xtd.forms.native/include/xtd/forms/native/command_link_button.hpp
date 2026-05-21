@@ -42,17 +42,17 @@ namespace xtd {
         /// @param control Command link button window handle.
         /// @param image A xtd::drawing::image to set.
         /// @warning Internal use only
-        static void image(intptr control, const drawing::image& image);
+        static auto image(xtd::intptr control, const xtd::drawing::image& image) -> void;
         /// @brief Sets image align.
         /// @param control Command link button window handle.
         /// @param align A bitwise combination of the content alignment flags.
         /// @warning Internal use only
-        static void image_align(intptr control, uint32 align);
+        static auto image_align(xtd::intptr control, xtd::uint32 align) -> void;
         /// @brief Sets text and supplementary text.
         /// @param control Command link button window handle.
         /// @param texts A tuple of two strings that represent control text and supplementary text.
         /// @warning Internal use only
-        static void texts(intptr control, const std::tuple<string, string>& texts);
+        static auto texts(xtd::intptr control, const std::tuple<xtd::string, xtd::string>& texts) -> void;
         /// @}
       };
     }
