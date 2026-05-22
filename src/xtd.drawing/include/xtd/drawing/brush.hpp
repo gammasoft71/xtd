@@ -45,7 +45,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of the brush.
       /// @return An intptr that contains the handle of the brush.
-      intptr handle() const noexcept;
+      [[nodiscard]] auto handle() const noexcept -> intptr;
       /// @}
       
       /// @name Public Methods
@@ -54,19 +54,19 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const brush& other) const noexcept override;
+      [[nodiscard]] auto equals(const brush& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     protected:
@@ -82,7 +82,7 @@ namespace xtd {
       /// @{
       /// @brief In a derived class, sets a reference to a GDI+ brush object.
       /// @param brush A pointer to the GDI+ brush object.
-      void set_native_brush(intptr brush);
+      auto set_native_brush(intptr brush) -> void;
       /// @}
       
     private:
