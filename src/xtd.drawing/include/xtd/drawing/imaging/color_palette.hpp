@@ -28,7 +28,7 @@ namespace xtd {
       /// @ingroup xtd_drawing
       /// @remarks You are not allowed to construct a color_palette object directly. If you created a color_palette object, you could then manipulate the palette size for a particular image, which is not allowed. Use the image.palette property to obtain a color_palette object.
       /// @remarks The colors in the palette are limited to 32-bit ARGB colors. A 32-bit ARGB color has 8 bits each for alpha, red, green, and blue values. The lowest 8 bits make up the blue bit, the next 8 bits are green, the next 8 bits are red, and the most significant 8 bits are alpha. This means each component can vary from 0 to 255. Fully on is 255 and fully off is 0. Alpha is used to make the color value transparent (alpha = 0) or opaque (alpha = 255). The number of intensity levels in the image can be increased without increasing the number of colors used. This process creates what is called a halftone, and it offers increased contrast at a cost of decreased resolution.
-      class color_palette final : public object, public xtd::iequatable<color_palette> {
+      class color_palette final : public xtd::object, public xtd::iequatable<color_palette> {
       public:
         /// @cond
         color_palette(color_palette&&) = default;
@@ -42,14 +42,14 @@ namespace xtd {
         /// @{
         /// @brief Gets an array of color structures.
         /// @return The array of color structure that make up this color_palette.
-        xtd::array<color> entries() const noexcept;
+        [[nodiscard]] auto entries() const noexcept -> xtd::array<xtd::drawing::color>;
         
         /// @brief Gets a value that specifies how to interpret the color information in the array of colors.
         /// @remarks The following flag values are valid:
         /// * 0x00000001 The color values in the array contain alpha information.
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
-        int32 flags() const noexcept;
+        [[nodiscard]] auto flags() const noexcept -> xtd::int32;
         /// @}
         
         /// @name Public Methods
@@ -58,15 +58,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const color_palette& other) const noexcept override;
+        [[nodiscard]] auto equals(const color_palette& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
