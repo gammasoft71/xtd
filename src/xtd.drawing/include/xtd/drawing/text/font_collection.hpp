@@ -26,7 +26,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the array of xtd::drawing::text::font_family objects associated with this xtd::drawing::text::font_collection.
         /// @return xtd::array<xtd::drawing::text::font_family> An array of xtd::drawing::text::font_family objects.
-        const xtd::array<font_family>& families() const noexcept {return families_;}
+        [[nodiscard]] auto families() const noexcept -> const xtd::array<font_family>& {return families_;}
         /// @}
         
       protected:
