@@ -38,7 +38,7 @@ namespace xtd {
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
         /// @return An xtd::guid structure that contains a GUID that represents this frame_dimension object.
-        const xtd::guid& guid() const noexcept;
+        [[nodiscard]] auto guid() const noexcept -> const xtd::guid&;
         /// @}
         
         /// @name Public Static Properties
@@ -46,15 +46,15 @@ namespace xtd {
         /// @{
         /// @brief Gets the page dimension.
         /// @return The page dimension.
-        static frame_dimension page() noexcept;
+        [[nodiscard]] static auto page() noexcept -> frame_dimension;
         
         /// @brief Gets the resolution dimension.
         /// @return The resolution dimension.
-        static frame_dimension resolution() noexcept;
+        [[nodiscard]] static auto resolution() noexcept -> frame_dimension;
         
         /// @brief Gets the time dimension.
         /// @return The time dimension.
-        static frame_dimension time() noexcept;
+        [[nodiscard]] static auto time() noexcept -> frame_dimension;
         /// @}
         
         /// @name Public Methods
@@ -63,15 +63,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const frame_dimension& other) const noexcept override;
+        [[nodiscard]] auto equals(const frame_dimension& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
