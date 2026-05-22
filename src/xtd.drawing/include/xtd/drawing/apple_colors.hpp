@@ -26,57 +26,57 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html apple_colors_black.png
-      static xtd::drawing::color black() noexcept;
+      [[nodiscard]] static auto black() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_blue.png
-      static xtd::drawing::color blue() noexcept;
+      [[nodiscard]] static auto blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_brown.png
-      static xtd::drawing::color brown() noexcept;
+      [[nodiscard]] static auto brown() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_cyan.png
-      static xtd::drawing::color cyan() noexcept;
+      [[nodiscard]] static auto cyan() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_green.png
-      static xtd::drawing::color green() noexcept;
+      [[nodiscard]] static auto green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_magenta.png
-      static xtd::drawing::color magenta() noexcept;
+      [[nodiscard]] static auto magenta() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_orange.png
-      static xtd::drawing::color orange() noexcept;
+      [[nodiscard]] static auto orange() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_purple.png
-      static xtd::drawing::color purple() noexcept;
+      [[nodiscard]] static auto purple() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_red.png
-      static xtd::drawing::color red() noexcept;
+      [[nodiscard]] static auto red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_yellow.png
-      static xtd::drawing::color yellow() noexcept;
+      [[nodiscard]] static auto yellow() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html apple_colors_white.png
-      static xtd::drawing::color white() noexcept;
+      [[nodiscard]] static auto white() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
