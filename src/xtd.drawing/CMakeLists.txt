@@ -36,6 +36,7 @@ add_sources(
   "include/xtd/drawing/buffered_graphics_context.hpp"
   "include/xtd/drawing/buffered_graphics_context"
   "include/xtd/drawing/categories_system_images.hpp"
+  "include/xtd/drawing/categories_system_images"
   "include/xtd/drawing/color.hpp"
   "include/xtd/drawing/color"
   "include/xtd/drawing/color_converter.hpp"
