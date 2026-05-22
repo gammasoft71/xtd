@@ -38,7 +38,7 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, blur_effect {10});
         /// result.save("ball_blur.png");
         /// ```
-        static xtd::drawing::image set_effect(const xtd::drawing::image& image, const xtd::drawing::imaging::effects::effect& effect);
+        [[nodiscard]] static auto set_effect(const xtd::drawing::image& image, const xtd::drawing::imaging::effects::effect& effect) -> xtd::drawing::image;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle to with apply effect.
@@ -54,7 +54,7 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, 50, 50, 200, 200, blur_effect {10});
         /// result.save("ball_blur.png");
         /// ```
-        static xtd::drawing::image set_effect(const xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, const xtd::drawing::imaging::effects::effect& effect);
+        [[nodiscard]] static auto set_effect(const xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, const xtd::drawing::imaging::effects::effect& effect) -> xtd::drawing::image;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle to with apply effect.
@@ -70,7 +70,7 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});
         /// result.save("ball_blur.png");
         /// ```
-        static xtd::drawing::image set_effect(const xtd::drawing::image& image, float x, float y, float width, float height, const xtd::drawing::imaging::effects::effect& effect);
+        [[nodiscard]] static auto set_effect(const xtd::drawing::image& image, float x, float y, float width, float height, const xtd::drawing::imaging::effects::effect& effect) -> xtd::drawing::image;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
@@ -84,7 +84,7 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, rect, blur_effect {10});
         /// result.save("ball_blur.png");
         /// ```
-        static xtd::drawing::image set_effect(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        [[nodiscard]] static auto set_effect(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, const xtd::drawing::imaging::effects::effect& effect) -> xtd::drawing::image;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
@@ -98,7 +98,7 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, rect, blur_effect {10});
         /// result.save("ball_blur.png");
         /// ```
-        static xtd::drawing::image set_effect(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        [[nodiscard]] static auto set_effect(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect) -> xtd::drawing::image;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param region The xtd::drawing::region to with apply effect.
@@ -114,7 +114,7 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, reg, blur_effect {10});
         /// result.save("ball_blur.png");
         /// ```
-        static xtd::drawing::image set_effect(const xtd::drawing::image& image, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect);
+        [[nodiscard]] static auto set_effect(const xtd::drawing::image& image, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect) -> xtd::drawing::image;
         /// @brief Sets the specified effects to the specifid image.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param effect The effect to apply.
@@ -125,7 +125,7 @@ namespace xtd {
         /// image_effector::set_effect(img, blur_effect {10});
         /// image.save("ball_blur.png");
         /// ```
-        static void set_effect(xtd::drawing::image& image, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::image& image, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle to with apply effect.
@@ -140,7 +140,7 @@ namespace xtd {
         /// image_effector::set_effect(img, 50, 50, 200, 200, blur_effect {10});
         /// image.save("ball_blur.png");
         /// ```
-        static void set_effect(xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle to with apply effect.
@@ -155,7 +155,7 @@ namespace xtd {
         /// image_effector::set_effect(img, 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});
         /// image.save("ball_blur.png");
         /// ```
-        static void set_effect(xtd::drawing::image& image, float x, float y, float width, float height, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::image& image, float x, float y, float width, float height, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
@@ -168,7 +168,7 @@ namespace xtd {
         /// image_effector::set_effect(img, rect, blur_effect {10});
         /// image.save("ball_blur.png");
         /// ```
-        static void set_effect(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
@@ -181,7 +181,7 @@ namespace xtd {
         /// image_effector::set_effect(img, rect, blur_effect {10});
         /// image.save("ball_blur.png");
         /// ```
-        static void set_effect(xtd::drawing::image& image, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::image& image, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid image with rectangle.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param region The xtd::drawing::region to with apply effect.
@@ -196,7 +196,7 @@ namespace xtd {
         /// image_effector::set_effect(img, reg, blur_effect {10});
         /// image.save("ball_blur.png");
         /// ```
-        static void set_effect(xtd::drawing::image& image, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::image& image, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid graphics.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param effect The effect to apply.
@@ -207,7 +207,7 @@ namespace xtd {
         ///   image_effector::set_effect(g, blur_effect {10});
         /// }
         /// ```
-        static void set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid graphics with rectangle.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle to with apply effect.
@@ -223,7 +223,7 @@ namespace xtd {
         ///   image_effector::set_effect(e.graphics(), 50, 50, 200, 200, blur_effect {10});
         /// }
         /// ```
-        static void set_effect(xtd::drawing::graphics& graphics, int32 x, int32 y, int32 width, int32 height, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::graphics& graphics, int32 x, int32 y, int32 width, int32 height, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid graphics with rectangle.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle to with apply effect.
@@ -239,7 +239,7 @@ namespace xtd {
         ///   image_effector::set_effect(e.graphics(), 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});
         /// }
         /// ```
-        static void set_effect(xtd::drawing::graphics& graphics, float x, float y, float width, float height, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::graphics& graphics, float x, float y, float width, float height, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid graphics with rectangle.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
@@ -252,7 +252,7 @@ namespace xtd {
         ///   image_effector::set_effect(e.graphics(), e.clip_rectangle(), blur_effect {10});
         /// }
         /// ```
-        static void set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid graphics with rectangle.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
@@ -266,7 +266,7 @@ namespace xtd {
         ///   image_effector::set_effect(e.graphics(), rect, blur_effect {10});
         /// }
         /// ```
-        static void set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @brief Sets the specified effects to the specifid graphics with rectangle.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param region The xtd::drawing::rectangle to with apply effect.
@@ -282,7 +282,7 @@ namespace xtd {
         ///   image_effector::set_effect(e.graphics(), reg, blur_effect {10});
         /// }
         /// ```
-        static void set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect);
+        static auto set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect) -> void;
         /// @}
       };
     }
