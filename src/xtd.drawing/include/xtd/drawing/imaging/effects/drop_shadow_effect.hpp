@@ -73,7 +73,7 @@ namespace xtd {
           /// @brief Apply the effect.
           /// @param graphics The graphics to apply effect.
           /// @param image The image where the effect is applied.
-          void apply(xtd::drawing::image& image) const override;
+          auto apply(xtd::drawing::image& image) const -> void override;
           /// @}
         };
       }
