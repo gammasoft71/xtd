@@ -253,7 +253,7 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        xtd::int32 id() const noexcept;
+        [[nodiscard]] auto id() const noexcept -> xtd::int32;
         /// @brief Sets the ID of the property.
         /// @param value The integer that represents the ID of the property.
         /// @remarks The following table shows the property tags and their IDs.
@@ -476,11 +476,11 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        void id(xtd::int32 value) noexcept;
+        auto id(xtd::int32 value) noexcept -> void;
         
         /// @brief Gets the length (in bytes) of the value property.
         /// @return An integer that represents the length (in bytes) of the value byte array.
-        xtd::usize len() const noexcept;
+        [[nodiscard]] auto len() const noexcept -> xtd::usize;
         
         /// @brief Gets an integer that defines the type of data contained in the value property.
         /// @return An integer that defines the type of data contained in value.
@@ -495,7 +495,7 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        xtd::int16 type() const noexcept;
+        [[nodiscard]] auto type() const noexcept -> xtd::int16;
         /// @brief Sets an integer that defines the type of data contained in the value property.
         /// @param value An integer that defines the type of data contained in value.
         /// @remarks The following table shows integers and the types they represent.
@@ -509,20 +509,20 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        void type(xtd::int16 value) noexcept;
+        auto type(xtd::int16 value) noexcept -> void;
         
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        const xtd::array<xtd::byte>& value() const noexcept;
+        [[nodiscard]] auto value() const noexcept -> const xtd::array<xtd::byte>&;
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        xtd::array<xtd::byte>& value() noexcept;
+        [[nodiscard]] auto value() noexcept -> xtd::array<xtd::byte>&;
         /// @brief Sets the value of the property item.
         /// @param value A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        void value(const xtd::array<xtd::byte>& value) noexcept;
+        auto value(const xtd::array<xtd::byte>& value) noexcept -> void;
         /// @}
         
         /// @name Public Properties
@@ -531,15 +531,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const property_item& other) const noexcept override;
+        [[nodiscard]] auto equals(const property_item& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
