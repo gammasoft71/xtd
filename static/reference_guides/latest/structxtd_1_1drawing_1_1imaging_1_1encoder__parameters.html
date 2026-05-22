@@ -120,10 +120,10 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a45a0e07ba9453e43b13dd68201a4e24e" id="r_a45a0e07ba9453e43b13dd68201a4e24e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a45a0e07ba9453e43b13dd68201a4e24e">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a45a0e07ba9453e43b13dd68201a4e24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a32efa547e74e419fc7b25e58b17220fc" id="r_a32efa547e74e419fc7b25e58b17220fc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a32efa547e74e419fc7b25e58b17220fc">equals</a> (const <a class="el" href="#a16c8648aa3e31be84a1bd9c590b70ac4">encoder_parameters</a> &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:a32efa547e74e419fc7b25e58b17220fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a6afffc1e5babfd6237013201aa3a98cf" id="r_a6afffc1e5babfd6237013201aa3a98cf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6afffc1e5babfd6237013201aa3a98cf">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a6afffc1e5babfd6237013201aa3a98cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a6aab913a762a8d2e12f10006bda17ed3" id="r_a6aab913a762a8d2e12f10006bda17ed3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6aab913a762a8d2e12f10006bda17ed3">equals</a> (const <a class="el" href="#a16c8648aa3e31be84a1bd9c590b70ac4">encoder_parameters</a> &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a6aab913a762a8d2e12f10006bda17ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -211,8 +211,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a45a0e07ba9453e43b13dd68201a4e24e" name="a45a0e07ba9453e43b13dd68201a4e24e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45a0e07ba9453e43b13dd68201a4e24e">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a6afffc1e5babfd6237013201aa3a98cf" name="a6afffc1e5babfd6237013201aa3a98cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6afffc1e5babfd6237013201aa3a98cf">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,15 +221,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::drawing::imaging::encoder_parameters::equals </td>
+          <td class="memname">auto xtd::drawing::imaging::encoder_parameters::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -247,8 +247,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a32efa547e74e419fc7b25e58b17220fc" name="a32efa547e74e419fc7b25e58b17220fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32efa547e74e419fc7b25e58b17220fc">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a6aab913a762a8d2e12f10006bda17ed3" name="a6aab913a762a8d2e12f10006bda17ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aab913a762a8d2e12f10006bda17ed3">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,15 +257,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::drawing::imaging::encoder_parameters::equals </td>
+          <td class="memname">auto xtd::drawing::imaging::encoder_parameters::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a16c8648aa3e31be84a1bd9c590b70ac4">encoder_parameters</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

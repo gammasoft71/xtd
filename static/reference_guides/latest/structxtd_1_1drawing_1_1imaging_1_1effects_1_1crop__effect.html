@@ -118,11 +118,10 @@ Inheritance diagram for xtd::drawing::imaging::effects::crop_effect:</div>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1crop__effect.html" title="The xtd::drawing::imaging::effects::crop_effect crops the image with new rectangle.">xtd::drawing::imaging::effects::crop_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(img, <a class="code hl_function" href="#ae63e381a0585ac7c81c520e723c239b9">crop_effect</a> {<a class="code hl_variable" href="#a77b3214c287ed76c5c75c4e5e48cbde9">rectangle</a> {25, 25, 240, 240}});</div>
-<div class="line">result.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_crop.png&quot;</span>);</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ac5122a1e0ff6c8d0bc80019f9e0a659c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::string &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
+<div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, <a class="code hl_function" href="#ae63e381a0585ac7c81c520e723c239b9">crop_effect</a> {<a class="code hl_variable" href="#a77b3214c287ed76c5c75c4e5e48cbde9">rectangle</a> {25, 25, 240, 240}});</div>
+<div class="line">result.save(<span class="stringliteral">&quot;ball_crop.png&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aca0c9ca36c4ee8fc8feaf7deb79cefa4"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::string &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9344eb0db0c29f20d46826c184a64e75"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static xtd::drawing::image set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect)</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9d94b6d34fa39133874a6c9a8922736f"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9d94b6d34fa39133874a6c9a8922736f">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static auto set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect) -&gt; xtd::drawing::image</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1crop__effect_html_a77b3214c287ed76c5c75c4e5e48cbde9"><div class="ttname"><a href="#a77b3214c287ed76c5c75c4e5e48cbde9">xtd::drawing::imaging::effects::crop_effect::rectangle</a></div><div class="ttdeci">xtd::drawing::rectangle rectangle</div><div class="ttdoc">Gets or sets the new rectangle.</div><div class="ttdef"><b>Definition</b> crop_effect.hpp:56</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1crop__effect_html_ae63e381a0585ac7c81c520e723c239b9"><div class="ttname"><a href="#ae63e381a0585ac7c81c520e723c239b9">xtd::drawing::imaging::effects::crop_effect::crop_effect</a></div><div class="ttdeci">crop_effect()=default</div><div class="ttdoc">Initialise the new instance of xtd::drawing::imaging::crop_effect object.</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -134,8 +133,8 @@ Inheritance diagram for xtd::drawing::imaging::effects::crop_effect:</div>
 Public Properties</h2></td></tr>
 <tr class="memitem:a77b3214c287ed76c5c75c4e5e48cbde9" id="r_a77b3214c287ed76c5c75c4e5e48cbde9"><td class="memItemLeft"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a77b3214c287ed76c5c75c4e5e48cbde9">rectangle</a></td></tr>
 <tr class="memdesc:a77b3214c287ed76c5c75c4e5e48cbde9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the new rectangle.  <br /></td></tr>
-<tr class="memitem:a22e9bfe56710205ccf76f37b491552d3" id="r_a22e9bfe56710205ccf76f37b491552d3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a22e9bfe56710205ccf76f37b491552d3">size</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;value)</td></tr>
-<tr class="memdesc:a22e9bfe56710205ccf76f37b491552d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the new size.  <br /></td></tr>
+<tr class="memitem:abaa3104a2edc48fe62bf19ed61c702e5" id="r_abaa3104a2edc48fe62bf19ed61c702e5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abaa3104a2edc48fe62bf19ed61c702e5">size</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;value) -&gt; void</td></tr>
+<tr class="memdesc:abaa3104a2edc48fe62bf19ed61c702e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the new size.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -143,13 +142,13 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:ae63e381a0585ac7c81c520e723c239b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::crop_effect object.  <br /></td></tr>
 <tr class="memitem:a2e981074184dc8fc1bdf4d91a2ac1330" id="r_a2e981074184dc8fc1bdf4d91a2ac1330"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2e981074184dc8fc1bdf4d91a2ac1330">crop_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;<a class="el" href="#a77b3214c287ed76c5c75c4e5e48cbde9">rectangle</a>)</td></tr>
 <tr class="memdesc:a2e981074184dc8fc1bdf4d91a2ac1330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::crop_effect with specified rectangle.  <br /></td></tr>
-<tr class="memitem:a3cd84a056d303a470603c826256cabec" id="r_a3cd84a056d303a470603c826256cabec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3cd84a056d303a470603c826256cabec">crop_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;<a class="el" href="#a22e9bfe56710205ccf76f37b491552d3">size</a>)</td></tr>
+<tr class="memitem:a3cd84a056d303a470603c826256cabec" id="r_a3cd84a056d303a470603c826256cabec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3cd84a056d303a470603c826256cabec">crop_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;<a class="el" href="#abaa3104a2edc48fe62bf19ed61c702e5">size</a>)</td></tr>
 <tr class="memdesc:a3cd84a056d303a470603c826256cabec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::crop_effect with specified size.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:a354e4cfcbbafac125adba128a3aa13ea" id="r_a354e4cfcbbafac125adba128a3aa13ea"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a354e4cfcbbafac125adba128a3aa13ea">apply</a> (<a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const override</td></tr>
-<tr class="memdesc:a354e4cfcbbafac125adba128a3aa13ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the effect.  <br /></td></tr>
+<tr class="memitem:a2463deea7b917d22bf9edadb5902c61a" id="r_a2463deea7b917d22bf9edadb5902c61a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2463deea7b917d22bf9edadb5902c61a">apply</a> (<a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const -&gt; void override</td></tr>
+<tr class="memdesc:a2463deea7b917d22bf9edadb5902c61a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the effect.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -271,17 +270,17 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a22e9bfe56710205ccf76f37b491552d3" name="a22e9bfe56710205ccf76f37b491552d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22e9bfe56710205ccf76f37b491552d3">&#9670;&#160;</a></span>size()</h2>
+<a id="abaa3104a2edc48fe62bf19ed61c702e5" name="abaa3104a2edc48fe62bf19ed61c702e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa3104a2edc48fe62bf19ed61c702e5">&#9670;&#160;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::imaging::effects::crop_effect::size </td>
+          <td class="memname">auto xtd::drawing::imaging::effects::crop_effect::size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -296,8 +295,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a354e4cfcbbafac125adba128a3aa13ea" name="a354e4cfcbbafac125adba128a3aa13ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a354e4cfcbbafac125adba128a3aa13ea">&#9670;&#160;</a></span>apply()</h2>
+<a id="a2463deea7b917d22bf9edadb5902c61a" name="a2463deea7b917d22bf9edadb5902c61a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2463deea7b917d22bf9edadb5902c61a">&#9670;&#160;</a></span>apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,10 +305,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::imaging::effects::crop_effect::apply </td>
+          <td class="memname">auto xtd::drawing::imaging::effects::crop_effect::apply </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -328,7 +327,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1effect.html#a20b4899b6f375346100a8fbce43267a5">xtd::drawing::imaging::effects::effect</a>.</p>
+<p>Implements <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1effect.html#ae64d711db209a4719918c8b50e3f0b2f">xtd::drawing::imaging::effects::effect</a>.</p>
 
 </div>
 </div>

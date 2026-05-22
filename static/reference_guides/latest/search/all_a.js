@@ -21,7 +21,7 @@ var searchData=
   ['joinable_18',['joinable',['../classxtd_1_1threading_1_1thread.html#a0bc2ee452875c7090fdd208888bdde62',1,'xtd::threading::thread']]],
   ['jordan_19',['jordan',['../classxtd_1_1forms_1_1countries.html#a9ed07eb35963b33244f3d49f9e6dbb2b',1,'xtd::forms::countries']]],
   ['joystick_20',['joystick',['../classxtd_1_1forms_1_1emoticons.html#a60e790f13f77240f9ab73414f737dbde',1,'xtd::forms::emoticons']]],
-  ['jpeg_21',['jpeg',['../classxtd_1_1drawing_1_1imaging_1_1image__format.html#a48ab8916467ed0d929dbaf789d48afc0',1,'xtd::drawing::imaging::image_format']]],
+  ['jpeg_21',['jpeg',['../classxtd_1_1drawing_1_1imaging_1_1image__format.html#ad1e3bfd514a58dfa3fc40aa9b26e583a',1,'xtd::drawing::imaging::image_format']]],
   ['jthread_22',['jthread',['../classxtd_1_1threading_1_1jthread.html',1,'xtd::threading::jthread'],['../classxtd_1_1threading_1_1jthread.html#a329a23048cd8d71ab0d1d8a5ce3961b4',1,'xtd::threading::jthread::jthread(const xtd::threading::parameterized_thread_start &amp;start)'],['../classxtd_1_1threading_1_1jthread.html#ace10655be98569dc1af5f1ce6ffb1ee9',1,'xtd::threading::jthread::jthread(const xtd::threading::parameterized_thread_start &amp;start, int32 max_stack_size)'],['../classxtd_1_1threading_1_1jthread.html#a8a4e393f7fe81dfae86923fcbf56194c',1,'xtd::threading::jthread::jthread(const xtd::threading::thread_start &amp;start)'],['../classxtd_1_1threading_1_1jthread.html#a73b0cd5a4a5a45d572600ebb45a52777',1,'xtd::threading::jthread::jthread(const xtd::threading::thread_start &amp;start, int32 max_stack_size)']]],
   ['jthread_2ehpp_23',['jthread.hpp',['../jthread_8hpp.html',1,'']]],
   ['juggling_24',['juggling',['../classxtd_1_1forms_1_1emoticons.html#a97e98dcb97e373835be921b4e065c960',1,'xtd::forms::emoticons']]],

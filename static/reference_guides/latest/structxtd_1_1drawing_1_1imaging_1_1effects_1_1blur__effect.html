@@ -118,11 +118,10 @@ Inheritance diagram for xtd::drawing::imaging::effects::blur_effect:</div>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html" title="The xtd::drawing::imaging::effects::blur_effect blurs the image with radius.">xtd::drawing::imaging::effects::blur_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(img, <a class="code hl_function" href="#a4ac3e802bab33859967f359be7877494">blur_effect</a> {10});</div>
-<div class="line">result.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ac5122a1e0ff6c8d0bc80019f9e0a659c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::string &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
+<div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, <a class="code hl_function" href="#a4ac3e802bab33859967f359be7877494">blur_effect</a> {10});</div>
+<div class="line">result.save(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aca0c9ca36c4ee8fc8feaf7deb79cefa4"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::string &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9344eb0db0c29f20d46826c184a64e75"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static xtd::drawing::image set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect)</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9d94b6d34fa39133874a6c9a8922736f"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9d94b6d34fa39133874a6c9a8922736f">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static auto set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect) -&gt; xtd::drawing::image</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect_html_a4ac3e802bab33859967f359be7877494"><div class="ttname"><a href="#a4ac3e802bab33859967f359be7877494">xtd::drawing::imaging::effects::blur_effect::blur_effect</a></div><div class="ttdeci">blur_effect()=default</div><div class="ttdoc">Initialise the new instance of xtd::drawing::imaging::blur_effect object.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a31">image_effects.cpp</a>.</dd>
@@ -152,8 +151,8 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:ac0425af3784205e9b329f26cd3255897" id="r_ac0425af3784205e9b329f26cd3255897"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac0425af3784205e9b329f26cd3255897">apply</a> (<a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const override</td></tr>
-<tr class="memdesc:ac0425af3784205e9b329f26cd3255897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the effect.  <br /></td></tr>
+<tr class="memitem:a8befd2b488a36190b3dfa73449c5ba16" id="r_a8befd2b488a36190b3dfa73449c5ba16"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8befd2b488a36190b3dfa73449c5ba16">apply</a> (<a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const -&gt; void override</td></tr>
+<tr class="memdesc:a8befd2b488a36190b3dfa73449c5ba16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the effect.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -337,8 +336,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ac0425af3784205e9b329f26cd3255897" name="ac0425af3784205e9b329f26cd3255897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0425af3784205e9b329f26cd3255897">&#9670;&#160;</a></span>apply()</h2>
+<a id="a8befd2b488a36190b3dfa73449c5ba16" name="a8befd2b488a36190b3dfa73449c5ba16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8befd2b488a36190b3dfa73449c5ba16">&#9670;&#160;</a></span>apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,10 +346,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::imaging::effects::blur_effect::apply </td>
+          <td class="memname">auto xtd::drawing::imaging::effects::blur_effect::apply </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -369,7 +368,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1effect.html#a20b4899b6f375346100a8fbce43267a5">xtd::drawing::imaging::effects::effect</a>.</p>
+<p>Implements <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1effect.html#ae64d711db209a4719918c8b50e3f0b2f">xtd::drawing::imaging::effects::effect</a>.</p>
 
 </div>
 </div>

@@ -135,13 +135,13 @@ The following illustration shows the matrices A, B, C, and D. <div class="image"
 </div>
  The fact that the matrix of a composite transformation can be formed by multiplying the individual transformation matrices means that any sequence of affine transformations can be stored in a single <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> object. <b>Caution: The order of a composite transformation is important. In general, rotate, then scale, then translate is not the same as scale, then rotate, then translate. Similarly, the order of matrix multiplication is important. In general, ABC is not the same as BAC.</b> <br  />
 <br  />
-The <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> class provides several methods for building a composite transformation: <a class="el" href="#a441e54e60820346709536d012335791d" title="Multiplies this xtd::drawing::drawing_2d::matrix by the matrix specified in the matrix parameter,...">xtd::drawing::drawing_2d::matrix::multiply</a>, <a class="el" href="#ad465d6b695c3d6160197fdf96ca3a91e" title="repend to this xtd::drawing::drawing_2d::matrix a clockwise rotation, around the origin and by the sp...">xtd::drawing::drawing_2d::matrix::rotate</a>, <a class="el" href="#a81261677cc5af5f7ba29c6b98732aadd" title="Applies a clockwise rotation to this xtd::drawing::drawing_2d::matrix around the point specified in t...">xtd::drawing::drawing_2d::matrix::rotate_at</a>, <a class="el" href="#a96082a796fcc4b31232d1b749b859700" title="Applies the specified scale vector to this xtd::drawing::drawing_2d::matrix by prepending the scale v...">xtd::drawing::drawing_2d::matrix::scale</a>, <a class="el" href="#a06cc356740d981eb4eab78362517406e" title="Applies the specified shear vector to this xtd::drawing::drawing_2d::matrix.">xtd::drawing::drawing_2d::matrix::shear</a>, and <a class="el" href="#a20c4efd29612c3b65ac5b6b2fe9760c9" title="Applies the specified translation vector (offset_x and offset_y) to this xtd::drawing::drawing_2d::ma...">xtd::drawing::drawing_2d::matrix::translate</a>. The following example creates the matrix of a composite transformation that first rotates 30 degrees, then scales by a factor of 2 in the y direction, and then translates 5 units in the x direction: <div class="fragment"><div class="line"><a class="code hl_function" href="#acfacd5123c2be05381ab1fb306b5a0f2">matrix</a> my_matrix;</div>
-<div class="line">my_matrix.<a class="code hl_function" href="#ad465d6b695c3d6160197fdf96ca3a91e">rotate</a>(30);</div>
-<div class="line">my_matrix.<a class="code hl_function" href="#a96082a796fcc4b31232d1b749b859700">scale</a>(1, 2, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga15f959642469ecccc49d70748808959da9516dfb15f51c7ee19a4d46b8c0dbe1d">matrix_order::append</a>);</div>
-<div class="line">my_matrix.<a class="code hl_function" href="#a20c4efd29612c3b65ac5b6b2fe9760c9">translate</a>(5, 0, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga15f959642469ecccc49d70748808959da9516dfb15f51c7ee19a4d46b8c0dbe1d">matrix_order::append</a>);</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1matrix_html_a20c4efd29612c3b65ac5b6b2fe9760c9"><div class="ttname"><a href="#a20c4efd29612c3b65ac5b6b2fe9760c9">xtd::drawing::drawing_2d::matrix::translate</a></div><div class="ttdeci">void translate(float offset_x, float offset_y)</div><div class="ttdoc">Applies the specified translation vector (offset_x and offset_y) to this xtd::drawing::drawing_2d::ma...</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1matrix_html_a96082a796fcc4b31232d1b749b859700"><div class="ttname"><a href="#a96082a796fcc4b31232d1b749b859700">xtd::drawing::drawing_2d::matrix::scale</a></div><div class="ttdeci">void scale(float scale_x, float scale_y)</div><div class="ttdoc">Applies the specified scale vector to this xtd::drawing::drawing_2d::matrix by prepending the scale v...</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1matrix_html_ad465d6b695c3d6160197fdf96ca3a91e"><div class="ttname"><a href="#ad465d6b695c3d6160197fdf96ca3a91e">xtd::drawing::drawing_2d::matrix::rotate</a></div><div class="ttdeci">void rotate(float angle)</div><div class="ttdoc">repend to this xtd::drawing::drawing_2d::matrix a clockwise rotation, around the origin and by the sp...</div></div>
+The <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> class provides several methods for building a composite transformation: <a class="el" href="#aa70bb322d98bff99c03a494d7efadb47" title="Multiplies this xtd::drawing::drawing_2d::matrix by the matrix specified in the matrix parameter,...">xtd::drawing::drawing_2d::matrix::multiply</a>, <a class="el" href="#a2a60a90f421f2848c8a376e38f02d86d" title="repend to this xtd::drawing::drawing_2d::matrix a clockwise rotation, around the origin and by the sp...">xtd::drawing::drawing_2d::matrix::rotate</a>, <a class="el" href="#af894afcfd38ff77d3d023c4b29b75dc4" title="Applies a clockwise rotation to this xtd::drawing::drawing_2d::matrix around the point specified in t...">xtd::drawing::drawing_2d::matrix::rotate_at</a>, <a class="el" href="#afdacc18149f18c1d5aaff9853317991d" title="Applies the specified scale vector to this xtd::drawing::drawing_2d::matrix by prepending the scale v...">xtd::drawing::drawing_2d::matrix::scale</a>, <a class="el" href="#a7c177fdf53a3c2cbb7e8d860d4346279" title="Applies the specified shear vector to this xtd::drawing::drawing_2d::matrix.">xtd::drawing::drawing_2d::matrix::shear</a>, and <a class="el" href="#ae81a49377cca70cb603d45de637acc97" title="Applies the specified translation vector (offset_x and offset_y) to this xtd::drawing::drawing_2d::ma...">xtd::drawing::drawing_2d::matrix::translate</a>. The following example creates the matrix of a composite transformation that first rotates 30 degrees, then scales by a factor of 2 in the y direction, and then translates 5 units in the x direction: <div class="fragment"><div class="line"><a class="code hl_function" href="#acfacd5123c2be05381ab1fb306b5a0f2">matrix</a> my_matrix;</div>
+<div class="line">my_matrix.<a class="code hl_function" href="#a2a60a90f421f2848c8a376e38f02d86d">rotate</a>(30);</div>
+<div class="line">my_matrix.<a class="code hl_function" href="#afdacc18149f18c1d5aaff9853317991d">scale</a>(1, 2, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga15f959642469ecccc49d70748808959da9516dfb15f51c7ee19a4d46b8c0dbe1d">matrix_order::append</a>);</div>
+<div class="line">my_matrix.<a class="code hl_function" href="#ae81a49377cca70cb603d45de637acc97">translate</a>(5, 0, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga15f959642469ecccc49d70748808959da9516dfb15f51c7ee19a4d46b8c0dbe1d">matrix_order::append</a>);</div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1matrix_html_a2a60a90f421f2848c8a376e38f02d86d"><div class="ttname"><a href="#a2a60a90f421f2848c8a376e38f02d86d">xtd::drawing::drawing_2d::matrix::rotate</a></div><div class="ttdeci">auto rotate(float angle) -&gt; void</div><div class="ttdoc">repend to this xtd::drawing::drawing_2d::matrix a clockwise rotation, around the origin and by the sp...</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1matrix_html_ae81a49377cca70cb603d45de637acc97"><div class="ttname"><a href="#ae81a49377cca70cb603d45de637acc97">xtd::drawing::drawing_2d::matrix::translate</a></div><div class="ttdeci">auto translate(float offset_x, float offset_y) -&gt; void</div><div class="ttdoc">Applies the specified translation vector (offset_x and offset_y) to this xtd::drawing::drawing_2d::ma...</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1matrix_html_afdacc18149f18c1d5aaff9853317991d"><div class="ttname"><a href="#afdacc18149f18c1d5aaff9853317991d">xtd::drawing::drawing_2d::matrix::scale</a></div><div class="ttdeci">auto scale(float scale_x, float scale_y) -&gt; void</div><div class="ttdoc">Applies the specified scale vector to this xtd::drawing::drawing_2d::matrix by prepending the scale v...</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gga15f959642469ecccc49d70748808959da9516dfb15f51c7ee19a4d46b8c0dbe1d"><div class="ttname"><a href="group__xtd__drawing.html#gga15f959642469ecccc49d70748808959da9516dfb15f51c7ee19a4d46b8c0dbe1d">xtd::drawing::drawing_2d::matrix_order::append</a></div><div class="ttdeci">@ append</div><div class="ttdoc">The new operation is applied after the old operation.</div><div class="ttdef"><b>Definition</b> matrix_order.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -158,67 +158,67 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a3888bd24c7ca8b39d96967cc19f65566" id="r_a3888bd24c7ca8b39d96967cc19f65566"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; float &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3888bd24c7ca8b39d96967cc19f65566">elements</a> () const</td></tr>
-<tr class="memdesc:a3888bd24c7ca8b39d96967cc19f65566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of floating-point values that represents the elements of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
-<tr class="memitem:a2327870efbefa378da6dbd78ce9dddde" id="r_a2327870efbefa378da6dbd78ce9dddde"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2327870efbefa378da6dbd78ce9dddde">handle</a> () const noexcept</td></tr>
-<tr class="memdesc:a2327870efbefa378da6dbd78ce9dddde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the handle of the matrix.  <br /></td></tr>
-<tr class="memitem:a01c126af07d5ed3bc6cec18512b3ad0f" id="r_a01c126af07d5ed3bc6cec18512b3ad0f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a01c126af07d5ed3bc6cec18512b3ad0f">is_identity</a> () const</td></tr>
-<tr class="memdesc:a01c126af07d5ed3bc6cec18512b3ad0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is the identity matrix.  <br /></td></tr>
-<tr class="memitem:a358991be38b40eea122fa1f4084c4ba5" id="r_a358991be38b40eea122fa1f4084c4ba5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a358991be38b40eea122fa1f4084c4ba5">is_invertible</a> () const</td></tr>
-<tr class="memdesc:a358991be38b40eea122fa1f4084c4ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is invertible.  <br /></td></tr>
-<tr class="memitem:a5a06f7b7236e59fdc1408bc9571585e1" id="r_a5a06f7b7236e59fdc1408bc9571585e1"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a5a06f7b7236e59fdc1408bc9571585e1">offset_x</a> () const</td></tr>
-<tr class="memdesc:a5a06f7b7236e59fdc1408bc9571585e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x translation value (the dx value, or the element in the third row and first column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
-<tr class="memitem:a647aaffdbd06dbd793662e7ff7e61dc9" id="r_a647aaffdbd06dbd793662e7ff7e61dc9"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a647aaffdbd06dbd793662e7ff7e61dc9">offset_y</a> () const</td></tr>
-<tr class="memdesc:a647aaffdbd06dbd793662e7ff7e61dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y translation value (the dy value, or the element in the third row and second column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
+<tr class="memitem:a9ec8186f1d32909a6b8a3af2c21d7cb0" id="r_a9ec8186f1d32909a6b8a3af2c21d7cb0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9ec8186f1d32909a6b8a3af2c21d7cb0">elements</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; float &gt;</td></tr>
+<tr class="memdesc:a9ec8186f1d32909a6b8a3af2c21d7cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of floating-point values that represents the elements of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
+<tr class="memitem:ad7cf7fb51496bd69700e78860a08fba7" id="r_ad7cf7fb51496bd69700e78860a08fba7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad7cf7fb51496bd69700e78860a08fba7">handle</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a></td></tr>
+<tr class="memdesc:ad7cf7fb51496bd69700e78860a08fba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the handle of the matrix.  <br /></td></tr>
+<tr class="memitem:aa9a2c4fee77532805af2f75a1c0f13d1" id="r_aa9a2c4fee77532805af2f75a1c0f13d1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa9a2c4fee77532805af2f75a1c0f13d1">is_identity</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:aa9a2c4fee77532805af2f75a1c0f13d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is the identity matrix.  <br /></td></tr>
+<tr class="memitem:a3b4d9b60353bf4512d387952d34c274f" id="r_a3b4d9b60353bf4512d387952d34c274f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3b4d9b60353bf4512d387952d34c274f">is_invertible</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a3b4d9b60353bf4512d387952d34c274f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is invertible.  <br /></td></tr>
+<tr class="memitem:a699c4aac45019ccd964c486a7c8c2996" id="r_a699c4aac45019ccd964c486a7c8c2996"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a699c4aac45019ccd964c486a7c8c2996">offset_x</a> () const -&gt; float</td></tr>
+<tr class="memdesc:a699c4aac45019ccd964c486a7c8c2996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x translation value (the dx value, or the element in the third row and first column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
+<tr class="memitem:a29c2a9497bab6269e33b713119e36ec4" id="r_a29c2a9497bab6269e33b713119e36ec4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a29c2a9497bab6269e33b713119e36ec4">offset_y</a> () const -&gt; float</td></tr>
+<tr class="memdesc:a29c2a9497bab6269e33b713119e36ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y translation value (the dy value, or the element in the third row and second column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ac339ca35ac7ce2c5dac3f275eb14c8ad" id="r_ac339ca35ac7ce2c5dac3f275eb14c8ad"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac339ca35ac7ce2c5dac3f275eb14c8ad">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:ac339ca35ac7ce2c5dac3f275eb14c8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a40c0f9c947ff1237718d49df43795d7d" id="r_a40c0f9c947ff1237718d49df43795d7d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a40c0f9c947ff1237718d49df43795d7d">equals</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:a40c0f9c947ff1237718d49df43795d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a372de739e85f0970e8fa66923342c4c5" id="r_a372de739e85f0970e8fa66923342c4c5"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a372de739e85f0970e8fa66923342c4c5">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a372de739e85f0970e8fa66923342c4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:a357419468e1c86cb56dba546e1022d9c" id="r_a357419468e1c86cb56dba546e1022d9c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a357419468e1c86cb56dba546e1022d9c">invert</a> ()</td></tr>
-<tr class="memdesc:a357419468e1c86cb56dba546e1022d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>, if it is invertible.  <br /></td></tr>
-<tr class="memitem:a441e54e60820346709536d012335791d" id="r_a441e54e60820346709536d012335791d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a441e54e60820346709536d012335791d">multiply</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;<a class="el" href="#acfacd5123c2be05381ab1fb306b5a0f2">matrix</a>)</td></tr>
-<tr class="memdesc:a441e54e60820346709536d012335791d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by the matrix specified in the matrix parameter, by prepending the specified <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
-<tr class="memitem:a3adbce4274f8fbf18ffd830b4c14625d" id="r_a3adbce4274f8fbf18ffd830b4c14625d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3adbce4274f8fbf18ffd830b4c14625d">multiply</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;<a class="el" href="#acfacd5123c2be05381ab1fb306b5a0f2">matrix</a>, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order)</td></tr>
-<tr class="memdesc:a3adbce4274f8fbf18ffd830b4c14625d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by the matrix specified in the matrix parameter, and in the order specified in the order parameter.  <br /></td></tr>
-<tr class="memitem:a23c544f861ae8bc330ca634cbd1b0c6c" id="r_a23c544f861ae8bc330ca634cbd1b0c6c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23c544f861ae8bc330ca634cbd1b0c6c">reset</a> ()</td></tr>
-<tr class="memdesc:a23c544f861ae8bc330ca634cbd1b0c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to have the elements of the identity matrix.  <br /></td></tr>
-<tr class="memitem:ad465d6b695c3d6160197fdf96ca3a91e" id="r_ad465d6b695c3d6160197fdf96ca3a91e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad465d6b695c3d6160197fdf96ca3a91e">rotate</a> (float angle)</td></tr>
-<tr class="memdesc:ad465d6b695c3d6160197fdf96ca3a91e"><td class="mdescLeft">&#160;</td><td class="mdescRight">repend to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> a clockwise rotation, around the origin and by the specified angle.  <br /></td></tr>
-<tr class="memitem:a1274b0697f8c00d514fc50c28897a829" id="r_a1274b0697f8c00d514fc50c28897a829"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1274b0697f8c00d514fc50c28897a829">rotate</a> (float angle, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order)</td></tr>
-<tr class="memdesc:a1274b0697f8c00d514fc50c28897a829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation of an amount specified in the angle parameter, around the origin (zero x and y coordinates) for this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
-<tr class="memitem:a81261677cc5af5f7ba29c6b98732aadd" id="r_a81261677cc5af5f7ba29c6b98732aadd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a81261677cc5af5f7ba29c6b98732aadd">rotate_at</a> (float angle, const <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1point.html">point</a>)</td></tr>
-<tr class="memdesc:a81261677cc5af5f7ba29c6b98732aadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> around the point specified in the point parameter, and by prepending the rotation.  <br /></td></tr>
-<tr class="memitem:ab54b7cd5ebbcfdc5278cd9ec304b1470" id="r_ab54b7cd5ebbcfdc5278cd9ec304b1470"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab54b7cd5ebbcfdc5278cd9ec304b1470">rotate_at</a> (float angle, const <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1point.html">point</a>, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order)</td></tr>
-<tr class="memdesc:ab54b7cd5ebbcfdc5278cd9ec304b1470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation about the specified point to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order.  <br /></td></tr>
-<tr class="memitem:a96082a796fcc4b31232d1b749b859700" id="r_a96082a796fcc4b31232d1b749b859700"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a96082a796fcc4b31232d1b749b859700">scale</a> (float scale_x, float scale_y)</td></tr>
-<tr class="memdesc:a96082a796fcc4b31232d1b749b859700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified scale vector to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by prepending the scale vector.  <br /></td></tr>
-<tr class="memitem:a6915fa912c497ae40bf6419d8da08a7c" id="r_a6915fa912c497ae40bf6419d8da08a7c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6915fa912c497ae40bf6419d8da08a7c">scale</a> (float scale_x, float scale_y, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order)</td></tr>
-<tr class="memdesc:a6915fa912c497ae40bf6419d8da08a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified scale vector (scale_x and scale_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> using the specified order.  <br /></td></tr>
-<tr class="memitem:a06cc356740d981eb4eab78362517406e" id="r_a06cc356740d981eb4eab78362517406e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a06cc356740d981eb4eab78362517406e">shear</a> (float scale_x, float scale_y)</td></tr>
-<tr class="memdesc:a06cc356740d981eb4eab78362517406e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified shear vector to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
-<tr class="memitem:a4ff2608b67488e04f2cad07198befcc1" id="r_a4ff2608b67488e04f2cad07198befcc1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4ff2608b67488e04f2cad07198befcc1">shear</a> (float scale_x, float scale_y, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order)</td></tr>
-<tr class="memdesc:a4ff2608b67488e04f2cad07198befcc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified shear vector to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order.  <br /></td></tr>
-<tr class="memitem:a2f168e05bdb39b6148a05f318dfd1941" id="r_a2f168e05bdb39b6148a05f318dfd1941"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2f168e05bdb39b6148a05f318dfd1941">transform_points</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;points)</td></tr>
-<tr class="memdesc:a2f168e05bdb39b6148a05f318dfd1941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the geometric transform represented by this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to a specified array of points.  <br /></td></tr>
-<tr class="memitem:a56b7ca9b7e105402364e34f877916e41" id="r_a56b7ca9b7e105402364e34f877916e41"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a56b7ca9b7e105402364e34f877916e41">transform_points</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &gt; &amp;points)</td></tr>
-<tr class="memdesc:a56b7ca9b7e105402364e34f877916e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the geometric transform represented by this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to a specified array of points.  <br /></td></tr>
-<tr class="memitem:a4c6d98dceeda351debeee3c950aa208f" id="r_a4c6d98dceeda351debeee3c950aa208f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4c6d98dceeda351debeee3c950aa208f">transform_vectors</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;points)</td></tr>
-<tr class="memdesc:a4c6d98dceeda351debeee3c950aa208f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies only the scale and rotate components of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to the specified array of points.  <br /></td></tr>
-<tr class="memitem:a105a3a640307269b941f741de223ca24" id="r_a105a3a640307269b941f741de223ca24"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a105a3a640307269b941f741de223ca24">transform_vectors</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &gt; &amp;points)</td></tr>
-<tr class="memdesc:a105a3a640307269b941f741de223ca24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies only the scale and rotate components of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to the specified array of points.  <br /></td></tr>
-<tr class="memitem:a20c4efd29612c3b65ac5b6b2fe9760c9" id="r_a20c4efd29612c3b65ac5b6b2fe9760c9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a20c4efd29612c3b65ac5b6b2fe9760c9">translate</a> (float <a class="el" href="#a5a06f7b7236e59fdc1408bc9571585e1">offset_x</a>, float <a class="el" href="#a647aaffdbd06dbd793662e7ff7e61dc9">offset_y</a>)</td></tr>
-<tr class="memdesc:a20c4efd29612c3b65ac5b6b2fe9760c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified translation vector (offset_x and offset_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by prepending the translation vector.  <br /></td></tr>
-<tr class="memitem:a19d19e538ba5d570914d7f5e342e275d" id="r_a19d19e538ba5d570914d7f5e342e275d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a19d19e538ba5d570914d7f5e342e275d">translate</a> (float <a class="el" href="#a5a06f7b7236e59fdc1408bc9571585e1">offset_x</a>, float <a class="el" href="#a647aaffdbd06dbd793662e7ff7e61dc9">offset_y</a>, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order)</td></tr>
-<tr class="memdesc:a19d19e538ba5d570914d7f5e342e275d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified translation vector (offset_x and offset_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order.  <br /></td></tr>
-<tr class="memitem:a27bd09d3c9f1482cf3a2bec4aa9e7076" id="r_a27bd09d3c9f1482cf3a2bec4aa9e7076"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a27bd09d3c9f1482cf3a2bec4aa9e7076">vector_transform_points</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;points)</td></tr>
-<tr class="memdesc:a27bd09d3c9f1482cf3a2bec4aa9e7076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored.  <br /></td></tr>
-<tr class="memitem:af17ad9d49681d1cf0173fcc8f7632a80" id="r_af17ad9d49681d1cf0173fcc8f7632a80"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#af17ad9d49681d1cf0173fcc8f7632a80">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:af17ad9d49681d1cf0173fcc8f7632a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:ae0aaaf37300f96df7a9036171f5ad159" id="r_ae0aaaf37300f96df7a9036171f5ad159"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae0aaaf37300f96df7a9036171f5ad159">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ae0aaaf37300f96df7a9036171f5ad159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a7df3c17548b765f1d52de3afbf1f8747" id="r_a7df3c17548b765f1d52de3afbf1f8747"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7df3c17548b765f1d52de3afbf1f8747">equals</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;value) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a7df3c17548b765f1d52de3afbf1f8747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a261c606de027e57d47907c17099122f8" id="r_a261c606de027e57d47907c17099122f8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a261c606de027e57d47907c17099122f8">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a261c606de027e57d47907c17099122f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:ac546f81ad760065d428a86ebbbf4d087" id="r_ac546f81ad760065d428a86ebbbf4d087"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac546f81ad760065d428a86ebbbf4d087">invert</a> () -&gt; void</td></tr>
+<tr class="memdesc:ac546f81ad760065d428a86ebbbf4d087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>, if it is invertible.  <br /></td></tr>
+<tr class="memitem:aa70bb322d98bff99c03a494d7efadb47" id="r_aa70bb322d98bff99c03a494d7efadb47"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa70bb322d98bff99c03a494d7efadb47">multiply</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;<a class="el" href="#acfacd5123c2be05381ab1fb306b5a0f2">matrix</a>) -&gt; void</td></tr>
+<tr class="memdesc:aa70bb322d98bff99c03a494d7efadb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by the matrix specified in the matrix parameter, by prepending the specified <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
+<tr class="memitem:a65d8879f3a1fba6590b74701eb63680a" id="r_a65d8879f3a1fba6590b74701eb63680a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a65d8879f3a1fba6590b74701eb63680a">multiply</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;<a class="el" href="#acfacd5123c2be05381ab1fb306b5a0f2">matrix</a>, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order) -&gt; void</td></tr>
+<tr class="memdesc:a65d8879f3a1fba6590b74701eb63680a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by the matrix specified in the matrix parameter, and in the order specified in the order parameter.  <br /></td></tr>
+<tr class="memitem:a05bfdce5e95becbc1cc2e4929bd529cf" id="r_a05bfdce5e95becbc1cc2e4929bd529cf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a05bfdce5e95becbc1cc2e4929bd529cf">reset</a> () -&gt; void</td></tr>
+<tr class="memdesc:a05bfdce5e95becbc1cc2e4929bd529cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to have the elements of the identity matrix.  <br /></td></tr>
+<tr class="memitem:a2a60a90f421f2848c8a376e38f02d86d" id="r_a2a60a90f421f2848c8a376e38f02d86d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a60a90f421f2848c8a376e38f02d86d">rotate</a> (float angle) -&gt; void</td></tr>
+<tr class="memdesc:a2a60a90f421f2848c8a376e38f02d86d"><td class="mdescLeft">&#160;</td><td class="mdescRight">repend to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> a clockwise rotation, around the origin and by the specified angle.  <br /></td></tr>
+<tr class="memitem:aae83221417b12d92c65c96f526959b0f" id="r_aae83221417b12d92c65c96f526959b0f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae83221417b12d92c65c96f526959b0f">rotate</a> (float angle, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order) -&gt; void</td></tr>
+<tr class="memdesc:aae83221417b12d92c65c96f526959b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation of an amount specified in the angle parameter, around the origin (zero x and y coordinates) for this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
+<tr class="memitem:af894afcfd38ff77d3d023c4b29b75dc4" id="r_af894afcfd38ff77d3d023c4b29b75dc4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af894afcfd38ff77d3d023c4b29b75dc4">rotate_at</a> (float angle, const <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1point.html">point</a>) -&gt; void</td></tr>
+<tr class="memdesc:af894afcfd38ff77d3d023c4b29b75dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> around the point specified in the point parameter, and by prepending the rotation.  <br /></td></tr>
+<tr class="memitem:aeaa466c7dee174e5a92d5ec6b8555c44" id="r_aeaa466c7dee174e5a92d5ec6b8555c44"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aeaa466c7dee174e5a92d5ec6b8555c44">rotate_at</a> (float angle, const <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1point.html">point</a>, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order) -&gt; void</td></tr>
+<tr class="memdesc:aeaa466c7dee174e5a92d5ec6b8555c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a clockwise rotation about the specified point to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order.  <br /></td></tr>
+<tr class="memitem:afdacc18149f18c1d5aaff9853317991d" id="r_afdacc18149f18c1d5aaff9853317991d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afdacc18149f18c1d5aaff9853317991d">scale</a> (float scale_x, float scale_y) -&gt; void</td></tr>
+<tr class="memdesc:afdacc18149f18c1d5aaff9853317991d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified scale vector to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by prepending the scale vector.  <br /></td></tr>
+<tr class="memitem:a610077ae3b649fdffb1c9b061fdae8ef" id="r_a610077ae3b649fdffb1c9b061fdae8ef"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a610077ae3b649fdffb1c9b061fdae8ef">scale</a> (float scale_x, float scale_y, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order) -&gt; void</td></tr>
+<tr class="memdesc:a610077ae3b649fdffb1c9b061fdae8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified scale vector (scale_x and scale_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> using the specified order.  <br /></td></tr>
+<tr class="memitem:a7c177fdf53a3c2cbb7e8d860d4346279" id="r_a7c177fdf53a3c2cbb7e8d860d4346279"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7c177fdf53a3c2cbb7e8d860d4346279">shear</a> (float scale_x, float scale_y) -&gt; void</td></tr>
+<tr class="memdesc:a7c177fdf53a3c2cbb7e8d860d4346279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified shear vector to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>.  <br /></td></tr>
+<tr class="memitem:aa1e1e587cae67f87aa5f904fb1f21e1a" id="r_aa1e1e587cae67f87aa5f904fb1f21e1a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa1e1e587cae67f87aa5f904fb1f21e1a">shear</a> (float scale_x, float scale_y, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order) -&gt; void</td></tr>
+<tr class="memdesc:aa1e1e587cae67f87aa5f904fb1f21e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified shear vector to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order.  <br /></td></tr>
+<tr class="memitem:ab69459f9a7924d175c5042d2854f4e07" id="r_ab69459f9a7924d175c5042d2854f4e07"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab69459f9a7924d175c5042d2854f4e07">transform_points</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;points) -&gt; void</td></tr>
+<tr class="memdesc:ab69459f9a7924d175c5042d2854f4e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the geometric transform represented by this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to a specified array of points.  <br /></td></tr>
+<tr class="memitem:a9b6a74aac97555b92b14f24394941329" id="r_a9b6a74aac97555b92b14f24394941329"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9b6a74aac97555b92b14f24394941329">transform_points</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &gt; &amp;points) -&gt; void</td></tr>
+<tr class="memdesc:a9b6a74aac97555b92b14f24394941329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the geometric transform represented by this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to a specified array of points.  <br /></td></tr>
+<tr class="memitem:a3b68203afa289713c513c4e8ab07b9c0" id="r_a3b68203afa289713c513c4e8ab07b9c0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3b68203afa289713c513c4e8ab07b9c0">transform_vectors</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;points) -&gt; void</td></tr>
+<tr class="memdesc:a3b68203afa289713c513c4e8ab07b9c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies only the scale and rotate components of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to the specified array of points.  <br /></td></tr>
+<tr class="memitem:ab143d27d791f59bb5a94811558b12ea4" id="r_ab143d27d791f59bb5a94811558b12ea4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab143d27d791f59bb5a94811558b12ea4">transform_vectors</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &gt; &amp;points) -&gt; void</td></tr>
+<tr class="memdesc:ab143d27d791f59bb5a94811558b12ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies only the scale and rotate components of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> to the specified array of points.  <br /></td></tr>
+<tr class="memitem:ae81a49377cca70cb603d45de637acc97" id="r_ae81a49377cca70cb603d45de637acc97"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae81a49377cca70cb603d45de637acc97">translate</a> (float <a class="el" href="#a699c4aac45019ccd964c486a7c8c2996">offset_x</a>, float <a class="el" href="#a29c2a9497bab6269e33b713119e36ec4">offset_y</a>) -&gt; void</td></tr>
+<tr class="memdesc:ae81a49377cca70cb603d45de637acc97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified translation vector (offset_x and offset_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by prepending the translation vector.  <br /></td></tr>
+<tr class="memitem:aa67e06fe44d6ceda3cbdcdac719354c1" id="r_aa67e06fe44d6ceda3cbdcdac719354c1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa67e06fe44d6ceda3cbdcdac719354c1">translate</a> (float <a class="el" href="#a699c4aac45019ccd964c486a7c8c2996">offset_x</a>, float <a class="el" href="#a29c2a9497bab6269e33b713119e36ec4">offset_y</a>, <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a> order) -&gt; void</td></tr>
+<tr class="memdesc:aa67e06fe44d6ceda3cbdcdac719354c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the specified translation vector (offset_x and offset_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order.  <br /></td></tr>
+<tr class="memitem:a3ecd0d9676c8428b4ee2358d1921c2dd" id="r_a3ecd0d9676c8428b4ee2358d1921c2dd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3ecd0d9676c8428b4ee2358d1921c2dd">vector_transform_points</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;points) -&gt; void</td></tr>
+<tr class="memdesc:a3ecd0d9676c8428b4ee2358d1921c2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored.  <br /></td></tr>
+<tr class="memitem:a0f7e827c82ac14e90d824b916f6d696c" id="r_a0f7e827c82ac14e90d824b916f6d696c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0f7e827c82ac14e90d824b916f6d696c">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a0f7e827c82ac14e90d824b916f6d696c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -375,29 +375,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a3888bd24c7ca8b39d96967cc19f65566" name="a3888bd24c7ca8b39d96967cc19f65566"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3888bd24c7ca8b39d96967cc19f65566">&#9670;&#160;</a></span>elements()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; float &gt; xtd::drawing::drawing_2d::matrix::elements </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets an array of floating-point values that represents the elements of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>An array of floating-point values that represents the elements of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The elements m11, m12, m21, m22, dx, and dy of the <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> are represented by the values in the array in that order. </dd></dl>
-
-</div>
-</div>
-<a id="a2327870efbefa378da6dbd78ce9dddde" name="a2327870efbefa378da6dbd78ce9dddde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2327870efbefa378da6dbd78ce9dddde">&#9670;&#160;</a></span>handle()</h2>
+<a id="a9ec8186f1d32909a6b8a3af2c21d7cb0" name="a9ec8186f1d32909a6b8a3af2c21d7cb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec8186f1d32909a6b8a3af2c21d7cb0">&#9670;&#160;</a></span>elements()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,15 +385,44 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> xtd::drawing::drawing_2d::matrix::handle </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::elements </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; float &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an array of floating-point values that represents the elements of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of floating-point values that represents the elements of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The elements m11, m12, m21, m22, dx, and dy of the <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> are represented by the values in the array in that order. </dd></dl>
+
+</div>
+</div>
+<a id="ad7cf7fb51496bd69700e78860a08fba7" name="ad7cf7fb51496bd69700e78860a08fba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7cf7fb51496bd69700e78860a08fba7">&#9670;&#160;</a></span>handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::handle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -424,88 +432,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a01c126af07d5ed3bc6cec18512b3ad0f" name="a01c126af07d5ed3bc6cec18512b3ad0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01c126af07d5ed3bc6cec18512b3ad0f">&#9670;&#160;</a></span>is_identity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool xtd::drawing::drawing_2d::matrix::is_identity </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is the identity matrix. </p>
-<dl class="section return"><dt>Returns</dt><dd>This property is <span class="tt">true</span> if this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is identity; otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a358991be38b40eea122fa1f4084c4ba5" name="a358991be38b40eea122fa1f4084c4ba5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a358991be38b40eea122fa1f4084c4ba5">&#9670;&#160;</a></span>is_invertible()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool xtd::drawing::drawing_2d::matrix::is_invertible </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is invertible. </p>
-<dl class="section return"><dt>Returns</dt><dd>This property is <span class="tt">true</span> if this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is invertible; otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a5a06f7b7236e59fdc1408bc9571585e1" name="a5a06f7b7236e59fdc1408bc9571585e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a06f7b7236e59fdc1408bc9571585e1">&#9670;&#160;</a></span>offset_x()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float xtd::drawing::drawing_2d::matrix::offset_x </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the x translation value (the dx value, or the element in the third row and first column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The x translation value of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a647aaffdbd06dbd793662e7ff7e61dc9" name="a647aaffdbd06dbd793662e7ff7e61dc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a647aaffdbd06dbd793662e7ff7e61dc9">&#9670;&#160;</a></span>offset_y()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float xtd::drawing::drawing_2d::matrix::offset_y </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the y translation value (the dy value, or the element in the third row and second column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The y translation value of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ac339ca35ac7ce2c5dac3f275eb14c8ad" name="ac339ca35ac7ce2c5dac3f275eb14c8ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac339ca35ac7ce2c5dac3f275eb14c8ad">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="aa9a2c4fee77532805af2f75a1c0f13d1" name="aa9a2c4fee77532805af2f75a1c0f13d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a2c4fee77532805af2f75a1c0f13d1">&#9670;&#160;</a></span>is_identity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,15 +442,127 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::drawing::drawing_2d::matrix::equals </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::is_identity </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is the identity matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>This property is <span class="tt">true</span> if this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is identity; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a3b4d9b60353bf4512d387952d34c274f" name="a3b4d9b60353bf4512d387952d34c274f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b4d9b60353bf4512d387952d34c274f">&#9670;&#160;</a></span>is_invertible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::is_invertible </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is invertible. </p>
+<dl class="section return"><dt>Returns</dt><dd>This property is <span class="tt">true</span> if this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> is invertible; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a699c4aac45019ccd964c486a7c8c2996" name="a699c4aac45019ccd964c486a7c8c2996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699c4aac45019ccd964c486a7c8c2996">&#9670;&#160;</a></span>offset_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::offset_x </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  float</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the x translation value (the dx value, or the element in the third row and first column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The x translation value of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a29c2a9497bab6269e33b713119e36ec4" name="a29c2a9497bab6269e33b713119e36ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c2a9497bab6269e33b713119e36ec4">&#9670;&#160;</a></span>offset_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::offset_y </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  float</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the y translation value (the dy value, or the element in the third row and second column) of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The y translation value of this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ae0aaaf37300f96df7a9036171f5ad159" name="ae0aaaf37300f96df7a9036171f5ad159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0aaaf37300f96df7a9036171f5ad159">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -540,8 +580,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a40c0f9c947ff1237718d49df43795d7d" name="a40c0f9c947ff1237718d49df43795d7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40c0f9c947ff1237718d49df43795d7d">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a7df3c17548b765f1d52de3afbf1f8747" name="a7df3c17548b765f1d52de3afbf1f8747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7df3c17548b765f1d52de3afbf1f8747">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -550,15 +590,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::drawing::drawing_2d::matrix::equals </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -574,8 +614,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a372de739e85f0970e8fa66923342c4c5" name="a372de739e85f0970e8fa66923342c4c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a372de739e85f0970e8fa66923342c4c5">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a261c606de027e57d47907c17099122f8" name="a261c606de027e57d47907c17099122f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a261c606de027e57d47907c17099122f8">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -584,15 +624,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::drawing::drawing_2d::matrix::get_hash_code </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -604,17 +644,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a357419468e1c86cb56dba546e1022d9c" name="a357419468e1c86cb56dba546e1022d9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a357419468e1c86cb56dba546e1022d9c">&#9670;&#160;</a></span>invert()</h2>
+<a id="ac546f81ad760065d428a86ebbbf4d087" name="ac546f81ad760065d428a86ebbbf4d087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac546f81ad760065d428a86ebbbf4d087">&#9670;&#160;</a></span>invert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::invert </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::invert </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -623,17 +663,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a441e54e60820346709536d012335791d" name="a441e54e60820346709536d012335791d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a441e54e60820346709536d012335791d">&#9670;&#160;</a></span>multiply() <span class="overload">[1/2]</span></h2>
+<a id="aa70bb322d98bff99c03a494d7efadb47" name="aa70bb322d98bff99c03a494d7efadb47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa70bb322d98bff99c03a494d7efadb47">&#9670;&#160;</a></span>multiply() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::multiply </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::multiply </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -648,21 +688,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3adbce4274f8fbf18ffd830b4c14625d" name="a3adbce4274f8fbf18ffd830b4c14625d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3adbce4274f8fbf18ffd830b4c14625d">&#9670;&#160;</a></span>multiply() <span class="overload">[2/2]</span></h2>
+<a id="a65d8879f3a1fba6590b74701eb63680a" name="a65d8879f3a1fba6590b74701eb63680a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d8879f3a1fba6590b74701eb63680a">&#9670;&#160;</a></span>multiply() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::multiply </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::multiply </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html">xtd::drawing::drawing_2d::matrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -678,17 +718,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a23c544f861ae8bc330ca634cbd1b0c6c" name="a23c544f861ae8bc330ca634cbd1b0c6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23c544f861ae8bc330ca634cbd1b0c6c">&#9670;&#160;</a></span>reset()</h2>
+<a id="a05bfdce5e95becbc1cc2e4929bd529cf" name="a05bfdce5e95becbc1cc2e4929bd529cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05bfdce5e95becbc1cc2e4929bd529cf">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::reset </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -698,17 +738,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad465d6b695c3d6160197fdf96ca3a91e" name="ad465d6b695c3d6160197fdf96ca3a91e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad465d6b695c3d6160197fdf96ca3a91e">&#9670;&#160;</a></span>rotate() <span class="overload">[1/2]</span></h2>
+<a id="a2a60a90f421f2848c8a376e38f02d86d" name="a2a60a90f421f2848c8a376e38f02d86d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a60a90f421f2848c8a376e38f02d86d">&#9670;&#160;</a></span>rotate() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::rotate </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::rotate </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>angle</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -723,21 +763,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1274b0697f8c00d514fc50c28897a829" name="a1274b0697f8c00d514fc50c28897a829"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1274b0697f8c00d514fc50c28897a829">&#9670;&#160;</a></span>rotate() <span class="overload">[2/2]</span></h2>
+<a id="aae83221417b12d92c65c96f526959b0f" name="aae83221417b12d92c65c96f526959b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae83221417b12d92c65c96f526959b0f">&#9670;&#160;</a></span>rotate() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::rotate </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::rotate </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -753,21 +793,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a81261677cc5af5f7ba29c6b98732aadd" name="a81261677cc5af5f7ba29c6b98732aadd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81261677cc5af5f7ba29c6b98732aadd">&#9670;&#160;</a></span>rotate_at() <span class="overload">[1/2]</span></h2>
+<a id="af894afcfd38ff77d3d023c4b29b75dc4" name="af894afcfd38ff77d3d023c4b29b75dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af894afcfd38ff77d3d023c4b29b75dc4">&#9670;&#160;</a></span>rotate_at() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::rotate_at </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::rotate_at </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -783,14 +823,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab54b7cd5ebbcfdc5278cd9ec304b1470" name="ab54b7cd5ebbcfdc5278cd9ec304b1470"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54b7cd5ebbcfdc5278cd9ec304b1470">&#9670;&#160;</a></span>rotate_at() <span class="overload">[2/2]</span></h2>
+<a id="aeaa466c7dee174e5a92d5ec6b8555c44" name="aeaa466c7dee174e5a92d5ec6b8555c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa466c7dee174e5a92d5ec6b8555c44">&#9670;&#160;</a></span>rotate_at() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::rotate_at </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::rotate_at </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
         </tr>
@@ -802,7 +842,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -819,21 +859,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a96082a796fcc4b31232d1b749b859700" name="a96082a796fcc4b31232d1b749b859700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96082a796fcc4b31232d1b749b859700">&#9670;&#160;</a></span>scale() <span class="overload">[1/2]</span></h2>
+<a id="afdacc18149f18c1d5aaff9853317991d" name="afdacc18149f18c1d5aaff9853317991d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdacc18149f18c1d5aaff9853317991d">&#9670;&#160;</a></span>scale() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::scale </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::scale </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_y</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_y</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -849,14 +889,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6915fa912c497ae40bf6419d8da08a7c" name="a6915fa912c497ae40bf6419d8da08a7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6915fa912c497ae40bf6419d8da08a7c">&#9670;&#160;</a></span>scale() <span class="overload">[2/2]</span></h2>
+<a id="a610077ae3b649fdffb1c9b061fdae8ef" name="a610077ae3b649fdffb1c9b061fdae8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610077ae3b649fdffb1c9b061fdae8ef">&#9670;&#160;</a></span>scale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::scale </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::scale </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_x</em></span>, </td>
         </tr>
@@ -868,7 +908,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -885,21 +925,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a06cc356740d981eb4eab78362517406e" name="a06cc356740d981eb4eab78362517406e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06cc356740d981eb4eab78362517406e">&#9670;&#160;</a></span>shear() <span class="overload">[1/2]</span></h2>
+<a id="a7c177fdf53a3c2cbb7e8d860d4346279" name="a7c177fdf53a3c2cbb7e8d860d4346279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c177fdf53a3c2cbb7e8d860d4346279">&#9670;&#160;</a></span>shear() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::shear </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::shear </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_y</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_y</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -916,14 +956,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4ff2608b67488e04f2cad07198befcc1" name="a4ff2608b67488e04f2cad07198befcc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff2608b67488e04f2cad07198befcc1">&#9670;&#160;</a></span>shear() <span class="overload">[2/2]</span></h2>
+<a id="aa1e1e587cae67f87aa5f904fb1f21e1a" name="aa1e1e587cae67f87aa5f904fb1f21e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e1e587cae67f87aa5f904fb1f21e1a">&#9670;&#160;</a></span>shear() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::shear </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::shear </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scale_x</em></span>, </td>
         </tr>
@@ -935,7 +975,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -953,17 +993,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2f168e05bdb39b6148a05f318dfd1941" name="a2f168e05bdb39b6148a05f318dfd1941"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f168e05bdb39b6148a05f318dfd1941">&#9670;&#160;</a></span>transform_points() <span class="overload">[1/2]</span></h2>
+<a id="ab69459f9a7924d175c5042d2854f4e07" name="ab69459f9a7924d175c5042d2854f4e07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab69459f9a7924d175c5042d2854f4e07">&#9670;&#160;</a></span>transform_points() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::transform_points </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::transform_points </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -978,17 +1018,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a56b7ca9b7e105402364e34f877916e41" name="a56b7ca9b7e105402364e34f877916e41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56b7ca9b7e105402364e34f877916e41">&#9670;&#160;</a></span>transform_points() <span class="overload">[2/2]</span></h2>
+<a id="a9b6a74aac97555b92b14f24394941329" name="a9b6a74aac97555b92b14f24394941329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6a74aac97555b92b14f24394941329">&#9670;&#160;</a></span>transform_points() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::transform_points </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::transform_points </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1003,17 +1043,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4c6d98dceeda351debeee3c950aa208f" name="a4c6d98dceeda351debeee3c950aa208f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c6d98dceeda351debeee3c950aa208f">&#9670;&#160;</a></span>transform_vectors() <span class="overload">[1/2]</span></h2>
+<a id="a3b68203afa289713c513c4e8ab07b9c0" name="a3b68203afa289713c513c4e8ab07b9c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b68203afa289713c513c4e8ab07b9c0">&#9670;&#160;</a></span>transform_vectors() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::transform_vectors </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::transform_vectors </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1028,17 +1068,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a105a3a640307269b941f741de223ca24" name="a105a3a640307269b941f741de223ca24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a105a3a640307269b941f741de223ca24">&#9670;&#160;</a></span>transform_vectors() <span class="overload">[2/2]</span></h2>
+<a id="ab143d27d791f59bb5a94811558b12ea4" name="ab143d27d791f59bb5a94811558b12ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab143d27d791f59bb5a94811558b12ea4">&#9670;&#160;</a></span>transform_vectors() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::transform_vectors </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::transform_vectors </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1053,21 +1093,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a20c4efd29612c3b65ac5b6b2fe9760c9" name="a20c4efd29612c3b65ac5b6b2fe9760c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20c4efd29612c3b65ac5b6b2fe9760c9">&#9670;&#160;</a></span>translate() <span class="overload">[1/2]</span></h2>
+<a id="ae81a49377cca70cb603d45de637acc97" name="ae81a49377cca70cb603d45de637acc97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81a49377cca70cb603d45de637acc97">&#9670;&#160;</a></span>translate() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::translate </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::translate </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>offset_x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>offset_y</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>offset_y</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1075,22 +1115,22 @@ Additional Inherited Members</h2></td></tr>
 <p>Applies the specified translation vector (offset_x and offset_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> by prepending the translation vector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a5a06f7b7236e59fdc1408bc9571585e1" title="Gets the x translation value (the dx value, or the element in the third row and first column) of this...">offset_x</a></td><td>The x value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a647aaffdbd06dbd793662e7ff7e61dc9" title="Gets the y translation value (the dy value, or the element in the third row and second column) of thi...">offset_y</a></td><td>The y value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a699c4aac45019ccd964c486a7c8c2996" title="Gets the x translation value (the dx value, or the element in the third row and first column) of this...">offset_x</a></td><td>The x value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a29c2a9497bab6269e33b713119e36ec4" title="Gets the y translation value (the dy value, or the element in the third row and second column) of thi...">offset_y</a></td><td>The y value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a19d19e538ba5d570914d7f5e342e275d" name="a19d19e538ba5d570914d7f5e342e275d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19d19e538ba5d570914d7f5e342e275d">&#9670;&#160;</a></span>translate() <span class="overload">[2/2]</span></h2>
+<a id="aa67e06fe44d6ceda3cbdcdac719354c1" name="aa67e06fe44d6ceda3cbdcdac719354c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67e06fe44d6ceda3cbdcdac719354c1">&#9670;&#160;</a></span>translate() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::translate </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::translate </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>offset_x</em></span>, </td>
         </tr>
@@ -1102,7 +1142,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d">xtd::drawing::drawing_2d::matrix_order</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1110,8 +1150,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Applies the specified translation vector (offset_x and offset_y) to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a> in the specified order. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a5a06f7b7236e59fdc1408bc9571585e1" title="Gets the x translation value (the dx value, or the element in the third row and first column) of this...">offset_x</a></td><td>The x value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a647aaffdbd06dbd793662e7ff7e61dc9" title="Gets the y translation value (the dy value, or the element in the third row and second column) of thi...">offset_y</a></td><td>The y value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a699c4aac45019ccd964c486a7c8c2996" title="Gets the x translation value (the dx value, or the element in the third row and first column) of this...">offset_x</a></td><td>The x value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a29c2a9497bab6269e33b713119e36ec4" title="Gets the y translation value (the dy value, or the element in the third row and second column) of thi...">offset_y</a></td><td>The y value by which to translate this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
     <tr><td class="paramname">order</td><td>A <a class="el" href="group__xtd__drawing.html#ga15f959642469ecccc49d70748808959d" title="Specifies the order for matrix transform operations.">xtd::drawing::drawing_2d::matrix_order</a> that specifies the order (append or prepend) in which the translation is applied to this <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html" title="Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inher...">xtd::drawing::drawing_2d::matrix</a>. </td></tr>
   </table>
   </dd>
@@ -1119,17 +1159,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a27bd09d3c9f1482cf3a2bec4aa9e7076" name="a27bd09d3c9f1482cf3a2bec4aa9e7076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27bd09d3c9f1482cf3a2bec4aa9e7076">&#9670;&#160;</a></span>vector_transform_points()</h2>
+<a id="a3ecd0d9676c8428b4ee2358d1921c2dd" name="a3ecd0d9676c8428b4ee2358d1921c2dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ecd0d9676c8428b4ee2358d1921c2dd">&#9670;&#160;</a></span>vector_transform_points()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::drawing::drawing_2d::matrix::vector_transform_points </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::vector_transform_points </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1144,8 +1184,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af17ad9d49681d1cf0173fcc8f7632a80" name="af17ad9d49681d1cf0173fcc8f7632a80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af17ad9d49681d1cf0173fcc8f7632a80">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a0f7e827c82ac14e90d824b916f6d696c" name="a0f7e827c82ac14e90d824b916f6d696c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7e827c82ac14e90d824b916f6d696c">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1154,15 +1194,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::drawing::drawing_2d::matrix::to_string </td>
+          <td class="memname">auto xtd::drawing::drawing_2d::matrix::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
