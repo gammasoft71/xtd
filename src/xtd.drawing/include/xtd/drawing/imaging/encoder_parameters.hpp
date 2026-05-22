@@ -52,11 +52,11 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override {return is<encoder_parameters>(obj) && equals(static_cast<const encoder_parameters&>(obj));}
+        [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<encoder_parameters>(obj) && equals(static_cast<const encoder_parameters&>(obj));}
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const encoder_parameters& other) const noexcept override {return params == other.params;}
+        [[nodiscard]] auto equals(const encoder_parameters& other) const noexcept -> bool override {return params == other.params;}
         /// @}
       };
     }
