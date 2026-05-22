@@ -31,15 +31,15 @@ namespace xtd {
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
-      static xtd::drawing::size default_size() noexcept;
+      [[nodiscard]] static auto default_size() noexcept -> xtd::drawing::size;
       
       /// @brief Gets the animations system image "process-working".
       /// @return The xtd::drawing::image "process-working".
-      static xtd::drawing::image process_working() noexcept;
+      [[nodiscard]] static auto process_working() noexcept -> xtd::drawing::image;
       /// @brief Gets the animations system image "process-working" with specified size.
       /// @param size The animations system image size in pixels.
       /// @return The xtd::drawing::image "process-working".
-      static xtd::drawing::image process_working(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto process_working(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @}
       
@@ -48,15 +48,15 @@ namespace xtd {
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
-      static const xtd::array<xtd::drawing::image>& get_images() noexcept;
+      [[nodiscard]] static auto get_images() noexcept -> const xtd::array<xtd::drawing::image>&;
       /// @brief Gets an array of images with specified size.
       /// @param size The images size in pixels.
       /// @return The array of images.
-      static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto get_images(const xtd::drawing::size& size) noexcept -> xtd::array<xtd::drawing::image>;
       
       /// @brief Gets an array of image names.
       /// @return The array of image names.
-      static const xtd::array<xtd::string>& get_image_names() noexcept;
+      [[nodiscard]] static auto get_image_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
