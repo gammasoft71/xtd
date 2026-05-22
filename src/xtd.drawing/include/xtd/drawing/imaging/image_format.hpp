@@ -47,7 +47,7 @@ namespace xtd {
         /// @{
         /// @brief Gets a guid structure that represents this image_format object.
         /// @return A guid structure that represents this image_format object.
-        const xtd::guid guid() const noexcept;
+        [[nodiscard]] auto guid() const noexcept -> const xtd::guid;
         /// @}
         
         /// @name Public Static Properties
@@ -55,139 +55,139 @@ namespace xtd {
         /// @{
         /// @brief Gets the bitmap (BMP) image format.
         /// @return An image_format object that indicates the bitmap image format.
-        static image_format bmp() noexcept;
+        [[nodiscard]] static auto bmp() noexcept -> image_format;
         
         /// @brief Gets the enhanced metafile (EMF) image format.
         /// @return An image_format object that indicates the enhanced metafile image format.
-        static image_format emf() noexcept;
+        [[nodiscard]] static auto emf() noexcept -> image_format;
         
         /// @brief Gets the Exchangeable Image File (Exif) format.
         /// @return An image_format object that indicates the Exif format.
-        static image_format exif() noexcept;
+        [[nodiscard]] static auto exif() noexcept -> image_format;
         
         /// @brief Gets the Graphics Interchange Format (GIF) image format.
         /// @return An image_format object that indicates the GIF image format.
-        static image_format gif() noexcept;
+        [[nodiscard]] static auto gif() noexcept -> image_format;
         
         /// @brief Gets the windows icon (ico) image format.
         /// @return An image_format object that indicates the icon image format.
-        static image_format ico() noexcept;
+        [[nodiscard]] static auto ico() noexcept -> image_format;
         
         /// @brief Gets the Joint Photographic Experts Group (JPEG) image format.
         /// @return An image_format object that indicates the JOEG image format.
-        static image_format jpeg() noexcept;
+        [[nodiscard]] static auto jpeg() noexcept -> image_format;
         
         /// @brief Gets the format of a bitmap in memory.
         /// @return An image_format object that indicates the bitmap memory image format.
-        static image_format memory_bmp() noexcept;
+        [[nodiscard]] static auto memory_bmp() noexcept -> image_format;
         
         /// @brief Gets the W3C Portable Network Graphics (PNG) image format.
         /// @return An image_format object that indicates the PNG image format.
-        static image_format png() noexcept;
+        [[nodiscard]] static auto png() noexcept -> image_format;
         
         /// @brief Gets the Tagged Image File Format (TIFF) image format.
         /// @return An image_format object that indicates the TIFF image format.
-        static image_format tiff() noexcept;
+        [[nodiscard]] static auto tiff() noexcept -> image_format;
         
         /// @brief Gets the Windows metafile (WMF) image format.
         /// @return An image_format object that indicates the WMF image format.
-        static image_format wmf() noexcept;
+        [[nodiscard]] static auto wmf() noexcept -> image_format;
         
         /// @brief Gets the GIF memory format.
         /// @return An image_format object that indicates the GIF mempry image format.
-        static image_format memory_gif() noexcept;
+        [[nodiscard]] static auto memory_gif() noexcept -> image_format;
         
         /// @brief Gets the ICO memory format.
         /// @return An image_format object that indicates the icon memory image format.
-        static image_format memory_ico() noexcept;
+        [[nodiscard]] static auto memory_ico() noexcept -> image_format;
         
         /// @brief Gets the JPEG memory format.
         /// @return An image_format object that indicates the JPEG memory image format.
-        static image_format memory_jpeg() noexcept;
+        [[nodiscard]] static auto memory_jpeg() noexcept -> image_format;
         
         /// @brief Gets the PNG memory format.
         /// @return An image_format object that indicates the PNG memory image format.
-        static image_format memory_png() noexcept;
+        [[nodiscard]] static auto memory_png() noexcept -> image_format;
         
         /// @brief Gets the TIFF memory.
         /// @return An image_format object that indicates the TIFF memory image format.
-        static image_format memory_tiff() noexcept;
+        [[nodiscard]] static auto memory_tiff() noexcept -> image_format;
         
         /// @brief Gets the cursor (CUR) image format.
         /// @return An image_format object that indicates the cursor image format.
-        static image_format cur() noexcept;
+        [[nodiscard]] static auto cur() noexcept -> image_format;
         
         /// @brief Gets the CUR memory.
         /// @return An image_format object that indicates the CUR memory image format.
-        static image_format memory_cur() noexcept;
+        [[nodiscard]] static auto memory_cur() noexcept -> image_format;
         
         /// @brief Gets the x bitmap (XBM) image format.
         /// @return An image_format object that indicates the XBM image format.
-        static image_format xbm() noexcept;
+        [[nodiscard]] static auto xbm() noexcept -> image_format;
         
         /// @brief Gets the XMB memory.
         /// @return An image_format object that indicates the XBM memory image format.
-        static image_format memory_xbm() noexcept;
+        [[nodiscard]] static auto memory_xbm() noexcept -> image_format;
         
         /// @brief Gets the x pixmap (XPM) image format.
         /// @return An image_format object that indicates the XPM image format.
-        static image_format xpm() noexcept;
+        [[nodiscard]] static auto xpm() noexcept -> image_format;
         
         /// @brief Gets the XPM memory.
         /// @return An image_format object that indicates the XPM memory image format.
-        static image_format memory_xpm() noexcept;
+        [[nodiscard]] static auto memory_xpm() noexcept -> image_format;
         
         /// @brief Gets the portable pixmap (PNM) image format.
         /// @return An image_format object that indicates the PNM image format.
-        static image_format pnm() noexcept;
+        [[nodiscard]] static auto pnm() noexcept -> image_format;
         
         /// @brief Gets the PNM memory.
         /// @return An image_format object that indicates the PNM memory image format.
-        static image_format memory_pnm() noexcept;
+        [[nodiscard]] static auto memory_pnm() noexcept -> image_format;
         
         /// @brief Gets the pcx (PCX) image format.
         /// @return An image_format object that indicates the PCX image format.
-        static image_format pcx() noexcept;
+        [[nodiscard]] static auto pcx() noexcept -> image_format;
         
         /// @brief Gets the PCX memory.
         /// @return An image_format object that indicates the PCX memory image format.
-        static image_format memory_pcx() noexcept;
+        [[nodiscard]] static auto memory_pcx() noexcept -> image_format;
         
         /// @brief Gets the apple pict (PICT) image format.
         /// @return An image_format object that indicates the PICT image format.
-        static image_format pict() noexcept;
+        [[nodiscard]] static auto pict() noexcept -> image_format;
         
         /// @brief Gets the PICT memory.
         /// @return An image_format object that indicates the PICT memory image format.
-        static image_format memory_pict() noexcept;
+        [[nodiscard]] static auto memory_pict() noexcept -> image_format;
         
         /// @brief Gets the apple icon (ICON) image format.
         /// @return An image_format object that indicates the ICON image format.
-        static image_format icon() noexcept;
+        [[nodiscard]] static auto icon() noexcept -> image_format;
         
         /// @brief Gets the ICON memory.
         /// @return An image_format object that indicates the ICOM memory image format.
-        static image_format memory_icon() noexcept;
+        [[nodiscard]] static auto memory_icon() noexcept -> image_format;
         
         /// @brief Gets the apple cursor (CURSOR) image format.
         /// @return An image_format object that indicates the CURSOR format.
-        static image_format cursor() noexcept;
+        [[nodiscard]] static auto cursor() noexcept -> image_format;
         
         /// @brief Gets the CURSOR memory.
         /// @return An image_format object that indicates the CURSOR memory image format.
-        static image_format memory_cursor() noexcept;
+        [[nodiscard]] static auto memory_cursor() noexcept -> image_format;
         
         /// @brief Gets the animated file cursor (ANI) image format.
         /// @return An image_format object that indicates the ANI image format.
-        static image_format ani() noexcept;
+        [[nodiscard]] static auto ani() noexcept -> image_format;
         
         /// @brief Gets the iif (IIF) image format.
         /// @return An image_format object that indicates the IIF image format.
-        static image_format iif() noexcept;
+        [[nodiscard]] static auto iif() noexcept -> image_format;
         
         /// @brief Gets the truevision targa (TGA) image format.
         /// @return An image_format object that indicates the TGA image format.
-        static image_format tga() noexcept;
+        [[nodiscard]] static auto tga() noexcept -> image_format;
         /// @}
         
         /// @name Public Methods
@@ -203,24 +203,24 @@ namespace xtd {
         /// | Less than zero    | This instance is less than obj.    |
         /// | Zero              | This instance is equal to obj.     |
         /// | Greater than zero | This instance is greater than obj. |
-        int32 compare_to(const image_format& value) const noexcept override;
+        [[nodiscard]] auto compare_to(const image_format& value) const noexcept -> int32 override;
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const image_format& other) const noexcept override;
+        [[nodiscard]] auto equals(const image_format& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         
         /// @brief Converts this image_format object to a human-readable string.
         /// @return A string that represents this image_format object.
-        xtd::string to_string() const noexcept override;
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
         /// @}
         
       private:
