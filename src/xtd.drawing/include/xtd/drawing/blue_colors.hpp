@@ -28,73 +28,73 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_blue.png
-      static xtd::drawing::color blue() noexcept;
+      [[nodiscard]] static auto blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_cornflower_blue.png
-      static xtd::drawing::color cornflower_blue() noexcept;
+      [[nodiscard]] static auto cornflower_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_blue.png
-      static xtd::drawing::color dark_blue() noexcept;
+      [[nodiscard]] static auto dark_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_deep_sky_blue.png
-      static xtd::drawing::color deep_sky_blue() noexcept;
+      [[nodiscard]] static auto deep_sky_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dodger_blue.png
-      static xtd::drawing::color dodger_blue() noexcept;
+      [[nodiscard]] static auto dodger_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_blue.png
-      static xtd::drawing::color light_blue() noexcept;
+      [[nodiscard]] static auto light_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_sky_blue.png
-      static xtd::drawing::color light_sky_blue() noexcept;
+      [[nodiscard]] static auto light_sky_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_steel_blue.png
-      static xtd::drawing::color light_steel_blue() noexcept;
+      [[nodiscard]] static auto light_steel_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_blue.png
-      static xtd::drawing::color medium_blue() noexcept;
+      [[nodiscard]] static auto medium_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_midnight_blue.png
-      static xtd::drawing::color midnight_blue() noexcept;
+      [[nodiscard]] static auto midnight_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_navy.png
-      static xtd::drawing::color navy() noexcept;
+      [[nodiscard]] static auto navy() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_powder_blue.png
-      static xtd::drawing::color powder_blue() noexcept;
+      [[nodiscard]] static auto powder_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_royal_blue.png
-      static xtd::drawing::color royal_blue() noexcept;
+      [[nodiscard]] static auto royal_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_sky_blue.png
-      static xtd::drawing::color sky_blue() noexcept;
+      [[nodiscard]] static auto sky_blue() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_steel_blue.png
-      static xtd::drawing::color steel_blue() noexcept;
+      [[nodiscard]] static auto steel_blue() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
