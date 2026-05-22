@@ -115,24 +115,24 @@ namespace xtd {
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @return A handle to the GDI bitmap object that this method creates.
       /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see [Bitmaps](https://go.microsoft.com/fwlink/?LinkId=205685) in the Windows GDI documentation.
-      xtd::intptr get_hbitmap() const;
+      [[nodiscard]] auto get_hbitmap() const -> xtd::intptr;
       
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @param background A xtd::drawing::color structure that specifies the background color. This parameter is ignored if the bitmap is totally opaque.
       /// @return A handle to the GDI bitmap object that this method creates.
       /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see [Bitmaps](https://go.microsoft.com/fwlink/?LinkId=205685) in the Windows GDI documentation.
-      xtd::intptr get_hbitmap(const xtd::drawing::color& background) const;
+      [[nodiscard]] auto get_hbitmap(const xtd::drawing::color& background) const -> xtd::intptr;
       
       /// @brief Returns the handle to an icon.
       /// @return A Windows handle to an icon with the same image as the xtd::drawing::bitmap.
       /// @remarks Initially, an icon created from the handle will have the same size as the original bitmap.
-      xtd::intptr get_hicon() const;
+      [[nodiscard]] auto get_hicon() const -> xtd::intptr;
       
       /// @brief Gets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
       /// @return A xtd::drawing::color structure that represents the color of the specified pixel.
-      drawing::color get_pixel(xtd::int32 x, xtd::int32 y)  const;
+      auto get_pixel(xtd::int32 x, xtd::int32 y) const -> drawing::color;
       
       /// @brief Locks a xtd::drawing::bitmap into system memory.
       /// @param rect A xtd::drawing::rectangle structure that specifies the portion of the xtd::drawing::bitmap to lock.
@@ -142,7 +142,7 @@ namespace xtd {
       /// @remarks Use the xtd::drawing::bitmap::lock_bits method to lock an existing bitmap in system memory so that it can be changed programmatically. You can change the color of an image with the xtd::drawing::bitmap::set_pixel method, although the xtd::drawing::bitmap::lock_bits method offers better performance for large-scale changes.
       /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
       /// @remarks When calling this method, you should use a member of the xtd::drawing::imaging::pixel_format enumeration that contains a specific bits-per-pixel (BPP) value. Using xtd::drawing::imaging::pixel_format values such as xtd::drawing::imaging::pixel_format::indexed and xtd::drawing::imaging::pixel_format::gdi will throw an xtd::argument_exception. Also, passing the incorrect pixel format for a bitmap will throw an xtd::argument_exception.
-      xtd::drawing::imaging::bitmap_data lock_bits(const xtd::drawing::rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format);
+      [[nodiscard]] auto lock_bits(const xtd::drawing::rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format) -> xtd::drawing::imaging::bitmap_data;
       /// @brief Locks a xtd::drawing::bitmap into system memory.
       /// @param rect A xtd::drawing::rectangle structure that specifies the portion of the xtd::drawing::bitmap to lock.
       /// @param flags An xtd::drawing::imaging::image_lock_mode enumeration that specifies the access level (read/write) for the xtd::drawing::bitmap.
@@ -152,33 +152,33 @@ namespace xtd {
       /// @remarks Use the xtd::drawing::bitmap::lock_bits method to lock an existing bitmap in system memory so that it can be changed programmatically. You can change the color of an image with the xtd::drawing::bitmap::set_pixel method, although the xtd::drawing::bitmap::lock_bits method offers better performance for large-scale changes.
       /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
       /// @remarks When calling this method, you should use a member of the xtd::drawing::imaging::pixel_format enumeration that contains a specific bits-per-pixel (BPP) value. Using xtd::drawing::imaging::pixel_format values such as xtd::drawing::imaging::pixel_format::indexed and xtd::drawing::imaging::pixel_format::gdi will throw an xtd::argument_exception. Also, passing the incorrect pixel format for a bitmap will throw an xtd::argument_exception.
-      xtd::drawing::imaging::bitmap_data lock_bits(const xtd::drawing::rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const xtd::drawing::imaging::bitmap_data& data);
+      [[nodiscard]] auto lock_bits(const xtd::drawing::rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const xtd::drawing::imaging::bitmap_data& data) -> xtd::drawing::imaging::bitmap_data;
       
       /// @brief Makes the default transparent color transparent for this xtd::drawing::bitmap.
       /// @remarks The system palette defines one color as the default transparent, or alpha, color. This method makes the default transparent color transparent for this xtd::drawing::bitmap. If no transparent color is specified by the system, xtd::drawing::color::light_gray is the transparent color.
       /// @remarks When you call xtd::drawing::bitmap::make_transparent, the bitmap will be converted to the xtd::drawing::imaging::pixel_format::format_32bpp_argb format, as this format supports an alpha channel.
-      void make_transparent();
+      auto make_transparent() -> void;
       /// @brief Makes the specified color transparent for this xtd::drawing::bitmap.
       /// @param transprent_color The xtd::drawing::color structure that represents the color to make transparent.
       /// @remarks When you call xtd::drawing::bitmap::make_transparent, the bitmap will be converted to the xtd::drawing::imaging::pixel_format::format_32bpp_argb format, as this format supports an alpha channel.
-      void make_transparent(const xtd::drawing::color& transparent_color);
+      auto make_transparent(const xtd::drawing::color& transparent_color) -> void;
       
       /// @brief Sets the color of the specified pixel in this xtd::drawing::bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
       /// @param color A xtd::drawing::color structure that represents the color of the specified pixel.
-      void set_pixel(xtd::int32 x, xtd::int32 y, const xtd::drawing::color& color);
+      auto set_pixel(xtd::int32 x, xtd::int32 y, const xtd::drawing::color& color) -> void;
       
       /// @brief Sets the resolution for this xtd::drawing::bitmap.
       /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.
       /// @param y_dpi The vertical resolution, in dots per inch, of the xtd::drawing::bitmap.
       /// @remarks Use this method to set the desired resolution on a newly created bitmap. Changing the resolution of the image does not change its physical size.
-      void set_resolution(xtd::int32 x_dpi, xtd::int32 y_dpi);
+      auto set_resolution(xtd::int32 x_dpi, xtd::int32 y_dpi) -> void;
       
       /// @brief Unlocks this xtd::drawing::bitmap from system memory.
       /// @param data A xtd::drawing::imaging::bitmap_data that specifies information about the lock operation.
       /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
-      void unlock_bits(const xtd::drawing::imaging::bitmap_data& data);
+      auto unlock_bits(const xtd::drawing::imaging::bitmap_data& data) -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -187,7 +187,7 @@ namespace xtd {
       /// @brief Creates a xtd::drawing::bitmap from a Windows handle to an icon.
       /// @param hicon A handle to an icon.
       /// @return The xtd::drawing::bitmap that this method creates.
-      static bitmap from_hicon(xtd::intptr icon);
+      [[nodiscard]] static auto from_hicon(xtd::intptr icon) -> bitmap;
       /// @}
       
       /// @name Public Deprecated Constructors
