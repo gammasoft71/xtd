@@ -109,27 +109,27 @@ namespace xtd {
         /// @{
         /// @brief Gets the Encoder object associated with this xtd::drawing::imaging::encoder_parameter object. The Encoder object encapsulates the globally unique identifier (GUID) that specifies the category (for example Quality, ColorDepth, or Compression) of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return An Encoder object that encapsulates the GUID that specifies the category of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
-        const xtd::drawing::imaging::encoder& encoder() const noexcept;
+        [[nodiscard]] auto encoder() const noexcept -> const xtd::drawing::imaging::encoder&;
         /// @brief Sets the Encoder object associated with this xtd::drawing::imaging::encoder_parameter object. The Encoder object encapsulates the globally unique identifier (GUID) that specifies the category (for example Quality, ColorDepth, or Compression) of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @param value An Encoder object that encapsulates the GUID that specifies the category of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return This current instance.
-        encoder_parameter& encoder(const xtd::drawing::imaging::encoder& value);
+        [[nodiscard]] auto encoder(const xtd::drawing::imaging::encoder& value) -> encoder_parameter&;
         
         /// @brief Gets the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return An integer that indicates the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
-        xtd::usize number_of_values() const noexcept;
+        [[nodiscard]] auto number_of_values() const noexcept -> xtd::usize;
         
         /// @brief Gets the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return A member of the EncoderParameterValueType enumeration that indicates the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
-        xtd::drawing::imaging::encoder_parameter_value_type type() const noexcept;
+        [[nodiscard]] auto type() const noexcept -> xtd::drawing::imaging::encoder_parameter_value_type;
         
         /// @brief Gets the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return A member of the EncoderParameterValueType enumeration that indicates the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
-        xtd::drawing::imaging::encoder_parameter_value_type value_type() const noexcept;
+        [[nodiscard]] auto value_type() const noexcept -> xtd::drawing::imaging::encoder_parameter_value_type;
         
         /// @brief Gets The data value.
         /// @return The data value.
-        const xtd::collections::generic::list<xtd::byte>& value() const noexcept;
+        [[nodiscard]] auto value() const noexcept -> const xtd::collections::generic::list<xtd::byte>&;
         /// @}
         
         /// @name Public Methods
@@ -138,15 +138,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const encoder_parameter& other) const noexcept override;
+        [[nodiscard]] auto equals(const encoder_parameter& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
