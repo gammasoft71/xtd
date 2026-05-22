@@ -28,437 +28,437 @@ namespace xtd {
       
       /// @{
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush transparent();
+      [[nodiscard]] static auto transparent() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush alice_blue();
+      [[nodiscard]] static auto alice_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush antique_white();
+      [[nodiscard]] static auto antique_white() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush aqua();
+      [[nodiscard]] static auto aqua() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush aquamarine();
+      [[nodiscard]] static auto aquamarine() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush azure();
+      [[nodiscard]] static auto azure() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush beige();
+      [[nodiscard]] static auto beige() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush bisque();
+      [[nodiscard]] static auto bisque() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush black();
+      [[nodiscard]] static auto black() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush blanched_almond();
+      [[nodiscard]] static auto blanched_almond() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush blue();
+      [[nodiscard]] static auto blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush blue_violet();
+      [[nodiscard]] static auto blue_violet() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush brown();
+      [[nodiscard]] static auto brown() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush burly_wood();
+      [[nodiscard]] static auto burly_wood() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush cadet_blue();
+      [[nodiscard]] static auto cadet_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush chartreuse();
+      [[nodiscard]] static auto chartreuse() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush chocolate();
+      [[nodiscard]] static auto chocolate() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush coral();
+      [[nodiscard]] static auto coral() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush cornflower_blue();
+      [[nodiscard]] static auto cornflower_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush cornsilk();
+      [[nodiscard]] static auto cornsilk() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush crimson();
+      [[nodiscard]] static auto crimson() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush cyan();
+      [[nodiscard]] static auto cyan() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_blue();
+      [[nodiscard]] static auto dark_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_cyan();
+      [[nodiscard]] static auto dark_cyan() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_goldenrod();
+      [[nodiscard]] static auto dark_goldenrod() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_gray();
+      [[nodiscard]] static auto dark_gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_green();
+      [[nodiscard]] static auto dark_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_khaki();
+      [[nodiscard]] static auto dark_khaki() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_magenta();
+      [[nodiscard]] static auto dark_magenta() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_olive_green();
+      [[nodiscard]] static auto dark_olive_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_orange();
+      [[nodiscard]] static auto dark_orange() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_orchid();
+      [[nodiscard]] static auto dark_orchid() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_red();
+      [[nodiscard]] static auto dark_red() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_salmon();
+      [[nodiscard]] static auto dark_salmon() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_sea_green();
+      [[nodiscard]] static auto dark_sea_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_slate_blue();
+      [[nodiscard]] static auto dark_slate_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_slate_gray();
+      [[nodiscard]] static auto dark_slate_gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_turquoise();
+      [[nodiscard]] static auto dark_turquoise() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dark_violet();
+      [[nodiscard]] static auto dark_violet() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush deep_pink();
+      [[nodiscard]] static auto deep_pink() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush deep_sky_blue();
+      [[nodiscard]] static auto deep_sky_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dim_gray();
+      [[nodiscard]] static auto dim_gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush dodger_blue();
+      [[nodiscard]] static auto dodger_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush firebrick();
+      [[nodiscard]] static auto firebrick() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush floral_white();
+      [[nodiscard]] static auto floral_white() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush forest_green();
+      [[nodiscard]] static auto forest_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush fuchsia();
+      [[nodiscard]] static auto fuchsia() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush gainsboro();
+      [[nodiscard]] static auto gainsboro() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush ghost_white();
+      [[nodiscard]] static auto ghost_white() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush gold();
+      [[nodiscard]] static auto gold() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush goldenrod();
+      [[nodiscard]] static auto goldenrod() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush gray();
+      [[nodiscard]] static auto gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush green();
+      [[nodiscard]] static auto green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush green_yellow();
+      [[nodiscard]] static auto green_yellow() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush honeydew();
+      [[nodiscard]] static auto honeydew() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush hot_pink();
+      [[nodiscard]] static auto hot_pink() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush indian_red();
+      [[nodiscard]] static auto indian_red() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush indigo();
+      [[nodiscard]] static auto indigo() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush ivory();
+      [[nodiscard]] static auto ivory() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush khaki();
+      [[nodiscard]] static auto khaki() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush lavender();
+      [[nodiscard]] static auto lavender() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush lavender_blush();
+      [[nodiscard]] static auto lavender_blush() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush lawn_green();
+      [[nodiscard]] static auto lawn_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush lemon_chiffon();
+      [[nodiscard]] static auto lemon_chiffon() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_blue();
+      [[nodiscard]] static auto light_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_coral();
+      [[nodiscard]] static auto light_coral() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_cyan();
+      [[nodiscard]] static auto light_cyan() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_goldenrod_yellow();
+      [[nodiscard]] static auto light_goldenrod_yellow() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_gray();
+      [[nodiscard]] static auto light_gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_green();
+      [[nodiscard]] static auto light_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_pink();
+      [[nodiscard]] static auto light_pink() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_salmon();
+      [[nodiscard]] static auto light_salmon() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_sea_green();
+      [[nodiscard]] static auto light_sea_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_sky_blue();
+      [[nodiscard]] static auto light_sky_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_slate_gray();
+      [[nodiscard]] static auto light_slate_gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_steel_blue();
+      [[nodiscard]] static auto light_steel_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush light_yellow();
+      [[nodiscard]] static auto light_yellow() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush lime();
+      [[nodiscard]] static auto lime() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush lime_green();
+      [[nodiscard]] static auto lime_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush linen();
+      [[nodiscard]] static auto linen() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush magenta();
+      [[nodiscard]] static auto magenta() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush maroon();
+      [[nodiscard]] static auto maroon() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_aquamarine();
+      [[nodiscard]] static auto medium_aquamarine() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_blue();
+      [[nodiscard]] static auto medium_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_orchid();
+      [[nodiscard]] static auto medium_orchid() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_purple();
+      [[nodiscard]] static auto medium_purple() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_sea_green();
+      [[nodiscard]] static auto medium_sea_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_slate_blue();
+      [[nodiscard]] static auto medium_slate_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_spring_green();
+      [[nodiscard]] static auto medium_spring_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_turquoise();
+      [[nodiscard]] static auto medium_turquoise() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush medium_violet_red();
+      [[nodiscard]] static auto medium_violet_red() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush midnight_blue();
+      [[nodiscard]] static auto midnight_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush mint_cream();
+      [[nodiscard]] static auto mint_cream() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush misty_rose();
+      [[nodiscard]] static auto misty_rose() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush moccasin();
+      [[nodiscard]] static auto moccasin() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush navajo_white();
+      [[nodiscard]] static auto navajo_white() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush navy();
+      [[nodiscard]] static auto navy() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush old_lace();
+      [[nodiscard]] static auto old_lace() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush olive();
+      [[nodiscard]] static auto olive() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush olive_drab();
+      [[nodiscard]] static auto olive_drab() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush orange();
+      [[nodiscard]] static auto orange() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush orange_red();
+      [[nodiscard]] static auto orange_red() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush orchid();
+      [[nodiscard]] static auto orchid() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush pale_goldenrod();
+      [[nodiscard]] static auto pale_goldenrod() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush pale_green();
+      [[nodiscard]] static auto pale_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush pale_turquoise();
+      [[nodiscard]] static auto pale_turquoise() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush pale_violet_red();
+      [[nodiscard]] static auto pale_violet_red() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush papaya_whip();
+      [[nodiscard]] static auto papaya_whip() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush peach_puff();
+      [[nodiscard]] static auto peach_puff() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush peru();
+      [[nodiscard]] static auto peru() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush pink();
+      [[nodiscard]] static auto pink() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush plum();
+      [[nodiscard]] static auto plum() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush powder_blue();
+      [[nodiscard]] static auto powder_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush purple();
+      [[nodiscard]] static auto purple() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush rebecca_purple();
+      [[nodiscard]] static auto rebecca_purple() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush red();
+      [[nodiscard]] static auto red() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush rosy_brown();
+      [[nodiscard]] static auto rosy_brown() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush royal_blue();
+      [[nodiscard]] static auto royal_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush saddle_brown();
+      [[nodiscard]] static auto saddle_brown() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush salmon();
+      [[nodiscard]] static auto salmon() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush sandy_brown();
+      [[nodiscard]] static auto sandy_brown() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush sea_green();
+      [[nodiscard]] static auto sea_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush sea_shell();
+      [[nodiscard]] static auto sea_shell() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush sienna();
+      [[nodiscard]] static auto sienna() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush silver();
+      [[nodiscard]] static auto silver() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush sky_blue();
+      [[nodiscard]] static auto sky_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush slate_blue();
+      [[nodiscard]] static auto slate_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush slate_gray();
+      [[nodiscard]] static auto slate_gray() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush snow();
+      [[nodiscard]] static auto snow() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush spring_green();
+      [[nodiscard]] static auto spring_green() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush steel_blue();
+      [[nodiscard]] static auto steel_blue() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush tan();
+      [[nodiscard]] static auto tan() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush teal();
+      [[nodiscard]] static auto teal() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush thistle();
+      [[nodiscard]] static auto thistle() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush tomato();
+      [[nodiscard]] static auto tomato() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush turquoise();
+      [[nodiscard]] static auto turquoise() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush violet();
+      [[nodiscard]] static auto violet() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush wheat();
+      [[nodiscard]] static auto wheat() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush white();
+      [[nodiscard]] static auto white() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush white_smoke();
+      [[nodiscard]] static auto white_smoke() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush yellow();
+      [[nodiscard]] static auto yellow() -> xtd::drawing::solid_brush;
       
       /// @brief A system-defined brush object.
-      static xtd::drawing::solid_brush yellow_green();
+      [[nodiscard]] static auto yellow_green() -> xtd::drawing::solid_brush;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of brushes.
-      static const xtd::array<xtd::drawing::solid_brush>& get_brushes();
+      [[nodiscard]] static auto get_brushes() -> const xtd::array<xtd::drawing::solid_brush>&;
       /// @}
     };
   }
