@@ -37,8 +37,8 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::graphics object that outputs to the graphics buffer.
       /// @return A xtd::drawing::graphics object that outputs to the graphics buffer.
       /// @remarks This property provides a xtd::drawing::graphics object that draws to the graphics buffer allocated for this xtd::drawing::buffered_graphics object.
-      const xtd::drawing::graphics& graphics() const noexcept;
-      xtd::drawing::graphics& graphics() noexcept;
+      [[nodiscard]] auto graphics() const noexcept -> const xtd::drawing::graphics&;
+      [[nodiscard]] auto graphics() noexcept -> xtd::drawing::graphics&;
       /// @}
       
       /// @name Public Methods
@@ -46,15 +46,15 @@ namespace xtd {
       /// @{
       /// @brief Writes the contents of the graphics buffer to the default device.
       /// @remarks This method writes the contents of the graphics buffer to the device specified by calling the xtd::drawing::bffered_graphics_context::allocate method of the xtd::drawing::bffered_graphics_context used to create this xtd::drawing::bffered_graphics object.
-      void render();
+      auto render() -> void;
       /// @brief Writes the contents of the graphics buffer to the specified xtd::drawing::graphics object.
       /// @param target A xtd::drawing::graphics object to which to write the contents of the graphics buffer.
       /// @remarks This method writes the contents of the graphics buffer to the specified xtd::drawing::graphics object.
-      void render(xtd::drawing::graphics& target);
+      auto render(xtd::drawing::graphics& target) -> void;
       /// @brief Writes the contents of the graphics buffer to the device context associated with the specified intptr handle.
       /// @param target_dc An intptr that points to the device context to which to write the contents of the graphics buffer.
       /// @remarks This method writes the contents of the graphics buffer to the device context associated with the specified intptr handle.
-      void render(intptr target_dc);
+      auto render(intptr target_dc) -> void;
       /// @}
       
     protected:
