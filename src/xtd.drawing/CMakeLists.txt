@@ -156,6 +156,8 @@ add_sources(
   "include/xtd/drawing/xtd_system_images.hpp"
   "include/xtd/drawing/yellow_colors.hpp"
   "include/xtd/drawing/yellow_colors"
+  "include/xtd/drawing/yuv.hpp"
+  "include/xtd/drawing/yuv"
   "include/xtd/drawing/drawing_2d/conical_gradient_brush.hpp"
   "include/xtd/drawing/drawing_2d/conical_gradient_brush"
   "include/xtd/drawing/drawing_2d/compositing_mode.hpp"

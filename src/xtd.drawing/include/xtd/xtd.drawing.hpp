@@ -146,3 +146,4 @@
 #include "drawing/white_colors.hpp"
 #include "drawing/xtd_system_images.hpp"
 #include "drawing/yellow_colors.hpp"
+#include "drawing/yuv.hpp"
