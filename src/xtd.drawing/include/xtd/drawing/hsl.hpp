@@ -18,7 +18,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing colors
     struct hsl {
       /// @name Public Properties
       
