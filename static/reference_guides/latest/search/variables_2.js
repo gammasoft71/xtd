@@ -59,7 +59,7 @@ var searchData=
   ['bird_56',['bird',['../classxtd_1_1forms_1_1emoticons.html#ae855af8e05e83f0338c24ca911d2b559',1,'xtd::forms::emoticons']]],
   ['birthday_5fcake_57',['birthday_cake',['../classxtd_1_1forms_1_1emoticons.html#a421949526b3b52a73f8d8a52f0ed97e7',1,'xtd::forms::emoticons']]],
   ['bisque_58',['bisque',['../classxtd_1_1drawing_1_1color.html#a60269551ee216a70dbc157baf55ec7c4',1,'xtd::drawing::color']]],
-  ['black_59',['black',['../classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11',1,'xtd::drawing::color']]],
+  ['black_59',['black',['../structxtd_1_1drawing_1_1cmyk.html#afe66b04a5cdd197d942338b6681e7fd5',1,'xtd::drawing::cmyk::black'],['../classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11',1,'xtd::drawing::color::black']]],
   ['black_5fchess_5fpawn_60',['black_chess_pawn',['../classxtd_1_1forms_1_1emoticons.html#a0291468ecc7e69256027babcdb4bd238',1,'xtd::forms::emoticons']]],
   ['black_5fcircle_5ffor_5frecord_61',['black_circle_for_record',['../classxtd_1_1forms_1_1emoticons.html#a8af8aa692e87c5a84a4117a6c80aaf20',1,'xtd::forms::emoticons']]],
   ['black_5fclub_5fsuit_62',['black_club_suit',['../classxtd_1_1forms_1_1emoticons.html#a30a8d8927efdd1dd91f593a3b594287e',1,'xtd::forms::emoticons']]],

@@ -251,6 +251,6 @@ var searchData=
   ['custard_248',['custard',['../classxtd_1_1forms_1_1emoticons.html#a03466730585469cd3f9eeef888835c3f',1,'xtd::forms::emoticons']]],
   ['customs_249',['customs',['../classxtd_1_1forms_1_1emoticons.html#a96bda1f0311b742ed52c36f757f05d0c',1,'xtd::forms::emoticons']]],
   ['cut_5fof_5fmeat_250',['cut_of_meat',['../classxtd_1_1forms_1_1emoticons.html#ae7250d9a8563bb4888d6c979f8ffcdb3',1,'xtd::forms::emoticons']]],
-  ['cyan_251',['cyan',['../classxtd_1_1drawing_1_1color.html#ace922e8f61ba93ef4bac04d657013c11',1,'xtd::drawing::color']]],
+  ['cyan_251',['cyan',['../structxtd_1_1drawing_1_1cmyk.html#af5ecb78a95a95dd8497aca283a81f6f6',1,'xtd::drawing::cmyk::cyan'],['../classxtd_1_1drawing_1_1color.html#ace922e8f61ba93ef4bac04d657013c11',1,'xtd::drawing::color::cyan']]],
   ['cyclone_252',['cyclone',['../classxtd_1_1forms_1_1emoticons.html#a6046f768c31ae00d14612273e6beab79',1,'xtd::forms::emoticons']]]
 ];

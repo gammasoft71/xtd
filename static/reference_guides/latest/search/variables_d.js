@@ -1,7 +1,7 @@
 var searchData=
 [
   ['mage_0',['mage',['../classxtd_1_1forms_1_1emoticons.html#a7a260d2aa4c0597389750676b62f8849',1,'xtd::forms::emoticons']]],
-  ['magenta_1',['magenta',['../classxtd_1_1drawing_1_1color.html#af2bd1e408af57f307567234dbdf79d9f',1,'xtd::drawing::color']]],
+  ['magenta_1',['magenta',['../structxtd_1_1drawing_1_1cmyk.html#af4c89c46f2bc15d859423a7c7eaebc4f',1,'xtd::drawing::cmyk::magenta'],['../classxtd_1_1drawing_1_1color.html#af2bd1e408af57f307567234dbdf79d9f',1,'xtd::drawing::color::magenta']]],
   ['magnet_2',['magnet',['../classxtd_1_1forms_1_1emoticons.html#aa197e50fc8a4bd10aa9802d9dbcda36e',1,'xtd::forms::emoticons']]],
   ['mahjong_5ftile_5fred_5fdragon_3',['mahjong_tile_red_dragon',['../classxtd_1_1forms_1_1emoticons.html#a78b9c93c9ab31c18515a3ead4b175997',1,'xtd::forms::emoticons']]],
   ['male_5fsign_4',['male_sign',['../classxtd_1_1forms_1_1emoticons.html#aaf4aad973c538297dc88897a9295b2fa',1,'xtd::forms::emoticons']]],
