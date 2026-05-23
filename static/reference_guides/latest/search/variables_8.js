@@ -65,8 +65,9 @@ var searchData=
   ['house_5fbuilding_62',['house_building',['../classxtd_1_1forms_1_1emoticons.html#aad8c79cfa6dfd669bd311ce3bda910e1',1,'xtd::forms::emoticons']]],
   ['house_5fbuildings_63',['house_buildings',['../classxtd_1_1forms_1_1emoticons.html#ae043b1926c03287b195fcf74dac5a890',1,'xtd::forms::emoticons']]],
   ['house_5fwith_5fgarden_64',['house_with_garden',['../classxtd_1_1forms_1_1emoticons.html#ad26bed5fd2918723052b01936cc8069d',1,'xtd::forms::emoticons']]],
-  ['hugging_5fface_65',['hugging_face',['../classxtd_1_1forms_1_1emoticons.html#a81798b2ebf69069612a37cce91962feb',1,'xtd::forms::emoticons']]],
-  ['hundred_5fpoints_5fsymbol_66',['hundred_points_symbol',['../classxtd_1_1forms_1_1emoticons.html#afadeb8eaad20f8929403f4d1bb449c74',1,'xtd::forms::emoticons']]],
-  ['hushed_5fface_67',['hushed_face',['../classxtd_1_1forms_1_1emoticons.html#a655e9a437a9de323303dced7b4729ab0',1,'xtd::forms::emoticons']]],
-  ['hwnd_68',['hwnd',['../structxtd_1_1forms_1_1message.html#a6e84bb75f6c9a0b4ba1a719dac4f172c',1,'xtd::forms::message']]]
+  ['hue_65',['hue',['../structxtd_1_1drawing_1_1hsb.html#a2b6016ea4436d28fc03304780596cdf6',1,'xtd::drawing::hsb::hue'],['../structxtd_1_1drawing_1_1hsl.html#aec3e8b4f091542c23015568387426271',1,'xtd::drawing::hsl::hue'],['../structxtd_1_1drawing_1_1hsv.html#ad7e823044af657d85c738eb061f3269d',1,'xtd::drawing::hsv::hue']]],
+  ['hugging_5fface_66',['hugging_face',['../classxtd_1_1forms_1_1emoticons.html#a81798b2ebf69069612a37cce91962feb',1,'xtd::forms::emoticons']]],
+  ['hundred_5fpoints_5fsymbol_67',['hundred_points_symbol',['../classxtd_1_1forms_1_1emoticons.html#afadeb8eaad20f8929403f4d1bb449c74',1,'xtd::forms::emoticons']]],
+  ['hushed_5fface_68',['hushed_face',['../classxtd_1_1forms_1_1emoticons.html#a655e9a437a9de323303dced7b4729ab0',1,'xtd::forms::emoticons']]],
+  ['hwnd_69',['hwnd',['../structxtd_1_1forms_1_1message.html#a6e84bb75f6c9a0b4ba1a719dac4f172c',1,'xtd::forms::message']]]
 ];

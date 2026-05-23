@@ -16,5 +16,8 @@ var searchData=
   ['horizontal_5fcontrol_5flayout_5fstyle_5fcollection_2ehpp_13',['horizontal_control_layout_style_collection.hpp',['../horizontal__control__layout__style__collection_8hpp.html',1,'']]],
   ['horizontal_5flayout_5fpanel_2ehpp_14',['horizontal_layout_panel.hpp',['../horizontal__layout__panel_8hpp.html',1,'']]],
   ['hotkey_5fprefix_2ehpp_15',['hotkey_prefix.hpp',['../hotkey__prefix_8hpp.html',1,'']]],
-  ['hue_5frotate_5feffect_2ehpp_16',['hue_rotate_effect.hpp',['../hue__rotate__effect_8hpp.html',1,'']]]
+  ['hsb_2ehpp_16',['hsb.hpp',['../hsb_8hpp.html',1,'']]],
+  ['hsl_2ehpp_17',['hsl.hpp',['../hsl_8hpp.html',1,'']]],
+  ['hsv_2ehpp_18',['hsv.hpp',['../hsv_8hpp.html',1,'']]],
+  ['hue_5frotate_5feffect_2ehpp_19',['hue_rotate_effect.hpp',['../hue__rotate__effect_8hpp.html',1,'']]]
 ];
