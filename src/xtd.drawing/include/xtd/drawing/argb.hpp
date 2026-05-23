@@ -12,7 +12,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The argb struct.
     /// ```cpp
-    /// struct argb : rgb;
+    /// struct argb;
     /// ```
     /// @par Namespace
     /// xtd::drawing
