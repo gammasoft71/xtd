@@ -241,6 +241,18 @@ color color::from_argb(const xtd::drawing::argb& argb) noexcept {
   return color(argb.to_uint32());
 }
 
+color color::from_cmyk(const cmyk& cmyk) noexcept {
+  return from_cmyk(cmyk.cyan, cmyk.magenta, cmyk.yellow, cmyk.black);
+}
+
+color color::from_cmyk(float cyan, float magenta, float yellow, float black) noexcept {
+  // algorithm version (see https://www.programmingalgorithms.com/algorithm/cmyk-to-rgb)
+  byte r = static_cast<xtd::byte>(255 * (1.0f - cyan) * (1.0f - black));
+  byte g = static_cast<xtd::byte>(255 * (1.0f - magenta) * (1.0f - black));
+  byte b = static_cast<xtd::byte>(255 * (1.0f - yellow) * (1.0f - black));
+  return color::from_argb(255, r, g, b);
+}
+
 color color::from_handle(intptr handle) noexcept {
   return color(handle);
 }
@@ -614,6 +626,18 @@ auto color::to_argb() const noexcept -> argb {
   return argb::from_uint32(to_uint32());
 }
 
+auto color::to_cmyk() const noexcept -> cmyk {
+  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-cmyk/)
+  auto dr = static_cast<float>(r()) / 255;
+  auto dg = static_cast<float>(g()) / 255;
+  auto db = static_cast<float>(b()) / 255;
+  auto k = 1.0f - static_cast<float>(math::max(math::max(dr, dg), db));
+  auto c = (1.0f - dr - k) / (1.0f - k);
+  auto m = (1.0f - dg - k) / (1.0f - k);
+  auto y = (1.0f - db - k) / (1.0f - k);
+  return cmyk::from_cmyk(c, m, y, k);
+}
+
 auto color::to_known_color() const noexcept -> known_color {
   return known_color_;
 }
@@ -690,6 +714,10 @@ auto color::to_yuv() const noexcept -> yuv {
 
 color::operator xtd::drawing::argb() const noexcept {
   return to_argb();
+}
+
+color::operator xtd::drawing::cmyk() const noexcept {
+  return to_cmyk();
 }
 
 color::operator xtd::drawing::hsb() const noexcept {

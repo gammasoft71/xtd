@@ -87,6 +87,7 @@
 #include "drawing/buffered_graphics.hpp"
 #include "drawing/buffered_graphics_context.hpp"
 #include "drawing/categories_system_images.hpp"
+#include "drawing/cmyk.hpp"
 #include "drawing/color.hpp"
 #include "drawing/color_converter.hpp"
 #include "drawing/color_translator.hpp"

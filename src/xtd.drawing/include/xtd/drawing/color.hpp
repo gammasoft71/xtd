@@ -4,6 +4,7 @@
 #pragma once
 #include "../drawing_export.hpp"
 #include "argb.hpp"
+#include "cmyk.hpp"
 #include "known_color.hpp"
 #include "hsb.hpp"
 #include "hsl.hpp"
@@ -685,6 +686,10 @@ namespace xtd {
       /// }
       /// ```
       [[nodiscard]] auto to_argb() const noexcept -> xtd::drawing::argb;
+      
+      /// @brief Gets the xtd::drawing::cmyk value of this xtd::drawing::color class.
+      /// @return The xtd::drawing::cmyk value of this xtd::drawing::color.
+      [[nodiscard]] auto to_cmyk() const noexcept -> xtd::drawing::cmyk;
 
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
       /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, 0.
@@ -770,6 +775,9 @@ namespace xtd {
       /// @brief Converts to xtd::drawing::argb operator of this xtd::drawing::color class.
       /// @return An xtd::drawing::argb value of this xtd::drawing::color.
       [[nodiscard]] operator xtd::drawing::argb() const noexcept;
+      /// @brief Converts to xtd::drawing::cmyk operator of this xtd::drawing::color class.
+      /// @return An xtd::drawing::cmyk value of this xtd::drawing::color.
+      [[nodiscard]] operator xtd::drawing::cmyk() const noexcept;
       /// @brief Converts to xtd::drawing::hsb operator of this xtd::drawing::color class.
       /// @return An xtd::drawing::hsb value of this xtd::drawing::color.
       [[nodiscard]] operator xtd::drawing::hsb() const noexcept;
@@ -999,6 +1007,18 @@ namespace xtd {
       /// @param argb The xtd::drawing::argb value for the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       [[nodiscard]] static auto from_argb(const xtd::drawing::argb& argb) noexcept -> xtd::drawing::color;
+
+      /// @brief Creates a xtd::drawing::color class from the four CMYK component (cyan, magenta, yellow, and black) values.
+      /// @param cyan The cyan component.
+      /// @param magenta The magenta component.
+      /// @param yellow The yellow component.
+      /// @param black The black component.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      [[nodiscard]] static auto from_cmyk(float cyan, float magenta, float yellow, float black) noexcept -> xtd::drawing::color;
+      /// @brief Creates a xtd::drawing::color class from the four CMYK component (cyan, magenta, yellow, and black) values.
+      /// @param hsv The xtd::drawing::hsv cmyk.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      [[nodiscard]] static auto from_cmyk(const xtd::drawing::cmyk& cmyk) noexcept -> xtd::drawing::color;
 
       /// @brief Creates a xtd::drawing::color class from native handle.
       /// @param handle the handle for the new xtd::drawing::color.
