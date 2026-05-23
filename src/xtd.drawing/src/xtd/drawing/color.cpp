@@ -587,15 +587,15 @@ color color::from_uint32(uint32 argb) noexcept {
 }
 
 xtd::drawing::color color::from_yuv(float y, float u, float v) noexcept {
-  y = math::clamp(y, 0.0f, 1.0f);
-  u = math::clamp(u, -0.5f, 0.5f);
-  v = math::clamp(v, -0.5f, 0.5f);
-  
   auto r = static_cast<xtd::byte>(y + 1.4075f * (v - 128));
   auto g = static_cast<xtd::byte>(y - 0.3455f * (u - 128) - (0.7169f * (v - 128)));
   auto b = static_cast<xtd::byte>(y + 1.7790f * (u - 128));
   
   return from_argb(r, g, b);
+}
+
+xtd::drawing::color color::from_yuv(const yuv& yuv) noexcept {
+  return from_yuv(yuv.y, yuv.u, yuv.v);
 }
 
 float color::get_brightness() const noexcept {
@@ -698,12 +698,20 @@ auto color::to_uint32() const noexcept -> uint32 {
   return argb_;
 }
 
+auto color::to_yuv() const noexcept -> yuv {
+  return yuv::from_yuv(get_y(), get_u(), get_v());
+}
+
 color::operator xtd::drawing::argb() const noexcept {
   return to_argb();
 }
 
 color::operator xtd::uint32() const noexcept {
   return to_uint32();
+}
+
+color::operator xtd::drawing::yuv() const noexcept {
+  return to_yuv();
 }
 
 color::color(uint32 argb) : argb_(argb), empty_(false) {

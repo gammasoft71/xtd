@@ -5,6 +5,7 @@
 #include "../drawing_export.hpp"
 #include "argb.hpp"
 #include "known_color.hpp"
+#include "yuv.hpp"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
@@ -962,7 +963,12 @@ namespace xtd {
       /// @return The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       [[nodiscard]] auto to_uint32() const noexcept -> xtd::uint32;
-      /// @}
+      
+      /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
+      /// @return The 32-bit ARGB value of this xtd::drawing::color.
+      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      [[nodiscard]] auto to_yuv() const noexcept -> xtd::drawing::yuv;
+     /// @}
 
       /// @name Public Operators
       
@@ -974,6 +980,9 @@ namespace xtd {
       /// @return The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       [[nodiscard]] operator xtd::uint32() const noexcept;
+      /// @brief Converts to xtd::drawing::yuv operator of this xtd::drawing::color class.
+      /// @return An xtd::drawing::yuv value of this xtd::drawing::color.
+      [[nodiscard]] operator xtd::drawing::yuv() const noexcept;
       /// @}
 
       /// @name Public Static Methods
@@ -1187,40 +1196,9 @@ namespace xtd {
       /// ```
       [[nodiscard]] static auto from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept -> xtd::drawing::color;
       
-      /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
-      /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
-      /// @param red The red component. Valid values are 0 through 255.
-      /// @param green The green component. Valid values are 0 through 255.
-      /// @param blue The blue component. Valid values are 0 through 255.
+      /// @brief Creates a xtd::drawing::color class from the xtd::drawing::argb value.
+      /// @param argb The xtd::drawing::argb value for the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args e, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
-      /// * Creates three brushes, each a different color. Each xtd::drawing::color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
-      /// * Uses an imaginary triangle to position three circles.
-      /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
-      /// ```cpp
-      /// void from_argb1(paint_event_args& e) {
-      ///   graphics g = e.graphics();
-      ///
-      ///   // Transparent red, green, and blue brushes.
-      ///   solid_brush trns_red_brush(color::from_argb(120, 255, 0, 0));
-      ///   solid_brush trns_green_brush(color::from_argb(120, 0, 255, 0));
-      ///   solid_brush trns_blue_brush(color::from_argb(120, 0, 0, 255));
-      ///
-      ///   // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
-      ///   float tri_base = 100;
-      ///   float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
-      ///
-      ///   // Coordinates of first circle's bounding rectangle.
-      ///   float x1 = 40;
-      ///   float y1 = 40;
-      ///
-      ///   // Fill 3 over-lapping circles. Each circle is a different color.
-      ///   g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
-      ///   g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
-      ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
-      /// }
-      /// ```
       [[nodiscard]] static auto from_argb(const xtd::drawing::argb& argb) noexcept -> xtd::drawing::color;
 
       /// @brief Creates a xtd::drawing::color class from native handle.
@@ -1338,7 +1316,11 @@ namespace xtd {
       /// @param v The Y'UV `V` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       [[nodiscard]] static auto from_yuv(float y, float u, float v) noexcept -> xtd::drawing::color;
-      
+      /// @brief Creates a xtd::drawing::color class from the xtd::drawing::yuv value.
+      /// @param yuv The xtd::drawing::yuv value for the new xtd::drawing::color.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      [[nodiscard]] static auto from_yuv(const xtd::drawing::yuv& yuv) noexcept -> xtd::drawing::color;
+
       /// @brief Creates a xtd::drawing::color class from the specified name.
       /// @param color A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
