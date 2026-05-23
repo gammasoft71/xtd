@@ -251,6 +251,10 @@ color color::from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept 
   return from_argb(0xFF, red, green, blue);
 }
 
+color color::from_argb(const xtd::drawing::argb& argb) noexcept {
+  return color(argb.to_uint32());
+}
+
 color color::from_handle(intptr handle) noexcept {
   return color(handle);
 }
@@ -578,6 +582,10 @@ color color::from_name(const string& name) noexcept {
   }
 }
 
+color color::from_uint32(uint32 argb) noexcept {
+  return color(argb);
+}
+
 xtd::drawing::color color::from_yuv(float y, float u, float v) noexcept {
   y = math::clamp(y, 0.0f, 1.0f);
   u = math::clamp(u, -0.5f, 0.5f);
@@ -653,15 +661,15 @@ float color::get_y() const noexcept {
   return r() * .299000f + g() * .587000f + b() * .114000f;
 }
 
-color color::light(const color& color) noexcept {
+auto color::light(const color& color) noexcept -> drawing::color {
   return color_converter::light(color);
 }
 
-color color::light(const color& color, double percent) noexcept {
+auto color::light(const color& color, double percent) noexcept -> drawing::color {
   return color_converter::light(color, percent);
 }
 
-color color::parse(const string& color) noexcept {
+auto color::parse(const string& color) noexcept -> drawing::color {
   try {
     auto argb = color.replace("color [a=", string::empty_string).replace(" r=", string::empty_string).replace(" g=", string::empty_string).replace("b=", string::empty_string).replace("]", string::empty_string).split(',');
     if (argb.length() == 1) return color::from_argb(xtd::parse<uint32>(argb[0], xtd::number_styles::hex_number));
@@ -671,19 +679,31 @@ color color::parse(const string& color) noexcept {
   }
 }
 
-uint32 color::to_argb() const noexcept {
+auto color::to_argb() const noexcept -> argb {
+  return argb::from_uint32(to_uint32());
+}
+
+auto color::to_known_color() const noexcept -> known_color {
+  return known_color_;
+}
+
+auto color::to_string() const noexcept -> string {
+  if (empty_) return "color [empty]";
+  if (name() != string::format("{:x8}", argb_) && name() != "0") return string::format("color [{0}]", name());
+  return string::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
+}
+
+auto color::to_uint32() const noexcept -> uint32 {
   if (handle_) return native::system_colors::to_argb(handle_);
   return argb_;
 }
 
-known_color color::to_known_color() const noexcept {
-  return known_color_;
+color::operator xtd::drawing::argb() const noexcept {
+  return to_argb();
 }
 
-string color::to_string() const noexcept {
-  if (empty_) return "color [empty]";
-  if (name() != string::format("{:x8}", argb_) && name() != "0") return string::format("color [{0}]", name());
-  return string::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
+color::operator xtd::uint32() const noexcept {
+  return to_uint32();
 }
 
 color::color(uint32 argb) : argb_(argb), empty_(false) {
