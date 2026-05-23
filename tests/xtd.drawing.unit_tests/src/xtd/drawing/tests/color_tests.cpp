@@ -172,9 +172,9 @@ namespace xtd::drawing::tests {
       assert::are_equal(0, c.handle());
       assert::are_equal("ff0000ff", c.name());
       
-      assert::are_equal(240, c.get_hue());
-      assert::are_equal(1.0f, c.get_saturation());
-      assert::are_equal(1.0f, c.get_brightness());
+      assert::are_equal(240, c.to_hsb().hue);
+      assert::are_equal(1.0f, c.to_hsb().saturation);
+      assert::are_equal(1.0f, c.to_hsb().brightness);
       
       assert::are_equal("color [a=255, r=0, g=0, b=255]", c.to_string());
       
@@ -201,9 +201,9 @@ namespace xtd::drawing::tests {
       assert::are_equal(0, c.handle());
       assert::are_equal("ffa3e0b5", c.name());
       
-      assert::are_equal(138.0f, c.get_hue(), 0.01f);
-      assert::are_equal(0.50f, c.get_saturation(), 0.01f);
-      assert::are_equal(0.76f, c.get_lightness(), 0.01f);
+      assert::are_equal(138.0f, c.to_hsl().hue, 0.01f);
+      assert::are_equal(0.50f, c.to_hsl().saturation, 0.01f);
+      assert::are_equal(0.76f, c.to_hsl().lightness, 0.01f);
       
       assert::are_equal("color [a=255, r=163, g=224, b=181]", c.to_string());
       

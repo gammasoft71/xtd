@@ -82,11 +82,11 @@ string color_translator::to_hsl(const color& value) noexcept {
 
 string color_translator::to_hsl(const color& value, bool auto_hsla) noexcept {
   if (auto_hsla && value.a() < 255) return to_hsla(value);
-  return string::format("hsl({}, {}%, {}%)", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_lightness() * 100));
+  return string::format("hsl({}, {}%, {}%)", as<int32>(value.to_hsl().hue), as<int32>(value.to_hsl().saturation * 100), as<int32>(value.to_hsl().lightness * 100));
 }
 
 string color_translator::to_hsla(const color& value) noexcept {
-  return string::format("hsla({}, {}%, {}%, {:G3})", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_lightness() * 100), value.a() / 255.0);
+  return string::format("hsla({}, {}%, {}%, {:G3})", as<int32>(value.to_hsl().hue), as<int32>(value.to_hsl().saturation * 100), as<int32>(value.to_hsl().lightness * 100), value.a() / 255.0);
 }
 
 string color_translator::to_hsv(const color& value) noexcept {
@@ -95,11 +95,11 @@ string color_translator::to_hsv(const color& value) noexcept {
 
 string color_translator::to_hsv(const color& value, bool auto_hsva) noexcept {
   if (auto_hsva && value.a() < 255) return to_hsva(value);
-  return string::format("hsv({}, {}%, {}%)", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_brightness() * 100));
+  return string::format("hsv({}, {}%, {}%)", as<int32>(value.to_hsv().hue), as<int32>(value.to_hsv().saturation * 100), as<int32>(value.to_hsv().value * 100));
 }
 
 string color_translator::to_hsva(const color& value) noexcept {
-  return string::format("hsva({}, {}%, {}%, {:G3})", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_brightness() * 100), value.a() / 255.0);
+  return string::format("hsva({}, {}%, {}%, {:G3})", as<int32>(value.to_hsv().hue), as<int32>(value.to_hsv().saturation * 100), as<int32>(value.to_hsv().value * 100), value.a() / 255.0);
 }
 
 string color_translator::to_html(const color& value) noexcept {

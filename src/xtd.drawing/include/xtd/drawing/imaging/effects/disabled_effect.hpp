@@ -55,7 +55,7 @@ namespace xtd {
           
           /// @brief Gets or sets the brightness.
           /// @param brightness The brightness.
-          float brightness = system_colors::control().get_brightness();
+          float brightness = system_colors::control().to_hsb().brightness;
           /// @}
           
         protected:

@@ -250,7 +250,7 @@ namespace xtd {
           });
           
           fixed = (create_params.style & WS_THICKFRAME) != WS_THICKFRAME;
-          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+          if (xtd::drawing::system_colors::window().to_hsl().lightness < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
           }

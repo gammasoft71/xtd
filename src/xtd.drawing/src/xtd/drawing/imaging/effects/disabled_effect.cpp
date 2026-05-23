@@ -9,14 +9,14 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::imaging;
 using namespace xtd::drawing::imaging::effects;
 
-disabled_effect::disabled_effect(const xtd::drawing::color& back_color) : brightness {back_color.get_brightness()} {
+disabled_effect::disabled_effect(const xtd::drawing::color& back_color) : brightness {back_color.to_hsb().brightness} {
 }
 
 disabled_effect::disabled_effect(float brightness) : brightness {brightness} {
 }
 
 void disabled_effect::back_color(const xtd::drawing::color& value) {
-  brightness = value.get_brightness();
+  brightness = value.to_hsb().brightness;
 }
 
 void disabled_effect::apply(xtd::drawing::image& image) const {

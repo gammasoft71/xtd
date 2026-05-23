@@ -231,7 +231,7 @@ private:
   void draw_separator(xtd::forms::paint_event_args& e) {
     if (data_->flat) {
       auto percent_of_color = 1.0 / 6;
-      auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
+      auto color = back_color().to_hsl().lightness < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
       if (is_horizontal()) {
         auto left = image_size().width / 4;
         auto top = 4;

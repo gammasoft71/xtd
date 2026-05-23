@@ -60,7 +60,7 @@ void radio_button_renderer::draw_radio_button(const string& theme, graphics g, c
 }
 
 void radio_button_renderer::draw_radio_button_gnome(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_radio_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_radio_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -121,7 +121,7 @@ void radio_button_renderer::draw_radio_button_gnome_light(graphics g, const rect
 }
 
 void radio_button_renderer::draw_radio_button_kde(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_radio_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_radio_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -134,7 +134,7 @@ void radio_button_renderer::draw_radio_button_kde_light(graphics g, const rectan
 }
 
 void radio_button_renderer::draw_radio_button_macos(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_radio_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_radio_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -199,7 +199,7 @@ void radio_button_renderer::draw_radio_button_macos_light(graphics g, const rect
 }
 
 void radio_button_renderer::draw_radio_button_symbolic(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_radio_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_radio_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -272,7 +272,7 @@ void radio_button_renderer::draw_radio_button_symbolic_light(graphics g, const r
 }
 
 void radio_button_renderer::draw_radio_button_windows(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_radio_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_radio_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -334,7 +334,7 @@ void radio_button_renderer::draw_radio_button_windows_light(graphics g, const re
 }
 
 void radio_button_renderer::draw_radio_button_xtd(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_radio_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_radio_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -347,7 +347,7 @@ void radio_button_renderer::draw_radio_button_xtd_light(graphics g, const rectan
 }
 
 void radio_button_renderer::draw_flat_radio_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_flat_radio_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_flat_radio_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_flat_radio_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -358,7 +358,7 @@ void radio_button_renderer::draw_flat_radio_button_light(graphics g, const recta
 }
 
 void radio_button_renderer::draw_popup_radio_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_popup_radio_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_popup_radio_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_popup_radio_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 

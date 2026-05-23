@@ -7,7 +7,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 void image_renderer::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, const xtd::drawing::color& back_color, const xtd::forms::style_sheets::iimage_model& data) {
-  draw_image(graphics, bounds, image, enabled, back_color.get_brightness(), data);
+  draw_image(graphics, bounds, image, enabled, back_color.to_hsb().brightness, data);
 }
 
 void image_renderer::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, float brigthtness, const xtd::forms::style_sheets::iimage_model& data) {

@@ -177,7 +177,8 @@ intptr color::handle() const noexcept {
 }
 
 bool color::is_dark() const noexcept {
-  return get_lightness() < lightness_threshold;
+  auto [hue, saturation, lightness] = to_hsl();
+  return lightness < lightness_threshold;
 }
 
 bool color::is_empty() const noexcept {
@@ -189,7 +190,7 @@ bool color::is_known_color() const noexcept {
 }
 
 bool color::is_light() const noexcept {
-  return get_lightness() >= lightness_threshold;
+  return !is_dark();
 }
 
 bool color::is_named_color() const noexcept {
@@ -210,21 +211,6 @@ xtd::string color::name() const noexcept {
 
 xtd::byte color::r() const noexcept {
   return static_cast<xtd::byte>((to_argb() & 0x00FF0000) >> 16);
-}
-color color::average(const color& color1, const color& color2, double weight) noexcept {
-  return color_converter::average(color1, color2, weight);
-}
-
-color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
-  return color_converter::average(color1, color2, weight, average_alpha);
-}
-
-color color::dark(const color& color) noexcept {
-  return color_converter::dark(color);
-}
-
-color color::dark(const color& color, double percent) noexcept {
-  return color_converter::dark(color, percent);
 }
 
 bool color::equals(const object& obj) const noexcept {
@@ -280,6 +266,10 @@ color color::from_hsb(float hue, float saturation, float brightness) noexcept {
   }
 }
 
+color color::from_hsb(const hsb& hsb) noexcept {
+  return from_hsb(hsb.hue, hsb.saturation, hsb.brightness);
+}
+
 color color::from_hsl(float hue, float saturation, float lightness) noexcept {
   // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsl-to-rgb)
   if (saturation == 0) return color::from_argb(255, static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f));
@@ -300,8 +290,16 @@ color color::from_hsl(float hue, float saturation, float lightness) noexcept {
   return color::from_argb(255, static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
 }
 
+color color::from_hsl(const hsl& hsl) noexcept {
+  return from_hsl(hsl.hue, hsl.saturation, hsl.lightness);
+}
+
 color color::from_hsv(float hue, float saturation, float value) noexcept {
   return from_hsb(hue, saturation, value);
+}
+
+color color::from_hsv(const hsv& hsv) noexcept {
+  return from_hsv(hsv.hue, hsv.saturation, hsv.value);
 }
 
 color color::from_known_color(known_color color) {
@@ -598,75 +596,8 @@ xtd::drawing::color color::from_yuv(const yuv& yuv) noexcept {
   return from_yuv(yuv.y, yuv.u, yuv.v);
 }
 
-float color::get_brightness() const noexcept {
-  // .net version (see https://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/color.cs,9103fd761ca562ae)
-  //return ((float)max(max(r(), g()), b()) + (float)min(min(r(), g()), b())) / 255.0 / 2.0;
-  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-hsv)
-  return static_cast<float>(math::max(math::max(r(), g()), b())) / 255.0f;
-}
-
 usize color::get_hash_code() const noexcept {
   return hash_code::combine(argb_, empty_, handle_, name_);
-}
-
-float color::get_hue() const noexcept {
-  if (r() == g() && g() == b())
-    return 0.0;
-    
-  auto rc = static_cast<float>(r()) / 255.0f;
-  auto gc = static_cast<float>(g()) / 255.0f;
-  auto bc = static_cast<float>(b()) / 255.0f;
-  
-  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
-  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
-  
-  auto delta = max - min;
-  
-  auto hue = 0.0f;
-  if (rc == max) hue = (gc - bc) / delta;
-  else if (gc == max) hue = 2 + (bc - rc) / delta;
-  else if (bc == max) hue = 4 + (rc - gc) / delta;
-  hue *= 60;
-  
-  if (hue < 0.0) hue += 360.0;
-  return hue;
-}
-
-float color::get_lightness() const noexcept {
-  return (static_cast<float>(math::max(math::max(r(), g()), b())) + static_cast<float>(math::min(math::min(r(), g()), b()))) / 2.0f / 255.0f;
-}
-
-float color::get_saturation() const noexcept {
-  auto max = static_cast<float>(math::max(math::max(r(), g()), b())) / 255.0f;
-  auto min = static_cast<float>(math::min(math::min(r(), g()), b())) / 255.0f;
-  
-  if (max == min) return 0.0f;
-  
-  return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
-}
-
-float color::get_value() const noexcept {
-  return get_brightness();
-}
-
-float color::get_u() const noexcept {
-  return r() * -.168736f + g() * -.331264f + b() * .500000f + 128;
-}
-
-float color::get_v() const noexcept {
-  return r() * .500000f + g() * -.418688f + b() * -.081312f + 128;
-}
-
-float color::get_y() const noexcept {
-  return r() * .299000f + g() * .587000f + b() * .114000f;
-}
-
-auto color::light(const color& color) noexcept -> drawing::color {
-  return color_converter::light(color);
-}
-
-auto color::light(const color& color, double percent) noexcept -> drawing::color {
-  return color_converter::light(color, percent);
 }
 
 auto color::parse(const string& color) noexcept -> drawing::color {
@@ -687,6 +618,58 @@ auto color::to_known_color() const noexcept -> known_color {
   return known_color_;
 }
 
+auto color::to_hsb() const noexcept -> hsb {
+  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-hsv)
+  auto rc = static_cast<float>(r()) / 255.0f;
+  auto gc = static_cast<float>(g()) / 255.0f;
+  auto bc = static_cast<float>(b()) / 255.0f;
+  
+  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
+  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
+  auto delta = max - min;
+
+  auto brightness = max == .0f ? .0f : (max - min) / max;
+  auto saturation = max == .0f ? .0f :  delta / max;
+  auto hue = .0f;
+  if (saturation != .0f) {
+    if (rc == max) hue = (gc - bc) / delta;
+    else if (gc == max) hue = 2 + (bc - rc) / delta;
+    else if (bc == max) hue = 4 + (rc - gc) / delta;
+    hue *= 60;
+    if (hue < 0.0) hue = hue + 360;
+  }
+  
+  return hsb::from_hsb(hue, saturation, brightness);
+}
+
+auto color::to_hsl() const noexcept -> hsl {
+  auto rc = static_cast<float>(r()) / 255.0f;
+  auto gc = static_cast<float>(g()) / 255.0f;
+  auto bc = static_cast<float>(b()) / 255.0f;
+  
+  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
+  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
+  auto delta = max - min;
+
+  auto lightness = (max + min) / 2.0f;
+  auto saturation = max == min ? 0.0f : (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
+  auto hue = .0f;
+  if (saturation != 0) {
+    if (rc == max) hue = (gc - bc) / delta;
+    else if (gc == max) hue = 2 + (bc - rc) / delta;
+    else if (bc == max) hue = 4 + (rc - gc) / delta;
+    hue *= 60;
+    if (hue < 0.0) hue = hue + 360;
+  }
+
+  return hsl::from_hsl(hue, saturation, lightness);
+}
+
+auto color::to_hsv() const noexcept -> hsv {
+  auto [hue, saturation, brightness] = to_hsb();
+  return hsv::from_hsv(hue, saturation, brightness);
+}
+
 auto color::to_string() const noexcept -> string {
   if (empty_) return "color [empty]";
   if (name() != string::format("{:x8}", argb_) && name() != "0") return string::format("color [{0}]", name());
@@ -699,11 +682,26 @@ auto color::to_uint32() const noexcept -> uint32 {
 }
 
 auto color::to_yuv() const noexcept -> yuv {
-  return yuv::from_yuv(get_y(), get_u(), get_v());
+  auto y = r() * .299000f + g() * .587000f + b() * .114000f;
+  auto u = r() * -.168736f + g() * -.331264f + b() * .500000f + 128;
+  auto v = r() * .500000f + g() * -.418688f + b() * -.081312f + 128;
+  return yuv::from_yuv(y, u, v);
 }
 
 color::operator xtd::drawing::argb() const noexcept {
   return to_argb();
+}
+
+color::operator xtd::drawing::hsb() const noexcept {
+  return to_hsb();
+}
+
+color::operator xtd::drawing::hsl() const noexcept {
+  return to_hsl();
+}
+
+color::operator xtd::drawing::hsv() const noexcept {
+  return to_hsv();
 }
 
 color::operator xtd::uint32() const noexcept {
@@ -718,4 +716,60 @@ color::color(uint32 argb) : argb_(argb), empty_(false) {
 }
 
 color::color(intptr handle) : empty_(false), handle_(handle) {
+}
+
+float color::get_brightness() const noexcept {
+  return to_hsb().brightness;
+}
+
+float color::get_hue() const noexcept {
+  return to_hsl().hue;
+}
+
+float color::get_lightness() const noexcept {
+  return to_hsl().lightness;
+}
+
+float color::get_saturation() const noexcept {
+  return to_hsl().saturation;
+}
+
+float color::get_u() const noexcept {
+  return to_yuv().u;
+}
+
+float color::get_value() const noexcept {
+  return to_hsv().value;
+}
+
+float color::get_v() const noexcept {
+  return to_yuv().v;
+}
+
+float color::get_y() const noexcept {
+  return to_yuv().y;
+}
+
+color color::average(const color& color1, const color& color2, double weight) noexcept {
+  return color_converter::average(color1, color2, weight);
+}
+
+color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
+  return color_converter::average(color1, color2, weight, average_alpha);
+}
+
+color color::dark(const color& color) noexcept {
+  return color_converter::dark(color);
+}
+
+color color::dark(const color& color, double percent) noexcept {
+  return color_converter::dark(color, percent);
+}
+
+auto color::light(const color& color) noexcept -> drawing::color {
+  return color_converter::light(color);
+}
+
+auto color::light(const color& color, double percent) noexcept -> drawing::color {
+  return color_converter::light(color, percent);
 }

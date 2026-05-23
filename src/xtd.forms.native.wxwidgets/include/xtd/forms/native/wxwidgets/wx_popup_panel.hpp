@@ -138,12 +138,12 @@ namespace xtd {
           SetPosition({create_params.location.x, create_params.location.y});
           control()->SetSize(create_params.size.width, create_params.size.height);
           #if defined(__WXMSW__)
-          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+          if (xtd::drawing::system_colors::window().to_hsl().lightness < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #elif defined(__WXOSX__)
-          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+          if (xtd::drawing::system_colors::window().to_hsl().lightness < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
           }

@@ -37,7 +37,7 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      /// @brief Creates a xtd::yuv struct from the specified y, y, and v single values.
+      /// @brief Creates a xtd::yuv struct from the specified y, u, and v single values.
       /// @param y The a single value.
       /// @param u The r single value.
       /// @param v The g single value.

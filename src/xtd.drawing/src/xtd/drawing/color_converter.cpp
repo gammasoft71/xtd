@@ -76,7 +76,8 @@ color color_converter::dark(const drawing::color& color, double percent) noexcep
 }
 
 color color_converter::disabled(const drawing::color& fore_color, const drawing::color& back_color) noexcept {
-  return disabled(fore_color, back_color.get_brightness());
+  auto [hue, saturation, brightness] = back_color.to_hsb();
+  return disabled(fore_color, brightness);
 }
 
 color color_converter::disabled(const drawing::color& fore_color, float brightness) noexcept {
@@ -104,12 +105,13 @@ color color_converter::grayscale(const drawing::color& color, double percent) no
 
 color color_converter::hue_rotate(const drawing::color& color, int angle) noexcept {
   angle = math::clamp(angle, 0, 360);
-  
-  auto h = static_cast<int>(color.get_hue());
+  auto [hue, saturation, lightness] = color.to_hsl();
+
+  auto h = static_cast<int>(hue);
   h = (h + angle) % 360;
   if (h < 0) h += 360;
   
-  return color::from_hsl(static_cast<float>(h), color.get_saturation(), color.get_lightness());
+  return color::from_hsl(static_cast<float>(h), saturation, lightness);
 }
 
 color color_converter::invert(const drawing::color& color) noexcept {

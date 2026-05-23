@@ -195,7 +195,7 @@ void button_renderer::draw_button(const string& theme, graphics g, const rectang
 }
 
 void button_renderer::draw_button_gnome(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -254,7 +254,7 @@ void button_renderer::draw_button_gnome_light(graphics g, const rectangle& bound
 }
 
 void button_renderer::draw_button_kde(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -327,7 +327,7 @@ void button_renderer::draw_button_kde_light(graphics g, const rectangle& bounds,
 }
 
 void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -393,7 +393,7 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
 }
 
 void button_renderer::draw_button_symbolic(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -452,7 +452,7 @@ void button_renderer::draw_button_symbolic_light(graphics g, const rectangle& bo
 }
 
 void button_renderer::draw_button_windows(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -520,7 +520,7 @@ void button_renderer::draw_button_windows_light(graphics g, const rectangle& bou
 }
 
 void button_renderer::draw_button_xtd(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -533,7 +533,7 @@ void button_renderer::draw_button_xtd_light(graphics g, const rectangle& bounds,
 }
 
 void button_renderer::draw_flat_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color, const flat_button_appearance& flat_appearance) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_flat_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_flat_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
   else draw_flat_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
 }
 
@@ -573,7 +573,7 @@ void button_renderer::draw_flat_button_light(graphics g, const rectangle& bounds
 }
 
 void button_renderer::draw_popup_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color, const flat_button_appearance& flat_appearance) {
-  if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_popup_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
+  if (application::style_sheet().system_colors().window().to_hsl().lightness < 0.5) draw_popup_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
   else draw_popup_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
 }
 
