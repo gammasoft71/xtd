@@ -21,7 +21,7 @@ var searchData=
   ['application_18',['application',['../classxtd_1_1forms_1_1application.html',1,'xtd::forms']]],
   ['application_5fcontext_19',['application_context',['../classxtd_1_1forms_1_1application__context.html',1,'xtd::forms']]],
   ['applications_5fsystem_5fimages_20',['applications_system_images',['../classxtd_1_1drawing_1_1applications__system__images.html',1,'xtd::drawing']]],
-  ['argb_21',['argb',['../structxtd_1_1drawing_1_1helpers_1_1argb.html',1,'xtd::drawing::helpers']]],
+  ['argb_21',['argb',['../structxtd_1_1drawing_1_1argb.html',1,'xtd::drawing']]],
   ['argument_5fexception_22',['argument_exception',['../classxtd_1_1argument__exception.html',1,'xtd']]],
   ['argument_5fnull_5fexception_23',['argument_null_exception',['../classxtd_1_1argument__null__exception.html',1,'xtd']]],
   ['argument_5fout_5fof_5frange_5fexception_24',['argument_out_of_range_exception',['../classxtd_1_1argument__out__of__range__exception.html',1,'xtd']]],

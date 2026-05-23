@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r_0',['r',['../structxtd_1_1drawing_1_1helpers_1_1argb.html#a3cc112d0d7a76457989595e37fb8aa31',1,'xtd::drawing::helpers::argb::r'],['../structxtd_1_1drawing_1_1helpers_1_1rgb.html#a4c5fb60b1ea4b64195aeb8a6b7ec04ea',1,'xtd::drawing::helpers::rgb::r'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1gamma__correction__effect.html#a5c1d387dcd4c0bf7ac74861e1fc9bb4e',1,'xtd::drawing::imaging::effects::gamma_correction_effect::r']]],
+  ['r_0',['r',['../structxtd_1_1drawing_1_1argb.html#af0a396f0814514ce97ba7942afe04b63',1,'xtd::drawing::argb::r'],['../structxtd_1_1drawing_1_1helpers_1_1rgb.html#a4c5fb60b1ea4b64195aeb8a6b7ec04ea',1,'xtd::drawing::helpers::rgb::r'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1gamma__correction__effect.html#a5c1d387dcd4c0bf7ac74861e1fc9bb4e',1,'xtd::drawing::imaging::effects::gamma_correction_effect::r']]],
   ['rabbit_1',['rabbit',['../classxtd_1_1forms_1_1emoticons.html#aad7bcf03cdf5d2f9a01cc32d3409e559',1,'xtd::forms::emoticons']]],
   ['rabbit_5fface_2',['rabbit_face',['../classxtd_1_1forms_1_1emoticons.html#a288232df3943889a8df0a0552000dc7a',1,'xtd::forms::emoticons']]],
   ['raccoon_3',['raccoon',['../classxtd_1_1forms_1_1emoticons.html#a75ac88c6a6ff2cabe71cc6c3fbd6ed07',1,'xtd::forms::emoticons']]],

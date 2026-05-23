@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../structxtd_1_1drawing_1_1helpers_1_1alpha.html#a58eaae241fbb47ce0c62700bcd7d039e',1,'xtd::drawing::helpers::alpha::a'],['../structxtd_1_1drawing_1_1helpers_1_1argb.html#afad6b8204e78b0f3be3f139dc1e450ae',1,'xtd::drawing::helpers::argb::a']]],
+  ['a_0',['a',['../structxtd_1_1drawing_1_1argb.html#aa2d44a2d6f6bf4fc9eaa871668bc0ffb',1,'xtd::drawing::argb::a'],['../structxtd_1_1drawing_1_1helpers_1_1alpha.html#a58eaae241fbb47ce0c62700bcd7d039e',1,'xtd::drawing::helpers::alpha::a']]],
   ['abacus_1',['abacus',['../classxtd_1_1forms_1_1emoticons.html#a1b15f43fda61abcf357652037f022344',1,'xtd::forms::emoticons']]],
   ['accepts_5freturn_5fchanged_2',['accepts_return_changed',['../classxtd_1_1forms_1_1text__box.html#aa6823893a1a61ba023cfcc34ef7f9836',1,'xtd::forms::text_box']]],
   ['accepts_5ftab_5fchanged_3',['accepts_tab_changed',['../classxtd_1_1forms_1_1text__box__base.html#ac6c58524c3a8ed263a9d7a24c10dfab8',1,'xtd::forms::text_box_base']]],

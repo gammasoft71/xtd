@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['u_0',['u',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c',1,'xtd::u'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea7b774effe4a349c6dd82ad4f4f21d34c',1,'xtd::forms::u']]],
+  ['u_0',['u',['../structxtd_1_1drawing_1_1yuv.html#a9ba5ac5fa5fe06551760dea4a4a990d3',1,'xtd::drawing::yuv::u'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c',1,'xtd::u'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea7b774effe4a349c6dd82ad4f4f21d34c',1,'xtd::forms::u']]],
   ['u16string_1',['u16string',['../group__strings.html#gad9519a3c079fca351ff0c97ccd3b012a',1,'xtd']]],
   ['u16string_2ehpp_2',['u16string.hpp',['../u16string_8hpp.html',1,'']]],
   ['u16string_5fbuilder_3',['u16string_builder',['../group__strings.html#ga2b0fa8983b51035b33f765fd06a5c9af',1,'xtd::text']]],
