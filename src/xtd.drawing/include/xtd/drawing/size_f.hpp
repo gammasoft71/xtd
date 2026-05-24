@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::size_f class.
+/// @brief Contains xtd::drawing::size_f struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.hpp"
@@ -34,7 +34,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a Size class that has a Height and Width value of 0. This field is constant.
-      static const xtd::drawing::size_f empty;
+      static const size_f empty;
       /// @}
       
       /// @name Public Constructors
@@ -53,11 +53,6 @@ namespace xtd {
       size_f(float width, float height) noexcept;
       /// @}
       
-      /// @cond
-      size_f(const xtd::drawing::size_f&) noexcept = default;
-      size_f& operator =(const xtd::drawing::size_f& size) noexcept = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
@@ -73,7 +68,7 @@ namespace xtd {
       
       /// @brief Tests whether this Size class has xtd::drawing::size_f::width and xtd::drawing::size_f::height of 0.
       /// @return Returns `true`  when this xtd::drawing::size_f class has both a xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0; otherwise, `false`.
-      bool is_empty() const noexcept;
+      [[nodiscard]] auto is_empty() const noexcept -> bool;
       /// @}
       
       /// @name Public Methods
@@ -88,24 +83,24 @@ namespace xtd {
       /// | Less than zero    | This instance is less than obj.    |
       /// | Zero              | This instance is equal to obj.     |
       /// | Greater than zero | This instance is greater than obj. |
-      int32 compare_to(const xtd::drawing::size_f& obj) const noexcept override;
+      [[nodiscard]] auto compare_to(const size_f& obj) const noexcept -> xtd::int32 override;
       /// @{
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::drawing::size_f& other) const noexcept override;
+      [[nodiscard]] auto equals(const size_f& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Creates a human-readable string that represents this xtd::drawing::size_f class.
       /// @return A xtd::string that represents this size.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -115,13 +110,13 @@ namespace xtd {
       /// @param size1 The first xtd::drawing::size_f class to add.
       /// @param size2 The second xtd::drawing::size_f class to add.
       /// @return A xtd::drawing::size_f class that is the result of the addition operation.
-      static xtd::drawing::size_f add(const xtd::drawing::size_f& size1, const xtd::drawing::size_f& size2) noexcept;
+      [[nodiscard]] static auto add(const size_f& size1, const size_f& size2) noexcept -> size_f;
       
       /// @brief Returns the result of subtracting specified xtd::drawing::size_f from the specified xtd::drawing::size_f.
       /// @param sz1 The xtd::drawing::size_f to be subtracted from.
       /// @param sz2 The xtd::drawing::size_f to subtract from the Size.
       /// @return The xtd::drawing::size_f that is the result of the subtraction operation.
-      static xtd::drawing::size_f subtract(const xtd::drawing::size_f& sz1, const xtd::drawing::size_f& sz2) noexcept;
+      [[nodiscard]] static auto subtract(const size_f& sz1, const size_f& sz2) noexcept -> size_f;
       /// @}
       
       /// @name Operators
@@ -130,45 +125,45 @@ namespace xtd {
       /// @brief Increases a xtd::drawing::size_f with a given xtd::drawing::size_f.
       /// @param size A xtd::drawing::size_f that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
       /// @return The increased xtd::drawing::size.
-      size_f operator +(const xtd::drawing::size_f& size) const noexcept;
+      auto operator +(const xtd::drawing::size_f& size) const noexcept -> size_f;
       /// @brief Increases a xtd::drawing::size_f with a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
       /// @return The increased xtd::drawing::size_f.
-      size_f operator +(const xtd::drawing::size& size) const noexcept;
+      auto operator +(const xtd::drawing::size& size) const noexcept -> size_f;
       
       /// @brief Increases a xtd::drawing::size_f wuth a given xtd::drawing::size_f.
       /// @param size A xtd::drawing::size_f that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
       /// @return The increased xtd::drawing::size_f.
-      size_f& operator +=(const xtd::drawing::size_f& size) noexcept;
+      auto operator +=(const xtd::drawing::size_f& size) noexcept -> size_f&;
       /// @brief Increases a xtd::drawing::size_f wuth a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
       /// @return The increased xtd::drawing::size_f.
-      size_f& operator +=(const xtd::drawing::size& size) noexcept;
+      auto operator +=(const xtd::drawing::size& size) noexcept -> size_f&;
       
       /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size_f.
       /// @param size A xtd::drawing::size_f that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
       /// @return The decreased xtd::drawing::size_f.
-      size_f operator -(const xtd::drawing::size_f& size) const noexcept;
+      auto operator -(const xtd::drawing::size_f& size) const noexcept -> size_f;
       /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
       /// @return The decreased xtd::drawing::size_f.
-      size_f operator -(const xtd::drawing::size& size) const noexcept;
+      auto operator -(const xtd::drawing::size& size) const noexcept -> size_f;
       
       /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size_f.
       /// @param size A xtd::drawing::size_f that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
       /// @return The decreased xtd::drawing::size_f.
-      size_f& operator -=(const xtd::drawing::size_f& size) noexcept;
+      auto operator -=(const xtd::drawing::size_f& size) noexcept -> size_f&;
       /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
       /// @return The decreased xtd::drawing::size_f.
-      size_f& operator -=(const xtd::drawing::size& size) noexcept;
+      auto operator -=(const xtd::drawing::size& size) noexcept -> size_f&;
       /// @}
     };
   }
   
   /// @cond
   template<>
-  inline drawing::size_f parse<drawing::size_f>(const std::string& str) {
+  [[nodiscard]] inline auto parse<xtd::drawing::size_f>(const std::string& str) -> xtd::drawing::size_f {
     auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" height=", xtd::string::empty_string).replace("{width=", xtd::string::empty_string).split(',');
     return {xtd::parse<float>(values[0]), xtd::parse<float>(values[1])};
   }
