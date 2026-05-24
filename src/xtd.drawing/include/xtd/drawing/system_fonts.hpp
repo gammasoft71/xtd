@@ -29,7 +29,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a xtd::drawing::font that is used to display text in the title bars of windows.
       /// @return A xtd::drawing::font that is used to display text in the title bars of windows.
-      static xtd::drawing::font caption_font();
+      [[nodiscard]] static auto caption_font() -> xtd::drawing::font;
       
       /// @brief Gets the default font that applications can use for dialog boxes and forms.
       /// @return The default xtd::drawing::font of the system. The value returned will vary depending on the user's operating system and the local culture setting of their system.
@@ -42,46 +42,46 @@ namespace xtd {
       /// @remarks MS Shell Dlg maps to a font set in the system registry.
       /// @remarks If the above fonts are not installed, the default font is Tahoma, 8 point. If Tahoma, 8 point, is not installed, xtd::drawing::system_fonts::default_font returns the value of the GenericSansSerif property.
       /// @remarks The xtd::drawing::font returned by xtd::drawing::system_fonts::default_font does not change when the user is in High Contrast mode. For a font that changes when the user is in High Contrast mode use another system font such as xtd::drawing::system_fonts::icon_title_font.
-      static xtd::drawing::font default_font();
+      [[nodiscard]] static auto default_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that applications can use for dialog boxes and forms.
       /// @return A xtd::drawing::font that can be used for dialog boxes and forms, depending on the operating system and local culture setting of the system.
       /// @remarks If the operating system is Windows 2000 or Windows XP, the xtd::drawing::system_fonts::dialog_font property returns Tahoma, 8 point. Otherwise, xtd::drawing::system_fonts::dialog_font returns the value of the xtd::drawing::system_fonts::default_font property. The xtd::drawing::font returned by xtd::drawing::system_fonts::dialog_font does not change when the user is in High Contrast mode. For a font that changes when the user is in High Contrast mode use another system font such as xtd::drawing::system_fonts::icon_title_font.
-      static xtd::drawing::font dialog_font();
+      [[nodiscard]] static auto dialog_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that is used for icon titles.
       /// @return A xtd::drawing::font that is used for icon titles.
-      static xtd::drawing::font icon_title_font();
+      [[nodiscard]] static auto icon_title_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that is used for menus.
       /// @return A xtd::drawing::font that is used for menus.
-      static xtd::drawing::font menu_font();
+      [[nodiscard]] static auto menu_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that is used for message boxes.
       /// @return A xtd::drawing::font that is used for message boxes.
-      static xtd::drawing::font message_box_font();
+      [[nodiscard]] static auto message_box_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that is used to display text in the title bars of small windows, such as tool windows.
       /// @return A xtd::drawing::font that is used to display text in the title bars of small windows, such as tool windows.
-      static xtd::drawing::font small_caption_font();
+      [[nodiscard]] static auto small_caption_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that is used to display text in the status bar.
       /// @return A xtd::drawing::font that is used to display text in the status bar.
-      static xtd::drawing::font status_font();
+      [[nodiscard]] static auto status_font() -> xtd::drawing::font;
       
       /// @brief Gets a xtd::drawing::font that is used to display text in the tool bar.
       /// @return A xtd::drawing::font that is used to display text in the tool bar.
-      static xtd::drawing::font tool_font();
+      [[nodiscard]] static auto tool_font() -> xtd::drawing::font;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of system fonts.
-      static const xtd::array<xtd::drawing::font>& get_fonts();
+      [[nodiscard]] static auto get_fonts() -> const xtd::array<xtd::drawing::font>&;
       
       /// @brief Gets an array of system font names.
-      static const xtd::array<xtd::string>& get_font_names();
+      [[nodiscard]] static auto get_font_names() -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
