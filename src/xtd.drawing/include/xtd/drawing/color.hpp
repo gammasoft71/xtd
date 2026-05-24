@@ -626,10 +626,22 @@ namespace xtd {
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       [[nodiscard]] auto equals(const color& other) const noexcept -> bool override;
       
+      /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
+      /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      [[nodiscard]] auto get_brightness() const noexcept -> float;
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
-
+      
+      /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
+      /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
+      [[nodiscard]] auto get_hue() const noexcept -> float;
+      
+      /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
+      /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
+      [[nodiscard]] auto get_saturation() const noexcept -> float;
+      
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
@@ -1161,29 +1173,11 @@ namespace xtd {
       /// @name Public Deprecated Methods
       
       /// @{
-      /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
-      /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
-       /// @deprecated Replaced by Replaced by xtd::drawing::color::to_hsb - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::drawing::color::to_hsb - Will be removed in version 1.2.0.")]]
-      [[nodiscard]] auto get_brightness() const noexcept -> float;
-      
-      /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
-      /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
-      /// @deprecated Replaced by Replaced by xtd::drawing::color::to_hsby or xtd::drawing::color::to_hsl - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::drawing::color::to_hsb or xtd::drawing::color::to_hsl - Will be removed in version 1.2.0.")]]
-      [[nodiscard]] auto get_hue() const noexcept -> float;
-      
       /// @brief Gets the hue-saturation-lightness (HSL) lightness value for this xtd::drawing::color structure.
       /// @return The lightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
       /// @deprecated Replaced by Replaced by xtd::drawing::color::to_hsl - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::drawing::color::to_hsl - Will be removed in version 1.2.0.")]]
       [[nodiscard]] auto get_lightness() const noexcept -> float;
-      
-      /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
-      /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
-      /// @deprecated Replaced by Replaced by xtd::drawing::color::to_hsb or  xtd::drawing::color::to_hsl - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::drawing::color::to_hsb or xtd::drawing::color::to_hsl - Will be removed in version 1.2.0.")]]
-      [[nodiscard]] auto get_saturation() const noexcept -> float;
 
       /// @brief Gets the Y'UV color model `U` (chroma) value for this xtd::drawing::color structure.
       /// @return The Y'UV `U` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
