@@ -39,7 +39,9 @@ namespace xtd {
       /// @}
       
       /// @cond
+      texture_brush(texture_brush&& value) = default;
       texture_brush(const texture_brush& value);
+      texture_brush& operator =(texture_brush&& value) = default;
       texture_brush& operator =(const texture_brush& value);
       /// @endcond
       
@@ -48,10 +50,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::drawing::image object associated with this xtd::drawing::texture_brush object.
       /// @return An xtd::drawing::image object that represents the image with which this xtd::drawing::texture_brush object fills shapes.
-      const drawing::image& image() const noexcept;
+      [[nodiscard]] auto image() const noexcept -> const drawing::image&;
       /// @brief Sets the xtd::drawing::image object associated with this xtd::drawing::texture_brush object.
       /// @param image An xtd::drawing::image object that represents the image with which this xtd::drawing::texture_brush object fills shapes.
-      texture_brush& image(const drawing::image& image);
+      auto image(const drawing::image& image) -> texture_brush&;
       /// @}
       
     private:
