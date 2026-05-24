@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::point_f class.
+/// @brief Contains xtd::drawing::point_f struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.hpp"
@@ -55,17 +55,12 @@ namespace xtd {
       explicit point_f(const size_f& sz) noexcept;
       /// @}
       
-      /// @cond
-      point_f(const point_f&) noexcept = default;
-      point_f& operator =(const point_f&) noexcept = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether this xtd::drawing::point_f is empty.
       /// @return `true` if both xtd::drawing::point_f::x and xtd::drawing::point_f::y are 0; otherwise, `false`.
-      bool is_empty() const noexcept;
+      [[nodiscard]] auto is_empty() const noexcept -> bool;
       
       /// @brief Gets or sets the x-coordinate of this xtd::drawing::point_f.
       /// @param x The x-coordinate of this xtd::drawing::point_f.
@@ -82,29 +77,29 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const point_f& other) const noexcept override;
+      [[nodiscard]] auto equals(const point_f& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Translates this xtd::drawing::point_f by the specified amount.
       /// @param dx The amount to offset the x-coordinate.
       /// @param dy The amount to offset the y-coordinate.
-      void offset(float dx, float dy) noexcept;
+      auto offset(float dx, float dy) noexcept -> void;
       
       /// @brief Translates this xtd::drawing::point_f by the specified xtd::drawing::point_f.
       /// @param p The xtd::drawing::point used offset this xtd::drawing::point_f.
       /// @remarks This method adjusts the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f to the sum of the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f and p.
-      void offset(const point_f& pt) noexcept;
+      auto offset(const point_f& pt) noexcept -> void;
       
       /// @brief Converts this point to a human-readable string.
       /// @return An xtd::string that represents this xtd::drawing::point.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Methods
@@ -115,46 +110,46 @@ namespace xtd {
       /// @param sz The xtd::drawing::size to add.
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
       /// @remarks The xtd::drawing::point::add adds the xtd::drawing::size::width and xtd::drawing::size::height of the specified size to the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of the specified xtd::drawing::point_f.
-      static point_f add(const point_f& pt, const size& sz) noexcept;
+      [[nodiscard]] static auto add(const point_f& pt, const xtd::drawing::size& sz) noexcept -> point_f;
       /// @brief Adds the specified xtd::drawing::size_f to the specified xtd::drawing::point_f.
       /// @param pt The xtd::drawing::point_f to add.
       /// @param sz The xtd::drawing::size_f to add.
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
       /// @remarks The xtd::drawing::point::add adds the xtd::drawing::size_f::width and xtd::drawing::size_f::height of the specified size to the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of the specified xtd::drawing::point_f.
-      static point_f add(const point_f& pt, const size_f& sz) noexcept;
+      [[nodiscard]] static auto add(const point_f& pt, const xtd::drawing::size_f& sz) noexcept -> point_f;
       /// @brief Adds the specified xtd::drawing::point to the specified xtd::drawing::point_f.
       /// @param pt1 The xtd::drawing::point_f to add.
       /// @param pt2 The xtd::drawing::point to add.
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
-      static point_f add(const point_f& pt1, const point& pt2) noexcept;
+      [[nodiscard]] static auto add(const point_f& pt1, const xtd::drawing::point& pt2) noexcept -> point_f;
       /// @brief Adds the specified xtd::drawing::point_f to the specified xtd::drawing::point_f.
       /// @param pt1 The xtd::drawing::point_f to add.
       /// @param pt2 The xtd::drawing::point_f to add.
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
-      static point_f add(const point_f& pt1, const point_f& pt2) noexcept;
+      [[nodiscard]] static auto add(const point_f& pt1, const point_f& pt2) noexcept -> point_f;
       
       /// @brief Returns the result of subtracting specified xtd::drawing::size from the specified xtd::drawing::point_f.
       /// @param pt The xtd::drawing::point_f to be subtracted from.
       /// @param sz The xtd::drawing::size to subtract from the xtd::drawing::point.
       /// @return The xtd::drawing::point_f that is the result of the subtraction operation.
       /// @remarks The xtd::drawing::point_f::subtract subtracts the xtd::drawing::size::width and xtd::drawing::size::height of the specified xtd::drawing::size from the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of the specified xtd::drawing::point_f.
-      static point_f subtract(const point_f& pt, const size& sz) noexcept;
+      [[nodiscard]] static auto subtract(const point_f& pt, const xtd::drawing::size& sz) noexcept -> point_f;
       /// @brief Returns the result of subtracting specified xtd::drawing::size_f from the specified xtd::drawing::point_f.
       /// @param pt The xtd::drawing::point_f to be subtracted from.
       /// @param sz The xtd::drawing::size_f to subtract from the xtd::drawing::point.
       /// @return The xtd::drawing::point_f that is the result of the subtraction operation.
       /// @remarks The xtd::drawing::point_f::subtract subtracts the xtd::drawing::size_f::width and xtd::drawing::size_F::height of the specified xtd::drawing::size_f from the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of the specified xtd::drawing::poin_ft.
-      static point_f subtract(const point_f& pt, const size_f& sz) noexcept;
+      [[nodiscard]] static auto subtract(const point_f& pt, const xtd::drawing::size_f& sz) noexcept -> point_f;
       /// @brief Returns the result of subtracting specified xtd::drawing::point from the specified xtd::drawing::point.
       /// @param pt1 The xtd::drawing::point_f to be subtracted from.
       /// @param pt2 The xtd::drawing::point to subtract from the xtd::drawing::point_f.
       /// @return The xtd::drawing::point_f that is the result of the subtraction operation.
-      static point_f subtract(const point_f& pt1, const point& pt2) noexcept;
+      [[nodiscard]] static auto subtract(const point_f& pt1, const xtd::drawing::point& pt2) noexcept -> point_f;
       /// @brief Returns the result of subtracting specified xtd::drawing::point from the specified xtd::drawing::point.
       /// @param pt1 The xtd::drawing::point_f to be subtracted from.
       /// @param pt2 The xtd::drawing::point_f to subtract from the xtd::drawing::point_f.
       /// @return The xtd::drawing::point_f that is the result of the subtraction operation.
-      static point_f subtract(const point_f& pt1, const point_f& pt2) noexcept;
+      [[nodiscard]] static auto subtract(const point_f& pt1, const point_f& pt2) noexcept -> point_f;
       /// @}
       
       /// @name Operators
@@ -163,70 +158,70 @@ namespace xtd {
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f operator +(const size& sz) const noexcept;
+      auto operator +(const xtd::drawing::size& sz) const noexcept -> point_f;
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::size_f.
       /// @param sz A xtd::drawing::size_f that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f operator +(const size_f& sz) const noexcept;
+      auto operator +(const xtd::drawing::size_f& sz) const noexcept -> point_f;
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::point.
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f operator +(const point& pt) const noexcept;
+      auto operator +(const xtd::drawing::point& pt) const noexcept -> point_f;
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::point_f.
       /// @param pt A xtd::drawing::size that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f operator +(const point_f& pt) const noexcept;
+      auto operator +(const point_f& pt) const noexcept -> point_f;
       
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f& operator +=(const size& sz) noexcept;
+      auto operator +=(const xtd::drawing::size& sz) noexcept -> point_f&;
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::size_f.
       /// @param sz A xtd::drawing::size_f that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f& operator +=(const size_f& sz) noexcept;
+      auto operator +=(const xtd::drawing::size_f& sz) noexcept -> point_f&;
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::point.
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f& operator +=(const point& pt) noexcept;
+      auto operator +=(const xtd::drawing::point& pt) noexcept -> point_f&;
       /// @brief Translates a xtd::drawing::point_f by a given xtd::drawing::point_f.
       /// @param pt A xtd::drawing::point_f that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f& operator +=(const point_f& pt) noexcept;
+      auto operator +=(const point_f& pt) noexcept -> point_f&;
       
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point_f.
       /// @return A xtd::drawing::point_f structure that is translated by the negative of a given xtd::drawing::size structure.
-      point_f operator -(const size& sz) const noexcept;
+      auto operator -(const xtd::drawing::size& sz) const noexcept -> point_f;
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::size_f.
       /// @param sz A xtd::drawing::size_f that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point_f.
       /// @return A xtd::drawing::point_f structure that is translated by the negative of a given xtd::drawing::size_f structure.
-      point_f operator -(const size_f& sz) const noexcept;
+      auto operator -(const xtd::drawing::size_f& sz) const noexcept -> point_f;
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::point.
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point.
       /// @return A xtd::drawing::point_f structure that is translated by the negative of a given xtd::drawing::point structure.
-      point_f operator -(const point& pt) const noexcept;
+      auto operator -(const xtd::drawing::point& pt) const noexcept -> point_f;
       /// @brief Translates a xtd::drawing::point by the negative of a given xtd::drawing::point.
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point.
       /// @return A xtd::drawing::point structure that is translated by the negative of a given xtd::drawing::point structure.
-      point_f operator -(const point_f& pt) const noexcept;
+      auto operator -(const point_f& pt) const noexcept -> point_f;
       
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point_f.
       /// @return A xtd::drawing::point_f structure that is translated by the negative of a given xtd::drawing::size structure.
-      point_f& operator -=(const size& sz) noexcept;
+      auto operator -=(const xtd::drawing::size& sz) noexcept -> point_f&;
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::size_f.
       /// @param sz A xtd::drawing::size_f that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point_f.
       /// @return A xtd::drawing::point_f structure that is translated by the negative of a given xtd::drawing::size_f structure.
-      point_f& operator -=(const size_f& sz) noexcept;
+      auto operator -=(const xtd::drawing::size_f& sz) noexcept -> point_f&;
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::point.
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f& operator -=(const point& pt) noexcept;
+      auto operator -=(const xtd::drawing::point& pt) noexcept -> point_f&;
       /// @brief Translates a xtd::drawing::point_f by the negative of a given xtd::drawing::point_f.
       /// @param pt A xtd::drawing::point_f that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point_f.
       /// @return The translated xtd::drawing::point_f.
-      point_f& operator -=(const point_f& pt) noexcept;
+      auto operator -=(const point_f& pt) noexcept -> point_f&;
       /// @}
     };
   }
