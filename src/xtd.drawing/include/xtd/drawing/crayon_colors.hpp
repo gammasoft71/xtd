@@ -26,205 +26,205 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html crayon_colors_aluminium.png
-      static xtd::drawing::color aluminium() noexcept;
+      [[nodiscard]] static auto aluminium() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_aqua.png
-      static xtd::drawing::color aqua() noexcept;
+      [[nodiscard]] static auto aqua() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_asparagus.png
-      static xtd::drawing::color asparagus() noexcept;
+      [[nodiscard]] static auto asparagus() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_banana.png
-      static xtd::drawing::color banana() noexcept;
+      [[nodiscard]] static auto banana() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_blueberry.png
-      static xtd::drawing::color blueberry() noexcept;
+      [[nodiscard]] static auto blueberry() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_bubblegum.png
-      static xtd::drawing::color bubblegum() noexcept;
+      [[nodiscard]] static auto bubblegum() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_cantaloupe.png
-      static xtd::drawing::color cantaloupe() noexcept;
+      [[nodiscard]] static auto cantaloupe() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_carnation.png
-      static xtd::drawing::color carnation() noexcept;
+      [[nodiscard]] static auto carnation() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_acayenne.png
-      static xtd::drawing::color cayenne() noexcept;
+      [[nodiscard]] static auto cayenne() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_clover.png
-      static xtd::drawing::color clover() noexcept;
+      [[nodiscard]] static auto clover() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_eggplant.png
-      static xtd::drawing::color eggplant() noexcept;
+      [[nodiscard]] static auto eggplant() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_fern.png
-      static xtd::drawing::color fern() noexcept;
+      [[nodiscard]] static auto fern() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_flora.png
-      static xtd::drawing::color flora() noexcept;
+      [[nodiscard]] static auto flora() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_grape.png
-      static xtd::drawing::color grape() noexcept;
+      [[nodiscard]] static auto grape() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_honeydew.png
-      static xtd::drawing::color honeydew() noexcept;
+      [[nodiscard]] static auto honeydew() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_ice.png
-      static xtd::drawing::color ice() noexcept;
+      [[nodiscard]] static auto ice() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_iron.png
-      static xtd::drawing::color iron() noexcept;
+      [[nodiscard]] static auto iron() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_lavendar.png
-      static xtd::drawing::color lavendar() noexcept;
+      [[nodiscard]] static auto lavendar() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_lead.png
-      static xtd::drawing::color lead() noexcept;
+      [[nodiscard]] static auto lead() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_lemon.png
-      static xtd::drawing::color lemon() noexcept;
+      [[nodiscard]] static auto lemon() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_licorice.png
-      static xtd::drawing::color licorice() noexcept;
+      [[nodiscard]] static auto licorice() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_lime.png
-      static xtd::drawing::color lime() noexcept;
+      [[nodiscard]] static auto lime() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_magenta.png
-      static xtd::drawing::color magenta() noexcept;
+      [[nodiscard]] static auto magenta() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_magnesium.png
-      static xtd::drawing::color magnesium() noexcept;
+      [[nodiscard]] static auto magnesium() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_maraschino.png
-      static xtd::drawing::color maraschino() noexcept;
+      [[nodiscard]] static auto maraschino() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_maroon.png
-      static xtd::drawing::color maroon() noexcept;
+      [[nodiscard]] static auto maroon() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_mercury.png
-      static xtd::drawing::color mercury() noexcept;
+      [[nodiscard]] static auto mercury() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_mmidnight.png
-      static xtd::drawing::color midnight() noexcept;
+      [[nodiscard]] static auto midnight() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_moss.png
-      static xtd::drawing::color moss() noexcept;
+      [[nodiscard]] static auto moss() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_mocha.png
-      static xtd::drawing::color mocha() noexcept;
+      [[nodiscard]] static auto mocha() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_nickel.png
-      static xtd::drawing::color nickel() noexcept;
+      [[nodiscard]] static auto nickel() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_ocean.png
-      static xtd::drawing::color ocean() noexcept;
+      [[nodiscard]] static auto ocean() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_orchid.png
-      static xtd::drawing::color orchid() noexcept;
+      [[nodiscard]] static auto orchid() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_plum.png
-      static xtd::drawing::color plum() noexcept;
+      [[nodiscard]] static auto plum() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_salmon.png
-      static xtd::drawing::color salmon() noexcept;
+      [[nodiscard]] static auto salmon() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_sea_foam.png
-      static xtd::drawing::color sea_foam() noexcept;
+      [[nodiscard]] static auto sea_foam() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_silver.png
-      static xtd::drawing::color silver() noexcept;
+      [[nodiscard]] static auto silver() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_sky.png
-      static xtd::drawing::color sky() noexcept;
+      [[nodiscard]] static auto sky() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_snow.png
-      static xtd::drawing::color snow() noexcept;
+      [[nodiscard]] static auto snow() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_spindrift.png
-      static xtd::drawing::color spindrift() noexcept;
+      [[nodiscard]] static auto spindrift() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_spring.png
-      static xtd::drawing::color spring() noexcept;
+      [[nodiscard]] static auto spring() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_steel.png
-      static xtd::drawing::color steel() noexcept;
+      [[nodiscard]] static auto steel() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_strawberry.png
-      static xtd::drawing::color strawberry() noexcept;
+      [[nodiscard]] static auto strawberry() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_tangerine.png
-      static xtd::drawing::color tangerine() noexcept;
+      [[nodiscard]] static auto tangerine() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_teal.png
-      static xtd::drawing::color teal() noexcept;
+      [[nodiscard]] static auto teal() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_tin.png
-      static xtd::drawing::color tin() noexcept;
+      [[nodiscard]] static auto tin() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_tungsten.png
-      static xtd::drawing::color tungsten() noexcept;
+      [[nodiscard]] static auto tungsten() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html crayon_colors_turquoise.png
-      static xtd::drawing::color turquoise() noexcept;
+      [[nodiscard]] static auto turquoise() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
-      
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      /// @brief Gets an array of color names.
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
