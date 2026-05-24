@@ -121,19 +121,19 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of this icon. This is not a copy of the handle; do not free it.
       /// @return The Windows handle for the icon.
-      intptr handle() const noexcept;
+      [[nodiscard]] auto handle() const noexcept -> xtd::intptr;
       
       /// @brief Gets the height of this xtd::drawing::icon.
       /// @return The height of this xtd::drawing::icon.
-      int32 height() const noexcept;
+      [[nodiscard]] auto height() const noexcept -> xtd::int32;
       
       /// @brief Gets the size of this xtd::drawing::icon.
       /// @return The size of this xtd::drawing::icon.
-      const xtd::drawing::size& size() const noexcept;
+      [[nodiscard]] auto size() const noexcept -> const xtd::drawing::size&;
       
       /// @brief Gets the width of this xtd::drawing::icon.
       /// @return The width of this xtd::drawing::icon.
-      int32 width() const noexcept;
+      [[nodiscard]] auto width() const noexcept -> xtd::int32;
       /// @}
       
       /// @name Public Methods
@@ -142,31 +142,31 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param other An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      bool equals(const icon& other) const noexcept override;
+      [[nodiscard]] auto equals(const icon& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Saves this xtd::drawing::icon to the specified output filename.
       /// @param filename The file to save to.
-      void save(const xtd::string& filename) const;
+      auto save(const xtd::string& filename) const -> void;
       /// @brief Saves this xtd::drawing::icon to the specified output std::ostream.
       /// @param stream The std::ostream to save to.
-      void save(std::ostream& stream) const;
+      auto save(std::ostream& stream) const -> void;
       
       /// @brief Converts this xtd::drawing::icon to a GDI+ xtd::drawing::bitmap.
       /// @return A Bitmap that represents the converted xtd::drawing::icon.
       /// @remarks The transparent areas of the icon are lost when it is converted to a bitmap, and the transparent color of the resulting bitmap is set to RGB(13,11,12). The returned bitmap has the same height and width as the original icon.
-      xtd::drawing::bitmap to_bitmap() const;
+      [[nodiscard]] auto to_bitmap() const -> xtd::drawing::bitmap;
       
       /// @brief Gets a human-readable string that describes the xtd::drawing::icon.
       /// @return A string that describes the xtd::drawing::icon.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -175,13 +175,13 @@ namespace xtd {
       /// @brief Creates a GDI+ xtd::drawing::icon from the specified bitmap.
       /// @param bitmap A xtd::drawing::bitmap use to create xtd::drawing::icon.
       /// @return The xtd::drawing::icon this method creates.
-      static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
+      [[nodiscard]] static auto from_bitmap(const xtd::drawing::bitmap& bitmap) -> icon;
       
       /// @brief Creates a GDI+ xtd::drawing::icon from the specified Windows handle to an icon (HICON).
       /// @param handle A Windows handle to an icon.
       /// @return The xtd::drawing::icon this method creates.
       /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
-      static icon from_handle(intptr handle);
+      [[nodiscard]] static auto from_handle(intptr handle) -> icon;
       /// @}
       
     private:
