@@ -28,33 +28,33 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_coral.png
-      static xtd::drawing::color coral() noexcept;
+      [[nodiscard]] static auto coral() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_orange_red.png
-      static xtd::drawing::color orange_red() noexcept;
+      [[nodiscard]] static auto orange_red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_tomato.png
-      static xtd::drawing::color tomato() noexcept;
+      [[nodiscard]] static auto tomato() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_orange.png
-      static xtd::drawing::color dark_orange() noexcept;
+      [[nodiscard]] static auto dark_orange() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_orange.png
-      static xtd::drawing::color orange() noexcept;
+      [[nodiscard]] static auto orange() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       /// @brief Gets an array of color names.
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
