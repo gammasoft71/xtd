@@ -39,9 +39,6 @@ namespace xtd {
       /// | format_flag    | 0             |
       /// | hotkey_prefix  | none          |
       string_format() = default;
-      /// @brief Initializes a new string_format object from the specified existing string_format object.
-      /// @param format The string_format object from which to initialize the new string_format object.
-      string_format(const xtd::drawing::string_format& format) = default;
       /// @brief Initializes a new string_format object with the specified string_format_flags enumeration.
       /// @param options The StringFormatFlags enumeration for the new StringFormat object.
       explicit string_format(xtd::drawing::string_format_flags options);
@@ -53,43 +50,43 @@ namespace xtd {
       /// @brief Gets horizontal alignment of the string.
       /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      xtd::drawing::string_alignment alignment() const noexcept;
+      [[nodiscard]] auto alignment() const noexcept -> xtd::drawing::string_alignment;
       /// @brief Sets horizontal alignment of the string.
       /// @param alignment A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      xtd::drawing::string_format& alignment(xtd::drawing::string_alignment alignment) noexcept;
+      auto alignment(xtd::drawing::string_alignment alignment) noexcept -> string_format&;
       
       /// @brief Gets a string_formatFlags enumeration that contains formatting information.
       /// @return A string_formatFlags enumeration that contains formatting information.
-      xtd::drawing::string_format_flags format_flags() const noexcept;
+      [[nodiscard]] auto format_flags() const noexcept -> xtd::drawing::string_format_flags;
       /// @brief Sets a string_formatFlags enumeration that contains formatting information.
       /// @param format_flag A string_formatFlags enumeration that contains formatting information.
-      xtd::drawing::string_format& format_flags(xtd::drawing::string_format_flags format_flag) noexcept;
+      auto format_flags(xtd::drawing::string_format_flags format_flag) noexcept -> string_format&;
       
       /// @brief Gets the HotkeyPrefix object for this string_format object.
       /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
-      xtd::drawing::text::hotkey_prefix hotkey_prefix() const noexcept;
+      [[nodiscard]] auto hotkey_prefix() const noexcept -> xtd::drawing::text::hotkey_prefix;
       /// @brief Sets the HotkeyPrefix object for this string_format object.
       /// @param hotkey_prefix The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
-      xtd::drawing::string_format& hotkey_prefix(xtd::drawing::text::hotkey_prefix hotkey_prefix) noexcept;
+      auto hotkey_prefix(xtd::drawing::text::hotkey_prefix hotkey_prefix) noexcept -> string_format&;
       
       /// @brief Gets vertical alignment of the string.
       /// @return A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
-      xtd::drawing::string_alignment line_alignment() const noexcept;
+      [[nodiscard]] auto line_alignment() const noexcept -> xtd::drawing::string_alignment;
       /// @brief Sets vertical alignment of the string.
       /// @param alignment A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
-      xtd::drawing::string_format& line_alignment(xtd::drawing::string_alignment line_alignment) noexcept;
+      auto line_alignment(xtd::drawing::string_alignment line_alignment) noexcept -> string_format&;
       
       /// @brief Gets the string_trimming enumeration for this string_format object.
       /// @return A string_trimming enumeration that indicates how text drawn with this string_format object is trimmed when it exceeds the edges of the layout rectangle.
-      xtd::drawing::string_trimming trimming() const noexcept;
+      [[nodiscard]] auto trimming() const noexcept -> xtd::drawing::string_trimming;
       /// @brief Sets the string_trimming enumeration for this string_format object.
       /// @param trimming A string_trimming enumeration that indicates how text drawn with this string_format object is trimmed when it exceeds the edges of the layout rectangle.
-      xtd::drawing::string_format& trimming(xtd::drawing::string_trimming trimming) noexcept;
+      auto trimming(xtd::drawing::string_trimming trimming) noexcept -> string_format&;
       /// @}
       
       /// @name Public Static Properties
@@ -105,7 +102,7 @@ namespace xtd {
       /// | line_alignment | near          |
       /// | hotkey_prefix  | none          |
       /// | trimming       | character     |
-      static xtd::drawing::string_format generic_default() noexcept;
+      [[nodiscard]] static auto generic_default() noexcept -> string_format;
       
       /// @brief Gets a generic typographic string_format object.
       /// @return A generic typographic string_format object.
@@ -117,7 +114,7 @@ namespace xtd {
       /// | line_alignment | near                                                   |
       /// | hotkey_prefix  | none                                                   |
       /// | trimming       | none                                                   |
-      static xtd::drawing::string_format generic_typographic() noexcept;
+      [[nodiscard]] static auto generic_typographic() noexcept -> string_format;
       /// @}
       
     private:
