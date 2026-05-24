@@ -177,12 +177,12 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
       /// @return `true` if this xtd::drawing::font is bold; otherwise, `false`.
-      bool bold() const noexcept;
+      [[nodiscard]] auto bold() const noexcept -> bool;
       
       /// @brief Gets the xtd::drawing::font_family associated with this xtd::drawing::font.
       /// @return The font_family associated with this Font.
       /// @remarks A font_family represents a group of fonts that have a similar font face, but may have different sizes and styles (for example, Arial, Times New Roman, and Verdana).
-      drawing::font_family font_family() const noexcept;
+      [[nodiscard]] auto font_family() const noexcept -> xtd::drawing::font_family;
       
       /// @brief Gets a byte value that specifies the GDI character set that this xtd::drawing::font uses.
       /// @return A byte value that specifies the GDI character set that this xtd::drawing::font uses. The default is 1.
@@ -209,17 +209,17 @@ namespace xtd {
       /// | RUSSIAN       | 204   |
       /// | MAC           | 77    |
       /// | BALTIC        | 186   |
-      xtd::byte gdi_char_set() const noexcept;
+      [[nodiscard]] auto gdi_char_set() const noexcept -> xtd::byte;
       
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
       /// @return `true` if this xtd::drawing::font is derived from a GDI vertical font; otherwise, `false`.
       /// @remarks Use this property to determine if a font is compatible with native Win32 controls on non-Unicode platforms.
       /// @remarks gdi_vertical_font only returns `true` if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
-      bool gdi_vertical_font() const noexcept;
+      [[nodiscard]] auto gdi_vertical_font() const noexcept -> bool;
       
       /// @brief Gets the window handle that the font is bound to.
       /// @return An intptr that contains the window handle (hfont) of the font.
-      intptr handle() const noexcept;
+      [[nodiscard]] auto handle() const noexcept -> xtd::intptr;
       
       /// @brief Gets the line spacing of this font.
       /// @return The line spacing, in pixels, of this font.
@@ -227,48 +227,48 @@ namespace xtd {
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. For a screen display that has a vertical resolution of 96 dots per inch, you can calculate the height as follows:
       /// @remarks 2355*(0.3/2048)*96 = 33.11719
       /// @remarks The value returned by the get_height method would be 33.11719, and the value returned by the height property would be 34. The height property is the value returned by get_height, rounded up to the nearest integer.
-      int32 height() const noexcept;
+      [[nodiscard]] auto height() const noexcept -> xtd::int32;
       
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
       /// @return `true` if the font is a member of xtd::drawing::system_fonts; otherwise, `false`. The default is `false`.
       /// @remarks When the user changes the system font, the is_system_font property could return `true`, even if the font is not actually a system font.
-      bool is_system_font() const noexcept;
+      [[nodiscard]] auto is_system_font() const noexcept -> bool;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is italic.
       /// @return `true` if this xtd::drawing::font is italic; otherwise, `false`.
-      bool italic() const noexcept;
+      [[nodiscard]] auto italic() const noexcept -> bool;
       
       /// @brief Gets the face name of this xtd::drawing::font.
       /// @return A string representation of the face name of this xtd::drawing::font.
-      const xtd::string& name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the face name of this Font.
       /// @return A string representation of the face name of this Font.
-      const xtd::string& original_font_name() const noexcept;
+      [[nodiscard]] auto original_font_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the em-size of this xtd::drawing::font measured in the units specified by the unit property.
       /// @return The em-size of this xtd::drawing::font.
-      float size() const noexcept;
+      [[nodiscard]] auto size() const noexcept -> float;
       
       /// @brief Gets the em-size, in points, of this xtd::drawing::font.
       /// @return The em-size, in points, of this xtd::drawing::font.
-      float size_in_points() const noexcept;
+      [[nodiscard]] auto size_in_points() const noexcept -> float;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is strikeout.
       /// @return `true` if this xtd::drawing::font is strikeout; otherwise, `false`.
-      bool strikeout() const noexcept;
+      [[nodiscard]] auto strikeout() const noexcept -> bool;
       
       /// @brief Gets style information for this xtd::drawing::font.
       /// @return A font_style enumeration that contains style information for this xtd::drawing::font.
-      font_style style() const noexcept;
+      [[nodiscard]] auto style() const noexcept -> xtd::drawing::font_style;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is underline.
       /// @return `true` if this xtd::drawing::font is underline; otherwise, `false`.
-      bool underline() const noexcept;
+      [[nodiscard]] auto underline() const noexcept -> bool;
       
       /// @brief Gets the unit of measure for this xtd::drawing::font.
       /// @return A graphics_unit that represents the unit of measure for this xtd::drawing::font.
-      graphics_unit unit() const noexcept;
+      [[nodiscard]] auto unit() const noexcept -> xtd::drawing::graphics_unit;
       /// @}
       
       /// @name Public Methods
@@ -277,43 +277,43 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const font& other) const noexcept override;
+      [[nodiscard]] auto equals(const font& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns the line spacing, in pixels, of this font.
       /// @return The line spacing, in pixels, of this font.
       /// @remarks The line spacing of a xtd::drawing::font is the vertical distance between the base lines of two consecutive lines of text. Thus, the line spacing includes the blank space between lines along with the height of the character itself.
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. For a screen display that has a vertical resolution of 96 dots per inch, you can calculate the height as follows: <br> 2355*(0.3/2048)*96 = 33.11719
-      float get_height() const;
+      [[nodiscard]] auto get_height() const -> float;
       
       /// @brief Returns the line spacing, in the current unit of a specified xtd::drawing::graphics, of this font.
       /// @param graphics A xtd::drawing::graphics that holds the vertical resolution, in dots per inch, of the display device as well as settings for page unit and page scale.
       /// @return The line spacing, in pixels, of this font.
       /// @remarks The line spacing of a xtd::drawing::font is the vertical distance between the base lines of two consecutive lines of text. Thus, the line spacing includes the blank space between lines along with the height of the character itself.
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. For a screen display that has a vertical resolution of 96 dots per inch, you can calculate the height as follows: <br> 2355*(0.3/2048)*96 = 33.11719
-      float get_height(const graphics& graphics) const;
+      [[nodiscard]] auto get_height(const graphics& graphics) const -> float;
       
       /// @brief Returns the height, in pixels, of this Font when drawn to a device with the specified vertical resolution.
       /// @param dpi The vertical resolution, in dots per inch, used to calculate the height of the font.
       /// @return The height, in pixels, of this xtd::drawing::font.
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. If the specified vertical resolution is 96 dots per inch, the height is calculated as follows: <br> 2355*(0.3/2048)*96 = 33.1171875
-      float get_height(float dpi) const;
+      [[nodiscard]] auto get_height(float dpi) const -> float;
       
       /// @return Returns a handle to this xtd::drawing::font.
       /// @return A Windows handle to this xtd::drawing::font.
       /// @remarks When using this method, you must dispose of the resulting Hfont using the GDI DeleteObject method to ensure the resources are released.
-      intptr to_hfont() const;
+      [[nodiscard]] auto to_hfont() const -> xtd::intptr;
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -322,12 +322,12 @@ namespace xtd {
       /// @brief Creates a font from the specified Windows handle to a device context.
       /// @param hdc A handle to a device context.
       /// @return The font this method creates.
-      static font from_hdc(const intptr hdc);
+      [[nodiscard]] static auto from_hdc(const intptr hdc) -> font;
       
       /// @brief Creates a font from the specified Windows handle.
       /// @param hfont A Windows handle to a GDI font.
       /// @return The font this method creates.
-      static font from_hfont(const intptr hfont);
+      [[nodiscard]] static auto from_hfont(const intptr hfont) -> font;
       /// @}
       
     private:
