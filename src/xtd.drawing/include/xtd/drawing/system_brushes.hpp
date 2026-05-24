@@ -27,134 +27,134 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a solid_brush that is the color of the accent.
-      static xtd::drawing::solid_brush accent();
+      [[nodiscard]] static auto accent() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the accent text.
-      static xtd::drawing::solid_brush accent_text();
+      [[nodiscard]] static auto accent_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the active border.
-      static xtd::drawing::solid_brush active_border();
+      [[nodiscard]] static auto active_border() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the active caption.
-      static xtd::drawing::solid_brush active_caption();
+      [[nodiscard]] static auto active_caption() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the active caption text.
-      static xtd::drawing::solid_brush active_caption_text();
+      [[nodiscard]] static auto active_caption_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the active text.
-      static xtd::drawing::solid_brush active_text();
+      [[nodiscard]] static auto active_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the app workspace.
-      static xtd::drawing::solid_brush app_workspace();
+      [[nodiscard]] static auto app_workspace() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the button face.
-      static xtd::drawing::solid_brush button_face();
+      [[nodiscard]] static auto button_face() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the button highlight.
-      static xtd::drawing::solid_brush button_highlight();
+      [[nodiscard]] static auto button_highlight() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the button shadow.
-      static xtd::drawing::solid_brush button_shadow();
+      [[nodiscard]] static auto button_shadow() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the control.
-      static xtd::drawing::solid_brush control();
+      [[nodiscard]] static auto control() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the control dark.
-      static xtd::drawing::solid_brush control_dark();
+      [[nodiscard]] static auto control_dark() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the control dark dark.
-      static xtd::drawing::solid_brush control_dark_dark();
+      [[nodiscard]] static auto control_dark_dark() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the control light.
-      static xtd::drawing::solid_brush control_light();
+      [[nodiscard]] static auto control_light() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the control light light.
-      static xtd::drawing::solid_brush control_light_light();
+      [[nodiscard]] static auto control_light_light() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the control text.
-      static xtd::drawing::solid_brush control_text();
+      [[nodiscard]] static auto control_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the desktop.
-      static xtd::drawing::solid_brush desktop();
+      [[nodiscard]] static auto desktop() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the gradient active caption.
-      static xtd::drawing::solid_brush gradient_active_caption();
+      [[nodiscard]] static auto gradient_active_caption() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the gradient inactive caption.
-      static xtd::drawing::solid_brush gradient_inactive_caption();
+      [[nodiscard]] static auto gradient_inactive_caption() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the gray text.
-      static xtd::drawing::solid_brush gray_text();
+      [[nodiscard]] static auto gray_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the highlight.
-      static xtd::drawing::solid_brush highlight();
+      [[nodiscard]] static auto highlight() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the highlight text.
-      static xtd::drawing::solid_brush highlight_text();
+      [[nodiscard]] static auto highlight_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the hot track.
-      static xtd::drawing::solid_brush hot_track();
+      [[nodiscard]] static auto hot_track() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the inactive border.
-      static xtd::drawing::solid_brush inactive_border();
+      [[nodiscard]] static auto inactive_border() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the inactive caption.
-      static xtd::drawing::solid_brush inactive_caption();
+      [[nodiscard]] static auto inactive_caption() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the inactive caption text.
-      static xtd::drawing::solid_brush inactive_caption_text();
+      [[nodiscard]] static auto inactive_caption_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the info.
-      static xtd::drawing::solid_brush info();
+      [[nodiscard]] static auto info() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the info text.
-      static xtd::drawing::solid_brush info_text();
+      [[nodiscard]] static auto info_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the link text.
-      static xtd::drawing::solid_brush link_text();
+      [[nodiscard]] static auto link_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the menu.
-      static xtd::drawing::solid_brush menu();
+      [[nodiscard]] static auto menu() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the menu bar.
-      static xtd::drawing::solid_brush menu_bar();
+      [[nodiscard]] static auto menu_bar() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the menu highlight.
-      static xtd::drawing::solid_brush menu_highlight();
+      [[nodiscard]] static auto menu_highlight() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the menu text.
-      static xtd::drawing::solid_brush menu_text();
+      [[nodiscard]] static auto menu_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the scroll bar.
-      static xtd::drawing::solid_brush scroll_bar();
+      [[nodiscard]] static auto scroll_bar() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the shadow text.
-      static xtd::drawing::solid_brush shadow_text();
+      [[nodiscard]] static auto shadow_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the text box.
-      static xtd::drawing::solid_brush text_box();
+      [[nodiscard]] static auto text_box() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the text box text.
-      static xtd::drawing::solid_brush text_box_text();
+      [[nodiscard]] static auto text_box_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the visited text.
-      static xtd::drawing::solid_brush visited_text();
+      [[nodiscard]] static auto visited_text() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the window.
-      static xtd::drawing::solid_brush window();
+      [[nodiscard]] static auto window() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the window frame.
-      static xtd::drawing::solid_brush window_frame();
+      [[nodiscard]] static auto window_frame() -> xtd::drawing::solid_brush;
       
       /// @brief Gets a solid_brush that is the color of the window text.
-      static xtd::drawing::solid_brush window_text();
+      [[nodiscard]] static auto window_text() -> xtd::drawing::solid_brush;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of system colors.
-      static const xtd::array<xtd::drawing::solid_brush>& get_brushes();
+      static auto get_brushes() -> const xtd::array<xtd::drawing::solid_brush>&;
       /// @}
     };
   }
