@@ -28,49 +28,49 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_crimson.png
-      static xtd::drawing::color crimson() noexcept;
+      [[nodiscard]] static auto crimson() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_red.png
-      static xtd::drawing::color dark_red() noexcept;
+      [[nodiscard]] static auto dark_red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_salmon.png
-      static xtd::drawing::color dark_salmon() noexcept;
+      [[nodiscard]] static auto dark_salmon() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_firebrick.png
-      static xtd::drawing::color firebrick() noexcept;
+      [[nodiscard]] static auto firebrick() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_indian_red.png
-      static xtd::drawing::color indian_red() noexcept;
+      [[nodiscard]] static auto indian_red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_coral.png
-      static xtd::drawing::color light_coral() noexcept;
+      [[nodiscard]] static auto light_coral() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_salmon.png
-      static xtd::drawing::color light_salmon() noexcept;
+      [[nodiscard]] static auto light_salmon() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_red.png
-      static xtd::drawing::color red() noexcept;
+      [[nodiscard]] static auto red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_salmon.png
-      static xtd::drawing::color salmon() noexcept;
+      [[nodiscard]] static auto salmon() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       /// @brief Gets an array of color names.
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
