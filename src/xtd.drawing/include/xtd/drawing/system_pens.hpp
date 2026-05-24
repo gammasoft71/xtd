@@ -28,170 +28,170 @@ namespace xtd {
       /// @{
       /// @brief Gets a pen that is the color of the accent.
       /// @return A xtd::drawing::pen that is the color of the accent.
-      static xtd::drawing::pen accent();
+      [[nodiscard]] static auto accent() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the accent text.
       /// @return A xtd::drawing::pen that is the color of the accent ext.
-      static xtd::drawing::pen accent_text();
+      [[nodiscard]] static auto accent_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the active border.
       /// @return A xtd::drawing::pen that is the color of the active window's border.
-      static xtd::drawing::pen active_border();
+      [[nodiscard]] static auto active_border() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the active caption.
       /// @return A xtd::drawing::pen that is the color of the active caption.
-      static xtd::drawing::pen active_caption();
+      [[nodiscard]] static auto active_caption() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the active caption text.
       /// @return A xtd::drawing::pen that is the color of the active caption text.
-      static xtd::drawing::pen active_caption_text();
+      [[nodiscard]] static auto active_caption_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the active text.
       /// @return A xtd::drawing::pen that is the color of the active text.
-      static xtd::drawing::pen active_text();
+      [[nodiscard]] static auto active_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the app workspace.
       /// @return A xtd::drawing::pen that is the color of the app workspace.
-      static xtd::drawing::pen app_workspace();
+      [[nodiscard]] static auto app_workspace() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the button face.
       /// @return A xtd::drawing::pen that is the color of the button face.
-      static xtd::drawing::pen button_face();
+      [[nodiscard]] static auto button_face() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the button highlight.
       /// @return A xtd::drawing::pen that is the color of the button highlight.
-      static xtd::drawing::pen button_highlight();
+      [[nodiscard]] static auto button_highlight() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the button shadow.
       /// @return A xtd::drawing::pen that is the color of the button shadow.
-      static xtd::drawing::pen button_shadow();
+      [[nodiscard]] static auto button_shadow() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the control.
       /// @return A xtd::drawing::pen that is the color of the control.
-      static xtd::drawing::pen control();
+      [[nodiscard]] static auto control() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the control dark.
       /// @return A xtd::drawing::pen that is the color of the control dark.
-      static xtd::drawing::pen control_dark();
+      [[nodiscard]] static auto control_dark() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the control dark dark.
       /// @return A xtd::drawing::pen that is the color of the control dark dark.
-      static xtd::drawing::pen control_dark_dark();
+      [[nodiscard]] static auto control_dark_dark() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the control light.
       /// @return A xtd::drawing::pen that is the color of the control light.
-      static xtd::drawing::pen control_light();
+      [[nodiscard]] static auto control_light() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the control light light.
       /// @return A xtd::drawing::pen that is the color of the control light kight.
-      static xtd::drawing::pen control_light_light();
+      [[nodiscard]] static auto control_light_light() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the control text.
       /// @return A xtd::drawing::pen that is the color of the control text.
-      static xtd::drawing::pen control_text();
+      [[nodiscard]] static auto control_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the desktop.
       /// @return A xtd::drawing::pen that is the color of the desktop.
-      static xtd::drawing::pen desktop();
+      [[nodiscard]] static auto desktop() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the gradient active caption.
       /// @return A xtd::drawing::pen that is the color of the gradient active caption.
-      static xtd::drawing::pen gradient_active_caption();
+      [[nodiscard]] static auto gradient_active_caption() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the gradient inactive caption.
       /// @return A xtd::drawing::pen that is the color of the gradient inactive caption.
-      static xtd::drawing::pen gradient_inactive_caption();
+      [[nodiscard]] static auto gradient_inactive_caption() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the gray text.
       /// @return A xtd::drawing::pen that is the color of the gray text.
-      static xtd::drawing::pen gray_text();
+      [[nodiscard]] static auto gray_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the highlight.
       /// @return A xtd::drawing::pen that is the color of the highlight.
-      static xtd::drawing::pen highlight();
+      [[nodiscard]] static auto highlight() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the highlight text.
       /// @return A xtd::drawing::pen that is the color of the highlight text.
-      static xtd::drawing::pen highlight_text();
+      [[nodiscard]] static auto highlight_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the hot track.
       /// @return A xtd::drawing::pen that is the color of the hot track.
-      static xtd::drawing::pen hot_track();
+      [[nodiscard]] static auto hot_track() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the inactive border.
       /// @return A xtd::drawing::pen that is the color of the inactive border.
-      static xtd::drawing::pen inactive_border();
+      [[nodiscard]] static auto inactive_border() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the inactive caption.
       /// @return A xtd::drawing::pen that is the color of the inactive caption.
-      static xtd::drawing::pen inactive_caption();
+      [[nodiscard]] static auto inactive_caption() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the inactive caption text.
       /// @return A xtd::drawing::pen that is the color of the inactive caption text.
-      static xtd::drawing::pen inactive_caption_text();
+      [[nodiscard]] static auto inactive_caption_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the info.
       /// @return A xtd::drawing::pen that is the color of the info.
-      static xtd::drawing::pen info();
+      [[nodiscard]] static auto info() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the info text.
       /// @return A xtd::drawing::pen that is the color of the info text.
-      static xtd::drawing::pen info_text();
+      [[nodiscard]] static auto info_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the link text.
       /// @return A xtd::drawing::pen that is the color of the link text.
-      static xtd::drawing::pen link_text();
+      [[nodiscard]] static auto link_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the menu.
       /// @return A xtd::drawing::pen that is the color of the menu.
-      static xtd::drawing::pen menu();
+      [[nodiscard]] static auto menu() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the menu bar.
       /// @return A xtd::drawing::pen that is the color of the menu bar.
-      static xtd::drawing::pen menu_bar();
+      [[nodiscard]] static auto menu_bar() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the menu highlight.
       /// @return A xtd::drawing::pen that is the color of the menu highlight.
-      static xtd::drawing::pen menu_highlight();
+      [[nodiscard]] static auto menu_highlight() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the menu text.
       /// @return A xtd::drawing::pen that is the color of the menu text.
-      static xtd::drawing::pen menu_text();
+      [[nodiscard]] static auto menu_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the scroll bar.
       /// @return A xtd::drawing::pen that is the color of the scroll bar.
-      static xtd::drawing::pen scroll_bar();
+      [[nodiscard]] static auto scroll_bar() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the text box.
       /// @return A xtd::drawing::pen that is the color of the text box.
-      static xtd::drawing::pen text_box();
+      [[nodiscard]] static auto text_box() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the text box text.
       /// @return A xtd::drawing::pen that is the color of the text box text.
-      static xtd::drawing::pen text_box_text();
+      [[nodiscard]] static auto text_box_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the visited text.
       /// @return A xtd::drawing::pen that is the color of the visited text.
-      static xtd::drawing::pen visited_text();
+      [[nodiscard]] static auto visited_text() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the window.
       /// @return A xtd::drawing::pen that is the color of the window.
-      static xtd::drawing::pen window();
+      [[nodiscard]] static auto window() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the window frame.
       /// @return A xtd::drawing::pen that is the color of the window frame.
-      static xtd::drawing::pen window_frame();
+      [[nodiscard]] static auto window_frame() -> xtd::drawing::pen;
       
       /// @brief Gets a pen that is the color of the window text.
       /// @return A xtd::drawing::pen that is the color of the window text.
-      static xtd::drawing::pen window_text();
+      [[nodiscard]] static auto window_text() -> xtd::drawing::pen;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of system colors.
-      static const xtd::array<xtd::drawing::pen>& get_pens();
+      [[nodiscard]] static auto get_pens() -> const xtd::array<xtd::drawing::pen>&;
       /// @}
     };
   }
