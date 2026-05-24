@@ -31,175 +31,175 @@ namespace xtd {
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
-      static xtd::drawing::size default_size() noexcept;
+      [[nodiscard]] static auto default_size() noexcept -> xtd::drawing::size;
       
       /// @brief Gets the emotes system image "face-angel".
       /// @return The xtd::drawing::image "face-angel".
-      static xtd::drawing::image face_angel() noexcept;
+      [[nodiscard]] static auto face_angel() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-angel" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-angel".
-      static xtd::drawing::image face_angel(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_angel(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-angry".
       /// @return The xtd::drawing::image "face-angry".
-      static xtd::drawing::image face_angry() noexcept;
+      [[nodiscard]] static auto face_angry() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-angry" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-angry".
-      static xtd::drawing::image face_angry(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_angry(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-cool".
       /// @return The xtd::drawing::image "face-cool".
-      static xtd::drawing::image face_cool() noexcept;
+      [[nodiscard]] static auto face_cool() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-cool" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-cool".
-      static xtd::drawing::image face_cool(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_cool(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-crying".
       /// @return The xtd::drawing::image "face-crying".
-      static xtd::drawing::image face_crying() noexcept;
+      [[nodiscard]] static auto face_crying() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-crying" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-crying".
-      static xtd::drawing::image face_crying(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_crying(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-devilish".
       /// @return The xtd::drawing::image "face-devilish".
-      static xtd::drawing::image face_devilish() noexcept;
+      [[nodiscard]] static auto face_devilish() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-devilish" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-devilish".
-      static xtd::drawing::image face_devilish(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_devilish(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-embarrassed".
       /// @return The xtd::drawing::image "face-embarrassed".
-      static xtd::drawing::image face_embarrassed() noexcept;
+      [[nodiscard]] static auto face_embarrassed() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-embarrassed" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-embarrassed".
-      static xtd::drawing::image face_embarrassed(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_embarrassed(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-kiss".
       /// @return The xtd::drawing::image "face-kiss".
-      static xtd::drawing::image face_kiss() noexcept;
+      [[nodiscard]] static auto face_kiss() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-kiss" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-kiss".
-      static xtd::drawing::image face_kiss(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_kiss(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-laugh".
       /// @return The xtd::drawing::image "face-laugh".
-      static xtd::drawing::image face_laugh() noexcept;
+      [[nodiscard]] static auto face_laugh() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-laugh" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-laugh".
-      static xtd::drawing::image face_laugh(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_laugh(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-monkey".
       /// @return The xtd::drawing::image "face-monkey".
-      static xtd::drawing::image face_monkey() noexcept;
+      [[nodiscard]] static auto face_monkey() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-monkey" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-monkey".
-      static xtd::drawing::image face_monkey(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_monkey(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-plain".
       /// @return The xtd::drawing::image "face-plain".
-      static xtd::drawing::image face_plain() noexcept;
+      [[nodiscard]] static auto face_plain() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-plain" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-plain".
-      static xtd::drawing::image face_plain(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_plain(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-raspberry".
       /// @return The xtd::drawing::image "face-raspberry".
-      static xtd::drawing::image face_raspberry() noexcept;
+      [[nodiscard]] static auto face_raspberry() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-raspberry" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-raspberry".
-      static xtd::drawing::image face_raspberry(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_raspberry(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-sad".
       /// @return The xtd::drawing::image "face-sad".
-      static xtd::drawing::image face_sad() noexcept;
+      [[nodiscard]] static auto face_sad() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-sad" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-sad".
-      static xtd::drawing::image face_sad(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_sad(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-sick".
       /// @return The xtd::drawing::image "face-sick".
-      static xtd::drawing::image face_sick() noexcept;
+      [[nodiscard]] static auto face_sick() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-sick" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-sick".
-      static xtd::drawing::image face_sick(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_sick(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-smile".
       /// @return The xtd::drawing::image "face-smile".
-      static xtd::drawing::image face_smile() noexcept;
+      [[nodiscard]] static auto face_smile() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-smile" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-smile".
-      static xtd::drawing::image face_smile(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_smile(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-smile-big".
       /// @return The xtd::drawing::image "face-smile-big".
-      static xtd::drawing::image face_smile_big() noexcept;
+      [[nodiscard]] static auto face_smile_big() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-smile-big" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-smile-big".
-      static xtd::drawing::image face_smile_big(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_smile_big(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-smirk".
       /// @return The xtd::drawing::image "face-smirk".
-      static xtd::drawing::image face_smirk() noexcept;
+      [[nodiscard]] static auto face_smirk() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-smirk" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-smirk".
-      static xtd::drawing::image face_smirk(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_smirk(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-surprise".
       /// @return The xtd::drawing::image "face-surprise".
-      static xtd::drawing::image face_surprise() noexcept;
+      [[nodiscard]] static auto face_surprise() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-surprise" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-surprise".
-      static xtd::drawing::image face_surprise(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_surprise(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-tired".
       /// @return The xtd::drawing::image "face-tired".
-      static xtd::drawing::image face_tired() noexcept;
+      [[nodiscard]] static auto face_tired() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-tired" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-tired".
-      static xtd::drawing::image face_tired(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_tired(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-uncertain".
       /// @return The xtd::drawing::image "face-uncertain".
-      static xtd::drawing::image face_uncertain() noexcept;
+      [[nodiscard]] static auto face_uncertain() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-uncertain" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-uncertain".
-      static xtd::drawing::image face_uncertain(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_uncertain(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-wink".
       /// @return The xtd::drawing::image "face-wink".
-      static xtd::drawing::image face_wink() noexcept;
+      [[nodiscard]] static auto face_wink() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-wink" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-wink".
-      static xtd::drawing::image face_wink(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_wink(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the emotes system image "face-worried".
       /// @return The xtd::drawing::image "face-worried".
-      static xtd::drawing::image face_worried() noexcept;
+      [[nodiscard]] static auto face_worried() noexcept -> xtd::drawing::image;
       /// @brief Gets the emotes system image "face-worried" with specified size.
       /// @param size The emotes system image size in pixels.
       /// @return The xtd::drawing::image "face-worried".
-      static xtd::drawing::image face_worried(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto face_worried(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @}
       
@@ -208,15 +208,15 @@ namespace xtd {
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
-      static const xtd::array<xtd::drawing::image>& get_images() noexcept;
+      [[nodiscard]] static auto get_images() noexcept -> const xtd::array<xtd::drawing::image>&;
       /// @brief Gets an array of images with specified size.
       /// @param size The images size in pixels.
       /// @return The array of images.
-      static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto get_images(const xtd::drawing::size& size) noexcept -> xtd::array<xtd::drawing::image>;
       
       /// @brief Gets an array of image names.
       /// @return The array of image names.
-      static const xtd::array<xtd::string>& get_image_names() noexcept;
+      [[nodiscard]] static auto get_image_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
