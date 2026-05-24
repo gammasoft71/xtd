@@ -28,93 +28,93 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_chartreuse.png
-      static xtd::drawing::color chartreuse() noexcept;
+      [[nodiscard]] static auto chartreuse() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_green.png
-      static xtd::drawing::color dark_green() noexcept;
+      [[nodiscard]] static auto dark_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_olive_green.png
-      static xtd::drawing::color dark_olive_green() noexcept;
+      [[nodiscard]] static auto dark_olive_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_sea_green.png
-      static xtd::drawing::color dark_sea_green() noexcept;
+      [[nodiscard]] static auto dark_sea_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_green.png
-      static xtd::drawing::color green() noexcept;
+      [[nodiscard]] static auto green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_green_yellow.png
-      static xtd::drawing::color green_yellow() noexcept;
+      [[nodiscard]] static auto green_yellow() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_forest_green.png
-      static xtd::drawing::color forest_green() noexcept;
+      [[nodiscard]] static auto forest_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_lawn_green.png
-      static xtd::drawing::color lawn_green() noexcept;
+      [[nodiscard]] static auto lawn_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_green.png
-      static xtd::drawing::color light_green() noexcept;
+      [[nodiscard]] static auto light_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_lime.png
-      static xtd::drawing::color lime() noexcept;
+      [[nodiscard]] static auto lime() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_lime_green.png
-      static xtd::drawing::color lime_green() noexcept;
+      [[nodiscard]] static auto lime_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_aquamarine.png
-      static xtd::drawing::color medium_aquamarine() noexcept;
+      [[nodiscard]] static auto medium_aquamarine() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_sea_green.png
-      static xtd::drawing::color medium_sea_green() noexcept;
+      [[nodiscard]] static auto medium_sea_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_spring_green.png
-      static xtd::drawing::color medium_spring_green() noexcept;
+      [[nodiscard]] static auto medium_spring_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_olive.png
-      static xtd::drawing::color olive() noexcept;
+      [[nodiscard]] static auto olive() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_olive_drab.png
-      static xtd::drawing::color olive_drab() noexcept;
+      [[nodiscard]] static auto olive_drab() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_pale_green.png
-      static xtd::drawing::color pale_green() noexcept;
+      [[nodiscard]] static auto pale_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_sea_green.png
-      static xtd::drawing::color sea_green() noexcept;
+      [[nodiscard]] static auto sea_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_spring_green.png
-      static xtd::drawing::color spring_green() noexcept;
+      [[nodiscard]] static auto spring_green() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_yellow_green.png
-      static xtd::drawing::color yellow_green() noexcept;
+      [[nodiscard]] static auto yellow_green() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       /// @brief Gets an array of color_names.
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
