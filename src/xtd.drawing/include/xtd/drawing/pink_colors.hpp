@@ -28,37 +28,37 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_deep_pink.png
-      static xtd::drawing::color deep_pink() noexcept;
+      [[nodiscard]] static auto deep_pink() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_hot_pink.png
-      static xtd::drawing::color hot_pink() noexcept;
+      [[nodiscard]] static auto hot_pink() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_pink.png
-      static xtd::drawing::color light_pink() noexcept;
+      [[nodiscard]] static auto light_pink() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_violet_red.png
-      static xtd::drawing::color medium_violet_red() noexcept;
+      [[nodiscard]] static auto medium_violet_red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_pale_violet_red.png
-      static xtd::drawing::color pale_violet_red() noexcept;
+      [[nodiscard]] static auto pale_violet_red() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_pink.png
-      static xtd::drawing::color pink() noexcept;
+      [[nodiscard]] static auto pink() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       /// @brief Gets an array of color names.
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
