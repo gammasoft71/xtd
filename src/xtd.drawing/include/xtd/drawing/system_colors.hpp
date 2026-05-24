@@ -29,191 +29,191 @@ namespace xtd {
       /// @{
       /// @brief Gets a xtd::drawing::color structure that is the color used to accent a control.
       /// @return A xtd::drawing::color that is the color used to accent a control.
-      static xtd::drawing::color accent();
+      [[nodiscard]] static auto accent() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text used to accent a control.
       /// @return A xtd::drawing::color that is the color of the text used to accent a control.
-      static xtd::drawing::color accent_text();
+      [[nodiscard]] static auto accent_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the active window's border.
       /// @return A xtd::drawing::color that is the color of the active window's border.
-      static xtd::drawing::color active_border();
+      [[nodiscard]] static auto active_border() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the active window's title bar.
-      static xtd::drawing::color active_caption();
+      [[nodiscard]] static auto active_caption() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the text in the active window's title bar.
-      static xtd::drawing::color active_caption_text();
+      [[nodiscard]] static auto active_caption_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of a active text.
       /// @return A xtd::drawing::color that is the color of a active text.
       /// @remarks The active text color is the text color of an html link text when mouse down.
-      static xtd::drawing::color active_text();
+      [[nodiscard]] static auto active_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the application workspace.
       /// @return A xtd::drawing::color that is the color of the application workspace.
       /// @remarks The application workspace is the area in a multiple-document view that is not being occupied by documents.
-      static xtd::drawing::color app_workspace();
+      [[nodiscard]] static auto app_workspace() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the face color of a 3-D element.
       /// @return A xtd::drawing::color that is the face color of a 3-D element.
-      static xtd::drawing::color button_face();
+      [[nodiscard]] static auto button_face() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the highlight color of a 3-D element.
       /// @return A xtd::drawing::color that is the highlight color of a 3-D element.
       /// @remarks This color is applied to parts of a 3-D element that face the light source.
-      static xtd::drawing::color button_highlight();
+      [[nodiscard]] static auto button_highlight() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the shadow color of a 3-D element.
       /// @return A xtd::drawing::color that is the shadow color of a 3-D element.
       /// @remarks This color is applied to parts of a 3-D element that face away from the light source.
-      static xtd::drawing::color button_shadow();
+      [[nodiscard]] static auto button_shadow() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the face color of a 3-D element.
       /// @return A xtd::drawing::color that is the face color of a 3-D element.
-      static xtd::drawing::color control();
+      [[nodiscard]] static auto control() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the shadow color of a 3-D element.
       /// @return A xtd::drawing::color that is the shadow color of a 3-D element.
       /// @remarks This color is applied to parts of a 3-D element that face away from the light source.
-      static xtd::drawing::color control_dark();
+      [[nodiscard]] static auto control_dark() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the dark shadow color of a 3-D element.
       /// @return A xtd::drawing::color that is the dark shadow color of a 3-D element.
       /// @remarks This color is applied to the parts of a 3-D element that are the darkest color.
-      static xtd::drawing::color control_dark_dark();
+      [[nodiscard]] static auto control_dark_dark() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the light color of a 3-D element.
       /// @return A xtd::drawing::color that is the light color of a 3-D element.
       /// @remarks This color is applied to parts of a 3-D element that face the light source.
-      static xtd::drawing::color control_light();
+      [[nodiscard]] static auto control_light() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the highlight color of a 3-D element.
       /// @return A xtd::drawing::color that is the highlight color of a 3-D element.
       /// @remarks This color is applied to the parts of a 3-D element that are the lightest color.
-      static xtd::drawing::color control_light_light();
+      [[nodiscard]] static auto control_light_light() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of text in a 3-D element.
       /// @return A xtd::drawing::color that is the color of text in a 3-D element.
-      static xtd::drawing::color control_text();
+      [[nodiscard]] static auto control_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the desktop.
       /// @return A xtd::drawing::color that is the color of the desktop.
-      static xtd::drawing::color desktop();
+      [[nodiscard]] static auto desktop() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the lightest color in the color gradient of an active window's title bar.
       /// @return A xtd::drawing::color that is the lightest color in the color gradient of an active window's title bar.
-      static xtd::drawing::color gradient_active_caption();
+      [[nodiscard]] static auto gradient_active_caption() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the lightest color in the color gradient of an inactive window's title bar.
       /// @return A xtd::drawing::color that is the lightest color in the color gradient of an inactive window's title bar.
-      static xtd::drawing::color gradient_inactive_caption();
+      [[nodiscard]] static auto gradient_inactive_caption() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of dimmed text.
       /// @return A xtd::drawing::color that is the color of dimmed text.
       /// @remarks Items in a list that are disabled are displayed in dimmed text.
-      static xtd::drawing::color gray_text();
+      [[nodiscard]] static auto gray_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of selected items.
       /// @return A xtd::drawing::color that is the color of the background of selected items.
       /// @remarks Selected items may include menu items as well as selected text. For example, the xtd::drawing::color structure may be the color used for the background of selected items in a list box.
-      static xtd::drawing::color highlight();
+      [[nodiscard]] static auto highlight() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text of selected items.
       /// @return A xtd::drawing::color that is the color of the text of selected items.
       /// @remarks For example, this color is used for the text of selected items in a list box.
-      static xtd::drawing::color highlight_text();
+      [[nodiscard]] static auto highlight_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color used to designate a hot-tracked item.
       /// @return A xtd::drawing::color that is the color used to designate a hot-tracked item.
       /// @remarks Single-clicking a hot-tracked item executes the item.
-      static xtd::drawing::color hot_track();
+      [[nodiscard]] static auto hot_track() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of an inactive window's border.
       /// @return A xtd::drawing::color that is the color of an inactive window's border.
-      static xtd::drawing::color inactive_border();
+      [[nodiscard]] static auto inactive_border() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of an inactive window's title bar.
       /// @return A xtd::drawing::color that is the color of the background of an inactive window's title bar.
-      static xtd::drawing::color inactive_caption();
+      [[nodiscard]] static auto inactive_caption() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in an inactive window's title bar.
       /// @return A xtd::drawing::color that is the color of the text in an inactive window's title bar.
-      static xtd::drawing::color inactive_caption_text();
+      [[nodiscard]] static auto inactive_caption_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of a xtd::forms::tool_tip.
       /// @return A xtd::drawing::color that is the color of the background of a xtd::forms::tool_tip.
-      static xtd::drawing::color info();
+      [[nodiscard]] static auto info() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text of a xtd::forms::tool_tip.
       /// @return A xtd::drawing::color that is the color of the text of a xtd::forms::tool_tip.
-      static xtd::drawing::color info_text();
+      [[nodiscard]] static auto info_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of a link text.
       /// @return A xtd::drawing::color that is the color of a link text.
       /// @remarks The link text color is the text color of an html link text.
-      static xtd::drawing::color link_text();
+      [[nodiscard]] static auto link_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of a menu's background.
       /// @return A xtd::drawing::color that is the color of a menu's background.
-      static xtd::drawing::color menu();
+      [[nodiscard]] static auto menu() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of a menu bar.
       /// @return A xtd::drawing::color that is the color of the background of a menu bar.
-      static xtd::drawing::color menu_bar();
+      [[nodiscard]] static auto menu_bar() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color used to highlight menu items when the menu appears as a flat menu.
       /// @return A xtd::drawing::color that is the color used to highlight menu items when the menu appears as a flat menu.
-      static xtd::drawing::color menu_highlight();
+      [[nodiscard]] static auto menu_highlight() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of a menu's text.
       /// @return A xtd::drawing::color that is the color of a menu's text.
-      static xtd::drawing::color menu_text();
+      [[nodiscard]] static auto menu_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of a scroll bar.
       /// @return A xtd::drawing::color that is the color of the background of a scroll bar.
-      static xtd::drawing::color scroll_bar();
+      [[nodiscard]] static auto scroll_bar() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the shadow text.
       /// @return A xtd::drawing::color that is the color of the shadow text.
-      static xtd::drawing::color shadow_text();
+      [[nodiscard]] static auto shadow_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of a text box.
       /// @return A xtd::drawing::color that is the color of the background of a textt box.
-      static xtd::drawing::color text_box();
+      [[nodiscard]] static auto text_box() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text of a text box.
       /// @return A xtd::drawing::color that is the color of the text of a text tbox.
-      static xtd::drawing::color text_box_text();
+      [[nodiscard]] static auto text_box_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of a visited text.
       /// @return A xtd::drawing::color that is the color of a link text.
       /// @remarks The visited text color is the text color of an html visited link text.
-      static xtd::drawing::color visited_text();
+      [[nodiscard]] static auto visited_text() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the background in the client area of a window.
       /// @return A xtd::drawing::color that is the color of the background in the client area of a window.
-      static xtd::drawing::color window();
+      [[nodiscard]] static auto window() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of a window frame.
       /// @return A xtd::drawing::color that is the color of a window frame.
-      static xtd::drawing::color window_frame();
+      [[nodiscard]] static auto window_frame() -> xtd::drawing::color;
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in the client area of a window.
       /// @return A xtd::drawing::color that is the color of the text in the client area of a window.
-      static xtd::drawing::color window_text();
+      [[nodiscard]] static auto window_text() -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of system colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       /// @brief Gets an array of system color names.
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
