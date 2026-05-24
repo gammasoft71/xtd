@@ -31,135 +31,135 @@ namespace xtd {
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
-      static xtd::drawing::size default_size() noexcept;
+      [[nodiscard]] static auto default_size() noexcept -> xtd::drawing::size;
       
       /// @brief Gets the mimetypes system image "application-x-executable".
       /// @return The xtd::drawing::image "application-x-executable".
-      static xtd::drawing::image application_x_executable() noexcept;
+      [[nodiscard]] static auto application_x_executable() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "application-x-executable" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "application-x-executable".
-      static xtd::drawing::image application_x_executable(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto application_x_executable(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "audio-x-generic".
       /// @return The xtd::drawing::image "audio-x-generic".
-      static xtd::drawing::image audio_x_generic() noexcept;
+      [[nodiscard]] static auto audio_x_generic() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "audio-x-generic" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "audio-x-generic".
-      static xtd::drawing::image audio_x_generic(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto audio_x_generic(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "font-x-generic".
       /// @return The xtd::drawing::image "font-x-generic".
-      static xtd::drawing::image font_x_generic() noexcept;
+      [[nodiscard]] static auto font_x_generic() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "font-x-generic" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "font-x-generic".
-      static xtd::drawing::image font_x_generic(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto font_x_generic(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "image-x-generic".
       /// @return The xtd::drawing::image "image-x-generic".
-      static xtd::drawing::image image_x_generic() noexcept;
+      [[nodiscard]] static auto image_x_generic() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "image-x-generic" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "image-x-generic".
-      static xtd::drawing::image image_x_generic(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto image_x_generic(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "package-x-generic".
       /// @return The xtd::drawing::image "package-x-generic".
-      static xtd::drawing::image package_x_generic() noexcept;
+      [[nodiscard]] static auto package_x_generic() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "package-x-generic" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "package-x-generic".
-      static xtd::drawing::image package_x_generic(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto package_x_generic(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "text-html".
       /// @return The xtd::drawing::image "text-html".
-      static xtd::drawing::image text_html() noexcept;
+      [[nodiscard]] static auto text_html() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "text-html" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "text-html".
-      static xtd::drawing::image text_html(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto text_html(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "text-x-generic".
       /// @return The xtd::drawing::image "text-x-generic".
-      static xtd::drawing::image text_x_generic() noexcept;
+      [[nodiscard]] static auto text_x_generic() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "text-x-generic" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "text-x-generic".
-      static xtd::drawing::image text_x_generic(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto text_x_generic(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "text-x-generic-template".
       /// @return The xtd::drawing::image "text-x-generic-template".
-      static xtd::drawing::image text_x_generic_template() noexcept;
+      [[nodiscard]] static auto text_x_generic_template() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "text-x-generic-template" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "text-x-generic-template".
-      static xtd::drawing::image text_x_generic_template(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto text_x_generic_template(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "text-x-script".
       /// @return The xtd::drawing::image "text-x-script".
-      static xtd::drawing::image text_x_script() noexcept;
+      [[nodiscard]] static auto text_x_script() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "text-x-script" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "text-x-script".
-      static xtd::drawing::image text_x_script(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto text_x_script(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "video-x-generic".
       /// @return The xtd::drawing::image "video-x-generic".
-      static xtd::drawing::image video_x_generic() noexcept;
+      [[nodiscard]] static auto video_x_generic() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "video-x-generic" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "video-x-generic".
-      static xtd::drawing::image video_x_generic(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto video_x_generic(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "x-office-address-book".
       /// @return The xtd::drawing::image "x-office-address-book".
-      static xtd::drawing::image x_office_address_book() noexcept;
+      [[nodiscard]] static auto x_office_address_book() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "x-office-address-book" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "x-office-address-book".
-      static xtd::drawing::image x_office_address_book(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto x_office_address_book(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "x-office-calendar".
       /// @return The xtd::drawing::image "x-office-calendar".
-      static xtd::drawing::image x_office_calendar() noexcept;
+      [[nodiscard]] static auto x_office_calendar() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "x-office-calendar" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "x-office-calendar".
-      static xtd::drawing::image x_office_calendar(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto x_office_calendar(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "x-office-contact".
       /// @return The xtd::drawing::image "x-office-contact".
-      static xtd::drawing::image x_office_contact() noexcept;
+      [[nodiscard]] static auto x_office_contact() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "x-office-contact" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "x-office-contact".
-      static xtd::drawing::image x_office_contact(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto x_office_contact(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "x-office-document".
       /// @return The xtd::drawing::image "x-office-document".
-      static xtd::drawing::image x_office_document() noexcept;
+      [[nodiscard]] static auto x_office_document() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "x-office-document" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "x-office-document".
-      static xtd::drawing::image x_office_document(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto x_office_document(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "x-office-presentation".
       /// @return The xtd::drawing::image "x-office-presentation".
-      static xtd::drawing::image x_office_presentation() noexcept;
+      [[nodiscard]] static auto x_office_presentation() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "x-office-presentation" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "x-office-presentation".
-      static xtd::drawing::image x_office_presentation(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto x_office_presentation(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @brief Gets the mimetypes system image "x-office-spreadsheet".
       /// @return The xtd::drawing::image "x-office-spreadsheet".
-      static xtd::drawing::image x_office_spreadsheet() noexcept;
+      [[nodiscard]] static auto x_office_spreadsheet() noexcept -> xtd::drawing::image;
       /// @brief Gets the mimetypes system image "x-office-spreadsheet" with specified size.
       /// @param size The mimetypes system image size in pixels.
       /// @return The xtd::drawing::image "x-office-spreadsheet".
-      static xtd::drawing::image x_office_spreadsheet(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto x_office_spreadsheet(const xtd::drawing::size& size) noexcept -> xtd::drawing::image;
       
       /// @}
       
@@ -168,15 +168,15 @@ namespace xtd {
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
-      static const xtd::array<xtd::drawing::image>& get_images() noexcept;
+      [[nodiscard]] static auto get_images() noexcept -> const xtd::array<xtd::drawing::image>&;
       /// @brief Gets an array of images with specified size.
       /// @param size The images size in pixels.
       /// @return The array of images.
-      static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
+      [[nodiscard]] static auto get_images(const xtd::drawing::size& size) noexcept -> xtd::array<xtd::drawing::image>;
       
       /// @brief Gets an array of image names.
       /// @return The array of image names.
-      static const xtd::array<xtd::string>& get_image_names() noexcept;
+      [[nodiscard]] static auto get_image_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
