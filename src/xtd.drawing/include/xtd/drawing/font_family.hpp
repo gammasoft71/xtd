@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the name of this font_family.
       /// @return A String that represents the name of this font_family.
-      const xtd::string& name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       /// @}
       
       /// @name Public Static Properties
@@ -73,19 +73,19 @@ namespace xtd {
       /// @{
       /// @brief Returns an array that contains all the font_family objects associated with the current graphics context.
       /// @return An array of font_family objects associated with the current graphics context.
-      static xtd::array<font_family> families() noexcept;
+      [[nodiscard]] static auto families() noexcept -> xtd::array<font_family>;
       
       /// @brief Gets a generic monospace font_family.
       /// @return A font_family that represents a generic monospace font.
-      static font_family generic_monospace() noexcept;
+      [[nodiscard]] static auto generic_monospace() noexcept -> font_family;
       
       /// @brief Gets a generic sans serif font_family.
       /// @return A font_family that represents a generic sans serif font.
-      static font_family generic_sans_serif() noexcept;
+      [[nodiscard]] static auto generic_sans_serif() noexcept -> font_family;
       
       /// @brief Gets a generic serif font_family.
       /// @return A font_family that represents a generic serif font.
-      static font_family generic_serif() noexcept;
+      [[nodiscard]] static auto generic_serif() noexcept -> font_family;
       /// @}
       
       /// @name Public Methods
@@ -94,50 +94,50 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const font_family& other) const noexcept override;
+      [[nodiscard]] auto equals(const font_family& other) const noexcept -> bool override;
       
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The cell ascent for this font_family that uses the specified font_style.
-      int32 get_cell_ascent(font_style style) const;
+      [[nodiscard]] auto get_cell_ascent(font_style style) const -> xtd::int32;
       
       /// @brief Returns the cell descent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The cell ascent for this font_family that uses the specified font_style.
-      int32 get_cell_descent(font_style style) const;
+      [[nodiscard]] auto get_cell_descent(font_style style) const -> xtd::int32;
       
       /// @brief Gets the height, in font design units, of the em square for the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The height of the em square.
-      int32 get_em_height(font_style style) const noexcept;
+      [[nodiscard]] auto get_em_height(font_style style) const noexcept -> xtd::int32;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns the line spacing, in design units, of the font_family of the specified style. The line spacing is the vertical distance between the base lines of two consecutive lines of text.
       /// @param style A font_style that contains style information for the font.
       /// @return The distance between two consecutive lines of text.
-      int32 get_line_spacing(font_style style) const;
+      [[nodiscard]] auto get_line_spacing(font_style style) const -> xtd::int32;
       
       /// @brief Returns the name, in the specified language, of this font_family.
       /// @param language The language in which the name is returned.
       /// @return A String that represents the name, in the specified language, of this font_family.
       /// @remarks To indicate language neutral, you should specify 0 for the language parameter. For a listing of the available languages and sublanguages, see the Winnt.h header file. If you have Visual Studio installed, this header file can typically be found relative to the Visual Studio installation directory at \\VC\PlatformSDK\Include.
-      xtd::string get_name(int32 language) const;
+      [[nodiscard]] auto get_name(int32 language) const -> xtd::string;
       
       /// @brief Indicates whether the specified font_style enumeration is available.
       /// @param style The font_style to test.
       /// @return `true` if the specified font_style is available; otherwise, `false`.
-      bool is_style_available(font_style style) const;
+      [[nodiscard]] auto is_style_available(font_style style) const -> bool;
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     private:
