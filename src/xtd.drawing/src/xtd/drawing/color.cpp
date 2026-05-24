@@ -221,6 +221,150 @@ bool color::equals(const color& other) const noexcept {
   return argb_ == other.argb_ && handle_ == other.handle_ && empty_ == other.empty_ && name_ == other.name_;
 }
 
+float color::get_brightness() const noexcept {
+  return to_hsb().brightness;
+}
+
+float color::get_hue() const noexcept {
+  return to_hsb().hue;
+}
+
+float color::get_saturation() const noexcept {
+  return to_hsb().saturation;
+}
+
+usize color::get_hash_code() const noexcept {
+  return hash_code::combine(argb_, empty_, handle_, name_);
+}
+
+auto color::parse(const string& color) noexcept -> drawing::color {
+  try {
+    auto argb = color.replace("color [a=", string::empty_string).replace(" r=", string::empty_string).replace(" g=", string::empty_string).replace("b=", string::empty_string).replace("]", string::empty_string).split(',');
+    if (argb.length() == 1) return color::from_argb(xtd::parse<uint32>(argb[0], xtd::number_styles::hex_number));
+    return color::from_argb(string::parse<xtd::byte>(argb[0]), string::parse<xtd::byte>(argb[1]), string::parse<xtd::byte>(argb[2]), string::parse<xtd::byte>(argb[3]));
+  } catch (...) {
+    return color::from_name(color.replace("]", string::empty_string).replace("color [", string::empty_string));
+  }
+}
+
+auto color::to_argb() const noexcept -> argb {
+  return argb::from_uint32(to_uint32());
+}
+
+auto color::to_cmyk() const noexcept -> cmyk {
+  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-cmyk/)
+  auto dr = static_cast<float>(r()) / 255;
+  auto dg = static_cast<float>(g()) / 255;
+  auto db = static_cast<float>(b()) / 255;
+  auto k = 1.0f - static_cast<float>(math::max(math::max(dr, dg), db));
+  auto c = (1.0f - dr - k) / (1.0f - k);
+  auto m = (1.0f - dg - k) / (1.0f - k);
+  auto y = (1.0f - db - k) / (1.0f - k);
+  return cmyk::from_cmyk(c, m, y, k);
+}
+
+auto color::to_known_color() const noexcept -> known_color {
+  return known_color_;
+}
+
+auto color::to_hsb() const noexcept -> hsb {
+  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-hsv)
+  auto rc = static_cast<float>(r()) / 255.0f;
+  auto gc = static_cast<float>(g()) / 255.0f;
+  auto bc = static_cast<float>(b()) / 255.0f;
+  
+  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
+  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
+  auto delta = max - min;
+  
+  auto brightness = max == .0f ? .0f : (max - min) / max;
+  auto saturation = max == .0f ? .0f :  delta / max;
+  auto hue = .0f;
+  if (saturation != .0f) {
+    if (rc == max) hue = (gc - bc) / delta;
+    else if (gc == max) hue = 2 + (bc - rc) / delta;
+    else if (bc == max) hue = 4 + (rc - gc) / delta;
+    hue *= 60;
+    if (hue < 0.0) hue = hue + 360;
+  }
+  
+  return hsb::from_hsb(hue, saturation, brightness);
+}
+
+auto color::to_hsl() const noexcept -> hsl {
+  auto rc = static_cast<float>(r()) / 255.0f;
+  auto gc = static_cast<float>(g()) / 255.0f;
+  auto bc = static_cast<float>(b()) / 255.0f;
+  
+  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
+  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
+  auto delta = max - min;
+  
+  auto lightness = (max + min) / 2.0f;
+  auto saturation = max == min ? 0.0f : (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
+  auto hue = .0f;
+  if (saturation != 0) {
+    if (rc == max) hue = (gc - bc) / delta;
+    else if (gc == max) hue = 2 + (bc - rc) / delta;
+    else if (bc == max) hue = 4 + (rc - gc) / delta;
+    hue *= 60;
+    if (hue < 0.0) hue = hue + 360;
+  }
+  
+  return hsl::from_hsl(hue, saturation, lightness);
+}
+
+auto color::to_hsv() const noexcept -> hsv {
+  auto [hue, saturation, brightness] = to_hsb();
+  return hsv::from_hsv(hue, saturation, brightness);
+}
+
+auto color::to_string() const noexcept -> string {
+  if (empty_) return "color [empty]";
+  if (name() != string::format("{:x8}", argb_) && name() != "0") return string::format("color [{0}]", name());
+  return string::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
+}
+
+auto color::to_uint32() const noexcept -> uint32 {
+  if (handle_) return native::system_colors::to_argb(handle_);
+  return argb_;
+}
+
+auto color::to_yuv() const noexcept -> yuv {
+  auto y = r() * .299000f + g() * .587000f + b() * .114000f;
+  auto u = r() * -.168736f + g() * -.331264f + b() * .500000f + 128;
+  auto v = r() * .500000f + g() * -.418688f + b() * -.081312f + 128;
+  return yuv::from_yuv(y, u, v);
+}
+
+color::operator xtd::drawing::argb() const noexcept {
+  return to_argb();
+}
+
+color::operator xtd::drawing::cmyk() const noexcept {
+  return to_cmyk();
+}
+
+color::operator xtd::drawing::hsb() const noexcept {
+  return to_hsb();
+}
+
+color::operator xtd::drawing::hsl() const noexcept {
+  return to_hsl();
+}
+
+color::operator xtd::drawing::hsv() const noexcept {
+  return to_hsv();
+}
+
+color::operator xtd::uint32() const noexcept {
+  return to_uint32();
+}
+
+color::operator xtd::drawing::yuv() const noexcept {
+  return to_yuv();
+}
+
 color color::from_argb(uint32 argb) noexcept {
   return color(argb);
 }
@@ -608,158 +752,14 @@ xtd::drawing::color color::from_yuv(const yuv& yuv) noexcept {
   return from_yuv(yuv.y, yuv.u, yuv.v);
 }
 
-usize color::get_hash_code() const noexcept {
-  return hash_code::combine(argb_, empty_, handle_, name_);
-}
-
-auto color::parse(const string& color) noexcept -> drawing::color {
-  try {
-    auto argb = color.replace("color [a=", string::empty_string).replace(" r=", string::empty_string).replace(" g=", string::empty_string).replace("b=", string::empty_string).replace("]", string::empty_string).split(',');
-    if (argb.length() == 1) return color::from_argb(xtd::parse<uint32>(argb[0], xtd::number_styles::hex_number));
-    return color::from_argb(string::parse<xtd::byte>(argb[0]), string::parse<xtd::byte>(argb[1]), string::parse<xtd::byte>(argb[2]), string::parse<xtd::byte>(argb[3]));
-  } catch (...) {
-    return color::from_name(color.replace("]", string::empty_string).replace("color [", string::empty_string));
-  }
-}
-
-auto color::to_argb() const noexcept -> argb {
-  return argb::from_uint32(to_uint32());
-}
-
-auto color::to_cmyk() const noexcept -> cmyk {
-  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-cmyk/)
-  auto dr = static_cast<float>(r()) / 255;
-  auto dg = static_cast<float>(g()) / 255;
-  auto db = static_cast<float>(b()) / 255;
-  auto k = 1.0f - static_cast<float>(math::max(math::max(dr, dg), db));
-  auto c = (1.0f - dr - k) / (1.0f - k);
-  auto m = (1.0f - dg - k) / (1.0f - k);
-  auto y = (1.0f - db - k) / (1.0f - k);
-  return cmyk::from_cmyk(c, m, y, k);
-}
-
-auto color::to_known_color() const noexcept -> known_color {
-  return known_color_;
-}
-
-auto color::to_hsb() const noexcept -> hsb {
-  // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-hsv)
-  auto rc = static_cast<float>(r()) / 255.0f;
-  auto gc = static_cast<float>(g()) / 255.0f;
-  auto bc = static_cast<float>(b()) / 255.0f;
-  
-  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
-  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
-  auto delta = max - min;
-
-  auto brightness = max == .0f ? .0f : (max - min) / max;
-  auto saturation = max == .0f ? .0f :  delta / max;
-  auto hue = .0f;
-  if (saturation != .0f) {
-    if (rc == max) hue = (gc - bc) / delta;
-    else if (gc == max) hue = 2 + (bc - rc) / delta;
-    else if (bc == max) hue = 4 + (rc - gc) / delta;
-    hue *= 60;
-    if (hue < 0.0) hue = hue + 360;
-  }
-  
-  return hsb::from_hsb(hue, saturation, brightness);
-}
-
-auto color::to_hsl() const noexcept -> hsl {
-  auto rc = static_cast<float>(r()) / 255.0f;
-  auto gc = static_cast<float>(g()) / 255.0f;
-  auto bc = static_cast<float>(b()) / 255.0f;
-  
-  auto max = static_cast<float>(math::max(math::max(rc, gc), bc));
-  auto min = static_cast<float>(math::min(math::min(rc, gc), bc));
-  auto delta = max - min;
-
-  auto lightness = (max + min) / 2.0f;
-  auto saturation = max == min ? 0.0f : (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
-  auto hue = .0f;
-  if (saturation != 0) {
-    if (rc == max) hue = (gc - bc) / delta;
-    else if (gc == max) hue = 2 + (bc - rc) / delta;
-    else if (bc == max) hue = 4 + (rc - gc) / delta;
-    hue *= 60;
-    if (hue < 0.0) hue = hue + 360;
-  }
-
-  return hsl::from_hsl(hue, saturation, lightness);
-}
-
-auto color::to_hsv() const noexcept -> hsv {
-  auto [hue, saturation, brightness] = to_hsb();
-  return hsv::from_hsv(hue, saturation, brightness);
-}
-
-auto color::to_string() const noexcept -> string {
-  if (empty_) return "color [empty]";
-  if (name() != string::format("{:x8}", argb_) && name() != "0") return string::format("color [{0}]", name());
-  return string::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
-}
-
-auto color::to_uint32() const noexcept -> uint32 {
-  if (handle_) return native::system_colors::to_argb(handle_);
-  return argb_;
-}
-
-auto color::to_yuv() const noexcept -> yuv {
-  auto y = r() * .299000f + g() * .587000f + b() * .114000f;
-  auto u = r() * -.168736f + g() * -.331264f + b() * .500000f + 128;
-  auto v = r() * .500000f + g() * -.418688f + b() * -.081312f + 128;
-  return yuv::from_yuv(y, u, v);
-}
-
-color::operator xtd::drawing::argb() const noexcept {
-  return to_argb();
-}
-
-color::operator xtd::drawing::cmyk() const noexcept {
-  return to_cmyk();
-}
-
-color::operator xtd::drawing::hsb() const noexcept {
-  return to_hsb();
-}
-
-color::operator xtd::drawing::hsl() const noexcept {
-  return to_hsl();
-}
-
-color::operator xtd::drawing::hsv() const noexcept {
-  return to_hsv();
-}
-
-color::operator xtd::uint32() const noexcept {
-  return to_uint32();
-}
-
-color::operator xtd::drawing::yuv() const noexcept {
-  return to_yuv();
-}
-
 color::color(uint32 argb) : argb_(argb), empty_(false) {
 }
 
 color::color(intptr handle) : empty_(false), handle_(handle) {
 }
 
-float color::get_brightness() const noexcept {
-  return to_hsb().brightness;
-}
-
-float color::get_hue() const noexcept {
-  return to_hsl().hue;
-}
-
 float color::get_lightness() const noexcept {
   return to_hsl().lightness;
-}
-
-float color::get_saturation() const noexcept {
-  return to_hsl().saturation;
 }
 
 float color::get_u() const noexcept {
