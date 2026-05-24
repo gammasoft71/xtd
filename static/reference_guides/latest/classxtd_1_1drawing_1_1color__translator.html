@@ -130,6 +130,8 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a2e8efd144642b55bc798c3a7e1eadab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates an RGB color representation to a GDI+ <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:a2de5567dad5f27d2a7fd2ee08b0ca840" id="r_a2de5567dad5f27d2a7fd2ee08b0ca840"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2de5567dad5f27d2a7fd2ee08b0ca840">from_rgba</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="namespacextd_1_1drawing_1_1text.html">text</a>) -&gt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td></tr>
 <tr class="memdesc:a2de5567dad5f27d2a7fd2ee08b0ca840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates an RGBA color representation to a GDI+ <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
+<tr class="memitem:a88a495319eee6493204581faa97c795b" id="r_a88a495319eee6493204581faa97c795b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a88a495319eee6493204581faa97c795b">from_win32</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="namespacextd_1_1drawing_1_1text.html">text</a>) -&gt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td></tr>
+<tr class="memdesc:a88a495319eee6493204581faa97c795b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates a Win32 color representation to a GDI+ <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:a8904b40a08f63678a47006b495912b55" id="r_a8904b40a08f63678a47006b495912b55"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8904b40a08f63678a47006b495912b55">from_win32</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) -&gt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td></tr>
 <tr class="memdesc:a8904b40a08f63678a47006b495912b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates a Win32 color representation to a GDI+ <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:adc22e5cbd3cf28076900b8e6da7a1d74" id="r_adc22e5cbd3cf28076900b8e6da7a1d74"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adc22e5cbd3cf28076900b8e6da7a1d74">to_cmyk</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;value) noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
@@ -567,8 +569,48 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
+<a id="a88a495319eee6493204581faa97c795b" name="a88a495319eee6493204581faa97c795b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88a495319eee6493204581faa97c795b">&#9670;&#160;</a></span>from_win32() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::color_translator::from_win32 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Translates a Win32 color representation to a GDI+ <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="namespacextd_1_1drawing_1_1text.html" title="The xtd::drawing::text namespace provides advanced GDI+ typography functionality.">text</a></td><td>The string representation of the Win32 color to translate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure that represents the translated Win32 color or <a class="el" href="classxtd_1_1drawing_1_1color.html#ad1ef3e0a49b8f60bbbdd8d7c7ddcf7c6" title="Represents a color that is null.">xtd::drawing::color::empty</a> if text is empty (""). </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd:format_exception</td><td>text is not a valid Win32 color name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8904b40a08f63678a47006b495912b55" name="a8904b40a08f63678a47006b495912b55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8904b40a08f63678a47006b495912b55">&#9670;&#160;</a></span>from_win32()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8904b40a08f63678a47006b495912b55">&#9670;&#160;</a></span>from_win32() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
