@@ -50,11 +50,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the color of this xtd::drawing::solid_brush object.
       /// @return A xtd::drawing::color structure that represents the color of this brush.
-      const xtd::drawing::color& color() const noexcept;
+      [[nodiscard]] auto color() const noexcept -> const xtd::drawing::color&;
       /// @brief Sets the color of this xtd::drawing::solid_brush object.
       /// @param value A xtd::drawing::color structure that represents the color of this brush.
       /// @return This current instance.
-      xtd::drawing::solid_brush& color(const xtd::drawing::color& value) noexcept;
+      auto color(const xtd::drawing::color& value) noexcept -> xtd::drawing::solid_brush&;
       /// @}
       
     private:
