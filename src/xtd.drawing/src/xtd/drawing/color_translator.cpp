@@ -7,6 +7,20 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::helpers;
 
+color color_translator::from_cmyk(const string& text) {
+  auto result = color::empty;
+  if (string::is_empty(text)) return result;
+  if (try_parse_cmyk_color(text, result) == false) throw_helper::throws(exception_case::format);
+  return result;
+}
+
+color color_translator::from_cmyka(const string& text) {
+  auto result = color::empty;
+  if (string::is_empty(text)) return result;
+  if (try_parse_cmyka_color(text, result) == false) throw_helper::throws(exception_case::format);
+  return result;
+}
+
 color color_translator::from_hex(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
@@ -67,6 +81,19 @@ color color_translator::from_win32(int32 value) {
   return color::from_argb(as<byte>((value >> win32_red_shift) & 0xFF), as<byte>((value >> win32_green_shift) & 0xFF), as<byte>((value >> win32_blue_shift) & 0xFF));
 }
 
+string color_translator::to_cmyk(const color& value) noexcept {
+  return to_cmyk(value, false);
+}
+
+string color_translator::to_cmyk(const color& value, bool auto_cmyka) noexcept {
+  if (auto_cmyka && value.a() < 255) return to_cmyka(value);
+  return string::format("cmyk({}%, {}%, {}%, {}%)", as<int32>(value.to_cmyk().cyan * 100), as<int32>(value.to_cmyk().magenta * 100), as<int32>(value.to_cmyk().yellow * 100), as<int32>(value.to_cmyk().black * 100));
+}
+
+string color_translator::to_cmyka(const color& value) noexcept {
+  return string::format("cmyka({}%, {}%, {}%, {}%, {:G3})", as<int32>(value.to_cmyk().cyan * 100), as<int32>(value.to_cmyk().magenta * 100), as<int32>(value.to_cmyk().yellow * 100), as<int32>(value.to_cmyk().black * 100), value.a() / 255.0);
+}
+
 string color_translator::to_hex(const color& value) noexcept {
   return to_hex(value, false);
 }
@@ -125,6 +152,56 @@ int32 color_translator::to_win32(const xtd::drawing::color& value) noexcept {
 
 string color_translator::from_name(const color& value) {
   return value.name().replace("_", " ").to_title_case().replace(" ", string::empty_string);
+}
+
+bool color_translator::try_parse_cmyk_color(const string& text, color& result) noexcept {
+  auto value = text.remove(text.length() - 1).replace("cmyk(", string::empty_string);
+  auto color_parts = value.split(',');
+  if (color_parts.length() != 4) return false;
+  if (!color_parts[0].ends_with("%")) return false;
+  if (!color_parts[1].ends_with("%")) return false;
+  if (!color_parts[2].ends_with("%")) return false;
+  if (!color_parts[3].ends_with("%")) return false;
+  color_parts[0] = color_parts[0].remove(color_parts[0].length() - 1);
+  color_parts[1] = color_parts[1].remove(color_parts[1].length() - 1);
+  color_parts[2] = color_parts[2].remove(color_parts[2].length() - 1);
+  color_parts[3] = color_parts[3].remove(color_parts[3].length() - 1);
+  auto c = .0f;
+  if (string::try_parse<float>(color_parts[0], c) == false) return false;
+  auto m = .0f;
+  if (string::try_parse<float>(color_parts[1], m) == false) return false;
+  auto y = .0f;
+  if (string::try_parse<float>(color_parts[2], y) == false) return false;
+  auto k = .0f;
+  if (string::try_parse<float>(color_parts[3], k) == false) return false;
+  result = color::from_cmyk(c / 100.0f, m / 100.0f, y / 100.0f, k / 100.0f);
+  return true;
+}
+
+bool color_translator::try_parse_cmyka_color(const string& text, color& result) noexcept {
+  auto value = text.remove(text.length() - 1).replace("cmyka(", string::empty_string);
+  auto color_parts = value.split(',');
+  if (color_parts.length() != 5) return false;
+  if (!color_parts[0].ends_with("%")) return false;
+  if (!color_parts[1].ends_with("%")) return false;
+  if (!color_parts[2].ends_with("%")) return false;
+  if (!color_parts[3].ends_with("%")) return false;
+  color_parts[0] = color_parts[0].remove(color_parts[0].length() - 1);
+  color_parts[1] = color_parts[1].remove(color_parts[1].length() - 1);
+  color_parts[2] = color_parts[2].remove(color_parts[2].length() - 1);
+  color_parts[3] = color_parts[3].remove(color_parts[3].length() - 1);
+  auto c = .0f;
+  if (string::try_parse<float>(color_parts[0], c) == false) return false;
+  auto m = .0f;
+  if (string::try_parse<float>(color_parts[1], m) == false) return false;
+  auto y = .0f;
+  if (string::try_parse<float>(color_parts[2], y) == false) return false;
+  auto k = .0f;
+  if (string::try_parse<float>(color_parts[3], k) == false) return false;
+  auto a = .0f;
+  if (string::try_parse<float>(color_parts[4], a) == false) return false;
+  result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_cmyk(c / 100.0f, m / 100.0f, y / 100.0f, k / 100.0f));
+  return true;
 }
 
 bool color_translator::try_parse_hex_color(const string& text, color& result) noexcept {
