@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::size class.
+/// @brief Contains xtd::drawing::size struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.hpp"
@@ -48,13 +48,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::drawing::size class from the specified dimensions.
       /// @param width The width component of the new xtd::drawing::size.
       /// @param height The height component of the new xtd::drawing::size.
-      size(int32 width, int32 height) noexcept;
+      size(xtd::int32 width, xtd::int32 height) noexcept;
       /// @}
       
       /// @cond
-      size(const xtd::drawing::size&) noexcept = default;
-      size& operator =(const xtd::drawing::size& size) noexcept = default;
-      operator size_f() const noexcept;
+      operator xtd::drawing::size_f() const noexcept;
       /// @endcond
       
       /// @name Public Properties
@@ -63,16 +61,16 @@ namespace xtd {
       /// @brief Gets or sets the horizontal component of this xtd::drawing::size class.
       /// @param width The horizontal component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      int32 width = 0;
+      xtd::int32 width = 0;
       
       /// @brief Gets or sets he vertical component of this xtd::drawing::size class.
       /// @param height The vertical component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      int32 height = 0;
+      xtd::int32 height = 0;
       
       /// @brief Tests whether this xtd::drawing::size class has xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0.
       /// @return Returns `true`  when this xtd::drawing::size class has both a xtd::drawing::size::width and xtd::drawing::size::height of 0; otherwise, `false`.
-      bool is_empty() const noexcept;
+      [[nodiscard]] auto is_empty() const noexcept -> bool;
       /// @}
       
       /// @name Public Methods
@@ -88,54 +86,54 @@ namespace xtd {
       /// | Less than zero    | This instance is less than obj.    |
       /// | Zero              | This instance is equal to obj.     |
       /// | Greater than zero | This instance is greater than obj. |
-      int32 compare_to(const xtd::drawing::size& obj) const noexcept override;
+      [[nodiscard]] auto compare_to(const xtd::drawing::size& obj) const noexcept -> xtd::int32 override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::drawing::size& other) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::drawing::size& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Creates a human-readable string that represents this xtd::drawing::size class.
       /// @return A xtd::string that represents this xtd::drawing::size.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
-      /// @name Public Methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Adds the width and height of one xtd::drawing::size class to the width and height of another size class.
       /// @param size1 The first xtd::drawing::size class to add.
       /// @param size2 The second xtd::drawing::size class to add.
       /// @return xtd::drawing::size A xtd::drawing::size class that is the result of the addition operation.
-      static size add(const size& size1, const size& size2) noexcept;
+      [[nodiscard]] static auto add(const size& size1, const size& size2) noexcept -> size;
       
       /// @brief Converts the specified xtd::drawing::size_f to a xtd::drawing::size by rounding the values of the xtd::drawing::size_f to the next higher integer values.
       /// @param value The xtd::drawing::size_f to convert.
       /// @return The xtd::drawing::size this method converts to.
-      static size ceiling(const size_f& value) noexcept;
+      [[nodiscard]] static auto ceiling(const xtd::drawing::size_f& value) noexcept -> size;
       
       /// @brief Converts the specified xtd::drawing::size_f to a xtd::drawing::size object by rounding the xtd::drawing::size_f values to the nearest integer.
       /// @param value The xtd::drawing::size_f to convert.
       /// @return The xtd::drawing::size this method converts to.
-      static size round(const size_f& value) noexcept;
+      [[nodiscard]] static auto round(const xtd::drawing::size_f& value) noexcept -> size;
       
       /// @brief Returns the result of subtracting specified xtd::drawing::size from the specified xtd::drawing::size.
       /// @param sz1 The xtd::drawing::size to be subtracted from.
       /// @param sz2 The xtd::drawing::size to subtract from the xtd::drawing::size.
       /// @return The xtd::drawing::size that is the result of the subtraction operation.
-      static xtd::drawing::size subtract(const xtd::drawing::size& sz1, const xtd::drawing::size& sz2) noexcept;
+      [[nodiscard]] static auto subtract(const size& sz1, const size& sz2) noexcept -> size;
       
       /// @brief Converts the specified xtd::drawing::size_f to a xtd::drawing::size by truncating the values of the xtd::drawing::size_f.
       /// @param value The xtd::drawing::size_f to convert.
       /// @return The xtd::drawing::size this method converts to.
-      static size truncate(const size_f& value) noexcept;
+      [[nodiscard]] static auto truncate(const xtd::drawing::size_f& value) noexcept -> size;
       /// @}
       
       /// @name Operators
@@ -144,31 +142,31 @@ namespace xtd {
       /// @brief Increases a xtd::drawing::size with a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size.
       /// @return The increased xtd::drawing::size.
-      size operator +(const xtd::drawing::size& size) const noexcept;
+      auto operator +(const size& size) const noexcept -> xtd::drawing::size;
       
       /// @brief Increases a xtd::drawing::size wuth a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size.
       /// @return The increased xtd::drawing::size.
-      size& operator +=(const xtd::drawing::size& size) noexcept;
+      auto operator +=(const size& size) noexcept -> xtd::drawing::size&;
       
       /// @brief Decreases a xtd::drawing::size with the a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size.
       /// @return The decreased xtd::drawing::size.
-      size operator -(const xtd::drawing::size& size) const noexcept;
+      auto operator -(const size& size) const noexcept -> xtd::drawing::size;
       
       /// @brief Decreases a xtd::drawing::size with the a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size.
       /// @return The decreased xtd::drawing::size.
-      size& operator -=(const xtd::drawing::size& size) noexcept;
+      auto operator -=(const size& size) noexcept -> xtd::drawing::size&;
       /// @}
     };
   }
   
   /// @cond
   template<>
-  inline drawing::size parse<drawing::size>(const std::string& str) {
+  inline auto parse<xtd::drawing::size>(const std::string& str) -> xtd::drawing::size {
     auto values = xtd::string(str).replace("}", xtd::string::empty_string).replace(" height=", xtd::string::empty_string).replace("{width=", xtd::string::empty_string).split(',');
-    return {xtd::parse<int32>(values[0]), xtd::parse<int32>(values[1])};
+    return {xtd::parse<xtd::int32>(values[0]), xtd::parse<xtd::int32>(values[1])};
   }
   /// @endcond
 }
