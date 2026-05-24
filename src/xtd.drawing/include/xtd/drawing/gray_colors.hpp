@@ -28,53 +28,53 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_black.png
-      static xtd::drawing::color black() noexcept;
+      [[nodiscard]] static auto black() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_gray.png
-      static xtd::drawing::color dark_gray() noexcept;
+      [[nodiscard]] static auto dark_gray() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_slate_gray.png
-      static xtd::drawing::color dark_slate_gray() noexcept;
+      [[nodiscard]] static auto dark_slate_gray() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_dim_gray.png
-      static xtd::drawing::color dim_gray() noexcept;
+      [[nodiscard]] static auto dim_gray() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_gainsboro.png
-      static xtd::drawing::color gainsboro() noexcept;
+      [[nodiscard]] static auto gainsboro() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_gray.png
-      static xtd::drawing::color gray() noexcept;
+      [[nodiscard]] static auto gray() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_gray.png
-      static xtd::drawing::color light_gray() noexcept;
+      [[nodiscard]] static auto light_gray() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_slate_gray.png
-      static xtd::drawing::color light_slate_gray() noexcept;
+      [[nodiscard]] static auto light_slate_gray() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_silver.png
-      static xtd::drawing::color silver() noexcept;
+      [[nodiscard]] static auto silver() noexcept -> xtd::drawing::color;
       
       /// @brief A system-defined color object.
       /// @image html colors_slate_gray.png
-      static xtd::drawing::color slate_gray() noexcept;
+      [[nodiscard]] static auto slate_gray() noexcept -> xtd::drawing::color;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
+      [[nodiscard]] static auto get_colors() noexcept -> const xtd::array<xtd::drawing::color>&;
       
       /// @brief Gets an array of color names.
-      static const xtd::array<xtd::string>& get_color_names() noexcept;
+      [[nodiscard]] static auto get_color_names() noexcept -> const xtd::array<xtd::string>&;
       /// @}
     };
   }
