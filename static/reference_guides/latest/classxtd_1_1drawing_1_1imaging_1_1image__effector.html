@@ -180,13 +180,13 @@ Public Static Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting image. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, blur_effect {10});</div>
 <div class="line">result.save(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aca0c9ca36c4ee8fc8feaf7deb79cefa4"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::string &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ad7f9004d60e0a35cf1a6585af996b08c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">xtd::drawing::image::from_file</a></div><div class="ttdeci">static auto from_file(const xtd::string &amp;filename) -&gt; image</div><div class="ttdoc">Creates an image from the specified file.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9d94b6d34fa39133874a6c9a8922736f"><div class="ttname"><a href="#a9d94b6d34fa39133874a6c9a8922736f">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static auto set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect) -&gt; xtd::drawing::image</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a29">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a28">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -251,7 +251,7 @@ Public Static Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting image. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, 50, 50, 200, 200, blur_effect {10});</div>
 <div class="line">result.save(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
@@ -318,7 +318,7 @@ Public Static Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting image. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});</div>
 <div class="line">result.save(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
@@ -367,7 +367,7 @@ Public Static Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting image. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> rect = <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {50, 50, 200, 200};</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, rect, blur_effect {10});</div>
 <div class="line">result.save(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
@@ -418,7 +418,7 @@ Public Static Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting image. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> rect = <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle__f.html">rectangle_f</a> {50.0f, 50.0f, 200.0f, 200.0f};</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, rect, blur_effect {10});</div>
 <div class="line">result.save(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
@@ -469,7 +469,7 @@ Public Static Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting image. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, region, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, region, and effect. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a> = graphics_path {};</div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>.add_ellipse(<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {130, 23, 150, 150});</div>
 <div class="line"><span class="keyword">auto</span> reg = <a class="code hl_class" href="classxtd_1_1drawing_1_1region.html">region</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1region.html">drawing::region</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>));</div>
@@ -516,11 +516,11 @@ Public Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, blur_effect {10});</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad9fe30f879d30304a661d03a22cbd6bf">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a></div><div class="ttdoc">An abstract base class that provides functionality for the bitmap and metafile descended classes.</div><div class="ttdef"><b>Definition</b> image.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ac5122a1e0ff6c8d0bc80019f9e0a659c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::string &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ad9fe30f879d30304a661d03a22cbd6bf"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ad9fe30f879d30304a661d03a22cbd6bf">xtd::drawing::image::save</a></div><div class="ttdeci">auto save(const xtd::string &amp;filename) const -&gt; void</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -584,9 +584,9 @@ Public Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y, width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y, width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, 50, 50, 200, 200, blur_effect {10});</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad9fe30f879d30304a661d03a22cbd6bf">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -650,9 +650,9 @@ Public Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y, width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, x, y, width, height, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad9fe30f879d30304a661d03a22cbd6bf">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -698,10 +698,10 @@ Public Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> rect = <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {50, 50, 200, 200};</div>
 <div class="line"><a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, rect, blur_effect {10});</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad9fe30f879d30304a661d03a22cbd6bf">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -747,10 +747,10 @@ Public Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, rectangle, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> rect = <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle__f.html">rectangle_f</a> {50.0f, 50.0f, 200.0f, 200.0f};</div>
 <div class="line"><a class="code hl_function" href="#a9d94b6d34fa39133874a6c9a8922736f">image_effector::set_effect</a>(img, rect, blur_effect {10});</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad9fe30f879d30304a661d03a22cbd6bf">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -796,7 +796,7 @@ Public Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, region, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="#a9d94b6d34fa39133874a6c9a8922736f" title="Sets the specified effects to the specifid image.">xtd::drawing::imaging::image_effector::set_effect</a> with image, region, and effect. <div class="fragment"><div class="line"><span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ad7f9004d60e0a35cf1a6585af996b08c">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a> = graphics_path {};</div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>.add_ellipse(<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {130, 23, 150, 150});</div>
 <div class="line"><span class="keyword">auto</span> reg = <a class="code hl_class" href="classxtd_1_1drawing_1_1region.html">region</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1region.html">drawing::region</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>));</div>

@@ -473,8 +473,14 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a1d04f67b6a48e49674a108640373a6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:a85960854c599473db1a62b03a17bfea8" id="r_a85960854c599473db1a62b03a17bfea8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a85960854c599473db1a62b03a17bfea8">equals</a> (const <a class="el" href="#a0c189d088fc2611f0e3b1026384438ce">color</a> &amp;other) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a85960854c599473db1a62b03a17bfea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a74fa19702dd3282ba876004d2baca082" id="r_a74fa19702dd3282ba876004d2baca082"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a74fa19702dd3282ba876004d2baca082">get_brightness</a> () const noexcept -&gt; float</td></tr>
+<tr class="memdesc:a74fa19702dd3282ba876004d2baca082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-brightness (HSB) brightness value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:a0ff73f052da5842481e6673566b58a34" id="r_a0ff73f052da5842481e6673566b58a34"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ff73f052da5842481e6673566b58a34">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
 <tr class="memdesc:a0ff73f052da5842481e6673566b58a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a30e6f6eeccb8050ceaf8c51b322cf333" id="r_a30e6f6eeccb8050ceaf8c51b322cf333"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a30e6f6eeccb8050ceaf8c51b322cf333">get_hue</a> () const noexcept -&gt; float</td></tr>
+<tr class="memdesc:a30e6f6eeccb8050ceaf8c51b322cf333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
+<tr class="memitem:ae69d9da86b599e2e8a38b1ccc165103e" id="r_ae69d9da86b599e2e8a38b1ccc165103e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae69d9da86b599e2e8a38b1ccc165103e">get_saturation</a> () const noexcept -&gt; float</td></tr>
+<tr class="memdesc:ae69d9da86b599e2e8a38b1ccc165103e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-brightness (HSB) saturation value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:abe6980710b389109500bffc5f8e55d38" id="r_abe6980710b389109500bffc5f8e55d38"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abe6980710b389109500bffc5f8e55d38">to_argb</a> () const noexcept -&gt; <a class="el" href="structxtd_1_1drawing_1_1argb.html">xtd::drawing::argb</a></td></tr>
 <tr class="memdesc:abe6980710b389109500bffc5f8e55d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the 32-bit ARGB value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.  <br /></td></tr>
 <tr class="memitem:a8da085a39ff58eb0665eb643b556d2c1" id="r_a8da085a39ff58eb0665eb643b556d2c1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8da085a39ff58eb0665eb643b556d2c1">to_cmyk</a> () const noexcept -&gt; <a class="el" href="structxtd_1_1drawing_1_1cmyk.html">xtd::drawing::cmyk</a></td></tr>
@@ -513,14 +519,8 @@ Public Operators</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Deprecated Methods</h2></td></tr>
-<tr class="memitem:a74fa19702dd3282ba876004d2baca082" id="r_a74fa19702dd3282ba876004d2baca082"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a74fa19702dd3282ba876004d2baca082">get_brightness</a> () const noexcept -&gt; float</td></tr>
-<tr class="memdesc:a74fa19702dd3282ba876004d2baca082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-brightness (HSB) brightness value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
-<tr class="memitem:a30e6f6eeccb8050ceaf8c51b322cf333" id="r_a30e6f6eeccb8050ceaf8c51b322cf333"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a30e6f6eeccb8050ceaf8c51b322cf333">get_hue</a> () const noexcept -&gt; float</td></tr>
-<tr class="memdesc:a30e6f6eeccb8050ceaf8c51b322cf333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:adfe200efd716357905f39bead6067534" id="r_adfe200efd716357905f39bead6067534"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adfe200efd716357905f39bead6067534">get_lightness</a> () const noexcept -&gt; float</td></tr>
 <tr class="memdesc:adfe200efd716357905f39bead6067534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-lightness (HSL) lightness value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
-<tr class="memitem:ae69d9da86b599e2e8a38b1ccc165103e" id="r_ae69d9da86b599e2e8a38b1ccc165103e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae69d9da86b599e2e8a38b1ccc165103e">get_saturation</a> () const noexcept -&gt; float</td></tr>
-<tr class="memdesc:ae69d9da86b599e2e8a38b1ccc165103e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-brightness (HSB) saturation value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:ab2be0fbe9b817aee5c9cbd1b07e881c4" id="r_ab2be0fbe9b817aee5c9cbd1b07e881c4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab2be0fbe9b817aee5c9cbd1b07e881c4">get_u</a> () const noexcept -&gt; float</td></tr>
 <tr class="memdesc:ab2be0fbe9b817aee5c9cbd1b07e881c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Y'UV color model <span class="tt">U</span> (chroma) value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="memitem:a6d0bfc1e27d1d6c38b245fc041dbdedb" id="r_a6d0bfc1e27d1d6c38b245fc041dbdedb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6d0bfc1e27d1d6c38b245fc041dbdedb">get_value</a> () const noexcept -&gt; float</td></tr>
@@ -1092,6 +1092,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a74fa19702dd3282ba876004d2baca082" name="a74fa19702dd3282ba876004d2baca082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74fa19702dd3282ba876004d2baca082">&#9670;&#160;</a></span>get_brightness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::color::get_brightness </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  float</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hue-saturation-brightness (HSB) brightness value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>The brightness of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </dd></dl>
+
+</div>
+</div>
 <a id="a0ff73f052da5842481e6673566b58a34" name="a0ff73f052da5842481e6673566b58a34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ff73f052da5842481e6673566b58a34">&#9670;&#160;</a></span>get_hash_code()</h2>
 
@@ -1119,6 +1147,62 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a4818d9d8dba01bffd5e642fd66117d1c">xtd::object</a>.</p>
+
+</div>
+</div>
+<a id="a30e6f6eeccb8050ceaf8c51b322cf333" name="a30e6f6eeccb8050ceaf8c51b322cf333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e6f6eeccb8050ceaf8c51b322cf333">&#9670;&#160;</a></span>get_hue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::color::get_hue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  float</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hue, in degrees, of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space. </dd></dl>
+
+</div>
+</div>
+<a id="ae69d9da86b599e2e8a38b1ccc165103e" name="ae69d9da86b599e2e8a38b1ccc165103e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69d9da86b599e2e8a38b1ccc165103e">&#9670;&#160;</a></span>get_saturation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::drawing::color::get_saturation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  float</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hue-saturation-brightness (HSB) saturation value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>The saturation of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated. </dd></dl>
 
 </div>
 </div>
@@ -1781,7 +1865,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment --> </li>
 </ul>
 </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#a18">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#a17">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2738,64 +2822,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a74fa19702dd3282ba876004d2baca082" name="a74fa19702dd3282ba876004d2baca082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74fa19702dd3282ba876004d2baca082">&#9670;&#160;</a></span>get_brightness()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::drawing::color::get_brightness </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  float</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the hue-saturation-brightness (HSB) brightness value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
-<dl class="section return"><dt>Returns</dt><dd>The brightness of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000169">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a7ed8b68fd65f85ed80973b7c361beb68" title="Gets the xtd::drawing::hsb value of this xtd::drawing::color class.">xtd::drawing::color::to_hsb</a> - Will be removed in version 1.2.0. </dd></dl>
-
-</div>
-</div>
-<a id="a30e6f6eeccb8050ceaf8c51b322cf333" name="a30e6f6eeccb8050ceaf8c51b322cf333"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30e6f6eeccb8050ceaf8c51b322cf333">&#9670;&#160;</a></span>get_hue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::drawing::color::get_hue </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  float</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
-<dl class="section return"><dt>Returns</dt><dd>The hue, in degrees, of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000170">Deprecated</a></b></dt><dd>Replaced by Replaced by xtd::drawing::color::to_hsby or <a class="el" href="#a5010e9bb942027d43de2ce2c96d029b8" title="Gets the xtd::drawing::hsl value of this xtd::drawing::color class.">xtd::drawing::color::to_hsl</a> - Will be removed in version 1.2.0. </dd></dl>
-
-</div>
-</div>
 <a id="adfe200efd716357905f39bead6067534" name="adfe200efd716357905f39bead6067534"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfe200efd716357905f39bead6067534">&#9670;&#160;</a></span>get_lightness()</h2>
 
@@ -2821,36 +2847,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the hue-saturation-lightness (HSL) lightness value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The lightness of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000171">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a5010e9bb942027d43de2ce2c96d029b8" title="Gets the xtd::drawing::hsl value of this xtd::drawing::color class.">xtd::drawing::color::to_hsl</a> - Will be removed in version 1.2.0. </dd></dl>
-
-</div>
-</div>
-<a id="ae69d9da86b599e2e8a38b1ccc165103e" name="ae69d9da86b599e2e8a38b1ccc165103e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae69d9da86b599e2e8a38b1ccc165103e">&#9670;&#160;</a></span>get_saturation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::drawing::color::get_saturation </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  float</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the hue-saturation-brightness (HSB) saturation value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
-<dl class="section return"><dt>Returns</dt><dd>The saturation of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000172">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a7ed8b68fd65f85ed80973b7c361beb68" title="Gets the xtd::drawing::hsb value of this xtd::drawing::color class.">xtd::drawing::color::to_hsb</a> or <a class="el" href="#a5010e9bb942027d43de2ce2c96d029b8" title="Gets the xtd::drawing::hsl value of this xtd::drawing::color class.">xtd::drawing::color::to_hsl</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000169">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a5010e9bb942027d43de2ce2c96d029b8" title="Gets the xtd::drawing::hsl value of this xtd::drawing::color class.">xtd::drawing::color::to_hsl</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -2879,7 +2876,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the Y'UV color model <span class="tt">U</span> (chroma) value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The Y'UV <span class="tt">U</span> value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The y ranges from -0.5 through0.5. When <span class="tt">U</span> and <span class="tt">V</span> are both 0, the color is neutral (gray). Positive <span class="tt">U</span> values represent the red-green axis, and positive <span class="tt">V</span> values represent the blue-yellow axis </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000173">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a87ce4b77c58e65e4f4401f417dae932d" title="Gets the Y&#39;UV color model of this xtd::drawing::color class.">xtd::drawing::color::to_yuv</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000170">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a87ce4b77c58e65e4f4401f417dae932d" title="Gets the Y&#39;UV color model of this xtd::drawing::color class.">xtd::drawing::color::to_yuv</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -2908,7 +2905,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the hue-saturation-value (HSB) value value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The brightness of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000174">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#accd107a3115cb23d83c7c230e2004275" title="Gets the xtd::drawing::hsv value of this xtd::drawing::color class.">xtd::drawing::color::to_hsv</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000171">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#accd107a3115cb23d83c7c230e2004275" title="Gets the xtd::drawing::hsv value of this xtd::drawing::color class.">xtd::drawing::color::to_hsv</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -2937,7 +2934,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the Y'UV color model <span class="tt">V</span> (chroma) value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The Y'UV <span class="tt">V</span> value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The y ranges from -0.5 through0.5. When <span class="tt">U</span> and <span class="tt">V</span> are both 0, the color is neutral (gray). Positive <span class="tt">U</span> values represent the red-green axis, and positive <span class="tt">V</span> values represent the blue-yellow axis </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000175">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a87ce4b77c58e65e4f4401f417dae932d" title="Gets the Y&#39;UV color model of this xtd::drawing::color class.">xtd::drawing::color::to_yuv</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000172">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a87ce4b77c58e65e4f4401f417dae932d" title="Gets the Y&#39;UV color model of this xtd::drawing::color class.">xtd::drawing::color::to_yuv</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -2966,7 +2963,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the Y'UV color model <span class="tt">Y</span> (luma) value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The Y'UV <span class="tt">Y</span> value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>. The y ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000176">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a87ce4b77c58e65e4f4401f417dae932d" title="Gets the Y&#39;UV color model of this xtd::drawing::color class.">xtd::drawing::color::to_yuv</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000173">Deprecated</a></b></dt><dd>Replaced by Replaced by <a class="el" href="#a87ce4b77c58e65e4f4401f417dae932d" title="Gets the Y&#39;UV color model of this xtd::drawing::color class.">xtd::drawing::color::to_yuv</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -3018,7 +3015,7 @@ The red, green and blue values are averages using the following formula: <div cl
 </div><!-- fragment --> </dd>
 <dd>
 Thus, a weight value of <span class="tt">1.0</span> will return the second color, while a value of <span class="tt">0.0</span> will return the first color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000177">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ae2016ce91cffb2e1ea51d569c2c68931" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000174">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ae2016ce91cffb2e1ea51d569c2c68931" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -3074,7 +3071,7 @@ Thus, a weight value of <span class="tt">1.0</span> will return the second color
 </div><!-- fragment --> </dd>
 <dd>
 Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000178">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ae2016ce91cffb2e1ea51d569c2c68931" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000175">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ae2016ce91cffb2e1ea51d569c2c68931" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -3109,7 +3106,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000179">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ababb50a897f031963763543040d5ffe6" title="Creates a new darker color of the specified color with 33% factor.">xtd::drawing::color_converter::dark</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000176">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ababb50a897f031963763543040d5ffe6" title="Creates a new darker color of the specified color with 33% factor.">xtd::drawing::color_converter::dark</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -3144,7 +3141,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000180">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a109e25b3eb2e017f64a5fd33c35359cb" title="Creates a new lighter color of the specified color with 33% factor.">xtd::drawing::color_converter::light</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000177">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a109e25b3eb2e017f64a5fd33c35359cb" title="Creates a new lighter color of the specified color with 33% factor.">xtd::drawing::color_converter::light</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -3185,7 +3182,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Thus, a percent value of <span class="tt">1.0</span> will return the <a class="el" href="#ad04928a6ddbfa799f6fdaca302cacf11" title="Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.">xtd::drawing::color::black</a>, while a value of <span class="tt">0.0</span> will return the color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000181">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a109e25b3eb2e017f64a5fd33c35359cb" title="Creates a new lighter color of the specified color with 33% factor.">xtd::drawing::color_converter::light</a> - Will be removed in version 1.2.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000178">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a109e25b3eb2e017f64a5fd33c35359cb" title="Creates a new lighter color of the specified color with 33% factor.">xtd::drawing::color_converter::light</a> - Will be removed in version 1.2.0. </dd></dl>
 
 </div>
 </div>
@@ -3236,7 +3233,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 
 <p>Gets a system-defined color that has an ARGB value of 0x00000000. This field is constant. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The value is 0x00000000 unlike the value defined by css, which is 0x00000000. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a28">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a27">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3310,7 +3307,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF00FFFF. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a87">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a86">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3432,7 +3429,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_form_8cpp-example.html#_a1">debug_form.cpp</a>, <a class="el" href="image_effects_8cpp-example.html#_a26">image_effects.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#_a15">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_form_8cpp-example.html#_a1">debug_form.cpp</a>, <a class="el" href="image_effects_8cpp-example.html#_a25">image_effects.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#_a15">test_forms.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3482,7 +3479,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF0000FF. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a25">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a24">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -4352,7 +4349,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFFFF00FF. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a90">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a89">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -4474,7 +4471,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF808080. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a82">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a81">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -4500,7 +4497,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF008000. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a24">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a23">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -5104,7 +5101,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF00FF00. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_form_8cpp-example.html#_a2">debug_form.cpp</a>, <a class="el" href="image_effects_8cpp-example.html#_a86">image_effects.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#_a18">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_form_8cpp-example.html#_a2">debug_form.cpp</a>, <a class="el" href="image_effects_8cpp-example.html#_a85">image_effects.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#_a18">test_forms.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -5202,7 +5199,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF800000. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a83">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a82">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -5564,7 +5561,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF000080. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_paint_8cpp-example.html#_a6">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a10">graphics.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a89">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_paint_8cpp-example.html#_a6">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a10">graphics.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a88">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -5614,7 +5611,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF808000. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a85">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a84">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -5976,7 +5973,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF800080. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a91">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a90">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -6026,7 +6023,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="busy_dialog_8cpp-example.html#_a3">busy_dialog.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a22">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="busy_dialog_8cpp-example.html#_a3">busy_dialog.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a21">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -6246,7 +6243,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFFC0C0C0. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a81">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a80">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -6442,7 +6439,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFF008080. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a88">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_effects_8cpp-example.html#_a87">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -6588,7 +6585,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="busy_dialog_8cpp-example.html#_a4">busy_dialog.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#_a10">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a15">graphics.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a23">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="busy_dialog_8cpp-example.html#_a4">busy_dialog.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#_a10">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a15">graphics.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a22">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -6638,7 +6635,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 </div><div class="memdoc">
 
 <p>Gets a system-defined color that has an ARGB value of 0xFFFFFF00. This field is constant. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_paint_8cpp-example.html#_a11">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a16">graphics.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a84">image_effects.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_paint_8cpp-example.html#_a11">form_paint.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a16">graphics.cpp</a>, and <a class="el" href="image_effects_8cpp-example.html#_a83">image_effects.cpp</a>.</dd>
 </dl>
 
 </div>
