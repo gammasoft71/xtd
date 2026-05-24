@@ -1,7 +1,7 @@
 #include "../../../include/xtd/drawing/color_translator.hpp"
 #include <xtd/as>
 #include <xtd/format_exception>
-#include <map>
+#include <xtd/int32_object>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -79,6 +79,13 @@ color color_translator::from_rgba(const string& text) {
 
 color color_translator::from_win32(int32 value) {
   return color::from_argb(as<byte>((value >> win32_red_shift) & 0xFF), as<byte>((value >> win32_green_shift) & 0xFF), as<byte>((value >> win32_blue_shift) & 0xFF));
+}
+
+color color_translator::from_win32(const string& text) {
+  auto result = color::empty;
+  if (string::is_empty(text)) return result;
+  if (try_parse_win32_color(text, result) == false) throw_helper::throws(exception_case::format);
+  return result;
 }
 
 string color_translator::to_cmyk(const color& value) noexcept {
@@ -301,7 +308,7 @@ bool color_translator::try_parse_hsv_color(const string& text, color& result) no
   if (string::try_parse<float>(color_parts[1], s) == false) return false;
   auto v = .0f;
   if (string::try_parse<float>(color_parts[2], v) == false) return false;
-  result = color::from_hsb(h, s / 100.0f, v / 100.0f);
+  result = color::from_hsv(h, s / 100.0f, v / 100.0f);
   return true;
 }
 
@@ -321,7 +328,7 @@ bool color_translator::try_parse_hsva_color(const string& text, color& result) n
   if (string::try_parse<float>(color_parts[2], v) == false) return false;
   auto a = .0f;
   if (string::try_parse<float>(color_parts[3], a) == false) return false;
-  result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_hsb(h, s / 100.0f, v / 100.0f));
+  result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_hsv(h, s / 100.0f, v / 100.0f));
   return true;
 }
 
@@ -373,5 +380,12 @@ bool color_translator::try_parse_rgba_color(const string& text, color& result) n
   auto a = .0f;
   if (string::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), r, g, b);
+  return true;
+}
+
+bool color_translator::try_parse_win32_color(const string& text, color& result) noexcept {
+  auto value = 0;
+  if (int32_object::try_parse(text, value) == false) return false;
+  result = from_win32(value);
   return true;
 }

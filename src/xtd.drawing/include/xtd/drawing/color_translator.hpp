@@ -92,6 +92,11 @@ namespace xtd {
       /// @param text The string representation of the Win32 color to translate.
       /// @return The xtd::drawing::color structure that represents the translated Win32 color or xtd::drawing::color::empty if text is empty ("").
       /// @exception xtd:format_exception text is not a valid Win32 color name.
+      [[nodiscard]] static auto from_win32(const xtd::string& text) -> xtd::drawing::color;
+      /// @brief Translates a Win32 color representation to a GDI+ xtd::drawing::color structure.
+      /// @param text The string representation of the Win32 color to translate.
+      /// @return The xtd::drawing::color structure that represents the translated Win32 color or xtd::drawing::color::empty if text is empty ("").
+      /// @exception xtd:format_exception text is not a valid Win32 color name.
       [[nodiscard]] static auto from_win32(int32 value) -> xtd::drawing::color;
       
       /// @brief Translates the specified xtd::drawing::color structure to an CMYK string color representation.
@@ -204,6 +209,7 @@ namespace xtd {
       [[nodiscard]] static auto try_parse_named_color(const xtd::string& text, xtd::drawing::color& result) noexcept -> bool;
       [[nodiscard]] static auto try_parse_rgb_color(const xtd::string& text, xtd::drawing::color& result) noexcept -> bool;
       [[nodiscard]] static auto try_parse_rgba_color(const xtd::string& text, xtd::drawing::color& result) noexcept -> bool;
+      [[nodiscard]] static auto try_parse_win32_color(const xtd::string& text, xtd::drawing::color& result) noexcept -> bool;
       /// @}
     };
   }
