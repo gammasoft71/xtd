@@ -28,437 +28,437 @@ namespace xtd {
       
       /// @{
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen transparent();
+      [[nodiscard]] static auto transparent() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen alice_blue();
+      [[nodiscard]] static auto alice_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen antique_white();
+      [[nodiscard]] static auto antique_white() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen aqua();
+      [[nodiscard]] static auto aqua() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen aquamarine();
+      [[nodiscard]] static auto aquamarine() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen azure();
+      [[nodiscard]] static auto azure() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen beige();
+      [[nodiscard]] static auto beige() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen bisque();
+      [[nodiscard]] static auto bisque() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen black();
+      [[nodiscard]] static auto black() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen blanched_almond();
+      [[nodiscard]] static auto blanched_almond() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen blue();
+      [[nodiscard]] static auto blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen blue_violet();
+      [[nodiscard]] static auto blue_violet() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen brown();
+      [[nodiscard]] static auto brown() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen burly_wood();
+      [[nodiscard]] static auto burly_wood() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen cadet_blue();
+      [[nodiscard]] static auto cadet_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen chartreuse();
+      [[nodiscard]] static auto chartreuse() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen chocolate();
+      [[nodiscard]] static auto chocolate() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen coral();
+      [[nodiscard]] static auto coral() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen cornflower_blue();
+      [[nodiscard]] static auto cornflower_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen cornsilk();
+      [[nodiscard]] static auto cornsilk() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen crimson();
+      [[nodiscard]] static auto crimson() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen cyan();
+      [[nodiscard]] static auto cyan() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_blue();
+      [[nodiscard]] static auto dark_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_cyan();
+      [[nodiscard]] static auto dark_cyan() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_goldenrod();
+      [[nodiscard]] static auto dark_goldenrod() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_gray();
+      [[nodiscard]] static auto dark_gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_green();
+      [[nodiscard]] static auto dark_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_khaki();
+      [[nodiscard]] static auto dark_khaki() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_magenta();
+      [[nodiscard]] static auto dark_magenta() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_olive_green();
+      [[nodiscard]] static auto dark_olive_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_orange();
+      [[nodiscard]] static auto dark_orange() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_orchid();
+      [[nodiscard]] static auto dark_orchid() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_red();
+      [[nodiscard]] static auto dark_red() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_salmon();
+      [[nodiscard]] static auto dark_salmon() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_sea_green();
+      [[nodiscard]] static auto dark_sea_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_slate_blue();
+      [[nodiscard]] static auto dark_slate_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_slate_gray();
+      [[nodiscard]] static auto dark_slate_gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_turquoise();
+      [[nodiscard]] static auto dark_turquoise() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dark_violet();
+      [[nodiscard]] static auto dark_violet() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen deep_pink();
+      [[nodiscard]] static auto deep_pink() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen deep_sky_blue();
+      [[nodiscard]] static auto deep_sky_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dim_gray();
+      [[nodiscard]] static auto dim_gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen dodger_blue();
+      [[nodiscard]] static auto dodger_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen firebrick();
+      [[nodiscard]] static auto firebrick() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen floral_white();
+      [[nodiscard]] static auto floral_white() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen forest_green();
+      [[nodiscard]] static auto forest_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen fuchsia();
+      [[nodiscard]] static auto fuchsia() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen gainsboro();
+      [[nodiscard]] static auto gainsboro() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen ghost_white();
+      [[nodiscard]] static auto ghost_white() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen gold();
+      [[nodiscard]] static auto gold() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen goldenrod();
+      [[nodiscard]] static auto goldenrod() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen gray();
+      [[nodiscard]] static auto gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen green();
+      [[nodiscard]] static auto green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen green_yellow();
+      [[nodiscard]] static auto green_yellow() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen honeydew();
+      [[nodiscard]] static auto honeydew() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen hot_pink();
+      [[nodiscard]] static auto hot_pink() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen indian_red();
+      [[nodiscard]] static auto indian_red() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen indigo();
+      [[nodiscard]] static auto indigo() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen ivory();
+      [[nodiscard]] static auto ivory() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen khaki();
+      [[nodiscard]] static auto khaki() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen lavender();
+      [[nodiscard]] static auto lavender() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen lavender_blush();
+      [[nodiscard]] static auto lavender_blush() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen lawn_green();
+      [[nodiscard]] static auto lawn_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen lemon_chiffon();
+      [[nodiscard]] static auto lemon_chiffon() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_blue();
+      [[nodiscard]] static auto light_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_coral();
+      [[nodiscard]] static auto light_coral() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_cyan();
+      [[nodiscard]] static auto light_cyan() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_goldenrod_yellow();
+      [[nodiscard]] static auto light_goldenrod_yellow() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_gray();
+      [[nodiscard]] static auto light_gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_green();
+      [[nodiscard]] static auto light_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_pink();
+      [[nodiscard]] static auto light_pink() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_salmon();
+      [[nodiscard]] static auto light_salmon() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_sea_green();
+      [[nodiscard]] static auto light_sea_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_sky_blue();
+      [[nodiscard]] static auto light_sky_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_slate_gray();
+      [[nodiscard]] static auto light_slate_gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_steel_blue();
+      [[nodiscard]] static auto light_steel_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen light_yellow();
+      [[nodiscard]] static auto light_yellow() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen lime();
+      [[nodiscard]] static auto lime() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen lime_green();
+      [[nodiscard]] static auto lime_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen linen();
+      [[nodiscard]] static auto linen() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen magenta();
+      [[nodiscard]] static auto magenta() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen maroon();
+      [[nodiscard]] static auto maroon() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_aquamarine();
+      [[nodiscard]] static auto medium_aquamarine() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_blue();
+      [[nodiscard]] static auto medium_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_orchid();
+      [[nodiscard]] static auto medium_orchid() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_purple();
+      [[nodiscard]] static auto medium_purple() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_sea_green();
+      [[nodiscard]] static auto medium_sea_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_slate_blue();
+      [[nodiscard]] static auto medium_slate_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_spring_green();
+      [[nodiscard]] static auto medium_spring_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_turquoise();
+      [[nodiscard]] static auto medium_turquoise() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen medium_violet_red();
+      [[nodiscard]] static auto medium_violet_red() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen midnight_blue();
+      [[nodiscard]] static auto midnight_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen mint_cream();
+      [[nodiscard]] static auto mint_cream() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen misty_rose();
+      [[nodiscard]] static auto misty_rose() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen moccasin();
+      [[nodiscard]] static auto moccasin() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen navajo_white();
+      [[nodiscard]] static auto navajo_white() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen navy();
+      [[nodiscard]] static auto navy() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen old_lace();
+      [[nodiscard]] static auto old_lace() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen olive();
+      [[nodiscard]] static auto olive() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen olive_drab();
+      [[nodiscard]] static auto olive_drab() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen orange();
+      [[nodiscard]] static auto orange() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen orange_red();
+      [[nodiscard]] static auto orange_red() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen orchid();
+      [[nodiscard]] static auto orchid() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen pale_goldenrod();
+      [[nodiscard]] static auto pale_goldenrod() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen pale_green();
+      [[nodiscard]] static auto pale_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen pale_turquoise();
+      [[nodiscard]] static auto pale_turquoise() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen pale_violet_red();
+      [[nodiscard]] static auto pale_violet_red() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen papaya_whip();
+      [[nodiscard]] static auto papaya_whip() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen peach_puff();
+      [[nodiscard]] static auto peach_puff() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen peru();
+      [[nodiscard]] static auto peru() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen pink();
+      [[nodiscard]] static auto pink() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen plum();
+      [[nodiscard]] static auto plum() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen powder_blue();
+      [[nodiscard]] static auto powder_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen purple();
+      [[nodiscard]] static auto purple() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen rebecca_purple();
+      [[nodiscard]] static auto rebecca_purple() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen red();
+      [[nodiscard]] static auto red() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen rosy_brown();
+      [[nodiscard]] static auto rosy_brown() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen royal_blue();
+      [[nodiscard]] static auto royal_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen saddle_brown();
+      [[nodiscard]] static auto saddle_brown() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen salmon();
+      [[nodiscard]] static auto salmon() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen sandy_brown();
+      [[nodiscard]] static auto sandy_brown() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen sea_green();
+      [[nodiscard]] static auto sea_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen sea_shell();
+      [[nodiscard]] static auto sea_shell() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen sienna();
+      [[nodiscard]] static auto sienna() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen silver();
+      [[nodiscard]] static auto silver() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen sky_blue();
+      [[nodiscard]] static auto sky_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen slate_blue();
+      [[nodiscard]] static auto slate_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen slate_gray();
+      [[nodiscard]] static auto slate_gray() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen snow();
+      [[nodiscard]] static auto snow() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen spring_green();
+      [[nodiscard]] static auto spring_green() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen steel_blue();
+      [[nodiscard]] static auto steel_blue() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen tan();
+      [[nodiscard]] static auto tan() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen teal();
+      [[nodiscard]] static auto teal() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen thistle();
+      [[nodiscard]] static auto thistle() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen tomato();
+      [[nodiscard]] static auto tomato() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen turquoise();
+      [[nodiscard]] static auto turquoise() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen violet();
+      [[nodiscard]] static auto violet() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen wheat();
+      [[nodiscard]] static auto wheat() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen white();
+      [[nodiscard]] static auto white() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen white_smoke();
+      [[nodiscard]] static auto white_smoke() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen yellow();
+      [[nodiscard]] static auto yellow() -> xtd::drawing::pen;
       
       /// @brief A system-defined pen object with a width of 1.
-      static xtd::drawing::pen yellow_green();
+      [[nodiscard]] static auto yellow_green() -> xtd::drawing::pen;
       /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of pens.
-      static const xtd::array<xtd::drawing::pen>& get_pens();
+      [[nodiscard]] static auto get_pens() -> const xtd::array<xtd::drawing::pen>&;
       /// @}
     };
   }
