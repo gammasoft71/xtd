@@ -193,37 +193,37 @@ namespace xtd {
         /// @brief Gets the total number of elements the internal data structure can hold without resizing.
         /// @return Capacity of the currently allocated storage.
         /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
-        size_type capacity() const noexcept {return data_->items.capacity();}
+        [[nodiscard]] auto capacity() const noexcept -> size_type {return data_->items.capacity();}
         /// @brief Sets the total number of elements the internal data structure can hold without resizing.
         /// @return Capacity of the currently allocated storage.
         /// @exception xtd::out_of_memory There is not enough memory available on the system.
         /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
-        void capacity(size_type value) {data_->items.capacity(value);}
+        auto capacity(size_type value) -> void {data_->items.capacity(value);}
         
         /// @brief Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return The number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
-        size_type count() const noexcept override {return data_->items.count();}
+        [[nodiscard]] auto count() const noexcept -> size_type override {return data_->items.count();}
         
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
-        pointer data() {return data_->items.data();}
+        [[nodiscard]] auto data() -> pointer {return data_->items.data();}
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
-        const_pointer data() const {return data_->items.data();}
+        [[nodiscard]] auto data() const -> const_pointer {return data_->items.data();}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        const auto& items() const {return data_->items.items();}
+        [[nodiscard]] const auto& items() const {return data_->items.items();}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        auto& items() {return data_->items.items();}
+        [[nodiscard]] auto& items() {return data_->items.items();}
         
         /// @brief Checks whether the container is sorted.
         /// @return `true` if container is sorted; otherwise `false`.
-        virtual bool sorted() const noexcept {return data_->sorted;}
+        [[nodiscard]] virtual auto sorted() const noexcept -> bool {return data_->sorted;}
         /// @brief Sets the container is sorted.
         /// @param value `true` if container is sorted; otherwise `false`.
-        virtual arranged_element_collection& sorted(bool value) {
+        virtual auto sorted(bool value) -> arranged_element_collection& {
           if (data_->sorted == value) return self_;
           data_->sorted = value;
           if (data_->sorted) sort();
@@ -236,7 +236,7 @@ namespace xtd {
         /// @{
         /// @brief Adds an item to the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @param item The object to add to the xtd::forms::layout::arranged_element_collection <type_t>.
-        void add(const type_t& item) override {
+        auto add(const type_t& item) -> void override {
           data_->items.add(item);
           xtd::usize index = data_->items.count() - 1;
           static_cast<value_type&>(self_[index]).owner = this;
@@ -246,7 +246,7 @@ namespace xtd {
         }
         /// @brief Adds an item to the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @param item The object to add to the xtd::forms::layout::arranged_element_collection <type_t>.
-        virtual void add(type_t&& item) {
+        virtual auto add(type_t&& item) -> void {
           data_->items.add(item);
           xtd::usize index = data_->items.count() - 1;
           static_cast<value_type&>(self_[index]).owner = this;
@@ -257,40 +257,40 @@ namespace xtd {
         
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        virtual void add_range(const arranged_element_collection& collection) {
+        virtual auto add_range(const arranged_element_collection& collection) -> void {
           for (const auto& item : collection)
             add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        virtual void add_range(const std::vector<type_t>& collection) {
+        virtual auto add_range(const std::vector<type_t>& collection) -> void {
           for (const auto& item : collection)
             add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        virtual void add_range(const std::initializer_list<type_t>& collection) {
+        virtual auto add_range(const std::initializer_list<type_t>& collection) -> void {
           for (const auto& item : collection)
             add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         template<typename collection_t>
-        void add_range(collection_t&& collection) {
+        auto add_range(collection_t&& collection) -> void {
           for (auto& item : collection)
             add(value_type(item));
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         template<typename collection_t>
-        void add_range(const collection_t& collection) {
+        auto add_range(const collection_t& collection) -> void {
           for (const auto& item : collection)
             add(item);
         }
         
         /// @brief Removes all items from the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @remarks xtd::forms::layout::arranged_element_collection::count must be set to 0, and references to other objects from elements of the collection must be released.
-        void clear() override {
+        auto clear() -> void override {
           while (count())
             remove_at(0);
         }
@@ -298,7 +298,7 @@ namespace xtd {
         /// @brief Determines whether the xtd::forms::layout::arranged_element_collection <type_t> contains a specific value.
         /// @param item The object to locate in the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return `true` if item is found in the xtd::forms::layout::arranged_element_collection <type_t>; otherwise, `false`.
-        bool contains(const type_t& item) const noexcept override {
+        [[nodiscard]] auto contains(const type_t& item) const noexcept -> bool override {
           return data_->items.contains(item);
         }
         
@@ -306,7 +306,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::forms::layout::arranged_element_collection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::forms::layout::arranged_element_collection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        void copy_to(xtd::array<type_t>& array, xtd::usize array_index) const override {
+        auto copy_to(xtd::array<type_t>& array, xtd::usize array_index) const -> void override {
           if (array_index + count() > array.length()) helpers::throw_helper::throws(helpers::exception_case::argument_out_of_range);
           auto i = size_type {0};
           for (const type_t& item : self_) {
@@ -317,7 +317,7 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::forms::layout::arranged_element_collection <type_t>.
-        xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
+        [[nodiscard]] auto get_enumerator() const noexcept -> xtd::collections::generic::enumerator<type_t> override {
           struct arranged_element_collection_enumerator : public xtd::collections::generic::ienumerator<type_t> {
             explicit arranged_element_collection_enumerator(const arranged_element_collection& items, xtd::usize version) : items_(items), version_(version) {}
             
@@ -349,7 +349,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
-        virtual void insert(xtd::usize index, const type_t& value) {
+        virtual auto insert(xtd::usize index, const type_t& value) -> void {
           if (index > count()) helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->inserting = true;
           items().insert(items().begin() + index, value);
@@ -361,7 +361,7 @@ namespace xtd {
         }
         
         /// @brief Sorts the content.
-        virtual arranged_element_collection& sort() {
+        virtual auto sort() -> arranged_element_collection& {
           sorter_t sorter;
           sorter(items().begin(), items().end());
           return self_;
@@ -372,7 +372,7 @@ namespace xtd {
         /// @return `true` if item was successfully removed from the xtd::forms::layout::arranged_element_collection <type_t>; otherwise, `false`. This method also returns `false` if item is not found in the original xtd::forms::layout::arranged_element_collection <type_t>.
         /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::forms::layout::arranged_element_collection::count.
-        bool remove(const type_t& item) override {
+        auto remove(const type_t& item) -> bool override {
           if (count() == 0)  return false;
           for (auto index = size_type {0}; index < count(); ++index) {
             if (!xtd::collections::generic::helpers::equator<type_t> {}(self_[index], item)) continue;
@@ -384,7 +384,7 @@ namespace xtd {
         
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
-        virtual void remove_at(xtd::usize index) {
+        virtual auto remove_at(xtd::usize index) -> void {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           on_item_removed(index, const_cast<value_type&>(data_->items[index]));
           data_->erasing = true;
@@ -416,7 +416,7 @@ namespace xtd {
         
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
-        xtd::array<type_t> to_array() const noexcept {
+        [[nodiscard]] auto to_array() const noexcept -> xtd::array<type_t> {
           return data_->items.count() ? xtd::array<type_t>(data_->items.begin(), data_->items.end()) : xtd::array<type_t> {};
         }
         /// @}
@@ -427,7 +427,7 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        arranged_element_collection& operator =(const arranged_element_collection& other) {
+        auto operator =(const arranged_element_collection& other) -> arranged_element_collection& {
           clear();
           add_range(other);
           return self_;
@@ -435,7 +435,7 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
-        arranged_element_collection& operator =(arranged_element_collection&& other) noexcept {
+        auto operator =(arranged_element_collection&& other) noexcept -> arranged_element_collection& {
           clear();
           add_range(std::move(other.data_->items));
           return self_;
@@ -443,7 +443,7 @@ namespace xtd {
         /// @brief Replaces the contents with those identified by initializer list ilist.
         /// @param items Initializer list to use as data source
         /// @return This current instance.
-        arranged_element_collection& operator =(const std::initializer_list<type_t>& items) {
+        auto operator =(const std::initializer_list<type_t>& items) -> arranged_element_collection& {
           clear();
           add_range(items);
           return self_;
@@ -452,7 +452,7 @@ namespace xtd {
         /// @brief Access specified element.
         /// @param index The position of the element to return.
         /// @return The requested element.
-        value_type& operator [](size_type index) {
+        [[nodiscard]] auto operator [](size_type index) -> value_type& {
           if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           data_->items[index].pos = index > npos / 2 ? count() - (npos - index) : index;
           data_->items[index].owner = this;
@@ -461,7 +461,7 @@ namespace xtd {
         /// @brief Access specified element.
         /// @param index The position of the element to return.
         /// @return The requested element.
-        const value_type& operator [](size_type index) const {
+        [[nodiscard]] auto operator [](size_type index) const -> const value_type& {
           if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           data_->items[index].pos = index > npos / 2 ? count() - (npos - index) : index;
           data_->items[index].owner = const_cast<arranged_element_collection*>(this);
@@ -470,13 +470,13 @@ namespace xtd {
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator const_base_type& () const noexcept {return items();}
+        [[nodiscard]] operator const_base_type& () const noexcept {return items();}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator base_type& () noexcept {return items();}
+        [[nodiscard]] operator base_type& () noexcept {return items();}
         
-        bool operator ==(const arranged_element_collection& value) const {return data_->items == value.data_->items;}
-        bool operator !=(const arranged_element_collection& value) const {return !operator ==(value);}
+        [[nodiscard]] auto operator ==(const arranged_element_collection& value) const -> bool {return data_->items == value.data_->items;}
+        [[nodiscard]] auto operator !=(const arranged_element_collection& value) const -> bool {return !operator ==(value);}
         /// @}
         
         /// @name Public Events
@@ -513,7 +513,7 @@ namespace xtd {
         /// @return The maximum possible number of elements.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 1.2.0.")]]
-        size_type max_size() const noexcept {return data_->items.max_size();}
+        [[nodiscard]] auto max_size() const noexcept -> size_type {return data_->items.max_size();}
         /// @}
         
         /// @name Public Deprecated Methods
@@ -524,7 +524,7 @@ namespace xtd {
         /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [] - Will be removed in version 1.2.0.")]]
-        reference at(size_type pos) {
+        [[nodiscard]] auto at(size_type pos) -> reference {
           data_->items[pos].pos = pos;
           data_->items[pos].owner = this;
           return data_->items.at(pos);
@@ -534,46 +534,46 @@ namespace xtd {
         /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [] - Will be removed in version 1.2.0.")]]
-        const_reference at(size_type pos) const {return data_->items.at(pos);}
+        [[nodiscard]] auto at(size_type pos) const -> const_reference {return data_->items.at(pos);}
         
         /// @brief Access the last element.
         /// @return The last element.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.")]]
-        reference back() {return data_->items.back();}
+        [[nodiscard]] auto back() -> reference {return data_->items.back();}
         /// @brief Access the last element.
         /// @return The last element.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.")]]
-        const_reference back() const {return data_->items.back();}
+        [[nodiscard]] auto back() const -> const_reference {return data_->items.back();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 1.2.0.")]]
-        const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
+        [[nodiscard]] auto crbegin() const noexcept -> const_reverse_iterator {return data_->items.crbegin();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 1.2.0.")]]
-        const_reverse_iterator crend() const noexcept {return data_->items.crend();}
+        [[nodiscard]] auto crend() const noexcept -> const_reverse_iterator {return data_->items.crend();}
         
         /// @brief Access the first element.
         /// @return The first element.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.")]]
-        reference front() {return data_->items.front();}
+        [[nodiscard]] auto front() -> reference {return data_->items.front();}
         /// @brief Access the first element.
         /// @return The first element.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 1.2.0.")]]
-        const_reference front() const {return data_->items.front();}
+        [[nodiscard]] auto front() const -> const_reference {return data_->items.front();}
         
         /// @brief Returns the associated allocator
         /// @return The associate allocator.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().get_allocator - Will be removed in version 1.2.0.")]]
-        auto get_allocator() const noexcept {return data_->items.get_allocator();}
+        [[nodiscard]] auto get_allocator() const noexcept {return data_->items.get_allocator();}
         
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
@@ -581,7 +581,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.
         template<typename ...args_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.")]]
-        void emplace(xtd::collections::generic::list<value_type>::const_iterator pos, args_t&& ... args) {
+        auto emplace(xtd::collections::generic::list<value_type>::const_iterator pos, args_t&& ... args) -> void {
           auto index = pos - items().begin();
           data_->inserting = true;
           auto result = data_->items.insert(pos, args...);
@@ -598,7 +598,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.
         template<typename ...args_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.")]]
-        void emplace_back(args_t&& ... args) {
+        auto emplace_back(args_t&& ... args) -> void {
           data_->items.emplace_back(args...);
           xtd::usize index = data_->items.count() - 1;
           self_[index].owner = this;
@@ -659,7 +659,7 @@ namespace xtd {
         /// @param pos The index which the content will be erased.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 1.2.0.")]]
-        void erase_at(xtd::usize index) {
+        auto erase_at(xtd::usize index) -> void {
           remove_at(index);
         }
         
@@ -701,14 +701,14 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 1.2.0.")]]
-        void insert_at(xtd::usize index, const type_t& value) {
+        auto insert_at(xtd::usize index, const type_t& value) -> void {
           insert(index, value);
         }
         
         /// @brief Removes the last element of the container.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 1.2.0.")]]
-        void pop_back() {
+        auto pop_back() -> void {
           if (count() != 0) remove_at(count() - 1);
         }
         
@@ -716,14 +716,14 @@ namespace xtd {
         /// @param item The element to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.")]]
-        void push_back(const type_t& item) {
+        auto push_back(const type_t& item) -> void {
           add(item);
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 1.2.0.")]]
-        void push_back(type_t&& item) {
+        auto push_back(type_t&& item) -> void {
           add(std::move(item));
         }
         
@@ -731,21 +731,21 @@ namespace xtd {
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
-        void push_back_range(const arranged_element_collection& collection) {
+        auto push_back_range(const arranged_element_collection& collection) -> void {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
-        void push_back_range(const std::vector<type_t>& collection) {
+        auto push_back_range(const std::vector<type_t>& collection) -> void {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
-        void push_back_range(const std::initializer_list<type_t>& collection) {
+        auto push_back_range(const std::initializer_list<type_t>& collection) -> void {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
@@ -753,7 +753,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         template<typename collection_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
-        void push_back_range(collection_t&& collection) {
+        auto push_back_range(collection_t&& collection) -> void {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
@@ -761,7 +761,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.
         template<typename iterator_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 1.2.0.")]]
-        void push_back_range(iterator_t begin, iterator_t end) {
+        auto push_back_range(iterator_t begin, iterator_t end) -> void {
           add_range(begin, end);
         }
         
@@ -769,39 +769,39 @@ namespace xtd {
         /// @return The array that contains elements of the container.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 1.2.0.")]]
-        std::vector<type_t> to_vector() const noexcept {return to_array();}
+        [[nodiscard]] auto to_vector() const noexcept -> std::vector<type_t> {return to_array();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.")]]
-        auto rbegin() noexcept {return data_->items.rbegin();}
+        [[nodiscard]] auto rbegin() noexcept {return data_->items.rbegin();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 1.2.0.")]]
-        auto rbegin() const noexcept {return data_->items.rbegin();}
+        [[nodiscard]] auto rbegin() const noexcept {return data_->items.rbegin();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.")]]
-        auto rend() noexcept {return data_->items.rend();}
+        [[nodiscard]] auto rend() noexcept {return data_->items.rend();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 1.2.0.")]]
-        auto rend() const noexcept {return data_->items.rend();}
+        [[nodiscard]] auto rend() const noexcept {return data_->items.rend();}
         
         /// @brief Reserves storage.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().reserve - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().reserve - Will be removed in version 1.2.0.")]]
-        void reserve(size_type size) {data_->items.reserve(size);}
+        auto reserve(size_type size) -> void {data_->items.reserve(size);}
         
         /// @brief Reduces memory usage by freeing unused memory.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().shrink_to_fit - Will be removed in version 1.2.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().shrink_to_fit - Will be removed in version 1.2.0.")]]
-        void shrink_to_fit() {data_->items.shrink_to_fit();}
+        auto shrink_to_fit() -> void {data_->items.shrink_to_fit();}
         /// @}
         
       protected:
@@ -811,23 +811,23 @@ namespace xtd {
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_added event.
         /// @param index The index of the item.
         /// @param item The item added.
-        virtual void on_item_added(xtd::usize index, type_t& item) {item_added(index, item);}
+        virtual auto on_item_added(xtd::usize index, type_t& item) -> void {item_added(index, item);}
         
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_updated event.
         /// @param index The index of the item.
         /// @param item The item updated.
-        virtual void on_item_updated(xtd::usize index, type_t& item) {item_updated(index, item);}
+        virtual auto on_item_updated(xtd::usize index, type_t& item) -> void {item_updated(index, item);}
         
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_removed event.
         /// @param index The index of the item.
         /// @param item The item removed.
-        virtual void on_item_removed(xtd::usize index, type_t& item) {item_removed(index, item);}
+        virtual auto on_item_removed(xtd::usize index, type_t& item) -> void {item_removed(index, item);}
         /// @}
         
       private:
-        bool is_read_only() const noexcept override {return false;}
-        bool is_synchronized() const noexcept override {return false;}
-        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
+        [[nodiscard]] auto is_read_only() const noexcept -> bool override {return false;}
+        [[nodiscard]] auto is_synchronized() const noexcept -> bool override {return false;}
+        [[nodiscard]] auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
         
         struct data_collection {
           mutable xtd::collections::generic::list < value_type > items;
