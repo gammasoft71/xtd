@@ -13,19 +13,28 @@ namespace xtd {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
       template<typename item_t>
+      /// @brief Represents the items edded event args.
       class items_added_event_args : public xtd::event_args {
       public:
         /// @name Public Consturctors
         
         /// @{
+        /// @brie Initialize a new instance of xtd::forms::layout::items_added_event_args class.
+        /// @param index The items added index.
+        /// @param items The items added.
         items_added_event_args(xtd::usize index, const xtd::array<item_t>& items) : index_ {index}, items_ {items} {}
         /// @}
         
         /// @name Public Properties
         
         /// @{
-        xtd::usize index() const noexcept {return index_;}
-        const xtd::array<item_t>& items() const noexcept {return items_;}
+        /// @brief Gets the items added index.
+        /// @return The added items index.
+        [[nodiscard]] auto index() const noexcept -> xtd::usize {return index_;}
+        
+        /// @brief Gets the items added.
+        /// @return The items added.
+        [[nodiscard]] auto items() const noexcept -> const xtd::array<item_t>& {return items_;}
         /// @}
         
       private:
