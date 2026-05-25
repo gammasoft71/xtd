@@ -173,6 +173,8 @@ add_sources(
   "include/xtd/convert_string"
   "include/xtd/converter.hpp"
   "include/xtd/converter"
+  "include/xtd/core_namespace_aliases.hpp"
+  "include/xtd/core_namespace_aliases"
   "include/xtd/cpp_language.hpp"
   "include/xtd/cpp_language"
   "include/xtd/create_const_reference_wrapper_object.hpp"
