@@ -22,6 +22,7 @@
 #include "../../scope_exit.hpp"
 #include "../../sptr.hpp"
 #include "../../usize.hpp"
+#include <atomic>
 #include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -39,7 +40,20 @@ namespace xtd {
 
       class task_factory;
       /// @endcond
-      
+
+      /// @brief Represents an asynchronous operation object.
+      class task_object : public object {
+        /// @cond
+      protected:
+        inline static thread_local xtd::usize current_id_ = 0;
+        inline static std::atomic<xtd::usize> last_id_ = 0;
+
+        task_object() = default;
+
+        static auto generate_id() noexcept -> xtd::usize {return ++last_id_;}
+        /// @endcond
+      };
+
       /// @brief Represents an asynchronous operation.
       /// @par Namespace
       /// xtd::threading::tasks
@@ -47,7 +61,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core threading tasks
       template<typename result_t = void>
-      class basic_task : public object, public itask, public xtd::iasync_result {
+      class basic_task : public task_object, public itask, public xtd::iasync_result {
       public:
         struct yield_awaiter;
         
@@ -148,9 +162,9 @@ namespace xtd {
         }
         
         auto run_synchronously() -> void {
-          data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
-          data_->task_proc(data_->state, false);
+          if (is_completed()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Start may not be called on a task that has completed.");
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
+          data_->task_proc(data_->state, false);
         }
         
         /// @brief Starts the xtd::threading::tasks::task, scheduling it for execution to the current xtd::threading::tasks::task_scheduler.
@@ -412,11 +426,6 @@ namespace xtd {
           itask_pointer.push_back(&item);
         }
 
-        static auto generate_id() noexcept -> xtd::usize {
-          static auto id = xtd::usize {0};
-          return ++id;
-        }
-
         struct data {
           using result_type = std::conditional_t<std::is_same_v<result_t, void>, std::uint8_t, result_t>;
           
@@ -431,6 +440,7 @@ namespace xtd {
           xtd::exception_services::exception_dispatch_info exception;
           xtd::func<result_t> func;
           xtd::usize id = generate_id();
+          xtd::usize previous_current_id;
           xtd::func<result_t, const xtd::any_object&> parameterized_func;
           result_type result;
           const xtd::any_object* state = &empty_state;
@@ -439,13 +449,13 @@ namespace xtd {
           xtd::object sync_root;
           
           xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
-            auto previous_current_id = current_id_;
+            previous_current_id = current_id_;
             current_id_ = id;
             
             scope_exit_ {
-              current_id_ = previous_current_id;
               end_event.set();
               if (!continuation.is_empty()) continuation();
+              current_id_ = previous_current_id;
             };
             
             status = xtd::threading::tasks::task_status::running;
@@ -477,7 +487,6 @@ namespace xtd {
         };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
-        inline static thread_local xtd::usize current_id_ = 0;
       };
     }
   }
