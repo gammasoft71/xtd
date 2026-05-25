@@ -663,4 +663,3 @@
 #include "wstring.hpp"
 #include "wstring_comparer.hpp"
 #include "xml_syntax_exception.hpp"
-#include "xtd_namespace_aliases.hpp"
