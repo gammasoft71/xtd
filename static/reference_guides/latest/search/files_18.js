@@ -12,7 +12,6 @@ var searchData=
   ['xtd_5fcore_5fexamples_2edox_9',['xtd_core_examples.dox',['../xtd__core__examples_8dox.html',1,'']]],
   ['xtd_5fdrawing_5fexamples_2edox_10',['xtd_drawing_examples.dox',['../xtd__drawing__examples_8dox.html',1,'']]],
   ['xtd_5fforms_5fexamples_2edox_11',['xtd_forms_examples.dox',['../xtd__forms__examples_8dox.html',1,'']]],
-  ['xtd_5fnamespace_5faliases_2ehpp_12',['xtd_namespace_aliases.hpp',['../xtd__namespace__aliases_8hpp.html',1,'']]],
-  ['xtd_5fsystem_5fimages_2ehpp_13',['xtd_system_images.hpp',['../xtd__system__images_8hpp.html',1,'']]],
-  ['xtd_5ftunit_5fexamples_2edox_14',['xtd_tunit_examples.dox',['../xtd__tunit__examples_8dox.html',1,'']]]
+  ['xtd_5fsystem_5fimages_2ehpp_12',['xtd_system_images.hpp',['../xtd__system__images_8hpp.html',1,'']]],
+  ['xtd_5ftunit_5fexamples_2edox_13',['xtd_tunit_examples.dox',['../xtd__tunit__examples_8dox.html',1,'']]]
 ];
