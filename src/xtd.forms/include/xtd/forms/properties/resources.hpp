@@ -21,22 +21,22 @@ namespace xtd {
       
       /// @{
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& cursor_arrow();
+      [[nodiscard]] static auto cursor_arrow() -> const xtd::drawing::bitmap&;
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& cursor_no_move_2d();
+      [[nodiscard]] static auto cursor_no_move_2d() -> const xtd::drawing::bitmap&;
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& gammasoft();
+      [[nodiscard]] static auto gammasoft() -> const xtd::drawing::bitmap&;
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& xtd();
+      [[nodiscard]] static auto xtd() -> const xtd::drawing::bitmap&;
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& xtd_console();
+      [[nodiscard]] static auto xtd_console() -> const xtd::drawing::bitmap&;
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& xtd_forms();
+      [[nodiscard]] static auto xtd_forms() -> const xtd::drawing::bitmap&;
       /// @}
     };
   }
