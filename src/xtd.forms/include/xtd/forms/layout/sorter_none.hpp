@@ -25,6 +25,10 @@ namespace xtd {
         /// @name Operators
         
         /// @{
+        /// @brief The sorter operator with specified first and last items.
+        /// @param first the first item to sort.
+        /// @param last the last item to sort.
+        /// @remark Do not sort.
         template<typename type_t>
         void operator()(type_t first, type_t last) {}
         /// @}
