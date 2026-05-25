@@ -184,6 +184,16 @@ namespace xtd {
       auto xtd::threading::tasks::basic_task<result_t>::yield() -> task<result_t> {
         co_await yield_awaiter {};
       }
+
+      template<typename result1_t, typename result2_t>
+      inline auto operator &&(const task<result1_t>& t1, const task<result2_t>& t2) -> task<> {
+        return task_factory {}.start_new([t1, t2] mutable {task<>::wait_all(t1, t2);});
+      }
+      
+      template<typename result1_t, typename result2_t>
+      inline auto operator ||(const task<result1_t>& t1, const task<result2_t>& t2) -> task<> {
+        return task_factory {}.start_new([t1, t2] mutable {task<>::wait_any(t1, t2);});
+      }
       /// @endcond
     }
   }
