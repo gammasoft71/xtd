@@ -6,6 +6,7 @@
 #include "../../include/xtd/lock.hpp"
 #include "../../include/xtd/io/io_exception.hpp"
 #include "../../include/xtd/io/stream_reader.hpp"
+#include "../../include/xtd/threading/thread.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -17,6 +18,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 using namespace xtd::io;
+using namespace xtd::threading;
 
 namespace {
   std::streambuf* __get_err_rdbuf() {
@@ -267,6 +269,7 @@ void console::beep() {
 
 void console::beep(uint32 frequency, uint32 duration) {
   register_cancel_key_press(); // Must be first...
+  if (frequency < 37 || frequency > 32767) thread::sleep(duration);
   native::console::beep(frequency, duration);
 }
 
