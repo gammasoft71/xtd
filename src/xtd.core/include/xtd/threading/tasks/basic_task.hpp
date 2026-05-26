@@ -5,6 +5,7 @@
 #include "itask.hpp"
 #include "task_canceled_exception.hpp"
 #include "task_creation_options.hpp"
+#include "task_object.hpp"
 #include "task_status.hpp"
 #include "../auto_reset_event.hpp"
 #include "../lock.hpp"
@@ -21,8 +22,6 @@
 #include "../../ref.hpp"
 #include "../../scope_exit.hpp"
 #include "../../sptr.hpp"
-#include "../../usize.hpp"
-#include <atomic>
 #include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -41,27 +40,23 @@ namespace xtd {
       class task_factory;
       /// @endcond
 
-      /// @brief Represents an asynchronous operation object.
-      class task_object : public object {
-        /// @cond
-      protected:
-        inline static thread_local xtd::usize current_id_ = 0;
-        inline static std::atomic<xtd::usize> last_id_ = 0;
-
-        task_object() = default;
-
-        static auto generate_id() noexcept -> xtd::usize {return ++last_id_;}
-        /// @endcond
-      };
-
-      /// @brief Represents an asynchronous operation.
+      /// @brief Represents a base class for asynchronous operation.
+      /// ```cpp
+      /// template<typename result_t = void>
+      /// class basic_task : public xtd::threading::tasks::task_object, public xtd::threading::tasks::itask, public xtd::iasync_result;
+      /// ```
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/tasks/task_object>
+      /// ```
       /// @par Namespace
-      /// xtd::threading::tasks
+      /// xtd::threading
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core threading tasks
+      /// @ingroup xtd_core tasks
+      /// @remarks This is tha base class for xtd::threading::tasks::task <> and xtd::threading::tasks::task <result_t>.
       template<typename result_t = void>
-      class basic_task : public task_object, public itask, public xtd::iasync_result {
+      class basic_task : public xtd::threading::tasks::task_object, public xtd::threading::tasks::itask, public xtd::iasync_result {
       public:
         struct yield_awaiter;
         
@@ -75,6 +70,8 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
+        /// @brief Initializes a new xtd::threading::tasks::basic_task <result_t> with the specified function.
+        /// @param func The delegate that represents the code to execute in the task. When the function has completed, the task's xtd::threading::tasks::basic_task::result property will be set to return the result value of the function.
         basic_task(const xtd::func<result_t>& func) {
           data_->func = func;
         }
@@ -114,7 +111,7 @@ namespace xtd {
           data_->state = &state;
           data_->cancellation_token = cancellation_token;
         }
-        /// @}
+        /// @endcond
 
         
         /// @name Public Properties
