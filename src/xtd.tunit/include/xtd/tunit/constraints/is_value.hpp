@@ -61,7 +61,7 @@ namespace xtd {
         /// ```
         auto empty(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_empty(actual_value<actual_t>::actual(), stack_frame);
-          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_empty(actual_value<actual_t>::actual(), stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_empty(actual_value<actual_t>::actual(), message, stack_frame);
           else xtd::tunit::assume::is_empty(actual_value<actual_t>::actual(), stack_frame);
           return operator_value<actual_t>(self_);
         }
@@ -130,12 +130,80 @@ namespace xtd {
         /// assert_that(v2).is().false_("User message..."); // test throws an assert_error exception.
         /// ```
         auto false_(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_false(actual_value<actual_t>::actual(), stack_frame);
-          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_false(actual_value<actual_t>::actual(), stack_frame);
-          else xtd::tunit::assume::is_false(actual_value<actual_t>::actual(), stack_frame);
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_false(actual_value<actual_t>::actual(), message, stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_false(actual_value<actual_t>::actual(), message, stack_frame);
+          else xtd::tunit::assume::is_false(actual_value<actual_t>::actual(), message, stack_frame);
           return operator_value<actual_t>(self_);
         }
         
+        /// @brief Asserts that value is positive.
+        /// @param stack_frame Contains information about current file and current line.
+        /// @exception xtd::tunit::assert_error If bad assertion.
+        /// @par Examples
+        /// ```cpp
+        /// auto v1 = -42;
+        /// auto v2 = 42;
+        /// valid_that(v1).is().negative(); // test ok.
+        /// assert_that(v2).is().negative(); // test throws an assert_error exception.
+        /// ```
+        auto negative(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_positive(actual_value<actual_t>::actual(), stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_positive(actual_value<actual_t>::actual(), stack_frame);
+          else xtd::tunit::assume::is_positive(actual_value<actual_t>::actual(), stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+        /// @brief Asserts that value is false and specified user message.
+        /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+        /// @param stack_frame Contains information about current file and current line.
+        /// @exception xtd::tunit::assert_error If bad assertion.
+        /// @par Examples
+        /// ```cpp
+        /// auto v1 = -42;
+        /// auto v2 = 42;
+        /// valid_that(v1).is().negative("User message..."); // test ok.
+        /// assert_that(v2).is().negative("User message..."); // test throws an assert_error exception.
+        /// ```
+        auto negative(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_negative(actual_value<actual_t>::actual(), message, stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_negative(actual_value<actual_t>::actual(), message, stack_frame);
+          else xtd::tunit::assume::is_negative(actual_value<actual_t>::actual(), message, stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+        
+        /// @brief Asserts that value is positive.
+        /// @param stack_frame Contains information about current file and current line.
+        /// @exception xtd::tunit::assert_error If bad assertion.
+        /// @par Examples
+        /// ```cpp
+        /// auto v1 = 42;
+        /// auto v2 = -42;
+        /// valid_that(v1).is().positive(); // test ok.
+        /// assert_that(v2).is().positive(); // test throws an assert_error exception.
+        /// ```
+        auto positive(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_positive(actual_value<actual_t>::actual(), stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_positive(actual_value<actual_t>::actual(), stack_frame);
+          else xtd::tunit::assume::is_positive(actual_value<actual_t>::actual(), stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+        /// @brief Asserts that value is false and specified user message.
+        /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+        /// @param stack_frame Contains information about current file and current line.
+        /// @exception xtd::tunit::assert_error If bad assertion.
+        /// @par Examples
+        /// ```cpp
+        /// auto v1 = 42;
+        /// auto v2 = -42;
+        /// valid_that(v1).is().positive("User message..."); // test ok.
+        /// assert_that(v2).is().positive("User message..."); // test throws an assert_error exception.
+        /// ```
+        auto positive(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_positive(actual_value<actual_t>::actual(), message, stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_positive(actual_value<actual_t>::actual(), message, stack_frame);
+          else xtd::tunit::assume::is_positive(actual_value<actual_t>::actual(), message, stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+
         /// @brief Asserts that value is same as specified expected.
         /// @param expected the expected value.
         /// @param stack_frame Contains information about current file and current line.
@@ -204,9 +272,9 @@ namespace xtd {
         /// assert_that(v2).is().true_("User message..."); // test throws an assert_error exception.
         /// ```
         auto true_(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_true(actual_value<actual_t>::actual(), stack_frame);
-          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_true(actual_value<actual_t>::actual(), stack_frame);
-          else xtd::tunit::assume::is_true(actual_value<actual_t>::actual(), stack_frame);
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_true(actual_value<actual_t>::actual(), message, stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_true(actual_value<actual_t>::actual(), message, stack_frame);
+          else xtd::tunit::assume::is_true(actual_value<actual_t>::actual(), message, stack_frame);
           return operator_value<actual_t>(self_);
         }
         /// @}
