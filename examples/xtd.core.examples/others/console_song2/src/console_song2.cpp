@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
-// Define the frequencies of notes in an octave, as well as
-// silence (rest).
+// Define the frequencies of notes in an octave, as well as silence (rest).
 enum class tone {
   rest = 0,
   g_below_c = 196,
@@ -16,7 +15,7 @@ enum class tone {
   f = 349,
   f_sharp = 370,
   g = 392,
-  g_sharp = 415,
+  g_sharp = 415
 };
 
 // Define the duration of a note in units of milliseconds.
@@ -26,57 +25,37 @@ enum class duration {
   half = whole / 2,
   quarter = half / 2,
   eighth = quarter / 2,
-  sixteenth = eighth / 2,
+  sixteenth = eighth / 2
 };
 
-// Define a note as a frequency (tone) and the amount of
-// time (duration) the note plays.
-struct note final {
-private:
-  tone tone_val = tone::rest;
-  duration dur_val = duration::none;
-  
-public:
-  // Define a constructor to create a specific note.
-  note(tone frequency, duration time) : tone_val(frequency), dur_val(time) {}
-  
-  note() = default;
-  note(const note& note) = default;
-  note& operator =(const note& note) = default;
-  bool operator ==(const note& rhs) const noexcept {return tone_val == rhs.tone_val && dur_val == rhs.dur_val;}
-  
+// Define a note as a frequency (tone) and the amount of time (duration) the note plays.
+struct note {
   // Define properties to return the note's tone and duration.
-  tone note_tone() const noexcept {return tone_val;}
-  duration note_duration() const noexcept {return dur_val;}
+  tone tone = tone::rest;
+  duration duration = duration::none;
 };
 
 // Play the notes in a song.
-void play(const ienumerable<note>& tune) {
-  for (auto n : tune) {
-    if (n.note_tone() == tone::rest)
-      threading::thread::sleep(as<int>(n.note_duration()));
-    else
-      console::out << beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
-  }
+auto play(const array<note>& tune) {
+  for (auto [tone, duration] : tune)
+    console::out << beep(as<uint32>(tone), as<uint32>(duration));
 }
 
 auto main() -> int {
-  // Declare the first few notes of the song, "Mary Had A Little Lamb".
-  auto mary = array {
-    note(tone::b, duration::quarter),
-    note(tone::a, duration::quarter),
-    note(tone::g_below_c, duration::quarter),
-    note(tone::a, duration::quarter),
-    note(tone::b, duration::quarter),
-    note(tone::b, duration::quarter),
-    note(tone::b, duration::half),
-    note(tone::a, duration::quarter),
-    note(tone::a, duration::quarter),
-    note(tone::a, duration::half),
-    note(tone::b, duration::quarter),
-    note(tone::d, duration::quarter),
-    note(tone::d, duration::half)
-  };
-  // Play the song
-  play(mary);
+  // Declare the first few notes of the song, "Mary Had A Little Lamb" and play it
+  play({
+    {tone::b, duration::quarter},
+    {tone::a, duration::quarter},
+    {tone::g_below_c, duration::quarter},
+    {tone::a, duration::quarter},
+    {tone::b, duration::quarter},
+    {tone::b, duration::quarter},
+    {tone::b, duration::half},
+    {tone::a, duration::quarter},
+    {tone::a, duration::quarter},
+    {tone::a, duration::half},
+    {tone::b, duration::quarter},
+    {tone::d, duration::quarter},
+    {tone::d, duration::half}
+  });
 }
