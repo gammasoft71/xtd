@@ -95,7 +95,15 @@ Inheritance diagram for xtd::threading::tasks::itask:</div>
  <div class="center">
   <img src="classxtd_1_1threading_1_1tasks_1_1itask.png" usemap="#xtd_3A_3Athreading_3A_3Atasks_3A_3Aitask_map" alt=""/>
   <map id="xtd_3A_3Athreading_3A_3Atasks_3A_3Aitask_map" name="xtd_3A_3Athreading_3A_3Atasks_3A_3Aitask_map">
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,152,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="195,0,446,24"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1basic__task.html" alt="xtd::threading::tasks::basic_task&lt; result_t &gt;" shape="rect" coords="0,112,251,136"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1basic__task.html" title="Represents a base class for asynchronous operation." alt="xtd::threading::tasks::basic_task&lt; result_t &gt;" shape="rect" coords="391,112,642,136"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1task.html" title="Represents an asynchronous operation." alt="xtd::threading::tasks::task&lt; result_t &gt;" shape="rect" coords="0,168,251,192"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html" title="Represents an asynchronous operation." alt="xtd::threading::tasks::task&lt; void &gt;" shape="rect" coords="261,168,512,192"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html" title="Represents an asynchronous operation." alt="xtd::threading::tasks::task&lt; void &gt;" shape="rect" coords="522,168,773,192"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1wtask.html" alt="xtd::threading::tasks::wtask&lt; result_t &gt;" shape="rect" coords="0,224,251,248"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1wtask.html" alt="xtd::threading::tasks::wtask&lt; result_t &gt;" shape="rect" coords="261,224,512,248"/>
+<area href="classxtd_1_1threading_1_1tasks_1_1wtask.html" alt="xtd::threading::tasks::wtask&lt; result_t &gt;" shape="rect" coords="522,224,773,248"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
@@ -149,6 +157,8 @@ Public Methods</h2></td></tr>
 <p>Gets an ID for this task instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>The identifier that is assigned by the system to this task instance. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#ae603c8cc23f9f4aedec3390e4bc4817c">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>, and <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#ae603c8cc23f9f4aedec3390e4bc4817c">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="a54514495c71e3fbac29d77a83504b140" name="a54514495c71e3fbac29d77a83504b140"></a>
@@ -176,6 +186,8 @@ Public Methods</h2></td></tr>
 
 <p>Starts the task, scheduling it for execution to the current xtd::threading::tasks::task_scheduler. </p>
 
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#adc93c847da02b569261726433fa6aac8">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>, and <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#adc93c847da02b569261726433fa6aac8">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="aa3896c4620dc0d1c1ee7457cbbb5c267" name="aa3896c4620dc0d1c1ee7457cbbb5c267"></a>
@@ -202,6 +214,8 @@ Public Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Waits for the task to complete execution. </p>
+
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#a3db9dbda5a8eeedf14abf376d2a7ba86">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>, and <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#a3db9dbda5a8eeedf14abf376d2a7ba86">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -236,6 +250,8 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the task completed execution within the allotted time; otherwise, <span class="tt">false</span>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#ac88842ce620e77543ecce5cfa6d0a0ea">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -275,6 +291,8 @@ Public Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the task completed execution within the allotted time; otherwise, <span class="tt">false</span>. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#afd898c923383b829646a016ef75128d0">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="a3093401364174914728b3ea708730a2d" name="a3093401364174914728b3ea708730a2d"></a>
@@ -308,6 +326,8 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the task completed execution within the allotted time; otherwise, <span class="tt">false</span>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#a415661b095cc7727e8feb13427e118ce">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -346,6 +366,8 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the task completed execution within the allotted time; otherwise, <span class="tt">false</span>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#aa315f77dce483d318460b1c1695da1ae">xtd::threading::tasks::basic_task&lt; result_t &gt;</a>.</p>
 
 </div>
 </div>

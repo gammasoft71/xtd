@@ -2686,8 +2686,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Define the frequencies of notes in an octave, as well as</span></div>
-<div class="line"><span class="comment">// silence (rest).</span></div>
+<div class="line"><span class="comment">// Define the frequencies of notes in an octave, as well as silence (rest).</span></div>
 <div class="line"><span class="keyword">enum class</span> tone {</div>
 <div class="line">  rest = 0,</div>
 <div class="line">  g_below_c = 196,</div>
@@ -2702,7 +2701,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a> = 349,</div>
 <div class="line">  f_sharp = 370,</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">g</a> = 392,</div>
-<div class="line">  g_sharp = 415,</div>
+<div class="line">  g_sharp = 415</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Define the duration of a note in units of milliseconds.</span></div>
@@ -2712,64 +2711,43 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line">  half = whole / 2,</div>
 <div class="line">  quarter = half / 2,</div>
 <div class="line">  eighth = quarter / 2,</div>
-<div class="line">  sixteenth = eighth / 2,</div>
+<div class="line">  sixteenth = eighth / 2</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Define a note as a frequency (tone) and the amount of</span></div>
-<div class="line"><span class="comment">// time (duration) the note plays.</span></div>
-<div class="line"><span class="keyword">struct </span>note final {</div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  tone tone_val = tone::rest;</div>
-<div class="line">  duration dur_val = duration::none;</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="comment">// Define a constructor to create a specific note.</span></div>
-<div class="line">  note(tone frequency, duration time) : tone_val(frequency), dur_val(time) {}</div>
-<div class="line">  </div>
-<div class="line">  note() = <span class="keywordflow">default</span>;</div>
-<div class="line">  note(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
-<div class="line">  note&amp; operator =(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
-<div class="line">  <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> note&amp; rhs) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> tone_val == rhs.tone_val &amp;&amp; dur_val == rhs.dur_val;}</div>
-<div class="line"> </div>
+<div class="line"><span class="comment">// Define a note as a frequency (tone) and the amount of time (duration) the note plays.</span></div>
+<div class="line"><span class="keyword">struct </span>note {</div>
 <div class="line">  <span class="comment">// Define properties to return the note&#39;s tone and duration.</span></div>
-<div class="line">  <span class="keyword">auto</span> note_tone() const noexcept -&gt; tone {<span class="keywordflow">return</span> tone_val;}</div>
-<div class="line">  <span class="keyword">auto</span> note_duration() const noexcept -&gt; duration {<span class="keywordflow">return</span> dur_val;}</div>
+<div class="line">  tone tone = tone::rest;</div>
+<div class="line">  duration duration = duration::none;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Play the notes in a song.</span></div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> list&lt;note&gt;&amp; tune) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : tune) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
-<div class="line">      threading::thread::sleep(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::beep(as&lt;uint32&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;uint32&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
-<div class="line">  }</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> array&lt;note&gt;&amp; tune) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> [tone, duration] : tune)</div>
+<div class="line">    console::beep(as&lt;uint32&gt;(tone), as&lt;uint32&gt;(duration));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
-<div class="line">  <span class="keyword">auto</span> mary = list {</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::g_below_c, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::b, duration::half),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::half),</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::d, duration::quarter),</div>
-<div class="line">    note(tone::d, duration::half)</div>
-<div class="line">  };</div>
-<div class="line">  <span class="comment">// Play the song</span></div>
-<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(mary);</div>
+<div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot; and play it</span></div>
+<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>({</div>
+<div class="line">    {tone::b, duration::quarter},</div>
+<div class="line">    {tone::a, duration::quarter},</div>
+<div class="line">    {tone::g_below_c, duration::quarter},</div>
+<div class="line">    {tone::a, duration::quarter},</div>
+<div class="line">    {tone::b, duration::quarter},</div>
+<div class="line">    {tone::b, duration::quarter},</div>
+<div class="line">    {tone::b, duration::half},</div>
+<div class="line">    {tone::a, duration::quarter},</div>
+<div class="line">    {tone::a, duration::quarter},</div>
+<div class="line">    {tone::a, duration::half},</div>
+<div class="line">    {tone::b, duration::quarter},</div>
+<div class="line">    {tone::d, duration::quarter},</div>
+<div class="line">    {tone::d, duration::half}</div>
+<div class="line">  });</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__xtd__core_html_ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::console_modifiers::none</a></div><div class="ttdeci">@ none</div><div class="ttdoc">No modifier key.</div><div class="ttdef"><b>Definition</b> console_modifiers.hpp:22</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:92</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">xtd::console_key::n</a></div><div class="ttdeci">@ n</div><div class="ttdoc">The N key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:114</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">xtd::console_key::d</a></div><div class="ttdeci">@ d</div><div class="ttdoc">The D key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:94</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:98</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>

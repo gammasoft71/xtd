@@ -607,7 +607,7 @@ var searchData=
   ['async_5fio_604',['async_io',['../group__xtd__core.html#ggafcb65e427e8409a46ea4ddaee074a5b2a23eece92b416154b5c682c0d9db9c740',1,'xtd::net::sockets']]],
   ['async_5fresult_605',['async_result',['../group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d',1,'xtd']]],
   ['async_5fresult_2ehpp_606',['async_result.hpp',['../async__result_8hpp.html',1,'']]],
-  ['async_5fstate_607',['async_state',['../classxtd_1_1iasync__result.html#a5573c36e3a2d1f1175e83f29bee4618f',1,'xtd::iasync_result']]],
+  ['async_5fstate_607',['async_state',['../classxtd_1_1iasync__result.html#a5573c36e3a2d1f1175e83f29bee4618f',1,'xtd::iasync_result::async_state()'],['../classxtd_1_1threading_1_1tasks_1_1basic__task.html#a812996373ebb4a05382c6c76fda74d76',1,'xtd::threading::tasks::basic_task::async_state()']]],
   ['async_5fwait_5fhandle_608',['async_wait_handle',['../classxtd_1_1iasync__result.html#a11d3673e26b4d3fa4da194b887588241',1,'xtd::iasync_result']]],
   ['at_609',['at',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a4748e6845a56c68413b4eb5ee426e295',1,'xtd::forms::layout::arranged_element_collection::at(size_type pos) -&gt; reference'],['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8e8d140e7fcfb9155de4a605c6ef385e',1,'xtd::forms::layout::arranged_element_collection::at(size_type pos) const -&gt; const_reference']]],
   ['atan_610',['atan',['../classxtd_1_1math.html#a229ad00920a4ea3b0843628f8815e98e',1,'xtd::math']]],
