@@ -54,22 +54,22 @@ auto process::error_data_received_event::is_empty() const noexcept -> bool {
 }
 
 auto process::error_data_received_event::operator +=(const data_received_event_handler& handler) noexcept -> data_received_event_handler& {
-  data_->error_data_received_callback += (handler);
+  data_->error_data_received_callback += handler;
   return data_received_event_handler::operator +=(handler);
 }
 
 auto process::error_data_received_event::operator +=(const typename data_received_event_handler::function_t& function) noexcept -> data_received_event_handler& {
-  data_->error_data_received_callback += (function);
+  data_->error_data_received_callback += function;
   return data_received_event_handler::operator +=(function);
 }
 
 auto process::error_data_received_event::operator -=(const data_received_event_handler& handler) noexcept -> data_received_event_handler& {
-  data_->error_data_received_callback -= (handler);
+  data_->error_data_received_callback -= handler;
   return data_received_event_handler::operator -=(handler);
 }
 
 auto process::error_data_received_event::operator -=(const typename data_received_event_handler::function_t& function) noexcept -> data_received_event_handler& {
-  data_->error_data_received_callback -= (function);
+  data_->error_data_received_callback -= function;
   return data_received_event_handler::operator -=(function);
 }
 
