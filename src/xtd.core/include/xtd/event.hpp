@@ -2,6 +2,8 @@
 /// @brief Contains xtd::event event.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include <utility>
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents an event.
@@ -36,17 +38,25 @@ namespace xtd {
     /// @param handler Handler to add.
     /// @return The current event instance.
     auto operator +=(const handler_t& handler) noexcept -> handler_t& {return handler_t::operator +=(handler);}
+    /// @brief Adds an handler to the event.
+    /// @param handler Handler to add.
+    /// @return The current event instance.
+    auto operator +=(handler_t&& handler) noexcept -> handler_t& {return handler_t::operator +=(std::forward<handler_t>(handler));}
     
     /// @brief Adds a function to the event.
     /// @param handler Function to add.
     /// @return The current event instance.
     auto operator +=(const typename handler_t::function_t& function) noexcept -> handler_t& {return handler_t::operator +=(function);}
+    /// @brief Adds a function to the event.
+    /// @param handler Function to add.
+    /// @return The current event instance.
+    auto operator +=(typename handler_t::function_t&& function) noexcept -> handler_t& {return handler_t::operator +=(function);}
     
     /// @brief Adds a function to the event.
     /// @param function Function to add.
     /// @return The current event instance.
     template<typename fn_t>
-    auto operator +=(fn_t function) noexcept -> handler_t& {return handler_t::operator +=(function);}
+    auto operator +=(fn_t&& function) noexcept -> handler_t& {return handler_t::operator +=(std::forward<fn_t>(function));}
     
     /// @brief Removes an handler to the event.
     /// @param handler Handler to remove.
