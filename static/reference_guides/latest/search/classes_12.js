@@ -19,7 +19,7 @@ var searchData=
   ['semaphore_5ffull_5fexception_16',['semaphore_full_exception',['../classxtd_1_1threading_1_1semaphore__full__exception.html',1,'xtd::threading']]],
   ['send_5fpackets_5felement_17',['send_packets_element',['../classxtd_1_1net_1_1sockets_1_1send__packets__element.html',1,'xtd::net::sockets']]],
   ['sepia_5feffect_18',['sepia_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1sepia__effect.html',1,'xtd::drawing::imaging::effects']]],
-  ['settings_19',['settings',['../classxtd_1_1configuration_1_1settings.html',1,'xtd::configuration::settings'],['../classxtd_1_1forms_1_1settings.html',1,'xtd::forms::settings'],['../classxtd_1_1tunit_1_1settings.html',1,'xtd::tunit::settings']]],
+  ['settings_19',['settings',['../classxtd_1_1configuration_1_1settings.html',1,'xtd::configuration::settings'],['../classxtd_1_1tunit_1_1settings.html',1,'xtd::tunit::settings']]],
   ['seven_5fsegment_5fdisplay_20',['seven_segment_display',['../classxtd_1_1forms_1_1seven__segment__display.html',1,'xtd::forms']]],
   ['shadow_21',['shadow',['../classxtd_1_1forms_1_1shadow.html',1,'xtd::forms::shadow'],['../classxtd_1_1forms_1_1style__sheets_1_1shadow.html',1,'xtd::forms::style_sheets::shadow']]],
   ['signal_5fcancel_5fevent_5fargs_22',['signal_cancel_event_args',['../classxtd_1_1signal__cancel__event__args.html',1,'xtd']]],

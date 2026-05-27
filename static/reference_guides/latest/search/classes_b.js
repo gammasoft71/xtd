@@ -14,7 +14,7 @@ var searchData=
   ['lesser_11',['lesser',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html',1,'xtd::collections::generic::helpers']]],
   ['light_5fbutton_12',['light_button',['../classxtd_1_1forms_1_1light__button.html',1,'xtd::forms']]],
   ['light_5fbuttons_13',['light_buttons',['../classxtd_1_1forms_1_1light__buttons.html',1,'xtd::forms']]],
-  ['linear_5fgradient_5fbrush_14',['linear_gradient_brush',['../classxtd_1_1drawing_1_1drawing2d_1_1linear__gradient__brush.html',1,'xtd::drawing::drawing2d::linear_gradient_brush'],['../classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html',1,'xtd::drawing::drawing_2d::linear_gradient_brush']]],
+  ['linear_5fgradient_5fbrush_14',['linear_gradient_brush',['../classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html',1,'xtd::drawing::drawing_2d']]],
   ['linger_5foption_15',['linger_option',['../classxtd_1_1net_1_1sockets_1_1linger__option.html',1,'xtd::net::sockets']]],
   ['link_16',['link',['../classxtd_1_1forms_1_1link.html',1,'xtd::forms']]],
   ['link_5farea_17',['link_area',['../structxtd_1_1forms_1_1link__area.html',1,'xtd::forms']]],
