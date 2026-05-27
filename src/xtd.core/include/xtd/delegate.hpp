@@ -306,18 +306,25 @@ namespace xtd {
     }
     
     auto operator +=(const delegate& other) noexcept -> delegate& {
-      *this = delegate::combine(*this, other);
+      for (const auto& function : other.data_->functions)
+        data_->functions.push_back(function);
+      return *this;
+    }
+    
+    auto operator +=(delegate&& other) noexcept -> delegate& {
+      for (auto&& function : other.data_->functions)
+        data_->functions.push_back(std::move(function));
       return *this;
     }
     
     auto operator +=(const function_t& function) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(function));
+      data_->functions.push_back(delagate(function));
       return *this;
     }
     
     template<class fn_t>
     auto operator +=(fn_t function) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(function));
+      data_->functions.push_back(delegate(function));
       return *this;
     }
     
@@ -341,18 +348,23 @@ namespace xtd {
     }
     
     auto operator -=(const delegate& other) noexcept -> delegate& {
-      *this = delegate::remove(*this, other);
+      std::for_each(other.data_->functions.begin(), other.data_->functions.end(), [&](const auto& function) {
+        auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+        if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
+      });
       return *this;
     }
     
     auto operator -=(const function_t& function) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(function));
+      auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+      if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
       return *this;
     }
     
     template<class fn_t>
     auto operator -=(fn_t function) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(function));
+      auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+      if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
       return *this;
     }
     /// @endcond
@@ -564,10 +576,10 @@ namespace xtd {
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     [[nodiscard]] static auto combine(const xtd::array<delegate>& delegates) noexcept -> delegate {
       auto result = delegate {};
-      for (auto delegate : delegates) {
-        for (auto function : delegate.data_->no_arguments_functions)
+      for (const auto& delegate : delegates) {
+        for (const auto& function : delegate.data_->no_arguments_functions)
           result.data_->no_arguments_functions.push_back(function);
-        for (auto function : delegate.data_->functions)
+        for (const auto& function : delegate.data_->functions)
           result.data_->functions.push_back(function);
       }
       return result;
@@ -578,8 +590,43 @@ namespace xtd {
     /// @param b The delegate whose invocation list comes second.
     /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    [[nodiscard]] static auto combine(const delegate& a, const delegate& b) noexcept -> delegate {return combine({a, b});}
+    [[nodiscard]] static auto combine(const delegate& a, const delegate& b) noexcept -> delegate {
+      auto result = a;
+      for (const auto& function : b.data_->no_arguments_functions)
+        result.data_->no_arguments_functions.push_back(function);
+      for (const auto& function : b.data_->functions)
+        result.data_->functions.push_back(function);
+      return result;
+    }
     
+    /// @brief Concatenates the invocation lists of two delegates.
+    /// @param a The delegate whose invocation list comes first.
+    /// @param b The delegate whose invocation list comes second.
+    /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
+    /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
+    [[nodiscard]] static auto combine(delegate&& a, delegate&& b) noexcept -> delegate {
+      auto result = std::move(a);
+      for (auto&& function : b.data_->no_arguments_functions)
+        result.data_->no_arguments_functions.push_back(std::move(function));
+      for (auto&& function : b.data_->functions)
+        result.data_->functions.push_back(std::move(function));
+      return result;
+    }
+    
+    /// @brief Concatenates the invocation lists of two delegates.
+    /// @param a The delegate whose invocation list comes first.
+    /// @param b The delegate whose invocation list comes second.
+    /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
+    /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
+    [[nodiscard]] static auto combine(const delegate& a, delegate&& b) noexcept -> delegate {
+      auto result = a;
+      for (auto&& function : b.data_->no_arguments_functions)
+        result.data_->no_arguments_functions.push_back(std::move(function));
+      for (auto&& function : b.data_->functions)
+        result.data_->functions.push_back(std::move(function));
+      return result;
+    }
+
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
     /// @param value The delegate that supplies the invocation list to remove from the invocation list of source.
@@ -755,12 +802,23 @@ namespace xtd {
     }
     
     auto operator +=(const delegate& other) noexcept -> delegate& {
-      *this = delegate::combine(*this, other);
+      for (const auto& function : other.data_->no_arguments_functions)
+        data_->no_arguments_functions.push_back(function);
+      for (const auto& function : other.data_->functions)
+        data_->functions.push_back(function);
       return *this;
     }
     
+    auto operator +=(delegate&& other) noexcept -> delegate& {
+      for (auto&& function : other.data_->no_arguments_functions)
+        data_->no_arguments_functions.push_back(std::move(function));
+      for (auto&& function : other.data_->functions)
+        data_->functions.push_back(std::move(function));
+      return *this;
+    }
+
     auto operator +=(const function_t& function) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(function));
+      data_->functions.push_back(function);
       return *this;
     }
     
@@ -770,7 +828,7 @@ namespace xtd {
     (!std::same_as<std::decay_t<fct_t>, function_t>) &&
     std::invocable<fct_t&, arguments_t...>
     auto operator +=(fct_t&& function) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(function));
+      *this += delegate(function);
       return *this;
     }
     
@@ -780,7 +838,7 @@ namespace xtd {
     (!std::same_as<std::decay_t<fct_t>, function_t>) &&
     std::invocable<fct_t&>
     auto operator +=(fct_t&& function) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(function));
+      *this += delegate(function);
       return *this;
     }
     
@@ -788,7 +846,7 @@ namespace xtd {
     requires xtd::expressions::expression_operand<expression_t> &&
     requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
     auto operator +=(expression_t&& expression) noexcept -> delegate& {
-      *this = delegate::combine(*this, delegate(expression));
+      *this += delegate(expression);
       return *this;
     }
     
@@ -836,12 +894,27 @@ namespace xtd {
     }
     
     auto operator -=(const delegate& other) noexcept -> delegate& {
-      *this = delegate::remove(*this, other);
+      std::for_each(other.data_->no_arguments_functions.begin(), other.data_->no_arguments_functions.end(), [&](const auto& no_arguments_function) {
+        auto iterator = std::find_if(data_->no_arguments_functions.rbegin(), data_->no_arguments_functions.rend(), [&](const auto& item) {return are_equals(item, no_arguments_function);});
+        if (iterator != data_->no_arguments_functions.rend()) data_->no_arguments_functions.erase((iterator + 1).base());
+      });
+      
+      std::for_each(other.data_->functions.begin(), other.data_->functions.end(), [&](const auto& function) {
+        auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+        if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
+      });
       return *this;
     }
     
     auto operator -=(const function_t& function) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(function));
+      auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+      if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
+      return *this;
+    }
+    
+    auto operator -=(const no_arguments_function_t& no_arguments_function) noexcept -> delegate& {
+      auto iterator = std::find_if(data_->no_arguments_functions.rbegin(), data_->no_arguments_functions.rend(), [&](const auto& item) {return are_equals(item, no_arguments_function);});
+      if (iterator != data_->no_arguments_functions.rend()) data_->no_arguments_functions.erase((iterator + 1).base());
       return *this;
     }
     
@@ -851,7 +924,8 @@ namespace xtd {
     (!std::same_as<std::decay_t<fct_t>, function_t>) &&
     std::invocable<fct_t&, arguments_t...>
     auto operator -=(fct_t&& function) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(function));
+      auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+      if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
       return *this;
     }
     
@@ -861,7 +935,8 @@ namespace xtd {
     (!std::same_as<std::decay_t<fct_t>, function_t>) &&
     std::invocable<fct_t&>
     auto operator -=(fct_t&& function) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(function));
+      auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
+      if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
       return *this;
     }
     
@@ -869,7 +944,8 @@ namespace xtd {
     requires xtd::expressions::expression_operand<expression_t> &&
     requires (expression_t e, arguments_t... args) { { e(args...) } -> std::convertible_to<result_t>;}
     auto operator -=(expression_t&& expression) noexcept -> delegate& {
-      *this = delegate::remove(*this, delegate(expression));
+      auto iterator = std::find_if(data_->functions.rbegin(), data_->functions.rend(), [&](const auto& item) {return are_equals(item, function_t {expression});});
+      if (iterator != data_->functions.rend()) data_->functions.erase((iterator + 1).base());
       return *this;
     }
     /// @endcond
