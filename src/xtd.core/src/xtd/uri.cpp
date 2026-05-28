@@ -447,7 +447,7 @@ void uri::set_port(string& escape_uri) {
     if (index_start == string::npos) return;
     
     data_->port = escape_uri.remove(index_start);
-    auto _ = parse<int32>(data_->port);
+    [[maybe_unused]] auto _ = parse<int32>(data_->port);
     
     escape_uri = escape_uri.substring(index_start);
   } catch (...) {
