@@ -26,6 +26,9 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Creates a new instance of test_class_attribute.
+      /// @remarks The name of the test class attribute is deduced from the test class type `test_class_t`
+      explicit test_class_attribute() noexcept : test_class_attribute(xtd::type_of<test_class_t>().full_name()) {}
       /// @brief Creates a new instance of test_class_attribute with specified name.
       /// @param name The name of the test class attribute.
       explicit test_class_attribute(const xtd::string& name) noexcept {xtd::tunit::unit_test::add({name, xtd::new_sptr<test_class_t>()});}
