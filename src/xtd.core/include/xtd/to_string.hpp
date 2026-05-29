@@ -39,7 +39,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
-  inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  inline auto to_string(value_t&& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace

@@ -14,10 +14,10 @@
 
 /// @cond
 template<typename range_t>
-[[nodiscard]] auto __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
+[[nodiscard]] auto __xtd_range_to_string(range_t&& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
 
 template<typename value_t>
-[[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+[[nodiscard]] inline auto xtd::to_string(value_t&& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   if constexpr(std::is_polymorphic_v<value_t>) return __to_string_polymorphic(value, fmt, loc);
   else if constexpr(std::is_enum_v<value_t>) return __enum_formatter<char>(fmt, value, loc);
   #if defined(__xtd__cpp_lib_ranges)
@@ -248,16 +248,16 @@ template<typename iterator_t>
 }
 
 template<typename range_t>
-[[nodiscard]] inline auto __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string {
+[[nodiscard]] inline auto __xtd_range_to_string(range_t&& values, const xtd::string& fmt, const std::locale& loc) -> std::string {
   std::ostringstream oss;
   oss.imbue(loc);
   oss << "[";
-  bool first = true;
-  for (auto&& v : values) {
+  auto first = true;
+  std::ranges::for_each(values, [&](auto&& v) {
     if (!first) oss << ", ";
     first = false;
     oss << xtd::to_string(v, fmt, loc);
-  }
+  });
   oss << "]";
   return oss.str();
 }
