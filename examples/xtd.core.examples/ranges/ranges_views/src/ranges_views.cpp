@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace std::ranges::views;
+
 auto main() -> int {
   //string names[] = {"Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David"};
   //auto names = std::initializer_list {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
@@ -32,9 +34,9 @@ auto main() -> int {
   
   // std::ranges combined with xtd::ranges query
   auto query3 = names
-    | std::views::filter(_*method(&string::length) == 5)
-    | xtd::views::order_by(_)
-    | std::views::transform(_*method(&string::to_upper));
+    | filter(_*method(&string::length) == 5)
+    | order_by(_)
+    | transform(_*method(&string::to_upper));
   println(query3);
 }
 
