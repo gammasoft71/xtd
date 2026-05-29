@@ -1,8 +1,4 @@
-#include <xtd/tunit/constraints/assert_that>
-#include <xtd/tunit/test_class_attribute>
-#include <xtd/tunit/test_method_attribute>
-#include <xtd/tunit/tunit_main>
-#include <xtd/startup>
+#include <xtd/xtd>
 
 namespace xtd::tunit::tests {
   class test_class_(manual_test_tunit) {
