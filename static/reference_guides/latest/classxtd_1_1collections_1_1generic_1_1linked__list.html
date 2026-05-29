@@ -371,6 +371,8 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html"
 <li>Thanks to <a class="el" href="namespacextd_1_1linq.html" title="Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).">xtd::linq</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; can be manipulated by the classes of <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> and can be combined with <a href="https://en.cppreference.com/w/cpp/ranges.html">std::ranges</a>. <br  />
 The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> and <a href="https://en.cppreference.com/w/cpp/ranges.html">std::ranges</a> usage : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std::ranges::views;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//string names[] = {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
 <div class="line">  <span class="comment">//auto names = std::initializer_list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
@@ -403,9 +405,9 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <div class="line">  </div>
 <div class="line">  <span class="comment">// std::ranges combined with xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query3 = names</div>
-<div class="line">    | std::views::filter(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) == 5)</div>
-<div class="line">    | <a class="code hl_variable" href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::views::order_by</a>(_)</div>
-<div class="line">    | std::views::transform(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
+<div class="line">    | filter(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) == 5)</div>
+<div class="line">    | order_by(_)</div>
+<div class="line">    | transform(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(query3);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -416,7 +418,6 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <div class="line"><span class="comment">// [BURKE, DAVID, FRANK]</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a2095a4dd9dbf5c5b0945458539b94a3d"><div class="ttname"><a href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">xtd::basic_string&lt; char &gt;::to_upper</a></div><div class="ttdeci">auto to_upper() const noexcept -&gt; basic_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:947</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="agroup__ranges_html_ga7afb21b332d0583925f7568616d4f5c4"><div class="ttname"><a href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::ranges::views::order_by</a></div><div class="ttdeci">constexpr auto order_by</div><div class="ttdoc">The xtd::ranges::views::order_by instance.</div><div class="ttdef"><b>Definition</b> order_by.hpp:40</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 </div><!-- fragment --> </li>
 </ul>
