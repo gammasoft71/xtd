@@ -59,58 +59,53 @@ namespace xtd {
         lengths(xtd::forms::style_sheets::length left, xtd::forms::style_sheets::length top, xtd::forms::style_sheets::length right, xtd::forms::style_sheets::length bottom);
         /// @}
         
-        /// @cond
-        lengths(const lengths&) = default;
-        lengths& operator =(const lengths&) = default;
-        /// @endcond
-        
         /// @name Peorperties
         
         /// @{
         /// @brief Gets the xtd::forms::style_sheets::lengths value for all the edges.
         /// @return The xtd::forms::style_sheets::lengths, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::lengths value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::lengths values are not equal.
-        xtd::forms::style_sheets::length all() const noexcept;
+        [[nodiscard]] auto all() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::lengths value for all the edges.
         /// @param all The xtd::forms::style_sheets::lengths, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::lengths value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::lengths values are not equal.
-        void all(xtd::forms::style_sheets::length all) noexcept;
+        auto all(xtd::forms::style_sheets::length all) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::lengths value for the bottom edge.
         /// @return The xtd::forms::style_sheets::lengths, in pixels, for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length bottom() const noexcept;
+        [[nodiscard]] auto bottom() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::lengths value for the bottom edge.
         /// @param bottom The xtd::forms::style_sheets::lengths, in pixels, for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom(xtd::forms::style_sheets::length bottom) noexcept;
+        auto bottom(xtd::forms::style_sheets::length bottom) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::lengths value for the left edge.
         /// @return The xtd::forms::style_sheets::lengths, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length left() const noexcept;
+        [[nodiscard]] auto left() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::lengths value for the left edge.
         /// @param left The xtd::forms::style_sheets::lengths, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        void left(xtd::forms::style_sheets::length left) noexcept;
+        auto left(xtd::forms::style_sheets::length left) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::lengths value for the right edge.
         /// @return The xtd::forms::style_sheets::lengths, in pixels, for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length right() const noexcept;
+        [[nodiscard]] auto right() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::lengths value for the right edge.
         /// @param right The xtd::forms::style_sheets::lengths, in pixels, for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        void right(xtd::forms::style_sheets::length right) noexcept;
+        auto right(xtd::forms::style_sheets::length right) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::lengths value for the top edge.
         /// @return The xtd::forms::style_sheets::lengths, in pixels, for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length top() const noexcept;
+        [[nodiscard]] auto top() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::lengths value for the top edge.
         /// @param top The xtd::forms::style_sheets::lengths, in pixels, for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        void top(xtd::forms::style_sheets::length top) noexcept;
+        auto top(xtd::forms::style_sheets::length top) noexcept -> void;
         /// @}
         
         /// @name Public Methods
@@ -119,17 +114,17 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const lengths& other) const noexcept override;
+        [[nodiscard]] auto equals(const lengths& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         
-        xtd::string to_string() const noexcept override;
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
         /// @}
         
       private:
