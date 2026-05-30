@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      line_separator.<a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1forms_1_1style__sheets_1_1control.html#a7a9e55b11111e688fe3d41c69cbd70a4">color</a>(drawing::system_colors::window());</div>
+<div class="line">      line_separator.<a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1forms_1_1style__sheets_1_1control.html#a45d656e02bd58359756581174fcb33e3">color</a>(drawing::system_colors::window());</div>
 <div class="line">      line_separator.bounds({10, 10, 280, 2});</div>
 <div class="line">      </div>
-<div class="line">      line_red.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a0c189d088fc2611f0e3b1026384438ce">color</a>(drawing::color::red);</div>
+<div class="line">      line_red.color(drawing::color::red);</div>
 <div class="line">      line_red.bounds({10, 20, 2, 250});</div>
 <div class="line">      </div>
 <div class="line">      line_green.color(drawing::color::green);</div>
@@ -174,8 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(line_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a0c189d088fc2611f0e3b1026384438ce"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a0c189d088fc2611f0e3b1026384438ce">xtd::drawing::color::color</a></div><div class="ttdeci">color()=default</div><div class="ttdoc">Initialize a new instance of xtd::drawing::color class.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1control_html_a7a9e55b11111e688fe3d41c69cbd70a4"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1control.html#a7a9e55b11111e688fe3d41c69cbd70a4">xtd::forms::style_sheets::control::color</a></div><div class="ttdeci">const xtd::drawing::color &amp; color() const noexcept override</div><div class="ttdoc">Gets the color is used to add foreground effects to the text.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1control_html_a45d656e02bd58359756581174fcb33e3"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1control.html#a45d656e02bd58359756581174fcb33e3">xtd::forms::style_sheets::control::color</a></div><div class="ttdeci">auto color() const noexcept -&gt; const xtd::drawing::color &amp;override</div><div class="ttdoc">Gets the color is used to add foreground effects to the text.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
