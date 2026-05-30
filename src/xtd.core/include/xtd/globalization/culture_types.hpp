@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::globalization::culture_type enum class.
+/// @brief Contains xtd::globalization::culture_types enum class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../enum.hpp"
