@@ -42,7 +42,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the alignment of the image.
         /// @return A combination of xtd::forms::content_alignment values.
-        virtual xtd::forms::content_alignment image_alignment() const noexcept = 0;
+        [[nodiscard]] virtual auto image_alignment() const noexcept -> xtd::forms::content_alignment = 0;
         /// @}
       };
     }
