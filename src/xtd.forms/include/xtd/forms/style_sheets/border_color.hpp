@@ -59,58 +59,53 @@ namespace xtd {
         border_color(const xtd::drawing::color& left, const xtd::drawing::color& top, const xtd::drawing::color& right, const xtd::drawing::color& bottom);
         /// @}
         
-        /// @cond
-        border_color(const border_color&) = default;
-        border_color& operator =(const border_color&) = default;
-        /// @endcond
-        
         /// @name Peorperties
         
         /// @{
         /// @brief Gets the xtd::forms::style_sheets::border_color value for all the edges.
         /// @return The xtd::forms::style_sheets::border_color for all edges if the same; otherwise, xtd::forms::style_sheets::color_data::empty.
         /// @remarks When retrieving this property, if all the edges use the same border_color value, then this common value is returned. Otherwise, xtd::forms::style_sheets::color_data::empty is returned to indicate that all the xtd::forms::style_sheets::border_color values are not equal.
-        const xtd::drawing::color& all() const noexcept;
+        [[nodiscard]] auto all() const noexcept -> const xtd::drawing::color&;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_color for all edges if the same; otherwise, xtd::forms::style_sheets::color_data::empty.
         /// @remarks When retrieving this property, if all the edges use the same border_color value, then this common value is returned. Otherwise, xtd::forms::style_sheets::color_data::empty is returned to indicate that all the xtd::forms::style_sheets::border_color values are not equal.
-        void all(const xtd::drawing::color& all) noexcept;
+        auto all(const xtd::drawing::color& all) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the bottom edge.
         /// @return The xtd::forms::style_sheets::border_color for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        const xtd::drawing::color& bottom() const noexcept;
+        [[nodiscard]] auto bottom() const noexcept -> const xtd::drawing::color&;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the bottom edge.
         /// @param bottom The xtd::forms::style_sheets::border_color for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom(const xtd::drawing::color& bottom) noexcept;
+        auto bottom(const xtd::drawing::color& bottom) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the left edge.
         /// @return The xtd::forms::style_sheets::border_color for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        const xtd::drawing::color& left() const noexcept;
+        [[nodiscard]] auto left() const noexcept -> const xtd::drawing::color&;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the left edge.
         /// @param left The xtd::forms::style_sheets::border_color for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        void left(const xtd::drawing::color& left) noexcept;
+        auto left(const xtd::drawing::color& left) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the right edge.
         /// @return The xtd::forms::style_sheets::border_color for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        const xtd::drawing::color& right() const noexcept;
+        [[nodiscard]] auto right() const noexcept -> const xtd::drawing::color&;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the right edge.
         /// @param right The xtd::forms::style_sheets::border_color for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        void right(const xtd::drawing::color& right) noexcept;
+        auto right(const xtd::drawing::color& right) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the top edge.
         /// @return The xtd::forms::style_sheets::border_color for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        const xtd::drawing::color& top() const noexcept;
+        [[nodiscard]] auto top() const noexcept -> const xtd::drawing::color&;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the top edge.
         /// @param top The xtd::forms::style_sheets::border_color for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        void top(const xtd::drawing::color& top) noexcept;
+        auto top(const xtd::drawing::color& top) noexcept -> void;
         /// @}
         
         /// @name Public Methods
@@ -119,15 +114,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const border_color& other) const noexcept override;
+        [[nodiscard]] auto equals(const border_color& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
