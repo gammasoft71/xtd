@@ -9,10 +9,11 @@
 /// ```cpp
 /// #include <xtd/abstract>
 /// ```
+/// @par Namespace
+/// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
-/// @remarks This keyword has no other use than to tag a class to abstract.
 /// @par Examples
 /// ```cpp
 /// class foo abstract_ {
@@ -20,5 +21,6 @@
 ///   virtual xtd::string to_string() = 0;
 /// };
 /// ```
+/// @remarks This keyword has no other use than to tag a class to abstract.
 #define abstract_ \
   : public xtd::abstract_object
