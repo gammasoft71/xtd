@@ -59,58 +59,53 @@ namespace xtd {
         border_radius(xtd::forms::style_sheets::length top_left, xtd::forms::style_sheets::length top_right, xtd::forms::style_sheets::length bottom_right, xtd::forms::style_sheets::length bottom_left);
         /// @}
         
-        /// @cond
-        border_radius(const border_radius&) = default;
-        border_radius& operator =(const border_radius&) = default;
-        /// @endcond
-        
         /// @name Peorperties
         
         /// @{
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for all the edges.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_radius value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_radius values are not equal.
-        xtd::forms::style_sheets::length all() const noexcept;
+        [[nodiscard]] auto all() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_radius, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_radius value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_radius values are not equal.
-        void all(xtd::forms::style_sheets::length all) noexcept;
+        auto all(xtd::forms::style_sheets::length all) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the bottom_right edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_right edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length bottom_right() const noexcept;
+        [[nodiscard]] auto bottom_right() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the bottom_right edge.
         /// @param bottom_right The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_right edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom_right(xtd::forms::style_sheets::length bottom_right) noexcept;
+        auto bottom_right(xtd::forms::style_sheets::length bottom_right) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the top_left edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the top_left edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length top_left() const noexcept;
+        [[nodiscard]] auto top_left() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the top_left edge.
         /// @param top_left The xtd::forms::style_sheets::border_radius, in pixels, for the top_left edge.
         /// @remarks Setting this value can also alter the all property.
-        void top_left(xtd::forms::style_sheets::length top_left) noexcept;
+        auto top_left(xtd::forms::style_sheets::length top_left) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the bottom_left edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_left edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length bottom_left() const noexcept;
+        [[nodiscard]] auto bottom_left() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the bottom_left edge.
         /// @param bottom_left The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_left edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom_left(xtd::forms::style_sheets::length bottom_left) noexcept;
+        auto bottom_left(xtd::forms::style_sheets::length bottom_left) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the top_right edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the top_right edge.
         /// @remarks Setting this value can also alter the all property.
-        xtd::forms::style_sheets::length top_right() const noexcept;
+        [[nodiscard]] auto top_right() const noexcept -> xtd::forms::style_sheets::length;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the top_right edge.
         /// @param top_right The xtd::forms::style_sheets::border_radius, in pixels, for the top_right edge.
         /// @remarks Setting this value can also alter the all property.
-        void top_right(xtd::forms::style_sheets::length top_right) noexcept;
+        auto top_right(xtd::forms::style_sheets::length top_right) noexcept -> void;
         
         /// @}
         
@@ -120,15 +115,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const border_radius& other) const noexcept override;
+        [[nodiscard]] auto equals(const border_radius& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
