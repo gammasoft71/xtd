@@ -99,27 +99,22 @@ namespace xtd {
         length(double value, length_unit unit);
         /// @}
         
-        /// @cond
-        length(const length&) = default;
-        length& operator =(const length&) = default;
-        /// @endcond
-        
         /// @name Peorperties
         
         /// @{
         /// @brief Gets the xtd::forms::style_sheets::length value.
         /// @return The value of the xtd::forms::style_sheets::length.
-        double value() const noexcept;
+        [[nodiscard]] auto value() const noexcept -> double;
         /// @brief Sets the xtd::forms::style_sheets::length value.
         /// @param value The value of the xtd::forms::style_sheets::length.
-        void value(double value) noexcept;
+        auto value(double value) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::length unit.
         /// @return One of xtd::forms::style_sheets::legth_unit values.
-        length_unit unit() const noexcept;
+        [[nodiscard]] auto unit() const noexcept -> length_unit;
         /// @brief Sets the xtd::forms::style_sheets::length unit.
         /// @param value One of xtd::forms::style_sheets::legth_unit values.
-        void unit(length_unit value) noexcept;
+        auto unit(length_unit value) noexcept -> void;
         /// @}
         
         /// @name Public Methods
@@ -128,22 +123,22 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const length& other) const noexcept override;
+        [[nodiscard]] auto equals(const length& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         
         /// @brief Gets the legnth in pixels.
         /// @param rect The xtd::drawing::rectangle is used to compute the length for relative length units.
         /// @return The legnth in pixels.
-        int32 get_pixels(const xtd::drawing::rectangle& rect) const noexcept;
+        [[nodiscard]] auto get_pixels(const xtd::drawing::rectangle& rect) const noexcept -> xtd::int32;
         
-        xtd::string to_string() const noexcept override;
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
         /// @}
         
       private:
