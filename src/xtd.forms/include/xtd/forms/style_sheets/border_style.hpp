@@ -59,58 +59,53 @@ namespace xtd {
         border_style(border_type left, border_type top, border_type right, border_type bottom);
         /// @}
         
-        /// @cond
-        border_style(const border_style&) = default;
-        border_style& operator =(const border_style&) = default;
-        /// @endcond
-        
         /// @name Peorperties
         
         /// @{
         /// @brief Gets the xtd::forms::style_sheets::border_style value for all the edges.
         /// @return The xtd::forms::style_sheets::border_style for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_style value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_style values are not equal.
-        border_type all() const noexcept;
+        [[nodiscard]] auto all() const noexcept -> border_type;
         /// @brief Sets the xtd::forms::style_sheets::border_style value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_style for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_style value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_style values are not equal.
-        void all(border_type all) noexcept;
+        auto all(border_type all) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_style value for the bottom edge.
         /// @return The xtd::forms::style_sheets::border_style for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        border_type bottom() const;
+        [[nodiscard]] auto bottom() const -> border_type;
         /// @brief Sets the xtd::forms::style_sheets::border_style value for the bottom edge.
         /// @param bottom The xtd::f noexceptorms::style_sheets::border_style for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom(border_type bottom) noexcept;
+        auto bottom(border_type bottom) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_style value for the left edge.
         /// @return The xtd::forms::style_sheets::border_style for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        border_type left() const noexcept;
+        [[nodiscard]] auto left() const noexcept -> border_type;
         /// @brief Sets the xtd::forms::style_sheets::border_style value for the left edge.
         /// @param left The xtd::forms::style_sheets::border_style for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        void left(border_type left) noexcept;
+        auto left(border_type left) noexcept -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_style value for the right edge.
         /// @return The xtd::forms::style_sheets::border_style for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        border_type right() const noexcept;
+        [[nodiscard]] auto right() const noexcept -> border_type;
         /// @brief Sets the xtd::forms::style_sheets::border_style value for the right edge.
         /// @param right The xtd::forms::style_sheets::border_style for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        void right(border_type right);
+        auto right(border_type right) -> void;
         
         /// @brief Gets the xtd::forms::style_sheets::border_style value for the top edge.
         /// @return The xtd::forms::style_sheets::border_style for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        border_type top() const noexcept;
+        [[nodiscard]] auto top() const noexcept -> border_type;
         /// @brief Sets the xtd::forms::style_sheets::border_style value for the top edge.
         /// @param top The xtd::forms::style_sheets::border_style for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        void top(border_type top) noexcept;
+        auto top(border_type top) noexcept -> void;
         /// @}
         
         /// @name Public Methods
@@ -119,15 +114,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const border_style& other) const noexcept override;
+        [[nodiscard]] auto equals(const border_style& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
