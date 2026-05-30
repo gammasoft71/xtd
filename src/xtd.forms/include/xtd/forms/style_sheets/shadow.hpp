@@ -53,32 +53,27 @@ namespace xtd {
         shadow(const xtd::drawing::point& offset, int32 radius, const xtd::drawing::color& color);
         /// @}
         
-        /// @cond
-        shadow(const shadow&) = default;
-        shadow& operator =(const shadow&) = default;
-        /// @endcond
-        
         /// @name Peorperties
         
         /// @{
         /// @brief Gets the shadow color.
         /// @return The shadow color.
-        const xtd::drawing::color& color() const noexcept;
+        [[nodiscard]] auto color() const noexcept -> const xtd::drawing::color&;
         /// @brief Sets the shadow color.
         /// @param value The shadow color.
-        void color(const xtd::drawing::color& value) noexcept;
+        auto color(const xtd::drawing::color& value) noexcept -> void;
         /// @brief Gets the shadow offset in pixels.
         /// @return The shadow offset.
-        const xtd::drawing::point& offset() const noexcept;
+        [[nodiscard]] auto offset() const noexcept -> const xtd::drawing::point&;
         /// @brief Sets the shadow offset point in pixels.
         /// @param value The shadow offset point.
-        void offset(const xtd::drawing::point& value) noexcept;
+        auto offset(const xtd::drawing::point& value) noexcept -> void;
         /// @brief Gets the shadow blurring radius in pixels.
         /// @return The shadow blurring radius.
-        int32 radius() const noexcept;
+        [[nodiscard]] auto radius() const noexcept -> xtd::int32;
         /// @brief Sets the shadow blurring radius in pixels.
         /// @param value The shadow blurring radius.
-        void radius(int32 value) noexcept;
+        auto radius(xtd::int32 value) noexcept -> void;
         /// @}
         
         /// @name Public Methods
@@ -87,15 +82,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const shadow& other) const noexcept override;
+        [[nodiscard]] auto equals(const shadow& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         /// @}
         
       private:
