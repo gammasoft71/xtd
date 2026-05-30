@@ -59,42 +59,36 @@ namespace xtd {
         theme(const xtd::string& name, const xtd::string& description, const xtd::string& authors, const xtd::uri& website);
         /// @}
         
-        /// @cond
-        theme(const theme&) = default;
-        theme(theme&&) = default;
-        theme& operator =(const theme&) = default;
-        /// @endcond
-        
         /// @name Public Properties
         
         /// @{
         /// @brief Gets the theme authors.
         /// @return The theme authors.
-        const xtd::string& authors() const noexcept;
+        [[nodiscard]] auto authors() const noexcept -> const xtd::string&;
         /// @brief Sets the theme authors.
         /// @param value The theme authors.
-        void authors(const xtd::string& value) noexcept;
+        auto authors(const xtd::string& value) noexcept -> void;
         
         /// @brief Gets the theme name.
         /// @return The theme name.
-        const xtd::string& description() const noexcept;
+        [[nodiscard]] auto description() const noexcept -> const xtd::string&;
         /// @brief Sets the theme name.
         /// @param value The theme name.
-        void description(const xtd::string& value) noexcept;
+        auto description(const xtd::string& value) noexcept -> void;
         
         /// @brief Gets the theme name.
         /// @return The theme name.
-        const xtd::string& name() const noexcept;
+        [[nodiscard]] auto name() const noexcept -> const xtd::string&;
         /// @brief Sets the theme name.
         /// @param value The theme name.
-        void name(const xtd::string& value) noexcept;
+        auto name(const xtd::string& value) noexcept -> void;
         
         /// @brief Gets the theme website.
         /// @return The theme website.
-        const xtd::uri& website() const noexcept;
+        [[nodiscard]] auto website() const noexcept -> const xtd::uri&;
         /// @brief Sets the theme website.
         /// @param value The theme website.
-        void website(const xtd::uri& value) noexcept;
+        auto website(const xtd::uri& value) noexcept -> void;
         /// @}
         
         /// @name Public Methods
@@ -103,21 +97,21 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const theme& other) const noexcept override;
+        [[nodiscard]] auto equals(const theme& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         
-        xtd::string to_string() const noexcept override;
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
         
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
         /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
-        xtd::string to_css() const noexcept;
+        [[nodiscard]] auto to_css() const noexcept -> xtd::string;
         /// @}
         
         /// @name Public Static Methods
@@ -127,19 +121,19 @@ namespace xtd {
         /// @param css_text A css xtd::string that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
         /// @return `true` if succeed; otherwise `false`.
-        static bool from_css(const xtd::string& css_text, theme& result);
+        static auto from_css(const xtd::string& css_text, theme& result) -> bool;
         
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified text.
         /// @param text A xtd::string that represents a xtd::forms::style_sheets::theme object.
         /// @return The xtd::forms::style_sheets::theme class that this method creates.
         /// @exception xtd::argument_exception The text is not a xtd::forms::style_sheets::theme object.
-        static theme parse(const xtd::string& text);
+        [[nodiscard]] static auto parse(const xtd::string& text) -> theme;
         
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified text.
         /// @param text A xtd::string that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
         /// @return `true` if succeed; otherwise `false`.
-        static bool try_parse(const xtd::string& text, theme& result) noexcept;
+        [[nodiscard]] static auto try_parse(const xtd::string& text, theme& result) noexcept -> bool;
         /// @}
         
       private:
