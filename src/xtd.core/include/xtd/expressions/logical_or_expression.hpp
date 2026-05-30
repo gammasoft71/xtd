@@ -75,6 +75,7 @@ namespace xtd {
       auto right_expression = as_expression(right);
       return logical_or_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
+    /// @endcond
 
     /// @name Public Operators
     
