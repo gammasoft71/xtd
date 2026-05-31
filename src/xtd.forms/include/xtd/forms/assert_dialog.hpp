@@ -48,42 +48,42 @@ namespace xtd {
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const noexcept;
+      [[nodiscard]] auto dialog_result() const noexcept -> xtd::forms::dialog_result;
       
       /// @brief Gets the dialog appearance.
       /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
-      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      [[nodiscard]] auto dialog_appearance() const noexcept -> xtd::forms::dialog_appearance;
       /// @brief Sets the dialog appearance.
       /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current assert_dialog instance.
-      assert_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
+      auto dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) -> assert_dialog&;
       
       /// @brief Gets the dialog message text.
       /// @return The current dialog message text.
-      xtd::string message() const noexcept;
+      [[nodiscard]] auto message() const noexcept -> xtd::string;
       /// @brief Sets the dialog message text.
       /// @param value The new dialog message text.
       /// @return Current input_dialog instance.
-      assert_dialog& message(const xtd::string& value);
+      auto message(const xtd::string& value) -> assert_dialog&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset() noexcept;
+      auto reset() noexcept -> void;
       
       /// @brief Runs assert dialog box.
-      xtd::forms::dialog_result show_dialog(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      auto show_dialog(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       /// @brief Runs assert dialog box.
-      xtd::forms::dialog_result show_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      auto show_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       
       /// @brief Runs assert dialog box.
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
-      void show_sheet(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      auto show_sheet(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Runs assert dialog box.
-      xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      auto show_sheet_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       /// @}
       
       /// @name Public Events
@@ -101,13 +101,13 @@ namespace xtd {
       /// @return The stack frame.
       /// @deprecated Will be removed in version 1.2.0.
       [[deprecated("Will be removed in version 1.2.0.")]]
-      xtd::diagnostics::stack_frame stack_frame() const noexcept;
+      [[nodiscard]] auto stack_frame() const noexcept -> xtd::diagnostics::stack_frame;
       /// @brief Sets stack frame.
       /// @param value The stack frame.
       /// @return Current assert_dialog instance.
       /// @deprecated Use "Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 1.2.0.
       [[deprecated("Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 1.2.0.")]]
-      assert_dialog& stack_frame(const xtd::diagnostics::stack_frame& value);
+      [[nodiscard]] auto stack_frame(const xtd::diagnostics::stack_frame& value) -> assert_dialog&;
       /// @}
       
     protected:
@@ -117,11 +117,11 @@ namespace xtd {
       /// @brief Raises the close event.
       /// @param e An assert_dialog_closed_event_args that provides the event data.
       /// @remarks This method is invoked when the assert dialog box is closed.
-      void on_dialog_closed(const dialog_closed_event_args& e);
+      auto on_dialog_closed(const dialog_closed_event_args& e) -> void;
       /// @}
       
     private:
-      void set_message() noexcept;
+      auto set_message() noexcept -> void;
       xtd::sptr<data> data_;
     };
   }
