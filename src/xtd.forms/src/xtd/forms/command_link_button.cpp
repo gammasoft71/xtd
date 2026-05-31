@@ -34,7 +34,7 @@ command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode v
   return *this;
 }
 
-string& command_link_button::main_text() const noexcept {
+const string& command_link_button::main_text() const noexcept {
   return std::get<0>(data_->texts);
 }
 
@@ -42,7 +42,7 @@ command_link_button& command_link_button::main_text(const string& value) {
   return texts({value, std::get<1>(data_->texts)});
 }
 
-string& command_link_button::supplementary_text() const noexcept {
+const string& command_link_button::supplementary_text() const noexcept {
   return std::get<1>(data_->texts);
 }
 
@@ -50,7 +50,7 @@ command_link_button& command_link_button::supplementary_text(const string& value
   return texts({std::get<0>(data_->texts), value});
 }
 
-string& command_link_button::text() const noexcept {
+const string& command_link_button::text() const noexcept {
   return data_->text;
 }
 
