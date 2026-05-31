@@ -32,20 +32,15 @@ namespace xtd {
       explicit cancel_event_args(bool cancel) : cancel_(cancel) {};
       /// @}
       
-      /// @cond
-      cancel_event_args(const cancel_event_args& cancel_event_args) = default;
-      cancel_event_args& operator =(const cancel_event_args& cancel_event_args) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the event should be canceled.
       /// @return `true` if the event should be canceled; otherwise, `false`.
-      virtual bool cancel() const noexcept {return cancel_;}
+      [[nodiscard]] virtual auto cancel() const noexcept -> bool {return cancel_;}
       /// @brief Sets a value indicating whether the event should be canceled.
       /// @param cancel `true` if the event should be canceled; otherwise, `false`.
-      virtual void cancel(bool cancel) {cancel_ = cancel;}
+      virtual auto cancel(bool cancel) -> void {cancel_ = cancel;}
       /// @}
       
     protected:
