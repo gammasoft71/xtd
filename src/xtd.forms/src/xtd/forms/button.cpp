@@ -48,8 +48,13 @@ button& button::auto_repeat(bool auto_repeat) {
   return *this;
 }
 
-int32 button::auto_repeat_delay() const noexcept {
-  return data_->auto_repeat_delay;
+time_span button::auto_repeat_delay() const noexcept {
+  return time_span::from_milliseconds(data_->auto_repeat_delay);
+}
+
+button& button::auto_repeat_delay(const time_span& auto_repeat_delay) {
+  data_->auto_repeat_delay = as<int32>(auto_repeat_delay.total_milliseconds());
+  return *this;
 }
 
 button& button::auto_repeat_delay(int32 auto_repeat_delay) {
@@ -57,13 +62,26 @@ button& button::auto_repeat_delay(int32 auto_repeat_delay) {
   return *this;
 }
 
-int32 button::auto_repeat_interval() const noexcept {
-  return data_->auto_repeat_interval;
+int32 button::auto_repeat_delay_milliseconds() const noexcept {
+  return data_->auto_repeat_delay;
+}
+
+time_span button::auto_repeat_interval() const noexcept {
+  return time_span::from_milliseconds(data_->auto_repeat_interval);
+}
+
+button& button::auto_repeat_interval(const time_span& auto_repeat_interval) {
+  data_->auto_repeat_interval = as<int32>(auto_repeat_interval.total_milliseconds());
+  return *this;
 }
 
 button& button::auto_repeat_interval(int32 auto_repeat_interval) {
   data_->auto_repeat_interval = auto_repeat_interval;
   return *this;
+}
+
+int32 button::auto_repeat_interval_milliseconds() const noexcept {
+  return data_->auto_repeat_interval;
 }
 
 forms::auto_size_mode button::auto_size_mode() const noexcept {
