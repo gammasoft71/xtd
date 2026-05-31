@@ -147,10 +147,10 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a3e170f0b7652e6d5f940da9e3661f8ed" id="r_a3e170f0b7652e6d5f940da9e3661f8ed"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a3e170f0b7652e6d5f940da9e3661f8ed">cancel</a> () const noexcept</td></tr>
-<tr class="memdesc:a3e170f0b7652e6d5f940da9e3661f8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the event should be canceled.  <br /></td></tr>
-<tr class="memitem:af29f3d766c488b670ae886a82bd05c80" id="r_af29f3d766c488b670ae886a82bd05c80"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af29f3d766c488b670ae886a82bd05c80">cancel</a> (bool cancel)</td></tr>
-<tr class="memdesc:af29f3d766c488b670ae886a82bd05c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the event should be canceled.  <br /></td></tr>
+<tr class="memitem:aa4c2ae9b908070ff99bb5d54bca6b200" id="r_aa4c2ae9b908070ff99bb5d54bca6b200"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aa4c2ae9b908070ff99bb5d54bca6b200">cancel</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aa4c2ae9b908070ff99bb5d54bca6b200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the event should be canceled.  <br /></td></tr>
+<tr class="memitem:a197347450ec1b00684239ed2a701f6a9" id="r_a197347450ec1b00684239ed2a701f6a9"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a197347450ec1b00684239ed2a701f6a9">cancel</a> (bool cancel) -&gt; void</td></tr>
+<tr class="memdesc:a197347450ec1b00684239ed2a701f6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the event should be canceled.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -240,8 +240,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a3e170f0b7652e6d5f940da9e3661f8ed" name="a3e170f0b7652e6d5f940da9e3661f8ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e170f0b7652e6d5f940da9e3661f8ed">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
+<a id="aa4c2ae9b908070ff99bb5d54bca6b200" name="aa4c2ae9b908070ff99bb5d54bca6b200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c2ae9b908070ff99bb5d54bca6b200">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,15 +250,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::forms::cancel_event_args::cancel </td>
+          <td class="memname">virtual auto xtd::forms::cancel_event_args::cancel </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -268,8 +268,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af29f3d766c488b670ae886a82bd05c80" name="af29f3d766c488b670ae886a82bd05c80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af29f3d766c488b670ae886a82bd05c80">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
+<a id="a197347450ec1b00684239ed2a701f6a9" name="a197347450ec1b00684239ed2a701f6a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197347450ec1b00684239ed2a701f6a9">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,10 +278,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::forms::cancel_event_args::cancel </td>
+          <td class="memname">virtual auto xtd::forms::cancel_event_args::cancel </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>

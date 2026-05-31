@@ -168,7 +168,7 @@ Inheritance diagram for xtd::forms::busy_dialog:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;Do something...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1busy__dialog.html">busy_dialog</a> {};</div>
-<div class="line">      dialog.<a class="code hl_function" href="#acfac5941d0fb9a172fd712d9bc0a74c7">icon</a>(<a class="code hl_function" href="classxtd_1_1drawing_1_1system__icons.html#ac4c9867e7365ee74e480af7764768b8e">xtd::drawing::system_icons::exclamation</a>({64, 64}));</div>
+<div class="line">      dialog.<a class="code hl_function" href="#a27cb58e58cb3106572f5636d039005e6">icon</a>(<a class="code hl_function" href="classxtd_1_1drawing_1_1system__icons.html#ac4c9867e7365ee74e480af7764768b8e">xtd::drawing::system_icons::exclamation</a>({64, 64}));</div>
 <div class="line">      dialog.text(<span class="stringliteral">&quot;Application busy&quot;</span>);</div>
 <div class="line">      dialog.description(<span class="stringliteral">&quot;Please wait while do something...&quot;</span>);</div>
 <div class="line">      dialog.back_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">xtd::drawing::color::red</a>);</div>
@@ -176,7 +176,7 @@ Inheritance diagram for xtd::forms::busy_dialog:</div>
 <div class="line">      dialog.opacity(0.75);</div>
 <div class="line">      dialog.show(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> count = 0; count &lt; 500; ++count) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">application::do_events</a>();</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a76aab2a457f0985b7730a12298550cbf">application::do_events</a>();</div>
 <div class="line">        thread::sleep(10);</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
@@ -187,15 +187,15 @@ Inheritance diagram for xtd::forms::busy_dialog:</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a5a5321d22db7d71a0baa993a7f1be327">xtd::forms::application::run</a>(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a3204045ef270f9856b5018b2b8408d9c"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a3204045ef270f9856b5018b2b8408d9c">xtd::drawing::color::white</a></div><div class="ttdeci">static const xtd::drawing::color white</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:476</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a7a0b8f1210fbda4739c37fd61e1a1dab"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">xtd::drawing::color::red</a></div><div class="ttdeci">static const xtd::drawing::color red</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:407</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__icons_html_ac4c9867e7365ee74e480af7764768b8e"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__icons.html#ac4c9867e7365ee74e480af7764768b8e">xtd::drawing::system_icons::exclamation</a></div><div class="ttdeci">static auto exclamation() noexcept -&gt; xtd::drawing::icon</div><div class="ttdoc">Gets an xtd::drawing::icon object that contains the system exclamation icon (WIN32: IDI_EXCLAMATION).</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a1d4031fa24263d5b25e996ebd2ce9089"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">xtd::forms::application::do_events</a></div><div class="ttdeci">static void do_events()</div><div class="ttdoc">Processes all Windows messages currently in the message queue.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a5a5321d22db7d71a0baa993a7f1be327"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a5a5321d22db7d71a0baa993a7f1be327">xtd::forms::application::run</a></div><div class="ttdeci">static auto run() -&gt; void</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a76aab2a457f0985b7730a12298550cbf"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a76aab2a457f0985b7730a12298550cbf">xtd::forms::application::do_events</a></div><div class="ttdeci">static auto do_events() -&gt; void</div><div class="ttdoc">Processes all Windows messages currently in the message queue.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1busy__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1busy__dialog.html">xtd::forms::busy_dialog</a></div><div class="ttdoc">Represents a dialog box that displays busy dialog.</div><div class="ttdef"><b>Definition</b> busy_dialog.hpp:37</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1busy__dialog_html_acfac5941d0fb9a172fd712d9bc0a74c7"><div class="ttname"><a href="#acfac5941d0fb9a172fd712d9bc0a74c7">xtd::forms::busy_dialog::icon</a></div><div class="ttdeci">xtd::drawing::icon icon() const noexcept</div><div class="ttdoc">Gets the product icon.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1busy__dialog_html_a27cb58e58cb3106572f5636d039005e6"><div class="ttname"><a href="#a27cb58e58cb3106572f5636d039005e6">xtd::forms::busy_dialog::icon</a></div><div class="ttdeci">auto icon() const noexcept -&gt; xtd::drawing::icon</div><div class="ttdoc">Gets the product icon.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
@@ -211,49 +211,49 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a6894f11eb47408dc76b62d17b5c53360" id="r_a6894f11eb47408dc76b62d17b5c53360"><td class="memItemLeft"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6894f11eb47408dc76b62d17b5c53360">back_color</a> () const noexcept</td></tr>
-<tr class="memdesc:a6894f11eb47408dc76b62d17b5c53360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color for the dialog.  <br /></td></tr>
-<tr class="memitem:a77cc55cc2e1e66c76a99f9a0e7c2d7d6" id="r_a77cc55cc2e1e66c76a99f9a0e7c2d7d6"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a77cc55cc2e1e66c76a99f9a0e7c2d7d6">back_color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:a77cc55cc2e1e66c76a99f9a0e7c2d7d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the background color for the dialog.  <br /></td></tr>
-<tr class="memitem:a6a244ee8c92c5ebe77279d0806a8ceec" id="r_a6a244ee8c92c5ebe77279d0806a8ceec"><td class="memItemLeft"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6a244ee8c92c5ebe77279d0806a8ceec">dialog_appearance</a> () const noexcept</td></tr>
-<tr class="memdesc:a6a244ee8c92c5ebe77279d0806a8ceec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog appearance color for the dialog.  <br /></td></tr>
-<tr class="memitem:a0946c50389c09314b64f7bc867ceb1ae" id="r_a0946c50389c09314b64f7bc867ceb1ae"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0946c50389c09314b64f7bc867ceb1ae">dialog_appearance</a> (<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a> dialog_appearance<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">dialog_appearance</a>)</td></tr>
-<tr class="memdesc:a0946c50389c09314b64f7bc867ceb1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog appearance color for the dialog.  <br /></td></tr>
-<tr class="memitem:a3f31b8477623105ccc7544907216cc67" id="r_a3f31b8477623105ccc7544907216cc67"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3f31b8477623105ccc7544907216cc67">description</a> () const noexcept</td></tr>
-<tr class="memdesc:a3f31b8477623105ccc7544907216cc67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the product description.  <br /></td></tr>
-<tr class="memitem:a1aad6382a7cb477331f466475a94f3f9" id="r_a1aad6382a7cb477331f466475a94f3f9"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1aad6382a7cb477331f466475a94f3f9">description</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;description)</td></tr>
-<tr class="memdesc:a1aad6382a7cb477331f466475a94f3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product description.  <br /></td></tr>
-<tr class="memitem:a8096d39ec6551e648e7038ebcdc85885" id="r_a8096d39ec6551e648e7038ebcdc85885"><td class="memItemLeft"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8096d39ec6551e648e7038ebcdc85885">fore_color</a> () const noexcept</td></tr>
-<tr class="memdesc:a8096d39ec6551e648e7038ebcdc85885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the foreground color for the dialog.  <br /></td></tr>
-<tr class="memitem:aaba27987aeb2bd2cfbb3c484140fc0e4" id="r_aaba27987aeb2bd2cfbb3c484140fc0e4"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aaba27987aeb2bd2cfbb3c484140fc0e4">fore_color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:aaba27987aeb2bd2cfbb3c484140fc0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground color for the dialog.  <br /></td></tr>
-<tr class="memitem:acfac5941d0fb9a172fd712d9bc0a74c7" id="r_acfac5941d0fb9a172fd712d9bc0a74c7"><td class="memItemLeft"><a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a>&#160;</td><td class="memItemRight"><a class="el" href="#acfac5941d0fb9a172fd712d9bc0a74c7">icon</a> () const noexcept</td></tr>
-<tr class="memdesc:acfac5941d0fb9a172fd712d9bc0a74c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the product icon.  <br /></td></tr>
-<tr class="memitem:ad0c08986aca7715999c86bbd13c88443" id="r_ad0c08986aca7715999c86bbd13c88443"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad0c08986aca7715999c86bbd13c88443">icon</a> (const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon)</td></tr>
-<tr class="memdesc:ad0c08986aca7715999c86bbd13c88443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product icon.  <br /></td></tr>
-<tr class="memitem:a08cc22b7856ea38d39e56f43ec91baaf" id="r_a08cc22b7856ea38d39e56f43ec91baaf"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a08cc22b7856ea38d39e56f43ec91baaf">icon</a> (const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;image)</td></tr>
-<tr class="memdesc:a08cc22b7856ea38d39e56f43ec91baaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product icon.  <br /></td></tr>
-<tr class="memitem:a6f81076f0880855fd8860ce271eb8859" id="r_a6f81076f0880855fd8860ce271eb8859"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6f81076f0880855fd8860ce271eb8859">icon</a> (const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;bitmap)</td></tr>
-<tr class="memdesc:a6f81076f0880855fd8860ce271eb8859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product icon.  <br /></td></tr>
-<tr class="memitem:a329f712a4783d5f32d9aff3e43b694a8" id="r_a329f712a4783d5f32d9aff3e43b694a8"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a329f712a4783d5f32d9aff3e43b694a8">opacity</a> () const noexcept</td></tr>
-<tr class="memdesc:a329f712a4783d5f32d9aff3e43b694a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog opacity.  <br /></td></tr>
-<tr class="memitem:af879246146f8640555403832c05769ef" id="r_af879246146f8640555403832c05769ef"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af879246146f8640555403832c05769ef">opacity</a> (double opacity)</td></tr>
-<tr class="memdesc:af879246146f8640555403832c05769ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog opacity.  <br /></td></tr>
-<tr class="memitem:a24d977ff2fcb7d579355a1ec8409f83d" id="r_a24d977ff2fcb7d579355a1ec8409f83d"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a24d977ff2fcb7d579355a1ec8409f83d">text</a> () const noexcept</td></tr>
-<tr class="memdesc:a24d977ff2fcb7d579355a1ec8409f83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog title.  <br /></td></tr>
-<tr class="memitem:aae55483c28acd00d8ea1258c5b1e5152" id="r_aae55483c28acd00d8ea1258c5b1e5152"><td class="memItemLeft"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aae55483c28acd00d8ea1258c5b1e5152">text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:aae55483c28acd00d8ea1258c5b1e5152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog title.  <br /></td></tr>
+<tr class="memitem:abf5d1c97ccfaa02019767b948c2f12bc" id="r_abf5d1c97ccfaa02019767b948c2f12bc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abf5d1c97ccfaa02019767b948c2f12bc">back_color</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td></tr>
+<tr class="memdesc:abf5d1c97ccfaa02019767b948c2f12bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color for the dialog.  <br /></td></tr>
+<tr class="memitem:af53e7e9adbf1c3086156f8376bfef419" id="r_af53e7e9adbf1c3086156f8376bfef419"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af53e7e9adbf1c3086156f8376bfef419">back_color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:af53e7e9adbf1c3086156f8376bfef419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the background color for the dialog.  <br /></td></tr>
+<tr class="memitem:acb717a3bd5d877aec54d28749f3ccff5" id="r_acb717a3bd5d877aec54d28749f3ccff5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acb717a3bd5d877aec54d28749f3ccff5">dialog_appearance</a> () const noexcept -&gt; <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td></tr>
+<tr class="memdesc:acb717a3bd5d877aec54d28749f3ccff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog appearance color for the dialog.  <br /></td></tr>
+<tr class="memitem:a9281e734a02c47d9202d1949bea57e3e" id="r_a9281e734a02c47d9202d1949bea57e3e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9281e734a02c47d9202d1949bea57e3e">dialog_appearance</a> (<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a> dialog_appearance<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">dialog_appearance</a>) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a9281e734a02c47d9202d1949bea57e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog appearance color for the dialog.  <br /></td></tr>
+<tr class="memitem:adb66f2cc54923d75f0c157503e4bd506" id="r_adb66f2cc54923d75f0c157503e4bd506"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adb66f2cc54923d75f0c157503e4bd506">description</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:adb66f2cc54923d75f0c157503e4bd506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the product description.  <br /></td></tr>
+<tr class="memitem:a487c2ecf71d1e48a4faf8d55af6403ff" id="r_a487c2ecf71d1e48a4faf8d55af6403ff"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a487c2ecf71d1e48a4faf8d55af6403ff">description</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;description) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a487c2ecf71d1e48a4faf8d55af6403ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product description.  <br /></td></tr>
+<tr class="memitem:a575ada1c900d5edc37ae13b2989cbfc4" id="r_a575ada1c900d5edc37ae13b2989cbfc4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a575ada1c900d5edc37ae13b2989cbfc4">fore_color</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td></tr>
+<tr class="memdesc:a575ada1c900d5edc37ae13b2989cbfc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the foreground color for the dialog.  <br /></td></tr>
+<tr class="memitem:a9be37dd52bba89c992fb0ca5c1152a27" id="r_a9be37dd52bba89c992fb0ca5c1152a27"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9be37dd52bba89c992fb0ca5c1152a27">fore_color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a9be37dd52bba89c992fb0ca5c1152a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground color for the dialog.  <br /></td></tr>
+<tr class="memitem:a27cb58e58cb3106572f5636d039005e6" id="r_a27cb58e58cb3106572f5636d039005e6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a27cb58e58cb3106572f5636d039005e6">icon</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a></td></tr>
+<tr class="memdesc:a27cb58e58cb3106572f5636d039005e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the product icon.  <br /></td></tr>
+<tr class="memitem:adef70661275f4d93cb504dd7d8a0c1b7" id="r_adef70661275f4d93cb504dd7d8a0c1b7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adef70661275f4d93cb504dd7d8a0c1b7">icon</a> (const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:adef70661275f4d93cb504dd7d8a0c1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product icon.  <br /></td></tr>
+<tr class="memitem:ad2f40ab95012d973073eced1f8b48763" id="r_ad2f40ab95012d973073eced1f8b48763"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad2f40ab95012d973073eced1f8b48763">icon</a> (const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;image) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ad2f40ab95012d973073eced1f8b48763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product icon.  <br /></td></tr>
+<tr class="memitem:a6f471528b1469c445fc66730ef2bbad4" id="r_a6f471528b1469c445fc66730ef2bbad4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6f471528b1469c445fc66730ef2bbad4">icon</a> (const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;bitmap) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a6f471528b1469c445fc66730ef2bbad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the product icon.  <br /></td></tr>
+<tr class="memitem:ad9759ca972791e95b90cc5240a64a650" id="r_ad9759ca972791e95b90cc5240a64a650"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad9759ca972791e95b90cc5240a64a650">opacity</a> () const noexcept -&gt; double</td></tr>
+<tr class="memdesc:ad9759ca972791e95b90cc5240a64a650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog opacity.  <br /></td></tr>
+<tr class="memitem:a00ef8cc4561e865b0de4e7eca132ae2e" id="r_a00ef8cc4561e865b0de4e7eca132ae2e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a00ef8cc4561e865b0de4e7eca132ae2e">opacity</a> (double opacity) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a00ef8cc4561e865b0de4e7eca132ae2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog opacity.  <br /></td></tr>
+<tr class="memitem:aff1e0a0074dc6d921597d0138d1b6588" id="r_aff1e0a0074dc6d921597d0138d1b6588"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff1e0a0074dc6d921597d0138d1b6588">text</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:aff1e0a0074dc6d921597d0138d1b6588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog title.  <br /></td></tr>
+<tr class="memitem:a12f58b9468a3086824ce6104020addb3" id="r_a12f58b9468a3086824ce6104020addb3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a12f58b9468a3086824ce6104020addb3">text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a12f58b9468a3086824ce6104020addb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog title.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a3e5ebb24aa6dbd3918c4dfb1face95da" id="r_a3e5ebb24aa6dbd3918c4dfb1face95da"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3e5ebb24aa6dbd3918c4dfb1face95da">hide</a> ()</td></tr>
-<tr class="memdesc:a3e5ebb24aa6dbd3918c4dfb1face95da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides busy dialog box.  <br /></td></tr>
-<tr class="memitem:adf78fdb62926b2142f0778aea48489eb" id="r_adf78fdb62926b2142f0778aea48489eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adf78fdb62926b2142f0778aea48489eb">reset</a> ()</td></tr>
-<tr class="memdesc:adf78fdb62926b2142f0778aea48489eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
-<tr class="memitem:a778415449b1c11951120f0cda79477b5" id="r_a778415449b1c11951120f0cda79477b5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a778415449b1c11951120f0cda79477b5">show</a> ()</td></tr>
-<tr class="memdesc:a778415449b1c11951120f0cda79477b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs busy dialog box.  <br /></td></tr>
-<tr class="memitem:a0fb55c606b52353de45cb8c74f520603" id="r_a0fb55c606b52353de45cb8c74f520603"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0fb55c606b52353de45cb8c74f520603">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a0fb55c606b52353de45cb8c74f520603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs busy dialog box.  <br /></td></tr>
+<tr class="memitem:a5de2f91afd913201168b15d7f6e69cb6" id="r_a5de2f91afd913201168b15d7f6e69cb6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5de2f91afd913201168b15d7f6e69cb6">hide</a> () -&gt; void</td></tr>
+<tr class="memdesc:a5de2f91afd913201168b15d7f6e69cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides busy dialog box.  <br /></td></tr>
+<tr class="memitem:af28d00de2d4e760684e56e795f871d27" id="r_af28d00de2d4e760684e56e795f871d27"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af28d00de2d4e760684e56e795f871d27">reset</a> () -&gt; void</td></tr>
+<tr class="memdesc:af28d00de2d4e760684e56e795f871d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
+<tr class="memitem:ade8843e67355221639bff3f20c5cf7dd" id="r_ade8843e67355221639bff3f20c5cf7dd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ade8843e67355221639bff3f20c5cf7dd">show</a> () -&gt; void</td></tr>
+<tr class="memdesc:ade8843e67355221639bff3f20c5cf7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs busy dialog box.  <br /></td></tr>
+<tr class="memitem:a01bbc90a3258de566a3aec66731dda63" id="r_a01bbc90a3258de566a3aec66731dda63"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a01bbc90a3258de566a3aec66731dda63">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:a01bbc90a3258de566a3aec66731dda63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs busy dialog box.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -304,8 +304,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a6894f11eb47408dc76b62d17b5c53360" name="a6894f11eb47408dc76b62d17b5c53360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6894f11eb47408dc76b62d17b5c53360">&#9670;&#160;</a></span>back_color() <span class="overload">[1/2]</span></h2>
+<a id="abf5d1c97ccfaa02019767b948c2f12bc" name="abf5d1c97ccfaa02019767b948c2f12bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5d1c97ccfaa02019767b948c2f12bc">&#9670;&#160;</a></span>back_color() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,15 +314,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::forms::busy_dialog::back_color </td>
+          <td class="memname">auto xtd::forms::busy_dialog::back_color </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -332,17 +332,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a77cc55cc2e1e66c76a99f9a0e7c2d7d6" name="a77cc55cc2e1e66c76a99f9a0e7c2d7d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77cc55cc2e1e66c76a99f9a0e7c2d7d6">&#9670;&#160;</a></span>back_color() <span class="overload">[2/2]</span></h2>
+<a id="af53e7e9adbf1c3086156f8376bfef419" name="af53e7e9adbf1c3086156f8376bfef419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53e7e9adbf1c3086156f8376bfef419">&#9670;&#160;</a></span>back_color() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::back_color </td>
+          <td class="memname">auto xtd::forms::busy_dialog::back_color </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -358,8 +358,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a244ee8c92c5ebe77279d0806a8ceec" name="a6a244ee8c92c5ebe77279d0806a8ceec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a244ee8c92c5ebe77279d0806a8ceec">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[1/2]</span></h2>
+<a id="acb717a3bd5d877aec54d28749f3ccff5" name="acb717a3bd5d877aec54d28749f3ccff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb717a3bd5d877aec54d28749f3ccff5">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,15 +368,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a> xtd::forms::busy_dialog::dialog_appearance </td>
+          <td class="memname">auto xtd::forms::busy_dialog::dialog_appearance </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -386,17 +386,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a0946c50389c09314b64f7bc867ceb1ae" name="a0946c50389c09314b64f7bc867ceb1ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0946c50389c09314b64f7bc867ceb1ae">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[2/2]</span></h2>
+<a id="a9281e734a02c47d9202d1949bea57e3e" name="a9281e734a02c47d9202d1949bea57e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9281e734a02c47d9202d1949bea57e3e">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::dialog_appearance </td>
+          <td class="memname">auto xtd::forms::busy_dialog::dialog_appearance </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td>          <td class="paramname"><span class="paramname"><em>dialog_appearance</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -412,8 +412,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3f31b8477623105ccc7544907216cc67" name="a3f31b8477623105ccc7544907216cc67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f31b8477623105ccc7544907216cc67">&#9670;&#160;</a></span>description() <span class="overload">[1/2]</span></h2>
+<a id="adb66f2cc54923d75f0c157503e4bd506" name="adb66f2cc54923d75f0c157503e4bd506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb66f2cc54923d75f0c157503e4bd506">&#9670;&#160;</a></span>description() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,15 +422,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::busy_dialog::description </td>
+          <td class="memname">auto xtd::forms::busy_dialog::description </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -440,17 +440,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1aad6382a7cb477331f466475a94f3f9" name="a1aad6382a7cb477331f466475a94f3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1aad6382a7cb477331f466475a94f3f9">&#9670;&#160;</a></span>description() <span class="overload">[2/2]</span></h2>
+<a id="a487c2ecf71d1e48a4faf8d55af6403ff" name="a487c2ecf71d1e48a4faf8d55af6403ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a487c2ecf71d1e48a4faf8d55af6403ff">&#9670;&#160;</a></span>description() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::description </td>
+          <td class="memname">auto xtd::forms::busy_dialog::description </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>description</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -466,8 +466,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8096d39ec6551e648e7038ebcdc85885" name="a8096d39ec6551e648e7038ebcdc85885"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8096d39ec6551e648e7038ebcdc85885">&#9670;&#160;</a></span>fore_color() <span class="overload">[1/2]</span></h2>
+<a id="a575ada1c900d5edc37ae13b2989cbfc4" name="a575ada1c900d5edc37ae13b2989cbfc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575ada1c900d5edc37ae13b2989cbfc4">&#9670;&#160;</a></span>fore_color() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,15 +476,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::forms::busy_dialog::fore_color </td>
+          <td class="memname">auto xtd::forms::busy_dialog::fore_color </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -494,17 +494,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aaba27987aeb2bd2cfbb3c484140fc0e4" name="aaba27987aeb2bd2cfbb3c484140fc0e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaba27987aeb2bd2cfbb3c484140fc0e4">&#9670;&#160;</a></span>fore_color() <span class="overload">[2/2]</span></h2>
+<a id="a9be37dd52bba89c992fb0ca5c1152a27" name="a9be37dd52bba89c992fb0ca5c1152a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be37dd52bba89c992fb0ca5c1152a27">&#9670;&#160;</a></span>fore_color() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::fore_color </td>
+          <td class="memname">auto xtd::forms::busy_dialog::fore_color </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -520,8 +520,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="acfac5941d0fb9a172fd712d9bc0a74c7" name="acfac5941d0fb9a172fd712d9bc0a74c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfac5941d0fb9a172fd712d9bc0a74c7">&#9670;&#160;</a></span>icon() <span class="overload">[1/4]</span></h2>
+<a id="a27cb58e58cb3106572f5636d039005e6" name="a27cb58e58cb3106572f5636d039005e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27cb58e58cb3106572f5636d039005e6">&#9670;&#160;</a></span>icon() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,15 +530,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> xtd::forms::busy_dialog::icon </td>
+          <td class="memname">auto xtd::forms::busy_dialog::icon </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -548,17 +548,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad0c08986aca7715999c86bbd13c88443" name="ad0c08986aca7715999c86bbd13c88443"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0c08986aca7715999c86bbd13c88443">&#9670;&#160;</a></span>icon() <span class="overload">[2/4]</span></h2>
+<a id="adef70661275f4d93cb504dd7d8a0c1b7" name="adef70661275f4d93cb504dd7d8a0c1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef70661275f4d93cb504dd7d8a0c1b7">&#9670;&#160;</a></span>icon() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::icon </td>
+          <td class="memname">auto xtd::forms::busy_dialog::icon </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -574,17 +574,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a08cc22b7856ea38d39e56f43ec91baaf" name="a08cc22b7856ea38d39e56f43ec91baaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08cc22b7856ea38d39e56f43ec91baaf">&#9670;&#160;</a></span>icon() <span class="overload">[3/4]</span></h2>
+<a id="ad2f40ab95012d973073eced1f8b48763" name="ad2f40ab95012d973073eced1f8b48763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f40ab95012d973073eced1f8b48763">&#9670;&#160;</a></span>icon() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::icon </td>
+          <td class="memname">auto xtd::forms::busy_dialog::icon </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -600,17 +600,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f81076f0880855fd8860ce271eb8859" name="a6f81076f0880855fd8860ce271eb8859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f81076f0880855fd8860ce271eb8859">&#9670;&#160;</a></span>icon() <span class="overload">[4/4]</span></h2>
+<a id="a6f471528b1469c445fc66730ef2bbad4" name="a6f471528b1469c445fc66730ef2bbad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f471528b1469c445fc66730ef2bbad4">&#9670;&#160;</a></span>icon() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::icon </td>
+          <td class="memname">auto xtd::forms::busy_dialog::icon </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bitmap</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -626,8 +626,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a329f712a4783d5f32d9aff3e43b694a8" name="a329f712a4783d5f32d9aff3e43b694a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a329f712a4783d5f32d9aff3e43b694a8">&#9670;&#160;</a></span>opacity() <span class="overload">[1/2]</span></h2>
+<a id="ad9759ca972791e95b90cc5240a64a650" name="ad9759ca972791e95b90cc5240a64a650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9759ca972791e95b90cc5240a64a650">&#9670;&#160;</a></span>opacity() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -636,15 +636,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double xtd::forms::busy_dialog::opacity </td>
+          <td class="memname">auto xtd::forms::busy_dialog::opacity </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  double</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -655,17 +655,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af879246146f8640555403832c05769ef" name="af879246146f8640555403832c05769ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af879246146f8640555403832c05769ef">&#9670;&#160;</a></span>opacity() <span class="overload">[2/2]</span></h2>
+<a id="a00ef8cc4561e865b0de4e7eca132ae2e" name="a00ef8cc4561e865b0de4e7eca132ae2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ef8cc4561e865b0de4e7eca132ae2e">&#9670;&#160;</a></span>opacity() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::opacity </td>
+          <td class="memname">auto xtd::forms::busy_dialog::opacity </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>opacity</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -682,8 +682,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a24d977ff2fcb7d579355a1ec8409f83d" name="a24d977ff2fcb7d579355a1ec8409f83d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24d977ff2fcb7d579355a1ec8409f83d">&#9670;&#160;</a></span>text() <span class="overload">[1/2]</span></h2>
+<a id="aff1e0a0074dc6d921597d0138d1b6588" name="aff1e0a0074dc6d921597d0138d1b6588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1e0a0074dc6d921597d0138d1b6588">&#9670;&#160;</a></span>text() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -692,15 +692,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::busy_dialog::text </td>
+          <td class="memname">auto xtd::forms::busy_dialog::text </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -710,17 +710,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aae55483c28acd00d8ea1258c5b1e5152" name="aae55483c28acd00d8ea1258c5b1e5152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae55483c28acd00d8ea1258c5b1e5152">&#9670;&#160;</a></span>text() <span class="overload">[2/2]</span></h2>
+<a id="a12f58b9468a3086824ce6104020addb3" name="a12f58b9468a3086824ce6104020addb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f58b9468a3086824ce6104020addb3">&#9670;&#160;</a></span>text() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp; xtd::forms::busy_dialog::text </td>
+          <td class="memname">auto xtd::forms::busy_dialog::text </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a8a604ef0d1fbd1e136672602c315f4ab">busy_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -736,17 +736,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3e5ebb24aa6dbd3918c4dfb1face95da" name="a3e5ebb24aa6dbd3918c4dfb1face95da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e5ebb24aa6dbd3918c4dfb1face95da">&#9670;&#160;</a></span>hide()</h2>
+<a id="a5de2f91afd913201168b15d7f6e69cb6" name="a5de2f91afd913201168b15d7f6e69cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de2f91afd913201168b15d7f6e69cb6">&#9670;&#160;</a></span>hide()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::busy_dialog::hide </td>
+          <td class="memname">auto xtd::forms::busy_dialog::hide </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -755,17 +755,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="adf78fdb62926b2142f0778aea48489eb" name="adf78fdb62926b2142f0778aea48489eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf78fdb62926b2142f0778aea48489eb">&#9670;&#160;</a></span>reset()</h2>
+<a id="af28d00de2d4e760684e56e795f871d27" name="af28d00de2d4e760684e56e795f871d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28d00de2d4e760684e56e795f871d27">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::busy_dialog::reset </td>
+          <td class="memname">auto xtd::forms::busy_dialog::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -774,17 +774,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a778415449b1c11951120f0cda79477b5" name="a778415449b1c11951120f0cda79477b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a778415449b1c11951120f0cda79477b5">&#9670;&#160;</a></span>show() <span class="overload">[1/2]</span></h2>
+<a id="ade8843e67355221639bff3f20c5cf7dd" name="ade8843e67355221639bff3f20c5cf7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade8843e67355221639bff3f20c5cf7dd">&#9670;&#160;</a></span>show() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::busy_dialog::show </td>
+          <td class="memname">auto xtd::forms::busy_dialog::show </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -793,17 +793,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a0fb55c606b52353de45cb8c74f520603" name="a0fb55c606b52353de45cb8c74f520603"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb55c606b52353de45cb8c74f520603">&#9670;&#160;</a></span>show() <span class="overload">[2/2]</span></h2>
+<a id="a01bbc90a3258de566a3aec66731dda63" name="a01bbc90a3258de566a3aec66731dda63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01bbc90a3258de566a3aec66731dda63">&#9670;&#160;</a></span>show() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::busy_dialog::show </td>
+          <td class="memname">auto xtd::forms::busy_dialog::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -166,8 +166,8 @@ Inheritance diagram for xtd::forms::assert_box:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;assert...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <span class="keywordflow">switch</span>(<a class="code hl_function" href="#a172f0b1e9ea284822e1cc2a84d607d62">assert_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Index must be &gt; 0&quot;</span>, <a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">diagnostics::stack_frame::current</a>())) {</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a5bb94a1c12413a2e5d14deabab29f2aa">forms::dialog_result::abort</a>: <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a">application::exit</a>(); <span class="keywordflow">break</span>;</div>
+<div class="line">      <span class="keywordflow">switch</span>(<a class="code hl_function" href="#ac875e6659223b41b87ee960867285997">assert_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Index must be &gt; 0&quot;</span>, <a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">diagnostics::stack_frame::current</a>())) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a5bb94a1c12413a2e5d14deabab29f2aa">forms::dialog_result::abort</a>: <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a3913c8dafbec58b3bc206abc51560a75">application::exit</a>(); <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a165e6d21e0a2cc9ebb32ca05f90e0fa7">forms::dialog_result::retry</a>: <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debugger.html#af36de71439af03f8c321d26093305507">diagnostics::debugger::debug_break</a>(); <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
 <div class="line">      }</div>
@@ -183,8 +183,8 @@ Inheritance diagram for xtd::forms::assert_box:</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debugger_html_af36de71439af03f8c321d26093305507"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debugger.html#af36de71439af03f8c321d26093305507">xtd::diagnostics::debugger::debug_break</a></div><div class="ttdeci">static auto debug_break() -&gt; void</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ab0acb39aaf9a3f77703f678ec1f1f192"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a></div><div class="ttdeci">static auto current(const xtd::diagnostics::source_location &amp;value=xtd::diagnostics::source_location::current()) noexcept -&gt; xtd::diagnostics::stack_frame</div><div class="ttdoc">Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a1f7d29b0aeda0c96f5acc4e38ad5902a"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a">xtd::forms::application::exit</a></div><div class="ttdeci">static void exit()</div><div class="ttdoc">Informs all message pumps that they must terminate, and then closes all application windows after the...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1assert__box_html_a172f0b1e9ea284822e1cc2a84d607d62"><div class="ttname"><a href="#a172f0b1e9ea284822e1cc2a84d607d62">xtd::forms::assert_box::show</a></div><div class="ttdeci">static dialog_result show(const iwin32_window &amp;owner, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Displays a assert box in front of the specified window. The assert box displays a specified assert.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a3913c8dafbec58b3bc206abc51560a75"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a3913c8dafbec58b3bc206abc51560a75">xtd::forms::application::exit</a></div><div class="ttdeci">static auto exit() -&gt; void</div><div class="ttdoc">Informs all message pumps that they must terminate, and then closes all application windows after the...</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1assert__box_html_ac875e6659223b41b87ee960867285997"><div class="ttname"><a href="#ac875e6659223b41b87ee960867285997">xtd::forms::assert_box::show</a></div><div class="ttdeci">static auto show(const xtd::forms::iwin32_window &amp;owner, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a assert box in front of the specified window. The assert box displays a specified assert.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
@@ -197,18 +197,18 @@ Inheritance diagram for xtd::forms::assert_box:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a172f0b1e9ea284822e1cc2a84d607d62" id="r_a172f0b1e9ea284822e1cc2a84d607d62"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a172f0b1e9ea284822e1cc2a84d607d62">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a172f0b1e9ea284822e1cc2a84d607d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box in front of the specified window. The assert box displays a specified assert.  <br /></td></tr>
-<tr class="memitem:a23bac2effe585bee143a9beb3629b3da" id="r_a23bac2effe585bee143a9beb3629b3da"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a23bac2effe585bee143a9beb3629b3da">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a23bac2effe585bee143a9beb3629b3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box in front of the specified window. The assert box displays a specified assert and caption.  <br /></td></tr>
-<tr class="memitem:a5ade293ce745e58f4e7ff80486fd2a72" id="r_a5ade293ce745e58f4e7ff80486fd2a72"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5ade293ce745e58f4e7ff80486fd2a72">show</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a5ade293ce745e58f4e7ff80486fd2a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box. The assert box displays a specified assert.  <br /></td></tr>
-<tr class="memitem:a4307c2a80d547aef289ed927cb4e79c7" id="r_a4307c2a80d547aef289ed927cb4e79c7"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4307c2a80d547aef289ed927cb4e79c7">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a4307c2a80d547aef289ed927cb4e79c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box. The assert box displays a specified assert and caption.  <br /></td></tr>
+<tr class="memitem:ac875e6659223b41b87ee960867285997" id="r_ac875e6659223b41b87ee960867285997"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac875e6659223b41b87ee960867285997">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ac875e6659223b41b87ee960867285997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box in front of the specified window. The assert box displays a specified assert.  <br /></td></tr>
+<tr class="memitem:af6c24b21b6d14829f6037a1ba2eaf105" id="r_af6c24b21b6d14829f6037a1ba2eaf105"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af6c24b21b6d14829f6037a1ba2eaf105">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:af6c24b21b6d14829f6037a1ba2eaf105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box in front of the specified window. The assert box displays a specified assert and caption.  <br /></td></tr>
+<tr class="memitem:a0ff44d64683398871bd92b9c5339323c" id="r_a0ff44d64683398871bd92b9c5339323c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ff44d64683398871bd92b9c5339323c">show</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a0ff44d64683398871bd92b9c5339323c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box. The assert box displays a specified assert.  <br /></td></tr>
+<tr class="memitem:aab03c6ed857aaae8677aa354a3e36f39" id="r_aab03c6ed857aaae8677aa354a3e36f39"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aab03c6ed857aaae8677aa354a3e36f39">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:aab03c6ed857aaae8677aa354a3e36f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a assert box. The assert box displays a specified assert and caption.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a172f0b1e9ea284822e1cc2a84d607d62" name="a172f0b1e9ea284822e1cc2a84d607d62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a172f0b1e9ea284822e1cc2a84d607d62">&#9670;&#160;</a></span>show() <span class="overload">[1/4]</span></h2>
+<a id="ac875e6659223b41b87ee960867285997" name="ac875e6659223b41b87ee960867285997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac875e6659223b41b87ee960867285997">&#9670;&#160;</a></span>show() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,19 +217,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::assert_box::show </td>
+          <td class="memname">auto xtd::forms::assert_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -245,8 +245,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a23bac2effe585bee143a9beb3629b3da" name="a23bac2effe585bee143a9beb3629b3da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23bac2effe585bee143a9beb3629b3da">&#9670;&#160;</a></span>show() <span class="overload">[2/4]</span></h2>
+<a id="af6c24b21b6d14829f6037a1ba2eaf105" name="af6c24b21b6d14829f6037a1ba2eaf105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c24b21b6d14829f6037a1ba2eaf105">&#9670;&#160;</a></span>show() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,9 +255,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::assert_box::show </td>
+          <td class="memname">auto xtd::forms::assert_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -267,12 +267,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -289,8 +289,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a5ade293ce745e58f4e7ff80486fd2a72" name="a5ade293ce745e58f4e7ff80486fd2a72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ade293ce745e58f4e7ff80486fd2a72">&#9670;&#160;</a></span>show() <span class="overload">[3/4]</span></h2>
+<a id="a0ff44d64683398871bd92b9c5339323c" name="a0ff44d64683398871bd92b9c5339323c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff44d64683398871bd92b9c5339323c">&#9670;&#160;</a></span>show() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,15 +299,15 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::assert_box::show </td>
+          <td class="memname">auto xtd::forms::assert_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -322,8 +322,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a4307c2a80d547aef289ed927cb4e79c7" name="a4307c2a80d547aef289ed927cb4e79c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4307c2a80d547aef289ed927cb4e79c7">&#9670;&#160;</a></span>show() <span class="overload">[4/4]</span></h2>
+<a id="aab03c6ed857aaae8677aa354a3e36f39" name="aab03c6ed857aaae8677aa354a3e36f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab03c6ed857aaae8677aa354a3e36f39">&#9670;&#160;</a></span>show() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,19 +332,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::assert_box::show </td>
+          <td class="memname">auto xtd::forms::assert_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

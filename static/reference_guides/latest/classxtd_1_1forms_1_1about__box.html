@@ -166,7 +166,7 @@ Inheritance diagram for xtd::forms::about_box:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <a class="code hl_function" href="#ac5c9c9bde27a113c8bf53eec00335c72">about_box::show</a>(<span class="stringliteral">&quot;About box description.&quot;</span>, <span class="stringliteral">&quot;About box&quot;</span>, <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#a63b2dd700e5075526daa621d356e121b">xtd::drawing::image::from_xpm_data</a>(gammasoft_64x64_xpm), <span class="stringliteral">&quot;1.0&quot;</span>, <span class="stringliteral">&quot;1.0.0&quot;</span>, <span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.\nAll rights reserved.&quot;</span>, <span class="stringliteral">&quot;https://gammasoft71.github.io&quot;</span>, <span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="#ac354cce3c87312077a5a1c68cf179f68">about_box::show</a>(<span class="stringliteral">&quot;About box description.&quot;</span>, <span class="stringliteral">&quot;About box&quot;</span>, <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#a63b2dd700e5075526daa621d356e121b">xtd::drawing::image::from_xpm_data</a>(gammasoft_64x64_xpm), <span class="stringliteral">&quot;1.0&quot;</span>, <span class="stringliteral">&quot;1.0.0&quot;</span>, <span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.\nAll rights reserved.&quot;</span>, <span class="stringliteral">&quot;https://gammasoft71.github.io&quot;</span>, <span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -178,7 +178,7 @@ Inheritance diagram for xtd::forms::about_box:</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_a63b2dd700e5075526daa621d356e121b"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#a63b2dd700e5075526daa621d356e121b">xtd::drawing::image::from_xpm_data</a></div><div class="ttdeci">static auto from_xpm_data(const char *const *bits) -&gt; bitmap</div><div class="ttdoc">Creates an xtd::drawing::image from the specified data pointer.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1about__box_html_ac5c9c9bde27a113c8bf53eec00335c72"><div class="ttname"><a href="#ac5c9c9bde27a113c8bf53eec00335c72">xtd::forms::about_box::show</a></div><div class="ttdeci">static void show()</div><div class="ttdoc">Displays an about box.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1about__box_html_ac354cce3c87312077a5a1c68cf179f68"><div class="ttname"><a href="#ac354cce3c87312077a5a1c68cf179f68">xtd::forms::about_box::show</a></div><div class="ttdeci">static auto show() -&gt; void</div><div class="ttdoc">Displays an about box.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
@@ -199,84 +199,84 @@ Public Aliases</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a0e67c9b3480239524c357d63ba07eebe" id="r_a0e67c9b3480239524c357d63ba07eebe"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0e67c9b3480239524c357d63ba07eebe">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a0e67c9b3480239524c357d63ba07eebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window.  <br /></td></tr>
-<tr class="memitem:a0fb0a071f497ac9fc387038575c68552" id="r_a0fb0a071f497ac9fc387038575c68552"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0fb0a071f497ac9fc387038575c68552">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a0fb0a071f497ac9fc387038575c68552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message.  <br /></td></tr>
-<tr class="memitem:af838f2c7cbcc920698243ad39fa155b7" id="r_af838f2c7cbcc920698243ad39fa155b7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af838f2c7cbcc920698243ad39fa155b7">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption)</td></tr>
-<tr class="memdesc:af838f2c7cbcc920698243ad39fa155b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message and title bar caption.  <br /></td></tr>
-<tr class="memitem:aaa4a9a0f0e86f0575ed35d70a418c267" id="r_aaa4a9a0f0e86f0575ed35d70a418c267"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aaa4a9a0f0e86f0575ed35d70a418c267">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon)</td></tr>
-<tr class="memdesc:aaa4a9a0f0e86f0575ed35d70a418c267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption and icon.  <br /></td></tr>
-<tr class="memitem:af08f87ce80be59493e66be2dbd50e4fa" id="r_af08f87ce80be59493e66be2dbd50e4fa"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af08f87ce80be59493e66be2dbd50e4fa">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version)</td></tr>
-<tr class="memdesc:af08f87ce80be59493e66be2dbd50e4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon and version.  <br /></td></tr>
-<tr class="memitem:a6e085105c714ca48505b7edf39199ee9" id="r_a6e085105c714ca48505b7edf39199ee9"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6e085105c714ca48505b7edf39199ee9">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version)</td></tr>
-<tr class="memdesc:a6e085105c714ca48505b7edf39199ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version and long version.  <br /></td></tr>
-<tr class="memitem:a241b49a88c5c0e0084d0dc96f838ada8" id="r_a241b49a88c5c0e0084d0dc96f838ada8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a241b49a88c5c0e0084d0dc96f838ada8">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright)</td></tr>
-<tr class="memdesc:a241b49a88c5c0e0084d0dc96f838ada8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version and copyright.  <br /></td></tr>
-<tr class="memitem:a1cb41ee8fa933e6bccb8ebded363597d" id="r_a1cb41ee8fa933e6bccb8ebded363597d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1cb41ee8fa933e6bccb8ebded363597d">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website)</td></tr>
-<tr class="memdesc:a1cb41ee8fa933e6bccb8ebded363597d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website.  <br /></td></tr>
-<tr class="memitem:ac0468ee72c598ee7bf810480b6b315ee" id="r_ac0468ee72c598ee7bf810480b6b315ee"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac0468ee72c598ee7bf810480b6b315ee">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label)</td></tr>
-<tr class="memdesc:ac0468ee72c598ee7bf810480b6b315ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.  <br /></td></tr>
-<tr class="memitem:a121338ed1d1381ced73260f8f686b0c1" id="r_a121338ed1d1381ced73260f8f686b0c1"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a121338ed1d1381ced73260f8f686b0c1">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors)</td></tr>
-<tr class="memdesc:a121338ed1d1381ced73260f8f686b0c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.  <br /></td></tr>
-<tr class="memitem:abdd79655701bde6e1a007d0eb7f81d7b" id="r_abdd79655701bde6e1a007d0eb7f81d7b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#abdd79655701bde6e1a007d0eb7f81d7b">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters)</td></tr>
-<tr class="memdesc:abdd79655701bde6e1a007d0eb7f81d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.  <br /></td></tr>
-<tr class="memitem:adb17150fa7675f8683c5ec0fe201c5fb" id="r_adb17150fa7675f8683c5ec0fe201c5fb"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#adb17150fa7675f8683c5ec0fe201c5fb">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators)</td></tr>
-<tr class="memdesc:adb17150fa7675f8683c5ec0fe201c5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.  <br /></td></tr>
-<tr class="memitem:a6ea968bae7c579d2e0950566b82c43ec" id="r_a6ea968bae7c579d2e0950566b82c43ec"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6ea968bae7c579d2e0950566b82c43ec">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists)</td></tr>
-<tr class="memdesc:a6ea968bae7c579d2e0950566b82c43ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.  <br /></td></tr>
-<tr class="memitem:af8002c56308257bb89aeae9590455df8" id="r_af8002c56308257bb89aeae9590455df8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af8002c56308257bb89aeae9590455df8">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;license)</td></tr>
-<tr class="memdesc:af8002c56308257bb89aeae9590455df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.  <br /></td></tr>
-<tr class="memitem:ac5c9c9bde27a113c8bf53eec00335c72" id="r_ac5c9c9bde27a113c8bf53eec00335c72"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac5c9c9bde27a113c8bf53eec00335c72">show</a> ()</td></tr>
-<tr class="memdesc:ac5c9c9bde27a113c8bf53eec00335c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box.  <br /></td></tr>
-<tr class="memitem:a5743ac6ebf3f69fc22d37890497f7b94" id="r_a5743ac6ebf3f69fc22d37890497f7b94"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5743ac6ebf3f69fc22d37890497f7b94">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a5743ac6ebf3f69fc22d37890497f7b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message.  <br /></td></tr>
-<tr class="memitem:a9f672cfc379ee42f968abf054f5cc189" id="r_a9f672cfc379ee42f968abf054f5cc189"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9f672cfc379ee42f968abf054f5cc189">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption)</td></tr>
-<tr class="memdesc:a9f672cfc379ee42f968abf054f5cc189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message and title bar caption.  <br /></td></tr>
-<tr class="memitem:a3e62714055c2c12aeb1998b1cc7a4b31" id="r_a3e62714055c2c12aeb1998b1cc7a4b31"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3e62714055c2c12aeb1998b1cc7a4b31">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon)</td></tr>
-<tr class="memdesc:a3e62714055c2c12aeb1998b1cc7a4b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption and icon.  <br /></td></tr>
-<tr class="memitem:ac2800002b2d104116a220f3f73fd77db" id="r_ac2800002b2d104116a220f3f73fd77db"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac2800002b2d104116a220f3f73fd77db">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version)</td></tr>
-<tr class="memdesc:ac2800002b2d104116a220f3f73fd77db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon and version.  <br /></td></tr>
-<tr class="memitem:a7006ba6718005416c1c85e8953bffa03" id="r_a7006ba6718005416c1c85e8953bffa03"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a7006ba6718005416c1c85e8953bffa03">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version)</td></tr>
-<tr class="memdesc:a7006ba6718005416c1c85e8953bffa03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version and long version.  <br /></td></tr>
-<tr class="memitem:a6a12438a46291e59964ef2e7c183b1a5" id="r_a6a12438a46291e59964ef2e7c183b1a5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6a12438a46291e59964ef2e7c183b1a5">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright)</td></tr>
-<tr class="memdesc:a6a12438a46291e59964ef2e7c183b1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version and copyright.  <br /></td></tr>
-<tr class="memitem:a18aa59a4f4d766f0ee79a44aedcba895" id="r_a18aa59a4f4d766f0ee79a44aedcba895"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a18aa59a4f4d766f0ee79a44aedcba895">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website)</td></tr>
-<tr class="memdesc:a18aa59a4f4d766f0ee79a44aedcba895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website.  <br /></td></tr>
-<tr class="memitem:a602722e2869391c3430c09aa93e25a30" id="r_a602722e2869391c3430c09aa93e25a30"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a602722e2869391c3430c09aa93e25a30">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label)</td></tr>
-<tr class="memdesc:a602722e2869391c3430c09aa93e25a30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.  <br /></td></tr>
-<tr class="memitem:aace5687d7a7d2572c8fea763e20a3a2c" id="r_aace5687d7a7d2572c8fea763e20a3a2c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aace5687d7a7d2572c8fea763e20a3a2c">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors)</td></tr>
-<tr class="memdesc:aace5687d7a7d2572c8fea763e20a3a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.  <br /></td></tr>
-<tr class="memitem:a3094fb9b936d42458b532b5efd07d77e" id="r_a3094fb9b936d42458b532b5efd07d77e"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3094fb9b936d42458b532b5efd07d77e">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters)</td></tr>
-<tr class="memdesc:a3094fb9b936d42458b532b5efd07d77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.  <br /></td></tr>
-<tr class="memitem:a4cb262f724c45ed15156260f74179e61" id="r_a4cb262f724c45ed15156260f74179e61"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4cb262f724c45ed15156260f74179e61">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators)</td></tr>
-<tr class="memdesc:a4cb262f724c45ed15156260f74179e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.  <br /></td></tr>
-<tr class="memitem:a18138ee26025237961b1787c49311c0c" id="r_a18138ee26025237961b1787c49311c0c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a18138ee26025237961b1787c49311c0c">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists)</td></tr>
-<tr class="memdesc:a18138ee26025237961b1787c49311c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.  <br /></td></tr>
-<tr class="memitem:a4db97a9d52a3a49b2c37a3727b72e6b0" id="r_a4db97a9d52a3a49b2c37a3727b72e6b0"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4db97a9d52a3a49b2c37a3727b72e6b0">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;license)</td></tr>
-<tr class="memdesc:a4db97a9d52a3a49b2c37a3727b72e6b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.  <br /></td></tr>
-<tr class="memitem:ac976081304c1fa17d6c05dc8d0a0cb7b" id="r_ac976081304c1fa17d6c05dc8d0a0cb7b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac976081304c1fa17d6c05dc8d0a0cb7b">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon)</td></tr>
-<tr class="memdesc:ac976081304c1fa17d6c05dc8d0a0cb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption and icon.  <br /></td></tr>
-<tr class="memitem:a2fec700546f5c6989132e7996ddca6d4" id="r_a2fec700546f5c6989132e7996ddca6d4"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2fec700546f5c6989132e7996ddca6d4">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version)</td></tr>
-<tr class="memdesc:a2fec700546f5c6989132e7996ddca6d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon and version.  <br /></td></tr>
-<tr class="memitem:ab021692f6a4598a2ec95d515b29b4a5e" id="r_ab021692f6a4598a2ec95d515b29b4a5e"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab021692f6a4598a2ec95d515b29b4a5e">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version)</td></tr>
-<tr class="memdesc:ab021692f6a4598a2ec95d515b29b4a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version and long version.  <br /></td></tr>
-<tr class="memitem:acee7ccb581c66dbfc5249302ce8e97f8" id="r_acee7ccb581c66dbfc5249302ce8e97f8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acee7ccb581c66dbfc5249302ce8e97f8">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright)</td></tr>
-<tr class="memdesc:acee7ccb581c66dbfc5249302ce8e97f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version and copyright.  <br /></td></tr>
-<tr class="memitem:a35a9d374b91e219f2257130c612de972" id="r_a35a9d374b91e219f2257130c612de972"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a35a9d374b91e219f2257130c612de972">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website)</td></tr>
-<tr class="memdesc:a35a9d374b91e219f2257130c612de972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website.  <br /></td></tr>
-<tr class="memitem:acaffe5c6dfc52a87925c46493e1c5fe7" id="r_acaffe5c6dfc52a87925c46493e1c5fe7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acaffe5c6dfc52a87925c46493e1c5fe7">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label)</td></tr>
-<tr class="memdesc:acaffe5c6dfc52a87925c46493e1c5fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.  <br /></td></tr>
-<tr class="memitem:acd25a6a15f7e06c4d400b3a41ddef240" id="r_acd25a6a15f7e06c4d400b3a41ddef240"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acd25a6a15f7e06c4d400b3a41ddef240">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors)</td></tr>
-<tr class="memdesc:acd25a6a15f7e06c4d400b3a41ddef240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.  <br /></td></tr>
-<tr class="memitem:a5ed21f069595a12b7746377f4672943d" id="r_a5ed21f069595a12b7746377f4672943d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5ed21f069595a12b7746377f4672943d">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters)</td></tr>
-<tr class="memdesc:a5ed21f069595a12b7746377f4672943d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.  <br /></td></tr>
-<tr class="memitem:ac234fe571a033c0ccda970ba8ba03d45" id="r_ac234fe571a033c0ccda970ba8ba03d45"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac234fe571a033c0ccda970ba8ba03d45">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators)</td></tr>
-<tr class="memdesc:ac234fe571a033c0ccda970ba8ba03d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.  <br /></td></tr>
-<tr class="memitem:ad3bbbcaac31f45f2c8c308645eadc5f6" id="r_ad3bbbcaac31f45f2c8c308645eadc5f6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad3bbbcaac31f45f2c8c308645eadc5f6">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists)</td></tr>
-<tr class="memdesc:ad3bbbcaac31f45f2c8c308645eadc5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.  <br /></td></tr>
-<tr class="memitem:a05873c88b8a47076c445aaeb5a0a5342" id="r_a05873c88b8a47076c445aaeb5a0a5342"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a05873c88b8a47076c445aaeb5a0a5342">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;license)</td></tr>
-<tr class="memdesc:a05873c88b8a47076c445aaeb5a0a5342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.  <br /></td></tr>
+<tr class="memitem:ae8cd3fa7294d9de62d8ee46154f66b9a" id="r_ae8cd3fa7294d9de62d8ee46154f66b9a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae8cd3fa7294d9de62d8ee46154f66b9a">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:ae8cd3fa7294d9de62d8ee46154f66b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window.  <br /></td></tr>
+<tr class="memitem:a4480919a440d61c15e864333672b83c6" id="r_a4480919a440d61c15e864333672b83c6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4480919a440d61c15e864333672b83c6">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; void</td></tr>
+<tr class="memdesc:a4480919a440d61c15e864333672b83c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message.  <br /></td></tr>
+<tr class="memitem:ab5a18eedcf1addf4b450f7dac8fe002a" id="r_ab5a18eedcf1addf4b450f7dac8fe002a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab5a18eedcf1addf4b450f7dac8fe002a">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption) -&gt; void</td></tr>
+<tr class="memdesc:ab5a18eedcf1addf4b450f7dac8fe002a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message and title bar caption.  <br /></td></tr>
+<tr class="memitem:ad514c9e15847ac1f0612b519e6341a13" id="r_ad514c9e15847ac1f0612b519e6341a13"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad514c9e15847ac1f0612b519e6341a13">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon) -&gt; void</td></tr>
+<tr class="memdesc:ad514c9e15847ac1f0612b519e6341a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption and icon.  <br /></td></tr>
+<tr class="memitem:aab5feee91587279b813606f7aa581a27" id="r_aab5feee91587279b813606f7aa581a27"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aab5feee91587279b813606f7aa581a27">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version) -&gt; void</td></tr>
+<tr class="memdesc:aab5feee91587279b813606f7aa581a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon and version.  <br /></td></tr>
+<tr class="memitem:a1062d990ad7d95bf7756caccdb93b11d" id="r_a1062d990ad7d95bf7756caccdb93b11d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1062d990ad7d95bf7756caccdb93b11d">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version) -&gt; void</td></tr>
+<tr class="memdesc:a1062d990ad7d95bf7756caccdb93b11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version and long version.  <br /></td></tr>
+<tr class="memitem:a82cc64a396a4327c638185de80db23d3" id="r_a82cc64a396a4327c638185de80db23d3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a82cc64a396a4327c638185de80db23d3">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright) -&gt; void</td></tr>
+<tr class="memdesc:a82cc64a396a4327c638185de80db23d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version and copyright.  <br /></td></tr>
+<tr class="memitem:ad86c9c4215a39025c7e4f57c3ec050a7" id="r_ad86c9c4215a39025c7e4f57c3ec050a7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad86c9c4215a39025c7e4f57c3ec050a7">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website) -&gt; void</td></tr>
+<tr class="memdesc:ad86c9c4215a39025c7e4f57c3ec050a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website.  <br /></td></tr>
+<tr class="memitem:a8f839afbe60bd1d05cc23f367832ae01" id="r_a8f839afbe60bd1d05cc23f367832ae01"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8f839afbe60bd1d05cc23f367832ae01">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label) -&gt; void</td></tr>
+<tr class="memdesc:a8f839afbe60bd1d05cc23f367832ae01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.  <br /></td></tr>
+<tr class="memitem:a096dc5d69300eea9c9c0fa8e5d9b1fb9" id="r_a096dc5d69300eea9c9c0fa8e5d9b1fb9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a096dc5d69300eea9c9c0fa8e5d9b1fb9">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors) -&gt; void</td></tr>
+<tr class="memdesc:a096dc5d69300eea9c9c0fa8e5d9b1fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.  <br /></td></tr>
+<tr class="memitem:aa8fa6123e6576b7cf79061a04771bed5" id="r_aa8fa6123e6576b7cf79061a04771bed5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa8fa6123e6576b7cf79061a04771bed5">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters) -&gt; void</td></tr>
+<tr class="memdesc:aa8fa6123e6576b7cf79061a04771bed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.  <br /></td></tr>
+<tr class="memitem:afef4c2ca3cf446ee2629bff26112bbcd" id="r_afef4c2ca3cf446ee2629bff26112bbcd"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afef4c2ca3cf446ee2629bff26112bbcd">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators) -&gt; void</td></tr>
+<tr class="memdesc:afef4c2ca3cf446ee2629bff26112bbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.  <br /></td></tr>
+<tr class="memitem:aa915d3d206c81c2e7e052a623585fba3" id="r_aa915d3d206c81c2e7e052a623585fba3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa915d3d206c81c2e7e052a623585fba3">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists) -&gt; void</td></tr>
+<tr class="memdesc:aa915d3d206c81c2e7e052a623585fba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.  <br /></td></tr>
+<tr class="memitem:a46987f7c35713ec6aaea51c8b3d78ddc" id="r_a46987f7c35713ec6aaea51c8b3d78ddc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a46987f7c35713ec6aaea51c8b3d78ddc">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;license) -&gt; void</td></tr>
+<tr class="memdesc:a46987f7c35713ec6aaea51c8b3d78ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.  <br /></td></tr>
+<tr class="memitem:ac354cce3c87312077a5a1c68cf179f68" id="r_ac354cce3c87312077a5a1c68cf179f68"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac354cce3c87312077a5a1c68cf179f68">show</a> () -&gt; void</td></tr>
+<tr class="memdesc:ac354cce3c87312077a5a1c68cf179f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box.  <br /></td></tr>
+<tr class="memitem:a6ca0790c6b41839747c2dc7a554a5029" id="r_a6ca0790c6b41839747c2dc7a554a5029"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ca0790c6b41839747c2dc7a554a5029">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; void</td></tr>
+<tr class="memdesc:a6ca0790c6b41839747c2dc7a554a5029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message.  <br /></td></tr>
+<tr class="memitem:a7656f924d4cc990c31a5bda379353c8c" id="r_a7656f924d4cc990c31a5bda379353c8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7656f924d4cc990c31a5bda379353c8c">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption) -&gt; void</td></tr>
+<tr class="memdesc:a7656f924d4cc990c31a5bda379353c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message and title bar caption.  <br /></td></tr>
+<tr class="memitem:a48601b66dbc6d6c303e13254cef44ce0" id="r_a48601b66dbc6d6c303e13254cef44ce0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a48601b66dbc6d6c303e13254cef44ce0">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon) -&gt; void</td></tr>
+<tr class="memdesc:a48601b66dbc6d6c303e13254cef44ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption and icon.  <br /></td></tr>
+<tr class="memitem:abe4d5e5de9cad768a4d4900adc04a776" id="r_abe4d5e5de9cad768a4d4900adc04a776"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abe4d5e5de9cad768a4d4900adc04a776">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version) -&gt; void</td></tr>
+<tr class="memdesc:abe4d5e5de9cad768a4d4900adc04a776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon and version.  <br /></td></tr>
+<tr class="memitem:ac2cae1b8c809c337700accf37046bcbe" id="r_ac2cae1b8c809c337700accf37046bcbe"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2cae1b8c809c337700accf37046bcbe">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version) -&gt; void</td></tr>
+<tr class="memdesc:ac2cae1b8c809c337700accf37046bcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version and long version.  <br /></td></tr>
+<tr class="memitem:a1a4d80755547972600a5acd2f43487a2" id="r_a1a4d80755547972600a5acd2f43487a2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1a4d80755547972600a5acd2f43487a2">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright) -&gt; void</td></tr>
+<tr class="memdesc:a1a4d80755547972600a5acd2f43487a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version and copyright.  <br /></td></tr>
+<tr class="memitem:a120df6c761c44858d196418daebf5a94" id="r_a120df6c761c44858d196418daebf5a94"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a120df6c761c44858d196418daebf5a94">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website) -&gt; void</td></tr>
+<tr class="memdesc:a120df6c761c44858d196418daebf5a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website.  <br /></td></tr>
+<tr class="memitem:a51cebc0fbbdae31c46587b158df9019a" id="r_a51cebc0fbbdae31c46587b158df9019a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a51cebc0fbbdae31c46587b158df9019a">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label) -&gt; void</td></tr>
+<tr class="memdesc:a51cebc0fbbdae31c46587b158df9019a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.  <br /></td></tr>
+<tr class="memitem:a1b773447485cd64195510d9a4a979880" id="r_a1b773447485cd64195510d9a4a979880"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1b773447485cd64195510d9a4a979880">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors) -&gt; void</td></tr>
+<tr class="memdesc:a1b773447485cd64195510d9a4a979880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.  <br /></td></tr>
+<tr class="memitem:ab128d2ed359c3bda1673c33056889d9d" id="r_ab128d2ed359c3bda1673c33056889d9d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab128d2ed359c3bda1673c33056889d9d">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters) -&gt; void</td></tr>
+<tr class="memdesc:ab128d2ed359c3bda1673c33056889d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.  <br /></td></tr>
+<tr class="memitem:a5622f21107822742eaac26b4d5d05907" id="r_a5622f21107822742eaac26b4d5d05907"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5622f21107822742eaac26b4d5d05907">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators) -&gt; void</td></tr>
+<tr class="memdesc:a5622f21107822742eaac26b4d5d05907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.  <br /></td></tr>
+<tr class="memitem:a3cb0588f072ea89c824f879937f4d146" id="r_a3cb0588f072ea89c824f879937f4d146"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3cb0588f072ea89c824f879937f4d146">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists) -&gt; void</td></tr>
+<tr class="memdesc:a3cb0588f072ea89c824f879937f4d146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.  <br /></td></tr>
+<tr class="memitem:a0bfc579fa568880bb97d3b87b869dc42" id="r_a0bfc579fa568880bb97d3b87b869dc42"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0bfc579fa568880bb97d3b87b869dc42">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;license) -&gt; void</td></tr>
+<tr class="memdesc:a0bfc579fa568880bb97d3b87b869dc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.  <br /></td></tr>
+<tr class="memitem:a9e14958895a2f4f9d2c7a9a3a9803de3" id="r_a9e14958895a2f4f9d2c7a9a3a9803de3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e14958895a2f4f9d2c7a9a3a9803de3">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon) -&gt; void</td></tr>
+<tr class="memdesc:a9e14958895a2f4f9d2c7a9a3a9803de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption and icon.  <br /></td></tr>
+<tr class="memitem:ad063741a02b7cf763f8be4d97f14dda1" id="r_ad063741a02b7cf763f8be4d97f14dda1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad063741a02b7cf763f8be4d97f14dda1">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version) -&gt; void</td></tr>
+<tr class="memdesc:ad063741a02b7cf763f8be4d97f14dda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon and version.  <br /></td></tr>
+<tr class="memitem:a50390d18a0202f4b22b8e92e5b7f2f8c" id="r_a50390d18a0202f4b22b8e92e5b7f2f8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a50390d18a0202f4b22b8e92e5b7f2f8c">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version) -&gt; void</td></tr>
+<tr class="memdesc:a50390d18a0202f4b22b8e92e5b7f2f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version and long version.  <br /></td></tr>
+<tr class="memitem:a47d0aed46fa2c0af396dc652ac9c6315" id="r_a47d0aed46fa2c0af396dc652ac9c6315"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a47d0aed46fa2c0af396dc652ac9c6315">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright) -&gt; void</td></tr>
+<tr class="memdesc:a47d0aed46fa2c0af396dc652ac9c6315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version and copyright.  <br /></td></tr>
+<tr class="memitem:a04a303457cf13061bb10a59f511a0484" id="r_a04a303457cf13061bb10a59f511a0484"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a04a303457cf13061bb10a59f511a0484">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website) -&gt; void</td></tr>
+<tr class="memdesc:a04a303457cf13061bb10a59f511a0484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website.  <br /></td></tr>
+<tr class="memitem:a7719e2500d0a8840f12cf7fb2d2353d5" id="r_a7719e2500d0a8840f12cf7fb2d2353d5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7719e2500d0a8840f12cf7fb2d2353d5">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label) -&gt; void</td></tr>
+<tr class="memdesc:a7719e2500d0a8840f12cf7fb2d2353d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.  <br /></td></tr>
+<tr class="memitem:a6445d508fe311440a9d19616bdbfd8bb" id="r_a6445d508fe311440a9d19616bdbfd8bb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6445d508fe311440a9d19616bdbfd8bb">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors) -&gt; void</td></tr>
+<tr class="memdesc:a6445d508fe311440a9d19616bdbfd8bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.  <br /></td></tr>
+<tr class="memitem:a40e1abf22b4c1930137c58f5cabc5e7d" id="r_a40e1abf22b4c1930137c58f5cabc5e7d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a40e1abf22b4c1930137c58f5cabc5e7d">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters) -&gt; void</td></tr>
+<tr class="memdesc:a40e1abf22b4c1930137c58f5cabc5e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.  <br /></td></tr>
+<tr class="memitem:a9fad994bd67816728480cbb7c9c6b00f" id="r_a9fad994bd67816728480cbb7c9c6b00f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fad994bd67816728480cbb7c9c6b00f">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators) -&gt; void</td></tr>
+<tr class="memdesc:a9fad994bd67816728480cbb7c9c6b00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.  <br /></td></tr>
+<tr class="memitem:a496ce5b728507dc2a595d17547745b16" id="r_a496ce5b728507dc2a595d17547745b16"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a496ce5b728507dc2a595d17547745b16">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists) -&gt; void</td></tr>
+<tr class="memdesc:a496ce5b728507dc2a595d17547745b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.  <br /></td></tr>
+<tr class="memitem:a3c23fd1f9077f9fce137166eb19001cc" id="r_a3c23fd1f9077f9fce137166eb19001cc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c23fd1f9077f9fce137166eb19001cc">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;icon, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;long_version, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;copyright, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;website_label, const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;authors, const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;documenters, const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;translators, const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;artists, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;license) -&gt; void</td></tr>
+<tr class="memdesc:a3c23fd1f9077f9fce137166eb19001cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a1bf80cea5313f72d8660fd3cba858e42" name="a1bf80cea5313f72d8660fd3cba858e42"></a>
@@ -344,8 +344,8 @@ Public Static Methods</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a0e67c9b3480239524c357d63ba07eebe" name="a0e67c9b3480239524c357d63ba07eebe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e67c9b3480239524c357d63ba07eebe">&#9670;&#160;</a></span>show() <span class="overload">[1/39]</span></h2>
+<a id="ae8cd3fa7294d9de62d8ee46154f66b9a" name="ae8cd3fa7294d9de62d8ee46154f66b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8cd3fa7294d9de62d8ee46154f66b9a">&#9670;&#160;</a></span>show() <span class="overload">[1/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,10 +354,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -370,15 +370,15 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a0fb0a071f497ac9fc387038575c68552" name="a0fb0a071f497ac9fc387038575c68552"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb0a071f497ac9fc387038575c68552">&#9670;&#160;</a></span>show() <span class="overload">[2/39]</span></h2>
+<a id="a4480919a440d61c15e864333672b83c6" name="a4480919a440d61c15e864333672b83c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4480919a440d61c15e864333672b83c6">&#9670;&#160;</a></span>show() <span class="overload">[2/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,14 +387,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -407,7 +407,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
   </table>
   </dd>
@@ -415,8 +415,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="af838f2c7cbcc920698243ad39fa155b7" name="af838f2c7cbcc920698243ad39fa155b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af838f2c7cbcc920698243ad39fa155b7">&#9670;&#160;</a></span>show() <span class="overload">[3/39]</span></h2>
+<a id="ab5a18eedcf1addf4b450f7dac8fe002a" name="ab5a18eedcf1addf4b450f7dac8fe002a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5a18eedcf1addf4b450f7dac8fe002a">&#9670;&#160;</a></span>show() <span class="overload">[3/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,9 +425,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -437,7 +437,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -450,7 +450,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message and title bar caption. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
   </table>
@@ -459,8 +459,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aaa4a9a0f0e86f0575ed35d70a418c267" name="aaa4a9a0f0e86f0575ed35d70a418c267"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa4a9a0f0e86f0575ed35d70a418c267">&#9670;&#160;</a></span>show() <span class="overload">[4/39]</span></h2>
+<a id="ad514c9e15847ac1f0612b519e6341a13" name="ad514c9e15847ac1f0612b519e6341a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad514c9e15847ac1f0612b519e6341a13">&#9670;&#160;</a></span>show() <span class="overload">[4/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,9 +469,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -486,7 +486,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -499,7 +499,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption and icon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -509,8 +509,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="af08f87ce80be59493e66be2dbd50e4fa" name="af08f87ce80be59493e66be2dbd50e4fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af08f87ce80be59493e66be2dbd50e4fa">&#9670;&#160;</a></span>show() <span class="overload">[5/39]</span></h2>
+<a id="aab5feee91587279b813606f7aa581a27" name="aab5feee91587279b813606f7aa581a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5feee91587279b813606f7aa581a27">&#9670;&#160;</a></span>show() <span class="overload">[5/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -519,9 +519,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -541,7 +541,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -554,7 +554,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon and version. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -565,8 +565,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e085105c714ca48505b7edf39199ee9" name="a6e085105c714ca48505b7edf39199ee9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e085105c714ca48505b7edf39199ee9">&#9670;&#160;</a></span>show() <span class="overload">[6/39]</span></h2>
+<a id="a1062d990ad7d95bf7756caccdb93b11d" name="a1062d990ad7d95bf7756caccdb93b11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1062d990ad7d95bf7756caccdb93b11d">&#9670;&#160;</a></span>show() <span class="overload">[6/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,9 +575,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -602,7 +602,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>long_version</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>long_version</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -615,7 +615,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version and long version. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -627,8 +627,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a241b49a88c5c0e0084d0dc96f838ada8" name="a241b49a88c5c0e0084d0dc96f838ada8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241b49a88c5c0e0084d0dc96f838ada8">&#9670;&#160;</a></span>show() <span class="overload">[7/39]</span></h2>
+<a id="a82cc64a396a4327c638185de80db23d3" name="a82cc64a396a4327c638185de80db23d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82cc64a396a4327c638185de80db23d3">&#9670;&#160;</a></span>show() <span class="overload">[7/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -637,9 +637,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -669,7 +669,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>copyright</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>copyright</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -682,7 +682,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version and copyright. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -695,8 +695,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a1cb41ee8fa933e6bccb8ebded363597d" name="a1cb41ee8fa933e6bccb8ebded363597d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cb41ee8fa933e6bccb8ebded363597d">&#9670;&#160;</a></span>show() <span class="overload">[8/39]</span></h2>
+<a id="ad86c9c4215a39025c7e4f57c3ec050a7" name="ad86c9c4215a39025c7e4f57c3ec050a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86c9c4215a39025c7e4f57c3ec050a7">&#9670;&#160;</a></span>show() <span class="overload">[8/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -705,9 +705,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -742,7 +742,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -755,7 +755,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -769,8 +769,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac0468ee72c598ee7bf810480b6b315ee" name="ac0468ee72c598ee7bf810480b6b315ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0468ee72c598ee7bf810480b6b315ee">&#9670;&#160;</a></span>show() <span class="overload">[9/39]</span></h2>
+<a id="a8f839afbe60bd1d05cc23f367832ae01" name="a8f839afbe60bd1d05cc23f367832ae01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f839afbe60bd1d05cc23f367832ae01">&#9670;&#160;</a></span>show() <span class="overload">[9/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -779,9 +779,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -821,7 +821,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website_label</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website_label</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -834,7 +834,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -849,8 +849,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a121338ed1d1381ced73260f8f686b0c1" name="a121338ed1d1381ced73260f8f686b0c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a121338ed1d1381ced73260f8f686b0c1">&#9670;&#160;</a></span>show() <span class="overload">[10/39]</span></h2>
+<a id="a096dc5d69300eea9c9c0fa8e5d9b1fb9" name="a096dc5d69300eea9c9c0fa8e5d9b1fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096dc5d69300eea9c9c0fa8e5d9b1fb9">&#9670;&#160;</a></span>show() <span class="overload">[10/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -859,9 +859,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -906,7 +906,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authors</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authors</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -919,7 +919,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -935,8 +935,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="abdd79655701bde6e1a007d0eb7f81d7b" name="abdd79655701bde6e1a007d0eb7f81d7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdd79655701bde6e1a007d0eb7f81d7b">&#9670;&#160;</a></span>show() <span class="overload">[11/39]</span></h2>
+<a id="aa8fa6123e6576b7cf79061a04771bed5" name="aa8fa6123e6576b7cf79061a04771bed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fa6123e6576b7cf79061a04771bed5">&#9670;&#160;</a></span>show() <span class="overload">[11/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -945,9 +945,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -997,7 +997,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>documenters</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>documenters</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1010,7 +1010,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -1027,8 +1027,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="adb17150fa7675f8683c5ec0fe201c5fb" name="adb17150fa7675f8683c5ec0fe201c5fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb17150fa7675f8683c5ec0fe201c5fb">&#9670;&#160;</a></span>show() <span class="overload">[12/39]</span></h2>
+<a id="afef4c2ca3cf446ee2629bff26112bbcd" name="afef4c2ca3cf446ee2629bff26112bbcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afef4c2ca3cf446ee2629bff26112bbcd">&#9670;&#160;</a></span>show() <span class="overload">[12/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1037,9 +1037,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1094,7 +1094,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>translators</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>translators</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1107,7 +1107,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -1125,8 +1125,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ea968bae7c579d2e0950566b82c43ec" name="a6ea968bae7c579d2e0950566b82c43ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ea968bae7c579d2e0950566b82c43ec">&#9670;&#160;</a></span>show() <span class="overload">[13/39]</span></h2>
+<a id="aa915d3d206c81c2e7e052a623585fba3" name="aa915d3d206c81c2e7e052a623585fba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa915d3d206c81c2e7e052a623585fba3">&#9670;&#160;</a></span>show() <span class="overload">[13/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1135,9 +1135,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1197,7 +1197,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>artists</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>artists</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1210,7 +1210,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -1229,8 +1229,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="af8002c56308257bb89aeae9590455df8" name="af8002c56308257bb89aeae9590455df8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8002c56308257bb89aeae9590455df8">&#9670;&#160;</a></span>show() <span class="overload">[14/39]</span></h2>
+<a id="a46987f7c35713ec6aaea51c8b3d78ddc" name="a46987f7c35713ec6aaea51c8b3d78ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46987f7c35713ec6aaea51c8b3d78ddc">&#9670;&#160;</a></span>show() <span class="overload">[14/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1239,9 +1239,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1306,7 +1306,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>license</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>license</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1319,7 +1319,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that represents the owner window of the about box. </td></tr>
+    <tr><td class="paramname">owner</td><td>A <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that represents the owner window of the about box. </td></tr>
     <tr><td class="paramname">text</td><td>A string that specifies the text to display. </td></tr>
     <tr><td class="paramname">caption</td><td>A string that specifies the title bar caption to display. </td></tr>
     <tr><td class="paramname">icon</td><td>An icon value that specifies the icon to display. </td></tr>
@@ -1339,8 +1339,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac5c9c9bde27a113c8bf53eec00335c72" name="ac5c9c9bde27a113c8bf53eec00335c72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5c9c9bde27a113c8bf53eec00335c72">&#9670;&#160;</a></span>show() <span class="overload">[15/39]</span></h2>
+<a id="ac354cce3c87312077a5a1c68cf179f68" name="ac354cce3c87312077a5a1c68cf179f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac354cce3c87312077a5a1c68cf179f68">&#9670;&#160;</a></span>show() <span class="overload">[15/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1349,10 +1349,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1366,8 +1366,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a5743ac6ebf3f69fc22d37890497f7b94" name="a5743ac6ebf3f69fc22d37890497f7b94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5743ac6ebf3f69fc22d37890497f7b94">&#9670;&#160;</a></span>show() <span class="overload">[16/39]</span></h2>
+<a id="a6ca0790c6b41839747c2dc7a554a5029" name="a6ca0790c6b41839747c2dc7a554a5029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca0790c6b41839747c2dc7a554a5029">&#9670;&#160;</a></span>show() <span class="overload">[16/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1376,10 +1376,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1399,8 +1399,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a9f672cfc379ee42f968abf054f5cc189" name="a9f672cfc379ee42f968abf054f5cc189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f672cfc379ee42f968abf054f5cc189">&#9670;&#160;</a></span>show() <span class="overload">[17/39]</span></h2>
+<a id="a7656f924d4cc990c31a5bda379353c8c" name="a7656f924d4cc990c31a5bda379353c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7656f924d4cc990c31a5bda379353c8c">&#9670;&#160;</a></span>show() <span class="overload">[17/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1409,14 +1409,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1437,8 +1437,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a3e62714055c2c12aeb1998b1cc7a4b31" name="a3e62714055c2c12aeb1998b1cc7a4b31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e62714055c2c12aeb1998b1cc7a4b31">&#9670;&#160;</a></span>show() <span class="overload">[18/39]</span></h2>
+<a id="a48601b66dbc6d6c303e13254cef44ce0" name="a48601b66dbc6d6c303e13254cef44ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48601b66dbc6d6c303e13254cef44ce0">&#9670;&#160;</a></span>show() <span class="overload">[18/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1447,7 +1447,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1459,7 +1459,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1481,8 +1481,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2800002b2d104116a220f3f73fd77db" name="ac2800002b2d104116a220f3f73fd77db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2800002b2d104116a220f3f73fd77db">&#9670;&#160;</a></span>show() <span class="overload">[19/39]</span></h2>
+<a id="abe4d5e5de9cad768a4d4900adc04a776" name="abe4d5e5de9cad768a4d4900adc04a776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe4d5e5de9cad768a4d4900adc04a776">&#9670;&#160;</a></span>show() <span class="overload">[19/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1491,7 +1491,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1508,7 +1508,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1531,8 +1531,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a7006ba6718005416c1c85e8953bffa03" name="a7006ba6718005416c1c85e8953bffa03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7006ba6718005416c1c85e8953bffa03">&#9670;&#160;</a></span>show() <span class="overload">[20/39]</span></h2>
+<a id="ac2cae1b8c809c337700accf37046bcbe" name="ac2cae1b8c809c337700accf37046bcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2cae1b8c809c337700accf37046bcbe">&#9670;&#160;</a></span>show() <span class="overload">[20/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1541,7 +1541,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1563,7 +1563,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>long_version</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>long_version</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1587,8 +1587,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a12438a46291e59964ef2e7c183b1a5" name="a6a12438a46291e59964ef2e7c183b1a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a12438a46291e59964ef2e7c183b1a5">&#9670;&#160;</a></span>show() <span class="overload">[21/39]</span></h2>
+<a id="a1a4d80755547972600a5acd2f43487a2" name="a1a4d80755547972600a5acd2f43487a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a4d80755547972600a5acd2f43487a2">&#9670;&#160;</a></span>show() <span class="overload">[21/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1597,7 +1597,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1624,7 +1624,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>copyright</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>copyright</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1649,8 +1649,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a18aa59a4f4d766f0ee79a44aedcba895" name="a18aa59a4f4d766f0ee79a44aedcba895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18aa59a4f4d766f0ee79a44aedcba895">&#9670;&#160;</a></span>show() <span class="overload">[22/39]</span></h2>
+<a id="a120df6c761c44858d196418daebf5a94" name="a120df6c761c44858d196418daebf5a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a120df6c761c44858d196418daebf5a94">&#9670;&#160;</a></span>show() <span class="overload">[22/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1659,7 +1659,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1691,7 +1691,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1717,8 +1717,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a602722e2869391c3430c09aa93e25a30" name="a602722e2869391c3430c09aa93e25a30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a602722e2869391c3430c09aa93e25a30">&#9670;&#160;</a></span>show() <span class="overload">[23/39]</span></h2>
+<a id="a51cebc0fbbdae31c46587b158df9019a" name="a51cebc0fbbdae31c46587b158df9019a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51cebc0fbbdae31c46587b158df9019a">&#9670;&#160;</a></span>show() <span class="overload">[23/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1727,7 +1727,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1764,7 +1764,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website_label</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website_label</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1791,8 +1791,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aace5687d7a7d2572c8fea763e20a3a2c" name="aace5687d7a7d2572c8fea763e20a3a2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aace5687d7a7d2572c8fea763e20a3a2c">&#9670;&#160;</a></span>show() <span class="overload">[24/39]</span></h2>
+<a id="a1b773447485cd64195510d9a4a979880" name="a1b773447485cd64195510d9a4a979880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b773447485cd64195510d9a4a979880">&#9670;&#160;</a></span>show() <span class="overload">[24/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1801,7 +1801,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1843,7 +1843,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authors</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authors</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1871,8 +1871,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a3094fb9b936d42458b532b5efd07d77e" name="a3094fb9b936d42458b532b5efd07d77e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3094fb9b936d42458b532b5efd07d77e">&#9670;&#160;</a></span>show() <span class="overload">[25/39]</span></h2>
+<a id="ab128d2ed359c3bda1673c33056889d9d" name="ab128d2ed359c3bda1673c33056889d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab128d2ed359c3bda1673c33056889d9d">&#9670;&#160;</a></span>show() <span class="overload">[25/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1881,7 +1881,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1928,7 +1928,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>documenters</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>documenters</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1957,8 +1957,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a4cb262f724c45ed15156260f74179e61" name="a4cb262f724c45ed15156260f74179e61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cb262f724c45ed15156260f74179e61">&#9670;&#160;</a></span>show() <span class="overload">[26/39]</span></h2>
+<a id="a5622f21107822742eaac26b4d5d05907" name="a5622f21107822742eaac26b4d5d05907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5622f21107822742eaac26b4d5d05907">&#9670;&#160;</a></span>show() <span class="overload">[26/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1967,7 +1967,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2019,7 +2019,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>translators</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>translators</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2049,8 +2049,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a18138ee26025237961b1787c49311c0c" name="a18138ee26025237961b1787c49311c0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18138ee26025237961b1787c49311c0c">&#9670;&#160;</a></span>show() <span class="overload">[27/39]</span></h2>
+<a id="a3cb0588f072ea89c824f879937f4d146" name="a3cb0588f072ea89c824f879937f4d146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cb0588f072ea89c824f879937f4d146">&#9670;&#160;</a></span>show() <span class="overload">[27/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2059,7 +2059,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2116,7 +2116,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>artists</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>artists</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2147,8 +2147,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a4db97a9d52a3a49b2c37a3727b72e6b0" name="a4db97a9d52a3a49b2c37a3727b72e6b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4db97a9d52a3a49b2c37a3727b72e6b0">&#9670;&#160;</a></span>show() <span class="overload">[28/39]</span></h2>
+<a id="a0bfc579fa568880bb97d3b87b869dc42" name="a0bfc579fa568880bb97d3b87b869dc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bfc579fa568880bb97d3b87b869dc42">&#9670;&#160;</a></span>show() <span class="overload">[28/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2157,7 +2157,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2219,7 +2219,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>license</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>license</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2251,8 +2251,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac976081304c1fa17d6c05dc8d0a0cb7b" name="ac976081304c1fa17d6c05dc8d0a0cb7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac976081304c1fa17d6c05dc8d0a0cb7b">&#9670;&#160;</a></span>show() <span class="overload">[29/39]</span></h2>
+<a id="a9e14958895a2f4f9d2c7a9a3a9803de3" name="a9e14958895a2f4f9d2c7a9a3a9803de3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e14958895a2f4f9d2c7a9a3a9803de3">&#9670;&#160;</a></span>show() <span class="overload">[29/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2261,7 +2261,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2273,7 +2273,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2295,8 +2295,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a2fec700546f5c6989132e7996ddca6d4" name="a2fec700546f5c6989132e7996ddca6d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fec700546f5c6989132e7996ddca6d4">&#9670;&#160;</a></span>show() <span class="overload">[30/39]</span></h2>
+<a id="ad063741a02b7cf763f8be4d97f14dda1" name="ad063741a02b7cf763f8be4d97f14dda1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad063741a02b7cf763f8be4d97f14dda1">&#9670;&#160;</a></span>show() <span class="overload">[30/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2305,7 +2305,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2322,7 +2322,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>version</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2345,8 +2345,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ab021692f6a4598a2ec95d515b29b4a5e" name="ab021692f6a4598a2ec95d515b29b4a5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab021692f6a4598a2ec95d515b29b4a5e">&#9670;&#160;</a></span>show() <span class="overload">[31/39]</span></h2>
+<a id="a50390d18a0202f4b22b8e92e5b7f2f8c" name="a50390d18a0202f4b22b8e92e5b7f2f8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50390d18a0202f4b22b8e92e5b7f2f8c">&#9670;&#160;</a></span>show() <span class="overload">[31/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2355,7 +2355,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2377,7 +2377,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>long_version</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>long_version</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2401,8 +2401,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="acee7ccb581c66dbfc5249302ce8e97f8" name="acee7ccb581c66dbfc5249302ce8e97f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acee7ccb581c66dbfc5249302ce8e97f8">&#9670;&#160;</a></span>show() <span class="overload">[32/39]</span></h2>
+<a id="a47d0aed46fa2c0af396dc652ac9c6315" name="a47d0aed46fa2c0af396dc652ac9c6315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d0aed46fa2c0af396dc652ac9c6315">&#9670;&#160;</a></span>show() <span class="overload">[32/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2411,7 +2411,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2438,7 +2438,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>copyright</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>copyright</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2463,8 +2463,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a35a9d374b91e219f2257130c612de972" name="a35a9d374b91e219f2257130c612de972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35a9d374b91e219f2257130c612de972">&#9670;&#160;</a></span>show() <span class="overload">[33/39]</span></h2>
+<a id="a04a303457cf13061bb10a59f511a0484" name="a04a303457cf13061bb10a59f511a0484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a303457cf13061bb10a59f511a0484">&#9670;&#160;</a></span>show() <span class="overload">[33/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2473,7 +2473,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2505,7 +2505,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2531,8 +2531,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="acaffe5c6dfc52a87925c46493e1c5fe7" name="acaffe5c6dfc52a87925c46493e1c5fe7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaffe5c6dfc52a87925c46493e1c5fe7">&#9670;&#160;</a></span>show() <span class="overload">[34/39]</span></h2>
+<a id="a7719e2500d0a8840f12cf7fb2d2353d5" name="a7719e2500d0a8840f12cf7fb2d2353d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7719e2500d0a8840f12cf7fb2d2353d5">&#9670;&#160;</a></span>show() <span class="overload">[34/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2541,7 +2541,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2578,7 +2578,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website_label</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>website_label</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2605,8 +2605,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="acd25a6a15f7e06c4d400b3a41ddef240" name="acd25a6a15f7e06c4d400b3a41ddef240"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd25a6a15f7e06c4d400b3a41ddef240">&#9670;&#160;</a></span>show() <span class="overload">[35/39]</span></h2>
+<a id="a6445d508fe311440a9d19616bdbfd8bb" name="a6445d508fe311440a9d19616bdbfd8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6445d508fe311440a9d19616bdbfd8bb">&#9670;&#160;</a></span>show() <span class="overload">[35/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2615,7 +2615,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2657,7 +2657,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authors</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#a1bf80cea5313f72d8660fd3cba858e42">author_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authors</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2685,8 +2685,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a5ed21f069595a12b7746377f4672943d" name="a5ed21f069595a12b7746377f4672943d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ed21f069595a12b7746377f4672943d">&#9670;&#160;</a></span>show() <span class="overload">[36/39]</span></h2>
+<a id="a40e1abf22b4c1930137c58f5cabc5e7d" name="a40e1abf22b4c1930137c58f5cabc5e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e1abf22b4c1930137c58f5cabc5e7d">&#9670;&#160;</a></span>show() <span class="overload">[36/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2695,7 +2695,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2742,7 +2742,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>documenters</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#ac11d77921b8604cfdf5d62342104d48f">documenter_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>documenters</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2771,8 +2771,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac234fe571a033c0ccda970ba8ba03d45" name="ac234fe571a033c0ccda970ba8ba03d45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac234fe571a033c0ccda970ba8ba03d45">&#9670;&#160;</a></span>show() <span class="overload">[37/39]</span></h2>
+<a id="a9fad994bd67816728480cbb7c9c6b00f" name="a9fad994bd67816728480cbb7c9c6b00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fad994bd67816728480cbb7c9c6b00f">&#9670;&#160;</a></span>show() <span class="overload">[37/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2781,7 +2781,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2833,7 +2833,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>translators</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#a0c23a1bd70675a48e5d7ab469d5a1bb7">translator_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>translators</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2863,8 +2863,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ad3bbbcaac31f45f2c8c308645eadc5f6" name="ad3bbbcaac31f45f2c8c308645eadc5f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3bbbcaac31f45f2c8c308645eadc5f6">&#9670;&#160;</a></span>show() <span class="overload">[38/39]</span></h2>
+<a id="a496ce5b728507dc2a595d17547745b16" name="a496ce5b728507dc2a595d17547745b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496ce5b728507dc2a595d17547745b16">&#9670;&#160;</a></span>show() <span class="overload">[38/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2873,7 +2873,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -2930,7 +2930,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>artists</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#af04d25f871c2cbf1e8354d83a68fe9ad">artist_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>artists</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2961,8 +2961,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a05873c88b8a47076c445aaeb5a0a5342" name="a05873c88b8a47076c445aaeb5a0a5342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05873c88b8a47076c445aaeb5a0a5342">&#9670;&#160;</a></span>show() <span class="overload">[39/39]</span></h2>
+<a id="a3c23fd1f9077f9fce137166eb19001cc" name="a3c23fd1f9077f9fce137166eb19001cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c23fd1f9077f9fce137166eb19001cc">&#9670;&#160;</a></span>show() <span class="overload">[39/39]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2971,7 +2971,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::about_box::show </td>
+          <td class="memname">auto xtd::forms::about_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -3033,7 +3033,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>license</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>license</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>

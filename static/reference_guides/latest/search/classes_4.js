@@ -220,7 +220,7 @@ var searchData=
   ['event_3c_20xtd_3a_3aforms_3a_3abackground_5fworker_2c_20progress_5fchanged_5fevent_5fhandler_20_3e_217',['event&lt; xtd::forms::background_worker, progress_changed_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3abackground_5fworker_2c_20run_5fworker_5fcompleted_5fevent_5fhandler_20_3e_218',['event&lt; xtd::forms::background_worker, run_worker_completed_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3abutton_5fbase_2c_20event_5fhandler_20_3e_219',['event&lt; xtd::forms::button_base, event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
-  ['event_3c_20xtd_3a_3aforms_3a_3acheck_5fbox_2c_20event_5fhandler_20_3e_220',['event&lt; xtd::forms::check_box, event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
+  ['event_3c_20xtd_3a_3aforms_3a_3acheck_5fbox_2c_20xtd_3a_3aevent_5fhandler_20_3e_220',['event&lt; xtd::forms::check_box, xtd::event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3achecked_5flist_5fbox_2c_20item_5fcheck_5fevent_5fhandler_20_3e_221',['event&lt; xtd::forms::checked_list_box, item_check_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3acollapsible_5fpanel_2c_20xtd_3a_3aevent_5fhandler_20_3e_222',['event&lt; xtd::forms::collapsible_panel, xtd::event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3acolor_5fpicker_2c_20color_5fpicker_5fevent_5fhandler_20_3e_223',['event&lt; xtd::forms::color_picker, color_picker_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],

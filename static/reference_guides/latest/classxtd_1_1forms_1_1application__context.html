@@ -156,15 +156,15 @@ Inheritance diagram for xtd::forms::application_context:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a466bb139bfe3d1fa26ba473386c0c476" id="r_a466bb139bfe3d1fa26ba473386c0c476"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a466bb139bfe3d1fa26ba473386c0c476">exit_thread_core</a> ()</td></tr>
-<tr class="memdesc:a466bb139bfe3d1fa26ba473386c0c476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates the message loop of the thread.  <br /></td></tr>
-<tr class="memitem:aba0fa04d97e87bc882a3bca9945c92b0" id="r_aba0fa04d97e87bc882a3bca9945c92b0"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aba0fa04d97e87bc882a3bca9945c92b0">on_main_form_closed</a> (<a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;sender, const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e)</td></tr>
-<tr class="memdesc:aba0fa04d97e87bc882a3bca9945c92b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls ExitThreadCore(), which raises the ThreadExit event.  <br /></td></tr>
+<tr class="memitem:a1e5f8d4aeced43156cbf06704234e8a6" id="r_a1e5f8d4aeced43156cbf06704234e8a6"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e5f8d4aeced43156cbf06704234e8a6">exit_thread_core</a> () -&gt; void</td></tr>
+<tr class="memdesc:a1e5f8d4aeced43156cbf06704234e8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates the message loop of the thread.  <br /></td></tr>
+<tr class="memitem:af565d70e245c757834d09e4c217794d5" id="r_af565d70e245c757834d09e4c217794d5"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#af565d70e245c757834d09e4c217794d5">on_main_form_closed</a> (<a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;sender, const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) -&gt; void</td></tr>
+<tr class="memdesc:af565d70e245c757834d09e4c217794d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls ExitThreadCore(), which raises the ThreadExit event.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Events</h2></td></tr>
 <tr class="memitem:a3dc1fee2312e39f7032b071ed5ee0f54" id="r_a3dc1fee2312e39f7032b071ed5ee0f54"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="#a565bbabff1f377c8b3a9eb28028d4dfe">application_context</a>, <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3dc1fee2312e39f7032b071ed5ee0f54">thread_exit</a></td></tr>
-<tr class="memdesc:a3dc1fee2312e39f7032b071ed5ee0f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the message loop of the thread should be terminated, by calling <a class="el" href="#a3e34e98c1ee192c1091cd13dde474bf9" title="Terminates the message loop of the thread.">exit_thread()</a>.  <br /></td></tr>
+<tr class="memdesc:a3dc1fee2312e39f7032b071ed5ee0f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the message loop of the thread should be terminated, by calling <a class="el" href="#afe1e99641604a3c2cf2b9fe40aafa115" title="Terminates the message loop of the thread.">exit_thread()</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -175,23 +175,23 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a4be4b23c1063c89e478249e8a36f68f6" id="r_a4be4b23c1063c89e478249e8a36f68f6"><td class="memItemLeft">std::optional&lt; <a class="el" href="group__xtd__forms.html#ga0c54ecda7c48b99264f231bb0af71a81">const_form_ref</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4be4b23c1063c89e478249e8a36f68f6">main_form</a> () const noexcept</td></tr>
-<tr class="memdesc:a4be4b23c1063c89e478249e8a36f68f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the form to use as context.  <br /></td></tr>
-<tr class="memitem:aedb9ef2f98ccae2c70e24e84b6c754a0" id="r_aedb9ef2f98ccae2c70e24e84b6c754a0"><td class="memItemLeft">std::optional&lt; <a class="el" href="group__xtd__forms.html#ga97d04d62780c781b0d9f2cdf27af910e">form_ref</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aedb9ef2f98ccae2c70e24e84b6c754a0">main_form</a> () noexcept</td></tr>
-<tr class="memdesc:aedb9ef2f98ccae2c70e24e84b6c754a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Form to use as context.  <br /></td></tr>
-<tr class="memitem:a0c2eeef4bb20a6c077a925896a9024e4" id="r_a0c2eeef4bb20a6c077a925896a9024e4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c2eeef4bb20a6c077a925896a9024e4">main_form</a> (const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;main_form)</td></tr>
-<tr class="memdesc:a0c2eeef4bb20a6c077a925896a9024e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Form to use as context.  <br /></td></tr>
-<tr class="memitem:a844e842bc8bbb30f3d6a5042f0abcc20" id="r_a844e842bc8bbb30f3d6a5042f0abcc20"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a844e842bc8bbb30f3d6a5042f0abcc20">main_form</a> (std::nullptr_t)</td></tr>
-<tr class="memdesc:a844e842bc8bbb30f3d6a5042f0abcc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the Form to use as context.  <br /></td></tr>
-<tr class="memitem:a334032fd5dbc652e3b5a0004d5f6f494" id="r_a334032fd5dbc652e3b5a0004d5f6f494"><td class="memItemLeft"><a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a>&#160;</td><td class="memItemRight"><a class="el" href="#a334032fd5dbc652e3b5a0004d5f6f494">tag</a> () const noexcept</td></tr>
-<tr class="memdesc:a334032fd5dbc652e3b5a0004d5f6f494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that contains data about the control.  <br /></td></tr>
-<tr class="memitem:a7651081d41e92c8695f43b0b272f59de" id="r_a7651081d41e92c8695f43b0b272f59de"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7651081d41e92c8695f43b0b272f59de">tag</a> (const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;tag)</td></tr>
-<tr class="memdesc:a7651081d41e92c8695f43b0b272f59de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object that contains data about the control.  <br /></td></tr>
+<tr class="memitem:af02a056c4456d0014e405aab54df1bc2" id="r_af02a056c4456d0014e405aab54df1bc2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af02a056c4456d0014e405aab54df1bc2">main_form</a> () const noexcept -&gt; std::optional&lt; <a class="el" href="group__xtd__forms.html#ga0c54ecda7c48b99264f231bb0af71a81">const_form_ref</a> &gt;</td></tr>
+<tr class="memdesc:af02a056c4456d0014e405aab54df1bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the form to use as context.  <br /></td></tr>
+<tr class="memitem:a3be2fbed1f17f194f5c84835c119dfe9" id="r_a3be2fbed1f17f194f5c84835c119dfe9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3be2fbed1f17f194f5c84835c119dfe9">main_form</a> () noexcept -&gt; std::optional&lt; <a class="el" href="group__xtd__forms.html#ga97d04d62780c781b0d9f2cdf27af910e">form_ref</a> &gt;</td></tr>
+<tr class="memdesc:a3be2fbed1f17f194f5c84835c119dfe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Form to use as context.  <br /></td></tr>
+<tr class="memitem:acf701a0c0c8e4a214d87d8d0110ec319" id="r_acf701a0c0c8e4a214d87d8d0110ec319"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acf701a0c0c8e4a214d87d8d0110ec319">main_form</a> (const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;main_form) -&gt; void</td></tr>
+<tr class="memdesc:acf701a0c0c8e4a214d87d8d0110ec319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Form to use as context.  <br /></td></tr>
+<tr class="memitem:acaad44fbe92d0bbd066132ccc89e8800" id="r_acaad44fbe92d0bbd066132ccc89e8800"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acaad44fbe92d0bbd066132ccc89e8800">main_form</a> (std::nullptr_t) -&gt; void</td></tr>
+<tr class="memdesc:acaad44fbe92d0bbd066132ccc89e8800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the Form to use as context.  <br /></td></tr>
+<tr class="memitem:a7463f108c02c7a3a8b2eda0f05946590" id="r_a7463f108c02c7a3a8b2eda0f05946590"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7463f108c02c7a3a8b2eda0f05946590">tag</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a></td></tr>
+<tr class="memdesc:a7463f108c02c7a3a8b2eda0f05946590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that contains data about the control.  <br /></td></tr>
+<tr class="memitem:a9556a783b387f02f2180a3f1d6eb6b63" id="r_a9556a783b387f02f2180a3f1d6eb6b63"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9556a783b387f02f2180a3f1d6eb6b63">tag</a> (const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;tag) -&gt; void</td></tr>
+<tr class="memdesc:a9556a783b387f02f2180a3f1d6eb6b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object that contains data about the control.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a3e34e98c1ee192c1091cd13dde474bf9" id="r_a3e34e98c1ee192c1091cd13dde474bf9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3e34e98c1ee192c1091cd13dde474bf9">exit_thread</a> ()</td></tr>
-<tr class="memdesc:a3e34e98c1ee192c1091cd13dde474bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates the message loop of the thread.  <br /></td></tr>
+<tr class="memitem:afe1e99641604a3c2cf2b9fe40aafa115" id="r_afe1e99641604a3c2cf2b9fe40aafa115"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afe1e99641604a3c2cf2b9fe40aafa115">exit_thread</a> () -&gt; void</td></tr>
+<tr class="memdesc:afe1e99641604a3c2cf2b9fe40aafa115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates the message loop of the thread.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -270,8 +270,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a4be4b23c1063c89e478249e8a36f68f6" name="a4be4b23c1063c89e478249e8a36f68f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4be4b23c1063c89e478249e8a36f68f6">&#9670;&#160;</a></span>main_form() <span class="overload">[1/4]</span></h2>
+<a id="af02a056c4456d0014e405aab54df1bc2" name="af02a056c4456d0014e405aab54df1bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af02a056c4456d0014e405aab54df1bc2">&#9670;&#160;</a></span>main_form() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,15 +280,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; <a class="el" href="group__xtd__forms.html#ga0c54ecda7c48b99264f231bb0af71a81">const_form_ref</a> &gt; xtd::forms::application_context::main_form </td>
+          <td class="memname">auto xtd::forms::application_context::main_form </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  std::optional&lt; <a class="el" href="group__xtd__forms.html#ga0c54ecda7c48b99264f231bb0af71a81">const_form_ref</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -299,8 +299,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aedb9ef2f98ccae2c70e24e84b6c754a0" name="aedb9ef2f98ccae2c70e24e84b6c754a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedb9ef2f98ccae2c70e24e84b6c754a0">&#9670;&#160;</a></span>main_form() <span class="overload">[2/4]</span></h2>
+<a id="a3be2fbed1f17f194f5c84835c119dfe9" name="a3be2fbed1f17f194f5c84835c119dfe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be2fbed1f17f194f5c84835c119dfe9">&#9670;&#160;</a></span>main_form() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,15 +309,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; <a class="el" href="group__xtd__forms.html#ga97d04d62780c781b0d9f2cdf27af910e">form_ref</a> &gt; xtd::forms::application_context::main_form </td>
+          <td class="memname">auto xtd::forms::application_context::main_form </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  std::optional&lt; <a class="el" href="group__xtd__forms.html#ga97d04d62780c781b0d9f2cdf27af910e">form_ref</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -328,17 +328,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a0c2eeef4bb20a6c077a925896a9024e4" name="a0c2eeef4bb20a6c077a925896a9024e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c2eeef4bb20a6c077a925896a9024e4">&#9670;&#160;</a></span>main_form() <span class="overload">[3/4]</span></h2>
+<a id="acf701a0c0c8e4a214d87d8d0110ec319" name="acf701a0c0c8e4a214d87d8d0110ec319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf701a0c0c8e4a214d87d8d0110ec319">&#9670;&#160;</a></span>main_form() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::application_context::main_form </td>
+          <td class="memname">auto xtd::forms::application_context::main_form </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>main_form</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,17 +354,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a844e842bc8bbb30f3d6a5042f0abcc20" name="a844e842bc8bbb30f3d6a5042f0abcc20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a844e842bc8bbb30f3d6a5042f0abcc20">&#9670;&#160;</a></span>main_form() <span class="overload">[4/4]</span></h2>
+<a id="acaad44fbe92d0bbd066132ccc89e8800" name="acaad44fbe92d0bbd066132ccc89e8800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaad44fbe92d0bbd066132ccc89e8800">&#9670;&#160;</a></span>main_form() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::application_context::main_form </td>
+          <td class="memname">auto xtd::forms::application_context::main_form </td>
           <td>(</td>
           <td class="paramtype">std::nullptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -380,8 +380,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a334032fd5dbc652e3b5a0004d5f6f494" name="a334032fd5dbc652e3b5a0004d5f6f494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a334032fd5dbc652e3b5a0004d5f6f494">&#9670;&#160;</a></span>tag() <span class="overload">[1/2]</span></h2>
+<a id="a7463f108c02c7a3a8b2eda0f05946590" name="a7463f108c02c7a3a8b2eda0f05946590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7463f108c02c7a3a8b2eda0f05946590">&#9670;&#160;</a></span>tag() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,15 +390,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> xtd::forms::application_context::tag </td>
+          <td class="memname">auto xtd::forms::application_context::tag </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -411,17 +411,17 @@ A common use for the tag property is to store data that is closely associated wi
 
 </div>
 </div>
-<a id="a7651081d41e92c8695f43b0b272f59de" name="a7651081d41e92c8695f43b0b272f59de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7651081d41e92c8695f43b0b272f59de">&#9670;&#160;</a></span>tag() <span class="overload">[2/2]</span></h2>
+<a id="a9556a783b387f02f2180a3f1d6eb6b63" name="a9556a783b387f02f2180a3f1d6eb6b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9556a783b387f02f2180a3f1d6eb6b63">&#9670;&#160;</a></span>tag() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::application_context::tag </td>
+          <td class="memname">auto xtd::forms::application_context::tag </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tag</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -439,17 +439,17 @@ A common use for the tag property is to store data that is closely associated wi
 
 </div>
 </div>
-<a id="a3e34e98c1ee192c1091cd13dde474bf9" name="a3e34e98c1ee192c1091cd13dde474bf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e34e98c1ee192c1091cd13dde474bf9">&#9670;&#160;</a></span>exit_thread()</h2>
+<a id="afe1e99641604a3c2cf2b9fe40aafa115" name="afe1e99641604a3c2cf2b9fe40aafa115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1e99641604a3c2cf2b9fe40aafa115">&#9670;&#160;</a></span>exit_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::application_context::exit_thread </td>
+          <td class="memname">auto xtd::forms::application_context::exit_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -460,8 +460,8 @@ A common use for the tag property is to store data that is closely associated wi
 
 </div>
 </div>
-<a id="a466bb139bfe3d1fa26ba473386c0c476" name="a466bb139bfe3d1fa26ba473386c0c476"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a466bb139bfe3d1fa26ba473386c0c476">&#9670;&#160;</a></span>exit_thread_core()</h2>
+<a id="a1e5f8d4aeced43156cbf06704234e8a6" name="a1e5f8d4aeced43156cbf06704234e8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5f8d4aeced43156cbf06704234e8a6">&#9670;&#160;</a></span>exit_thread_core()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -470,10 +470,10 @@ A common use for the tag property is to store data that is closely associated wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::forms::application_context::exit_thread_core </td>
+          <td class="memname">virtual auto xtd::forms::application_context::exit_thread_core </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -489,8 +489,8 @@ A common use for the tag property is to store data that is closely associated wi
 
 </div>
 </div>
-<a id="aba0fa04d97e87bc882a3bca9945c92b0" name="aba0fa04d97e87bc882a3bca9945c92b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba0fa04d97e87bc882a3bca9945c92b0">&#9670;&#160;</a></span>on_main_form_closed()</h2>
+<a id="af565d70e245c757834d09e4c217794d5" name="af565d70e245c757834d09e4c217794d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af565d70e245c757834d09e4c217794d5">&#9670;&#160;</a></span>on_main_form_closed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,14 +499,14 @@ A common use for the tag property is to store data that is closely associated wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::forms::application_context::on_main_form_closed </td>
+          <td class="memname">virtual auto xtd::forms::application_context::on_main_form_closed </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -541,7 +541,7 @@ A common use for the tag property is to store data that is closely associated wi
       </table>
 </div><div class="memdoc">
 
-<p>Occurs when the message loop of the thread should be terminated, by calling <a class="el" href="#a3e34e98c1ee192c1091cd13dde474bf9" title="Terminates the message loop of the thread.">exit_thread()</a>. </p>
+<p>Occurs when the message loop of the thread should be terminated, by calling <a class="el" href="#afe1e99641604a3c2cf2b9fe40aafa115" title="Terminates the message loop of the thread.">exit_thread()</a>. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 
 </div>

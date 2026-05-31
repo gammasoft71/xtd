@@ -192,7 +192,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="line">      dialog.show_elapsed_time(<span class="keyword">true</span>);</div>
 <div class="line">      dialog.show_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">      <span class="keywordflow">while</span> (!dialog.cancelled()) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">application::do_events</a>();</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a76aab2a457f0985b7730a12298550cbf">application::do_events</a>();</div>
 <div class="line">        thread::sleep(100_ms);</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
@@ -206,7 +206,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a1d4031fa24263d5b25e996ebd2ce9089"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">xtd::forms::application::do_events</a></div><div class="ttdeci">static void do_events()</div><div class="ttdoc">Processes all Windows messages currently in the message queue.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a76aab2a457f0985b7730a12298550cbf"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a76aab2a457f0985b7730a12298550cbf">xtd::forms::application::do_events</a></div><div class="ttdeci">static auto do_events() -&gt; void</div><div class="ttdoc">Processes all Windows messages currently in the message queue.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__dialog.html">xtd::forms::progress_dialog</a></div><div class="ttdoc">Represents a common dialog box that displays progress dialog.</div><div class="ttdef"><b>Definition</b> progress_dialog.hpp:32</div></div>
