@@ -24,13 +24,8 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class color_picker_event_args : public event_args {
+    class color_picker_event_args : public xtd::event_args {
     public:
-      /// @cond
-      color_picker_event_args(const color_picker_event_args& color_picker_event_args) = default;
-      color_picker_event_args& operator =(const color_picker_event_args& color_picker_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -44,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::drawing::color that represent the xtd::forms::color_picker::color.
       /// @return The xtd::drawing::color that represent the xtd::forms::color_picker::color.
-      const xtd::drawing::color& color() const noexcept {return color_;}
+      [[nodiscard]] auto color() const noexcept -> const xtd::drawing::color& {return color_;}
       /// @}
       
     private:
