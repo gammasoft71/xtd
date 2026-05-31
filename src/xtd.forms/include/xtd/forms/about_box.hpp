@@ -48,56 +48,56 @@ namespace xtd {
       
       /// @{
       /// @brief Displays an about box in front of the specified window.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
-      static void show(const iwin32_window& owner);
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
+      static auto show(const xtd::forms::iwin32_window& owner) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
-      static void show(const iwin32_window& owner, const xtd::string& text);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message and title bar caption.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption and icon.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon and version.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version and long version.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
       /// @param long_version A string that specifies the long version to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version and copyright.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
       /// @param long_version A string that specifies the long version to display.
       /// @param copyright A string that specifies the copyright to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -105,10 +105,10 @@ namespace xtd {
       /// @param long_version A string that specifies the long version to display.
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -117,10 +117,10 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -130,10 +130,10 @@ namespace xtd {
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
       /// @param authors A authors_collection that specifies the authors collection.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -144,10 +144,10 @@ namespace xtd {
       /// @param website_label A string that specifies the website label to display.
       /// @param authors A authors_collection that specifies the authors collection.
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -159,10 +159,10 @@ namespace xtd {
       /// @param authors A authors_collection that specifies the authors collection.
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -175,10 +175,10 @@ namespace xtd {
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
       /// @param artists A artists_collection that specifies the designers collection.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists) -> void;
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
-      /// @param owner A iwin32_window that represents the owner window of the about box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -192,32 +192,32 @@ namespace xtd {
       /// @param translators A translators_collection that specifies the translators collection.
       /// @param artists A artists_collection that specifies the designers collection.
       /// @param license A string that specifies the license text to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists, const xtd::string& license);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists, const xtd::string& license) -> void;
       
       /// @brief Displays an about box.
-      static void show();
+      static auto show() -> void;
       
       /// @brief Displays an about box. The about box displays a message.
       /// @param text A string that specifies the text to display.
-      static void show(const xtd::string& text);
+      static auto show(const xtd::string& text) -> void;
       
       /// @brief Displays an about box. The about box displays a message and title bar caption.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
-      static void show(const xtd::string& text, const xtd::string& caption);
+      static auto show(const xtd::string& text, const xtd::string& caption) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon and version.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version and long version.
       /// @param text A string that specifies the text to display.
@@ -225,7 +225,7 @@ namespace xtd {
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
       /// @param long_version A string that specifies the long version to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version and copyright.
       /// @param text A string that specifies the text to display.
@@ -234,7 +234,7 @@ namespace xtd {
       /// @param version A string that specifies the version to display.
       /// @param long_version A string that specifies the long version to display.
       /// @param copyright A string that specifies the copyright to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website.
       /// @param text A string that specifies the text to display.
@@ -244,7 +244,7 @@ namespace xtd {
       /// @param long_version A string that specifies the long version to display.
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.
       /// @param text A string that specifies the text to display.
@@ -255,7 +255,7 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
       /// @param text A string that specifies the text to display.
@@ -267,7 +267,7 @@ namespace xtd {
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
       /// @param authors A authors_collection that specifies the authors collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
       /// @param text A string that specifies the text to display.
@@ -280,7 +280,7 @@ namespace xtd {
       /// @param website_label A string that specifies the website label to display.
       /// @param authors A authors_collection that specifies the authors collection.
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
       /// @param text A string that specifies the text to display.
@@ -294,7 +294,7 @@ namespace xtd {
       /// @param authors A authors_collection that specifies the authors collection.
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
       /// @param text A string that specifies the text to display.
@@ -309,7 +309,7 @@ namespace xtd {
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
       /// @param artists A artists_collection that specifies the designers collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
       /// @param text A string that specifies the text to display.
@@ -325,20 +325,20 @@ namespace xtd {
       /// @param translators A translators_collection that specifies the translators collection.
       /// @param artists A artists_collection that specifies the designers collection.
       /// @param license A string that specifies the license text to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists, const xtd::string& license);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists, const xtd::string& license) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon and version.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version and long version.
       /// @param text A string that specifies the text to display.
@@ -346,7 +346,7 @@ namespace xtd {
       /// @param icon An icon value that specifies the icon to display.
       /// @param version A string that specifies the version to display.
       /// @param long_version A string that specifies the long version to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version and copyright.
       /// @param text A string that specifies the text to display.
@@ -355,7 +355,7 @@ namespace xtd {
       /// @param version A string that specifies the version to display.
       /// @param long_version A string that specifies the long version to display.
       /// @param copyright A string that specifies the copyright to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website.
       /// @param text A string that specifies the text to display.
@@ -365,7 +365,7 @@ namespace xtd {
       /// @param long_version A string that specifies the long version to display.
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.
       /// @param text A string that specifies the text to display.
@@ -376,7 +376,7 @@ namespace xtd {
       /// @param copyright A string that specifies the copyright to display.
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
       /// @param text A string that specifies the text to display.
@@ -388,7 +388,7 @@ namespace xtd {
       /// @param website A string that specifies the website url.
       /// @param website_label A string that specifies the website label to display.
       /// @param authors A authors_collection that specifies the authors collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
       /// @param text A string that specifies the text to display.
@@ -401,7 +401,7 @@ namespace xtd {
       /// @param website_label A string that specifies the website label to display.
       /// @param authors A authors_collection that specifies the authors collection.
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
       /// @param text A string that specifies the text to display.
@@ -415,7 +415,7 @@ namespace xtd {
       /// @param authors A authors_collection that specifies the authors collection.
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
       /// @param text A string that specifies the text to display.
@@ -430,7 +430,7 @@ namespace xtd {
       /// @param documenters A documenters_collection that specifies the documentation writers collection.
       /// @param translators A translators_collection that specifies the translators collection.
       /// @param artists A artists_collection that specifies the designers collection.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists) -> void;
       
       /// @brief Displays an about box. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
       /// @param text A string that specifies the text to display.
@@ -446,12 +446,12 @@ namespace xtd {
       /// @param translators A translators_collection that specifies the translators collection.
       /// @param artists A artists_collection that specifies the designers collection.
       /// @param license A string that specifies the license text to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists, const xtd::string& license);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::bitmap& icon, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection& translators, const artist_collection& artists, const xtd::string& license) -> void;
       /// @}
       
     private:
       template<typename icon_t>
-      static void show_about_dialog(const iwin32_window* owner, const xtd::string& text = "About box..."_t, const xtd::string& caption = xtd::string::empty_string, const icon_t& icon = icon_t::empty, const xtd::string& version = xtd::string::empty_string, const xtd::string& long_version = xtd::string::empty_string, const xtd::string& copyright = xtd::string::empty_string, const xtd::string& website = xtd::string::empty_string, const xtd::string& website_label = xtd::string::empty_string, const author_collection& authors = author_collection {}, const documenter_collection& documenters = documenter_collection {}, const translator_collection& translators = translator_collection {}, const artist_collection& artists = artist_collection {}, const xtd::string& license = "") {
+      static auto show_about_dialog(const xtd::forms::iwin32_window* owner, const xtd::string& text = "About box..."_t, const xtd::string& caption = xtd::string::empty_string, const icon_t& icon = icon_t::empty, const xtd::string& version = xtd::string::empty_string, const xtd::string& long_version = xtd::string::empty_string, const xtd::string& copyright = xtd::string::empty_string, const xtd::string& website = xtd::string::empty_string, const xtd::string& website_label = xtd::string::empty_string, const author_collection& authors = author_collection {}, const documenter_collection& documenters = documenter_collection {}, const translator_collection& translators = translator_collection {}, const artist_collection& artists = artist_collection {}, const xtd::string& license = "") -> void {
         static auto dialog = about_dialog {};
         dialog.description(text);
         dialog.name(caption);
