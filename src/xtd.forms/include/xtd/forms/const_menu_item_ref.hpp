@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using const_menu_item_ref = xtd::ref<const menu_item>;
+    using const_menu_item_ref = xtd::ref<const xtd::forms::menu_item>;
   }
 }
