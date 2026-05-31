@@ -28,3570 +28,3570 @@ namespace xtd {
       /// @{
       /// @brief Create a system-defined button that represent abort button
       /// @return The created button.
-      static button abort();
+      [[nodiscard]] static auto abort() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button abort(const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button abort(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button abort(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button abort(const control& parent);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button abort(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button abort(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent abort button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent about button
       /// @return The created button.
-      static button about();
+      [[nodiscard]] static auto about() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button about(const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button about(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button about(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button about(const control& parent);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button about(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button about(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent about button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent actual_size button
       /// @return The created button.
-      static button actual_size();
+      [[nodiscard]] static auto actual_size() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button actual_size(const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button actual_size(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button actual_size(const control& parent);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button actual_size(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button actual_size(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent actual_size button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent add button
       /// @return The created button.
-      static button add();
+      [[nodiscard]] static auto add() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button add(const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button add(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button add(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button add(const control& parent);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button add(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button add(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent add button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent alignment button
       /// @return The created button.
-      static button alignment();
+      [[nodiscard]] static auto alignment() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button alignment(const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button alignment(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button alignment(const control& parent);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button alignment(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button alignment(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent alignment button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent align_left button
       /// @return The created button.
-      static button align_left();
+      [[nodiscard]] static auto align_left() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button align_left(const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button align_left(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button align_left(const control& parent);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button align_left(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button align_left(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_left button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent align_right button
       /// @return The created button.
-      static button align_right();
+      [[nodiscard]] static auto align_right() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button align_right(const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button align_right(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button align_right(const control& parent);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button align_right(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button align_right(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent align_right button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent apply button
       /// @return The created button.
-      static button apply();
+      [[nodiscard]] static auto apply() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button apply(const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button apply(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button apply(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button apply(const control& parent);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button apply(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button apply(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent apply button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent ascending button
       /// @return The created button.
-      static button ascending();
+      [[nodiscard]] static auto ascending() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button ascending(const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button ascending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button ascending(const control& parent);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button ascending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button ascending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ascending button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent back button
       /// @return The created button.
-      static button back();
+      [[nodiscard]] static auto back() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button back(const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button back(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button back(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button back(const control& parent);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button back(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button back(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent back button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent bold button
       /// @return The created button.
-      static button bold();
+      [[nodiscard]] static auto bold() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button bold(const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button bold(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button bold(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button bold(const control& parent);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button bold(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button bold(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bold button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent bottom button
       /// @return The created button.
-      static button bottom();
+      [[nodiscard]] static auto bottom() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button bottom(const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button bottom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button bottom(const control& parent);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button bottom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button bottom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent bottom button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent cancel button
       /// @return The created button.
-      static button cancel();
+      [[nodiscard]] static auto cancel() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button cancel(const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button cancel(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button cancel(const control& parent);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button cancel(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button cancel(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cancel button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent cdrom button
       /// @return The created button.
-      static button cdrom();
+      [[nodiscard]] static auto cdrom() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button cdrom(const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button cdrom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button cdrom(const control& parent);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button cdrom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button cdrom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cdrom button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent centered button
       /// @return The created button.
-      static button centered();
+      [[nodiscard]] static auto centered() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button centered(const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button centered(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button centered(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button centered(const control& parent);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button centered(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button centered(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent centered button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent clear button
       /// @return The created button.
-      static button clear();
+      [[nodiscard]] static auto clear() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button clear(const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button clear(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button clear(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button clear(const control& parent);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button clear(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button clear(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent clear button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent close button
       /// @return The created button.
-      static button close();
+      [[nodiscard]] static auto close() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button close(const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button close(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button close(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button close(const control& parent);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button close(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button close(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent close button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent color button
       /// @return The created button.
-      static button color();
+      [[nodiscard]] static auto color() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button color(const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button color(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button color(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button color(const control& parent);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button color(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button color(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent color button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent contents button
       /// @return The created button.
-      static button contents();
+      [[nodiscard]] static auto contents() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button contents(const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button contents(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button contents(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button contents(const control& parent);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button contents(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button contents(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent contents button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent convert button
       /// @return The created button.
-      static button convert();
+      [[nodiscard]] static auto convert() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button convert(const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button convert(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button convert(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button convert(const control& parent);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button convert(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button convert(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent convert button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent copy button
       /// @return The created button.
-      static button copy();
+      [[nodiscard]] static auto copy() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button copy(const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button copy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button copy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button copy(const control& parent);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button copy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button copy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent copy button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent customize button
       /// @return The created button.
-      static button customize();
+      [[nodiscard]] static auto customize() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button customize(const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button customize(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button customize(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button customize(const control& parent);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button customize(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button customize(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent customize button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent cut button
       /// @return The created button.
-      static button cut();
+      [[nodiscard]] static auto cut() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button cut(const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button cut(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button cut(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button cut(const control& parent);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button cut(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button cut(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent cut button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent del button
       /// @return The created button.
-      static button del();
+      [[nodiscard]] static auto del() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button del(const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button del(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button del(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button del(const control& parent);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button del(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button del(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent del button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent descending button
       /// @return The created button.
-      static button descending();
+      [[nodiscard]] static auto descending() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button descending(const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button descending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button descending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button descending(const control& parent);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button descending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button descending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent descending button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent down button
       /// @return The created button.
-      static button down();
+      [[nodiscard]] static auto down() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button down(const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button down(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button down(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button down(const control& parent);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button down(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button down(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent down button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent edit button
       /// @return The created button.
-      static button edit();
+      [[nodiscard]] static auto edit() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button edit(const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button edit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button edit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button edit(const control& parent);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button edit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button edit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent edit button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent execute button
       /// @return The created button.
-      static button execute();
+      [[nodiscard]] static auto execute() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button execute(const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button execute(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button execute(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button execute(const control& parent);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button execute(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button execute(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent execute button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent exit button
       /// @return The created button.
-      static button exit();
+      [[nodiscard]] static auto exit() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button exit(const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button exit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button exit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button exit(const control& parent);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button exit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button exit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent exit button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent file button
       /// @return The created button.
-      static button file();
+      [[nodiscard]] static auto file() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button file(const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button file(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button file(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button file(const control& parent);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button file(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button file(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent file button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent find button
       /// @return The created button.
-      static button find();
+      [[nodiscard]] static auto find() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button find(const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button find(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button find(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button find(const control& parent);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button find(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button find(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent find button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent first button
       /// @return The created button.
-      static button first();
+      [[nodiscard]] static auto first() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button first(const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button first(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button first(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button first(const control& parent);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button first(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button first(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent first button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent floppy button
       /// @return The created button.
-      static button floppy();
+      [[nodiscard]] static auto floppy() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button floppy(const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button floppy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button floppy(const control& parent);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button floppy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button floppy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent floppy button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent font button
       /// @return The created button.
-      static button font();
+      [[nodiscard]] static auto font() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button font(const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button font(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button font(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button font(const control& parent);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button font(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button font(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent font button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent forward button
       /// @return The created button.
-      static button forward();
+      [[nodiscard]] static auto forward() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button forward(const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button forward(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button forward(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button forward(const control& parent);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button forward(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button forward(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent forward button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent harddisk button
       /// @return The created button.
-      static button harddisk();
+      [[nodiscard]] static auto harddisk() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button harddisk(const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button harddisk(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button harddisk(const control& parent);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button harddisk(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button harddisk(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent harddisk button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent help button
       /// @return The created button.
-      static button help();
+      [[nodiscard]] static auto help() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button help(const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button help(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button help(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button help(const control& parent);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button help(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button help(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent help button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent home button
       /// @return The created button.
-      static button home();
+      [[nodiscard]] static auto home() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button home(const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button home(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button home(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button home(const control& parent);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button home(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button home(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent home button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent ignore button
       /// @return The created button.
-      static button ignore();
+      [[nodiscard]] static auto ignore() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button ignore(const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button ignore(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button ignore(const control& parent);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button ignore(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button ignore(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ignore button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent indent button
       /// @return The created button.
-      static button indent();
+      [[nodiscard]] static auto indent() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button indent(const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button indent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button indent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button indent(const control& parent);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button indent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button indent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent indent button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent index button
       /// @return The created button.
-      static button index();
+      [[nodiscard]] static auto index() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button index(const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button index(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button index(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button index(const control& parent);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button index(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button index(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent index button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent info button
       /// @return The created button.
-      static button info();
+      [[nodiscard]] static auto info() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button info(const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button info(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button info(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button info(const control& parent);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button info(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button info(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent info button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent italic button
       /// @return The created button.
-      static button italic();
+      [[nodiscard]] static auto italic() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button italic(const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button italic(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button italic(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button italic(const control& parent);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button italic(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button italic(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent italic button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent justified button
       /// @return The created button.
-      static button justified();
+      [[nodiscard]] static auto justified() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button justified(const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button justified(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button justified(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button justified(const control& parent);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button justified(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button justified(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent justified button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent jump_to button
       /// @return The created button.
-      static button jump_to();
+      [[nodiscard]] static auto jump_to() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button jump_to(const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button jump_to(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button jump_to(const control& parent);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button jump_to(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button jump_to(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent jump_to button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent last button
       /// @return The created button.
-      static button last();
+      [[nodiscard]] static auto last() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button last(const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button last(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button last(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button last(const control& parent);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button last(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button last(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent last button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent network button
       /// @return The created button.
-      static button network();
+      [[nodiscard]] static auto network() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button network(const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button network(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button network(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button network(const control& parent);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button network(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button network(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent network button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent new_ button
       /// @return The created button.
-      static button new_();
+      [[nodiscard]] static auto new_() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button new_(const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button new_(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button new_(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button new_(const control& parent);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button new_(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button new_(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent new_ button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent next button
       /// @return The created button.
-      static button next();
+      [[nodiscard]] static auto next() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button next(const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button next(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button next(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button next(const control& parent);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button next(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button next(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent next button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent no button
       /// @return The created button.
-      static button no();
+      [[nodiscard]] static auto no() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button no(const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button no(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button no(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button no(const control& parent);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button no(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button no(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent no button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent ok button
       /// @return The created button.
-      static button ok();
+      [[nodiscard]] static auto ok() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button ok(const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button ok(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button ok(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button ok(const control& parent);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button ok(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button ok(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent ok button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent open button
       /// @return The created button.
-      static button open();
+      [[nodiscard]] static auto open() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button open(const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button open(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button open(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button open(const control& parent);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button open(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button open(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent open button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent options button
       /// @return The created button.
-      static button options();
+      [[nodiscard]] static auto options() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button options(const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button options(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button options(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button options(const control& parent);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button options(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button options(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent options button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent paste button
       /// @return The created button.
-      static button paste();
+      [[nodiscard]] static auto paste() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button paste(const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button paste(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button paste(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button paste(const control& parent);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button paste(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button paste(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent paste button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent preferences button
       /// @return The created button.
-      static button preferences();
+      [[nodiscard]] static auto preferences() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button preferences(const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button preferences(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button preferences(const control& parent);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button preferences(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button preferences(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent preferences button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent previous button
       /// @return The created button.
-      static button previous();
+      [[nodiscard]] static auto previous() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button previous(const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button previous(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button previous(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button previous(const control& parent);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button previous(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button previous(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent previous button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent print button
       /// @return The created button.
-      static button print();
+      [[nodiscard]] static auto print() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button print(const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button print(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button print(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button print(const control& parent);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button print(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button print(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent print_preview button
       /// @return The created button.
-      static button print_preview();
+      [[nodiscard]] static auto print_preview() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button print_preview(const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button print_preview(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button print_preview(const control& parent);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button print_preview(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button print_preview(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent print_preview button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent properties button
       /// @return The created button.
-      static button properties();
+      [[nodiscard]] static auto properties() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button properties(const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button properties(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button properties(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button properties(const control& parent);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button properties(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button properties(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent properties button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent quit button
       /// @return The created button.
-      static button quit();
+      [[nodiscard]] static auto quit() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button quit(const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button quit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button quit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button quit(const control& parent);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button quit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button quit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent quit button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent redo button
       /// @return The created button.
-      static button redo();
+      [[nodiscard]] static auto redo() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button redo(const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button redo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button redo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button redo(const control& parent);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button redo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button redo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent redo button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent refresh button
       /// @return The created button.
-      static button refresh();
+      [[nodiscard]] static auto refresh() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button refresh(const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button refresh(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button refresh(const control& parent);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button refresh(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button refresh(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent refresh button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent remove button
       /// @return The created button.
-      static button remove();
+      [[nodiscard]] static auto remove() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button remove(const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button remove(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button remove(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button remove(const control& parent);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button remove(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button remove(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent remove button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent replace button
       /// @return The created button.
-      static button replace();
+      [[nodiscard]] static auto replace() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button replace(const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button replace(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button replace(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button replace(const control& parent);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button replace(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button replace(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent replace button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent retry button
       /// @return The created button.
-      static button retry();
+      [[nodiscard]] static auto retry() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button retry(const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button retry(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button retry(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button retry(const control& parent);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button retry(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button retry(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent retry button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent revert_to_saved button
       /// @return The created button.
-      static button revert_to_saved();
+      [[nodiscard]] static auto revert_to_saved() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button revert_to_saved(const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button revert_to_saved(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button revert_to_saved(const control& parent);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button revert_to_saved(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent revert_to_saved button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent save button
       /// @return The created button.
-      static button save();
+      [[nodiscard]] static auto save() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button save(const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button save(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button save(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button save(const control& parent);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button save(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button save(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent save_as button
       /// @return The created button.
-      static button save_as();
+      [[nodiscard]] static auto save_as() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button save_as(const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button save_as(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button save_as(const control& parent);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button save_as(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button save_as(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent save_as button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent search button
       /// @return The created button.
-      static button search();
+      [[nodiscard]] static auto search() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button search(const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button search(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button search(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button search(const control& parent);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button search(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button search(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent search button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent select_all button
       /// @return The created button.
-      static button select_all();
+      [[nodiscard]] static auto select_all() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button select_all(const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button select_all(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button select_all(const control& parent);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button select_all(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button select_all(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent select_all button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent settings button
       /// @return The created button.
-      static button settings();
+      [[nodiscard]] static auto settings() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button settings(const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button settings(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button settings(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button settings(const control& parent);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button settings(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button settings(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent settings button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent spell_check button
       /// @return The created button.
-      static button spell_check();
+      [[nodiscard]] static auto spell_check() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button spell_check(const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button spell_check(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button spell_check(const control& parent);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button spell_check(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button spell_check(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent spell_check button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent stop button
       /// @return The created button.
-      static button stop();
+      [[nodiscard]] static auto stop() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button stop(const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button stop(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button stop(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button stop(const control& parent);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button stop(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button stop(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent stop button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent strikeout button
       /// @return The created button.
-      static button strikeout();
+      [[nodiscard]] static auto strikeout() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button strikeout(const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button strikeout(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button strikeout(const control& parent);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button strikeout(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button strikeout(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent strikeout button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent tools button
       /// @return The created button.
-      static button tools();
+      [[nodiscard]] static auto tools() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button tools(const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button tools(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button tools(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button tools(const control& parent);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button tools(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button tools(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent tools button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent top button
       /// @return The created button.
-      static button top();
+      [[nodiscard]] static auto top() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button top(const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button top(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button top(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button top(const control& parent);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button top(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button top(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent top button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent undelete button
       /// @return The created button.
-      static button undelete();
+      [[nodiscard]] static auto undelete() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button undelete(const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button undelete(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button undelete(const control& parent);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button undelete(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button undelete(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undelete button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent underline button
       /// @return The created button.
-      static button underline();
+      [[nodiscard]] static auto underline() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button underline(const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button underline(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button underline(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button underline(const control& parent);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button underline(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button underline(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent underline button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent undo button
       /// @return The created button.
-      static button undo();
+      [[nodiscard]] static auto undo() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button undo(const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button undo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button undo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button undo(const control& parent);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button undo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button undo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent undo button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent unindent button
       /// @return The created button.
-      static button unindent();
+      [[nodiscard]] static auto unindent() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button unindent(const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button unindent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button unindent(const control& parent);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button unindent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button unindent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent unindent button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent up button
       /// @return The created button.
-      static button up();
+      [[nodiscard]] static auto up() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button up(const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button up(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button up(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button up(const control& parent);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button up(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button up(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent up button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent view button
       /// @return The created button.
-      static button view();
+      [[nodiscard]] static auto view() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button view(const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button view(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button view(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button view(const control& parent);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button view(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button view(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent view button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent window button
       /// @return The created button.
-      static button window();
+      [[nodiscard]] static auto window() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button window(const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button window(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button window(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button window(const control& parent);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button window(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button window(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent window button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent yes button
       /// @return The created button.
-      static button yes();
+      [[nodiscard]] static auto yes() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button yes(const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button yes(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button yes(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button yes(const control& parent);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button yes(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button yes(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent yes button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent zoom_in button
       /// @return The created button.
-      static button zoom_in();
+      [[nodiscard]] static auto zoom_in() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button zoom_in(const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button zoom_in(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button zoom_in(const control& parent);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button zoom_in(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_in button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent zoom_out button
       /// @return The created button.
-      static button zoom_out();
+      [[nodiscard]] static auto zoom_out() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button zoom_out(const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button zoom_out(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button zoom_out(const control& parent);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button zoom_out(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_out button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       
       /// @brief Create a system-defined button that represent zoom_to_fit button
       /// @return The created button.
-      static button zoom_to_fit();
+      [[nodiscard]] static auto zoom_to_fit() -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified location.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button zoom_to_fit(const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified location, and size.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button zoom_to_fit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified location, size, and name.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified parent.
       /// @param parent The control that contains the button.
       /// @return The created button.
-      static button zoom_to_fit(const control& parent);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified parent, and location.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @return The created button.
-      static button zoom_to_fit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified parent, location, and size.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @return The created button.
-      static button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::button;
       /// @brief Create a system-defined button that represent zoom_to_fit button with specified parent, location, size, and name.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param name The name of the button.
       /// @return The created button.
-      static button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::button;
       /// @}
     };
   }
