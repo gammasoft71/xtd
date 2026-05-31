@@ -34,16 +34,16 @@ namespace xtd {
       /// @param graphics The Graphics used to draw a box.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
       /// @param box_model The xtd::forms::style_sheets::ibox_model that specifies the style for the box.
-      static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
+      static auto draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model) -> void;
       /// @}
       
     private:
-      static xtd::drawing::drawing_2d::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);
-      static void draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);
-      static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);
-      static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);
-      static void draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);
-      static void fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
+      [[nodiscard]] static auto border_type_to_dash_style(xtd::forms::style_sheets::border_type value) -> xtd::drawing::drawing_2d::dash_style;
+      static auto draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) -> void;
+      static auto draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) -> void;
+      static auto draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) -> void;
+      static auto draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) -> void;
+      static auto fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model) -> void;
     };
   }
 }
