@@ -25,6 +25,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a control_event_args delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate.
-    using color_picker_event_handler = xtd::delegate<void(object& sender, const color_picker_event_args& e)>;
+    using color_picker_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::color_picker_event_args& e)>;
   }
 }
