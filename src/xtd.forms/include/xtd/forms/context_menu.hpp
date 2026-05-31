@@ -39,7 +39,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents menu items collection.
-      using menu_item_collection = std::vector<menu_item_ref>;
+      using menu_item_collection = std::vector<xtd::forms::menu_item_ref>;
       /// @}
       
       /// @name Public Constructors
@@ -53,7 +53,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      explicit context_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
+      explicit context_menu(const std::initializer_list<xtd::forms::const_menu_item_ref>& menu_items);
       context_menu(context_menu&&) = default;
       context_menu(const context_menu&) = default;
       context_menu& operator =(const context_menu&) = default;
@@ -67,7 +67,7 @@ namespace xtd {
       /// @param control A xtd::forms::control that specifies the control with which this shortcut menu is associated.
       /// @param pos A xtd::drawing::point that specifies the coordinates at which to display the menu. These coordinates are specified relative to the client coordinates of the control specified in the control parameter.
       /// @remarks Typically, a xtd::forms::context_menu is displayed when the user clicks the right mouse button on a control or area of the form that the xtd::forms::context_menu is bound to. You can use this method to manually display the shortcut menu at a specific location and bind it with a specific control. This method does not return until the menu is dismissed.
-      void show(const xtd::forms::control& control, const xtd::drawing::point& pos);
+      auto show(const xtd::forms::control& control, const xtd::drawing::point& pos) -> void;
       /// @}
       ///
     protected:
@@ -78,17 +78,17 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
+      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
       
-      intptr create_menu_handle() override;
-      void destroy_menu_handle(intptr handle) override;
-      void on_item_added(xtd::usize pos, menu_item_ref item) override;
-      void on_item_removed(xtd::usize pos, menu_item_ref item) override;
+      [[nodiscard]] auto create_menu_handle() -> xtd::intptr override;
+      auto destroy_menu_handle(intptr handle) -> void override;
+      auto on_item_added(xtd::usize pos, menu_item_ref item) -> void override;
+      auto on_item_removed(xtd::usize pos, menu_item_ref item) -> void override;
       /// @}
       
     private:
       friend class control;
-      bool on_item_click(intptr menu_id);
+      [[nodiscard]] auto on_item_click(intptr menu_id) -> bool;
     };
   }
 }
