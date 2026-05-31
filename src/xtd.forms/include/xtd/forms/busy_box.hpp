@@ -35,78 +35,78 @@ namespace xtd {
       
       /// @{
       /// @brief Hides a busy box in front.
-      static void hide();
+      static auto hide() -> void;
       
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
-      static void show(const iwin32_window& owner);
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
+      static auto show(const xtd::forms::iwin32_window& owner) -> void;
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
-      static void show(const iwin32_window& owner, const xtd::string& text);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text) -> void;
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption) -> void;
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon) -> void;
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) -> void;
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) -> void;
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A xtd::forms::iwin32_window that represents the owner window of the busy box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
       /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no full opacity)
-      static void show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity);
+      static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) -> void;
       
       /// @brief Displays a busy box.
-      static void show();
+      static auto show() -> void;
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.
       /// @param text A string that specifies the text to display.
-      static void show(const xtd::string& text);
+      static auto show(const xtd::string& text) -> void;
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
-      static void show(const xtd::string& text, const xtd::string& caption);
+      static auto show(const xtd::string& text, const xtd::string& caption) -> void;
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon) -> void;
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) -> void;
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) -> void;
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
@@ -114,11 +114,11 @@ namespace xtd {
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
       /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no opacity). The lower the value, the more transparent.
-      static void show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity);
+      static auto show(const xtd::string& text, const xtd::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) -> void;
       /// @}
       
     private:
-      static void show_busy_dialog(const iwin32_window* owner, const xtd::string& text = "Please wait..."_t, const xtd::string& caption = xtd::string::empty_string, const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 1.0f);
+      static auto show_busy_dialog(const xtd::forms::iwin32_window* owner, const xtd::string& text = "Please wait..."_t, const xtd::string& caption = xtd::string::empty_string, const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 1.0f) -> void;
       
       static xtd::uptr<busy_dialog> dialog_;
     };
