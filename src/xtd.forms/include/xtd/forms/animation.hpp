@@ -46,48 +46,47 @@ namespace xtd {
       /// @{
       /// @brief Gets the elapsed time for the current frame, in nanoseconds.
       /// @return A std::chrono::nanoseconds representing the elapsed time for the current frame, in nanoseconds.
-      virtual time_span elapsed() const noexcept;
+      [[nodiscard]] virtual auto elapsed() const noexcept -> xtd::time_span;
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
-      virtual int64 elapsed_milliseconds() const noexcept;
+      [[nodiscard]] virtual auto elapsed_milliseconds() const noexcept -> xtd::int64;
       
       /// @brief Gets the elapsed time for the current frame, in nanoseconds.
       /// @return A long integer representing the elapsed time for the current frame, in nanoseconds.
-      virtual int64 elapsed_nanoseconds() const noexcept;
+      [[nodiscard]] virtual auto elapsed_nanoseconds() const noexcept -> xtd::int64;
       
       /// @brief Gets the elapsed time for the current frame, in ticks.
       /// @return A long integer representing the elapsed time for the current frame, in ticks.
-      virtual int64 elapsed_ticks() const noexcept;
+      [[nodiscard]] virtual auto elapsed_ticks() const noexcept -> xtd::int64;
       
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
-      virtual uint32 frame_counter() const noexcept;
+      [[nodiscard]] virtual auto frame_counter() const noexcept -> xtd::uint32;
       
       /// @brief Gets the number of frame per second.
       /// @return The number of frame per seconds. The default is 10.
-      virtual uint32 frames_per_second() const noexcept;
+      [[nodiscard]] virtual auto frames_per_second() const noexcept -> xtd::uint32;
       /// @brief Sets the number of frame per second.
       /// @param value The number of frame per seconds. The default is 10.
-      virtual animation& frames_per_second(uint32 value);
+      virtual auto frames_per_second(uint32 value) -> animation&;
       
       /// @brief Gets a valiue that indicates if the animation is running.
       /// @return `true` if the animation is running; otherwise `false`.
-      virtual bool running() const noexcept;
-      
-      /// @brief Gets a valiue that indicates if the animation is running.
+      [[nodiscard]] virtual auto running() const noexcept -> bool;
+      /// @brief Sets a valiue that indicates if the animation is running.
       /// @param value `true` if the animation is running; otherwise `false`.
-      virtual animation& running(bool value);
+      virtual auto running(bool value) -> animation&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Starts animation of the animation control.
-      void start();
+      auto start() -> void;
       
       /// @brief Stops animation of the animation control.
-      void stop();
+      auto stop() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -95,84 +94,84 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create();
+      [[nodiscard]] static auto create() -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const drawing::point& location);
+      [[nodiscard]] static auto create(const drawing::point& location) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified the number of frame per seconds.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(uint32 frames_per_second);
+      [[nodiscard]] static auto create(uint32 frames_per_second) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified the number of frame per second, and location.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(uint32 frames_per_second, const drawing::point& location);
+      [[nodiscard]] static auto create(uint32 frames_per_second, const drawing::point& location) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified the number of frame per second, location, and size.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified the number of frame per second, location, size, and name.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent);
+      [[nodiscard]] static auto create(const control& parent) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, and location.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, location, and size.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, location, size, and name.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, and the number of frame per second.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, uint32 frames_per_second);
+      [[nodiscard]] static auto create(const control& parent, uint32 frames_per_second) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, the number of frame per second, and location.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, uint32 frames_per_second, const drawing::point& location) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, the number of frame per second, location, and size.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size) -> animation;
       /// @brief A factory to create an xtd::forms::animation with specified parent, the number of frame per second, location, size, and name.
       /// @param parent The number of frame per seconds of the xtd::forms::animation.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
@@ -180,7 +179,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
-      static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> animation;
       /// @}
       
       /// @name Public Events
@@ -196,7 +195,7 @@ namespace xtd {
       /// @name Protected Properties
       
       /// @{
-      drawing::size default_size() const noexcept override;
+      [[nodiscard]] auto default_size() const noexcept -> xtd::drawing::size override;
       /// @}
       
       /// @name Protected Methods
@@ -206,15 +205,15 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
+      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
       
       /// @brief Raises the updated event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
-      virtual void on_updated(const xtd::forms::animation_updated_event_args& e);
+      virtual auto on_updated(const xtd::forms::animation_updated_event_args& e) -> void;
       /// @}
       
     private:
-      void on_frames_timer_tick(object& timer, const xtd::event_args& e);
+      auto on_frames_timer_tick(object& timer, const xtd::event_args& e) -> void;
       
       xtd::sptr<data> data_;
     };
