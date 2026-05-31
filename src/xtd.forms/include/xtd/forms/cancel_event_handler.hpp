@@ -25,6 +25,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a cancel_event_handler delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event-handler method is called whenever the event occurs, unless you remove the delegate.
-    using cancel_event_handler = xtd::delegate<void(object& sender, cancel_event_args& e)>;
+    using cancel_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::cancel_event_args& e)>;
   }
 }
