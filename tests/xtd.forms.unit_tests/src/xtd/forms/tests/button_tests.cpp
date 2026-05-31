@@ -100,8 +100,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -168,8 +168,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -236,8 +236,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -304,8 +304,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -375,8 +375,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -446,8 +446,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -515,8 +515,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -584,8 +584,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -653,8 +653,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -725,8 +725,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
@@ -797,8 +797,8 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
       
       assert::is_false(button.auto_repeat());
-      assert::are_equal(300, button.auto_repeat_delay());
-      assert::are_equal(100, button.auto_repeat_interval());
+      assert::are_equal(300_ms, button.auto_repeat_delay());
+      assert::are_equal(100_ms, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
