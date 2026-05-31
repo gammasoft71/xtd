@@ -37,39 +37,39 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      virtual bool auto_size() const noexcept override;
+      virtual auto auto_size() const noexcept -> bool override;
       
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const noexcept;
+      [[nodiscard]] virtual auto border_sides() const noexcept -> xtd::forms::border_sides;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
-      virtual collapsible_panel& border_sides(forms::border_sides border_sides);
+      virtual auto border_sides(forms::border_sides border_sides) -> collapsible_panel&;
       
       /// @brief Gets the border style for the control.
       /// @return One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
-      virtual forms::border_style border_style() const noexcept;
+      [[nodiscard]] virtual auto border_style() const noexcept -> xtd::forms::border_style;
       /// @brief Sets the border style for the control.
       /// @param border_style One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
-      virtual collapsible_panel& border_style(forms::border_style border_style);
+      virtual auto border_style(forms::border_style border_style) -> collapsible_panel&;
       /// @brief Resets the border style for the control.
       /// @param border_style nullptr.
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual collapsible_panel& border_style(std::nullptr_t);
+      virtual auto border_style(std::nullptr_t) -> collapsible_panel&;
       
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
       /// @return `true` if collapsible_panel is expanded; otherwise `false`.
-      bool expanded() const noexcept;
+      [[nodiscard]] auto expanded() const noexcept -> bool;
       /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
       /// @param expanded `true` if collapsible_panel is expanded; otherwise `false`.
-      collapsible_panel& expanded(bool expanded);
+      auto expanded(bool expanded) -> collapsible_panel&;
       
       /// @cond
-      const xtd::drawing::size& client_size() const noexcept override;
-      xtd::drawing::size size() const noexcept override;
+      [[nodiscard]] auto client_size() const noexcept -> const xtd::drawing::size& override;
+      [[nodiscard]] auto size() const noexcept -> xtd::drawing::size override;
       /// @endcond
       /// @}
       
@@ -78,11 +78,11 @@ namespace xtd {
       /// @{
       /// @brief Collapse the collapsible_panel.
       /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to `false`. After the collapse method is called, the expanded property returns a value of `false` until the expand method is called.
-      void collapse();
+      auto collapse() -> void;
       
       /// @brief Expand the collapsible_panel.
       /// @remarks Expanding the collapsible_panel is equivalent to setting the expanded property to `true`. After the expand method is called, the expanded property returns a value of `true` until the collapse method is called.
-      void expand();
+      auto expand() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -90,62 +90,62 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create();
+      [[nodiscard]] static auto create() -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text);
+      [[nodiscard]] static auto create(const xtd::string& text) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, and expanded.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param expanded A value indicating whether the collapsible_panel is in the expanded.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, bool expanded);
+      [[nodiscard]] static auto create(const xtd::string& text, bool expanded) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, expanded, and location.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param expanded A value indicating whether the collapsible_panel is in the expanded.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, bool expanded, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::string& text, bool expanded, const xtd::drawing::point& location) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, expanded, location, and size.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param expanded A value indicating whether the collapsible_panel is in the expanded.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::string& text, bool expanded, const xtd::drawing::point& location, const xtd::drawing::size& size) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, expanded, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param expanded A value indicating whether the collapsible_panel is in the expanded.
@@ -153,47 +153,47 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::string& text, bool expanded, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
@@ -201,20 +201,20 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, and exapended.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param expanded A value indicating whether the collapsible_panel is in the expanded.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, bool expanded);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool expanded) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, exapended, and location.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param expanded A value indicating whether the collapsible_panel is in the expanded.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, bool expanded, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool expanded, const xtd::drawing::point& location) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, exapended, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
@@ -222,7 +222,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool expanded, const xtd::drawing::point& location, const xtd::drawing::size& size) -> collapsible_panel;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, exapended, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
@@ -231,7 +231,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::collapsible_panel.
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
-      static collapsible_panel create(const control& parent, const xtd::string& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool expanded, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> collapsible_panel;
       /// @}
       
       /// @name Public Events
@@ -246,7 +246,7 @@ namespace xtd {
       /// @name Protected Properties
       
       /// @{
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
       /// @name Protected Methods
@@ -256,26 +256,26 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
+      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
       
-      drawing::size measure_control() const noexcept override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       
-      void on_control_added(const control_event_args& e) override;
-      void on_control_removed(const control_event_args& e) override;
+      auto on_control_added(const control_event_args& e) -> void override;
+      auto on_control_removed(const control_event_args& e) -> void override;
       
       /// @brief Raises the collapsible_panel::expanded_changed event.
-      virtual void on_expanded_changed(const xtd::event_args& e);
+      virtual auto on_expanded_changed(const xtd::event_args& e) -> void;
       
-      void on_handle_created(const event_args& e) override;
+      auto on_handle_created(const event_args& e) -> void override;
       
-      void wnd_proc(message& message) override;
+      auto wnd_proc(message& message) -> void override;
       /// @}
       
     private:
-      control& auto_size(bool auto_size) override;
-      control& client_size(const xtd::drawing::size& client_size) override;
-      control& size(const xtd::drawing::size& size) override;
-      void wm_command_control(message& message);
+      auto auto_size(bool auto_size) -> xtd::forms::control& override;
+      auto client_size(const xtd::drawing::size& client_size) -> xtd::forms::control& override;
+      auto size(const xtd::drawing::size& size) -> xtd::forms::control& override;
+      auto wm_command_control(message& message) -> void;
       
       xtd::sptr<data> data_;
     };
