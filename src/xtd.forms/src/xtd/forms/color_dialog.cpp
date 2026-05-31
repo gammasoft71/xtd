@@ -117,7 +117,7 @@ bool color_dialog::run_dialog(intptr owner) {
 }
 
 void color_dialog::run_sheet(intptr owner) {
-  if (!owner) run_dialog(owner);
+  if (!owner) [[maybe_unused]] auto _ = run_dialog(owner);
   else native::color_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->title, data_->color, data_->custom_colors, data_->options);
 }
 
