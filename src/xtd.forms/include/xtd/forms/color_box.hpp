@@ -42,14 +42,14 @@ namespace xtd {
       /// @param owner A iwin32_window that represents the owner window of the color box.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner) -> xtd::forms::dialog_result;
       /// @brief Displays a color box in front of the specified window. The color box displays a color.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
       /// @param title The file dialog box title. The default value is an empty string ("").
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title) -> xtd::forms::dialog_result;
       /// @brief Displays a color box in front of the specified window. The color box displays a color with styles.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param styles A bitwise combination of the color_box_styles values. The default is alpha_color and allow_full_open.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title, color_box_styles styles);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title, color_box_styles styles) -> xtd::forms::dialog_result;
       /// @brief Displays a color box in front of the specified window. The color box displays a color with styles, and custom colors.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
@@ -66,26 +66,26 @@ namespace xtd {
       /// @param custom_colors A colors array that contains user custom colors.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title, color_box_styles styles, const xtd::array<xtd::drawing::color>& custom_colors);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title, color_box_styles styles, const xtd::array<xtd::drawing::color>& custom_colors) -> xtd::forms::dialog_result;
       
       /// @brief Displays a color box. The color box displays a color.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color);
+      [[nodiscard]] static auto show(xtd::drawing::color& color) -> xtd::forms::dialog_result;
       /// @brief Displays a color box. The color box displays a color.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param title The file dialog box title. The default value is an empty string ("").
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::string& title);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::string& title) -> xtd::forms::dialog_result;
       /// @brief Displays a color box. The color box displays a color with styles.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param title The file dialog box title. The default value is an empty string ("").
       /// @param styles A bitwise combination of the color_box_styles values. The default is alpha_color and allow_full_open.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::string& title, color_box_styles styles);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::string& title, color_box_styles styles) -> xtd::forms::dialog_result;
       /// @brief Displays a color box. The color box displays a color with styles, and custom colors.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param title The file dialog box title. The default value is an empty string ("").
@@ -93,11 +93,11 @@ namespace xtd {
       /// @param custom_colors A colors array that contains user custom colors.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::string& title, color_box_styles styles, const xtd::array<xtd::drawing::color>& custom_colors);
+      [[nodiscard]] static auto show(xtd::drawing::color& color, const xtd::string& title, color_box_styles styles, const xtd::array<xtd::drawing::color>& custom_colors) -> xtd::forms::dialog_result;
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, const xtd::string& title = xtd::string::empty_string, color_box_styles styles = color_box_styles::alpha_color | color_box_styles::allow_full_open, const std::optional<xtd::array<xtd::drawing::color>>& custom_colors = std::optional<xtd::array<xtd::drawing::color >> {});
+      [[nodiscard]] static auto show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, const xtd::string& title = xtd::string::empty_string, color_box_styles styles = color_box_styles::alpha_color | color_box_styles::allow_full_open, const std::optional<xtd::array<xtd::drawing::color>>& custom_colors = std::optional<xtd::array<xtd::drawing::color >> {}) -> xtd::forms::dialog_result;
     };
   }
 }
