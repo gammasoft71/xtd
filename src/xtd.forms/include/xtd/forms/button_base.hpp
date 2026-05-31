@@ -44,80 +44,79 @@ namespace xtd {
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @return `true` if the additional label text is to be indicated by an ellipsis; otherwise, `false`. The default is `true`.
       /// @remarks Set auto_ellipsis to `true` to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to `false` if you want AutoEllipsis to be `true`. If AutoSize is `true`, the control will grow to fit the text and an ellipsis will not appear.
-      virtual bool auto_ellipsis() const noexcept;
-      
+      [[nodiscard]] virtual auto auto_ellipsis() const noexcept -> bool;
       /// @brief Sets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @param auto_ellipse `true` if the additional label text is to be indicated by an ellipsis; otherwise, `false`. The default is `true`.
       /// @remarks Set auto_ellipsis to `true` to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to `false` if you want AutoEllipsis to be `true`. If AutoSize is `true`, the control will grow to fit the text and an ellipsis will not appear.
-      virtual button_base& auto_ellipsis(bool auto_ellipsis);
+      virtual auto auto_ellipsis(bool auto_ellipsis) -> button_base&;
       
-      bool auto_size() const noexcept override;
-      control& auto_size(bool auto_size) override;
+      [[nodiscard]] bool auto_size() const noexcept override;
+      auto auto_size(bool auto_size) -> control& override;
       
       using control::control_appearance;
-      control& control_appearance(forms::control_appearance value) override;
+      auto control_appearance(xtd::forms::control_appearance value) -> control& override;
       
       /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @return The xtd::forms::flat_button_appearance appearance.
-      virtual const xtd::forms::flat_button_appearance& flat_appearance() const noexcept;
+      [[nodiscard]] virtual auto flat_appearance() const noexcept -> const xtd::forms::flat_button_appearance&;
       /// @brief Sets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @param value The xtd::forms::flat_button_appearance appearance.
-      virtual xtd::forms::button_base& flat_appearance(const xtd::forms::flat_button_appearance& value);
+      virtual auto flat_appearance(const xtd::forms::flat_button_appearance& value) -> button_base&;
       
       /// @brief Gets the flat style appearance of the button control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
-      virtual xtd::forms::flat_style flat_style() const noexcept;
+      [[nodiscard]] virtual auto flat_style() const noexcept -> xtd::forms::flat_style;
       /// @brief Sets the flat style appearance of the button control.
       /// @param value One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
-      virtual xtd::forms::button_base& flat_style(xtd::forms::flat_style value);
+      virtual auto flat_style(xtd::forms::flat_style value) -> button_base&;
       
       /// @brief Gets the image that is displayed on a button control.
       /// @return The Image displayed on the button control. The default value is xtd::drawing::image::empty.
       /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
       /// @note If the flat_style property is set to xtd::forms::flat_style::system, any images assigned to the image property are not displayed.
-      virtual const drawing::image& image() const noexcept;
+      [[nodiscard]] virtual auto image() const noexcept -> const xtd::drawing::image&;
       /// @brief Sets the image that is displayed on a button control.
       /// @param value The Image displayed on the button control. The default value is xtd::drawing::image::empty.
       /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
       /// @note If the flat_style property is set to xtd::forms::flat_style::system, any images assigned to the image property are not displayed.
-      virtual button_base& image(const drawing::image& value);
+      virtual auto image(const xtd::drawing::image& value) -> button_base&;
       
       /// @brief Gets the alignment of the image on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
-      virtual content_alignment image_align() const noexcept;
+      [[nodiscard]] virtual auto image_align() const noexcept -> xtd::forms::content_alignment;
       /// @brief Sets the alignment of the image on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
-      virtual button_base& image_align(content_alignment value);
+      virtual auto image_align(xtd::forms::content_alignment value) -> button_base&;
       
       /// @brief Gets the image list index value of the image displayed on the button control.
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
-      virtual int32 image_index() const noexcept;
+      [[nodiscard]] virtual auto image_index() const noexcept -> xtd::int32;
       /// @brief Sets the image list index value of the image displayed on the button control.
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
-      virtual button_base& image_index(int32 value);
+      virtual auto image_index(xtd::int32 value) -> button_base&;
       
       /// @brief Gets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
-      virtual const forms::image_list& image_list() const noexcept;
+      [[nodiscard]] virtual auto image_list() const noexcept -> const xtd::forms::image_list&;
       /// @brief Gets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
-      virtual forms::image_list& image_list() noexcept;
+      [[nodiscard]] virtual auto image_list() noexcept -> xtd::forms::image_list&;
       /// @brief Sets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
-      virtual button_base& image_list(const forms::image_list& value);
+      virtual auto image_list(const xtd::forms::image_list& value) -> button_base&;
       
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
-      virtual content_alignment text_align() const noexcept ;
+      [[nodiscard]] virtual auto text_align() const noexcept -> xtd::forms::content_alignment;
       /// @brief Gets the alignment of the text on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
-      virtual button_base& text_align(content_alignment value);
+      virtual auto text_align(xtd::forms::content_alignment value) -> button_base&;
       /// @}
       
       /// @name Public Events
@@ -142,18 +141,18 @@ namespace xtd {
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       
       /// @brief Gets a value indicating whether the button control is the default button.
       /// @return `true` if the button control is the default button; otherwise, `false`.
       /// @remarks When the xtd::forms::button_base::is_default property is set to `true`, the button is the default button for the xtd::forms::form. This means that the button is clicked when the ENTER key is pressed if no other button or any other control that captures the ENTER key has focus.
       /// @remarks To specify the default button of a form, set the xtd::forms::form::accept_button property of the form to the desired button.
-      bool is_default() const noexcept;
+      [[nodiscard]] auto is_default() const noexcept -> bool;
       /// @brief Sets a value indicating whether the button control is the default button.
       /// @param value `true` if the button control is the default button; otherwise, `false`.
       /// @remarks When the xtd::forms::button_base::is_default property is set to `true`, the button is the default button for the xtd::forms::form. This means that the button is clicked when the ENTER key is pressed if no other button or any other control that captures the ENTER key has focus.
       /// @remarks To specify the default button of a form, set the xtd::forms::form::accept_button property of the form to the desired button.
-      button_base& is_default(bool value);
+      auto is_default(bool value) -> button_base&;
       /// @}
       
       /// @name Protected Methods
@@ -162,31 +161,31 @@ namespace xtd {
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is `true`.
-      drawing::size measure_control() const noexcept override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       
-      void on_back_color_changed(const event_args& e) override;
-      void on_enabled_changed(const event_args& e) override;
-      void on_font_changed(const xtd::event_args& e) override;
-      void on_fore_color_changed(const event_args& e) override;
+      auto on_back_color_changed(const event_args& e) -> void override;
+      auto on_enabled_changed(const event_args& e) -> void override;
+      auto on_font_changed(const xtd::event_args& e) -> void override;
+      auto on_fore_color_changed(const event_args& e) -> void override;
       
       /// @brief Raises the button_base::image_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_image_changed(const xtd::event_args& e);
+      virtual auto on_image_changed(const xtd::event_args& e) -> void;
       
-      void on_mouse_down(const mouse_event_args& e) override;
-      void on_mouse_enter(const event_args& e) override;
-      void on_mouse_leave(const event_args& e) override;
-      void on_mouse_up(const mouse_event_args& e) override;
-      void on_parent_back_color_changed(const event_args& e) override;
-      void on_parent_fore_color_changed(const event_args& e) override;
-      void on_resize(const xtd::event_args& e) override;
-      void on_text_changed(const xtd::event_args& e) override;
+      auto on_mouse_down(const mouse_event_args& e) -> void override;
+      auto on_mouse_enter(const event_args& e) -> void override;
+      auto on_mouse_leave(const event_args& e) -> void override;
+      auto on_mouse_up(const mouse_event_args& e) -> void override;
+      auto on_parent_back_color_changed(const event_args& e) -> void override;
+      auto on_parent_fore_color_changed(const event_args& e) -> void override;
+      auto on_resize(const xtd::event_args& e) -> void override;
+      auto on_text_changed(const xtd::event_args& e) -> void override;
       /// @}
       
       /// @cond
-      xtd::drawing::rectangle compute_image_bounds();
-      xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
-      text_format_flags to_text_format_flags(content_alignment text_align);
+      [[nodiscard]] auto compute_image_bounds() -> xtd::drawing::rectangle;
+      [[nodiscard]] auto compute_image_bounds(const xtd::drawing::rectangle& rectangle) -> xtd::drawing::rectangle;
+      [[nodiscard]] auto to_text_format_flags(xtd::forms::content_alignment text_align) -> xtd::forms::text_format_flags;
       /// @endcond
       
     private:
