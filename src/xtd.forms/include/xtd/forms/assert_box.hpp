@@ -43,24 +43,24 @@ namespace xtd {
       /// @brief Displays a assert box in front of the specified window. The assert box displays a specified assert.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      [[nodiscard]] static auto show(const xtd::forms::iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       /// @brief Displays a assert box in front of the specified window. The assert box displays a specified assert and caption.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       /// @param message A string that specifies the message to display.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const iwin32_window& owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      [[nodiscard]] static auto show(const xtd::forms::iwin32_window& owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       
       /// @brief Displays a assert box. The assert box displays a specified assert.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      [[nodiscard]] static auto show(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       /// @brief Displays a assert box. The assert box displays a specified assert and caption.
       /// @param message A string that specifies the message to display.
       /// @param stack_frame An stack_frame to display.
-      static dialog_result show(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      [[nodiscard]] static auto show(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> xtd::forms::dialog_result;
       /// @}
       
     private:
-      static dialog_result show_assert_box(const iwin32_window* owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      [[nodiscard]] static auto show_assert_box(const xtd::forms::iwin32_window* owner, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) -> xtd::forms::dialog_result;
     };
   }
 }
