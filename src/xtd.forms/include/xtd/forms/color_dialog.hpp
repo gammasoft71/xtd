@@ -48,7 +48,7 @@ namespace xtd {
       /// | alpha_color      | `true`                  |
       /// | allow_full_open  | `true`                  |
       /// | any_color        | `false`                 |
-      /// | color            | drawing::color::black   |
+      /// | color            | xtd::drawing::color::black   |
       /// | custom_colors    | has no value            |
       /// | full_open        | `false`                 |
       /// | show_help        | `false`                 |
@@ -62,93 +62,93 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).
       /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`. The default is `true`.
-      bool alpha_color() const noexcept;
+      [[nodiscard]] auto alpha_color() const noexcept -> bool;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param alpha_color `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
-      color_dialog& alpha_color(bool alpha_color);
+      auto alpha_color(bool alpha_color) -> color_dialog&;
       
       /// @brief Gets a value indicating whether the user can use the dialog box to define custom colors.
       /// @return `true` if the user can define custom colors; otherwise, `false`. The default is `true`.
-      bool allow_full_open() const noexcept;
+      [[nodiscard]] auto allow_full_open() const noexcept -> bool;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param allow_full_open `true` if the user can define custom colors; otherwise, `false`. The default is `true`.
-      color_dialog& allow_full_open(bool allow_full_open);
+      auto allow_full_open(bool allow_full_open) -> color_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @return `true` if the dialog box displays all available colors in the set of basic colors; otherwise, `false`. The default value is `false`.
-      bool any_color() const noexcept;
+      [[nodiscard]] auto any_color() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @param any_color `true` if the dialog box displays all available colors in the set of basic colors; otherwise, `false`. The default value is `false`.
-      color_dialog& any_color(bool any_color);
+      auto any_color(bool any_color) -> color_dialog&;
       
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the dialog box at run time, as defined in color structure.
-      drawing::color color() const noexcept;
+      [[nodiscard]] auto color() const noexcept -> xtd::drawing::color;
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @remarks The color selected by the user in the dialog box at run time, as defined in color structure.
-      color_dialog& color(const drawing::color& color);
+      auto color(const xtd::drawing::color& color) -> color_dialog&;
       
       /// @brief Gets the set of custom colors shown in the dialog box.
       /// @return A set of custom colors shown by the dialog box. The default value is empty.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32 composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to `true`.
-      const colors& custom_colors() const noexcept;
+      [[nodiscard]] auto custom_colors() const noexcept -> const colors&;
       /// @brief Sets the set of custom colors shown in the dialog box.
       /// @param custom_color A set of custom colors shown by the dialog box.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32 composed of the BGR (blue, green, red) values necessary to create the color.
       /// @remarks Custom colors can only be defined if allow_full_open is set to `true`.
-      color_dialog& custom_colors(const colors& custom_colors);
+      auto custom_colors(const colors& custom_colors) -> color_dialog&;
       
       /// @brief Gets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened
       /// @return `true` if the custom color controls are available when the dialog box is opened; otherwise, `false`. The default value is `false`.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
       /// @note If allow_full_open is `false`, then full_open has no effect.
-      bool full_open() const noexcept;
+      [[nodiscard]] auto full_open() const noexcept -> bool;
       /// @brief Sets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened
       /// @param full_open `true` if the custom color controls are available when the dialog box is opened; otherwise, `false`. The default value is `false`.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
       /// @note If allow_full_open is `false`, then full_open has no effect.
-      color_dialog& full_open(bool full_open);
+      auto full_open(bool full_open) -> color_dialog&;
       
       /// @brief Gets values to initialize the color_dialog.
       /// @return A bitwise combination of internal values that initializes the color_dialog.
       /// @remarks The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the color_dialog class to get and set the options.
-      xtd::usize options() const noexcept;
+      [[nodiscard]] auto options() const noexcept -> xtd::usize;
       
       /// @brief Gets a value indicating whether a Help button appears in the color dialog box.
       /// @return `true` if the Help button is shown in the dialog box; otherwise, `false`. The default value is `false`.
-      bool show_help() const noexcept;
+      [[nodiscard]] auto show_help() const noexcept -> bool;
       /// @brief Sets a value indicating whether a Help button appears in the color dialog box.
       /// @param show_help `true` if the Help button is shown in the dialog box; otherwise, `false`.
-      color_dialog& show_help(bool show_help);
+      auto show_help(bool show_help) -> color_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box will restrict users to selecting solid colors only.
       /// @return `true` if users can select only solid colors; otherwise, `false`. The default value is `false`.
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
-      bool solid_color_only() const noexcept;
+      [[nodiscard]] auto solid_color_only() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box will restrict users to selecting solid colors only.
       /// @param solid_color_only `true` if users can select only solid colors; otherwise, `false`.
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
-      color_dialog& solid_color_only(bool solid_color_only);
+      auto solid_color_only(bool solid_color_only) -> color_dialog&;
       
       /// @brief Gets the color dialog box title.
       /// @return The color dialog box title. The default value is an empty string ("").
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is "Color".
-      virtual const xtd::string& title() const noexcept;
+      [[nodiscard]] virtual auto title() const noexcept -> const xtd::string&;
       /// @brief Sets the color dialog box title.
       /// @param value The file dialog box title. The default value is an empty string ("").
       /// @return Current file_dialog.
       /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is "Color".
-      virtual color_dialog& title(const xtd::string& value);
+      virtual auto title(const xtd::string& value) -> color_dialog&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.
-      void reset() noexcept override;
+      auto reset() noexcept -> void override;
       /// @}
       
     protected:
@@ -158,16 +158,16 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return `true` if the dialog box was successfully run; otherwise, `false`.
-      bool run_dialog(intptr owner) override;
+      [[nodiscard]] auto run_dialog(intptr owner) -> bool override;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      void run_sheet(intptr owner) override;
+      auto run_sheet(intptr owner) -> void override;
       /// @}
       
     private:
-      bool get_option(xtd::usize flag) const noexcept;
-      void set_option(xtd::usize flag, bool value);
+      [[nodiscard]] auto get_option(xtd::usize flag) const noexcept -> bool;
+      auto set_option(xtd::usize flag, bool value) -> void;
       
       xtd::sptr<data> data_;
     };
