@@ -28,3570 +28,3570 @@ namespace xtd {
       /// @{
       /// @brief Create a system-defined command_link_button that represent abort command_link_button
       /// @return The created command_link_button.
-      static command_link_button abort();
+      [[nodiscard]] static auto abort() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button abort(const drawing::point& location);
+      [[nodiscard]] static auto abort(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button abort(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button abort(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button abort(const control& parent);
+      [[nodiscard]] static auto abort(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button abort(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto abort(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button abort(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent abort command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent about command_link_button
       /// @return The created command_link_button.
-      static command_link_button about();
+      [[nodiscard]] static auto about() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button about(const drawing::point& location);
+      [[nodiscard]] static auto about(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button about(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button about(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button about(const control& parent);
+      [[nodiscard]] static auto about(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button about(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto about(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button about(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent about command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button
       /// @return The created command_link_button.
-      static command_link_button actual_size();
+      [[nodiscard]] static auto actual_size() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const control& parent);
+      [[nodiscard]] static auto actual_size(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent actual_size command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent add command_link_button
       /// @return The created command_link_button.
-      static command_link_button add();
+      [[nodiscard]] static auto add() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button add(const drawing::point& location);
+      [[nodiscard]] static auto add(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button add(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button add(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button add(const control& parent);
+      [[nodiscard]] static auto add(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button add(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto add(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button add(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent add command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button
       /// @return The created command_link_button.
-      static command_link_button alignment();
+      [[nodiscard]] static auto alignment() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button alignment(const drawing::point& location);
+      [[nodiscard]] static auto alignment(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button alignment(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button alignment(const control& parent);
+      [[nodiscard]] static auto alignment(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button alignment(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto alignment(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button alignment(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent alignment command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button
       /// @return The created command_link_button.
-      static command_link_button align_left();
+      [[nodiscard]] static auto align_left() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_left(const drawing::point& location);
+      [[nodiscard]] static auto align_left(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_left(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button align_left(const control& parent);
+      [[nodiscard]] static auto align_left(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_left(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_left(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_left(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_left command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button
       /// @return The created command_link_button.
-      static command_link_button align_right();
+      [[nodiscard]] static auto align_right() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_right(const drawing::point& location);
+      [[nodiscard]] static auto align_right(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_right(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button align_right(const control& parent);
+      [[nodiscard]] static auto align_right(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_right(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_right(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button align_right(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent align_right command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent apply command_link_button
       /// @return The created command_link_button.
-      static command_link_button apply();
+      [[nodiscard]] static auto apply() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button apply(const drawing::point& location);
+      [[nodiscard]] static auto apply(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button apply(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button apply(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button apply(const control& parent);
+      [[nodiscard]] static auto apply(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button apply(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto apply(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button apply(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent apply command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button
       /// @return The created command_link_button.
-      static command_link_button ascending();
+      [[nodiscard]] static auto ascending() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button ascending(const drawing::point& location);
+      [[nodiscard]] static auto ascending(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button ascending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ascending(const control& parent);
+      [[nodiscard]] static auto ascending(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button ascending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ascending(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button ascending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ascending command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent back command_link_button
       /// @return The created command_link_button.
-      static command_link_button back();
+      [[nodiscard]] static auto back() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button back(const drawing::point& location);
+      [[nodiscard]] static auto back(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button back(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button back(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button back(const control& parent);
+      [[nodiscard]] static auto back(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button back(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto back(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button back(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent back command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent bold command_link_button
       /// @return The created command_link_button.
-      static command_link_button bold();
+      [[nodiscard]] static auto bold() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button bold(const drawing::point& location);
+      [[nodiscard]] static auto bold(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button bold(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button bold(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button bold(const control& parent);
+      [[nodiscard]] static auto bold(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button bold(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bold(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button bold(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bold command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button
       /// @return The created command_link_button.
-      static command_link_button bottom();
+      [[nodiscard]] static auto bottom() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button bottom(const drawing::point& location);
+      [[nodiscard]] static auto bottom(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button bottom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button bottom(const control& parent);
+      [[nodiscard]] static auto bottom(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button bottom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bottom(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button bottom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent bottom command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button
       /// @return The created command_link_button.
-      static command_link_button cancel();
+      [[nodiscard]] static auto cancel() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button cancel(const drawing::point& location);
+      [[nodiscard]] static auto cancel(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button cancel(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cancel(const control& parent);
+      [[nodiscard]] static auto cancel(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button cancel(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cancel(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button cancel(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cancel command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button
       /// @return The created command_link_button.
-      static command_link_button cdrom();
+      [[nodiscard]] static auto cdrom() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const control& parent);
+      [[nodiscard]] static auto cdrom(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cdrom command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent centered command_link_button
       /// @return The created command_link_button.
-      static command_link_button centered();
+      [[nodiscard]] static auto centered() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button centered(const drawing::point& location);
+      [[nodiscard]] static auto centered(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button centered(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button centered(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button centered(const control& parent);
+      [[nodiscard]] static auto centered(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button centered(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto centered(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button centered(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent centered command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent clear command_link_button
       /// @return The created command_link_button.
-      static command_link_button clear();
+      [[nodiscard]] static auto clear() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button clear(const drawing::point& location);
+      [[nodiscard]] static auto clear(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button clear(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button clear(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button clear(const control& parent);
+      [[nodiscard]] static auto clear(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button clear(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto clear(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button clear(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent clear command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent close command_link_button
       /// @return The created command_link_button.
-      static command_link_button close();
+      [[nodiscard]] static auto close() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button close(const drawing::point& location);
+      [[nodiscard]] static auto close(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button close(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button close(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button close(const control& parent);
+      [[nodiscard]] static auto close(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button close(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto close(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button close(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent close command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent color command_link_button
       /// @return The created command_link_button.
-      static command_link_button color();
+      [[nodiscard]] static auto color() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button color(const drawing::point& location);
+      [[nodiscard]] static auto color(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button color(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button color(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button color(const control& parent);
+      [[nodiscard]] static auto color(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button color(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto color(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button color(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent color command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent contents command_link_button
       /// @return The created command_link_button.
-      static command_link_button contents();
+      [[nodiscard]] static auto contents() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button contents(const drawing::point& location);
+      [[nodiscard]] static auto contents(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button contents(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button contents(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button contents(const control& parent);
+      [[nodiscard]] static auto contents(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button contents(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto contents(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button contents(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent contents command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent convert command_link_button
       /// @return The created command_link_button.
-      static command_link_button convert();
+      [[nodiscard]] static auto convert() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button convert(const drawing::point& location);
+      [[nodiscard]] static auto convert(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button convert(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button convert(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button convert(const control& parent);
+      [[nodiscard]] static auto convert(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button convert(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto convert(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button convert(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent convert command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent copy command_link_button
       /// @return The created command_link_button.
-      static command_link_button copy();
+      [[nodiscard]] static auto copy() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button copy(const drawing::point& location);
+      [[nodiscard]] static auto copy(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button copy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button copy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button copy(const control& parent);
+      [[nodiscard]] static auto copy(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button copy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto copy(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button copy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent copy command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent customize command_link_button
       /// @return The created command_link_button.
-      static command_link_button customize();
+      [[nodiscard]] static auto customize() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button customize(const drawing::point& location);
+      [[nodiscard]] static auto customize(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button customize(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button customize(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button customize(const control& parent);
+      [[nodiscard]] static auto customize(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button customize(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto customize(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button customize(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent customize command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent cut command_link_button
       /// @return The created command_link_button.
-      static command_link_button cut();
+      [[nodiscard]] static auto cut() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button cut(const drawing::point& location);
+      [[nodiscard]] static auto cut(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button cut(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cut(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cut(const control& parent);
+      [[nodiscard]] static auto cut(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button cut(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cut(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button cut(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent cut command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent del command_link_button
       /// @return The created command_link_button.
-      static command_link_button del();
+      [[nodiscard]] static auto del() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button del(const drawing::point& location);
+      [[nodiscard]] static auto del(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button del(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button del(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button del(const control& parent);
+      [[nodiscard]] static auto del(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button del(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto del(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button del(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent del command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent descending command_link_button
       /// @return The created command_link_button.
-      static command_link_button descending();
+      [[nodiscard]] static auto descending() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button descending(const drawing::point& location);
+      [[nodiscard]] static auto descending(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button descending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button descending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button descending(const control& parent);
+      [[nodiscard]] static auto descending(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button descending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto descending(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button descending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent descending command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent down command_link_button
       /// @return The created command_link_button.
-      static command_link_button down();
+      [[nodiscard]] static auto down() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button down(const drawing::point& location);
+      [[nodiscard]] static auto down(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button down(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button down(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button down(const control& parent);
+      [[nodiscard]] static auto down(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button down(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto down(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button down(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent down command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent edit command_link_button
       /// @return The created command_link_button.
-      static command_link_button edit();
+      [[nodiscard]] static auto edit() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button edit(const drawing::point& location);
+      [[nodiscard]] static auto edit(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button edit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button edit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button edit(const control& parent);
+      [[nodiscard]] static auto edit(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button edit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto edit(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button edit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent edit command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent execute command_link_button
       /// @return The created command_link_button.
-      static command_link_button execute();
+      [[nodiscard]] static auto execute() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button execute(const drawing::point& location);
+      [[nodiscard]] static auto execute(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button execute(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button execute(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button execute(const control& parent);
+      [[nodiscard]] static auto execute(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button execute(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto execute(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button execute(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent execute command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent exit command_link_button
       /// @return The created command_link_button.
-      static command_link_button exit();
+      [[nodiscard]] static auto exit() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button exit(const drawing::point& location);
+      [[nodiscard]] static auto exit(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button exit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button exit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button exit(const control& parent);
+      [[nodiscard]] static auto exit(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button exit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto exit(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button exit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent exit command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent file command_link_button
       /// @return The created command_link_button.
-      static command_link_button file();
+      [[nodiscard]] static auto file() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button file(const drawing::point& location);
+      [[nodiscard]] static auto file(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button file(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button file(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button file(const control& parent);
+      [[nodiscard]] static auto file(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button file(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto file(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button file(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent file command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent find command_link_button
       /// @return The created command_link_button.
-      static command_link_button find();
+      [[nodiscard]] static auto find() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button find(const drawing::point& location);
+      [[nodiscard]] static auto find(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button find(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button find(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button find(const control& parent);
+      [[nodiscard]] static auto find(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button find(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto find(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button find(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent find command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent first command_link_button
       /// @return The created command_link_button.
-      static command_link_button first();
+      [[nodiscard]] static auto first() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button first(const drawing::point& location);
+      [[nodiscard]] static auto first(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button first(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button first(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button first(const control& parent);
+      [[nodiscard]] static auto first(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button first(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto first(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button first(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent first command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button
       /// @return The created command_link_button.
-      static command_link_button floppy();
+      [[nodiscard]] static auto floppy() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button floppy(const drawing::point& location);
+      [[nodiscard]] static auto floppy(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button floppy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button floppy(const control& parent);
+      [[nodiscard]] static auto floppy(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button floppy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto floppy(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button floppy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent floppy command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent font command_link_button
       /// @return The created command_link_button.
-      static command_link_button font();
+      [[nodiscard]] static auto font() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button font(const drawing::point& location);
+      [[nodiscard]] static auto font(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button font(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button font(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button font(const control& parent);
+      [[nodiscard]] static auto font(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button font(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto font(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button font(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent font command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent forward command_link_button
       /// @return The created command_link_button.
-      static command_link_button forward();
+      [[nodiscard]] static auto forward() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button forward(const drawing::point& location);
+      [[nodiscard]] static auto forward(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button forward(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button forward(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button forward(const control& parent);
+      [[nodiscard]] static auto forward(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button forward(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto forward(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button forward(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent forward command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button
       /// @return The created command_link_button.
-      static command_link_button harddisk();
+      [[nodiscard]] static auto harddisk() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const control& parent);
+      [[nodiscard]] static auto harddisk(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent harddisk command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent help command_link_button
       /// @return The created command_link_button.
-      static command_link_button help();
+      [[nodiscard]] static auto help() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button help(const drawing::point& location);
+      [[nodiscard]] static auto help(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button help(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button help(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button help(const control& parent);
+      [[nodiscard]] static auto help(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button help(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto help(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button help(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent help command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent home command_link_button
       /// @return The created command_link_button.
-      static command_link_button home();
+      [[nodiscard]] static auto home() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button home(const drawing::point& location);
+      [[nodiscard]] static auto home(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button home(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button home(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button home(const control& parent);
+      [[nodiscard]] static auto home(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button home(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto home(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button home(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent home command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button
       /// @return The created command_link_button.
-      static command_link_button ignore();
+      [[nodiscard]] static auto ignore() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button ignore(const drawing::point& location);
+      [[nodiscard]] static auto ignore(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button ignore(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ignore(const control& parent);
+      [[nodiscard]] static auto ignore(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button ignore(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ignore(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button ignore(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ignore command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent indent command_link_button
       /// @return The created command_link_button.
-      static command_link_button indent();
+      [[nodiscard]] static auto indent() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button indent(const drawing::point& location);
+      [[nodiscard]] static auto indent(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button indent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button indent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button indent(const control& parent);
+      [[nodiscard]] static auto indent(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button indent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto indent(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button indent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent indent command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent index command_link_button
       /// @return The created command_link_button.
-      static command_link_button index();
+      [[nodiscard]] static auto index() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button index(const drawing::point& location);
+      [[nodiscard]] static auto index(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button index(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button index(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button index(const control& parent);
+      [[nodiscard]] static auto index(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button index(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto index(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button index(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent index command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent info command_link_button
       /// @return The created command_link_button.
-      static command_link_button info();
+      [[nodiscard]] static auto info() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button info(const drawing::point& location);
+      [[nodiscard]] static auto info(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button info(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button info(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button info(const control& parent);
+      [[nodiscard]] static auto info(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button info(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto info(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button info(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent info command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent italic command_link_button
       /// @return The created command_link_button.
-      static command_link_button italic();
+      [[nodiscard]] static auto italic() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button italic(const drawing::point& location);
+      [[nodiscard]] static auto italic(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button italic(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button italic(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button italic(const control& parent);
+      [[nodiscard]] static auto italic(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button italic(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto italic(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button italic(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent italic command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent justified command_link_button
       /// @return The created command_link_button.
-      static command_link_button justified();
+      [[nodiscard]] static auto justified() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button justified(const drawing::point& location);
+      [[nodiscard]] static auto justified(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button justified(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button justified(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button justified(const control& parent);
+      [[nodiscard]] static auto justified(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button justified(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto justified(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button justified(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent justified command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button
       /// @return The created command_link_button.
-      static command_link_button jump_to();
+      [[nodiscard]] static auto jump_to() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const control& parent);
+      [[nodiscard]] static auto jump_to(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent jump_to command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent last command_link_button
       /// @return The created command_link_button.
-      static command_link_button last();
+      [[nodiscard]] static auto last() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button last(const drawing::point& location);
+      [[nodiscard]] static auto last(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button last(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button last(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button last(const control& parent);
+      [[nodiscard]] static auto last(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button last(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto last(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button last(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent last command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent network command_link_button
       /// @return The created command_link_button.
-      static command_link_button network();
+      [[nodiscard]] static auto network() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button network(const drawing::point& location);
+      [[nodiscard]] static auto network(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button network(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button network(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button network(const control& parent);
+      [[nodiscard]] static auto network(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button network(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto network(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button network(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent network command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button
       /// @return The created command_link_button.
-      static command_link_button new_();
+      [[nodiscard]] static auto new_() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button new_(const drawing::point& location);
+      [[nodiscard]] static auto new_(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button new_(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button new_(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button new_(const control& parent);
+      [[nodiscard]] static auto new_(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button new_(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto new_(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button new_(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent new_ command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent next command_link_button
       /// @return The created command_link_button.
-      static command_link_button next();
+      [[nodiscard]] static auto next() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button next(const drawing::point& location);
+      [[nodiscard]] static auto next(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button next(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button next(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button next(const control& parent);
+      [[nodiscard]] static auto next(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button next(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto next(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button next(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent next command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent no command_link_button
       /// @return The created command_link_button.
-      static command_link_button no();
+      [[nodiscard]] static auto no() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button no(const drawing::point& location);
+      [[nodiscard]] static auto no(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button no(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button no(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button no(const control& parent);
+      [[nodiscard]] static auto no(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button no(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto no(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button no(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent no command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent ok command_link_button
       /// @return The created command_link_button.
-      static command_link_button ok();
+      [[nodiscard]] static auto ok() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button ok(const drawing::point& location);
+      [[nodiscard]] static auto ok(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button ok(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ok(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ok(const control& parent);
+      [[nodiscard]] static auto ok(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button ok(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ok(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button ok(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent ok command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent open command_link_button
       /// @return The created command_link_button.
-      static command_link_button open();
+      [[nodiscard]] static auto open() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button open(const drawing::point& location);
+      [[nodiscard]] static auto open(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button open(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button open(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button open(const control& parent);
+      [[nodiscard]] static auto open(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button open(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto open(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button open(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent open command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent options command_link_button
       /// @return The created command_link_button.
-      static command_link_button options();
+      [[nodiscard]] static auto options() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button options(const drawing::point& location);
+      [[nodiscard]] static auto options(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button options(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button options(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button options(const control& parent);
+      [[nodiscard]] static auto options(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button options(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto options(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button options(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent options command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent paste command_link_button
       /// @return The created command_link_button.
-      static command_link_button paste();
+      [[nodiscard]] static auto paste() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button paste(const drawing::point& location);
+      [[nodiscard]] static auto paste(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button paste(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button paste(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button paste(const control& parent);
+      [[nodiscard]] static auto paste(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button paste(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto paste(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button paste(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent paste command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button
       /// @return The created command_link_button.
-      static command_link_button preferences();
+      [[nodiscard]] static auto preferences() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button preferences(const drawing::point& location);
+      [[nodiscard]] static auto preferences(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button preferences(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button preferences(const control& parent);
+      [[nodiscard]] static auto preferences(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button preferences(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto preferences(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button preferences(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent preferences command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent previous command_link_button
       /// @return The created command_link_button.
-      static command_link_button previous();
+      [[nodiscard]] static auto previous() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button previous(const drawing::point& location);
+      [[nodiscard]] static auto previous(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button previous(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button previous(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button previous(const control& parent);
+      [[nodiscard]] static auto previous(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button previous(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto previous(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button previous(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent previous command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent print command_link_button
       /// @return The created command_link_button.
-      static command_link_button print();
+      [[nodiscard]] static auto print() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button print(const drawing::point& location);
+      [[nodiscard]] static auto print(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button print(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button print(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button print(const control& parent);
+      [[nodiscard]] static auto print(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button print(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button print(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button
       /// @return The created command_link_button.
-      static command_link_button print_preview();
+      [[nodiscard]] static auto print_preview() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const control& parent);
+      [[nodiscard]] static auto print_preview(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent print_preview command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent properties command_link_button
       /// @return The created command_link_button.
-      static command_link_button properties();
+      [[nodiscard]] static auto properties() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button properties(const drawing::point& location);
+      [[nodiscard]] static auto properties(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button properties(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button properties(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button properties(const control& parent);
+      [[nodiscard]] static auto properties(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button properties(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto properties(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button properties(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent properties command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent quit command_link_button
       /// @return The created command_link_button.
-      static command_link_button quit();
+      [[nodiscard]] static auto quit() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button quit(const drawing::point& location);
+      [[nodiscard]] static auto quit(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button quit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button quit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button quit(const control& parent);
+      [[nodiscard]] static auto quit(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button quit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto quit(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button quit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent quit command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent redo command_link_button
       /// @return The created command_link_button.
-      static command_link_button redo();
+      [[nodiscard]] static auto redo() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button redo(const drawing::point& location);
+      [[nodiscard]] static auto redo(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button redo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button redo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button redo(const control& parent);
+      [[nodiscard]] static auto redo(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button redo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto redo(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button redo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent redo command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button
       /// @return The created command_link_button.
-      static command_link_button refresh();
+      [[nodiscard]] static auto refresh() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button refresh(const drawing::point& location);
+      [[nodiscard]] static auto refresh(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button refresh(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button refresh(const control& parent);
+      [[nodiscard]] static auto refresh(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button refresh(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto refresh(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button refresh(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent refresh command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent remove command_link_button
       /// @return The created command_link_button.
-      static command_link_button remove();
+      [[nodiscard]] static auto remove() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button remove(const drawing::point& location);
+      [[nodiscard]] static auto remove(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button remove(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button remove(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button remove(const control& parent);
+      [[nodiscard]] static auto remove(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button remove(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto remove(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button remove(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent remove command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent replace command_link_button
       /// @return The created command_link_button.
-      static command_link_button replace();
+      [[nodiscard]] static auto replace() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button replace(const drawing::point& location);
+      [[nodiscard]] static auto replace(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button replace(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button replace(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button replace(const control& parent);
+      [[nodiscard]] static auto replace(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button replace(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto replace(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button replace(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent replace command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent retry command_link_button
       /// @return The created command_link_button.
-      static command_link_button retry();
+      [[nodiscard]] static auto retry() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button retry(const drawing::point& location);
+      [[nodiscard]] static auto retry(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button retry(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button retry(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button retry(const control& parent);
+      [[nodiscard]] static auto retry(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button retry(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto retry(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button retry(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent retry command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved();
+      [[nodiscard]] static auto revert_to_saved() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const control& parent);
+      [[nodiscard]] static auto revert_to_saved(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent revert_to_saved command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent save command_link_button
       /// @return The created command_link_button.
-      static command_link_button save();
+      [[nodiscard]] static auto save() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button save(const drawing::point& location);
+      [[nodiscard]] static auto save(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button save(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button save(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button save(const control& parent);
+      [[nodiscard]] static auto save(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button save(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button save(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button
       /// @return The created command_link_button.
-      static command_link_button save_as();
+      [[nodiscard]] static auto save_as() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button save_as(const drawing::point& location);
+      [[nodiscard]] static auto save_as(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button save_as(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button save_as(const control& parent);
+      [[nodiscard]] static auto save_as(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button save_as(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save_as(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button save_as(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent save_as command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent search command_link_button
       /// @return The created command_link_button.
-      static command_link_button search();
+      [[nodiscard]] static auto search() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button search(const drawing::point& location);
+      [[nodiscard]] static auto search(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button search(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button search(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button search(const control& parent);
+      [[nodiscard]] static auto search(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button search(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto search(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button search(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent search command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button
       /// @return The created command_link_button.
-      static command_link_button select_all();
+      [[nodiscard]] static auto select_all() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button select_all(const drawing::point& location);
+      [[nodiscard]] static auto select_all(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button select_all(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button select_all(const control& parent);
+      [[nodiscard]] static auto select_all(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button select_all(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto select_all(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button select_all(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent select_all command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent settings command_link_button
       /// @return The created command_link_button.
-      static command_link_button settings();
+      [[nodiscard]] static auto settings() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button settings(const drawing::point& location);
+      [[nodiscard]] static auto settings(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button settings(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button settings(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button settings(const control& parent);
+      [[nodiscard]] static auto settings(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button settings(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto settings(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button settings(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent settings command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button
       /// @return The created command_link_button.
-      static command_link_button spell_check();
+      [[nodiscard]] static auto spell_check() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const control& parent);
+      [[nodiscard]] static auto spell_check(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent spell_check command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent stop command_link_button
       /// @return The created command_link_button.
-      static command_link_button stop();
+      [[nodiscard]] static auto stop() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button stop(const drawing::point& location);
+      [[nodiscard]] static auto stop(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button stop(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button stop(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button stop(const control& parent);
+      [[nodiscard]] static auto stop(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button stop(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto stop(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button stop(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent stop command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button
       /// @return The created command_link_button.
-      static command_link_button strikeout();
+      [[nodiscard]] static auto strikeout() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const control& parent);
+      [[nodiscard]] static auto strikeout(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent strikeout command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent tools command_link_button
       /// @return The created command_link_button.
-      static command_link_button tools();
+      [[nodiscard]] static auto tools() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button tools(const drawing::point& location);
+      [[nodiscard]] static auto tools(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button tools(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button tools(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button tools(const control& parent);
+      [[nodiscard]] static auto tools(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button tools(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto tools(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button tools(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent tools command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent top command_link_button
       /// @return The created command_link_button.
-      static command_link_button top();
+      [[nodiscard]] static auto top() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button top(const drawing::point& location);
+      [[nodiscard]] static auto top(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button top(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button top(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button top(const control& parent);
+      [[nodiscard]] static auto top(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button top(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto top(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button top(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent top command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button
       /// @return The created command_link_button.
-      static command_link_button undelete();
+      [[nodiscard]] static auto undelete() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button undelete(const drawing::point& location);
+      [[nodiscard]] static auto undelete(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button undelete(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button undelete(const control& parent);
+      [[nodiscard]] static auto undelete(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button undelete(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undelete(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button undelete(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undelete command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent underline command_link_button
       /// @return The created command_link_button.
-      static command_link_button underline();
+      [[nodiscard]] static auto underline() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button underline(const drawing::point& location);
+      [[nodiscard]] static auto underline(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button underline(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button underline(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button underline(const control& parent);
+      [[nodiscard]] static auto underline(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button underline(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto underline(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button underline(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent underline command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent undo command_link_button
       /// @return The created command_link_button.
-      static command_link_button undo();
+      [[nodiscard]] static auto undo() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button undo(const drawing::point& location);
+      [[nodiscard]] static auto undo(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button undo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button undo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button undo(const control& parent);
+      [[nodiscard]] static auto undo(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button undo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undo(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button undo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent undo command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button
       /// @return The created command_link_button.
-      static command_link_button unindent();
+      [[nodiscard]] static auto unindent() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button unindent(const drawing::point& location);
+      [[nodiscard]] static auto unindent(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button unindent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button unindent(const control& parent);
+      [[nodiscard]] static auto unindent(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button unindent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto unindent(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button unindent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent unindent command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent up command_link_button
       /// @return The created command_link_button.
-      static command_link_button up();
+      [[nodiscard]] static auto up() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button up(const drawing::point& location);
+      [[nodiscard]] static auto up(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button up(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button up(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button up(const control& parent);
+      [[nodiscard]] static auto up(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button up(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto up(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button up(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent up command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent view command_link_button
       /// @return The created command_link_button.
-      static command_link_button view();
+      [[nodiscard]] static auto view() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button view(const drawing::point& location);
+      [[nodiscard]] static auto view(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button view(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button view(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button view(const control& parent);
+      [[nodiscard]] static auto view(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button view(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto view(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button view(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent view command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent window command_link_button
       /// @return The created command_link_button.
-      static command_link_button window();
+      [[nodiscard]] static auto window() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button window(const drawing::point& location);
+      [[nodiscard]] static auto window(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button window(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button window(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button window(const control& parent);
+      [[nodiscard]] static auto window(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button window(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto window(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button window(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent window command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent yes command_link_button
       /// @return The created command_link_button.
-      static command_link_button yes();
+      [[nodiscard]] static auto yes() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button yes(const drawing::point& location);
+      [[nodiscard]] static auto yes(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button yes(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button yes(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button yes(const control& parent);
+      [[nodiscard]] static auto yes(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button yes(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto yes(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button yes(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent yes command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button
       /// @return The created command_link_button.
-      static command_link_button zoom_in();
+      [[nodiscard]] static auto zoom_in() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const control& parent);
+      [[nodiscard]] static auto zoom_in(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_in command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button
       /// @return The created command_link_button.
-      static command_link_button zoom_out();
+      [[nodiscard]] static auto zoom_out() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const control& parent);
+      [[nodiscard]] static auto zoom_out(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_out command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit();
+      [[nodiscard]] static auto zoom_to_fit() -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified location.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified location, and size.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified location, size, and name.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified parent.
       /// @param parent The control that contains the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const control& parent);
+      [[nodiscard]] static auto zoom_to_fit(const control& parent) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified parent, and location.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const control& parent, const drawing::point& location) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified parent, location, and size.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size) -> command_link_button;
       /// @brief Create a system-defined command_link_button that represent zoom_to_fit command_link_button with specified parent, location, size, and name.
       /// @param parent The control that contains the command_link_button.
       /// @param location The command_link_button location in pixels.
       /// @param size The command_link_button size in pixels.
       /// @param name The name of the command_link_button.
       /// @return The created command_link_button.
-      static command_link_button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> command_link_button;
       /// @}
     };
   }
