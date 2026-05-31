@@ -29,13 +29,13 @@ namespace xtd {
       /// @{
       /// @brief Gets the active control on the container control.
       /// @return The control that is currently active on the container_control.
-      std::optional<control_ref> active_control() const noexcept;
+      [[nodiscard]] auto active_control() const noexcept -> std::optional<xtd::forms::control_ref>;
       /// @brief Sets the active control on the container control.
       /// @param active_control The control that is currently active on the container_control.
-      void active_control(const control& active_control);
+      auto active_control(const xtd::forms::control& active_control) -> void;
       /// @brief Resets the active control on the container control.
       /// @param nullptr.
-      void active_control(std::nullptr_t);
+      auto active_control(xtd::null_ptr) -> void;
       /// @}
       
     protected:
@@ -49,11 +49,11 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      drawing::size measure_control() const noexcept override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       /// @}
       
       /// @cond
-      std::optional<control_ref> active_control_;
+      std::optional<xtd::forms::control_ref> active_control_;
       /// @endcond
     };
   }
