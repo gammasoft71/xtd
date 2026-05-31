@@ -57,38 +57,37 @@ namespace xtd {
       /// @brief Gets a value indicating whether the caller can quit this application.
       /// @return `true` if the caller can quit this application; otherwise, `false`.
       /// @remarks This method returns `false` if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
-      static bool allow_quit() noexcept;
+      [[nodiscard]] static auto allow_quit() noexcept -> bool;
       
       /// @brief Gets the application context associate to the application.
       /// @return An application context.
       /// @remarks The application context can be created by the user and sent to the application when the xtd::forms::application::run method is called.
-      static xtd::forms::application_context& application_context();
+      [[nodiscard]] static auto application_context() -> xtd::forms::application_context&;
       
       /// @brief Gets button images are enabled.
       /// @return `true` if button images aree enabled; otherwise `false`.
       /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
-      static bool button_images() noexcept;
-      
+      [[nodiscard]] static auto button_images() noexcept -> bool;
       /// @brief Gets button images are enabled.
       /// @param value `true` if button images aree enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
-      static void button_images(bool value);
+      static auto button_images(bool value) -> void;
       
       /// @brief Gets the path for the application data that is shared among all users.
       /// @return The path for the application data that is shared among all users.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks product_version first looks to see if the assembly containing the main executable has the AssemblyInformationalVersion attribute on it. If this attribute exists, it is used for both product_version and common_app_data_path. If this attribute does not exist, both properties use the version of the executable file instead.
       /// @remarks The path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
-      static xtd::string common_app_data_path() noexcept;
+      [[nodiscard]] static auto common_app_data_path() noexcept -> xtd::string;
       
       /*
        /// @brief Gets the registry key for the application data that is shared among all users.
        /// @return A RegistryKey representing the registry key of the application data that is shared among all users.
        /// @remarks If the key does not exist, it is created in the following format: local_machine\software\company_name\product_name\product_version
-       static microsoft::win32::registry_key common_app_data_registry();
+       [[nodiscard]] static auto common_app_data_registry() -> microsoft::win32::registry_key;
        */
       
       /// @brief Gets the company name associated with the application.
@@ -100,24 +99,23 @@ namespace xtd {
       ///   textBox1.Text(xtd::string::format("The company name is: {0}", application::company_name);
       /// }
       /// ```
-      static xtd::string company_name() noexcept;
+      [[nodiscard]] static auto company_name() noexcept -> xtd::string;
       
       /// @brief Gets a value indicating whether dark mode is enabled for the application.
       /// @return True is dark mode enabled; otherwise `false`.
-      static bool dark_mode() noexcept;
-      
+      [[nodiscard]] static auto dark_mode() noexcept -> bool;
       /// @brief Sets a value indicating whether dark mode is enabled for the application.
       /// @param value True is dark mode enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      static void dark_mode(bool value);
+      static auto dark_mode(bool value) -> void;
       
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
-      static xtd::string executable_name() noexcept;
+      [[nodiscard]] static auto executable_name() noexcept -> xtd::string;
       
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
-      static xtd::string executable_path() noexcept;
+      [[nodiscard]] static auto executable_path() noexcept -> xtd::string;
       
       /// @brief Gets a value indicating whether font size correction is enabled.
       /// @return `true` if font size correction is enabled; otherwise `false`.
@@ -125,94 +123,91 @@ namespace xtd {
       /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
       /// @remarks If you disable this option, you will use the actual native font size of the operating system.
       /// @remarks This method has an effect only on non Windows operating system.
-      static bool font_size_correction();
-      
+      [[nodiscard]] static auto font_size_correction() -> bool;
       /// @brief Sets a value indicating whether font size correction is enabled.
       /// @param value `true` if font size correction is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
       /// @remarks If you disable this option, you will use the actual native font size of the operating system.
       /// @remarks This method has an effect only on non Windows operating system.
-      static void font_size_correction(bool value);
+      static auto font_size_correction(bool value) -> void;
       
       /// @brief Gets a value indicating whether light mode is enabled for the application.
       /// @return True is light mode enabled; otherwise `false`.
-      static bool light_mode() noexcept;
-      
+      [[nodiscard]] static auto light_mode() noexcept -> bool;
       /// @brief Sets a value indicating whether light mode is enabled for the application.
       /// @param value True is light mode enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      static void light_mode(bool value);
+      static auto light_mode(bool value) -> void;
       
       /// @brief Gets the optional main form owned by the application.
       /// @return The optional main form.
       /// @remarks The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the xtd::forms::application method can be called with the xtd::forms::application_context class, which doesn't contain a main form.
-      static std::optional<form_ref> main_form();
+      [[nodiscard]] static auto main_form() -> std::optional<form_ref>;
       
       /// @brief Gets menu images are enabled.
       /// @return `true` if menu images aree enabled; otherwise `false`.
       /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
-      static bool menu_images() noexcept;
-      
+      [[nodiscard]] static auto menu_images() noexcept -> bool;
       /// @brief Sets menu images ilages are enabled.
       /// @param value `true` if menu images aree enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
-      static void menu_images(bool value);
+      static auto menu_images(bool value) -> void;
       
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return `true` if a message loop exists; otherwise, `false`.
-      static bool message_loop() noexcept;
+      [[nodiscard]] static auto message_loop() noexcept -> bool;
       
       /// @brief Gets a collection of open forms owned by the application.
       /// @return A form_collection containing all the currently open forms owned by this application.
       /// @remarks The open_forms property represents a read-only collection of forms owned by the application.
-      static const form_collection open_forms() noexcept;
+      [[nodiscard]] static auto open_forms() noexcept -> const form_collection;
       
       /// @brief Gets the product name associated with this application.
       /// @return The product name.
-      static xtd::string product_name() noexcept;
+      [[nodiscard]] static auto product_name() noexcept -> xtd::string;
       
       /// @brief Gets the product version associated with this application.
       /// @return The product version.
-      static xtd::string product_version() noexcept;
+      [[nodiscard]] static auto product_version() noexcept -> xtd::string;
       
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
-      static xtd::string startup_path() noexcept;
+      [[nodiscard]] static auto startup_path() noexcept -> xtd::string;
       
       /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
       /// @return The current xtd::forms::style_sheets::style_sheet style sheet.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static const xtd::forms::style_sheets::style_sheet& style_sheet() noexcept;
+      [[nodiscard]] static auto style_sheet() noexcept -> const xtd::forms::style_sheets::style_sheet&;
       /// @brief Sets current xtd::forms::style_sheets::style_sheet style sheet.
       /// @param value The current xtd::forms::style_sheets::style_sheet style sheet.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static void style_sheet(const xtd::forms::style_sheets::style_sheet& value);
+      static auto style_sheet(const xtd::forms::style_sheets::style_sheet& value) -> void;
+
       /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
       /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static const xtd::forms::style_sheets::style_sheet::style_sheets_t& style_sheets() noexcept;
+      [[nodiscard]] static auto style_sheets() noexcept -> const xtd::forms::style_sheets::style_sheet::style_sheets_t&;
       
       /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet names.
       /// @return The installed xtd::forms::style_sheets::style_sheet names.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static const xtd::forms::style_sheets::style_sheet::style_sheet_names_t& style_sheet_names() noexcept;
+      [[nodiscard]] static auto style_sheet_names() noexcept -> const xtd::forms::style_sheets::style_sheet::style_sheet_names_t&;
       
       /// @brief Gets a value indicating whether the system control is enabled.
       /// @return `true` if system control is enabled; otherwise `false`.
       /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
       /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
-      static bool system_controls() noexcept;
-      
+      [[nodiscard]] static auto system_controls() noexcept -> bool;
       /// @brief Sets a value indicating whether the system control is enabled.
       /// @param value `true` if system control is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
       /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
-      static void system_controls(bool value);
+      static auto system_controls(bool value) -> void;
       
       /// @brief Gets a value indicating whether the system font size is enabled.
       /// @return `true` if the system font size is enabled; otherwise `false`.
@@ -220,35 +215,34 @@ namespace xtd {
       /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
       /// @remarks This method has an effect only on Gtk.
-      static bool system_font_size() noexcept;
-      
+      [[nodiscard]] static auto system_font_size() noexcept -> bool;
       /// @brief Sets a value indicating whether the system font size is enabled.
       /// @param value `true` if the system font size is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
       /// @remarks This method has an effect only on Gtk.
-      static void system_font_size(bool value);
+      static auto system_font_size(bool value) -> void;
       
       /// @brief Gets system xtd::forms::style_sheets::style_sheet style sheet.
       /// @return The system xtd::forms::style_sheets::style_sheet style sheet.
       /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static const xtd::forms::style_sheets::style_sheet& system_style_sheet() noexcept;
+      [[nodiscard]] static auto system_style_sheet() noexcept -> const xtd::forms::style_sheets::style_sheet&;
       
       /// @brief Gets the path for the application data of a user.
       /// @return The path for the application data of a user.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks Data stored in this path is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
       /// @remarks A typical base path is "C:\Documents and Settings\username\Application Data".
-      static xtd::string user_app_data_path() noexcept;
+      [[nodiscard]] static auto user_app_data_path() noexcept -> xtd::string;
       
       /*
        /// @brief Gets the registry key for the application data of a user.
        /// @return A registry_key representing the registry key for the application data specific to the user.
        /// @remarks If the key does not exist, it is created in the following format: current_user\software\company_name\product_name\product_version
        /// @remarks Data stored in this key is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
-       static microsoft::win32::registry_key user_app_data_registry();
+       [[nodiscard]] static auto user_app_data_registry() -> microsoft::win32::registry_key;
        */
       
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
@@ -257,27 +251,26 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      static bool use_wait_cursor() noexcept;
+      [[nodiscard]] static auto use_wait_cursor() noexcept -> bool;
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
       /// @param use_wait_cursor `true` is the wait cursor is used for all open forms; otherwise, `false`.
       /// @remarks When this property is set to `true`, the use_wait_cursor property of all open forms in the application will be set to `true`. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      static void use_wait_cursor(bool use_wait_cursor);
+      static auto use_wait_cursor(bool use_wait_cursor) -> void;
       
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return `true` if visual styles are enabled; otherwise, `false`.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
-      static bool visual_styles() noexcept;
-      
+      [[nodiscard]] static auto visual_styles() noexcept -> bool;
       /// @brief Sets a value that indicates whether visual styles are enabled for the application.
       /// @param value `true` if visual styles are enabled; otherwise, `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
-      static void visual_styles(bool value);
+      static auto visual_styles(bool value) -> void;
       /// @}
       
       /// @name Public Static Events
@@ -326,27 +319,27 @@ namespace xtd {
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
       /// @param The implementation of the imessage_filter interface you want to install.
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
-      static void add_message_filter(const imessage_filter& value);
+      static auto add_message_filter(const imessage_filter& value) -> void;
       
       /// @brief Processes all Windows messages currently in the message queue.
       /// @remarks When you run a Windows form, it creates the new form, which then waits for events to handle. Each time the form handles an event, it processes all the code associated with that event. All other events wait in the queue. While your code handles the event, your application does not respond. For example, the window does not repaint if another window is dragged on top.
       /// @remarks If you call do_events in your code, your application can handle the other events. For example, if you have a form that adds data to a list_box and add do_events to your code, your form repaints when another window is dragged over it. If you remove do_events from your code, your form will not repaint until the click event handler of the button is finished executing.
       /// @remarks Typically, you use this method in a loop to process messages.
       /// @warning Calling this method causes the current thread to be suspended while all waiting window messages are processed. If a message causes an event to be triggered, then other areas of your application code may execute. This can cause your application to exhibit unexpected behaviors that are difficult to debug. If you perform operations or computations that take a long time, it is often preferable to perform those operations on a new thread.
-      static void do_events();
+      static auto do_events() -> void;
       
       /// @brief Enables visual styles for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
-      static void enable_visual_styles();
+      static auto enable_visual_styles() -> void;
       
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
       /// @remarks The exit method stops all running message loops on all threads and closes all windows of the application. This method does not necessarily force the application to exit. The exit method is typically called from within a message loop, and forces Run to return. To exit a message loop for the current thread only, call exit_thread.
       /// @remarks Exit raises the following events and performs the associated conditional actions:
       /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to `true`.
       /// * If one of more of the handlers cancels the event, then exit returns without further action. Otherwise, a form_closed event is raised for every open form, then all running message loops and forms are closed.
-      static void exit();
+      static auto exit() -> void;
       
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
       /// @param e Returns whether any Form within the application cancelled the exit.
@@ -354,32 +347,32 @@ namespace xtd {
       /// @remarks Exit raises the following events and performs the associated conditional actions:
       /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to `true`.
       /// * If one of more of the handlers cancels the event, then exit returns without further action. Otherwise, a form_closed event is raised for every open form, then all running message loops and forms are closed.
-      static void exit(cancel_event_args& e);
+      static auto exit(cancel_event_args& e) -> void;
       
       /// @brief Exits the message loop on the current thread and closes all windows on the thread.
       /// @remarks Use this method to exit the message loop of the current thread. This method causes the call to run for the current thread to return. To exit the entire application, call exit.
-      static void exit_thread();
+      static auto exit_thread() -> void;
       
       /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
       /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
       /// @exception xtd::argument_exception The style sheet name not tvalid.
       /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      static xtd::forms::style_sheets::style_sheet get_style_sheet_from_name(const xtd::string& name);
+      [[nodiscard]] static auto get_style_sheet_from_name(const xtd::string& name) -> xtd::forms::style_sheets::style_sheet;
       
       /// @brief Raises the Idle event
       /// @param e The event_args objects to pass to the idle event.
-      static void raise_idle(const event_args& e);
+      static auto raise_idle(const event_args& e) -> void;
       
       /// @brief Registers a callback for checking whether the message loop is running in hosted environments.
       /// @param callback The method to call when Windows Forms needs to check if the hosting environment is still sending messages.
       /// @remarks This method is used when hosting Windows Forms in another environment. In hosted environments, the message_loop property will always return `false` if Windows Forms is not processing messages. Use this callback to tell Windows Forms if the hosting environment is still processing messages.
-      static void register_message_loop_callback(message_loop_callback callback);
+      static auto register_message_loop_callback(message_loop_callback callback) -> void;
       
       /// @brief Removes a message filter from the message pump of the application.
       /// @param value The implementation of the imessage_filter to remove from the application.
       /// @remarks You can remove a message filter when you no longer want to capture Windows messages before they are dispatched.
-      static void remove_message_filter(const imessage_filter& value);
+      static auto remove_message_filter(const imessage_filter& value) -> void;
       
       /// @brief Shuts down the application and starts a new instance immediately.
       /// @remarks Applications are restarted in the context in which they were initially run.
@@ -387,7 +380,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application restart method.
       /// @include application_restart.cpp
-      static void restart();
+      static auto restart() -> void;
       
       /// @brief Begins running a standard application message loop on the current thread, without a form.
       /// @remarks In a Win32-based or Windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows Forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop.
@@ -395,7 +388,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application run method.
       /// @include application_run.cpp
-      static void run();
+      static auto run() -> void;
       
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
       /// @param context An ApplicationContext in which the application is run.
@@ -403,7 +396,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application run method.
       /// @include application_context.cpp
-      static void run(xtd::forms::application_context& context);
+      static auto run(xtd::forms::application_context& context) -> void;
       
       /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
       /// @param main_form A form that represents the form to make visible.
@@ -412,7 +405,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application run method.
       /// @include application.cpp
-      static void run(const form& main_form);
+      static auto run(const form& main_form) -> void;
       
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
@@ -420,7 +413,7 @@ namespace xtd {
       /// @remarks It is often not feasible to catch all of the exceptions thrown by Windows Forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
       /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
       /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
-      static void set_unhandled_exception_mode (unhandled_exception_mode mode);
+      static auto set_unhandled_exception_mode (unhandled_exception_mode mode) -> void;
        */
       
       /*
@@ -432,12 +425,12 @@ namespace xtd {
       /// @remarks When threadScope is `true`, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.
       /// @remarks When threadScope is `false`, the application exception mode is set. The application exception mode is used for all threads that have the automatic mode. Setting the application exception mode does not affect the setting of the current thread.
       /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
-      static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
+      static auto set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
        */
       /// @}
       
       /// @cond
-      static auto __opaque_crt_prv_msg__(intptr, int32, intptr, intptr, intptr, intptr) noexcept;
+      [[nodiscard]] static auto __opaque_crt_prv_msg__(intptr, int32, intptr, intptr, intptr, intptr) noexcept;
       /// @endcond
       
       /// @name Public Deprecated Static Properties
@@ -447,20 +440,20 @@ namespace xtd {
       /// @return True is dark mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.")]]
-      static bool dark_mode_enabled() noexcept;
+      [[nodiscard]] static auto dark_mode_enabled() noexcept -> bool;
       
       /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is light mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.")]]
-      static bool light_mode_enabled() noexcept;
+      [[nodiscard]] static auto light_mode_enabled() noexcept -> bool;
       
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return `true` if visual styles are enabled; otherwise, `false`.
       /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
       /// @deprecated Replaced by xtd::application::visual_styles - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::visual_styles - Will be removed in version 1.2.0.")]]
-      static bool use_visual_styles() noexcept;
+      [[nodiscard]] static auto use_visual_styles() noexcept -> bool;
       /// @}
       
       /// @name PublicDeprecated Static Methods
@@ -471,7 +464,7 @@ namespace xtd {
       /// @remarks This method has an effect only on linux.
       /// @deprecated Replaced by xtd::application::button_images - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::button_images - Will be removed in version 1.2.0.")]]
-      static void enable_button_images();
+      static auto enable_button_images() -> void;
       
       /// @brief Enables dark mode for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
@@ -479,7 +472,7 @@ namespace xtd {
       /// @remarks xtd::forms::application::enable_dark_mode sets the application in dark mode even if your system is in light mode.
       /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.")]]
-      static void enable_dark_mode();
+      static auto enable_dark_mode() -> void;
       
       /// @brief Enables light mode for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
@@ -487,14 +480,14 @@ namespace xtd {
       /// @remarks xtd::forms::application::enable_light_mode sets the application in light mode even if your system is in dark mode.
       /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.")]]
-      static void enable_light_mode();
+      static auto enable_light_mode() -> void;
       
       /// @brief Enables menu images  for the application.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method has an effect only on linux.
       /// @deprecated Replaced by xtd::application::menu_images - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::application::menu_images - Will be removed in version 1.2.0.")]]
-      static void enable_menu_images();
+      static auto enable_menu_images() -> void;
       /// @}
       
     private:
@@ -503,17 +496,17 @@ namespace xtd {
       friend class input_dialog;
       friend class message_box;
       
-      static bool close_open_forms();
-      static void on_app_thread_exit(object& sender, const event_args& e);
-      static bool on_app_thread_exception();
-      static bool on_thread_exception(const threading::thread_exception_event_args& e);
-      static void raise_enter_thread_modal(const event_args& e);
-      static void raise_leave_thread_modal(const event_args& e);
-      static intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);
-      static void wnd_proc(message& message);
-      static void wm_activate_app(message& message);
-      static void wm_app_idle(message& message);
-      static void wm_quit(message& message);
+      [[nodiscard]] static auto close_open_forms() -> bool;
+      static auto on_app_thread_exit(object& sender, const event_args& e) -> void;
+      [[nodiscard]] static auto on_app_thread_exception() -> bool;
+      [[nodiscard]] static auto on_thread_exception(const threading::thread_exception_event_args& e) -> bool;
+      static auto raise_enter_thread_modal(const event_args& e) -> void;
+      static auto raise_leave_thread_modal(const event_args& e) -> void;
+      [[nodiscard]] static auto wnd_proc_(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr handle) -> xtd::intptr;
+      static auto wnd_proc(message& message) -> void;
+      static auto wm_activate_app(message& message) -> void;
+      static auto wm_app_idle(message& message) -> void;
+      static auto wm_quit(message& message) -> void;
       
       static xtd::forms::application_context internal_context_;
       static xtd::forms::application_context* context_;
