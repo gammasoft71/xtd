@@ -157,10 +157,10 @@ Protected constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Properties</h2></td></tr>
-<tr class="memitem:a4e9ca54c53522d1490054cd1d4543263" id="r_a4e9ca54c53522d1490054cd1d4543263"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a4e9ca54c53522d1490054cd1d4543263">can_raise_events</a> () const noexcept</td></tr>
-<tr class="memdesc:a4e9ca54c53522d1490054cd1d4543263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the component can raise an event.  <br /></td></tr>
-<tr class="memitem:aee075564d621347a36cd8ecb963db462" id="r_aee075564d621347a36cd8ecb963db462"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aee075564d621347a36cd8ecb963db462">design_mode</a> () const noexcept</td></tr>
-<tr class="memdesc:aee075564d621347a36cd8ecb963db462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
+<tr class="memitem:af27dbee0ffb4ee7c64a687826c1ff173" id="r_af27dbee0ffb4ee7c64a687826c1ff173"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#af27dbee0ffb4ee7c64a687826c1ff173">can_raise_events</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:af27dbee0ffb4ee7c64a687826c1ff173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the component can raise an event.  <br /></td></tr>
+<tr class="memitem:a25081f8b2f33791a98cb9cf44aa3664b" id="r_a25081f8b2f33791a98cb9cf44aa3664b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a25081f8b2f33791a98cb9cf44aa3664b">design_mode</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a25081f8b2f33791a98cb9cf44aa3664b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -213,8 +213,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a4e9ca54c53522d1490054cd1d4543263" name="a4e9ca54c53522d1490054cd1d4543263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e9ca54c53522d1490054cd1d4543263">&#9670;&#160;</a></span>can_raise_events()</h2>
+<a id="af27dbee0ffb4ee7c64a687826c1ff173" name="af27dbee0ffb4ee7c64a687826c1ff173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27dbee0ffb4ee7c64a687826c1ff173">&#9670;&#160;</a></span>can_raise_events()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,15 +223,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::forms::component::can_raise_events </td>
+          <td class="memname">virtual auto xtd::forms::component::can_raise_events </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -244,8 +244,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aee075564d621347a36cd8ecb963db462" name="aee075564d621347a36cd8ecb963db462"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee075564d621347a36cd8ecb963db462">&#9670;&#160;</a></span>design_mode()</h2>
+<a id="a25081f8b2f33791a98cb9cf44aa3664b" name="a25081f8b2f33791a98cb9cf44aa3664b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25081f8b2f33791a98cb9cf44aa3664b">&#9670;&#160;</a></span>design_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,15 +254,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::component::design_mode </td>
+          <td class="memname">auto xtd::forms::component::design_mode </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

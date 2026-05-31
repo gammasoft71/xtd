@@ -166,7 +166,7 @@ Inheritance diagram for xtd::forms::color_box:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;Color...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> color = <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa">back_color</a>();</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a53b9b97dbf4df7803feba12fe4357994">color_box::show</a>(color, <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>) == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">forms::dialog_result::ok</a>)</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="#ad76dad6d917f6311480c2d5947775d93">color_box::show</a>(color, <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>) == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">forms::dialog_result::ok</a>)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa">back_color</a>(color);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -178,7 +178,7 @@ Inheritance diagram for xtd::forms::color_box:</div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1color__box_html_a53b9b97dbf4df7803feba12fe4357994"><div class="ttname"><a href="#a53b9b97dbf4df7803feba12fe4357994">xtd::forms::color_box::show</a></div><div class="ttdeci">static xtd::forms::dialog_result show(xtd::drawing::color &amp;color, const xtd::forms::iwin32_window &amp;owner)</div><div class="ttdoc">Displays a color box in front of the specified window. The color box displays a color.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1color__box_html_ad76dad6d917f6311480c2d5947775d93"><div class="ttname"><a href="#ad76dad6d917f6311480c2d5947775d93">xtd::forms::color_box::show</a></div><div class="ttdeci">static auto show(xtd::drawing::color &amp;color, const xtd::forms::iwin32_window &amp;owner) -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a color box in front of the specified window. The color box displays a color.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ab4236dd32071d07bb8ec2452e041fbfa"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa">xtd::forms::control::back_color</a></div><div class="ttdeci">virtual drawing::color back_color() const noexcept</div><div class="ttdoc">Gets the background color for the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
@@ -191,26 +191,26 @@ Inheritance diagram for xtd::forms::color_box:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a53b9b97dbf4df7803feba12fe4357994" id="r_a53b9b97dbf4df7803feba12fe4357994"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a53b9b97dbf4df7803feba12fe4357994">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a53b9b97dbf4df7803feba12fe4357994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color.  <br /></td></tr>
-<tr class="memitem:a384b38d449de689d651fcf6614cdedde" id="r_a384b38d449de689d651fcf6614cdedde"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a384b38d449de689d651fcf6614cdedde">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title)</td></tr>
-<tr class="memdesc:a384b38d449de689d651fcf6614cdedde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color.  <br /></td></tr>
-<tr class="memitem:a636d410623a56263fdfb6db618e84f27" id="r_a636d410623a56263fdfb6db618e84f27"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a636d410623a56263fdfb6db618e84f27">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles)</td></tr>
-<tr class="memdesc:a636d410623a56263fdfb6db618e84f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color with styles.  <br /></td></tr>
-<tr class="memitem:aa64493644a3518de4267482836e5a20b" id="r_aa64493644a3518de4267482836e5a20b"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa64493644a3518de4267482836e5a20b">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;custom_colors)</td></tr>
-<tr class="memdesc:aa64493644a3518de4267482836e5a20b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color with styles, and custom colors.  <br /></td></tr>
-<tr class="memitem:a78436eae6068961bfaea344d60479d40" id="r_a78436eae6068961bfaea344d60479d40"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a78436eae6068961bfaea344d60479d40">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:a78436eae6068961bfaea344d60479d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color.  <br /></td></tr>
-<tr class="memitem:a433661777583cda7df448ed1c7f82ed1" id="r_a433661777583cda7df448ed1c7f82ed1"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a433661777583cda7df448ed1c7f82ed1">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title)</td></tr>
-<tr class="memdesc:a433661777583cda7df448ed1c7f82ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color.  <br /></td></tr>
-<tr class="memitem:a80fe8bf2aefac923d497e212c8bba2b2" id="r_a80fe8bf2aefac923d497e212c8bba2b2"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a80fe8bf2aefac923d497e212c8bba2b2">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles)</td></tr>
-<tr class="memdesc:a80fe8bf2aefac923d497e212c8bba2b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color with styles.  <br /></td></tr>
-<tr class="memitem:a0b065dbc89bf36f46e216cab6b79f7fe" id="r_a0b065dbc89bf36f46e216cab6b79f7fe"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0b065dbc89bf36f46e216cab6b79f7fe">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;custom_colors)</td></tr>
-<tr class="memdesc:a0b065dbc89bf36f46e216cab6b79f7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color with styles, and custom colors.  <br /></td></tr>
+<tr class="memitem:ad76dad6d917f6311480c2d5947775d93" id="r_ad76dad6d917f6311480c2d5947775d93"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad76dad6d917f6311480c2d5947775d93">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ad76dad6d917f6311480c2d5947775d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color.  <br /></td></tr>
+<tr class="memitem:a0e9e254a629b1ffef7bad60487bc42de" id="r_a0e9e254a629b1ffef7bad60487bc42de"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0e9e254a629b1ffef7bad60487bc42de">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a0e9e254a629b1ffef7bad60487bc42de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color.  <br /></td></tr>
+<tr class="memitem:a557049c22b7da6b26422104f9cc48763" id="r_a557049c22b7da6b26422104f9cc48763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a557049c22b7da6b26422104f9cc48763">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a557049c22b7da6b26422104f9cc48763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color with styles.  <br /></td></tr>
+<tr class="memitem:ad72830fe9adf4c8b045eaa2a0e0e4f16" id="r_ad72830fe9adf4c8b045eaa2a0e0e4f16"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad72830fe9adf4c8b045eaa2a0e0e4f16">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;custom_colors) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ad72830fe9adf4c8b045eaa2a0e0e4f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box in front of the specified window. The color box displays a color with styles, and custom colors.  <br /></td></tr>
+<tr class="memitem:ac5b84acfc603ac2e86b65b32e5fd4546" id="r_ac5b84acfc603ac2e86b65b32e5fd4546"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac5b84acfc603ac2e86b65b32e5fd4546">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ac5b84acfc603ac2e86b65b32e5fd4546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color.  <br /></td></tr>
+<tr class="memitem:a00714eb0af72a525f39d4b37bca8fbbc" id="r_a00714eb0af72a525f39d4b37bca8fbbc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a00714eb0af72a525f39d4b37bca8fbbc">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a00714eb0af72a525f39d4b37bca8fbbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color.  <br /></td></tr>
+<tr class="memitem:a28f2dd33948cb68b618b2b652d996e33" id="r_a28f2dd33948cb68b618b2b652d996e33"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a28f2dd33948cb68b618b2b652d996e33">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a28f2dd33948cb68b618b2b652d996e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color with styles.  <br /></td></tr>
+<tr class="memitem:a922687ab05cb1e378ec6a024a0dcf1f0" id="r_a922687ab05cb1e378ec6a024a0dcf1f0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a922687ab05cb1e378ec6a024a0dcf1f0">show</a> (<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, <a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a> styles, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;custom_colors) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a922687ab05cb1e378ec6a024a0dcf1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a color box. The color box displays a color with styles, and custom colors.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a53b9b97dbf4df7803feba12fe4357994" name="a53b9b97dbf4df7803feba12fe4357994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b9b97dbf4df7803feba12fe4357994">&#9670;&#160;</a></span>show() <span class="overload">[1/8]</span></h2>
+<a id="ad76dad6d917f6311480c2d5947775d93" name="ad76dad6d917f6311480c2d5947775d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76dad6d917f6311480c2d5947775d93">&#9670;&#160;</a></span>show() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,19 +219,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -249,8 +249,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a384b38d449de689d651fcf6614cdedde" name="a384b38d449de689d651fcf6614cdedde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a384b38d449de689d651fcf6614cdedde">&#9670;&#160;</a></span>show() <span class="overload">[2/8]</span></h2>
+<a id="a0e9e254a629b1ffef7bad60487bc42de" name="a0e9e254a629b1ffef7bad60487bc42de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9e254a629b1ffef7bad60487bc42de">&#9670;&#160;</a></span>show() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +259,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
@@ -271,12 +271,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -295,8 +295,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a636d410623a56263fdfb6db618e84f27" name="a636d410623a56263fdfb6db618e84f27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a636d410623a56263fdfb6db618e84f27">&#9670;&#160;</a></span>show() <span class="overload">[3/8]</span></h2>
+<a id="a557049c22b7da6b26422104f9cc48763" name="a557049c22b7da6b26422104f9cc48763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557049c22b7da6b26422104f9cc48763">&#9670;&#160;</a></span>show() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -305,7 +305,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
@@ -322,12 +322,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -347,8 +347,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aa64493644a3518de4267482836e5a20b" name="aa64493644a3518de4267482836e5a20b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa64493644a3518de4267482836e5a20b">&#9670;&#160;</a></span>show() <span class="overload">[4/8]</span></h2>
+<a id="ad72830fe9adf4c8b045eaa2a0e0e4f16" name="ad72830fe9adf4c8b045eaa2a0e0e4f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72830fe9adf4c8b045eaa2a0e0e4f16">&#9670;&#160;</a></span>show() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,7 +357,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
@@ -379,12 +379,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>custom_colors</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>custom_colors</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -405,8 +405,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a78436eae6068961bfaea344d60479d40" name="a78436eae6068961bfaea344d60479d40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78436eae6068961bfaea344d60479d40">&#9670;&#160;</a></span>show() <span class="overload">[5/8]</span></h2>
+<a id="ac5b84acfc603ac2e86b65b32e5fd4546" name="ac5b84acfc603ac2e86b65b32e5fd4546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b84acfc603ac2e86b65b32e5fd4546">&#9670;&#160;</a></span>show() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -415,15 +415,15 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -440,8 +440,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a433661777583cda7df448ed1c7f82ed1" name="a433661777583cda7df448ed1c7f82ed1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a433661777583cda7df448ed1c7f82ed1">&#9670;&#160;</a></span>show() <span class="overload">[6/8]</span></h2>
+<a id="a00714eb0af72a525f39d4b37bca8fbbc" name="a00714eb0af72a525f39d4b37bca8fbbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00714eb0af72a525f39d4b37bca8fbbc">&#9670;&#160;</a></span>show() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,19 +450,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -480,8 +480,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a80fe8bf2aefac923d497e212c8bba2b2" name="a80fe8bf2aefac923d497e212c8bba2b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80fe8bf2aefac923d497e212c8bba2b2">&#9670;&#160;</a></span>show() <span class="overload">[7/8]</span></h2>
+<a id="a28f2dd33948cb68b618b2b652d996e33" name="a28f2dd33948cb68b618b2b652d996e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f2dd33948cb68b618b2b652d996e33">&#9670;&#160;</a></span>show() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -490,7 +490,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
@@ -502,12 +502,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga2eb5191f396b67ceb2ccab03798d6ec0">color_box_styles</a></td>          <td class="paramname"><span class="paramname"><em>styles</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -526,8 +526,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a0b065dbc89bf36f46e216cab6b79f7fe" name="a0b065dbc89bf36f46e216cab6b79f7fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b065dbc89bf36f46e216cab6b79f7fe">&#9670;&#160;</a></span>show() <span class="overload">[8/8]</span></h2>
+<a id="a922687ab05cb1e378ec6a024a0dcf1f0" name="a922687ab05cb1e378ec6a024a0dcf1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922687ab05cb1e378ec6a024a0dcf1f0">&#9670;&#160;</a></span>show() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,7 +536,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::color_box::show </td>
+          <td class="memname">auto xtd::forms::color_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
@@ -553,12 +553,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>custom_colors</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>custom_colors</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

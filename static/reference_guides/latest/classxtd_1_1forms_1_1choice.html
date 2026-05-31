@@ -182,7 +182,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      <a class="code hl_function" href="#afc3c886220f47bcaa099c4a363414836">text</a>(<span class="stringliteral">&quot;Checked list box example&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="#a04400d69b44f14c4426cb289c33112dc">text</a>(<span class="stringliteral">&quot;Checked list box example&quot;</span>);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({200, 240});</div>
 <div class="line">      </div>
 <div class="line">      checked_list_box1.parent(*<span class="keyword">this</span>);</div>
@@ -207,7 +207,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(checked_list_box_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1choice_html_afc3c886220f47bcaa099c4a363414836"><div class="ttname"><a href="#afc3c886220f47bcaa099c4a363414836">xtd::forms::choice::text</a></div><div class="ttdeci">control &amp; text(const xtd::string &amp;text) override</div><div class="ttdoc">Sets the text associated with this control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1choice_html_a04400d69b44f14c4426cb289c33112dc"><div class="ttname"><a href="#a04400d69b44f14c4426cb289c33112dc">xtd::forms::choice::text</a></div><div class="ttdeci">auto text(const xtd::string &amp;text) -&gt; control &amp;override</div><div class="ttdoc">Sets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a2a2a45ce0f1d7d2794c2cbc44cbbf352"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a2a2a45ce0f1d7d2794c2cbc44cbbf352">xtd::forms::control::client_size</a></div><div class="ttdeci">virtual const drawing::size &amp; client_size() const noexcept</div><div class="ttdoc">Gets the height and width of the client area of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
@@ -219,7 +219,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      <a class="code hl_function" href="#afc3c886220f47bcaa099c4a363414836">text</a>(<span class="stringliteral">&quot;Choice example&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="#a04400d69b44f14c4426cb289c33112dc">text</a>(<span class="stringliteral">&quot;Choice example&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">      choice1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      choice1.location({10, 10});</div>
@@ -257,104 +257,104 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a983b4c2eb923b5b3c008312327ee9fc8" id="r_a983b4c2eb923b5b3c008312327ee9fc8"><td class="memItemLeft"><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a983b4c2eb923b5b3c008312327ee9fc8">items</a> () noexcept</td></tr>
-<tr class="memdesc:a983b4c2eb923b5b3c008312327ee9fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object representing the collection of the items contained in this choice.  <br /></td></tr>
-<tr class="memitem:a332772c45cad2e983e2466f50bec7f4a" id="r_a332772c45cad2e983e2466f50bec7f4a"><td class="memItemLeft">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a332772c45cad2e983e2466f50bec7f4a">items</a> () const noexcept</td></tr>
-<tr class="memdesc:a332772c45cad2e983e2466f50bec7f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object representing the collection of the items contained in this choice.  <br /></td></tr>
-<tr class="memitem:aa2410abe29392c07b1cf9c9796693ff3" id="r_aa2410abe29392c07b1cf9c9796693ff3"><td class="memItemLeft">const <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa2410abe29392c07b1cf9c9796693ff3">items</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items)</td></tr>
-<tr class="memdesc:aa2410abe29392c07b1cf9c9796693ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object representing the collection of the items contained in this choice.  <br /></td></tr>
-<tr class="memitem:a1a2fe11ee70303adb90b4bd3a4a69061" id="r_a1a2fe11ee70303adb90b4bd3a4a69061"><td class="memItemLeft"><a class="el" href="classxtd_1_1forms_1_1list__control.html#ae0e92ac144b60b62f43fc11c4422ecf1">list_control</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1a2fe11ee70303adb90b4bd3a4a69061">selected_index</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index) override</td></tr>
-<tr class="memdesc:a1a2fe11ee70303adb90b4bd3a4a69061"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, Sets the zero-based index of the currently selected item.  <br /></td></tr>
-<tr class="memitem:a02522259f70c9793164a9e25017f9838" id="r_a02522259f70c9793164a9e25017f9838"><td class="memItemLeft">const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a02522259f70c9793164a9e25017f9838">selected_item</a> () const noexcept</td></tr>
-<tr class="memdesc:a02522259f70c9793164a9e25017f9838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets currently selected item in the choice.  <br /></td></tr>
-<tr class="memitem:a0badf2e57b51ce642d047f3fd8a8eb16" id="r_a0badf2e57b51ce642d047f3fd8a8eb16"><td class="memItemLeft"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0badf2e57b51ce642d047f3fd8a8eb16">selected_item</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;selected_item)</td></tr>
-<tr class="memdesc:a0badf2e57b51ce642d047f3fd8a8eb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets currently selected item in the choice.  <br /></td></tr>
-<tr class="memitem:a98abdc3e9186b274c9ae924526d4ec4c" id="r_a98abdc3e9186b274c9ae924526d4ec4c"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a98abdc3e9186b274c9ae924526d4ec4c">sorted</a> () const noexcept</td></tr>
-<tr class="memdesc:a98abdc3e9186b274c9ae924526d4ec4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the items in the choice are sorted.  <br /></td></tr>
-<tr class="memitem:a79aa4adffd32b504fd052d695921fa8f" id="r_a79aa4adffd32b504fd052d695921fa8f"><td class="memItemLeft">virtual <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a79aa4adffd32b504fd052d695921fa8f">sorted</a> (bool sorted)</td></tr>
-<tr class="memdesc:a79aa4adffd32b504fd052d695921fa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the items in the choice are sorted.  <br /></td></tr>
-<tr class="memitem:afc3c886220f47bcaa099c4a363414836" id="r_afc3c886220f47bcaa099c4a363414836"><td class="memItemLeft"><a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#afc3c886220f47bcaa099c4a363414836">text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) override</td></tr>
-<tr class="memdesc:afc3c886220f47bcaa099c4a363414836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text associated with this control.  <br /></td></tr>
+<tr class="memitem:a166e863ed03bee784bffefa17ba5b14b" id="r_a166e863ed03bee784bffefa17ba5b14b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a166e863ed03bee784bffefa17ba5b14b">items</a> () noexcept -&gt; <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td></tr>
+<tr class="memdesc:a166e863ed03bee784bffefa17ba5b14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object representing the collection of the items contained in this choice.  <br /></td></tr>
+<tr class="memitem:af74a54364482b1b70ed71e93bf4dd813" id="r_af74a54364482b1b70ed71e93bf4dd813"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af74a54364482b1b70ed71e93bf4dd813">items</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td></tr>
+<tr class="memdesc:af74a54364482b1b70ed71e93bf4dd813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object representing the collection of the items contained in this choice.  <br /></td></tr>
+<tr class="memitem:ae5d42f66ff681429ec0100ab36a04142" id="r_ae5d42f66ff681429ec0100ab36a04142"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae5d42f66ff681429ec0100ab36a04142">items</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items) -&gt; const <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;</td></tr>
+<tr class="memdesc:ae5d42f66ff681429ec0100ab36a04142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object representing the collection of the items contained in this choice.  <br /></td></tr>
+<tr class="memitem:a6bbe207df4264712331872a2e49c960f" id="r_a6bbe207df4264712331872a2e49c960f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6bbe207df4264712331872a2e49c960f">selected_index</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index) -&gt; <a class="el" href="classxtd_1_1forms_1_1list__control.html#ae0e92ac144b60b62f43fc11c4422ecf1">list_control</a> &amp;override</td></tr>
+<tr class="memdesc:a6bbe207df4264712331872a2e49c960f"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, Sets the zero-based index of the currently selected item.  <br /></td></tr>
+<tr class="memitem:a67b94a627d421a0545ec9766e26103cc" id="r_a67b94a627d421a0545ec9766e26103cc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a67b94a627d421a0545ec9766e26103cc">selected_item</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;</td></tr>
+<tr class="memdesc:a67b94a627d421a0545ec9766e26103cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets currently selected item in the choice.  <br /></td></tr>
+<tr class="memitem:aceb7e1df7a0bcf8a210e09b32fa8f06d" id="r_aceb7e1df7a0bcf8a210e09b32fa8f06d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aceb7e1df7a0bcf8a210e09b32fa8f06d">selected_item</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;selected_item) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;</td></tr>
+<tr class="memdesc:aceb7e1df7a0bcf8a210e09b32fa8f06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets currently selected item in the choice.  <br /></td></tr>
+<tr class="memitem:aa177595cf2a31800d34673ca065c54ec" id="r_aa177595cf2a31800d34673ca065c54ec"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aa177595cf2a31800d34673ca065c54ec">sorted</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aa177595cf2a31800d34673ca065c54ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the items in the choice are sorted.  <br /></td></tr>
+<tr class="memitem:a9e76837f56839382467de2ca1efe7774" id="r_a9e76837f56839382467de2ca1efe7774"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e76837f56839382467de2ca1efe7774">sorted</a> (bool sorted) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;</td></tr>
+<tr class="memdesc:a9e76837f56839382467de2ca1efe7774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the items in the choice are sorted.  <br /></td></tr>
+<tr class="memitem:a04400d69b44f14c4426cb289c33112dc" id="r_a04400d69b44f14c4426cb289c33112dc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a04400d69b44f14c4426cb289c33112dc">text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;override</td></tr>
+<tr class="memdesc:a04400d69b44f14c4426cb289c33112dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text associated with this control.  <br /></td></tr>
 <tr class="memitem:a378c28de47d5bb00751b1f4ebe4f27df" id="r_a378c28de47d5bb00751b1f4ebe4f27df"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a378c28de47d5bb00751b1f4ebe4f27df">selected_index</a> () const noexcept</td></tr>
 <tr class="memdesc:a378c28de47d5bb00751b1f4ebe4f27df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the zero-based index of the currently selected item.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a7e2227307fc585108d0d00603f004c68" id="r_a7e2227307fc585108d0d00603f004c68"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e2227307fc585108d0d00603f004c68">begin_update</a> ()</td></tr>
-<tr class="memdesc:a7e2227307fc585108d0d00603f004c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the EndUpdate() method is called.  <br /></td></tr>
-<tr class="memitem:a675bf4228461addf7018d7b6570ee74d" id="r_a675bf4228461addf7018d7b6570ee74d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a675bf4228461addf7018d7b6570ee74d">end_update</a> ()</td></tr>
-<tr class="memdesc:a675bf4228461addf7018d7b6570ee74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes painting the choice control after painting is suspended by the begin_update method.  <br /></td></tr>
+<tr class="memitem:a9e766694d0a40cc1c1e5d921d9125eac" id="r_a9e766694d0a40cc1c1e5d921d9125eac"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e766694d0a40cc1c1e5d921d9125eac">begin_update</a> () -&gt; void</td></tr>
+<tr class="memdesc:a9e766694d0a40cc1c1e5d921d9125eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the EndUpdate() method is called.  <br /></td></tr>
+<tr class="memitem:afc398fab2006bf420ae91ea0a9c2ee5a" id="r_afc398fab2006bf420ae91ea0a9c2ee5a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afc398fab2006bf420ae91ea0a9c2ee5a">end_update</a> () -&gt; void</td></tr>
+<tr class="memdesc:afc398fab2006bf420ae91ea0a9c2ee5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes painting the choice control after painting is suspended by the begin_update method.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:aa40946fd1be0401a11123797cce66ec0" id="r_aa40946fd1be0401a11123797cce66ec0"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa40946fd1be0401a11123797cce66ec0">create</a> ()</td></tr>
-<tr class="memdesc:aa40946fd1be0401a11123797cce66ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>.  <br /></td></tr>
-<tr class="memitem:afc760fa785d49aca7646a38f0bdf7b8f" id="r_afc760fa785d49aca7646a38f0bdf7b8f"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#afc760fa785d49aca7646a38f0bdf7b8f">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:afc760fa785d49aca7646a38f0bdf7b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location.  <br /></td></tr>
-<tr class="memitem:ab7d3f376a70eb652e7ebff50124bd586" id="r_ab7d3f376a70eb652e7ebff50124bd586"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab7d3f376a70eb652e7ebff50124bd586">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:ab7d3f376a70eb652e7ebff50124bd586"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, and size.  <br /></td></tr>
-<tr class="memitem:ad48ec7c5aad34e6959b5c363a0425aeb" id="r_ad48ec7c5aad34e6959b5c363a0425aeb"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad48ec7c5aad34e6959b5c363a0425aeb">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:ad48ec7c5aad34e6959b5c363a0425aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, size, and name.  <br /></td></tr>
-<tr class="memitem:a8596be36c81ad917709090cec7bce503" id="r_a8596be36c81ad917709090cec7bce503"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8596be36c81ad917709090cec7bce503">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items)</td></tr>
-<tr class="memdesc:a8596be36c81ad917709090cec7bce503"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items.  <br /></td></tr>
-<tr class="memitem:a311024a81d1012961abb76999e6ba91d" id="r_a311024a81d1012961abb76999e6ba91d"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a311024a81d1012961abb76999e6ba91d">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a311024a81d1012961abb76999e6ba91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and location.  <br /></td></tr>
-<tr class="memitem:a8f859975a23f24465b3e8163f67da100" id="r_a8f859975a23f24465b3e8163f67da100"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8f859975a23f24465b3e8163f67da100">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:a8f859975a23f24465b3e8163f67da100"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, and size.  <br /></td></tr>
-<tr class="memitem:abe3f133bcd49de8ebf4524d12ccd68e0" id="r_abe3f133bcd49de8ebf4524d12ccd68e0"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#abe3f133bcd49de8ebf4524d12ccd68e0">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:abe3f133bcd49de8ebf4524d12ccd68e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, size, and name.  <br /></td></tr>
-<tr class="memitem:a1bab654e504fc4642792bed8413e6a23" id="r_a1bab654e504fc4642792bed8413e6a23"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1bab654e504fc4642792bed8413e6a23">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index)</td></tr>
-<tr class="memdesc:a1bab654e504fc4642792bed8413e6a23"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and selected_index.  <br /></td></tr>
-<tr class="memitem:a2d93936d66a6c2be023b2f5ba8a49d0a" id="r_a2d93936d66a6c2be023b2f5ba8a49d0a"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2d93936d66a6c2be023b2f5ba8a49d0a">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a2d93936d66a6c2be023b2f5ba8a49d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, and location.  <br /></td></tr>
-<tr class="memitem:a0b28c7b4747a9604207102ba0e04a1d5" id="r_a0b28c7b4747a9604207102ba0e04a1d5"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0b28c7b4747a9604207102ba0e04a1d5">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:a0b28c7b4747a9604207102ba0e04a1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, location, and size.  <br /></td></tr>
-<tr class="memitem:ae6f0484f03da501288f8c023746876dc" id="r_ae6f0484f03da501288f8c023746876dc"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae6f0484f03da501288f8c023746876dc">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:ae6f0484f03da501288f8c023746876dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, location, size, and name.  <br /></td></tr>
-<tr class="memitem:aa027d91b56af2717d524c7b69832ea00" id="r_aa027d91b56af2717d524c7b69832ea00"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa027d91b56af2717d524c7b69832ea00">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent)</td></tr>
-<tr class="memdesc:aa027d91b56af2717d524c7b69832ea00"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent.  <br /></td></tr>
-<tr class="memitem:a1aaf99ed89a452f9ebdc80902b6b51cc" id="r_a1aaf99ed89a452f9ebdc80902b6b51cc"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1aaf99ed89a452f9ebdc80902b6b51cc">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a1aaf99ed89a452f9ebdc80902b6b51cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and location.  <br /></td></tr>
-<tr class="memitem:a375813570fefa8d32cbf55905153fe73" id="r_a375813570fefa8d32cbf55905153fe73"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a375813570fefa8d32cbf55905153fe73">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:a375813570fefa8d32cbf55905153fe73"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, and size.  <br /></td></tr>
-<tr class="memitem:afb810cefc256ce0cd161967ed264b353" id="r_afb810cefc256ce0cd161967ed264b353"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#afb810cefc256ce0cd161967ed264b353">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:afb810cefc256ce0cd161967ed264b353"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, size, and name.  <br /></td></tr>
-<tr class="memitem:a2099af895e4d335cc67d9e7fb5a09b80" id="r_a2099af895e4d335cc67d9e7fb5a09b80"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2099af895e4d335cc67d9e7fb5a09b80">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items)</td></tr>
-<tr class="memdesc:a2099af895e4d335cc67d9e7fb5a09b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and items.  <br /></td></tr>
-<tr class="memitem:a65231d512d272dffb547d1ece5b6fd21" id="r_a65231d512d272dffb547d1ece5b6fd21"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a65231d512d272dffb547d1ece5b6fd21">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a65231d512d272dffb547d1ece5b6fd21"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and location.  <br /></td></tr>
-<tr class="memitem:acd32d4e1e99fb4469f1699e1f01841bb" id="r_acd32d4e1e99fb4469f1699e1f01841bb"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#acd32d4e1e99fb4469f1699e1f01841bb">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:acd32d4e1e99fb4469f1699e1f01841bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, and size.  <br /></td></tr>
-<tr class="memitem:ae0e2d4eec486687d2add8496e9386269" id="r_ae0e2d4eec486687d2add8496e9386269"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae0e2d4eec486687d2add8496e9386269">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:ae0e2d4eec486687d2add8496e9386269"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, size, and name.  <br /></td></tr>
-<tr class="memitem:aefdeb6a88e80ae6d9b833274d830f709" id="r_aefdeb6a88e80ae6d9b833274d830f709"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#aefdeb6a88e80ae6d9b833274d830f709">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index)</td></tr>
-<tr class="memdesc:aefdeb6a88e80ae6d9b833274d830f709"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and selected_index.  <br /></td></tr>
-<tr class="memitem:a1413a94e5b124318439afe48ef143ded" id="r_a1413a94e5b124318439afe48ef143ded"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1413a94e5b124318439afe48ef143ded">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a1413a94e5b124318439afe48ef143ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, and location.  <br /></td></tr>
-<tr class="memitem:afcada82910d23250714c15c78ba02129" id="r_afcada82910d23250714c15c78ba02129"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#afcada82910d23250714c15c78ba02129">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:afcada82910d23250714c15c78ba02129"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, location, and size.  <br /></td></tr>
-<tr class="memitem:a8844dc379f382ca5d1187f122494fab8" id="r_a8844dc379f382ca5d1187f122494fab8"><td class="memItemLeft">static <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8844dc379f382ca5d1187f122494fab8">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:a8844dc379f382ca5d1187f122494fab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, location, size, and name.  <br /></td></tr>
+<tr class="memitem:afcc2f72b04d30026b4bf9233c10e42d4" id="r_afcc2f72b04d30026b4bf9233c10e42d4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afcc2f72b04d30026b4bf9233c10e42d4">create</a> () -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:afcc2f72b04d30026b4bf9233c10e42d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>.  <br /></td></tr>
+<tr class="memitem:a3f7a1c69258ef8fc540bb8acded497d6" id="r_a3f7a1c69258ef8fc540bb8acded497d6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f7a1c69258ef8fc540bb8acded497d6">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a3f7a1c69258ef8fc540bb8acded497d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location.  <br /></td></tr>
+<tr class="memitem:a36dfa4e3bbb2e82cfcd935cecc58349a" id="r_a36dfa4e3bbb2e82cfcd935cecc58349a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a36dfa4e3bbb2e82cfcd935cecc58349a">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a36dfa4e3bbb2e82cfcd935cecc58349a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, and size.  <br /></td></tr>
+<tr class="memitem:ae756303ec6eebb494a15200fbca5e6d8" id="r_ae756303ec6eebb494a15200fbca5e6d8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae756303ec6eebb494a15200fbca5e6d8">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:ae756303ec6eebb494a15200fbca5e6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="memitem:a56077ec20879850fdcf13af487d665ac" id="r_a56077ec20879850fdcf13af487d665ac"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a56077ec20879850fdcf13af487d665ac">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a56077ec20879850fdcf13af487d665ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items.  <br /></td></tr>
+<tr class="memitem:a4dd68d86a07e3b7e1d398438204e0d13" id="r_a4dd68d86a07e3b7e1d398438204e0d13"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4dd68d86a07e3b7e1d398438204e0d13">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a4dd68d86a07e3b7e1d398438204e0d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and location.  <br /></td></tr>
+<tr class="memitem:a2f90f353ac779e156ac8ea8ab3248706" id="r_a2f90f353ac779e156ac8ea8ab3248706"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2f90f353ac779e156ac8ea8ab3248706">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a2f90f353ac779e156ac8ea8ab3248706"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, and size.  <br /></td></tr>
+<tr class="memitem:a656eae642179ddd90720a36fb5b40013" id="r_a656eae642179ddd90720a36fb5b40013"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a656eae642179ddd90720a36fb5b40013">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a656eae642179ddd90720a36fb5b40013"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, size, and name.  <br /></td></tr>
+<tr class="memitem:a423806aa1d1cf6a1e7439eac59ed6ad5" id="r_a423806aa1d1cf6a1e7439eac59ed6ad5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a423806aa1d1cf6a1e7439eac59ed6ad5">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a423806aa1d1cf6a1e7439eac59ed6ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and selected_index.  <br /></td></tr>
+<tr class="memitem:aeee281428d4ec5efdd6417bdbae30589" id="r_aeee281428d4ec5efdd6417bdbae30589"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeee281428d4ec5efdd6417bdbae30589">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:aeee281428d4ec5efdd6417bdbae30589"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, and location.  <br /></td></tr>
+<tr class="memitem:abc71759d10bdc0d2088f7074ab5472d5" id="r_abc71759d10bdc0d2088f7074ab5472d5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abc71759d10bdc0d2088f7074ab5472d5">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:abc71759d10bdc0d2088f7074ab5472d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, location, and size.  <br /></td></tr>
+<tr class="memitem:a1cf2a24629d836a26b6c793e6425792f" id="r_a1cf2a24629d836a26b6c793e6425792f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1cf2a24629d836a26b6c793e6425792f">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a1cf2a24629d836a26b6c793e6425792f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, location, size, and name.  <br /></td></tr>
+<tr class="memitem:a4c2a0b148457ae1e45c4bd5b7be50d1b" id="r_a4c2a0b148457ae1e45c4bd5b7be50d1b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4c2a0b148457ae1e45c4bd5b7be50d1b">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a4c2a0b148457ae1e45c4bd5b7be50d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent.  <br /></td></tr>
+<tr class="memitem:a37e78cb774a50362ceb25461c950eb5f" id="r_a37e78cb774a50362ceb25461c950eb5f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a37e78cb774a50362ceb25461c950eb5f">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a37e78cb774a50362ceb25461c950eb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and location.  <br /></td></tr>
+<tr class="memitem:a9fbbb374ffa3b92cb49cda12c98228af" id="r_a9fbbb374ffa3b92cb49cda12c98228af"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fbbb374ffa3b92cb49cda12c98228af">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a9fbbb374ffa3b92cb49cda12c98228af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, and size.  <br /></td></tr>
+<tr class="memitem:a857cdaced7a769bc0f6ba8ad21725fa4" id="r_a857cdaced7a769bc0f6ba8ad21725fa4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a857cdaced7a769bc0f6ba8ad21725fa4">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a857cdaced7a769bc0f6ba8ad21725fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, size, and name.  <br /></td></tr>
+<tr class="memitem:afa7c7b0b982e2c5b293bb92c9f46092f" id="r_afa7c7b0b982e2c5b293bb92c9f46092f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afa7c7b0b982e2c5b293bb92c9f46092f">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:afa7c7b0b982e2c5b293bb92c9f46092f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and items.  <br /></td></tr>
+<tr class="memitem:a2b78401c2e1db4f42756ac74a953617e" id="r_a2b78401c2e1db4f42756ac74a953617e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2b78401c2e1db4f42756ac74a953617e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a2b78401c2e1db4f42756ac74a953617e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and location.  <br /></td></tr>
+<tr class="memitem:a5748edc298433a8f77c683faaae14f47" id="r_a5748edc298433a8f77c683faaae14f47"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5748edc298433a8f77c683faaae14f47">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a5748edc298433a8f77c683faaae14f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, and size.  <br /></td></tr>
+<tr class="memitem:a4950e2868b7a7c8fa797e79e76f0e6da" id="r_a4950e2868b7a7c8fa797e79e76f0e6da"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4950e2868b7a7c8fa797e79e76f0e6da">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a4950e2868b7a7c8fa797e79e76f0e6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, size, and name.  <br /></td></tr>
+<tr class="memitem:aabd22d4ca1c8f2f54ef36d893b681532" id="r_aabd22d4ca1c8f2f54ef36d893b681532"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aabd22d4ca1c8f2f54ef36d893b681532">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:aabd22d4ca1c8f2f54ef36d893b681532"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and selected_index.  <br /></td></tr>
+<tr class="memitem:ab666ceadd2f9c319d7faa1c7021218e0" id="r_ab666ceadd2f9c319d7faa1c7021218e0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab666ceadd2f9c319d7faa1c7021218e0">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:ab666ceadd2f9c319d7faa1c7021218e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, and location.  <br /></td></tr>
+<tr class="memitem:a7e5544e422419118db8b1e256a70b37e" id="r_a7e5544e422419118db8b1e256a70b37e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7e5544e422419118db8b1e256a70b37e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a7e5544e422419118db8b1e256a70b37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, location, and size.  <br /></td></tr>
+<tr class="memitem:a4039df9bb80bb482de0a5503c4ae8c32" id="r_a4039df9bb80bb482de0a5503c4ae8c32"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4039df9bb80bb482de0a5503c4ae8c32">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;parent, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;items, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> selected_index, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td></tr>
+<tr class="memdesc:a4039df9bb80bb482de0a5503c4ae8c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, location, size, and name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Properties</h2></td></tr>
-<tr class="memitem:ab4f0db6636547de019c63a7834d3e7ec" id="r_ab4f0db6636547de019c63a7834d3e7ec"><td class="memItemLeft"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab4f0db6636547de019c63a7834d3e7ec">create_params</a> () const noexcept override</td></tr>
-<tr class="memdesc:ab4f0db6636547de019c63a7834d3e7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
+<tr class="memitem:a8cfa99c2bec9b212a1d39d5e31e4f7cf" id="r_a8cfa99c2bec9b212a1d39d5e31e4f7cf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8cfa99c2bec9b212a1d39d5e31e4f7cf">create_params</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1forms_1_1create__params.html">xtd::forms::create_params</a> override</td></tr>
+<tr class="memdesc:a8cfa99c2bec9b212a1d39d5e31e4f7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:ac079bd63773df6f222d60ecfaab51b42" id="r_ac079bd63773df6f222d60ecfaab51b42"><td class="memItemLeft"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac079bd63773df6f222d60ecfaab51b42">clone</a> () const override</td></tr>
-<tr class="memdesc:ac079bd63773df6f222d60ecfaab51b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
-<tr class="memitem:a66a28aa47e071cd5a7d473626d2bd3f9" id="r_a66a28aa47e071cd5a7d473626d2bd3f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66a28aa47e071cd5a7d473626d2bd3f9">on_handle_created</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) override</td></tr>
-<tr class="memdesc:a66a28aa47e071cd5a7d473626d2bd3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event.  <br /></td></tr>
-<tr class="memitem:a47d4d528d1176bfb1335d73d4a63fa8c" id="r_a47d4d528d1176bfb1335d73d4a63fa8c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a47d4d528d1176bfb1335d73d4a63fa8c">on_selected_value_changed</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) override</td></tr>
-<tr class="memdesc:a47d4d528d1176bfb1335d73d4a63fa8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1list__control.html#a9672bf15ae99a851f921070c9b8277b5" title="Occurs when the selected_value property changes.">list_control::selected_value_changed</a> event.  <br /></td></tr>
-<tr class="memitem:a888ea5e48dc8b4cabc75afb7fd56aa5f" id="r_a888ea5e48dc8b4cabc75afb7fd56aa5f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a888ea5e48dc8b4cabc75afb7fd56aa5f">set_bounds_core</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> x, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> y, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> width, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> height, <a class="el" href="group__xtd__forms.html#ga475781e3c7baa300a81ab16d22b16962">bounds_specified</a> specified) override</td></tr>
-<tr class="memdesc:a888ea5e48dc8b4cabc75afb7fd56aa5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the work of setting the specified bounds of this control.  <br /></td></tr>
-<tr class="memitem:a2b139831b619fdf8eaddcc4124f569d1" id="r_a2b139831b619fdf8eaddcc4124f569d1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2b139831b619fdf8eaddcc4124f569d1">set_client_size_core</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> width, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> height) override</td></tr>
-<tr class="memdesc:a2b139831b619fdf8eaddcc4124f569d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the size of the client area of the control.  <br /></td></tr>
-<tr class="memitem:acd6f85bd11b16e4881896962d816f2ca" id="r_acd6f85bd11b16e4881896962d816f2ca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd6f85bd11b16e4881896962d816f2ca">wnd_proc</a> (<a class="el" href="structxtd_1_1forms_1_1message.html">message</a> &amp;<a class="el" href="structxtd_1_1forms_1_1message.html">message</a>) override</td></tr>
-<tr class="memdesc:acd6f85bd11b16e4881896962d816f2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Windows messages.  <br /></td></tr>
+<tr class="memitem:a182208f53b39771f6daf266bed0e9fc7" id="r_a182208f53b39771f6daf266bed0e9fc7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a182208f53b39771f6daf266bed0e9fc7">clone</a> () const -&gt; <a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; override</td></tr>
+<tr class="memdesc:a182208f53b39771f6daf266bed0e9fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="memitem:a78c5d6eeb58c9ffd163ba7c7c3e32120" id="r_a78c5d6eeb58c9ffd163ba7c7c3e32120"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a78c5d6eeb58c9ffd163ba7c7c3e32120">on_handle_created</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) -&gt; void override</td></tr>
+<tr class="memdesc:a78c5d6eeb58c9ffd163ba7c7c3e32120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event.  <br /></td></tr>
+<tr class="memitem:aacc2b21c429d420aa235ef2b3887db35" id="r_aacc2b21c429d420aa235ef2b3887db35"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aacc2b21c429d420aa235ef2b3887db35">on_selected_value_changed</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) -&gt; void override</td></tr>
+<tr class="memdesc:aacc2b21c429d420aa235ef2b3887db35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1list__control.html#a9672bf15ae99a851f921070c9b8277b5" title="Occurs when the selected_value property changes.">list_control::selected_value_changed</a> event.  <br /></td></tr>
+<tr class="memitem:a97a36fef1b64fd42764481ab37026bfd" id="r_a97a36fef1b64fd42764481ab37026bfd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a97a36fef1b64fd42764481ab37026bfd">set_bounds_core</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> x, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> y, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> width, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> height, <a class="el" href="group__xtd__forms.html#ga475781e3c7baa300a81ab16d22b16962">bounds_specified</a> specified) -&gt; void override</td></tr>
+<tr class="memdesc:a97a36fef1b64fd42764481ab37026bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the work of setting the specified bounds of this control.  <br /></td></tr>
+<tr class="memitem:aafb46c030157a53e9de29bfb571e0ec5" id="r_aafb46c030157a53e9de29bfb571e0ec5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aafb46c030157a53e9de29bfb571e0ec5">set_client_size_core</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> width, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> height) -&gt; void override</td></tr>
+<tr class="memdesc:aafb46c030157a53e9de29bfb571e0ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the size of the client area of the control.  <br /></td></tr>
+<tr class="memitem:aedf46b8d95efa095f0c7f6eee953247b" id="r_aedf46b8d95efa095f0c7f6eee953247b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aedf46b8d95efa095f0c7f6eee953247b">wnd_proc</a> (<a class="el" href="structxtd_1_1forms_1_1message.html">message</a> &amp;<a class="el" href="structxtd_1_1forms_1_1message.html">message</a>) -&gt; void override</td></tr>
+<tr class="memdesc:aedf46b8d95efa095f0c7f6eee953247b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Windows messages.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1001,8 +1001,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 <tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">control_styles</a> flag to either <span class="tt">true</span> or <span class="tt">false</span>.  <br /></td></tr>
 <tr class="memitem:a63ab8930bd0ee6af0857d95c58838b40" id="r_a63ab8930bd0ee6af0857d95c58838b40"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1component.html#a63ab8930bd0ee6af0857d95c58838b40">component</a> ()</td></tr>
 <tr class="memdesc:a63ab8930bd0ee6af0857d95c58838b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises a new instance of the component class.  <br /></td></tr>
-<tr class="memitem:aee075564d621347a36cd8ecb963db462" id="r_aee075564d621347a36cd8ecb963db462"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1component.html#aee075564d621347a36cd8ecb963db462">design_mode</a> () const noexcept</td></tr>
-<tr class="memdesc:aee075564d621347a36cd8ecb963db462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
+<tr class="memitem:a25081f8b2f33791a98cb9cf44aa3664b" id="r_a25081f8b2f33791a98cb9cf44aa3664b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1component.html#a25081f8b2f33791a98cb9cf44aa3664b">design_mode</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a25081f8b2f33791a98cb9cf44aa3664b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
 <tr class="memitem:a25a9782b3a93edea02b4924c509f36ec" id="r_a25a9782b3a93edea02b4924c509f36ec"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1control.html#a25a9782b3a93edea02b4924c509f36ec">set_mouse_buttons</a> (<a class="el" href="group__xtd__forms.html#gad6ce53382a707cdcbacf10ddfe871d63">forms::mouse_buttons</a> value)</td></tr>
 <tr class="memdesc:a25a9782b3a93edea02b4924c509f36ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating which of the mouse buttons is in a pressed state.  <br /></td></tr>
 </table>
@@ -1027,8 +1027,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a983b4c2eb923b5b3c008312327ee9fc8" name="a983b4c2eb923b5b3c008312327ee9fc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a983b4c2eb923b5b3c008312327ee9fc8">&#9670;&#160;</a></span>items() <span class="overload">[1/3]</span></h2>
+<a id="a166e863ed03bee784bffefa17ba5b14b" name="a166e863ed03bee784bffefa17ba5b14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a166e863ed03bee784bffefa17ba5b14b">&#9670;&#160;</a></span>items() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1037,15 +1037,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp; xtd::forms::choice::items </td>
+          <td class="memname">auto xtd::forms::choice::items </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1056,8 +1056,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a332772c45cad2e983e2466f50bec7f4a" name="a332772c45cad2e983e2466f50bec7f4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a332772c45cad2e983e2466f50bec7f4a">&#9670;&#160;</a></span>items() <span class="overload">[2/3]</span></h2>
+<a id="af74a54364482b1b70ed71e93bf4dd813" name="af74a54364482b1b70ed71e93bf4dd813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af74a54364482b1b70ed71e93bf4dd813">&#9670;&#160;</a></span>items() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1066,15 +1066,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp; xtd::forms::choice::items </td>
+          <td class="memname">auto xtd::forms::choice::items </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1084,17 +1084,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="aa2410abe29392c07b1cf9c9796693ff3" name="aa2410abe29392c07b1cf9c9796693ff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2410abe29392c07b1cf9c9796693ff3">&#9670;&#160;</a></span>items() <span class="overload">[3/3]</span></h2>
+<a id="ae5d42f66ff681429ec0100ab36a04142" name="ae5d42f66ff681429ec0100ab36a04142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d42f66ff681429ec0100ab36a04142">&#9670;&#160;</a></span>items() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp; xtd::forms::choice::items </td>
+          <td class="memname">auto xtd::forms::choice::items </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  const <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1109,8 +1109,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a1a2fe11ee70303adb90b4bd3a4a69061" name="a1a2fe11ee70303adb90b4bd3a4a69061"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a2fe11ee70303adb90b4bd3a4a69061">&#9670;&#160;</a></span>selected_index() <span class="overload">[1/2]</span></h2>
+<a id="a6bbe207df4264712331872a2e49c960f" name="a6bbe207df4264712331872a2e49c960f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bbe207df4264712331872a2e49c960f">&#9670;&#160;</a></span>selected_index() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1119,10 +1119,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1list__control.html#ae0e92ac144b60b62f43fc11c4422ecf1">list_control</a> &amp; xtd::forms::choice::selected_index </td>
+          <td class="memname">auto xtd::forms::choice::selected_index </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>selected_index</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1forms_1_1list__control.html#ae0e92ac144b60b62f43fc11c4422ecf1">list_control</a> &amp;override</td>
         </tr>
       </table>
   </td>
@@ -1144,8 +1144,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a02522259f70c9793164a9e25017f9838" name="a02522259f70c9793164a9e25017f9838"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02522259f70c9793164a9e25017f9838">&#9670;&#160;</a></span>selected_item() <span class="overload">[1/2]</span></h2>
+<a id="a67b94a627d421a0545ec9766e26103cc" name="a67b94a627d421a0545ec9766e26103cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67b94a627d421a0545ec9766e26103cc">&#9670;&#160;</a></span>selected_item() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1154,15 +1154,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp; xtd::forms::choice::selected_item </td>
+          <td class="memname">auto xtd::forms::choice::selected_item </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1172,17 +1172,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a0badf2e57b51ce642d047f3fd8a8eb16" name="a0badf2e57b51ce642d047f3fd8a8eb16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0badf2e57b51ce642d047f3fd8a8eb16">&#9670;&#160;</a></span>selected_item() <span class="overload">[2/2]</span></h2>
+<a id="aceb7e1df7a0bcf8a210e09b32fa8f06d" name="aceb7e1df7a0bcf8a210e09b32fa8f06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb7e1df7a0bcf8a210e09b32fa8f06d">&#9670;&#160;</a></span>selected_item() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp; xtd::forms::choice::selected_item </td>
+          <td class="memname">auto xtd::forms::choice::selected_item </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>selected_item</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1197,8 +1197,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a98abdc3e9186b274c9ae924526d4ec4c" name="a98abdc3e9186b274c9ae924526d4ec4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98abdc3e9186b274c9ae924526d4ec4c">&#9670;&#160;</a></span>sorted() <span class="overload">[1/2]</span></h2>
+<a id="aa177595cf2a31800d34673ca065c54ec" name="aa177595cf2a31800d34673ca065c54ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa177595cf2a31800d34673ca065c54ec">&#9670;&#160;</a></span>sorted() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1207,15 +1207,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::forms::choice::sorted </td>
+          <td class="memname">virtual auto xtd::forms::choice::sorted </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1226,8 +1226,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a79aa4adffd32b504fd052d695921fa8f" name="a79aa4adffd32b504fd052d695921fa8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79aa4adffd32b504fd052d695921fa8f">&#9670;&#160;</a></span>sorted() <span class="overload">[2/2]</span></h2>
+<a id="a9e76837f56839382467de2ca1efe7774" name="a9e76837f56839382467de2ca1efe7774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e76837f56839382467de2ca1efe7774">&#9670;&#160;</a></span>sorted() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1236,10 +1236,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp; xtd::forms::choice::sorted </td>
+          <td class="memname">virtual auto xtd::forms::choice::sorted </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>sorted</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1260,8 +1260,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="afc3c886220f47bcaa099c4a363414836" name="afc3c886220f47bcaa099c4a363414836"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc3c886220f47bcaa099c4a363414836">&#9670;&#160;</a></span>text()</h2>
+<a id="a04400d69b44f14c4426cb289c33112dc" name="a04400d69b44f14c4426cb289c33112dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04400d69b44f14c4426cb289c33112dc">&#9670;&#160;</a></span>text()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1270,10 +1270,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp; xtd::forms::choice::text </td>
+          <td class="memname">auto xtd::forms::choice::text </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;override</td>
         </tr>
       </table>
   </td>
@@ -1295,17 +1295,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a7e2227307fc585108d0d00603f004c68" name="a7e2227307fc585108d0d00603f004c68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e2227307fc585108d0d00603f004c68">&#9670;&#160;</a></span>begin_update()</h2>
+<a id="a9e766694d0a40cc1c1e5d921d9125eac" name="a9e766694d0a40cc1c1e5d921d9125eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e766694d0a40cc1c1e5d921d9125eac">&#9670;&#160;</a></span>begin_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::begin_update </td>
+          <td class="memname">auto xtd::forms::choice::begin_update </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1315,17 +1315,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a675bf4228461addf7018d7b6570ee74d" name="a675bf4228461addf7018d7b6570ee74d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a675bf4228461addf7018d7b6570ee74d">&#9670;&#160;</a></span>end_update()</h2>
+<a id="afc398fab2006bf420ae91ea0a9c2ee5a" name="afc398fab2006bf420ae91ea0a9c2ee5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc398fab2006bf420ae91ea0a9c2ee5a">&#9670;&#160;</a></span>end_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::end_update </td>
+          <td class="memname">auto xtd::forms::choice::end_update </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1335,8 +1335,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="aa40946fd1be0401a11123797cce66ec0" name="aa40946fd1be0401a11123797cce66ec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa40946fd1be0401a11123797cce66ec0">&#9670;&#160;</a></span>create() <span class="overload">[1/24]</span></h2>
+<a id="afcc2f72b04d30026b4bf9233c10e42d4" name="afcc2f72b04d30026b4bf9233c10e42d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc2f72b04d30026b4bf9233c10e42d4">&#9670;&#160;</a></span>create() <span class="overload">[1/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1345,15 +1345,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1363,8 +1363,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="afc760fa785d49aca7646a38f0bdf7b8f" name="afc760fa785d49aca7646a38f0bdf7b8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc760fa785d49aca7646a38f0bdf7b8f">&#9670;&#160;</a></span>create() <span class="overload">[2/24]</span></h2>
+<a id="a3f7a1c69258ef8fc540bb8acded497d6" name="a3f7a1c69258ef8fc540bb8acded497d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7a1c69258ef8fc540bb8acded497d6">&#9670;&#160;</a></span>create() <span class="overload">[2/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1373,15 +1373,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1397,8 +1397,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ab7d3f376a70eb652e7ebff50124bd586" name="ab7d3f376a70eb652e7ebff50124bd586"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7d3f376a70eb652e7ebff50124bd586">&#9670;&#160;</a></span>create() <span class="overload">[3/24]</span></h2>
+<a id="a36dfa4e3bbb2e82cfcd935cecc58349a" name="a36dfa4e3bbb2e82cfcd935cecc58349a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36dfa4e3bbb2e82cfcd935cecc58349a">&#9670;&#160;</a></span>create() <span class="overload">[3/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,19 +1407,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1436,8 +1436,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ad48ec7c5aad34e6959b5c363a0425aeb" name="ad48ec7c5aad34e6959b5c363a0425aeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad48ec7c5aad34e6959b5c363a0425aeb">&#9670;&#160;</a></span>create() <span class="overload">[4/24]</span></h2>
+<a id="ae756303ec6eebb494a15200fbca5e6d8" name="ae756303ec6eebb494a15200fbca5e6d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae756303ec6eebb494a15200fbca5e6d8">&#9670;&#160;</a></span>create() <span class="overload">[4/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1446,24 +1446,24 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1481,8 +1481,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a8596be36c81ad917709090cec7bce503" name="a8596be36c81ad917709090cec7bce503"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8596be36c81ad917709090cec7bce503">&#9670;&#160;</a></span>create() <span class="overload">[5/24]</span></h2>
+<a id="a56077ec20879850fdcf13af487d665ac" name="a56077ec20879850fdcf13af487d665ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56077ec20879850fdcf13af487d665ac">&#9670;&#160;</a></span>create() <span class="overload">[5/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1491,15 +1491,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1515,8 +1515,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a311024a81d1012961abb76999e6ba91d" name="a311024a81d1012961abb76999e6ba91d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a311024a81d1012961abb76999e6ba91d">&#9670;&#160;</a></span>create() <span class="overload">[6/24]</span></h2>
+<a id="a4dd68d86a07e3b7e1d398438204e0d13" name="a4dd68d86a07e3b7e1d398438204e0d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd68d86a07e3b7e1d398438204e0d13">&#9670;&#160;</a></span>create() <span class="overload">[6/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1525,19 +1525,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1554,8 +1554,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a8f859975a23f24465b3e8163f67da100" name="a8f859975a23f24465b3e8163f67da100"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f859975a23f24465b3e8163f67da100">&#9670;&#160;</a></span>create() <span class="overload">[7/24]</span></h2>
+<a id="a2f90f353ac779e156ac8ea8ab3248706" name="a2f90f353ac779e156ac8ea8ab3248706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f90f353ac779e156ac8ea8ab3248706">&#9670;&#160;</a></span>create() <span class="overload">[7/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1564,24 +1564,24 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1599,8 +1599,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="abe3f133bcd49de8ebf4524d12ccd68e0" name="abe3f133bcd49de8ebf4524d12ccd68e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe3f133bcd49de8ebf4524d12ccd68e0">&#9670;&#160;</a></span>create() <span class="overload">[8/24]</span></h2>
+<a id="a656eae642179ddd90720a36fb5b40013" name="a656eae642179ddd90720a36fb5b40013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a656eae642179ddd90720a36fb5b40013">&#9670;&#160;</a></span>create() <span class="overload">[8/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1609,29 +1609,29 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1650,8 +1650,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a1bab654e504fc4642792bed8413e6a23" name="a1bab654e504fc4642792bed8413e6a23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bab654e504fc4642792bed8413e6a23">&#9670;&#160;</a></span>create() <span class="overload">[9/24]</span></h2>
+<a id="a423806aa1d1cf6a1e7439eac59ed6ad5" name="a423806aa1d1cf6a1e7439eac59ed6ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423806aa1d1cf6a1e7439eac59ed6ad5">&#9670;&#160;</a></span>create() <span class="overload">[9/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1660,19 +1660,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>selected_index</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>selected_index</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1689,8 +1689,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a2d93936d66a6c2be023b2f5ba8a49d0a" name="a2d93936d66a6c2be023b2f5ba8a49d0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d93936d66a6c2be023b2f5ba8a49d0a">&#9670;&#160;</a></span>create() <span class="overload">[10/24]</span></h2>
+<a id="aeee281428d4ec5efdd6417bdbae30589" name="aeee281428d4ec5efdd6417bdbae30589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee281428d4ec5efdd6417bdbae30589">&#9670;&#160;</a></span>create() <span class="overload">[10/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1699,7 +1699,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
@@ -1711,12 +1711,12 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1734,8 +1734,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a0b28c7b4747a9604207102ba0e04a1d5" name="a0b28c7b4747a9604207102ba0e04a1d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b28c7b4747a9604207102ba0e04a1d5">&#9670;&#160;</a></span>create() <span class="overload">[11/24]</span></h2>
+<a id="abc71759d10bdc0d2088f7074ab5472d5" name="abc71759d10bdc0d2088f7074ab5472d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc71759d10bdc0d2088f7074ab5472d5">&#9670;&#160;</a></span>create() <span class="overload">[11/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1744,7 +1744,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
@@ -1756,17 +1756,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1785,8 +1785,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ae6f0484f03da501288f8c023746876dc" name="ae6f0484f03da501288f8c023746876dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6f0484f03da501288f8c023746876dc">&#9670;&#160;</a></span>create() <span class="overload">[12/24]</span></h2>
+<a id="a1cf2a24629d836a26b6c793e6425792f" name="a1cf2a24629d836a26b6c793e6425792f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf2a24629d836a26b6c793e6425792f">&#9670;&#160;</a></span>create() <span class="overload">[12/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1795,7 +1795,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
@@ -1807,22 +1807,22 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1842,8 +1842,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="aa027d91b56af2717d524c7b69832ea00" name="aa027d91b56af2717d524c7b69832ea00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa027d91b56af2717d524c7b69832ea00">&#9670;&#160;</a></span>create() <span class="overload">[13/24]</span></h2>
+<a id="a4c2a0b148457ae1e45c4bd5b7be50d1b" name="a4c2a0b148457ae1e45c4bd5b7be50d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2a0b148457ae1e45c4bd5b7be50d1b">&#9670;&#160;</a></span>create() <span class="overload">[13/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1852,15 +1852,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1876,8 +1876,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a1aaf99ed89a452f9ebdc80902b6b51cc" name="a1aaf99ed89a452f9ebdc80902b6b51cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1aaf99ed89a452f9ebdc80902b6b51cc">&#9670;&#160;</a></span>create() <span class="overload">[14/24]</span></h2>
+<a id="a37e78cb774a50362ceb25461c950eb5f" name="a37e78cb774a50362ceb25461c950eb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e78cb774a50362ceb25461c950eb5f">&#9670;&#160;</a></span>create() <span class="overload">[14/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1886,19 +1886,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1915,8 +1915,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a375813570fefa8d32cbf55905153fe73" name="a375813570fefa8d32cbf55905153fe73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a375813570fefa8d32cbf55905153fe73">&#9670;&#160;</a></span>create() <span class="overload">[15/24]</span></h2>
+<a id="a9fbbb374ffa3b92cb49cda12c98228af" name="a9fbbb374ffa3b92cb49cda12c98228af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fbbb374ffa3b92cb49cda12c98228af">&#9670;&#160;</a></span>create() <span class="overload">[15/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1925,24 +1925,24 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1960,8 +1960,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="afb810cefc256ce0cd161967ed264b353" name="afb810cefc256ce0cd161967ed264b353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb810cefc256ce0cd161967ed264b353">&#9670;&#160;</a></span>create() <span class="overload">[16/24]</span></h2>
+<a id="a857cdaced7a769bc0f6ba8ad21725fa4" name="a857cdaced7a769bc0f6ba8ad21725fa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a857cdaced7a769bc0f6ba8ad21725fa4">&#9670;&#160;</a></span>create() <span class="overload">[16/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1970,29 +1970,29 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2011,8 +2011,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a2099af895e4d335cc67d9e7fb5a09b80" name="a2099af895e4d335cc67d9e7fb5a09b80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2099af895e4d335cc67d9e7fb5a09b80">&#9670;&#160;</a></span>create() <span class="overload">[17/24]</span></h2>
+<a id="afa7c7b0b982e2c5b293bb92c9f46092f" name="afa7c7b0b982e2c5b293bb92c9f46092f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7c7b0b982e2c5b293bb92c9f46092f">&#9670;&#160;</a></span>create() <span class="overload">[17/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2021,19 +2021,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2050,8 +2050,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a65231d512d272dffb547d1ece5b6fd21" name="a65231d512d272dffb547d1ece5b6fd21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65231d512d272dffb547d1ece5b6fd21">&#9670;&#160;</a></span>create() <span class="overload">[18/24]</span></h2>
+<a id="a2b78401c2e1db4f42756ac74a953617e" name="a2b78401c2e1db4f42756ac74a953617e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b78401c2e1db4f42756ac74a953617e">&#9670;&#160;</a></span>create() <span class="overload">[18/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2060,7 +2060,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2072,12 +2072,12 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2095,8 +2095,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="acd32d4e1e99fb4469f1699e1f01841bb" name="acd32d4e1e99fb4469f1699e1f01841bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd32d4e1e99fb4469f1699e1f01841bb">&#9670;&#160;</a></span>create() <span class="overload">[19/24]</span></h2>
+<a id="a5748edc298433a8f77c683faaae14f47" name="a5748edc298433a8f77c683faaae14f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5748edc298433a8f77c683faaae14f47">&#9670;&#160;</a></span>create() <span class="overload">[19/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2105,7 +2105,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2117,17 +2117,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2146,8 +2146,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ae0e2d4eec486687d2add8496e9386269" name="ae0e2d4eec486687d2add8496e9386269"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0e2d4eec486687d2add8496e9386269">&#9670;&#160;</a></span>create() <span class="overload">[20/24]</span></h2>
+<a id="a4950e2868b7a7c8fa797e79e76f0e6da" name="a4950e2868b7a7c8fa797e79e76f0e6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4950e2868b7a7c8fa797e79e76f0e6da">&#9670;&#160;</a></span>create() <span class="overload">[20/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2156,7 +2156,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2168,22 +2168,22 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2203,8 +2203,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="aefdeb6a88e80ae6d9b833274d830f709" name="aefdeb6a88e80ae6d9b833274d830f709"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefdeb6a88e80ae6d9b833274d830f709">&#9670;&#160;</a></span>create() <span class="overload">[21/24]</span></h2>
+<a id="aabd22d4ca1c8f2f54ef36d893b681532" name="aabd22d4ca1c8f2f54ef36d893b681532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd22d4ca1c8f2f54ef36d893b681532">&#9670;&#160;</a></span>create() <span class="overload">[21/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2213,7 +2213,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2225,12 +2225,12 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>selected_index</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>selected_index</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2248,8 +2248,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a1413a94e5b124318439afe48ef143ded" name="a1413a94e5b124318439afe48ef143ded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1413a94e5b124318439afe48ef143ded">&#9670;&#160;</a></span>create() <span class="overload">[22/24]</span></h2>
+<a id="ab666ceadd2f9c319d7faa1c7021218e0" name="ab666ceadd2f9c319d7faa1c7021218e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab666ceadd2f9c319d7faa1c7021218e0">&#9670;&#160;</a></span>create() <span class="overload">[22/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2258,7 +2258,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2275,12 +2275,12 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2299,8 +2299,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="afcada82910d23250714c15c78ba02129" name="afcada82910d23250714c15c78ba02129"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcada82910d23250714c15c78ba02129">&#9670;&#160;</a></span>create() <span class="overload">[23/24]</span></h2>
+<a id="a7e5544e422419118db8b1e256a70b37e" name="a7e5544e422419118db8b1e256a70b37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e5544e422419118db8b1e256a70b37e">&#9670;&#160;</a></span>create() <span class="overload">[23/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2309,7 +2309,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2326,17 +2326,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2356,8 +2356,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a8844dc379f382ca5d1187f122494fab8" name="a8844dc379f382ca5d1187f122494fab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8844dc379f382ca5d1187f122494fab8">&#9670;&#160;</a></span>create() <span class="overload">[24/24]</span></h2>
+<a id="a4039df9bb80bb482de0a5503c4ae8c32" name="a4039df9bb80bb482de0a5503c4ae8c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4039df9bb80bb482de0a5503c4ae8c32">&#9670;&#160;</a></span>create() <span class="overload">[24/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2366,7 +2366,7 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a> xtd::forms::choice::create </td>
+          <td class="memname">auto xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
@@ -2383,22 +2383,22 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#af5ad24f09651d460ffbd4de4299216d1">choice</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2419,8 +2419,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ab4f0db6636547de019c63a7834d3e7ec" name="ab4f0db6636547de019c63a7834d3e7ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4f0db6636547de019c63a7834d3e7ec">&#9670;&#160;</a></span>create_params()</h2>
+<a id="a8cfa99c2bec9b212a1d39d5e31e4f7cf" name="a8cfa99c2bec9b212a1d39d5e31e4f7cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cfa99c2bec9b212a1d39d5e31e4f7cf">&#9670;&#160;</a></span>create_params()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2429,15 +2429,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a> xtd::forms::choice::create_params </td>
+          <td class="memname">auto xtd::forms::choice::create_params </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1forms_1_1create__params.html">xtd::forms::create_params</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2451,8 +2451,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ac079bd63773df6f222d60ecfaab51b42" name="ac079bd63773df6f222d60ecfaab51b42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac079bd63773df6f222d60ecfaab51b42">&#9670;&#160;</a></span>clone()</h2>
+<a id="a182208f53b39771f6daf266bed0e9fc7" name="a182208f53b39771f6daf266bed0e9fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182208f53b39771f6daf266bed0e9fc7">&#9670;&#160;</a></span>clone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2461,15 +2461,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::choice::clone </td>
+          <td class="memname">auto xtd::forms::choice::clone </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2482,8 +2482,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a66a28aa47e071cd5a7d473626d2bd3f9" name="a66a28aa47e071cd5a7d473626d2bd3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66a28aa47e071cd5a7d473626d2bd3f9">&#9670;&#160;</a></span>on_handle_created()</h2>
+<a id="a78c5d6eeb58c9ffd163ba7c7c3e32120" name="a78c5d6eeb58c9ffd163ba7c7c3e32120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c5d6eeb58c9ffd163ba7c7c3e32120">&#9670;&#160;</a></span>on_handle_created()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2492,10 +2492,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::on_handle_created </td>
+          <td class="memname">auto xtd::forms::choice::on_handle_created </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2517,8 +2517,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a47d4d528d1176bfb1335d73d4a63fa8c" name="a47d4d528d1176bfb1335d73d4a63fa8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47d4d528d1176bfb1335d73d4a63fa8c">&#9670;&#160;</a></span>on_selected_value_changed()</h2>
+<a id="aacc2b21c429d420aa235ef2b3887db35" name="aacc2b21c429d420aa235ef2b3887db35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc2b21c429d420aa235ef2b3887db35">&#9670;&#160;</a></span>on_selected_value_changed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2527,10 +2527,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::on_selected_value_changed </td>
+          <td class="memname">auto xtd::forms::choice::on_selected_value_changed </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2546,8 +2546,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a888ea5e48dc8b4cabc75afb7fd56aa5f" name="a888ea5e48dc8b4cabc75afb7fd56aa5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a888ea5e48dc8b4cabc75afb7fd56aa5f">&#9670;&#160;</a></span>set_bounds_core()</h2>
+<a id="a97a36fef1b64fd42764481ab37026bfd" name="a97a36fef1b64fd42764481ab37026bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a36fef1b64fd42764481ab37026bfd">&#9670;&#160;</a></span>set_bounds_core()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2556,29 +2556,29 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::set_bounds_core </td>
+          <td class="memname">auto xtd::forms::choice::set_bounds_core </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga475781e3c7baa300a81ab16d22b16962">bounds_specified</a></td>          <td class="paramname"><span class="paramname"><em>specified</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga475781e3c7baa300a81ab16d22b16962">bounds_specified</a></td>          <td class="paramname"><span class="paramname"><em>specified</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2602,14 +2602,14 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 <dl class="section remark"><dt>Remarks</dt><dd>Typically, the parameters that correspond to the bounds not included in the specified parameter are passed in with their current values. For example, the height, width, or the y or y properties of the location property can be passed in with a reference to the current instance of the control. However all values passed in are honored and applied to the control. </dd>
 <dd>
 The specified parameter represents the elements of the controls Bounds changed by your application. For example, if you change the size of the control, the specified parameter value is the size value of <a class="el" href="group__xtd__forms.html#ga475781e3c7baa300a81ab16d22b16962" title="Specifies the bounds of the control to use when defining a control&#39;s size and position....">bounds_specified</a>. However, if the size is adjusted in response to the dock property being set, the specified parameter value is the none value of <a class="el" href="group__xtd__forms.html#ga475781e3c7baa300a81ab16d22b16962" title="Specifies the bounds of the control to use when defining a control&#39;s size and position....">bounds_specified</a>. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>When overriding <a class="el" href="#a888ea5e48dc8b4cabc75afb7fd56aa5f" title="Performs the work of setting the specified bounds of this control.">set_bounds_core(int32, int32, int32, int32, bounds_specified)</a> in a derived class, be sure to call the base class's <a class="el" href="#a888ea5e48dc8b4cabc75afb7fd56aa5f" title="Performs the work of setting the specified bounds of this control.">set_bounds_core(int32, int32, int32, int32, bounds_specified)</a> method to force the bounds of the control to change. Derived classes can add size restrictions to the <a class="el" href="#a888ea5e48dc8b4cabc75afb7fd56aa5f" title="Performs the work of setting the specified bounds of this control.">set_bounds_core(int32, int32, int32, int32, bounds_specified)</a> method. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>When overriding <a class="el" href="classxtd_1_1forms_1_1control.html#a903227d322943681d2c4dcbbfc639b63" title="Performs the work of setting the specified bounds of this control.">set_bounds_core(int32, int32, int32, int32, bounds_specified)</a> in a derived class, be sure to call the base class's <a class="el" href="classxtd_1_1forms_1_1control.html#a903227d322943681d2c4dcbbfc639b63" title="Performs the work of setting the specified bounds of this control.">set_bounds_core(int32, int32, int32, int32, bounds_specified)</a> method to force the bounds of the control to change. Derived classes can add size restrictions to the <a class="el" href="classxtd_1_1forms_1_1control.html#a903227d322943681d2c4dcbbfc639b63" title="Performs the work of setting the specified bounds of this control.">set_bounds_core(int32, int32, int32, int32, bounds_specified)</a> method. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1control.html#a903227d322943681d2c4dcbbfc639b63">xtd::forms::control</a>.</p>
 
 </div>
 </div>
-<a id="a2b139831b619fdf8eaddcc4124f569d1" name="a2b139831b619fdf8eaddcc4124f569d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b139831b619fdf8eaddcc4124f569d1">&#9670;&#160;</a></span>set_client_size_core()</h2>
+<a id="aafb46c030157a53e9de29bfb571e0ec5" name="aafb46c030157a53e9de29bfb571e0ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb46c030157a53e9de29bfb571e0ec5">&#9670;&#160;</a></span>set_client_size_core()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2618,14 +2618,14 @@ The specified parameter represents the elements of the controls Bounds changed b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::set_client_size_core </td>
+          <td class="memname">auto xtd::forms::choice::set_client_size_core </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2646,14 +2646,14 @@ The specified parameter represents the elements of the controls Bounds changed b
 <dl class="section remark"><dt>Remarks</dt><dd>The client area starts at the (0, 0) location and extends to the (width, height) location. </dd>
 <dd>
 Typically, you should not set the client_size of the control. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>When overriding <a class="el" href="#a2b139831b619fdf8eaddcc4124f569d1" title="Sets the size of the client area of the control.">set_client_size_core(int32, int32)</a> in a derived class, be sure to call the base class's <a class="el" href="#a2b139831b619fdf8eaddcc4124f569d1" title="Sets the size of the client area of the control.">set_client_size_core(int32, int32)</a> method so that the client_size property is adjusted. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>When overriding <a class="el" href="classxtd_1_1forms_1_1control.html#a1c5fd94d22139c3f036cdd9e0a575a45" title="Sets the size of the client area of the control.">set_client_size_core(int32, int32)</a> in a derived class, be sure to call the base class's <a class="el" href="classxtd_1_1forms_1_1control.html#a1c5fd94d22139c3f036cdd9e0a575a45" title="Sets the size of the client area of the control.">set_client_size_core(int32, int32)</a> method so that the client_size property is adjusted. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1control.html#a1c5fd94d22139c3f036cdd9e0a575a45">xtd::forms::control</a>.</p>
 
 </div>
 </div>
-<a id="acd6f85bd11b16e4881896962d816f2ca" name="acd6f85bd11b16e4881896962d816f2ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd6f85bd11b16e4881896962d816f2ca">&#9670;&#160;</a></span>wnd_proc()</h2>
+<a id="aedf46b8d95efa095f0c7f6eee953247b" name="aedf46b8d95efa095f0c7f6eee953247b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf46b8d95efa095f0c7f6eee953247b">&#9670;&#160;</a></span>wnd_proc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2662,10 +2662,10 @@ Typically, you should not set the client_size of the control. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::choice::wnd_proc </td>
+          <td class="memname">auto xtd::forms::choice::wnd_proc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structxtd_1_1forms_1_1message.html">message</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -2683,7 +2683,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting controls should call the base class's <a class="el" href="#acd6f85bd11b16e4881896962d816f2ca" title="Processes Windows messages.">wnd_proc(message&amp;)</a> method to process any messages that they do not handle. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting controls should call the base class's <a class="el" href="classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096" title="Processes Windows messages.">wnd_proc(message&amp;)</a> method to process any messages that they do not handle. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096">xtd::forms::control</a>.</p>
 

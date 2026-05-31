@@ -182,7 +182,7 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="line">      <a class="code hl_function" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      <a class="code hl_function" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>.alpha_color(<span class="keyword">true</span>);</div>
 <div class="line">      <a class="code hl_function" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>.location({10, 10});</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a>.<a class="code hl_variable" href="#a21a2383c0d5a1ed2d15078025c8a2b46">color_picker_changed</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker__event__args.html">color_picker_event_args</a>&amp; e) {</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a>.<a class="code hl_variable" href="#a033e288b3d9d6955c8bd0a864acecb7e">color_picker_changed</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker__event__args.html">color_picker_event_args</a>&amp; e) {</div>
 <div class="line">        test_zone.invalidate();</div>
 <div class="line">        color_label.text(color_translator::to_html(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.color()));</div>
 <div class="line">      };</div>
@@ -215,7 +215,7 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1color__picker__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1color__picker__event__args.html">xtd::forms::color_picker_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::color_picker::color_picker_changed event.</div><div class="ttdef"><b>Definition</b> color_picker_event_args.hpp:27</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1color__picker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1color__picker.html">xtd::forms::color_picker</a></div><div class="ttdoc">Represents a picker control that displays available colors along with controls that enable the user t...</div><div class="ttdef"><b>Definition</b> color_picker.hpp:32</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1color__picker_html_a21a2383c0d5a1ed2d15078025c8a2b46"><div class="ttname"><a href="#a21a2383c0d5a1ed2d15078025c8a2b46">xtd::forms::color_picker::color_picker_changed</a></div><div class="ttdeci">event&lt; color_picker, color_picker_event_handler &gt; color_picker_changed</div><div class="ttdoc">Occurs when the value of the color property changes.</div><div class="ttdef"><b>Definition</b> color_picker.hpp:162</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1color__picker_html_a033e288b3d9d6955c8bd0a864acecb7e"><div class="ttname"><a href="#a033e288b3d9d6955c8bd0a864acecb7e">xtd::forms::color_picker::color_picker_changed</a></div><div class="ttdeci">xtd::event&lt; color_picker, xtd::forms::color_picker_event_handler &gt; color_picker_changed</div><div class="ttdoc">Occurs when the value of the color property changes.</div><div class="ttdef"><b>Definition</b> color_picker.hpp:162</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1color__picker_html_aaeb8c1fc56ef259e51bf88de1b17866b"><div class="ttname"><a href="#aaeb8c1fc56ef259e51bf88de1b17866b">xtd::forms::color_picker::color_picker</a></div><div class="ttdeci">color_picker()</div><div class="ttdoc">Initializes a new instance of the color_picker class.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a062234ad322e5e57a08b72940341e971"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a062234ad322e5e57a08b72940341e971">xtd::forms::control::form</a></div><div class="ttdeci">friend class form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> control.hpp:1849</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
@@ -227,8 +227,8 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Events</h2></td></tr>
-<tr class="memitem:a21a2383c0d5a1ed2d15078025c8a2b46" id="r_a21a2383c0d5a1ed2d15078025c8a2b46"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>, <a class="el" href="group__events.html#gac9dbf6a3fd503cbfe4653afe1d126a04">color_picker_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a21a2383c0d5a1ed2d15078025c8a2b46">color_picker_changed</a></td></tr>
-<tr class="memdesc:a21a2383c0d5a1ed2d15078025c8a2b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the value of the color property changes.  <br /></td></tr>
+<tr class="memitem:a033e288b3d9d6955c8bd0a864acecb7e" id="r_a033e288b3d9d6955c8bd0a864acecb7e"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>, <a class="el" href="group__events.html#ga6c0670f44e3bc4d5488e817aa2266e06">xtd::forms::color_picker_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a033e288b3d9d6955c8bd0a864acecb7e">color_picker_changed</a></td></tr>
+<tr class="memdesc:a033e288b3d9d6955c8bd0a864acecb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the value of the color property changes.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -237,65 +237,65 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:ad8ecf3ead2a45e7a1339fa8fd4b8034d" id="r_ad8ecf3ead2a45e7a1339fa8fd4b8034d"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#ad8ecf3ead2a45e7a1339fa8fd4b8034d">alpha_color</a> () const noexcept</td></tr>
-<tr class="memdesc:ad8ecf3ead2a45e7a1339fa8fd4b8034d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).  <br /></td></tr>
-<tr class="memitem:ab681540f906052b0bd2fe2f39ed7f6c9" id="r_ab681540f906052b0bd2fe2f39ed7f6c9"><td class="memItemLeft">virtual <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ab681540f906052b0bd2fe2f39ed7f6c9">alpha_color</a> (bool alpha_color)</td></tr>
-<tr class="memdesc:ab681540f906052b0bd2fe2f39ed7f6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the user can use the dialog box to define custom colors.  <br /></td></tr>
-<tr class="memitem:ae75744bd22cea7aa7e56753ac627e01d" id="r_ae75744bd22cea7aa7e56753ac627e01d"><td class="memItemLeft">virtual const <a class="el" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae75744bd22cea7aa7e56753ac627e01d">color</a> () const noexcept</td></tr>
-<tr class="memdesc:ae75744bd22cea7aa7e56753ac627e01d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color selected by the user.  <br /></td></tr>
-<tr class="memitem:a940827c882a98fc63bc3040f436dad53" id="r_a940827c882a98fc63bc3040f436dad53"><td class="memItemLeft">virtual <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a940827c882a98fc63bc3040f436dad53">color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:a940827c882a98fc63bc3040f436dad53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color selected by the user.  <br /></td></tr>
+<tr class="memitem:afd3e31e1b0dcfa58adbd293a1ff68e42" id="r_afd3e31e1b0dcfa58adbd293a1ff68e42"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afd3e31e1b0dcfa58adbd293a1ff68e42">alpha_color</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:afd3e31e1b0dcfa58adbd293a1ff68e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).  <br /></td></tr>
+<tr class="memitem:ad1985d316a3d90658a67af71ccbdb329" id="r_ad1985d316a3d90658a67af71ccbdb329"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad1985d316a3d90658a67af71ccbdb329">alpha_color</a> (bool alpha_color) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp;</td></tr>
+<tr class="memdesc:ad1985d316a3d90658a67af71ccbdb329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the user can use the dialog box to define custom colors.  <br /></td></tr>
+<tr class="memitem:acd0c36d12ed0424ea2675c39b6faea39" id="r_acd0c36d12ed0424ea2675c39b6faea39"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#acd0c36d12ed0424ea2675c39b6faea39">color</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td></tr>
+<tr class="memdesc:acd0c36d12ed0424ea2675c39b6faea39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color selected by the user.  <br /></td></tr>
+<tr class="memitem:aecdf8dce36be209cbe43d508373617f7" id="r_aecdf8dce36be209cbe43d508373617f7"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aecdf8dce36be209cbe43d508373617f7">color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp;</td></tr>
+<tr class="memdesc:aecdf8dce36be209cbe43d508373617f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color selected by the user.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a1d7c8dc0331b00876ac14a461ececa8b" id="r_a1d7c8dc0331b00876ac14a461ececa8b"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1d7c8dc0331b00876ac14a461ececa8b">create</a> ()</td></tr>
-<tr class="memdesc:a1d7c8dc0331b00876ac14a461ececa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a>.  <br /></td></tr>
-<tr class="memitem:a98a11c03eb16a5d4b073f8f697719718" id="r_a98a11c03eb16a5d4b073f8f697719718"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a98a11c03eb16a5d4b073f8f697719718">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a98a11c03eb16a5d4b073f8f697719718"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified location.  <br /></td></tr>
-<tr class="memitem:a0234fd0f081cfd367e236bd7bb3967b7" id="r_a0234fd0f081cfd367e236bd7bb3967b7"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0234fd0f081cfd367e236bd7bb3967b7">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:a0234fd0f081cfd367e236bd7bb3967b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified location, and size.  <br /></td></tr>
-<tr class="memitem:aab10503c5b125452e014deb77ad59c5b" id="r_aab10503c5b125452e014deb77ad59c5b"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#aab10503c5b125452e014deb77ad59c5b">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:aab10503c5b125452e014deb77ad59c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified location, size, and name.  <br /></td></tr>
-<tr class="memitem:abbd87809f609605ff09d53f67814737f" id="r_abbd87809f609605ff09d53f67814737f"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#abbd87809f609605ff09d53f67814737f">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:abbd87809f609605ff09d53f67814737f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color.  <br /></td></tr>
-<tr class="memitem:ae771501c624c4bded08899e394c3467b" id="r_ae771501c624c4bded08899e394c3467b"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae771501c624c4bded08899e394c3467b">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:ae771501c624c4bded08899e394c3467b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color, and location.  <br /></td></tr>
-<tr class="memitem:a30b0e5be4f31a78154658c9a374d7d0f" id="r_a30b0e5be4f31a78154658c9a374d7d0f"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a30b0e5be4f31a78154658c9a374d7d0f">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:a30b0e5be4f31a78154658c9a374d7d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color, location, and size.  <br /></td></tr>
-<tr class="memitem:a6663f0331bccb0db3e33ebe05249bd79" id="r_a6663f0331bccb0db3e33ebe05249bd79"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6663f0331bccb0db3e33ebe05249bd79">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:a6663f0331bccb0db3e33ebe05249bd79"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color, location, size, and name.  <br /></td></tr>
-<tr class="memitem:a16189efe8556acc7f04ee1464e4f95da" id="r_a16189efe8556acc7f04ee1464e4f95da"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a16189efe8556acc7f04ee1464e4f95da">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent)</td></tr>
-<tr class="memdesc:a16189efe8556acc7f04ee1464e4f95da"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent.  <br /></td></tr>
-<tr class="memitem:a9ee9e6c12cf8befc75da6875cda55f65" id="r_a9ee9e6c12cf8befc75da6875cda55f65"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9ee9e6c12cf8befc75da6875cda55f65">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:a9ee9e6c12cf8befc75da6875cda55f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, and location.  <br /></td></tr>
-<tr class="memitem:a0e6e440a427fc83a07e6a6d28eeb2254" id="r_a0e6e440a427fc83a07e6a6d28eeb2254"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0e6e440a427fc83a07e6a6d28eeb2254">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:a0e6e440a427fc83a07e6a6d28eeb2254"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, location, and size.  <br /></td></tr>
-<tr class="memitem:a7f7d7b4aebcc449f0b579cc8d0e11929" id="r_a7f7d7b4aebcc449f0b579cc8d0e11929"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7f7d7b4aebcc449f0b579cc8d0e11929">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:a7f7d7b4aebcc449f0b579cc8d0e11929"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, location, size, and name.  <br /></td></tr>
-<tr class="memitem:a90c155d247b6433c030b6c7daee6b82a" id="r_a90c155d247b6433c030b6c7daee6b82a"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90c155d247b6433c030b6c7daee6b82a">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:a90c155d247b6433c030b6c7daee6b82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, and color.  <br /></td></tr>
-<tr class="memitem:afd4c4ef7dcde850fafd638ee99d94717" id="r_afd4c4ef7dcde850fafd638ee99d94717"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#afd4c4ef7dcde850fafd638ee99d94717">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location)</td></tr>
-<tr class="memdesc:afd4c4ef7dcde850fafd638ee99d94717"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, color, and location.  <br /></td></tr>
-<tr class="memitem:ae65db2c11af005a98ce3729c19d70647" id="r_ae65db2c11af005a98ce3729c19d70647"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae65db2c11af005a98ce3729c19d70647">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size)</td></tr>
-<tr class="memdesc:ae65db2c11af005a98ce3729c19d70647"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, color, location, and size.  <br /></td></tr>
-<tr class="memitem:ac87b1a25786de7261304ecba30679281" id="r_ac87b1a25786de7261304ecba30679281"><td class="memItemLeft">static <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac87b1a25786de7261304ecba30679281">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name)</td></tr>
-<tr class="memdesc:ac87b1a25786de7261304ecba30679281"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, color, location, size, and name.  <br /></td></tr>
+<tr class="memitem:aabb37748be280d9c3930cd59477601e0" id="r_aabb37748be280d9c3930cd59477601e0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aabb37748be280d9c3930cd59477601e0">create</a> () -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:aabb37748be280d9c3930cd59477601e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a>.  <br /></td></tr>
+<tr class="memitem:a8ef8ce685ab9a57471c47c0fb6193430" id="r_a8ef8ce685ab9a57471c47c0fb6193430"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ef8ce685ab9a57471c47c0fb6193430">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a8ef8ce685ab9a57471c47c0fb6193430"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified location.  <br /></td></tr>
+<tr class="memitem:a7bcd075bd612df1e91533166e6cc8cb5" id="r_a7bcd075bd612df1e91533166e6cc8cb5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7bcd075bd612df1e91533166e6cc8cb5">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a7bcd075bd612df1e91533166e6cc8cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified location, and size.  <br /></td></tr>
+<tr class="memitem:a0f1ca77e56a3cb41bdaad5eb0c4ce99b" id="r_a0f1ca77e56a3cb41bdaad5eb0c4ce99b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0f1ca77e56a3cb41bdaad5eb0c4ce99b">create</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a0f1ca77e56a3cb41bdaad5eb0c4ce99b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="memitem:a935a0beb06fb701d4a43ff384d0f3b09" id="r_a935a0beb06fb701d4a43ff384d0f3b09"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a935a0beb06fb701d4a43ff384d0f3b09">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a935a0beb06fb701d4a43ff384d0f3b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color.  <br /></td></tr>
+<tr class="memitem:abe30aecdfee4fc87797403c056ec565a" id="r_abe30aecdfee4fc87797403c056ec565a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abe30aecdfee4fc87797403c056ec565a">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:abe30aecdfee4fc87797403c056ec565a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color, and location.  <br /></td></tr>
+<tr class="memitem:a3c6be1c7c7240fac4c8e4d421359e6fe" id="r_a3c6be1c7c7240fac4c8e4d421359e6fe"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c6be1c7c7240fac4c8e4d421359e6fe">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a3c6be1c7c7240fac4c8e4d421359e6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color, location, and size.  <br /></td></tr>
+<tr class="memitem:a93aee383968fe13d77615e7d6581a07f" id="r_a93aee383968fe13d77615e7d6581a07f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a93aee383968fe13d77615e7d6581a07f">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a93aee383968fe13d77615e7d6581a07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified color, location, size, and name.  <br /></td></tr>
+<tr class="memitem:a5da1e1153a836d8f6f0afc99bbd8f02f" id="r_a5da1e1153a836d8f6f0afc99bbd8f02f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5da1e1153a836d8f6f0afc99bbd8f02f">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a5da1e1153a836d8f6f0afc99bbd8f02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent.  <br /></td></tr>
+<tr class="memitem:aa8edfa0013f63ca1e93289bd660dc1ee" id="r_aa8edfa0013f63ca1e93289bd660dc1ee"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa8edfa0013f63ca1e93289bd660dc1ee">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:aa8edfa0013f63ca1e93289bd660dc1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, and location.  <br /></td></tr>
+<tr class="memitem:accac3b30a2f9875583942a6697b5c7ce" id="r_accac3b30a2f9875583942a6697b5c7ce"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#accac3b30a2f9875583942a6697b5c7ce">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:accac3b30a2f9875583942a6697b5c7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, location, and size.  <br /></td></tr>
+<tr class="memitem:a6aa18d40124ab4f4034d9ea7e1ef8d9c" id="r_a6aa18d40124ab4f4034d9ea7e1ef8d9c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6aa18d40124ab4f4034d9ea7e1ef8d9c">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a6aa18d40124ab4f4034d9ea7e1ef8d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, location, size, and name.  <br /></td></tr>
+<tr class="memitem:a6ea34f80b170a9869f3d1d7028c19dc6" id="r_a6ea34f80b170a9869f3d1d7028c19dc6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ea34f80b170a9869f3d1d7028c19dc6">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a6ea34f80b170a9869f3d1d7028c19dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, and color.  <br /></td></tr>
+<tr class="memitem:a294cc73903dbc6d6516fc6a9b8ccc3f9" id="r_a294cc73903dbc6d6516fc6a9b8ccc3f9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a294cc73903dbc6d6516fc6a9b8ccc3f9">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a294cc73903dbc6d6516fc6a9b8ccc3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, color, and location.  <br /></td></tr>
+<tr class="memitem:ac919e78305e4dab81e17dd29b561758a" id="r_ac919e78305e4dab81e17dd29b561758a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac919e78305e4dab81e17dd29b561758a">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:ac919e78305e4dab81e17dd29b561758a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, color, location, and size.  <br /></td></tr>
+<tr class="memitem:a70882909fa3e54b1c1ae9078a11ebac0" id="r_a70882909fa3e54b1c1ae9078a11ebac0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a70882909fa3e54b1c1ae9078a11ebac0">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;parent, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;location, const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;size, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td></tr>
+<tr class="memdesc:a70882909fa3e54b1c1ae9078a11ebac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1color__picker.html" title="Represents a picker control that displays available colors along with controls that enable the user t...">xtd::forms::color_picker</a> with specified parent, color, location, size, and name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Properties</h2></td></tr>
-<tr class="memitem:a4ce2ff9f3894478962b37fc7679c1ec9" id="r_a4ce2ff9f3894478962b37fc7679c1ec9"><td class="memItemLeft"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4ce2ff9f3894478962b37fc7679c1ec9">create_params</a> () const noexcept override</td></tr>
-<tr class="memdesc:a4ce2ff9f3894478962b37fc7679c1ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
+<tr class="memitem:a934121de29667297f6cd96fd659e9fe1" id="r_a934121de29667297f6cd96fd659e9fe1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a934121de29667297f6cd96fd659e9fe1">create_params</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1forms_1_1create__params.html">xtd::forms::create_params</a> override</td></tr>
+<tr class="memdesc:a934121de29667297f6cd96fd659e9fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:af5ee25b16dd5882f8e4a278cca0dfe71" id="r_af5ee25b16dd5882f8e4a278cca0dfe71"><td class="memItemLeft"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af5ee25b16dd5882f8e4a278cca0dfe71">clone</a> () const override</td></tr>
-<tr class="memdesc:af5ee25b16dd5882f8e4a278cca0dfe71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
-<tr class="memitem:af415afedd4b40a40bcee9891d454a328" id="r_af415afedd4b40a40bcee9891d454a328"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af415afedd4b40a40bcee9891d454a328">on_color_picker_changed</a> (const <a class="el" href="classxtd_1_1forms_1_1color__picker__event__args.html">color_picker_event_args</a> &amp;e)</td></tr>
-<tr class="memdesc:af415afedd4b40a40bcee9891d454a328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the color_changed event.  <br /></td></tr>
-<tr class="memitem:add25139b5fb7f35d3063e9a943a028e7" id="r_add25139b5fb7f35d3063e9a943a028e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#add25139b5fb7f35d3063e9a943a028e7">on_handle_created</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) override</td></tr>
-<tr class="memdesc:add25139b5fb7f35d3063e9a943a028e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event.  <br /></td></tr>
-<tr class="memitem:adb5fe8e010e08c9a6d5b1258a72fffae" id="r_adb5fe8e010e08c9a6d5b1258a72fffae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adb5fe8e010e08c9a6d5b1258a72fffae">wnd_proc</a> (<a class="el" href="structxtd_1_1forms_1_1message.html">message</a> &amp;<a class="el" href="structxtd_1_1forms_1_1message.html">message</a>) override</td></tr>
-<tr class="memdesc:adb5fe8e010e08c9a6d5b1258a72fffae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Windows messages.  <br /></td></tr>
+<tr class="memitem:a728e289772dbdc9154aaa717c1b4571e" id="r_a728e289772dbdc9154aaa717c1b4571e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a728e289772dbdc9154aaa717c1b4571e">clone</a> () const -&gt; <a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; override</td></tr>
+<tr class="memdesc:a728e289772dbdc9154aaa717c1b4571e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="memitem:a30346a377016da7493bd24a5a3da0c51" id="r_a30346a377016da7493bd24a5a3da0c51"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a30346a377016da7493bd24a5a3da0c51">on_color_picker_changed</a> (const <a class="el" href="classxtd_1_1forms_1_1color__picker__event__args.html">color_picker_event_args</a> &amp;e) -&gt; void</td></tr>
+<tr class="memdesc:a30346a377016da7493bd24a5a3da0c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the color_changed event.  <br /></td></tr>
+<tr class="memitem:a56085c73ff449e5c8fa73adc6b0542e7" id="r_a56085c73ff449e5c8fa73adc6b0542e7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a56085c73ff449e5c8fa73adc6b0542e7">on_handle_created</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;e) -&gt; void override</td></tr>
+<tr class="memdesc:a56085c73ff449e5c8fa73adc6b0542e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event.  <br /></td></tr>
+<tr class="memitem:a6eb9676e7db3d72cf660d112d1260b5c" id="r_a6eb9676e7db3d72cf660d112d1260b5c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6eb9676e7db3d72cf660d112d1260b5c">wnd_proc</a> (<a class="el" href="structxtd_1_1forms_1_1message.html">message</a> &amp;<a class="el" href="structxtd_1_1forms_1_1message.html">message</a>) -&gt; void override</td></tr>
+<tr class="memdesc:a6eb9676e7db3d72cf660d112d1260b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Windows messages.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -928,8 +928,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 <tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">control_styles</a> flag to either <span class="tt">true</span> or <span class="tt">false</span>.  <br /></td></tr>
 <tr class="memitem:a63ab8930bd0ee6af0857d95c58838b40" id="r_a63ab8930bd0ee6af0857d95c58838b40"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1component.html#a63ab8930bd0ee6af0857d95c58838b40">component</a> ()</td></tr>
 <tr class="memdesc:a63ab8930bd0ee6af0857d95c58838b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises a new instance of the component class.  <br /></td></tr>
-<tr class="memitem:aee075564d621347a36cd8ecb963db462" id="r_aee075564d621347a36cd8ecb963db462"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1component.html#aee075564d621347a36cd8ecb963db462">design_mode</a> () const noexcept</td></tr>
-<tr class="memdesc:aee075564d621347a36cd8ecb963db462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
+<tr class="memitem:a25081f8b2f33791a98cb9cf44aa3664b" id="r_a25081f8b2f33791a98cb9cf44aa3664b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1component.html#a25081f8b2f33791a98cb9cf44aa3664b">design_mode</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a25081f8b2f33791a98cb9cf44aa3664b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
 <tr class="memitem:a25a9782b3a93edea02b4924c509f36ec" id="r_a25a9782b3a93edea02b4924c509f36ec"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1control.html#a25a9782b3a93edea02b4924c509f36ec">set_mouse_buttons</a> (<a class="el" href="group__xtd__forms.html#gad6ce53382a707cdcbacf10ddfe871d63">forms::mouse_buttons</a> value)</td></tr>
 <tr class="memdesc:a25a9782b3a93edea02b4924c509f36ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating which of the mouse buttons is in a pressed state.  <br /></td></tr>
 </table>
@@ -954,8 +954,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ad8ecf3ead2a45e7a1339fa8fd4b8034d" name="ad8ecf3ead2a45e7a1339fa8fd4b8034d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8ecf3ead2a45e7a1339fa8fd4b8034d">&#9670;&#160;</a></span>alpha_color() <span class="overload">[1/2]</span></h2>
+<a id="afd3e31e1b0dcfa58adbd293a1ff68e42" name="afd3e31e1b0dcfa58adbd293a1ff68e42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd3e31e1b0dcfa58adbd293a1ff68e42">&#9670;&#160;</a></span>alpha_color() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -964,15 +964,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::forms::color_picker::alpha_color </td>
+          <td class="memname">virtual auto xtd::forms::color_picker::alpha_color </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -982,8 +982,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ab681540f906052b0bd2fe2f39ed7f6c9" name="ab681540f906052b0bd2fe2f39ed7f6c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab681540f906052b0bd2fe2f39ed7f6c9">&#9670;&#160;</a></span>alpha_color() <span class="overload">[2/2]</span></h2>
+<a id="ad1985d316a3d90658a67af71ccbdb329" name="ad1985d316a3d90658a67af71ccbdb329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1985d316a3d90658a67af71ccbdb329">&#9670;&#160;</a></span>alpha_color() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,10 +992,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp; xtd::forms::color_picker::alpha_color </td>
+          <td class="memname">virtual auto xtd::forms::color_picker::alpha_color </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>alpha_color</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1015,8 +1015,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ae75744bd22cea7aa7e56753ac627e01d" name="ae75744bd22cea7aa7e56753ac627e01d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75744bd22cea7aa7e56753ac627e01d">&#9670;&#160;</a></span>color() <span class="overload">[1/2]</span></h2>
+<a id="acd0c36d12ed0424ea2675c39b6faea39" name="acd0c36d12ed0424ea2675c39b6faea39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd0c36d12ed0424ea2675c39b6faea39">&#9670;&#160;</a></span>color() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1025,15 +1025,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> &amp; xtd::forms::color_picker::color </td>
+          <td class="memname">virtual auto xtd::forms::color_picker::color </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1044,8 +1044,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a940827c882a98fc63bc3040f436dad53" name="a940827c882a98fc63bc3040f436dad53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a940827c882a98fc63bc3040f436dad53">&#9670;&#160;</a></span>color() <span class="overload">[2/2]</span></h2>
+<a id="aecdf8dce36be209cbe43d508373617f7" name="aecdf8dce36be209cbe43d508373617f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecdf8dce36be209cbe43d508373617f7">&#9670;&#160;</a></span>color() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1054,10 +1054,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp; xtd::forms::color_picker::color </td>
+          <td class="memname">virtual auto xtd::forms::color_picker::color </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -1078,8 +1078,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a1d7c8dc0331b00876ac14a461ececa8b" name="a1d7c8dc0331b00876ac14a461ececa8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d7c8dc0331b00876ac14a461ececa8b">&#9670;&#160;</a></span>create() <span class="overload">[1/16]</span></h2>
+<a id="aabb37748be280d9c3930cd59477601e0" name="aabb37748be280d9c3930cd59477601e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb37748be280d9c3930cd59477601e0">&#9670;&#160;</a></span>create() <span class="overload">[1/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1088,15 +1088,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1106,8 +1106,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a98a11c03eb16a5d4b073f8f697719718" name="a98a11c03eb16a5d4b073f8f697719718"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98a11c03eb16a5d4b073f8f697719718">&#9670;&#160;</a></span>create() <span class="overload">[2/16]</span></h2>
+<a id="a8ef8ce685ab9a57471c47c0fb6193430" name="a8ef8ce685ab9a57471c47c0fb6193430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef8ce685ab9a57471c47c0fb6193430">&#9670;&#160;</a></span>create() <span class="overload">[2/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1116,15 +1116,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1140,8 +1140,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a0234fd0f081cfd367e236bd7bb3967b7" name="a0234fd0f081cfd367e236bd7bb3967b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0234fd0f081cfd367e236bd7bb3967b7">&#9670;&#160;</a></span>create() <span class="overload">[3/16]</span></h2>
+<a id="a7bcd075bd612df1e91533166e6cc8cb5" name="a7bcd075bd612df1e91533166e6cc8cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bcd075bd612df1e91533166e6cc8cb5">&#9670;&#160;</a></span>create() <span class="overload">[3/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1150,19 +1150,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1179,8 +1179,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="aab10503c5b125452e014deb77ad59c5b" name="aab10503c5b125452e014deb77ad59c5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab10503c5b125452e014deb77ad59c5b">&#9670;&#160;</a></span>create() <span class="overload">[4/16]</span></h2>
+<a id="a0f1ca77e56a3cb41bdaad5eb0c4ce99b" name="a0f1ca77e56a3cb41bdaad5eb0c4ce99b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1ca77e56a3cb41bdaad5eb0c4ce99b">&#9670;&#160;</a></span>create() <span class="overload">[4/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1189,24 +1189,24 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1224,8 +1224,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="abbd87809f609605ff09d53f67814737f" name="abbd87809f609605ff09d53f67814737f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbd87809f609605ff09d53f67814737f">&#9670;&#160;</a></span>create() <span class="overload">[5/16]</span></h2>
+<a id="a935a0beb06fb701d4a43ff384d0f3b09" name="a935a0beb06fb701d4a43ff384d0f3b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935a0beb06fb701d4a43ff384d0f3b09">&#9670;&#160;</a></span>create() <span class="overload">[5/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1234,15 +1234,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1258,8 +1258,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ae771501c624c4bded08899e394c3467b" name="ae771501c624c4bded08899e394c3467b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae771501c624c4bded08899e394c3467b">&#9670;&#160;</a></span>create() <span class="overload">[6/16]</span></h2>
+<a id="abe30aecdfee4fc87797403c056ec565a" name="abe30aecdfee4fc87797403c056ec565a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe30aecdfee4fc87797403c056ec565a">&#9670;&#160;</a></span>create() <span class="overload">[6/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1268,19 +1268,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1297,8 +1297,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a30b0e5be4f31a78154658c9a374d7d0f" name="a30b0e5be4f31a78154658c9a374d7d0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30b0e5be4f31a78154658c9a374d7d0f">&#9670;&#160;</a></span>create() <span class="overload">[7/16]</span></h2>
+<a id="a3c6be1c7c7240fac4c8e4d421359e6fe" name="a3c6be1c7c7240fac4c8e4d421359e6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6be1c7c7240fac4c8e4d421359e6fe">&#9670;&#160;</a></span>create() <span class="overload">[7/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1307,24 +1307,24 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1342,8 +1342,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a6663f0331bccb0db3e33ebe05249bd79" name="a6663f0331bccb0db3e33ebe05249bd79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6663f0331bccb0db3e33ebe05249bd79">&#9670;&#160;</a></span>create() <span class="overload">[8/16]</span></h2>
+<a id="a93aee383968fe13d77615e7d6581a07f" name="a93aee383968fe13d77615e7d6581a07f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93aee383968fe13d77615e7d6581a07f">&#9670;&#160;</a></span>create() <span class="overload">[8/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1352,29 +1352,29 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1393,8 +1393,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a16189efe8556acc7f04ee1464e4f95da" name="a16189efe8556acc7f04ee1464e4f95da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16189efe8556acc7f04ee1464e4f95da">&#9670;&#160;</a></span>create() <span class="overload">[9/16]</span></h2>
+<a id="a5da1e1153a836d8f6f0afc99bbd8f02f" name="a5da1e1153a836d8f6f0afc99bbd8f02f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da1e1153a836d8f6f0afc99bbd8f02f">&#9670;&#160;</a></span>create() <span class="overload">[9/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1403,15 +1403,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1427,8 +1427,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a9ee9e6c12cf8befc75da6875cda55f65" name="a9ee9e6c12cf8befc75da6875cda55f65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ee9e6c12cf8befc75da6875cda55f65">&#9670;&#160;</a></span>create() <span class="overload">[10/16]</span></h2>
+<a id="aa8edfa0013f63ca1e93289bd660dc1ee" name="aa8edfa0013f63ca1e93289bd660dc1ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8edfa0013f63ca1e93289bd660dc1ee">&#9670;&#160;</a></span>create() <span class="overload">[10/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1437,19 +1437,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1466,8 +1466,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a0e6e440a427fc83a07e6a6d28eeb2254" name="a0e6e440a427fc83a07e6a6d28eeb2254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e6e440a427fc83a07e6a6d28eeb2254">&#9670;&#160;</a></span>create() <span class="overload">[11/16]</span></h2>
+<a id="accac3b30a2f9875583942a6697b5c7ce" name="accac3b30a2f9875583942a6697b5c7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accac3b30a2f9875583942a6697b5c7ce">&#9670;&#160;</a></span>create() <span class="overload">[11/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1476,24 +1476,24 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1511,8 +1511,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a7f7d7b4aebcc449f0b579cc8d0e11929" name="a7f7d7b4aebcc449f0b579cc8d0e11929"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f7d7b4aebcc449f0b579cc8d0e11929">&#9670;&#160;</a></span>create() <span class="overload">[12/16]</span></h2>
+<a id="a6aa18d40124ab4f4034d9ea7e1ef8d9c" name="a6aa18d40124ab4f4034d9ea7e1ef8d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa18d40124ab4f4034d9ea7e1ef8d9c">&#9670;&#160;</a></span>create() <span class="overload">[12/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1521,29 +1521,29 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1562,8 +1562,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a90c155d247b6433c030b6c7daee6b82a" name="a90c155d247b6433c030b6c7daee6b82a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90c155d247b6433c030b6c7daee6b82a">&#9670;&#160;</a></span>create() <span class="overload">[13/16]</span></h2>
+<a id="a6ea34f80b170a9869f3d1d7028c19dc6" name="a6ea34f80b170a9869f3d1d7028c19dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea34f80b170a9869f3d1d7028c19dc6">&#9670;&#160;</a></span>create() <span class="overload">[13/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1572,19 +1572,19 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1601,8 +1601,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="afd4c4ef7dcde850fafd638ee99d94717" name="afd4c4ef7dcde850fafd638ee99d94717"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd4c4ef7dcde850fafd638ee99d94717">&#9670;&#160;</a></span>create() <span class="overload">[14/16]</span></h2>
+<a id="a294cc73903dbc6d6516fc6a9b8ccc3f9" name="a294cc73903dbc6d6516fc6a9b8ccc3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a294cc73903dbc6d6516fc6a9b8ccc3f9">&#9670;&#160;</a></span>create() <span class="overload">[14/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1611,9 +1611,9 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1623,12 +1623,12 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1646,8 +1646,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ae65db2c11af005a98ce3729c19d70647" name="ae65db2c11af005a98ce3729c19d70647"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae65db2c11af005a98ce3729c19d70647">&#9670;&#160;</a></span>create() <span class="overload">[15/16]</span></h2>
+<a id="ac919e78305e4dab81e17dd29b561758a" name="ac919e78305e4dab81e17dd29b561758a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac919e78305e4dab81e17dd29b561758a">&#9670;&#160;</a></span>create() <span class="overload">[15/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1656,9 +1656,9 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1668,17 +1668,17 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1697,8 +1697,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="ac87b1a25786de7261304ecba30679281" name="ac87b1a25786de7261304ecba30679281"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac87b1a25786de7261304ecba30679281">&#9670;&#160;</a></span>create() <span class="overload">[16/16]</span></h2>
+<a id="a70882909fa3e54b1c1ae9078a11ebac0" name="a70882909fa3e54b1c1ae9078a11ebac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70882909fa3e54b1c1ae9078a11ebac0">&#9670;&#160;</a></span>create() <span class="overload">[16/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1707,9 +1707,9 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a> xtd::forms::color_picker::create </td>
+          <td class="memname">auto xtd::forms::color_picker::create </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html#a8671fd38ac49190d3381aa4bf65b1dda">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1719,22 +1719,22 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;) -&gt;  <a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1754,8 +1754,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="a4ce2ff9f3894478962b37fc7679c1ec9" name="a4ce2ff9f3894478962b37fc7679c1ec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ce2ff9f3894478962b37fc7679c1ec9">&#9670;&#160;</a></span>create_params()</h2>
+<a id="a934121de29667297f6cd96fd659e9fe1" name="a934121de29667297f6cd96fd659e9fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a934121de29667297f6cd96fd659e9fe1">&#9670;&#160;</a></span>create_params()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1764,15 +1764,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a> xtd::forms::color_picker::create_params </td>
+          <td class="memname">auto xtd::forms::color_picker::create_params </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1forms_1_1create__params.html">xtd::forms::create_params</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1786,8 +1786,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="af5ee25b16dd5882f8e4a278cca0dfe71" name="af5ee25b16dd5882f8e4a278cca0dfe71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5ee25b16dd5882f8e4a278cca0dfe71">&#9670;&#160;</a></span>clone()</h2>
+<a id="a728e289772dbdc9154aaa717c1b4571e" name="a728e289772dbdc9154aaa717c1b4571e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a728e289772dbdc9154aaa717c1b4571e">&#9670;&#160;</a></span>clone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1796,15 +1796,15 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::color_picker::clone </td>
+          <td class="memname">auto xtd::forms::color_picker::clone </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1817,8 +1817,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="af415afedd4b40a40bcee9891d454a328" name="af415afedd4b40a40bcee9891d454a328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af415afedd4b40a40bcee9891d454a328">&#9670;&#160;</a></span>on_color_picker_changed()</h2>
+<a id="a30346a377016da7493bd24a5a3da0c51" name="a30346a377016da7493bd24a5a3da0c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30346a377016da7493bd24a5a3da0c51">&#9670;&#160;</a></span>on_color_picker_changed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1827,10 +1827,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::color_picker::on_color_picker_changed </td>
+          <td class="memname">auto xtd::forms::color_picker::on_color_picker_changed </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1color__picker__event__args.html">color_picker_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1850,8 +1850,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="add25139b5fb7f35d3063e9a943a028e7" name="add25139b5fb7f35d3063e9a943a028e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add25139b5fb7f35d3063e9a943a028e7">&#9670;&#160;</a></span>on_handle_created()</h2>
+<a id="a56085c73ff449e5c8fa73adc6b0542e7" name="a56085c73ff449e5c8fa73adc6b0542e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56085c73ff449e5c8fa73adc6b0542e7">&#9670;&#160;</a></span>on_handle_created()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1860,10 +1860,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::color_picker::on_handle_created </td>
+          <td class="memname">auto xtd::forms::color_picker::on_handle_created </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1885,8 +1885,8 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
 
 </div>
 </div>
-<a id="adb5fe8e010e08c9a6d5b1258a72fffae" name="adb5fe8e010e08c9a6d5b1258a72fffae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb5fe8e010e08c9a6d5b1258a72fffae">&#9670;&#160;</a></span>wnd_proc()</h2>
+<a id="a6eb9676e7db3d72cf660d112d1260b5c" name="a6eb9676e7db3d72cf660d112d1260b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb9676e7db3d72cf660d112d1260b5c">&#9670;&#160;</a></span>wnd_proc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1895,10 +1895,10 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::color_picker::wnd_proc </td>
+          <td class="memname">auto xtd::forms::color_picker::wnd_proc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structxtd_1_1forms_1_1message.html">message</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1916,21 +1916,21 @@ void&#160;</td><td class="memItemRight"><b>post_recreate_handle</b> () noexcept<
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting controls should call the base class's <a class="el" href="#adb5fe8e010e08c9a6d5b1258a72fffae" title="Processes Windows messages.">wnd_proc(message&amp;)</a> method to process any messages that they do not handle. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting controls should call the base class's <a class="el" href="classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096" title="Processes Windows messages.">wnd_proc(message&amp;)</a> method to process any messages that they do not handle. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096">xtd::forms::control</a>.</p>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a21a2383c0d5a1ed2d15078025c8a2b46" name="a21a2383c0d5a1ed2d15078025c8a2b46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21a2383c0d5a1ed2d15078025c8a2b46">&#9670;&#160;</a></span>color_picker_changed</h2>
+<a id="a033e288b3d9d6955c8bd0a864acecb7e" name="a033e288b3d9d6955c8bd0a864acecb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033e288b3d9d6955c8bd0a864acecb7e">&#9670;&#160;</a></span>color_picker_changed</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>, <a class="el" href="group__events.html#gac9dbf6a3fd503cbfe4653afe1d126a04">color_picker_event_handler</a>&gt; xtd::forms::color_picker::color_picker_changed</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt;<a class="el" href="#aaeb8c1fc56ef259e51bf88de1b17866b">color_picker</a>, <a class="el" href="group__events.html#ga6c0670f44e3bc4d5488e817aa2266e06">xtd::forms::color_picker_event_handler</a>&gt; xtd::forms::color_picker::color_picker_changed</td>
         </tr>
       </table>
 </div><div class="memdoc">
