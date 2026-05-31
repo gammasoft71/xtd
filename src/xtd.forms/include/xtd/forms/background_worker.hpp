@@ -52,29 +52,29 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the application has requested cancellation of a background operation.
       /// @return `true` if the application has requested cancellation of a background operation; otherwise, `false`. The default is `false`.
-      bool cancellation_pending() const noexcept;
+      [[nodiscard]] auto cancellation_pending() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the background_worker is running an asynchronous operation.
       /// @return `true`, if the background_worker is running an asynchronous operation; otherwise, `false`.
-      bool is_busy() const noexcept;
+      [[nodiscard]] auto is_busy() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @return `true` if the background_worker supports progress updates; otherwise `false`. The default is `false`.
       /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is `true`, user code can call the report_progress method to raise the progress_changed event.
-      bool worker_reports_progress() const noexcept;
+      [[nodiscard]] auto worker_reports_progress() const noexcept -> bool;
       /// @brief Sets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @param value `true` if the background_worker supports progress updates; otherwise `false`. The default is `false`.
       /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is `true`, user code can call the report_progress method to raise the progress_changed event.
-      void worker_reports_progress(bool value);
+      auto worker_reports_progress(bool value) -> void;
       
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @return `true` if the background_worker supports cancellation; otherwise `false`. The default is `false`.
       /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is `true`, you can call the cancel_async method to interrupt a background operation.
-      bool worker_supports_cancellation() const noexcept;
+      [[nodiscard]] auto worker_supports_cancellation() const noexcept -> bool;
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @param value `true` if the background_worker supports cancellation; otherwise `false`. The default is `false`.
       /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is `true`, you can call the cancel_async method to interrupt a background operation.
-      void worker_supports_cancellation(bool value);
+      auto worker_supports_cancellation(bool value) -> void;
       /// @}
       
       /// @name Public Methods
@@ -83,41 +83,41 @@ namespace xtd {
       /// @brief Requests cancellation of a pending background operation.
       /// @remarks cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to `true`.
       /// @remarks When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to `true`.
-      void cancel_async();
+      auto cancel_async() -> void;
       
       /// @brief Raises the background_worker::do_work event.
       /// @param e An event_args that contains the event data.
-      virtual void on_do_work(do_work_event_args& e);
+      virtual auto on_do_work(do_work_event_args& e) -> void;
       
       /// @brief Raises the background_worker::progress_changed event.
       /// @param e An event_args that contains the event data.
-      virtual void on_progress_changed(const progress_changed_event_args& e);
+      virtual auto on_progress_changed(const progress_changed_event_args& e) -> void;
       
       /// @brief Raises the background_worker::run_worker_completed event.
       /// @param e An event_args that contains the event data.
-      virtual void on_run_worker_completed(const run_worker_completed_event_args& e);
+      virtual auto on_run_worker_completed(const run_worker_completed_event_args& e) -> void;
       
       /// @brief Starts execution of a background operation.
       /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is `true`;
-      void run_worker_async();
+      auto run_worker_async() -> void;
       
       /// @brief Starts execution of a background operation.
       /// @param argument A parameter for use by the background operation to be executed in the xtd::forms::background_worker::do_work event handler.
       /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is `true`;
       template<typename argument_t>
-      void run_worker_async(argument_t argument) {
+      auto run_worker_async(argument_t argument) -> void {
         argument_(xtd::any_object(argument));
         run_worker_async();
       }
       
       /// @brief Raises the ProgressChanged event.
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
-      void report_progress(int32 percent_progress);
+      auto report_progress(int32 percent_progress) -> void;
       
       /// @brief Raises the ProgressChanged event.
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
       /// @param user_state A unique object indicating the user state. Returned as the user_state property of the progress_changed_even_args.
-      void report_progress(int32 percent_progress, const xtd::any_object& user_state);
+      auto report_progress(int32 percent_progress, const xtd::any_object& user_state) -> void;
       /// @}
       
       /// @name Public Events
@@ -137,7 +137,7 @@ namespace xtd {
       /// @}
       
     private:
-      void argument_(xtd::any_object&& argument);
+      auto argument_(xtd::any_object&& argument) -> void;
       
       xtd::sptr<data> data_;
     };
