@@ -66,11 +66,11 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box appearance.
       /// @include check_box.cpp
-      virtual forms::appearance appearance() const noexcept;
+      [[nodiscard]] virtual auto appearance() const noexcept -> xtd::forms::appearance;
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @param appearance One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
-      virtual check_box& appearance(forms::appearance appearance);
+      virtual auto appearance(xtd::forms::appearance appearance) -> check_box&;
       
       /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
@@ -78,18 +78,18 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box auto_check.
       /// @include check_box.cpp
-      virtual bool auto_check() const noexcept;
+      [[nodiscard]] virtual auto auto_check() const noexcept -> bool;
       /// @brief Sets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @param auto_check `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
-      virtual check_box& auto_check(bool auto_check);
+      virtual auto auto_check(bool auto_check) -> check_box&;
       
       /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @return One of the content_alignment values. The default value is middle_left.
-      virtual content_alignment check_align() const noexcept;
+      [[nodiscard]] virtual auto check_align() const noexcept -> xtd::forms::content_alignment;
       /// @brief Sets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @param check_align One of the content_alignment values. The default value is middle_left.
-      virtual check_box& check_align(content_alignment check_align);
+      virtual auto check_align(xtd::forms::content_alignment check_align) -> check_box&;
       
       /// @brief Gets a value indicating whether the check_box is in the checked state.
       /// @return `true` if the check_box is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate check_state.
@@ -97,11 +97,11 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box checked.
       /// @include check_box.cpp
-      virtual bool checked() const noexcept;
+      [[nodiscard]] virtual auto checked() const noexcept -> bool;
       /// @brief Sets a value indicating whether the check_box is in the checked state.
       /// @param checked `true` if the check_box is in the checked state; otherwise, `false`. The default value is `false`.
       /// @remarks When the value is `true`, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
-      virtual check_box& checked(bool checked);
+      virtual auto checked(bool checked) -> check_box&;
       
       /// @brief Gets the state of the check_box.
       /// @return One of the xtd::forms::check_state enumeration values. The default value is unchecked.
@@ -115,7 +115,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box check_state.
       /// @include check_box.cpp
-      virtual forms::check_state check_state() const noexcept;
+      [[nodiscard]] virtual auto check_state() const noexcept -> xtd::forms::check_state;
       /// @brief Sets the state of the check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
@@ -127,7 +127,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box check_state.
       /// @include check_box.cpp
-      virtual check_box& check_state(forms::check_state check_state);
+      virtual auto check_state(xtd::forms::check_state check_state) -> check_box&;
       
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @return `true` if the check_box is able to display three check states; otherwise, `false`. The default value is `false`.
@@ -135,11 +135,11 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box three_state.
       /// @include check_box.cpp
-      virtual bool three_state() const noexcept;
+      [[nodiscard]] virtual auto three_state() const noexcept -> bool;
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`. The default value is `false`.
       /// @remarks If the three_state property is set to `false`, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
-      virtual check_box& three_state(bool three_state);
+      virtual auto three_state(bool three_state) -> check_box&;
       /// @}
       
       /// @name Public Static Methods
@@ -147,49 +147,49 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create();
+      [[nodiscard]] static auto create() -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text);
+      [[nodiscard]] static auto create(const xtd::string& text) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, and check_state.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, xtd::forms::check_state check_state);
+      [[nodiscard]] static auto create(const xtd::string& text, xtd::forms::check_state check_state) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, check_state, and location.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -197,13 +197,13 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::string& text, xtd::forms::check_state check_state, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, check_state, location, and size.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::string& text, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, check_state, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -211,25 +211,25 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::string& text, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, and three_state.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, bool three_state);
+      [[nodiscard]] static auto create(const xtd::string& text, bool three_state) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, three_state, and check_state.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state);
+      [[nodiscard]] static auto create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, three_state, check_state, and location.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, three_state, check_state, location, and size.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
@@ -237,7 +237,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create an xtd::forms::check_box with specified text, three_state, check_state, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
@@ -246,47 +246,47 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -294,20 +294,20 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, and check_state.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, xtd::forms::check_state check_state) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, check_state, and location.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, xtd::forms::check_state check_state, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, check_state, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -315,7 +315,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, check_state, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -324,20 +324,20 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, and three_state.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, bool three_state);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool three_state) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, three_state, and check_state.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, three_state, check_state, and location.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -345,7 +345,7 @@ namespace xtd {
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const xtd::drawing::point& location) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, three_state, check_state, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -354,7 +354,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size) -> check_box;
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, three_state, check_state, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -364,7 +364,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> check_box;
       /// @}
       
       /// @name Public Events
@@ -372,15 +372,15 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the value of the appearance property changes.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<check_box, event_handler> appearance_changed;
+      event<check_box, xtd::event_handler> appearance_changed;
       
       /// @brief Occurs when the value of the checked property changes.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<check_box, event_handler> checked_changed;
+      event<check_box, xtd::event_handler> checked_changed;
       
       /// @brief Occurs when the value of the check_state property changes.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<check_box, event_handler> check_state_changed;
+      event<check_box, xtd::event_handler> check_state_changed;
       /// @}
       
     protected:
@@ -389,10 +389,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::check_box_state values.
-      xtd::forms::visual_styles::check_box_state state() const noexcept;
+      [[nodiscard]] auto state() const noexcept -> xtd::forms::visual_styles::check_box_state;
       /// @}
       
       /// @name Protected Methods
@@ -402,45 +402,45 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
+      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
       
       /// @brief Measure this control.
-      /// @return The drawing::size size of this control.
+      /// @return The xtd::drawing::size size of this control.
       /// @remarks This method is not relevant for this class.
-      drawing::size measure_control() const noexcept override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       
       /// @brief Raises the check_box::appearance_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_appearance_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      virtual void on_appearance_changed(const event_args& e);
+      virtual auto on_appearance_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the check_box::checked_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      virtual void on_checked_changed(const event_args& e);
+      virtual auto on_checked_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the check_box::check_state_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      virtual void on_check_state_changed(const event_args& e);
+      virtual auto on_check_state_changed(const xtd::event_args& e) -> void;
       
-      void on_enabled_changed(const event_args& e) override;
-      void on_handle_created(const event_args& e) override;
-      void on_mouse_down(const mouse_event_args& e) override;
-      void on_mouse_enter(const event_args& e) override;
-      void on_mouse_leave(const event_args& e) override;
-      void on_mouse_up(const mouse_event_args& e) override;
-      void on_paint(paint_event_args& e) override;
-      void wnd_proc(message& message) override;
+      auto on_enabled_changed(const xtd::event_args& e) -> void override;
+      auto on_handle_created(const xtd::event_args& e) -> void override;
+      auto on_mouse_down(const xtd::forms::mouse_event_args& e) -> void override;
+      auto on_mouse_enter(const xtd::event_args& e) -> void override;
+      auto on_mouse_leave(const xtd::event_args& e) -> void override;
+      auto on_mouse_up(const xtd::forms::mouse_event_args& e) -> void override;
+      auto on_paint(xtd::forms::paint_event_args& e) -> void override;
+      auto wnd_proc(xtd::forms::message& message) -> void override;
       /// @}
       
     private:
-      void wm_mouse_double_click(message& message);
-      void wm_mouse_down(message& message);
-      void wm_mouse_up(message& message);
+      auto wm_mouse_double_click(xtd::forms::message& message) -> void;
+      auto wm_mouse_down(xtd::forms::message& message) -> void;
+      auto wm_mouse_up(xtd::forms:: message& message) -> void;
       
       xtd::sptr<data> data_;
     };
