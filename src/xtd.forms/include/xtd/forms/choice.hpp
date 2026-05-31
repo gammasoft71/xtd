@@ -57,39 +57,39 @@ namespace xtd {
       /// @brief Gets an object representing the collection of the items contained in this choice.
       /// @return A choice::object_collection representing the items in the choice.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the choice. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      object_collection& items() noexcept;
+      [[nodiscard]] auto items() noexcept -> object_collection&;
       /// @brief Gets an object representing the collection of the items contained in this choice.
       /// @return A choice::object_collection representing the items in the choice.
-      const object_collection& items() const noexcept;
+      [[nodiscard]] auto items() const noexcept -> const object_collection&;
       /// @brief Sets an object representing the collection of the items contained in this choice.
       /// @param items A choice::object_collection representing the items in the choice.
-      const choice& items(const object_collection& items);
+      auto items(const object_collection& items) -> const choice&;
       
-      using list_control::selected_index;
+      using xtd::forms::list_control::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      list_control& selected_index(xtd::usize selected_index) override;
+      auto selected_index(xtd::usize selected_index) -> list_control& override;
       
       /// @brief Gets currently selected item in the choice.
       /// @return The object that is the currently selected item.
-      const item& selected_item() const noexcept;
+      [[nodiscard]] auto selected_item() const noexcept -> const item&;
       /// @brief Sets currently selected item in the choice.
       /// @param selected_item The object that is the currently selected item.
-      choice& selected_item(const item& selected_item);
+      auto selected_item(const item& selected_item) -> choice&;
       
       /// @brief Gets a value indicating whether the items in the choice are sorted.
       /// @return `true` if the choice is sorted; otherwise, `false`. The default is `false`.
       /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to `false`, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
-      virtual bool sorted() const noexcept;
+      [[nodiscard]] virtual auto sorted() const noexcept -> bool;
       /// @brief Sets a value indicating whether the items in the choice are sorted.
       /// @param sorted `true` if the choice is sorted; otherwise, `false`. The default is `false`.
       /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to `false`, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
-      virtual choice& sorted(bool sorted);
+      virtual auto sorted(bool sorted) -> choice&;
       
-      using list_control::text;
+      using xtd::forms::list_control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const xtd::string& text) override;
+      auto text(const xtd::string& text) -> control& override;
       /// @}
       
       /// @name Public Methods
@@ -97,11 +97,11 @@ namespace xtd {
       /// @{
       /// @brief Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the choice is to use the push_back_range method of the choice::object_collection class (through the items property of the choice). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the choice::object_collection class, you can use the begin_update method to prevent the control from repainting the choice each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the choice to repaint. This way of adding items can prevent flickered drawing of the choice when a large number of items are being added to the list.
-      void begin_update();
+      auto begin_update() -> void;
       
       /// @brief Resumes painting the choice control after painting is suspended by the begin_update method.
       /// @remarks The preferred way to add multiple items to the choice is to use the push_back_range method of the choice::object_collection class (through the items property of the choice). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the choice::object_collection class, you can use the begin_update method to prevent the control from repainting the choice each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the choice to repaint. This way of adding items can prevent flickered drawing of the choice when a large number of items are being added to the list.
-      void end_update();
+      auto end_update() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -109,62 +109,62 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create();
+      [[nodiscard]] static auto create() -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items);
+      [[nodiscard]] static auto create(const object_collection& items) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, and location.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, const drawing::point& location);
+      [[nodiscard]] static auto create(const object_collection& items, const xtd::drawing::point& location) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, location, and size.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const object_collection& items, const xtd::drawing::point& location, const xtd::drawing::size& size) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, location, size, and name.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const object_collection& items, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, and selected_index.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, xtd::usize selected_index);
+      [[nodiscard]] static auto create(const object_collection& items, xtd::usize selected_index) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, selected_index, and location.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, xtd::usize selected_index, const drawing::point& location);
+      [[nodiscard]] static auto create(const object_collection& items, xtd::usize selected_index, const xtd::drawing::point& location) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, selected_index, location, and size.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const object_collection& items, xtd::usize selected_index, const xtd::drawing::point& location, const xtd::drawing::size& size) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified items, selected_index, location, size, and name.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
@@ -172,47 +172,47 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const object_collection& items, xtd::usize selected_index, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent);
+      [[nodiscard]] static auto create(const control& parent) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, and items.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, and location.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, const xtd::drawing::point& location) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, const xtd::drawing::point& location, const xtd::drawing::size& size) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
@@ -220,20 +220,20 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, and selected_index.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, xtd::usize selected_index);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, xtd::usize selected_index) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, selected_index, and location.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::choice::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, xtd::usize selected_index, const xtd::drawing::point& location) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, selected_index, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
@@ -241,7 +241,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, xtd::usize selected_index, const xtd::drawing::point& location, const xtd::drawing::size& size) -> choice;
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, selected_index, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
@@ -250,14 +250,14 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @param name The name of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const control& parent, const object_collection& items, xtd::usize selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const object_collection& items, xtd::usize selected_index, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> choice;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
       /// @name Protected Methods
@@ -267,23 +267,23 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
+      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
       
-      void on_handle_created(const event_args& e) override;
-      void on_selected_value_changed(const event_args& e) override;
-      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
-      void set_client_size_core(int32 width, int32 height) override;
-      void wnd_proc(message& message) override;
+      auto on_handle_created(const event_args& e) -> void override;
+      auto on_selected_value_changed(const event_args& e) -> void override;
+      auto set_bounds_core(xtd::int32 x, xtd::int32 y, xtd::int32 width, xtd::int32 height, bounds_specified specified) -> void override;
+      auto set_client_size_core(xtd::int32 width, xtd::int32 height) -> void override;
+      auto wnd_proc(message& message) -> void override;
       /// @}
       
     private:
-      void on_items_item_added(xtd::usize pos, const item& item);
-      void on_items_item_removed(xtd::usize pos, const item& item);
-      void on_items_item_updated(xtd::usize pos, const item& item);
-      void wm_command_control(message& message);
-      void wm_mouse_double_click(message& message);
-      void wm_mouse_down(message& message);
-      void wm_mouse_up(message& message);
+      auto on_items_item_added(xtd::usize pos, const item& item) -> void;
+      auto on_items_item_removed(xtd::usize pos, const item& item) -> void;
+      auto on_items_item_updated(xtd::usize pos, const item& item) -> void;
+      auto wm_command_control(xtd::forms::message& message) -> void;
+      auto wm_mouse_double_click(xtd::forms::message& message) -> void;
+      auto wm_mouse_down(xtd::forms::message& message) -> void;
+      auto wm_mouse_up(xtd::forms::message& message) -> void;
       
       xtd::sptr<data> data_;
     };
