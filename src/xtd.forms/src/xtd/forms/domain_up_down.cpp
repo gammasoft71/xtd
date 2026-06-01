@@ -345,12 +345,6 @@ drawing::color domain_up_down::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
 }
 
-xtd::uptr<xtd::object> domain_up_down::clone() const {
-  auto result = xtd::new_uptr<domain_up_down>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void domain_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   for (auto index = 0_z; index < data_->items.count(); ++index)

@@ -57,12 +57,6 @@ namespace {
     }
     
   protected:
-    xtd::uptr<xtd::object> clone() const override {
-      auto result = xtd::new_uptr<credits_item_panel>(*this);
-      if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-      return result;
-    }
-    
     void on_create_control() override {
       horizontal_layout_panel::on_create_control();
       control_layout_style(title_label_, {.50f, size_type::percent});

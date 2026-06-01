@@ -211,9 +211,3 @@ string status_bar_panel::to_string() const noexcept {
   if (!xtd::string::is_empty(data_->name)) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
   return string::format("{}, style: {}", get_type().full_name(), data_->style);
 }
-
-uptr<object> status_bar_panel::clone() const {
-  auto result = new_uptr<status_bar_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}

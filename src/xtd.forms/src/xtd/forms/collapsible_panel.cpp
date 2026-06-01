@@ -294,12 +294,6 @@ forms::create_params collapsible_panel::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> collapsible_panel::clone() const {
-  auto result = xtd::new_uptr<collapsible_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size collapsible_panel::measure_control() const noexcept {
   auto bounds = drawing::rectangle {};
   for (auto item : controls()) {

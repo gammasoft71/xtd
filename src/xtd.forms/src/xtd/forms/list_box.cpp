@@ -400,12 +400,6 @@ forms::create_params list_box::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> list_box::clone() const {
-  auto result = xtd::new_uptr<list_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(data_->sorted);

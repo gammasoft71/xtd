@@ -5,7 +5,6 @@
 #include "menu.hpp"
 #include "message.hpp"
 #include <xtd/drawing/point>
-#include <xtd/iclonable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of context menu componant.
     /// @include context_menu.cpp
-    class forms_export_ context_menu : public menu, public iclonable {
+    class forms_export_ context_menu : public menu {
     public:
       /// @name Public Aliases
       
@@ -74,12 +73,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
-      
       [[nodiscard]] auto create_menu_handle() -> xtd::intptr override;
       auto destroy_menu_handle(intptr handle) -> void override;
       auto on_item_added(xtd::usize pos, menu_item_ref item) -> void override;

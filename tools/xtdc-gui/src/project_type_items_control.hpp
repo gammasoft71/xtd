@@ -142,13 +142,6 @@ namespace xtdc_gui {
     /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
     static inline constexpr xtd::usize epos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::epos;
     
-  protected:
-    xtd::uptr<xtd::object> clone() const override {
-      auto result = xtd::new_uptr<project_type_items_control>(*this);
-      if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-      return result;
-    }
-    
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != npos) {

@@ -186,12 +186,6 @@ forms::create_params group_box::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> group_box::clone() const {
-  auto result = xtd::new_uptr<group_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size group_box::measure_control() const noexcept {
   drawing::rectangle bounds;
   for (auto item : controls()) {

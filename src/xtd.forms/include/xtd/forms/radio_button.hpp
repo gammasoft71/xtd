@@ -268,12 +268,6 @@ namespace xtd {
       /// @name Protected Properties
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
-      
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const noexcept override;

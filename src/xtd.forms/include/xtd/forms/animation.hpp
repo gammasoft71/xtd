@@ -201,12 +201,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
-      
       /// @brief Raises the updated event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
       virtual auto on_updated(const xtd::forms::animation_updated_event_args& e) -> void;

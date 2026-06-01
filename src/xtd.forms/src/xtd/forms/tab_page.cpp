@@ -193,12 +193,6 @@ void tab_page::destroy_handle() {
   panel::destroy_handle();
 }
 
-xtd::uptr<xtd::object> tab_page::clone() const {
-  auto result = xtd::new_uptr<tab_page>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void tab_page::on_handle_created(const event_args& e) {
   panel::on_handle_created(e);
   native::tab_control::insert_page(parent().value().get().handle(), parent().value().get().get_child_index(handle()), handle());

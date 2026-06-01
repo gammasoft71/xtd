@@ -242,12 +242,6 @@ forms::create_params font_picker::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> font_picker::clone() const {
-  auto result = xtd::new_uptr<font_picker>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void font_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   if (is_handle_created()) {

@@ -335,12 +335,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
-      
       /// @brief Raises the date_time_picker::close_up event.
       /// @param e An event_args that contains the event data.
       virtual void on_close_up(const event_args& e);

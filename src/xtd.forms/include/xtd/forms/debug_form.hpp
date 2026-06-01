@@ -78,17 +78,6 @@ namespace xtd {
       }
       /// @}
       
-    protected:
-      /// @name Protected Methods
-      
-      /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
-      /// @}
-      
     private:
       xtd::sptr<xtd::diagnostics::trace_listener> listener_ = xtd::forms::control_trace_listener::create(*this);
       bool defined = false;

@@ -285,12 +285,6 @@ drawing::size seven_segment_display::default_size() const noexcept {
   return {25, 50};
 }
 
-xtd::uptr<xtd::object> seven_segment_display::clone() const {
-  auto result = xtd::new_uptr<seven_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void seven_segment_display::draw_back_digit(drawing::graphics& graphics) {
   auto color = enabled() ? drawing::color_converter::average(back_segment_color(), back_color(), back_segment_opacity()) : back_color();
   draw_segment_a(graphics, color);

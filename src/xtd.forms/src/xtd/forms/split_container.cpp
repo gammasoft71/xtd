@@ -141,12 +141,6 @@ drawing::size split_container::default_size() const noexcept {
   return {150, 100};
 }
 
-xtd::uptr<xtd::object> split_container::clone() const {
-  auto result = xtd::new_uptr<split_container>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void split_container::on_resize(const event_args& e) {
   xtd::forms::scrollable_control::on_resize(e);
 }

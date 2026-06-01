@@ -436,12 +436,6 @@ xtd::forms::visual_styles::check_box_state light_button::state() const noexcept 
   return data_->state;
 }
 
-xtd::uptr<xtd::object> light_button::clone() const {
-  auto result = xtd::new_uptr<light_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size light_button::measure_control() const noexcept {
   /// @todo Add light according to the alignment
   return button_base::measure_text();

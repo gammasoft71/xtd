@@ -1804,12 +1804,6 @@ void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawi
   on_context_menu_item_click(menu, native::control::user_context_menu(handle(), menu.handle(), pos));
 }
 
-xtd::uptr < xtd::object > control::clone() const {
-  auto result = xtd::new_uptr < control > (*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void control::create_handle() {
   set_state(state::creating_handle, true);
   auto params = create_params();

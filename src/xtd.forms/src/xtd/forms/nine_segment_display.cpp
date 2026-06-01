@@ -212,12 +212,6 @@ nine_segment_display nine_segment_display::create(const control& parent, xtd::fo
   return item;
 }
 
-xtd::uptr<xtd::object> nine_segment_display::clone() const {
-  auto result = xtd::new_uptr<nine_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void nine_segment_display::draw_back_digit(drawing::graphics& graphics) {
   seven_segment_display::draw_back_digit(graphics);
   draw_segment_h(graphics, drawing::color_converter::average(back_segment_color(), back_color(), back_segment_opacity()));

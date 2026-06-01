@@ -481,12 +481,6 @@ drawing::size tool_bar::default_size() const noexcept {
   return native::control::default_size("toolbar");
 }
 
-xtd::uptr<xtd::object> tool_bar::clone() const {
-  auto result = xtd::new_uptr<tool_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args& e) {
   if (!can_raise_events()) return;
   auto safe_button_click = button_click;

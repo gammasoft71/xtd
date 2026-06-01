@@ -252,12 +252,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
-      
       [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       
       auto on_control_added(const control_event_args& e) -> void override;

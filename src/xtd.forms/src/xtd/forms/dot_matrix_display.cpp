@@ -343,12 +343,6 @@ xtd::drawing::size dot_matrix_display::default_size() const noexcept {
   return {50, 50};
 }
 
-xtd::uptr<xtd::object> dot_matrix_display::clone() const {
-  auto result = xtd::new_uptr<dot_matrix_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void dot_matrix_display::on_back_color_changed(const event_args& e) {
   control::on_back_color_changed(e);
   invalidate();

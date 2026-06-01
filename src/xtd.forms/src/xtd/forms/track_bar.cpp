@@ -422,12 +422,6 @@ drawing::size track_bar::default_size() const noexcept {
   return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height, size.width);
 }
 
-xtd::uptr<xtd::object> track_bar::clone() const {
-  auto result = xtd::new_uptr<track_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void track_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::track_bar::large_change(handle(), large_change());

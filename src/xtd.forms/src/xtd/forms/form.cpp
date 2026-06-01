@@ -63,7 +63,6 @@ form::form() : data_(xtd::new_sptr<data>()) {
   fore_color(application::style_sheet().is_system_style_sheet() ? system_colors::control_text() : default_fore_color());
   font(default_font());
   create_control();
-  application::top_level_forms_.add(as<control>(as<iclonable>(*this).clone()));
 }
 
 std::optional<form::ibutton_control_ref> form::accept_button() const noexcept {
@@ -642,12 +641,6 @@ forms::create_params form::create_params() const noexcept {
 
 drawing::size form::default_size() const noexcept {
   return {300, 300};
-}
-
-xtd::uptr<xtd::object> form::clone() const {
-  auto result = xtd::new_uptr<form>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
 }
 
 void form::on_activated(const event_args& e) {

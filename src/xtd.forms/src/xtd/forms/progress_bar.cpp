@@ -409,12 +409,6 @@ drawing::size progress_bar::default_size() const noexcept {
   return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height, size.width);
 }
 
-xtd::uptr<xtd::object> progress_bar::clone() const {
-  auto result = xtd::new_uptr<progress_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void progress_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::progress_bar::maximum(handle(), data_->maximum);

@@ -94,7 +94,6 @@ bool application::system_controls_ = false;
 bool application::system_font_size_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::visual_styles_ = false;
-xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> application::top_level_forms_;
 
 event<application, event_handler> application::application_exit;
 event<application, event_handler> application::enter_thread_modal;
@@ -415,7 +414,6 @@ void application::run(xtd::forms::application_context& context) {
   context.thread_exit -= application::on_app_thread_exit;
   application::message_loop_ = false;
   internal_context_.main_form(nullptr);
-  top_level_forms_.clear();
   native::application::cleanup();
 }
 

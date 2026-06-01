@@ -263,12 +263,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      [[nodiscard]] auto clone() const -> xtd::uptr<xtd::object> override;
-      
       auto on_handle_created(const event_args& e) -> void override;
       auto on_selected_value_changed(const event_args& e) -> void override;
       auto set_bounds_core(xtd::int32 x, xtd::int32 y, xtd::int32 width, xtd::int32 height, bounds_specified specified) -> void override;

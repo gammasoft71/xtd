@@ -394,12 +394,6 @@ forms::create_params numeric_up_down::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> numeric_up_down::clone() const {
-  auto result = xtd::new_uptr<numeric_up_down>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void numeric_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   native::numeric_up_down::decimal_place(handle(), data_->decimal_place);

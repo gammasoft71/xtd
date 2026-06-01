@@ -112,12 +112,6 @@ drawing::size splitter::default_size() const noexcept {
   return {3, 3};
 }
 
-xtd::uptr<xtd::object> splitter::clone() const {
-  auto result = xtd::new_uptr<splitter>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void splitter::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
 }

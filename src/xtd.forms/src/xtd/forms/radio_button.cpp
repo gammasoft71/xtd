@@ -315,12 +315,6 @@ xtd::forms::visual_styles::radio_button_state radio_button::state() const noexce
   return data_->state;
 }
 
-xtd::uptr<xtd::object> radio_button::clone() const {
-  auto result = xtd::new_uptr<radio_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size radio_button::measure_control() const noexcept {
   return button_base::measure_text() + drawing::size(24, 0);
 }

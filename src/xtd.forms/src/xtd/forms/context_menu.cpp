@@ -37,12 +37,6 @@ void context_menu::show(const xtd::forms::control& control, const xtd::drawing::
   control.show_context_menu(*this, pos);
 }
 
-xtd::uptr<xtd::object> context_menu::clone() const {
-  auto result = xtd::new_uptr<context_menu>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 intptr context_menu::create_menu_handle() {
   return native::context_menu::create();
 }

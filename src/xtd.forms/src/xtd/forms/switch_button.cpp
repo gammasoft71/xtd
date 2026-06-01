@@ -222,12 +222,6 @@ drawing::size switch_button::default_size() const noexcept {
   return {50, 25};
 }
 
-xtd::uptr<xtd::object> switch_button::clone() const {
-  auto result = xtd::new_uptr<switch_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void switch_button::on_checked_changed(const event_args& e) {
   if (!can_raise_events()) return;
   auto safe_checked_changed = checked_changed;

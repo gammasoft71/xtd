@@ -80,12 +80,6 @@ vertical_layout_panel vertical_layout_panel::create(const control& parent, const
   return result;
 }
 
-xtd::uptr<xtd::object> vertical_layout_panel::clone() const {
-  auto result = xtd::new_uptr<vertical_layout_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void vertical_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
   panel::on_control_added(e);
   control_layout_styles_.emplace_back(control_ref(const_cast<xtd::forms::control&>(e.control())), vertical_control_layout_style());

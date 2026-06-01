@@ -347,12 +347,6 @@ forms::create_params label::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> label::clone() const {
-  auto result = xtd::new_uptr<label>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size label::measure_control() const noexcept {
   return control::measure_text() + drawing::size(data_->border_style == border_style::none ? 0 : 4, data_->border_style == border_style::none ? 0 : 4);
 }

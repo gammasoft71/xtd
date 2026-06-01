@@ -7,7 +7,6 @@
 #include "shortcut.hpp"
 #include <xtd/drawing/image>
 #include <xtd/event>
-#include <xtd/iclonable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,7 +27,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
-    class forms_export_ menu_item : public xtd::forms::menu, public xtd::iclonable {
+    class forms_export_ menu_item : public xtd::forms::menu {
       struct data;
       
     public:
@@ -338,12 +337,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
-      
       intptr create_menu_handle() override;
       void destroy_menu_handle(intptr handle) override;
       

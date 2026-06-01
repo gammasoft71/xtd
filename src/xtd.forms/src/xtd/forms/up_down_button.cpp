@@ -377,12 +377,6 @@ forms::create_params up_down_button::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> up_down_button::clone() const {
-  auto result = xtd::new_uptr<up_down_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void up_down_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   native::up_down_button::maximum(handle(), data_->maximum);

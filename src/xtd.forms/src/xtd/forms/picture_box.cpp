@@ -246,12 +246,6 @@ forms::create_params picture_box::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> picture_box::clone() const {
-  auto result = xtd::new_uptr<picture_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size picture_box::measure_control() const noexcept {
   auto size = data_->image.has_value() ? data_->image->size() : drawing::size(0, 0);
   /// @todo add location

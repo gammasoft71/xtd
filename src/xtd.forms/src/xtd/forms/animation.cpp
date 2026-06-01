@@ -199,12 +199,6 @@ void animation::stop() {
   running(false);
 }
 
-xtd::uptr<xtd::object> animation::clone() const {
-  auto result = xtd::new_uptr<animation>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 void animation::on_updated(const animation_updated_event_args& e) {
   if (!can_raise_events()) return;
   auto safe_updated = updated;

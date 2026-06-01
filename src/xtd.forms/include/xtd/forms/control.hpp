@@ -38,7 +38,6 @@
 #include <xtd/any>
 #include <xtd/async_result>
 #include <xtd/optional>
-#include <xtd/iclonable>
 #include <xtd/iequatable>
 #include <xtd/isynchronize_invoke>
 #include <cstdint>
@@ -79,12 +78,12 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window, public iclonable, public icomparable<control>, public xtd::iequatable<control>, public xtd::isynchronize_invoke {
+    class forms_export_ control : public xtd::forms::component, public xtd::forms::iwin32_window, public xtd::icomparable<control>, public xtd::iequatable<control>, public xtd::isynchronize_invoke {
       struct data;
       
     protected:
       /// @cond
-      enum class state : int64 {
+      enum class state : xtd::int64 {
         empty = 0,
         creating = 0b1,
         created = 0b10,
@@ -132,10 +131,10 @@ namespace xtd {
         struct data;
       public:
         explicit async_result_invoke(const xtd::any_object& async_state);
-        xtd::any_object async_state() const noexcept override;
-        xtd::threading::wait_handle& async_wait_handle() noexcept override;
-        bool completed_synchronously() const noexcept override;
-        bool is_completed() const noexcept override;
+        [[nodiscard]] auto async_state() const noexcept -> xtd::any_object override;
+        [[nodiscard]] auto async_wait_handle() noexcept -> xtd::threading::wait_handle& override;
+        [[nodiscard]] auto completed_synchronously() const noexcept -> bool override;
+        [[nodiscard]] auto is_completed() const noexcept -> bool override;
         
         xtd::sptr<data> data_;
       };
@@ -150,13 +149,13 @@ namespace xtd {
       /// @}
       
       /// @brief Represents a collection of controls.
-      class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
+      class control_collection : public xtd::forms::layout::arranged_element_collection<xtd::forms::control_ref> {
       public:
         /// @name Public Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.
-        using base = xtd::forms::layout::arranged_element_collection<control_ref>;
+        using base = xtd::forms::layout::arranged_element_collection<xtd::forms::control_ref>;
         /// @}
         
         /// @name Public Constructors
@@ -182,79 +181,56 @@ namespace xtd {
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        value_type operator [](const xtd::string& name) const;
+        [[nodiscard]] auto operator [](const xtd::string& name) const -> value_type;
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        value_type operator [](const xtd::string& name);
+        [[nodiscard]] auto operator [](const xtd::string& name) -> value_type;
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        void add(const control_ref& value) override;
+        auto add(const control_ref& value) -> void override;
         
         template<typename control_t>
-        void add(control_t& value) {
+        auto add(control_t& value) -> void {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
           base::add(value);
         }
         
-        /// @brief Creates and inserts specified control at specified position.
-        /// @param pos The iterator before which the content will be inserted. pos may be the xtd::forms::control::control_collection::end iterator.
-        /// @param args The arguments to forward to the create method of the control
+        /// @brief Creates and adds a control to the end.
         /// @return A reference to the created control.
         /// @remarks The control will be destroyed automatically when the control no longer has a parent.
         /// @remarks For creation and insertion, this method uses the xtd::forms::control::create methods of the various controls.
         /// @par Examples
-        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
+        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
-        template<typename control_t, typename ...args_t>
-        control_t& emplace_front(args_t&& ...args) {
-          auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          auto& control_ref = *control_ptr;
-          controls_.add(std::move(control_ptr));
-          base::insert(0, control_ref);
-          return control_ref;
+        template<typename control_t>
+        control_t& add_new() {
+          auto control = xtd::new_sptr<control_t>();
+          controls_.add(control);
+          base::add(*control);
+          return *control;
         }
-        
-        /// @brief Creates and inserts specified control at specified position.
-        /// @param index The index before which the content will be inserted.
-        /// @param args The arguments to forward to the create method of the control
-        /// @return A reference to the created control.
-        /// @remarks The control will be destroyed automatically when the control no longer has a parent.
-        /// @remarks For creation and insertion, this method uses the xtd::forms::control::create methods of the various controls.
-        /// @par Examples
-        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
-        /// @include emplace.cpp
-        template<typename control_t, typename ...args_t>
-        control_t& emplace_at(xtd::usize index, args_t&& ...args) {
-          auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          auto& control_ref = *control_ptr;
-          controls_.add(std::move(control_ptr));
-          base::insert(index, control_ref);
-          return control_ref;
-        }
-        
         /// @brief Creates and adds a control to the end.
         /// @param args The arguments to forward to the create method of the control
         /// @return A reference to the created control.
         /// @remarks The control will be destroyed automatically when the control no longer has a parent.
         /// @remarks For creation and insertion, this method uses the xtd::forms::control::create methods of the various controls.
         /// @par Examples
-        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
+        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t, typename ...args_t>
-        control_t& emplace_back(args_t&& ...args) {
-          auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          auto& control_ref = *control_ptr;
-          controls_.add(std::move(control_ptr));
-          base::add(control_ref);
-          return control_ref;
+        control_t& add_new(args_t&& ...args) {
+          auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
+          controls_.add(control);
+          base::add(*control);
+          return *control;
         }
-        
+
         void insert(xtd::usize index, const control_ref& value) override;
         
         template<typename control_t>
@@ -262,6 +238,39 @@ namespace xtd {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
           base::insert(index, value);
+        }
+
+        /// @brief Creates and inserts specified control at specified position.
+        /// @param index The index before which the content will be inserted.
+        /// @param args The arguments to forward to the create method of the control
+        /// @return A reference to the created control.
+        /// @remarks The control will be destroyed automatically when the control no longer has a parent.
+        /// @remarks For creation and insertion, this method uses the xtd::forms::control::create methods of the various controls.
+        /// @par Examples
+        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
+        /// @include emplace.cpp
+        template<typename control_t>
+        control_t& insert_new(xtd::usize index) {
+          auto control = xtd::new_sptr<control_t>();
+          controls_.add(control);
+          base::insert(index, *control);
+          return *control;
+        }
+        /// @brief Creates and inserts specified control at specified position.
+        /// @param index The index before which the content will be inserted.
+        /// @param args The arguments to forward to the create method of the control
+        /// @return A reference to the created control.
+        /// @remarks The control will be destroyed automatically when the control no longer has a parent.
+        /// @remarks For creation and insertion, this method uses the xtd::forms::control::create methods of the various controls.
+        /// @par Examples
+        /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
+        /// @include emplace.cpp
+        template<typename control_t, typename ...args_t>
+        control_t& insert_new(xtd::usize index, args_t&& ...args) {
+          auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
+          controls_.add(control);
+          base::insert(index, *control);
+          return *control;
         }
         /// @}
         
@@ -1891,12 +1900,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
-      
       /// @brief Creates a handle for the control.
       /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.
       /// @par Notes to Inheritors

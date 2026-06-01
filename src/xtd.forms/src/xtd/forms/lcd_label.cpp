@@ -297,12 +297,6 @@ drawing::size lcd_label::default_size() const noexcept {
   return {100, 25};
 }
 
-xtd::uptr<xtd::object> lcd_label::clone() const {
-  auto result = xtd::new_uptr<lcd_label>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size lcd_label::measure_control() const noexcept {
   if (data_->digits.count() == 0) return {0, size().height};
   return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32>(data_->digits.count()) - digit_spacing() + 2, size().height);

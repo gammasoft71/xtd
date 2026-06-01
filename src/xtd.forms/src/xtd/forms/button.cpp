@@ -37,6 +37,13 @@ button::button(button&& rhs) : button_base(std::move(rhs)), data_ {std::move(rhs
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
 
+button& button::operator =(button&& rhs) {
+  data_ = std::move(rhs.data_);
+  data_->auto_repeat_timer.tick -= {rhs, &button::on_auto_repeat_timer_tick};
+  data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
+  return *this;
+}
+
 bool button::auto_repeat() const noexcept {
   return data_->auto_repeat;
 }
@@ -244,12 +251,6 @@ forms::create_params button::create_params() const noexcept {
 
 xtd::forms::visual_styles::push_button_state button::state() const noexcept {
   return data_->state;
-}
-
-xtd::uptr<xtd::object> button::clone() const {
-  auto result = xtd::new_uptr<button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
 }
 
 drawing::size button::measure_control() const noexcept {

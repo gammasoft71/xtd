@@ -373,12 +373,6 @@ forms::create_params toggle_button::create_params() const noexcept {
   return create_params;
 }
 
-xtd::uptr<xtd::object> toggle_button::clone() const {
-  auto result = xtd::new_uptr<toggle_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
-  return result;
-}
-
 drawing::size toggle_button::measure_control() const noexcept {
   return button_base::measure_text() + drawing::size(18, 0);
 }

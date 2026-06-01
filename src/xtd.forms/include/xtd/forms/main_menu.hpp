@@ -6,7 +6,6 @@
 #include "message.hpp"
 #include <xtd/collections/generic/list>
 #include <xtd/drawing/size>
-#include <xtd/iclonable>
 #include <memory>
 #include <vector>
 
@@ -39,7 +38,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of main_menu::create_standard_items factory.
     /// @include main_menu_create_standard_items.cpp
-    class forms_export_ main_menu : public menu, public iclonable {
+    class forms_export_ main_menu : public menu {
     public:
       /// @name Public Constructors
       
@@ -278,12 +277,6 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      /// @brief Creates a new object that is a copy of the current instance.
-      /// @return A new object that is a copy of this instance.
-      /// @par Notes to Implementers
-      /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;
-      
       intptr create_menu_handle() override;
       void destroy_menu_handle(intptr handle) override;
       void on_item_added(xtd::usize pos, menu_item_ref item) override;
