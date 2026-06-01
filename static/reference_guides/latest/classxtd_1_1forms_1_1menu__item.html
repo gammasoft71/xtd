@@ -120,10 +120,8 @@ Inheritance diagram for xtd::forms::menu_item:</div>
   <img src="classxtd_1_1forms_1_1menu__item.png" usemap="#xtd_3A_3Aforms_3A_3Amenu_5Fitem_map" alt=""/>
   <map id="xtd_3A_3Aforms_3A_3Amenu_5Fitem_map" name="xtd_3A_3Aforms_3A_3Amenu_5Fitem_map">
 <area href="classxtd_1_1forms_1_1menu.html" title="Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_do..." alt="xtd::forms::menu" shape="rect" coords="290,112,667,136"/>
-<area href="classxtd_1_1iclonable.html" title="Supports cloning, which creates a new instance of a class with the same value as an existing instance..." alt="xtd::iclonable" shape="rect" coords="967,112,1344,136"/>
 <area href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications." alt="xtd::forms::component" shape="rect" coords="0,56,377,80"/>
 <area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; menu &gt;" shape="rect" coords="580,56,957,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="967,56,1344,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,377,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="387,0,764,24"/>
 <area href="classxtd_1_1extensions_1_1equality__operators.html" alt="xtd::extensions::equality_operators&lt; menu, iequatable&lt; menu &gt; &gt;" shape="rect" coords="774,0,1151,24"/>
@@ -248,8 +246,6 @@ Public Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:aa65a51537f9ebc8140a78abb35f4851b" id="r_aa65a51537f9ebc8140a78abb35f4851b"><td class="memItemLeft"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa65a51537f9ebc8140a78abb35f4851b">clone</a> () const override</td></tr>
-<tr class="memdesc:aa65a51537f9ebc8140a78abb35f4851b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
 <tr class="memitem:a5d2477fda59877c23174fee1be05b022" id="r_a5d2477fda59877c23174fee1be05b022"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5d2477fda59877c23174fee1be05b022">create_menu_handle</a> () override</td></tr>
 <tr class="memdesc:a5d2477fda59877c23174fee1be05b022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new handle to the Menu.  <br /></td></tr>
 <tr class="memitem:a511c6d266d6a1ff1f4f742def33b5e22" id="r_a511c6d266d6a1ff1f4f742def33b5e22"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a511c6d266d6a1ff1f4f742def33b5e22">destroy_menu_handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> handle) override</td></tr>
@@ -1781,37 +1777,6 @@ Setting the text parameter to "-" causes your menu item to be displayed as a sep
 <dl class="section remark"><dt>Remarks</dt><dd>The to_string method returns a string that includes the type and the number of items in the menu_items property of the control. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1menu.html#a63e567f0be2b3fb287ebcaff6e1d6ee5">xtd::forms::menu</a>.</p>
-
-</div>
-</div>
-<a id="aa65a51537f9ebc8140a78abb35f4851b" name="aa65a51537f9ebc8140a78abb35f4851b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa65a51537f9ebc8140a78abb35f4851b">&#9670;&#160;</a></span>clone()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a>&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::menu_item::clone </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a new object that is a copy of the current instance. </p>
-<dl class="section return"><dt>Returns</dt><dd>A new object that is a copy of this instance. </dd></dl>
-<dl class="section user"><dt>Notes to Implementers</dt><dd>All controls must be override the clone method. </dd></dl>
-
-<p>Implements <a class="el" href="classxtd_1_1iclonable.html#a2e4820ac1a74316a4002b618940f80ac">xtd::iclonable</a>.</p>
 
 </div>
 </div>
