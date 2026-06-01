@@ -357,6 +357,8 @@ namespace xtd {
       /// @cond
       control(control&& rhs) = default;
       control& operator = (control&&) = default;
+      control(const control& rhs) = delete;
+      control& operator = (const control&) = delete;
       ~control();
       /// @endcond
       
