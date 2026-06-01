@@ -211,8 +211,11 @@ namespace xtd {
         template<typename control_t>
         control_t& add_new() {
           auto control = xtd::new_sptr<control_t>();
-          controls_.add(control);
-          base::add(*control);
+          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
+          else {
+            controls_.add(control);
+            base::add(*control);
+          }
           return *control;
         }
         /// @brief Creates and adds a control to the end.
@@ -226,8 +229,11 @@ namespace xtd {
         template<typename control_t, typename ...args_t>
         control_t& add_new(args_t&& ...args) {
           auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          controls_.add(control);
-          base::add(*control);
+          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
+          else {
+            controls_.add(control);
+            base::add(*control);
+          }
           return *control;
         }
 
@@ -252,8 +258,11 @@ namespace xtd {
         template<typename control_t>
         control_t& insert_new(xtd::usize index) {
           auto control = xtd::new_sptr<control_t>();
-          controls_.add(control);
-          base::insert(index, *control);
+          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
+          else {
+            controls_.add(control);
+            base::insert(index, *control);
+          }
           return *control;
         }
         /// @brief Creates and inserts specified control at specified position.
@@ -268,8 +277,11 @@ namespace xtd {
         template<typename control_t, typename ...args_t>
         control_t& insert_new(xtd::usize index, args_t&& ...args) {
           auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          controls_.add(control);
-          base::insert(index, *control);
+          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
+          else {
+            controls_.add(control);
+            base::insert(index, *control);
+          }
           return *control;
         }
         /// @}
@@ -343,9 +355,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      control(control&& rhs);
-      control(const control&) = default;
-      control& operator = (const control&) = default;
+      control(control&& rhs) = default;
+      control& operator = (control&&) = default;
       ~control();
       /// @endcond
       

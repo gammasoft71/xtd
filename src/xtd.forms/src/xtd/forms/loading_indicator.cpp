@@ -43,11 +43,6 @@ loading_indicator::loading_indicator() : data_(xtd::new_sptr<data>()) {
   data_->timer.tick += {*this, &loading_indicator::on_timer_tick};
 }
 
-loading_indicator::loading_indicator(loading_indicator&& rhs) : control(std::move(rhs)), data_ {std::move(rhs.data_)} {
-  data_->timer.tick -= {rhs, &loading_indicator::on_timer_tick};
-  data_->timer.tick += {*this, &loading_indicator::on_timer_tick};
-}
-
 control& loading_indicator::control_appearance(forms::control_appearance value) {
   control::control_appearance(value);
   if (value == forms::control_appearance::system && data_->loading_indicator_style != loading_indicator_style::system)

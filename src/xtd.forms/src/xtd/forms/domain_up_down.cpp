@@ -66,15 +66,6 @@ domain_up_down::domain_up_down() : data_(xtd::new_sptr<data>()) {
   data_->items.item_updated += {*this, &domain_up_down::on_items_item_updated};
 }
 
-domain_up_down::domain_up_down(domain_up_down&& rhs) : up_down_base(std::move(rhs)), data_ {std::move(rhs.data_)} {
-  data_->items.item_added -= {rhs, &domain_up_down::on_items_item_added};
-  data_->items.item_removed -= {rhs, &domain_up_down::on_items_item_removed};
-  data_->items.item_updated -= {rhs, &domain_up_down::on_items_item_updated};
-  data_->items.item_added += {*this, &domain_up_down::on_items_item_added};
-  data_->items.item_removed += {*this, &domain_up_down::on_items_item_removed};
-  data_->items.item_updated += {*this, &domain_up_down::on_items_item_updated};
-}
-
 domain_up_down::object_collection& domain_up_down::items() noexcept {
   return data_->items;
 }

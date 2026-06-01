@@ -44,12 +44,6 @@ namespace xtd {
       combo_box();
       /// @}
       
-      /// @cond
-      combo_box(combo_box&& rhs);
-      combo_box(const combo_box&) = default;
-      combo_box& operator =(const combo_box&) = default;
-      /// @endcond
-      
       /// @name Porperties
       
       /// @{

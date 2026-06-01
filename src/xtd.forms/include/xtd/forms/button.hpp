@@ -58,13 +58,6 @@ namespace xtd {
       button();
       /// @}
       
-      /// @cond
-      //button(button&) = default;
-      //button& operator =(const button&) = default;
-      button(button&& rhs);
-      button& operator =(button&& rhs);
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{

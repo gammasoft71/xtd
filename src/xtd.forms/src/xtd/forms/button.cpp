@@ -32,18 +32,6 @@ button::button() : data_(xtd::new_sptr<data>()) {
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
 
-button::button(button&& rhs) : button_base(std::move(rhs)), data_ {std::move(rhs.data_)} {
-  data_->auto_repeat_timer.tick -= {rhs, &button::on_auto_repeat_timer_tick};
-  data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
-}
-
-button& button::operator =(button&& rhs) {
-  data_ = std::move(rhs.data_);
-  data_->auto_repeat_timer.tick -= {rhs, &button::on_auto_repeat_timer_tick};
-  data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
-  return *this;
-}
-
 bool button::auto_repeat() const noexcept {
   return data_->auto_repeat;
 }

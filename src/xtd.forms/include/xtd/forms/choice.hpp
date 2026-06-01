@@ -45,12 +45,6 @@ namespace xtd {
       choice();
       /// @}
       
-      /// @cond
-      choice(choice&& rhs);
-      choice(const choice&) = default;
-      choice& operator =(const choice&) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{

@@ -39,12 +39,6 @@ namespace xtd {
       loading_indicator();
       /// @}
       
-      /// @cond
-      loading_indicator(loading_indicator&& rhs);
-      loading_indicator(const loading_indicator&) = default;
-      loading_indicator& operator =(const loading_indicator&) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{

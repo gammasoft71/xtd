@@ -72,12 +72,6 @@ namespace xtd {
       status_bar();
       /// @}
       
-      /// @cond
-      status_bar(status_bar&& rhs);
-      status_bar(const status_bar&) = default;
-      status_bar& operator =(const status_bar&) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{

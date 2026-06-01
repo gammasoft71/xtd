@@ -35,15 +35,6 @@ combo_box::combo_box() : data_(xtd::new_sptr<data>()) {
   data_->items.item_updated += {*this, &combo_box::on_items_item_updated};
 }
 
-combo_box::combo_box(combo_box&& rhs) : list_control(std::move(rhs)), data_ {std::move(rhs.data_)} {
-  data_->items.item_added -= {rhs, &combo_box::on_items_item_added};
-  data_->items.item_removed -= {rhs, &combo_box::on_items_item_removed};
-  data_->items.item_updated -= {rhs, &combo_box::on_items_item_updated};
-  data_->items.item_added += {*this, &combo_box::on_items_item_added};
-  data_->items.item_removed += {*this, &combo_box::on_items_item_removed};
-  data_->items.item_updated += {*this, &combo_box::on_items_item_updated};
-}
-
 bool combo_box::dropped_down() const noexcept {
   return data_->drop_down;
 }

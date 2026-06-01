@@ -51,12 +51,6 @@ namespace xtd {
       list_box();
       /// @}
       
-      /// @cond
-      list_box(list_box&& rhs);
-      list_box(const list_box&) = default;
-      list_box& operator =(const list_box&) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{

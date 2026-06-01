@@ -73,15 +73,6 @@ status_bar::status_bar() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::user_paint | control_styles::selectable, false);
 }
 
-status_bar::status_bar(status_bar&& rhs) : control(std::move(rhs)), data_ {std::move(rhs.data_)} {
-  data_->panels.item_added -= {rhs, &status_bar::on_item_added};
-  data_->panels.item_updated -= {rhs, &status_bar::on_item_updated};
-  data_->panels.item_removed -= {rhs, &status_bar::on_item_removed};
-  data_->panels.item_added += {*this, &status_bar::on_item_added};
-  data_->panels.item_updated += {*this, &status_bar::on_item_updated};
-  data_->panels.item_removed += {*this, &status_bar::on_item_removed};
-}
-
 dock_style status_bar::dock() const noexcept {
   //if (is_system_status_bar()) return data_->non_system_dock;
   return control::dock();

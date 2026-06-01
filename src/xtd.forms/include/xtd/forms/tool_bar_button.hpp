@@ -59,6 +59,7 @@ namespace xtd {
       tool_bar_button(const tool_bar_button&) noexcept = default;
       tool_bar_button(tool_bar_button&&) noexcept = default;
       tool_bar_button& operator =(const tool_bar_button&) noexcept = default;
+      tool_bar_button& operator =(tool_bar_button&&) noexcept = default;
       /// @endcond
       
       /// @name Public Properties

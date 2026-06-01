@@ -21,11 +21,6 @@ animation::animation() : data_(xtd::new_sptr<data>()) {
   data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
 }
 
-animation::animation(animation&& rhs) : control(std::move(rhs)), data_ {std::move(rhs.data_)} {
-  data_->frames_timer.tick -= {rhs, &animation::on_frames_timer_tick};
-  data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
-}
-
 drawing::size animation::default_size() const noexcept {
   return {200, 100};
 }

@@ -69,6 +69,7 @@ namespace xtd {
       status_bar_panel(const status_bar_panel&) noexcept = default;
       status_bar_panel(status_bar_panel&&) noexcept = default;
       status_bar_panel& operator =(const status_bar_panel&) noexcept = default;
+      status_bar_panel& operator =(status_bar_panel&&) noexcept = default;
       /// @endcond
       
       /// @name Public Properties
