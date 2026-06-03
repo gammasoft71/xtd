@@ -37,6 +37,8 @@ namespace {
 }
 
 struct tool_bar::data {
+  data(tool_bar& control) : control {control} {}
+  tool_bar& control;
   xtd::forms::tool_bar_appearance appearance = xtd::forms::tool_bar_appearance::normal;
   forms::border_sides border_sides = forms::border_sides::all;
   std::optional<xtd::forms::border_style> border_style;
@@ -55,13 +57,31 @@ struct tool_bar::data {
   list<intptr> system_tool_bar_button_handles;
   xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
   bool wrappable = false;
+
+  auto on_item_added(xtd::usize pos, tool_bar_button_ref item) -> void {
+    auto pcsg = parent_client_size_guard {control}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    item.get().data_->parent = &control;
+    control.post_recreate_handle();
+  }
+  
+  auto on_item_updated(xtd::usize pos, tool_bar_button_ref item) -> void {
+    auto pcsg = parent_client_size_guard {control}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    control.post_recreate_handle();
+  }
+  
+  auto on_item_removed(xtd::usize pos, tool_bar_button_ref item) -> void {
+    auto pcsg = parent_client_size_guard {control}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    item.get().data_->parent = &control;
+    control.post_recreate_handle();
+  }
 };
 
-tool_bar::tool_bar() : data_(xtd::new_sptr<data>()) {
-  data_->buttons.item_added += {*this, &tool_bar::on_item_added};
-  data_->buttons.item_updated += {*this, &tool_bar::on_item_updated};
-  data_->buttons.item_removed += {*this, &tool_bar::on_item_removed};
-  
+tool_bar::tool_bar() {
+  data_ = xtd::new_sptr<data>(*this);
+  data_->buttons.item_added += {*data_, &tool_bar::data::on_item_added};
+  data_->buttons.item_updated += {*data_, &tool_bar::data::on_item_updated};
+  data_->buttons.item_removed += {*data_, &tool_bar::data::on_item_removed};
+
   if (environment::os_version().is_windows_platform()) data_->image_list.image_size(drawing::size {16, 16});
   else if (environment::os_version().is_macos_platform()) data_->image_list.image_size(drawing::size {32, 32});
   else data_->image_list.image_size(drawing::size {24, 24});
@@ -622,23 +642,6 @@ void tool_bar::fill() {
   }
   
   resume_layout();
-}
-
-void tool_bar::on_item_added(xtd::usize pos, tool_bar_button_ref item) {
-  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  item.get().data_->parent = this;
-  post_recreate_handle();
-}
-
-void tool_bar::on_item_updated(xtd::usize pos, tool_bar_button_ref item) {
-  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  post_recreate_handle();
-}
-
-void tool_bar::on_item_removed(xtd::usize pos, tool_bar_button_ref item) {
-  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  item.get().data_->parent = nullptr;
-  post_recreate_handle();
 }
 
 void tool_bar::wnd_proc(message& message) {
