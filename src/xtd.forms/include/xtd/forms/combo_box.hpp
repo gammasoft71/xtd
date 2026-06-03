@@ -314,9 +314,6 @@ namespace xtd {
       /// @}
       
     private:
-      auto on_items_item_added(xtd::usize pos, const item& item) -> void;
-      auto on_items_item_removed(xtd::usize pos, const item& item) -> void;
-      auto on_items_item_updated(xtd::usize pos, const item& item) -> void;
       auto wm_command_control(message& message) -> void;
       auto wm_command_control_selchange(message& message) -> void;
       auto wm_mouse_double_click(message& message) -> void;

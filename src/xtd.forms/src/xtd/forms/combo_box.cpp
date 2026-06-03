@@ -15,6 +15,8 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct combo_box::data {
+  data(combo_box& control) : control {control} {}
+  combo_box& control;
   bool drop_down = false;
   int32 drop_down_height = 0;
   combo_box_style drop_down_style = combo_box_style::drop_down;
@@ -23,16 +25,38 @@ struct combo_box::data {
   item selected_item;
   bool sorted = false;
   //bool user_set_size = false;
+  
+  auto on_items_item_added(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::combo_box::insert_item(control.handle(), pos, item.value());
+    auto selected_item = combo_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected_item = items[control.selected_index()];
+    control.selected_item(selected_item);
+  }
+  
+  auto on_items_item_removed(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::combo_box::delete_item(control.handle(), pos);
+    auto selected_item = combo_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected_item = items[control.selected_index()];
+    if (control.selected_index() == pos) control.selected_index(npos);
+  }
+  
+  auto on_items_item_updated(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::combo_box::update_item(control.handle(), pos, item.value());
+    auto selected_item = combo_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected_item = items[control.selected_index()];
+    control.selected_item(selected_item);
+  }
 };
 
-combo_box::combo_box() : data_(xtd::new_sptr<data>()) {
+combo_box::combo_box() {
+  data_ = xtd::new_sptr<data>(*this);
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
   
-  data_->items.item_added += {*this, &combo_box::on_items_item_added};
-  data_->items.item_removed += {*this, &combo_box::on_items_item_removed};
-  data_->items.item_updated += {*this, &combo_box::on_items_item_updated};
+  data_->items.item_added += {*data_, &combo_box::data::on_items_item_added};
+  data_->items.item_removed += {*data_, &combo_box::data::on_items_item_removed};
+  data_->items.item_updated += {*data_, &combo_box::data::on_items_item_updated};
 }
 
 bool combo_box::dropped_down() const noexcept {
@@ -368,7 +392,7 @@ void combo_box::on_handle_created(const event_args& e) {
   data_->drop_down_height = static_cast<int32>(font().get_height()) * 9;
   if (environment::os_version().is_windows_platform() && data_->drop_down_style == combo_box_style::simple && size().height == default_size().height && size().height < data_->drop_down_height)
     size({size().width, data_->drop_down_height});
-    
+  
   data_->items.sorted(data_->sorted);
   for (xtd::usize index = 0; index < data_->items.count(); ++index)
     native::combo_box::insert_item(handle(), index, data_->items[index].value());
@@ -380,27 +404,6 @@ void combo_box::on_selected_value_changed(const event_args& e) {
   list_control::text(data_->selected_item.value());
   list_control::on_selected_value_changed(e);
 }
-void combo_box::on_items_item_added(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
-  auto selected_item = combo_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
-}
-
-void combo_box::on_items_item_removed(xtd::usize pos, const item& item)  {
-  if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
-  auto selected_item = combo_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected_item = data_->items[selected_index()];
-  if (selected_index() == pos) selected_index(npos);
-}
-
-void combo_box::on_items_item_updated(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
-  auto selected_item = combo_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
-}
-
 
 void combo_box::wnd_proc(message& message) {
   switch (message.msg) {
