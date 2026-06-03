@@ -242,7 +242,6 @@ namespace xtd {
       
     private:
       auto auto_repeat_perform_click() -> void;
-      auto on_auto_repeat_timer_tick(object& sender, const event_args& e) -> void;
       
       xtd::sptr<data> data_;
     };

@@ -18,18 +18,30 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct button::data {
+  data(button& control) : control(control) {}
   bool auto_repeat = false;
   bool auto_repeat_click = false;
   timer auto_repeat_timer;
   int32 auto_repeat_delay = 300;
   int32 auto_repeat_interval = 100;
+  button& control;
   forms::dialog_result dialog_result = forms::dialog_result::none;
   xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
+  
+  auto on_auto_repeat_timer_tick(object& sender, const event_args& e) -> void {
+    auto_repeat_timer.enabled(false);
+    if (control.enabled()) {
+      control.auto_repeat_perform_click();
+      auto_repeat_timer.interval_milliseconds(auto_repeat_interval);
+      auto_repeat_timer.enabled(auto_repeat);
+    }
+  }
 };
 
-button::button() : data_(xtd::new_sptr<data>()) {
+button::button() {
+  data_ = xtd::new_sptr<data>(*this);
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
-  data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
+  data_->auto_repeat_timer.tick += {*data_, &button::data::on_auto_repeat_timer_tick};
 }
 
 bool button::auto_repeat() const noexcept {
@@ -318,13 +330,4 @@ void button::auto_repeat_perform_click() {
   data_->auto_repeat_click = true;
   perform_click();
   data_->auto_repeat_click = false;
-}
-
-void button::on_auto_repeat_timer_tick(object& sender, const event_args& e) {
-  data_->auto_repeat_timer.enabled(false);
-  if (enabled()) {
-    auto_repeat_perform_click();
-    data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
-    data_->auto_repeat_timer.enabled(data_->auto_repeat);
-  }
 }
