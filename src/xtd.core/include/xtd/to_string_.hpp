@@ -17,7 +17,7 @@ template<typename range_t>
 [[nodiscard]] auto __xtd_range_to_string(range_t&& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
 
 template<typename value_t>
-[[nodiscard]] inline auto xtd::to_string(value_t&& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+[[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   if constexpr(std::is_polymorphic_v<value_t>) return __to_string_polymorphic(value, fmt, loc);
   else if constexpr(std::is_enum_v<value_t>) return __enum_formatter<char>(fmt, value, loc);
   #if defined(__xtd__cpp_lib_ranges)
@@ -397,6 +397,11 @@ template<typename type_t>
   std::map<type_t, xtd::string, std::greater<type_t>> values;
   for (const auto& item : il) values[item.first] = item.second;
   return to_string(value, values);
+}
+
+template<>
+inline auto xtd::to_string(const std::filesystem::path& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+  return to_string(value.string(), fmt, loc);
 }
 
 #if defined(__xtd__cpp_lib_ranges)

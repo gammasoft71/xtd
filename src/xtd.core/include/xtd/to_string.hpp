@@ -25,6 +25,7 @@
 #include "register_any_stringer.hpp"
 #include "types.hpp"
 #include "string.hpp"
+#include <filesystem>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,7 +40,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
-  inline auto to_string(value_t&& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -470,6 +471,9 @@ namespace xtd {
   
   auto to_string(const std::locale& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
+  template<>
+  inline auto to_string(const std::filesystem::path& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+
   #if defined(__xtd__cpp_lib_ranges)
   //template <std::ranges::range range_t>
   //inline auto to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
