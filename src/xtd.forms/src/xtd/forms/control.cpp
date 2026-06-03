@@ -127,26 +127,28 @@ void control::control_collection::add(const control_ref& value) {
 }
 
 struct control::data {
+  data(forms::control& control) : control {control} {}
   anchor_styles anchor = anchor_styles::top | anchor_styles::left;
   forms::padding anchoring;
   drawing::point auto_scroll_point;
   forms::auto_size_mode auto_size_mode = forms::auto_size_mode::grow_and_shrink;
-  std::optional < drawing::color > back_color;
+  std::optional<drawing::color> back_color;
   xtd::drawing::image background_image = xtd::drawing::image::empty;
   xtd::forms::image_layout background_image_layout = xtd::forms::image_layout::tile;
   bool can_focus = true;
   bool can_raise_events = true;
+  forms::control& control;
   drawing::rectangle client_rectangle;
   drawing::size client_size;
   forms::control_appearance control_appearance = forms::control_appearance::standard;
   xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
   control_collection controls;
-  std::optional < context_menu_ref > context_menu;
-  std::optional < forms::cursor > cursor;
+  std::optional<context_menu_ref> context_menu;
+  std::optional<forms::cursor> cursor;
   dock_style dock = dock_style::none;
   bool focused = false;
-  std::optional < drawing::color > fore_color;
-  std::optional < drawing::font > font;
+  std::optional<drawing::color> fore_color;
+  std::optional<drawing::font> font;
   intptr handle = 0;
   uint32 id = 0;
   drawing::point location;
@@ -160,10 +162,10 @@ struct control::data {
   bool mouse_in = false;
   xtd::string name;
   intptr parent = 0;
-  std::queue < message > post_messages;
+  std::queue<message> post_messages;
   bool recreate_handle_posted = false;
-  std::optional < forms::right_to_left > right_to_left;
-  std::optional < drawing::size > size;
+  std::optional<forms::right_to_left> right_to_left;
+  std::optional<drawing::size> size;
   control::state state = control::state::empty;
   control_styles style = control_styles::none;
   style_sheets::style_sheet style_sheet;
@@ -171,9 +173,22 @@ struct control::data {
   object sync_root;
   any_object tag;
   string text;
+  
+  void on_controls_item_added(xtd::usize, control_ref item) {
+    control.on_control_added(control_event_args(item.get()));
+    item.get().data_->parent = handle;
+    if (handle) item.get().create_control();
+  }
+  
+  void on_controls_item_removed(xtd::usize, control_ref item) {
+    control.on_control_removed(control_event_args(item.get()));
+    item.get().data_->parent = 0;
+    item.get().destroy_control();
+  }
 };
 
-control::control() : data_(xtd::new_sptr < data > ()) {
+control::control()  {
+  data_ = xtd::new_sptr<data>(*this);
   static auto id = 1u;
   data_->id = id++;
   if (application::system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
@@ -182,9 +197,9 @@ control::control() : data_(xtd::new_sptr < data > ()) {
   set_state(state::visible, true);
   set_state(state::tab_stop, true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
-  
-  data_->controls.item_added += {*this, &control::on_controls_item_added};
-  data_->controls.item_removed += {*this, &control::on_controls_item_removed};
+
+  data_->controls.item_added += {*data_, &control::data::on_controls_item_added};
+  data_->controls.item_removed += {*data_, &control::data::on_controls_item_removed};
 }
 
 control::control(const xtd::string& text) : control() {
@@ -2097,19 +2112,6 @@ void control::do_layout_with_auto_size_mode() {
 
 bool control::is_trace_form_or_control(const string& name) {
   return name == __xtd_forms_trace_form_base_default_form_name__() || name == __xtd_forms_trace_form_base_default_text_box_name__();
-}
-
-void control::on_controls_item_added(xtd::usize, control_ref item) {
-  on_control_added(control_event_args(item.get()));
-  item.get().data_->parent = data_->handle;
-  if (data_->handle)
-    item.get().create_control();
-}
-
-void control::on_controls_item_removed(xtd::usize, control_ref item) {
-  on_control_removed(control_event_args(item.get()));
-  item.get().data_->parent = 0;
-  item.get().destroy_control();
 }
 
 void control::on_parent_size_changed(object& sender, const event_args& e) {

@@ -209,15 +209,7 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t>
-        control_t& add_new() {
-          auto control = xtd::new_sptr<control_t>();
-          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
-          else {
-            controls_.add(control);
-            base::add(*control);
-          }
-          return *control;
-        }
+        control_t& add_new() {return insert_new<control_t>(count());}
         /// @brief Creates and adds a control to the end.
         /// @param args The arguments to forward to the create method of the control
         /// @return A reference to the created control.
@@ -227,15 +219,7 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t, typename ...args_t>
-        control_t& add_new(args_t&& ...args) {
-          auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
-          else {
-            controls_.add(control);
-            base::add(*control);
-          }
-          return *control;
-        }
+        control_t& add_new(args_t&& ...args) {return insert_new<control_t>(count(), std::forward<args_t>(args)...);}
 
         void insert(xtd::usize index, const control_ref& value) override;
         
@@ -258,11 +242,8 @@ namespace xtd {
         template<typename control_t>
         control_t& insert_new(xtd::usize index) {
           auto control = xtd::new_sptr<control_t>();
-          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
-          else {
-            controls_.add(control);
-            base::insert(index, *control);
-          }
+          controls_.add(control);
+          insert(index, *control);
           return *control;
         }
         /// @brief Creates and inserts specified control at specified position.
@@ -277,11 +258,9 @@ namespace xtd {
         template<typename control_t, typename ...args_t>
         control_t& insert_new(xtd::usize index, args_t&& ...args) {
           auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
-          if (control->parent()) control->parent().value().get().controls().controls_.add(control);
-          else {
-            controls_.add(control);
-            base::insert(index, *control);
-          }
+          if (control->parent()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          controls_.add(control);
+          insert(index, *control);
           return *control;
         }
         /// @}
@@ -2234,8 +2213,6 @@ namespace xtd {
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
       static bool is_trace_form_or_control(const string& name);
-      void on_controls_item_added(xtd::usize, control_ref item);
-      void on_controls_item_removed(xtd::usize, control_ref item);
       void on_parent_size_changed(object& sender, const event_args& e);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr handle, message& message);
