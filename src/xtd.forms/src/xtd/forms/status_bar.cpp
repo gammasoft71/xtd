@@ -38,6 +38,8 @@ namespace {
 }
 
 struct status_bar::data {
+  data(status_bar& control) : control {control} {}
+  status_bar& control;
   status_bar_panel_collection panels;
   bool is_system_status_bar = false;
   dock_style non_system_dock = dock_style::none;
@@ -49,12 +51,35 @@ struct status_bar::data {
   list<sptr<status_bar::status_bar_panel_control>> spring_panels;
   list<sptr<status_bar::status_bar_panel_control>> status_bar_panels;
   list<intptr> system_status_bar_panel_handles;
+
+  auto on_item_added(xtd::usize pos, status_bar_panel_ref item) -> void {
+    auto pcsg = parent_client_size_guard {control}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    item.get().data_->parent = &control;
+    control.post_recreate_handle();
+  }
+  
+  auto on_item_updated(xtd::usize pos, status_bar_panel_ref item) -> void {
+    auto pcsg = parent_client_size_guard {control}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    control.post_recreate_handle();
+  }
+  
+  auto on_item_removed(xtd::usize pos, status_bar_panel_ref item) -> void {
+    auto pcsg = parent_client_size_guard {control}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    item.get().data_->parent = nullptr;
+    control.post_recreate_handle();
+  }
+
+  auto on_main_panel_paint(object& sender, xtd::forms::paint_event_args& e) -> void {
+    auto style = control.style_sheet() != style_sheets::style_sheet::empty ? control.style_sheet() : style_sheets::style_sheet::current_style_sheet();
+    if (control.control_appearance() == forms::control_appearance::standard && !show_panels)
+      status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), control.text(), control.fore_color() != control.default_fore_color() ? std::optional<drawing::color> {control.fore_color()} : std::nullopt, control.font());
+  }
 };
 
-status_bar::status_bar() : data_(xtd::new_sptr<data>()) {
+status_bar::status_bar() {
+  data_ = xtd::new_sptr<data>(*this);
   data_->main_panel.parent(*this);
   data_->main_panel.dock(dock_style::fill);
-  data_->main_panel.paint += {*this, &status_bar::on_main_panel_paint};
   
   data_->sizing_grip_control = xtd::new_sptr<sizing_grip_control>();
   data_->sizing_grip_control->cursor(cursors::from_name(native::status_bar::sizing_grip_cursor_name()));
@@ -63,9 +88,10 @@ status_bar::status_bar() : data_(xtd::new_sptr<data>()) {
   data_->sizing_grip_control->visible(data_->sizing_grip && native::status_bar::sizing_grip());
   data_->sizing_grip_control->size({16, 16});
   
-  data_->panels.item_added += {*this, &status_bar::on_item_added};
-  data_->panels.item_updated += {*this, &status_bar::on_item_updated};
-  data_->panels.item_removed += {*this, &status_bar::on_item_removed};
+  data_->main_panel.paint += {*data_, &status_bar::data::on_main_panel_paint};
+  data_->panels.item_added += {*data_, &status_bar::data::on_item_added};
+  data_->panels.item_updated += {*data_, &status_bar::data::on_item_updated};
+  data_->panels.item_removed += {*data_, &status_bar::data::on_item_removed};
   
   dock(dock_style::bottom);
   padding(forms::padding {0, 1, 0, 0});
@@ -340,12 +366,6 @@ void status_bar::on_paint(xtd::forms::paint_event_args& e) {
     status_bar_renderer::draw_status_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, std::nullopt, xtd::forms::border_sides::all);
 }
 
-void status_bar::on_main_panel_paint(object& sender, xtd::forms::paint_event_args& e) {
-  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard && !data_->show_panels)
-    status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), text(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font());
-}
-
 void status_bar::on_resize(const event_args& e) {
   control::on_resize(e);
   resize_spring_panels();
@@ -459,23 +479,6 @@ void status_bar::fill() {
   
   resume_layout();
    */
-}
-
-void status_bar::on_item_added(xtd::usize pos, status_bar_panel_ref item) {
-  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  item.get().data_->parent = this;
-  post_recreate_handle();
-}
-
-void status_bar::on_item_updated(xtd::usize pos, status_bar_panel_ref item) {
-  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  post_recreate_handle();
-}
-
-void status_bar::on_item_removed(xtd::usize pos, status_bar_panel_ref item) {
-  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  item.get().data_->parent = nullptr;
-  post_recreate_handle();
 }
 
 void status_bar::wnd_proc(message& message) {
