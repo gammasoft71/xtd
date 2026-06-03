@@ -29,18 +29,26 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct loading_indicator::data {
-  bool running = false;
+  data(loading_indicator& control) : control {control} {}
+  loading_indicator& control;
   int32 interval = 150;
-  xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
-  xtd::forms::timer timer;
   xtd::sptr<xtd::forms::loading_indicator_animation> loading_indicator_animation;
+  xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
+  bool running = false;
+  xtd::forms::timer timer;
+
+  auto on_timer_tick(object& timer, const xtd::event_args& e) -> void {
+    if (loading_indicator_style != xtd::forms::loading_indicator_style::system) loading_indicator_animation->on_timer();
+    if (control.control_appearance() == forms::control_appearance::standard) control.invalidate();
+  }
 };
 
-loading_indicator::loading_indicator() : data_(xtd::new_sptr<data>()) {
+loading_indicator::loading_indicator() {
+  data_ = xtd::new_sptr<data>(*this);
   if (control_appearance() == forms::control_appearance::system) data_->loading_indicator_style = loading_indicator_style::system;
   set_can_focus(false);
   data_->timer.interval_milliseconds(data_->interval);
-  data_->timer.tick += {*this, &loading_indicator::on_timer_tick};
+  data_->timer.tick += {*data_, &loading_indicator::data::on_timer_tick};
 }
 
 control& loading_indicator::control_appearance(forms::control_appearance value) {
@@ -176,11 +184,6 @@ void loading_indicator::on_handle_created(const event_args& e) {
 void loading_indicator::on_paint(paint_event_args& e) {
   if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_paint(e.graphics(), e.clip_rectangle(), fore_color(), enabled());
   control::on_paint(e);
-}
-
-void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_timer();
-  if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
 
 void loading_indicator::start() {

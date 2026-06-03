@@ -134,8 +134,6 @@ namespace xtd {
       /// @}
       
     private:
-      void on_timer_tick(object& timer, const xtd::event_args& e);
-      
       xtd::sptr<data> data_;
     };
   }
