@@ -17,16 +17,33 @@ namespace {
 };
 
 struct link_label::data {
-  bool mouse_hover = false;
+  data(link_label& control) : control {control} {}
   std::optional<xtd::drawing::color> active_link_color;
+  link_label& control;
   std::optional<xtd::drawing::color> disabled_link_color;
   xtd::forms::link_area link_area;
   xtd::forms::link_behavior link_behavior = xtd::forms::link_behavior::system_default;
   std::optional<xtd::drawing::color> link_color;
   link_collection links;
+  bool mouse_hover = false;
   xtd::forms::cursor original_cursor;
   std::optional<xtd::forms::cursor> override_cursor;
   std::optional<xtd::drawing::color> visited_link_color;
+
+  auto on_links_link_added(xtd::usize pos, const link& link) -> void {
+    if (links.count() == 2 && links[0].start() == 0 && links[0].length() == control.text().length())
+      links.remove_at(0);
+    //control.tab_stop(true);
+    control.invalidate();
+  }
+  
+  auto on_links_link_removed(xtd::usize pos, const link& item) -> void {
+    control.invalidate();
+  }
+  
+  auto on_links_link_updated(xtd::usize pos, const link& link) -> void {
+    control.invalidate();
+  }
 };
 
 link_label::link_collection::link_collection(const link_label::link_collection::base& collection) : link_label::link_collection::base(collection) {}
@@ -50,12 +67,14 @@ link_label::link_collection::reference link_label::link_collection::operator [](
   return link_empty;
 }
 
-link_label::link_label() : data_(xtd::new_sptr<data>()) {
+link_label::link_label() {
+  data_ = xtd::new_sptr<data>(*this);
   double_buffered(true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
-  data_->links.item_added += {*this, &link_label::on_links_link_added};
-  data_->links.item_removed += {*this, &link_label::on_links_link_removed};
-  data_->links.item_updated += {*this, &link_label::on_links_link_updated};
+
+  data_->links.item_added += {*data_, &link_label::data::on_links_link_added};
+  data_->links.item_removed += {*data_, &link_label::data::on_links_link_removed};
+  data_->links.item_updated += {*data_, &link_label::data::on_links_link_updated};
 }
 
 xtd::drawing::color link_label::active_link_color() const noexcept {
@@ -540,19 +559,4 @@ array<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects
 
 xtd::drawing::font link_label::link_font() const noexcept {
   return {font(), xtd::drawing::font_style::underline};
-}
-
-void link_label::on_links_link_added(xtd::usize pos, const link& link) {
-  if (data_->links.count() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
-    data_->links.remove_at(0);
-  //tab_stop(true);
-  invalidate();
-}
-
-void link_label::on_links_link_removed(xtd::usize pos, const link& item) {
-  invalidate();
-}
-
-void link_label::on_links_link_updated(xtd::usize pos, const link& link) {
-  invalidate();
 }

@@ -403,9 +403,6 @@ namespace xtd {
       xtd::drawing::point get_text_location(xtd::usize line) const noexcept;
       xtd::array<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const noexcept;
       xtd::drawing::font link_font() const noexcept;
-      void on_links_link_added(xtd::usize pos, const link& link);
-      void on_links_link_removed(xtd::usize pos, const link& link);
-      void on_links_link_updated(xtd::usize pos, const link& link);
       
       xtd::sptr<data> data_;
     };
