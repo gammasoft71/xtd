@@ -19,21 +19,44 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct list_box::data {
+  data(list_box& control) : control {control} {}
   forms::border_sides border_sides = forms::border_sides::all;
   std::optional<forms::border_style> border_style;
+  list_box& control;
   object_collection items;
   item selected_item;
   forms::selection_mode selection_mode = forms::selection_mode::one;
   bool sorted = false;
+
+  auto on_items_item_added(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::list_box::insert_item(control.handle(), pos, item.value());
+    auto selected = list_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected = items[control.selected_index()];
+    control.selected_item(selected);
+  }
+  
+  auto on_items_item_removed(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::list_box::delete_item(control.handle(), pos);
+    if (control.selected_index() == pos) control.selected_index(npos);
+  }
+  
+  auto on_items_item_updated(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::list_box::update_item(control.handle(), pos, item.value());
+    auto selected = list_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected = items[control.selected_index()];
+    control.selected_item(selected);
+  }
 };
 
-list_box::list_box() : data_(xtd::new_sptr<data>()) {
+list_box::list_box() {
+  data_ = xtd::new_sptr<data>(*this);
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::standard_click | control_styles::use_text_for_accessibility, false);
-  data_->items.item_added += {*this, &list_box::on_items_item_added};
-  data_->items.item_removed += {*this, &list_box::on_items_item_removed};
-  data_->items.item_updated += {*this, &list_box::on_items_item_updated};
+
+  data_->items.item_added += {*data_, &list_box::data::on_items_item_added};
+  data_->items.item_removed += {*data_, &list_box::data::on_items_item_removed};
+  data_->items.item_updated += {*data_, &list_box::data::on_items_item_updated};
 }
 
 forms::border_sides list_box::border_sides() const noexcept {
@@ -415,25 +438,6 @@ void list_box::wnd_proc(message& message) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: list_control::wnd_proc(message);
   }
-}
-
-void list_box::on_items_item_added(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::list_box::insert_item(handle(), pos, item.value());
-  auto selected = list_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
-  this->selected_item(selected);
-}
-
-void list_box::on_items_item_removed(xtd::usize pos, const item& item)   {
-  if (is_handle_created()) native::list_box::delete_item(handle(), pos);
-  if (selected_index() == pos) selected_index(npos);
-}
-
-void list_box::on_items_item_updated(xtd::usize pos, const item& item)   {
-  if (is_handle_created()) native::list_box::update_item(handle(), pos, item.value());
-  auto selected = list_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
-  this->selected_item(selected);
 }
 
 void list_box::wm_mouse_double_click(message& message) {

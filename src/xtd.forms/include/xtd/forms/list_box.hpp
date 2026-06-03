@@ -323,9 +323,6 @@ namespace xtd {
       /// @}
       
     private:
-      void on_items_item_added(xtd::usize pos, const item& item);
-      void on_items_item_removed(xtd::usize pos, const item& item);
-      void on_items_item_updated(xtd::usize pos, const item& item);
       void wm_command_control(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
