@@ -8,17 +8,27 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct animation::data {
+  data(animation& control) : control(control) {}
+  animation& control;
   uint32 frame_counter = 0;
   uint32 frames_per_second = 10;
   diagnostics::stopwatch stopwatch;
   timer frames_timer;
+  
+  void on_frames_timer_tick(object& timer, const event_args& e) {
+    ++frame_counter;
+    control.on_updated(animation_updated_event_args(frame_counter, stopwatch.elapsed_nanoseconds()));
+    control.invalidate();
+    stopwatch = stopwatch::start_new();
+  }
 };
 
-animation::animation() : data_(xtd::new_sptr<data>()) {
+animation::animation() {
+  data_ = xtd::new_sptr<data>(*this);
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::resize_redraw, true);
-  data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
+  data_->frames_timer.tick += {*data_, &animation::data::on_frames_timer_tick};
 }
 
 drawing::size animation::default_size() const noexcept {
@@ -199,11 +209,4 @@ void animation::on_updated(const animation_updated_event_args& e) {
   auto safe_updated = updated;
   if (safe_updated.is_empty()) return;
   safe_updated(*this, e);
-}
-
-void animation::on_frames_timer_tick(object& timer, const event_args& e) {
-  ++data_->frame_counter;
-  on_updated(animation_updated_event_args(data_->frame_counter, data_->stopwatch.elapsed_nanoseconds()));
-  invalidate();
-  data_->stopwatch = stopwatch::start_new();
 }

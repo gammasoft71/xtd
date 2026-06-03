@@ -200,9 +200,6 @@ namespace xtd {
       virtual auto on_updated(const xtd::forms::animation_updated_event_args& e) -> void;
       /// @}
       
-    private:
-      auto on_frames_timer_tick(object& timer, const xtd::event_args& e) -> void;
-      
       xtd::sptr<data> data_;
     };
   }
