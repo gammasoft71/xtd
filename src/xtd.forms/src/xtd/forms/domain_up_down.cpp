@@ -51,19 +51,43 @@ string domain_up_down::item::to_string() const noexcept {
 }
 
 struct domain_up_down::data {
+  data(domain_up_down& control) : control {control} {}
+  domain_up_down& control;
   object_collection items;
   xtd::usize selected_index = npos;
   item selected_item;
   bool wrap = false;
+
+  auto on_items_item_added(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::domain_up_down::insert_item(control.handle(), pos, item.value());
+    auto selected = domain_up_down::item {};
+    if (selected_index != npos && selected_index < items.count()) selected = items[selected_index];
+    control.selected_item(selected);
+  }
+  
+  auto on_items_item_removed(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::domain_up_down::delete_item(control.handle(), pos);
+    if (control.selected_index() == pos) control.selected_index(npos);
+  }
+  
+  auto on_items_item_updated(xtd::usize pos, const item& item) -> void {
+    static auto update_disabled = false;
+    if (update_disabled) return;
+    if (control.is_handle_created()) native::domain_up_down::update_item(control.handle(), pos, item.value());
+    auto selected = domain_up_down::item {};
+    if (selected_index != npos && selected_index < items.count()) selected = items[selected_index];
+    control.selected_item(selected);
+  }
 };
 
-domain_up_down::domain_up_down() : data_(xtd::new_sptr<data>()) {
+domain_up_down::domain_up_down() {
+  data_ = xtd::new_sptr<data>(*this);
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   
-  data_->items.item_added += {*this, &domain_up_down::on_items_item_added};
-  data_->items.item_removed += {*this, &domain_up_down::on_items_item_removed};
-  data_->items.item_updated += {*this, &domain_up_down::on_items_item_updated};
+  data_->items.item_added += {*data_, &domain_up_down::data::on_items_item_added};
+  data_->items.item_removed += {*data_, &domain_up_down::data::on_items_item_removed};
+  data_->items.item_updated += {*data_, &domain_up_down::data::on_items_item_updated};
 }
 
 domain_up_down::object_collection& domain_up_down::items() noexcept {
@@ -385,25 +409,4 @@ void domain_up_down::wm_scroll_control(message& message) {
     data_->selected_index = native::domain_up_down::selected_index(handle());
     on_selected_item_changed(event_args::empty);
   }
-}
-
-void domain_up_down::on_items_item_added(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
-  auto selected = domain_up_down::item {};
-  if (data_->selected_index != npos && data_->selected_index < data_->items.count()) selected = data_->items[data_->selected_index];
-  this->selected_item(selected);
-}
-
-void domain_up_down::on_items_item_removed(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::domain_up_down::delete_item(handle(), pos);
-  if (selected_index() == pos) selected_index(npos);
-}
-
-void domain_up_down::on_items_item_updated(xtd::usize pos, const item& item) {
-  static auto update_disabled = false;
-  if (update_disabled) return;
-  if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());
-  auto selected = domain_up_down::item {};
-  if (data_->selected_index != npos && data_->selected_index < data_->items.count()) selected = data_->items[data_->selected_index];
-  this->selected_item(selected);
 }

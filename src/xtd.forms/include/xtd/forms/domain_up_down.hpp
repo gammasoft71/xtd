@@ -368,10 +368,6 @@ namespace xtd {
       /// @endcond
       
     private:
-      void on_items_item_added(xtd::usize pos, const item& item);
-      void on_items_item_removed(xtd::usize pos, const item& item);
-      void on_items_item_updated(xtd::usize pos, const item& item);
-      
       xtd::sptr<data> data_;
     };
   }
