@@ -296,11 +296,6 @@ namespace xtd {
       friend class xtd::forms::form;
       using control::controls;
       
-      void on_tab_pages_item_added(xtd::usize, tab_page_ref& item);
-      void on_tab_pages_item_removed(xtd::usize, tab_page_ref& item);
-      void on_tab_pages_text_added(xtd::usize index, const string& text, const string& name);
-      void on_tab_pages_text_inserted(xtd::usize pos, const string& text, const string& name);
-      
       void wm_command_control(message& message);
       
       xtd::sptr<data> data_;

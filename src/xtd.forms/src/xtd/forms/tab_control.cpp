@@ -108,14 +108,15 @@ std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_pag
   return {};
 }
 
-tab_control::tab_control() : data_(xtd::new_sptr<data>()) {
+tab_control::tab_control() {
+  data_ = xtd::new_sptr<data>(*this);
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   
-  data_->tab_pages.item_added += {*this, &tab_control::on_tab_pages_item_added};
-  data_->tab_pages.item_removed += {*this, &tab_control::on_tab_pages_item_removed};
-  data_->tab_pages.text_added += {*this, &tab_control::on_tab_pages_text_added};
+  data_->tab_pages.item_added += {*data_, &tab_control::data::on_tab_pages_item_added};
+  data_->tab_pages.item_removed += {*data_, &tab_control::data::on_tab_pages_item_removed};
+  data_->tab_pages.text_added += {*data_, &tab_control::data::on_tab_pages_text_added};
 }
 
 tab_alignment tab_control::alignment() const noexcept {
@@ -275,36 +276,6 @@ xtd::usize tab_control::get_child_index(intptr page) {
   for (auto index = 0_z; index < controls().count(); ++index)
     if (controls()[index].get().handle() == page) return index;
   return npos;
-}
-
-void tab_control::on_tab_pages_item_added(xtd::usize index, tab_page_ref& item) {
-  controls().insert(index, item.get());
-}
-
-void tab_control::on_tab_pages_item_removed(xtd::usize index, tab_page_ref& item) {
-  controls().remove_at(index);
-}
-
-void tab_control::on_tab_pages_text_added(xtd::usize index, const string& text, const string& name) {
-  auto item = xtd::new_sptr<tab_page>();
-  item->text(text);
-  item->name(name);
-  if (index == tab_pages().npos) {
-    tab_pages().add(*item);
-    data_->text_tab_pages.add(item);
-  } else {
-    tab_pages().insert(index, *item);
-    data_->text_tab_pages.insert(index, item);
-  }
-}
-
-void tab_control::on_tab_pages_text_inserted(xtd::usize pos, const string& text, const string& name) {
-  auto item = xtd::new_sptr<tab_page>();
-  item->text(text);
-  item->name(name);
-  tab_pages().insert(pos, *item);
-  if (pos == tab_pages().npos) data_->text_tab_pages.add(item);
-  else data_->text_tab_pages.insert(pos, item);
 }
 
 void tab_control::wm_command_control(message& message) {
