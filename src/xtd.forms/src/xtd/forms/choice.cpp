@@ -14,18 +14,41 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct choice::data {
+  data(choice& control) : control {control} {}
+  choice& control;
   object_collection items;
   item selected_item;
   bool sorted = false;
+
+  auto on_items_item_added(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::choice::insert_item(control.handle(), pos, item.value());
+    auto selected = npos;
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected = control.selected_index();
+    control.selected_index(selected);
+  }
+  
+  auto on_items_item_removed(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::choice::delete_item(control.handle(), pos);
+    if (control.selected_index() == pos) control.selected_index(npos);
+  }
+  
+  auto on_items_item_updated(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::choice::update_item(control.handle(), pos, item.value());
+    auto selected = npos;
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected = control.selected_index();
+    control.selected_index(selected);
+  }
 };
 
-choice::choice() : data_(xtd::new_sptr<data>()) {
+choice::choice() {
+  data_ = xtd::new_sptr<data>(*this);
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
-  data_->items.item_added += {*this, &choice::on_items_item_added};
-  data_->items.item_removed += {*this, &choice::on_items_item_removed};
-  data_->items.item_updated += {*this, &choice::on_items_item_updated};
+  
+  data_->items.item_added += {*data_, &choice::data::on_items_item_added};
+  data_->items.item_removed += {*data_, &choice::data::on_items_item_removed};
+  data_->items.item_updated += {*data_, &choice::data::on_items_item_updated};
 }
 
 choice::object_collection& choice::items() noexcept {
@@ -336,25 +359,6 @@ void choice::wnd_proc(message& message) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: list_control::wnd_proc(message);
   }
-}
-
-void choice::on_items_item_added(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
-  auto selected = npos;
-  if (this->selected_index() != npos && this->selected_index() < data_->items.count()) selected = this->selected_index();
-  this->selected_index(selected);
-}
-
-void choice::on_items_item_removed(xtd::usize pos, const item& item)  {
-  if (is_handle_created()) native::choice::delete_item(handle(), pos);
-  if (selected_index() == pos) selected_index(npos);
-}
-
-void choice::on_items_item_updated(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::choice::update_item(handle(), pos, item.value());
-  auto selected = npos;
-  if (this->selected_index() != npos && this->selected_index() < data_->items.count()) selected = this->selected_index();
-  this->selected_index(selected);
 }
 
 void choice::wm_command_control(message& message) {
