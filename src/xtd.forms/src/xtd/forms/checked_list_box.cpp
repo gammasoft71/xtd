@@ -56,17 +56,39 @@ bool checked_list_box::item::equals(const item& value) const noexcept {
 }
 
 struct checked_list_box::data {
+  data(checked_list_box& control) : control(control) {}
+  checked_list_box& control;
   object_collection items;
   item selected_item;
+
+  auto on_items_item_added(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::checked_list_box::insert_item(control.handle(), pos, item.value(), static_cast<int32>(item.check_state()));
+    auto selected = checked_list_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected = items[control.selected_index()];
+    control.selected_item(selected);
+  }
+  
+  auto on_items_item_removed(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::checked_list_box::delete_item(control.handle(), pos);
+    if (control.selected_index() == pos) control.selected_index(npos);
+  }
+  
+  auto on_items_item_updated(xtd::usize pos, const item& item) -> void {
+    if (control.is_handle_created()) native::checked_list_box::update_item(control.handle(), pos, item.value(), static_cast<int32>(item.check_state()));
+    auto selected = checked_list_box::item {};
+    if (control.selected_index() != npos && control.selected_index() < items.count()) selected = items[control.selected_index()];
+    control.selected_item(selected);
+  }
 };
 
-checked_list_box::checked_list_box() : data_(xtd::new_sptr<data>()) {
+checked_list_box::checked_list_box() {
+  data_ = xtd::new_sptr<data>(*this);
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::resize_redraw, true);
-  data_->items.item_added += {*this, &checked_list_box::on_items_item_added};
-  data_->items.item_removed += {*this, &checked_list_box::on_items_item_removed};
-  data_->items.item_updated += {*this, &checked_list_box::on_items_item_updated};
+  data_->items.item_added += {*data_, &checked_list_box::data::on_items_item_added};
+  data_->items.item_removed += {*data_, &checked_list_box::data::on_items_item_removed};
+  data_->items.item_updated += {*data_, &checked_list_box::data::on_items_item_updated};
 }
 
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
@@ -428,25 +450,6 @@ void checked_list_box::wnd_proc(message& message) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: list_box::wnd_proc(message);
   }
-}
-
-void checked_list_box::on_items_item_added(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
-  checked_list_box::item selected;
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
-  this->selected_item(selected);
-}
-
-void checked_list_box::on_items_item_removed(xtd::usize pos, const item& item)  {
-  if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
-  if (selected_index() == pos) selected_index(npos);
-}
-
-void checked_list_box::on_items_item_updated(xtd::usize pos, const item& item) {
-  if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
-  checked_list_box::item selected;
-  if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
-  this->selected_item(selected);
 }
 
 void checked_list_box::wm_mouse_double_click(message& message) {
