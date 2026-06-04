@@ -14,7 +14,7 @@
 
 /// @cond
 template<typename range_t>
-[[nodiscard]] auto __xtd_range_to_string(range_t&& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
+[[nodiscard]] auto __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
 
 template<typename value_t>
 [[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
@@ -248,16 +248,17 @@ template<typename iterator_t>
 }
 
 template<typename range_t>
-[[nodiscard]] inline auto __xtd_range_to_string(range_t&& values, const xtd::string& fmt, const std::locale& loc) -> std::string {
+[[nodiscard]] inline auto __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string {
   std::ostringstream oss;
   oss.imbue(loc);
   oss << "[";
   auto first = true;
-  std::ranges::for_each(values, [&](auto&& v) {
+  auto& mutable_values = const_cast<range_t&>(values);
+  for (const auto value : mutable_values) {
     if (!first) oss << ", ";
     first = false;
-    oss << xtd::to_string(v, fmt, loc);
-  });
+    oss << xtd::to_string(value, fmt, loc);
+  }
   oss << "]";
   return oss.str();
 }
