@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks With each xtd::forms::control::key_press event, a xtd::forms::key_press_event_args is passed. A key_event_args is passed with each xtd::forms::control::key_down and xtd::forms::control::key_up event. A key_event_args specifies whether any modifier keys (CMD, CTRL, SHIFT, or ALT) were pressed along with another key. (This modifier information can also be obtained through the modifier_keys property of the control class.)
     /// @remarks Set handled to `true` to cancel the xtd::forms::control::key_press event. This keeps the control from processing the key press.
     /// @note Some controls will process certain key strokes on xtd::forms::control::key_down. For example, rich_text_box processes the Enter key before xtd::forms::control::key_press is called. In such cases, you cannot cancel the xtd::forms::control::key_press event, and must cancel the key stroke from xtd::forms::control::key_down instead.
-    class key_press_event_args : public event_args {
+    class key_press_event_args : public xtd::event_args {
     public:
       /// @name Public Constructors
       
