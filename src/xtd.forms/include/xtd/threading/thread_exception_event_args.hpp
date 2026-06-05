@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks A xtd::forms::thread_exception_event_args is created by a thread when an unhandled exception occurs. xtd::forms::thread_exception_event_args contains the xtd::exception that occurred.
-    class forms_export_ thread_exception_event_args : public event_args {
+    class forms_export_ thread_exception_event_args : public xtd::event_args {
     public:
       /// @name Public Constructors
       
