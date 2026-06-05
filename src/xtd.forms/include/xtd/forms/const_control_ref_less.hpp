@@ -27,7 +27,7 @@ namespace xtd {
       /// @param value1 The first value to compare.
       /// @param value2 The second value to compare.
       /// @return `true` if value1 < value2; otherwise `false`.
-      bool operator()(const xtd::forms::const_control_ref& value1, const xtd::forms::const_control_ref& value2) const {
+      auto operator()(const xtd::forms::const_control_ref& value1, const xtd::forms::const_control_ref& value2) const -> bool {
         return &value1.get() < &value2.get();
       }
       /// @}
