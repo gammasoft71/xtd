@@ -25,7 +25,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class font_picker_event_args : public event_args {
+    class font_picker_event_args : public xtd::event_args {
     public:
       /// @cond
       font_picker_event_args(const font_picker_event_args& font_picker_event_args) = default;
