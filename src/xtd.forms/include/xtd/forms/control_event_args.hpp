@@ -24,19 +24,14 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class control_event_args : public event_args {
+    class control_event_args : public xtd::event_args {
     public:
-      /// @cond
-      control_event_args(control_event_args& control_event_args) = default;
-      control_event_args& operator =(control_event_args& control_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the control_event_args class for the specified control.
       /// @param control The control to store in this event.
-      explicit control_event_args(forms::control& control) : control_(&control) {}
+      explicit control_event_args(xtd::forms::control& control) : control_(&control) {}
       /// @}
       
       /// @name Public Properties
@@ -44,11 +39,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the control object used by this event.
       /// @return The control used by this event.
-      forms::control& control() const noexcept {return *control_;}
+      [[nodiscard]] auto control() const noexcept -> xtd::forms::control& {return *control_;}
       /// @}
       
     private:
-      forms::control* control_ = nullptr;
+      xtd::forms::control* control_ = nullptr;
     };
   }
 }
