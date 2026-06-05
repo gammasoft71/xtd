@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class run_worker_completed_event_args : public event_args {
+    class run_worker_completed_event_args : public xtd::event_args {
     public:
       /// @cond
       run_worker_completed_event_args(const run_worker_completed_event_args& do_work_event_args) = default;
