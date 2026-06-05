@@ -4,1003 +4,1003 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-const country countries::afghanistan() {
+auto countries::afghanistan() -> country {
   return country {u8"Afghanistan"_t, "AF", "AFG", 4};
 }
 
-const country countries::aland_islands() {
+auto countries::aland_islands() -> country {
   return country {u8"Åland Islands"_t, "AX", "ALA", 248};
 }
 
-const country countries::albania() {
+auto countries::albania() -> country {
   return country {u8"Albania"_t, "AL", "ALB", 8};
 }
 
-const country countries::algeria() {
+auto countries::algeria() -> country {
   return country {u8"Algeria"_t, "DZ", "DZA", 12};
 }
 
-const country countries::american_samoa() {
+auto countries::american_samoa() -> country {
   return country {u8"American Samoa"_t, "AS", "ASM", 16};
 }
 
-const country countries::andorra() {
+auto countries::andorra() -> country {
   return country {u8"Andorra"_t, "AD", "AND", 20};
 }
 
-const country countries::angola() {
+auto countries::angola() -> country {
   return country {u8"Angola"_t, "AO", "AGO", 24};
 }
 
-const country countries::anguilla() {
+auto countries::anguilla() -> country {
   return country {u8"Anguilla"_t, "AI", "AIA", 660};
 }
 
-const country countries::antarctica() {
+auto countries::antarctica() -> country {
   return country {u8"Antarctica"_t, "AQ", "ATA", 10};
 }
 
-const country countries::antigua_and_barbuda() {
+auto countries::antigua_and_barbuda() -> country {
   return country {u8"Antigua and Barbuda"_t, "AG", "ATG", 28};
 }
 
-const country countries::argentina() {
+auto countries::argentina() -> country {
   return country {u8"Argentina"_t, "AR", "ARG", 32};
 }
 
-const country countries::armenia() {
+auto countries::armenia() -> country {
   return country {u8"Armenia"_t, "AM", "ARM", 51};
 }
 
-const country countries::aruba() {
+auto countries::aruba() -> country {
   return country {u8"Aruba"_t, "AW", "ABW", 533};
 }
 
-const country countries::australia() {
+auto countries::australia() -> country {
   return country {u8"Australia"_t, "AU", "AUS", 36};
 }
 
-const country countries::austria() {
+auto countries::austria() -> country {
   return country {u8"Austria"_t, "AT", "AUT", 40};
 }
 
-const country countries::azerbaijan() {
+auto countries::azerbaijan() -> country {
   return country {u8"Azerbaijan"_t, "AZ", "AZE", 31};
 }
 
-const country countries::bahamas() {
+auto countries::bahamas() -> country {
   return country {u8"Bahamas"_t, "BS", "BHS", 44};
 }
 
-const country countries::bahrain() {
+auto countries::bahrain() -> country {
   return country {u8"Bahrain"_t, "BH", "BHR", 48};
 }
 
-const country countries::bangladesh() {
+auto countries::bangladesh() -> country {
   return country {u8"Bangladesh"_t, "BD", "BGD", 50};
 }
 
-const country countries::barbados() {
+auto countries::barbados() -> country {
   return country {u8"Barbados"_t, "BB", "BRB", 52};
 }
 
-const country countries::belarus() {
+auto countries::belarus() -> country {
   return country {u8"Belarus"_t, "BY", "BLR", 112};
 }
 
-const country countries::belgium() {
+auto countries::belgium() -> country {
   return country {u8"Belgium"_t, "BE", "BEL", 56};
 }
 
-const country countries::belize() {
+auto countries::belize() -> country {
   return country {u8"Belize"_t, "BZ", "BLZ", 84};
 }
 
-const country countries::benin() {
+auto countries::benin() -> country {
   return country {u8"Benin"_t, "BJ", "BEN", 204};
 }
 
-const country countries::bermuda() {
+auto countries::bermuda() -> country {
   return country {u8"Bermuda"_t, "BM", "BMU", 60};
 }
 
-const country countries::bhutan() {
+auto countries::bhutan() -> country {
   return country {u8"Bhutan"_t, "BT", "BTN", 64};
 }
 
-const country countries::bolivia() {
+auto countries::bolivia() -> country {
   return country {u8"Bolivia (Plurinational State of)"_t, "BO", "BOL", 68};
 }
 
-const country countries::bonaire_sint_eustatius_and_saba() {
+auto countries::bonaire_sint_eustatius_and_saba() -> country {
   return country {u8"Bonaire, Sint Eustatius and Saba"_t, "BQ", "BES", 535};
 }
 
-const country countries::bosnia_and_herzegovina() {
+auto countries::bosnia_and_herzegovina() -> country {
   return country {u8"Bosnia and Herzegovina"_t, "BA", "BIH", 70};
 }
 
-const country countries::botswana() {
+auto countries::botswana() -> country {
   return country {u8"Botswana"_t, "BW", "BWA", 72};
 }
 
-const country countries::bouvet_island() {
+auto countries::bouvet_island() -> country {
   return country {u8"Bouvet Island"_t, "BV", "BVT", 74};
 }
 
-const country countries::brazil() {
+auto countries::brazil() -> country {
   return country {u8"Brazil"_t, "BR", "BRA", 76};
 }
 
-const country countries::british_indian_ocean_territory() {
+auto countries::british_indian_ocean_territory() -> country {
   return country {u8"British Indian Ocean Territory"_t, "IO", "IOT", 86};
 }
 
-const country countries::brunei_darussalam() {
+auto countries::brunei_darussalam() -> country {
   return country {u8"Brunei Darussalam"_t, "BN", "BRN", 96};
 }
 
-const country countries::bulgaria() {
+auto countries::bulgaria() -> country {
   return country {u8"Bulgaria"_t, "BG", "BGR", 100};
 }
 
-const country countries::burkina_faso() {
+auto countries::burkina_faso() -> country {
   return country {u8"Burkina Faso"_t, "BF", "BFA", 854};
 }
 
-const country countries::burundi() {
+auto countries::burundi() -> country {
   return country {u8"Burundi"_t, "BI", "BDI", 108};
 }
 
-const country countries::cabo_verde() {
+auto countries::cabo_verde() -> country {
   return country {u8"Cabo Verde"_t, "CV", "CPV", 132};
 }
 
-const country countries::cambodia() {
+auto countries::cambodia() -> country {
   return country {u8"Cambodia"_t, "KH", "KHM", 116};
 }
 
-const country countries::cameroon() {
+auto countries::cameroon() -> country {
   return country {u8"Cameroon"_t, "CM", "CMR", 120};
 }
 
-const country countries::canada() {
+auto countries::canada() -> country {
   return country {u8"Canada"_t, "CA", "CAN", 124};
 }
 
-const country countries::cayman_islands() {
+auto countries::cayman_islands() -> country {
   return country {u8"Cayman Islands"_t, "KY", "CYM", 136};
 }
 
-const country countries::central_african_republic() {
+auto countries::central_african_republic() -> country {
   return country {u8"Central African Republic"_t, "CF", "CAF", 140};
 }
 
-const country countries::chad() {
+auto countries::chad() -> country {
   return country {u8"Chad"_t, "TD", "TCD", 148};
 }
 
-const country countries::chile() {
+auto countries::chile() -> country {
   return country {u8"Chile"_t, "CL", "CHL", 152};
 }
 
-const country countries::china() {
+auto countries::china() -> country {
   return country {u8"China"_t, "CN", "CHN", 156};
 }
 
-const country countries::christmas_island() {
+auto countries::christmas_island() -> country {
   return country {u8"Christmas Island"_t, "CX", "CXR", 162};
 }
 
-const country countries::cocos_keeling_islands() {
+auto countries::cocos_keeling_islands() -> country {
   return country {u8"Cocos (Keeling) Islands"_t, "CC", "CCK", 166};
 }
 
-const country countries::colombia() {
+auto countries::colombia() -> country {
   return country {u8"Colombia"_t, "CO", "COL", 170};
 }
 
-const country countries::comoros() {
+auto countries::comoros() -> country {
   return country {u8"Comoros"_t, "KM", "COM", 174};
 }
 
-const country countries::congo() {
+auto countries::congo() -> country {
   return country {u8"Congo"_t, "CG", "COG", 178};
 }
 
-const country countries::democratic_republic_of_the_congo() {
+auto countries::democratic_republic_of_the_congo() -> country {
   return country {u8"Congo, Democratic Republic of the"_t, "CD", "COD", 180};
 }
 
-const country countries::cook_islands() {
+auto countries::cook_islands() -> country {
   return country {u8"Cook Islands"_t, "CK", "COK", 184};
 }
 
-const country countries::costa_rica() {
+auto countries::costa_rica() -> country {
   return country {u8"Costa Rica"_t, "CR", "CRI", 188};
 }
 
-const country countries::cote_d_ivoire() {
+auto countries::cote_d_ivoire() -> country {
   return country {u8"Côte d'Ivoire"_t, "CI", "CIV", 384};
 }
 
-const country countries::croatia() {
+auto countries::croatia() -> country {
   return country {u8"Croatia"_t, "HR", "HRV", 191};
 }
 
-const country countries::cuba() {
+auto countries::cuba() -> country {
   return country {u8"Cuba"_t, "CU", "CUB", 192};
 }
 
-const country countries::curacao() {
+auto countries::curacao() -> country {
   return country {u8"Curaçao"_t, "CW", "CUW", 531};
 }
 
-const country countries::cyprus() {
+auto countries::cyprus() -> country {
   return country {u8"Cyprus"_t, "CY", "CYP", 196};
 }
 
-const country countries::czechia() {
+auto countries::czechia() -> country {
   return country {u8"Czechia"_t, "CZ", "CZE", 203};
 }
 
-const country countries::denmark() {
+auto countries::denmark() -> country {
   return country {u8"Denmark"_t, "DK", "DNK", 208};
 }
 
-const country countries::djibouti() {
+auto countries::djibouti() -> country {
   return country {u8"Djibouti"_t, "DJ", "DJI", 262};
 }
 
-const country countries::dominica() {
+auto countries::dominica() -> country {
   return country {u8"Dominica"_t, "DM", "DMA", 212};
 }
 
-const country countries::dominican_republic() {
+auto countries::dominican_republic() -> country {
   return country {u8"Dominican Republic"_t, "DO", "DOM", 214};
 }
 
-const country countries::ecuador() {
+auto countries::ecuador() -> country {
   return country {u8"Ecuador"_t, "EC", "ECU", 218};
 }
 
-const country countries::egypt() {
+auto countries::egypt() -> country {
   return country {u8"Egypt"_t, "EG", "EGY", 818};
 }
 
-const country countries::el_salvador() {
+auto countries::el_salvador() -> country {
   return country {u8"El Salvador"_t, "SV", "SLV", 222};
 }
 
-const country countries::equatorial_guinea() {
+auto countries::equatorial_guinea() -> country {
   return country {u8"Equatorial Guinea"_t, "GQ", "GNQ", 226};
 }
 
-const country countries::eritrea() {
+auto countries::eritrea() -> country {
   return country {u8"Eritrea"_t, "ER", "ERI", 232};
 }
 
-const country countries::estonia() {
+auto countries::estonia() -> country {
   return country {u8"Estonia"_t, "EE", "EST", 233};
 }
 
-const country countries::eswatini() {
+auto countries::eswatini() -> country {
   return country {u8"Eswatini"_t, "SZ", "SWZ", 748};
 }
 
-const country countries::ethiopia() {
+auto countries::ethiopia() -> country {
   return country {u8"Ethiopia"_t, "ET", "ETH", 231};
 }
 
-const country countries::falkland_islands() {
+auto countries::falkland_islands() -> country {
   return country {u8"Falkland Islands (Malvinas)"_t, "FK", "FLK", 238};
 }
 
-const country countries::faroe_islands() {
+auto countries::faroe_islands() -> country {
   return country {u8"Faroe Islands"_t, "FO", "FRO", 234};
 }
 
-const country countries::fiji() {
+auto countries::fiji() -> country {
   return country {u8"Fiji"_t, "FJ", "FJI", 242};
 }
 
-const country countries::finland() {
+auto countries::finland() -> country {
   return country {u8"Finland"_t, "FI", "FIN", 246};
 }
 
-const country countries::france() {
+auto countries::france() -> country {
   return country {u8"France"_t, "FR", "FRA", 250};
 }
 
-const country countries::french_guiana() {
+auto countries::french_guiana() -> country {
   return country {u8"French Guiana"_t, "GF", "GUF", 254};
 }
 
-const country countries::french_polynesia() {
+auto countries::french_polynesia() -> country {
   return country {u8"French Polynesia"_t, "PF", "PYF", 258};
 }
 
-const country countries::french_southern_territories() {
+auto countries::french_southern_territories() -> country {
   return country {u8"French Southern Territories"_t, "TF", "ATF", 260};
 }
 
-const country countries::gabon() {
+auto countries::gabon() -> country {
   return country {u8"Gabon"_t, "GA", "GAB", 266};
 }
 
-const country countries::gambia() {
+auto countries::gambia() -> country {
   return country {u8"Gambia"_t, "GM", "GMB", 270};
 }
 
-const country countries::georgia() {
+auto countries::georgia() -> country {
   return country {u8"Georgia"_t, "GE", "GEO", 268};
 }
 
-const country countries::germany() {
+auto countries::germany() -> country {
   return country {u8"Germany"_t, "DE", "DEU", 276};
 }
 
-const country countries::ghana() {
+auto countries::ghana() -> country {
   return country {u8"Ghana"_t, "GH", "GHA", 288};
 }
 
-const country countries::gibraltar() {
+auto countries::gibraltar() -> country {
   return country {u8"Gibraltar"_t, "GI", "GIB", 292};
 }
 
-const country countries::greece() {
+auto countries::greece() -> country {
   return country {u8"Greece"_t, "GR", "GRC", 300};
 }
 
-const country countries::greenland() {
+auto countries::greenland() -> country {
   return country {u8"Greenland"_t, "GL", "GRL", 304};
 }
 
-const country countries::grenada() {
+auto countries::grenada() -> country {
   return country {u8"Grenada"_t, "GD", "GRD", 308};
 }
 
-const country countries::guadeloupe() {
+auto countries::guadeloupe() -> country {
   return country {u8"Guadeloupe"_t, "GP", "GLP", 312};
 }
 
-const country countries::guam() {
+auto countries::guam() -> country {
   return country {u8"Guam"_t, "GU", "GUM", 316};
 }
 
-const country countries::guatemala() {
+auto countries::guatemala() -> country {
   return country {u8"Guatemala"_t, "GT", "GTM", 320};
 }
 
-const country countries::guernsey() {
+auto countries::guernsey() -> country {
   return country {u8"Guernsey"_t, "GG", "GGY", 831};
 }
 
-const country countries::guinea() {
+auto countries::guinea() -> country {
   return country {u8"Guinea"_t, "GN", "GIN", 324};
 }
 
-const country countries::guinea_bissau() {
+auto countries::guinea_bissau() -> country {
   return country {u8"Guinea-Bissau"_t, "GW", "GNB", 624};
 }
 
-const country countries::guyana() {
+auto countries::guyana() -> country {
   return country {u8"Guyana"_t, "GY", "GUY", 328};
 }
 
-const country countries::haiti() {
+auto countries::haiti() -> country {
   return country {u8"Haiti"_t, "HT", "HTI", 332};
 }
 
-const country countries::heard_island_and_mcdonald_islands() {
+auto countries::heard_island_and_mcdonald_islands() -> country {
   return country {u8"Heard Island and McDonald Islands"_t, "HM", "HMD", 334};
 }
 
-const country countries::holy_see() {
+auto countries::holy_see() -> country {
   return country {u8"Holy See"_t, "VA", "VAT", 336};
 }
 
-const country countries::honduras() {
+auto countries::honduras() -> country {
   return country {u8"Honduras"_t, "HN", "HND", 340};
 }
 
-const country countries::hong_kong() {
+auto countries::hong_kong() -> country {
   return country {u8"Hong Kong"_t, "HK", "HKG", 344};
 }
 
-const country countries::hungary() {
+auto countries::hungary() -> country {
   return country {u8"Hungary"_t, "HU", "HUN", 348};
 }
 
-const country countries::iceland() {
+auto countries::iceland() -> country {
   return country {u8"Iceland"_t, "IS", "ISL", 352};
 }
 
-const country countries::india() {
+auto countries::india() -> country {
   return country {u8"India"_t, "IN", "IND", 356};
 }
 
-const country countries::indonesia() {
+auto countries::indonesia() -> country {
   return country {u8"Indonesia"_t, "ID", "IDN", 360};
 }
 
-const country countries::iran() {
+auto countries::iran() -> country {
   return country {u8"Iran (Islamic Republic of)"_t, "IR", "IRN", 364};
 }
 
-const country countries::iraq() {
+auto countries::iraq() -> country {
   return country {u8"Iraq"_t, "IQ", "IRQ", 368};
 }
 
-const country countries::ireland() {
+auto countries::ireland() -> country {
   return country {u8"Ireland"_t, "IE", "IRL", 372};
 }
 
-const country countries::isle_of_man() {
+auto countries::isle_of_man() -> country {
   return country {u8"Isle of Man"_t, "IM", "IMN", 833};
 }
 
-const country countries::israel() {
+auto countries::israel() -> country {
   return country {u8"Israel"_t, "IL", "ISR", 376};
 }
 
-const country countries::italy() {
+auto countries::italy() -> country {
   return country {u8"Italy"_t, "IT", "ITA", 380};
 }
 
-const country countries::jamaica() {
+auto countries::jamaica() -> country {
   return country {u8"Jamaica"_t, "JM", "JAM", 388};
 }
 
-const country countries::japan() {
+auto countries::japan() -> country {
   return country {u8"Japan"_t, "JP", "JPN", 392};
 }
 
-const country countries::jersey() {
+auto countries::jersey() -> country {
   return country {u8"Jersey"_t, "JE", "JEY", 832};
 }
 
-const country countries::jordan() {
+auto countries::jordan() -> country {
   return country {u8"Jordan"_t, "JO", "JOR", 400};
 }
 
-const country countries::kazakhstan() {
+auto countries::kazakhstan() -> country {
   return country {u8"Kazakhstan"_t, "KZ", "KAZ", 398};
 }
 
-const country countries::kenya() {
+auto countries::kenya() -> country {
   return country {u8"Kenya"_t, "KE", "KEN", 404};
 }
 
-const country countries::kiribati() {
+auto countries::kiribati() -> country {
   return country {u8"Kiribati"_t, "KI", "KIR", 296};
 }
 
-const country countries::north_korea() {
+auto countries::north_korea() -> country {
   return country {u8"Korea (Democratic People's Republic of)"_t, "KP", "PRK", 408};
 }
 
-const country countries::south_korea() {
+auto countries::south_korea() -> country {
   return country {u8"Korea, Republic of"_t, "KR", "KOR", 410};
 }
 
-const country countries::kuwait() {
+auto countries::kuwait() -> country {
   return country {u8"Kuwait"_t, "KW", "KWT", 414};
 }
 
-const country countries::kyrgyzstan() {
+auto countries::kyrgyzstan() -> country {
   return country {u8"Kyrgyzstan"_t, "KG", "KGZ", 417};
 }
 
-const country countries::lao_people_s_democratic_republic() {
+auto countries::lao_people_s_democratic_republic() -> country {
   return country {u8"Lao People's Democratic Republic"_t, "LA", "LAO", 418};
 }
 
-const country countries::latvia() {
+auto countries::latvia() -> country {
   return country {u8"Latvia"_t, "LV", "LVA", 428};
 }
 
-const country countries::lebanon() {
+auto countries::lebanon() -> country {
   return country {u8"Lebanon"_t, "LB", "LBN", 422};
 }
 
-const country countries::lesotho() {
+auto countries::lesotho() -> country {
   return country {u8"Lesotho"_t, "LS", "LSO", 426};
 }
 
-const country countries::liberia() {
+auto countries::liberia() -> country {
   return country {u8"Liberia"_t, "LR", "LBR", 430};
 }
 
-const country countries::libya() {
+auto countries::libya() -> country {
   return country {u8"Libya"_t, "LY", "LBY", 434};
 }
 
-const country countries::liechtenstein() {
+auto countries::liechtenstein() -> country {
   return country {u8"Liechtenstein"_t, "LI", "LIE", 438};
 }
 
-const country countries::lithuania() {
+auto countries::lithuania() -> country {
   return country {u8"Lithuania"_t, "LT", "LTU", 440};
 }
 
-const country countries::luxembourg() {
+auto countries::luxembourg() -> country {
   return country {u8"Luxembourg"_t, "LU", "LUX", 442};
 }
 
-const country countries::macao() {
+auto countries::macao() -> country {
   return country {u8"Macao"_t, "MO", "MAC", 446};
 }
 
-const country countries::madagascar() {
+auto countries::madagascar() -> country {
   return country {u8"Madagascar"_t, "MG", "MDG", 450};
 }
 
-const country countries::malawi() {
+auto countries::malawi() -> country {
   return country {u8"Malawi"_t, "MW", "MWI", 454};
 }
 
-const country countries::malaysia() {
+auto countries::malaysia() -> country {
   return country {u8"Malaysia"_t, "MY", "MYS", 458};
 }
 
-const country countries::maldives() {
+auto countries::maldives() -> country {
   return country {u8"Maldives"_t, "MV", "MDV", 462};
 }
 
-const country countries::mali() {
+auto countries::mali() -> country {
   return country {u8"Mali"_t, "ML", "MLI", 466};
 }
 
-const country countries::malta() {
+auto countries::malta() -> country {
   return country {u8"Malta"_t, "MT", "MLT", 470};
 }
 
-const country countries::marshall_islands() {
+auto countries::marshall_islands() -> country {
   return country {u8"Marshall Islands"_t, "MH", "MHL", 584};
 }
 
-const country countries::martinique() {
+auto countries::martinique() -> country {
   return country {u8"Martinique"_t, "MQ", "MTQ", 474};
 }
 
-const country countries::mauritania() {
+auto countries::mauritania() -> country {
   return country {u8"Mauritania"_t, "MR", "MRT", 478};
 }
 
-const country countries::mauritius() {
+auto countries::mauritius() -> country {
   return country {u8"Mauritius"_t, "MU", "MUS", 480};
 }
 
-const country countries::mayotte() {
+auto countries::mayotte() -> country {
   return country {u8"Mayotte"_t, "YT", "MYT", 175};
 }
 
-const country countries::mexico() {
+auto countries::mexico() -> country {
   return country {u8"Mexico"_t, "MX", "MEX", 484};
 }
 
-const country countries::federated_states_of_micronesia() {
+auto countries::federated_states_of_micronesia() -> country {
   return country {u8"Micronesia (Federated States of)"_t, "FM", "FSM", 583};
 }
 
-const country countries::moldova() {
+auto countries::moldova() -> country {
   return country {u8"Moldova, Republic of"_t, "MD", "MDA", 498};
 }
 
-const country countries::monaco() {
+auto countries::monaco() -> country {
   return country {u8"Monaco"_t, "MC", "MCO", 492};
 }
 
-const country countries::mongolia() {
+auto countries::mongolia() -> country {
   return country {u8"Mongolia"_t, "MN", "MNG", 496};
 }
 
-const country countries::montenegro() {
+auto countries::montenegro() -> country {
   return country {u8"Montenegro"_t, "ME", "MNE", 499};
 }
 
-const country countries::montserrat() {
+auto countries::montserrat() -> country {
   return country {u8"Montserrat"_t, "MS", "MSR", 500};
 }
 
-const country countries::morocco() {
+auto countries::morocco() -> country {
   return country {u8"Morocco"_t, "MA", "MAR", 504};
 }
 
-const country countries::mozambique() {
+auto countries::mozambique() -> country {
   return country {u8"Mozambique"_t, "MZ", "MOZ", 508};
 }
 
-const country countries::myanmar() {
+auto countries::myanmar() -> country {
   return country {u8"Myanmar"_t, "MM", "MMR", 104};
 }
 
-const country countries::namibia() {
+auto countries::namibia() -> country {
   return country {u8"Namibia"_t, "NA", "NAM", 516};
 }
 
-const country countries::nauru() {
+auto countries::nauru() -> country {
   return country {u8"Nauru"_t, "NR", "NRU", 520};
 }
 
-const country countries::nepal() {
+auto countries::nepal() -> country {
   return country {u8"Nepal"_t, "NP", "NPL", 524};
 }
 
-const country countries::netherlands() {
+auto countries::netherlands() -> country {
   return country {u8"Netherlands"_t, "NL", "NLD", 528};
 }
 
-const country countries::new_caledonia() {
+auto countries::new_caledonia() -> country {
   return country {u8"New Caledonia"_t, "NC", "NCL", 540};
 }
 
-const country countries::new_zealand() {
+auto countries::new_zealand() -> country {
   return country {u8"New Zealand"_t, "NZ", "NZL", 554};
 }
 
-const country countries::nicaragua() {
+auto countries::nicaragua() -> country {
   return country {u8"Nicaragua"_t, "NI", "NIC", 558};
 }
 
-const country countries::niger() {
+auto countries::niger() -> country {
   return country {u8"Niger"_t, "NE", "NER", 562};
 }
 
-const country countries::nigeria() {
+auto countries::nigeria() -> country {
   return country {u8"Nigeria"_t, "NG", "NGA", 566};
 }
 
-const country countries::niue() {
+auto countries::niue() -> country {
   return country {u8"Niue"_t, "NU", "NIU", 570};
 }
 
-const country countries::norfolk_island() {
+auto countries::norfolk_island() -> country {
   return country {u8"Norfolk Island"_t, "NF", "NFK", 574};
 }
 
-const country countries::north_macedonia() {
+auto countries::north_macedonia() -> country {
   return country {u8"North Macedonia"_t, "MK", "MKD", 807};
 }
 
-const country countries::northern_mariana_islands() {
+auto countries::northern_mariana_islands() -> country {
   return country {u8"Northern Mariana Islands"_t, "MP", "MNP", 580};
 }
 
-const country countries::norway() {
+auto countries::norway() -> country {
   return country {u8"Norway"_t, "NO", "NOR", 578};
 }
 
-const country countries::oman() {
+auto countries::oman() -> country {
   return country {u8"Oman"_t, "OM", "OMN", 512};
 }
 
-const country countries::pakistan() {
+auto countries::pakistan() -> country {
   return country {u8"Pakistan"_t, "PK", "PAK", 586};
 }
 
-const country countries::palau() {
+auto countries::palau() -> country {
   return country {u8"Palau"_t, "PW", "PLW", 585};
 }
 
-const country countries::state_of_palestine() {
+auto countries::state_of_palestine() -> country {
   return country {u8"Palestine, State of"_t, "PS", "PSE", 275};
 }
 
-const country countries::panama() {
+auto countries::panama() -> country {
   return country {u8"Panama"_t, "PA", "PAN", 591};
 }
 
-const country countries::papua_new_guinea() {
+auto countries::papua_new_guinea() -> country {
   return country {u8"Papua New Guinea"_t, "PG", "PNG", 598};
 }
 
-const country countries::paraguay() {
+auto countries::paraguay() -> country {
   return country {u8"Paraguay"_t, "PY", "PRY", 600};
 }
 
-const country countries::peru() {
+auto countries::peru() -> country {
   return country {u8"Peru"_t, "PE", "PER", 604};
 }
 
-const country countries::philippines() {
+auto countries::philippines() -> country {
   return country {u8"Philippines"_t, "PH", "PHL", 608};
 }
 
-const country countries::pitcairn() {
+auto countries::pitcairn() -> country {
   return country {u8"Pitcairn"_t, "PN", "PCN", 612};
 }
 
-const country countries::poland() {
+auto countries::poland() -> country {
   return country {u8"Poland"_t, "PL", "POL", 616};
 }
 
-const country countries::portugal() {
+auto countries::portugal() -> country {
   return country {u8"Portugal"_t, "PT", "PRT", 620};
 }
 
-const country countries::puerto_rico() {
+auto countries::puerto_rico() -> country {
   return country {u8"Puerto Rico"_t, "PR", "PRI", 630};
 }
 
-const country countries::qatar() {
+auto countries::qatar() -> country {
   return country {u8"Qatar"_t, "QA", "QAT", 634};
 }
 
-const country countries::reunion() {
+auto countries::reunion() -> country {
   return country {u8"Réunion"_t, "RE", "REU", 638};
 }
 
-const country countries::romania() {
+auto countries::romania() -> country {
   return country {u8"Romania"_t, "RO", "ROU", 642};
 }
 
-const country countries::russian_federation() {
+auto countries::russian_federation() -> country {
   return country {u8"Russian Federation"_t, "RU", "RUS", 643};
 }
 
-const country countries::rwanda() {
+auto countries::rwanda() -> country {
   return country {u8"Rwanda"_t, "RW", "RWA", 646};
 }
 
-const country countries::saint_barthelemy() {
+auto countries::saint_barthelemy() -> country {
   return country {u8"Saint Barthélemy"_t, "BL", "BLM", 652};
 }
 
-const country countries::saint_helena_ascension_and_tristan_da_cunha() {
+auto countries::saint_helena_ascension_and_tristan_da_cunha() -> country {
   return country {u8"Saint Helena, Ascension and Tristan da Cunha"_t, "SH", "SHN", 654};
 }
 
-const country countries::saint_kitts_and_nevis() {
+auto countries::saint_kitts_and_nevis() -> country {
   return country {u8"Saint Kitts and Nevis"_t, "KN", "KNA", 659};
 }
 
-const country countries::saint_lucia() {
+auto countries::saint_lucia() -> country {
   return country {u8"Saint Lucia"_t, "LC", "LCA", 662};
 }
 
-const country countries::saint_martin_french_part() {
+auto countries::saint_martin_french_part() -> country {
   return country {u8"Saint Martin (French part)"_t, "MF", "MAF", 663};
 }
 
-const country countries::saint_pierre_and_miquelon() {
+auto countries::saint_pierre_and_miquelon() -> country {
   return country {u8"Saint Pierre and Miquelon"_t, "PM", "SPM", 666};
 }
 
-const country countries::saint_vincent_and_the_grenadines() {
+auto countries::saint_vincent_and_the_grenadines() -> country {
   return country {u8"Saint Vincent and the Grenadines"_t, "VC", "VCT", 670};
 }
 
-const country countries::samoa() {
+auto countries::samoa() -> country {
   return country {u8"Samoa"_t, "WS", "WSM", 882};
 }
 
-const country countries::san_marino() {
+auto countries::san_marino() -> country {
   return country {u8"San Marino"_t, "SM", "SMR", 674};
 }
 
-const country countries::sao_tome_and_principe() {
+auto countries::sao_tome_and_principe() -> country {
   return country {u8"Sao Tome and Principe"_t, "ST", "STP", 678};
 }
 
-const country countries::saudi_arabia() {
+auto countries::saudi_arabia() -> country {
   return country {u8"Saudi Arabia"_t, "SA", "SAU", 682};
 }
 
-const country countries::senegal() {
+auto countries::senegal() -> country {
   return country {u8"Senegal"_t, "SN", "SEN", 686};
 }
 
-const country countries::serbia() {
+auto countries::serbia() -> country {
   return country {u8"Serbia"_t, "RS", "SRB", 688};
 }
 
-const country countries::seychelles() {
+auto countries::seychelles() -> country {
   return country {u8"Seychelles"_t, "SC", "SYC", 690};
 }
 
-const country countries::sierra_leone() {
+auto countries::sierra_leone() -> country {
   return country {u8"Sierra Leone"_t, "SL", "SLE", 694};
 }
 
-const country countries::singapore() {
+auto countries::singapore() -> country {
   return country {u8"Singapore"_t, "SG", "SGP", 702};
 }
 
-const country countries::sint_maarten_dutch_part() {
+auto countries::sint_maarten_dutch_part() -> country {
   return country {u8"Sint Maarten (Dutch part)"_t, "SX", "SXM", 534};
 }
 
-const country countries::slovakia() {
+auto countries::slovakia() -> country {
   return country {u8"Slovakia"_t, "SK", "SVK", 703};
 }
 
-const country countries::slovenia() {
+auto countries::slovenia() -> country {
   return country {u8"Slovenia"_t, "SI", "SVN", 705};
 }
 
-const country countries::solomon_islands() {
+auto countries::solomon_islands() -> country {
   return country {u8"Solomon Islands"_t, "SB", "SLB", 90};
 }
 
-const country countries::somalia() {
+auto countries::somalia() -> country {
   return country {u8"Somalia"_t, "SO", "SOM", 706};
 }
 
-const country countries::south_africa() {
+auto countries::south_africa() -> country {
   return country {u8"South Africa"_t, "ZA", "ZAF", 710};
 }
 
-const country countries::south_georgia_and_the_south_sandwich_islands() {
+auto countries::south_georgia_and_the_south_sandwich_islands() -> country {
   return country {u8"South Georgia and the South Sandwich Islands"_t, "GS", "SGS", 239};
 }
 
-const country countries::south_sudan() {
+auto countries::south_sudan() -> country {
   return country {u8"South Sudan"_t, "SS", "SSD", 728};
 }
 
-const country countries::spain() {
+auto countries::spain() -> country {
   return country {u8"Spain"_t, "ES", "ESP", 724};
 }
 
-const country countries::sri_lanka() {
+auto countries::sri_lanka() -> country {
   return country {u8"Sri Lanka"_t, "LK", "LKA", 144};
 }
 
-const country countries::sudan() {
+auto countries::sudan() -> country {
   return country {u8"Sudan"_t, "SD", "SDN", 729};
 }
 
-const country countries::suriname() {
+auto countries::suriname() -> country {
   return country {u8"Suriname"_t, "SR", "SUR", 740};
 }
 
-const country countries::svalbard_and_jan_mayen() {
+auto countries::svalbard_and_jan_mayen() -> country {
   return country {u8"Svalbard and Jan Mayen"_t, "SJ", "SJM", 744};
 }
 
-const country countries::sweden() {
+auto countries::sweden() -> country {
   return country {u8"Sweden"_t, "SE", "SWE", 752};
 }
 
-const country countries::switzerland() {
+auto countries::switzerland() -> country {
   return country {u8"Switzerland"_t, "CH", "CHE", 756};
 }
 
-const country countries::syrian_arab_republic() {
+auto countries::syrian_arab_republic() -> country {
   return country {u8"Syrian Arab Republic"_t, "SY", "SYR", 760};
 }
 
-const country countries::taiwan_china() {
+auto countries::taiwan_china() -> country {
   return country {u8"Taiwan, Province of China"_t, "TW", "TWN", 158};
 }
 
-const country countries::tajikistan() {
+auto countries::tajikistan() -> country {
   return country {u8"Tajikistan"_t, "TJ", "TJK", 762};
 }
 
-const country countries::tanzania() {
+auto countries::tanzania() -> country {
   return country {u8"Tanzania, United Republic of"_t, "TZ", "TZA", 834};
 }
 
-const country countries::thailand() {
+auto countries::thailand() -> country {
   return country {u8"Thailand"_t, "TH", "THA", 764};
 }
 
-const country countries::timor_leste() {
+auto countries::timor_leste() -> country {
   return country {u8"Timor-Leste"_t, "TL", "TLS", 626};
 }
 
-const country countries::togo() {
+auto countries::togo() -> country {
   return country {u8"Togo"_t, "TG", "TGO", 768};
 }
 
-const country countries::tokelau() {
+auto countries::tokelau() -> country {
   return country {u8"Tokelau"_t, "TK", "TKL", 772};
 }
 
-const country countries::tonga() {
+auto countries::tonga() -> country {
   return country {u8"Tonga"_t, "TO", "TON", 776};
 }
 
-const country countries::trinidad_and_tobago() {
+auto countries::trinidad_and_tobago() -> country {
   return country {u8"Trinidad and Tobago"_t, "TT", "TTO", 780};
 }
 
-const country countries::tunisia() {
+auto countries::tunisia() -> country {
   return country {u8"Tunisia"_t, "TN", "TUN", 788};
 }
 
-const country countries::turkey() {
+auto countries::turkey() -> country {
   return country {u8"Turkey"_t, "TR", "TUR", 792};
 }
 
-const country countries::turkmenistan() {
+auto countries::turkmenistan() -> country {
   return country {u8"Turkmenistan"_t, "TM", "TKM", 795};
 }
 
-const country countries::turks_and_caicos_islands() {
+auto countries::turks_and_caicos_islands() -> country {
   return country {u8"Turks and Caicos Islands"_t, "TC", "TCA", 796};
 }
 
-const country countries::tuvalu() {
+auto countries::tuvalu() -> country {
   return country {u8"Tuvalu"_t, "TV", "TUV", 798};
 }
 
-const country countries::uganda() {
+auto countries::uganda() -> country {
   return country {u8"Uganda"_t, "UG", "UGA", 800};
 }
 
-const country countries::ukraine() {
+auto countries::ukraine() -> country {
   return country {u8"Ukraine"_t, "UA", "UKR", 804};
 }
 
-const country countries::united_arab_emirates() {
+auto countries::united_arab_emirates() -> country {
   return country {u8"United Arab Emirates", "AE", "ARE", 784};
 }
 
-const country countries::united_kingdom_of_great_britain_and_northern_ireland() {
+auto countries::united_kingdom_of_great_britain_and_northern_ireland() -> country {
   return country {u8"United Kingdom of Great Britain and Northern Ireland"_t, "GB", "GBR", 826};
 }
 
-const country countries::united_states_of_america() {
+auto countries::united_states_of_america() -> country {
   return country {u8"United States of America"_t, "US", "USA", 840};
 }
 
-const country countries::united_states_minor_outlying_islands() {
+auto countries::united_states_minor_outlying_islands() -> country {
   return country {u8"United States Minor Outlying Islands"_t, "UM", "UMI", 581};
 }
 
-const country countries::uruguay() {
+auto countries::uruguay() -> country {
   return country {u8"Uruguay"_t, "UY", "URY", 858};
 }
 
-const country countries::uzbekistan() {
+auto countries::uzbekistan() -> country {
   return country {u8"Uzbekistan"_t, "UZ", "UZB", 860};
 }
 
-const country countries::vanuatu() {
+auto countries::vanuatu() -> country {
   return country {u8"Vanuatu"_t, "VU", "VUT", 548};
 }
 
-const country countries::venezuela() {
+auto countries::venezuela() -> country {
   return country {u8"Venezuela (Bolivarian Republic of)"_t, "VE", "VEN", 862};
 }
 
-const country countries::viet_nam() {
+auto countries::viet_nam() -> country {
   return country {u8"Viet Nam"_t, "VN", "VNM", 704};
 }
 
-const country countries::british_virgin_islands() {
+auto countries::british_virgin_islands() -> country {
   return country {u8"Virgin Islands (British)"_t, "VG", "VGB", 92};
 }
 
-const country countries::united_states_virgin_islands() {
+auto countries::united_states_virgin_islands() -> country {
   return country {u8"Virgin Islands (U.S.)"_t, "VI", "VIR", 850};
 }
 
-const country countries::wallis_and_futuna() {
+auto countries::wallis_and_futuna() -> country {
   return country {u8"Wallis and Futuna"_t, "WF", "WLF", 876};
 }
 
-const country countries::western_sahara() {
+auto countries::western_sahara() -> country {
   return country {u8"Western Sahara"_t, "EH", "ESH", 732};
 }
 
-const country countries::yemen() {
+auto countries::yemen() -> country {
   return country {u8"Yemen"_t, "YE", "YEM", 887};
 }
 
-const country countries::zambia() {
+auto countries::zambia() -> country {
   return country {u8"Zambia"_t, "ZM", "ZMB", 894};
 }
 
-const country countries::zimbabwe() {
+auto countries::zimbabwe() -> country {
   return country {u8"Zimbabwe"_t, "ZW", "ZWE", 716};
 }
 
-const array<country>& countries::get_countries() {
+auto countries::get_countries() -> const array<country>& {
   static auto countries = array {afghanistan(), aland_islands(), albania(), algeria(), american_samoa(), andorra(), angola(), anguilla(), antarctica(), antigua_and_barbuda(), argentina(), armenia(), aruba(), australia(), austria(), azerbaijan(), bahamas(), bahrain(), bangladesh(), barbados(), belarus(), belgium(), belize(), benin(), bermuda(), bhutan(), bolivia(), bonaire_sint_eustatius_and_saba(), bosnia_and_herzegovina(), botswana(), bouvet_island(), brazil(), british_indian_ocean_territory(), brunei_darussalam(), bulgaria(), burkina_faso(), burundi(), cabo_verde(), cambodia(), cameroon(), canada(), cayman_islands(), central_african_republic(), chad(), chile(), china(), christmas_island(), cocos_keeling_islands(), colombia(), comoros(), congo(), democratic_republic_of_the_congo(), cook_islands(), costa_rica(), cote_d_ivoire(), croatia(), cuba(), curacao(), cyprus(), czechia(), denmark(), djibouti(), dominica(), dominican_republic(), ecuador(), egypt(), el_salvador(), equatorial_guinea(), eritrea(), estonia(), eswatini(), ethiopia(), falkland_islands(), faroe_islands(), fiji(), finland(), france(), french_guiana(), french_polynesia(), french_southern_territories(), gabon(), gambia(), georgia(), germany(), ghana(), gibraltar(), greece(), greenland(), grenada(), guadeloupe(), guam(), guatemala(), guernsey(), guinea(), guinea_bissau(), guyana(), haiti(), heard_island_and_mcdonald_islands(), holy_see(), honduras(), hong_kong(), hungary(), iceland(), india(), indonesia(), iran(), iraq(), ireland(), isle_of_man(), israel(), italy(), jamaica(), japan(), jersey(), jordan(), kazakhstan(), kenya(), kiribati(), north_korea(), south_korea(), kuwait(), kyrgyzstan(), lao_people_s_democratic_republic(), latvia(), lebanon(), lesotho(), liberia(), libya(), liechtenstein(), lithuania(), luxembourg(), macao(), madagascar(), malawi(), malaysia(), maldives(), mali(), malta(), marshall_islands(), martinique(), mauritania(), mauritius(), mayotte(), mexico(), federated_states_of_micronesia(), moldova(), monaco(), mongolia(), montenegro(), montserrat(), morocco(), mozambique(), myanmar(), namibia(), nauru(), nepal(), netherlands(), new_caledonia(), new_zealand(), nicaragua(), niger(), nigeria(), niue(), norfolk_island(), north_macedonia(), northern_mariana_islands(), norway(), oman(), pakistan(), palau(), state_of_palestine(), panama(), papua_new_guinea(), paraguay(), peru(), philippines(), pitcairn(), poland(), portugal(), puerto_rico(), qatar(), reunion(), romania(), russian_federation(), rwanda(), saint_barthelemy(), saint_helena_ascension_and_tristan_da_cunha(), saint_kitts_and_nevis(), saint_lucia(), saint_martin_french_part(), saint_pierre_and_miquelon(), saint_vincent_and_the_grenadines(), samoa(), san_marino(), sao_tome_and_principe(), saudi_arabia(), senegal(), serbia(), seychelles(), sierra_leone(), singapore(), sint_maarten_dutch_part(), slovakia(), slovenia(), solomon_islands(), somalia(), south_africa(), south_georgia_and_the_south_sandwich_islands(), south_sudan(), spain(), sri_lanka(), sudan(), suriname(), svalbard_and_jan_mayen(), sweden(), switzerland(), syrian_arab_republic(), taiwan_china(), tajikistan(), tanzania(), thailand(), timor_leste(), togo(), tokelau(), tonga(), trinidad_and_tobago(), tunisia(), turkey(), turkmenistan(), turks_and_caicos_islands(), tuvalu(), uganda(), ukraine(), united_arab_emirates(), united_kingdom_of_great_britain_and_northern_ireland(), united_states_of_america(), united_states_minor_outlying_islands(), uruguay(), uzbekistan(), vanuatu(), venezuela(), viet_nam(), british_virgin_islands(), united_states_virgin_islands(), wallis_and_futuna(), western_sahara(), yemen(), zambia(), zimbabwe()};
   return countries;
 }

@@ -28,751 +28,751 @@ namespace xtd {
       /// @{
       /// @brief A system-defined country object.
       /// @image html af.png
-      static const country afghanistan();
+      [[nodiscard]] static auto afghanistan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ax.png
-      static const country aland_islands();
+      [[nodiscard]] static auto aland_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html al.png
-      static const country albania();
+      [[nodiscard]] static auto albania() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html dz.png
-      static const country algeria();
+      [[nodiscard]] static auto algeria() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html as.png
-      static const country american_samoa();
+      [[nodiscard]] static auto american_samoa() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ad.png
-      static const country andorra();
+      [[nodiscard]] static auto andorra() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ao.png
-      static const country angola();
+      [[nodiscard]] static auto angola() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ai.png
-      static const country anguilla();
+      [[nodiscard]] static auto anguilla() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html aq.png
-      static const country antarctica();
+      [[nodiscard]] static auto antarctica() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ag.png
-      static const country antigua_and_barbuda();
+      [[nodiscard]] static auto antigua_and_barbuda() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ar.png
-      static const country argentina();
+      [[nodiscard]] static auto argentina() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html am.png
-      static const country armenia();
+      [[nodiscard]] static auto armenia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html aw.png
-      static const country aruba();
+      [[nodiscard]] static auto aruba() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html au.png
-      static const country australia();
+      [[nodiscard]] static auto australia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html at.png
-      static const country austria();
+      [[nodiscard]] static auto austria() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html az.png
-      static const country azerbaijan();
+      [[nodiscard]] static auto azerbaijan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bs.png
-      static const country bahamas();
+      [[nodiscard]] static auto bahamas() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bh.png
-      static const country bahrain();
+      [[nodiscard]] static auto bahrain() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bd.png
-      static const country bangladesh();
+      [[nodiscard]] static auto bangladesh() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bb.png
-      static const country barbados();
+      [[nodiscard]] static auto barbados() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html by.png
-      static const country belarus();
+      [[nodiscard]] static auto belarus() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html be.png
-      static const country belgium();
+      [[nodiscard]] static auto belgium() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bz.png
-      static const country belize();
+      [[nodiscard]] static auto belize() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bj.png
-      static const country benin();
+      [[nodiscard]] static auto benin() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html md.png
-      static const country bermuda();
+      [[nodiscard]] static auto bermuda() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bt.png
-      static const country bhutan();
+      [[nodiscard]] static auto bhutan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bo.png
-      static const country bolivia();
+      [[nodiscard]] static auto bolivia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bq.png
-      static const country bonaire_sint_eustatius_and_saba();
+      [[nodiscard]] static auto bonaire_sint_eustatius_and_saba() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ba.png
-      static const country bosnia_and_herzegovina();
+      [[nodiscard]] static auto bosnia_and_herzegovina() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bw.png
-      static const country botswana();
+      [[nodiscard]] static auto botswana() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bv.png
-      static const country bouvet_island();
+      [[nodiscard]] static auto bouvet_island() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html br.png
-      static const country brazil();
+      [[nodiscard]] static auto brazil() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html iot.png
-      static const country british_indian_ocean_territory();
+      [[nodiscard]] static auto british_indian_ocean_territory() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bn.png
-      static const country brunei_darussalam();
+      [[nodiscard]] static auto brunei_darussalam() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bg.png
-      static const country bulgaria();
+      [[nodiscard]] static auto bulgaria() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bf.png
-      static const country burkina_faso();
+      [[nodiscard]] static auto burkina_faso() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bi.png
-      static const country burundi();
+      [[nodiscard]] static auto burundi() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cv.png
-      static const country cabo_verde();
+      [[nodiscard]] static auto cabo_verde() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kh.png
-      static const country cambodia();
+      [[nodiscard]] static auto cambodia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cm.png
-      static const country cameroon();
+      [[nodiscard]] static auto cameroon() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ca.png
-      static const country canada();
+      [[nodiscard]] static auto canada() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ky.png
-      static const country cayman_islands();
+      [[nodiscard]] static auto cayman_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cf.png
-      static const country central_african_republic();
+      [[nodiscard]] static auto central_african_republic() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html td.png
-      static const country chad();
+      [[nodiscard]] static auto chad() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cl.png
-      static const country chile();
+      [[nodiscard]] static auto chile() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cn.png
-      static const country china();
+      [[nodiscard]] static auto china() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cx.png
-      static const country christmas_island();
+      [[nodiscard]] static auto christmas_island() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cc.png
-      static const country cocos_keeling_islands();
+      [[nodiscard]] static auto cocos_keeling_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html co.png
-      static const country colombia();
+      [[nodiscard]] static auto colombia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html km.png
-      static const country comoros();
+      [[nodiscard]] static auto comoros() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cg.png
-      static const country congo();
+      [[nodiscard]] static auto congo() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cd.png
-      static const country democratic_republic_of_the_congo();
+      [[nodiscard]] static auto democratic_republic_of_the_congo() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ck.png
-      static const country cook_islands();
+      [[nodiscard]] static auto cook_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cr.png
-      static const country costa_rica();
+      [[nodiscard]] static auto costa_rica() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ci.png
-      static const country cote_d_ivoire();
+      [[nodiscard]] static auto cote_d_ivoire() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html hr.png
-      static const country croatia();
+      [[nodiscard]] static auto croatia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cu.png
-      static const country cuba();
+      [[nodiscard]] static auto cuba() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cw.png
-      static const country curacao();
+      [[nodiscard]] static auto curacao() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cy.png
-      static const country cyprus();
+      [[nodiscard]] static auto cyprus() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html cz.png
-      static const country czechia();
+      [[nodiscard]] static auto czechia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html dk.png
-      static const country denmark();
+      [[nodiscard]] static auto denmark() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html dj.png
-      static const country djibouti();
+      [[nodiscard]] static auto djibouti() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html dm.png
-      static const country dominica();
+      [[nodiscard]] static auto dominica() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html do.png
-      static const country dominican_republic();
+      [[nodiscard]] static auto dominican_republic() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ec.png
-      static const country ecuador();
+      [[nodiscard]] static auto ecuador() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html eg.png
-      static const country egypt();
+      [[nodiscard]] static auto egypt() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sv.png
-      static const country el_salvador();
+      [[nodiscard]] static auto el_salvador() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gq.png
-      static const country equatorial_guinea();
+      [[nodiscard]] static auto equatorial_guinea() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html er.png
-      static const country eritrea();
+      [[nodiscard]] static auto eritrea() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ee.png
-      static const country estonia();
+      [[nodiscard]] static auto estonia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sz.png
-      static const country eswatini();
+      [[nodiscard]] static auto eswatini() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html et.png
-      static const country ethiopia();
+      [[nodiscard]] static auto ethiopia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html fk.png
-      static const country falkland_islands();
+      [[nodiscard]] static auto falkland_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html fo.png
-      static const country faroe_islands();
+      [[nodiscard]] static auto faroe_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html fj.png
-      static const country fiji();
+      [[nodiscard]] static auto fiji() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html fi.png
-      static const country finland();
+      [[nodiscard]] static auto finland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html fr.png
-      static const country france();
+      [[nodiscard]] static auto france() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gf.png
-      static const country french_guiana();
+      [[nodiscard]] static auto french_guiana() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pf.png
-      static const country french_polynesia();
+      [[nodiscard]] static auto french_polynesia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tf.png
-      static const country french_southern_territories();
+      [[nodiscard]] static auto french_southern_territories() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ga.png
-      static const country gabon();
+      [[nodiscard]] static auto gabon() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gm.png
-      static const country gambia();
+      [[nodiscard]] static auto gambia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ge.png
-      static const country georgia();
+      [[nodiscard]] static auto georgia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html de.png
-      static const country germany();
+      [[nodiscard]] static auto germany() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gh.png
-      static const country ghana();
+      [[nodiscard]] static auto ghana() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gi.png
-      static const country gibraltar();
+      [[nodiscard]] static auto gibraltar() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gr.png
-      static const country greece();
+      [[nodiscard]] static auto greece() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gl.png
-      static const country greenland();
+      [[nodiscard]] static auto greenland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gd.png
-      static const country grenada();
+      [[nodiscard]] static auto grenada() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gp.png
-      static const country guadeloupe();
+      [[nodiscard]] static auto guadeloupe() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gu.png
-      static const country guam();
+      [[nodiscard]] static auto guam() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gt.png
-      static const country guatemala();
+      [[nodiscard]] static auto guatemala() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gg.png
-      static const country guernsey();
+      [[nodiscard]] static auto guernsey() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gn.png
-      static const country guinea();
+      [[nodiscard]] static auto guinea() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gw.png
-      static const country guinea_bissau();
+      [[nodiscard]] static auto guinea_bissau() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gy.png
-      static const country guyana();
+      [[nodiscard]] static auto guyana() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ht.png
-      static const country haiti();
+      [[nodiscard]] static auto haiti() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html hm.png
-      static const country heard_island_and_mcdonald_islands();
+      [[nodiscard]] static auto heard_island_and_mcdonald_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html va.png
-      static const country holy_see();
+      [[nodiscard]] static auto holy_see() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html hn.png
-      static const country honduras();
+      [[nodiscard]] static auto honduras() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html hk.png
-      static const country hong_kong();
+      [[nodiscard]] static auto hong_kong() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html hu.png
-      static const country hungary();
+      [[nodiscard]] static auto hungary() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html is.png
-      static const country iceland();
+      [[nodiscard]] static auto iceland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html in.png
-      static const country india();
+      [[nodiscard]] static auto india() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html id.png
-      static const country indonesia();
+      [[nodiscard]] static auto indonesia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ir.png
-      static const country iran();
+      [[nodiscard]] static auto iran() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html iq.png
-      static const country iraq();
+      [[nodiscard]] static auto iraq() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ie.png
-      static const country ireland();
+      [[nodiscard]] static auto ireland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html im.png
-      static const country isle_of_man();
+      [[nodiscard]] static auto isle_of_man() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html il.png
-      static const country israel();
+      [[nodiscard]] static auto israel() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html it.png
-      static const country italy();
+      [[nodiscard]] static auto italy() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html jm.png
-      static const country jamaica();
+      [[nodiscard]] static auto jamaica() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html jp.png
-      static const country japan();
+      [[nodiscard]] static auto japan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html je.png
-      static const country jersey();
+      [[nodiscard]] static auto jersey() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html jo.png
-      static const country jordan();
+      [[nodiscard]] static auto jordan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kz.png
-      static const country kazakhstan();
+      [[nodiscard]] static auto kazakhstan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ke.png
-      static const country kenya();
+      [[nodiscard]] static auto kenya() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ki.png
-      static const country kiribati();
+      [[nodiscard]] static auto kiribati() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kp.png
-      static const country north_korea();
+      [[nodiscard]] static auto north_korea() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kr.png
-      static const country south_korea();
+      [[nodiscard]] static auto south_korea() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kw.png
-      static const country kuwait();
+      [[nodiscard]] static auto kuwait() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kg.png
-      static const country kyrgyzstan();
+      [[nodiscard]] static auto kyrgyzstan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html la.png
-      static const country lao_people_s_democratic_republic();
+      [[nodiscard]] static auto lao_people_s_democratic_republic() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lv.png
-      static const country latvia();
+      [[nodiscard]] static auto latvia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lb.png
-      static const country lebanon();
+      [[nodiscard]] static auto lebanon() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ls.png
-      static const country lesotho();
+      [[nodiscard]] static auto lesotho() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lr.png
-      static const country liberia();
+      [[nodiscard]] static auto liberia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ly.png
-      static const country libya();
+      [[nodiscard]] static auto libya() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html li.png
-      static const country liechtenstein();
+      [[nodiscard]] static auto liechtenstein() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lt.png
-      static const country lithuania();
+      [[nodiscard]] static auto lithuania() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lu.png
-      static const country luxembourg();
+      [[nodiscard]] static auto luxembourg() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ma.png
-      static const country macao();
+      [[nodiscard]] static auto macao() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mg.png
-      static const country madagascar();
+      [[nodiscard]] static auto madagascar() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mw.png
-      static const country malawi();
+      [[nodiscard]] static auto malawi() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html my.png
-      static const country malaysia();
+      [[nodiscard]] static auto malaysia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mv.png
-      static const country maldives();
+      [[nodiscard]] static auto maldives() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ml.png
-      static const country mali();
+      [[nodiscard]] static auto mali() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mt.png
-      static const country malta();
+      [[nodiscard]] static auto malta() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mh.png
-      static const country marshall_islands();
+      [[nodiscard]] static auto marshall_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mq.png
-      static const country martinique();
+      [[nodiscard]] static auto martinique() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mr.png
-      static const country mauritania();
+      [[nodiscard]] static auto mauritania() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mu.png
-      static const country mauritius();
+      [[nodiscard]] static auto mauritius() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html yt.png
-      static const country mayotte();
+      [[nodiscard]] static auto mayotte() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mx.png
-      static const country mexico();
+      [[nodiscard]] static auto mexico() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html fm.png
-      static const country federated_states_of_micronesia();
+      [[nodiscard]] static auto federated_states_of_micronesia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html md.png
-      static const country moldova();
+      [[nodiscard]] static auto moldova() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mc.png
-      static const country monaco();
+      [[nodiscard]] static auto monaco() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mn.png
-      static const country mongolia();
+      [[nodiscard]] static auto mongolia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html me.png
-      static const country montenegro();
+      [[nodiscard]] static auto montenegro() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ms.png
-      static const country montserrat();
+      [[nodiscard]] static auto montserrat() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ma.png
-      static const country morocco();
+      [[nodiscard]] static auto morocco() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mz.png
-      static const country mozambique();
+      [[nodiscard]] static auto mozambique() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mm.png
-      static const country myanmar();
+      [[nodiscard]] static auto myanmar() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html na.png
-      static const country namibia();
+      [[nodiscard]] static auto namibia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html nr.png
-      static const country nauru();
+      [[nodiscard]] static auto nauru() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html np.png
-      static const country nepal();
+      [[nodiscard]] static auto nepal() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html nl.png
-      static const country netherlands();
+      [[nodiscard]] static auto netherlands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html nc.png
-      static const country new_caledonia();
+      [[nodiscard]] static auto new_caledonia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html nz.png
-      static const country new_zealand();
+      [[nodiscard]] static auto new_zealand() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ni.png
-      static const country nicaragua();
+      [[nodiscard]] static auto nicaragua() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ng.png
-      static const country niger();
+      [[nodiscard]] static auto niger() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ne.png
-      static const country nigeria();
+      [[nodiscard]] static auto nigeria() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html nu.png
-      static const country niue();
+      [[nodiscard]] static auto niue() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html nf.png
-      static const country norfolk_island();
+      [[nodiscard]] static auto norfolk_island() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mk.png
-      static const country north_macedonia();
+      [[nodiscard]] static auto north_macedonia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mp.png
-      static const country northern_mariana_islands();
+      [[nodiscard]] static auto northern_mariana_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html no.png
-      static const country norway();
+      [[nodiscard]] static auto norway() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html om.png
-      static const country oman();
+      [[nodiscard]] static auto oman() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pk.png
-      static const country pakistan();
+      [[nodiscard]] static auto pakistan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pw.png
-      static const country palau();
+      [[nodiscard]] static auto palau() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ps.png
-      static const country state_of_palestine();
+      [[nodiscard]] static auto state_of_palestine() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pa.png
-      static const country panama();
+      [[nodiscard]] static auto panama() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pg.png
-      static const country papua_new_guinea();
+      [[nodiscard]] static auto papua_new_guinea() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html py.png
-      static const country paraguay();
+      [[nodiscard]] static auto paraguay() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pe.png
-      static const country peru();
+      [[nodiscard]] static auto peru() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ph.png
-      static const country philippines();
+      [[nodiscard]] static auto philippines() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pn.png
-      static const country pitcairn();
+      [[nodiscard]] static auto pitcairn() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pl.png
-      static const country poland();
+      [[nodiscard]] static auto poland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pt.png
-      static const country portugal();
+      [[nodiscard]] static auto portugal() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pr.png
-      static const country puerto_rico();
+      [[nodiscard]] static auto puerto_rico() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html qa.png
-      static const country qatar();
+      [[nodiscard]] static auto qatar() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html re.png
-      static const country reunion();
+      [[nodiscard]] static auto reunion() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ro.png
-      static const country romania();
+      [[nodiscard]] static auto romania() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ru.png
-      static const country russian_federation();
+      [[nodiscard]] static auto russian_federation() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html rw.png
-      static const country rwanda();
+      [[nodiscard]] static auto rwanda() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html bl.png
-      static const country saint_barthelemy();
+      [[nodiscard]] static auto saint_barthelemy() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sh.png
-      static const country saint_helena_ascension_and_tristan_da_cunha();
+      [[nodiscard]] static auto saint_helena_ascension_and_tristan_da_cunha() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html kn.png
-      static const country saint_kitts_and_nevis();
+      [[nodiscard]] static auto saint_kitts_and_nevis() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lc.png
-      static const country saint_lucia();
+      [[nodiscard]] static auto saint_lucia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html mf.png
-      static const country saint_martin_french_part();
+      [[nodiscard]] static auto saint_martin_french_part() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html pm.png
-      static const country saint_pierre_and_miquelon();
+      [[nodiscard]] static auto saint_pierre_and_miquelon() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html vc.png
-      static const country saint_vincent_and_the_grenadines();
+      [[nodiscard]] static auto saint_vincent_and_the_grenadines() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ws.png
-      static const country samoa();
+      [[nodiscard]] static auto samoa() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sm.png
-      static const country san_marino();
+      [[nodiscard]] static auto san_marino() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html st.png
-      static const country sao_tome_and_principe();
+      [[nodiscard]] static auto sao_tome_and_principe() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sa.png
-      static const country saudi_arabia();
+      [[nodiscard]] static auto saudi_arabia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sn.png
-      static const country senegal();
+      [[nodiscard]] static auto senegal() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html rs.png
-      static const country serbia();
+      [[nodiscard]] static auto serbia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sc.png
-      static const country seychelles();
+      [[nodiscard]] static auto seychelles() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sl.png
-      static const country sierra_leone();
+      [[nodiscard]] static auto sierra_leone() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sg.png
-      static const country singapore();
+      [[nodiscard]] static auto singapore() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sx.png
-      static const country sint_maarten_dutch_part();
+      [[nodiscard]] static auto sint_maarten_dutch_part() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sk.png
-      static const country slovakia();
+      [[nodiscard]] static auto slovakia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html si.png
-      static const country slovenia();
+      [[nodiscard]] static auto slovenia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sb.png
-      static const country solomon_islands();
+      [[nodiscard]] static auto solomon_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html so.png
-      static const country somalia();
+      [[nodiscard]] static auto somalia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html za.png
-      static const country south_africa();
+      [[nodiscard]] static auto south_africa() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gs.png
-      static const country south_georgia_and_the_south_sandwich_islands();
+      [[nodiscard]] static auto south_georgia_and_the_south_sandwich_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ss.png
-      static const country south_sudan();
+      [[nodiscard]] static auto south_sudan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html es.png
-      static const country spain();
+      [[nodiscard]] static auto spain() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html lk.png
-      static const country sri_lanka();
+      [[nodiscard]] static auto sri_lanka() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sd.png
-      static const country sudan();
+      [[nodiscard]] static auto sudan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sr.png
-      static const country suriname();
+      [[nodiscard]] static auto suriname() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sj.png
-      static const country svalbard_and_jan_mayen();
+      [[nodiscard]] static auto svalbard_and_jan_mayen() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html se.png
-      static const country sweden();
+      [[nodiscard]] static auto sweden() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ch.png
-      static const country switzerland();
+      [[nodiscard]] static auto switzerland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html sy.png
-      static const country syrian_arab_republic();
+      [[nodiscard]] static auto syrian_arab_republic() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tw.png
-      static const country taiwan_china();
+      [[nodiscard]] static auto taiwan_china() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tj.png
-      static const country tajikistan();
+      [[nodiscard]] static auto tajikistan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tz.png
-      static const country tanzania();
+      [[nodiscard]] static auto tanzania() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html th.png
-      static const country thailand();
+      [[nodiscard]] static auto thailand() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tl.png
-      static const country timor_leste();
+      [[nodiscard]] static auto timor_leste() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tg.png
-      static const country togo();
+      [[nodiscard]] static auto togo() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tk.png
-      static const country tokelau();
+      [[nodiscard]] static auto tokelau() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html to.png
-      static const country tonga();
+      [[nodiscard]] static auto tonga() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tt.png
-      static const country trinidad_and_tobago();
+      [[nodiscard]] static auto trinidad_and_tobago() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tn.png
-      static const country tunisia();
+      [[nodiscard]] static auto tunisia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tr.png
-      static const country turkey();
+      [[nodiscard]] static auto turkey() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tm.png
-      static const country turkmenistan();
+      [[nodiscard]] static auto turkmenistan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tc.png
-      static const country turks_and_caicos_islands();
+      [[nodiscard]] static auto turks_and_caicos_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html tv.png
-      static const country tuvalu();
+      [[nodiscard]] static auto tuvalu() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ug.png
-      static const country uganda();
+      [[nodiscard]] static auto uganda() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ua.png
-      static const country ukraine();
+      [[nodiscard]] static auto ukraine() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ae.png
-      static const country united_arab_emirates();
+      [[nodiscard]] static auto united_arab_emirates() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html gb.png
-      static const country united_kingdom_of_great_britain_and_northern_ireland();
+      [[nodiscard]] static auto united_kingdom_of_great_britain_and_northern_ireland() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html us.png
-      static const country united_states_of_america();
+      [[nodiscard]] static auto united_states_of_america() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html um.png
-      static const country united_states_minor_outlying_islands();
+      [[nodiscard]] static auto united_states_minor_outlying_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html uy.png
-      static const country uruguay();
+      [[nodiscard]] static auto uruguay() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html uz.png
-      static const country uzbekistan();
+      [[nodiscard]] static auto uzbekistan() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html vu.png
-      static const country vanuatu();
+      [[nodiscard]] static auto vanuatu() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ve.png
-      static const country venezuela();
+      [[nodiscard]] static auto venezuela() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html vn.png
-      static const country viet_nam();
+      [[nodiscard]] static auto viet_nam() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html vg.png
-      static const country british_virgin_islands();
+      [[nodiscard]] static auto british_virgin_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html vi.png
-      static const country united_states_virgin_islands();
+      [[nodiscard]] static auto united_states_virgin_islands() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html wf.png
-      static const country wallis_and_futuna();
+      [[nodiscard]] static auto wallis_and_futuna() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html eh.png
-      static const country western_sahara();
+      [[nodiscard]] static auto western_sahara() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html ye.png
-      static const country yemen();
+      [[nodiscard]] static auto yemen() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html zm.png
-      static const country zambia();
+      [[nodiscard]] static auto zambia() -> xtd::forms::country;
       /// @brief A system-defined country object.
       /// @image html zw.png
-      static const country zimbabwe();
+      [[nodiscard]] static auto zimbabwe() -> xtd::forms::country;
       /// @}
       
       /// @name Public Static Methods
@@ -780,7 +780,7 @@ namespace xtd {
       /// @{
       /// @brief Gets countries collection.
       /// @return Countries collection.
-      static const xtd::array<country>& get_countries();
+      [[nodiscard]] static auto get_countries() -> const xtd::array<xtd::forms::country>&;
       /// @}
     };
   }
