@@ -28,7 +28,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks The @verbatim draw_item @endverbatim event is raised by owner draw controls, such as the xtd::forms::list_box and xtd::forms::combo_box controls. It contains all the information that is needed for the user to paint the specified item, including the item index, the xtd::drawing::rectangle, and the xtd::drawing::graphics on which the drawing should be done.
-    class forms_export_ draw_item_event_args : public event_args {
+    class forms_export_ draw_item_event_args : public xtd::event_args {
       struct data;
       
     public:
