@@ -29,11 +29,6 @@ namespace xtd {
     /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
     class date_range_event_args : public event_args {
     public:
-      /// @cond
-      date_range_event_args(const date_range_event_args& date_range_event_args) = default;
-      date_range_event_args& operator =(const date_range_event_args& date_range_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -47,11 +42,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the last date/time value in the range that the user has selected.
       /// @return A xtd::date_time that represents the last date in the date range that the user has selected.
-      const xtd::date_time& end() const noexcept {return end_;}
+      [[nodiscard]] auto end() const noexcept -> const xtd::date_time& {return end_;}
       
       /// @brief Gets the first date/time value in the range that the user has selected.
       /// @return A xtd::date_time that represents the first date in the date range that the user has selected.
-      const xtd::date_time& start() const noexcept {return start_;}
+      [[nodiscard]] auto start() const noexcept -> const xtd::date_time& {return start_;}
       /// @}
       
     private:
