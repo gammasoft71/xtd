@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class replace_event_args : public event_args {
+    class replace_event_args : public xtd::event_args {
     public:
       /// @name Public Constructors
       
