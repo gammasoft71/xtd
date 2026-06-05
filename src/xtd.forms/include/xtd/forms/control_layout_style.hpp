@@ -71,26 +71,26 @@ namespace xtd {
       /// @{
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
       /// @return One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.
-      xtd::forms::size_type size_type() const noexcept;
+      [[nodiscard]] auto size_type() const noexcept -> xtd::forms::size_type;
       /// @brief Sets a flag indicating how a control should be sized relative to its containing layout container.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.
-      control_layout_style& size_type(xtd::forms::size_type size_type);
+      auto size_type(xtd::forms::size_type size_type) -> control_layout_style&;
       
       /// @brief Gets a flag indicating if control is expanded to its containing layout container.
       /// @return `true` if control expanded; otherwise `false`. The default is `false`.
-      bool expanded() const noexcept;
+      [[nodiscard]] auto expanded() const noexcept -> bool;
       /// @brief Sets a flag indicating if control is expanded to its containing layout container.
       /// @param expanded `true` if control expanded; otherwise `false`. The default is `false`.
-      control_layout_style& expanded(bool expanded);
+      auto expanded(bool expanded) -> control_layout_style&;
       
       /// @brief Gets a flag indicating how a control should be align to its containing layout container.
       /// @return align One of the content_alignment values. The default is top_left.
       /// @remarks This property work only if expanded = `false`.
-      xtd::forms::content_alignment align() const noexcept;
+      [[nodiscard]] auto align() const noexcept -> xtd::forms::content_alignment;
       /// @brief Sets a flag indicating how a control should be align to its containing layout container.
       /// @param align One of the content_alignment values. The default is top_left.
       /// @remarks This property work only if expanded = `false`.
-      control_layout_style& align(xtd::forms::content_alignment align);
+      auto align(xtd::forms::content_alignment align) -> control_layout_style&;
       /// @}
       
       /// @name Public Methods
@@ -99,19 +99,19 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const control_layout_style& other) const noexcept override;
+      [[nodiscard]] auto equals(const control_layout_style& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     private:
