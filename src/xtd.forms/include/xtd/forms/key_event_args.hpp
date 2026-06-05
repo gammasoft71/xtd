@@ -22,7 +22,7 @@ namespace xtd {
     /// @remarks A key_event_args, which specifies the key the user pressed and whether any modifier keys (CMD, CTRL, ALT, and SHIFT) were pressed at the same time, is passed with each xtd::forms::control::key_down or xtd::forms::control::key_up event.
     /// @remarks The xtd::forms::control::key_down event occurs when the user presses any key. The xtd::forms::control::key_up event occurs when the user releases the key. Duplicate xtd::forms::control::key_down events occur each time the key repeats, if the key is held down, but only one xtd::forms::control::key_up event is generated when the user releases the key.
     /// @remarks The xtd::forms::control::key_press event also occurs when a key is pressed. A xtd::forms::key_press_event_args is passed with each xtd::forms::control::key_press event, and specifies the character that was composed as a result of each key press.
-    class key_event_args : public event_args {
+    class key_event_args : public xtd::event_args {
     public:
       /// @name Public Constructors
       
