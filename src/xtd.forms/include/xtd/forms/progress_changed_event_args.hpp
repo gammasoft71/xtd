@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class progress_changed_event_args : public event_args {
+    class progress_changed_event_args : public xtd::event_args {
     public:
       /// @cond
       progress_changed_event_args(const progress_changed_event_args&) = default;
