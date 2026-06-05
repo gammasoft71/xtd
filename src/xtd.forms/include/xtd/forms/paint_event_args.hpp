@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks The xtd::forms::control::paint event occurs when a control is redrawn. A paint_event_args specifies the graphics to use to paint the control and the clip_rectangle in which to paint.
-    class forms_export_ paint_event_args : public event_args {
+    class forms_export_ paint_event_args : public xtd::event_args {
     public:
       /// @name Public Constructors
       
