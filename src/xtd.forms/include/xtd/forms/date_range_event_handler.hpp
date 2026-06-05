@@ -25,6 +25,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a date_range_event_args delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate.
-    using date_range_event_handler = xtd::delegate<void(object& sender, const date_range_event_args& e)>;
+    using date_range_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::date_range_event_args& e)>;
   }
 }
