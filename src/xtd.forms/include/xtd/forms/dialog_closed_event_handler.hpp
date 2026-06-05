@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using dialog_closed_event_handler = xtd::delegate<void(object& sender, const dialog_closed_event_args& e)>;
+    using dialog_closed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::dialog_closed_event_args& e)>;
   }
 }
