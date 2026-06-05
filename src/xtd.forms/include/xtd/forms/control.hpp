@@ -192,7 +192,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        auto add(const control_ref& value) -> void override;
+        auto add(const xtd::forms::control_ref& value) -> void override;
         
         template<typename control_t>
         auto add(control_t& value) -> void {
@@ -209,7 +209,7 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t>
-        control_t& add_new() {return insert_new<control_t>(count());}
+        auto add_new() -> control_t& {return insert_new<control_t>(count());}
         /// @brief Creates and adds a control to the end.
         /// @param args The arguments to forward to the create method of the control
         /// @return A reference to the created control.
@@ -219,12 +219,12 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t, typename ...args_t>
-        control_t& add_new(args_t&& ...args) {return insert_new<control_t>(count(), std::forward<args_t>(args)...);}
+        auto add_new(args_t&& ...args) -> control_t& {return insert_new<control_t>(count(), std::forward<args_t>(args)...);}
 
-        void insert(xtd::usize index, const control_ref& value) override;
+        auto insert(xtd::usize index, const xtd::forms::control_ref& value) -> void override;
         
         template<typename control_t>
-        void insert(xtd::usize index, control_t& value) {
+        auto insert(xtd::usize index, control_t& value) -> void {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
           base::insert(index, value);
@@ -240,7 +240,7 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t>
-        control_t& insert_new(xtd::usize index) {
+        auto insert_new(xtd::usize index) -> control_t& {
           auto control = xtd::new_sptr<control_t>();
           controls_.add(control);
           insert(index, *control);
@@ -256,7 +256,7 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::add_new, and xtd::forms::control::control_collection::insert_new methods.
         /// @include emplace.cpp
         template<typename control_t, typename ...args_t>
-        control_t& insert_new(xtd::usize index, args_t&& ...args) {
+        auto insert_new(xtd::usize index, args_t&& ...args) -> control_t& {
           auto control = xtd::new_sptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           if (control->parent()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           controls_.add(control);
@@ -271,15 +271,15 @@ namespace xtd {
         using arranged_element_collection::push_back;
         template<typename control_t>
         [[deprecated("Replaced by xtd::forms::control::control_collection::add - Will be removed in version 1.2.0.")]]
-        void push_back(control_t& value) {add(value);}
+        auto push_back(control_t& value) -> void {add(value);}
         /// @}
         
       protected:
         /// @name Protected Methods
         
         /// @{
-        void on_item_removed(xtd::usize index, control_ref& item) override {
-          xtd::forms::layout::arranged_element_collection<control_ref>::on_item_removed(index, item);
+        auto on_item_removed(xtd::usize index, xtd::forms::control_ref& item) -> void override {
+          xtd::forms::layout::arranged_element_collection<xtd::forms::control_ref>::on_item_removed(index, item);
           for (auto i = xtd::usize {0}; i < controls_.count(); ++i) {
             if (controls_[i].get() != &item.get()) continue;
             controls_.remove_at(i);
@@ -289,8 +289,8 @@ namespace xtd {
         /// @}
         
       private:
-        using xtd::forms::layout::arranged_element_collection<control_ref>::insert;
-        using xtd::forms::layout::arranged_element_collection<control_ref>::add;
+        using xtd::forms::layout::arranged_element_collection<xtd::forms::control_ref>::insert;
+        using xtd::forms::layout::arranged_element_collection<xtd::forms::control_ref>::add;
         
         static xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> controls_;
       };
@@ -351,7 +351,7 @@ namespace xtd {
       /// @note The xtd::forms::control::anchor and xtd::forms::control::dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::anchor property in a derived class, use the base class's xtd::forms::control::anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::anchor property; you can override only one if needed.
-      virtual anchor_styles anchor() const noexcept;
+      [[nodiscard]] virtual auto anchor() const noexcept -> xtd::forms::anchor_styles;
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
       /// @param anchor A bitwise combination of the xtd::forms::anchor_styles values. The default is xtd::forms::anchor_styles::top and xtd::forms::anchor_styles::left.
       /// @return Current control.
@@ -361,27 +361,27 @@ namespace xtd {
       /// @warning Set the xtd::forms::control::anchor property after setting the xtd::forms::control::location and xtd::forms::control::size.
       /// @par Notes to Inheritors
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
-      virtual control& anchor(xtd::forms::anchor_styles anchor);
+      virtual auto anchor(xtd::forms::anchor_styles anchor) -> control&;
       
       /// @brief Gets where this control is scrolled to in scroll_control_into_view(control).
       /// @return A xtd::drawing::point specifying the scroll location. The default is the upper-left corner of the control.
-      virtual drawing::point auto_scroll_point() const noexcept;
+      [[nodiscard]] virtual auto auto_scroll_point() const noexcept -> xtd::drawing::point;
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return `true` if enabled; otherwise, `false`.
       /// @remarks This property is not relevant for this class.
-      virtual bool auto_size() const noexcept;
+      [[nodiscard]] virtual auto auto_size() const noexcept -> bool;
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size `true` if enabled; otherwise, `false`.
       /// @return Current control.
       /// @remarks This property is not relevant for this class.
-      virtual control& auto_size(bool auto_size);
+      virtual auto auto_size(bool auto_size) -> control&;
       
       /// @brief Gets the background color for the control.
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to `true`.
       /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual drawing::color back_color() const noexcept;
+      [[nodiscard]] virtual auto back_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @return Current control.
@@ -389,54 +389,54 @@ namespace xtd {
       /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::back_color property in a derived class, use the base class's xtd::forms::control::back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::back_color property; you can override only one if needed.
-      virtual control& back_color(const xtd::drawing::color& color);
-      /// @cond
-      virtual control& back_color(std::nullptr_t);
-      /// @endcond
+      virtual auto back_color(const xtd::drawing::color& color) -> control&;
+      /// @brief Resets the background color for the control.
+      /// @param xtd::null.
+      /// @return Current control.
+      virtual auto back_color(xtd::null_ptr) -> control&;
       
       /// @brief Gets the background image displayed in the control.
       /// @return An xtd::drawing::image that represents the image to display in the background of the control.
       /// @remarks Use the background_image property to place a graphic image onto a control.
-      virtual const xtd::drawing::image& background_image() const noexcept;
+      [[nodiscard]] virtual auto background_image() const noexcept -> const xtd::drawing::image&;
       /// @brief Sets the background image displayed in the control.
       /// @param background_image An xtd::drawing::image that represents the image to display in the background of the control.
       /// @return Current control.
       /// @remarks Use the background_image property to place a graphic image onto a control.
-      virtual control& background_image(const xtd::drawing::image& background_image);
+      virtual auto background_image(const xtd::drawing::image& background_image) -> control&;
       
       /// @brief Gets the background image layout as defined in the xtd::forms::image_layout enumeration.
       /// @return One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom). tile is the default value.
       /// @remarks Use the background_image_layout property to specify the position and behavior of an image you have placed onto a control. background_image_layout takes effect only if the background_image property is set.
       /// @remarks You can increase performance for large images if you set background_image_layout to something other than tile.
-      virtual xtd::forms::image_layout background_image_layout() const noexcept;
-      
+      [[nodiscard]] virtual auto background_image_layout() const noexcept -> xtd::forms::image_layout;
       /// @brief Sets the background image layout as defined in the xtd::forms::image_layout enumeration.
       /// @param background_image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom). tile is the default value.
       /// @return Current control.
       /// @remarks Use the background_image_layout property to specify the position and behavior of an image you have placed onto a control. background_image_layout takes effect only if the background_image property is set.
       /// @remarks You can increase performance for large images if you set background_image_layout to something other than tile.
-      virtual control& background_image_layout(xtd::forms::image_layout background_image_layout);
+      virtual auto background_image_layout(xtd::forms::image_layout background_image_layout) -> control&;
       
       /// @brief Gets the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @return An int32 representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @remarks The value of this property is equal to the sum of the top property value, and the height property value.
       /// @remarks The bottom property is a read-only property. You can manipulate this property value by changing the value of the top or height properties or calling the set_bounds, set_bounds_core, update_bounds, or set_client_size_core methods.
-      virtual int32 bottom() const noexcept;
+      [[nodiscard]] virtual auto bottom() const noexcept -> xtd::int32;
       
       /// @brief Gets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
       /// @return A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus.
-      virtual drawing::rectangle bounds() const noexcept;
+      [[nodiscard]] virtual auto bounds() const noexcept -> xtd::drawing::rectangle;
       /// @brief Sets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
       /// @param bounds A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @return Current control.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The Set_bounds_core method is called to set the bounds property. The bounds property is not always changed through its set method so you should override the set_bounds_core method to ensure that your code is executed when the bounds property is set.
-      virtual control& bounds(const xtd::drawing::rectangle& bounds);
+      virtual auto bounds(const xtd::drawing::rectangle& bounds) -> control&;
       
       /// @brief Gets a value indicating whether the control can receive focus.
       /// @return `true` if the control can receive focus; otherwise, `false`.
       /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to `true` for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
-      virtual bool can_focus() const noexcept;
+      [[nodiscard]] virtual auto can_focus() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the control can be selected.
       /// @return `true` if the control can be selected; otherwise, `false`.s
@@ -449,56 +449,56 @@ namespace xtd {
       /// * splitter
       /// * label
       /// * link_label (when there is no link present in the control)
-      virtual bool can_select() const noexcept;
+      [[nodiscard]] virtual auto can_select() const noexcept -> bool;
       
       /// @brief Determines if events can be raised on the control.
       /// @return `true` if the control can raise events; otherwise, `false`.
-      bool can_raise_events() const noexcept override;
+      [[nodiscard]] auto can_raise_events() const noexcept -> bool override;
       
       /// @brief Gets the rectangle that represents the client area of the control.
       /// @return A rectangle that represents the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
       /// @remarks Because client coordinates are relative to the upper-left corner of the client area of the control, the coordinates of the upper-left corner of the rectangle returned by this property are (0,0). You can use this property to obtain the size and coordinates of the client area of the control for tasks such as drawing on the surface of the control.
-      virtual const drawing::rectangle& client_rectangle() const noexcept;
+      [[nodiscard]] virtual auto client_rectangle() const noexcept -> const xtd::drawing::rectangle&;
       
       /// @brief Gets the height and width of the client area of the control.
       /// @return A size that represents the dimensions of the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
-      virtual const drawing::size& client_size() const noexcept;
+      [[nodiscard]] virtual auto client_size() const noexcept -> const xtd::drawing::size&;
       /// @brief Sets the height and width of the client area of the control.
       /// @param client_size A size that represents the dimensions of the client area of the control.
       /// @return Current control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_size_core method to ensure that your code is executed when the client_size property is set.
-      virtual control& client_size(const xtd::drawing::size& client_size);
+      virtual auto client_size(const xtd::drawing::size& client_size) -> control&;
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
-      virtual xtd::string company_name() const noexcept;
+      [[nodiscard]] virtual auto company_name() const noexcept -> xtd::string;
       
       /// @brief Gets the xtd::forms::context_menu that is displayed in the control.
       /// @return A xtd::forms::context_menu that represents the context menu to display in the control.
-      virtual std::optional<context_menu_ref> context_menu() const noexcept;
+      [[nodiscard]] virtual auto context_menu() const noexcept -> std::optional<context_menu_ref>;
       /// @brief Sets the xtd::forms::context_menu that is displayed in the control.
       /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
       /// @return Current control.
-      virtual control& context_menu(xtd::forms::context_menu& value);
-      /// @brief Sets the xtd::forms::context_menu that is displayed in the control.
-      /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
+      virtual auto context_menu(xtd::forms::context_menu& value) -> control&;
+      /// @brief Resets the xtd::forms::context_menu that is displayed in the control.
+      /// @param xtd::null.
       /// @return Current control.
-      virtual control& context_menu(std::nullptr_t);
+      virtual auto context_menu(xtd::null_ptr) -> control&;
       
       /// @brief Gets control appearance.
       /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
       /// @remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
-      virtual forms::control_appearance control_appearance() const noexcept;
+      [[nodiscard]] virtual auto control_appearance() const noexcept -> xtd::forms::control_appearance;
       /// @brief Sets control appearance.
       /// @param value One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
       /// @remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
-      virtual control& control_appearance(xtd::forms::control_appearance value);
+      virtual auto control_appearance(xtd::forms::control_appearance value) -> control&;
       
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -506,36 +506,37 @@ namespace xtd {
       /// @remarks You can manipulate the controls in the control::control_collection assigned to the controls property by using the methods available in the control::control_collection class.
       /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
       /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
-      virtual control_collection& controls() noexcept;
+      [[nodiscard]] virtual auto controls() noexcept -> control_collection&;
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
       /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
       /// @remarks You can manipulate the controls in the control::control_collection assigned to the controls property by using the methods available in the control::control_collection class.
       /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
       /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
-      virtual const control_collection& controls() const noexcept;
+      [[nodiscard]] virtual auto controls() const noexcept -> const control_collection&;
       
       /// @brief Gets a value indicating whether the control has been created.
       /// @return `true` if the control has been created; otherwise, `false`.
       /// @remarks The created property returns `true` if the control was successfully created even though the control's handle might not have been created or recreated yet.
-      virtual bool created() const noexcept;
+      [[nodiscard]] virtual auto created() const noexcept -> bool;
       
       /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
       /// @return A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual forms::cursor cursor() const noexcept;
+      [[nodiscard]] virtual auto cursor() const noexcept -> xtd::forms::cursor;
       /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
       /// @param cursor A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       /// @return Current control.
       /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual control& cursor(const xtd::forms::cursor& cursor);
-      /// @cond
-      virtual control& cursor(std::nullptr_t);
-      /// @endcond
+      virtual auto cursor(const xtd::forms::cursor& cursor) -> control&;
+      /// @brief Resets the cursor that is displayed when the mouse pointer is over the control.
+      /// @param xtd::null.
+      /// @return Current control.
+      virtual auto cursor(xtd::null_ptr) -> control&;
       
       /// @brief Gets the rectangle that represents the display area of the control.
       /// @return A rectangle that represents the display area of the control.
-      virtual drawing::rectangle display_rectangle() const noexcept;
+      [[nodiscard]] virtual auto display_rectangle() const noexcept -> xtd::drawing::rectangle;
       
       /// @brief Gets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @return One of the xtd::forms::dock_style values. The default is xtd::forms::dock_style::none.
@@ -545,7 +546,7 @@ namespace xtd {
       /// @note The xtd::forms::control::anchor and xtd::forms::control::dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::dock property in a derived class, use the base class's xtd::forms::control::dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the xtd::forms::control::dock property; you can override only one if needed.
-      virtual dock_style dock() const noexcept;
+      [[nodiscard]] virtual auto dock() const noexcept -> xtd::forms::dock_style;
       /// @brief Sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @param dock One of the xtd::forms::dock_style values. The default is xtd::forms::dock_style::none.
       /// @return Current control.
@@ -555,208 +556,210 @@ namespace xtd {
       /// @note The xtd::forms::control::anchor and xtd::forms::control::dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::dock property in a derived class, use the base class's xtd::forms::control::dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the xtd::forms::control::dock property; you can override only one if needed.
-      virtual control& dock(xtd::forms::dock_style dock);
+      virtual auto dock(xtd::forms::dock_style dock) -> control&;
       
       /// @brief Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
       /// @return `true` if the surface of the control should be drawn using double buffering; otherwise, `false`.
-      virtual bool double_buffered() const noexcept;
+      [[nodiscard]] virtual auto double_buffered() const noexcept -> bool;
       /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
       /// @param double_buffered `true` if the surface of the control should be drawn using double buffering; otherwise, `false`.
       /// @return Current control.
-      virtual control& double_buffered(bool double_buffered);
+      virtual auto double_buffered(bool double_buffered) -> control&;
       
       /// @brief Gets a value indicating whether the control can respond to user interaction.
       /// @return `true` if the control can respond to user interaction; otherwise, `false`. The default is `true`.
-      virtual bool enabled() const noexcept;
+      [[nodiscard]] virtual auto enabled() const noexcept -> bool;
       /// @brief Sets a value indicating whether the control can respond to user interaction.
       /// @param enabled `true` if the control can respond to user interaction; otherwise, `false`. The default is `true`.
       /// @return Current control.
-      virtual control& enabled(bool enabled);
+      virtual auto enabled(bool enabled) -> control&;
       
       /// @brief Gets a value indicating whether the control has input focus.
       /// @return `true` if the control has focus; otherwise, `false`.
-      virtual bool focused() const noexcept;
+      [[nodiscard]] virtual auto focused() const noexcept -> bool;
       
       /// @brief Gets the font of the text displayed by the control.
       /// @return The font to apply to the text displayed by the control. The default is the value of the default_font property.
       /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual drawing::font font() const noexcept;
+      [[nodiscard]] virtual auto font() const noexcept -> xtd::drawing::font;
       /// @brief Sets the font of the text displayed by the control.
       /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
       /// @return Current control.
       /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual control& font(const xtd::drawing::font& font);
-      /// @cond
-      virtual control& font(std::nullptr_t);
-      /// @endcond
+      virtual auto font(const xtd::drawing::font& font) -> control&;
+      /// @brief Resets the font of the text displayed by the control.
+      /// @param xtd::null.
+      /// @return Current control.
+      virtual auto font(xtd::null_ptr) -> control&;
       
       /// @brief Gets the foreground color of the control.
       /// @return The foreground color of the control. The default is the value of the default_fore_color property.
       /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual drawing::color fore_color() const noexcept;
+      [[nodiscard]] virtual auto fore_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets the foreground color of the control.
       /// @param color The foreground color of the control. The default is the value of the default_fore_color property.
       /// @return Current control.
       /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
-      virtual control& fore_color(const xtd::drawing::color& color);
-      /// @cond
-      virtual control& fore_color(std::nullptr_t);
-      /// @endcond
+      virtual auto fore_color(const xtd::drawing::color& color) -> control&;
+      /// @brief Resets the foreground color of the control.
+      /// @param xtd::null.
+      /// @return Current control.
+      virtual auto fore_color(xtd::null_ptr) -> control&;
       
       /// @brief Gets the window handle that the control is bound to.
       /// @return An intptr that contains the window handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the `true` native handle.
-      intptr handle() const override;
+      [[nodiscard]] auto handle() const -> xtd::intptr override;
       
       /// @brief Gets the height of the control.
       /// @return The height of the control in pixels.
-      virtual int32 height() const noexcept;
+      [[nodiscard]] virtual auto height() const noexcept -> xtd::int32;
       /// @brief Sets the height of the control.
       /// @param height The height of the control in pixels.
       /// @return Current control.
-      virtual control& height(int32 height);
+      virtual auto height(xtd::int32 height) -> control&;
       
       /// @brief Gets a value indicating whether the caller must call an invoke method when making method calls to the control because the caller is on a different thread than the one the control was created on.
       /// @return `true` if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, `false`.
-      bool invoke_required() const noexcept override;
+      [[nodiscard]] auto invoke_required() const noexcept -> bool override;
       
       /// @brief Gets a value indicating whether the control has a handle associated with it.
       /// @return `true` if a handle has been assigned to the control; otherwise, `false`.
       /// @remarks Use the is_handle_created property to determine whether create_handle has been called.
-      bool is_handle_created() const noexcept;
+      [[nodiscard]] auto is_handle_created() const noexcept -> bool;
       
       /// @brief Gets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       /// @return An int32 representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
-      virtual int32 left() const noexcept;
+      [[nodiscard]] virtual auto left() const noexcept -> xtd::int32;
       /// @brief Sets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       /// @param left An int32 representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       /// @return Current control.
-      virtual control& left(int32 left);
+      virtual auto left(xtd::int32 left) -> control&;
       
       /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
-      virtual drawing::point location() const noexcept;
+      [[nodiscard]] virtual auto location() const noexcept -> xtd::drawing::point;
       /// @brief Sets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @param location The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return Current control.
-      virtual control& location(const xtd::drawing::point& location);
+      virtual auto location(const xtd::drawing::point& location) -> control&;
       
       /// @brief Gets the space between controls.
       /// @return A padding representing the space between controls.
-      virtual forms::padding margin() const noexcept;
+      [[nodiscard]] virtual auto margin() const noexcept -> xtd::forms::padding;
       /// @brief Sets the space between controls.
       /// @param margin A padding representing the space between controls.
       /// @return Current control.
-      virtual control& margin(const xtd::forms::padding& margin);
+      virtual auto margin(const xtd::forms::padding& margin) -> control&;
       
       /// @brief Gets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual const drawing::size& maximum_client_size() const noexcept;
+      [[nodiscard]] virtual auto maximum_client_size() const noexcept -> const xtd::drawing::size&;
       /// @brief Sets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& maximum_client_size(const xtd::drawing::size& size);
+      virtual auto maximum_client_size(const xtd::drawing::size& size) -> control&;
       
       /// @brief Gets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual const drawing::size& maximum_size() const noexcept;
+      [[nodiscard]] virtual auto maximum_size() const noexcept -> const xtd::drawing::size&;
       /// @brief Sets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& maximum_size(const xtd::drawing::size& size);
+      virtual auto maximum_size(const xtd::drawing::size& size) -> control&;
       
       /// @brief Gets the client size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual const drawing::size& minimum_client_size() const noexcept;
+      [[nodiscard]] virtual auto minimum_client_size() const noexcept -> const xtd::drawing::size&;
       /// @brief Sets the client size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& minimum_client_size(const xtd::drawing::size& size);
+      virtual auto minimum_client_size(const xtd::drawing::size& size) -> control&;
       
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual const drawing::size& minimum_size() const noexcept;
+      [[nodiscard]] virtual auto minimum_size() const noexcept -> const xtd::drawing::size&;
       /// @brief Sets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& minimum_size(const xtd::drawing::size& size);
+      virtual auto minimum_size(const xtd::drawing::size& size) -> control&;
       
       /// @brief Gets the native handle that the control is bound to.
       /// @return An intptr that contains the native handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the `true` native handle.
-      intptr native_handle() const noexcept;
+      [[nodiscard]] auto native_handle() const noexcept -> xtd::intptr;
       
       /// @brief Gets the name of the control.
       /// @return The name of the control. The default is an empty string ("").
-      virtual const xtd::string& name() const noexcept;
+      [[nodiscard]] virtual auto name() const noexcept -> const xtd::string&;
       /// @brief Sets the name of the control.
       /// @param name The name of the control. The default is an empty string ("").
       /// @return Current control.
-      virtual control& name(const xtd::string& name);
+      virtual auto name(const xtd::string& name) -> control&;
       
       /// @brief Gets padding within the control.
       /// @return A padding representing the control's internal spacing characteristics.
-      virtual forms::padding padding() const noexcept;
+      [[nodiscard]] virtual auto padding() const noexcept -> xtd::forms::padding;
       /// @brief Sets padding within the control.
       /// @param padding A padding representing the control's internal spacing characteristics.
       /// @return Current control.
-      virtual control& padding(const xtd::forms::padding& padding);
+      virtual auto padding(const xtd::forms::padding& padding) -> control&;
       
       /// @brief Gets the parent container of the control.
       /// @return A control that represents the parent or container control of the control.
-      virtual std::optional<control_ref> parent() const noexcept;
+      [[nodiscard]] virtual auto parent() const noexcept -> std::optional<xtd::forms::control_ref>;
       /// @brief Sets the parent container of the control.
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
       /// @return Current control.
-      virtual control& parent(const control& parent);
+      virtual auto parent(const control& parent) -> control&;
       /// @brief Resets the parent container of the control.
-      /// @param nullptr.
+      /// @param xtd::null.
       /// @return Current control.
-      virtual control& parent(std::nullptr_t);
+      virtual auto parent(xtd::null_ptr) -> control&;
       
       /// @brief Gets the product name of the assembly containing the control.
       /// @return The product name of the assembly containing the control.
-      virtual xtd::string product_name() const noexcept;
+      [[nodiscard]] virtual auto product_name() const noexcept -> xtd::string;
       
       /// @brief Gets a value indicating whether the control is currently re-creating its handle.
       /// @return `true` if the control is currently re-creating its handle; otherwise, `false`.
-      bool recreating_handle() const noexcept;
+      [[nodiscard]] auto recreating_handle() const noexcept -> bool;
       
       /// @brief Gets the window region associated with the control.
       /// @return The window xtd::drawing::region associated with the control.
       /// @remarks The window region is a collection of pixels within the window where the operating system permits drawing. The operating system does not display any portion of a window that lies outside of the window region. The coordinates of a control's region are relative to the upper-left corner of the control, not the client area of the control.
       /// @note The collection of pixels contained with the region can be noncontiguous.
-      virtual const xtd::drawing::region& region() const noexcept;
+      [[nodiscard]] virtual auto region() const noexcept -> const xtd::drawing::region&;
       /// @brief Sets the window region associated with the control.
       /// @param value The window xtd::drawing::region associated with the control.
       /// @return Current control.
       /// @remarks The window region is a collection of pixels within the window where the operating system permits drawing. The operating system does not display any portion of a window that lies outside of the window region. The coordinates of a control's region are relative to the upper-left corner of the control, not the client area of the control.
       /// @note The collection of pixels contained with the region can be noncontiguous.
-      virtual control& region(const xtd::drawing::region& value);
+      virtual auto region(const xtd::drawing::region& value) -> control&;
       
       /// @brief Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       /// @return An int32 representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
-      virtual int32 right() const noexcept;
+      [[nodiscard]] virtual auto right() const noexcept -> xtd::int32;
       
       /// @brief Gets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
       /// @return One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
@@ -773,7 +776,7 @@ namespace xtd {
       /// * The alignment of toolbar buttons on a xtd::forms::tool_bar control or the alignment of text on a xtd::forms::tool_bar_button is not affected by the xtd::forms::control::right_to_left property.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::right_to_left property in a derived class, use the base class's xtd::forms::control::right_to_left property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::right_to_left property; you can override only one if needed.
-      virtual xtd::forms::right_to_left right_to_left() const noexcept;
+      [[nodiscard]] virtual auto right_to_left() const noexcept -> xtd::forms::right_to_left;
       /// @brief Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
       /// @param value One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
       /// @return Current control.
@@ -790,102 +793,103 @@ namespace xtd {
       /// * The alignment of toolbar buttons on a xtd::forms::tool_bar control or the alignment of text on a xtd::forms::tool_bar_button is not affected by the xtd::forms::control::right_to_left property.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::right_to_left property in a derived class, use the base class's xtd::forms::control::right_to_left property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::right_to_left property; you can override only one if needed.
-      virtual control& right_to_left(xtd::forms::right_to_left value);
-      /// @cond
-      virtual control& right_to_left(std::nullptr_t);
-      /// @endcond
+      virtual auto right_to_left(xtd::forms::right_to_left value) -> control&;
+      /// @brief Resets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
+      /// @param xtd::null.
+      /// @return Current control.
+      virtual auto right_to_left(xtd::null_ptr) -> control&;
       
       /// @brief Gets the height and width of the control.
       /// @return The size that represents the height and width of the control in pixels.
-      virtual drawing::size size() const noexcept;
+      [[nodiscard]] virtual auto size() const noexcept -> xtd::drawing::size;
       /// @brief Sets the height and width of the control.
       /// @param size The size that represents the height and width of the control in pixels.
       /// @return Current control.
-      virtual control& size(const drawing::size& size);
+      virtual auto size(const xtd::drawing::size& size) -> control&;
       
       /// @brief Gets the contol style sheet.
       /// @return The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      virtual style_sheets::style_sheet style_sheet() const noexcept;
+      [[nodiscard]] virtual auto style_sheet() const noexcept -> xtd::forms::style_sheets::style_sheet;
       /// @brief Sets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      virtual control& style_sheet(const style_sheets::style_sheet& value);
+      virtual auto style_sheet(const xtd::forms::style_sheets::style_sheet& value) -> control&;
       /// @brief Sets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      virtual control& style_sheet(const xtd::string& value);
+      virtual auto style_sheet(const xtd::string& value) -> control&;
       /// @brief Resets the contol style sheet.
-      /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
+      /// @param xtd::null.
       /// @return Current control.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-      virtual control& style_sheet(std::nullptr_t);
+      virtual auto style_sheet(xtd::null_ptr) -> control&;
       
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
       /// @return `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is `true`.
       /// @note Note: This property will always return `true` for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of `false` are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
-      virtual bool tab_stop() const noexcept;
+      [[nodiscard]] virtual auto tab_stop() const noexcept -> bool;
       /// @brief Sets a value indicating whether the user can give the focus to this control using the TAB key.
       /// @param value `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is `true`.
       /// @return Current control.
       /// @note Note: This property will always return `true` for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of `false` are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
-      virtual control& tab_stop(bool value);
+      virtual auto tab_stop(bool value) -> control&;
       
       /// @brief Gets the object that contains data about the control.
       /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      virtual xtd::any_object tag() const noexcept;
+      [[nodiscard]] virtual auto tag() const noexcept -> xtd::any_object;
       /// @brief Sets the object that contains data about the control.
       /// @param tag A xtd::any_object that contains data about the control. The default is empty.
       /// @return Current control.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      virtual control& tag(const xtd::any_object& tag);
+      virtual auto tag(const xtd::any_object& tag) -> control&;
       
       /// @brief Gets the text associated with this control.
       /// @return The text associated with this control.
-      virtual const xtd::string& text() const noexcept;
+      [[nodiscard]] virtual auto text() const noexcept -> const xtd::string&;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      virtual control& text(const xtd::string& text);
+      virtual auto text(const xtd::string& text) -> control&;
       
       /// @brief Gets the toolkit handle that the control is bound to.
       /// @return An intptr that contains the toolkit handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::toolkit_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::toolkit_handle returns the toolkit handle.
-      intptr toolkit_handle() const noexcept;
+      [[nodiscard]] auto toolkit_handle() const noexcept -> xtd::intptr;
       
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An std::int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
-      virtual int32 top() const noexcept;
+      [[nodiscard]] virtual auto top() const noexcept -> xtd::int32;
       /// @brief Sets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @param top An std::int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @return Current control.
-      virtual control& top(int32 top);
+      virtual auto top(xtd::int32 top) -> control&;
       
       /// @brief Gets the parent control that is not parented by another Windows Forms control. Typically, this is the outermost Form that the control is contained in.
       /// @return The control that represents the top-level control that contains the current control.
-      virtual std::optional<control_ref> top_level_control() const noexcept;
+      [[nodiscard]] virtual auto top_level_control() const noexcept -> std::optional<xtd::forms::control_ref>;
       
       /// @brief Gets a value indicating whether the control and all its child controls are displayed.
       /// @return `true` if the control and all its child controls are displayed; otherwise, `false`. The default is `true`.
-      virtual bool visible() const noexcept;
+      [[nodiscard]] virtual auto visible() const noexcept -> bool;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
       /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`. The default is `true`.
       /// @return Current control.
-      virtual control& visible(bool visible);
+      virtual auto visible(bool visible) -> control&;
       
       /// @brief Gets the width of the control.
       /// @return The width of the control in pixels.
-      virtual int32 width() const noexcept;
+      [[nodiscard]] virtual auto width() const noexcept -> xtd::int32;
       /// @brief Sets the width of the control.
       /// @param width The width of the control in pixels.
       /// @return Current control.
-      virtual control& width(int32 width);
+      virtual auto width(xtd::int32 width) -> control&;
       /// @}
       
       /// @name Public Static Properties
@@ -895,48 +899,48 @@ namespace xtd {
       /// @return `true` if calls on the wrong thread are caught; otherwise, `false`.
       /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to `true` to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
-      static bool check_for_illegal_cross_thread_calls() noexcept;
+      [[nodiscard]] static auto check_for_illegal_cross_thread_calls() noexcept -> bool;
       /// @brief Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
       /// @param value `true` if calls on the wrong thread are caught; otherwise, `false`.
       /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to `true` to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
-      static void check_for_illegal_cross_thread_calls(bool value);
+      static auto check_for_illegal_cross_thread_calls(bool value) -> void;
       
       /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
       /// @return A bitwise combination of the keys values. The default is none.
-      static forms::keys modifier_keys() noexcept;
+      [[nodiscard]] static auto modifier_keys() noexcept -> xtd::forms::keys;
       
       /// @brief Gets a value indicating which of the mouse buttons is in a pressed state.
       /// @return A bitwise combination of the mouse_buttons enumeration values. The default is none.
-      static forms::mouse_buttons mouse_buttons() noexcept;
+      [[nodiscard]] static auto mouse_buttons() noexcept -> xtd::forms::mouse_buttons;
       
       /// @brief Gets the position of the mouse cursor in screen coordinates.
       /// @return A xtd::drawing::point that contains the coordinates of the mouse cursor relative to the upper-left corner of the screen.
       /// @remarks The xtd::forms::control::mouse_position property returns a xtd::drawing::point that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
       /// @remarks The xtd::forms::control::mouse_position property is identical to the xtd::forms::cursor::position property.
-      static xtd::drawing::point mouse_position() noexcept;
+      static auto mouse_position() noexcept -> xtd::drawing::point;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      using isynchronize_invoke::begin_invoke;
+      using xtd::isynchronize_invoke::begin_invoke;
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
       /// @param method A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      xtd::async_result begin_invoke(delegate<void()> method) override;
+      [[nodiscard]] xtd::async_result begin_invoke(xtd::delegate<void()> method) override;
       
       /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      xtd::async_result begin_invoke(delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) override;
+      [[nodiscard]] xtd::async_result begin_invoke(xtd::delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) override;
       
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the xtd::forms::control::paint event.
       virtual void bring_to_front();
       
-      int32 compare_to(const control& value) const noexcept override;
+      [[nodiscard]] xtd::int32 compare_to(const control& value) const noexcept override;
       
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
@@ -946,7 +950,7 @@ namespace xtd {
       /// @brief Creates the xtd::drawing::graphics for the control.
       /// @return A xtd::drawing::graphics for the control.
       /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
-      drawing::graphics create_graphics() const;
+      [[nodiscard]] xtd::drawing::graphics create_graphics() const;
       
       /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
       /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
@@ -956,16 +960,16 @@ namespace xtd {
       
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      std::optional<object_ref> end_invoke(xtd::async_result async) override;
+      [[nodiscard]] std::optional<object_ref> end_invoke(xtd::async_result async) override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] bool equals(const xtd::object& obj) const noexcept override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const control& value) const noexcept override;
+      [[nodiscard]] bool equals(const control& value) const noexcept override;
       
       /// @brief Sets input focus to the control.
       /// @return `true` if the input focus request was successful; otherwise, `false`.
@@ -974,37 +978,37 @@ namespace xtd {
       
       /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
       /// @return auto_size_mode One of the xtd::forms::auto_size_mode values.
-      auto_size_mode get_auto_size_mode() const;
+      [[nodiscard]] auto_size_mode get_auto_size_mode() const;
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_back_color() const noexcept;
+      [[nodiscard]] std::optional<xtd::drawing::color> get_back_color() const noexcept;
       /// @endcond
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::font> get_font() const noexcept;
+      [[nodiscard]] std::optional<xtd::drawing::font> get_font() const noexcept;
       /// @endcond
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_fore_color() const noexcept;
+      [[nodiscard]] std::optional<xtd::drawing::color> get_fore_color() const noexcept;
       /// @endcond
       
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
       /// @exception xtd::argument_exception The child control is not in the control::control_collection.
-      xtd::usize get_child_index(intptr child) const;
+      [[nodiscard]] xtd::usize get_child_index(intptr child) const;
       
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
       /// @param throw_exception `true` to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, `false`.
-      xtd::usize get_child_index(intptr child, bool& throw_exception) const;
+      [[nodiscard]] xtd::usize get_child_index(intptr child, bool& throw_exception) const;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] xtd::usize get_hash_code() const noexcept override;
       
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to `false`. After the hide method is called, the visible property returns a value of `false` until the show method is called.
@@ -1061,12 +1065,12 @@ namespace xtd {
       /// @brief Computes the location of the specified screen point into client coordinates.
       /// @param p The screen coordinate xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
-      xtd::drawing::point point_to_client(const xtd::drawing::point& p) const;
+      [[nodiscard]] xtd::drawing::point point_to_client(const xtd::drawing::point& p) const;
       
       /// @brief Computes the location of the specified client point into screen coordinates.
       /// @param p The client coordinate  xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
-      xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
+      [[nodiscard]] xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
       
       /// @brief Places (posts) a message in the message queue with specified hwnd, message, wparam and lparam.
       /// @param hwnd The window handle of the message.
@@ -1141,7 +1145,7 @@ namespace xtd {
       
       /// @brief Returns a string containing the name of the control, if any.
       /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] xtd::string to_string() const noexcept override;
       
       /// @brief Causes the control to redraw the invalidated regions within its client area.
       /// @remarks Executes any pending requests for painting.
@@ -1173,50 +1177,50 @@ namespace xtd {
       /// @{
       /// @brief A factory to create a specified control.
       /// @return New control created.
-      static control create();
+      [[nodiscard]] static control create();
       /// @brief A factory to create a specified control with specified location.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
-      static control create(const drawing::point& location);
+      [[nodiscard]] static control create(const drawing::point& location);
       /// @brief A factory to create a specified control with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      static control create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static control create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create a specified control with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a specified control with specified parent.
       /// @param parent The parent that contains the new created control.
       /// @return New control created.
-      static control create(const control& paren);
+      [[nodiscard]] static control create(const control& paren);
       /// @brief A factory to create a specified control with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static control create(const control& parent, const drawing::point& location);
       /// @brief A factory to create a specified control with specified parent, location, and size.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      static control create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static control create(const control& parent, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create a specified control with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a specified control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create() {
+      [[nodiscard]] static control_t create() {
         auto result = control_t {};
         return result;
       }
@@ -1224,7 +1228,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const drawing::point& location) {
+      [[nodiscard]] static control_t create(const drawing::point& location) {
         auto result = control_t {};
         result.location(location);
         return result;
@@ -1234,7 +1238,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static control_t create(const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.location(location);
         result.size(size);
@@ -1246,7 +1250,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static control_t create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.location(location);
         result.size(size);
@@ -1257,7 +1261,7 @@ namespace xtd {
       /// @param parent The parent that contains the new created control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent) {
+      [[nodiscard]] static control_t create(const control& parent) {
         auto result = control_t {};
         result.parent(parent);
         return result;
@@ -1267,7 +1271,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const drawing::point& location) {
+      [[nodiscard]] static control_t create(const control& parent, const drawing::point& location) {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1279,7 +1283,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static control_t create(const control& parent, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1293,7 +1297,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1305,7 +1309,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::string& text) {
+      [[nodiscard]] static control_t create(const xtd::string& text) {
         auto result = control_t {};
         result.text(text);
         return result;
@@ -1315,7 +1319,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::string& text, const drawing::point& location) {
+      [[nodiscard]] static control_t create(const xtd::string& text, const drawing::point& location) {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1327,7 +1331,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1341,7 +1345,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1354,7 +1358,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::string& text) {
+      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1366,7 +1370,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::string& text, const drawing::point& location) {
+      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text, const drawing::point& location) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1380,7 +1384,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1396,7 +1400,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1410,12 +1414,12 @@ namespace xtd {
       /// @param handle The window handle (HWND) to search for.
       /// @return The control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       /// @remarks This method searches up the window handle parent chain until it finds a handle that is associated with a control. This method is more reliable than the from_handle method, because it correctly returns controls that own more than one handle.
-      static std::optional<control_ref> from_child_handle(intptr handle);
+      [[nodiscard]] static std::optional<control_ref> from_child_handle(intptr handle);
       
       /// @brief Returns the control that is currently associated with the specified handle.
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
-      static std::optional<control_ref> from_handle(intptr handle);
+      [[nodiscard]] static std::optional<control_ref> from_handle(intptr handle);
       /// @}
       
       /// @name Public Events
@@ -1858,35 +1862,35 @@ namespace xtd {
       /// @{
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::control_state values.
-      xtd::forms::visual_styles::control_state control_state() const noexcept;
+      [[nodiscard]] xtd::forms::visual_styles::control_state control_state() const noexcept;
       
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       /// @remarks The create_params property should not be overridden and used to adjust the properties of your derived control. Properties such as the create_params::caption, create_params::width, and create_params::height should be set by the corresponding properties in your control such as control::text, control::width and control::height. The create_params should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the forms namespace.
       /// @par Notes for inheritors
       /// When overriding the create_params property in a derived class, use the base class's create_params property to extend the base implementation. Otherwise, you must provide all the implementation.
-      virtual forms::create_params create_params() const noexcept;
+      [[nodiscard]] virtual forms::create_params create_params() const noexcept;
       
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const noexcept;
+      [[nodiscard]] virtual drawing::color default_back_color() const noexcept;
       
       /// @brief Gets the default cursor for the control.
       /// @return An object of type xtd::forms::cursor representing the current default cursor.
-      virtual forms::cursor default_cursor() const noexcept;
+      [[nodiscard]] virtual forms::cursor default_cursor() const noexcept;
       
       /// @brief Gets the default font of the control.
       /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
-      virtual drawing::font default_font() const noexcept;
+      [[nodiscard]] virtual drawing::font default_font() const noexcept;
       
       /// @brief Gets the default foreground color of the control.
       /// @return The default foreground color of the control. The default is control_text.
-      virtual drawing::color default_fore_color() const noexcept;
+      [[nodiscard]] virtual drawing::color default_fore_color() const noexcept;
       
       /// @brief Gets the default size of the control.
       /// @return The default size of the control.
-      virtual drawing::size default_size() const noexcept;
+      [[nodiscard]] virtual drawing::size default_size() const noexcept;
       /// @}
       
       /// @name Protected Methods
@@ -1911,15 +1915,15 @@ namespace xtd {
       /// @param flag The control_styles bit to return the value from.
       /// @return `true` if the specified control style bit is set to `true`; otherwise, `false`.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
-      bool get_style(control_styles flag) const noexcept;
+      [[nodiscard]] bool get_style(control_styles flag) const noexcept;
       
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
-      virtual drawing::size measure_control() const noexcept;
+      [[nodiscard]] virtual drawing::size measure_control() const noexcept;
       
       /// @brief Measure this control text.
       /// @return The drawing::size size of this control text.
-      drawing::size measure_text() const noexcept;
+      [[nodiscard]] drawing::size measure_text() const noexcept;
       
       /// @brief Raises the xtd::forms::control::auto_size_changed event.
       /// @param e An xtd::event_args that contains the event data.
@@ -2203,7 +2207,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool get_state(control::state flag) const noexcept;
+      [[nodiscard]] bool get_state(control::state flag) const noexcept;
       void set_state(control::state flag, bool value);
       bool on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const;
       /// @endcond
@@ -2212,11 +2216,11 @@ namespace xtd {
       void do_layout_children_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
-      static bool is_trace_form_or_control(const string& name);
+      [[nodiscard]] static bool is_trace_form_or_control(const string& name);
       void on_parent_size_changed(object& sender, const event_args& e);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr handle, message& message);
-      intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);
+      [[nodiscard]] intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);
       void wm_app_idle(message& message);
       void wm_child_activate(message& message);
       void wm_command(message& message);
