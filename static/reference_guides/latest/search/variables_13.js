@@ -2,7 +2,7 @@ var searchData=
 [
   ['t_5frex_0',['t_rex',['../classxtd_1_1forms_1_1emoticons.html#a076dee5d0acd4b201f1e8b38545beeed',1,'xtd::forms::emoticons']]],
   ['t_5fshirt_1',['t_shirt',['../classxtd_1_1forms_1_1emoticons.html#ab76c1b282988bc2554fea80a2db749d7',1,'xtd::forms::emoticons']]],
-  ['tab_5fstop_5fchanged_2',['tab_stop_changed',['../classxtd_1_1forms_1_1control.html#a2e6a773300b752225e18683bb39fb7f8',1,'xtd::forms::control']]],
+  ['tab_5fstop_5fchanged_2',['tab_stop_changed',['../classxtd_1_1forms_1_1control.html#a5c1af1eac07347818c4deec1e28f00d8',1,'xtd::forms::control']]],
   ['table_5ftennis_5fpaddle_5fand_5fball_3',['table_tennis_paddle_and_ball',['../classxtd_1_1forms_1_1emoticons.html#aa23a6b3b9e8f7085722a0d470845fec8',1,'xtd::forms::emoticons']]],
   ['taco_4',['taco',['../classxtd_1_1forms_1_1emoticons.html#aec75b691734f6bb00b85ae74f041e917',1,'xtd::forms::emoticons']]],
   ['takeout_5fbox_5',['takeout_box',['../classxtd_1_1forms_1_1emoticons.html#a01f828b2407e4bfffcf6d3bb6c2aef7b',1,'xtd::forms::emoticons']]],
@@ -23,7 +23,7 @@ var searchData=
   ['tent_20',['tent',['../classxtd_1_1forms_1_1emoticons.html#a741e5dc7081820fb34e156c234783de8',1,'xtd::forms::emoticons']]],
   ['test_5ftube_21',['test_tube',['../classxtd_1_1forms_1_1emoticons.html#a619bdf2d646fa0958e52b5e5375061c5',1,'xtd::forms::emoticons']]],
   ['text_5falign_5fchanged_22',['text_align_changed',['../classxtd_1_1forms_1_1label.html#a0b804168f3570873a47d08a0113fcb80',1,'xtd::forms::label']]],
-  ['text_5fchanged_23',['text_changed',['../classxtd_1_1forms_1_1control.html#a4aec54a6d3082f21cedd536008e40854',1,'xtd::forms::control']]],
+  ['text_5fchanged_23',['text_changed',['../classxtd_1_1forms_1_1control.html#ab9f69a50d836b59bb965d39a396c768b',1,'xtd::forms::control']]],
   ['thermometer_24',['thermometer',['../classxtd_1_1forms_1_1emoticons.html#aefefe493016dd40932a415ae71689939',1,'xtd::forms::emoticons']]],
   ['thinking_5fface_25',['thinking_face',['../classxtd_1_1forms_1_1emoticons.html#a13f5c140111577b20e4db7a4e863b867',1,'xtd::forms::emoticons']]],
   ['third_5fplace_5fmedal_26',['third_place_medal',['../classxtd_1_1forms_1_1emoticons.html#af22b95afadeaf53a823dcaeb59b86331',1,'xtd::forms::emoticons']]],

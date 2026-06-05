@@ -47,7 +47,7 @@ var searchData=
   ['atom_5fsymbol_44',['atom_symbol',['../classxtd_1_1forms_1_1emoticons.html#ab39352be2d445f5c7779a30a3a4b9d8a',1,'xtd::forms::emoticons']]],
   ['aubergine_45',['aubergine',['../classxtd_1_1forms_1_1emoticons.html#a3a642c78029d626c15a5dc82005f7e7c',1,'xtd::forms::emoticons']]],
   ['auto_5frickshaw_46',['auto_rickshaw',['../classxtd_1_1forms_1_1emoticons.html#ab1dae616268dce4d5f323d8ae134d973',1,'xtd::forms::emoticons']]],
-  ['auto_5fsize_5fchanged_47',['auto_size_changed',['../classxtd_1_1forms_1_1control.html#a8cdb3a6b3fe7fb4d4fc09a9f9174d8b6',1,'xtd::forms::control']]],
+  ['auto_5fsize_5fchanged_47',['auto_size_changed',['../classxtd_1_1forms_1_1control.html#ad96b1497e3590c5b47e72b1588e0f264',1,'xtd::forms::control']]],
   ['automated_5fteller_5fmachine_48',['automated_teller_machine',['../classxtd_1_1forms_1_1emoticons.html#ad91cdf83ab76031fc427a38325403a05',1,'xtd::forms::emoticons']]],
   ['automobile_49',['automobile',['../classxtd_1_1forms_1_1emoticons.html#a9cbcd1aa575bf0640da12d32ee0ad9df',1,'xtd::forms::emoticons']]],
   ['avocado_50',['avocado',['../classxtd_1_1forms_1_1emoticons.html#a66fc8caeff71ef0e3b1e0be6d297f7cf',1,'xtd::forms::emoticons']]],

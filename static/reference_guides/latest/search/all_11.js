@@ -1,7 +1,7 @@
 var searchData=
 [
   ['q_0',['q',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7694f4a66316e53c8cdd9d9954bd611d',1,'xtd::q'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea7694f4a66316e53c8cdd9d9954bd611d',1,'xtd::forms::q']]],
-  ['qatar_1',['qatar',['../classxtd_1_1forms_1_1countries.html#a3851d6f1dbf33d697461788ea3724021',1,'xtd::forms::countries']]],
+  ['qatar_1',['qatar',['../classxtd_1_1forms_1_1countries.html#a51742142e37ddca2abdeecb44517fae0',1,'xtd::forms::countries']]],
   ['quality_2',['quality',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#a01eaf16a8d3142136da557650590c73a',1,'xtd::drawing::imaging::encoder']]],
   ['query_3',['query',['../classxtd_1_1uri.html#a8f63463933d1862832aab0eb94e5b08b',1,'xtd::uri::query()'],['../group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb',1,'xtd::query'],['../group__xtd__core.html#ggae28bc955b84c3c42c759ee1eb4717b6aa1b1cc7f086b3f074da452bc3129981eb',1,'xtd::query']]],
   ['query_5ftarget_5fpnp_5fhandle_4',['query_target_pnp_handle',['../group__xtd__core.html#ggafcb65e427e8409a46ea4ddaee074a5b2ac35fe737abc2cf4393c315ea3dde386a',1,'xtd::net::sockets']]],

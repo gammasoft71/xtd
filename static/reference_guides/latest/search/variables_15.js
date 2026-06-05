@@ -15,7 +15,7 @@ var searchData=
   ['violet_12',['violet',['../classxtd_1_1drawing_1_1color.html#a68798d6bd6bc0da16bffd510787b2082',1,'xtd::drawing::color']]],
   ['violin_13',['violin',['../classxtd_1_1forms_1_1emoticons.html#a07e35d5f28068f691d559ce3a77577dd',1,'xtd::forms::emoticons']]],
   ['virgo_14',['virgo',['../classxtd_1_1forms_1_1emoticons.html#a0ee086e3a2082ab363b246402d580b1e',1,'xtd::forms::emoticons']]],
-  ['visible_5fchanged_15',['visible_changed',['../classxtd_1_1forms_1_1control.html#a386f32440d7b3c683f95ab943cc8ae5e',1,'xtd::forms::control']]],
+  ['visible_5fchanged_15',['visible_changed',['../classxtd_1_1forms_1_1control.html#a2e45e37ab916349559fdc8d014a2d101',1,'xtd::forms::control']]],
   ['volcano_16',['volcano',['../classxtd_1_1forms_1_1emoticons.html#a1abc7c6dd1aab249fbf2b2bfe035b557',1,'xtd::forms::emoticons']]],
   ['volleyball_17',['volleyball',['../classxtd_1_1forms_1_1emoticons.html#a52a8bfd27219a6e88388b88da0947bf3',1,'xtd::forms::emoticons']]]
 ];

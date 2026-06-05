@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['qatar_0',['qatar',['../classxtd_1_1forms_1_1countries.html#a3851d6f1dbf33d697461788ea3724021',1,'xtd::forms::countries']]],
+  ['qatar_0',['qatar',['../classxtd_1_1forms_1_1countries.html#a51742142e37ddca2abdeecb44517fae0',1,'xtd::forms::countries']]],
   ['quality_1',['quality',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#a01eaf16a8d3142136da557650590c73a',1,'xtd::drawing::imaging::encoder']]],
   ['query_2',['query',['../classxtd_1_1uri.html#a8f63463933d1862832aab0eb94e5b08b',1,'xtd::uri']]],
   ['question_3',['question',['../classxtd_1_1media_1_1system__sounds.html#a4acec475d7679f100f1622aa0f784b99',1,'xtd::media::system_sounds::question()'],['../classxtd_1_1drawing_1_1system__icons.html#a6b811694a705aa08351cc3b73011643c',1,'xtd::drawing::system_icons::question() noexcept -&gt; xtd::drawing::icon'],['../classxtd_1_1drawing_1_1system__icons.html#a87944121679a164353327e3c5d76a03d',1,'xtd::drawing::system_icons::question(const xtd::drawing::size &amp;size) noexcept -&gt; xtd::drawing::icon']]],

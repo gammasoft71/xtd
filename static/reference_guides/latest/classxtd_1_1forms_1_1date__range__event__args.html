@@ -129,7 +129,7 @@ Inheritance diagram for xtd::forms::date_range_event_args:</div>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1month__calendar.html#ad84f0aec07a7e057e8c2bdde9cf87e4c" title="Occurs when the date selected in the xtd::forms::month_calendar changes.">xtd::forms::month_calendar::date_changed</a> event occurs when the currently selected date or range of dates changes; for example, when the user explicitly changes a selection within the current month or when the selection is implicitly changed in response to next/previous month navigation. The <a class="el" href="classxtd_1_1forms_1_1month__calendar.html#a10bc3f04d063156025c95e49eb59d68a" title="Occurs when the user makes an explicit date selection using the mouse.">xtd::forms::month_calendar::date_selected</a> event occurs when the user explicitly changes a selection. The <a class="el" href="classxtd_1_1forms_1_1date__range__event__args.html" title="Provides data for the xtd::forms::month_calendar::date_changed or xtd::forms::month_calendar::date_se...">xtd::forms::date_range_event_args</a> constructor specifies the start and end for the new date range that has been selected. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If a single date is selected, the <a class="el" href="#af83e260c3948d535336b24ceab587fa9" title="Gets the first date/time value in the range that the user has selected.">xtd::forms::date_range_event_args::start</a> and <a class="el" href="#aea5f76524cf127ab5ef4c35136378830" title="Gets the last date/time value in the range that the user has selected.">xtd::forms::date_range_event_args::end</a> property values will be equal. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If a single date is selected, the <a class="el" href="#ab4d2ca24d8174602a624eef2778b24a0" title="Gets the first date/time value in the range that the user has selected.">xtd::forms::date_range_event_args::start</a> and <a class="el" href="#aa3cfc15e2a4dbbaee06e5a2c0d8a6612" title="Gets the last date/time value in the range that the user has selected.">xtd::forms::date_range_event_args::end</a> property values will be equal. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -139,10 +139,10 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:aea5f76524cf127ab5ef4c35136378830" id="r_aea5f76524cf127ab5ef4c35136378830"><td class="memItemLeft">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aea5f76524cf127ab5ef4c35136378830">end</a> () const noexcept</td></tr>
-<tr class="memdesc:aea5f76524cf127ab5ef4c35136378830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last date/time value in the range that the user has selected.  <br /></td></tr>
-<tr class="memitem:af83e260c3948d535336b24ceab587fa9" id="r_af83e260c3948d535336b24ceab587fa9"><td class="memItemLeft">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af83e260c3948d535336b24ceab587fa9">start</a> () const noexcept</td></tr>
-<tr class="memdesc:af83e260c3948d535336b24ceab587fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first date/time value in the range that the user has selected.  <br /></td></tr>
+<tr class="memitem:aa3cfc15e2a4dbbaee06e5a2c0d8a6612" id="r_aa3cfc15e2a4dbbaee06e5a2c0d8a6612"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3cfc15e2a4dbbaee06e5a2c0d8a6612">end</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:aa3cfc15e2a4dbbaee06e5a2c0d8a6612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last date/time value in the range that the user has selected.  <br /></td></tr>
+<tr class="memitem:ab4d2ca24d8174602a624eef2778b24a0" id="r_ab4d2ca24d8174602a624eef2778b24a0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4d2ca24d8174602a624eef2778b24a0">start</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:ab4d2ca24d8174602a624eef2778b24a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first date/time value in the range that the user has selected.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -209,8 +209,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aea5f76524cf127ab5ef4c35136378830" name="aea5f76524cf127ab5ef4c35136378830"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea5f76524cf127ab5ef4c35136378830">&#9670;&#160;</a></span>end()</h2>
+<a id="aa3cfc15e2a4dbbaee06e5a2c0d8a6612" name="aa3cfc15e2a4dbbaee06e5a2c0d8a6612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cfc15e2a4dbbaee06e5a2c0d8a6612">&#9670;&#160;</a></span>end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,15 +219,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::forms::date_range_event_args::end </td>
+          <td class="memname">auto xtd::forms::date_range_event_args::end </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -237,8 +237,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af83e260c3948d535336b24ceab587fa9" name="af83e260c3948d535336b24ceab587fa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af83e260c3948d535336b24ceab587fa9">&#9670;&#160;</a></span>start()</h2>
+<a id="ab4d2ca24d8174602a624eef2778b24a0" name="ab4d2ca24d8174602a624eef2778b24a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d2ca24d8174602a624eef2778b24a0">&#9670;&#160;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,15 +247,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::forms::date_range_event_args::start </td>
+          <td class="memname">auto xtd::forms::date_range_event_args::start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

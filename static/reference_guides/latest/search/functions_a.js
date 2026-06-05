@@ -1,9 +1,9 @@
 var searchData=
 [
   ['kanji_5fwindow_5fheight_0',['kanji_window_height',['../classxtd_1_1forms_1_1system__information.html#aec459208249798ee40c819e4f533a30b',1,'xtd::forms::system_information']]],
-  ['kazakhstan_1',['kazakhstan',['../classxtd_1_1forms_1_1countries.html#abeafc0b22625fcd922da04939315bacd',1,'xtd::forms::countries']]],
+  ['kazakhstan_1',['kazakhstan',['../classxtd_1_1forms_1_1countries.html#ac861569a60dab61f9d0f3b17eb7d6c8e',1,'xtd::forms::countries']]],
   ['kde_5flogo_2',['kde_logo',['../classxtd_1_1drawing_1_1system__icons.html#ace50b7bcee0d1f3f580d3b53b614c82b',1,'xtd::drawing::system_icons::kde_logo() noexcept -&gt; xtd::drawing::icon'],['../classxtd_1_1drawing_1_1system__icons.html#a3a24637f085bee781ffce02bd526755a',1,'xtd::drawing::system_icons::kde_logo(const xtd::drawing::size &amp;size) noexcept -&gt; xtd::drawing::icon']]],
-  ['kenya_3',['kenya',['../classxtd_1_1forms_1_1countries.html#afd4888f43ec3e7a94fb3c98e6251dfcc',1,'xtd::forms::countries']]],
+  ['kenya_3',['kenya',['../classxtd_1_1forms_1_1countries.html#aebfefd30e903e874c1d9b592301ff3ac',1,'xtd::forms::countries']]],
   ['key_4',['key',['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#a8ecff906120e109a68ff8d05b9a503ab',1,'xtd::collections::generic::key_value_pair::key()'],['../classxtd_1_1console__key__info.html#a560bacb960197c63703fb856041b7736',1,'xtd::console_key_info::key()'],['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#a8ecff906120e109a68ff8d05b9a503ab',1,'xtd::collections::generic::key_value_pair&lt; &gt;::key()']]],
   ['key_5favailable_5',['key_available',['../classxtd_1_1console.html#abb5c4e6bb1318c5ce3f30c2f9ef8667b',1,'xtd::console']]],
   ['key_5fchar_6',['key_char',['../classxtd_1_1console__key__info.html#aa997048efd66ee4e2ce25ae9ec3afa42',1,'xtd::console_key_info::key_char()'],['../classxtd_1_1forms_1_1key__press__event__args.html#a64d9048ab774c10bc8a70da6aea1cdf2',1,'xtd::forms::key_press_event_args::key_char() const noexcept'],['../classxtd_1_1forms_1_1key__press__event__args.html#a13e6e8bc20555302d7af649ed8fdd467',1,'xtd::forms::key_press_event_args::key_char(char32 key_char)']]],
@@ -22,7 +22,7 @@ var searchData=
   ['khaki_19',['khaki',['../classxtd_1_1drawing_1_1brushes.html#a56bcee2cf6044703f5b71ed97ebe39ff',1,'xtd::drawing::brushes::khaki()'],['../classxtd_1_1drawing_1_1colors.html#a5d810d9eb626c7e707a115fe669853bf',1,'xtd::drawing::colors::khaki()'],['../classxtd_1_1drawing_1_1pens.html#a624c3f52337c2a3507c9adf895ec6ce7',1,'xtd::drawing::pens::khaki()'],['../classxtd_1_1drawing_1_1yellow__colors.html#ab13a52d612615c6dc50d18d0b37891a3',1,'xtd::drawing::yellow_colors::khaki()']]],
   ['kill_20',['kill',['../classxtd_1_1diagnostics_1_1process.html#a1a6ed9423e8599ff34b419f54b16c789',1,'xtd::diagnostics::process']]],
   ['kind_21',['kind',['../classxtd_1_1date__time.html#a9ad59fef912d7007d922d6c7614a2e19',1,'xtd::date_time::kind()'],['../classxtd_1_1forms_1_1menu__item.html#aa7c1d7d105e752e36b05546dcea4ed84',1,'xtd::forms::menu_item::kind() const noexcept'],['../classxtd_1_1forms_1_1menu__item.html#a8c1c54c27a5dcac04341f7485e181809',1,'xtd::forms::menu_item::kind(xtd::forms::menu_item_kind value)']]],
-  ['kiribati_22',['kiribati',['../classxtd_1_1forms_1_1countries.html#afefc3aee77415003a06e16d66048830a',1,'xtd::forms::countries']]],
-  ['kuwait_23',['kuwait',['../classxtd_1_1forms_1_1countries.html#abe08cd7b7769313f3dd5ef3571c44a9d',1,'xtd::forms::countries']]],
-  ['kyrgyzstan_24',['kyrgyzstan',['../classxtd_1_1forms_1_1countries.html#a20b9af121f14d0dcd6ab45f502a0128e',1,'xtd::forms::countries']]]
+  ['kiribati_22',['kiribati',['../classxtd_1_1forms_1_1countries.html#a2db018647197e8244b891475285d72b4',1,'xtd::forms::countries']]],
+  ['kuwait_23',['kuwait',['../classxtd_1_1forms_1_1countries.html#aa3d15601030d17d4b97adbc6ed70f11a',1,'xtd::forms::countries']]],
+  ['kyrgyzstan_24',['kyrgyzstan',['../classxtd_1_1forms_1_1countries.html#a08851569359020543cf4cbf00fd633b7',1,'xtd::forms::countries']]]
 ];
