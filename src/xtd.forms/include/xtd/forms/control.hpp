@@ -335,9 +335,9 @@ namespace xtd {
       
       /// @cond
       control(control&& rhs) = default;
-      control& operator = (control&&) = default;
+      auto operator = (control&&) -> control& = default;
       control(const control& rhs) = delete;
-      control& operator = (const control&) = delete;
+      auto operator = (const control&) -> control& = delete;
       ~control();
       /// @endcond
       
@@ -842,7 +842,7 @@ namespace xtd {
       /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      [[nodiscard]] virtual auto tag() const noexcept -> xtd::any_object;
+      [[nodiscard]] virtual auto tag() const noexcept -> const xtd::any_object&;
       /// @brief Sets the object that contains data about the control.
       /// @param tag A xtd::any_object that contains data about the control. The default is empty.
       /// @return Current control.
@@ -928,149 +928,149 @@ namespace xtd {
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
       /// @param method A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      [[nodiscard]] xtd::async_result begin_invoke(xtd::delegate<void()> method) override;
+      [[nodiscard]] auto begin_invoke(xtd::delegate<void()> method) -> xtd::async_result override;
       
       /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      [[nodiscard]] xtd::async_result begin_invoke(xtd::delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) override;
+      [[nodiscard]] auto begin_invoke(xtd::delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) -> xtd::async_result override;
       
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the xtd::forms::control::paint event.
-      virtual void bring_to_front();
+      virtual auto bring_to_front() -> void;
       
-      [[nodiscard]] xtd::int32 compare_to(const control& value) const noexcept override;
+      [[nodiscard]] auto compare_to(const control& value) const noexcept -> xtd::int32 override;
       
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
       /// @remarks create_control does not create a control handle if the control's visible property is `false`. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.
-      void create_control();
+      auto create_control() -> void;
       
       /// @brief Creates the xtd::drawing::graphics for the control.
       /// @return A xtd::drawing::graphics for the control.
       /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
-      [[nodiscard]] xtd::drawing::graphics create_graphics() const;
+      [[nodiscard]] auto create_graphics() const -> xtd::drawing::graphics;
       
       /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
       /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
       /// @par Notes to Inheritors
       /// When overriding destroy_control() in a derived class, be sure to call the base class's destroy_control() method to ensure that the handle is destroyed.
-      virtual void destroy_control();
+      virtual auto destroy_control() -> void;
       
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      [[nodiscard]] std::optional<object_ref> end_invoke(xtd::async_result async) override;
+      [[nodiscard]] auto end_invoke(xtd::async_result async) -> std::optional<xtd::object_ref> override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      [[nodiscard]] bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      [[nodiscard]] bool equals(const control& value) const noexcept override;
+      [[nodiscard]] auto equals(const control& value) const noexcept -> bool override;
       
       /// @brief Sets input focus to the control.
       /// @return `true` if the input focus request was successful; otherwise, `false`.
       /// @remarks The focus method returns `true` if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
-      bool focus();
+      auto focus() -> bool;
       
       /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
       /// @return auto_size_mode One of the xtd::forms::auto_size_mode values.
-      [[nodiscard]] auto_size_mode get_auto_size_mode() const;
+      [[nodiscard]] auto get_auto_size_mode() const -> xtd::forms::auto_size_mode;
       
       /// @cond
       /// @todo Remove when render is done.
-      [[nodiscard]] std::optional<xtd::drawing::color> get_back_color() const noexcept;
+      [[nodiscard]] auto get_back_color() const noexcept -> std::optional<xtd::drawing::color>;
       /// @endcond
       
       /// @cond
       /// @todo Remove when render is done.
-      [[nodiscard]] std::optional<xtd::drawing::font> get_font() const noexcept;
+      [[nodiscard]] auto get_font() const noexcept -> std::optional<xtd::drawing::font>;
       /// @endcond
       
       /// @cond
       /// @todo Remove when render is done.
-      [[nodiscard]] std::optional<xtd::drawing::color> get_fore_color() const noexcept;
+      [[nodiscard]] auto get_fore_color() const noexcept -> std::optional<xtd::drawing::color>;
       /// @endcond
       
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
       /// @exception xtd::argument_exception The child control is not in the control::control_collection.
-      [[nodiscard]] xtd::usize get_child_index(intptr child) const;
+      [[nodiscard]] auto get_child_index(xtd::intptr child) const -> xtd::usize;
       
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
       /// @param throw_exception `true` to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, `false`.
-      [[nodiscard]] xtd::usize get_child_index(intptr child, bool& throw_exception) const;
+      [[nodiscard]] auto get_child_index(xtd::intptr child, bool& throw_exception) const -> xtd::usize;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      [[nodiscard]] xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to `false`. After the hide method is called, the visible property returns a value of `false` until the show method is called.
-      virtual void hide();
+      virtual auto hide() -> void;
       
       /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate() const;
+      virtual auto invalidate() const -> void;
       
       /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(bool invalidate_children) const;
+      virtual auto invalidate(bool invalidate_children) const -> void;
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::rectangle& rect) const;
+      virtual auto invalidate(const xtd::drawing::rectangle& rect) const -> void;
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
       /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
+      virtual auto invalidate(const xtd::drawing::rectangle& rect, bool invalidate_children) const -> void;
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
       /// @param region A xtd::drawing::region that represents the region to invalidate.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::region& region) const;
+      virtual auto invalidate(const xtd::drawing::region& region) const -> void;
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param region A xtd::drawing::region that represents the region to invalidate.
       /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
+      virtual auto invalidate(const xtd::drawing::region& region, bool invalidate_children) const -> void;
       
-      using isynchronize_invoke::invoke;
+      using xtd::isynchronize_invoke::invoke;
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
       /// @param method A delegate that contains a method to be called in the control's thread context.
-      std::optional<object_ref> invoke(delegate<void()> method) override;
+      auto invoke(xtd::delegate<void()> method) -> std::optional<xtd::object_ref> override;
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      std::optional<object_ref> invoke(delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) override;
+      auto invoke(xtd::delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) -> std::optional<xtd::object_ref> override;
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      std::optional<object_ref> invoke(delegate<void(xtd::array<xtd::any_object>)> method, const xtd::any_object& arg) override;
+      auto invoke(xtd::delegate<void(xtd::array<xtd::any_object>)> method, const xtd::any_object& arg) -> std::optional<xtd::object_ref> override;
       
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the xtd::forms::control::layout event is suppressed.
-      void perform_layout();
+      auto perform_layout() -> void;
       
       /// @brief Computes the location of the specified screen point into client coordinates.
       /// @param p The screen coordinate xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
-      [[nodiscard]] xtd::drawing::point point_to_client(const xtd::drawing::point& p) const;
+      [[nodiscard]] auto point_to_client(const xtd::drawing::point& p) const -> xtd::drawing::point;
       
       /// @brief Computes the location of the specified client point into screen coordinates.
       /// @param p The client coordinate  xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
-      [[nodiscard]] xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
+      [[nodiscard]] auto point_to_screen(const xtd::drawing::point& p) const -> xtd::drawing::point;
       
       /// @brief Places (posts) a message in the message queue with specified hwnd, message, wparam and lparam.
       /// @param hwnd The window handle of the message.
@@ -1078,24 +1078,24 @@ namespace xtd {
       /// @param wparam The WParam field of the message.
       /// @param lparam The LParam field of the message.
       /// @return `true` if message posted; otherwise `false`.
-      bool post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
+      auto post_message(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam) const -> bool;
       
       /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
       /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
       /// @return `true` if the message was processed by the control; otherwise, `false`.
       /// @remarks pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
-      virtual bool pre_process_message(const xtd::forms::message& message);
+      virtual auto pre_process_message(const xtd::forms::message& message) -> bool;
       
       /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
       /// @par Notes to Inheritors
       /// When overriding refresh() in a derived class, be sure to call the base class's refresh() method so the control and its child controls are invalidated and redrawn.
-      virtual void refresh() const;
+      virtual auto refresh() const -> void;
       
       /// @brief Resumes usual layout logic.
       /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests.
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
-      void resume_layout();
+      auto resume_layout() -> void;
       
       /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
       /// @param perform_layout `true` to execute pending layout requests; otherwise, `false`.
@@ -1103,7 +1103,7 @@ namespace xtd {
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
-      void resume_layout(bool perform_layout);
+      auto resume_layout(bool perform_layout) -> void;
       
       /// @brief Send a message with specified hwnd, message, wparam and lparam.
       /// @param hwnd The window handle of the message.
@@ -1111,18 +1111,18 @@ namespace xtd {
       /// @param wparam The WParam field of the message.
       /// @param lparam The LParam field of the message.
       /// @return The return value of the message.
-      intptr send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
+      auto send_message(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam) const -> xtd::intptr;
       
       /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.
       /// @param auto_size_mode One of the xtd::forms::auto_size_mode values.
-      void set_auto_size_mode(auto_size_mode auto_size_mode);
+      auto set_auto_size_mode(xtd::forms::auto_size_mode auto_size_mode) -> void;
       
       /// @brief Sets the bounds of the control to the specified location and size.
       /// @param x The new left property value of the control.
       /// @param y The new top property value of the control.
       /// @param width The new width property value of the control.
       /// @param height The new height property value of the control.
-      void set_bounds(int32 x, int32 y, int32 width, int32 height);
+      auto set_bounds(xtd::int32 x, xtd::int32 y, xtd::int32 width, xtd::int32 height) -> void;
       
       /// @brief Sets the specified bounds of the control to the specified location and size.
       /// @param x The new left property value of the control.
@@ -1130,22 +1130,22 @@ namespace xtd {
       /// @param width The new width property value of the control.
       /// @param height The new height property value of the control.
       /// @param specified A bitwise combination of the xtd::forms::bounds_specified values. For any parameter not specified, the current value will be used.
-      void set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
+      auto set_bounds(xtd::int32 x, xtd::int32 y, xtd::int32 width, xtd::int32 height, xtd::forms::bounds_specified specified) -> void;
       
       /// @brief Displays the control to the user.
       /// @remarks Showing the control is equivalent to setting the visible property to `true`. After the show method is called, the visible property returns a value of `true` until the hide method is called.
-      virtual void show();
+      virtual auto show() -> void;
       
       /// @brief Temporarily suspends the layout logic for the control.
       /// @remarks The layout logic of the control is suspended until the resume_layout method is called.
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
-      void suspend_layout();
+      auto suspend_layout() -> void;
       
       /// @brief Returns a string containing the name of the control, if any.
       /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
-      [[nodiscard]] xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       
       /// @brief Causes the control to redraw the invalidated regions within its client area.
       /// @remarks Executes any pending requests for painting.
@@ -1153,7 +1153,7 @@ namespace xtd {
       /// * You can use one of the overloads of the invalidate method with the update method.
       /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to `true` and using it with update.
       /// @remarks The invalidate method governs what gets painted or repainted. The update method governs when the painting or repainting occurs. If you use the invalidate and update methods together rather than calling refresh, what gets repainted depends on which overload of invalidate you use. The update method just forces the control to be painted immediately, but the invalidate method governs what gets painted when you call the update method.
-      virtual void update() const;
+      virtual auto update() const -> void;
       /// @}
       
       /// @name Operators
@@ -1163,13 +1163,13 @@ namespace xtd {
       /// @param parent A control that represents the parent or container control of the control.
       /// @param child A control to add to parent.
       /// @return Current control.
-      control& operator <<(control& child);
+      auto operator <<(control& child) -> control&;
       
       /// @brief Remove child control.
       /// @param parent A control that represents the parent or container control of the control.
       /// @param child A control to remove to parent.
       /// @return Current control.
-      control& operator >>(control& child);
+      auto operator >>(control& child) -> control&;
       /// @}
       
       /// @name Public Static Methods
@@ -1177,50 +1177,50 @@ namespace xtd {
       /// @{
       /// @brief A factory to create a specified control.
       /// @return New control created.
-      [[nodiscard]] static control create();
+      [[nodiscard]] static auto create() -> control;
       /// @brief A factory to create a specified control with specified location.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
-      [[nodiscard]] static control create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> control;
       /// @brief A factory to create a specified control with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      [[nodiscard]] static control create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> control;
       /// @brief A factory to create a specified control with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      [[nodiscard]] static control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> control;
       /// @brief A factory to create a specified control with specified parent.
       /// @param parent The parent that contains the new created control.
       /// @return New control created.
-      [[nodiscard]] static control create(const control& paren);
+      [[nodiscard]] static auto create(const control& paren) -> control;
       /// @brief A factory to create a specified control with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      [[nodiscard]] static control create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location) -> control;
       /// @brief A factory to create a specified control with specified parent, location, and size.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      [[nodiscard]] static control create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> control;
       /// @brief A factory to create a specified control with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      [[nodiscard]] static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> control;
       /// @brief A factory to create a specified control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create() {
+      [[nodiscard]] static auto create() -> control_t {
         auto result = control_t {};
         return result;
       }
@@ -1228,7 +1228,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const drawing::point& location) {
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> control_t {
         auto result = control_t {};
         result.location(location);
         return result;
@@ -1238,7 +1238,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> control_t {
         auto result = control_t {};
         result.location(location);
         result.size(size);
@@ -1250,7 +1250,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> control_t {
         auto result = control_t {};
         result.location(location);
         result.size(size);
@@ -1261,7 +1261,7 @@ namespace xtd {
       /// @param parent The parent that contains the new created control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent) {
+      [[nodiscard]] static auto create(const control& parent) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         return result;
@@ -1271,7 +1271,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const drawing::point& location) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1283,7 +1283,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1297,7 +1297,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.location(location);
@@ -1309,7 +1309,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const xtd::string& text) {
+      [[nodiscard]] static auto create(const xtd::string& text) -> control_t {
         auto result = control_t {};
         result.text(text);
         return result;
@@ -1319,7 +1319,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const xtd::string& text, const drawing::point& location) {
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location) -> control_t {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1331,7 +1331,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> control_t {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1345,7 +1345,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> control_t {
         auto result = control_t {};
         result.text(text);
         result.location(location);
@@ -1358,7 +1358,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::string& text) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1370,7 +1370,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text, const drawing::point& location) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::string& text, const xtd::drawing::point& location) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1384,7 +1384,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1400,7 +1400,7 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       template<typename control_t>
-      [[nodiscard]] static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+      [[nodiscard]] static auto create(const control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> control_t {
         auto result = control_t {};
         result.parent(parent);
         result.text(text);
@@ -1414,12 +1414,12 @@ namespace xtd {
       /// @param handle The window handle (HWND) to search for.
       /// @return The control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       /// @remarks This method searches up the window handle parent chain until it finds a handle that is associated with a control. This method is more reliable than the from_handle method, because it correctly returns controls that own more than one handle.
-      [[nodiscard]] static std::optional<control_ref> from_child_handle(intptr handle);
+      [[nodiscard]] static auto from_child_handle(xtd::intptr handle) -> std::optional<xtd::forms::control_ref>;
       
       /// @brief Returns the control that is currently associated with the specified handle.
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
-      [[nodiscard]] static std::optional<control_ref> from_handle(intptr handle);
+      [[nodiscard]] static auto from_handle(xtd::intptr handle) -> std::optional<xtd::forms::control_ref>;
       /// @}
       
       /// @name Public Events
@@ -1428,27 +1428,27 @@ namespace xtd {
       /// @brief Occurs when the value of the xtd::forms::control::auto_size property changes.
       /// @remarks This event is raised if the xtd::forms::control::auto_size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> auto_size_changed;
+      xtd::event<control, xtd::event_handler> auto_size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::back_color property changes.
       /// @remarks This event is raised if the xtd::forms::control::back_color property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> back_color_changed;
+      xtd::event<control, xtd::event_handler> back_color_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::background_image property changes.
       /// @remarks This event is raised if the xtd::forms::control::background_image property is changed by either a programmatic modification or user interaction
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> background_image_changed;
+      xtd::event<control, xtd::event_handler> background_image_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::background_image_layout property changes.
       /// @remarks This event is raised if the xtd::forms::control::background_image_layout property is changed by either a programmatic modification or user interaction
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> background_image_layout_changed;
+      xtd::event<control, xtd::event_handler> background_image_layout_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::control_appearance property changes.
       /// @remarks This event is raised if the control_appearance property is changed by either a programmatic modification or user interaction
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> control_appearance_changed;
+      xtd::event<control, xtd::event_handler> control_appearance_changed;
       
       /// @brief Occurs when the xtd::forms::control is clicked.
       /// @remarks The xtd::forms::control::click event passes an xtd::event_args to its event handler, so it only indicates that a click has occurred. If you need more specific mouse information (button, number of clicks, wheel rotation, or location), use the xtd::forms::control::mouse_click event. However, the xtd::forms::control::mouse_click event will not be raised if the click is caused by action other than that of the mouse, such as pressing the ENTER key.
@@ -1473,30 +1473,30 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> click;
+      xtd::event<control, xtd::event_handler> click;
       
       /// @brief Occurs when the value of the xtd::forms::control::client_size property changes.
       /// @remarks This event is raised if the xtd::forms::control::client_size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> client_size_changed;
+      xtd::event<control, xtd::event_handler> client_size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::cursor property changes.
       /// @remarks This event is raised if the xtd::forms::control::cursor property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> cursor_changed;
+      xtd::event<control, xtd::event_handler> cursor_changed;
       
       /// @brief Occurs when a new xtd::forms::control::control is added to the xtd::forms::control::control_collection.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, control_event_handler> control_added;
+      xtd::event<control, xtd::forms::control_event_handler> control_added;
       
       /// @brief Occurs when a new xtd::forms::control:: is removed to the xtd::forms::control::control_collection.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, control_event_handler> control_removed;
+      xtd::event<control, xtd::forms::control_event_handler> control_removed;
       
       /// @brief Occurs when the value of the xtd::forms::control::dock property changes.
       /// @remarks This event is raised if the xtd::forms::control::dock property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> dock_changed;
+      xtd::event<control, xtd::event_handler> dock_changed;
       
       /// @brief Occurs when the xtd::forms::control is double-clicked.
       /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the xtd::forms::control::click and xtd::forms::control::double_click events of a xtd::forms::form, the xtd::forms::control::click and xtd::forms::control::double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the xtd::forms::control::double_click event, the click event might be raised twice.
@@ -1520,7 +1520,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> double_click;
+      xtd::event<control, xtd::event_handler> double_click;
       
       /// @brief Occurs when the xtd::forms::control receives focus.
       /// @remarks When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the select or select_next_control methods, or by setting the container_control::active_control property to the current form, focus events occur in the following order:
@@ -1541,37 +1541,37 @@ namespace xtd {
       /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> got_focus;
+      xtd::event<control, xtd::event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the xtd::forms::control.
       /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to `false`, the xtd::forms::control::handle_created event will not be raised until visible is set to `true`.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> handle_created;
+      xtd::event<control, xtd::event_handler> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
       /// @remarks During the xtd::forms::control::handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> handle_destroyed;
+      xtd::event<control, xtd::event_handler> handle_destroyed;
       
       /// @brief Occurs when the value of the xtd::forms::control::enabled property changes.
       /// @remarks This event is raised if the xtd::forms::control::enabled property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> enabled_changed;
+      xtd::event<control, xtd::event_handler> enabled_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::fore_color property changes.
       /// @remarks This event is raised if the xtd::forms::control::fore_color property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> fore_color_changed;
+      xtd::event<control, xtd::event_handler> fore_color_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::font property changes.
       /// @remarks This event is raised if the xtd::forms::control::font property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> font_changed;
+      xtd::event<control, xtd::event_handler> font_changed;
       
       /// @brief Occurs when the user requests help for a xtd::forms::control.
       /// @remarks The xtd::forms::control::help_requested event is commonly raised when the user presses the F1 key or an associated context-sensitive help button is clicked.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, help_event_handler> help_requested;
+      xtd::event<control, xtd::forms::help_event_handler> help_requested;
       
       /// @brief Occurs when a key is pressed while the xtd::forms::control has focus.
       /// @remarks Key events occur in the following order:
@@ -1583,7 +1583,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, key_event_handler> key_down;
+      xtd::event<control, xtd::forms::key_event_handler> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.
       /// @remarks Key events occur in the following order:
@@ -1597,7 +1597,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, key_press_event_handler> key_press;
+      xtd::event<control, xtd::forms::key_press_event_handler> key_press;
       
       /// @brief Occurs when a key is released while the xtd::forms::control has focus.
       /// @remarks Key events occur in the following order:
@@ -1609,17 +1609,17 @@ namespace xtd {
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, key_event_handler> key_up;
+      xtd::event<control, xtd::forms::key_event_handler> key_up;
       
       /// @brief Occurs when a xtd::forms::control should reposition its child controls.
       /// @remarks The xtd::forms::control::layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The xtd::forms::control::layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a xtd::forms::control::layout event.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> layout;
+      xtd::event<control, xtd::event_handler> layout;
       
       /// @brief Occurs when the value of the xtd::forms::control::location property changes.
       /// @remarks This event is raised if the xtd::forms::control::location property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> location_changed;
+      xtd::event<control, xtd::event_handler> location_changed;
       
       /// @brief Occurs when the xtd::forms::control loses focus.
       /// @remarks When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the select or select_next_control methods, or by setting the container_control::active_control property to the current form, focus events occur in the following order:
@@ -1641,7 +1641,7 @@ namespace xtd {
       /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> lost_focus;
+      xtd::event<control, xtd::event_handler> lost_focus;
       
       /// @brief Occurs when the xtd::forms::control is clicked by the mouse.
       /// @remarks Depressing a mouse button when the cursor is over a control typically raises the following series of events from the control:
@@ -1657,7 +1657,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_click;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_click;
       
       /// @brief Occurs when the xtd::forms::control is double clicked by the mouse.
       /// @remarks The xtd::forms::control::mouse_double_click event occurs when the user depresses a mouse button twice in quick succession when the cursor is over the control. The time interval that separates two single clicks from a double-click is determined by the mouse settings of the user's operating system.
@@ -1677,7 +1677,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_double_click;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is pressed.
       /// @remarks Mouse events occur in the following order:
@@ -1691,7 +1691,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_down;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the xtd::forms::control.
       /// @remarks Mouse events occur in the following order:
@@ -1705,7 +1705,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> mouse_enter;
+      xtd::event<control, xtd::event_handler> mouse_enter;
       
       /// @brief Occurs when the mouse horizontal wheel moves while the xtd::forms::control has focus.
       /// @remarks When handling the xtd::forms::control::mouse_horizontal_wheel event it is important to follow the user interface (UI) standards associated with the mouse wheel. The mouse_event_args::delta property value indicates the amount the mouse wheel has been moved.
@@ -1720,7 +1720,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_horizontal_wheel;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the xtd::forms::control.
       /// @remarks Mouse events occur in the following order:
@@ -1734,7 +1734,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> mouse_leave;
+      xtd::event<control, xtd::event_handler> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the xtd::forms::control.
       /// @remarks Mouse events occur in the following order:
@@ -1748,7 +1748,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_move;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is released.
       /// @remarks Mouse events occur in the following order:
@@ -1762,7 +1762,7 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_up;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the xtd::forms::control has focus.
       /// @remarks When handling the xtd::forms::control::mouse_wheel event it is important to follow the user interface (UI) standards associated with the mouse wheel. The mouse_event_args::delta property value indicates the amount the mouse wheel has been moved. The UI should scroll when the accumulated delta is plus or minus 120. The UI should scroll the number of logical lines returned by the system_information::mouse_wheel_scroll_lines property for every delta value reached. You can also scroll more smoothly in smaller that 120 unit increments, however the ratio should remain constant, that is system_information::mouse_wheel_scroll_lines lines scrolled per 120 delta units of wheel movement.
@@ -1777,11 +1777,11 @@ namespace xtd {
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, mouse_event_handler> mouse_wheel;
+      xtd::event<control, xtd::forms::mouse_event_handler> mouse_wheel;
       
       /// @brief Occurs when the control is moved.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> move;
+      xtd::event<control, xtd::event_handler> move;
       
       /// @brief Occurs when the xtd::forms::control is redrawn.
       /// @remarks The xtd::forms::control::paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the xtd::forms::control::paint event. The xtd::forms::control::paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the xtd::forms::control::paint event.
@@ -1790,17 +1790,17 @@ namespace xtd {
       /// The following code example demonstrates the use of control paint events.
       /// @include form_paint.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, paint_event_handler> paint;
+      xtd::event<control, xtd::forms::paint_event_handler> paint;
       
       /// @brief Occurs when the value of the xtd::forms::control::parent property changes.
       /// @remarks This event is raised if the xtd::forms::control::parent property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> parent_changed;
+      xtd::event<control, xtd::event_handler> parent_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::region property changes.
       /// @remarks This event is raised if the xtd::forms::control::region property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> region_changed;
+      xtd::event<control, xtd::event_handler> region_changed;
       
       /// @brief Occurs when the xtd::forms::control is resized.
       /// @remarks To determine the size of the resized control, you can cast the sender parameter of the registered control_event_handler method to a control and get its size property (or height and width properties individually).
@@ -1809,42 +1809,42 @@ namespace xtd {
       /// The following code example demonstrates the use of control xtd::forms::control::resize event.
       /// @include dot_matrix_display.cpp
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> resize;
+      xtd::event<control, xtd::event_handler> resize;
       
       /// @brief Occurs when the value of the xtd::forms::control::right_to_left property changes.
       /// @remarks This event is raised if the xtd::forms::control::right_to_left property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> right_to_left_changed;
+      xtd::event<control, xtd::event_handler> right_to_left_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::size property changes.
       /// @remarks This event is raised if the xtd::forms::control::size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> size_changed;
+      xtd::event<control, xtd::event_handler> size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::style_sheet property changes or when xtd::application::style_sheet property changes.
       /// @remarks This event is raised if the xtd::forms::control::style_sheet property is changed or when xtd::application::style_sheet property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> style_sheet_changed;
+      xtd::event<control, xtd::event_handler> style_sheet_changed;
       
       /// @brief Occurs when the xtd::drwing::system_colors changes.
       /// @remarks This event is raised if the xtd::drawing::system_colors is changed. For example when automatic dark mode switching on macOS.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> system_colors_changed;
+      xtd::event<control, xtd::event_handler> system_colors_changed;
       
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> tab_stop_changed;
+      xtd::event<control, xtd::event_handler> tab_stop_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::text property changes.
       /// @remarks This event is raised if the xtd::forms::control::text property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> text_changed;
+      xtd::event<control, xtd::event_handler> text_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::visible property changes.
       /// @remarks This event is raised if the xtd::forms::control::visible property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<control, event_handler> visible_changed;
+      xtd::event<control, xtd::event_handler> visible_changed;
       /// @}
       
     protected:
@@ -1862,35 +1862,35 @@ namespace xtd {
       /// @{
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::control_state values.
-      [[nodiscard]] xtd::forms::visual_styles::control_state control_state() const noexcept;
+      [[nodiscard]] auto control_state() const noexcept -> xtd::forms::visual_styles::control_state;
       
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       /// @remarks The create_params property should not be overridden and used to adjust the properties of your derived control. Properties such as the create_params::caption, create_params::width, and create_params::height should be set by the corresponding properties in your control such as control::text, control::width and control::height. The create_params should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the forms namespace.
       /// @par Notes for inheritors
       /// When overriding the create_params property in a derived class, use the base class's create_params property to extend the base implementation. Otherwise, you must provide all the implementation.
-      [[nodiscard]] virtual forms::create_params create_params() const noexcept;
+      [[nodiscard]] virtual auto create_params() const noexcept -> xtd::forms::create_params;
       
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      [[nodiscard]] virtual drawing::color default_back_color() const noexcept;
+      [[nodiscard]] virtual auto default_back_color() const noexcept -> xtd::drawing::color;
       
       /// @brief Gets the default cursor for the control.
       /// @return An object of type xtd::forms::cursor representing the current default cursor.
-      [[nodiscard]] virtual forms::cursor default_cursor() const noexcept;
+      [[nodiscard]] virtual auto default_cursor() const noexcept -> xtd::forms::cursor;
       
       /// @brief Gets the default font of the control.
       /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
-      [[nodiscard]] virtual drawing::font default_font() const noexcept;
+      [[nodiscard]] virtual auto default_font() const noexcept -> xtd::drawing::font;
       
       /// @brief Gets the default foreground color of the control.
       /// @return The default foreground color of the control. The default is control_text.
-      [[nodiscard]] virtual drawing::color default_fore_color() const noexcept;
+      [[nodiscard]] virtual auto default_fore_color() const noexcept -> xtd::drawing::color;
       
       /// @brief Gets the default size of the control.
       /// @return The default size of the control.
-      [[nodiscard]] virtual drawing::size default_size() const noexcept;
+      [[nodiscard]] virtual auto default_size() const noexcept -> xtd::drawing::size;
       /// @}
       
       /// @name Protected Methods
@@ -1900,253 +1900,253 @@ namespace xtd {
       /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.
       /// @par Notes to Inheritors
       /// When overriding create_handle() in a derived class, be sure to call the base class's create_handle() method to ensure that the handle is created.
-      virtual void create_handle();
+      virtual auto create_handle() -> void;
       
       /// @brief Destroys the handle associated with the control.
       /// @par Notes to Inheritors
       /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
-      virtual void destroy_handle();
+      virtual auto destroy_handle() -> void;
       
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
-      virtual void def_wnd_proc(message& message);
+      virtual auto def_wnd_proc(xtd::forms::message& message) -> void;
       
       /// @brief Retrieves the value of the specified control style bit for the control.
       /// @param flag The control_styles bit to return the value from.
       /// @return `true` if the specified control style bit is set to `true`; otherwise, `false`.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
-      [[nodiscard]] bool get_style(control_styles flag) const noexcept;
+      [[nodiscard]] auto get_style(xtd::forms::control_styles flag) const noexcept -> bool;
       
       /// @brief Measure this control.
-      /// @return The drawing::size size of this control.
-      [[nodiscard]] virtual drawing::size measure_control() const noexcept;
+      /// @return The xtd::drawing::size size of this control.
+      [[nodiscard]] virtual auto measure_control() const noexcept -> xtd::drawing::size;
       
       /// @brief Measure this control text.
-      /// @return The drawing::size size of this control text.
-      [[nodiscard]] drawing::size measure_text() const noexcept;
+      /// @return The xtd::drawing::size size of this control text.
+      [[nodiscard]] auto measure_text() const noexcept -> xtd::drawing::size;
       
       /// @brief Raises the xtd::forms::control::auto_size_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_auto_size_changed(const event_args& e);
+      virtual auto on_auto_size_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::back_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_back_color_changed(const event_args& e);
+      virtual auto on_back_color_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::background_image_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_background_image_changed(const event_args& e);
+      virtual auto on_background_image_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::background_image_layout_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_background_image_layout_changed(const event_args& e);
+      virtual auto on_background_image_layout_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the control::control_appearance_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_control_appearance_changed(const event_args& e);
+      virtual auto on_control_appearance_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::click event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_click(const event_args& e);
+      virtual auto on_click(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::client_size_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_client_size_changed(const event_args& e);
+      virtual auto on_client_size_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::control_added event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_control_added(const control_event_args& e);
+      virtual auto on_control_added(const xtd::forms::control_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::control_removed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_control_removed(const control_event_args& e);
+      virtual auto on_control_removed(const xtd::forms::control_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::create_control event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_create_control();
+      virtual auto on_create_control() -> void;
       
       /// @brief Raises the xtd::forms::control::cursor_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_cursor_changed(const event_args& e);
+      virtual auto on_cursor_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::destroy_control event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_destroy_control();
+      virtual auto on_destroy_control() -> void;
       
       /// @brief Raises the xtd::forms::control::dock_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_dock_changed(const event_args& e);
+      virtual auto on_dock_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::double_click event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_double_click(const event_args& e);
+      virtual auto on_double_click(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::enabled_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_enabled_changed(const event_args& e);
+      virtual auto on_enabled_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::fore_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_fore_color_changed(const event_args& e);
+      virtual auto on_fore_color_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::font_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_font_changed(const event_args& e);
+      virtual auto on_font_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::got_focus event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_got_focus(const event_args& e);
+      virtual auto on_got_focus(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::handle_created event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_handle_created(const event_args& e);
+      virtual auto on_handle_created(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::handle_destroyed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_handle_destroyed(const event_args& e);
+      virtual auto on_handle_destroyed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::help_requested event.
       /// @param e A xtd::forms::help_event_args that contains the event data.
-      virtual void on_help_requested(help_event_args& e);
+      virtual auto on_help_requested(xtd::forms::help_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::key_down event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_key_down(key_event_args& e);
+      virtual auto on_key_down(xtd::forms::key_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::key_press event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_key_press(key_press_event_args& e);
+      virtual auto on_key_press(xtd::forms::key_press_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::key_up event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_key_up(key_event_args& e);
+      virtual auto on_key_up(xtd::forms::key_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::layout event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_layout(const event_args& e);
+      virtual auto on_layout(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::location_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_location_changed(const event_args& e);
+      virtual auto on_location_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::lost_focus event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_lost_focus(const event_args& e);
+      virtual auto on_lost_focus(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_click event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_click(const mouse_event_args& e);
+      virtual auto on_mouse_click(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_double_click event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_double_click(const mouse_event_args& e);
+      virtual auto on_mouse_double_click(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_down event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_down(const mouse_event_args& e);
+      virtual auto on_mouse_down(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_enter event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_enter(const event_args& e);
+      virtual auto on_mouse_enter(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_horizontal_wheel event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_horizontal_wheel(const mouse_event_args& e);
+      virtual auto on_mouse_horizontal_wheel(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_leave event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_leave(const event_args& e);
+      virtual auto on_mouse_leave(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_move event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_move(const mouse_event_args& e);
+      virtual auto on_mouse_move(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_up event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_up(const mouse_event_args& e);
+      virtual auto on_mouse_up(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::mouse_wheel event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_mouse_wheel(const mouse_event_args& e);
+      virtual auto on_mouse_wheel(const xtd::forms::mouse_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::move event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_move(const event_args& e);
+      virtual auto on_move(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::paint event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_paint(paint_event_args& e);
+      virtual auto on_paint(xtd::forms::paint_event_args& e) -> void;
       
       /// @brief Paints the background of the xtd::forms::control.
       /// @param e An xtd::event_args that contains the event data.
       /// @remarks The xtd::forms::control::on_paint_background method enables derived classes to handle Windows background erase requests.
-      virtual void on_paint_background(paint_event_args& e);
+      virtual auto on_paint_background(xtd::forms::paint_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::parent_back_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_parent_back_color_changed(const event_args& e);
+      virtual auto on_parent_back_color_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::parent_cursor_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_parent_cursor_changed(const event_args& e);
+      virtual auto on_parent_cursor_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::parent_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_parent_changed(const event_args& e);
+      virtual auto on_parent_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::control::enabled_changed event when the xtd::control::enabled property value of the control's container changes..
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_parent_enabled_changed(const event_args& e);
+      virtual auto on_parent_enabled_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::parent_fore_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_parent_fore_color_changed(const event_args& e);
+      virtual auto on_parent_fore_color_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::parent_font_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_parent_font_changed(const event_args& e);
+      virtual auto on_parent_font_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::region event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_resize(const event_args& e);
+      virtual auto on_resize(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::region_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_region_changed(const event_args& e);
+      virtual auto on_region_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::right_to_left_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_right_to_left_changed(const event_args& e);
+      virtual auto on_right_to_left_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::size_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_size_changed(const event_args& e);
+      virtual auto on_size_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::style_sheet_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_style_sheet_changed(const event_args& e);
+      virtual auto on_style_sheet_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the control::system_colors_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_system_colors_changed(const event_args& e);
+      virtual auto on_system_colors_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::tab_stop_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_tab_stop_changed(const event_args& e);
+      virtual auto on_tab_stop_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::text_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_text_changed(const event_args& e);
+      virtual auto on_text_changed(const xtd::event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::control::visible_changed event.
       /// @param e An xtd::event_args that contains the event data.
-      virtual void on_visible_changed(const event_args& e);
+      virtual auto on_visible_changed(const xtd::event_args& e) -> void;
       
-      void post_recreate_handle() noexcept;
+      auto post_recreate_handle() noexcept -> void;
       
       /// @brief Forces the re-creation of the handle for the control.
       /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to `true`.
-      virtual void recreate_handle();
+      virtual auto recreate_handle() -> void;
       
       /// @brief Performs the work of setting the specified bounds of this control.
       /// @param x The new left property value of the control.
@@ -2158,17 +2158,17 @@ namespace xtd {
       /// @remarks The specified parameter represents the elements of the controls Bounds changed by your application. For example, if you change the size of the control, the specified parameter value is the size value of bounds_specified. However, if the size is adjusted in response to the dock property being set, the specified parameter value is the none value of bounds_specified.
       /// @par Notes to Inheritors
       /// When overriding set_bounds_core(int32, int32, int32, int32, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32, int32, int32, int32, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32, int32, int32, int32, bounds_specified) method.
-      virtual void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
+      virtual auto set_bounds_core(xtd::int32 x, xtd::int32 y, xtd::int32 width, xtd::int32 height, xtd::forms::bounds_specified specified) -> void;
       
       /// @brief Sets a value indicating whether the control can receive focus.
       /// @param value `true` if the control can receive focus; otherwise, `false`.
       /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to `true` for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
-      void set_can_focus(bool value);
+      auto set_can_focus(bool value) -> void;
       
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
-      virtual void set_text(const xtd::string& text);
+      virtual auto set_text(const xtd::string& text) -> void;
       
       /// @brief Sets the size of the client area of the control.
       /// @param width The client area width, in pixels.
@@ -2177,25 +2177,25 @@ namespace xtd {
       /// @remarks Typically, you should not set the client_size of the control.
       /// @par Notes to Inheritors
       /// When overriding set_client_size_core(int32, int32) in a derived class, be sure to call the base class's set_client_size_core(int32, int32) method so that the client_size property is adjusted.
-      virtual void set_client_size_core(int32 width, int32 height);
+      virtual auto set_client_size_core(xtd::int32 width, xtd::int32 height) -> void;
       
       /// @brief Sets the parent handle of the control.
       /// @param handle The parent handle.
-      void set_parent(intptr handle);
+      auto set_parent(xtd::intptr handle) -> void;
       
       /// @brief Sets a specified control_styles flag to either `true` or `false`.
       /// @param flag The control_styles bit to set.
       /// @param value `true` to apply the specified style to the control; otherwise, `false`.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit (or bits) and the bool value to set the bit(s) to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
       /// @warning Setting the control style bits can substantially change the behavior of the control. Review the control_styles enumeration documentation to understand the effects of changing the control style bits before calling the set_style method.
-      void set_style(control_styles flag, bool value);
+      auto set_style(xtd::forms::control_styles flag, bool value) -> void;
       
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       /// @par Notes to Inheritors
       /// Inheriting controls should call the base class's wnd_proc(message&) method to process any messages that they do not handle.
-      virtual void wnd_proc(message& m);
+      virtual auto wnd_proc(xtd::forms::message& m) -> void;
       /// @}
       
       /// @name Protected Static Methods
@@ -2203,61 +2203,61 @@ namespace xtd {
       /// @{
       /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.
       /// @param value A bitwise combination of the mouse_buttons enumeration values. The default is none.
-      static void set_mouse_buttons(forms::mouse_buttons value);
+      static auto set_mouse_buttons(xtd::forms::mouse_buttons value) -> void;
       /// @}
       
       /// @cond
-      [[nodiscard]] bool get_state(control::state flag) const noexcept;
-      void set_state(control::state flag, bool value);
-      bool on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const;
+      [[nodiscard]] auto get_state(control::state flag) const noexcept -> bool;
+      auto set_state(control::state flag, bool value) -> void;
+      auto on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const -> bool;
       /// @endcond
       
     private:
-      void do_layout_children_with_dock_style();
-      void do_layout_with_auto_size_mode();
-      void do_layout_with_anchor_styles();
-      [[nodiscard]] static bool is_trace_form_or_control(const string& name);
-      void on_parent_size_changed(object& sender, const event_args& e);
-      void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
-      void reflect_message(intptr handle, message& message);
-      [[nodiscard]] intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);
-      void wm_app_idle(message& message);
-      void wm_child_activate(message& message);
-      void wm_command(message& message);
-      void wm_command_control(message& message);
-      void wm_ctlcolor(message& message);
-      void wm_ctlcolor_control(message& message);
-      void wm_create(message& message);
-      void wm_destroy(message& message);
-      void wm_key_char(message& message);
-      void wm_kill_focus(message& message);
-      void wm_menu_command(message& message);
-      void wm_mouse_down(message& message);
-      void wm_mouse_double_click(message& message);
-      void wm_mouse_enter(message& message);
-      void wm_mouse_leave(message& message);
-      void wm_mouse_up(message& message);
-      void wm_mouse_move(message& message);
-      void wm_move(message& message);
-      void wm_mouse_wheel(message& message);
-      void wm_notify(message& message);
-      void wm_notify_control(message& message);
-      void wm_paint(message& message);
-      void wm_erase_background(message& message);
-      void wm_help(message& message);
-      void wm_scroll(message& message);
-      void wm_scroll_control(message& message);
-      void wm_set_focus(message& message);
-      void wm_set_text(message& message);
-      void wm_show(message& message);
-      void wm_size(message& message);
-      void wm_sizing(message& message);
-      void wm_style_sheet_changed(message& message);
+      auto do_layout_children_with_dock_style() -> void;
+      auto do_layout_with_auto_size_mode() -> void;
+      auto do_layout_with_anchor_styles() -> void;
+      [[nodiscard]] static auto is_trace_form_or_control(const string& name) -> bool;
+      auto on_parent_size_changed(xtd::object& sender, const xtd::event_args& e) -> void;
+      auto show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const -> void;
+      auto reflect_message(xtd::intptr handle, xtd::forms::message& message) -> void;
+      [[nodiscard]] auto wnd_proc_(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr handle) -> xtd::intptr;
+      auto wm_app_idle(xtd::forms::message& message) -> void;
+      auto wm_child_activate(xtd::forms::message& message) -> void;
+      auto wm_command(xtd::forms::message& message) -> void;
+      auto wm_command_control(xtd::forms::message& message) -> void;
+      auto wm_ctlcolor(xtd::forms::message& message) -> void;
+      auto wm_ctlcolor_control(xtd::forms::message& message) -> void;
+      auto wm_create(xtd::forms::message& message) -> void;
+      auto wm_destroy(xtd::forms::message& message) -> void;
+      auto wm_key_char(xtd::forms::message& message) -> void;
+      auto wm_kill_focus(xtd::forms::message& message) -> void;
+      auto wm_menu_command(xtd::forms::message& message) -> void;
+      auto wm_mouse_down(xtd::forms::message& message) -> void;
+      auto wm_mouse_double_click(xtd::forms::message& message) -> void;
+      auto wm_mouse_enter(xtd::forms::message& message) -> void;
+      auto wm_mouse_leave(xtd::forms::message& message) -> void;
+      auto wm_mouse_up(xtd::forms::message& message) -> void;
+      auto wm_mouse_move(xtd::forms::message& message) -> void;
+      auto wm_move(xtd::forms::message& message) -> void;
+      auto wm_mouse_wheel(xtd::forms::message& message) -> void;
+      auto wm_notify(xtd::forms::message& message) -> void;
+      auto wm_notify_control(xtd::forms::message& message) -> void;
+      auto wm_paint(xtd::forms::message& message) -> void;
+      auto wm_erase_background(xtd::forms::message& message) -> void;
+      auto wm_help(xtd::forms::message& message) -> void;
+      auto wm_scroll(xtd::forms::message& message) -> void;
+      auto wm_scroll_control(xtd::forms::message& message) -> void;
+      auto wm_set_focus(xtd::forms::message& message) -> void;
+      auto wm_set_text(xtd::forms::message& message) -> void;
+      auto wm_show(xtd::forms::message& message) -> void;
+      auto wm_size(xtd::forms::message& message) -> void;
+      auto wm_sizing(xtd::forms::message& message) -> void;
+      auto wm_style_sheet_changed(xtd::forms::message& message) -> void;
       
       static bool check_for_illegal_cross_thread_calls_;
-      static forms::keys modifier_keys_;
-      static forms::mouse_buttons mouse_buttons_;
-      static std::map<intptr, control*> handles_;
+      static xtd::forms::keys modifier_keys_;
+      static xtd::forms::mouse_buttons mouse_buttons_;
+      static std::map<xtd::intptr, control*> handles_;
       static control_collection top_level_controls_;
       
       xtd::sptr<data> data_;

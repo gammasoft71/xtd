@@ -807,7 +807,7 @@ control& control::tab_stop(bool value) {
   return *this;
 }
 
-any_object control::tag() const noexcept {
+const any_object& control::tag() const noexcept {
   return data_->tag;
 }
 
