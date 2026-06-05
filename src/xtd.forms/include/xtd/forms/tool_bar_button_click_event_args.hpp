@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks The event occurs whenever the user clicks on a button on a xtd::forms::tool_bar control. The xtd::forms::tool_bar_button_click_event_args::button property contains the xtd::forms::tool_bar_button with the information about the button that was clicked.
-    class tool_bar_button_click_event_args : public event_args {
+    class tool_bar_button_click_event_args : public xtd::event_args {
     public:
       /// @cond
       tool_bar_button_click_event_args(const tool_bar_button_click_event_args&) = default;
