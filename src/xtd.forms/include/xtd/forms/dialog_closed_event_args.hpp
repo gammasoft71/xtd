@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class dialog_closed_event_args final : public event_args {
+    class dialog_closed_event_args final : public xtd::event_args {
     public:
       /// @name Public Constructors
       
@@ -28,7 +28,7 @@ namespace xtd {
       dialog_closed_event_args() = default;
       /// @brief Initializes a new instance of the dialog_closed_event_args class.
       /// @param dialog_result The dialog_result contains the result when closing dialog.
-      explicit dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
+      explicit dialog_closed_event_args(xtd::forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
       /// @}
       
       /// @name Public Properties
@@ -36,11 +36,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the dialog_result contains the result when closing dialog.
       /// One of dialog_result enumerated values.
-      forms::dialog_result dialog_result() const noexcept {return dialog_result_;}
+      [[nodiscard]] auto dialog_result() const noexcept -> xtd::forms::dialog_result {return dialog_result_;}
       /// @}
       
     private:
-      forms::dialog_result dialog_result_ = forms::dialog_result::none;
+      xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
     };
   }
 }
