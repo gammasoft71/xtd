@@ -25,6 +25,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a do_work_event_handler delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event-handler method is called whenever the event occurs, unless you remove the delegate
-    using do_work_event_handler = xtd::delegate<void(object& sender, do_work_event_args& e)>;
+    using do_work_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::do_work_event_args& e)>;
   }
 }
