@@ -85,8 +85,9 @@ const any_object& cursor::tag() const noexcept {
   return data_->tag;
 }
 
-void cursor::tag(any_object tag) {
+cursor& cursor::tag(any_object tag) {
   data_->tag = tag;
+  return *this;
 }
 
 intptr cursor::copy_handle() const {

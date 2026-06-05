@@ -61,7 +61,7 @@ namespace xtd {
       
       /// @cond
       cursor(const cursor& value) = default;
-      cursor& operator =(const cursor& value) = default;
+      auto operator =(const cursor& value) -> cursor& = default;
       ~cursor();
       /// @endcond
       
@@ -71,26 +71,26 @@ namespace xtd {
       /// @brief Gets the handle of the cursor.
       /// @return An intptr that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not destroy it.
-      intptr handle() const noexcept;
+      [[nodiscard]] auto handle() const noexcept -> xtd::intptr;
       
       /// @brief Gets the cursor hot spot.
       /// @return A point representing the cursor hot spot.
       /// @remarks The hot_spot is the point in the cursor that interacts with other elements on the screen.
-      drawing::point hot_spot() const noexcept;
+      [[nodiscard]] auto hot_spot() const noexcept -> xtd::drawing::point;
       
       /// @brief Gets the size of the cursor object.
       /// @return A size that represents the width and height of the cursor.
-      drawing::size size() const noexcept;
+      [[nodiscard]] auto size() const noexcept -> xtd::drawing::size;
       
       /// @brief Gets the object that contains data about the control.
       /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      const xtd::any_object& tag() const noexcept;
+      [[nodiscard]] auto tag() const noexcept -> const xtd::any_object&;
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      void tag(xtd::any_object tag);
+      auto tag(xtd::any_object tag) -> cursor&;
       /// @}
       
       /// @name Public Static Properties
@@ -99,20 +99,20 @@ namespace xtd {
       /// @brief Gets a cursor object that represents the mouse cursor.
       /// @return A cursor that represents the mouse cursor. The default is cursor::none.
       /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
-      static xtd::forms::cursor current();
+      [[nodiscard]] static auto current() -> cursor;
       /// @brief Sets a cursor object that represents the mouse cursor.
       /// @param cursor A cursor that represents the mouse cursor. The default is cursor::none.
       /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
-      static void current(const xtd::forms::cursor& cursor);
+      static auto current(const cursor& cursor) -> void;
       
       /// @brief Gets the cursor's position.
       /// @return A point that represents the cursor's position in screen coordinates.
       /// @remarks The position property is identical to the control::mouse_position property.
-      static drawing::point position();
+      [[nodiscard]] static auto position() -> xtd::drawing::point;
       /// @brief Sets the cursor's position.
       /// @param position A point that represents the cursor's position in screen coordinates.
       /// @remarks The position property is identical to the control::mouse_position property.
-      static void position(const drawing::point& position);
+      static auto position(const xtd::drawing::point& position) -> void;
       /// @}
       
       /// @name Methodds
@@ -121,24 +121,24 @@ namespace xtd {
       /// @brief Copies the handle of this cursor.
       /// @return An intptr that represents the cursor's handle.
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
-      intptr copy_handle() const;
+      [[nodiscard]] auto copy_handle() const -> xtd::intptr;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const cursor& value) const noexcept override;
+      [[nodiscard]] bool equals(const cursor& value) const noexcept override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Static methodds
@@ -148,12 +148,12 @@ namespace xtd {
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @param hot_spot A xtd::drawing::point hot spot location.
       /// @return A new cursor instance.
-      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
+      [[nodiscard]] static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
       /// @brief Create a cursor form a specified bitmap.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @return A new cursor instance.
       /// @remarks The hot spot location is top left (0, 0).
-      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap);
+      [[nodiscard]] static cursor from_bitmap(const xtd::drawing::bitmap& bitmap);
       
       /// @brief Hides the cursor.
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
@@ -167,7 +167,7 @@ namespace xtd {
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
-      cursor(intptr handle, bool destroyable, const xtd::string& name);
+      cursor(xtd::intptr handle, bool destroyable, const xtd::string& name);
       
       xtd::sptr<data> data_;
     };
