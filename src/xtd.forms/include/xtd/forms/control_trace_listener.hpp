@@ -46,37 +46,41 @@ namespace xtd {
       /// @{
       /// @brief Gets icontroll_trace object.
       /// @return The icontrol_trace object used.
-      virtual xtd::forms::icontrol_trace& control_trace() noexcept {return *control_trace_;}
+      [[nodiscard]] virtual auto control_trace() noexcept -> xtd::forms::icontrol_trace& {return *control_trace_;}
       /// @brief Sets icontroll_trace object.
       /// @param control_trace The icontrol_trace object to use.
-      virtual void control_trace(xtd::forms::icontrol_trace& control_trace) {control_trace_ = &control_trace;}
+      /// @return This current instance.
+      virtual auto control_trace(xtd::forms::icontrol_trace& control_trace) -> control_trace_listener& {
+        control_trace_ = &control_trace;
+        return *this;
+      }
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void close() override { }
+      auto close() -> void override { }
       
-      void flush() override {
+      auto flush() -> void override {
         #if DEBUG || TRACE
         if (control_trace_) control_trace_->flush();
         #endif
       }
       
-      using trace_listener::write;
+      using xtd::diagnostics::trace_listener::write;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
-      void write(const xtd::string& message) override {
+      auto write(const xtd::string& message) -> void override {
         #if DEBUG || TRACE
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write(message);
         #endif
       }
       
-      using trace_listener::write_line;
+      using xtd::diagnostics::trace_listener::write_line;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
-      void write_line(const xtd::string& message) override {
+      auto write_line(const xtd::string& message) -> void override {
         #if DEBUG || TRACE
         //write(message + "\n");
         if (need_indent()) write_indent();
@@ -91,7 +95,7 @@ namespace xtd {
       /// @{
       /// @brief Create new control_trace_listener.
       /// @return New created trace listener.
-      static xtd::sptr<xtd::diagnostics::trace_listener> create(xtd::forms::icontrol_trace& control_trace) {return xtd::new_sptr<control_trace_listener>(control_trace);}
+      [[nodiscard]] static auto create(xtd::forms::icontrol_trace& control_trace) -> xtd::sptr<xtd::diagnostics::trace_listener> {return xtd::new_sptr<control_trace_listener>(control_trace);}
       /// @}
       
     private:
