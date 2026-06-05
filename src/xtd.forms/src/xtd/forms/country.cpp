@@ -31,31 +31,31 @@ country& country::operator =(const country& other) {
   return *this;
 }
 
-const country country::empty() {
+country country::empty() {
   return country();
 }
 
-const xtd::string country::alpha_2_code() const noexcept {
+xtd::string country::alpha_2_code() const noexcept {
   return data_->alpha_2_code;
 }
 
-const xtd::string country::alpha_3_code() const noexcept {
+xtd::string country::alpha_3_code() const noexcept {
   return data_->alpha_3_code;
 }
 
-const xtd::string country::emoticon() const noexcept {
+xtd::string country::emoticon() const noexcept {
   return data_->emoticon;
 }
 
-const image country::flag() const noexcept {
+image country::flag() const noexcept {
   return bitmap(path::combine({environment::get_folder_path(environment::special_folder::xtd_resources), "countries", alpha_2_code().to_lower() + ".png"}));
 }
 
-const image country::flag_squared() const noexcept {
+image country::flag_squared() const noexcept {
   return images::from_name(string::format("flag-{}", alpha_2_code().to_lower()), drawing::size {1024, 1024});
 }
 
-const xtd::string country::name() const noexcept {
+xtd::string country::name() const noexcept {
   return data_->name;
 }
 

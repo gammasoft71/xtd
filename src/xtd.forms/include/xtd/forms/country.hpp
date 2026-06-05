@@ -39,7 +39,7 @@ namespace xtd {
       /// @cond
       country();
       country(const country& other);
-      country& operator =(const country& other);
+      auto operator =(const country& other) -> country&;
       /// @endcond
       
       /// @name Public Fields
@@ -47,7 +47,7 @@ namespace xtd {
       /// @{
       /// @brief Gets an empty country.
       /// @return An empty country
-      static const country empty();
+      [[nodiscard]] static auto empty() -> country;
       /// @}
       
       /// @name Public Properties
@@ -55,31 +55,31 @@ namespace xtd {
       /// @{
       /// @brief Gets the country alpha 2 code.
       /// @return A string that represent the alpha 2 code.
-      virtual const xtd::string alpha_2_code() const noexcept;
+      [[nodiscard]] virtual auto alpha_2_code() const noexcept -> xtd::string;
       
       /// @brief Gets the country alpha 3 code.
       /// @return A string that represent the alpha 3 code.
-      virtual const xtd::string alpha_3_code() const noexcept;
+      [[nodiscard]] virtual auto alpha_3_code() const noexcept -> xtd::string;
       
       /// @brief Gets the country emoticon.
       /// @return A string that represent the emoticon.
-      virtual const xtd::string emoticon() const noexcept;
+      [[nodiscard]] virtual auto emoticon() const noexcept -> xtd::string;
       
       /// @brief Gets the country flag.
       /// @return A xtd::drawing::image that represent the flag of 1024 x 768 pixels.
-      virtual const xtd::drawing::image flag() const noexcept;
+      [[nodiscard]] virtual auto flag() const noexcept -> xtd::drawing::image;
       
       /// @brief Gets the country flag.
       /// @return A xtd::drawing::image that represent the flag of 1024 x 1024 pixels.
-      virtual const xtd::drawing::image flag_squared() const noexcept;
+      [[nodiscard]] virtual auto flag_squared() const noexcept -> xtd::drawing::image;
       
       /// @brief Gets the country name.
       /// @return A string that represent the country.
-      virtual const xtd::string name() const noexcept;
+      [[nodiscard]] virtual auto name() const noexcept -> xtd::string;
       
       /// @brief Gets the country numeric code.
       /// @return A signed-integer that represent the numeric code.
-      virtual int32 numeric_code() const noexcept;
+      [[nodiscard]] virtual auto numeric_code() const noexcept -> xtd::int32;
       /// @}
       
       /// @name Public Methods
@@ -95,24 +95,24 @@ namespace xtd {
       /// | Less than zero    | This instance is less than obj.    |
       /// | Zero              | This instance is equal to obj.     |
       /// | Greater than zero | This instance is greater than obj. |
-      int compare_to(const country& obj) const noexcept override;
+      [[nodiscard]] auto compare_to(const country& obj) const noexcept -> xtd::int32 override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const country& other) const noexcept override;
+      [[nodiscard]] auto equals(const country& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
-      virtual xtd::string to_string() const noexcept override;
+      [[nodiscard]] virtual auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -120,19 +120,19 @@ namespace xtd {
       /// @{
       /// @brief Gets a country from alpha 2 code.
       /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
-      static country from_alpha_2_code(const xtd::string& alpha_2_code);
+      [[nodiscard]] static auto from_alpha_2_code(const xtd::string& alpha_2_code) -> country;
       
       /// @brief Gets a country from alpha 3 code.
       /// @return If exist a xtd::forms::country that represent alpha 3 coded; otherwise xtd::forms::country::empty.
-      static country from_alpha_3_code(const xtd::string& alpha_3_code);
+      [[nodiscard]] static auto from_alpha_3_code(const xtd::string& alpha_3_code) -> country;
       
       /// @brief Gets a country from name.
       /// @return If exist a xtd::forms::country that represent name; otherwise xtd::forms::country::empty.
-      static country from_name(const xtd::string& name);
+      [[nodiscard]] static auto from_name(const xtd::string& name) -> country;
       
       /// @brief Gets a country from numeric code.
       /// @return If exist a xtd::forms::country that represent numeric coded; otherwise xtd::forms::country::empty.
-      static country from_numeric_code(int32 numeric_code);
+      [[nodiscard]] static auto from_numeric_code(xtd::int32 numeric_code) -> country;
       /// @}
       
     private:
