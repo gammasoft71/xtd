@@ -114,7 +114,7 @@ For example, if a xtd.forms library header file contains :
 
 namespace xtd {
   namespace forms {
-    class form_closed_event_args : public event_args {
+    class form_closed_event_args : public xtd::event_args {
     public:
       form_closed_event_args() = default;
       form_closed_event_args(forms::close_reason close_reason) : close_reason_(close_reason) {};
