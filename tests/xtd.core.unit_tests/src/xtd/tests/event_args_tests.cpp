@@ -8,7 +8,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(event_args_tests) {
-    class test_event_args : public event_args {
+    class test_event_args : public xtd::event_args {
     public:
       test_event_args() = default;
       test_event_args(int32 args) : args_(args) {}
