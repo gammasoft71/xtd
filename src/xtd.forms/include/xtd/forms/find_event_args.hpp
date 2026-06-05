@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class forms_export_ find_event_args : public event_args {
+    class forms_export_ find_event_args : public xtd::event_args {
       struct data;
       
     public:
