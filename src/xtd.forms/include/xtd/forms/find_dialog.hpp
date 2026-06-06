@@ -35,7 +35,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of find_dialog dialog.
     /// @include find_dialog.cpp
-    class forms_export_ find_dialog final : public component {
+    class forms_export_ find_dialog final : public xtd::forms::component {
       struct data;
       
     public:
@@ -55,75 +55,75 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::string& find_string() const noexcept;
+      [[nodiscard]] auto find_string() const noexcept -> const xtd::string&;
       /// @brief Sets the string to find.
       /// @param value The string to find.
       /// @return Current find_dialog instance.
-      find_dialog& find_string(const xtd::string& value);
+      auto find_string(const xtd::string& value) -> find_dialog&;
       
       /// @brief Gets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @return The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
-      xtd::drawing::point location() const noexcept;
+      [[nodiscard]] auto location() const noexcept -> xtd::drawing::point;
       /// @brief Sets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @param value The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
       /// @return Current find_dialog instance.
-      find_dialog& location(const xtd::drawing::point& value);
+      auto location(const xtd::drawing::point& value) -> find_dialog&;
       
       /// @brief Gets the match case value.
       /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
-      bool match_case() const noexcept;
+      [[nodiscard]] auto match_case() const noexcept -> bool;
       /// @brief Sets the match case value.
       /// @param value `true` if match case option selected; otherwise `false`. The default is `false`.
       /// @return Current find_dialog instance.
-      find_dialog& match_case(bool value);
+      auto match_case(bool value) -> find_dialog&;
       
       /// @brief Gets the search direction value.
       /// @return One of xtd::forms::search_direction values. The default is xtd::forms::search_direction::down.
-      xtd::forms::search_direction search_direction() const noexcept;
+      [[nodiscard]] auto search_direction() const noexcept -> xtd::forms::search_direction;
       /// @brief Gets the search direction value.
       /// @param value One of xtd::forms::search_direction values. The default is xtd::forms::search_direction::down.
       /// @return Current find_dialog instance.
-      find_dialog& search_direction(xtd::forms::search_direction value);
+      auto search_direction(xtd::forms::search_direction value) -> find_dialog&;
       
       /// @brief Gets a value that indicates whether match case option is shown.
       /// @return `true` if match case option is shown; otherwise `false`. The default is `true`.
-      bool show_match_case() const noexcept;
+      [[nodiscard]] auto show_match_case() const noexcept -> bool;
       /// @brief Sets a value that indicates whether match case option is shown.
       /// @param value `true` if match case option is shown; otherwise `false`. The default is `true`.
       /// @return Current find_dialog instance.
-      find_dialog& show_match_case(bool value);
+      auto show_match_case(bool value) -> find_dialog&;
       
       /// @brief Gets a value that indicates whether up down option is shown.
       /// @return `true` if up down option is shown; otherwise `false`. The default is `true`.
-      bool show_up_down() const noexcept;
+      [[nodiscard]] auto show_up_down() const noexcept -> bool;
       /// @brief Sets a value that indicates whether up down option is shown.
       /// @param value `true` if up down option is shown; otherwise `false`. The default is `true`.
       /// @return Current find_dialog instance.
-      find_dialog& show_up_down(bool value);
+      auto show_up_down(bool value) -> find_dialog&;
       
       /// @brief Gets a value that indicates whether whole word option is shown.
       /// @return `true` if whole word option is shown; otherwise `false`. The default is `true`.
-      bool show_whole_word() const noexcept;
+      [[nodiscard]] auto show_whole_word() const noexcept -> bool;
       /// @brief Sets a value that indicates whether whole word option is shown.
       /// @param value `true` if whole word option is shown; otherwise `false`. The default is `true`.
       /// @return Current find_dialog instance.
-      find_dialog& show_whole_word(bool value);
+      auto show_whole_word(bool value) -> find_dialog&;
       
       /// @brief Gets the find dialog title.
       /// @return The find dialog title.
-      const xtd::string& title() const noexcept;
+      [[nodiscard]] auto title() const noexcept -> const xtd::string&;
       /// @brief Sets the find dialog title.
       /// @param value The find dialog title.
       /// @return Current find_dialog instance.
-      find_dialog& title(const xtd::string& value);
+      auto title(const xtd::string& value) -> find_dialog&;
       
       /// @brief Gets the whole word value.
       /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
-      bool whole_word() const noexcept;
+      [[nodiscard]] auto whole_word() const noexcept -> bool;
       /// @brief Sets the whole word value.
       /// @param value `true` if whole word option selected; otherwise `false`. The default is `false`.
       /// @return Current find_dialog instance.
-      find_dialog& whole_word(bool value);
+      auto whole_word(bool value) -> find_dialog&;
       /// @}
       
       /// @name Public Events
@@ -144,7 +144,7 @@ namespace xtd {
       /// @{
       /// @brief Closes the find dialog box.
       /// @remarks If the find dialog box is already closed, this method does nothing.
-      void close();
+      auto close() -> void;
       
       /// @brief Resets all properties to default values.
       /// @remarks When you reset the xtd::forms::find::dialog, the following read/write properties are set to initial values.
@@ -158,19 +158,19 @@ namespace xtd {
       /// | search_direction | xtd::forms::search_direction::down |
       /// | whole_word       | `false`                            |
       /// | match_case       | `false`                            |
-      void reset() noexcept;
+      auto reset() noexcept -> void;
       
       /// @brief Runs find dialog box.
       /// @remarks If the find dialog box is already displayed, this method does nothing.
-      void show(const iwin32_window& owner);
+      auto show(const iwin32_window& owner) -> void;
       /// @}
       
     private:
-      void create_handle();
-      void destroy_handle();
-      void on_dialog_closed();
-      void on_dialog_find(const xtd::drawing::point& location, const string& find_string, bool downwards, bool whole_word, bool match_case);
-      void recreate_handle();
+      auto create_handle() -> void;
+      auto destroy_handle() -> void;
+      auto on_dialog_closed() -> void;
+      auto on_dialog_find(const xtd::drawing::point& location, const xtd::string& find_string, bool downwards, bool whole_word, bool match_case) -> void;
+      auto recreate_handle() -> void;
       
       xtd::sptr<data> data_;
     };
