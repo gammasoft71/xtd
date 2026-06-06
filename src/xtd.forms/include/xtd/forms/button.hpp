@@ -65,21 +65,21 @@ namespace xtd {
       /// @return `true`, if is auto repeat; otherwise `false`. Default is `false`.
       [[nodiscard]] virtual auto auto_repeat() const noexcept -> bool;
       /// @brief Sets if this button instance is auto repeat.
-      /// @param auto_repeat `true`, if is auto repeat; otherwise `false`. Default is `false`.
+      /// @param value `true`, if is auto repeat; otherwise `false`. Default is `false`.
       /// @return This button.
-      virtual auto auto_repeat(bool auto_repeat) -> button&;
+      virtual auto auto_repeat(bool value) -> button&;
       
       /// @brief Gets the auto repeat delay.
       /// @return Auto repeat delay. Default is 300 ms.
       [[nodiscard]] virtual auto auto_repeat_delay() const noexcept -> xtd::time_span;
       /// @brief Gets the auto repeat delay.
-      /// @param auto_repeat_delay Auto repeat delay. Default is 300 ms.
+      /// @param value Auto repeat delay. Default is 300 ms.
       /// @return This button.
-      virtual auto auto_repeat_delay(const xtd::time_span& auto_repeat_delay) -> button&;
+      virtual auto auto_repeat_delay(const xtd::time_span& value) -> button&;
       /// @brief Gets the auto repeat delay.
-      /// @param auto_repeat_delay Auto repeat delay in milliseconds. Default is 300 ms.
+      /// @param value Auto repeat delay in milliseconds. Default is 300 ms.
       /// @return This button.
-      virtual auto auto_repeat_delay(xtd::int32 auto_repeat_delay) -> button&;
+      virtual auto auto_repeat_delay(xtd::int32 value) -> button&;
 
       /// @brief Gets the auto repeat delay.
       /// @return Auto repeat delay in milliseconds. Default is 300 ms.
@@ -89,13 +89,13 @@ namespace xtd {
       /// @return Auto repeat interval. Default is 100 ms.
       [[nodiscard]] virtual auto auto_repeat_interval() const noexcept -> xtd::time_span;
       /// @brief Gets the auto repeat interval.
-      /// @param auto_repeat_interval Auto repeat interval. Default is 100 ms.
+      /// @param value Auto repeat interval. Default is 100 ms.
       /// @return This button.
-      virtual auto auto_repeat_interval(const xtd::time_span& auto_repeat_interval) -> button&;
+      virtual auto auto_repeat_interval(const xtd::time_span& value) -> button&;
       /// @brief Gets the auto repeat interval.
-      /// @param auto_repeat_interval Auto repeat interval in milliseconds. Default is 100 ms.
+      /// @param value Auto repeat interval in milliseconds. Default is 100 ms.
       /// @return This button.
-      virtual auto auto_repeat_interval(xtd::int32 auto_repeat_interval) -> button&;
+      virtual auto auto_repeat_interval(xtd::int32 value) -> button&;
 
       /// @brief Gets the auto repeat interval.
       /// @return Auto repeat interval in milliseconds. Default is 100 ms.
@@ -109,7 +109,7 @@ namespace xtd {
       virtual auto auto_size_mode(xtd::forms::auto_size_mode value) -> button&;
       
       [[nodiscard]] auto dialog_result() const noexcept -> xtd::forms::dialog_result override;
-      auto dialog_result(xtd::forms::dialog_result dialog_result) -> xtd::forms::control& override;
+      auto dialog_result(xtd::forms::dialog_result value) -> xtd::forms::control& override;
       /// @}
       
       /// @name Public Methods
