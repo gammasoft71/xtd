@@ -84,9 +84,9 @@ namespace xtd {
       /// @return A dots_collection that represent all dots status.
       [[nodiscard]] virtual auto dots() const noexcept -> const dots_collection&;
       /// @brief Sets all dots status.
-      /// @param dots A dots_collection that represent all dots status.
+      /// @param value A dots_collection that represent all dots status.
       /// @return Current dot_matrix_display.
-      virtual auto dots(const dots_collection& dots) -> dot_matrix_display&;
+      virtual auto dots(const dots_collection& value) -> dot_matrix_display&;
       
       /// @brief Gets the matrix size. Number of height dots.
       /// @return A int32 represent the height dots of the matrix. The default is 7.
