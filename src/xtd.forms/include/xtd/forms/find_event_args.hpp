@@ -41,7 +41,7 @@ namespace xtd {
       
       /// @cond
       find_event_args(const find_event_args& other);
-      find_event_args& operator =(const find_event_args& other);
+      auto operator =(const find_event_args& other) -> find_event_args&;
       /// @endcond
       
       /// @name Public Properties
@@ -49,20 +49,19 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::string& find_string() const noexcept;
+      [[nodiscard]] auto find_string() const noexcept -> const xtd::string&;
       
       /// @brief Gets the match case value.
       /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
-      bool match_case() const noexcept;
+      [[nodiscard]] auto match_case() const noexcept -> bool;
       
       /// @brief Gets the search direction value.
       /// @return One of xtd::forms::search_direction values; The default is xtd::forms::search_direction::down.
-      xtd::forms::search_direction search_direction() const noexcept;
+      [[nodiscard]] auto search_direction() const noexcept -> xtd::forms::search_direction;
       
       /// @brief Gets the whole word value.
       /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
-      bool whole_word() const noexcept;
-      
+      [[nodiscard]] auto whole_word() const noexcept -> bool;
       /// @}
       
     private:
