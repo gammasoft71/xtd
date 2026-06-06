@@ -49,10 +49,10 @@ namespace xtd {
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.
       [[nodiscard]] virtual auto format() const noexcept -> xtd::forms::date_time_picker_format;
       /// @brief Sets the format of the date and time displayed in the control.
-      /// @param format One of the date_time_picker_format values. The default is long_format.
+      /// @param value One of the date_time_picker_format values. The default is long_format.
       /// @return Current date_time_picker.
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.
-      virtual auto format(xtd::forms::date_time_picker_format format) -> date_time_picker&;
+      virtual auto format(xtd::forms::date_time_picker_format value) -> date_time_picker&;
       
       /// @brief Gets the maximum date and time that can be selected in the control.
       /// @return The maximum date and time that can be selected in the control.
