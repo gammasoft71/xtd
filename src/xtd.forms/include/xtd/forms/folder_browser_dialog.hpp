@@ -109,11 +109,11 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return `true` if the dialog box was successfully run; otherwise, `false`.
-      auto run_dialog(intptr owner) -> bool override;
+      auto run_dialog(xtd::intptr owner) -> bool override;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-       auto run_sheet(intptr owner) -> void override;
+       auto run_sheet(xtd::intptr owner) -> void override;
       /// @}
       
     private:
