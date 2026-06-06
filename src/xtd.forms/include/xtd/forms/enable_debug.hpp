@@ -27,12 +27,10 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of enable_debug class.
     /// @include enable_debug.cpp
-    class forms_export_ enable_debug : public object, public xtd::iequatable<enable_debug> {
+    class forms_export_ enable_debug : public xtd::object, public xtd::iequatable<enable_debug> {
     public:
       /// @cond
       enable_debug() = default;
-      enable_debug(const enable_debug&) = default;
-      enable_debug& operator =(const enable_debug&) = default;
       
       enable_debug operator |(const enable_debug& value) const noexcept;
       enable_debug operator +(const enable_debug& value) const  noexcept;
@@ -66,7 +64,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a trace switch to configure debug traces.
       /// @return a xtd::diagnostics::trace_switch to configure debug traces.
-      static xtd::diagnostics::trace_switch& trace_switch() noexcept;
+      [[nodiscard]] static auto trace_switch() noexcept -> xtd::diagnostics::trace_switch&;
       /// @}
       
       /// @name Public Methods
@@ -75,15 +73,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const enable_debug& other) const noexcept override;
+      [[nodiscard]] auto equals(const enable_debug& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
       /// @name Public Static Methods
@@ -91,16 +89,16 @@ namespace xtd {
       /// @{
       /// @brief Gets enable_debug flags status.
       /// @return `true` if enable_debug flags is on; otherwise `false`.
-      static bool get(const enable_debug& flags);
+      [[nodiscard]] static auto get(const enable_debug& flags) -> bool;
       /// @brief Sets enable_debug flags status.
       /// @param on `true` if enable_debug flags is on; otherwise `false`.
-      static void set(const enable_debug& flags, bool on);
+      static auto set(const enable_debug& flags, bool on) -> void;
       /// @}
       
     private:
-      explicit enable_debug(uint64 value);
+      explicit enable_debug(xtd::uint64 value);
       
-      uint64 value_ = 0;
+      xtd::uint64 value_ = 0;
       static enable_debug values_;
     };
   }
