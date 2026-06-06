@@ -24,7 +24,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of application and application_context classes.
     /// @include application_context.cpp
-    class application_context : public object {
+    class application_context : public xtd::object {
       struct data;
       
     public:
