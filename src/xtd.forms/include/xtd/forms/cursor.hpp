@@ -88,9 +88,9 @@ namespace xtd {
       [[nodiscard]] auto tag() const noexcept -> const xtd::any_object&;
       
       /// @brief Sets the object that contains data about the control.
-      /// @param tag A xtd::any_object that contains data about the control. The default is empty.
+      /// @param value A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      auto tag(xtd::any_object tag) -> cursor&;
+      auto tag(xtd::any_object value) -> cursor&;
       /// @}
       
       /// @name Public Static Properties
