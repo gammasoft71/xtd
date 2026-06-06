@@ -33,8 +33,9 @@ namespace xtd {
       
     public:
       /// @cond
+      draw_item_event_args() = default;
       draw_item_event_args(const draw_item_event_args& other);
-      draw_item_event_args& operator =(const draw_item_event_args& other);
+      auto operator =(const draw_item_event_args& other) -> draw_item_event_args&;
       /// @endcond
       
       /// @name Public Constructors
@@ -62,35 +63,35 @@ namespace xtd {
       /// @brief Gets the background color of the item that is being drawn.
       /// @return The background xtd::drawing::color of the item that is being drawn.
       /// @remarks If the item's state is xtd::forms::draw_item_state::selected, the xtd::forms::drawing_item_event_args::back_color is set to xtd::drawing::system_colors::highlight. If the item's state is not xtd::forms::draw_item_state::selected, the xtd::forms::draw_item_event_Args::back_color property is set to xtd::drawing::system_colors::window.
-      const xtd::drawing::color& back_color() const noexcept;
+      [[nodiscard]] auto back_color() const noexcept -> const xtd::drawing::color&;
       
       /// @brief Gets the rectangle that represents the bounds of the item that is being drawn.
       /// @return The xtd::drawing::rectangle that represents the bounds of the item that is being drawn.
-      const xtd::drawing::rectangle& bounds() const noexcept;
+      [[nodiscard]] auto bounds() const noexcept -> const xtd::drawing::rectangle&;
       
       /// @brief Gets the font that is assigned to the item being drawn.
       /// @return The xtd::drawing::font that is assigned to the item being drawn.
       /// @remarks A suggested xtd::drawing::font, usually the xtd::forms::control::font property of the parent control.
-      const xtd::drawing::font& font() const noexcept;
+      [[nodiscard]] auto font() const noexcept -> const xtd::drawing::font&;
       
       /// @brief Gets the foreground color of the of the item being drawn.
       /// @return The foreground xtd::drawing::color of the item being drawn.
       /// @remarks If the item's state is xtd::forms::draw_item_state::selected, the xtd::forms::drawing_item_event_args::fore_color is set to xtd::drawing::system_colors::highlight_text. If the item's state is not xtd::forms::draw_item_state::selected, the xtd::forms::drawing_item_event_args::fore_color property is set to xtd::drawing::system_colors::window.
-      const xtd::drawing::color& fore_color() const noexcept;
+      [[nodiscard]] auto fore_color() const noexcept -> const xtd::drawing::color&;
       
       /// @brief Gets the graphics surface to draw the item on.
       /// @return The xtd::drawing::graphics surface to draw the item on.
-      xtd::drawing::graphics& graphics() noexcept;
+      [[nodiscard]] auto graphics() noexcept -> xtd::drawing::graphics&;
       
       /// @brief Gets the index value of the item that is being drawn.
       /// @return The numeric value that represents the xtd::forms::control::control_collection::operator [] value of the item being drawn.
       /// @remarks This property returns the xtd::forms::control::control_collection::operator [] value of the item being drawn in the xtd::forms::control::control_collection. This property can return xtd::forms::control::control_collection::npos if items were removed from the list.
-      xtd::usize index() const noexcept;
+      [[nodiscard]] auto index() const noexcept -> xtd::usize;
       
       /// @brief Gets the state of the item being drawn.
       /// @return The xtd::forms::draw_item_state that represents the state of the item being drawn.
       /// @remarks This property value can be a combination of the xtd::forms::draw_item_state enumeration members. The members can be combined by using bitwise operators.
-      xtd::forms::draw_item_state state() const noexcept;
+      [[nodiscard]] auto state() const noexcept -> xtd::forms::draw_item_state;
       /// @}
       
     private:
