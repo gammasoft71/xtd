@@ -31,11 +31,11 @@ namespace xtd {
       /// @return The control that is currently active on the container_control.
       [[nodiscard]] auto active_control() const noexcept -> std::optional<xtd::forms::control_ref>;
       /// @brief Sets the active control on the container control.
-      /// @param active_control The control that is currently active on the container_control.
-      auto active_control(const xtd::forms::control& active_control) -> void;
+      /// @param value The control that is currently active on the container_control.
+      auto active_control(const xtd::forms::control& value) -> void;
       /// @brief Resets the active control on the container control.
       /// @param nullptr.
-      auto active_control(xtd::null_ptr) -> void;
+      auto active_control(xtd::null_ptr) -> container_control&;
       /// @}
       
     protected:
