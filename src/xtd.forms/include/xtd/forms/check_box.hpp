@@ -68,9 +68,9 @@ namespace xtd {
       /// @include check_box.cpp
       [[nodiscard]] virtual auto appearance() const noexcept -> xtd::forms::appearance;
       /// @brief Gets the value that determines the appearance of a check_box control.
-      /// @param appearance One of the appearance values. The default value is normal.
+      /// @param value One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
-      virtual auto appearance(xtd::forms::appearance appearance) -> check_box&;
+      virtual auto appearance(xtd::forms::appearance value) -> check_box&;
       
       /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
@@ -80,16 +80,16 @@ namespace xtd {
       /// @include check_box.cpp
       [[nodiscard]] virtual auto auto_check() const noexcept -> bool;
       /// @brief Sets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
-      /// @param auto_check `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
+      /// @param value `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
-      virtual auto auto_check(bool auto_check) -> check_box&;
+      virtual auto auto_check(bool value) -> check_box&;
       
       /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @return One of the content_alignment values. The default value is middle_left.
       [[nodiscard]] virtual auto check_align() const noexcept -> xtd::forms::content_alignment;
       /// @brief Sets the horizontal and vertical alignment of the check mark on a check_box control.
-      /// @param check_align One of the content_alignment values. The default value is middle_left.
-      virtual auto check_align(xtd::forms::content_alignment check_align) -> check_box&;
+      /// @param value One of the content_alignment values. The default value is middle_left.
+      virtual auto check_align(xtd::forms::content_alignment value) -> check_box&;
       
       /// @brief Gets a value indicating whether the check_box is in the checked state.
       /// @return `true` if the check_box is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate check_state.
@@ -99,9 +99,9 @@ namespace xtd {
       /// @include check_box.cpp
       [[nodiscard]] virtual auto checked() const noexcept -> bool;
       /// @brief Sets a value indicating whether the check_box is in the checked state.
-      /// @param checked `true` if the check_box is in the checked state; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the check_box is in the checked state; otherwise, `false`. The default value is `false`.
       /// @remarks When the value is `true`, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
-      virtual auto checked(bool checked) -> check_box&;
+      virtual auto checked(bool value) -> check_box&;
       
       /// @brief Gets the state of the check_box.
       /// @return One of the xtd::forms::check_state enumeration values. The default value is unchecked.
@@ -117,7 +117,7 @@ namespace xtd {
       /// @include check_box.cpp
       [[nodiscard]] virtual auto check_state() const noexcept -> xtd::forms::check_state;
       /// @brief Sets the state of the check_box.
-      /// @param check_state One of the xtd::forms::check_state enumeration values. The default value is unchecked.
+      /// @param value One of the xtd::forms::check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
       /// | Check_state   |  appearance::normal                                                    | appearance::button                     |
       /// | ------------- | ---------------------------------------------------------------------- | -------------------------------------- |
@@ -127,7 +127,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of check_box check_state.
       /// @include check_box.cpp
-      virtual auto check_state(xtd::forms::check_state check_state) -> check_box&;
+      virtual auto check_state(xtd::forms::check_state value) -> check_box&;
       
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @return `true` if the check_box is able to display three check states; otherwise, `false`. The default value is `false`.
@@ -137,9 +137,9 @@ namespace xtd {
       /// @include check_box.cpp
       [[nodiscard]] virtual auto three_state() const noexcept -> bool;
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
-      /// @param three_state `true` if the check_box is able to display three check states; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the check_box is able to display three check states; otherwise, `false`. The default value is `false`.
       /// @remarks If the three_state property is set to `false`, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
-      virtual auto three_state(bool three_state) -> check_box&;
+      virtual auto three_state(bool value) -> check_box&;
       /// @}
       
       /// @name Public Static Methods
