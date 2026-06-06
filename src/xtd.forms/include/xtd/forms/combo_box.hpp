@@ -33,7 +33,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of combo box control.
     /// @include combo_box.cpp
-    class forms_export_ combo_box : public list_control {
+    class forms_export_ combo_box : public xtd::forms::list_control {
       struct data;
       
     public:
