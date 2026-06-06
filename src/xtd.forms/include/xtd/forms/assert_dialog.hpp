@@ -32,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of assert_dialog dialog.
     /// @include assert_dialog.cpp
-    class forms_export_ assert_dialog final : public component {
+    class forms_export_ assert_dialog final : public xtd::forms::component {
       struct data;
       
     public:
