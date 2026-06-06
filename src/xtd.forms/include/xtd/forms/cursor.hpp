@@ -37,7 +37,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of cursor component.
     /// @include cursors.cpp
-    class forms_export_ cursor : public object, public xtd::iequatable<cursor> {
+    class forms_export_ cursor : public xtd::object, public xtd::iequatable<cursor> {
       struct data;
       
     public:
