@@ -20,13 +20,8 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class do_work_event_args : public cancel_event_args {
+    class do_work_event_args : public xtd::forms::cancel_event_args {
     public:
-      /// @cond
-      do_work_event_args(const do_work_event_args& do_work_event_args) = default;
-      do_work_event_args& operator =(const do_work_event_args& do_work_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -40,14 +35,17 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      xtd::any_object argument() const noexcept {return argument_;}
+      [[nodiscard]] auto argument() const noexcept -> const xtd::any_object& {return argument_;}
       
       /// @brief Gets a value that represents the result of an asynchronous operation.
       /// @return A xtd::any_object representing the result of an asynchronous operation.
-      xtd::any_object result() const noexcept {return result_;}
+      [[nodiscard]] auto result() const noexcept -> const xtd::any_object& {return result_;}
       /// @brief Sets a value that represents the result of an asynchronous operation.
       /// @param value A xtd::any_object representing the result of an asynchronous operation.
-      void result(const xtd::any_object& value) {result_ = value;}
+      auto result(const xtd::any_object& value) -> do_work_event_args& {
+        result_ = value;
+        return *this;
+      }
       /// @}
       
     private:
