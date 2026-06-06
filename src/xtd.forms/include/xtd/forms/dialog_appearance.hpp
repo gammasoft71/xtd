@@ -18,6 +18,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using dialog_appearance = control_appearance;
+    using dialog_appearance = xtd::forms::control_appearance;
   }
 }
