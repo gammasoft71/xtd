@@ -62,7 +62,7 @@ namespace xtd {
       /// @return The main text associated with this control.
       [[nodiscard]] virtual auto main_text() const noexcept -> const xtd::string&;
       /// @brief Sets the main text associated with this control.
-      /// @param text The main text associated with this control.
+      /// @param value The main text associated with this control.
       /// @return Current control.
       virtual auto main_text(const xtd::string& value) -> command_link_button&;
       
@@ -70,7 +70,7 @@ namespace xtd {
       /// @return The supplementary text associated with this control.
       [[nodiscard]] virtual auto supplementary_text() const noexcept -> const xtd::string&;
       /// @brief Sets the supplementary text associated with this control.
-      /// @param text The supplementary text associated with this control.
+      /// @param value The supplementary text associated with this control.
       /// @return Current control.
       virtual auto supplementary_text(const xtd::string& value) -> command_link_button&;
       
@@ -78,7 +78,7 @@ namespace xtd {
       /// @return The text associated with this control.
       [[nodiscard]] auto text() const noexcept -> const xtd::string& override;
       /// @brief Sets the text associated with this control.
-      /// @param text The text associated with this control.
+      /// @param value The text associated with this control.
       /// @return Current control.
       /// @remarks Is equivalent to calling the texts property with what's before first "\n" as text and after first "\n" as supplementary_text.
       auto text(const xtd::string& value) -> xtd::forms::control& override;
@@ -87,10 +87,10 @@ namespace xtd {
       /// @return A tuple of two strings that represent main text and supplementary text.
       [[nodiscard]] virtual auto texts() const noexcept -> std::tuple<xtd::string, xtd::string>;
       /// @brief Sets text and supplementary text.
-      /// @param texts A tuple of two strings that represent main text and supplementary text.
+      /// @param value A tuple of two strings that represent main text and supplementary text.
       /// @return Current control.
       /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
-      virtual auto texts(const std::tuple<xtd::string, xtd::string>& texts) -> command_link_button&;
+      virtual auto texts(const std::tuple<xtd::string, xtd::string>& value) -> command_link_button&;
       /// @}
       
       /// @name Public Methods
