@@ -240,7 +240,7 @@ var searchData=
   ['event_3c_20xtd_3a_3aforms_3a_3aexception_5fdialog_2c_20xtd_3a_3aforms_3a_3adialog_5fclosed_5fevent_5fhandler_20_3e_237',['event&lt; xtd::forms::exception_dialog, xtd::forms::dialog_closed_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3afind_5fdialog_2c_20xtd_3a_3aforms_3a_3adialog_5fclosed_5fevent_5fhandler_20_3e_238',['event&lt; xtd::forms::find_dialog, xtd::forms::dialog_closed_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3afind_5fdialog_2c_20xtd_3a_3aforms_3a_3afind_5fevent_5fhandler_20_3e_239',['event&lt; xtd::forms::find_dialog, xtd::forms::find_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
-  ['event_3c_20xtd_3a_3aforms_3a_3afont_5fdialog_2c_20event_5fhandler_20_3e_240',['event&lt; xtd::forms::font_dialog, event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
+  ['event_3c_20xtd_3a_3aforms_3a_3afont_5fdialog_2c_20xtd_3a_3aevent_5fhandler_20_3e_240',['event&lt; xtd::forms::font_dialog, xtd::event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3afont_5fpicker_2c_20font_5fpicker_5fevent_5fhandler_20_3e_241',['event&lt; xtd::forms::font_picker, font_picker_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3aform_2c_20event_5fhandler_20_3e_242',['event&lt; xtd::forms::form, event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3aform_2c_20form_5fclosed_5fevent_5fhandler_20_3e_243',['event&lt; xtd::forms::form, form_closed_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],

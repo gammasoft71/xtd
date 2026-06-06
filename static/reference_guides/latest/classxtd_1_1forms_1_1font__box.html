@@ -169,7 +169,7 @@ Inheritance diagram for xtd::forms::font_box:</div>
 <div class="line">    .size({200, 45})</div>
 <div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> font = system_fonts::default_font();</div>
-<div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#acc876cdd0c7108ee0e9489e644a2a4a6">font_box::show</a>(font, *<span class="keyword">this</span>);</div>
+<div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#a5e9f551e3135b157b8e0594f469c86de">font_box::show</a>(font, *<span class="keyword">this</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == dialog_result::ok)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">message_box::show</a>(string::format(<span class="stringliteral">&quot;Selected font is: {}&quot;</span>, font));</div>
 <div class="line">    };</div>
@@ -181,7 +181,7 @@ Inheritance diagram for xtd::forms::font_box:</div>
 <div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      drawing::font <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a292ca8e4f7b4851f9d790aa394a9a9dd">font</a>(drawing::font_family::generic_sans_serif(), 16);</div>
 <div class="line">      drawing::color color = drawing::color::blue;</div>
-<div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#acc876cdd0c7108ee0e9489e644a2a4a6">font_box::show</a>(font, color, font_box_options::show_color);</div>
+<div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#a5e9f551e3135b157b8e0594f469c86de">font_box::show</a>(font, color, font_box_options::show_color);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == dialog_result::ok)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">message_box::show</a>(string::format(<span class="stringliteral">&quot;Selected font is: {}\ncolor: {}&quot;</span>, font, color));</div>
 <div class="line">    };</div>
@@ -199,7 +199,7 @@ Inheritance diagram for xtd::forms::font_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a77f74d2ddcec3606a4fd21cffc0948ad"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a77f74d2ddcec3606a4fd21cffc0948ad">xtd::forms::control::text</a></div><div class="ttdeci">virtual auto text() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ad0b14fe3337045f69f81c2f8f12aca1d"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ad0b14fe3337045f69f81c2f8f12aca1d">xtd::forms::control::client_size</a></div><div class="ttdeci">virtual auto client_size() const noexcept -&gt; const xtd::drawing::size &amp;</div><div class="ttdoc">Gets the height and width of the client area of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_aea3c09a223353a9c5c7afdda86882c45"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#aea3c09a223353a9c5c7afdda86882c45">xtd::forms::control::controls</a></div><div class="ttdeci">virtual auto controls() noexcept -&gt; control_collection &amp;</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1font__box_html_acc876cdd0c7108ee0e9489e644a2a4a6"><div class="ttname"><a href="#acc876cdd0c7108ee0e9489e644a2a4a6">xtd::forms::font_box::show</a></div><div class="ttdeci">static dialog_result show(xtd::drawing::font &amp;font)</div><div class="ttdoc">Displays a font dialog box.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1font__box_html_a5e9f551e3135b157b8e0594f469c86de"><div class="ttname"><a href="#a5e9f551e3135b157b8e0594f469c86de">xtd::forms::font_box::show</a></div><div class="ttdeci">static auto show(xtd::drawing::font &amp;font) -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a font dialog box.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
@@ -208,26 +208,26 @@ Inheritance diagram for xtd::forms::font_box:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:acc876cdd0c7108ee0e9489e644a2a4a6" id="r_acc876cdd0c7108ee0e9489e644a2a4a6"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#acc876cdd0c7108ee0e9489e644a2a4a6">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font)</td></tr>
-<tr class="memdesc:acc876cdd0c7108ee0e9489e644a2a4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
-<tr class="memitem:a9843b71569576a7ecadaf274e9451405" id="r_a9843b71569576a7ecadaf274e9451405"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9843b71569576a7ecadaf274e9451405">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options)</td></tr>
-<tr class="memdesc:a9843b71569576a7ecadaf274e9451405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
-<tr class="memitem:ae75538aa9acb7a0b6408fad817c87863" id="r_ae75538aa9acb7a0b6408fad817c87863"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae75538aa9acb7a0b6408fad817c87863">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:ae75538aa9acb7a0b6408fad817c87863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a514b3c6a699b831c366ed7a21e5b4ae1" id="r_a514b3c6a699b831c366ed7a21e5b4ae1"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a514b3c6a699b831c366ed7a21e5b4ae1">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options)</td></tr>
-<tr class="memdesc:a514b3c6a699b831c366ed7a21e5b4ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a04dfe656399eef9e7ae9d6e0341e9d47" id="r_a04dfe656399eef9e7ae9d6e0341e9d47"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a04dfe656399eef9e7ae9d6e0341e9d47">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color)</td></tr>
-<tr class="memdesc:a04dfe656399eef9e7ae9d6e0341e9d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
-<tr class="memitem:ae5a6ecb0841e53138f86e30f8b16dc8f" id="r_ae5a6ecb0841e53138f86e30f8b16dc8f"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae5a6ecb0841e53138f86e30f8b16dc8f">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options)</td></tr>
-<tr class="memdesc:ae5a6ecb0841e53138f86e30f8b16dc8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
-<tr class="memitem:a44e5f3545cd5a68afad0df81ffcc775a" id="r_a44e5f3545cd5a68afad0df81ffcc775a"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a44e5f3545cd5a68afad0df81ffcc775a">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a44e5f3545cd5a68afad0df81ffcc775a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a6d417d8f9867bc3b56ada0ebc457e0c4" id="r_a6d417d8f9867bc3b56ada0ebc457e0c4"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6d417d8f9867bc3b56ada0ebc457e0c4">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options)</td></tr>
-<tr class="memdesc:a6d417d8f9867bc3b56ada0ebc457e0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a5e9f551e3135b157b8e0594f469c86de" id="r_a5e9f551e3135b157b8e0594f469c86de"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5e9f551e3135b157b8e0594f469c86de">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a5e9f551e3135b157b8e0594f469c86de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
+<tr class="memitem:a759e9062bd4cef0f6da0e5eb0b581bc5" id="r_a759e9062bd4cef0f6da0e5eb0b581bc5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a759e9062bd4cef0f6da0e5eb0b581bc5">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a759e9062bd4cef0f6da0e5eb0b581bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
+<tr class="memitem:a2d118b0818a0e30d77e5c0a7ef347677" id="r_a2d118b0818a0e30d77e5c0a7ef347677"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d118b0818a0e30d77e5c0a7ef347677">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a2d118b0818a0e30d77e5c0a7ef347677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a58836e5d9a555a9c19405e5132ba1c14" id="r_a58836e5d9a555a9c19405e5132ba1c14"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a58836e5d9a555a9c19405e5132ba1c14">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a58836e5d9a555a9c19405e5132ba1c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:ad5f4ea41980cc6220fff2ea97804b73e" id="r_ad5f4ea41980cc6220fff2ea97804b73e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad5f4ea41980cc6220fff2ea97804b73e">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ad5f4ea41980cc6220fff2ea97804b73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
+<tr class="memitem:a1fbd28e25e6c53ae9df5a591a353fc00" id="r_a1fbd28e25e6c53ae9df5a591a353fc00"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1fbd28e25e6c53ae9df5a591a353fc00">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a1fbd28e25e6c53ae9df5a591a353fc00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box.  <br /></td></tr>
+<tr class="memitem:ae25fef717ea973c9ee21f1e21b810a49" id="r_ae25fef717ea973c9ee21f1e21b810a49"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae25fef717ea973c9ee21f1e21b810a49">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ae25fef717ea973c9ee21f1e21b810a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a0768f4dd686659293fbea0f0487d77e4" id="r_a0768f4dd686659293fbea0f0487d77e4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0768f4dd686659293fbea0f0487d77e4">show</a> (<a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;font, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;color, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a0768f4dd686659293fbea0f0487d77e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a font dialog box in front of a specified window.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acc876cdd0c7108ee0e9489e644a2a4a6" name="acc876cdd0c7108ee0e9489e644a2a4a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc876cdd0c7108ee0e9489e644a2a4a6">&#9670;&#160;</a></span>show() <span class="overload">[1/8]</span></h2>
+<a id="a5e9f551e3135b157b8e0594f469c86de" name="a5e9f551e3135b157b8e0594f469c86de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9f551e3135b157b8e0594f469c86de">&#9670;&#160;</a></span>show() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,15 +236,15 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -261,8 +261,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a9843b71569576a7ecadaf274e9451405" name="a9843b71569576a7ecadaf274e9451405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9843b71569576a7ecadaf274e9451405">&#9670;&#160;</a></span>show() <span class="overload">[2/8]</span></h2>
+<a id="a759e9062bd4cef0f6da0e5eb0b581bc5" name="a759e9062bd4cef0f6da0e5eb0b581bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759e9062bd4cef0f6da0e5eb0b581bc5">&#9670;&#160;</a></span>show() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,19 +271,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -301,8 +301,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ae75538aa9acb7a0b6408fad817c87863" name="ae75538aa9acb7a0b6408fad817c87863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75538aa9acb7a0b6408fad817c87863">&#9670;&#160;</a></span>show() <span class="overload">[3/8]</span></h2>
+<a id="a2d118b0818a0e30d77e5c0a7ef347677" name="a2d118b0818a0e30d77e5c0a7ef347677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d118b0818a0e30d77e5c0a7ef347677">&#9670;&#160;</a></span>show() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,19 +311,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -341,8 +341,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a514b3c6a699b831c366ed7a21e5b4ae1" name="a514b3c6a699b831c366ed7a21e5b4ae1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a514b3c6a699b831c366ed7a21e5b4ae1">&#9670;&#160;</a></span>show() <span class="overload">[4/8]</span></h2>
+<a id="a58836e5d9a555a9c19405e5132ba1c14" name="a58836e5d9a555a9c19405e5132ba1c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58836e5d9a555a9c19405e5132ba1c14">&#9670;&#160;</a></span>show() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +351,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
@@ -363,12 +363,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -387,8 +387,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a04dfe656399eef9e7ae9d6e0341e9d47" name="a04dfe656399eef9e7ae9d6e0341e9d47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04dfe656399eef9e7ae9d6e0341e9d47">&#9670;&#160;</a></span>show() <span class="overload">[5/8]</span></h2>
+<a id="ad5f4ea41980cc6220fff2ea97804b73e" name="ad5f4ea41980cc6220fff2ea97804b73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f4ea41980cc6220fff2ea97804b73e">&#9670;&#160;</a></span>show() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,19 +397,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -427,8 +427,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ae5a6ecb0841e53138f86e30f8b16dc8f" name="ae5a6ecb0841e53138f86e30f8b16dc8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5a6ecb0841e53138f86e30f8b16dc8f">&#9670;&#160;</a></span>show() <span class="overload">[6/8]</span></h2>
+<a id="a1fbd28e25e6c53ae9df5a591a353fc00" name="a1fbd28e25e6c53ae9df5a591a353fc00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fbd28e25e6c53ae9df5a591a353fc00">&#9670;&#160;</a></span>show() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +437,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
@@ -449,12 +449,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -473,8 +473,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a44e5f3545cd5a68afad0df81ffcc775a" name="a44e5f3545cd5a68afad0df81ffcc775a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44e5f3545cd5a68afad0df81ffcc775a">&#9670;&#160;</a></span>show() <span class="overload">[7/8]</span></h2>
+<a id="ae25fef717ea973c9ee21f1e21b810a49" name="ae25fef717ea973c9ee21f1e21b810a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25fef717ea973c9ee21f1e21b810a49">&#9670;&#160;</a></span>show() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -483,7 +483,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
@@ -495,12 +495,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -519,8 +519,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a6d417d8f9867bc3b56ada0ebc457e0c4" name="a6d417d8f9867bc3b56ada0ebc457e0c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d417d8f9867bc3b56ada0ebc457e0c4">&#9670;&#160;</a></span>show() <span class="overload">[8/8]</span></h2>
+<a id="a0768f4dd686659293fbea0f0487d77e4" name="a0768f4dd686659293fbea0f0487d77e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0768f4dd686659293fbea0f0487d77e4">&#9670;&#160;</a></span>show() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -529,7 +529,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::font_box::show </td>
+          <td class="memname">auto xtd::forms::font_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
         </tr>
@@ -546,12 +546,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga36effe8364961d98bde3996cf4e2febd">font_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
