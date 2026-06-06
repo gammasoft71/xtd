@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    struct control_ref_less : public object {
+    struct control_ref_less {
       /// @name Operators
       
       /// @{
