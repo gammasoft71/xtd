@@ -34,7 +34,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
-    class forms_export_ busy_dialog  final : public component {
+    class forms_export_ busy_dialog  final : public xtd::forms::component {
       struct data;
       
     public:
