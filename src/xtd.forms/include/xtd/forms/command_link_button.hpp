@@ -36,7 +36,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of command link button control.
     /// @include command_link_button.cpp
-    class forms_export_ command_link_button : public button_base {
+    class forms_export_ command_link_button : public xtd::forms::button_base {
       struct data;
       
     public:
