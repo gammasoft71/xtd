@@ -34,7 +34,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of choice control.
     /// @include choice.cpp
-    class forms_export_ choice : public list_control {
+    class forms_export_ choice : public xtd::forms::list_control {
       struct data;
       
     public:
