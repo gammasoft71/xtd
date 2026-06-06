@@ -54,9 +54,9 @@ namespace xtd {
       /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       [[nodiscard]] auto dialog_appearance() const noexcept -> xtd::forms::dialog_appearance;
       /// @brief Sets the dialog appearance.
-      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      /// @param value One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current assert_dialog instance.
-      auto dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) -> assert_dialog&;
+      auto dialog_appearance(xtd::forms::dialog_appearance value) -> assert_dialog&;
       
       /// @brief Gets the dialog message text.
       /// @return The current dialog message text.
