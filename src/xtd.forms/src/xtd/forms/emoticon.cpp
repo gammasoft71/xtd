@@ -9,8 +9,8 @@ struct emoticon::data {
   list<char32> codepoints;
 };
 
-const emoticon emoticon::empty() {
-  return emoticon();
+emoticon emoticon::empty() {
+  return emoticon {};
 }
 
 emoticon::emoticon() : data_(xtd::new_sptr<data>()) {

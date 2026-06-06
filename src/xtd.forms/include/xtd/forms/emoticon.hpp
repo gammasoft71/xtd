@@ -29,14 +29,14 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of emoticon class.
     /// @include emoticons.cpp
-    class forms_export_ emoticon : public object, public xtd::iequatable<emoticon>, public icomparable<emoticon> {
+    class forms_export_ emoticon : public xtd::object, public xtd::iequatable<emoticon>, public xtd::icomparable<emoticon> {
       struct data;
     public:
       /// @name Public Fields
       
       /// @{
       /// @brief Represents an empty emoticon.
-      static const emoticon empty();
+      static auto empty() -> emoticon;
       /// @}
       
       /// @name Public Constructors
@@ -45,29 +45,29 @@ namespace xtd {
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An initializer list of char32 that represent the emoticon.
-      emoticon(const xtd::string& name, std::initializer_list<char32> codepoints);
+      emoticon(const xtd::string& name, std::initializer_list<xtd::char32> codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An array of char32 that represent the emoticon.
-      emoticon(const xtd::string& name, const xtd::array<char32>& codepoints);
+      emoticon(const xtd::string& name, const xtd::array<xtd::char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoint.
       /// @param name A string that represent the name of emoticon
       /// @param codepoint A char32 that represent the emoticon.
-      emoticon(const xtd::string& name, char32 codepoint);
+      emoticon(const xtd::string& name, xtd::char32 codepoint);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An initializer list of char32 that represent the emoticon.
-      explicit emoticon(std::initializer_list<char32> codepoints);
+      explicit emoticon(std::initializer_list<xtd::char32> codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An array of char32 that represent the emoticon.
-      explicit emoticon(const xtd::array<char32>& codepoints);
+      explicit emoticon(const xtd::array<xtd::char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoint.
       /// @param codepoints A char32 that represent the emoticon.
-      explicit emoticon(char32 codepoint);
+      explicit emoticon(xtd::char32 codepoint);
       /// @}
       
       /// @cond
@@ -75,7 +75,7 @@ namespace xtd {
       emoticon(const xtd::string& name, std::initializer_list<type_t> codepoints) {
         create_data();
         name_(name);
-        for (auto codepoint : codepoints)
+        for (const auto& codepoint : codepoints)
           codepoints_().add(static_cast<char32>(codepoint));
       }
       
@@ -83,7 +83,7 @@ namespace xtd {
       emoticon(const xtd::string& name, const xtd::array<type_t>& codepoints) {
         create_data();
         name_(name);
-        for (auto codepoint : codepoints)
+        for (const auto& codepoint : codepoints)
           codepoints_().add(static_cast<char32>(codepoint));
       }
       
@@ -91,32 +91,32 @@ namespace xtd {
       emoticon(const xtd::string& name, type_t codepoint) {
         create_data();
         name_(name);
-        codepoints_({static_cast<char32>(codepoint)});
+        codepoints_({static_cast<xtd::char32>(codepoint)});
       }
       
       template<typename type_t>
       explicit emoticon(std::initializer_list<type_t> codepoints) {
         create_data();
         for (auto codepoint : codepoints)
-          codepoints_().add(static_cast<char32>(codepoint));
+          codepoints_().add(static_cast<xtd::char32>(codepoint));
       }
       
       template<typename type_t>
       explicit emoticon(const xtd::array<type_t>& codepoints) {
         create_data();
         for (auto codepoint : codepoints)
-          codepoints_().add(static_cast<char32>(codepoint));
+          codepoints_().add(static_cast<xtd::char32>(codepoint));
       }
       
       template<typename type_t>
       explicit emoticon(type_t codepoint) {
         create_data();
-        codepoints_({static_cast<char32>(codepoint)});
+        codepoints_({static_cast<xtd::char32>(codepoint)});
       }
       
       emoticon();
       emoticon(const emoticon& other);
-      emoticon& operator =(const emoticon& other);
+      auto operator =(const emoticon& other) -> emoticon&;
       /// @endcond
       
       /// @name Public Properties
@@ -124,11 +124,11 @@ namespace xtd {
       /// @{
       /// @brief Gets name of emoticon.
       /// @return A string that represent the name of emoticon.
-      const xtd::string& name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       
       /// @brief Gets codepoints of emoticon.
       /// @return An array of char32 that represent the emoticon.
-      xtd::array<char32> codepoints() const noexcept;
+      [[nodiscard]] auto codepoints() const noexcept -> xtd::array<xtd::char32>;
       /// @}
       
       /// @name Public Methods
@@ -144,55 +144,55 @@ namespace xtd {
       /// | Less than zero    | This instance is less than obj.    |
       /// | Zero              | This instance is equal to obj.     |
       /// | Greater than zero | This instance is greater than obj. |
-      int32 compare_to(const emoticon &obj) const noexcept override;
+      [[nodiscard]] auto compare_to(const emoticon &obj) const noexcept -> xtd::int32 override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const emoticon& other) const noexcept override;
+      [[nodiscard]] auto equals(const emoticon& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     private:
-      void create_data();
-      void name_(const string& name);
-      xtd::collections::generic::list<char32>& codepoints_();
-      void codepoints_(xtd::array<char32>&& codepoints);
+      auto create_data() -> void;
+      auto name_(const xtd::string& name) -> void;
+      [[nodiscard]] auto codepoints_() -> xtd::collections::generic::list<xtd::char32>&;
+      auto codepoints_(xtd::array<xtd::char32>&& codepoints) -> void;
       
       xtd::sptr<data> data_;
     };
   }
-}
 
-/// @cond
-inline xtd::string operator +(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) {
-  return value_a.to_string() + value_b.to_string();
+  /// @cond
+  inline auto operator +(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) -> xtd::string {
+    return value_a.to_string() + value_b.to_string();
+  }
+  
+  inline auto operator +(const xtd::forms::emoticon& value_a, const char* value_b) -> xtd::string {
+    return value_a.to_string() + value_b;
+  }
+  
+  inline auto operator +(const xtd::forms::emoticon& value_a, const xtd::string& value_b) -> xtd::string {
+    return value_a.to_string() + value_b;
+  }
+  
+  inline auto operator +(const xtd::string& value_a, const xtd::forms::emoticon& value_b) -> xtd::string {
+    return value_a + value_b.to_string();
+  }
+  
+  inline auto operator +(const char* value_a, const xtd::forms::emoticon& value_b) -> xtd::string {
+    return xtd::string(value_a) + value_b.to_string();
+  }
+  /// @endcond
 }
-
-inline xtd::string operator +(const xtd::forms::emoticon& value_a, const char* value_b) {
-  return value_a.to_string() + value_b;
-}
-
-inline xtd::string operator +(const xtd::forms::emoticon& value_a, const xtd::string& value_b) {
-  return value_a.to_string() + value_b;
-}
-
-inline xtd::string operator +(const xtd::string& value_a, const xtd::forms::emoticon& value_b) {
-  return value_a + value_b.to_string();
-}
-
-inline xtd::string operator +(const char* value_a, const xtd::forms::emoticon& value_b) {
-  return xtd::string(value_a) + value_b.to_string();
-}
-/// @endcond
