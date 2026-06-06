@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of debug_message_dialog dialog.
     /// @include debug_message_dialog.cpp
-    class forms_export_ debug_message_dialog final : public component {
+    class forms_export_ debug_message_dialog final : public xtd::forms::component {
       struct data;
       
     public:
@@ -43,15 +43,15 @@ namespace xtd {
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const noexcept;
+      [[nodiscard]] auto dialog_result() const noexcept -> xtd::forms::dialog_result;
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::string message() const noexcept;
+      [[nodiscard]] auto message() const noexcept -> xtd::string;
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current debug_message_dialog instance.
-      debug_message_dialog& message(const xtd::string& message) {
+      auto message(const xtd::string& message) -> debug_message_dialog& {
         #if DEBUG
         dialog_.message(message);
         #endif
@@ -63,10 +63,10 @@ namespace xtd {
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset();
+      auto reset() -> void;
       
       /// @brief Runs message dialog box.
-      xtd::forms::dialog_result show_dialog() {
+      auto show_dialog() -> xtd::forms::dialog_result {
         #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         return dialog_.show_dialog();
@@ -75,7 +75,7 @@ namespace xtd {
         #endif
       }
       /// @brief Runs message dialog box.
-      xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
+      auto show_dialog(const xtd::forms::iwin32_window& owner) -> xtd::forms::dialog_result {
         #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         return dialog_.show_dialog(owner);
@@ -84,14 +84,14 @@ namespace xtd {
         #endif
       }
       /// @brief Runs message dialog box.
-      void show_sheet(const iwin32_window& owner) {
+      auto show_sheet(const xtd::forms::iwin32_window& owner) -> void {
         #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         dialog_.show_sheet(owner);
         #endif
       }
       /// @brief Runs message dialog box.
-      xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner) {
+      auto show_sheet_dialog(const xtd::forms::iwin32_window& owner) -> xtd::forms::dialog_result {
         #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         return dialog_.show_sheet_dialog(owner);
@@ -106,11 +106,11 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<debug_message_dialog, dialog_closed_event_handler> dialog_closed;
+      xtd::event<debug_message_dialog, xtd::forms::dialog_closed_event_handler> dialog_closed;
       /// @}
       
     private:
-      void on_dialog_closed(const dialog_closed_event_args& e);
+      auto on_dialog_closed(const xtd::forms::dialog_closed_event_args& e) -> void;
       
       message_dialog dialog_;
     };
