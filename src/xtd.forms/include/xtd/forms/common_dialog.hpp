@@ -54,9 +54,9 @@ namespace xtd {
       /// @remarks Use this property to store arbitrary information about the control.
       [[nodiscard]] auto tag() const noexcept -> const xtd::any_object&;
       /// @brief Sets an object that contains data about the control.
-      /// @param tag The object that contains data about the common_dialog.
+      /// @param value The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
-      auto tag(const xtd::any_object& tag) -> common_dialog&;
+      auto tag(const xtd::any_object& value) -> common_dialog&;
       /// @}
       
       /// @name Public Methods
@@ -120,13 +120,13 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return `true` if the dialog box was successfully run; otherwise, `false`.
-      [[nodiscard]] virtual auto run_dialog(intptr hwnd_owner) -> bool = 0;
+      [[nodiscard]] virtual auto run_dialog(xtd::intptr hwnd_owner) -> bool = 0;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return `true` if the dialog box was successfully run; otherwise, `false`.
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
-      virtual auto run_sheet(intptr hwnd_owner) -> void = 0;
+      virtual auto run_sheet(xtd::intptr hwnd_owner) -> void = 0;
       
       /// @brief Sets async dialog_result result after dialog box is closing.
       /// @param value ok if the user clicks OK in the dialog box; otherwise, cancel.
