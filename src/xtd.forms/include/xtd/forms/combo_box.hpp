@@ -60,9 +60,9 @@ namespace xtd {
       /// @remarks The drop_down_style property specifies whether the list is always displayed or whether the list is displayed in a drop-down. The drop_down_style property also specifies whether the text portion can be edited. See combo_box_style for the available settings and their effects. There is no setting to always display the list and disallow entering a new value. To display a list to which no new values can be added, use a list_box control.
       [[nodiscard]] auto drop_down_style() const noexcept -> combo_box_style;
       /// @brief Sets a value specifying the style of the combo box.
-      /// @param droop_down_style One of the combo_box_style values. The default is drop_down.
+      /// @param value One of the combo_box_style values. The default is drop_down.
       /// @remarks The drop_down_style property specifies whether the list is always displayed or whether the list is displayed in a drop-down. The drop_down_style property also specifies whether the text portion can be edited. See combo_box_style for the available settings and their effects. There is no setting to always display the list and disallow entering a new value. To display a list to which no new values can be added, use a list_box control.
-      auto drop_down_style(combo_box_style drop_down_style) -> combo_box&;
+      auto drop_down_style(combo_box_style value) -> combo_box&;
       
       /// @brief Gets an object representing the collection of the items contained in this combo_box. Gets an object representing the collection of the items contained in this combo_box.
       /// @return A combo_box::object_collection representing the items in the combo_box.
@@ -72,38 +72,38 @@ namespace xtd {
       /// @return A combo_box::object_collection representing the items in the combo_box.
       auto items() const noexcept -> const object_collection&;
       /// @brief Sets an object representing the collection of the items contained in this combo_box. Gets an object representing the collection of the items contained in this combo_box.
-      /// @param items A combo_box::object_collection representing the items in the combo_box.
+      /// @param value A combo_box::object_collection representing the items in the combo_box.
       /// @return This instance of combo_box.
-      [[nodiscard]] auto items(const object_collection& items) -> const combo_box&;
+      [[nodiscard]] auto items(const object_collection& value) -> const combo_box&;
       
       using xtd::forms::list_control::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
-      auto selected_index(xtd::usize selected_index) -> list_control& override;
+      auto selected_index(xtd::usize value) -> list_control& override;
       
       /// @brief Gets currently selected item in the combo_box.
       /// @return An object that represents the current selection in the control.
       [[nodiscard]] auto selected_item() const noexcept -> const item&;
       /// @brief Sets currently selected item in the combo_box.
-      /// @param selected_item An object that represents the current selection in the control.
+      /// @param value An object that represents the current selection in the control.
       /// @return Current combo_box.
-      auto selected_item(const item& selected_item) -> combo_box&;
+      auto selected_item(const item& value) -> combo_box&;
       
       /// @brief Gets a value indicating whether the items in the combo_box are sorted alphabetically.
       /// @return `true` if items in the control are sorted; otherwise, `false`. The default is `false`.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a combo_box. As items are added to a sorted combo_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       [[nodiscard]] virtual auto sorted() const noexcept -> bool;
       /// @brief Sets a value indicating whether the items in the combo_box are sorted alphabetically.
-      /// @param sorted `true` if items in the control are sorted; otherwise, `false`. The default is `false`.
+      /// @param value `true` if items in the control are sorted; otherwise, `false`. The default is `false`.
       /// @return Current combo_box.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a combo_box. As items are added to a sorted combo_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
-      virtual auto sorted(bool sorted) -> combo_box&;
+      virtual auto sorted(bool value) -> combo_box&;
       
       using xtd::forms::list_control::text;
       /// @brief Sets the text associated with this control.
-      /// @param text The text associated with this control.
-      auto text(const xtd::string& text) -> xtd::forms::control& override;
+      /// @param value The text associated with this control.
+      auto text(const xtd::string& value) -> xtd::forms::control& override;
       /// @}
       
       /// @name Public Methods
