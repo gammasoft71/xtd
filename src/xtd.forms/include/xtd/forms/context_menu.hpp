@@ -32,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of context menu componant.
     /// @include context_menu.cpp
-    class forms_export_ context_menu : public menu {
+    class forms_export_ context_menu : public xtd::forms::menu {
     public:
       /// @name Public Aliases
       
