@@ -273,10 +273,10 @@ namespace xtd {
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return `true` if the file could be opened; otherwise, `false`.
       /// @remarks This method provides an implementation of run_dialog, and is invoked when the user of a file dialog invokes show_dialog.
-      [[nodiscard]] auto run_dialog(intptr hwnd_owner) -> bool override;
+      [[nodiscard]] auto run_dialog(xtd::intptr hwnd_owner) -> bool override;
       /// @brief Runs file dialog box in sheet mode.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
-      auto run_sheet(intptr hwnd_owner) -> void override;
+      auto run_sheet(xtd::intptr hwnd_owner) -> void override;
       /// @}
       
       /// @cond
