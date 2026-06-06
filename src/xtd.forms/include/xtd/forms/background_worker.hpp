@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of background_worker component.
     /// @include background_worker.cpp
-    class forms_export_ background_worker : public component {
+    class forms_export_ background_worker : public xtd::forms::component {
       struct data;
       
     public:
