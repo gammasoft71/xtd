@@ -33,7 +33,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of font_dialog dialog.
     /// @include font_dialog.cpp
-    class forms_export_ font_dialog : public common_dialog {
+    class forms_export_ font_dialog : public xtd::forms::common_dialog {
       struct data;
       
     public:
@@ -67,129 +67,129 @@ namespace xtd {
       /// @brief Gets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
       /// @return `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is `true`.
       /// @remarks The Script combo box found on the Font dialog box contains character sets associated with the selected font.
-      bool allow_script_change() const noexcept;
+      [[nodiscard]] auto allow_script_change() const noexcept -> bool;
       /// @brief Sets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
-      /// @param allow_script_change `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is `true`.
+      /// @param value `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
       /// @remarks The Script combo box found on the Font dialog box contains character sets associated with the selected font.
-      font_dialog& allow_script_change(bool allow_script_change);
+      auto allow_script_change(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box allows graphics device interface (GDI) font simulations.
       /// @return `true` if font simulations are allowed; otherwise, `false`. The default value is `true`.
-      bool allow_simulation() const noexcept;
+      [[nodiscard]] auto allow_simulation() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box allows graphics device interface (GDI) font simulations.
-      /// @param allow_simulation `true` if font simulations are allowed; otherwise, `false`. The default value is `true`.
+      /// @param value `true` if font simulations are allowed; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
-      font_dialog& allow_simulation(bool allow_simulation);
+      auto allow_simulation(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box allows vector font selections.
       /// @return `true` if vector fonts are allowed; otherwise, `false`. The default value is `true`.
-      bool allow_vector_fonts() const noexcept;
+      [[nodiscard]] auto allow_vector_fonts() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box allows vector font selections.
-      /// @param allow_vector_fonts `true` if vector fonts are allowed; otherwise, `false`. The default value is `true`.
+      /// @param value `true` if vector fonts are allowed; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
-      font_dialog& allow_vector_fonts(bool allow_vector_fonts);
+      auto allow_vector_fonts(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box displays both vertical and horizontal fonts or only horizontal fonts.
       /// @return `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is `true`.
-      bool allow_vertical_fonts() const noexcept;
+      [[nodiscard]] auto allow_vertical_fonts() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box displays both vertical and horizontal fonts or only horizontal fonts.
-      /// @param allow_vertical_fonts `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is `true`.
+      /// @param value `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
-      font_dialog& allow_vertical_fonts(bool allow_vertical_fonts);
+      auto allow_vertical_fonts(bool value) -> font_dialog&;
       
       /// @brief Gets the selected font color.
       /// @return The color of the selected font. The default value is Black.
-      drawing::color color() const noexcept;
+      [[nodiscard]] auto color() const noexcept -> xtd::drawing::color;
       /// @brief Sets the selected font color.
-      /// @param color The color of the selected font. The default value is Black.
+      /// @param value The color of the selected font. The default value is Black.
       /// @return Current font_dialog.
-      font_dialog& color(const drawing::color& color);
+      auto color(const xtd::drawing::color& value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box allows only the selection of fixed-pitch fonts.
       /// @return `true` if only fixed-pitch fonts can be selected; otherwise, `false`. The default value is `false`.
-      bool fixed_pitch_only() const noexcept;
+      [[nodiscard]] auto fixed_pitch_only() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box allows only the selection of fixed-pitch fonts.
-      /// @param fixed_pitch_only `true` if only fixed-pitch fonts can be selected; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if only fixed-pitch fonts can be selected; otherwise, `false`. The default value is `false`.
       /// @return Current font_dialog.
-      font_dialog& fixed_pitch_only(bool fixed_pitch_only);
+      auto fixed_pitch_only(bool value) -> font_dialog&;
       
       /// @brief Gets the selected font.
       /// @return The selected font.
-      drawing::font font() const noexcept;
+      [[nodiscard]] auto font() const noexcept -> xtd::drawing::font;
       /// @brief Sets the selected font.
-      /// @param font The selected font.
+      /// @param value The selected font.
       /// @return Current font_dialog.
-      font_dialog& font(const drawing::font& font);
+      auto font(const xtd::drawing::font& value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box specifies an error condition if the user attempts to select a font or style that does not exist.
       /// @return `true` if the dialog box specifies an error condition when the user tries to select a font or style that does not exist; otherwise, `false`. The default is `false`.
-      bool font_must_exist() const noexcept;
+      [[nodiscard]] auto font_must_exist() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box specifies an error condition if the user attempts to select a font or style that does not exist.
-      /// @param font_must_exist `true` if the dialog box specifies an error condition when the user tries to select a font or style that does not exist; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the dialog box specifies an error condition when the user tries to select a font or style that does not exist; otherwise, `false`. The default is `false`.
       /// @return Current font_dialog.
-      font_dialog& font_must_exist(bool font_must_exist);
+      auto font_must_exist(bool value) -> font_dialog&;
       
       /// @brief Gets the maximum point size a user can select.
       /// @return The maximum point size a user can select. The default is 0.
-      xtd::usize max_size() const noexcept;
+      [[nodiscard]] auto max_size() const noexcept -> xtd::usize;
       /// @brief Sets the maximum point size a user can select.
-      /// @param max_size The maximum point size a user can select. The default is 0.
+      /// @param value The maximum point size a user can select. The default is 0.
       /// @return Current font_dialog.
-      font_dialog& max_size(xtd::usize max_size);
+      auto max_size(xtd::usize value) -> font_dialog&;
       
       /// @brief Gets the minimum point size a user can select.
       /// @return The minimum point size a user can select. The default is 0.
-      xtd::usize min_size() const noexcept;
+      [[nodiscard]] auto min_size() const noexcept -> xtd::usize;
       /// @brief Sets the minimum point size a user can select.
-      /// @param min_size The minimum point size a user can select. The default is 0.
+      /// @param value The minimum point size a user can select. The default is 0.
       /// @return Current font_dialog.
-      font_dialog& min_size(xtd::usize min_size);
+      auto min_size(xtd::usize value) -> font_dialog&;
       
       /// @brief Gets values to initialize the font_dialog.
       /// @return A bitwise combination of internal values that initializes the font_dialog.
       /// @remarks The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the font_dialog class to get and set the options.
-      xtd::usize options() const noexcept;
+      [[nodiscard]] auto options() const noexcept -> xtd::usize;
       
       /// @brief Gets a value indicating whether the dialog box allows selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set.
       /// @return `true` if selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set, is allowed; otherwise, `false`. The default value is `false`.
-      bool script_only() const noexcept;
+      [[nodiscard]] auto script_only() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box allows selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set.
-      /// @param script_script = `true` if selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set, is allowed; otherwise, `false`. The default value is `false`.
+      /// @param value = `true` if selection of fonts for all non-OEM and Symbol character sets, as well as the ANSI character set, is allowed; otherwise, `false`. The default value is `false`.
       /// @return Current font_dialog.
-      font_dialog& script_only(bool script_only);
+      auto script_only(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box contains an Apply button.
       /// @return `true` if the dialog box contains an Apply button; otherwise, `false`. The default value is `false`.
-      bool show_apply() const noexcept;
+      [[nodiscard]] auto show_apply() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box contains an Apply button.
-      /// @param show_apply `true` if the dialog box contains an Apply button; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box contains an Apply button; otherwise, `false`. The default value is `false`.
       /// @return Current font_dialog.
-      font_dialog& show_apply(bool show_apply);
+      auto show_apply(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box displays the color choice.
       /// @return `true` if the dialog box displays the color choice; otherwise, `false`. The default value is `false`.
-      bool show_color() const noexcept;
+      [[nodiscard]] auto show_color() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box displays the color choice.
-      /// @param show_color `true` if the dialog box displays the color choice; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box displays the color choice; otherwise, `false`. The default value is `false`.
       /// @return Current font_dialog.
-      font_dialog& show_color(bool show_color);
+      auto show_color(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box contains controls that allow the user to specify strikethrough, underline, and text color options.
       /// @return `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is `true`.
-      bool show_effect() const noexcept;
+      [[nodiscard]] auto show_effect() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box contains controls that allow the user to specify strikethrough, underline, and text color options.
-      /// @param show_effect `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is `true`.
+      /// @param value `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
-      font_dialog& show_effect(bool show_effect);
+      auto show_effect(bool value) -> font_dialog&;
       
       /// @brief Gets a value indicating whether the dialog box displays a Help button.
       /// @return `true` if the dialog box displays a Help button; otherwise, `false`. The default value is `false`.
-      bool show_help() const noexcept;
+      [[nodiscard]] auto show_help() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box displays a Help button.
-      /// @param show_help `true` if the dialog box displays a Help button; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box displays a Help button; otherwise, `false`. The default value is `false`.
       /// @return Current font_dialog.
-      font_dialog& show_help(bool show_help);
+      auto show_help(bool value) -> font_dialog&;
       /// @}
       
       /// @name Public Methods
@@ -197,7 +197,7 @@ namespace xtd {
       /// @{
       /// @brief Resets all dialog box options to their default values.
       /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.
-      void reset() noexcept override;
+      auto reset() noexcept -> void override;
       /// @}
       
       /// @name Public Events
@@ -206,7 +206,7 @@ namespace xtd {
       /// @brief Occurs when the user clicks the Apply button in the font dialog box.
       /// @remarks Every time the Apply button is clicked, another apply event is raised.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<font_dialog, event_handler> apply;
+      xtd::event<font_dialog, xtd::event_handler> apply;
       /// @}
       
     protected:
@@ -218,22 +218,22 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @par Notes to Inheritors
       /// When overriding on_apply(const event_args&) in a derived class, be sure to call the base class's on_apply(const event_args&) method.
-      virtual void on_apply(const event_args& e);
+      virtual auto on_apply(const xtd::event_args& e) -> void;
       
       /// @return Specifies a file dialog box.
       /// @param owner The window handle of the owner window for the common dialog box.
       /// @return `true` if the dialog box was successfully run; otherwise, `false`.
       /// @remarks The run_dialog method is invoked when the user of a font dialog box calls the show_dialog method.
-      bool run_dialog(intptr owner) override;
+      auto run_dialog(xtd::intptr owner) -> bool override;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      void run_sheet(intptr owner) override;
+      auto run_sheet(xtd::intptr owner) -> void override;
       /// @}
       
     private:
-      bool get_option(xtd::usize flag) const noexcept;
-      void set_option(xtd::usize flag, bool value);
+      [[nodiscard]] auto get_option(xtd::usize flag) const noexcept -> bool;
+      auto set_option(xtd::usize flag, bool value) -> void;
       
       xtd::sptr<data> data_;
     };
