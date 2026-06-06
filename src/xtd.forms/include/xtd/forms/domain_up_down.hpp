@@ -149,25 +149,25 @@ namespace xtd {
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the domain_up_down. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       [[nodiscard]] auto items() noexcept -> object_collection&;
       /// @brief Sets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
-      /// @param items A domain_up_down::object_collection representing the items in the domain_up_down.
+      /// @param value A domain_up_down::object_collection representing the items in the domain_up_down.
       /// @return Current domain_up_down.
-      auto items(const object_collection& items) -> domain_up_down&;
+      auto items(const object_collection& value) -> domain_up_down&;
       
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       [[nodiscard]] virtual auto selected_index() const noexcept -> xtd::usize;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current domain_up_down.
-      virtual auto selected_index(xtd::usize selected_index) -> domain_up_down&;
+      virtual auto selected_index(xtd::usize value) -> domain_up_down&;
       
       /// @brief Gets the selected item based on the index value of the selected item in the collection.
       /// @return The selected item based on the selected_index value. The default value is item::empty.
       [[nodiscard]] auto selected_item() const noexcept -> const item&;
       /// @brief Gets the selected item based on the index value of the selected item in the collection.
-      /// @param item The selected item based on the selected_index value. The default value is item::empty.
+      /// @param value The selected item based on the selected_index value. The default value is item::empty.
       /// @return Current domain_up_down.
-      auto selected_item(const item& selected_item) -> domain_up_down&;
+      auto selected_item(const item& value) -> domain_up_down&;
       
       /// @brief Gets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
       /// @return `true` if the list starts again when the user reaches the beginning or end of the collection; otherwise, `false`. The default value is `false`.
@@ -177,7 +177,6 @@ namespace xtd {
       /// @return Current domain_up_down.
       virtual auto wrap(bool value) -> domain_up_down&;
       /// @}
-      
       
       /// @name Public Static Methods
       
