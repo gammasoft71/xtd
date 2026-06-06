@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of fixed_layout_panel container.
     /// @include fixed_layout_panel.cpp
-    class forms_export_ fixed_layout_panel : public panel {
+    class forms_export_ fixed_layout_panel : public xtd::forms::panel {
     public:
       /// @name Public Constructors
       
@@ -36,51 +36,51 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create();
+      [[nodiscard]] static auto create() -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
       /// @param name The name of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const control& parent);
+      [[nodiscard]] static auto create(const control& parent) -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location) -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> fixed_layout_panel;
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
       /// @param name The name of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> fixed_layout_panel;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      void on_layout(const xtd::event_args& e) override;
+      auto on_layout(const xtd::event_args& e) -> void override;
       /// @}
     };
   }
