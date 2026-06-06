@@ -13,8 +13,9 @@ void container_control::active_control(const control& active_control) {
     active_control_.value().get().focus();
 }
 
-void container_control::active_control(std::nullptr_t) {
+auto container_control::active_control(std::nullptr_t) -> container_control& {
   active_control_.reset();
+  return *this;
 }
 
 container_control::container_control() {
