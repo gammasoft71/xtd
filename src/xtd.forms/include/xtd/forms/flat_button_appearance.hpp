@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class flat_button_appearance : public object, public xtd::iequatable<flat_button_appearance> {
+    class flat_button_appearance : public xtd::object, public xtd::iequatable<flat_button_appearance> {
       struct data;
       
     public:
@@ -34,8 +34,7 @@ namespace xtd {
       
       /// @cond
       flat_button_appearance(const flat_button_appearance& other);
-      flat_button_appearance(flat_button_appearance&&) = default;
-      flat_button_appearance& operator =(const flat_button_appearance&);
+      auto operator =(const flat_button_appearance&) -> flat_button_appearance&;
       /// @endcond
       
       /// @name Public Properties
@@ -43,75 +42,75 @@ namespace xtd {
       /// @{
       /// @brief Gets the color of the border around the button.
       /// @return A xtd::drawing::color structure representing the color of the border around the button.
-      std::optional<xtd::drawing::color> border_color() const noexcept;
+      [[nodiscard]] auto border_color() const noexcept -> std::optional<xtd::drawing::color>;
       /// @brief Sets the color of the border around the button.
-      /// @param color A xtd::drawing::color structure representing the color of the border around the button.
+      /// @param value A xtd::drawing::color structure representing the color of the border around the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_color(const xtd::drawing::color& color);
+      auto border_color(const xtd::drawing::color& value) -> flat_button_appearance&;
       /// @brief Resets the color of the border around the button.
-      /// @param color nullptr.
+      /// @param xtd::null.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_color(std::nullptr_t color);
+      auto border_color(xtd::null_ptr) -> flat_button_appearance&;
       
       /// @brief Gets a value that specifies the radius, in pixels, of the border around the button.
       /// @return An int32 representing the radius, in pixels, of the border around the button.
-      std::optional<int32> border_radius() const noexcept;
+      [[nodiscard]] auto border_radius() const noexcept -> std::optional<xtd::int32>;
       /// @brief Sets a value that specifies the radius, in pixels, of the border around the button.
-      /// @param size An int32 representing the radius, in pixels, of the border around the button.
+      /// @param value An int32 representing the radius, in pixels, of the border around the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_radius(int32 radius);
+      auto border_radius(xtd::int32 value) -> flat_button_appearance&;
       /// @brief Resets a value that specifies the radius, in pixels, of the border around the button.
-      /// @param size nullptr.
+      /// @param xtd::null.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_radius(std::nullptr_t radius);
+      auto border_radius(xtd::null_ptr) -> flat_button_appearance&;
       
       /// @brief Gets a value that specifies the size, in pixels, of the border around the button.
       /// @return An int32 representing the size, in pixels, of the border around the button.
-      std::optional<int32> border_size() const noexcept;
+      [[nodiscard]] auto border_size() const noexcept -> std::optional<xtd::int32>;
       /// @brief Sets a value that specifies the size, in pixels, of the border around the button.
-      /// @param size An int32 representing the size, in pixels, of the border around the button.
+      /// @param value An int32 representing the size, in pixels, of the border around the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_size(int32 size);
+      auto border_size(xtd::int32 value) -> flat_button_appearance&;
       /// @brief Resets a value that specifies the size, in pixels, of the border around the button.
-      /// @param size nullptr.
+      /// @param xtd::null.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_size(std::nullptr_t size);
+      auto border_size(xtd::null_ptr) -> flat_button_appearance&;
       
       /// @brief Gets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
       /// @return A xtd::drawing::color structure representing the color of the client area of the button.
-      std::optional<xtd::drawing::color> checked_back_color() const noexcept;
+      [[nodiscard]] auto checked_back_color() const noexcept -> std::optional<xtd::drawing::color>;
       /// @brief Sets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
-      /// @param color A xtd::drawing::color structure representing the color of the client area of the button.structure representing the color of the client area of the button.
+      /// @param value A xtd::drawing::color structure representing the color of the client area of the button.structure representing the color of the client area of the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& checked_back_color(const xtd::drawing::color& color);
+      auto checked_back_color(const xtd::drawing::color& value) -> flat_button_appearance&;
       /// @brief Resets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
-      /// @param color nullptr.
+      /// @param xtd::null.
       /// @return Current flat_button_appearance.
-      flat_button_appearance& checked_back_color(std::nullptr_t color);
+      auto checked_back_color(xtd::null_ptr) -> flat_button_appearance&;
       
       /// @brief Gets the color of the client area of the button when the mouse is pressed within the bounds of the control.
       /// @return A xtd::drawing::color structure representing the color of the client area of the button.
-      std::optional<xtd::drawing::color> mouse_down_back_color() const noexcept;
+      [[nodiscard]] auto mouse_down_back_color() const noexcept -> std::optional<xtd::drawing::color>;
       /// @brief Sets the color of the client area of the button when the mouse is pressed within the bounds of the control.
-      /// @param color A xtd::drawing::color structure representing the color of the client area of the button.
+      /// @param value A xtd::drawing::color structure representing the color of the client area of the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& mouse_down_back_color(const xtd::drawing::color& color);
+      auto mouse_down_back_color(const xtd::drawing::color& value) -> flat_button_appearance&;
       /// @brief Resets the color of the client area of the button when the mouse is pressed within the bounds of the control.
-      /// @param color nullptr.
+      /// @param xtd::null.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& mouse_down_back_color(std::nullptr_t color);
+      auto mouse_down_back_color(xtd::null_ptr) -> flat_button_appearance&;
       
       /// @brief Gets the color of the client area of the button when the mouse pointer is within the bounds of the control.
       /// @return A xtd::drawing::color structure representing the color of the client area of the button.
-      std::optional<xtd::drawing::color> mouse_over_back_color() const noexcept;
+      [[nodiscard]] auto mouse_over_back_color() const noexcept -> std::optional<xtd::drawing::color>;
       /// @brief Sets the color of the client area of the button when the mouse pointer is within the bounds of the control.
-      /// @param color A xtd::drawing::color structure representing the color of the client area of the button.
+      /// @param value A xtd::drawing::color structure representing the color of the client area of the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& mouse_over_back_color(const xtd::drawing::color& color);
+      auto mouse_over_back_color(const xtd::drawing::color& value) -> flat_button_appearance&;
       /// @brief Resets the color of the client area of the button when the mouse pointer is within the bounds of the control.
-      /// @param color nullptr.
+      /// @param xtd::null.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& mouse_over_back_color(std::nullptr_t color);
+      auto mouse_over_back_color(xtd::null_ptr) -> flat_button_appearance&;
       /// @}
       
       /// @name Public Methods
@@ -120,15 +119,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const flat_button_appearance& other) const noexcept override;
+      [[nodiscard]] auto equals(const flat_button_appearance& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
     private:
