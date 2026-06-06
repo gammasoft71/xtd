@@ -150,14 +150,14 @@ namespace xtd {
       /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       [[nodiscard]] auto items() const noexcept -> const object_collection&;
       /// @brief Sets the collection of items in this checked_list_box.
-      /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
-      auto items(const object_collection& items) -> const list_box&;
+      /// @param value The checked_list_box::object_collection collection representing the items in the checked_list_box.
+      auto items(const object_collection& value) -> const list_box&;
       
       using list_box::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
+      /// @param value A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @return Current list_control.
-      auto selected_index(xtd::usize selected_index) -> list_control& override;
+      auto selected_index(xtd::usize value) -> list_control& override;
       
       [[nodiscard]] auto selected_indices() const noexcept -> selected_index_collection override;
       
@@ -167,10 +167,10 @@ namespace xtd {
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
       [[nodiscard]] auto selected_item() const noexcept -> const item&;
       /// @brief Sets the currently selected item in the list_box.
-      /// @param selected_item An object that represents the current selection in the control.
+      /// @param value An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
-      auto selected_item(const item& selected_item) -> checked_list_box&;
+      auto selected_item(const item& value) -> checked_list_box&;
       
       /// @brief Gets a collection containing the currently selected items in the list_box.
       /// @return A list_box::selected_object_collection containing the currently selected items in the control.
@@ -180,8 +180,8 @@ namespace xtd {
       
       using xtd::forms::list_box::text;
       /// @brief Sets the text associated with this control.
-      /// @param text The text associated with this control.
-      auto text(const xtd::string& text) -> xtd::forms::control& override;
+      /// @param value The text associated with this control.
+      auto text(const xtd::string& value) -> xtd::forms::control& override;
       /// @}
       
       /// @name Public Methods
