@@ -41,21 +41,21 @@ namespace xtd {
       /// @param font An output xtd::drawing::font that will store the selected font.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output font parameter will contain the selected font, otherwise it will be ignored.
-      static dialog_result show(xtd::drawing::font& font);
+      [[nodiscard]] static auto show(xtd::drawing::font& font) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box.
       /// @param font An output xtd::drawing::font that will store the selected font.
       /// @param options A bitwise combination of enum xtd::forms::font_box_options to specify additional options to the font dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output font parameter will contain the selected font, otherwise it will be ignored.
-      static dialog_result show(xtd::drawing::font& font, const font_box_options options);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, const font_box_options options) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box in front of a specified window.
       /// @param font An output xtd::drawing::font that will store the selected font.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the font dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output font parameter will contain the selected font, otherwise it will be ignored.
-      static dialog_result show(xtd::drawing::font& font, const iwin32_window& owner);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, const iwin32_window& owner) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box in front of a specified window.
       /// @param font An output xtd::drawing::font that will store the selected font.
@@ -63,14 +63,14 @@ namespace xtd {
       /// @param options A bitwise combination of enum xtd::forms::font_box_options to specify additional options to the font dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the output font parameter will contain the selected font, otherwise it will be ignored.
-      static dialog_result show(xtd::drawing::font& font, const iwin32_window& owner, const font_box_options options);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, const iwin32_window& owner, const font_box_options options) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box.
       /// @param font An output xtd::drawing::font that will store the selected font.
       /// @param color An output xtd::drawing::color that will store the selected font color.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output parameters font and color will contain the selected font and color, otherwise they will be ignored.
-      static dialog_result show(xtd::drawing::font& font, xtd::drawing::color& color);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, xtd::drawing::color& color) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box.
       /// @param font An output xtd::drawing::font that will store the selected font.
@@ -78,7 +78,7 @@ namespace xtd {
       /// @param options A bitwise combination of enum xtd::forms::font_box_options to specify additional options to the font dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output parameters font and color will contain the selected font and color, otherwise they will be ignored.
-      static dialog_result show(xtd::drawing::font& font, xtd::drawing::color& color, const font_box_options options);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, xtd::drawing::color& color, const font_box_options options) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box in front of a specified window.
       /// @param font An output xtd::drawing::font that will store the selected font.
@@ -86,7 +86,7 @@ namespace xtd {
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the font dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output parameters font and color will contain the selected font and color, otherwise they will be ignored.
-      static dialog_result show(xtd::drawing::font& font, xtd::drawing::color& color, const iwin32_window& owner);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, xtd::drawing::color& color, const iwin32_window& owner) -> xtd::forms::dialog_result;
       
       /// @brief Displays a font dialog box in front of a specified window.
       /// @param font An output xtd::drawing::font that will store the selected font.
@@ -95,11 +95,11 @@ namespace xtd {
       /// @param options A bitwise combination of enum xtd::forms::font_box_options to specify additional options to the font dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output parameters font and color will contain the selected font and color, otherwise they will be ignored.
-      static dialog_result show(xtd::drawing::font& font, xtd::drawing::color& color, const iwin32_window& owner, const font_box_options options);
+      [[nodiscard]] static auto show(xtd::drawing::font& font, xtd::drawing::color& color, const iwin32_window& owner, const font_box_options options) -> xtd::forms::dialog_result;
       /// @}
       
     private:
-      static dialog_result show_font_box(xtd::drawing::font& font, xtd::drawing::color* color = nullptr, const iwin32_window* owner = nullptr, font_box_options options = font_box_options::none);
+      [[nodiscard]] static auto show_font_box(xtd::drawing::font& font, xtd::drawing::color* color = nullptr, const iwin32_window* owner = nullptr, font_box_options options = font_box_options::none) -> xtd::forms::dialog_result;
     };
   }
 }
