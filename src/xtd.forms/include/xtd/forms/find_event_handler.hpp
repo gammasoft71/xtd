@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using find_event_handler = xtd::delegate<void(object& sender, const find_event_args& e)>;
+    using find_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::find_event_args& e)>;
   }
 }
