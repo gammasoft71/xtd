@@ -57,22 +57,23 @@ namespace xtd {
       /// @{
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      const xtd::diagnostics::trace_listener& trace_listener() const noexcept;
+      [[nodiscard]] auto trace_listener() const noexcept -> const xtd::diagnostics::trace_listener&;
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      xtd::diagnostics::trace_listener& trace_listener();
+      [[nodiscard]] auto trace_listener() -> xtd::diagnostics::trace_listener&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void flush() override;
+      auto flush() -> void override;
       
-      void write(const xtd::string& debug) override {
+      auto write(const xtd::string& debug) -> void override {
         if (!defined) return;
         trace_form_base::write(debug);
       }
-      void write_line(const xtd::string& debug) override {
+      
+      auto write_line(const xtd::string& debug) -> void override {
         if (!defined) return;
         trace_form_base::write_line(debug);
       }
