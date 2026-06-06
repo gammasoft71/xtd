@@ -169,7 +169,7 @@ Inheritance diagram for xtd::forms::folder_browser_dialog:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;Folder...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1folder__browser__dialog.html">folder_browser_dialog</a> {};</div>
-<div class="line">      dialog.<a class="code hl_function" href="#abc74848855d2bbe4d9335c15c5b77abd">selected_path</a>(selected_path);</div>
+<div class="line">      dialog.<a class="code hl_function" href="#a03c5bf346d6f26f4603ebbdacb43d4ea">selected_path</a>(selected_path);</div>
 <div class="line">      <span class="keywordflow">if</span> (dialog.show_sheet_dialog(*<span class="keyword">this</span>) == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">forms::dialog_result::ok</a>) {</div>
 <div class="line">        selected_path = dialog.selected_path();</div>
 <div class="line">        label1.text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Path = {}&quot;</span>, selected_path));</div>
@@ -194,7 +194,7 @@ Inheritance diagram for xtd::forms::folder_browser_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a77f74d2ddcec3606a4fd21cffc0948ad"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a77f74d2ddcec3606a4fd21cffc0948ad">xtd::forms::control::text</a></div><div class="ttdeci">virtual auto text() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_aea3c09a223353a9c5c7afdda86882c45"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#aea3c09a223353a9c5c7afdda86882c45">xtd::forms::control::controls</a></div><div class="ttdeci">virtual auto controls() noexcept -&gt; control_collection &amp;</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1folder__browser__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1folder__browser__dialog.html">xtd::forms::folder_browser_dialog</a></div><div class="ttdoc">Prompts the user to select a folder. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> folder_browser_dialog.hpp:31</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1folder__browser__dialog_html_abc74848855d2bbe4d9335c15c5b77abd"><div class="ttname"><a href="#abc74848855d2bbe4d9335c15c5b77abd">xtd::forms::folder_browser_dialog::selected_path</a></div><div class="ttdeci">const xtd::string &amp; selected_path() const noexcept</div><div class="ttdoc">Gets the path selected by the user.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1folder__browser__dialog_html_a03c5bf346d6f26f4603ebbdacb43d4ea"><div class="ttname"><a href="#a03c5bf346d6f26f4603ebbdacb43d4ea">xtd::forms::folder_browser_dialog::selected_path</a></div><div class="ttdeci">auto selected_path() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the path selected by the user.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1scrollable__control_html_a431f226dbf2ccd7608d1a8a393899b60"><div class="ttname"><a href="classxtd_1_1forms_1_1scrollable__control.html#a431f226dbf2ccd7608d1a8a393899b60">xtd::forms::scrollable_control::auto_scroll</a></div><div class="ttdeci">virtual bool auto_scroll() const noexcept</div><div class="ttdoc">Gets a value indicating whether the container enables the user to scroll to any controls placed outsi...</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
@@ -212,44 +212,44 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a614e700d66a13eaaa09c6ca882549e81" id="r_a614e700d66a13eaaa09c6ca882549e81"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a614e700d66a13eaaa09c6ca882549e81">auto_upgrade_enable</a> () const noexcept</td></tr>
-<tr class="memdesc:a614e700d66a13eaaa09c6ca882549e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the dialog will be automatically upgraded to enable new features.  <br /></td></tr>
-<tr class="memitem:a1efb98c211cb3892186ce7b311276ceb" id="r_a1efb98c211cb3892186ce7b311276ceb"><td class="memItemLeft"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1efb98c211cb3892186ce7b311276ceb">auto_upgrade_enable</a> (bool value)</td></tr>
-<tr class="memdesc:a1efb98c211cb3892186ce7b311276ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether the dialog will be automatically upgraded to enable new features.  <br /></td></tr>
-<tr class="memitem:acc26595d68e678a24102c36016de771b" id="r_acc26595d68e678a24102c36016de771b"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#acc26595d68e678a24102c36016de771b">description</a> () const noexcept</td></tr>
-<tr class="memdesc:acc26595d68e678a24102c36016de771b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the descriptive text displayed above the tree view control in the dialog box.  <br /></td></tr>
-<tr class="memitem:a647008e99fae9a533e9bb76d9b0e8904" id="r_a647008e99fae9a533e9bb76d9b0e8904"><td class="memItemLeft"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a647008e99fae9a533e9bb76d9b0e8904">description</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
-<tr class="memdesc:a647008e99fae9a533e9bb76d9b0e8904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the descriptive text displayed above the tree view control in the dialog box.  <br /></td></tr>
-<tr class="memitem:a476173da57b6d67a6c8f350c32e5aa9e" id="r_a476173da57b6d67a6c8f350c32e5aa9e"><td class="memItemLeft"><a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">environment::special_folder</a>&#160;</td><td class="memItemRight"><a class="el" href="#a476173da57b6d67a6c8f350c32e5aa9e">root_folder</a> () const noexcept</td></tr>
-<tr class="memdesc:a476173da57b6d67a6c8f350c32e5aa9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the root folder where the browsing starts from.  <br /></td></tr>
-<tr class="memitem:abfe7cedd683f8aa5acf0614ad2189df2" id="r_abfe7cedd683f8aa5acf0614ad2189df2"><td class="memItemLeft"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abfe7cedd683f8aa5acf0614ad2189df2">root_folder</a> (<a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">environment::special_folder</a> value)</td></tr>
-<tr class="memdesc:abfe7cedd683f8aa5acf0614ad2189df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the root folder where the browsing starts from.  <br /></td></tr>
-<tr class="memitem:abc74848855d2bbe4d9335c15c5b77abd" id="r_abc74848855d2bbe4d9335c15c5b77abd"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abc74848855d2bbe4d9335c15c5b77abd">selected_path</a> () const noexcept</td></tr>
-<tr class="memdesc:abc74848855d2bbe4d9335c15c5b77abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path selected by the user.  <br /></td></tr>
-<tr class="memitem:a5d57aab75bd8e56f7e84d122b25e2213" id="r_a5d57aab75bd8e56f7e84d122b25e2213"><td class="memItemLeft"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5d57aab75bd8e56f7e84d122b25e2213">selected_path</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
-<tr class="memdesc:a5d57aab75bd8e56f7e84d122b25e2213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the path selected by the user.  <br /></td></tr>
+<tr class="memitem:a2217eaf1b951acafbe0b2691664a696b" id="r_a2217eaf1b951acafbe0b2691664a696b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2217eaf1b951acafbe0b2691664a696b">auto_upgrade_enable</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a2217eaf1b951acafbe0b2691664a696b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the dialog will be automatically upgraded to enable new features.  <br /></td></tr>
+<tr class="memitem:ae7269c4cdf5036ff8ef2d32863fef6e6" id="r_ae7269c4cdf5036ff8ef2d32863fef6e6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7269c4cdf5036ff8ef2d32863fef6e6">auto_upgrade_enable</a> (bool value) -&gt; <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ae7269c4cdf5036ff8ef2d32863fef6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether the dialog will be automatically upgraded to enable new features.  <br /></td></tr>
+<tr class="memitem:ad4b58c8b6bb8fddc7259608aa7be1dfb" id="r_ad4b58c8b6bb8fddc7259608aa7be1dfb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad4b58c8b6bb8fddc7259608aa7be1dfb">description</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:ad4b58c8b6bb8fddc7259608aa7be1dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the descriptive text displayed above the tree view control in the dialog box.  <br /></td></tr>
+<tr class="memitem:a82033215ca3668f9ba33730b09e23fd5" id="r_a82033215ca3668f9ba33730b09e23fd5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a82033215ca3668f9ba33730b09e23fd5">description</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a82033215ca3668f9ba33730b09e23fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the descriptive text displayed above the tree view control in the dialog box.  <br /></td></tr>
+<tr class="memitem:af7ac12797f4258b63cb7baffd9bec429" id="r_af7ac12797f4258b63cb7baffd9bec429"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af7ac12797f4258b63cb7baffd9bec429">root_folder</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">xtd::environment::special_folder</a></td></tr>
+<tr class="memdesc:af7ac12797f4258b63cb7baffd9bec429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the root folder where the browsing starts from.  <br /></td></tr>
+<tr class="memitem:aa553116a49e5e5c724a0e5fd1be77c5d" id="r_aa553116a49e5e5c724a0e5fd1be77c5d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa553116a49e5e5c724a0e5fd1be77c5d">root_folder</a> (<a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">xtd::environment::special_folder</a> value) -&gt; <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td></tr>
+<tr class="memdesc:aa553116a49e5e5c724a0e5fd1be77c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the root folder where the browsing starts from.  <br /></td></tr>
+<tr class="memitem:a03c5bf346d6f26f4603ebbdacb43d4ea" id="r_a03c5bf346d6f26f4603ebbdacb43d4ea"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a03c5bf346d6f26f4603ebbdacb43d4ea">selected_path</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a03c5bf346d6f26f4603ebbdacb43d4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path selected by the user.  <br /></td></tr>
+<tr class="memitem:ae4a3bbdfe4d684044e36b1ce353e2761" id="r_ae4a3bbdfe4d684044e36b1ce353e2761"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae4a3bbdfe4d684044e36b1ce353e2761">selected_path</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ae4a3bbdfe4d684044e36b1ce353e2761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the path selected by the user.  <br /></td></tr>
 <tr class="memitem:a695d67efbf658fe1cbf1c17438223630" id="r_a695d67efbf658fe1cbf1c17438223630"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a695d67efbf658fe1cbf1c17438223630">show_new_folder_button</a> () const noexcept</td></tr>
 <tr class="memdesc:a695d67efbf658fe1cbf1c17438223630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the New Folder button appears in the folder browser dialog box.  <br /></td></tr>
-<tr class="memitem:aa34f0ed4ec2213e42db2daf2ae0757bc" id="r_aa34f0ed4ec2213e42db2daf2ae0757bc"><td class="memItemLeft"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa34f0ed4ec2213e42db2daf2ae0757bc">show_new_folder_button</a> (bool value)</td></tr>
-<tr class="memdesc:aa34f0ed4ec2213e42db2daf2ae0757bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the New Folder button appears in the folder browser dialog box.  <br /></td></tr>
+<tr class="memitem:a400b55c7b62898e670fd1b37989eec5f" id="r_a400b55c7b62898e670fd1b37989eec5f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a400b55c7b62898e670fd1b37989eec5f">show_new_folder_button</a> (bool value) -&gt; <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a400b55c7b62898e670fd1b37989eec5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the New Folder button appears in the folder browser dialog box.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a75708de8aaf6e18d1f8528c243721116" id="r_a75708de8aaf6e18d1f8528c243721116"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75708de8aaf6e18d1f8528c243721116">reset</a> () noexcept override</td></tr>
-<tr class="memdesc:a75708de8aaf6e18d1f8528c243721116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all options to their default values, the last selected color to black, and the custom colors to their default values.  <br /></td></tr>
+<tr class="memitem:a3a3fe86cad14d4f8bd12a4bc4d5ff14c" id="r_a3a3fe86cad14d4f8bd12a4bc4d5ff14c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3a3fe86cad14d4f8bd12a4bc4d5ff14c">reset</a> () noexcept -&gt; void override</td></tr>
+<tr class="memdesc:a3a3fe86cad14d4f8bd12a4bc4d5ff14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all options to their default values, the last selected color to black, and the custom colors to their default values.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:a9959cd49fc5882babd40f2b248b293a7" id="r_a9959cd49fc5882babd40f2b248b293a7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9959cd49fc5882babd40f2b248b293a7">run_dialog</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> owner) override</td></tr>
-<tr class="memdesc:a9959cd49fc5882babd40f2b248b293a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, specifies a common dialog box.  <br /></td></tr>
-<tr class="memitem:a0dfbc2b9dd80b89e8319b65a6b130654" id="r_a0dfbc2b9dd80b89e8319b65a6b130654"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0dfbc2b9dd80b89e8319b65a6b130654">run_sheet</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> owner) override</td></tr>
-<tr class="memdesc:a0dfbc2b9dd80b89e8319b65a6b130654"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, specifies a common dialog box.  <br /></td></tr>
+<tr class="memitem:a28786cbe40972e2faec92f2cdbd01d24" id="r_a28786cbe40972e2faec92f2cdbd01d24"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a28786cbe40972e2faec92f2cdbd01d24">run_dialog</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> owner) -&gt; bool override</td></tr>
+<tr class="memdesc:a28786cbe40972e2faec92f2cdbd01d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, specifies a common dialog box.  <br /></td></tr>
+<tr class="memitem:a001cb4f116efc911b8489faf2ca42710" id="r_a001cb4f116efc911b8489faf2ca42710"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a001cb4f116efc911b8489faf2ca42710">run_sheet</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> owner) -&gt; void override</td></tr>
+<tr class="memdesc:a001cb4f116efc911b8489faf2ca42710"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, specifies a common dialog box.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a263baaba1eddd4dc77556b54c547f412" id="r_a263baaba1eddd4dc77556b54c547f412"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a2676326cf7c7cbc57d3af6bd9ccdc0db">common_dialog</a>, <a class="el" href="group__events.html#ga55966b7a00fdb227ba91f3bdcd0a70bc">xtd::forms::help_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a263baaba1eddd4dc77556b54c547f412">help_request</a></td></tr>
 <tr class="memdesc:a263baaba1eddd4dc77556b54c547f412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the user clicks the Help button on a common dialog box.  <br /></td></tr>
-<tr class="memitem:a2776d50be858362f6015fd589cf8a1de" id="r_a2776d50be858362f6015fd589cf8a1de"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a2676326cf7c7cbc57d3af6bd9ccdc0db">common_dialog</a>, <a class="el" href="group__events.html#ga918add7eeacec65a73147b022e3dc92d">xtd::forms::dialog_closed_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a2776d50be858362f6015fd589cf8a1de">dialog_closed</a></td></tr>
+<tr class="memitem:a2776d50be858362f6015fd589cf8a1de" id="r_a2776d50be858362f6015fd589cf8a1de"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a2676326cf7c7cbc57d3af6bd9ccdc0db">common_dialog</a>, <a class="el" href="group__events.html#ga803a221ae03d8b20579938d03503852c">xtd::forms::dialog_closed_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a2776d50be858362f6015fd589cf8a1de">dialog_closed</a></td></tr>
 <tr class="memdesc:a2776d50be858362f6015fd589cf8a1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the user close a common dialog box with dialog close button or other dialog buttons.  <br /></td></tr>
 <tr class="memitem:a2676326cf7c7cbc57d3af6bd9ccdc0db" id="r_a2676326cf7c7cbc57d3af6bd9ccdc0db"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1forms_1_1common__dialog.html#a2676326cf7c7cbc57d3af6bd9ccdc0db">common_dialog</a> ()</td></tr>
 <tr class="memdesc:a2676326cf7c7cbc57d3af6bd9ccdc0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1common__dialog.html" title="Specifies the base class used for displaying dialog boxes on the screen.">common_dialog</a> class.  <br /></td></tr>
@@ -327,8 +327,8 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a614e700d66a13eaaa09c6ca882549e81" name="a614e700d66a13eaaa09c6ca882549e81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a614e700d66a13eaaa09c6ca882549e81">&#9670;&#160;</a></span>auto_upgrade_enable() <span class="overload">[1/2]</span></h2>
+<a id="a2217eaf1b951acafbe0b2691664a696b" name="a2217eaf1b951acafbe0b2691664a696b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2217eaf1b951acafbe0b2691664a696b">&#9670;&#160;</a></span>auto_upgrade_enable() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,15 +337,15 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::folder_browser_dialog::auto_upgrade_enable </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::auto_upgrade_enable </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -355,17 +355,17 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 
 </div>
 </div>
-<a id="a1efb98c211cb3892186ce7b311276ceb" name="a1efb98c211cb3892186ce7b311276ceb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1efb98c211cb3892186ce7b311276ceb">&#9670;&#160;</a></span>auto_upgrade_enable() <span class="overload">[2/2]</span></h2>
+<a id="ae7269c4cdf5036ff8ef2d32863fef6e6" name="ae7269c4cdf5036ff8ef2d32863fef6e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7269c4cdf5036ff8ef2d32863fef6e6">&#9670;&#160;</a></span>auto_upgrade_enable() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp; xtd::forms::folder_browser_dialog::auto_upgrade_enable </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::auto_upgrade_enable </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -381,8 +381,8 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 
 </div>
 </div>
-<a id="acc26595d68e678a24102c36016de771b" name="acc26595d68e678a24102c36016de771b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc26595d68e678a24102c36016de771b">&#9670;&#160;</a></span>description() <span class="overload">[1/2]</span></h2>
+<a id="ad4b58c8b6bb8fddc7259608aa7be1dfb" name="ad4b58c8b6bb8fddc7259608aa7be1dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b58c8b6bb8fddc7259608aa7be1dfb">&#9670;&#160;</a></span>description() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,15 +391,15 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::folder_browser_dialog::description </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::description </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -410,17 +410,17 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 
 </div>
 </div>
-<a id="a647008e99fae9a533e9bb76d9b0e8904" name="a647008e99fae9a533e9bb76d9b0e8904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a647008e99fae9a533e9bb76d9b0e8904">&#9670;&#160;</a></span>description() <span class="overload">[2/2]</span></h2>
+<a id="a82033215ca3668f9ba33730b09e23fd5" name="a82033215ca3668f9ba33730b09e23fd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82033215ca3668f9ba33730b09e23fd5">&#9670;&#160;</a></span>description() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp; xtd::forms::folder_browser_dialog::description </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::description </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -437,8 +437,8 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 
 </div>
 </div>
-<a id="a476173da57b6d67a6c8f350c32e5aa9e" name="a476173da57b6d67a6c8f350c32e5aa9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a476173da57b6d67a6c8f350c32e5aa9e">&#9670;&#160;</a></span>root_folder() <span class="overload">[1/2]</span></h2>
+<a id="af7ac12797f4258b63cb7baffd9bec429" name="af7ac12797f4258b63cb7baffd9bec429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ac12797f4258b63cb7baffd9bec429">&#9670;&#160;</a></span>root_folder() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -447,15 +447,15 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">environment::special_folder</a> xtd::forms::folder_browser_dialog::root_folder </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::root_folder </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">xtd::environment::special_folder</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -466,17 +466,17 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 
 </div>
 </div>
-<a id="abfe7cedd683f8aa5acf0614ad2189df2" name="abfe7cedd683f8aa5acf0614ad2189df2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe7cedd683f8aa5acf0614ad2189df2">&#9670;&#160;</a></span>root_folder() <span class="overload">[2/2]</span></h2>
+<a id="aa553116a49e5e5c724a0e5fd1be77c5d" name="aa553116a49e5e5c724a0e5fd1be77c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa553116a49e5e5c724a0e5fd1be77c5d">&#9670;&#160;</a></span>root_folder() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp; xtd::forms::folder_browser_dialog::root_folder </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::root_folder </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">environment::special_folder</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">xtd::environment::special_folder</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -493,8 +493,8 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
 
 </div>
 </div>
-<a id="abc74848855d2bbe4d9335c15c5b77abd" name="abc74848855d2bbe4d9335c15c5b77abd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc74848855d2bbe4d9335c15c5b77abd">&#9670;&#160;</a></span>selected_path() <span class="overload">[1/2]</span></h2>
+<a id="a03c5bf346d6f26f4603ebbdacb43d4ea" name="a03c5bf346d6f26f4603ebbdacb43d4ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c5bf346d6f26f4603ebbdacb43d4ea">&#9670;&#160;</a></span>selected_path() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -503,15 +503,15 @@ Typically, after creating a new <a class="el" href="classxtd_1_1forms_1_1folder_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::folder_browser_dialog::selected_path </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::selected_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -524,17 +524,17 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
 
 </div>
 </div>
-<a id="a5d57aab75bd8e56f7e84d122b25e2213" name="a5d57aab75bd8e56f7e84d122b25e2213"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d57aab75bd8e56f7e84d122b25e2213">&#9670;&#160;</a></span>selected_path() <span class="overload">[2/2]</span></h2>
+<a id="ae4a3bbdfe4d684044e36b1ce353e2761" name="ae4a3bbdfe4d684044e36b1ce353e2761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4a3bbdfe4d684044e36b1ce353e2761">&#9670;&#160;</a></span>selected_path() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp; xtd::forms::folder_browser_dialog::selected_path </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::selected_path </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -571,7 +571,7 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -582,17 +582,17 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
 
 </div>
 </div>
-<a id="aa34f0ed4ec2213e42db2daf2ae0757bc" name="aa34f0ed4ec2213e42db2daf2ae0757bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa34f0ed4ec2213e42db2daf2ae0757bc">&#9670;&#160;</a></span>show_new_folder_button() <span class="overload">[2/2]</span></h2>
+<a id="a400b55c7b62898e670fd1b37989eec5f" name="a400b55c7b62898e670fd1b37989eec5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400b55c7b62898e670fd1b37989eec5f">&#9670;&#160;</a></span>show_new_folder_button() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp; xtd::forms::folder_browser_dialog::show_new_folder_button </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::show_new_folder_button </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#abcdec7c4980ece4df2d8f7e40d18f001">folder_browser_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -608,8 +608,8 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
 
 </div>
 </div>
-<a id="a75708de8aaf6e18d1f8528c243721116" name="a75708de8aaf6e18d1f8528c243721116"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75708de8aaf6e18d1f8528c243721116">&#9670;&#160;</a></span>reset()</h2>
+<a id="a3a3fe86cad14d4f8bd12a4bc4d5ff14c" name="a3a3fe86cad14d4f8bd12a4bc4d5ff14c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3fe86cad14d4f8bd12a4bc4d5ff14c">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -618,10 +618,10 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::folder_browser_dialog::reset </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -637,8 +637,8 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
 
 </div>
 </div>
-<a id="a9959cd49fc5882babd40f2b248b293a7" name="a9959cd49fc5882babd40f2b248b293a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9959cd49fc5882babd40f2b248b293a7">&#9670;&#160;</a></span>run_dialog()</h2>
+<a id="a28786cbe40972e2faec92f2cdbd01d24" name="a28786cbe40972e2faec92f2cdbd01d24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28786cbe40972e2faec92f2cdbd01d24">&#9670;&#160;</a></span>run_dialog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -647,10 +647,10 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::folder_browser_dialog::run_dialog </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::run_dialog </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -673,8 +673,8 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
 
 </div>
 </div>
-<a id="a0dfbc2b9dd80b89e8319b65a6b130654" name="a0dfbc2b9dd80b89e8319b65a6b130654"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dfbc2b9dd80b89e8319b65a6b130654">&#9670;&#160;</a></span>run_sheet()</h2>
+<a id="a001cb4f116efc911b8489faf2ca42710" name="a001cb4f116efc911b8489faf2ca42710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001cb4f116efc911b8489faf2ca42710">&#9670;&#160;</a></span>run_sheet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -683,10 +683,10 @@ If the show_dialog returns OK, meaning the user clicked the OK button, the selec
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::folder_browser_dialog::run_sheet </td>
+          <td class="memname">auto xtd::forms::folder_browser_dialog::run_sheet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>

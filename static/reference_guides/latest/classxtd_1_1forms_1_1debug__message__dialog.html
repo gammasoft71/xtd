@@ -167,7 +167,7 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 <div class="line">    button_show_debug_message.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    button_show_debug_message.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1debug__message__dialog.html">debug_message_dialog</a> {};</div>
-<div class="line">      dialog.<a class="code hl_function" href="#a80e61508abd5612322284de5780880a3">message</a>(<span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
+<div class="line">      dialog.<a class="code hl_function" href="#aea4d7f722fc98431ecd8ce77d6427a99">message</a>(<span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
 <div class="line">      dialog.show_sheet_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -182,7 +182,7 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a99593a2bdff42f8dcff4a39e5c094337"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a99593a2bdff42f8dcff4a39e5c094337">xtd::forms::control::location</a></div><div class="ttdeci">virtual auto location() const noexcept -&gt; xtd::drawing::point</div><div class="ttdoc">Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its...</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__message__dialog.html">xtd::forms::debug_message_dialog</a></div><div class="ttdoc">Displays a message window and write debug, which presents a debug message to the user.</div><div class="ttdef"><b>Definition</b> debug_message_dialog.hpp:30</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html_a80e61508abd5612322284de5780880a3"><div class="ttname"><a href="#a80e61508abd5612322284de5780880a3">xtd::forms::debug_message_dialog::message</a></div><div class="ttdeci">xtd::string message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html_aea4d7f722fc98431ecd8ce77d6427a99"><div class="ttname"><a href="#aea4d7f722fc98431ecd8ce77d6427a99">xtd::forms::debug_message_dialog::message</a></div><div class="ttdeci">auto message() const noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the text message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
@@ -190,8 +190,8 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Events</h2></td></tr>
-<tr class="memitem:a809fbd31e2305923f5085ff5b7fb070c" id="r_a809fbd31e2305923f5085ff5b7fb070c"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a>, <a class="el" href="group__events.html#ga918add7eeacec65a73147b022e3dc92d">dialog_closed_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a809fbd31e2305923f5085ff5b7fb070c">dialog_closed</a></td></tr>
-<tr class="memdesc:a809fbd31e2305923f5085ff5b7fb070c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the user close a message dialog box with dialog close button or other dialog buttons.  <br /></td></tr>
+<tr class="memitem:aeab1e790ceff8537def6e355a3407c8d" id="r_aeab1e790ceff8537def6e355a3407c8d"><td class="memItemLeft"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt; <a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a>, <a class="el" href="group__events.html#ga803a221ae03d8b20579938d03503852c">xtd::forms::dialog_closed_event_handler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aeab1e790ceff8537def6e355a3407c8d">dialog_closed</a></td></tr>
+<tr class="memdesc:aeab1e790ceff8537def6e355a3407c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the user close a message dialog box with dialog close button or other dialog buttons.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -200,25 +200,25 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a690872dbd9d3bf2cb4e157fec489ff1f" id="r_a690872dbd9d3bf2cb4e157fec489ff1f"><td class="memItemLeft"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a690872dbd9d3bf2cb4e157fec489ff1f">dialog_result</a> () const noexcept</td></tr>
-<tr class="memdesc:a690872dbd9d3bf2cb4e157fec489ff1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets async dialog_result result after dialog box is closing.  <br /></td></tr>
-<tr class="memitem:a80e61508abd5612322284de5780880a3" id="r_a80e61508abd5612322284de5780880a3"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a80e61508abd5612322284de5780880a3">message</a> () const noexcept</td></tr>
-<tr class="memdesc:a80e61508abd5612322284de5780880a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the text message.  <br /></td></tr>
-<tr class="memitem:aaf653ffd475ff52642a00d093a3421c0" id="r_aaf653ffd475ff52642a00d093a3421c0"><td class="memItemLeft"><a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aaf653ffd475ff52642a00d093a3421c0">message</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message)</td></tr>
-<tr class="memdesc:aaf653ffd475ff52642a00d093a3421c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text message.  <br /></td></tr>
+<tr class="memitem:a8018a4030f3cdf240dfa4f981564a792" id="r_a8018a4030f3cdf240dfa4f981564a792"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8018a4030f3cdf240dfa4f981564a792">dialog_result</a> () const noexcept -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a8018a4030f3cdf240dfa4f981564a792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets async dialog_result result after dialog box is closing.  <br /></td></tr>
+<tr class="memitem:aea4d7f722fc98431ecd8ce77d6427a99" id="r_aea4d7f722fc98431ecd8ce77d6427a99"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aea4d7f722fc98431ecd8ce77d6427a99">message</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:aea4d7f722fc98431ecd8ce77d6427a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the text message.  <br /></td></tr>
+<tr class="memitem:ab0c94c6a7beaecece10cd2bbc090aa81" id="r_ab0c94c6a7beaecece10cd2bbc090aa81"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0c94c6a7beaecece10cd2bbc090aa81">message</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message) -&gt; <a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ab0c94c6a7beaecece10cd2bbc090aa81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text message.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a23c66e4c28e5baad46d23f07456015c4" id="r_a23c66e4c28e5baad46d23f07456015c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23c66e4c28e5baad46d23f07456015c4">reset</a> ()</td></tr>
-<tr class="memdesc:a23c66e4c28e5baad46d23f07456015c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
-<tr class="memitem:a9f763f857179e347fbd1a148eff54f92" id="r_a9f763f857179e347fbd1a148eff54f92"><td class="memItemLeft"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9f763f857179e347fbd1a148eff54f92">show_dialog</a> ()</td></tr>
-<tr class="memdesc:a9f763f857179e347fbd1a148eff54f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
-<tr class="memitem:abb4311d02b474858fa32ff308c3cbad6" id="r_abb4311d02b474858fa32ff308c3cbad6"><td class="memItemLeft"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#abb4311d02b474858fa32ff308c3cbad6">show_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:abb4311d02b474858fa32ff308c3cbad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
-<tr class="memitem:af5371e7a8d995665c1e6a5433e99a249" id="r_af5371e7a8d995665c1e6a5433e99a249"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af5371e7a8d995665c1e6a5433e99a249">show_sheet</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:af5371e7a8d995665c1e6a5433e99a249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
-<tr class="memitem:a19e6848bb0a23d1db12267b8c98edd57" id="r_a19e6848bb0a23d1db12267b8c98edd57"><td class="memItemLeft"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a19e6848bb0a23d1db12267b8c98edd57">show_sheet_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a19e6848bb0a23d1db12267b8c98edd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
+<tr class="memitem:a8c384c57ff63c1ef0ac84cd8f74fa289" id="r_a8c384c57ff63c1ef0ac84cd8f74fa289"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c384c57ff63c1ef0ac84cd8f74fa289">reset</a> () -&gt; void</td></tr>
+<tr class="memdesc:a8c384c57ff63c1ef0ac84cd8f74fa289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
+<tr class="memitem:ac0920028beb498094877894ba1dc063c" id="r_ac0920028beb498094877894ba1dc063c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac0920028beb498094877894ba1dc063c">show_dialog</a> () -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ac0920028beb498094877894ba1dc063c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
+<tr class="memitem:a3bc6b65e2862bf3641aaf5da7629a819" id="r_a3bc6b65e2862bf3641aaf5da7629a819"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3bc6b65e2862bf3641aaf5da7629a819">show_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a3bc6b65e2862bf3641aaf5da7629a819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
+<tr class="memitem:a33bcd208e459aa619e917a8853f6d6c3" id="r_a33bcd208e459aa619e917a8853f6d6c3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a33bcd208e459aa619e917a8853f6d6c3">show_sheet</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:a33bcd208e459aa619e917a8853f6d6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
+<tr class="memitem:a596cc4d0524c12584cb515166a1b8e18" id="r_a596cc4d0524c12584cb515166a1b8e18"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a596cc4d0524c12584cb515166a1b8e18">show_sheet_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a596cc4d0524c12584cb515166a1b8e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs message dialog box.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -269,8 +269,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a690872dbd9d3bf2cb4e157fec489ff1f" name="a690872dbd9d3bf2cb4e157fec489ff1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a690872dbd9d3bf2cb4e157fec489ff1f">&#9670;&#160;</a></span>dialog_result()</h2>
+<a id="a8018a4030f3cdf240dfa4f981564a792" name="a8018a4030f3cdf240dfa4f981564a792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8018a4030f3cdf240dfa4f981564a792">&#9670;&#160;</a></span>dialog_result()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,15 +279,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::debug_message_dialog::dialog_result </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::dialog_result </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -297,8 +297,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a80e61508abd5612322284de5780880a3" name="a80e61508abd5612322284de5780880a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80e61508abd5612322284de5780880a3">&#9670;&#160;</a></span>message() <span class="overload">[1/2]</span></h2>
+<a id="aea4d7f722fc98431ecd8ce77d6427a99" name="aea4d7f722fc98431ecd8ce77d6427a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4d7f722fc98431ecd8ce77d6427a99">&#9670;&#160;</a></span>message() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,15 +307,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::forms::debug_message_dialog::message </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::message </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -325,8 +325,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aaf653ffd475ff52642a00d093a3421c0" name="aaf653ffd475ff52642a00d093a3421c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf653ffd475ff52642a00d093a3421c0">&#9670;&#160;</a></span>message() <span class="overload">[2/2]</span></h2>
+<a id="ab0c94c6a7beaecece10cd2bbc090aa81" name="ab0c94c6a7beaecece10cd2bbc090aa81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c94c6a7beaecece10cd2bbc090aa81">&#9670;&#160;</a></span>message() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,10 +335,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a> &amp; xtd::forms::debug_message_dialog::message </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::message </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -359,17 +359,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a23c66e4c28e5baad46d23f07456015c4" name="a23c66e4c28e5baad46d23f07456015c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23c66e4c28e5baad46d23f07456015c4">&#9670;&#160;</a></span>reset()</h2>
+<a id="a8c384c57ff63c1ef0ac84cd8f74fa289" name="a8c384c57ff63c1ef0ac84cd8f74fa289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c384c57ff63c1ef0ac84cd8f74fa289">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::debug_message_dialog::reset </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -378,8 +378,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9f763f857179e347fbd1a148eff54f92" name="a9f763f857179e347fbd1a148eff54f92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f763f857179e347fbd1a148eff54f92">&#9670;&#160;</a></span>show_dialog() <span class="overload">[1/2]</span></h2>
+<a id="ac0920028beb498094877894ba1dc063c" name="ac0920028beb498094877894ba1dc063c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0920028beb498094877894ba1dc063c">&#9670;&#160;</a></span>show_dialog() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,10 +388,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::debug_message_dialog::show_dialog </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::show_dialog </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -405,8 +405,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abb4311d02b474858fa32ff308c3cbad6" name="abb4311d02b474858fa32ff308c3cbad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb4311d02b474858fa32ff308c3cbad6">&#9670;&#160;</a></span>show_dialog() <span class="overload">[2/2]</span></h2>
+<a id="a3bc6b65e2862bf3641aaf5da7629a819" name="a3bc6b65e2862bf3641aaf5da7629a819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc6b65e2862bf3641aaf5da7629a819">&#9670;&#160;</a></span>show_dialog() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -415,10 +415,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::debug_message_dialog::show_dialog </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::show_dialog </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -432,8 +432,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af5371e7a8d995665c1e6a5433e99a249" name="af5371e7a8d995665c1e6a5433e99a249"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5371e7a8d995665c1e6a5433e99a249">&#9670;&#160;</a></span>show_sheet()</h2>
+<a id="a33bcd208e459aa619e917a8853f6d6c3" name="a33bcd208e459aa619e917a8853f6d6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33bcd208e459aa619e917a8853f6d6c3">&#9670;&#160;</a></span>show_sheet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,10 +442,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::debug_message_dialog::show_sheet </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::show_sheet </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -459,8 +459,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a19e6848bb0a23d1db12267b8c98edd57" name="a19e6848bb0a23d1db12267b8c98edd57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19e6848bb0a23d1db12267b8c98edd57">&#9670;&#160;</a></span>show_sheet_dialog()</h2>
+<a id="a596cc4d0524c12584cb515166a1b8e18" name="a596cc4d0524c12584cb515166a1b8e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596cc4d0524c12584cb515166a1b8e18">&#9670;&#160;</a></span>show_sheet_dialog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,10 +469,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::debug_message_dialog::show_sheet_dialog </td>
+          <td class="memname">auto xtd::forms::debug_message_dialog::show_sheet_dialog </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -487,14 +487,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a809fbd31e2305923f5085ff5b7fb070c" name="a809fbd31e2305923f5085ff5b7fb070c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a809fbd31e2305923f5085ff5b7fb070c">&#9670;&#160;</a></span>dialog_closed</h2>
+<a id="aeab1e790ceff8537def6e355a3407c8d" name="aeab1e790ceff8537def6e355a3407c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab1e790ceff8537def6e355a3407c8d">&#9670;&#160;</a></span>dialog_closed</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a>, <a class="el" href="group__events.html#ga918add7eeacec65a73147b022e3dc92d">dialog_closed_event_handler</a>&gt; xtd::forms::debug_message_dialog::dialog_closed</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt;<a class="el" href="#a3cd2ae49cca77980471e6d6e717d6622">debug_message_dialog</a>, <a class="el" href="group__events.html#ga803a221ae03d8b20579938d03503852c">xtd::forms::dialog_closed_event_handler</a>&gt; xtd::forms::debug_message_dialog::dialog_closed</td>
         </tr>
       </table>
 </div><div class="memdoc">

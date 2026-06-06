@@ -93,7 +93,7 @@ var searchData=
   ['clockwise_5fdownwards_5fand_5fupwards_5fopen_5fcircle_5farrows_90',['clockwise_downwards_and_upwards_open_circle_arrows',['../classxtd_1_1forms_1_1emoticons.html#a3bff599858e8be99035fda0ada9c40e7',1,'xtd::forms::emoticons']]],
   ['clockwise_5frightwards_5fand_5fleftwards_5fopen_5fcircle_5farrows_91',['clockwise_rightwards_and_leftwards_open_circle_arrows',['../classxtd_1_1forms_1_1emoticons.html#a77d9fb975f8bf504db97632894ef9c03',1,'xtd::forms::emoticons']]],
   ['clockwise_5frightwards_5fand_5fleftwards_5fopen_5fcircle_5farrows_5fwith_5fcircled_5fone_5foverlay_92',['clockwise_rightwards_and_leftwards_open_circle_arrows_with_circled_one_overlay',['../classxtd_1_1forms_1_1emoticons.html#a6c8bf7e8745f426165734ec0c63b698a',1,'xtd::forms::emoticons']]],
-  ['close_5fup_93',['close_up',['../classxtd_1_1forms_1_1date__time__picker.html#aee764caed5833369087a4bb3dfae33ba',1,'xtd::forms::date_time_picker']]],
+  ['close_5fup_93',['close_up',['../classxtd_1_1forms_1_1date__time__picker.html#a32b5bd4003429799424f9200943ad29a',1,'xtd::forms::date_time_picker']]],
   ['closed_5fbook_94',['closed_book',['../classxtd_1_1forms_1_1emoticons.html#ae3050db9daae590bc2449a64ffbef90c',1,'xtd::forms::emoticons']]],
   ['closed_5flock_5fwith_5fkey_95',['closed_lock_with_key',['../classxtd_1_1forms_1_1emoticons.html#a496173bbeac8ec3c48d74898b74f6325',1,'xtd::forms::emoticons']]],
   ['closed_5fmailbox_5fwith_5flowered_5fflag_96',['closed_mailbox_with_lowered_flag',['../classxtd_1_1forms_1_1emoticons.html#afb530e4b713ccab39c44aaba91819e48',1,'xtd::forms::emoticons']]],
