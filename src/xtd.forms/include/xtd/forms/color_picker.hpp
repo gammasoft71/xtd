@@ -47,17 +47,17 @@ namespace xtd {
       /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`. The default is `true`.
       [[nodiscard]] virtual auto alpha_color() const noexcept -> bool;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @param alpha_color `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
-      virtual auto alpha_color(bool alpha_color) -> color_picker&;
+      /// @param value `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
+      virtual auto alpha_color(bool value) -> color_picker&;
       
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       [[nodiscard]] virtual auto color() const noexcept -> const xtd::drawing::color&;
       /// @brief Sets the color selected by the user.
-      /// @param color The color selected by the user. If a color is not selected.
+      /// @param value The color selected by the user. If a color is not selected.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      virtual auto color(const xtd::drawing::color& color) -> color_picker&;
+      virtual auto color(const xtd::drawing::color& value) -> color_picker&;
       /// @}
       
       
