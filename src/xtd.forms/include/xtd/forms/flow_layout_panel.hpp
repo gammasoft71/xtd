@@ -36,51 +36,51 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create();
+      [[nodiscard]] static auto create() -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const drawing::point& location);
+      [[nodiscard]] static auto create(const drawing::point& location) -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::flow_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size) -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::flow_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::flow_layout_panel.
       /// @param name The name of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const control& parent);
+      [[nodiscard]] static auto create(const control& parent) -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::flow_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location) -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::flow_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::flow_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size) -> flow_layout_panel;
       /// @brief A factory to create an xtd::forms::flow_layout_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::flow_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::flow_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::flow_layout_panel.
       /// @param name The name of the xtd::forms::flow_layout_panel.
       /// @return New xtd::forms::flow_layout_panel created.
-      static flow_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> flow_layout_panel;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      void on_layout(const xtd::event_args& e) override;
+      auto on_layout(const xtd::event_args& e) -> void override;
       /// @}
     };
   }
