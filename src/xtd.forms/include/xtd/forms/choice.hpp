@@ -56,34 +56,34 @@ namespace xtd {
       /// @return A choice::object_collection representing the items in the choice.
       [[nodiscard]] auto items() const noexcept -> const object_collection&;
       /// @brief Sets an object representing the collection of the items contained in this choice.
-      /// @param items A choice::object_collection representing the items in the choice.
-      auto items(const object_collection& items) -> const choice&;
+      /// @param value A choice::object_collection representing the items in the choice.
+      auto items(const object_collection& value) -> const choice&;
       
       using xtd::forms::list_control::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      auto selected_index(xtd::usize selected_index) -> list_control& override;
+      /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      auto selected_index(xtd::usize value) -> list_control& override;
       
       /// @brief Gets currently selected item in the choice.
       /// @return The object that is the currently selected item.
       [[nodiscard]] auto selected_item() const noexcept -> const item&;
       /// @brief Sets currently selected item in the choice.
-      /// @param selected_item The object that is the currently selected item.
-      auto selected_item(const item& selected_item) -> choice&;
+      /// @param value The object that is the currently selected item.
+      auto selected_item(const item& value) -> choice&;
       
       /// @brief Gets a value indicating whether the items in the choice are sorted.
       /// @return `true` if the choice is sorted; otherwise, `false`. The default is `false`.
       /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to `false`, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
       [[nodiscard]] virtual auto sorted() const noexcept -> bool;
       /// @brief Sets a value indicating whether the items in the choice are sorted.
-      /// @param sorted `true` if the choice is sorted; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the choice is sorted; otherwise, `false`. The default is `false`.
       /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to `false`, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
-      virtual auto sorted(bool sorted) -> choice&;
+      virtual auto sorted(bool value) -> choice&;
       
       using xtd::forms::list_control::text;
       /// @brief Sets the text associated with this control.
-      /// @param text The text associated with this control.
-      auto text(const xtd::string& text) -> control& override;
+      /// @param value The text associated with this control.
+      auto text(const xtd::string& value) -> control& override;
       /// @}
       
       /// @name Public Methods
