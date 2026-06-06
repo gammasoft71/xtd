@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    struct const_tab_page_ref_less : public object {
+    struct const_tab_page_ref_less {
       /// @name Operators
       
       /// @{
