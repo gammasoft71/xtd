@@ -55,67 +55,67 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the background color of the dialog.
       [[nodiscard]] auto back_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets the background color for the dialog.
-      /// @param color A xtd::drawing::color that represents the background color of the dialog.
+      /// @param value A xtd::drawing::color that represents the background color of the dialog.
       /// @return Current busy_dialog instance.
-      auto back_color(const xtd::drawing::color& color) -> busy_dialog&;
+      auto back_color(const xtd::drawing::color& value) -> busy_dialog&;
       
       /// @brief Gets the dialog appearance color for the dialog.
       /// @return A xtd::forms::dialog_appearance that represents the dialog appearance of the dialog.
       [[nodiscard]] auto dialog_appearance() const noexcept -> xtd::forms::dialog_appearance;
       /// @brief Sets the dialog appearance color for the dialog.
-      /// @param dialog_appearance A xtd::forms::dialog_appearance that represents the dialog appearance of the dialog.
+      /// @param value A xtd::forms::dialog_appearance that represents the dialog appearance of the dialog.
       /// @return Current busy_dialog instance.
-      auto dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) -> busy_dialog&;
+      auto dialog_appearance(xtd::forms::dialog_appearance value) -> busy_dialog&;
       
       /// @brief Gets the product description.
       /// @return The product description.
       [[nodiscard]] auto description() const noexcept -> const xtd::string&;
       /// @brief Sets the product description.
-      /// @param description The product description.
+      /// @param value The product description.
       /// @return Current busy_dialog instance.
-      auto description(const xtd::string& description) -> busy_dialog&;
+      auto description(const xtd::string& value) -> busy_dialog&;
       
       /// @brief Gets the foreground color for the dialog.
       /// @return A xtd::drawing::color that represents the foreground color of the dialog.
       [[nodiscard]] auto fore_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets the foreground color for the dialog.
-      /// @param color A xtd::drawing::color that represents the foreground color of the dialog.
+      /// @param value A xtd::drawing::color that represents the foreground color of the dialog.
       /// @return Current busy_dialog instance.
-      auto fore_color(const xtd::drawing::color& color) -> busy_dialog&;
+      auto fore_color(const xtd::drawing::color& value) -> busy_dialog&;
       
       /// @brief Gets the product icon.
       /// @return The product icon.
       [[nodiscard]] auto icon() const noexcept -> xtd::drawing::icon;
       /// @brief Sets the product icon.
-      /// @param icon The product icon.
+      /// @param value The product icon.
       /// @return Current busy_dialog instance.
-      auto icon(const xtd::drawing::icon& icon) -> busy_dialog&;
+      auto icon(const xtd::drawing::icon& value) -> busy_dialog&;
       /// @brief Sets the product icon.
-      /// @param image The product icon.
+      /// @param value The product icon.
       /// @return Current busy_dialog instance.
-      auto icon(const xtd::drawing::image& image) -> busy_dialog&;
+      auto icon(const xtd::drawing::image& value) -> busy_dialog&;
       /// @brief Sets the product icon.
-      /// @param bitmap The product icon.
+      /// @param value The product icon.
       /// @return Current busy_dialog instance.
-      auto icon(const xtd::drawing::bitmap& bitmap) -> busy_dialog&;
+      auto icon(const xtd::drawing::bitmap& value) -> busy_dialog&;
       
       /// @brief Gets the dialog opacity.
       /// @return The dialog opacity.
       /// @remarks 0 full opacity; 1.0 no opacity. The lower the value, the more transparent.
       [[nodiscard]] auto opacity() const noexcept -> double;
       /// @brief Gets the dialog opacity.
-      /// @param opacity The dialog opacity.
+      /// @param value The dialog opacity.
       /// @return Current busy_dialog instance.
       /// @remarks 0 full opacity; 1.0 no opacity. The lower the value, the more transparent.
-      auto opacity(double opacity) -> busy_dialog&;
+      auto opacity(double value) -> busy_dialog&;
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
       [[nodiscard]] auto text() const noexcept -> const xtd::string&;
       /// @brief Sets the dialog title.
-      /// @param text The dialog title.
+      /// @param value The dialog title.
       /// @return Current busy_dialog instance.
-      auto text(const xtd::string& text) -> busy_dialog&;
+      auto text(const xtd::string& value) -> busy_dialog&;
       /// @}
       
       /// @name Public Methods
