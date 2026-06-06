@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class control_layout_style : public object, public xtd::iequatable<control_layout_style> {
+    class control_layout_style : public xtd::object, public xtd::iequatable<control_layout_style> {
       struct data;
       
     protected:
