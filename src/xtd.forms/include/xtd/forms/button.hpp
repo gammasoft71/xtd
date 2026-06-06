@@ -46,7 +46,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of button control with bitmap.
     /// @include bitmap_button.cpp
-    class forms_export_ button : public ibutton_control, public button_base {
+    class forms_export_ button : public xtd::forms::ibutton_control, public xtd::forms::button_base {
       struct data;
       
     public:
