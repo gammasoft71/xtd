@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of collapsible_panel container.
     /// @include collapsible_panel.cpp
-    class forms_export_ collapsible_panel : public control {
+    class forms_export_ collapsible_panel : public xtd::forms::control {
       struct data;
       
     public:
