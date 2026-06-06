@@ -98,7 +98,7 @@ const domain_up_down::object_collection& domain_up_down::items() const noexcept 
   return data_->items;
 }
 
-const domain_up_down& domain_up_down::items(const object_collection& items) {
+domain_up_down& domain_up_down::items(const object_collection& items) {
   data_->items = items;
   return *this;
 }
