@@ -32,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of country component.
     /// @include countries.cpp
-    class forms_export_ country : public object, public xtd::icomparable<country>, public xtd::iequatable<country> {
+    class forms_export_ country : public xtd::object, public xtd::icomparable<country>, public xtd::iequatable<country> {
       struct data;
       
     public:
