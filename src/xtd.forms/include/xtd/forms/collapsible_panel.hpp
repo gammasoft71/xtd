@@ -43,29 +43,29 @@ namespace xtd {
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
       [[nodiscard]] virtual auto border_sides() const noexcept -> xtd::forms::border_sides;
       /// @brief Sets the border sides for the control.
-      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
-      virtual auto border_sides(forms::border_sides border_sides) -> collapsible_panel&;
+      /// @param value A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual auto border_sides(forms::border_sides value) -> collapsible_panel&;
       
       /// @brief Gets the border style for the control.
       /// @return One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       [[nodiscard]] virtual auto border_style() const noexcept -> xtd::forms::border_style;
       /// @brief Sets the border style for the control.
-      /// @param border_style One of the border_style values. The default is border_style::none.
+      /// @param value One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
-      virtual auto border_style(forms::border_style border_style) -> collapsible_panel&;
+      virtual auto border_style(forms::border_style value) -> collapsible_panel&;
       /// @brief Resets the border style for the control.
-      /// @param border_style nullptr.
+      /// @param xtd::null.
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual auto border_style(std::nullptr_t) -> collapsible_panel&;
+      virtual auto border_style(xtd::null_ptr) -> collapsible_panel&;
       
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
       /// @return `true` if collapsible_panel is expanded; otherwise `false`.
       [[nodiscard]] auto expanded() const noexcept -> bool;
       /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
-      /// @param expanded `true` if collapsible_panel is expanded; otherwise `false`.
-      auto expanded(bool expanded) -> collapsible_panel&;
+      /// @param value `true` if collapsible_panel is expanded; otherwise `false`.
+      auto expanded(bool value) -> collapsible_panel&;
       
       /// @cond
       [[nodiscard]] auto client_size() const noexcept -> const xtd::drawing::size& override;
