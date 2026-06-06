@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of color_dialog dialog.
     /// @include color_dialog.cpp
-    class forms_export_ color_dialog : public common_dialog {
+    class forms_export_ color_dialog : public xtd::forms::common_dialog {
       struct data;
       
     public:
