@@ -78,9 +78,9 @@ namespace xtd {
       /// @return The artists array.
       [[nodiscard]] auto artists() noexcept -> artist_collection&;
       /// @brief Sets the artists array.
-      /// @param artists The artists array.
+      /// @param value The artists array.
       /// @return Current about_dialog instance.
-      auto artists(const artist_collection& artists) -> about_dialog&;
+      auto artists(const artist_collection& value) -> about_dialog&;
       
       /// @brief Gets the authors array.
       /// @return The author array.
@@ -89,25 +89,25 @@ namespace xtd {
       /// @return The authors array.
       [[nodiscard]] auto authors() noexcept -> author_collection&;
       /// @brief Sets the authors array.
-      /// @param authors The authors array.
+      /// @param value The authors array.
       /// @return Current about_dialog instance.
-      auto authors(const author_collection& authors) -> about_dialog&;
+      auto authors(const author_collection& value) -> about_dialog&;
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
       [[nodiscard]] auto copyright() const noexcept -> xtd::string;
       /// @brief Sets the product description.
-      /// @param copyright The description copyright.
+      /// @param value The description copyright.
       /// @return Current about_dialog instance.
-      auto copyright(const xtd::string& copyright) -> about_dialog&;
+      auto copyright(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the product description.
       /// @return The product description.
       [[nodiscard]] auto description() const noexcept -> xtd::string;
       /// @brief Sets the product description.
-      /// @param description The product description.
+      /// @param value The product description.
       /// @return Current about_dialog instance.
-      auto description(const xtd::string& description) -> about_dialog&;
+      auto description(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the documentation writers array.
       /// @return The documentation writers array.
@@ -116,57 +116,57 @@ namespace xtd {
       /// @return The documentation writers array.
       [[nodiscard]] auto documenters() noexcept -> documenter_collection&;
       /// @brief Sets the documentation writers array.
-      /// @param documenters The documentation writers array.
+      /// @param value The documentation writers array.
       /// @return Current about_dialog instance.
-      auto documenters(const documenter_collection& documenters) -> about_dialog&;
+      auto documenters(const documenter_collection& value) -> about_dialog&;
       
       /// @brief Gets the dialog appearance.
       /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       [[nodiscard]] auto dialog_appearance() const noexcept -> xtd::forms::dialog_appearance;
       /// @brief Sets the dialog appearance.
-      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      /// @param value One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current about_dialog instance.
-      auto dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) -> about_dialog&;
+      auto dialog_appearance(xtd::forms::dialog_appearance value) -> about_dialog&;
       
       /// @brief Gets the product icon.
       /// @return The product icon.
       [[nodiscard]] auto icon() const noexcept -> xtd::drawing::icon;
       /// @brief Sets the product icon.
-      /// @param icon The product icon.
+      /// @param value The product icon.
       /// @return Current about_dialog instance.
-      auto icon(const xtd::drawing::icon& icon) -> about_dialog&;
+      auto icon(const xtd::drawing::icon& value) -> about_dialog&;
       /// @brief Sets the product icon.
-      /// @param image The product icon.
+      /// @param value The product icon.
       /// @return Current about_dialog instance.
-      auto icon(const xtd::drawing::image& image) -> about_dialog&;
+      auto icon(const xtd::drawing::image& value) -> about_dialog&;
       /// @brief Sets the product icon.
-      /// @param bitmap The product icon.
+      /// @param value The product icon.
       /// @return Current about_dialog instance.
-      auto icon(const xtd::drawing::bitmap& bitmap) -> about_dialog&;
+      auto icon(const xtd::drawing::bitmap& value) -> about_dialog&;
       
       /// @brief Gets the product license.
       /// @return The product license.
       [[nodiscard]] auto license() const noexcept -> xtd::string;
       /// @brief Sets the product license.
-      /// @param name The product license.
+      /// @param value The product license.
       /// @return Current about_dialog instance.
-      auto license(const xtd::string& license) -> about_dialog&;
+      auto license(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the product long version.
       /// @return The product long version.
       [[nodiscard]] auto long_version() const noexcept -> xtd::string;
       /// @brief Sets the product long version.
-      /// @param version The version version.
+      /// @param value The version version.
       /// @return Current about_dialog instance.
-      auto long_version(const xtd::string& long_version) -> about_dialog&;
+      auto long_version(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the product name.
       /// @return The product name.
       [[nodiscard]] auto name() const noexcept -> xtd::string;
       /// @brief Sets the product name.
-      /// @param name The product name.
+      /// @param value The product name.
       /// @return Current about_dialog instance.
-      auto name(const xtd::string& name) -> about_dialog&;
+      auto name(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the translators array.
       /// @return The translators array.
@@ -175,9 +175,9 @@ namespace xtd {
       /// @return The translators array.
       [[nodiscard]] auto translators() noexcept -> translator_collection&;
       /// @brief Sets the translators array.
-      /// @param translators The translators array.
+      /// @param value The translators array.
       /// @return Current about_dialog instance.
-      auto translators(const translator_collection& translators) -> about_dialog&;
+      auto translators(const translator_collection& value) -> about_dialog&;
       
       /// @brief Gets the collection of user tab pages in this about box.
       /// @return A xtd::forms::about_dialog::user_tab_page_collection that contains the control objects in this about box.
@@ -192,25 +192,25 @@ namespace xtd {
       /// @return The product version.
       [[nodiscard]] auto version() const noexcept -> xtd::string;
       /// @brief Sets the product version.
-      /// @param version The version version.
+      /// @param value The version version.
       /// @return Current about_dialog instance.
-      auto version(const xtd::string& version) -> about_dialog&;
+      auto version(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the product website.
       /// @return The website.
       [[nodiscard]] auto website() const noexcept -> xtd::string;
       /// @brief Sets the product website.
-      /// @param website The  product website.
+      /// @param value The  product website.
       /// @return Current about_dialog instance.
-      auto website(const xtd::string& website) -> about_dialog&;
+      auto website(const xtd::string& value) -> about_dialog&;
       
       /// @brief Gets the product website label.
       /// @return The product website label.
       [[nodiscard]] auto website_label() const noexcept -> xtd::string;
       /// @brief Sets the product website label.
-      /// @param website_label The product website label.
+      /// @param value The product website label.
       /// @return Current about_dialog instance.
-      auto website_label(const xtd::string& website_label) -> about_dialog&;
+      auto website_label(const xtd::string& value) -> about_dialog&;
       /// @}
       
       /// @name Public Methods
