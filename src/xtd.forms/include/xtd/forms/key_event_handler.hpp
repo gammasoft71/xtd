@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::control::key_up or xtd::forms::control::key_down event of a control.
     /// ```cpp
-    /// using key_event_handler = xtd::delegate<void(object& sender, key_event_args& e)>;
+    /// using key_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::key_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A key_event_args that contains the event data.
+    /// @param e A xtd::forms::key_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/key_event_handler>
@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using key_event_handler = xtd::delegate<void(object& sender, key_event_args& e)>;
+    using key_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::key_event_args& e)>;
   }
 }
