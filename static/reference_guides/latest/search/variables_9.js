@@ -5,7 +5,7 @@ var searchData=
   ['ice_5fhockey_5fstick_5fand_5fpuck_2',['ice_hockey_stick_and_puck',['../classxtd_1_1forms_1_1emoticons.html#ad60b8bb048342edb109c15410193b8ae',1,'xtd::forms::emoticons']]],
   ['ice_5fskate_3',['ice_skate',['../classxtd_1_1forms_1_1emoticons.html#a00af562276db33fd89bf3eb4a5f6df55',1,'xtd::forms::emoticons']]],
   ['idle_4',['idle',['../classxtd_1_1forms_1_1application.html#a7f2d96a631c393f782c84999e029c911',1,'xtd::forms::application']]],
-  ['image_5fchanged_5',['image_changed',['../classxtd_1_1forms_1_1button__base.html#a5e401cd0b0d6cdbc0944680ac43a4a6b',1,'xtd::forms::button_base::image_changed'],['../classxtd_1_1forms_1_1label.html#ab26545a787b9b5b6c402896e1ac3ecc3',1,'xtd::forms::label::image_changed']]],
+  ['image_5fchanged_5',['image_changed',['../classxtd_1_1forms_1_1button__base.html#a5e401cd0b0d6cdbc0944680ac43a4a6b',1,'xtd::forms::button_base::image_changed'],['../classxtd_1_1forms_1_1label.html#aca616327af44fe9ec1a89497e92c94b8',1,'xtd::forms::label::image_changed']]],
   ['imp_6',['imp',['../classxtd_1_1forms_1_1emoticons.html#aae5c5a0d8b100e1964bb7bd45eb40f2e',1,'xtd::forms::emoticons']]],
   ['in_7',['in',['../classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02',1,'xtd::console']]],
   ['inbox_5ftray_8',['inbox_tray',['../classxtd_1_1forms_1_1emoticons.html#accb406278ca2a85e46b2cb5d63c286b1',1,'xtd::forms::emoticons']]],

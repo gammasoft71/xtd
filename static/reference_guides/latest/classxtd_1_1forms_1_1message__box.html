@@ -168,7 +168,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <div class="line">    button_show_message.text(<span class="stringliteral">&quot;Message...&quot;</span>);</div>
 <div class="line">    button_show_message.width(100);</div>
 <div class="line">    button_show_message.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <span class="keyword">auto</span> result = <a class="code hl_function" href="#a652dfeb393c4deaa7ee4dacfb641ca36">message_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Hello, World!&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>, message_box_buttons::ok_cancel, message_box_icon::warning);</div>
+<div class="line">      <span class="keyword">auto</span> result = <a class="code hl_function" href="#a86f76dbd0bd3b8897c6d290e91bf2327">message_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Hello, World!&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>, message_box_buttons::ok_cancel, message_box_icon::warning);</div>
 <div class="line">      label_dialog_result.text(string::format(<span class="stringliteral">&quot;dialog_result = {}&quot;</span>, result));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -189,7 +189,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_aea3c09a223353a9c5c7afdda86882c45"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#aea3c09a223353a9c5c7afdda86882c45">xtd::forms::control::controls</a></div><div class="ttdeci">virtual auto controls() noexcept -&gt; control_collection &amp;</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_a74fccc296d0eba9aa370f6cbcc052983"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#a74fccc296d0eba9aa370f6cbcc052983">xtd::forms::form::start_position</a></div><div class="ttdeci">virtual auto start_position() const noexcept -&gt; xtd::forms::form_start_position</div><div class="ttdoc">Gets the starting position of the form at run time.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a86f76dbd0bd3b8897c6d290e91bf2327"><div class="ttname"><a href="#a86f76dbd0bd3b8897c6d290e91bf2327">xtd::forms::message_box::show</a></div><div class="ttdeci">static auto show() -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
@@ -197,42 +197,42 @@ Inheritance diagram for xtd::forms::message_box:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a265c0deaf6d4fef2014f9b27a2631eec" id="r_a265c0deaf6d4fef2014f9b27a2631eec"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a265c0deaf6d4fef2014f9b27a2631eec">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a265c0deaf6d4fef2014f9b27a2631eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window.  <br /></td></tr>
-<tr class="memitem:a3fa1e88b0cddaeffed9a99faab637c61" id="r_a3fa1e88b0cddaeffed9a99faab637c61"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3fa1e88b0cddaeffed9a99faab637c61">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a3fa1e88b0cddaeffed9a99faab637c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with specified text.  <br /></td></tr>
-<tr class="memitem:a94f6624272a12f032c5a2effd87b1b5d" id="r_a94f6624272a12f032c5a2effd87b1b5d"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a94f6624272a12f032c5a2effd87b1b5d">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption)</td></tr>
-<tr class="memdesc:a94f6624272a12f032c5a2effd87b1b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with specified text and caption.  <br /></td></tr>
-<tr class="memitem:a29070ba8d9c15cd76c5a7289fe2b10d5" id="r_a29070ba8d9c15cd76c5a7289fe2b10d5"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a29070ba8d9c15cd76c5a7289fe2b10d5">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons)</td></tr>
-<tr class="memdesc:a29070ba8d9c15cd76c5a7289fe2b10d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, and buttons.  <br /></td></tr>
-<tr class="memitem:a4f8f12c967056dae5555728a847451d1" id="r_a4f8f12c967056dae5555728a847451d1"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4f8f12c967056dae5555728a847451d1">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon)</td></tr>
-<tr class="memdesc:a4f8f12c967056dae5555728a847451d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, and icon.  <br /></td></tr>
-<tr class="memitem:a24cefeae26f65429b668c49c989475c6" id="r_a24cefeae26f65429b668c49c989475c6"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a24cefeae26f65429b668c49c989475c6">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a> default_button)</td></tr>
-<tr class="memdesc:a24cefeae26f65429b668c49c989475c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, icon, and default button.  <br /></td></tr>
-<tr class="memitem:aa2683f89b63ca7f8dc51536f6e4d0fd1" id="r_aa2683f89b63ca7f8dc51536f6e4d0fd1"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa2683f89b63ca7f8dc51536f6e4d0fd1">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a> options)</td></tr>
-<tr class="memdesc:aa2683f89b63ca7f8dc51536f6e4d0fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, and options.  <br /></td></tr>
-<tr class="memitem:a5250db5f709cc8f3b01b3b6c8a46659c" id="r_a5250db5f709cc8f3b01b3b6c8a46659c"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5250db5f709cc8f3b01b3b6c8a46659c">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a> options, bool display_help_button)</td></tr>
-<tr class="memdesc:a5250db5f709cc8f3b01b3b6c8a46659c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, options, and Help button.  <br /></td></tr>
-<tr class="memitem:a652dfeb393c4deaa7ee4dacfb641ca36" id="r_a652dfeb393c4deaa7ee4dacfb641ca36"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a652dfeb393c4deaa7ee4dacfb641ca36">show</a> ()</td></tr>
-<tr class="memdesc:a652dfeb393c4deaa7ee4dacfb641ca36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box.  <br /></td></tr>
-<tr class="memitem:a39c502c98101055337964a6fe185c571" id="r_a39c502c98101055337964a6fe185c571"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a39c502c98101055337964a6fe185c571">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a39c502c98101055337964a6fe185c571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with specified text.  <br /></td></tr>
-<tr class="memitem:a5a43aafd624184ca7d980701c62bb760" id="r_a5a43aafd624184ca7d980701c62bb760"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5a43aafd624184ca7d980701c62bb760">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption)</td></tr>
-<tr class="memdesc:a5a43aafd624184ca7d980701c62bb760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with specified text and caption.  <br /></td></tr>
-<tr class="memitem:a6c75f2dc284f8d1e25afe2ac3c410755" id="r_a6c75f2dc284f8d1e25afe2ac3c410755"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6c75f2dc284f8d1e25afe2ac3c410755">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons)</td></tr>
-<tr class="memdesc:a6c75f2dc284f8d1e25afe2ac3c410755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, and buttons.  <br /></td></tr>
-<tr class="memitem:a7a6a97063d39de54f0f0d23e96ba8d41" id="r_a7a6a97063d39de54f0f0d23e96ba8d41"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7a6a97063d39de54f0f0d23e96ba8d41">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon)</td></tr>
-<tr class="memdesc:a7a6a97063d39de54f0f0d23e96ba8d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, and icon.  <br /></td></tr>
-<tr class="memitem:a3afb12854b43dd809ecfda38bfd9da6d" id="r_a3afb12854b43dd809ecfda38bfd9da6d"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3afb12854b43dd809ecfda38bfd9da6d">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a> default_button)</td></tr>
-<tr class="memdesc:a3afb12854b43dd809ecfda38bfd9da6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, icon, and default button.  <br /></td></tr>
-<tr class="memitem:aea806c8a74ffa02f82f20d5381373e70" id="r_aea806c8a74ffa02f82f20d5381373e70"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#aea806c8a74ffa02f82f20d5381373e70">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a> options)</td></tr>
-<tr class="memdesc:aea806c8a74ffa02f82f20d5381373e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, icon, default button, and options.  <br /></td></tr>
-<tr class="memitem:abc923b1dc709720398baca0e3141765d" id="r_abc923b1dc709720398baca0e3141765d"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#abc923b1dc709720398baca0e3141765d">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a> options, bool display_help_button)</td></tr>
-<tr class="memdesc:abc923b1dc709720398baca0e3141765d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, icon, default button, options, and Help button.  <br /></td></tr>
+<tr class="memitem:acacccb029dfee48a266e7413a716e117" id="r_acacccb029dfee48a266e7413a716e117"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acacccb029dfee48a266e7413a716e117">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:acacccb029dfee48a266e7413a716e117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window.  <br /></td></tr>
+<tr class="memitem:aaea97b50af1fa49a30861b012dd9179f" id="r_aaea97b50af1fa49a30861b012dd9179f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aaea97b50af1fa49a30861b012dd9179f">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:aaea97b50af1fa49a30861b012dd9179f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with specified text.  <br /></td></tr>
+<tr class="memitem:a41d7cbb3746d967cd99b000c9223145e" id="r_a41d7cbb3746d967cd99b000c9223145e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a41d7cbb3746d967cd99b000c9223145e">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a41d7cbb3746d967cd99b000c9223145e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with specified text and caption.  <br /></td></tr>
+<tr class="memitem:ae75a5ad313be7d679be4538d797c4ce8" id="r_ae75a5ad313be7d679be4538d797c4ce8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae75a5ad313be7d679be4538d797c4ce8">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ae75a5ad313be7d679be4538d797c4ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, and buttons.  <br /></td></tr>
+<tr class="memitem:a74c913f1ee4b9d02fc2d704770b7ac1f" id="r_a74c913f1ee4b9d02fc2d704770b7ac1f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a74c913f1ee4b9d02fc2d704770b7ac1f">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a74c913f1ee4b9d02fc2d704770b7ac1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, and icon.  <br /></td></tr>
+<tr class="memitem:a9da3ea1a158989c3a1a543926adc732c" id="r_a9da3ea1a158989c3a1a543926adc732c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9da3ea1a158989c3a1a543926adc732c">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a> default_button) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a9da3ea1a158989c3a1a543926adc732c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, icon, and default button.  <br /></td></tr>
+<tr class="memitem:a080190f1632f459b1f93134557924410" id="r_a080190f1632f459b1f93134557924410"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a080190f1632f459b1f93134557924410">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a080190f1632f459b1f93134557924410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, and options.  <br /></td></tr>
+<tr class="memitem:a422b45f9ac5d783d641cac65bbaf6f40" id="r_a422b45f9ac5d783d641cac65bbaf6f40"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a422b45f9ac5d783d641cac65bbaf6f40">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a> options, bool display_help_button) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a422b45f9ac5d783d641cac65bbaf6f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, options, and Help button.  <br /></td></tr>
+<tr class="memitem:a86f76dbd0bd3b8897c6d290e91bf2327" id="r_a86f76dbd0bd3b8897c6d290e91bf2327"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a86f76dbd0bd3b8897c6d290e91bf2327">show</a> () -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a86f76dbd0bd3b8897c6d290e91bf2327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box.  <br /></td></tr>
+<tr class="memitem:ac0194d6ce94013ad8596497365e193a2" id="r_ac0194d6ce94013ad8596497365e193a2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac0194d6ce94013ad8596497365e193a2">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ac0194d6ce94013ad8596497365e193a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with specified text.  <br /></td></tr>
+<tr class="memitem:a2a65cc0a6e877e44d208acef3ad90769" id="r_a2a65cc0a6e877e44d208acef3ad90769"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a65cc0a6e877e44d208acef3ad90769">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a2a65cc0a6e877e44d208acef3ad90769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with specified text and caption.  <br /></td></tr>
+<tr class="memitem:a06f5399856e8f96cdbaf3010dd45413c" id="r_a06f5399856e8f96cdbaf3010dd45413c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a06f5399856e8f96cdbaf3010dd45413c">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a06f5399856e8f96cdbaf3010dd45413c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, and buttons.  <br /></td></tr>
+<tr class="memitem:a31e4d2d7b454ddbbfbc57363cbbe48bc" id="r_a31e4d2d7b454ddbbfbc57363cbbe48bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a31e4d2d7b454ddbbfbc57363cbbe48bc">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a31e4d2d7b454ddbbfbc57363cbbe48bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, and icon.  <br /></td></tr>
+<tr class="memitem:acbb0888fd014b87587f65ea126aca5ff" id="r_acbb0888fd014b87587f65ea126aca5ff"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acbb0888fd014b87587f65ea126aca5ff">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a> default_button) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:acbb0888fd014b87587f65ea126aca5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, icon, and default button.  <br /></td></tr>
+<tr class="memitem:ac6486730aa5eb3c8a380741bc5ad7cbf" id="r_ac6486730aa5eb3c8a380741bc5ad7cbf"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac6486730aa5eb3c8a380741bc5ad7cbf">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ac6486730aa5eb3c8a380741bc5ad7cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, icon, default button, and options.  <br /></td></tr>
+<tr class="memitem:a743f108b9c304538663b418e149d982a" id="r_a743f108b9c304538663b418e149d982a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a743f108b9c304538663b418e149d982a">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;caption, <a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a> buttons, <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a> icon, <a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a> default_button, <a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a> options, bool display_help_button) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a743f108b9c304538663b418e149d982a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box with the specified text, caption, buttons, icon, default button, options, and Help button.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a265c0deaf6d4fef2014f9b27a2631eec" name="a265c0deaf6d4fef2014f9b27a2631eec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a265c0deaf6d4fef2014f9b27a2631eec">&#9670;&#160;</a></span>show() <span class="overload">[1/16]</span></h2>
+<a id="acacccb029dfee48a266e7413a716e117" name="acacccb029dfee48a266e7413a716e117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acacccb029dfee48a266e7413a716e117">&#9670;&#160;</a></span>show() <span class="overload">[1/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,10 +241,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -257,7 +257,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -267,8 +267,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a3fa1e88b0cddaeffed9a99faab637c61" name="a3fa1e88b0cddaeffed9a99faab637c61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fa1e88b0cddaeffed9a99faab637c61">&#9670;&#160;</a></span>show() <span class="overload">[2/16]</span></h2>
+<a id="aaea97b50af1fa49a30861b012dd9179f" name="aaea97b50af1fa49a30861b012dd9179f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea97b50af1fa49a30861b012dd9179f">&#9670;&#160;</a></span>show() <span class="overload">[2/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,14 +277,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -297,7 +297,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with specified text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
   </table>
   </dd>
@@ -306,8 +306,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a94f6624272a12f032c5a2effd87b1b5d" name="a94f6624272a12f032c5a2effd87b1b5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94f6624272a12f032c5a2effd87b1b5d">&#9670;&#160;</a></span>show() <span class="overload">[3/16]</span></h2>
+<a id="a41d7cbb3746d967cd99b000c9223145e" name="a41d7cbb3746d967cd99b000c9223145e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d7cbb3746d967cd99b000c9223145e">&#9670;&#160;</a></span>show() <span class="overload">[3/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,9 +316,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -328,7 +328,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -341,7 +341,7 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with specified text and caption. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
   </table>
@@ -351,8 +351,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a29070ba8d9c15cd76c5a7289fe2b10d5" name="a29070ba8d9c15cd76c5a7289fe2b10d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29070ba8d9c15cd76c5a7289fe2b10d5">&#9670;&#160;</a></span>show() <span class="overload">[4/16]</span></h2>
+<a id="ae75a5ad313be7d679be4538d797c4ce8" name="ae75a5ad313be7d679be4538d797c4ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75a5ad313be7d679be4538d797c4ce8">&#9670;&#160;</a></span>show() <span class="overload">[4/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,9 +361,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -378,7 +378,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -391,10 +391,10 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with the specified text, caption, and buttons. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -402,8 +402,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a4f8f12c967056dae5555728a847451d1" name="a4f8f12c967056dae5555728a847451d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f8f12c967056dae5555728a847451d1">&#9670;&#160;</a></span>show() <span class="overload">[5/16]</span></h2>
+<a id="a74c913f1ee4b9d02fc2d704770b7ac1f" name="a74c913f1ee4b9d02fc2d704770b7ac1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c913f1ee4b9d02fc2d704770b7ac1f">&#9670;&#160;</a></span>show() <span class="overload">[5/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,9 +412,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -429,12 +429,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -447,11 +447,11 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with the specified text, caption, buttons, and icon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -459,8 +459,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a24cefeae26f65429b668c49c989475c6" name="a24cefeae26f65429b668c49c989475c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24cefeae26f65429b668c49c989475c6">&#9670;&#160;</a></span>show() <span class="overload">[6/16]</span></h2>
+<a id="a9da3ea1a158989c3a1a543926adc732c" name="a9da3ea1a158989c3a1a543926adc732c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da3ea1a158989c3a1a543926adc732c">&#9670;&#160;</a></span>show() <span class="overload">[6/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,9 +469,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -486,17 +486,17 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -509,12 +509,12 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with the specified text, caption, buttons, icon, and default button. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
-    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga3cd9e7f8507ba84826f4261f763dd00b" title="Specifies constants defining the default button on a message_box.">message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga2b5eb4fc94ca2524a5db21ba205d5ba6" title="Specifies constants defining the default button on a message_box.">xtd::forms::message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -522,8 +522,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aa2683f89b63ca7f8dc51536f6e4d0fd1" name="aa2683f89b63ca7f8dc51536f6e4d0fd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2683f89b63ca7f8dc51536f6e4d0fd1">&#9670;&#160;</a></span>show() <span class="overload">[7/16]</span></h2>
+<a id="a080190f1632f459b1f93134557924410" name="a080190f1632f459b1f93134557924410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080190f1632f459b1f93134557924410">&#9670;&#160;</a></span>show() <span class="overload">[7/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -532,9 +532,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -549,22 +549,22 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -577,13 +577,13 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, and options. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
-    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga3cd9e7f8507ba84826f4261f763dd00b" title="Specifies constants defining the default button on a message_box.">message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
-    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gae77b5412bb216780d0dd525e08954a59" title="Specifies options on a message_box.">message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga2b5eb4fc94ca2524a5db21ba205d5ba6" title="Specifies constants defining the default button on a message_box.">xtd::forms::message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
+    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gaeec1ab5b296eb6f8002b77aca4c36455" title="Specifies options on a message_box.">xtd::forms::message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
   </table>
   </dd>
 </dl>
@@ -591,8 +591,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a5250db5f709cc8f3b01b3b6c8a46659c" name="a5250db5f709cc8f3b01b3b6c8a46659c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5250db5f709cc8f3b01b3b6c8a46659c">&#9670;&#160;</a></span>show() <span class="overload">[8/16]</span></h2>
+<a id="a422b45f9ac5d783d641cac65bbaf6f40" name="a422b45f9ac5d783d641cac65bbaf6f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a422b45f9ac5d783d641cac65bbaf6f40">&#9670;&#160;</a></span>show() <span class="overload">[8/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -601,9 +601,9 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -618,27 +618,27 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>display_help_button</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>display_help_button</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -651,13 +651,13 @@ Public Static Methods</h2></td></tr>
 <p>Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, options, and Help button. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">iwin32_window</a> that will own the modal dialog box. </td></tr>
+    <tr><td class="paramname">owner</td><td>An implementation of <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles.">xtd::forms::iwin32_window</a> that will own the modal dialog box. </td></tr>
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
-    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga3cd9e7f8507ba84826f4261f763dd00b" title="Specifies constants defining the default button on a message_box.">message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
-    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gae77b5412bb216780d0dd525e08954a59" title="Specifies options on a message_box.">message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga2b5eb4fc94ca2524a5db21ba205d5ba6" title="Specifies constants defining the default button on a message_box.">xtd::forms::message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
+    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gaeec1ab5b296eb6f8002b77aca4c36455" title="Specifies options on a message_box.">xtd::forms::message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
     <tr><td class="paramname">display_help_button</td><td><span class="tt">true</span> to show the Help button; otherwise, <span class="tt">false</span>. The default is <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
@@ -666,8 +666,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a652dfeb393c4deaa7ee4dacfb641ca36" name="a652dfeb393c4deaa7ee4dacfb641ca36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a652dfeb393c4deaa7ee4dacfb641ca36">&#9670;&#160;</a></span>show() <span class="overload">[9/16]</span></h2>
+<a id="a86f76dbd0bd3b8897c6d290e91bf2327" name="a86f76dbd0bd3b8897c6d290e91bf2327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f76dbd0bd3b8897c6d290e91bf2327">&#9670;&#160;</a></span>show() <span class="overload">[9/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,10 +676,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -694,8 +694,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a39c502c98101055337964a6fe185c571" name="a39c502c98101055337964a6fe185c571"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39c502c98101055337964a6fe185c571">&#9670;&#160;</a></span>show() <span class="overload">[10/16]</span></h2>
+<a id="ac0194d6ce94013ad8596497365e193a2" name="ac0194d6ce94013ad8596497365e193a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0194d6ce94013ad8596497365e193a2">&#9670;&#160;</a></span>show() <span class="overload">[10/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -704,10 +704,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -728,8 +728,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a5a43aafd624184ca7d980701c62bb760" name="a5a43aafd624184ca7d980701c62bb760"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a43aafd624184ca7d980701c62bb760">&#9670;&#160;</a></span>show() <span class="overload">[11/16]</span></h2>
+<a id="a2a65cc0a6e877e44d208acef3ad90769" name="a2a65cc0a6e877e44d208acef3ad90769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a65cc0a6e877e44d208acef3ad90769">&#9670;&#160;</a></span>show() <span class="overload">[11/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -738,14 +738,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -767,8 +767,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c75f2dc284f8d1e25afe2ac3c410755" name="a6c75f2dc284f8d1e25afe2ac3c410755"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c75f2dc284f8d1e25afe2ac3c410755">&#9670;&#160;</a></span>show() <span class="overload">[12/16]</span></h2>
+<a id="a06f5399856e8f96cdbaf3010dd45413c" name="a06f5399856e8f96cdbaf3010dd45413c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f5399856e8f96cdbaf3010dd45413c">&#9670;&#160;</a></span>show() <span class="overload">[12/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -777,7 +777,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -789,7 +789,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -804,7 +804,7 @@ Public Static Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -812,8 +812,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a7a6a97063d39de54f0f0d23e96ba8d41" name="a7a6a97063d39de54f0f0d23e96ba8d41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a6a97063d39de54f0f0d23e96ba8d41">&#9670;&#160;</a></span>show() <span class="overload">[13/16]</span></h2>
+<a id="a31e4d2d7b454ddbbfbc57363cbbe48bc" name="a31e4d2d7b454ddbbfbc57363cbbe48bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e4d2d7b454ddbbfbc57363cbbe48bc">&#9670;&#160;</a></span>show() <span class="overload">[13/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -822,7 +822,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -834,12 +834,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -854,8 +854,8 @@ Public Static Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -863,8 +863,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a3afb12854b43dd809ecfda38bfd9da6d" name="a3afb12854b43dd809ecfda38bfd9da6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3afb12854b43dd809ecfda38bfd9da6d">&#9670;&#160;</a></span>show() <span class="overload">[14/16]</span></h2>
+<a id="acbb0888fd014b87587f65ea126aca5ff" name="acbb0888fd014b87587f65ea126aca5ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb0888fd014b87587f65ea126aca5ff">&#9670;&#160;</a></span>show() <span class="overload">[14/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -873,7 +873,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -885,17 +885,17 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -910,9 +910,9 @@ Public Static Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
-    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga3cd9e7f8507ba84826f4261f763dd00b" title="Specifies constants defining the default button on a message_box.">message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga2b5eb4fc94ca2524a5db21ba205d5ba6" title="Specifies constants defining the default button on a message_box.">xtd::forms::message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
   </table>
   </dd>
 </dl>
@@ -920,8 +920,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aea806c8a74ffa02f82f20d5381373e70" name="aea806c8a74ffa02f82f20d5381373e70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea806c8a74ffa02f82f20d5381373e70">&#9670;&#160;</a></span>show() <span class="overload">[15/16]</span></h2>
+<a id="ac6486730aa5eb3c8a380741bc5ad7cbf" name="ac6486730aa5eb3c8a380741bc5ad7cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6486730aa5eb3c8a380741bc5ad7cbf">&#9670;&#160;</a></span>show() <span class="overload">[15/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -930,7 +930,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -942,22 +942,22 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -972,10 +972,10 @@ Public Static Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
-    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga3cd9e7f8507ba84826f4261f763dd00b" title="Specifies constants defining the default button on a message_box.">message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
-    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gae77b5412bb216780d0dd525e08954a59" title="Specifies options on a message_box.">message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga2b5eb4fc94ca2524a5db21ba205d5ba6" title="Specifies constants defining the default button on a message_box.">xtd::forms::message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
+    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gaeec1ab5b296eb6f8002b77aca4c36455" title="Specifies options on a message_box.">xtd::forms::message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
   </table>
   </dd>
 </dl>
@@ -983,8 +983,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="abc923b1dc709720398baca0e3141765d" name="abc923b1dc709720398baca0e3141765d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc923b1dc709720398baca0e3141765d">&#9670;&#160;</a></span>show() <span class="overload">[16/16]</span></h2>
+<a id="a743f108b9c304538663b418e149d982a" name="a743f108b9c304538663b418e149d982a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743f108b9c304538663b418e149d982a">&#9670;&#160;</a></span>show() <span class="overload">[16/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -993,7 +993,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">dialog_result</a> xtd::forms::message_box::show </td>
+          <td class="memname">auto xtd::forms::message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -1005,27 +1005,27 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaba92ddccbdea7da5ddb782f27ad0c4e0">xtd::forms::message_box_buttons</a></td>          <td class="paramname"><span class="paramname"><em>buttons</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841">xtd::forms::message_box_icon</a></td>          <td class="paramname"><span class="paramname"><em>icon</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga53e9b1de8292d8ace6f1637815d5a0c0">xtd::forms::message_box_default_button</a></td>          <td class="paramname"><span class="paramname"><em>default_button</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga81e7adfdf3f80e70f7f6df17030378d2">xtd::forms::message_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>display_help_button</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>display_help_button</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -1040,10 +1040,10 @@ Public Static Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text to display in the message box. </td></tr>
     <tr><td class="paramname">caption</td><td>The text to display in the title bar of the message box. </td></tr>
-    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#ga0afe0cb8b691d0c53093a5e61fa96b59" title="Specifies constants defining which buttons to display on a message_box.">message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
-    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga611b82ea80025074b40e4ba5775d3bc1" title="Specifies constants defining which information to display.">message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
-    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga3cd9e7f8507ba84826f4261f763dd00b" title="Specifies constants defining the default button on a message_box.">message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
-    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gae77b5412bb216780d0dd525e08954a59" title="Specifies options on a message_box.">message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
+    <tr><td class="paramname">buttons</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac40b403602920b1a0e5714f1b6bdda4" title="Specifies constants defining which buttons to display on a message_box.">xtd::forms::message_box_buttons</a> values that specifies which buttons to display in the message box. </td></tr>
+    <tr><td class="paramname">icon</td><td>One of the <a class="el" href="group__xtd__forms.html#ga063e28210de68a4f3f921a1d35dd6dcb" title="Specifies constants defining which information to display.">xtd::forms::message_box_icon</a> values that specifies which icon to display in the message box. </td></tr>
+    <tr><td class="paramname">default_button</td><td>One of the <a class="el" href="group__xtd__forms.html#ga2b5eb4fc94ca2524a5db21ba205d5ba6" title="Specifies constants defining the default button on a message_box.">xtd::forms::message_box_default_button</a> values that specifies the default button for the message box. </td></tr>
+    <tr><td class="paramname">options</td><td>One of the <a class="el" href="group__xtd__forms.html#gaeec1ab5b296eb6f8002b77aca4c36455" title="Specifies options on a message_box.">xtd::forms::message_box_options</a> values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults. </td></tr>
     <tr><td class="paramname">display_help_button</td><td><span class="tt">true</span> to show the Help button; otherwise, <span class="tt">false</span>. The default is <span class="tt">false</span>. </td></tr>
   </table>
   </dd>

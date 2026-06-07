@@ -32,7 +32,7 @@ var searchData=
   ['height_29',['height',['../structxtd_1_1drawing_1_1imaging_1_1bitmap__data.html#a08b62b4f3efb3c65622bd25ea87a209c',1,'xtd::drawing::imaging::bitmap_data::height'],['../structxtd_1_1drawing_1_1rectangle.html#a3d3136ca7b0f133c6ea1c0deeb281520',1,'xtd::drawing::rectangle::height'],['../structxtd_1_1drawing_1_1rectangle__f.html#a000f8feba8c2010cb8f874200ed81316',1,'xtd::drawing::rectangle_f::height'],['../structxtd_1_1drawing_1_1size.html#a5e3142548139b9071df277f049d8ad28',1,'xtd::drawing::size::height'],['../structxtd_1_1drawing_1_1size__f.html#a4947d7f1a9f0544619a013eca124f871',1,'xtd::drawing::size_f::height']]],
   ['helicopter_30',['helicopter',['../classxtd_1_1forms_1_1emoticons.html#a7fa504f51fa0f1e376631062797f7a80',1,'xtd::forms::emoticons']]],
   ['helmet_5fwith_5fwhite_5fcross_31',['helmet_with_white_cross',['../classxtd_1_1forms_1_1emoticons.html#a2805f1bb2fa7f9f4084094a49a8e5582',1,'xtd::forms::emoticons']]],
-  ['help_5frequest_32',['help_request',['../classxtd_1_1forms_1_1common__dialog.html#a263baaba1eddd4dc77556b54c547f412',1,'xtd::forms::common_dialog::help_request'],['../classxtd_1_1forms_1_1message__dialog.html#ab7b63d10bb56fb1f4ead3366700c269c',1,'xtd::forms::message_dialog::help_request']]],
+  ['help_5frequest_32',['help_request',['../classxtd_1_1forms_1_1common__dialog.html#a263baaba1eddd4dc77556b54c547f412',1,'xtd::forms::common_dialog::help_request'],['../classxtd_1_1forms_1_1message__dialog.html#a3e00c89588f7b6602c209be59920553c',1,'xtd::forms::message_dialog::help_request']]],
   ['help_5frequested_33',['help_requested',['../classxtd_1_1forms_1_1control.html#a9ebda5b585f7fa1778d12df8346cd5f2',1,'xtd::forms::control']]],
   ['herb_34',['herb',['../classxtd_1_1forms_1_1emoticons.html#a654e8e89f343d5d691c898a2693a81d1',1,'xtd::forms::emoticons']]],
   ['hibiscus_35',['hibiscus',['../classxtd_1_1forms_1_1emoticons.html#ad5fdde84cee0b0eb4ed22a7119659810',1,'xtd::forms::emoticons']]],
@@ -69,5 +69,5 @@ var searchData=
   ['hugging_5fface_66',['hugging_face',['../classxtd_1_1forms_1_1emoticons.html#a81798b2ebf69069612a37cce91962feb',1,'xtd::forms::emoticons']]],
   ['hundred_5fpoints_5fsymbol_67',['hundred_points_symbol',['../classxtd_1_1forms_1_1emoticons.html#afadeb8eaad20f8929403f4d1bb449c74',1,'xtd::forms::emoticons']]],
   ['hushed_5fface_68',['hushed_face',['../classxtd_1_1forms_1_1emoticons.html#a655e9a437a9de323303dced7b4729ab0',1,'xtd::forms::emoticons']]],
-  ['hwnd_69',['hwnd',['../structxtd_1_1forms_1_1message.html#a6e84bb75f6c9a0b4ba1a719dac4f172c',1,'xtd::forms::message']]]
+  ['hwnd_69',['hwnd',['../structxtd_1_1forms_1_1message.html#abcb0177a312152669fd13b90390483d7',1,'xtd::forms::message']]]
 ];

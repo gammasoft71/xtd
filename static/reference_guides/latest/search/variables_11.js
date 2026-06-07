@@ -37,7 +37,7 @@ var searchData=
   ['reserved_34',['reserved',['../structxtd_1_1drawing_1_1imaging_1_1bitmap__data.html#aa3ee0500ad3dfcbaf6627531be092e5c',1,'xtd::drawing::imaging::bitmap_data']]],
   ['resize_35',['resize',['../classxtd_1_1forms_1_1control.html#a9deb71ee4a3b60b26af41fa88e872a92',1,'xtd::forms::control']]],
   ['restroom_36',['restroom',['../classxtd_1_1forms_1_1emoticons.html#a3b3c80387a6af42d893fe4ece945522c',1,'xtd::forms::emoticons']]],
-  ['result_37',['result',['../structxtd_1_1forms_1_1message.html#aa8f92b492fbe11a7d3c1f17665cf378f',1,'xtd::forms::message']]],
+  ['result_37',['result',['../structxtd_1_1forms_1_1message.html#ab9714151ecf743d94ce7c125d91c5c88',1,'xtd::forms::message']]],
   ['reversed_5fhand_5fwith_5fmiddle_5ffinger_5fextended_38',['reversed_hand_with_middle_finger_extended',['../classxtd_1_1forms_1_1emoticons.html#ac7f9453185aa98f8f00378efd17dbeb2',1,'xtd::forms::emoticons']]],
   ['revolving_5fhearts_39',['revolving_hearts',['../classxtd_1_1forms_1_1emoticons.html#a8b4cc808315c5ef6a144cd044909c7a0',1,'xtd::forms::emoticons']]],
   ['rhinoceros_40',['rhinoceros',['../classxtd_1_1forms_1_1emoticons.html#a6bcd53137ce9eaaeb3b8b1b36e80b360',1,'xtd::forms::emoticons']]],

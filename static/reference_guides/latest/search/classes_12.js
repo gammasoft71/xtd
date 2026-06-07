@@ -39,7 +39,7 @@ var searchData=
   ['software_5ftermination_5fexception_36',['software_termination_exception',['../classxtd_1_1software__termination__exception.html',1,'xtd']]],
   ['solarize_5feffect_37',['solarize_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1solarize__effect.html',1,'xtd::drawing::imaging::effects']]],
   ['solid_5fbrush_38',['solid_brush',['../classxtd_1_1drawing_1_1solid__brush.html',1,'xtd::drawing']]],
-  ['sorter_39',['sorter',['../classxtd_1_1forms_1_1list__control_1_1item_1_1sorter.html',1,'xtd::forms::list_control::item']]],
+  ['sorter_39',['sorter',['../structxtd_1_1forms_1_1list__control_1_1item_1_1sorter.html',1,'xtd::forms::list_control::item']]],
   ['sorter_5fnone_40',['sorter_none',['../classxtd_1_1forms_1_1layout_1_1sorter__none.html',1,'xtd::forms::layout']]],
   ['source_5ffilter_41',['source_filter',['../classxtd_1_1diagnostics_1_1source__filter.html',1,'xtd::diagnostics']]],
   ['source_5flocation_42',['source_location',['../classxtd_1_1diagnostics_1_1source__location.html',1,'xtd::diagnostics']]],

@@ -22,7 +22,7 @@ var searchData=
   ['tennis_5fracquet_5fand_5fball_19',['tennis_racquet_and_ball',['../classxtd_1_1forms_1_1emoticons.html#a173953be2f85a177ea7f9fdb9e12f29b',1,'xtd::forms::emoticons']]],
   ['tent_20',['tent',['../classxtd_1_1forms_1_1emoticons.html#a741e5dc7081820fb34e156c234783de8',1,'xtd::forms::emoticons']]],
   ['test_5ftube_21',['test_tube',['../classxtd_1_1forms_1_1emoticons.html#a619bdf2d646fa0958e52b5e5375061c5',1,'xtd::forms::emoticons']]],
-  ['text_5falign_5fchanged_22',['text_align_changed',['../classxtd_1_1forms_1_1label.html#a0b804168f3570873a47d08a0113fcb80',1,'xtd::forms::label']]],
+  ['text_5falign_5fchanged_22',['text_align_changed',['../classxtd_1_1forms_1_1label.html#a69e76921bc9b3dac4804c978a3922458',1,'xtd::forms::label']]],
   ['text_5fchanged_23',['text_changed',['../classxtd_1_1forms_1_1control.html#ab9f69a50d836b59bb965d39a396c768b',1,'xtd::forms::control']]],
   ['thermometer_24',['thermometer',['../classxtd_1_1forms_1_1emoticons.html#aefefe493016dd40932a415ae71689939',1,'xtd::forms::emoticons']]],
   ['thinking_5fface_25',['thinking_face',['../classxtd_1_1forms_1_1emoticons.html#a13f5c140111577b20e4db7a4e863b867',1,'xtd::forms::emoticons']]],
