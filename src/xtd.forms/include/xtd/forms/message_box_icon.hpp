@@ -19,6 +19,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the message_box class. The description of each member of this enumeration contains a typical representation of the symbol. The actual graphic displayed is a function of the operating system constants. In current implementations there are four unique symbols with multiple values assigned to them.
-    using message_box_icon = message_dialog_icon;
+    using message_box_icon = xtd::forms::message_dialog_icon;
   }
 }
