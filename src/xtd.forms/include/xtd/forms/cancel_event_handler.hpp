@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that handles a cancelable event.
     /// ```cpp
-    /// usingusing cancel_event_handler = xtd::delegate<void(object& sender, cancel_event_args& e)>;
+    /// usingusing cancel_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::cancel_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A cancel_event_args that contains the event data.
+    /// @param e A xtd::forms::cancel_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/cancel_event_handler>
