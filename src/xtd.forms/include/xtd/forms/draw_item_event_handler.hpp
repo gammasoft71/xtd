@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the @verbatim draw_item @endverbatim event of a xtd::forms::combo_box, xtd::forms::list_box, xtd::forms::menu_item, or xtd::forms::tab_control control.
     /// ```cpp
-    /// using draw_item_event_handler = xtd::delegate<void(object& sender, const draw_item_event_args& e)>;
+    /// using draw_item_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::draw_item_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::forms::draw_item_event_args that contains the event data.
