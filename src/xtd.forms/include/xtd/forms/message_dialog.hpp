@@ -39,7 +39,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of message_dialog dialog.
     /// @include message_dialog.cpp
-    class forms_export_ message_dialog final : public component {
+    class forms_export_ message_dialog final : public xtd::forms::component {
       struct data;
       
     public:
@@ -55,71 +55,71 @@ namespace xtd {
       /// @{
       /// @brief Gets buttons to display in the message dialog.
       /// @return One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
-      xtd::forms::message_dialog_buttons buttons() const noexcept;
+      [[nodiscard]] auto buttons() const noexcept -> xtd::forms::message_dialog_buttons;
       /// @brief Sets buttons to display in the message dialog.
-      /// @param buttons One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
+      /// @param value One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
       /// @return Current message dialog.
-      message_dialog& buttons(xtd::forms::message_dialog_buttons buttons);
+      auto buttons(xtd::forms::message_dialog_buttons value) -> message_dialog&;
       
       /// @brief Gets default button for the message dialog.
       /// @return One of the xtd::forms::message_dialog_default_button values that specifies the default button for the message dialog.
-      xtd::forms::message_dialog_default_button default_button() const noexcept;
+      [[nodiscard]] auto default_button() const noexcept -> xtd::forms::message_dialog_default_button;
       /// @brief Sets default button for the message dialog.
-      /// @param default_button One of the xtd::forms::message_dialog_default_button values that specifies the default button for the message dialog.
+      /// @param value One of the xtd::forms::message_dialog_default_button values that specifies the default button for the message dialog.
       /// @return Current message dialog.
-      message_dialog& default_button(xtd::forms::message_dialog_default_button default_button);
+      auto default_button(xtd::forms::message_dialog_default_button value) -> message_dialog&;
       
       /// @brief Gets a value indicate if help button is shown.
       /// @return `true` to show the Help button; otherwise, `false`. The default is `false`.
-      bool display_help_button() const noexcept;
+      [[nodiscard]] auto display_help_button() const noexcept -> bool;
       /// @brief Sets a value indicate if help button is shown.
-      /// @param display_help_button `true` to show the Help button; otherwise, `false`. The default is `false`.
+      /// @param value `true` to show the Help button; otherwise, `false`. The default is `false`.
       /// @return Current message dialog.
-      message_dialog& display_help_button(bool display_help_button);
+      auto display_help_button(bool value) -> message_dialog&;
       
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const noexcept;
+      [[nodiscard]] auto dialog_result() const noexcept -> xtd::forms::dialog_result;
       
       /// @brief Gets the dialog appearance.
       /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
-      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      [[nodiscard]] auto dialog_appearance() const noexcept -> xtd::forms::dialog_appearance;
       /// @brief Sets the dialog appearance.
-      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      /// @param value One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current message dialog.
-      message_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
+      auto dialog_appearance(xtd::forms::dialog_appearance value) -> message_dialog&;
       
       /// @brief Gets icon to display in the message dialog.
       /// @return One of the xtd::forms::message_dialog_icon values that specifies which icon to display in the message dialog.
-      xtd::forms::message_dialog_icon icon() const noexcept;
+      [[nodiscard]] auto icon() const noexcept -> xtd::forms::message_dialog_icon;
       /// @brief Sets icon to display in the message dialog.
-      /// @param icon One of the xtd::forms::message_dialog_icon values that specifies which icon to display in the message dialog.
+      /// @param value One of the xtd::forms::message_dialog_icon values that specifies which icon to display in the message dialog.
       /// @return Current message dialog.
-      message_dialog& icon(xtd::forms::message_dialog_icon icon);
+      auto icon(xtd::forms::message_dialog_icon value) -> message_dialog&;
       
       /// @brief Gets options will be used for the message box.
       /// @return One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
-      xtd::forms::message_dialog_options options() const noexcept;
+      [[nodiscard]] auto options() const noexcept -> xtd::forms::message_dialog_options;
       /// @brief Sets options will be used for the message box.
-      /// @param options One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
+      /// @param value One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @return Current message dialog.
-      message_dialog& options(xtd::forms::message_dialog_options options);
+      auto options(xtd::forms::message_dialog_options value) -> message_dialog&;
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::string message() const noexcept;
+      [[nodiscard]] auto message() const noexcept -> xtd::string;
       /// @brief Sets the text message.
-      /// @param message The text message.
+      /// @param value The text message.
       /// @return Current message_dialog instance.
-      message_dialog& message(const xtd::string& message);
+      auto message(const xtd::string& value) -> message_dialog&;
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::string text() const noexcept;
+      [[nodiscard]] auto text() const noexcept -> xtd::string;
       /// @brief Sets the dialog caption text.
-      /// @param text The new dialog caption text.
+      /// @param value The new dialog caption text.
       /// @return Current message_dialog instance.
-      message_dialog& text(const xtd::string& text);
+      auto text(const xtd::string& value) -> message_dialog&;
       /// @}
       
       /// @name Public Methods
@@ -129,13 +129,13 @@ namespace xtd {
       void reset();
       
       /// @brief Runs message dialog box.
-      xtd::forms::dialog_result show_dialog();
+      auto show_dialog() -> xtd::forms::dialog_result;
       /// @brief Runs message dialog box.
-      xtd::forms::dialog_result show_dialog(const iwin32_window& owner);
+      auto show_dialog(const xtd::forms::iwin32_window& owner) -> xtd::forms::dialog_result;
       /// @brief Runs message dialog box.
-      void show_sheet(const iwin32_window& owner);
+      auto show_sheet(const iwin32_window& owner) -> void;
       /// @brief Runs message dialog box.
-      xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      auto show_sheet_dialog(const xtd::forms::iwin32_window& owner) -> xtd::forms::dialog_result;
       /// @}
       
       /// @name Public Events
@@ -143,11 +143,11 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<message_dialog, help_event_handler> help_request;
+      xtd::event<message_dialog, xtd::forms::help_event_handler> help_request;
       
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<message_dialog, dialog_closed_event_handler> dialog_closed;
+      xtd::event<message_dialog, xtd::forms::dialog_closed_event_handler> dialog_closed;
       /// @}
       
     private:
@@ -158,7 +158,7 @@ namespace xtd {
       /// @brief Raises the message_dialog::dialog_close event.
       /// @param e An message_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the message dialog box is closed.
-      void on_dialog_closed(const dialog_closed_event_args& e);
+      auto on_dialog_closed(const xtd::forms::dialog_closed_event_args& e) -> void;
       
       xtd::sptr<data> data_;
     };
