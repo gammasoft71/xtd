@@ -37,10 +37,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of month_calendar control.
     /// @include month_calendar.cpp
-    class forms_export_ month_calendar : public control {
+    class forms_export_ month_calendar : public xtd::forms::control {
       struct data;
       
     public:
+      /// @name Public Types
+      /// @{
+      
       /// @brief Defines constants that represent areas in a xtd::forms::month_calendar control.
       /// @remarks This enumeration includes specific areas of the xtd::forms::month_calendar control as its enumerated values. The xtd::forms::month_calendar::hit_area member of xtd::forms::month_calendar::hit_test_info is one of these enumerated values, and indicates which portion of a month calendar is under a specified point.
       enum class hit_area {
@@ -77,23 +80,22 @@ namespace xtd {
       /// @warning xtd::forms::month_calendar::hit_test_info is for informational purposes only; you should not construct these objects and cannot modify any of the members.
       class hit_test_info final : public xtd::object {
       public:
-        /// @cond
-        hit_test_info(const hit_test_info&) = default;
-        hit_test_info& operator =(const hit_test_info&) = default;
-        /// @endcond
+        /// @name Public Properties
+        /// @{
         
         /// @brief Gets the xtd::forms::month_calendar::hit_area that represents the area of the calendar evaluated by the hit-test operation.
         /// @return One of the xtd::forms::month_calendar::hit_area values. The default is xtd::forms::month_calendar::hit_area::nowhere.
-        xtd::forms::month_calendar::hit_area hit_area() const noexcept;
+        [[nodiscard]] auto hit_area() const noexcept -> xtd::forms::month_calendar::hit_area;
         
         /// @brief Gets the point that was hit-tested.
         /// @return A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y values tested.
-        const xtd::drawing::point& point() const noexcept;
+        [[nodiscard]] auto point() const noexcept -> const xtd::drawing::point&;
         
         /// @brief Gets the time information specific to the location that was hit-tested.
         /// @return The time information specific to the location that was hit-tested.
         /// @remarks The xtd::forms::month_calendar::hit_test_info::time property contains a valid date when the xtd::forms::month_calendar::hit_area property is set to xtd::forms::month_calendar::hit_area::date or xtd::forms::month_calendar::hit_area::week_numbers.
-        const xtd::date_time& time() const noexcept;
+        [[nodiscard]] auto time() const noexcept -> const xtd::date_time&;
+        /// @}
         
       private:
         friend class xtd::forms::month_calendar;
@@ -103,7 +105,8 @@ namespace xtd {
         xtd::drawing::point point_;
         xtd::date_time time_;
       };
-      
+      /// @}
+
       /// @name Public Constructors
       /// @{
       
@@ -121,80 +124,80 @@ namespace xtd {
       /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      xtd::array<xtd::date_time> annually_bolded_dates() const noexcept;
+      [[nodiscard]] auto annually_bolded_dates() const noexcept -> xtd::array<xtd::date_time>;
       /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      month_calendar& annually_bolded_dates(const xtd::array<xtd::date_time>& value);
+      auto annually_bolded_dates(const xtd::array<xtd::date_time>& value) -> month_calendar&;
       
       /// @brief Gets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      xtd::array<xtd::date_time> bolded_dates() const noexcept;
+      [[nodiscard]] auto bolded_dates() const noexcept -> xtd::array<xtd::date_time>;
       /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      month_calendar& bolded_dates(const xtd::array<xtd::date_time>& value);
+      auto bolded_dates(const xtd::array<xtd::date_time>& value) -> month_calendar&;
       
       /// @brief Gets the number of columns and rows of months displayed.
       /// @return A xtd::drawing::size with the number of columns and rows to use to display the calendar.
       /// @remarks Only one calendar year is displayed at a time, and the maximum number of months that can be displayed is 12. Valid combinations of columns and rows make a maximum product of 12; for values greater than 12, the display is modified on a best-fit basis.
-      const xtd::drawing::size& calendar_dimensions() const noexcept;
+      [[nodiscard]] auto calendar_dimensions() const noexcept -> const xtd::drawing::size&;
       /// @brief Sets the number of columns and rows of months displayed.
       /// @param value A xtd::drawing::size with the number of columns and rows to use to display the calendar.
       /// @return Current month_calendar.
       /// @remarks Only one calendar year is displayed at a time, and the maximum number of months that can be displayed is 12. Valid combinations of columns and rows make a maximum product of 12; for values greater than 12, the display is modified on a best-fit basis.
-      month_calendar& calendar_dimensions(const xtd::drawing::size& value);
+      auto calendar_dimensions(const xtd::drawing::size& value) -> month_calendar&;
       
       /// @brief Gets the first day of the week as displayed in the month calendar.
       /// @return One of the xtd::forms::day values. The default is xtd::forms::day::default_day.
-      xtd::forms::day first_day_of_week() const noexcept;
+      [[nodiscard]] auto first_day_of_week() const noexcept -> xtd::forms::day;
       /// @brief Sets the first day of the week as displayed in the month calendar.
       /// @param value One of the xtd::forms::day values. The default is xtd::forms::day::default_day.
       /// @return Current month_calendar.
-      month_calendar& first_day_of_week(xtd::forms::day value);
+      auto first_day_of_week(xtd::forms::day value) -> month_calendar&;
       
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
-      xtd::date_time max_date() const noexcept;
+      [[nodiscard]] auto max_date() const noexcept -> xtd::date_time;
       /// @brief Sets the maximum date that can be selected in the control.
       /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      month_calendar& max_date(xtd::date_time value);
+      auto max_date(xtd::date_time value) -> month_calendar&;
       
       /// @brief Gets the maximum number of days that can be selected in a month calendar control.
       /// @return The maximum number of days that you can select. The default is 7.
       /// @exception xtd::argument_exception The value is less than 1.
       /// @remarks Setting this property does not effect the current selection range.
       /// @remarks It is important to remember that the xtd::forms::month_calendar::max_selection_count property represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
-      uint32 max_selection_count() const noexcept;
+      [[nodiscard]] auto max_selection_count() const noexcept -> xtd::uint32;
       /// @brief Sets the maximum number of days that can be selected in a month calendar control.
       /// @param value The maximum number of days that you can select. The default is 7.
       /// @return Current month_calendar.
       /// @exception xtd::argument_exception The value is less than 1.
       /// @remarks Setting this property does not effect the current selection range.
       /// @remarks It is important to remember that the xtd::forms::month_calendar::max_selection_count property represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
-      month_calendar& max_selection_count(uint32 value);
+      auto max_selection_count(xtd::uint32 value) -> month_calendar&;
       
       /// @brief Gets the minimum date that can be selected in the control.
       /// @return The minimum date that can be selected in the control.
-      xtd::date_time min_date() const noexcept;
+      [[nodiscard]] auto min_date() const noexcept -> xtd::date_time;
       /// @brief Sets the minimum date that can be selected in the control.
       /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      month_calendar& min_date(xtd::date_time value);
+      auto min_date(xtd::date_time value) -> month_calendar&;
       
       /// @brief Gets the array of xtd::date_time objects that determine which monthly days to bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      xtd::array<xtd::date_time> monthly_bolded_dates() const noexcept;
+      [[nodiscard]] auto monthly_bolded_dates() const noexcept -> xtd::array<xtd::date_time>;
       /// @brief Sets the array of xtd::date_time objects that determine which monthly days to bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      month_calendar& monthly_bolded_dates(const xtd::array<xtd::date_time>& value);
+      auto monthly_bolded_dates(const xtd::array<xtd::date_time>& value) -> month_calendar&;
       
       /// @brief Gets the end date of the selected range of dates.
       /// @return A xtd::date_time indicating the last date in the selection range.
@@ -202,7 +205,7 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_end that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_start is adjusted; xtd::forms::month_calendar::selection_start is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      xtd::date_time selection_end() const noexcept;
+      [[nodiscard]] auto selection_end() const noexcept -> xtd::date_time;
       /// @brief Sets the end date of the selected range of dates.
       /// @param value A xtd::date_time indicating the last date in the selection range.
       /// @return Current month_calendar.
@@ -210,19 +213,19 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_end that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_start is adjusted; xtd::forms::month_calendar::selection_start is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      month_calendar& selection_end(xtd::date_time value);
+      auto selection_end(xtd::date_time value) -> month_calendar&;
       
       /// @brief Gets the selected range of dates for a month calendar control.
       /// @return A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
       /// @remarks If the Start property value of the xtd::forms::month_calendar::selection_range is greater than its xtd::forms::selection_rande::end property value, the dates are swapped; the xtd::forms::selection_range::end property value becomes the starting date, and xtd::forms::selection_range::start property value becomes the end date.
-      xtd::forms::selection_range selection_range() const noexcept;
+      [[nodiscard]] auto selection_range() const noexcept -> xtd::forms::selection_range;
       /// @brief Sets the selected range of dates for a month calendar control.
       /// @param value A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @return Current month_calendar.
       /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
       /// @remarks If the Start property value of the xtd::forms::month_calendar::selection_range is greater than its xtd::forms::selection_rande::end property value, the dates are swapped; the xtd::forms::selection_range::end property value becomes the starting date, and xtd::forms::selection_range::start property value becomes the end date.
-      month_calendar& selection_range(const xtd::forms::selection_range& value);
+      auto selection_range(const xtd::forms::selection_range& value) -> month_calendar&;
       
       /// @brief Gets the start date of the selected range of dates.
       /// @return A xtd::date_time indicating the first date in the selection range.
@@ -230,7 +233,7 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_start that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_end is adjusted; xtd::forms::month_calendar::selection_end is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      xtd::date_time selection_start() const noexcept;
+      [[nodiscard]] auto selection_start() const noexcept -> xtd::date_time;
       /// @brief Sets the start date of the selected range of dates.
       /// @param value A xtd::date_time indicating the first date in the selection range.
       /// @return Current month_calendar.
@@ -238,82 +241,82 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_start that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_end is adjusted; xtd::forms::month_calendar::selection_end is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      month_calendar& selection_start(xtd::date_time value);
+      auto selection_start(xtd::date_time value) -> month_calendar&;
       
       /// @brief Gets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
       /// @return `true` if today's date is displayed; otherwise, `false`. The default is `true`.
       /// @remarks The date is displayed in the format specified by the system settings for the short date format.
-      bool show_today() const noexcept;
+      [[nodiscard]] auto show_today() const noexcept -> bool;
       /// @brief Sets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
       /// @param value `true` if today's date is displayed; otherwise, `false`. The default is `true`.
       /// @return Current month_calendar.
       /// @remarks The date is displayed in the format specified by the system settings for the short date format.
-      month_calendar& show_today(bool value);
+      auto show_today(bool value) -> month_calendar&;
       
       /// @brief Gets a value indicating whether today's date is identified with a circle or a square.
       /// @return `true` if today's date is identified with a circle or a square; otherwise, `false`. The default is `true`.
       /// @remarks If xtd::forms::month_calendar::show_today_circle is `true`, and visual styles are enabled and supported on the computer running the application, today's date will be enclosed in a square, otherwise today's date will be circled.
-      bool show_today_circle() const noexcept;
+      [[nodiscard]] auto show_today_circle() const noexcept -> bool;
       /// @brief Sets a value indicating whether today's date is identified with a circle or a square.
       /// @param value `true` if today's date is identified with a circle or a square; otherwise, `false`. The default is `true`.
       /// @return Current month_calendar.
       /// @remarks If xtd::forms::month_calendar::show_today_circle is `true`, and visual styles are enabled and supported on the computer running the application, today's date will be enclosed in a square, otherwise today's date will be circled.
-      month_calendar& show_today_circle(bool value);
+      auto show_today_circle(bool value) -> month_calendar&;
       
       /// @brief Gets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
       /// @return `true` if the week numbers are displayed; otherwise, `false`. The default is `false`.
-      bool show_week_numbers() const noexcept;
+      [[nodiscard]] auto show_week_numbers() const noexcept -> bool;
       /// @brief Sets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
       /// @param value `true` if the week numbers are displayed; otherwise, `false`. The default is `false`.
       /// @return Current month_calendar.
-      month_calendar& show_week_numbers(bool value);
+      auto show_week_numbers(bool value) -> month_calendar&;
       
       /// @brief Gets the minimum size to display one month of the calendar.
       /// @return The size, in pixels, necessary to fully display one month in the calendar.
       /// @remarks The size information is presented in the form of the xtd::forms::control::width and xtd::forms::control::height members, representing the minimum width and height required to display one month in the control. The minimum required window size for a month calendar control depends on the currently selected font.
-      xtd::drawing::size single_month_size() const noexcept;
+      [[nodiscard]] auto single_month_size() const noexcept -> xtd::drawing::size;
       
       /// @brief Gets a value indicating the background color of the title area of the calendar.
       /// @return A xtd::drawing::color. The default is the system color for active captions.
       /// @remarks The font color of the days-of-the-week text depends on the xtd::forms::month_calendar::title_back_color property. Setting the xtd::forms::month_calendar::title_back_color equal to the xtd::forms::month_control::back_color for the main display area of the calendar causes the days-of-the-week text to become unreadable.
-      xtd::drawing::color title_back_color() const noexcept;
+      [[nodiscard]] auto title_back_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets a value indicating the background color of the title area of the calendar.
       /// @param value A xtd::drawing::color. The default is the system color for active captions.
       /// @return Current month_calendar.
       /// @remarks The font color of the days-of-the-week text depends on the xtd::forms::month_calendar::title_back_color property. Setting the xtd::forms::month_calendar::title_back_color equal to the xtd::forms::control::back_color for the main display area of the calendar causes the days-of-the-week text to become unreadable.
-      month_calendar& title_back_color(const xtd::drawing::color& value);
+      auto title_back_color(const xtd::drawing::color& value) -> month_calendar&;
       
       /// @brief Gets a value indicating the foreground color of the title area of the calendar.
       /// @return A xtd::drawing::color. The default is the system color for active caption text.
-      xtd::drawing::color title_fore_color() const noexcept;
+      [[nodiscard]] auto title_fore_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets a value indicating the foreground color of the title area of the calendar.
       /// @param value A xtd::drawing::color. The default is the system color for active caption text.
       /// @return Current month_calendar.
-      month_calendar& title_fore_color(const xtd::drawing::color& value);
+      auto title_fore_color(const xtd::drawing::color& value) -> month_calendar&;
       
       /// @brief Gets the value that is used by xtd::forms::month_calendar as today's date.
       /// @return A xtd::date_time representing today's date. The default value is the current system date.
       /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is `false`. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to `true` and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
-      const xtd::date_time& today_date() const noexcept;
+      [[nodiscard]] auto today_date() const noexcept -> const xtd::date_time&;
       /// @brief Sets the value that is used by xtd::forms::month_calendar as today's date.
       /// @param value A xtd::date_time representing today's date. The default value is the current system date.
       /// @return Current month_calendar.
       /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is `false`. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to `true` and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
-      month_calendar& today_date(const xtd::date_time& value);
+      auto today_date(const xtd::date_time& value) -> month_calendar&;
       
       /// @brief Gets a value indicating whether the xtd::forms::month_calendar::today_date property has been explicitly set.
       /// @return `true` if the value for the xtd::forms::month_calendar::today_date property has been explicitly set; otherwise, `false`. The default is `false`.
-      bool today_date_set() const noexcept;
+      [[nodiscard]] auto today_date_set() const noexcept -> bool;
       
       /// @brief Gets a value indicating the color of days in months that are not fully displayed in the control.
       /// @return A xtd::drawing::color. The default is the system color for gray text.
       /// @remarks When the calendar is displayed, some dates precede and some follow the months that are fully displayed. Using the xtd::forms::month_calendar::trailing_fore_color property, you can modify the color of the text for those dates.
-      xtd::drawing::color trailing_fore_color() const noexcept;
+      [[nodiscard]] auto trailing_fore_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets a value indicating the color of days in months that are not fully displayed in the control.
       /// @param value A xtd::drawing::color. The default is the system color for gray text.
       /// @return Current month_calendar.
       /// @remarks When the calendar is displayed, some dates precede and some follow the months that are fully displayed. Using the xtd::forms::month_calendar::trailing_fore_color property, you can modify the color of the text for those dates.
-      month_calendar& trailing_fore_color(const xtd::drawing::color& value);
+      auto trailing_fore_color(const xtd::drawing::color& value) -> month_calendar&;
       /// @}
       
       /// @name Public Events
@@ -322,12 +325,12 @@ namespace xtd {
       /// @brief Occurs when the date selected in the xtd::forms::month_calendar changes.
       /// @remarks The xtd::forms::month_calendar::date_changed event occurs during any date selection, whether by mouse, keyboard, or code. The xtd::forms::month_calendar::date_selected event is similar, but it occurs only at the end of a date selection made using the mouse.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<month_calendar, xtd::forms::date_range_event_handler> date_changed;
+      xtd::event<month_calendar, xtd::forms::date_range_event_handler> date_changed;
       
       /// @brief Occurs when the user makes an explicit date selection using the mouse.
       /// @remarks This event is similar to the xtd::forms::month_calendar::date_changed event, but it occurs at the end of a date selection made using the mouse. The xtd::forms::month_calendar::date_changed event occurs during any date selection, whether by mouse, keyboard, or code.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
+      xtd::event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
       /// @}
       
       /// @name Public Methods
@@ -337,83 +340,83 @@ namespace xtd {
       /// @param date The date to be displayed in bold.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::annually_bolded_dates property.
-      void add_annually_bolded_date(const xtd::date_time& date);
+      auto add_annually_bolded_date(const xtd::date_time& date) -> void;
       
       /// @brief Adds a day to be displayed in bold in the month calendar.
       /// @param date The date to be displayed in bold.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::bolded_dates property.
-      void add_bolded_date(const xtd::date_time& date);
+      auto add_bolded_date(const xtd::date_time& date) -> void;
       
       /// @brief Adds a day that is displayed in bold on a monthly basis in the month calendar.
       /// @param date The date to be displayed in bold.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::monthly_bolded_dates property.
-      void add_monthly_bolded_date(const xtd::date_time& date);
+      auto add_monthly_bolded_date(const xtd::date_time& date) -> void;
       
       /// @brief Returns a xtd::forms::month_calendar::hit_test_info with information on which portion of a month calendar control is at a specified x- and y-coordinate.
       /// @param x The xtd::drawing::point::x coordinate of the point to be hit tested.
       /// @param y The xtd::drawing::point::y coordinate of the point to be hit tested.
       /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
-      xtd::forms::month_calendar::hit_test_info hit_test(int32 x, int32 y) const;
+      [[nodiscard]] auto hit_test(xtd::int32 x, xtd::int32 y) const -> hit_test_info;
       /// @brief Returns an object with information on which portion of a month calendar control is at a location specified by a xtd::drawing::point.
       /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
       /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
-      xtd::forms::month_calendar::hit_test_info hit_test(const xtd::drawing::point& point) const;
+      [[nodiscard]] auto hit_test(const xtd::drawing::point& point) const -> hit_test_info;
       
       /// @brief Removes all the annually bold dates.
       /// @remarks This method clears all dates from the xtd::forms::month_calendar::annually_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_annually_bolded_date method.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
-      void remove_all_annually_bolded_dates();
+      auto remove_all_annually_bolded_dates() -> void;
       
       /// @brief Removes all the nonrecurring bold dates.
       /// @remarks This method clears all dates from the xtd::forms::month_calendar::bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_bolded_date method.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
-      void remove_all_bolded_dates();
+      auto remove_all_bolded_dates() -> void;
       
       /// @brief Removes all the monthly bold dates.
       /// @remarks This method clears all dates from the xtd::forms::month_calendar::monthly_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_monthly_bolded_date method.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
-      void remove_all_monthly_bolded_dates();
+      auto remove_all_monthly_bolded_dates() -> void;
       
       /// @brief Removes the specified date from the list of annually bold dates.
       /// @param date The date to remove from the date list.
       /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
-      void remove_annually_bolded_dates(const xtd::date_time& date);
+      auto remove_annually_bolded_dates(const xtd::date_time& date) -> void;
       
       /// @brief Removes the specified date from the list of the nonrecurring bold dates.
       /// @param date The date to remove from the date list.
       /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
-      void remove_bolded_dates(const xtd::date_time& date);
+      auto remove_bolded_dates(const xtd::date_time& date) -> void;
       
       /// @brief Removes the specified date from the list of monthly bold dates.
       /// @param date The date to remove from the date list.
       /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
-      void remove_monthly_bolded_dates(const xtd::date_time& date);
+      auto remove_monthly_bolded_dates(const xtd::date_time& date) -> void;
       
       /// @brief Sets the number of columns and rows of months to display.
       /// @param x The number of columns.
       /// @param y The number of rows.
       /// @exception xtd::arguments x or y is less than 1.
-      void set_calendar_dimensions(int32 x, int32 y);
+      auto set_calendar_dimensions(xtd::int32 x, xtd::int32 y) -> void;
       
       /// @brief Sets a date as the currently selected date.
       /// @param date The date to be selected.
       /// @remarks This method sets the xtd::forms::month_calendar::selection_start and the xtd::forms::month_calendar::selection_end properties to the specified date. This method is the functional equivalent of setting the selection range to a single day through the xtd::forms::month_calendar::set_selection_range method or the xtd::forms::month_calendar::selection_range property.
-      void set_date(const xtd::date_time& date);
+      auto set_date(const xtd::date_time& date) -> void;
       
       /// @brief Sets the selected dates in a month calendar control to the specified date range.
       /// @param date1 The beginning date of the selection range.
       /// @param date2 The end date of the selection range.
       /// @remarks Using this method is functionally equivalent to setting the xtd::forms::month_calendar::selection_range property. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end property.
       /// @remarks If you set the date1 parameter greater than the date2 parameter, both dates are set to the date1 value.
-      void set_selection_range(const xtd::date_time& date1, const xtd::date_time& date2);
+      auto set_selection_range(const xtd::date_time& date1, const xtd::date_time& date2) -> void;
       
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       
       /// @brief Repaints the bold dates to reflect the dates set in the lists of bold dates.
       /// @remarks Use the xtd::forms::month_calendar::update_bolded_dates method to reflect changes made to xtd::forms::month_calendar::annually_bolded_dates, xtd::forms::month_calendar::monthly_bolded_dates, or xtd::forms::month_calendar::bolded_dates properties, either directly by modifying elements of the array or by using the add or remove methods provided to modify the date lists.
-      void update_bolded_dates();
+      auto update_bolded_dates() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -421,62 +424,62 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create();
+      [[nodiscard]] static auto create() -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, and location.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, location, and size.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, location, size, and name.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, and minimum date.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& max_date) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, maximum date, and location.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, maximum date, location, and size.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, maximum date, location, size, and name.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
@@ -484,20 +487,20 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, and maximum date.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, maximum date, and location.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, maximum date, location, and size.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
@@ -505,7 +508,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, maximum date, location, size, and name.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
@@ -514,7 +517,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -524,33 +527,33 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, and value.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, and location.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -558,7 +561,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -566,7 +569,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -574,13 +577,13 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, and maximum date.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, maximum date, and location.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -589,7 +592,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, maximum date, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -598,7 +601,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, maximum date, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -607,14 +610,14 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, and maximum date.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param min_date The minimum date and time that can be selected in the control.
       /// @param max_date The maximum date and time that can be selected in the control.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, maximum date, and location.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -624,7 +627,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const xtd::drawing::point& location) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, maximum date, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -634,7 +637,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size) -> month_calendar;
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, maximum date, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
@@ -644,16 +647,16 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> month_calendar;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      xtd::forms::create_params create_params() const noexcept override;
-      xtd::drawing::color default_back_color() const noexcept override;
-      xtd::drawing::color default_fore_color() const noexcept override;
+      auto create_params() const noexcept -> xtd::forms::create_params override;
+      auto default_back_color() const noexcept -> xtd::drawing::color override;
+      auto default_fore_color() const noexcept -> xtd::drawing::color override;
       /// @}
       
       /// @name Protected Methods
@@ -665,7 +668,7 @@ namespace xtd {
       /// @remarks The xtd::forms::month_calendar::on_date_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inherotors
       /// When overriding xtd::forms::month_calendar::on_date_changed in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_changed method so that registered delegates receive the event.
-      virtual void on_date_changed(const xtd::forms::date_range_event_args& e);
+      virtual auto on_date_changed(const xtd::forms::date_range_event_args& e) -> void;
       
       /// @brief Raises the xtd::forms::month_calendar::date_selected event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.
@@ -673,17 +676,17 @@ namespace xtd {
       /// @remarks The xtd::forms::month_calendar::on_date_selected method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inherotors
       /// When overriding xtd::forms::month_calendar::on_date_selected in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_selected method so that registered delegates receive the event.
-      virtual void on_date_selected(const xtd::forms::date_range_event_args& e);
+      virtual auto on_date_selected(const xtd::forms::date_range_event_args& e) -> void;
       
-      void on_handle_created(const xtd::event_args& e) override;
-      void wnd_proc(xtd::forms::message& message) override;
+      auto on_handle_created(const xtd::event_args& e) -> void override;
+      auto wnd_proc(xtd::forms::message& message) -> void override;
       /// @}
       
     private:
-      void wm_notify_control(xtd::forms::message& message);
-      void wm_date_selected(xtd::forms::message& message);
-      void wm_date_changed(xtd::forms::message& message);
-      void wm_view_changed(xtd::forms::message& message);
+      auto wm_notify_control(xtd::forms::message& message) -> void;
+      auto wm_date_selected(xtd::forms::message& message) -> void;
+      auto wm_date_changed(xtd::forms::message& message) -> void;
+      auto wm_view_changed(xtd::forms::message& message) -> void;
       
       xtd::sptr<data> data_;
     };
