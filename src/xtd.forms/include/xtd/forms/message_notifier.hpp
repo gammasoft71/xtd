@@ -23,7 +23,7 @@ namespace xtd {
       //...
       explicit notifier_button_click_event_args(const message_notifier_button& button) : button_(button) {}
       
-      xtd::forms::message_notifier_button button() const noexcept {
+      [[nodiscard]] auto button() const noexcept -> xtd::forms::message_notifier_button {
         return button_;
       }
       
@@ -32,7 +32,7 @@ namespace xtd {
       //...
     };
     
-    using notifier_button_click_event_handler = xtd::delegate<void(object& sender, const notifier_button_click_event_args& e)>;
+    using notifier_button_click_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::notifier_button_click_event_args& e)>;
     
     
     // TODO: IMPL + move to seperate file
@@ -40,15 +40,15 @@ namespace xtd {
     public:
       explicit notifier_closed_event_args(const std::optional<xtd::forms::message_notifier_button>& button) : button_(button) {}
       
-      std::optional<xtd::forms::message_notifier_button> button() const noexcept {
+      [[nodiscard]] auto button() const noexcept -> std::optional<xtd::forms::message_notifier_button> {
         return button_;
       }
       
-      bool close_on_timeout() const noexcept {
+      [[nodiscard]] auto close_on_timeout() const noexcept -> bool {
         return close_on_timeout_;
       }
       
-      bool close_on_click_message() const noexcept {
+      [[nodiscard]] auto close_on_click_message() const noexcept -> bool {
         return close_on_click_message_;
       }
       
@@ -59,55 +59,77 @@ namespace xtd {
       //...
     };
     
-    using notifier_closed_event_handler = xtd::delegate<void(object& sender, const notifier_closed_event_args& e)>;
+    using notifier_closed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::notifier_closed_event_args& e)>;
     
     
     class forms_export_ message_notifier final : public component {
     public:
       /// @name Public Aliases
-      using message_notifier_button_collection = xtd::forms::layout::arranged_element_collection<message_notifier_button_ref>;
       
-      message_notifier() = default;
-      
-      /// Properties
-      
-      const message_notifier_button_collection& buttons() const noexcept { return buttons_; }
-      message_notifier_button_collection& buttons() noexcept { return buttons_; }
-      
-      std::optional<xtd::forms::message_notifier_button> notifier_button_clicked() const noexcept { return notifier_button_clicked_; }
-      
-      xtd::string title() const noexcept { return title_; }
-      message_notifier& title(const xtd::string& title) noexcept { title_ = title; return *this; }
-      
-      xtd::string message() const noexcept { return message_; }
-      message_notifier& message(const xtd::string& message) noexcept { message_ = message; return *this; }
-      
-      const xtd::drawing::image& icon() const noexcept { return icon_; }
-      message_notifier& icon(const xtd::drawing::image& icon) noexcept { icon_ = icon; return *this; }
-      message_notifier& icon(const xtd::drawing::icon& icon)  noexcept { icon_ = icon.to_bitmap(); return *this; }
-      
-      bool close_timeout_enabled() const noexcept { return close_timeout_enabled_; }
-      message_notifier& close_timeout_enabled(bool value) noexcept { close_timeout_enabled_ = value; return *this; }
-      
-      std::chrono::milliseconds close_timeout_interval() const noexcept { return close_timeout_interval_; }
-      message_notifier& close_timeout_interval(std::chrono::milliseconds value) noexcept { close_timeout_interval_ = value; return *this;}
-      message_notifier& close_timeout_interval_milliseconds(int32 value) noexcept { close_timeout_interval_ = std::chrono::milliseconds(value); return *this; }
-      
-      xtd::forms::notifier_appearance notifier_appearance() const noexcept {return notifier_appearance_; }
-      message_notifier& notifier_appearance(xtd::forms::notifier_appearance notifier_appearance) noexcept { notifier_appearance_ = notifier_appearance; return *this; }
-      
-      void reset();
-      
-      void show();
-      void show(const iwin32_window& owner);
-      
-      event<message_notifier, xtd::forms::notifier_closed_event_handler> notifier_closed;
-      event<message_notifier, xtd::forms::notifier_button_click_event_handler> button_click;
-      
-    private:
-      void on_notifier_closed(const xtd::forms::notifier_closed_event_args& e) {notifier_closed(*this, e);}
-      void on_button_click(const xtd::forms::notifier_button_click_event_args& e) {button_click(*this, e);}
+      /// @{
+      using message_notifier_button_collection = xtd::forms::layout::arranged_element_collection<xtd::forms::message_notifier_button_ref>;
+      /// @}
 
+      /// @name Public Constructors
+      
+      /// @{
+      message_notifier() = default;
+      /// @}
+
+      /// @name Public Properties
+      
+      /// @{
+      [[nodiscard]] auto buttons() const noexcept -> const message_notifier_button_collection& {return buttons_;}
+      [[nodiscard]] auto buttons() noexcept -> message_notifier_button_collection& {return buttons_;}
+      
+      [[nodiscard]] auto close_timeout_enabled() const noexcept -> bool {return close_timeout_enabled_;}
+      auto close_timeout_enabled(bool value) noexcept -> message_notifier& {close_timeout_enabled_ = value; return *this;}
+
+      [[nodiscard]] auto close_timeout_interval() const noexcept -> std::chrono::milliseconds {return close_timeout_interval_;}
+      auto close_timeout_interval(std::chrono::milliseconds value) noexcept -> message_notifier& {close_timeout_interval_ = value; return *this;}
+      auto close_timeout_interval_milliseconds(xtd::int32 value) noexcept -> message_notifier& {close_timeout_interval_ = std::chrono::milliseconds(value); return *this;}
+      
+      [[nodiscard]] auto icon() const noexcept -> const xtd::drawing::image& {return icon_;}
+      auto icon(const xtd::drawing::image& icon) noexcept -> message_notifier& {icon_ = icon; return *this;}
+      auto icon(const xtd::drawing::icon& value) noexcept -> message_notifier& {icon_ = value.to_bitmap(); return *this;}
+      
+      [[nodiscard]] auto notifier_appearance() const noexcept -> xtd::forms::notifier_appearance {return notifier_appearance_;}
+      auto notifier_appearance(xtd::forms::notifier_appearance value) noexcept -> message_notifier& {notifier_appearance_ = value; return *this;}
+
+      [[nodiscard]] auto message() const noexcept -> const xtd::string& {return message_;}
+      auto message(const xtd::string& value) noexcept -> message_notifier& {message_ = value; return *this;}
+
+      [[nodiscard]] auto notifier_button_clicked() const noexcept -> std::optional<xtd::forms::message_notifier_button> {return notifier_button_clicked_;}
+      
+      [[nodiscard]] auto title() const noexcept -> const xtd::string& {return title_;}
+      auto title(const xtd::string& value) noexcept -> message_notifier& {title_ = value; return *this;}
+      /// @}
+
+      /// @name Public Methods
+      
+      /// @{
+      auto reset() -> void;
+      
+      auto show() -> void;
+      auto show(const iwin32_window& owner) -> void;
+      /// @}
+
+      /// @name Public Events
+      
+      /// @{
+      xtd::event<message_notifier, xtd::forms::notifier_closed_event_handler> notifier_closed;
+      xtd::event<message_notifier, xtd::forms::notifier_button_click_event_handler> button_click;
+      /// @}
+
+    protected:
+      /// @name Public Methods
+      
+      /// @{
+      auto on_notifier_closed(const xtd::forms::notifier_closed_event_args& e) -> void {notifier_closed(*this, e);}
+      auto on_button_click(const xtd::forms::notifier_button_click_event_args& e) -> void {button_click(*this, e);}
+      /// @}
+
+    private:
       xtd::string title_;
       xtd::string message_;
       xtd::drawing::image icon_ = xtd::drawing::image::empty;
@@ -116,7 +138,6 @@ namespace xtd {
       message_notifier_button_collection buttons_;
       std::optional<xtd::forms::message_notifier_button> notifier_button_clicked_ = std::nullopt;
       xtd::forms::notifier_appearance notifier_appearance_ = xtd::forms::notifier_appearance::standard;
-      
     };
   }
 }
