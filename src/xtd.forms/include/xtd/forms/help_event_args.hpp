@@ -30,13 +30,8 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::help_event_args class.
       /// @param mouse_pos The coordinates of the mouse pointer.
-      explicit help_event_args(const drawing::point& mouse_pos) : mouse_pos_(mouse_pos) {}
+      explicit help_event_args(const xtd::drawing::point& mouse_pos) : mouse_pos_(mouse_pos) {}
       /// @}
-      
-      /// @cond
-      help_event_args(const help_event_args& control_event_args) = default;
-      help_event_args& operator =(const help_event_args& help_event_args) = default;
-      /// @endcond
       
       /// @name Public Properties
       
@@ -44,21 +39,24 @@ namespace xtd {
       /// @brief Gets a value indicating whether the help event was handled.
       /// @return `true` if the event is handled; otherwise, `false`. The default is `false`.
       /// @remarks If you do not set this property to `true` the event will be passed to Windows for additional processing.
-      bool handled() const noexcept {return handled_;}
+      [[nodiscard]] auto handled() const noexcept -> bool {return handled_;}
       /// @brief Sets a value indicating whether the help event was handled.
-      /// @param handled `true` if the event is handled; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the event is handled; otherwise, `false`. The default is `false`.
       /// @remarks If you do not set this property to `true` the event will be passed to Windows for additional processing.
-      void handled(bool handled) {handled_ = handled;}
+      auto handled(bool value) -> help_event_args& {
+        handled_ = value;
+        return *this;
+      }
       
       /// @brief Gets the screen coordinates of the mouse pointer.
       /// @return A xtd::drawing::point representing the screen coordinates of the mouse pointer.
       /// @remarks You can use this information to provide help based on the position of the mouse pointer.
-      xtd::drawing::point mouse_pos() const noexcept {return mouse_pos_;}
+      [[nodiscard]] auto mouse_pos() const noexcept -> xtd::drawing::point {return mouse_pos_;}
       /// @}
       
     private:
       bool handled_ = false;
-      drawing::point mouse_pos_;
+      xtd::drawing::point mouse_pos_;
     };
   }
 }
