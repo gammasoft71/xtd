@@ -10,7 +10,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::link_label::link_clicked event of a xtd::forms::link_label.
     /// ```cpp
-    /// using link_label_clicked_event_handler = xtd::delegate<void(object& sender, link_label_clicked_event_args& e)>;
+    /// using link_label_clicked_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::link_label_clicked_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::forms::link_label_link_clicked_event_args that contains the event data.
@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a xtd::forms::link_label_link_clicked_event_handler delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, until you remove the delegate.
-    using link_label_clicked_event_handler = xtd::delegate<void(object& sender, link_label_clicked_event_args& e)>;
+    using link_label_clicked_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::link_label_clicked_event_args& e)>;
   }
 }
 
