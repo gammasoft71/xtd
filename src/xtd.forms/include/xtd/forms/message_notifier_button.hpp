@@ -6,44 +6,56 @@
 // TODO: documentation
 namespace xtd {
   namespace forms {
-    class message_notifier_button : public xtd::forms::component, public xtd::iequatable<message_notifier_button> {
+    class message_notifier_button : public xtd::forms::component, public xtd::iequatable<xtd::forms::message_notifier_button> {
     public:
+      /// @name Public Constructors
+      
+      /// @{
       message_notifier_button() = default;
       explicit message_notifier_button(const xtd::string& text) : text_(text) {}
+      /// @}
       
-      const xtd::string& text() const noexcept {
+      /// @name Public Properties
+      
+      /// @{
+      [[nodiscard]] auto text() const noexcept -> const xtd::string& {
         return text_;
       }
       
-      message_notifier_button& text(const xtd::string& value) {
+      auto text(const xtd::string& value) -> message_notifier_button& {
         text_ = value;
         return *this;
       }
+      /// @}
+
+      /// @name Public Methods
       
+      /// @{
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override {
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override {
         return is<message_notifier_button>(obj) && equals(static_cast<const message_notifier_button&>(obj));
       }
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const message_notifier_button& other) const noexcept override {
+      [[nodiscard]] auto equals(const message_notifier_button& other) const noexcept -> bool override {
         return text_ == other.text_;
       }
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override {
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize  override {
         return hash_code::combine(text_);
       }
-      
+      /// @}
+
     private:
       xtd::string text_;
     };
     
-    using message_notifier_button_ref = xtd::ref<message_notifier_button>;
+    using message_notifier_button_ref = xtd::ref<xtd::forms::message_notifier_button>;
   }
 }
 
