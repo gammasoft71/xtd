@@ -39,7 +39,7 @@ namespace xtd {
       /// @param form_state The visual state of a form that is drawn with visual styles.
       /// @param back_color The background color for the form control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
-      static void draw_form(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color);
+      static auto draw_form(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color) -> void;
       /// @}
     };
   }
