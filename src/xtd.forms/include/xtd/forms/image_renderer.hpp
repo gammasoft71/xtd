@@ -45,7 +45,7 @@ namespace xtd {
       /// @param back_color The back color is usedd to draw image disabled.
       /// @param data Contains the informations needed to draw image.
       /// @remarks if image is .xtd::drawing::image::empty, nothing is drawing.
-      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, const xtd::drawing::color& back_color, const xtd::forms::style_sheets::iimage_model& data);
+      static auto draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, const xtd::drawing::color& back_color, const xtd::forms::style_sheets::iimage_model& data) -> void;
       /// @brief Draws an image in the specified bounds.
       /// @param graphics The Graphics used to draw an image.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the image.
@@ -54,11 +54,11 @@ namespace xtd {
       /// @param brightness The brightness is usedd to draw image disabled.
       /// @param data Contains the informations needed to draw image.
       /// @remarks if image is .xtd::drawing::image::empty, nothing is drawing.
-      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, float brightness, const xtd::forms::style_sheets::iimage_model& data);
+      static auto draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, float brightness, const xtd::forms::style_sheets::iimage_model& data) -> void;
       /// @}
       
     private:
-      static xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle, const xtd::drawing::size& image_size, content_alignment align) noexcept;
+      [[nodiscard]] static auto compute_image_bounds(const xtd::drawing::rectangle& rectangle, const xtd::drawing::size& image_size, content_alignment align) noexcept -> xtd::drawing::rectangle;
     };
   }
 }
