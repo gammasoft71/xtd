@@ -35,7 +35,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of input_dialog dialog with password.
     /// @include input_dialog_password.cpp
-    class forms_export_ input_dialog : public common_dialog {
+    class forms_export_ input_dialog : public xtd::forms::common_dialog {
       struct data;
     public:
       /// @name Public Constructors
@@ -50,80 +50,80 @@ namespace xtd {
       /// @{
       /// @brief Gets the character casing.
       /// @return One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
-      xtd::forms::character_casing character_casing() const noexcept;
+      [[nodiscard]] auto character_casing() const noexcept -> xtd::forms::character_casing;
       /// @brief Sets the character casing.
-      /// @param dialog_appearance One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
+      /// @param value One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
       /// @return Current input instance.
-      input_dialog& character_casing(xtd::forms::character_casing character_casing);
+      auto character_casing(xtd::forms::character_casing value) -> input_dialog&;
       
       /// @brief Gets the dialog appearance.
       /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
-      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      [[nodiscard]] auto dialog_appearance() const noexcept -> xtd::forms::dialog_appearance;
       /// @brief Sets the dialog appearance.
-      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      /// @param value One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current input instance.
-      input_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
+      auto dialog_appearance(xtd::forms::dialog_appearance value) -> input_dialog&;
       
       /// @brief Gets multiline status.
       /// @return `true` if dialog text box is multiline; otherwise `false`.
       /// @remarks The default value is `false`.
-      bool multiline() const noexcept;
+      [[nodiscard]] auto multiline() const noexcept -> bool;
       /// @brief Sets multiline status.
-      /// @param multiline `true` if dialog text box is multiline; otherwise `false`.
+      /// @param value `true` if dialog text box is multiline; otherwise `false`.
       /// @return Current input_dialog instance.
       /// @remarks The default value is `false`.
-      input_dialog& multiline(bool multiline);
+      auto multiline(bool value) -> input_dialog&;
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::string message() const noexcept;
+      [[nodiscard]] auto message() const noexcept -> xtd::string;
       /// @brief Sets the text message.
-      /// @param message The text message.
+      /// @param value The text message.
       /// @return Current input_dialog instance.
-      input_dialog& message(const xtd::string& message);
+      auto message(const xtd::string& value) -> input_dialog&;
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::string text() const noexcept;
+      [[nodiscard]] auto text() const noexcept -> xtd::string;
       /// @brief Sets the dialog caption text.
-      /// @param text The new dialog caption text.
+      /// @param value The new dialog caption text.
       /// @return Current input_dialog instance.
-      input_dialog& text(const xtd::string& text);
+      auto text(const xtd::string& value) -> input_dialog&;
       
       /// @brief Gets use system password char status.
       /// @return `true` if dialog text box use system password char status; otherwise `false`.
       /// @remarks The default value is `false`.
-      bool use_system_password_char() const noexcept;
+      [[nodiscard]] auto use_system_password_char() const noexcept -> bool;
       /// @brief Sets use system password char status.
-      /// @param use_system_password_char `true` if dialog text box use system password char status; otherwise `false`.
+      /// @param value `true` if dialog text box use system password char status; otherwise `false`.
       /// @return Current input_dialog instance.
       /// @remarks The default value is `false`.
-      input_dialog&  use_system_password_char(bool use_system_password_char);
+      auto  use_system_password_char(bool value) -> input_dialog&;
       
       /// @brief Gets the value.
       /// @return The value.
-      xtd::string value() const noexcept;
+      [[nodiscard]] auto value() const noexcept -> xtd::string;
       /// @brief Sets the value.
       /// @param value The value.
       /// @return Current input_dialog instance.
-      input_dialog& value(const xtd::string& value);
+      auto value(const xtd::string& value) -> input_dialog&;
       
       /// @brief Gets word wrap status.
       /// @return `true` if dialog text box is word wrap; otherwise `false`.
       /// @remarks The default value is `true`.
-      bool word_wrap() const noexcept;
+      [[nodiscard]] auto word_wrap() const noexcept -> bool;
       /// @brief Sets word wrap status.
-      /// @param word_wrap `true` if dialog text box is word wrap; otherwise `false`.
+      /// @param value `true` if dialog text box is word wrap; otherwise `false`.
       /// @return Current input_dialog instance.
       /// @remarks The default value is `true`.
-      input_dialog& word_wrap(bool word_wrap);
+      auto word_wrap(bool value) -> input_dialog&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset() noexcept override;
+      auto reset() noexcept -> void override;
       /// @}
       
     protected:
@@ -133,11 +133,11 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return `true` if the dialog box was successfully run; otherwise, `false`.
-      bool run_dialog(xtd::intptr owner) override;
+      auto run_dialog(xtd::intptr owner) -> bool override;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      void run_sheet(xtd::intptr owner) override;
+      auto run_sheet(xtd::intptr owner) -> void override;
       /// @}
       
     private:
