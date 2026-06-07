@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::control::help_requested event of a control.
     /// ```cpp
-    /// using help_event_handler = xtd::delegate<void(object& sender, help_event_args& e)>;
+    /// using help_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::help_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::forms::help_event_args that contains the event data.
@@ -25,6 +25,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a help_event_handler delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate.
-    using help_event_handler = xtd::delegate<void(object& sender, help_event_args& e)>;
+    using help_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::help_event_args& e)>;
   }
 }
