@@ -115,7 +115,7 @@ namespace xtd {
         /// @brief Register a specified wnd proc from the message pump of the application.
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
-        static auto register_wnd_proc(const xtd::delegate<xtd::intptr(xtd::intptr, xtd::int32, xtd::intptr, xtd::intptr, xtd::intptr)>& wnd_proc) -> void;
+        static auto register_wnd_proc(const xtd::delegate<xtd::intptr(xtd::intptr, xtd::uint32, xtd::intptr, xtd::intptr, xtd::intptr)>& wnd_proc) -> void;
         /// @brief Shuts down the application and starts a new instance immediately.
         /// @param exit_after_restart If this option is enabled, the current application will be closed after the new application is created.
         /// @warning Internal use only

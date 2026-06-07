@@ -539,7 +539,7 @@ void control::invalidate(intptr control, const drawing::region& region, bool inv
   invalidate(control, rectangle::round(region.get_bounds()), invalidate_children);
 }
 
-void control::register_wnd_proc(intptr control, const delegate<intptr(intptr, int32, intptr, intptr, intptr)>& wnd_proc) {
+void control::register_wnd_proc(intptr control, const delegate<intptr(intptr, uint32, intptr, intptr, intptr)>& wnd_proc) {
   if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());

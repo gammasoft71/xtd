@@ -124,10 +124,10 @@ namespace xtd {
         
         void clear_control() { control_ = nullptr; }
         
-        intptr call_def_wnd_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) { return def_wnd_proc ? def_wnd_proc(hwnd, msg, wparam, lparam, result, handle) : 0; }
+        intptr call_def_wnd_proc(intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) { return def_wnd_proc ? def_wnd_proc(hwnd, msg, wparam, lparam, result, handle) : 0; }
         
-        std::function<intptr(intptr, int32, intptr, intptr, intptr)> wnd_proc;
-        std::function<intptr(intptr, int32, intptr, intptr, intptr, intptr)> def_wnd_proc;
+        std::function<intptr(intptr, uint32, intptr, intptr, intptr)> wnd_proc;
+        std::function<intptr(intptr, uint32, intptr, intptr, intptr, intptr)> def_wnd_proc;
         
       protected:
         static long common_control_style_to_wx_style(xtd::usize style, xtd::usize ex_style) {

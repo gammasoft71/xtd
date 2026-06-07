@@ -6,29 +6,29 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-bool message::equals(const object& obj) const noexcept {
+auto message::equals(const object& obj) const noexcept -> bool {
   return is<message>(obj) && equals(static_cast<const message&>(obj));
 }
 
-bool message::equals(const message& other) const noexcept {
+auto message::equals(const message& other) const noexcept -> bool {
   return hwnd == other.hwnd && msg == other.msg && wparam == other.wparam && lparam == other.lparam && result == other.result && __handle__ == other.__handle__;
 }
 
-usize message::get_hash_code() const noexcept {
+auto message::get_hash_code() const noexcept -> usize {
   return hash_code::combine(hwnd, msg);
 }
 
-string message::to_msg_string() const noexcept {
+auto message::to_msg_string() const noexcept -> string {
   return native::control::message_to_string(msg);
 }
 
-string message::to_string() const noexcept {
+auto message::to_string() const noexcept -> string {
   return string::format("msg=0x{:X4} ({}), hwnd=0x{:X}, wparam=0x{:X}, lparam=0x{:X}, result=0x{:X}", msg, to_msg_string(), hwnd, wparam, lparam, result);
 }
 
-message message::create(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
+auto message::create(intptr hwnd, uint32 msg, intptr wparam, intptr lparam) -> message {
   return message(hwnd, msg, wparam, lparam, 0, 0);
 }
 
-message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) : hwnd(hwnd), msg(msg), wparam(wparam), lparam(lparam), result(result), __handle__(handle) {
+message::message(intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) : hwnd(hwnd), msg(msg), wparam(wparam), lparam(lparam), result(result), __handle__(handle) {
 }

@@ -2220,7 +2220,7 @@ namespace xtd {
       auto on_parent_size_changed(xtd::object& sender, const xtd::event_args& e) -> void;
       auto show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const -> void;
       auto reflect_message(xtd::intptr handle, xtd::forms::message& message) -> void;
-      [[nodiscard]] auto wnd_proc_(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr handle) -> xtd::intptr;
+      [[nodiscard]] auto wnd_proc_(xtd::intptr hwnd, xtd::uint32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr handle) -> xtd::intptr;
       auto wm_app_idle(xtd::forms::message& message) -> void;
       auto wm_child_activate(xtd::forms::message& message) -> void;
       auto wm_command(xtd::forms::message& message) -> void;

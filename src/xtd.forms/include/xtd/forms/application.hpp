@@ -502,7 +502,7 @@ namespace xtd {
       [[nodiscard]] static auto on_thread_exception(const threading::thread_exception_event_args& e) -> bool;
       static auto raise_enter_thread_modal(const event_args& e) -> void;
       static auto raise_leave_thread_modal(const event_args& e) -> void;
-      [[nodiscard]] static auto wnd_proc_(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr handle) -> xtd::intptr;
+      [[nodiscard]] static auto wnd_proc_(xtd::intptr hwnd, xtd::uint32 msg, xtd::intptr wparam, xtd::intptr lparam, xtd::intptr handle) -> xtd::intptr;
       static auto wnd_proc(message& message) -> void;
       static auto wm_activate_app(message& message) -> void;
       static auto wm_app_idle(message& message) -> void;

@@ -406,7 +406,7 @@ void application::run(xtd::forms::application_context& context) {
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr, int32, intptr, intptr, intptr)>(message_filter_proc));
   native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
-  native::application::register_wnd_proc(delegate<intptr(intptr, int32, intptr, intptr, intptr)>(application::wnd_proc_));
+  native::application::register_wnd_proc(delegate<intptr(intptr, uint32, intptr, intptr, intptr)>(application::wnd_proc_));
   
   application::message_loop_ = true;
   if (context.main_form().has_value()) context.main_form().value().get().show();
@@ -467,7 +467,7 @@ void application::raise_leave_thread_modal(const event_args& e) {
   application::leave_thread_modal(obj, e);
 }
 
-intptr application::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
+intptr application::wnd_proc_(intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr handle) {
   auto message = forms::message {hwnd, msg, wparam, lparam, 0, handle};
   wnd_proc(message);
   return message.result;

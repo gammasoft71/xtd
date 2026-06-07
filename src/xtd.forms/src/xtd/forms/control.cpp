@@ -1793,7 +1793,7 @@ void control::reflect_message(intptr handle, message& message) { // message para
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg, message.wparam, message.lparam);
 }
 
-intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
+intptr control::wnd_proc_(intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr handle) {
   //try {
   auto message = forms::message {hwnd, msg, wparam, lparam, 0, handle};
   wnd_proc(message);

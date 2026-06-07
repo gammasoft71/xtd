@@ -373,7 +373,7 @@ namespace xtd {
         /// @param control Control window handle.
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
-        static auto register_wnd_proc(xtd::intptr control, const xtd::delegate<xtd::intptr(xtd::intptr, xtd::int32, xtd::intptr, xtd::intptr, xtd::intptr)>& wnd_proc) -> void;
+        static auto register_wnd_proc(xtd::intptr control, const xtd::delegate<xtd::intptr(xtd::intptr, xtd::uint32, xtd::intptr, xtd::intptr, xtd::intptr)>& wnd_proc) -> void;
         
         /// @brief Resumes usual layout logic.
         /// @param control Control window handle.
