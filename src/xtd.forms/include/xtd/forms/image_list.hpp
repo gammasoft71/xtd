@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of image_list class.
     /// @include image_list.cpp
-    class forms_export_ image_list final : public component, public xtd::iequatable<image_list> {
+    class forms_export_ image_list final : public xtd::forms::component, public xtd::iequatable<image_list> {
       struct data;
       
     public:
@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @{
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
-      using image_collection = layout::arranged_element_collection<drawing::image>;
+      using image_collection = xtd::forms::layout::arranged_element_collection<drawing::image>;
       /// @}
       
       /// @name Public Fields
@@ -68,8 +68,6 @@ namespace xtd {
       
       /// @cond
       ~image_list();
-      image_list(const image_list&) = default;
-      image_list& operator =(const image_list&) = default;
       /// @endcond
       
       /// @name Public Properties
@@ -77,37 +75,37 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of the image list object.
       /// @return The handle for the image list. The default is 0.
-      intptr handle() const noexcept;
+      [[nodiscard]] auto handle() const noexcept -> xtd::intptr;
       
       /// @brief Gets a value indicating whether the underlying Win32 handle has been created.
       /// @return `true` if the Handle has been created; otherwise, `false`. The default is `false`.
-      bool handle_created() const noexcept;
+      [[nodiscard]] auto handle_created() const noexcept -> bool;
       
       /// @brief Gets the xtd::forms::image_list::image_collection for this image list.
       /// @return The collection of images.
       /// @remarks If the image collection has not yet been created, it is created when you retrieve this property.
-      image_collection& images();
+      [[nodiscard]] auto images() -> image_collection&;
       /// @brief Gets the xtd::forms::image_list::image_collection for this image list.
       /// @return The collection of images.
       /// @remarks If the image collection has not yet been created, it is created when you retrieve this property.
-      const image_collection& images() const noexcept;
+      [[nodiscard]] auto images() const noexcept -> const image_collection&;
       
       /// @brief Gets the size of the images in the image list.
       /// @return The xtd::drawing::size that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16. The maximum size is 256 by 256.
-      const drawing::size image_size() const noexcept;
+      [[nodiscard]] auto image_size() const noexcept -> xtd::drawing::size;
       /// @brief Sets the size of the images in the image list.
       /// @param value The xtd::drawing::size that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16. The maximum size is 256 by 256.
       /// @remarks Setting the image_size property prior to adding images to the image collection causes the images to be resized to the image size specified.
       /// @remarks When you set the image_size property to a new value, the handle for the image list is recreated.
       /// @remarks Because setting the image_size property causes the handle to be recreated, you should set image_size prior to setting the Images property. When the handle for the image_list has been created, setting the color_depth or image_size properties in code, after setting the images property, will cause the collection of images set for the images property to be deleted.
-      const image_list& image_size(const drawing::size& value);
+      auto image_size(const xtd::drawing::size& value) -> image_list&;
       
       /// @brief Gets an object that contains additional data about the image_list.
       /// @return A object that contains additional data about the image_list.
-      const xtd::any_object& tag() const noexcept;
+      [[nodiscard]] auto tag() const noexcept -> const xtd::any_object&;
       /// @brief Sets an object that contains additional data about the image_list.
-      /// @param tag A object that contains additional data about the image_list.
-      image_list& tag(const xtd::any_object& tag);
+      /// @param value A object that contains additional data about the image_list.
+      auto tag(const xtd::any_object& value) -> image_list&;
       /// @}
       
       /// @name Public Methods
@@ -116,15 +114,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const image_list& other) const noexcept override;
+      [[nodiscard]] auto equals(const image_list& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
     private:
