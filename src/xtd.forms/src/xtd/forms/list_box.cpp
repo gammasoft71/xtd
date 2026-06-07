@@ -98,7 +98,7 @@ const list_box::object_collection& list_box::items() const noexcept {
   return data_->items;
 }
 
-const list_box& list_box::items(const object_collection& items) {
+list_box& list_box::items(const object_collection& items) {
   data_->items = items;
   return *this;
 }
