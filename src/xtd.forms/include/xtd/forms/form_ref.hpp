@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using form_ref = xtd::ref<form>;
+    using form_ref = xtd::ref<xtd::forms::form>;
   }
 }
