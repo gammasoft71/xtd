@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::month_calendar::date_changed and xtd::forms::month_calendar::date_selected events of the xtd::forms::month_calendar class.
     /// ```cpp
-    /// using date_range_event_handler = xtd::delegate<void(object& sender, const date_range_event_args& e)>;
+    /// using date_range_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::date_range_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A date_range_event_args that contains the event data.
+    /// @param e A xtd::forms::date_range_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/date_range_event_handlef>
