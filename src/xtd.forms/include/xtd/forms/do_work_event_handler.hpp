@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::background_worker::do_work event. This class cannot be inherited.
     /// ```cpp
-    /// using do_work_event_handler = xtd::delegate<void(object& sender, do_work_event_args& e)>;
+    /// using do_work_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::do_work_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A do_work_event_args that contains the event data.
+    /// @param e A xtd::forms::do_work_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/do_work_event_handler>
