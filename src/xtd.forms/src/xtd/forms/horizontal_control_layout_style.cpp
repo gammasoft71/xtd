@@ -73,22 +73,23 @@ horizontal_control_layout_style::horizontal_control_layout_style(float width, bo
 horizontal_control_layout_style::horizontal_control_layout_style(int32 width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(static_cast<float>(width)) {
 }
 
-std::optional<float> horizontal_control_layout_style::width() const noexcept {
+auto horizontal_control_layout_style::width() const noexcept -> std::optional<float> {
   return width_;
 }
 
-void horizontal_control_layout_style::width(float width) {
+auto horizontal_control_layout_style::width(float width) -> horizontal_control_layout_style& {
   width_ = width;
+  return *this;
 }
 
-bool horizontal_control_layout_style::equals(const horizontal_control_layout_style& other) const noexcept {
+auto horizontal_control_layout_style::equals(const horizontal_control_layout_style& other) const noexcept -> bool {
   return width_ == other.width_ && as<control_layout_style>(*this).equals(as<control_layout_style>(other));
 }
 
-usize horizontal_control_layout_style::get_hash_code() const noexcept {
+auto horizontal_control_layout_style::get_hash_code() const noexcept -> usize {
   return hash_code::combine(width_, as<control_layout_style>(*this).get_hash_code());
 }
 
-string horizontal_control_layout_style::to_string() const noexcept {
+auto horizontal_control_layout_style::to_string() const noexcept -> string {
   return string::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));
 }
