@@ -28,3570 +28,3570 @@ namespace xtd {
       /// @{
       /// @brief Create a system-defined label that represent abort label
       /// @return The created label.
-      static label abort();
+      [[nodiscard]] static auto abort() -> label;
       /// @brief Create a system-defined label that represent abort label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label abort(const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent abort label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label abort(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent abort label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label abort(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent abort label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label abort(const control& parent);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent abort label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label abort(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent abort label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label abort(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent abort label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent about label
       /// @return The created label.
-      static label about();
+      [[nodiscard]] static auto about() -> label;
       /// @brief Create a system-defined label that represent about label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label about(const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent about label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label about(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent about label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label about(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent about label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label about(const control& parent);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent about label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label about(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent about label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label about(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent about label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent actual_size label
       /// @return The created label.
-      static label actual_size();
+      [[nodiscard]] static auto actual_size() -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label actual_size(const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label actual_size(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label actual_size(const control& parent);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label actual_size(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label actual_size(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent actual_size label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent add label
       /// @return The created label.
-      static label add();
+      [[nodiscard]] static auto add() -> label;
       /// @brief Create a system-defined label that represent add label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label add(const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent add label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label add(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent add label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label add(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent add label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label add(const control& parent);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent add label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label add(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent add label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label add(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent add label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent alignment label
       /// @return The created label.
-      static label alignment();
+      [[nodiscard]] static auto alignment() -> label;
       /// @brief Create a system-defined label that represent alignment label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label alignment(const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent alignment label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label alignment(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent alignment label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent alignment label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label alignment(const control& parent);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent alignment label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label alignment(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent alignment label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label alignment(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent alignment label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent align_left label
       /// @return The created label.
-      static label align_left();
+      [[nodiscard]] static auto align_left() -> label;
       /// @brief Create a system-defined label that represent align_left label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label align_left(const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent align_left label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label align_left(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent align_left label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent align_left label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label align_left(const control& parent);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent align_left label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label align_left(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent align_left label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label align_left(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent align_left label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent align_right label
       /// @return The created label.
-      static label align_right();
+      [[nodiscard]] static auto align_right() -> label;
       /// @brief Create a system-defined label that represent align_right label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label align_right(const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent align_right label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label align_right(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent align_right label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent align_right label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label align_right(const control& parent);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent align_right label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label align_right(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent align_right label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label align_right(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent align_right label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent apply label
       /// @return The created label.
-      static label apply();
+      [[nodiscard]] static auto apply() -> label;
       /// @brief Create a system-defined label that represent apply label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label apply(const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent apply label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label apply(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent apply label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label apply(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent apply label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label apply(const control& parent);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent apply label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label apply(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent apply label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label apply(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent apply label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent ascending label
       /// @return The created label.
-      static label ascending();
+      [[nodiscard]] static auto ascending() -> label;
       /// @brief Create a system-defined label that represent ascending label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label ascending(const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent ascending label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label ascending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent ascending label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent ascending label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label ascending(const control& parent);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent ascending label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label ascending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent ascending label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label ascending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent ascending label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent back label
       /// @return The created label.
-      static label back();
+      [[nodiscard]] static auto back() -> label;
       /// @brief Create a system-defined label that represent back label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label back(const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent back label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label back(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent back label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label back(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent back label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label back(const control& parent);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent back label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label back(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent back label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label back(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent back label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent bold label
       /// @return The created label.
-      static label bold();
+      [[nodiscard]] static auto bold() -> label;
       /// @brief Create a system-defined label that represent bold label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label bold(const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent bold label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label bold(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent bold label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label bold(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent bold label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label bold(const control& parent);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent bold label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label bold(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent bold label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label bold(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent bold label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent bottom label
       /// @return The created label.
-      static label bottom();
+      [[nodiscard]] static auto bottom() -> label;
       /// @brief Create a system-defined label that represent bottom label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label bottom(const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent bottom label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label bottom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent bottom label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent bottom label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label bottom(const control& parent);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent bottom label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label bottom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent bottom label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label bottom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent bottom label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent cancel label
       /// @return The created label.
-      static label cancel();
+      [[nodiscard]] static auto cancel() -> label;
       /// @brief Create a system-defined label that represent cancel label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label cancel(const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent cancel label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label cancel(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent cancel label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent cancel label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label cancel(const control& parent);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent cancel label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label cancel(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent cancel label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label cancel(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent cancel label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent cdrom label
       /// @return The created label.
-      static label cdrom();
+      [[nodiscard]] static auto cdrom() -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label cdrom(const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label cdrom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label cdrom(const control& parent);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label cdrom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label cdrom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent cdrom label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent centered label
       /// @return The created label.
-      static label centered();
+      [[nodiscard]] static auto centered() -> label;
       /// @brief Create a system-defined label that represent centered label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label centered(const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent centered label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label centered(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent centered label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label centered(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent centered label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label centered(const control& parent);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent centered label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label centered(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent centered label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label centered(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent centered label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent clear label
       /// @return The created label.
-      static label clear();
+      [[nodiscard]] static auto clear() -> label;
       /// @brief Create a system-defined label that represent clear label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label clear(const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent clear label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label clear(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent clear label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label clear(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent clear label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label clear(const control& parent);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent clear label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label clear(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent clear label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label clear(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent clear label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent close label
       /// @return The created label.
-      static label close();
+      [[nodiscard]] static auto close() -> label;
       /// @brief Create a system-defined label that represent close label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label close(const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent close label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label close(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent close label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label close(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent close label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label close(const control& parent);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent close label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label close(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent close label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label close(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent close label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent color label
       /// @return The created label.
-      static label color();
+      [[nodiscard]] static auto color() -> label;
       /// @brief Create a system-defined label that represent color label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label color(const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent color label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label color(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent color label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label color(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent color label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label color(const control& parent);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent color label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label color(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent color label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label color(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent color label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent contents label
       /// @return The created label.
-      static label contents();
+      [[nodiscard]] static auto contents() -> label;
       /// @brief Create a system-defined label that represent contents label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label contents(const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent contents label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label contents(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent contents label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label contents(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent contents label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label contents(const control& parent);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent contents label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label contents(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent contents label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label contents(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent contents label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent convert label
       /// @return The created label.
-      static label convert();
+      [[nodiscard]] static auto convert() -> label;
       /// @brief Create a system-defined label that represent convert label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label convert(const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent convert label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label convert(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent convert label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label convert(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent convert label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label convert(const control& parent);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent convert label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label convert(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent convert label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label convert(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent convert label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent copy label
       /// @return The created label.
-      static label copy();
+      [[nodiscard]] static auto copy() -> label;
       /// @brief Create a system-defined label that represent copy label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label copy(const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent copy label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label copy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent copy label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label copy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent copy label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label copy(const control& parent);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent copy label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label copy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent copy label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label copy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent copy label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent customize label
       /// @return The created label.
-      static label customize();
+      [[nodiscard]] static auto customize() -> label;
       /// @brief Create a system-defined label that represent customize label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label customize(const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent customize label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label customize(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent customize label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label customize(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent customize label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label customize(const control& parent);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent customize label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label customize(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent customize label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label customize(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent customize label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent cut label
       /// @return The created label.
-      static label cut();
+      [[nodiscard]] static auto cut() -> label;
       /// @brief Create a system-defined label that represent cut label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label cut(const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent cut label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label cut(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent cut label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label cut(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent cut label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label cut(const control& parent);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent cut label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label cut(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent cut label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label cut(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent cut label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent del label
       /// @return The created label.
-      static label del();
+      [[nodiscard]] static auto del() -> label;
       /// @brief Create a system-defined label that represent del label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label del(const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent del label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label del(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent del label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label del(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent del label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label del(const control& parent);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent del label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label del(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent del label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label del(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent del label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent descending label
       /// @return The created label.
-      static label descending();
+      [[nodiscard]] static auto descending() -> label;
       /// @brief Create a system-defined label that represent descending label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label descending(const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent descending label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label descending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent descending label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label descending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent descending label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label descending(const control& parent);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent descending label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label descending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent descending label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label descending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent descending label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent down label
       /// @return The created label.
-      static label down();
+      [[nodiscard]] static auto down() -> label;
       /// @brief Create a system-defined label that represent down label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label down(const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent down label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label down(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent down label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label down(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent down label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label down(const control& parent);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent down label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label down(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent down label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label down(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent down label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent edit label
       /// @return The created label.
-      static label edit();
+      [[nodiscard]] static auto edit() -> label;
       /// @brief Create a system-defined label that represent edit label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label edit(const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent edit label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label edit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent edit label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label edit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent edit label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label edit(const control& parent);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent edit label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label edit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent edit label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label edit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent edit label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent execute label
       /// @return The created label.
-      static label execute();
+      [[nodiscard]] static auto execute() -> label;
       /// @brief Create a system-defined label that represent execute label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label execute(const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent execute label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label execute(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent execute label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label execute(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent execute label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label execute(const control& parent);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent execute label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label execute(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent execute label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label execute(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent execute label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent exit label
       /// @return The created label.
-      static label exit();
+      [[nodiscard]] static auto exit() -> label;
       /// @brief Create a system-defined label that represent exit label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label exit(const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent exit label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label exit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent exit label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label exit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent exit label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label exit(const control& parent);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent exit label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label exit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent exit label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label exit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent exit label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent file label
       /// @return The created label.
-      static label file();
+      [[nodiscard]] static auto file() -> label;
       /// @brief Create a system-defined label that represent file label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label file(const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent file label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label file(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent file label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label file(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent file label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label file(const control& parent);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent file label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label file(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent file label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label file(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent file label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent find label
       /// @return The created label.
-      static label find();
+      [[nodiscard]] static auto find() -> label;
       /// @brief Create a system-defined label that represent find label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label find(const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent find label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label find(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent find label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label find(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent find label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label find(const control& parent);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent find label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label find(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent find label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label find(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent find label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent first label
       /// @return The created label.
-      static label first();
+      [[nodiscard]] static auto first() -> label;
       /// @brief Create a system-defined label that represent first label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label first(const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent first label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label first(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent first label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label first(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent first label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label first(const control& parent);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent first label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label first(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent first label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label first(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent first label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent floppy label
       /// @return The created label.
-      static label floppy();
+      [[nodiscard]] static auto floppy() -> label;
       /// @brief Create a system-defined label that represent floppy label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label floppy(const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent floppy label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label floppy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent floppy label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent floppy label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label floppy(const control& parent);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent floppy label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label floppy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent floppy label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label floppy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent floppy label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent font label
       /// @return The created label.
-      static label font();
+      [[nodiscard]] static auto font() -> label;
       /// @brief Create a system-defined label that represent font label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label font(const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent font label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label font(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent font label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label font(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent font label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label font(const control& parent);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent font label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label font(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent font label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label font(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent font label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent forward label
       /// @return The created label.
-      static label forward();
+      [[nodiscard]] static auto forward() -> label;
       /// @brief Create a system-defined label that represent forward label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label forward(const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent forward label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label forward(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent forward label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label forward(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent forward label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label forward(const control& parent);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent forward label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label forward(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent forward label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label forward(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent forward label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent harddisk label
       /// @return The created label.
-      static label harddisk();
+      [[nodiscard]] static auto harddisk() -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label harddisk(const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label harddisk(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label harddisk(const control& parent);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label harddisk(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label harddisk(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent harddisk label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent help label
       /// @return The created label.
-      static label help();
+      [[nodiscard]] static auto help() -> label;
       /// @brief Create a system-defined label that represent help label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label help(const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent help label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label help(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent help label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label help(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent help label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label help(const control& parent);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent help label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label help(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent help label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label help(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent help label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent home label
       /// @return The created label.
-      static label home();
+      [[nodiscard]] static auto home() -> label;
       /// @brief Create a system-defined label that represent home label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label home(const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent home label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label home(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent home label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label home(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent home label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label home(const control& parent);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent home label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label home(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent home label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label home(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent home label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent ignore label
       /// @return The created label.
-      static label ignore();
+      [[nodiscard]] static auto ignore() -> label;
       /// @brief Create a system-defined label that represent ignore label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label ignore(const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent ignore label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label ignore(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent ignore label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent ignore label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label ignore(const control& parent);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent ignore label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label ignore(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent ignore label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label ignore(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent ignore label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent indent label
       /// @return The created label.
-      static label indent();
+      [[nodiscard]] static auto indent() -> label;
       /// @brief Create a system-defined label that represent indent label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label indent(const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent indent label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label indent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent indent label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label indent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent indent label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label indent(const control& parent);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent indent label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label indent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent indent label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label indent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent indent label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent index label
       /// @return The created label.
-      static label index();
+      [[nodiscard]] static auto index() -> label;
       /// @brief Create a system-defined label that represent index label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label index(const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent index label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label index(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent index label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label index(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent index label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label index(const control& parent);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent index label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label index(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent index label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label index(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent index label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent info label
       /// @return The created label.
-      static label info();
+      [[nodiscard]] static auto info() -> label;
       /// @brief Create a system-defined label that represent info label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label info(const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent info label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label info(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent info label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label info(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent info label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label info(const control& parent);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent info label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label info(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent info label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label info(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent info label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent italic label
       /// @return The created label.
-      static label italic();
+      [[nodiscard]] static auto italic() -> label;
       /// @brief Create a system-defined label that represent italic label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label italic(const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent italic label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label italic(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent italic label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label italic(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent italic label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label italic(const control& parent);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent italic label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label italic(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent italic label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label italic(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent italic label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent justified label
       /// @return The created label.
-      static label justified();
+      [[nodiscard]] static auto justified() -> label;
       /// @brief Create a system-defined label that represent justified label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label justified(const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent justified label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label justified(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent justified label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label justified(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent justified label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label justified(const control& parent);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent justified label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label justified(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent justified label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label justified(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent justified label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent jump_to label
       /// @return The created label.
-      static label jump_to();
+      [[nodiscard]] static auto jump_to() -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label jump_to(const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label jump_to(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label jump_to(const control& parent);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label jump_to(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label jump_to(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent jump_to label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent last label
       /// @return The created label.
-      static label last();
+      [[nodiscard]] static auto last() -> label;
       /// @brief Create a system-defined label that represent last label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label last(const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent last label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label last(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent last label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label last(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent last label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label last(const control& parent);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent last label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label last(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent last label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label last(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent last label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent network label
       /// @return The created label.
-      static label network();
+      [[nodiscard]] static auto network() -> label;
       /// @brief Create a system-defined label that represent network label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label network(const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent network label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label network(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent network label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label network(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent network label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label network(const control& parent);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent network label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label network(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent network label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label network(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent network label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent new_ label
       /// @return The created label.
-      static label new_();
+      [[nodiscard]] static auto new_() -> label;
       /// @brief Create a system-defined label that represent new_ label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label new_(const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent new_ label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label new_(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent new_ label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label new_(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent new_ label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label new_(const control& parent);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent new_ label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label new_(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent new_ label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label new_(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent new_ label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent next label
       /// @return The created label.
-      static label next();
+      [[nodiscard]] static auto next() -> label;
       /// @brief Create a system-defined label that represent next label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label next(const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent next label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label next(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent next label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label next(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent next label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label next(const control& parent);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent next label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label next(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent next label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label next(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent next label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent no label
       /// @return The created label.
-      static label no();
+      [[nodiscard]] static auto no() -> label;
       /// @brief Create a system-defined label that represent no label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label no(const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent no label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label no(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent no label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label no(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent no label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label no(const control& parent);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent no label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label no(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent no label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label no(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent no label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent ok label
       /// @return The created label.
-      static label ok();
+      [[nodiscard]] static auto ok() -> label;
       /// @brief Create a system-defined label that represent ok label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label ok(const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent ok label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label ok(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent ok label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label ok(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent ok label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label ok(const control& parent);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent ok label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label ok(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent ok label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label ok(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent ok label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent open label
       /// @return The created label.
-      static label open();
+      [[nodiscard]] static auto open() -> label;
       /// @brief Create a system-defined label that represent open label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label open(const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent open label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label open(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent open label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label open(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent open label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label open(const control& parent);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent open label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label open(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent open label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label open(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent open label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent options label
       /// @return The created label.
-      static label options();
+      [[nodiscard]] static auto options() -> label;
       /// @brief Create a system-defined label that represent options label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label options(const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent options label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label options(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent options label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label options(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent options label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label options(const control& parent);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent options label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label options(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent options label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label options(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent options label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent paste label
       /// @return The created label.
-      static label paste();
+      [[nodiscard]] static auto paste() -> label;
       /// @brief Create a system-defined label that represent paste label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label paste(const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent paste label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label paste(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent paste label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label paste(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent paste label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label paste(const control& parent);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent paste label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label paste(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent paste label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label paste(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent paste label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent preferences label
       /// @return The created label.
-      static label preferences();
+      [[nodiscard]] static auto preferences() -> label;
       /// @brief Create a system-defined label that represent preferences label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label preferences(const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent preferences label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label preferences(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent preferences label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent preferences label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label preferences(const control& parent);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent preferences label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label preferences(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent preferences label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label preferences(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent preferences label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent previous label
       /// @return The created label.
-      static label previous();
+      [[nodiscard]] static auto previous() -> label;
       /// @brief Create a system-defined label that represent previous label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label previous(const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent previous label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label previous(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent previous label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label previous(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent previous label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label previous(const control& parent);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent previous label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label previous(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent previous label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label previous(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent previous label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent print label
       /// @return The created label.
-      static label print();
+      [[nodiscard]] static auto print() -> label;
       /// @brief Create a system-defined label that represent print label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label print(const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent print label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label print(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent print label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label print(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent print label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label print(const control& parent);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent print label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label print(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent print label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label print(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent print label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent print_preview label
       /// @return The created label.
-      static label print_preview();
+      [[nodiscard]] static auto print_preview() -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label print_preview(const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label print_preview(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label print_preview(const control& parent);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label print_preview(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label print_preview(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent print_preview label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent properties label
       /// @return The created label.
-      static label properties();
+      [[nodiscard]] static auto properties() -> label;
       /// @brief Create a system-defined label that represent properties label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label properties(const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent properties label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label properties(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent properties label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label properties(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent properties label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label properties(const control& parent);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent properties label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label properties(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent properties label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label properties(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent properties label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent quit label
       /// @return The created label.
-      static label quit();
+      [[nodiscard]] static auto quit() -> label;
       /// @brief Create a system-defined label that represent quit label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label quit(const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent quit label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label quit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent quit label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label quit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent quit label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label quit(const control& parent);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent quit label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label quit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent quit label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label quit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent quit label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent redo label
       /// @return The created label.
-      static label redo();
+      [[nodiscard]] static auto redo() -> label;
       /// @brief Create a system-defined label that represent redo label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label redo(const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent redo label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label redo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent redo label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label redo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent redo label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label redo(const control& parent);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent redo label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label redo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent redo label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label redo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent redo label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent refresh label
       /// @return The created label.
-      static label refresh();
+      [[nodiscard]] static auto refresh() -> label;
       /// @brief Create a system-defined label that represent refresh label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label refresh(const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent refresh label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label refresh(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent refresh label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent refresh label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label refresh(const control& parent);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent refresh label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label refresh(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent refresh label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label refresh(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent refresh label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent remove label
       /// @return The created label.
-      static label remove();
+      [[nodiscard]] static auto remove() -> label;
       /// @brief Create a system-defined label that represent remove label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label remove(const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent remove label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label remove(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent remove label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label remove(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent remove label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label remove(const control& parent);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent remove label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label remove(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent remove label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label remove(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent remove label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent replace label
       /// @return The created label.
-      static label replace();
+      [[nodiscard]] static auto replace() -> label;
       /// @brief Create a system-defined label that represent replace label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label replace(const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent replace label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label replace(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent replace label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label replace(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent replace label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label replace(const control& parent);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent replace label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label replace(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent replace label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label replace(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent replace label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent retry label
       /// @return The created label.
-      static label retry();
+      [[nodiscard]] static auto retry() -> label;
       /// @brief Create a system-defined label that represent retry label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label retry(const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent retry label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label retry(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent retry label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label retry(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent retry label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label retry(const control& parent);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent retry label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label retry(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent retry label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label retry(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent retry label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent revert_to_saved label
       /// @return The created label.
-      static label revert_to_saved();
+      [[nodiscard]] static auto revert_to_saved() -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label revert_to_saved(const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label revert_to_saved(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label revert_to_saved(const control& parent);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label revert_to_saved(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent revert_to_saved label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent save label
       /// @return The created label.
-      static label save();
+      [[nodiscard]] static auto save() -> label;
       /// @brief Create a system-defined label that represent save label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label save(const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent save label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label save(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent save label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label save(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent save label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label save(const control& parent);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent save label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label save(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent save label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label save(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent save label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent save_as label
       /// @return The created label.
-      static label save_as();
+      [[nodiscard]] static auto save_as() -> label;
       /// @brief Create a system-defined label that represent save_as label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label save_as(const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent save_as label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label save_as(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent save_as label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent save_as label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label save_as(const control& parent);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent save_as label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label save_as(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent save_as label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label save_as(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent save_as label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent search label
       /// @return The created label.
-      static label search();
+      [[nodiscard]] static auto search() -> label;
       /// @brief Create a system-defined label that represent search label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label search(const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent search label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label search(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent search label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label search(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent search label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label search(const control& parent);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent search label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label search(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent search label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label search(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent search label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent select_all label
       /// @return The created label.
-      static label select_all();
+      [[nodiscard]] static auto select_all() -> label;
       /// @brief Create a system-defined label that represent select_all label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label select_all(const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent select_all label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label select_all(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent select_all label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent select_all label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label select_all(const control& parent);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent select_all label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label select_all(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent select_all label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label select_all(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent select_all label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent settings label
       /// @return The created label.
-      static label settings();
+      [[nodiscard]] static auto settings() -> label;
       /// @brief Create a system-defined label that represent settings label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label settings(const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent settings label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label settings(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent settings label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label settings(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent settings label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label settings(const control& parent);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent settings label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label settings(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent settings label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label settings(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent settings label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent spell_check label
       /// @return The created label.
-      static label spell_check();
+      [[nodiscard]] static auto spell_check() -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label spell_check(const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label spell_check(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label spell_check(const control& parent);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label spell_check(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label spell_check(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent spell_check label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent stop label
       /// @return The created label.
-      static label stop();
+      [[nodiscard]] static auto stop() -> label;
       /// @brief Create a system-defined label that represent stop label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label stop(const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent stop label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label stop(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent stop label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label stop(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent stop label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label stop(const control& parent);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent stop label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label stop(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent stop label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label stop(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent stop label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent strikeout label
       /// @return The created label.
-      static label strikeout();
+      [[nodiscard]] static auto strikeout() -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label strikeout(const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label strikeout(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label strikeout(const control& parent);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label strikeout(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label strikeout(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent strikeout label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent tools label
       /// @return The created label.
-      static label tools();
+      [[nodiscard]] static auto tools() -> label;
       /// @brief Create a system-defined label that represent tools label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label tools(const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent tools label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label tools(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent tools label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label tools(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent tools label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label tools(const control& parent);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent tools label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label tools(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent tools label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label tools(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent tools label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent top label
       /// @return The created label.
-      static label top();
+      [[nodiscard]] static auto top() -> label;
       /// @brief Create a system-defined label that represent top label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label top(const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent top label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label top(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent top label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label top(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent top label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label top(const control& parent);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent top label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label top(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent top label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label top(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent top label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent undelete label
       /// @return The created label.
-      static label undelete();
+      [[nodiscard]] static auto undelete() -> label;
       /// @brief Create a system-defined label that represent undelete label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label undelete(const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent undelete label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label undelete(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent undelete label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent undelete label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label undelete(const control& parent);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent undelete label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label undelete(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent undelete label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label undelete(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent undelete label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent underline label
       /// @return The created label.
-      static label underline();
+      [[nodiscard]] static auto underline() -> label;
       /// @brief Create a system-defined label that represent underline label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label underline(const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent underline label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label underline(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent underline label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label underline(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent underline label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label underline(const control& parent);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent underline label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label underline(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent underline label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label underline(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent underline label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent undo label
       /// @return The created label.
-      static label undo();
+      [[nodiscard]] static auto undo() -> label;
       /// @brief Create a system-defined label that represent undo label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label undo(const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent undo label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label undo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent undo label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label undo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent undo label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label undo(const control& parent);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent undo label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label undo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent undo label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label undo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent undo label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent unindent label
       /// @return The created label.
-      static label unindent();
+      [[nodiscard]] static auto unindent() -> label;
       /// @brief Create a system-defined label that represent unindent label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label unindent(const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent unindent label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label unindent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent unindent label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent unindent label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label unindent(const control& parent);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent unindent label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label unindent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent unindent label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label unindent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent unindent label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent up label
       /// @return The created label.
-      static label up();
+      [[nodiscard]] static auto up() -> label;
       /// @brief Create a system-defined label that represent up label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label up(const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent up label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label up(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent up label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label up(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent up label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label up(const control& parent);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent up label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label up(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent up label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label up(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent up label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent view label
       /// @return The created label.
-      static label view();
+      [[nodiscard]] static auto view() -> label;
       /// @brief Create a system-defined label that represent view label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label view(const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent view label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label view(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent view label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label view(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent view label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label view(const control& parent);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent view label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label view(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent view label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label view(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent view label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent window label
       /// @return The created label.
-      static label window();
+      [[nodiscard]] static auto window() -> label;
       /// @brief Create a system-defined label that represent window label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label window(const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent window label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label window(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent window label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label window(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent window label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label window(const control& parent);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent window label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label window(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent window label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label window(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent window label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent yes label
       /// @return The created label.
-      static label yes();
+      [[nodiscard]] static auto yes() -> label;
       /// @brief Create a system-defined label that represent yes label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label yes(const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent yes label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label yes(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent yes label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label yes(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent yes label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label yes(const control& parent);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent yes label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label yes(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent yes label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label yes(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent yes label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent zoom_in label
       /// @return The created label.
-      static label zoom_in();
+      [[nodiscard]] static auto zoom_in() -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label zoom_in(const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label zoom_in(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label zoom_in(const control& parent);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label zoom_in(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label zoom_in(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent zoom_in label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent zoom_out label
       /// @return The created label.
-      static label zoom_out();
+      [[nodiscard]] static auto zoom_out() -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label zoom_out(const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label zoom_out(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label zoom_out(const control& parent);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label zoom_out(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label zoom_out(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent zoom_out label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       
       /// @brief Create a system-defined label that represent zoom_to_fit label
       /// @return The created label.
-      static label zoom_to_fit();
+      [[nodiscard]] static auto zoom_to_fit() -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified location.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label zoom_to_fit(const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified location, and size.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label zoom_to_fit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified location, size, and name.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified parent.
       /// @param parent The control that contains the label.
       /// @return The created label.
-      static label zoom_to_fit(const control& parent);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent) -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified parent, and location.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @return The created label.
-      static label zoom_to_fit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified parent, location, and size.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @return The created label.
-      static label zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> label;
       /// @brief Create a system-defined label that represent zoom_to_fit label with specified parent, location, size, and name.
       /// @param parent The control that contains the label.
       /// @param location The label location in pixels.
       /// @param size The label size in pixels.
       /// @param name The name of the label.
       /// @return The created label.
-      static label zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> label;
       /// @}
     };
   }
