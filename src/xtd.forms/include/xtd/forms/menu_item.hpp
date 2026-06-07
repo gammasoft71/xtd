@@ -259,53 +259,53 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating the Windows identifier for this menu item.
       /// @return The Windows identifier for this menu item.
-      intptr menu_id() const noexcept;
+      [[nodiscard]] auto menu_id() const noexcept -> xtd::intptr;
       
       /// @brief Gets a value indicating whether a check mark appears next to the text of the menu item.
       /// @return `true` if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
-      bool checked() const noexcept;
+      [[nodiscard]] auto checked() const noexcept -> bool;
       /// @brief Sets a value indicating whether a check mark appears next to the text of the menu item.
       /// @param value `true` if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @return Current menu_item.
-      menu_item& checked(bool value);
+      auto checked(bool value) -> menu_item&;
       
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @return `true` if the menu item is enabled; otherwise, `false`. The default is `true`.
-      bool enabled() const noexcept;
+      [[nodiscard]] auto enabled() const noexcept -> bool;
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @param value `true` if the menu item is enabled; otherwise, `false`. The default is `true`.
       /// @return Current menu_item.
-      menu_item& enabled(bool value);
+      auto enabled(bool value) -> menu_item&;
       
-      bool is_parent() const noexcept override;
+      [[nodiscard]] auto is_parent() const noexcept -> bool override;
       
       /// @brief Gets a value that represents the kind of menu item.
       /// @return One of the xtd::forms::menu_item_kind value.
-      xtd::forms::menu_item_kind kind() const noexcept;
+      [[nodiscard]] auto kind() const noexcept -> xtd::forms::menu_item_kind;
       /// @brief Sets a value that represents the kind of menu item.
       /// @param value One of the xtd::forms::menu_item_kind value.
       /// @return Current menu_item.
-      menu_item& kind(xtd::forms::menu_item_kind value);
+      auto kind(xtd::forms::menu_item_kind value) -> menu_item&;
       
       /// @brief Gets a value indicating the shortcut key associated with the menu item.
       /// @return One of the xtd::forms::shortcut values. The default is xtd::forms::shortcut::none.
-      xtd::forms::shortcut shortcut() const noexcept;
+      [[nodiscard]] auto shortcut() const noexcept -> xtd::forms::shortcut;
       /// @brief Sets a value indicating the shortcut key associated with the menu item.
       /// @param value One of the xtd::forms::shortcut values. The default is xtd::forms::shortcut::none.
       /// @return Current menu_item.
-      menu_item& shortcut(xtd::forms::shortcut value);
+      auto shortcut(xtd::forms::shortcut value) -> menu_item&;
       
       /// @brief Gets a value indicating the caption of the menu item.
       /// @return The text caption of the menu item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      const xtd::string& text() const noexcept;
+      [[nodiscard]] auto text() const noexcept -> const xtd::string&;
       /// @brief Sets a value indicating the caption of the menu item.
       /// @param value The text caption of the menu item.
       /// @return Current menu_item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item& text(const xtd::string& value);
+      auto text(const xtd::string& value) -> menu_item&;
       /// @}
       
       /// @name Public Methods
@@ -318,7 +318,7 @@ namespace xtd {
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Events
@@ -327,7 +327,7 @@ namespace xtd {
       /// @brief Occurs when the menu item is clicked or selected using a shortcut key or access key defined for the menu item.
       /// @remarks The xtd::forms::menu_item::click event occurs when this xtd::forms::menu_item is clicked by the user. This event also occurs if the user selects the menu item using the keyboard and presses the Enter key. It can also occur if an access key or shortcut key is pressed that is associated with the xtd::forms::menu_item.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<menu_item, event_handler> click;
+      xtd::event<menu_item, xtd::event_handler> click;
       /// @}
       
     protected:
@@ -337,16 +337,16 @@ namespace xtd {
       /// @name Protected Methods
       
       /// @{
-      intptr create_menu_handle() override;
-      void destroy_menu_handle(intptr handle) override;
+      auto create_menu_handle() -> xtd::intptr override;
+      auto destroy_menu_handle(xtd::intptr handle) -> void override;
       
       /// @brief Raises the Click event.
       /// @param e An xtd::event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
-      virtual void on_click(const event_args& e);
+      virtual auto on_click(const event_args& e) -> void;
       
-      void on_item_added(xtd::usize pos, menu_item_ref item) override;
-      void on_item_removed(xtd::usize pos, menu_item_ref item) override;
+      auto on_item_added(xtd::usize pos, menu_item_ref item) -> void override;
+      auto on_item_removed(xtd::usize pos, menu_item_ref item) -> void override;
       /// @}
       
     private:
