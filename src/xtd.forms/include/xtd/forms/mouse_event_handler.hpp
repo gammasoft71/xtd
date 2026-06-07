@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the MouseDown, MouseUp, or MouseMove event of a form, control, or other component.
     /// ```cpp
-    /// using mouse_event_handler = xtd::delegate<void(object& sender, const mouse_event_args& e)>;
+    /// using mouse_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::mouse_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::forms::mouse_event_args that contains the event data.
@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using mouse_event_handler = xtd::delegate<void(object& sender, const mouse_event_args& e)>;
+    using mouse_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::mouse_event_args& e)>;
   }
 }
