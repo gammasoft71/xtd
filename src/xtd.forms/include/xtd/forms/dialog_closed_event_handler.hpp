@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Provides handler for a dialog closed event.
     /// ```cpp
-    /// using dialog_closed_event_handler = xtd::delegate<void(object& sender, const dialog_closed_event_args& e)>;
+    /// using dialog_closed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::dialog_closed_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e An dialog_closed_event_args that contains event data.
+    /// @param e An xtd::forms::dialog_closed_event_args that contains event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/dialog_closed_event_handler>
