@@ -31,11 +31,11 @@ namespace xtd {
       /// @brief Gets the value returned to the parent form when the button is clicked.
       /// @return One of the xtd::forms::dialog_result values. The default value is xtd::forms::dialog_result::none.
       /// @remarks When a form is shown as a dialog box using the xtd::forms::form::show_dialog method and one of its buttons is clicked, the button's xtd::forms::dialog_result value is assigned to the form's xtd::forms::dialog_result property.
-      virtual forms::dialog_result dialog_result() const noexcept = 0;
+      [[nodiscard]] virtual auto dialog_result() const noexcept -> xtd::forms::dialog_result = 0;
       /// @brief Sets the value returned to the parent form when the button is clicked.
-      /// @param dialog_result One of the xtd::forms::dialog_result values. The default value is xtd::forms::dialog_result::none.
+      /// @param value One of the xtd::forms::dialog_result values. The default value is xtd::forms::dialog_result::none.
       /// @remarks When a form is shown as a dialog box using the xtd::forms::form::show_dialog method and one of its buttons is clicked, the button's xtd::forms::dialog_result value is assigned to the form's xtd::forms::dialog_result property.
-      virtual control& dialog_result(forms::dialog_result dialog_result) = 0;
+      virtual auto dialog_result(xtd::forms::dialog_result value) -> xtd::forms::control& = 0;
       /// @}
       
       /// @name Public Methods
@@ -44,11 +44,11 @@ namespace xtd {
       /// @brief Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.
       /// @param value `true` if the control should behave as a default button; otherwise `false`.
       /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
-      virtual void notify_default(bool value) = 0;
+      virtual auto notify_default(bool value) -> void = 0;
       
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
-      virtual void perform_click() = 0;
+      virtual auto perform_click() -> void = 0;
       /// @}
     };
   }
