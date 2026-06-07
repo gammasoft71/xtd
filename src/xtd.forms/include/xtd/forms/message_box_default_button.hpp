@@ -19,6 +19,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the message_box class.
-    using message_box_default_button = message_dialog_default_button;
+    using message_box_default_button = xtd::forms::message_dialog_default_button;
   }
 }
