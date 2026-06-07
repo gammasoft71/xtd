@@ -38,7 +38,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of main_menu::create_standard_items factory.
     /// @include main_menu_create_standard_items.cpp
-    class forms_export_ main_menu : public menu {
+    class forms_export_ main_menu : public xtd::forms::menu {
     public:
       /// @name Public Constructors
       
@@ -47,14 +47,11 @@ namespace xtd {
       main_menu();
       /// @brief Initialize a new instance of main_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      explicit main_menu(const std::vector<menu_item_ref>& menu_items);
+      explicit main_menu(const std::vector<xtd::forms::menu_item_ref>& menu_items);
       /// @}
       
       /// @cond
-      explicit main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
-      main_menu(main_menu&&) = default;
-      main_menu(const main_menu&) = default;
-      main_menu& operator =(const main_menu&) = default;
+      explicit main_menu(const std::initializer_list<xtd::forms::const_menu_item_ref>& menu_items);
       /// @endcond
       
       /// @name Public Static Methods
@@ -108,7 +105,7 @@ namespace xtd {
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
       /// ```
-      static xtd::forms::main_menu create_standard_items(const xtd::event_handler& on_click);
+      [[nodiscard]] static auto create_standard_items(const xtd::event_handler& on_click) -> main_menu;
       /// @brief A factory to create a main menu with specified image size and on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param image_size A xtd::drawing::size that represent the menu item image size.
@@ -158,7 +155,7 @@ namespace xtd {
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
       /// ```
-      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& image_size, const xtd::event_handler& on_click);
+      [[nodiscard]] static auto create_standard_items(const xtd::drawing::size& image_size, const xtd::event_handler& on_click) -> main_menu;
       /// @brief A factory to create a main menu with specified theme and on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param theme The theme of menu item image.
@@ -208,7 +205,7 @@ namespace xtd {
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
       /// ```
-      static xtd::forms::main_menu create_standard_items(const xtd::string& theme, const xtd::event_handler& on_click);
+      [[nodiscard]] static auto create_standard_items(const xtd::string& theme, const xtd::event_handler& on_click) -> main_menu;
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param theme The theme of menu item image.
@@ -259,33 +256,33 @@ namespace xtd {
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
       /// ```
-      static xtd::forms::main_menu create_standard_items(const xtd::string& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
+      [[nodiscard]] static auto create_standard_items(const xtd::string& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click) -> main_menu;
       /// @}
       
       /// @cond
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(on_click_type on_click) {return create_standard_items(xtd::event_handler(on_click));}
+      [[nodiscard]] static auto create_standard_items(on_click_type on_click) -> main_menu {return create_standard_items(xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(size, xtd::event_handler(on_click));}
+      [[nodiscard]] static auto create_standard_items(const xtd::drawing::size& size, on_click_type on_click) -> main_menu {return create_standard_items(size, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::string& theme, on_click_type on_click) {return create_standard_items(theme, xtd::event_handler(on_click));}
+      [[nodiscard]] static auto create_standard_items(const xtd::string& theme, on_click_type on_click) -> main_menu {return create_standard_items(theme, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::string& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
+      [[nodiscard]] static auto create_standard_items(const xtd::string& theme, const xtd::drawing::size& size, on_click_type on_click) -> main_menu {return create_standard_items(theme, size, xtd::event_handler(on_click));}
       /// @endcond
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      intptr create_menu_handle() override;
-      void destroy_menu_handle(intptr handle) override;
-      void on_item_added(xtd::usize pos, menu_item_ref item) override;
-      void on_item_removed(xtd::usize pos, menu_item_ref item) override;
+      [[nodiscard]] auto create_menu_handle() -> xtd::intptr override;
+      auto destroy_menu_handle(intptr handle) -> void override;
+      auto on_item_added(xtd::usize pos, menu_item_ref item) -> void override;
+      auto on_item_removed(xtd::usize pos, menu_item_ref item) -> void override;
       /// @}
       
     private:
       friend class form;
-      void wm_click(message& message);
+      auto wm_click(message& message) -> void;
       xtd::collections::generic::list<xtd::sptr<menu_item>> standard_menu_items_;
     };
   }
