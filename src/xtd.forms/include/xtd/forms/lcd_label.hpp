@@ -54,76 +54,76 @@ namespace xtd {
       /// @brief Gets background digit color.
       /// @return A xtd::drawing color that represent the background digit color.
       /// @remarks Do not confuse back_digit_color and back_color. Background digit color is the color when digit is off.
-      xtd::drawing::color back_digit_color() const noexcept;
+      [[nodiscard]] auto back_digit_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets background digit color.
       /// @param value A xtd::drawing color that represent the background digit color.
       /// @return Current lcd_label.
       /// @remarks Do not confuse back_digit_color and back_color. Background digit color is the color when digit is off.
-      lcd_label& back_digit_color(const xtd::drawing::color& value);
+      auto back_digit_color(const xtd::drawing::color& value) -> lcd_label&;
       
       /// @brief Gets the background digit opacity.
       /// @return A double-precision value between 0.0 and 1.0 that represent the background digit opacity.
-      double back_digit_opacity() const noexcept;
+      [[nodiscard]] auto back_digit_opacity() const noexcept -> double;
       /// @brief Sets the background digit opacity.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background digit opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current lcd_label.
-      lcd_label& back_digit_opacity(double value);
+      auto back_digit_opacity(double value) -> lcd_label&;
       
       /// @brief Gets a value indicate if background digits are shown.
       /// @return `true` if background digits are shown; otherwise `false`
-      bool show_back_digit() const noexcept;
+      [[nodiscard]] auto show_back_digit() const noexcept -> bool;
       /// @brief Sets a value indicate if background digits are shown.
       /// @param value `true` if background digits are shown; otherwise `false`
       /// @return Current lcd_label.
-      lcd_label& show_back_digit(bool value);
+      auto show_back_digit(bool value) -> lcd_label&;
       
       /// @brief Gets the digit spacing.
       /// @return A int32 represent the digit spacing.
-      int32 digit_spacing() const noexcept;
+      [[nodiscard]] auto digit_spacing() const noexcept -> xtd::int32;
       /// @brief Sets the digit spacing.
       /// @param value A int32 represent the digit spacing.
       /// @return Current lcd_label.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.
-      lcd_label& digit_spacing(int32 value);
+      auto digit_spacing(xtd::int32 value) -> lcd_label&;
       
       /// @brief Gets lcd style.
       /// @return One of xtd::forms::lcd_style values. The default is xtd::forms::lcd_style::seven_segment_display.
-      forms::lcd_style lcd_style() const noexcept;
+      [[nodiscard]] auto lcd_style() const noexcept -> xtd::forms::lcd_style;
       /// @brief Sets lcd style.
       /// @param value One of xtd::forms::lcd_style values. The default is xtd::forms::lcd_style::seven_segment_display.
       /// @return Current lcd_label.
-      lcd_label& lcd_style(forms::lcd_style value);
+      auto lcd_style(xtd::forms::lcd_style value) -> lcd_label&;
       
       /// @brief Gets segment style.
       /// @return One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
-      forms::segment_style segment_style() const noexcept;
+      [[nodiscard]] auto segment_style() const noexcept -> xtd::forms::segment_style;
       /// @brief Sets segment style.
       /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
       /// @return Current lcd_label.
-      lcd_label& segment_style(forms::segment_style value);
+      auto segment_style(xtd::forms::segment_style value) -> lcd_label&;
       
       /// @brief Gets dot matrix style.
       /// @return One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
-      forms::dot_matrix_style dot_matrix_style() const noexcept;
+      [[nodiscard]] auto dot_matrix_style() const noexcept -> xtd::forms::dot_matrix_style;
       /// @brief Sets dot matrix style.
       /// @param value One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
       /// @return Current lcd_label.
-      lcd_label& dot_matrix_style(forms::dot_matrix_style value);
+      auto dot_matrix_style(xtd::forms::dot_matrix_style value) -> lcd_label&;
       
       /// @brief Gets thickness of lcd.
       /// @return A int32 that represent the lcd thickness.
-      int32 thickness() const noexcept;
+      [[nodiscard]] auto thickness() const noexcept -> xtd::int32;
       /// @brief Sets thickness of lcd.
       /// @param value A int32 that represent the lcd thickness.
       /// @return Current lcd_label.
-      lcd_label& thickness(int32 value);
+      auto thickness(xtd::int32 value) -> lcd_label&;
       
-      using control::text;
+      using xtd::forms::control::text;
       /// @brief Sets the text associated with this control.
-      /// @param text The text associated with this control.
+      /// @param value The text associated with this control.
       /// @return Current control.
-      control& text(const xtd::string& value) override;
+      auto text(const xtd::string& value) -> xtd::forms::control& override;
       
       /// @brief Gets valid characters.
       /// @return A xtd::array<char32> that represent valid characters.
@@ -136,7 +136,7 @@ namespace xtd {
       /// | xtd::forms::lcd_style::fourteen_segment_display  |  ✔️  |  ❌  |  ✔️  |  ❌  |  ❌  |  ❌  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ❌  |  ❌  |  ✔️  |  ❌  |  ❌  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ❌  |  ✔️  |  ❌  |  ✔️  |  ❌  |
       /// | xtd::forms::lcd_style::sixteen_segment_display   |  ✔️  |  ❌  |  ✔️  |  ❌  |  ❌  |  ❌  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ❌  |  ❌  |  ✔️  |  ❌  |  ❌  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ❌  |  ✔️  |  ❌  |  ✔️  |  ❌  |
       /// | xtd::forms::lcd_style::dot_matrix_display        |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |  ✔️   |  ✔️  |
-      xtd::array<char32> valid_characters();
+      [[nodiscard]] auto valid_characters() -> xtd::array<xtd::char32>;
       /// @}
       
       /// @name Public Static Methods
@@ -144,84 +144,84 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create();
+      [[nodiscard]] static auto create() -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @param name The name of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified text.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const xtd::string& text);
+      [[nodiscard]] static auto create(const xtd::string& text) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const xtd::string& text, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const xtd::string& text, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @param name The name of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent,.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, location.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @param name The name of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const xtd::string& text);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, text, and location.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const xtd::string& text, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, text, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> lcd_label;
       /// @brief A factory to create an xtd::forms::lcd_label with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::lcd_label.
       /// @param text A string that represent text of the xtd::forms::lcd_label.
@@ -229,33 +229,35 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
       /// @param name The name of the xtd::forms::lcd_label.
       /// @return New xtd::forms::lcd_label created.
-      static lcd_label create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> lcd_label;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      drawing::size default_size() const noexcept override;
+      [[nodiscard]] auto default_size() const noexcept -> xtd::drawing::size override;
       /// @}
-      
+
       /// @name Protected Methods
       
       /// @{
-      drawing::size measure_control() const noexcept override;
-      void on_back_color_changed(const event_args& e) override;
-      void on_fore_color_changed(const event_args& e) override;
-      void on_handle_created(const event_args& e) override;
-      void on_size_changed(const event_args& e) override;
-      void on_resize(const event_args& e) override;
+
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
+
+      auto on_back_color_changed(const xtd::event_args& e)  -> void override;
+      auto on_fore_color_changed(const xtd::event_args& e) -> void override;
+      auto on_handle_created(const xtd::event_args& e) -> void override;
+      auto on_size_changed(const xtd::event_args& e) -> void override;
+      auto on_resize(const xtd::event_args& e) -> void override;
       /// @}
       
     private:
-      void on_digit_click(object& sender, const event_args& e);
-      void on_digit_mouse_down(object& sender, const mouse_event_args& e);
-      void on_digit_mouse_move(object& sender, const mouse_event_args& e);
-      void on_digit_mouse_up(object& sender, const mouse_event_args& e);
-      void set_digits_params();
+      auto on_digit_click(xtd::object& sender, const xtd::event_args& e) -> void;
+      auto on_digit_mouse_down(xtd::object& sender, const xtd::forms::mouse_event_args& e) -> void;
+      auto on_digit_mouse_move(xtd::object& sender, const xtd::forms::mouse_event_args& e) -> void;
+      auto on_digit_mouse_up(xtd::object& sender, const xtd::forms::mouse_event_args& e) -> void;
+      auto set_digits_params() -> void;
       
       xtd::sptr<data> data_;
     };
