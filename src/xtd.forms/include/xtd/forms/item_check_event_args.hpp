@@ -29,11 +29,6 @@ namespace xtd {
     /// @remarks The item_check event occurs when the checked state of an item in a checked list box changes. The item_check_event_args class specifies the index of the item to change, the current value of the check box for the item, and the new value to set for the check box.
     class item_check_event_args : public xtd::event_args {
     public:
-      /// @cond
-      item_check_event_args(const item_check_event_args& item_check_event_args) = default;
-      item_check_event_args& operator =(const item_check_event_args& item_check_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -41,7 +36,7 @@ namespace xtd {
       /// @param index The zero-based index of the item to change.
       /// @param new_value One of the check_state values that indicates whether to change the check box for the item to be checked, unchecked, or indeterminate.
       /// @param current_value One of the check_state values that indicates whether the check box for the item is currently checked, unchecked, or indeterminate.
-      item_check_event_args(xtd::usize index, check_state new_value, check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
+      item_check_event_args(xtd::usize index, xtd::forms::check_state new_value, xtd::forms::check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
       /// @}
       
       /// @name Public Properties
@@ -50,27 +45,30 @@ namespace xtd {
       /// @brief Gets a value indicating the current state of the item's check box.
       /// @return One of the check_state values.
       /// @remarks This property enables you to determine the check state of the specified item in the checked_list_box before the check state change to apply is made.
-      check_state current_value() const noexcept {return current_value_;}
+      [[nodiscard]] auto current_value() const noexcept -> xtd::forms::check_state {return current_value_;}
       
       /// @brief Gets the zero-based index of the item to change.
       /// @return The zero-based index of the item to change.
       /// @remarks You can use this property to determine which item's check box in the checked_list_box is being changed.
-      xtd::usize index() const noexcept {return index_;}
+      [[nodiscard]] auto index() const noexcept -> xtd::usize {return index_;}
       
       /// @brief Gets a value indicating whether to set the check box for the item to be checked, unchecked, or indeterminate.
       /// @return One of the check_state values.
       /// @remarks This property enables you to determine the new check state for the specified item before the check state is changed by the checked_list_box control. In addition to determining the new check state, you can use this property in an event handler for the ItemCheck event to change the state to a different check state than the one specified. For example, if the user placed a check mark next to an item in the checked_list_box that you have determined should not be checked based on the state of your application, you can override the change in the check mark state by setting this property to its previous setting or to a different check state.
-      check_state new_value() const noexcept {return new_value_;}
+      [[nodiscard]] auto new_value() const noexcept -> xtd::forms::check_state {return new_value_;}
       /// @brief Gets a value indicating whether to set the check box for the item to be checked, unchecked, or indeterminate.
-      /// @param new_value One of the check_state values.
+      /// @param value One of the check_state values.
       /// @remarks This property enables you to determine the new check state for the specified item before the check state is changed by the checked_list_box control. In addition to determining the new check state, you can use this property in an event handler for the ItemCheck event to change the state to a different check state than the one specified. For example, if the user placed a check mark next to an item in the checked_list_box that you have determined should not be checked based on the state of your application, you can override the change in the check mark state by setting this property to its previous setting or to a different check state.
-      void new_value(check_state new_value) {new_value_ = new_value;}
+      auto new_value(xtd::forms::check_state value) -> item_check_event_args& {
+        new_value_ = value;
+        return *this;
+      }
       /// @}
       
     private:
       xtd::usize index_ = usize_object::max_value;
-      check_state new_value_ = check_state::indeterminate;
-      check_state current_value_ = check_state::unchecked;
+      xtd::forms::check_state new_value_ = xtd::forms::check_state::unchecked;
+      xtd::forms::check_state current_value_ = xtd::forms::check_state::unchecked;
     };
   }
 }
