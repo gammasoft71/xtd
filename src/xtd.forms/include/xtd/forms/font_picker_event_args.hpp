@@ -27,11 +27,6 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class font_picker_event_args : public xtd::event_args {
     public:
-      /// @cond
-      font_picker_event_args(const font_picker_event_args& font_picker_event_args) = default;
-      font_picker_event_args& operator =(const font_picker_event_args& font_picker_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -46,11 +41,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::drawing::color that represent the xtd::forms::font_picker::color.
       /// @return The xtd::drawing::color that represent the xtd::forms::font_picker::color.
-      const xtd::drawing::color& color() const noexcept {return color_;}
+      [[nodiscard]] auto color() const noexcept -> const xtd::drawing::color& {return color_;}
       
       /// @brief Gets the xtd::drawing::font that represent the xtd::forms::font_picker::font.
       /// @return The xtd::drawing::font that represent the xtd::forms::font_picker::font.
-      const xtd::drawing::font& font() const noexcept {return font_;}
+      [[nodiscard]] auto font() const noexcept -> const xtd::drawing::font& {return font_;}
       /// @}
       
     private:
