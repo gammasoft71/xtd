@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that handles a form_closing event.
     /// ```cpp
-    /// using form_closing_event_handler = xtd::delegate<void(object& sender, form_closing_event_args& e)>;
+    /// using form_closing_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::form_closing_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A form_closing_event_args that contains the event data.
+    /// @param e A xtd::forms::form_closing_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/form_closing_event_handler>
@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using form_closing_event_handler = xtd::delegate<void(object& sender, form_closing_event_args& e)>;
+    using form_closing_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::form_closing_event_args& e)>;
   }
 }
