@@ -24,7 +24,7 @@ var searchData=
   ['dash_5fsymbol_21',['dash_symbol',['../classxtd_1_1forms_1_1emoticons.html#ab17bf8f95f5670642a44aa70cf763d27',1,'xtd::forms::emoticons']]],
   ['date_5fchanged_22',['date_changed',['../classxtd_1_1forms_1_1month__calendar.html#ad84f0aec07a7e057e8c2bdde9cf87e4c',1,'xtd::forms::month_calendar']]],
   ['date_5fselected_23',['date_selected',['../classxtd_1_1forms_1_1month__calendar.html#a10bc3f04d063156025c95e49eb59d68a',1,'xtd::forms::month_calendar']]],
-  ['deactivate_24',['deactivate',['../classxtd_1_1forms_1_1form.html#ae7b9ab68370df452ee90838928b69943',1,'xtd::forms::form']]],
+  ['deactivate_24',['deactivate',['../classxtd_1_1forms_1_1form.html#a113d1395950119c86aea9400bbee6dbd',1,'xtd::forms::form']]],
   ['deciduous_5ftree_25',['deciduous_tree',['../classxtd_1_1forms_1_1emoticons.html#a752802f606339265edb02108ffe4cc15',1,'xtd::forms::emoticons']]],
   ['deep_5fpink_26',['deep_pink',['../classxtd_1_1drawing_1_1color.html#a5f233ebe21cc2eeb9477e21537c5cf75',1,'xtd::drawing::color']]],
   ['deep_5fsky_5fblue_27',['deep_sky_blue',['../classxtd_1_1drawing_1_1color.html#a8b40ffa3240499a9a87d45ac06d8970e',1,'xtd::drawing::color']]],

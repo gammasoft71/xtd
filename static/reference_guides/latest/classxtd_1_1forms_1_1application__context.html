@@ -134,7 +134,7 @@ Inheritance diagram for xtd::forms::application_context:</div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> context = <a class="code hl_function" href="#a565bbabff1f377c8b3a9eb28028d4dfe">application_context</a> {};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Form 1 (Click the client area to set form as the main form)&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#a2c615cec835a13cfe2dc843a4e964ce7">form::create</a>(<span class="stringliteral">&quot;Form 1 (Click the client area to set form as the main form)&quot;</span>);</div>
 <div class="line">  form1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {context.main_form(form1);};</div>
 <div class="line">  form1.show();</div>
 <div class="line">  </div>
@@ -150,7 +150,7 @@ Inheritance diagram for xtd::forms::application_context:</div>
 <div class="line">  application::run(context);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application__context_html_a565bbabff1f377c8b3a9eb28028d4dfe"><div class="ttname"><a href="#a565bbabff1f377c8b3a9eb28028d4dfe">xtd::forms::application_context::application_context</a></div><div class="ttdeci">application_context()</div><div class="ttdoc">Initializes a new instance of the application_context class with no context.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html_a2c615cec835a13cfe2dc843a4e964ce7"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#a2c615cec835a13cfe2dc843a4e964ce7">xtd::forms::form::create</a></div><div class="ttdeci">static auto create() -&gt; form</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -177,7 +177,7 @@ Public Constructors</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:af02a056c4456d0014e405aab54df1bc2" id="r_af02a056c4456d0014e405aab54df1bc2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af02a056c4456d0014e405aab54df1bc2">main_form</a> () const noexcept -&gt; std::optional&lt; <a class="el" href="group__xtd__forms.html#ga94b417c0461903f345731a092217138f">const_form_ref</a> &gt;</td></tr>
 <tr class="memdesc:af02a056c4456d0014e405aab54df1bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the form to use as context.  <br /></td></tr>
-<tr class="memitem:a3be2fbed1f17f194f5c84835c119dfe9" id="r_a3be2fbed1f17f194f5c84835c119dfe9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3be2fbed1f17f194f5c84835c119dfe9">main_form</a> () noexcept -&gt; std::optional&lt; <a class="el" href="group__xtd__forms.html#ga97d04d62780c781b0d9f2cdf27af910e">form_ref</a> &gt;</td></tr>
+<tr class="memitem:a3be2fbed1f17f194f5c84835c119dfe9" id="r_a3be2fbed1f17f194f5c84835c119dfe9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3be2fbed1f17f194f5c84835c119dfe9">main_form</a> () noexcept -&gt; std::optional&lt; <a class="el" href="group__xtd__forms.html#gad4a1f195f8342c3412e782db33796bd6">form_ref</a> &gt;</td></tr>
 <tr class="memdesc:a3be2fbed1f17f194f5c84835c119dfe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Form to use as context.  <br /></td></tr>
 <tr class="memitem:acf701a0c0c8e4a214d87d8d0110ec319" id="r_acf701a0c0c8e4a214d87d8d0110ec319"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acf701a0c0c8e4a214d87d8d0110ec319">main_form</a> (const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;main_form) -&gt; void</td></tr>
 <tr class="memdesc:acf701a0c0c8e4a214d87d8d0110ec319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Form to use as context.  <br /></td></tr>
@@ -312,7 +312,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::forms::application_context::main_form </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  std::optional&lt; <a class="el" href="group__xtd__forms.html#ga97d04d62780c781b0d9f2cdf27af910e">form_ref</a> &gt;</td>
+          <td> -&gt;  std::optional&lt; <a class="el" href="group__xtd__forms.html#gad4a1f195f8342c3412e782db33796bd6">form_ref</a> &gt;</td>
         </tr>
       </table>
   </td>
