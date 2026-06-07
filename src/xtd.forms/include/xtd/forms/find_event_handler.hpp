@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::find_dialog::find_next event of the xtd::forms::find_dialog and the xtd::forms::replace_dialog::find_next event of the xtd::forms::replace_dialog.
     /// ```cpp
-    /// using find_event_handler = xtd::delegate<void(object& sender, const find_event_args& e)>;
+    /// using find_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::find_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::forms::find_event_args that contains the event data.
