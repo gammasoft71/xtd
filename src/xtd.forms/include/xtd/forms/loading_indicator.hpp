@@ -28,7 +28,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of loading indicator control.
     /// @include loading_indicator.cpp
-    class forms_export_ loading_indicator : public control {
+    class forms_export_ loading_indicator : public xtd::forms::control {
       struct data;
       
     public:
@@ -42,35 +42,35 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      using control::control_appearance;
-      control& control_appearance(forms::control_appearance value) override;
+      using xtd::forms::control::control_appearance;
+      auto control_appearance(forms::control_appearance value) -> xtd::forms::control& override;
       
       /// @brief Gets the flat style appearance of the loading_indicator control.
       /// @return One of the xtd::forms::loading_indicator_style values. The default value is xtd::forms::loading_indicator_style::standard.
       /// @remarks When the loading_indicator_style property is set to xtd::forms::loading_indicator_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the loading_indicator_style property is set to xtd::forms::loading_indicator_style::system, the text in the loading_indicator control will be aligned to the top and center locations within the bounds of the control.
-      virtual xtd::forms::loading_indicator_style loading_indicator_style() const noexcept;
+      [[nodiscard]] virtual auto loading_indicator_style() const noexcept -> xtd::forms::loading_indicator_style;
       /// @brief Sets the flat style appearance of the loading_indicator control.
-      /// @param loading_indicator_style One of the xtd::forms::loading_indicator_style values. The default value is xtd::forms::loading_indicator_style::standard.
+      /// @param value One of the xtd::forms::loading_indicator_style values. The default value is xtd::forms::loading_indicator_style::standard.
       /// @return Current loading_indicator instance.
       /// @remarks When the loading_indicator_style property is set to xtd::forms::loading_indicator_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the loading_indicator_style property is set to xtd::forms::loading_indicator_style::system, the text in the loading_indicator control will be aligned to the top and center locations within the bounds of the control.
-      virtual xtd::forms::loading_indicator& loading_indicator_style(xtd::forms::loading_indicator_style loading_indicator_style);
+      virtual auto loading_indicator_style(xtd::forms::loading_indicator_style value) -> loading_indicator&;
       
       /// @brief Gets a valiue that indicates if the loading indicator is running.
       /// @return `true` if the loading indicator is running; otherwise `false`.
-      virtual bool running() const noexcept;
+      [[nodiscard]] virtual auto running() const noexcept -> bool;
       
       /// @brief Gets a valiue that indicates if the loading indicator is running.
       /// @param value `true` if the loading indicator is running; otherwise `false`.
-      virtual loading_indicator& running(bool value);
+      virtual auto running(bool value) -> loading_indicator&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Starts animation of the loading indicator.
-      void start();
+      auto start() -> void;
       /// @brief Stops animation of the loading indicator.
-      void stop();
+      auto stop() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -78,59 +78,59 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create();
+      [[nodiscard]] static auto create() -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::loading_indicator.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::loading_indicator.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::loading_indicator.
       /// @param name The name of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::loading_indicator.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::loading_indicator.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::loading_indicator.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> loading_indicator;
       /// @brief A factory to create an xtd::forms::loading_indicator with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::loading_indicator.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::loading_indicator.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::loading_indicator.
       /// @param name The name of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
-      static loading_indicator create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> loading_indicator;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      xtd::forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
       /// @name Protected method
       
       /// @{
-      xtd::drawing::size measure_control() const noexcept override;
-      void on_handle_created(const event_args& e) override;
-      void on_paint(xtd::forms::paint_event_args& e) override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
+      auto on_handle_created(const event_args& e) -> void override;
+      auto on_paint(xtd::forms::paint_event_args& e) -> void override;
       /// @}
       
     private:
