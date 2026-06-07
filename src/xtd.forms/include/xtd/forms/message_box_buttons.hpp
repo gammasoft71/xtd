@@ -19,6 +19,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks This enumeration is used by the message_box class.
-    using message_box_buttons = message_dialog_buttons;
+    using message_box_buttons = xtd::forms::message_dialog_buttons;
   }
 }
