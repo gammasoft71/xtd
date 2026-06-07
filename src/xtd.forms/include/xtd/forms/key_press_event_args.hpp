@@ -34,13 +34,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the KeyPressEventArgs class.
       /// @param key_char The ASCII character corresponding to the key the user pressed.
       /// @remarks Use the control::modifier_keys property to get the current state of the modifier keys.
-      explicit key_press_event_args(char32 key_char) : key_char_(key_char) {}
+      explicit key_press_event_args(xtd::char32 key_char) : key_char_(key_char) {}
       /// @}
-      
-      /// @cond
-      key_press_event_args(const key_press_event_args& key_press_event_args) = default;
-      key_press_event_args& operator =(const key_press_event_args& key_press_event_args) = default;
-      /// @endcond
       
       /// @name Public Properties
       
@@ -48,11 +43,14 @@ namespace xtd {
       /// @brief Gets a value indicating whether the xtd::forms::control::key_press event was handled.
       /// @return `true` if the event is handled; otherwise, `false`.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to `true` to cancel the xtd::forms::control::key_press event.
-      bool handled() const noexcept {return handled_;}
+      [[nodiscard]] auto handled() const noexcept -> bool {return handled_;}
       /// @brief Sets a value indicating whether the xtd::forms::control::key_press event was handled.
-      /// @param handled `true` if the event is handled; otherwise, `false`.
+      /// @param value `true` if the event is handled; otherwise, `false`.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to `true` to cancel the xtd::forms::control::key_press event.
-      void handled(bool handled) {handled_ = handled;}
+      auto handled(bool value) -> key_press_event_args& {
+        handled_ = value;
+        return *this;
+      }
       
       /// @brief Gets the character corresponding to the key pressed.
       /// @return The ASCII character that is composed. For example, if the user presses SHIFT + K, this property returns an uppercase K.
@@ -73,9 +71,9 @@ namespace xtd {
       /// * CMD and ALT.
       /// * Arrow keys.
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
-      char32 key_char() const noexcept {return key_char_;}
+      [[nodiscard]] auto key_char() const noexcept -> xtd::char32 {return key_char_;}
       /// @brief Sets the character corresponding to the key pressed.
-      /// @param key_char The ASCII character that is composed. For example, if the user presses SHIFT + K, this property returns an uppercase K.
+      /// @param value The ASCII character that is composed. For example, if the user presses SHIFT + K, this property returns an uppercase K.
       /// @remarks Use the key_char property to sample keystrokes at run time and to modify keystrokes under special run-time circumstances. For example, you can use key_char to disable non-numeric keypresses when the user enters a ZIP code, change all alphabetical keypresses to uppercase in a data entry field, or monitor the keyboard or other key input device for specific key combinations.
       /// @remarks You can get or set the following keys:
       /// * a-z, A-Z.
@@ -93,11 +91,14 @@ namespace xtd {
       /// * CMD and ALT.
       /// * Arrow keys.
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
-      void key_char(char32 key_char) {key_char_ = key_char;}
+      auto key_char(xtd::char32 value) -> key_press_event_args& {
+        key_char_ = value;
+        return *this;
+      }
       /// @}
       
     private:
-      char32 key_char_;
+      xtd::char32 key_char_;
       bool handled_ = false;
     };
   }
