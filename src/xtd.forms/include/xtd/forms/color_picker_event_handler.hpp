@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::color_picker::color_changeds of the xtd::forms::color_picker class.
     /// ```cpp
-    /// using color_picker_event_handler = xtd::delegate<void(object& sender, const color_picker_event_args& e)>;
+    /// using color_picker_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::color_picker_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A control_event_args that contains the event data.
+    /// @param e A xtd::forms::color_picker_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/color_picker_event_handler>
