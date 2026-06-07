@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::key_event_handler event handler.
+/// @brief Contains xtd::forms::animation_updated_event_handler event handler.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "animation_update_event_args.hpp"
