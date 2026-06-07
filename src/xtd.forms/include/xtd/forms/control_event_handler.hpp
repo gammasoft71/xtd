@@ -11,10 +11,10 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::control::control_added and xtd::forms::control::control_removed events of the control class.
     /// ```cpp
-    /// using control_event_handler = xtd::delegate<void(object& sender, const control_event_args& e)>;
+    /// using control_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::control_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
-    /// @param e A control_event_args that contains the event data.
+    /// @param e A xtd::forms::control_event_args that contains the event data.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/control_event_handler>
