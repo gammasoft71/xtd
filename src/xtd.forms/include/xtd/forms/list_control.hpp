@@ -24,16 +24,15 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks The list_control class provides implementations of common elements for the list_box and combo_box controls.
     /// @remarks The following properties are of primary concern to users of a data-bound list_box, choice or combo_box: data_source, display_member, selected_value, and value_member properties.
-    class forms_export_ list_control : public control {
+    class forms_export_ list_control : public xtd::forms::control {
       struct data;
       
     public:
       /// @brief Represent an item contained in the list_control::object_collection collection.
-      class item : public object, public icomparable<item>, public xtd::iequatable<item> {
+      class item : public xtd::object, public xtd::icomparable<item>, public xtd::iequatable<item> {
       public:
-        /// @brief Represent the sorter class used by list_control::object_collection collection.
-        class sorter {
-        public:
+        /// @brief Represent the sorter struct used by list_control::object_collection collection.
+        struct sorter {
           /// @name Operators
           
           /// @{
@@ -42,9 +41,7 @@ namespace xtd {
           /// @param last the last iterator to sort.
           /// @remarks same as std::sort.
           template<typename type_t>
-          void operator()(type_t first, type_t last) {
-            std::sort(first, last);
-          }
+          auto operator()(type_t first, type_t last) -> void {std::sort(first, last);}
           /// @}
         };
         
@@ -71,10 +68,6 @@ namespace xtd {
         
         /// @cond
         item(const char* value); // Can't be explicit by design.
-        item(const item& value) = default;
-        item(item&& value) = default;
-        item& operator =(const item& value) = default;
-        item& operator =(item&& value) = default;
         virtual ~item() = default;
         /// @endcond
         
@@ -83,11 +76,11 @@ namespace xtd {
         /// @{
         /// @brief Gets the value of the item.
         /// @return A xtd::string that represent the value of item.
-        virtual const xtd::string& value() const noexcept;
+        [[nodiscard]] virtual auto value() const noexcept -> const xtd::string&;
         
         /// @brief Gets the tag of the item.
         /// @return A xtd::any_object that represent the tag of item.
-        virtual const xtd::any_object& tag() const noexcept;
+        [[nodiscard]] virtual auto tag() const noexcept -> const xtd::any_object&;
         /// @}
         
         /// @name Public Methods
@@ -103,24 +96,24 @@ namespace xtd {
         /// | Less than zero    | This instance is less than obj.    |
         /// | Zero              | This instance is equal to obj.     |
         /// | Greater than zero | This instance is greater than obj. |
-        int32 compare_to(const item& value) const noexcept override;
+        [[nodiscard]] auto compare_to(const item& value) const noexcept -> xtd::int32 override;
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const item& other) const noexcept override;
+        [[nodiscard]] auto equals(const item& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::usize get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
         
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
-        xtd::string to_string() const noexcept override;
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
         /// @}
         
       private:
@@ -132,7 +125,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the collection of items in a list_control.
-      using object_collection = layout::arranged_element_collection<item, item::sorter>;
+      using object_collection = xtd::forms::layout::arranged_element_collection<item, item::sorter>;
       /// @}
       
       /// @name Public Fields
@@ -158,11 +151,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual xtd::usize selected_index() const noexcept;
+      [[nodiscard]] virtual auto selected_index() const noexcept -> xtd::usize;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
-      virtual list_control& selected_index(xtd::usize selected_index) = 0;
+      virtual auto selected_index(xtd::usize value) -> list_control& = 0;
       /// @}
       
       /// @name Public Events
@@ -170,11 +163,11 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the selected_index property changes.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<list_control, event_handler> selected_index_changed;
+      xtd::event<list_control, xtd::event_handler> selected_index_changed;
       
       /// @brief Occurs when the selected_value property changes.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<list_control, event_handler> selected_value_changed;
+      xtd::event<list_control, xtd::event_handler> selected_value_changed;
       /// @}
       
     protected:
@@ -188,8 +181,8 @@ namespace xtd {
       /// @name Protetced properties
       
       /// @{
-      drawing::color default_back_color() const noexcept override;
-      drawing::color default_fore_color() const noexcept override;
+      [[nodiscard]] auto default_back_color() const noexcept -> xtd::drawing::color override;
+      [[nodiscard]] auto default_fore_color() const noexcept -> xtd::drawing::color override;
       /// @}
       
       /// @name Protected Methods
@@ -197,17 +190,17 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return `true` if the list enables list item selection; otherwise, `false`. The default is `true`.
-      virtual bool allow_selection() const noexcept;
+      [[nodiscard]] virtual auto allow_selection() const noexcept -> bool;
       
-      /// @brief Raises the list_control::selected_index_changed event.
-      virtual void on_selected_index_changed(const event_args& e);
+      /// @briefautoRaises the list_control::selected_index_changed event.
+      virtual auto on_selected_index_changed(const event_args& e) -> void;
       
       /// @brief Raises the list_control::selected_value_changed event.
-      virtual void on_selected_value_changed(const event_args& e);
+      virtual auto on_selected_value_changed(const event_args& e) -> void;
       
       /// @brief Sets the currently selected item.
       /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      void set_selected_index(xtd::usize value);
+      auto set_selected_index(xtd::usize value) -> void;
       /// @}
       
     private:
