@@ -27,25 +27,25 @@ namespace xtd {
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
-      static xtd::drawing::size default_size() noexcept {return drawing::system_images::default_size();}
+      [[nodiscard]] static auto default_size() noexcept -> xtd::drawing::size {return drawing::system_images::default_size();}
       /// @brief Gets the image loading.
       /// @return The image loading.
       /// @remarks This is mage can be used when an image is loading.
-      static xtd::drawing::image image_loading() noexcept {return from_name("image-loading");}
+      [[nodiscard]] static auto image_loading() noexcept -> xtd::drawing::image {return from_name("image-loading");}
       /// @brief Gets the image loading with specified size.
       /// @param size The system image size in pixels.
       /// @return The image loading.
       /// @remarks This is mage can be used when an image is loading.
-      static xtd::drawing::image image_loading(const xtd::drawing::size& size) noexcept {return from_name("image-loading", size);}
+      [[nodiscard]] static auto image_loading(const xtd::drawing::size& size) noexcept -> xtd::drawing::image {return from_name("image-loading", size);}
       /// @brief Gets the image missing.
       /// @return The image missing.
       /// @remarks This is mage can be used when an image is missing.
-      static xtd::drawing::image image_missing() noexcept {return from_name("image-missing");}
+      [[nodiscard]] static auto image_missing() noexcept -> xtd::drawing::image {return from_name("image-missing");}
       /// @brief Gets the image missing with specified size.
       /// @param size The system image size in pixels.
       /// @return The image missing.
       /// @remarks This is mage can be used when an image is missing.
-      static xtd::drawing::image image_missing(const xtd::drawing::size& size) noexcept {return from_name("image-missing", size);}
+      [[nodiscard]] static auto image_missing(const xtd::drawing::size& size) noexcept -> xtd::drawing::image {return from_name("image-missing", size);}
       
       /// @brief Gets the image contexts.
       /// @return An wtd::string array that contains the image contexts.
@@ -66,7 +66,7 @@ namespace xtd {
       /// | Status        | Icons for presenting status to the user. This context contains icons for warning and error dialogs, as well as for the current weather, appointment alarms, and battery status.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
       /// | xtd           | Icons for representinf xtd libraries and products.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static xtd::array<xtd::string> contexts() noexcept {return drawing::system_images::contexts();}
+      [[nodiscard]] static auto contexts() noexcept -> xtd::array<xtd::string> {return drawing::system_images::contexts();}
       /// @brief Gets the image context names.
       /// @return An xtd::string, xtd::string hash table that contains the image context names.
       /// @remarks The system images are grouped by contaxt.
@@ -460,7 +460,8 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::map<xtd::string, xtd::array<xtd::string>> context_names() noexcept {return drawing::system_images::context_names();}
+      [[nodiscard]] static auto context_names() noexcept -> std::map<xtd::string, xtd::array<xtd::string>> {return drawing::system_images::context_names();}
+      
       /// @brief Gets the image names.
       /// @return An xtd::string array that contains the image names.
       /// @par The following table represents Standard Action Icons :
@@ -853,7 +854,7 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static xtd::array<xtd::string> names() noexcept {return drawing::system_images::names();}
+      [[nodiscard]] static auto names() noexcept -> xtd::array<xtd::string> {return drawing::system_images::names();}
       /// @brief Gets the image names for the specified context.
       /// @param context The context to retrieve the image names.
       /// @return An xtd::string, xtd::string hash table that contains the image names for the specified context.
@@ -1248,14 +1249,14 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static xtd::array<xtd::string> names(const xtd::string& context) noexcept {return drawing::system_images::names(context);}
+      [[nodiscard]] static auto names(const xtd::string& context) noexcept -> xtd::array<xtd::string> {return drawing::system_images::names(context);}
       /// @brief Gets the height and width of the button images.
       /// @return The size that represents the height and width of the button images in pixels (16 x 16).
-      static xtd::drawing::size size() {return default_size();}
+      [[nodiscard]] static auto size() -> xtd::drawing::size {return default_size();}
       /// @brief Gets standard sizes for image.
       /// @return An xtd::drawing::size array that contains the default sizes for image.
       /// @remarks This method allows you to obtain the standard sizes for an image. If you choose another size, the image will be scaled.
-      static xtd::array<xtd::drawing::size> sizes() noexcept {return drawing::system_images::sizes();}
+      [[nodiscard]] static auto sizes() noexcept -> xtd::array<xtd::drawing::size> {return drawing::system_images::sizes();}
       /// @}
       
       /// @name Public Methods
@@ -1265,21 +1266,21 @@ namespace xtd {
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::context_names to get names by context.
-      static xtd::drawing::image from_name(const xtd::string& name) {return from_name(name, size());}
+      [[nodiscard]] static auto from_name(const xtd::string& name) -> xtd::drawing::image {return from_name(name, size());}
       /// @brief Gets image object with specified theme and name.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name) {return from_name(theme, name, size());}
+      [[nodiscard]] static auto from_name(const xtd::string& theme, const xtd::string& name) -> xtd::drawing::image {return from_name(theme, name, size());}
       /// @brief Gets image object with specified name and size.
       /// @param name the image name to get.
       /// @param size The size that represents the height and width of the button images in pixels.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::string& name, const xtd::drawing::size& size);
+      [[nodiscard]] static auto from_name(const xtd::string& name, const xtd::drawing::size& size) -> xtd::drawing::image;
       /// @brief Gets image object with specified theme, name and size.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
@@ -1287,7 +1288,7 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::string& theme, const xtd::string& name, const xtd::drawing::size& size);
+      [[nodiscard]] static auto from_name(const xtd::string& theme, const xtd::string& name, const xtd::drawing::size& size) -> xtd::drawing::image;
       /// @}
     };
   }
