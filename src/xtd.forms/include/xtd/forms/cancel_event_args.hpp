@@ -39,9 +39,9 @@ namespace xtd {
       /// @return `true` if the event should be canceled; otherwise, `false`.
       [[nodiscard]] virtual auto cancel() const noexcept -> bool {return cancel_;}
       /// @brief Sets a value indicating whether the event should be canceled.
-      /// @param cancel `true` if the event should be canceled; otherwise, `false`.
-      virtual auto cancel(bool cancel) -> cancel_event_args& {
-        cancel_ = cancel;
+      /// @param value `true` if the event should be canceled; otherwise, `false`.
+      virtual auto cancel(bool value) -> cancel_event_args& {
+        cancel_ = value;
         return *this;
       }
       /// @}
