@@ -21,6 +21,6 @@ namespace xtd {
     /// @remarks This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.
     /// @remarks This enumeration is used by the MessageBox class.
     /// @remarks If you do not want to specify this parameter when calling methods on MessageBox, you can pass in 0 instead.
-    using message_box_options = message_dialog_options;
+    using message_box_options = xtd::forms::message_dialog_options;
   }
 }
