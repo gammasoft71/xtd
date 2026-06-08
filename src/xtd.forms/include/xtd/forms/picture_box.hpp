@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of picture box control.
     /// @include picture_box.cpp
-    class forms_export_ picture_box : public control {
+    class forms_export_ picture_box : public xtd::forms::control {
       struct data;
       
     public:
