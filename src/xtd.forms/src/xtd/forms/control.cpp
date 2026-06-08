@@ -1495,7 +1495,7 @@ void control::on_move(const event_args& e) {
 }
 
 void control::on_paint(paint_event_args& e) {
-  def_wnd_proc(e.message_);
+  def_wnd_proc(e.message());
   if (data_->background_image != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), data_->background_image, e.clip_rectangle(), data_->background_image_layout);
   if (!can_raise_events()) return;
   auto safe_paint = paint;
@@ -1504,7 +1504,7 @@ void control::on_paint(paint_event_args& e) {
 }
 
 void control::on_paint_background(paint_event_args& e) {
-  def_wnd_proc(e.message_);
+  def_wnd_proc(e.message());
 }
 
 void control::on_parent_back_color_changed(const event_args& e) {
@@ -2167,8 +2167,7 @@ void control::wm_destroy(message& message) {
 
 void control::wm_erase_background(message& message) {
   def_wnd_proc(message);
-  paint_event_args e(*this, data_->client_rectangle);
-  e.message_ = message;
+  auto e = paint_event_args {*this, data_->client_rectangle, message};
   on_paint_background(e);
 }
 
@@ -2325,8 +2324,7 @@ void control::wm_notify_control(message& message) {
 }
 
 void control::wm_paint(message& message) { // message parameter can't be const by design.
-  auto e = paint_event_args {*this, data_->client_rectangle};
-  e.message_ = message;
+  auto e = paint_event_args {*this, data_->client_rectangle, message};
   //auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   //if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   on_paint(e);
