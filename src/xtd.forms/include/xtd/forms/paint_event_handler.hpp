@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using paint_event_handler = xtd::delegate<void(object& sender, paint_event_args& e)>;
+    using paint_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::paint_event_args& e)>;
   }
 }
