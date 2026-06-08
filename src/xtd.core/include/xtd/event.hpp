@@ -17,7 +17,7 @@ namespace xtd {
   /// @remarks Only an object of type object_t can be create and invoke event.
   /// @remarks For more info about events see [Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/events) guide.
   /// @par Examples
-  /// The following example cshow hot to use event.
+  /// The following example show hot to use event.
   /// @include event.cpp
   template<typename object_t, typename handler_t>
   class event : protected handler_t {
