@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of popup_panel container.
     /// @include popup_panel.cpp
-    class forms_export_ popup_panel : public panel {
+    class forms_export_ popup_panel : public xtd::forms::panel {
       struct data;
       
     public:
@@ -43,11 +43,11 @@ namespace xtd {
       /// @{
       /// @brief Gets ignore mouse messages
       /// @return value If `true`, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically. The default value is `false`.
-      bool ignore_mouse_messages() const noexcept;
+      [[nodiscard]] auto ignore_mouse_messages() const noexcept -> bool;
       /// @brief Sets ignore mouse messages
       /// @param value If `true`, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically. The default value is `false`.
       /// @return The current popup panel instance.
-      popup_panel& ignore_mouse_messages(bool value);
+      auto ignore_mouse_messages(bool value) -> popup_panel&;
       /// @}
       
       /// @name Public Static Methods
@@ -55,64 +55,64 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create();
+      [[nodiscard]] static auto create() -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const drawing::point& location);
+      [[nodiscard]] static auto create(const drawing::point& location) -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::popup_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size) -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::popup_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::popup_panel.
       /// @param name The name of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const control& parent);
+      [[nodiscard]] static auto create(const control& parent) -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::popup_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location) -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::popup_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::popup_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size) -> popup_panel;
       /// @brief A factory to create an xtd::forms::popup_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::popup_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::popup_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::popup_panel.
       /// @param name The name of the xtd::forms::popup_panel.
       /// @return New xtd::forms::popup_panel created.
-      static popup_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> popup_panel;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
       /// @name Protected Methods
       
       /// @{
-      void on_handle_created(const event_args& e) override;
-      void on_layout(const event_args& e) override;
-      void on_region_changed(const event_args& e) override;
-      void wnd_proc(message& message) override;
+      auto on_handle_created(const event_args& e) -> void override;
+      auto on_layout(const event_args& e) -> void override;
+      auto on_region_changed(const event_args& e) -> void override;
+      auto wnd_proc(message& message) -> void override;
       /// @}
       
     private:
-      void wm_show(message& message);
+      auto wm_show(message& message) -> void;
       
       xtd::sptr<data> data_;
     };
