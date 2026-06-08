@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class forms_export_ padding : public object, public xtd::iequatable<padding> {
+    class forms_export_ padding : public xtd::object, public xtd::iequatable<padding> {
     public:
       /// @name Public Fields
       
@@ -40,7 +40,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the padding class using the supplied padding size for all edges.
       /// @param all The number of pixels to be used for padding for all edges.
       /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-      padding(int32 all); // Can't be explicit by design.
+      padding(xtd::int32 all); // Can't be explicit by design.
       
       /// @brief Initializes a new instance of the padding class using a separate padding size for each edge.
       /// @param left The padding size, in pixels, for the left edge.
@@ -48,13 +48,8 @@ namespace xtd {
       /// @param right The padding size, in pixels, for the right edge.
       /// @param bottom The padding size, in pixels, for the bottom edge.
       /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-      padding(int32 left, int32 top, int32 right, int32 bottom);
+      padding(xtd::int32 left, xtd::int32 top, xtd::int32 right, xtd::int32 bottom);
       /// @}
-      
-      /// @cond
-      padding(const padding&) = default;
-      padding& operator =(const padding&) = default;
-      /// @endcond
       
       /// @name Peorperties
       
@@ -62,57 +57,57 @@ namespace xtd {
       /// @brief Gets the padding value for all the edges.
       /// @return The padding, in pixels, for all edges if the same; otherwise, -1.
       /// @remarks When retrieving this property, if all the edges use the same padding value, then this common value is returned. Otherwise, -1 is returned to indicate that all the padding values are not equal.
-      int32 all() const noexcept;
+      xtd::int32 all() const noexcept;
       /// @brief Sets the padding value for all the edges.
       /// @param all The padding, in pixels, for all edges if the same; otherwise, -1.
       /// @remarks When retrieving this property, if all the edges use the same padding value, then this common value is returned. Otherwise, -1 is returned to indicate that all the padding values are not equal.
-      void all(int32 all);
+      padding& all(xtd::int32 all);
       
       /// @brief Gets the padding value for the bottom edge.
       /// @return The padding, in pixels, for the bottom edge.
       /// @remarks Setting this value can also alter the all property.
-      int32 bottom() const noexcept;
+      xtd::int32 bottom() const noexcept;
       /// @brief Sets the padding value for the bottom edge.
       /// @param bottom The padding, in pixels, for the bottom edge.
       /// @remarks Setting this value can also alter the all property.
-      void bottom(int32 bottom);
+      padding& bottom(xtd::int32 bottom);
       
       /// @brief Gets the combined padding for the right and left edges.
       /// @return Gets the sum, in pixels, of the left and right padding values.
-      int32 horizontal() const noexcept;
+      xtd::int32 horizontal() const noexcept;
       
       /// @brief Gets the padding value for the left edge.
       /// @return The padding, in pixels, for the left edge.
       /// @remarks Setting this value can also alter the all property.
-      int32 left() const noexcept;
+      xtd::int32 left() const noexcept;
       /// @brief Sets the padding value for the left edge.
       /// @param left The padding, in pixels, for the left edge.
       /// @remarks Setting this value can also alter the all property.
-      void left(int32 left);
+      padding& left(xtd::int32 left);
       
       /// @brief Gets the padding value for the right edge.
       /// @return The padding, in pixels, for the right edge.
       /// @remarks Setting this value can also alter the all property.
-      int32 right() const noexcept;
+      xtd::int32 right() const noexcept;
       /// @brief Sets the padding value for the right edge.
       /// @param right The padding, in pixels, for the right edge.
       /// @remarks Setting this value can also alter the all property.
-      void right(int32 right);
+      padding& right(xtd::int32 right);
       
       /// @brief Gets the padding value for the top edge.
       /// @return The padding, in pixels, for the top edge.
       /// @remarks Setting this value can also alter the all property.
-      int32 top() const noexcept;
+      xtd::int32 top() const noexcept;
       /// @brief Sets the padding value for the top edge.
       /// @param top The padding, in pixels, for the top edge.
       /// @remarks Setting this value can also alter the all property.
-      void top(int32 top);
+      padding& top(xtd::int32 top);
       
       /// @brief Gets the combined padding for the bottom and top edges.
       /// @param p1 A padding.
       /// @param p2 A padding.
       /// @return Gets the sum, in pixels, of the top and bottom padding values.
-      int32 vertical() const noexcept;
+      xtd::int32 vertical() const noexcept;
       /// @}
       
       /// @name Public Methods
@@ -153,10 +148,10 @@ namespace xtd {
       
     private:
       bool all_ = true;
-      int32 left_ = 0;
-      int32 top_ = 0;
-      int32 right_ = 0;
-      int32 bottom_ = 0;
+      xtd::int32 left_ = 0;
+      xtd::int32 top_ = 0;
+      xtd::int32 right_ = 0;
+      xtd::int32 bottom_ = 0;
     };
   }
 }

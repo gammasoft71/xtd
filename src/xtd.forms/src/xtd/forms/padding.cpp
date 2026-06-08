@@ -11,92 +11,92 @@ padding::padding(int32 all) : all_(true), left_(all), top_(all), right_(all), bo
 padding::padding(int32 left, int32 top, int32 right, int32 bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
-int32 padding::all() const noexcept {
+auto padding::all() const noexcept -> int32 {
   return all_ ? top_ : -1;
 }
 
-void padding::all(int32 all) {
-  if (!all_ || left_ != all) {
-    all_ = true;
-    left_ = top_ = right_ = bottom_ = all;
-  }
+auto padding::all(int32 all) -> padding& {
+  if (all_ && left_ == all) return *this;
+  all_ = true;
+  left_ = top_ = right_ = bottom_ = all;
+  return *this;
 }
 
-int32 padding::bottom() const noexcept {
+auto padding::bottom() const noexcept -> int32 {
   return bottom_;
 }
 
-void padding::bottom(int32 bottom) {
-  if (all_ || bottom_ != bottom) {
-    all_ = false;
-    bottom_ = bottom;
-  }
+auto padding::bottom(int32 bottom) -> padding& {
+  if (!all_ && bottom_ == bottom) return *this;
+  all_ = false;
+  bottom_ = bottom;
+  return *this;
 }
 
-int32 padding::horizontal() const noexcept {
+auto padding::horizontal() const noexcept -> int32 {
   return left_ + right_;
 }
 
 
-int32 padding::left() const noexcept {
+auto padding::left() const noexcept -> int32 {
   return left_;
 }
 
-void padding::left(int32 left) {
-  if (all_ || left_ != left) {
-    all_ = false;
-    left_ = left;
-  }
+auto padding::left(int32 left) -> padding& {
+  if (!all_ && left_ == left) return *this;
+  all_ = false;
+  left_ = left;
+  return *this;
 }
 
-int32 padding::right() const noexcept {
+auto padding::right() const noexcept -> int32 {
   return right_;
 }
 
-void padding::right(int32 right) {
-  if (all_ || right_ != right) {
-    all_ = false;
-    right_ = right;
-  }
+auto padding::right(int32 right) -> padding& {
+  if (!all_ && right_ == right) return *this;
+  all_ = false;
+  right_ = right;
+  return *this;
 }
 
-int32 padding::top() const noexcept {
+auto padding::top() const noexcept -> int32 {
   return top_;
 }
 
-void padding::top(int32 top) {
-  if (all_ || top_ != top) {
-    all_ = false;
-    top_ = top;
-  }
+auto padding::top(int32 top) -> padding& {
+  if (!all_ && top_ == top) return *this;
+  all_ = false;
+  top_ = top;
+  return *this;
 }
 
-int32 padding::vertical() const noexcept {
+auto padding::vertical() const noexcept -> int32 {
   return top_ + bottom_;
 }
 
-padding padding::add(const padding& p1, const padding& p2) {
+auto padding::add(const padding& p1, const padding& p2) -> padding {
   if (p1.all_ && p2.all_) return {p1.left_ + p2.left_};
   return {p1.left_ + p2.left_, p1.top_ + p2.top_, p1.right_ + p2.right_, p1.bottom_ + p2.bottom_};
 }
 
-bool padding::equals(const object& obj) const noexcept {
+auto padding::equals(const object& obj) const noexcept -> bool {
   return is<padding>(obj) && equals(static_cast<const padding&>(obj));
 }
 
-bool padding::equals(const padding& other) const noexcept {
+auto padding::equals(const padding& other) const noexcept -> bool {
   return all_ == other.all_ && bottom_ == other.bottom_ && left_ == other.left_ && right_ == other.right_ && top_ == other.top_;
 }
 
-usize padding::get_hash_code() const noexcept {
+auto padding::get_hash_code() const noexcept -> usize {
   return hash_code::combine(all_, bottom_, left_, right_, top_);
 }
 
-padding padding::subtract(const padding& p1, const padding& p2) {
+auto padding::subtract(const padding& p1, const padding& p2) -> padding {
   if (p1.all_ && p2.all_) return {p1.left_ - p2.left_};
   return {p1.left_ - p2.left_, p1.top_ - p2.top_, p1.right_ - p2.right_, p1.bottom_ - p2.bottom_};
 }
 
-xtd::string padding::to_string() const noexcept {
-  return xtd::string::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);
+auto padding::to_string() const noexcept -> string {
+  return string::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);
 }
