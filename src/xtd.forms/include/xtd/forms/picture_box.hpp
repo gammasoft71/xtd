@@ -46,50 +46,50 @@ namespace xtd {
       /// @{
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const noexcept;
+      [[nodiscard]] virtual auto border_sides() const noexcept -> xtd::forms::border_sides;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
-      virtual picture_box& border_sides(forms::border_sides border_sides);
+      virtual auto border_sides(xtd::forms::border_sides border_sides) -> picture_box&;
       
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual forms::border_style border_style() const noexcept;
+      [[nodiscard]] virtual auto border_style() const noexcept -> xtd::forms::border_style;
       /// @brief Sets the border style for the control.
-      /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
+      /// @param value One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @return Current picture_box.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual picture_box& border_style(forms::border_style border_style);
+      virtual auto border_style(forms::border_style value) -> picture_box&;
       /// @brief Resets the border style for the control.
-      /// @param border_style nullptr.
+      /// @param xtd::null.
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual picture_box& border_style(std::nullptr_t);
+      virtual auto border_style(xtd::null_ptr) -> picture_box&;
       
       /// @brief Gets the image that is displayed by picture_box.
       /// @return The xtd::drawing::image to display.
       /// @remarks The image property is set to the xtd::drawing::image to display. You can do this either at design time or at run time.
-      std::optional<drawing::image> image() const noexcept;
+      [[nodiscard]] virtual auto image() const noexcept -> std::optional<xtd::drawing::image>;
       /// @brief Sets the image that is displayed by picture_box.
-      /// @param image The xtd::drawing::image to display.
+      /// @param value The xtd::drawing::image to display.
       /// @return Current picture_box.
       /// @remarks The image property is set to the xtd::drawing::image to display. You can do this either at design time or at run time.
-      picture_box& image(const drawing::image& image);
+      virtual auto image(const xtd::drawing::image& value) -> picture_box&;
       /// @brief Resets the image that is displayed by picture_box.
-      /// @param nullptr.
+      /// @param xtd::null.
       /// @return Current picture_box.
       /// @remarks The image property is set to the xtd::drawing::image to display. You can do this either at design time or at run time.
-      picture_box& image(std::nullptr_t);
+      virtual auto image(xtd::null_ptr) -> picture_box&;
       
       /// @brief Indicates how the image is displayed.
       /// @return One of the picture_box_size_mode values. The default is normal.
       /// @remarks By default, in normal mode, the Image is positioned in the upper-left corner of the picture_box, and any part of the image that is too big for the picture_box is clipped. Using the stretch_image value causes the image to stretch or shrink to fit the picture_box. Using the zoom value causes the image to be stretched or shrunk to fit the picture_box; however, the aspect ratio in the original is maintained.
-      picture_box_size_mode size_mode() const noexcept;
+      [[nodiscard]] auto size_mode() const noexcept -> xtd::forms::picture_box_size_mode;
       /// @brief Indicates how the image is displayed.
-      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param value One of the picture_box_size_mode values. The default is normal.
       /// @return Current picture_box.
       /// @remarks By default, in normal mode, the Image is positioned in the upper-left corner of the picture_box, and any part of the image that is too big for the picture_box is clipped. Using the stretch_image value causes the image to stretch or shrink to fit the picture_box. Using the zoom value causes the image to be stretched or shrunk to fit the picture_box; however, the aspect ratio in the original is maintained.
-      picture_box& size_mode(picture_box_size_mode size_mode);
+      auto size_mode(xtd::forms::picture_box_size_mode value) -> picture_box&;
       /// @}
       
       /// @name Public Static Methods
@@ -97,84 +97,110 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create();
+      [[nodiscard]] static auto create() -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified image.
       /// @param image The image that is displayed by picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const xtd::drawing::image& image);
+      [[nodiscard]] static auto create(const xtd::drawing::image& image) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified image, and location.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const xtd::drawing::image& image, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, const xtd::drawing::point& location) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified image, location, and size.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, const xtd::drawing::point& location, const xtd::drawing::size& size) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified image, location, size, and name.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified image.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified image, and location.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode, const xtd::drawing::point& location) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified image, location, and size.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode, const xtd::drawing::point& location, const xtd::drawing::size& size) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified image, location, size, and name.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @param name The name of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, and image.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const xtd::drawing::image& image);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, and location.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, const xtd::drawing::point& location) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, const xtd::drawing::point& location, const xtd::drawing::size& size) -> picture_box;
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
@@ -182,26 +208,56 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, and image.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, and location.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode, const xtd::drawing::point& location) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode, const xtd::drawing::point& location, const xtd::drawing::size& size) -> picture_box;
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @param size_mode One of the picture_box_size_mode values. The default is normal.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @param name The name of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::image& image, xtd::forms::picture_box_size_mode size_mode, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> picture_box;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      drawing::size measure_control() const noexcept override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       
       /// @brief Overrides the on_handle_created(const event_args&) method.
       /// @param e An event_args that contains the event data.
-      void on_handle_created(const event_args& e) override;
-      void on_paint(paint_event_args& e) override;
+      auto on_handle_created(const xtd::event_args& e) -> void override;
+      auto on_paint(xtd::forms::paint_event_args& e) -> void override;
       /// @}
       
     private:
