@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of open_file_dialog dialog.
     /// @include open_file_dialog.cpp
-    class forms_export_ open_file_dialog final : public file_dialog {
+    class forms_export_ open_file_dialog final : public xtd::forms::file_dialog {
     public:
       /// @name Public Constructors
       
@@ -41,22 +41,22 @@ namespace xtd {
       /// @{
       /// @brief Opens the file with read only permission selected by the user.
       /// @return The read only file selected by the user.
-      std::ifstream open_file() const noexcept;
+      [[nodiscard]] auto open_file() const noexcept -> std::ifstream;
       
       /// @brief Gets a value indicating whether the dialog box allows multiple files to be selected.
       /// @return `true` if the dialog box allows multiple files to be selected together or concurrently; otherwise, `false`. The default value is `false`.
       /// @remarks Use the file_names property to access the full list of selected file names.
-      bool multiselect() const noexcept;
+      [[nodiscard]] auto multiselect() const noexcept -> bool;
       /// @brief Sets a value indicating whether the dialog box allows multiple files to be selected.
       /// @param value `true` if the dialog box allows multiple files to be selected together or concurrently; otherwise, `false`. The default value is `false`.
       /// @return Current open_file_dialog.
       /// @remarks Use the file_names property to access the full list of selected file names.
-      open_file_dialog& multiselect(bool value);
+      auto multiselect(bool value) -> open_file_dialog&;
       /// @}
       
     private:
-      bool run_file_dialog(intptr hwnd_owner) override;
-      void run_file_sheet(intptr owner) override;
+      auto run_file_dialog(xtd::intptr hwnd_owner) -> bool override;
+      auto run_file_sheet(xtd::intptr hwnd_owner) -> void override;
     };
   }
 }
