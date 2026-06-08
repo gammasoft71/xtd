@@ -18,6 +18,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using notifier_appearance = control_appearance;
+    using notifier_appearance = xtd::forms::control_appearance;
   }
 }
