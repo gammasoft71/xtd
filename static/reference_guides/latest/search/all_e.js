@@ -181,7 +181,7 @@ var searchData=
   ['not_5fsupported_5fexception_2ehpp_178',['not_supported_exception.hpp',['../not__supported__exception_8hpp.html',1,'']]],
   ['notebook_179',['notebook',['../classxtd_1_1forms_1_1emoticons.html#a26b7eb1feea36985ae69ae14e33c5167',1,'xtd::forms::emoticons']]],
   ['notebook_5fwith_5fdecorative_5fcover_180',['notebook_with_decorative_cover',['../classxtd_1_1forms_1_1emoticons.html#abc197c643b17757e74a138de6a2558e4',1,'xtd::forms::emoticons']]],
-  ['notifier_5fappearance_181',['notifier_appearance',['../group__xtd__forms.html#gaa13cd31e19ce23edb40ad21098ef97a1',1,'xtd::forms']]],
+  ['notifier_5fappearance_181',['notifier_appearance',['../group__xtd__forms.html#ga3b9e49897d15ab9fbefc05e558e5411c',1,'xtd::forms']]],
   ['notifier_5fappearance_2ehpp_182',['notifier_appearance.hpp',['../notifier__appearance_8hpp.html',1,'']]],
   ['notifier_5fbutton_5fclick_5fevent_5fargs_183',['notifier_button_click_event_args',['../classxtd_1_1forms_1_1notifier__button__click__event__args.html',1,'xtd::forms']]],
   ['notifier_5fclosed_5fevent_5fargs_184',['notifier_closed_event_args',['../classxtd_1_1forms_1_1notifier__closed__event__args.html',1,'xtd::forms']]],
