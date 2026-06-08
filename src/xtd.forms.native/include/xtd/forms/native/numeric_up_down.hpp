@@ -40,7 +40,7 @@ namespace xtd {
         /// @param control Numeric up down window handle.
         /// @param decimal_place The number of decimal places to display in the spin box.
         /// @warning Internal use only
-        static auto decimal_place(xtd::intptr control, int32 decimal_place) -> void;
+        static auto decimal_place(xtd::intptr control, xtd::uint32 decimal_place) -> void;
         /// @brief Sets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
         /// @param control Numeric up down window handle.
         /// @param increment The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box.

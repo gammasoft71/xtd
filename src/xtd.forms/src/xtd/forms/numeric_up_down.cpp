@@ -13,7 +13,7 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct numeric_up_down::data {
-  int32 decimal_place = 0;
+  uint32 decimal_place = 0;
   double increment = 1.0;
   double maximum = 100.0;
   double minimum = 0.0;
@@ -26,11 +26,11 @@ numeric_up_down::numeric_up_down() : data_(xtd::new_sptr<data>()) {
   control_appearance(forms::control_appearance::system);
 }
 
-double numeric_up_down::decimal_place() const noexcept {
+uint32 numeric_up_down::decimal_place() const noexcept {
   return data_->decimal_place;
 }
 
-numeric_up_down& numeric_up_down::decimal_place(int32 value) {
+numeric_up_down& numeric_up_down::decimal_place(uint32 value) {
   if (data_->decimal_place == value) return *this;
   data_->decimal_place = value;
   if (is_handle_created()) native::numeric_up_down::decimal_place(handle(), data_->decimal_place);
