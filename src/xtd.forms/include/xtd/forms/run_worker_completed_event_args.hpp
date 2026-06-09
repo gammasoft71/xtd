@@ -23,15 +23,10 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class run_worker_completed_event_args : public xtd::event_args {
     public:
-      /// @cond
-      run_worker_completed_event_args(const run_worker_completed_event_args& do_work_event_args) = default;
-      run_worker_completed_event_args& operator =(const run_worker_completed_event_args& do_work_event_args) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initializes a new instance of the DoWorkEventArgs class.
+      /// @brief Initializes a new instance of the xtd::forms::run_worker_completed_event_args class.
       /// @param argument Specifies an argument for an asynchronous operation.
       run_worker_completed_event_args(const xtd::any_object& result, std::optional<xtd::ref<std::exception>> exception, bool cancel) : cancel_(cancel), exception_(exception), result_(result) {}
       /// @}
@@ -39,14 +34,23 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      bool cancel() const noexcept {return cancel_;}
-      void cancel(bool value) {cancel_ = value;}
+      /// @brief Gets a value indicates the asynchronus operation is canceled.
+      /// @return `true`if asynchronus operation is canceled; otherwise `false`.
+      [[nodiscard]] bool cancel() const noexcept {return cancel_;}
+      /// @brief Sets a value indicates the asynchronus operation is canceled.
+      /// @param value `true`if asynchronus operation is canceled; otherwise `false`.
+      run_worker_completed_event_args& cancel(bool value) {
+        cancel_ = value;
+        return *this;
+      }
       
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      xtd::any_object user_state() const noexcept {return user_state_;}
+      [[nodiscard]] xtd::any_object user_state() const noexcept {return user_state_;}
       
-      xtd::any_object result() const noexcept {return result_;}
+      /// @biref Gets a value that represents the result of an asynchronous operation.
+      /// @return An xtd::any_object representing the result of an asynchronous operation.
+      [[nodiscard]] xtd::any_object result() const noexcept {return result_;}
       /// @}
       
     private:
