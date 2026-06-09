@@ -37,16 +37,23 @@ namespace xtd {
       
       /// @{
       /// @brief Draws a box in the specified bounds, form state and background color.
+      /// @param style_sheet The style sheet that contains the box style.
       /// @param graphics The Graphics used to draw a form.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
-      /// @param graphics The Graphics used to draw a form control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
       /// @param form_state The visual state of a form that is drawn with visual styles.
       /// @param back_color The background color for the form control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
-      static void draw_status_bar(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides);
+      static auto draw_status_bar(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides) -> void;
       
-      static void draw_text_status_bar(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font);
+      /// @brief Draws a text in the specified bounds, form state and background color.
+      /// @param style_sheet The style sheet that contains the text style.
+      /// @param graphics The Graphics used to draw a form.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
+      /// @param text The xtd::string that specifies the text.
+      /// @param fore_color The foreground color for the text.
+      /// @param font The font style for the text.
+      /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
+      static auto draw_text_status_bar(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font) -> void;
       /// @}
     };
   }
