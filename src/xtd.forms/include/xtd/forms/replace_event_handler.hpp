@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::replace_dialog::replace event and the xtd::forms::replace_dialog::replace_all event of the xtd::forms::replace_dialog.
     /// ```cpp
-    /// using replace_event_handler = xtd::delegate<void(object& sender, const replace_event_args& e)>;
+    /// using replace_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::replace_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::forms::replace_event_args that contains the event data.
@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using replace_event_handler = xtd::delegate<void(object& sender, const replace_event_args& e)>;
+    using replace_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::replace_event_args& e)>;
   }
 }
